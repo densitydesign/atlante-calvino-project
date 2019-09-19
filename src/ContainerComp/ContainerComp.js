@@ -32,7 +32,7 @@ class ContainerComp extends Component {
 
     }).then(data=>{
       // console.log('loaded sample-data.csv in ContainerComp')
-      const extent = d3.extent(data, d => { d.date })
+      // const extent = d3.extent(data, d => { d.date })
       this.setState({
         data: data,
         // timeFilter: '',
