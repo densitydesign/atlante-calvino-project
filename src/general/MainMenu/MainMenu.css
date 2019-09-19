@@ -1,0 +1,9 @@
+.main-menu {
+  background-color: var(--dark-green);
+  color: white;
+  opacity: .8;
+}
+
+.main-menu:hover {
+  opacity: 1;
+}
