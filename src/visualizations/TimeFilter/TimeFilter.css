@@ -1,5 +1,13 @@
 #time-filter {
   height: 30px;
-  background-color: green;
   width: 100%;
+}
+
+#time-filter .selection {
+  fill: #FF6347;
+  stroke: none;
+}
+
+#time-filter .handle {
+  fill: #FF6347;
 }

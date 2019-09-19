@@ -17,7 +17,7 @@ class TimeFilter extends Component {
   }
 
   componentDidUpdate() {
-    Viz.update(this.props.data);
+    // Viz.update(this.props.data);
   }
 
   componentWillUnmount() {

@@ -40,7 +40,7 @@ Viz.initialize = (el, data, filter) => {
 
 Viz.update = (el, data, filter) => {
 
-  console.log('data on update', data, filter);
+  // console.log('data on update', data, filter);
   // code for initialization of the visualisation
 
   // update scales
