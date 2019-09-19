@@ -127,3 +127,57 @@ class Child extends React.Component {
   }
 }
 ```
+
+### D3 charts
+
+new component folder
+inside make a js file viz-name.d3.js organised in this way:
+```
+import * as d3 from 'd3';
+
+const Viz = {};
+
+Viz.initialize = (el) => {}
+
+Viz.update = (data) => {}
+
+Viz.destroy = (el) => {}
+
+export default Viz
+```
+
+How to structure the component:
+```
+class TimeFilter extends Component {
+
+  componentDidMount() {
+    this._chart = Viz.initialize(
+        this._rootNode,
+        this.props.data,
+        this.props.config
+    );
+  }
+
+  componentDidUpdate() {
+    Viz.update(
+       this._rootNode,
+       this.props.data,
+       this.props.config,
+       this._chart
+    );
+  }
+
+  componentWillUnmount() {
+    Viz.destroy(this._rootNode);
+  }
+
+  _setRef(componentNode) {
+      this._rootNode = componentNode;
+  }
+
+
+  render() {
+    return <svg ref={this._setRef.bind(this)}></svg>
+  }
+}
+```

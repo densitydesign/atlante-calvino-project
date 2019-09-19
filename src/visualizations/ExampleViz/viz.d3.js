@@ -2,9 +2,7 @@ import * as d3 from 'd3';
 
 const Viz = {};
 
-let margin = Viz.Margin;
-
-Viz.initialize = (el, data, configuration) => {
+Viz.initialize = (el, data, filter) => {
   // code for initialization of the visualisation
   // console.log('data on initialize', data);
 
@@ -37,16 +35,19 @@ Viz.initialize = (el, data, configuration) => {
 
 
 
-  Viz.update(el, data, configuration);
+  Viz.update(el, data, filter);
 }
 
-Viz.update = (el, data, configuration) => {
+Viz.update = (el, data, filter) => {
 
-  // console.log('data on update', data);
+  console.log('data on update', data, filter);
   // code for initialization of the visualisation
 
   // update scales
   Viz.x.domain(d3.extent(data, function(d) { return d.date; }));
+  if (filter) {
+    Viz.x.domain(filter);
+  }
   Viz.y.domain([0, d3.max(data, function(d) { return d.price; })]);
 
   // update elements

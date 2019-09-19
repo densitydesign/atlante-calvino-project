@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
-import Loading from '../../general/Loading';
+import './TimeFilter.css';
+import Viz from './time-filter.d3'
 
 class TimeFilter extends Component {
+  constructor(props) {
+    super(props);
+    this.changeSpan = this.changeSpan.bind(this);
+  }
+
+  changeSpan(span) {
+    this.props.changeSpan(span);
+  }
 
   componentDidMount() {
-    console.log(this.props.data);
+    this._chart = Viz.initialize(this._rootNode, this.props.data, this.changeSpan);
   }
 
   componentDidUpdate() {
-    console.log(this.props.data);
+    Viz.update(this.props.data);
+  }
+
+  componentWillUnmount() {
+    Viz.destroy(this._rootNode);
+  }
+
+  _setRef(componentNode) {
+      this._rootNode = componentNode;
   }
 
   render() {
-    console.log(this.props.isLoading)
     return (
       <div style={this.props.style}>
-        sono più bello di andre
+        <h5>{this.props.title}</h5>
+        <svg id="time-filter" ref={this._setRef.bind(this)}></svg>
       </div>
     );
   }
 }
 
 export default TimeFilter;
+
+TimeFilter.defaultProps = { title: 'Time Filter' };

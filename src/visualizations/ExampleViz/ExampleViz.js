@@ -14,17 +14,16 @@ class ExampleViz extends Component {
       this._chart = Viz.initialize(
           this._rootNode,
           this.props.data,
-          this.props.config
+          this.props.span
       );
   }
 
   componentDidUpdate() {
-      Viz.update(
-         this._rootNode,
-         this.props.data,
-         this.props.config,
-         this._chart
-      );
+    Viz.update(
+       this._rootNode,
+       this.props.data,
+       this.props.span
+    );
   }
 
   componentWillUnmount() {

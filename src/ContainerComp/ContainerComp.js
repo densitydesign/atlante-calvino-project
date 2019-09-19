@@ -15,9 +15,9 @@ class ContainerComp extends Component {
     this.loadData = this.loadData.bind(this);
     this.state = {
       data:'data still not loaded',
-      timeFilter: undefined,
       isLoading: true
     };
+    this.changeSpan = this.changeSpan.bind(this);
   }
 
   loadData() {
@@ -35,7 +35,6 @@ class ContainerComp extends Component {
       // const extent = d3.extent(data, d => { d.date })
       this.setState({
         data: data,
-        // timeFilter: '',
         isLoading: false
       })
     })
@@ -45,13 +44,20 @@ class ContainerComp extends Component {
     this.loadData();
   }
 
+  changeSpan(newSpan) {
+    this.setState({
+      span: newSpan
+    });
+  }
+
   render() {
     return (
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
           <div style={{gridColumn: 'span 2', padding: '0 15px'}}>apritutto</div>
-          <TimeFilter style={{gridColumn: 'span 6', padding: '0 15px'}} data={this.state.data} isLoading={this.state.isLoading}/>
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 6', padding: '0 15px'}} /> }
+          { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6', padding: '0 15px'}} data={this.state.data} changeSpan={this.changeSpan} /> }
           <div style={{gridColumn: 'span 4', padding: '0 15px'}}>tipo pubblicazione</div>
           <div style={{gridColumn: 'span 4', padding: '0 15px'}}>temi</div>
           <div style={{gridColumn: 'span 6', padding: '0 15px'}}>ricerca</div>
@@ -60,7 +66,7 @@ class ContainerComp extends Component {
 
         <BodyViz className="the-body-viz">
           { this.state.isLoading && <Loading /> }
-          { !this.state.isLoading && <ExampleViz data={this.state.data} /> }
+          { !this.state.isLoading && <ExampleViz data={this.state.data} span={this.state.span} /> }
         </BodyViz>
       </div>
     );
