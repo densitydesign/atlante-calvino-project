@@ -23,14 +23,14 @@ Viz.initialize = (el, data, changeSpan) => {
   Viz.info = Viz.svg.selectAll('text')
 
   Viz.svg.append("line")
-    .attr('x1', 0)
+    .attr('x1', Viz.margin.left)
     .attr('y1', 10)
     .attr('x2', Viz.width)
     .attr('y2', 10)
     .attr('stroke', 'black')
 
   Viz.brush = d3.brushX()
-    .extent([[0, 0], [Viz.width, Viz.height]])
+    .extent([[Viz.margin.left, 0], [Viz.width, Viz.height]])
     .on("brush end", brushed);
 
   Viz.context = Viz.svg.append("g")
@@ -42,11 +42,12 @@ Viz.initialize = (el, data, changeSpan) => {
     .call(Viz.brush)
     .call(Viz.brush.move, Viz.x.range())
 
-  console.log(Viz.info)
+  console.log(d3.extent(data, d=> d.date))
 
-  const initialSpan = d3.extent(data, d=> d.date).map(d=> {
-    return d.getFullYear()
-  });
+  const initialSpan = d3.extent(data, d=> d.date)
+    // .map(d=> {
+    //   return d.getFullYear()
+    // });
   Viz.update(initialSpan)
 }
 
@@ -58,14 +59,21 @@ Viz.update = (span) => {
   Viz.info.exit().remove()
   Viz.info = Viz.info.enter().append('text')
     .attr('x', d => {
-      d = new Date(d, 1, 1);
       return Viz.x(d)
     })
     .attr('y', 29)
     .attr('text-anchor', (d,i) => {
-      return i%2==0 ? 'start' : 'end'
+      let anchor;
+      if (i%2===0) {
+        anchor = 'start';
+      } else {
+        anchor = 'end';
+      }
+      return anchor;
     })
-    .text(d=>d)
+    .text(d=>{
+      return d.getFullYear()
+    })
     .merge(Viz.info)
 }
 
@@ -81,9 +89,9 @@ function brushed() {
     Viz.changeSpan(span)
     span = span.map(d=> new Date(d));
     // console.log('brushed', span)
-    span = span.map(d => {
-      return d.getFullYear()
-    });
+    // span = span.map(d => {
+    //   return d.getFullYear()
+    // });
     Viz.update(span)
   }
 }
