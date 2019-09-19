@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 import Viz from './viz.d3'
 import './ExampleViz.css'
-
 const vizStyle = {
   width: '100%',
   height: '100%'
@@ -37,7 +36,7 @@ class ExampleViz extends Component {
   }
 
   render() {
-    return <svg style={vizStyle} id="example-viz" ref={this._setRef.bind(this)}></svg>;
+    return <svg style={vizStyle} id="example-viz" ref={this._setRef.bind(this)}></svg>
   }
 
 }

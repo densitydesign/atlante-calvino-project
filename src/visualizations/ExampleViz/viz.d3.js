@@ -6,7 +6,7 @@ let margin = Viz.Margin;
 
 Viz.initialize = (el, data, configuration) => {
   // code for initialization of the visualisation
-  console.log('data on initialize', data);
+  // console.log('data on initialize', data);
 
   // Set variables important to all the viz
   Viz.margin = {top: 20, right: 20, bottom: 110, left: 40}
@@ -24,11 +24,17 @@ Viz.initialize = (el, data, configuration) => {
     .y0(Viz.height)
     .y1(function(d) { return Viz.y(d.price); });
 
-  // set elements important for all the chart
+  // set selections here to be used in all the chart
   Viz.svg = d3.select(el);
   Viz.focus = Viz.svg.append("g").attr("class", "focus")
+  Viz.xAxisG = Viz.focus.append("g").attr("class", "axis axis--x")
+  Viz.yAxisG = Viz.focus.append("g").attr("class", "axis axis--y")
 
+  // focus.append("g")
+  //     .attr("class", "axis axis--y")
+  //     .call(yAxis);
   Viz.path = Viz.focus.append("path").attr("class", "area")
+
 
 
   Viz.update(el, data, configuration);
@@ -36,7 +42,7 @@ Viz.initialize = (el, data, configuration) => {
 
 Viz.update = (el, data, configuration) => {
 
-  console.log('data on update', data);
+  // console.log('data on update', data);
   // code for initialization of the visualisation
 
   // update scales
@@ -46,13 +52,15 @@ Viz.update = (el, data, configuration) => {
   // update elements
   Viz.svg.style('background-color', 'peachpuff');
   Viz.focus.attr("transform", "translate(" + Viz.margin.left + "," + Viz.margin.top + ")")
+  Viz.xAxisG.attr("transform", "translate(0," + Viz.height + ")").call(Viz.xAxis);
+  Viz.yAxisG.attr("transform", "translate(0,0)").call(Viz.yAxis);
+
   Viz.path.datum(data).attr("d", Viz.area);
-
-
 }
 
 Viz.destroy = (el, data, configuration) => {
   // code for initialization of the visualisation
+  console.log('remove Viz')
   Viz.svg.remove();
 }
 

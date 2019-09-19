@@ -5,6 +5,11 @@
 { !baby && <li>Pizza</li> }
 ```
 
+#### Comments
+```
+{ /*<li>Pizza</li>*/ }
+```
+
 ### Props
 
 #### Set default Props
