@@ -5,6 +5,8 @@ const Viz = {};
 Viz.initialize = (el, data, changeSpan) => {
   // console.log('initialized')
 
+  // data must be an array with 2+ elements. Element is a Date object
+
   // Important to declare at beginning
   Viz.changeSpan = changeSpan;
 
@@ -27,7 +29,7 @@ Viz.initialize = (el, data, changeSpan) => {
 
   Viz.x = d3.scaleTime()
     .range([0, Viz.width])
-    .domain(d3.extent(data, d=> d.date));
+    .domain(d3.extent(data, d => d));
 
   Viz.xAxis = d3.axisBottom(Viz.x)
 

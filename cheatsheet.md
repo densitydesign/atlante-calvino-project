@@ -142,15 +142,12 @@ inside make a js file viz-name.d3.js organised in this way:
 ```
 import * as d3 from 'd3';
 
-const Viz = {};
+const V = {}
+V.initialize = () => {}
+V.update = () => {}
+V.destroy = () => {}
 
-Viz.initialize = (el) => {}
-
-Viz.update = (data) => {}
-
-Viz.destroy = (el) => {}
-
-export default Viz
+export default V
 ```
 
 How to structure the component:

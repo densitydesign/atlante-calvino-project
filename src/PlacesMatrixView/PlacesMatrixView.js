@@ -8,9 +8,11 @@ import Loading from '../general/Loading';
 import TimeFilter from '../visualizations/TimeFilter'
 import DropDownSelect from '../general/DropDownSelect'
 import SetOption from '../general/SetOption'
-import ExampleViz from '../visualizations/ExampleViz';
+import PlacesMatrix from '../visualizations/PlacesMatrix';
 
-class ContainerComp extends Component {
+import ParseMatrixData from './parse-matrix-data'
+
+class PlacesMatrixView extends Component {
 
   constructor(props){
     super(props);
@@ -27,24 +29,20 @@ class ContainerComp extends Component {
   }
 
   loadData() {
-    const parseDate = d3.timeParse("%b %Y");
-    d3.csv('./sample-data.csv').then( data => {
-      // Execute here any function to format data
-      return data.map( d => {
-        d.date = parseDate(d.date);
-        d.price = +d.price;
-        return d;
+    d3.tsv('./places-matrix-data.tsv')
+      .then( data => {
+        const graph = ParseMatrixData.parser(data);
+        return graph;
       })
-
-    }).then(data=>{
-      this.setState({
-        data: data,
-        dataTimeFilter: d3.extent(data, d=> d.date),
-        themes: ['tema 1','tema 2','tema 3','tema 4','tema 5','tema 6'],
-        publicationsTypes: ['publication 1','publication 2','publication 3'],
-        isLoading: false
+      .then(data=>{
+        this.setState({
+          data: data,
+          dataTimeFilter: d3.extent(data.nodes, d => d.year),
+          themes: ['tema 1','tema 2','tema 3','tema 4','tema 5','tema 6'],
+          publicationsTypes: ['publication 1','publication 2','publication 3'],
+          isLoading: false
+        })
       })
-    })
   }
 
   componentDidMount() {
@@ -97,11 +95,11 @@ class ContainerComp extends Component {
 
         <BodyViz className="the-body-viz">
           { this.state.isLoading && <Loading /> }
-          { !this.state.isLoading && <ExampleViz data={this.state.data} span={this.state.span} /> }
+          { !this.state.isLoading && <PlacesMatrix data={this.state.data} span={this.state.span} /> }
         </BodyViz>
       </div>
     );
   }
 }
 
-export default ContainerComp;
+export default PlacesMatrixView;
