@@ -176,7 +176,19 @@ V.update = (data, filters) => {
   node = node.data(nodes, d => {
     return d.id
   })
-  node.exit().remove()
+  node.exit()
+    .transition()
+    .duration(500)
+    .attr('cx', d => {
+      if (d.x <= width/2) {
+        return -margin.left
+      } else {
+        return width + margin.right
+      }
+    })
+    .style('opacity', 0)
+    .remove();
+
   node = node.enter().append('circle')
     .attr('class', d => `node`)
     .attr('key', d=> d.id)
@@ -186,18 +198,26 @@ V.update = (data, filters) => {
     .attr('cy', d => {
       return d.y
     })
+    .attr('r', 0)
+    .style('opacity', 0)
     .merge(node)
     .style('cursor', function(d){
 			return d.subNodes && d.subNodes.length ? 'pointer' : 'auto';
 		})
-		.attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
+    .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
+
 		.attr("fill", function(d) {
 			// console.log(d)
 			return d.opened==true ? 'white' : color(d.category);
 		})
 		.attr('stroke', function(d) {
 			if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(0.7)
-		})
+		});
+
+  node.transition()
+      .duration(500)
+      .style('opacity', 1)
+
 
 
   simulation.nodes(nodes);
