@@ -8,8 +8,7 @@ class DropDownSelect extends Component {
 
   handleChange(e) {
     const selectedThemes = e.target.value
-    console.log(selectedThemes)
-    this.props.changeThemes(selectedThemes);
+    this.props.changeOptions(selectedThemes);
   }
 
   render() {
@@ -18,9 +17,9 @@ class DropDownSelect extends Component {
         <h5>{this.props.title}</h5>
         <select id={this.props.id} onChange={this.handleChange}>
           {
-            this.props.themes.map( (d,i) => {
+            this.props.options.map( (d,i) => {
               return <option key={i}>{d}</option>
-            } )
+            })
           }
         </select>
       </div>
