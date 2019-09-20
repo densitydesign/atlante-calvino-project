@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import './PlacesMatrix.css'
 import V from './matrix.d3'
 
 class PlacesMatrix extends Component {
   componentDidMount() {
     this._chart = V.initialize(
         this._rootNode,
-        this.props.data
+        this.props.data,
+        this.props.filters
     );
   }
 

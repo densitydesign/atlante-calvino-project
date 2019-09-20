@@ -21,7 +21,7 @@ const categoriesColors = [
 	'#cecece'
 ]
 
-const collisionPadding = 1;
+const collisionPadding = 0.75;
 
 // data
 let graph, nodes = [], links = [], hullsData = [], rootNodes = [], storedFilters, last=0, openAllState=false
@@ -141,13 +141,34 @@ function toggleSubnodes(d, noRestart) {
   }
 }
 
-V.initialize = (el, data) => {
-  console.log('init',data)
+function highlightNodes(arr){
+  arr.forEach( d => {
+    node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
+    label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
+  })
+}
+
+V.initialize = (el, data, filters) => {
+  console.log('init',data, filters)
 
   // Since React calls the update without data, at the beginning store data
   // so that when time-filter is used (and React calls update) there is data to use
   graph = data
-  rootNodes = graph.rootNodes
+  rootNodes = graph.rootNodes;
+
+  // //get themes
+  // let themes = []
+  // d3.nest()
+  //   .key(d=>d.theme)
+  //   .entries(graph.nodes)
+  //   .map(d=>d.key)
+  //   .forEach(d=>{ themes = themes.concat(d.split(';')) });
+  // themes = d3.nest()
+  //   .key(d=>d)
+  //   .entries(themes)
+  //   .map(d=>d.key)
+  //   .sort();
+  // console.log(JSON.stringify(themes))
 
   // Root and dimensions
   svg = d3.select(el).style('touch-action', 'manipulation');
@@ -158,7 +179,7 @@ V.initialize = (el, data) => {
   x = d3.scaleTime()
     .range([0, width])
     .domain(d3.extent(data.nodes, d=>d.year));
-  xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1))
+  xAxisCall = d3.axisBottom(x)//.ticks(d3.timeYear.every(1))
   y = d3.scalePoint()
     .range([0, height])
     .padding(0.5);
@@ -254,7 +275,7 @@ V.initialize = (el, data) => {
   	})
   }
 
-  V.update(data, null)
+  V.update(data, filters)
 }
 
 V.update = (data, filters) => {
@@ -268,127 +289,162 @@ V.update = (data, filters) => {
   if (filters) {
     // store filters
     storedFilters = filters
-    // do fitlers here
+    // do filters here
+    if (filters.openAll != openAllState) {
+      console.log('open or close all', filters.openAll)
+      openAllState = filters.openAll
+    }
     if (filters.timeFilter) {
       nodes = nodes.filter( d => {
         const date = new Date(d.year)
         return date >= filters.timeFilter[0] && date <= filters.timeFilter[1]
       })
     }
-    if (filters.openAll != openAllState) {
-      console.log('open or close all')
-      openAllState = filters.openAll
+    if (filters.selectedPublications) {
+      if (filters.selectedPublications === 'tutti') {
+        node.classed('faded', false)
+      } else {
+        node.classed('faded', d => {
+          if (filters.selectedPublications === 'altro') {
+            return  !d.publicationType == ""
+          } else {
+            return !d.publicationType.includes(filters.selectedPublications)
+          }
+        })
+      }
+      // switch(filters.selectedPublications) {
+      //   case 'raccolta':
+      //     nodes.classed('faded', d=>{
+      //       return
+      //     })
+      //
+      //   default:
+      //     node.classed('faded', false);
+      //     break;
+      // }
+    }
+    if (filters.selectedThemes) {
+      if (filters.selectedThemes === 'tutti') {
+        node.classed('faded', false)
+      } else {
+        node.classed('faded', d => {
+          if (d.themes) {
+            return !d.themes.includes(filters.selectedThemes)
+          } else {
+            return true
+          }
+        })
+      }
     }
   }
 
-  x.domain(d3.extent(nodes, d=>d.year))
-  xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
+  if (filters.update) {
+    x.domain(d3.extent(nodes, d=>d.year))
+    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
 
-  // Set x and y of subNodes
-  data.nodes.forEach(d => {
-    if (d.opened) {
-      d.fx = x(d.year)
-    }
-    d.x = x(d.year)
-    d.y = y(d.category)
-  })
-
-  // Update the force layout
-  simulation.force("x").x(function(d) { return d.x })
-
-  node = node.data(nodes, d => { return d.id })
-  node.exit().remove();
-  node = node.enter().append('circle')
-    .attr('class', d => `node`)
-    .on('click', function(d){
-      reset();
-			node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
-			label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
-
-			// show work title
-			information = information.data([d], function(d) { return d.id; });
-			information.exit().remove();
-			information = information.enter().append("text")
-				.classed('information', true)
-				.classed('label', true)
-				.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
-				.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
-				.attr('y', height - 10)
-				.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-				.merge(information);
-
-			// get the double tap
-			if ((d3.event.timeStamp - last) < 500) {
-				d.fx = d.x*1;
-				d.fy = d.y*1;
-        toggleSubnodes(d);
+    // Set x and y of subNodes
+    data.nodes.forEach(d => {
+      if (d.opened) {
+        d.fx = x(d.year)
       }
-      last = d3.event.timeStamp;
-		})
-    .attr('key', d=> d.id)
-    .attr('cx', d => {
-      return d.x
+      d.x = x(d.year)
+      d.y = y(d.category)
     })
-    .attr('cy', d => {
-      return d.y
-    })
-    .merge(node)
-    .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
-		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
-		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(0.7) })
-    .style('opacity', 1)
-    .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
 
-  // Apply the general update pattern to the links.
-	link = link.data(links, function(d) {
-		return d.source.id + "-" + d.target.id;
-	});
-	link.exit().remove();
-	link = link.enter().append("line")
-		.classed('link', true)
-		.classed('part-of', function(d) { return d.kind === 'part_of' })
-    .attr('stroke-width', 0.5)
-    .attr('stroke', '#ccc')
-		.on('click', d => console.log(d))
-		.merge(link);
+    // Update the force layout
+    simulation.force("x").x(function(d) { return d.x })
 
-	// Apply the general update pattern to the labels.
-	label = label.data(nodes, function(d) { return d.id; });
-	label.exit().remove();
-	label = label.enter().append("text")
-		.classed('label', true)
-		.style('display', 'none')
-		.attr('text-anchor', 'middle')
-    .style('pointer-events', 'none')
-		.text(function(d){return d.label})
-		.merge(label);
+    node = node.data(nodes, d => { return d.id })
+    node.exit().remove();
+    node = node.enter().append('circle')
+      .attr('class', d => `node`)
+      .on('click', function(d){
+        highlightNodes([d]);
 
-	// Apply the general update pattern to the convex hulls.
-	hull = hull.data(hullsData, function(d) {
-		return d[0].id;
-	});
-	hull.exit().remove();
-	hull = hull.enter().append("path")
-		.classed('hull', true)
-		.attr('fill', function(d){
-			return color(d[0].category)
-		})
-		.style('opacity', .25)
-		.on('click', d => {
-			// d3.event.preventDefault;
-			// get the double tap
-			if ((d3.event.timeStamp - last) < 500) {
-        toggleSubnodes(d[0]);
-      }
-      last = d3.event.timeStamp;
-		})
-		.merge(hull);
+  			// show work title
+  			information = information.data([d], function(d) { return d.id; });
+  			information.exit().remove();
+  			information = information.enter().append("text")
+  				.classed('information', true)
+  				.classed('label', true)
+  				.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
+  				.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
+  				.attr('y', height - 10)
+  				.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+  				.merge(information);
 
+  			// get the double tap
+  			if ((d3.event.timeStamp - last) < 500) {
+  				d.fx = d.x*1;
+  				d.fy = d.y*1;
+          toggleSubnodes(d);
+        }
+        last = d3.event.timeStamp;
+  		})
+      .attr('key', d=> d.id)
+      .attr('cx', d => {
+        return d.x
+      })
+      .attr('cy', d => {
+        return d.y
+      })
+      .merge(node)
+      .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
+  		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
+  		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(0.7) })
+      .style('opacity', 1)
+      .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
 
+    // Apply the general update pattern to the links.
+  	link = link.data(links, function(d) {
+  		return d.source.id + "-" + d.target.id;
+  	});
+  	link.exit().remove();
+  	link = link.enter().append("line")
+  		.classed('link', true)
+  		.classed('part-of', function(d) { return d.kind === 'part_of' })
+      .attr('stroke-width', 0.5)
+      .attr('stroke', '#ccc')
+  		.on('click', d => console.log(d))
+  		.merge(link);
 
-  simulation.nodes(nodes);
-	simulation.force("link").links(links);
-	simulation.alpha(1).restart();
+  	// Apply the general update pattern to the labels.
+  	label = label.data(nodes, function(d) { return d.id; });
+  	label.exit().remove();
+  	label = label.enter().append("text")
+  		.classed('label', true)
+  		.style('display', 'none')
+  		.attr('text-anchor', 'middle')
+      .style('pointer-events', 'none')
+  		.text(function(d){return d.label})
+  		.merge(label);
+
+  	// Apply the general update pattern to the convex hulls.
+  	hull = hull.data(hullsData, function(d) {
+  		return d[0].id;
+  	});
+  	hull.exit().remove();
+  	hull = hull.enter().append("path")
+  		.classed('hull', true)
+  		.attr('fill', function(d){
+  			return color(d[0].category)
+  		})
+  		.style('opacity', .25)
+  		.on('click', d => {
+  			// d3.event.preventDefault;
+  			// get the double tap
+  			if ((d3.event.timeStamp - last) < 500) {
+          toggleSubnodes(d[0]);
+        }
+        last = d3.event.timeStamp;
+  		})
+  		.merge(hull);
+
+    simulation.nodes(nodes);
+  	simulation.force("link").links(links);
+  	simulation.alpha(1).restart();
+  }
+
 }
 
 // V.openAll = () => {
@@ -426,7 +482,7 @@ export default V
 //
 
 var hullPadding = collisionPadding;
-var pointRadius = 5;
+// var pointRadius = 5;
 // var margin = hullPadding + pointRadius;
 
 var vecScale = function (scale, v) {

@@ -38,9 +38,13 @@ class PlacesMatrixView extends Component {
         this.setState({
           data: data,
           dataTimeFilter: d3.extent(data.nodes, d => d.year),
-          themes: ['tema 1','tema 2','tema 3','tema 4','tema 5','tema 6'],
-          publicationsTypes: ['publication 1','publication 2','publication 3'],
-          isLoading: false
+          themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio"],
+          publicationsTypes: ['tutti','raccolta','volume','altro'],
+          isLoading: false,
+          filters: {
+            update: true,
+            openAll: false
+          }
         })
       })
   }
@@ -53,27 +57,35 @@ class PlacesMatrixView extends Component {
     this.setState({
       span: newSpan,
       filters: {
-        timeFilter:newSpan
+        timeFilter:newSpan,
+        update: true
       }
     });
   }
 
   changeThemes(newThemes) {
     this.setState({
-      selectedThemes: newThemes
+      filters: {
+        selectedThemes: newThemes,
+        update: false
+      }
     });
   }
 
   changePublications(newPublications) {
     this.setState({
-      selectedPublications: newPublications
+      filters: {
+        selectedPublications: newPublications,
+        update: false
+      }
     });
   }
 
   openAll(value) {
     this.setState({
       filters: {
-        openAll: value
+        openAll: value,
+        update: true
       }
     });
   }
@@ -83,16 +95,17 @@ class PlacesMatrixView extends Component {
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
-          <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll} title="Apri tutto"/>
+          <div  style={{gridColumn: 'span 2'}}/>
+          <SetOption style={{gridColumn: 'span 2', display: 'none'}} selected={this.openAll} title="Apri tutto"/>
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.dataTimeFilter} changeSpan={this.changeSpan} title="Imposta un filtro temporale"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
-          { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changePublications} title="Tipo di pubblicazione"/> }
+          { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.publicationsTypes} changeOptions={this.changePublications} title="Tipo di pubblicazione"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
-          { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.publicationsTypes} changeOptions={this.changeThemes} title="Evidenzia un tema"/> }
+          { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un tema"/> }
 
           <div style={{gridColumn: 'span 6'}}>ricerca</div>
           <div style={{gridColumn: 'span 1'}}>help</div>

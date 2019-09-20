@@ -18,9 +18,9 @@ ParseMatrixData.parser = (rawData) => {
 			'year': +d.year,
 			'category': d['Categoria'],
 			'totalSubNodes':0,
-			// set x and y to make nodes appera in the precise position
-			// 'x': x(d.year),
-			// 'y': y(d['Categoria'])
+      'publicationType': d['Pubblicazione Fonte'],
+      'isGuessed': d['Luogo desunto'],
+      'themes': d['Tema']
 		}
 		return obj
 	})
