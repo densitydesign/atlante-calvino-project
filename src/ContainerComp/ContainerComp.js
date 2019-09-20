@@ -55,13 +55,13 @@ class ContainerComp extends Component {
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
-          <div style={{gridColumn: 'span 2', padding: '0 15px'}}>apritutto</div>
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 6', padding: '0 15px'}} /> }
-          { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6', padding: '0 15px'}} data={this.state.data} changeSpan={this.changeSpan} /> }
-          <div style={{gridColumn: 'span 4', padding: '0 15px'}}>tipo pubblicazione</div>
-          <div style={{gridColumn: 'span 4', padding: '0 15px'}}>temi</div>
-          <div style={{gridColumn: 'span 6', padding: '0 15px'}}>ricerca</div>
-          <div style={{gridColumn: 'span 1', padding: '0 15px'}}>help</div>
+          <div style={{gridColumn: 'span 2'}}>apritutto</div>
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
+          { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.data} changeSpan={this.changeSpan} /> }
+          <div style={{gridColumn: 'span 4'}}>tipo pubblicazione</div>
+          <div style={{gridColumn: 'span 4'}}>temi</div>
+          <div style={{gridColumn: 'span 6'}}>ricerca</div>
+          <div style={{gridColumn: 'span 1'}}>help</div>
         </HeaderViz>
 
         <BodyViz className="the-body-viz">

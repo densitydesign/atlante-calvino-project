@@ -1,14 +1,15 @@
 .the-header {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  border-top: 6px solid var(--calvino-red);
-  border-top: 6px solid var(--dark-green);
-  height: 66px;
+  border-top: var(--app-border-top) solid var(--calvino-red);
+  border-top: var(--app-border-top) solid var(--dark-green);
+  height: var(--header-height);
 }
 
 .the-header > * {
   padding: 0 15px;
   border-bottom: 1px solid var(--dark-green);
+  height: 100%;
 }
 
 .the-header > *:not(:last-child) {

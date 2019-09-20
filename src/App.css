@@ -2,6 +2,8 @@
 :root {
   --calvino-red: tomato;
   --dark-green: black;
+  --header-height: 66px;
+  --app-border-top: 6px;
 }
 
 h5 {

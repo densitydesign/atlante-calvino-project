@@ -24,6 +24,11 @@ Viz.initialize = (el, data, filter) => {
 
   // set selections here to be used in all the chart
   Viz.svg = d3.select(el);
+  Viz.svg.append("defs").append("clipPath")
+      .attr("id", "clip")
+    .append("rect")
+      .attr("width", Viz.width)
+      .attr("height", Viz.height);
   Viz.focus = Viz.svg.append("g").attr("class", "focus")
   Viz.xAxisG = Viz.focus.append("g").attr("class", "axis axis--x")
   Viz.yAxisG = Viz.focus.append("g").attr("class", "axis axis--y")

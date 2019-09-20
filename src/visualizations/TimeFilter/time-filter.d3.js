@@ -3,78 +3,129 @@ import * as d3 from 'd3';
 const Viz = {};
 
 Viz.initialize = (el, data, changeSpan) => {
-  // console.log('initialized')
+  console.log('initialized')
   // Important to declare at beginning
   Viz.changeSpan = changeSpan;
 
   // console.log('time-filter-init', el);
-  Viz.margin = { top: 0, right: 3, bottom: 10, left: 3 }
+  const m = 15;
+  Viz.margin = { top: 0, right: m, bottom: el.getBoundingClientRect().height - 20, left: m }
   Viz.svg = d3.select(el);
   Viz.width = el.getBoundingClientRect().width - Viz.margin.left - Viz.margin.right;
   Viz.height = el.getBoundingClientRect().height - Viz.margin.top - Viz.margin.bottom;
 
+  Viz.svg.append("defs").append("clipPath")
+      .attr("id", "timeclip")
+    .append('rect')
+      .classed('clip', true)
+      .attr('x', 0)
+      .attr('y', Viz.margin.top)
+      .attr('width', Viz.width + Viz.margin.left + Viz.margin.right)
+      .attr('height', Viz.height)
+      // the following to compensate the translation on VIz.context (even if not totally clear)
+      .attr("transform", "translate(" + -Viz.margin.left + "," + -Viz.margin.top + ")")
+
   Viz.x = d3.scaleTime()
-    .range([Viz.margin.left, Viz.width - Viz.margin.right])
+    .range([0, Viz.width])
     .domain(d3.extent(data, d=> d.date));
 
   Viz.xAxis = d3.axisBottom(Viz.x)
 
-  // important is before brushed is called or assigned
-  Viz.info = Viz.svg.selectAll('text')
-
-  Viz.svg.append("line")
-    .attr('x1', Viz.margin.left)
-    .attr('y1', 10)
-    .attr('x2', Viz.width)
-    .attr('y2', 10)
-    .attr('stroke', 'black')
-
   Viz.brush = d3.brushX()
-    .extent([[Viz.margin.left, 0], [Viz.width, Viz.height]])
+    .extent([[0, 0], [Viz.width, Viz.height]])
+    .handleSize(m*2)
     .on("brush end", brushed);
 
   Viz.context = Viz.svg.append("g")
     .attr("class", "context")
-    .attr("transform", "translate(" + Viz.margin.left + "," + Viz.margin.top + ")");
+    .attr("transform", "translate(" + Viz.margin.left + "," + Viz.margin.top + ")")
+
+  // important is before brushed is called or assigned
+  Viz.info = Viz.context.append('g').selectAll('.info')
+  Viz.line = Viz.context.append('g').selectAll('.info-line')
+  Viz.dotted = Viz.context.append('g').selectAll('.dotted')
+
+  Viz.context.append("line")
+    .attr('x1', 0)
+    .attr('y1', Viz.height/2)
+    .attr('x2', Viz.width)
+    .attr('y2', Viz.height/2)
+    .attr('stroke', 'var(--dark-green)')
 
   Viz.context.append("g")
     .attr("class", "brush")
     .call(Viz.brush)
     .call(Viz.brush.move, Viz.x.range())
 
-  console.log(d3.extent(data, d=> d.date))
-
-  const initialSpan = d3.extent(data, d=> d.date)
-    // .map(d=> {
-    //   return d.getFullYear()
-    // });
-  Viz.update(initialSpan)
+  // const initialSpan = d3.extent(data, d=> d.date)
+  // Viz.update(initialSpan)
 }
 
 Viz.update = (span) => {
-  // console.log('updated')
+  console.log('updated')
   // console.log('time-filter-update', span);
 
   Viz.info = Viz.info.data(span, d=>d);
   Viz.info.exit().remove()
   Viz.info = Viz.info.enter().append('text')
-    .attr('x', d => {
-      return Viz.x(d)
-    })
-    .attr('y', 29)
+    .attr('class','info')
+    .attr('x', d => { return Viz.x(d) })
+    .attr('y', Viz.height + Viz.margin.top + 12) // this value depends on the font-size
     .attr('text-anchor', (d,i) => {
-      let anchor;
-      if (i%2===0) {
-        anchor = 'start';
-      } else {
-        anchor = 'end';
+      function getAnchor(d,scale, width) {
+        let anchor;
+        if (i%2===0) {
+          if (scale(d) >= width/4) {
+            anchor = 'end';
+          } else {
+            anchor = 'start';
+          }
+        } else {
+          if (scale(d) <= width/4*3) {
+            anchor = 'start';
+          } else {
+            anchor = 'end';
+          }
+        }
+        return anchor;
       }
-      return anchor;
+      return getAnchor(d, Viz.x, Viz.width);
     })
     .text(d=>{
       return d.getFullYear()
     })
     .merge(Viz.info)
+
+  Viz.line = Viz.line.data(span, d=>d);
+  Viz.line.exit().remove()
+  Viz.line = Viz.line.enter().append('line')
+    .attr('class','info-line')
+    .attr('stroke', 'var(--calvino-red)')
+    .attr('stroke-width', '2px')
+    .attr('x1', d => { return Viz.x(d) })
+    .attr('y1', 0)
+    .attr('x2', d => { return Viz.x(d) })
+    .attr('y2', Viz.height)
+    .merge(Viz.line)
+
+  Viz.dotted = Viz.dotted.data([span], (d,i)=>{return d})
+  Viz.dotted.exit().remove()
+  Viz.dotted = Viz.dotted.enter().append('line')
+    .attr('class','dotted')
+    .attr('x1', Viz.info._groups[0][0].getBBox().x + Viz.info._groups[0][0].getBBox().width + 5 )
+    .attr('x2', Viz.info._groups[0][1].getBBox().x - 5)
+    .attr('y1', Viz.height + Viz.margin.top + 6)
+    .attr('y2', Viz.height + Viz.margin.top + 6)
+    .attr('stroke-width', '1.5px')
+    .attr('stroke', 'var(--dark-green)')
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-dasharray', '0,15')
+    .merge(Viz.dotted)
+
+  console.log(Viz.info._groups[0][1].getBBox())
+
+
+
 }
 
 Viz.destroy = (el) => {}
@@ -88,10 +139,6 @@ function brushed() {
     span = span.map(d=>{return Viz.x.invert(d)})
     Viz.changeSpan(span)
     span = span.map(d=> new Date(d));
-    // console.log('brushed', span)
-    // span = span.map(d => {
-    //   return d.getFullYear()
-    // });
     Viz.update(span)
   }
 }

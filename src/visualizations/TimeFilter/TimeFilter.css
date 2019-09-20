@@ -1,13 +1,19 @@
 #time-filter {
-  height: 30px;
-  width: 100%;
+  height: calc(var(--header-height) / 2);
+  width: calc(100% + 30px);
+  position: relative;
+  left: -15px;
+  /* outline: 1px solid  #eee; */
 }
 
 #time-filter .selection {
   fill: #FF6347;
   stroke: none;
+  clip-path: url(#timeclip);
 }
 
 #time-filter .handle {
-  fill: #FF6347;
+  fill: transparent;
+  clip-path: url(#timeclip);
+
 }

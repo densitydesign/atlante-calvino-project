@@ -2,6 +2,7 @@
   background-color: var(--dark-green);
   color: white;
   opacity: .8;
+  height: var(--header-height);
 }
 
 .main-menu:hover {
