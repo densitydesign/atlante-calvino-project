@@ -6,6 +6,7 @@ import * as d3 from 'd3';
 
 import Loading from '../general/Loading';
 import TimeFilter from '../visualizations/TimeFilter'
+import DropDownSelect from '../visualizations/DropDownSelect'
 import ExampleViz from '../visualizations/ExampleViz';
 
 class ContainerComp extends Component {
@@ -18,6 +19,7 @@ class ContainerComp extends Component {
       isLoading: true
     };
     this.changeSpan = this.changeSpan.bind(this);
+    this.changeThemes = this.changeThemes.bind(this);
   }
 
   loadData() {
@@ -31,10 +33,9 @@ class ContainerComp extends Component {
       })
 
     }).then(data=>{
-      // console.log('loaded sample-data.csv in ContainerComp')
-      // const extent = d3.extent(data, d => { d.date })
       this.setState({
         data: data,
+        themes: ['tema 1','tema 2','tema 3','tema 4','tema 5','tema 6'],
         isLoading: false
       })
     })
@@ -50,15 +51,25 @@ class ContainerComp extends Component {
     });
   }
 
+  changeThemes(newThemes) {
+    this.setState({
+      selectedThemes: newThemes
+    });
+  }
+
   render() {
     return (
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
           <div style={{gridColumn: 'span 2'}}>apritutto</div>
+
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
-          { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.data} changeSpan={this.changeSpan} /> }
-          <div style={{gridColumn: 'span 4'}}>tipo pubblicazione</div>
+          { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.data} changeSpan={this.changeSpan} title="Imposta un filtro temporale"/> }
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
+          { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} themes={this.state.themes} changeThemes={this.changeThemes} title="Evidenzia un tema"/> }
+
           <div style={{gridColumn: 'span 4'}}>temi</div>
           <div style={{gridColumn: 'span 6'}}>ricerca</div>
           <div style={{gridColumn: 'span 1'}}>help</div>

@@ -10,6 +10,13 @@
 { /*<li>Pizza</li>*/ }
 ```
 
+#### Generate elements from dasharray
+```
+{array.map((value, index) => {
+  return <li key={index}>{value}</li>
+})}
+```
+
 ### Props
 
 #### Set default Props

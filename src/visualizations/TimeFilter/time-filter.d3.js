@@ -3,11 +3,11 @@ import * as d3 from 'd3';
 const Viz = {};
 
 Viz.initialize = (el, data, changeSpan) => {
-  console.log('initialized')
+  // console.log('initialized')
+
   // Important to declare at beginning
   Viz.changeSpan = changeSpan;
 
-  // console.log('time-filter-init', el);
   const m = 15;
   Viz.margin = { top: 0, right: m, bottom: el.getBoundingClientRect().height - 20, left: m }
   Viz.svg = d3.select(el);
@@ -56,14 +56,10 @@ Viz.initialize = (el, data, changeSpan) => {
     .attr("class", "brush")
     .call(Viz.brush)
     .call(Viz.brush.move, Viz.x.range())
-
-  // const initialSpan = d3.extent(data, d=> d.date)
-  // Viz.update(initialSpan)
 }
 
 Viz.update = (span) => {
-  console.log('updated')
-  // console.log('time-filter-update', span);
+  // console.log('updated')
 
   Viz.info = Viz.info.data(span, d=>d);
   Viz.info.exit().remove()
@@ -121,11 +117,6 @@ Viz.update = (span) => {
     .attr('stroke-linecap', 'round')
     .attr('stroke-dasharray', '0,15')
     .merge(Viz.dotted)
-
-  console.log(Viz.info._groups[0][1].getBBox())
-
-
-
 }
 
 Viz.destroy = (el) => {}
