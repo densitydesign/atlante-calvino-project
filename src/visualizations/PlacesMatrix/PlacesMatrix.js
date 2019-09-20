@@ -12,7 +12,7 @@ class PlacesMatrix extends Component {
   componentDidUpdate() {
     V.update(
        this.props.data,
-       this.props.fitlers
+       this.props.filters
     );
   }
 
@@ -26,7 +26,11 @@ class PlacesMatrix extends Component {
 
 
   render() {
-    return <svg id={this.props.id} ref={this._setRef.bind(this)}></svg>
+    const style={
+      width: '100%',
+      height: '100%'
+    }
+    return <svg id={this.props.id} style={style} ref={this._setRef.bind(this)}></svg>
   }
 }
 

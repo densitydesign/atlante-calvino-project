@@ -51,7 +51,10 @@ class PlacesMatrixView extends Component {
 
   changeSpan(newSpan) {
     this.setState({
-      span: newSpan
+      span: newSpan,
+      filters: {
+        timeFilter:newSpan
+      }
     });
   }
 
@@ -95,7 +98,7 @@ class PlacesMatrixView extends Component {
 
         <BodyViz className="the-body-viz">
           { this.state.isLoading && <Loading /> }
-          { !this.state.isLoading && <PlacesMatrix data={this.state.data} span={this.state.span} /> }
+          { !this.state.isLoading && <PlacesMatrix data={this.state.data} filters={this.state.filters} /> }
         </BodyViz>
       </div>
     );
