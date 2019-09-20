@@ -17,11 +17,13 @@ class ContainerComp extends Component {
     this.loadData = this.loadData.bind(this);
     this.state = {
       data:'data still not loaded',
-      isLoading: true
+      isLoading: true,
+      openAll: false
     };
     this.changeSpan = this.changeSpan.bind(this);
     this.changeThemes = this.changeThemes.bind(this);
     this.changePublications = this.changePublications.bind(this);
+    this.openAll = this.openAll.bind(this);
   }
 
   loadData() {
@@ -66,12 +68,18 @@ class ContainerComp extends Component {
     });
   }
 
+  openAll(value) {
+    this.setState({
+      openAll: value
+    });
+  }
+
   render() {
     return (
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
-          <SetOption style={{gridColumn: 'span 2'}} />
+          <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll}/>
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.data} changeSpan={this.changeSpan} title="Imposta un filtro temporale"/> }

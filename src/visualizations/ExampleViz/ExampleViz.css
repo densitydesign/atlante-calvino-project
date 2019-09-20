@@ -2,9 +2,3 @@
   fill: steelblue;
   clip-path: url(#clip);
 }
-
-.zoom {
-  cursor: move;
-  fill: none;
-  pointer-events: all;
-}

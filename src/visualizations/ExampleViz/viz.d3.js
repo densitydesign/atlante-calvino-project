@@ -7,7 +7,7 @@ Viz.initialize = (el, data, filter) => {
   // console.log('data on initialize', data);
 
   // Set variables important to all the viz
-  Viz.margin = {top: 20, right: 20, bottom: 110, left: 40}
+  Viz.margin = {top: 20, right: 10, bottom: 20, left: 40}
   Viz.width = el.getBoundingClientRect().width - Viz.margin.left - Viz.margin.right;
   Viz.height = el.getBoundingClientRect().height - Viz.margin.top - Viz.margin.bottom;
 

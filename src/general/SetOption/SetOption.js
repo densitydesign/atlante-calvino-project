@@ -3,10 +3,14 @@ import './SetOption.css'
 
 class SetOption extends Component {
 
-  handleChange(event) {
-    const newValue = event.target.value
-    console.log(newValue)
-    this.props.changeOptions(newValue);
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const newValue = e.target.checked;
+    this.props.selected(newValue);
   }
 
   render() {
@@ -14,7 +18,7 @@ class SetOption extends Component {
       <div className="set-option" style={this.props.style}>
         <h5>{this.props.title}</h5>
         <label className="switch">
-          <input type="checkbox" onChange={this.props.changeOption} />
+          <input type="checkbox" onChange={this.handleChange}/>
           <span className="slider round"></span>
         </label>
       </div>
@@ -24,7 +28,4 @@ class SetOption extends Component {
 
 export default SetOption;
 
-SetOption.defaultProps = {
-  title: 'Option',
-  changeOption: function(value){ console.log('changed!', value) }
-};
+SetOption.defaultProps = { title: 'Option' };
