@@ -11,7 +11,7 @@ class PlacesMatrix extends Component {
 
   componentDidUpdate() {
     V.update(
-       this.props.data,
+       null,
        this.props.filters
     );
   }

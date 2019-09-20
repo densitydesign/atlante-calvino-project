@@ -72,7 +72,9 @@ class PlacesMatrixView extends Component {
 
   openAll(value) {
     this.setState({
-      openAll: value
+      filters: {
+        openAll: value
+      }
     });
   }
 
@@ -81,7 +83,7 @@ class PlacesMatrixView extends Component {
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
-          <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll}/>
+          <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll} title="Apri tutto"/>
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.dataTimeFilter} changeSpan={this.changeSpan} title="Imposta un filtro temporale"/> }
