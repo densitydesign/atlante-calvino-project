@@ -304,7 +304,7 @@ V.update = (data, filters) => {
       if (filters.selectedPublications === 'tutti') {
         node.classed('faded', false)
       } else {
-        node.classed('faded', d => {
+        node.classed('faded', false).classed('faded', d => {
           if (filters.selectedPublications === 'altro') {
             return  !d.publicationType == ""
           } else {
@@ -312,22 +312,12 @@ V.update = (data, filters) => {
           }
         })
       }
-      // switch(filters.selectedPublications) {
-      //   case 'raccolta':
-      //     nodes.classed('faded', d=>{
-      //       return
-      //     })
-      //
-      //   default:
-      //     node.classed('faded', false);
-      //     break;
-      // }
     }
     if (filters.selectedThemes) {
       if (filters.selectedThemes === 'tutti') {
         node.classed('faded', false)
       } else {
-        node.classed('faded', d => {
+        node.classed('faded', false).classed('faded', d => {
           if (d.themes) {
             return !d.themes.includes(filters.selectedThemes)
           } else {
