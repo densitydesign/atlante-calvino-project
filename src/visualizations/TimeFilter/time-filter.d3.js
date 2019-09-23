@@ -36,7 +36,8 @@ Viz.initialize = (el, data, changeSpan) => {
   Viz.brush = d3.brushX()
     .extent([[0, 0], [Viz.width, Viz.height]])
     .handleSize(m*2)
-    .on("brush end", brushed);
+    .on("brush end", brushed)
+    // .on("end", brushed);
 
   Viz.context = Viz.svg.append("g")
     .attr("class", "context")
@@ -130,8 +131,10 @@ function brushed() {
   if (d3.event.selection) {
     var span = d3.event.selection || Viz.x.range();
     span = span.map(d=>{return Viz.x.invert(d)})
-    Viz.changeSpan(span)
+    if (d3.event.type == "end") {
+      Viz.changeSpan(span);
+    }
     span = span.map(d=> new Date(d));
-    Viz.update(span)
+    Viz.update(span);
   }
 }
