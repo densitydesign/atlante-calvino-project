@@ -5,9 +5,12 @@ import MainMenu from '../general/MainMenu';
 import * as d3 from 'd3';
 
 import Loading from '../general/Loading';
+
+import SetOption from '../general/SetOption'
 import TimeFilter from '../visualizations/TimeFilter'
 import DropDownSelect from '../general/DropDownSelect'
-import SetOption from '../general/SetOption'
+import FilterSearch from '../general/FilterSearch'
+
 import PlacesMatrix from '../visualizations/PlacesMatrix';
 
 import ParseMatrixData from './parse-matrix-data'
@@ -22,10 +25,11 @@ class PlacesMatrixView extends Component {
       isLoading: true,
       openAll: false
     };
-    this.changeSpan = this.changeSpan.bind(this);
-    this.changeThemes = this.changeThemes.bind(this);
-    this.changePublications = this.changePublications.bind(this);
     this.openAll = this.openAll.bind(this);
+    this.changeSpan = this.changeSpan.bind(this);
+    this.changePublications = this.changePublications.bind(this);
+    this.changeThemes = this.changeThemes.bind(this);
+    this.searchRecord = this.searchRecord.bind(this);
   }
 
   loadData() {
@@ -40,6 +44,11 @@ class PlacesMatrixView extends Component {
           dataTimeFilter: d3.extent(data.nodes, d => d.year),
           themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio"],
           publicationsTypes: ['tutti','raccolta','volume','altro'],
+          searchOptions: [
+            { label: 'luogo', dimension: 'label'},
+            { label: 'raccolta', dimension: 'pubVenueTitle'},
+            { label: 'titolo', dimension:'sourceTitle'}
+          ],
           isLoading: false,
           filters: {
             update: true,
@@ -63,6 +72,15 @@ class PlacesMatrixView extends Component {
     });
   }
 
+  changePublications(newPublications) {
+    this.setState({
+      filters: {
+        selectedPublications: newPublications,
+        update: false
+      }
+    });
+  }
+
   changeThemes(newThemes) {
     this.setState({
       filters: {
@@ -72,10 +90,11 @@ class PlacesMatrixView extends Component {
     });
   }
 
-  changePublications(newPublications) {
+  searchRecord(searchResults) {
+    console.log('search result container', searchResults)
     this.setState({
       filters: {
-        selectedPublications: newPublications,
+        search: searchResults,
         update: false
       }
     });
@@ -107,7 +126,9 @@ class PlacesMatrixView extends Component {
           { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
           { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un tema"/> }
 
-          <div style={{gridColumn: 'span 6'}}>ricerca</div>
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
+          { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} options={this.state.searchOptions} searchRecord={this.searchRecord} title="Cerca"/> }
+
           <div style={{gridColumn: 'span 1'}}>help</div>
         </HeaderViz>
 

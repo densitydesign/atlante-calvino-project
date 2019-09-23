@@ -19,6 +19,7 @@ ParseMatrixData.parser = (rawData) => {
 			'category': d['Categoria'],
 			'totalSubNodes':0,
       'publicationType': d['Pubblicazione Fonte'],
+      'pubVenueTitle': d['Pubblicazioni Titoli'],
       'isGuessed': d['Luogo desunto'],
       'themes': d['Tema']
 		}

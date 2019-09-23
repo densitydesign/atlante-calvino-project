@@ -149,7 +149,7 @@ function highlightNodes(arr){
 }
 
 V.initialize = (el, data, filters) => {
-  console.log('init',data, filters)
+  // console.log('init',data, filters)
 
   // Since React calls the update without data, at the beginning store data
   // so that when time-filter is used (and React calls update) there is data to use
@@ -279,7 +279,7 @@ V.initialize = (el, data, filters) => {
 }
 
 V.update = (data, filters) => {
-  console.log('update viz')
+  // console.log('update viz')
 
   // This is because react must calls the update without data
   if (!data) data = graph
@@ -290,7 +290,7 @@ V.update = (data, filters) => {
     // store filters
     storedFilters = filters
     // do filters here
-    if (filters.openAll != openAllState) {
+    if (filters.openAll != undefined && filters.openAll != openAllState) {
       console.log('open or close all', filters.openAll)
       openAllState = filters.openAll
     }
@@ -326,6 +326,16 @@ V.update = (data, filters) => {
         })
       }
     }
+		if (filters.search) {
+			console.log(filters.search)
+			node
+				.classed('faded', true)
+				.filter(d=>{
+					// console.log(filters.search.indexOf(d.id) > -1)
+					return filters.search.indexOf(d.id) > -1
+				})
+				.classed('faded', false)
+		}
   }
 
   if (filters.update) {
@@ -449,13 +459,15 @@ V.update = (data, filters) => {
 // 	}
 // 	restart();
 // }
-//
+
 // V.closeAll = () => {
 // 	rootNodes.forEach( d => {
 // 		toggleSubnodes(d, false);
 // 	})
-// 	restart();
+// 	// V.update();
 // }
+
+
 
 V.destroy = () => {}
 
