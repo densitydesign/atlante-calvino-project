@@ -128,8 +128,9 @@ class PlacesMatrixView extends Component {
       <div>
         <HeaderViz>
           <MainMenu style={{gridColumn: 'span 1'}}/>
-          <div  style={{gridColumn: 'span 2'}}/>
-          <SetOption style={{gridColumn: 'span 2', display: 'none'}} selected={this.openAll} title="Apri tutto"/>
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 2'}} /> }
+          { !this.state.isLoading && <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll} title="Apri tutto"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <TimeFilter style={{gridColumn: 'span 6'}} data={this.state.dataTimeFilter} changeSpan={this.changeSpan} title="Imposta un filtro temporale"/> }

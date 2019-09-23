@@ -24,7 +24,9 @@ const categoriesColors = [
 const collisionPadding = 0.75;
 
 // data
-let graph, nodes = [], links = [], hullsData = [], rootNodes = [], storedFilters, last=0, openAllState=false
+let graph, nodes = [], links = [], hullsData = [],
+		rootNodes = [], storedFilters,
+		last=0, openAllState=false
 
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
@@ -46,6 +48,7 @@ function reset() {
 }
 
 function toggleSubnodes(d, noRestart) {
+	// console.log('toggle sub nodes')
   if (d.opened) {
     d.opened = false;
     d.fx = null;
@@ -93,6 +96,8 @@ function toggleSubnodes(d, noRestart) {
 
       // calculate graph
       graph = ParseMatrixData.calculateNetwork(filtered)
+			nodes = graph.nodes;
+	    links = graph.edges;
     } )
 
     if (noRestart !== false) {
@@ -154,8 +159,7 @@ V.initialize = (el, data, filters) => {
   // Since React calls the update without data, at the beginning store data
   // so that when time-filter is used (and React calls update) there is data to use
   graph = data
-  rootNodes = graph.rootNodes;
-
+  rootNodes = data.nodes.filter( d => d.totalSubNodes>0);
   // //get themes
   // let themes = []
   // d3.nest()
@@ -281,7 +285,7 @@ V.initialize = (el, data, filters) => {
 V.update = (data, filters) => {
   // console.log('update viz')
 
-  // This is because react must calls the update without data
+  // This is because react must call the update without data
   if (!data) data = graph
   nodes = data.nodes;
   links = data.edges;
@@ -290,9 +294,14 @@ V.update = (data, filters) => {
     // store filters
     storedFilters = filters
     // do filters here
-    if (filters.openAll != undefined && filters.openAll != openAllState) {
+    if (filters.openAll !== undefined && filters.openAll !== openAllState) {
       console.log('open or close all', filters.openAll)
       openAllState = filters.openAll
+			if (openAllState === true) {
+				V.openAll();
+			} else {
+				V.closeAll();
+			}
     }
     if (filters.timeFilter) {
       nodes = nodes.filter( d => {
@@ -306,7 +315,7 @@ V.update = (data, filters) => {
       } else {
         node.classed('faded', false).classed('faded', d => {
           if (filters.selectedPublications === 'altro') {
-            return  !d.publicationType == ""
+            return  !d.publicationType === ""
           } else {
             return !d.publicationType.includes(filters.selectedPublications)
           }
@@ -447,25 +456,28 @@ V.update = (data, filters) => {
 
 }
 
-// V.openAll = () => {
-// 	runAll(rootNodes);
-// 	function runAll(nodesList) {
-// 		nodesList.forEach( n => {
-// 			if (n.totalSubNodes > 0) {
-// 				toggleSubnodes(n, false);
-// 				runAll(n.subNodes);
-// 			}
-// 		});
-// 	}
-// 	restart();
-// }
+V.openAll = () => {
+	runAll(nodes);
+	function runAll(nodesList) {
+		nodesList.forEach( n => {
+			if (n.totalSubNodes > 0) {
+				toggleSubnodes(n, false);
+				runAll(n.subNodes);
+			}
+		});
+	}
+	V.update(graph, storedFilters);
+}
 
-// V.closeAll = () => {
-// 	rootNodes.forEach( d => {
-// 		toggleSubnodes(d, false);
-// 	})
-// 	// V.update();
-// }
+V.closeAll = () => {
+
+	rootNodes.forEach(function(d){
+		toggleSubnodes(d, false);
+	})
+
+	V.update(graph, storedFilters);
+	// window.alert('not working for now')
+}
 
 
 

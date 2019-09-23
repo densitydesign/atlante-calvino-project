@@ -43,7 +43,7 @@ class FilterSearch extends Component {
   }
 
   changeOption(option) {
-    const newOption = this.props.options.filter(d=>{return d.label == option})[0]
+    const newOption = this.props.options.filter(d=>{return d.label === option})[0]
     this.setState({
       option: newOption
     });
@@ -90,7 +90,6 @@ class FilterSearch extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="filter-search" style={this.props.style}>
         <h5>{this.props.title}</h5>
