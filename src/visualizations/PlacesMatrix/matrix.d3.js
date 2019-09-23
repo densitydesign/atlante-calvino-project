@@ -29,7 +29,7 @@ let graph, nodes = [], links = [], hullsData = [], rootNodes = [], storedFilters
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
 let xAxisCall, yAxisCall;
-margin = { 'top': 0, 'right': 50, 'bottom': 75, 'left': 50 }
+margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }
 
 // elements
 let svg, g, xAxis, yAxis, hull, link, node, label, information
