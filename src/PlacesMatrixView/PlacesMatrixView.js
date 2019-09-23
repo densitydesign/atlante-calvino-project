@@ -11,10 +11,10 @@ import TimeFilter from '../visualizations/TimeFilter'
 import DropDownSelect from '../general/DropDownSelect'
 import FilterSearch from '../general/FilterSearch'
 
+import MoreInfo from '../general/MoreInfo';
+
 import PlacesMatrix from '../visualizations/PlacesMatrix';
-
 import ParseMatrixData from './parse-matrix-data'
-
 class PlacesMatrixView extends Component {
 
   constructor(props){
@@ -95,7 +95,6 @@ class PlacesMatrixView extends Component {
   }
 
   searchRecord(searchResults) {
-    console.log('search result container', searchResults)
     this.setState({
       filters: {
         search: searchResults,
@@ -105,7 +104,6 @@ class PlacesMatrixView extends Component {
   }
 
   resetSearch() {
-    console.log('reset search');
     this.setState({
       filters: {
         search: [],
@@ -144,7 +142,9 @@ class PlacesMatrixView extends Component {
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} options={this.state.searchOptions} searchRecord={this.searchRecord} search={this.state.filters.search} resetSearch={this.resetSearch} title="Cerca"/> }
 
-          <div style={{gridColumn: 'span 1'}}>help</div>
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 1'}} /> }
+          { !this.state.isLoading && <MoreInfo style={{gridColumn: 'span 1'}}></MoreInfo>}
+
         </HeaderViz>
 
         <BodyViz className="the-body-viz">

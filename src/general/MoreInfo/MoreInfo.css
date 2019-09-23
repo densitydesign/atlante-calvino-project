@@ -1,0 +1,7 @@
+.more-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  cursor: not-allowed;
+}

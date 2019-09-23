@@ -3,6 +3,11 @@
   color: white;
   opacity: .8;
   height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  cursor: not-allowed;
 }
 
 .main-menu:hover {

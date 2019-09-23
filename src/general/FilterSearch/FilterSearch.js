@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
 import * as d3 from 'd3';
 import _ from 'lodash';
 import SimpleDropDown from '../SimpleDropDown'
@@ -95,7 +98,7 @@ class FilterSearch extends Component {
         <h5>{this.props.title}</h5>
         <SimpleDropDown style={{display: 'inline-block'}} options={this.props.options.map(d=>d.label)} changeOption={this.changeOption}/>
         <SimpleSearch style={{display: 'inline-block'}} searching={this.searching} previewSearch={this.state.previewSearch} selectResult={this.selectResult} />
-        { (this.props.search && this.props.search.length>0) && <span onClick={this.resetSearch}>X</span>}
+        { (this.props.search && this.props.search.length>0) && <span onClick={this.resetSearch}><FontAwesomeIcon icon={faTimesCircle} /></span>}
       </div>
     );
   }

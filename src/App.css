@@ -1,7 +1,7 @@
 /* common CSS */
 :root {
   --calvino-red: tomato;
-  --dark-green: black;
+  --dark-green: darkslategrey;
   --header-height: 66px;
   --app-border-top: 6px;
 }

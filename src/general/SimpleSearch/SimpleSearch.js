@@ -31,7 +31,7 @@ class SimpleSearch extends Component {
     }
     return (
       <div style={this.props.style}>
-        <input type="text" name="fname" placeholder="Da dv dgt?" onChange={this.handleTyping} />
+        <input type="text" name="fname" placeholder="Inserisci un nome" onChange={this.handleTyping} />
         <ul style={ulStyle}>
           {this.props.previewSearch.slice(0,8).map( (d,i)=>{
             return <li style={liStyle} key={i} onClick={this.selectResult} data-attr={d.values} >{d.key}</li>
