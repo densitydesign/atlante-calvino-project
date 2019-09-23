@@ -35,6 +35,7 @@ class FilterSearch extends Component {
     this.changeOption = this.changeOption.bind(this);
     this.searching = this.searching.bind(this);
     this.selectResult = this.selectResult.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   handleSearch(searchResults) {
@@ -84,12 +85,18 @@ class FilterSearch extends Component {
     this.props.searchRecord(value.split(','))
   }
 
+  resetSearch() {
+    this.props.resetSearch();
+  }
+
   render() {
+    console.log(this.props)
     return (
       <div className="filter-search" style={this.props.style}>
         <h5>{this.props.title}</h5>
         <SimpleDropDown style={{display: 'inline-block'}} options={this.props.options.map(d=>d.label)} changeOption={this.changeOption}/>
         <SimpleSearch style={{display: 'inline-block'}} searching={this.searching} previewSearch={this.state.previewSearch} selectResult={this.selectResult} />
+        { (this.props.search && this.props.search.length>0) && <span onClick={this.resetSearch}>X</span>}
       </div>
     );
   }

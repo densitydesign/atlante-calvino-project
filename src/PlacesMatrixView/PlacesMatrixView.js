@@ -23,13 +23,17 @@ class PlacesMatrixView extends Component {
     this.state = {
       data:'data still not loaded',
       isLoading: true,
-      openAll: false
+      openAll: false,
+      filters: {
+        search: []
+      }
     };
     this.openAll = this.openAll.bind(this);
     this.changeSpan = this.changeSpan.bind(this);
     this.changePublications = this.changePublications.bind(this);
     this.changeThemes = this.changeThemes.bind(this);
     this.searchRecord = this.searchRecord.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   loadData() {
@@ -100,6 +104,16 @@ class PlacesMatrixView extends Component {
     });
   }
 
+  resetSearch() {
+    console.log('reset search');
+    this.setState({
+      filters: {
+        search: [],
+        update: false
+      }
+    });
+  }
+
   openAll(value) {
     this.setState({
       filters: {
@@ -127,7 +141,7 @@ class PlacesMatrixView extends Component {
           { !this.state.isLoading && <DropDownSelect style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un tema"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
-          { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} options={this.state.searchOptions} searchRecord={this.searchRecord} title="Cerca"/> }
+          { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} options={this.state.searchOptions} searchRecord={this.searchRecord} search={this.state.filters.search} resetSearch={this.resetSearch} title="Cerca"/> }
 
           <div style={{gridColumn: 'span 1'}}>help</div>
         </HeaderViz>

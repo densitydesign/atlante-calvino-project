@@ -327,14 +327,14 @@ V.update = (data, filters) => {
       }
     }
 		if (filters.search) {
-			console.log(filters.search)
-			node
-				.classed('faded', true)
-				.filter(d=>{
-					// console.log(filters.search.indexOf(d.id) > -1)
-					return filters.search.indexOf(d.id) > -1
-				})
-				.classed('faded', false)
+			if (filters.search.length > 0) {
+				node
+					.classed('faded', true)
+					.filter(d=>filters.search.indexOf(d.id)>-1)
+					.classed('faded', false)
+			} else {
+				node.classed('faded', false)
+			}
 		}
   }
 
