@@ -290,66 +290,14 @@ V.update = (data, filters) => {
   nodes = data.nodes;
   links = data.edges;
 
-  if (filters) {
-    // store filters
-    storedFilters = filters
-    // do filters here
-    if (filters.openAll !== undefined && filters.openAll !== openAllState) {
-      console.log('open or close all', filters.openAll)
-      openAllState = filters.openAll
-			if (openAllState === true) {
-				V.openAll();
-			} else {
-				V.closeAll();
-			}
-    }
-    if (filters.timeFilter) {
-      nodes = nodes.filter( d => {
-        const date = new Date(d.year)
-        return date >= filters.timeFilter[0] && date <= filters.timeFilter[1]
-      })
-    }
-    if (filters.selectedPublications) {
-      if (filters.selectedPublications === 'tutti') {
-        node.classed('faded', false)
-      } else {
-        node.classed('faded', false).classed('faded', d => {
-          if (filters.selectedPublications === 'altro') {
-            return  !d.publicationType === ""
-          } else {
-            return !d.publicationType.includes(filters.selectedPublications)
-          }
-        })
-      }
-    }
-    if (filters.selectedThemes) {
-      if (filters.selectedThemes === 'tutti') {
-        node.classed('faded', false)
-      } else {
-        node.classed('faded', false).classed('faded', d => {
-          if (d.themes) {
-            return !d.themes.includes(filters.selectedThemes)
-          } else {
-            return true
-          }
-        })
-      }
-    }
-		if (filters.search) {
-			if (filters.search.length > 0) {
-				node
-					.classed('faded', true)
-					.filter(d=>filters.search.indexOf(d.id)>-1)
-					.classed('faded', false)
-			} else {
-				node.classed('faded', false)
-			}
-		}
-  }
-
   if (filters.update) {
-    x.domain(d3.extent(nodes, d=>d.year))
-    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
+		if (filters.timeFilter) {
+			x.domain(d3.extent(nodes.filter( d => {
+				const date = new Date(d.year)
+				return date >= filters.timeFilter[0] && date <= filters.timeFilter[1]
+			}), d=>d.year))
+	    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
+		}
 
     // Set x and y of subNodes
     data.nodes.forEach(d => {
@@ -453,6 +401,57 @@ V.update = (data, filters) => {
   	simulation.force("link").links(links);
   	simulation.alpha(1).restart();
   }
+
+	if (filters) {
+		// store filters
+		storedFilters = filters
+		// do filters here
+		if (filters.openAll !== undefined && filters.openAll !== openAllState) {
+			console.log('open or close all', filters.openAll)
+			openAllState = filters.openAll
+			if (openAllState === true) {
+				V.openAll();
+			} else {
+				V.closeAll();
+			}
+		}
+		if (filters.selectedPublications) {
+			if (filters.selectedPublications === 'tutti') {
+				node.classed('faded', false)
+			} else {
+				node.classed('faded', false).classed('faded', d => {
+					if (filters.selectedPublications === 'altro') {
+						return  !d.publicationType === ""
+					} else {
+						return !d.publicationType.includes(filters.selectedPublications)
+					}
+				})
+			}
+		}
+		if (filters.selectedThemes) {
+			if (filters.selectedThemes === 'tutti') {
+				node.classed('faded', false)
+			} else {
+				node.classed('faded', false).classed('faded', d => {
+					if (d.themes) {
+						return !d.themes.includes(filters.selectedThemes)
+					} else {
+						return true
+					}
+				})
+			}
+		}
+		if (filters.search) {
+			if (filters.search.length > 0) {
+				node
+					.classed('faded', true)
+					.filter(d=>filters.search.indexOf(d.id)>-1)
+					.classed('faded', false)
+			} else {
+				node.classed('faded', false)
+			}
+		}
+	}
 
 }
 
