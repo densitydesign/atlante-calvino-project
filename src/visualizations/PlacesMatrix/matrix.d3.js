@@ -34,13 +34,14 @@ let xAxisCall, yAxisCall;
 margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }
 
 // elements
-let svg, g, xAxis, yAxis, hull, link, node, label, information
+let svg, g, xAxis, yAxis, hull, link, node, presumed, label, information
 
 // force-layout
 let simulation
 
 function reset() {
   node.style('opacity', 1);
+	presumed.style('opacity', 1);
   label.classed('selected', false).style('display', 'none');
   // remove work title
   information = information.data([], function(d) { return d.id; });
@@ -149,6 +150,7 @@ function toggleSubnodes(d, noRestart) {
 function highlightNodes(arr){
   arr.forEach( d => {
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
+		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
     label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
   })
 }
@@ -230,6 +232,7 @@ V.initialize = (el, data, filters) => {
   link = g.append('g').classed('links', true).selectAll('.link');
   hull = g.append('g').classed('hulls', true).selectAll('.hull');
   node = g.append('g').classed('nodes', true).selectAll('.node');
+	presumed = g.append('g').classed('presumeds', true).selectAll('.presumed');
   label = g.append('g').classed('labels', true).selectAll('.label');
   information = g.append('g').classed('informations', true).selectAll('.information');
 
@@ -261,6 +264,8 @@ V.initialize = (el, data, filters) => {
   function ticked() {
     // console.log(simulation.alpha())
   	node.attr("cx", function(d) { return d.x; })
+  		.attr("cy", function(d) { return d.y; });
+		presumed.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
 
   	label.attr("x", function(d) { return d.x; })
@@ -348,9 +353,24 @@ V.update = (data, filters) => {
       .merge(node)
       .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
   		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
-  		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(0.7) })
+  		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
       .style('opacity', 1)
       .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
+
+		presumed = presumed.data(nodes.filter(d => { return d.isGuessed }), d => { return d.id })
+    presumed.exit().remove();
+    presumed = presumed.enter().append('circle')
+			.classed('presumed', true)
+			.attr('r', 1.5)
+			// .attr('fill', '#333')
+			.attr('fill', function(d) { return d3.color(color(d.category)).darker(1) })
+			.attr('cx', d => {
+        return d.x
+      })
+      .attr('cy', d => {
+        return d.y
+      })
+			.merge(presumed)
 
     // Apply the general update pattern to the links.
   	link = link.data(links, function(d) {
