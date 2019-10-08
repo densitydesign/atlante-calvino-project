@@ -185,7 +185,7 @@ V.initialize = (el, data, filters) => {
   x = d3.scaleTime()
     .range([0, width])
     .domain(d3.extent(data.nodes, d=>d.year));
-  xAxisCall = d3.axisBottom(x)//.ticks(d3.timeYear.every(1))
+  xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1))
   y = d3.scalePoint()
     .range([0, height])
     .padding(0.5);

@@ -1,3 +1,11 @@
 .faded {
   opacity: .2 !important;
 }
+
+/* .tick > text {
+  display: none;
+} */
+
+.tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
+  display: none;
+}
