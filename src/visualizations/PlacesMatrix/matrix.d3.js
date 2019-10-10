@@ -108,11 +108,14 @@ function toggleSubnodes(d, noRestart) {
     return;
   }
   if (d.subNodes && d.subNodes.length){
+		console.log(d.x, d.y);
     d.subNodes.forEach(function(subNode, i){
-      if (i > 0) {
+			console.log(d.y, subNode.y)
+      if (i > -1) {
         subNode.x = d.x;
         subNode.y = d.y;
       }
+			console.log(d.y, subNode.y)
     })
     d.opened = true;
 
@@ -148,6 +151,7 @@ function toggleSubnodes(d, noRestart) {
 }
 
 function highlightNodes(arr){
+	reset();
   arr.forEach( d => {
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
 		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
@@ -237,7 +241,7 @@ V.initialize = (el, data, filters) => {
   information = g.append('g').classed('informations', true).selectAll('.information');
 
   simulation = d3.forceSimulation(nodes)
-  	.force("charge", d3.forceManyBody().strength(-1))
+  	// .force("charge", d3.forceManyBody().strength(-1))
   	.force("link", d3.forceLink()
   		.strength( 0.35 )
   		.distance( r.range()[0] + 1 )
@@ -249,12 +253,14 @@ V.initialize = (el, data, filters) => {
   		})
   	)
   	.force("y", d3.forceY(function(d) { return d.y })
-  		.strength(function(d) { return d.part_of === '' ? 0.7 : 0; })
+  		.strength(function(d) {
+				return d.part_of === '' ? 0.7 : 0;
+			})
   	)
   	.force("collision", d3.forceCollide(function(d){
   			return d.opened ? r(1)+collisionPadding : r(d.totalSubNodes + 1)+collisionPadding
   		})
-  		.iterations(32)
+  		.iterations(4)
   		.strength(.5)
   	)
   	.on("tick", ticked)
@@ -262,10 +268,15 @@ V.initialize = (el, data, filters) => {
     .stop()
 
   function ticked() {
-    // console.log(simulation.alpha())
-  	node.attr("cx", function(d) { return d.x; })
+
+  	node
+			// .filter( d => d.part_of === '' )
+			.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
-		presumed.attr("cx", function(d) { return d.x; })
+
+		presumed
+			// .filter( d => d.part_of === '' )
+			.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
 
   	label.attr("x", function(d) { return d.x; })
@@ -282,6 +293,7 @@ V.initialize = (el, data, filters) => {
   		var convexHull = (points.length < 3) ? points : d3.polygonHull(points);
   		return roundedHull(convexHull, d);
   	})
+
   }
 
   V.update(data, filters)
@@ -310,7 +322,7 @@ V.update = (data, filters) => {
         d.fx = x(d.year)
       }
       d.x = x(d.year)
-      d.y = y(d.category)
+      d.y = d.y ? d.y : y(d.category)
     })
 
     // Update the force layout
@@ -320,6 +332,7 @@ V.update = (data, filters) => {
     node.exit().remove();
     node = node.enter().append('circle')
       .attr('class', d => `node`)
+			.classed('sub-node', d => d.part_of !== '' )
       .on('click', function(d){
         highlightNodes([d]);
 
@@ -418,7 +431,9 @@ V.update = (data, filters) => {
   		.merge(hull);
 
     simulation.nodes(nodes);
-  	simulation.force("link").links(links);
+		if (simulation.force("link")) {
+			simulation.force("link").links(links);
+		}
   	simulation.alpha(1).restart();
   }
 
@@ -495,7 +510,6 @@ V.closeAll = () => {
 	})
 
 	V.update(graph, storedFilters);
-	// window.alert('not working for now')
 }
 
 

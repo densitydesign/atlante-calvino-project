@@ -9,3 +9,7 @@
 .tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
   display: none;
 }
+
+/* .sub-node {
+  stroke: black;
+} */
