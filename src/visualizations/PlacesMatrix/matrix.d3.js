@@ -21,7 +21,7 @@ const categoriesColors = [
 	'#cecece'
 ]
 
-const collisionPadding = 0.75;
+const collisionPadding = 0.625;
 
 // data
 let graph, nodes = [], links = [], hullsData = [],
@@ -51,6 +51,7 @@ function reset() {
 function toggleSubnodes(d, noRestart) {
 	// console.log('toggle sub nodes')
   if (d.opened) {
+
     d.opened = false;
     d.fx = null;
     d.fy = null;
@@ -108,14 +109,13 @@ function toggleSubnodes(d, noRestart) {
     return;
   }
   if (d.subNodes && d.subNodes.length){
-		console.log(d.x, d.y);
+		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
+		d.fx = d.x*1;
+		d.fy = d.y*1;
+
     d.subNodes.forEach(function(subNode, i){
-			console.log(d.y, subNode.y)
-      if (i > -1) {
-        subNode.x = d.x;
-        subNode.y = d.y;
-      }
-			console.log(d.y, subNode.y)
+			subNode.x = d.x;
+			subNode.y = d.y;
     })
     d.opened = true;
 
@@ -219,8 +219,7 @@ V.initialize = (el, data, filters) => {
   xAxis = g.append("g").attr("class", "x-axis")
   yAxis = g.append('g').attr("class", "y-axis")
 
-  yAxis
-    .attr("transform", `translate(0, 0)`)
+  yAxis.attr("transform", `translate(0, 0)`)
     .call(yAxisCall)
     .call(g => g.selectAll(".tick text")
           .style("text-transform", "capitalize"))
@@ -243,7 +242,7 @@ V.initialize = (el, data, filters) => {
   simulation = d3.forceSimulation(nodes)
   	// .force("charge", d3.forceManyBody().strength(-1))
   	.force("link", d3.forceLink()
-  		.strength( 0.35 )
+  		.strength( 0.2 )
   		.distance( r.range()[0] + 1 )
   		.id(function(d) { return d.id; })
   	)
@@ -260,22 +259,22 @@ V.initialize = (el, data, filters) => {
   	.force("collision", d3.forceCollide(function(d){
   			return d.opened ? r(1)+collisionPadding : r(d.totalSubNodes + 1)+collisionPadding
   		})
-  		.iterations(4)
-  		.strength(.5)
+  		.iterations(8)
+  		.strength(0.35)
   	)
   	.on("tick", ticked)
-    .on("end", () => { console.log('simulation ended') })
+    .on("end", () => {
+			console.log('simulation ended')
+		})
     .stop()
 
   function ticked() {
 
   	node
-			// .filter( d => d.part_of === '' )
 			.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
 
 		presumed
-			// .filter( d => d.part_of === '' )
 			.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
 
@@ -294,6 +293,11 @@ V.initialize = (el, data, filters) => {
   		return roundedHull(convexHull, d);
   	})
 
+		if (simulation.alpha() < 0.15) {
+			simulation.force("x").strength(0)
+			simulation.force("y").strength(0)
+		}
+
   }
 
   V.update(data, filters)
@@ -308,7 +312,18 @@ V.update = (data, filters) => {
   links = data.edges;
 
   if (filters.update) {
+
+		let isTimeFiltered = false;
+
 		if (filters.timeFilter) {
+
+			if (filters.timeFilter[0].getFullYear() != x.domain()[0].getFullYear() || filters.timeFilter[1].getFullYear() != x.domain()[1].getFullYear()) {
+				isTimeFiltered = true;
+				simulation.force("x").strength(1);
+				simulation.force("y").strength(1);
+				console.log("isTimeFiltered")
+			}
+
 			x.domain(d3.extent(nodes.filter( d => {
 				const date = new Date(d.year)
 				return date >= filters.timeFilter[0] && date <= filters.timeFilter[1]
@@ -316,14 +331,11 @@ V.update = (data, filters) => {
 	    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
 		}
 
-    // Set x and y of subNodes
-    data.nodes.forEach(d => {
-      if (d.opened) {
-        d.fx = x(d.year)
-      }
-      d.x = x(d.year)
-      d.y = d.y ? d.y : y(d.category)
-    })
+		// Set x and y of subNodes
+		data.nodes.forEach(d => {
+			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year)
+			d.y = d.y ? d.y : y(d.category)
+		})
 
     // Update the force layout
     simulation.force("x").x(function(d) { return d.x })
@@ -350,8 +362,6 @@ V.update = (data, filters) => {
 
   			// get the double tap
   			if ((d3.event.timeStamp - last) < 500) {
-  				d.fx = d.x*1;
-  				d.fy = d.y*1;
           toggleSubnodes(d);
         }
         last = d3.event.timeStamp;
@@ -500,6 +510,8 @@ V.openAll = () => {
 			}
 		});
 	}
+	// simulation.force("x").strength(1)
+	// simulation.force("y").strength(1)
 	V.update(graph, storedFilters);
 }
 
@@ -508,7 +520,8 @@ V.closeAll = () => {
 	rootNodes.forEach(function(d){
 		toggleSubnodes(d, false);
 	})
-
+	// simulation.force("x").strength(1)
+	// simulation.force("y").strength(1)
 	V.update(graph, storedFilters);
 }
 

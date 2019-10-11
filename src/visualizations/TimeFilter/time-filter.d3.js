@@ -131,7 +131,7 @@ function brushed() {
   if (d3.event.selection) {
     var span = d3.event.selection || Viz.x.range();
     span = span.map(d=>{return Viz.x.invert(d)})
-    if (d3.event.type === "end") {
+    if (d3.event.type === "end" || true) {
       Viz.changeSpan(span);
     }
     span = span.map(d=> new Date(d));
