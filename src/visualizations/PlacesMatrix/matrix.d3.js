@@ -150,8 +150,9 @@ function toggleSubnodes(d, noRestart) {
   }
 }
 
-function highlightNodes(arr){
-	reset();
+function highlightNodes(arr, doReset){
+	if (doReset) reset();
+	console.log(arr)
   arr.forEach( d => {
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
 		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
@@ -185,6 +186,17 @@ V.initialize = (el, data, filters) => {
   width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
   height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
+	let zoom = d3.zoom()
+			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
+	    .scaleExtent([1, 3])
+	    .on("zoom", zoomed);
+
+	svg.call(zoom).on("dblclick.zoom", null);
+
+	function zoomed() {
+	  g.attr("transform", d3.event.transform);
+	}
+
   // Scales
   x = d3.scaleTime()
     .range([0, width])
@@ -214,8 +226,11 @@ V.initialize = (el, data, filters) => {
   	.attr('width', width)
   	.attr('height', height)
   	.attr('fill', 'transparent')
-  	.on('click', reset);
-  g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`)
+  	.on('click', function(d){
+			if ((d3.event.timeStamp - last) < 500) reset();
+			last = d3.event.timeStamp;
+		});
+  g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`).append('g')
   xAxis = g.append("g").attr("class", "x-axis")
   yAxis = g.append('g').attr("class", "y-axis")
 
@@ -346,8 +361,11 @@ V.update = (data, filters) => {
     node = node.enter().append('circle')
       .attr('class', d => `node`)
 			.classed('sub-node', d => d.part_of !== '' )
+			.on('dblclick', function(d) {
+				console.log('dblclick')
+        d3.event.preventDefault();
+	    })
       .on('click', function(d){
-        highlightNodes([d]);
 
   			// show work title
   			information = information.data([d], function(d) { return d.id; });
@@ -364,8 +382,11 @@ V.update = (data, filters) => {
   			// get the double tap
   			if ((d3.event.timeStamp - last) < 500) {
           toggleSubnodes(d);
+					return;
         }
-        last = d3.event.timeStamp;
+
+				last = d3.event.timeStamp;
+				highlightNodes([d], 'do reset opacity');
   		})
       .attr('key', d=> d.id)
       .attr('cx', d => {
@@ -378,7 +399,7 @@ V.update = (data, filters) => {
       .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
   		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
   		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
-      .style('opacity', 1)
+      // .style('opacity', 1)
       .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
 
 		presumed = presumed.data(nodes.filter(d => { return d.isGuessed }), d => { return d.id })
