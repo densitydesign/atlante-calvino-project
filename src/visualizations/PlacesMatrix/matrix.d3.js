@@ -333,8 +333,9 @@ V.update = (data, filters) => {
 
 		// Set x and y of subNodes
 		data.nodes.forEach(d => {
-			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year)
-			d.y = d.y ? d.y : y(d.category)
+			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year);
+			d.fx = (d.fx&&!isTimeFiltered) ? x(d.year) : null;
+			d.y = d.y ? d.y : y(d.category);
 		})
 
     // Update the force layout
