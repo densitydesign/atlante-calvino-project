@@ -18,6 +18,10 @@
   font-size: 0.75rem;
 }
 
+.label.make-visible {
+  display: block !important;
+}
+
 .node {
   -moz-user-select: none;
   -webkit-user-select: none;

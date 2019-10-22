@@ -160,6 +160,15 @@ function highlightNodes(arr, doReset){
   })
 }
 
+function highlightCategories(arr, doReset) {
+	if (doReset) reset();
+	console.log(arr)
+	let arrId = arr.map( d => d.id)
+	node.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
+	presumed.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
+	label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
+}
+
 V.initialize = (el, data, filters) => {
   // console.log('init',data, filters)
 
@@ -202,6 +211,7 @@ V.initialize = (el, data, filters) => {
     .range([0, width])
     .domain(d3.extent(data.nodes, d=>d.year));
   xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1))
+
   y = d3.scalePoint()
     .range([0, height])
     .padding(0.5);
@@ -211,6 +221,7 @@ V.initialize = (el, data, filters) => {
 			return d;
 		})
   y.domain(categories)
+
   r = d3.scalePow()
     .exponent(0.5)
     // .range([15,75])
@@ -246,6 +257,37 @@ V.initialize = (el, data, filters) => {
       .call(g => g.selectAll(".tick text")
           .attr("x", 4)
           .attr("dy", -y.step()/10));
+
+	yAxis.selectAll('.tick').on('click', function(d){
+
+		// close all
+
+		// console.log(d, nodes)
+		let arr = nodes.filter( e => e.category === d);
+		console.log(arr);
+
+		arr = []
+
+		collectAllCategory(nodes)
+		function collectAllCategory(nodeList) {
+			nodeList.forEach( n=> {
+				if (n.category === d) {
+					arr.push(n)
+				}
+				if (n.totalSubNodes > 0) {
+					let cat_subnodes = n.subNodes.filter( sn => sn.category === d )
+					if (cat_subnodes.length > 0) {
+						toggleSubnodes(n, false);
+					}
+					collectAllCategory(n.subNodes);
+				}
+			})
+		}
+		V.update(graph, storedFilters);
+		console.log(arr)
+
+		highlightCategories(arr, 'do reset')
+	})
 
   link = g.append('g').classed('links', true).selectAll('.link');
   hull = g.append('g').classed('hulls', true).selectAll('.hull');
@@ -665,3 +707,12 @@ var roundedHull2 = function (polyPoints, data) {
         + ' L ' + p1 + ' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',')
         + ' L ' + p3 + ' A ' + [hullPadding, hullPadding, '0,0,0', p0].join(',');
 };
+
+
+/////// Interactions
+
+document.addEventListener('keydown', keyIsPressedHereYeah);
+function keyIsPressedHereYeah(e) {
+  if (e.key === 'l') label.classed('make-visible', true)
+	if (e.key === 'L') label.classed('make-visible', false)
+}

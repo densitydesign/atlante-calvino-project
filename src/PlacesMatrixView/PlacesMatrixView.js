@@ -37,7 +37,7 @@ class PlacesMatrixView extends Component {
   }
 
   loadData() {
-    d3.tsv('./places-matrix-data.tsv')
+    d3.tsv('./places-matrix-data1.tsv')
       .then( data => {
         const graph = ParseMatrixData.parser(data);
         return graph;
