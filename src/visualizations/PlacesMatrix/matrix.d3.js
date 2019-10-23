@@ -256,7 +256,6 @@ function toggleSubnodes(d, noRestart) {
 
 function highlightNodes(arr, doReset){
 	if (doReset) reset();
-	console.log(arr)
   arr.forEach( d => {
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
 		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
@@ -398,6 +397,8 @@ V.initialize = (el, data, filters) => {
 
 		V.update(graph, storedFilters);
 
+		node.filter(nn=>{return nn.category!==d}).style('opacity',0.1)
+
 
 		// highlightCategories(toHighlight, 'do reset')
 	})
@@ -516,10 +517,10 @@ V.update = (data, filters) => {
     node = node.enter().append('circle')
       .attr('class', d => `node`)
 			.classed('sub-node', d => d.part_of !== '' )
-			.on('dblclick', function(d) {
-				console.log('dblclick')
-        d3.event.preventDefault();
-	    })
+			// .on('dblclick', function(d) {
+			// 	console.log('dblclick')
+      //   d3.event.preventDefault();
+	    // })
       .on('click', function(d){
 
   			// show work title

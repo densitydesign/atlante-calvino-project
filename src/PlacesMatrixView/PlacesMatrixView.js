@@ -46,7 +46,7 @@ class PlacesMatrixView extends Component {
         this.setState({
           data: data,
           dataTimeFilter: d3.extent(data.nodes, d => d.year),
-          themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio"],
+          themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito"],
           publicationsTypes: ['tutti','raccolta','volume','altro'],
           searchOptions: [
             { label: 'luogo', dimension: 'label'},
