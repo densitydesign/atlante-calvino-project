@@ -21,7 +21,7 @@ const categoriesColors = [
 	'#cecece'
 ]
 
-const collisionPadding = 0.625;
+const collisionPadding = 0.5;
 
 // data
 let graph, nodes = [], links = [], hullsData = [],
@@ -46,6 +46,110 @@ function reset() {
   // remove work title
   information = information.data([], function(d) { return d.id; });
   information.exit().remove();
+}
+
+function openSubnodes(d,noRestart) {
+	if (d.subNodes && d.subNodes.length){
+		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
+		d.fx = d.x*1;
+		d.fy = d.y*1;
+
+    d.subNodes.forEach(function(subNode, i){
+			subNode.x = d.x;
+			subNode.y = d.y;
+    })
+    d.opened = true;
+
+    // Make convex hull
+    var thisHullNodes = [d].concat(d.subNodes); // first element in array is always the one opened, so we can use its ID as identifier for the convex hull
+    hullsData.push(thisHullNodes);
+
+    // check if the first point of the hull is inside another hulls
+    // if so it means this hull should be part of that opened
+    // add these points to that hullsData
+    hullsData.forEach(function(thisHull){
+      // if the element is in the array, but is not the first
+      if (thisHull.indexOf(thisHullNodes[0]) > 0) {
+        thisHullNodes.forEach(function(n,i){
+          if (i !== 0) {
+            thisHull.push(n);
+          }
+        })
+      }
+    })
+
+    // calculate Graph
+    var augmentedNodes = nodes.concat(d.subNodes);
+    graph = ParseMatrixData.calculateNetwork(augmentedNodes);
+    nodes = graph.nodes;
+    links = graph.edges;
+    if (noRestart !== false) {
+      V.update(graph, storedFilters);
+    }
+  } else {
+    console.log('No nodes to expand')
+  }
+}
+
+function closeSubnodes(d,noRestart) {
+	if (d.opened) {
+
+    d.opened = false;
+    d.fx = null;
+    d.fy = null;
+
+    var subNodes2Remove = [];
+    var hulls2Remove = [d.id]
+
+    // recursive functions, it makes possible to close contained cluster of nodes
+    function collectSubNodes(parentNode) {
+      // console.log(`There are ${parentNode.subNodes.length} sub-nodes of ${parentNode.label}`)
+      parentNode.subNodes.forEach( childNode => {
+        if (childNode.opened) {
+          childNode.opened = false;
+          hulls2Remove.push(childNode.id);
+          collectSubNodes(childNode);
+        }
+      });
+      subNodes2Remove.push(parentNode.subNodes);
+      // console.log(`${parentNode.label} has ${parentNode.subNodes} nodes to be removed`);
+    }
+
+    collectSubNodes(d);
+
+    // cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
+    // Probably not the best way, but the simplest at the moment of the coding.
+    subNodes2Remove.forEach( subNodes => {
+
+      let toRemove = subNodes.map( d => d.id)
+      let filtered = nodes.filter( el => {
+        return !toRemove.includes( el.id );
+      })
+
+      // remove this hull
+      hullsData = hullsData.filter(function(h){
+        return !hulls2Remove.includes( h[0].id );
+      })
+
+      // remove extra points from the outer hull
+      hullsData.forEach(function(thisHull,i){
+        hullsData[i] = thisHull.filter(function(n){
+          return !toRemove.includes( n.id );
+        })
+      })
+
+      // calculate graph
+      graph = ParseMatrixData.calculateNetwork(filtered)
+			nodes = graph.nodes;
+	    links = graph.edges;
+    } )
+
+    if (noRestart !== false) {
+      V.update(graph, storedFilters);
+    }
+    // important to return here so to not do the following instructions
+    return;
+  }
 }
 
 function toggleSubnodes(d, noRestart) {
@@ -162,11 +266,11 @@ function highlightNodes(arr, doReset){
 
 function highlightCategories(arr, doReset) {
 	if (doReset) reset();
-	console.log(arr)
+	// console.log(arr)
 	let arrId = arr.map( d => d.id)
 	node.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
 	presumed.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
-	label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
+	// label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
 }
 
 V.initialize = (el, data, filters) => {
@@ -260,33 +364,42 @@ V.initialize = (el, data, filters) => {
 
 	yAxis.selectAll('.tick').on('click', function(d){
 
-		// close all
+		let toOpen = []
 
-		// console.log(d, nodes)
-		let arr = nodes.filter( e => e.category === d);
-		console.log(arr);
-
-		arr = []
-
-		collectAllCategory(nodes)
-		function collectAllCategory(nodeList) {
-			nodeList.forEach( n=> {
-				if (n.category === d) {
-					arr.push(n)
+		nodes.forEach(n0=>{
+			console.log('n0',n0);
+			if (n0.totalSubNodes>0){
+				if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
+					toOpen.push(n0);
 				}
-				if (n.totalSubNodes > 0) {
-					let cat_subnodes = n.subNodes.filter( sn => sn.category === d )
-					if (cat_subnodes.length > 0) {
-						toggleSubnodes(n, false);
+				n0.subNodes.forEach(n1=>{
+					console.log('n1',n1);
+					if(n1.totalSubNodes>0) {
+						if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
+							toOpen.push(n0);
+							toOpen.push(n1);
+						}
+						n1.subNodes.forEach(n2=>{
+							console.log('n2',n2);
+							if(n2.totalSubNodes>0) {
+								if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
+									toOpen.push(n0);
+									toOpen.push(n1);
+									toOpen.push(n2);
+								}
+							}
+						})
 					}
-					collectAllCategory(n.subNodes);
-				}
-			})
-		}
-		V.update(graph, storedFilters);
-		console.log(arr)
+				})
+			}
+		})
 
-		highlightCategories(arr, 'do reset')
+		toOpen.forEach(n=>{openSubnodes(n,false)});
+
+		V.update(graph, storedFilters);
+
+
+		// highlightCategories(toHighlight, 'do reset')
 	})
 
   link = g.append('g').classed('links', true).selectAll('.link');
