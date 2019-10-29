@@ -37,7 +37,7 @@ class PlacesMatrixView extends Component {
   }
 
   loadData() {
-    d3.tsv('./places-matrix-data3.tsv')
+    d3.tsv('./places-matrix-data.tsv')
       .then( data => {
         const graph = ParseMatrixData.parser(data);
         return graph;
@@ -46,7 +46,7 @@ class PlacesMatrixView extends Component {
         this.setState({
           data: data,
           dataTimeFilter: d3.extent(data.nodes, d => d.year),
-          themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'Nessuno'],
+          themes: ["tutti","fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
           publicationsTypes: ['tutti','raccolta','volume','altro'],
           searchOptions: [
             { label: 'luogo', dimension: 'label'},

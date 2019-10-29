@@ -491,7 +491,7 @@ V.update = (data, filters) => {
 			if (filters.timeFilter[0].getFullYear() != x.domain()[0].getFullYear() || filters.timeFilter[1].getFullYear() != x.domain()[1].getFullYear()) {
 				isTimeFiltered = true;
 				simulation.force("x").strength(1);
-				simulation.force("y").strength(1);
+				simulation.force("y").strength(0.7);
 				console.log("isTimeFiltered")
 			}
 

@@ -1,9 +1,9 @@
 id	Fonte	Titolo Fonte	Pubblicazione Fonte	Pubblicazioni Id	Pubblicazioni Titoli	year	Occorrenza	Parte di	Parte di ID	nominato/Generico	Scala	Luogo desunto	I	C	F	Localizzabile	Terrestre	Inventato	Categoria	Start	End	Nota	Tema
-L00000	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	strapiombo			generico			x			no	sì	-	generico_terrestre	32	42		Nessuno
-L00001	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	piazza			generico					x	no	sì	-	generico_terrestre	2048	2054		Nessuno
-L00002	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	bar			generico					x	no	sì	-	generico_terrestre	2120	2023		Nessuno
-L00003	S002	Dieci soldi in plastilina		«Roma fascista»	«Roma fascista»	1943	casa			generico						no	sì	-	generico_terrestre	2944	2948		Nessuno
-L00004	S003	Invece era un'altra		«Roma fascista»	«Roma fascista»	1943	prato			generico			x		x	no	sì	-	generico_terrestre	172	177		Nessuno
+L00000	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	strapiombo			generico			x			no	sì	-	generico_terrestre	32	42		nessuno
+L00001	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	piazza			generico					x	no	sì	-	generico_terrestre	2048	2054		nessuno
+L00002	S001	Passatempi		«Roma fascista»	«Roma fascista»	1943	bar			generico					x	no	sì	-	generico_terrestre	2120	2023		nessuno
+L00003	S002	Dieci soldi in plastilina		«Roma fascista»	«Roma fascista»	1943	casa			generico						no	sì	-	generico_terrestre	2944	2948		nessuno
+L00004	S003	Invece era un'altra		«Roma fascista»	«Roma fascista»	1943	prato			generico			x		x	no	sì	-	generico_terrestre	172	177		nessuno
 L00005	S004	Angoscia in caserma	raccolta	«Aretusa»;V002	«Aretusa»;Ultimo viene il corvo	1945	caserma			generico			x			no	sì	-	generico_terrestre	3634	3641		guerra
 L00006	S004	Angoscia in caserma	raccolta	«Aretusa»;V002	«Aretusa»;Ultimo viene il corvo	1945	alberghetto			generico				x		no	sì	-	generico_terrestre	17804	17815		guerra
 L00007	S004	Angoscia in caserma	raccolta	«Aretusa»;V002	«Aretusa»;Ultimo viene il corvo	1945	paese			generico				x		no	sì	-	generico_terrestre	18019	18024		guerra
@@ -137,12 +137,12 @@ L00134	S030	Pranzo con un pastore	raccolta	«L'Unità» (Torino);V002;V006	«L'U
 L00135	S031	Voglia di mare		«Unità» (Torino)	«Unità» (Torino)	1948	piazza	Cittadella	L00136	generico			x			sì	sì	-	generico_terrestre	91	97	sì	paesaggio urbano;protagonista bambino
 L00136	S031	Voglia di mare		«Unità» (Torino)	«Unità» (Torino)	1948	Cittadella	Torino	L00136b	nominato	contrada					sì	sì	no	nominato_terrestre	214	224		paesaggio urbano;protagonista bambino
 L00136b	S031	Voglia di mare		«Unità» (Torino)	«Unità» (Torino)	1948	Torino			nominato	comune	sì				sì	sì	no	nominato_terrestre	-	-		paesaggio urbano;protagonista bambino
-L00137	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	Sant'Alcide			nominato	comune		x			no	sì	sì	inventato	77	90		Nessuno
-L00138	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	stanzetta	Sant'Alcide	L00137	generico						no	sì	-	generico_terrestre	2765	2774		Nessuno
-L00139	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	balcone	stanzetta	L00138	generico						no	sì	-	generico_terrestre	3683	3690		Nessuno
-L00140	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	sezione democristiana	Sant'Alcide	L00137	generico				x		no	sì	-	generico_terrestre	4278	4299		Nessuno
-L00141	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	fabbrica			generico						no	sì	-	generico_terrestre	5159	5167		Nessuno
-L00142	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	fienile			generico					x	no	sì	-	generico_terrestre	8805	8812		Nessuno
+L00137	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	Sant'Alcide			nominato	comune		x			no	sì	sì	inventato	77	90		nessuno
+L00138	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	stanzetta	Sant'Alcide	L00137	generico						no	sì	-	generico_terrestre	2765	2774		nessuno
+L00139	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	balcone	stanzetta	L00138	generico						no	sì	-	generico_terrestre	3683	3690		nessuno
+L00140	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	sezione democristiana	Sant'Alcide	L00137	generico				x		no	sì	-	generico_terrestre	4278	4299		nessuno
+L00141	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	fabbrica			generico						no	sì	-	generico_terrestre	5159	5167		nessuno
+L00142	S032	Isabella e Fioravanti		«Unità» (Torino)	«Unità» (Torino)	1948	fienile			generico					x	no	sì	-	generico_terrestre	8805	8812		nessuno
 L00143	S033	Chi ha messo la mina nel mare?	raccolta	«L'Unità» (Torino);V002	«L'Unità» (Torino);Ultimo viene il corvo	1948	villa	cittadina rivierasca	L00144	generico			x	x		no	sì	-	generico_terrestre	36	41		guerra;paesaggio urbano;mare
 L00144	S033	Chi ha messo la mina nel mare?	raccolta	«L'Unità» (Torino);V002	«L'Unità» (Torino);Ultimo viene il corvo	1948	cittadina rivierasca			generico						no	sì	-	generico_terrestre	6092	6112		guerra;paesaggio urbano;mare
 L00145	S033	Chi ha messo la mina nel mare?	raccolta	«L'Unità» (Torino);V002	«L'Unità» (Torino);Ultimo viene il corvo	1948	Case Vecchie 	cittadina rivierasca	L00144	nominato	quartiere					no	sì	sì	inventato	6884	6896		guerra;paesaggio urbano;mare
@@ -316,21 +316,21 @@ L00311	S053	Funghi in città	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità
 L00312	S053	Funghi in città	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	fermata	città	L00309	generico				x		no	sì	-	generico_terrestre	1200	1207	ricontare aggiungendo la parola sbav	paesaggio urbano
 L00313	S053	Funghi in città	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	casa	città	L00309	generico						no	sì	-	generico_terrestre	6189	6193		paesaggio urbano
 L00314	S053	Funghi in città	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	ospedale	città	L00309	generico					x	no	sì	-	generico_terrestre	6274	6282		paesaggio urbano
-L00315	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	regione			generico			x			no	sì	-	generico_terrestre	809	816		Nessuno
-L00316	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	vie	paese	L00319	generico						no	sì	-	generico_terrestre	1202	1205		Nessuno
-L00317	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	campagna			generico			x			no	sì	-	generico_terrestre	1215	1223		Nessuno
-L00318	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	osteria	paese	L00319	generico						no	sì	-	generico_terrestre	1327	1334		Nessuno
-L00319	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	paese	regione	L00315	generico						no	sì	-	generico_terrestre	2211	2216		Nessuno
-L00320	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	casa	paese	L00319	generico				x		no	sì	-	generico_terrestre	2867	2871		Nessuno
-L00321	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	terreno	casa	L00320	generico						no	sì	-	generico_terrestre	5414	5421		Nessuno
-L00322	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	giardino	casa	L00320	generico						no	sì	-	generico_terrestre	15489	15497		Nessuno
-L00323	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	villetta	paese	L00319	generico						no	sì	-	generico_terrestre	26376	26384		Nessuno
-L00324	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	strada	paese	L00319	generico						no	sì	-	generico_terrestre	39506	39512		Nessuno
-L00325	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	villa	paese	L00319	generico						no	sì	-	generico_terrestre	54657	54662		Nessuno
-L00326	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	strada-cortile	paese	L00319	generico						no	sì	-	generico_terrestre	64048	64063		Nessuno
-L00327	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	baracca	paese	L00319	generico						no	sì	-	generico_terrestre	64850	64857		Nessuno
-L00328	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	città vecchia	paese	L00319	generico						no	sì	-	generico_terrestre	69638	69651		Nessuno
-L00329	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	porto	paese	L00319	generico					x	no	sì	-	generico_terrestre	71162	71167		Nessuno
+L00315	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	regione			generico			x			no	sì	-	generico_terrestre	809	816		nessuno
+L00316	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	vie	paese	L00319	generico						no	sì	-	generico_terrestre	1202	1205		nessuno
+L00317	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	campagna			generico			x			no	sì	-	generico_terrestre	1215	1223		nessuno
+L00318	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	osteria	paese	L00319	generico						no	sì	-	generico_terrestre	1327	1334		nessuno
+L00319	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	paese	regione	L00315	generico						no	sì	-	generico_terrestre	2211	2216		nessuno
+L00320	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	casa	paese	L00319	generico				x		no	sì	-	generico_terrestre	2867	2871		nessuno
+L00321	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	terreno	casa	L00320	generico						no	sì	-	generico_terrestre	5414	5421		nessuno
+L00322	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	giardino	casa	L00320	generico						no	sì	-	generico_terrestre	15489	15497		nessuno
+L00323	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	villetta	paese	L00319	generico						no	sì	-	generico_terrestre	26376	26384		nessuno
+L00324	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	strada	paese	L00319	generico						no	sì	-	generico_terrestre	39506	39512		nessuno
+L00325	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	villa	paese	L00319	generico						no	sì	-	generico_terrestre	54657	54662		nessuno
+L00326	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	strada-cortile	paese	L00319	generico						no	sì	-	generico_terrestre	64048	64063		nessuno
+L00327	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	baracca	paese	L00319	generico						no	sì	-	generico_terrestre	64850	64857		nessuno
+L00328	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	città vecchia	paese	L00319	generico						no	sì	-	generico_terrestre	69638	69651		nessuno
+L00329	S054	La formica argentina	raccolta;volume	«Botteghe Oscure»;V006;V007;V012;V017	«Botteghe Oscure»;I racconti;La formica argentina;La nuvola di smog e La formica argentina;Gli amori difficili	1952	porto	paese	L00319	generico					x	no	sì	-	generico_terrestre	71162	71167		nessuno
 L00330	S055	Il piccione comunale	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	città			generico						no	sì	-	generico_terrestre	140	145		paesaggio urbano
 L00331	S055	Il piccione comunale	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	via	città	L00330	generico			x			no	sì	-	generico_terrestre	519	522		paesaggio urbano
 L00332	S055	Il piccione comunale	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1952	crocevia	città	L00330	generico						no	sì	-	generico_terrestre	895	903		paesaggio urbano
@@ -363,8 +363,8 @@ L00358	S059	La ragazza licenziata		«Unità» (Torino)	«Unità» (Torino)	1952	
 L00359	S059	La ragazza licenziata		«Unità» (Torino)	«Unità» (Torino)	1952	fabbrica			generico				x		no	sì	-	generico_terrestre	2615	2623		paesaggio urbano;fabbrica
 L00360	S059	La ragazza licenziata		«Unità» (Torino)	«Unità» (Torino)	1952	prato			generico						no	sì	-	generico_terrestre	3204	3209		paesaggio urbano;fabbrica
 L00361	S059	La ragazza licenziata		«Unità» (Torino)	«Unità» (Torino)	1952	cucina	fabbrica	L00359	generico					x	no	sì	-	generico_terrestre	7266	7272		paesaggio urbano;fabbrica
-L00362	S060	Le disgrazie di un paese		«Unità» (Torino)	«Unità» (Torino)	1953	paese			generico			x		x	no	sì	-	generico_terrestre	40	45		Nessuno
-L00363	S060	Le disgrazie di un paese		«Unità» (Torino)	«Unità» (Torino)	1953	casa	paese	L00362	generico				x		no	sì	-	generico_terrestre	5137	5141		Nessuno
+L00362	S060	Le disgrazie di un paese		«Unità» (Torino)	«Unità» (Torino)	1953	paese			generico			x		x	no	sì	-	generico_terrestre	40	45		nessuno
+L00363	S060	Le disgrazie di un paese		«Unità» (Torino)	«Unità» (Torino)	1953	casa	paese	L00362	generico				x		no	sì	-	generico_terrestre	5137	5141		nessuno
 L00364	S061	Il bosco sull'autostrada	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	casa	città	L00367	generico			x	x		no	sì	-	generico_terrestre	278	282		paesaggio urbano
 L00365	S061	Il bosco sull'autostrada	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	giardino pubblico	città	L00367	generico						no	sì	-	generico_terrestre	1185	1202		paesaggio urbano
 L00366	S061	Il bosco sull'autostrada	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	vie	città	L00367	generico						no	sì	-	generico_terrestre	1221	1224		paesaggio urbano
@@ -424,16 +424,16 @@ L00419	S065	Gli avanguardisti a Mentone	raccolta	«Nuovi Argomenti»;V004;V006	�
 L00420	S065	Gli avanguardisti a Mentone	raccolta	«Nuovi Argomenti»;V004;V006	«Nuovi Argomenti»;L'entrata in guerra;I racconti	1953	Casa del Fascio	Mentone	L00407	nominato	landmark			x		sì	sì	no	nominato_terrestre	41477	41492		guerra;paesaggio urbano;viaggio
 L00421	S065	Gli avanguardisti a Mentone	raccolta	«Nuovi Argomenti»;V004;V006	«Nuovi Argomenti»;L'entrata in guerra;I racconti	1953	giardino	Mentone	L00407	generico						sì	sì	-	generico_terrestre	47404	47412		guerra;paesaggio urbano;viaggio
 L00422	S065	Gli avanguardisti a Mentone	raccolta	«Nuovi Argomenti»;V004;V006	«Nuovi Argomenti»;L'entrata in guerra;I racconti	1953	stazione	Mentone	L00407	generico						sì	sì	-	generico_terrestre	49383	49491		guerra;paesaggio urbano;viaggio
-L00423	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	seminterrato	città	L00426	generico			x			no	sì	-	generico_terrestre	182	194		Nessuno
-L00424	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	collina			generico						no	sì	-	generico_terrestre	1285	1292		Nessuno
-L00425	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	quartiere	città	L00426	generico						no	sì	-	generico_terrestre	1307	1316		Nessuno
-L00426	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	città			generico						no	sì	-	generico_terrestre	1323	1328		Nessuno
-L00427	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	viale	città	L00426	generico						no	sì	-	generico_terrestre	1579	1584		Nessuno
-L00428	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	capolinea	città	L00426	generico						no	sì	-	generico_terrestre	1614	1623		Nessuno
-L00429	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	stradina	città	L00426	generico						no	sì	-	generico_terrestre	1790	1798		Nessuno
-L00430	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	prato	collina	L00424	generico						no	sì	-	generico_terrestre	3119	3124		Nessuno
-L00431	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	sanatorio	collina	L00424	generico				x		no	sì	-	generico_terrestre	5799	5808		Nessuno
-L00432	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	via	collina	L00424	generico					x	no	sì	-	generico_terrestre	7343	7346		Nessuno
+L00423	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	seminterrato	città	L00426	generico			x			no	sì	-	generico_terrestre	182	194		nessuno
+L00424	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	collina			generico						no	sì	-	generico_terrestre	1285	1292		nessuno
+L00425	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	quartiere	città	L00426	generico						no	sì	-	generico_terrestre	1307	1316		nessuno
+L00426	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	città			generico						no	sì	-	generico_terrestre	1323	1328		nessuno
+L00427	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	viale	città	L00426	generico						no	sì	-	generico_terrestre	1579	1584		nessuno
+L00428	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	capolinea	città	L00426	generico						no	sì	-	generico_terrestre	1614	1623		nessuno
+L00429	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	stradina	città	L00426	generico						no	sì	-	generico_terrestre	1790	1798		nessuno
+L00430	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	prato	collina	L00424	generico						no	sì	-	generico_terrestre	3119	3124		nessuno
+L00431	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	sanatorio	collina	L00424	generico				x		no	sì	-	generico_terrestre	5799	5808		nessuno
+L00432	S066	L'aria buona	raccolta	«L'Unità» (Torino);V006;V011	«L'Unità» (Torino);I racconti;Marcovaldo	1953	via	collina	L00424	generico					x	no	sì	-	generico_terrestre	7343	7346		nessuno
 L00433	S067	L'entrata in guerra	raccolta	V002;«Il Ponte»;V004	Ultimo viene il corvo;«Il Ponte»;L'entrata in guerra	1953	spiaggia	Sanremo (città)	L00438	generico			x			sì	sì	-	generico_terrestre	128	136		guerra;paesaggio urbano
 L00434	S067	L'entrata in guerra	raccolta	V002;«Il Ponte»;V004	Ultimo viene il corvo;«Il Ponte»;L'entrata in guerra	1953	riva	Sanremo (città)	L00438	generico						sì	sì	-	generico_terrestre	388	392		guerra;paesaggio urbano
 L00435	S067	L'entrata in guerra	raccolta	V002;«Il Ponte»;V004	Ultimo viene il corvo;«Il Ponte»;L'entrata in guerra	1953	moscone			generico						sì	sì	-	generico_terrestre	521	528		guerra;paesaggio urbano
@@ -459,11 +459,11 @@ L00454	S068	L'avventura di un impiegato	raccolta	«Paragone-letteratura»;V006;V
 L00455	S068	L'avventura di un impiegato	raccolta	«Paragone-letteratura»;V006;V017	«Paragone-letteratura»;I racconti;Gli amori difficili	1953	piazza	città	L00453	generico						no	sì	-	generico_terrestre	12929	12935		paesaggio urbano
 L00456	S068	L'avventura di un impiegato	raccolta	«Paragone-letteratura»;V006;V017	«Paragone-letteratura»;I racconti;Gli amori difficili	1953	portici	città	L00453	generico						no	sì	-	generico_terrestre	12950	12957		paesaggio urbano
 L00457	S068	L'avventura di un impiegato	raccolta	«Paragone-letteratura»;V006;V017	«Paragone-letteratura»;I racconti;Gli amori difficili	1953	ufficio	città	L00453	generico					x	no	sì	-	generico_terrestre	13331	13338		paesaggio urbano
-L00458	S069	Un paese disgraziato		«Unità» (Torino)	«Unità» (Torino)	1953	Marzialia			nominato	nazione		x		x	no	sì	sì	inventato	30	39		Nessuno
-L00459	S069	Un paese disgraziato		«Unità» (Torino)	«Unità» (Torino)	1953	via	Marzialia	L00458	generico						no	sì	-	generico_terrestre	2822	2825		Nessuno
-L00460	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	Panduria			nominato	nazione		x			no	sì	sì	inventato	35	43		Nessuno
-L00461	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	biblioteca	Panduria	L00460	generico				x	x	no	sì	-	generico_terrestre	927	937		Nessuno
-L00462	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	palazzo	Panduria	L00460	generico						no	sì	-	generico_terrestre	951	958		Nessuno
+L00458	S069	Un paese disgraziato		«Unità» (Torino)	«Unità» (Torino)	1953	Marzialia			nominato	nazione		x		x	no	sì	sì	inventato	30	39		nessuno
+L00459	S069	Un paese disgraziato		«Unità» (Torino)	«Unità» (Torino)	1953	via	Marzialia	L00458	generico						no	sì	-	generico_terrestre	2822	2825		nessuno
+L00460	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	Panduria			nominato	nazione		x			no	sì	sì	inventato	35	43		nessuno
+L00461	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	biblioteca	Panduria	L00460	generico				x	x	no	sì	-	generico_terrestre	927	937		nessuno
+L00462	S070	Il generale in biblioteca		«Unità» (Torino)	«Unità» (Torino)	1953	palazzo	Panduria	L00460	generico						no	sì	-	generico_terrestre	951	958		nessuno
 L00463	S071	La fabbrica nella montagna		«Unità» (Torino)	«Unità» (Torino)	1954	piazzale	Amiantifera (fabbrica)	L00465	generico						sì	sì	-	generico_terrestre	1291	1299		paesaggio urbano;fabbrica
 L00464	S071	La fabbrica nella montagna		«Unità» (Torino)	«Unità» (Torino)	1954	sentieri	Balangero		generico						no	sì	-	generico_terrestre	2068	2076		paesaggio urbano;fabbrica
 L00465	S071	La fabbrica nella montagna		«Unità» (Torino)	«Unità» (Torino)	1954	Amiantifera (fabbrica)	Balangero		nominato	landmark					sì	sì	no	nominato_terrestre	3084	3095		paesaggio urbano;fabbrica
@@ -485,13 +485,13 @@ L00480	S073	La bomba addormentata nel bosco		«Incontri oggi»	«Incontri oggi»
 L00481	S073	La bomba addormentata nel bosco		«Incontri oggi»	«Incontri oggi»	1954	piazza	città	L00482	generico						no	sì	-	generico_terrestre	1165	1171		paesaggio urbano;protagonista bambino
 L00482	S073	La bomba addormentata nel bosco		«Incontri oggi»	«Incontri oggi»	1954	città			generico						no	sì	-	generico_terrestre	2821	2826		paesaggio urbano;protagonista bambino
 L00483	S073	La bomba addormentata nel bosco		«Incontri oggi»	«Incontri oggi»	1954	foresta			generico					x	no	sì	-	generico_terrestre	8155	8162		paesaggio urbano;protagonista bambino
-L00484	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Atrabilia			nominato	nazione		x	x	x	no	sì	sì	inventato	27	36		Nessuno
-L00485	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Cocinindia			nominato	nazione					no	sì	sì	inventato	383	393		Nessuno
-L00486	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Mantecablanca			nominato	nazione					no	sì	sì	inventato	1308	1321		Nessuno
-L00487	S075	I mozzatori di nasi		«Il contemporaneo»	«Il contemporaneo»	1954	rive	Eucalipto	L00488	generico			x			no	sì	-	generico_terrestre	32	36		Nessuno
-L00488	S075	I mozzatori di nasi		«Il contemporaneo»	«Il contemporaneo»	1954	Eucalipto			nominato	fiume					no	sì	sì	inventato	42	51		Nessuno
-L00489	S076	Dove va l'avvoltoio?		«Il contemporaneo»	«Il contemporaneo»	1954	cielo			generico			x		x	no	sì	-	generico_terrestre	226	231		Nessuno
-L00490	S076	Dove va l'avvoltoio?		«Il contemporaneo»	«Il contemporaneo»	1954	Brema			nominato	comune			x		sì	sì	no	nominato_terrestre	1717	1722		Nessuno
+L00484	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Atrabilia			nominato	nazione		x	x	x	no	sì	sì	inventato	27	36		nessuno
+L00485	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Cocinindia			nominato	nazione					no	sì	sì	inventato	383	393		nessuno
+L00486	S074	Libertà! Libertà!		«Il contemporaneo»	«Il contemporaneo»	1954	Mantecablanca			nominato	nazione					no	sì	sì	inventato	1308	1321		nessuno
+L00487	S075	I mozzatori di nasi		«Il contemporaneo»	«Il contemporaneo»	1954	rive	Eucalipto	L00488	generico			x			no	sì	-	generico_terrestre	32	36		nessuno
+L00488	S075	I mozzatori di nasi		«Il contemporaneo»	«Il contemporaneo»	1954	Eucalipto			nominato	fiume					no	sì	sì	inventato	42	51		nessuno
+L00489	S076	Dove va l'avvoltoio?		«Il contemporaneo»	«Il contemporaneo»	1954	cielo			generico			x		x	no	sì	-	generico_terrestre	226	231		nessuno
+L00490	S076	Dove va l'avvoltoio?		«Il contemporaneo»	«Il contemporaneo»	1954	Brema			nominato	comune			x		sì	sì	no	nominato_terrestre	1717	1722		nessuno
 L00491	S077	Il dittatore		«Il contemporaneo»	«Il contemporaneo»	1954	Champs Elysèes	Parigi	L00494	nominato	landmark		x			sì	sì	no	nominato_terrestre	95	109		metropoli
 L00492	S077	Il dittatore		«Il contemporaneo»	«Il contemporaneo»	1954	Rue de la Paix	Parigi	L00494	nominato	landmark		x			sì	sì	no	nominato_terrestre	118	132		metropoli
 L00493	S077	Il dittatore		«Il contemporaneo»	«Il contemporaneo»	1954	studio	Parigi	L00494	generico				x		sì	sì	-	generico_terrestre	1754	1760		metropoli
@@ -504,19 +504,19 @@ L00499	S078	Lo jus primae noctis		«Il contemporaneo»	«Il contemporaneo»	1954
 L00500	S078	Lo jus primae noctis		«Il contemporaneo»	«Il contemporaneo»	1954	treno			generico						no	sì	-	generico_terrestre	5135	5140		paesaggio urbano;fabbrica
 L00501	S078	Lo jus primae noctis		«Il contemporaneo»	«Il contemporaneo»	1954	baita			generico						no	sì	-	generico_terrestre	5577	5582		paesaggio urbano;fabbrica
 L00502	S078	Lo jus primae noctis		«Il contemporaneo»	«Il contemporaneo»	1954	prato			generico					x	no	sì	-	generico_terrestre	6151	6156		paesaggio urbano;fabbrica
-L00503	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico			x			no	sì	-	generico_terrestre	26	31		Nessuno
-L00504	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	aranceti	paese	L00503	generico						no	sì	-	generico_terrestre	190	198		Nessuno
-L00505	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	vie	paese	L00503	generico						no	sì	-	generico_terrestre	215	218		Nessuno
-L00506	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	moschea	paese	L00503	generico				x		no	sì	-	generico_terrestre	3786	3793		Nessuno
-L00507	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	deserto			generico						no	sì	-	generico_terrestre	5577	5584		Nessuno
-L00508	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	torre	deserto	L00507	generico					x	no	sì	-	generico_terrestre	5604	5609		Nessuno
-L00509	S080	La lente d'ingrandimento		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico			x	x	x	no	sì	-	generico_terrestre	34	39		Nessuno
+L00503	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico			x			no	sì	-	generico_terrestre	26	31		nessuno
+L00504	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	aranceti	paese	L00503	generico						no	sì	-	generico_terrestre	190	198		nessuno
+L00505	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	vie	paese	L00503	generico						no	sì	-	generico_terrestre	215	218		nessuno
+L00506	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	moschea	paese	L00503	generico				x		no	sì	-	generico_terrestre	3786	3793		nessuno
+L00507	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	deserto			generico						no	sì	-	generico_terrestre	5577	5584		nessuno
+L00508	S079	L'adultera		«Il contemporaneo»	«Il contemporaneo»	1954	torre	deserto	L00507	generico					x	no	sì	-	generico_terrestre	5604	5609		nessuno
+L00509	S080	La lente d'ingrandimento		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico			x	x	x	no	sì	-	generico_terrestre	34	39		nessuno
 L00510	S081	I Marziani		«Il contemporaneo»	«Il contemporaneo»	1954	Terra			nominato	pianeta					sì	no	no	nominato_non_terrestre	805	810		paesaggio cosmico
 L00511	S081	I Marziani		«Il contemporaneo»	«Il contemporaneo»	1954	regione	Terra	L00510	generico						no	sì	-	generico_terrestre	1111	1118		paesaggio cosmico
 L00512	S081	I Marziani		«Il contemporaneo»	«Il contemporaneo»	1954	navicella			generico						no	sì	-	generico_terrestre	1886	1895		paesaggio cosmico
 L00513	S081	I Marziani		«Il contemporaneo»	«Il contemporaneo»	1954	città	regione	L00511	generico						no	sì	-	generico_terrestre	2563	2568		paesaggio cosmico
 L00514	S081	I Marziani		«Il contemporaneo»	«Il contemporaneo»	1954	spazi			generico						no	no	-	generico_non_terrestre	3837	3842		paesaggio cosmico
-L00515	S082	La domenica delle follie		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico						no	sì	-	generico_terrestre	37	42		Nessuno
+L00515	S082	La domenica delle follie		«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico						no	sì	-	generico_terrestre	37	42		nessuno
 L00516	S083	Il coniglio velenoso	raccolta	«Il contemporaneo»;V006;V011	«Il contemporaneo»;I racconti;Marcovaldo	1954	ospedale	città	L00524	generico			x		x	no	sì	-	generico_terrestre	55	63		paesaggio urbano
 L00517	S083	Il coniglio velenoso	raccolta	«Il contemporaneo»;V006;V011	«Il contemporaneo»;I racconti;Marcovaldo	1954	laboratorio	ospedale	L00516	generico				x		no	sì	-	generico_terrestre	876	887		paesaggio urbano
 L00518	S083	Il coniglio velenoso	raccolta	«Il contemporaneo»;V006;V011	«Il contemporaneo»;I racconti;Marcovaldo	1954	casa	città	L00524	generico						no	sì	-	generico_terrestre	4694	4698		paesaggio urbano
@@ -632,11 +632,11 @@ L00626	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V0
 L00627	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1958	casa	*** (Sanremo)	L00613	generico						sì	sì	-	generico_terrestre	155406	155410		paesaggio urbano
 L00628	S089	Dialogo sul satellite		«Città aperta»	«Città aperta»	1958	razzo			generico					x	no	sì	-	generico_terrestre	7847	7852		paesaggio cosmico
 L00629	S089	Dialogo sul satellite		«Città aperta»	«Città aperta»	1958	foresta			generico					x	no	sì	-	generico_terrestre	8116	8123		paesaggio cosmico
-L00630	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	stanza	castello	L00631	generico			x	x	x	sì	sì	-	generico_terrestre	199	205		Nessuno
-L00631	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	castello	Scozia	L00632	generico						sì	sì	-	generico_terrestre	518	526		Nessuno
-L00632	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	Scozia			nominato	nazione					sì	sì	no	nominato_terrestre	2072	2078		Nessuno
-L00633	S091	Una bella giornata di marzo		«Città aperta»	«Città aperta»	1958	Senato	Roma	L00634	nominato	landmark		x	x	x	sì	sì	no	nominato_terrestre	126	132		Nessuno
-L00634	S091	Una bella giornata di marzo		«Città aperta»	«Città aperta»	1958	Roma			nominato	città antica					sì	sì	no	nominato_terrestre	3116	3120		Nessuno
+L00630	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	stanza	castello	L00631	generico			x	x	x	sì	sì	-	generico_terrestre	199	205		nessuno
+L00631	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	castello	Scozia	L00632	generico						sì	sì	-	generico_terrestre	518	526		nessuno
+L00632	S090	Monologo notturno d'un nobile scozzese		«L'Espresso»	«L'Espresso»	1958	Scozia			nominato	nazione					sì	sì	no	nominato_terrestre	2072	2078		nessuno
+L00633	S091	Una bella giornata di marzo		«Città aperta»	«Città aperta»	1958	Senato	Roma	L00634	nominato	landmark		x	x	x	sì	sì	no	nominato_terrestre	126	132		nessuno
+L00634	S091	Una bella giornata di marzo		«Città aperta»	«Città aperta»	1958	Roma			nominato	città antica					sì	sì	no	nominato_terrestre	3116	3120		nessuno
 L00635	S092	La gallina di reparto	raccolta	«Nuova Corrente»;V006	«Nuova Corrente»;I racconti	1958	cortiletto	fabbrica	L00636	generico			x			no	sì	-	generico_terrestre	170	180		fabbrica
 L00636	S092	La gallina di reparto	raccolta	«Nuova Corrente»;V006	«Nuova Corrente»;I racconti	1958	fabbrica			generico						no	sì	-	generico_terrestre	187	195		fabbrica
 L00637	S092	La gallina di reparto	raccolta	«Nuova Corrente»;V006	«Nuova Corrente»;I racconti	1958	reparto	fabbrica	L00636	generico				x		no	sì	-	generico_terrestre	2446	2453		fabbrica
@@ -707,11 +707,11 @@ L00701	S098	La villeggiatura in panchina	raccolta	V006;V011	I racconti;Marcovald
 L00702	S098	La villeggiatura in panchina	raccolta	V006;V011	I racconti;Marcovaldo	1958	camera			generico						no	sì	-	generico_terrestre	1323	1329		paesaggio urbano
 L00703	S098	La villeggiatura in panchina	raccolta	V006;V011	I racconti;Marcovaldo	1958	fontana	piazza	L00698	generico						no	sì	-	generico_terrestre	9664	9671		paesaggio urbano
 L00704	S098	La villeggiatura in panchina	raccolta	V006;V011	I racconti;Marcovaldo	1958	aiola	piazza	L00698	generico						no	sì	-	generico_terrestre	12579	12584		paesaggio urbano
-L00705	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	letto			generico			x			no	sì	-	generico_terrestre	744	749		Nessuno
-L00706	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	muretto			generico					x	no	sì	-	generico_terrestre	4231	4238		Nessuno
-L00707	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	prato			generico				x		no	sì	-	generico_terrestre	15128	15133		Nessuno
-L00708	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	strada ferrata			generico						no	sì	-	generico_terrestre	17247	17261		Nessuno
-L00709	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	riva			generico						no	sì	-	generico_terrestre	23692	23696		Nessuno
+L00705	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	letto			generico			x			no	sì	-	generico_terrestre	744	749		nessuno
+L00706	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	muretto			generico					x	no	sì	-	generico_terrestre	4231	4238		nessuno
+L00707	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	prato			generico				x		no	sì	-	generico_terrestre	15128	15133		nessuno
+L00708	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	strada ferrata			generico						no	sì	-	generico_terrestre	17247	17261		nessuno
+L00709	S099	Va' così che vai bene	raccolta	V006	I racconti	1958	riva			generico						no	sì	-	generico_terrestre	23692	23696		nessuno
 L00710	S100	Un letto di passaggio	raccolta	V006;V017	I racconti;Gli amori difficili	1958	vicolo	città vecchia	L00711	generico			x			no	sì	-	generico_terrestre	217	223		paesaggio urbano
 L00711	S100	Un letto di passaggio	raccolta	V006;V017	I racconti;Gli amori difficili	1958	città vecchia			generico						no	sì	-	generico_terrestre	441	454		paesaggio urbano
 L00712	S100	Un letto di passaggio	raccolta	V006;V017	I racconti;Gli amori difficili	1958	città nuova			generico						no	sì	-	generico_terrestre	882	893		paesaggio urbano
@@ -742,11 +742,11 @@ L00736	S104	L'avventura di un poeta	raccolta	V006;V017	I racconti;Gli amori diff
 L00737	S104	L'avventura di un poeta	raccolta	V006;V017	I racconti;Gli amori difficili	1958	Meridione			nominato	territorio					sì	sì	no	nominato_terrestre	1079	1088		mare
 L00738	S104	L'avventura di un poeta	raccolta	V006;V017	I racconti;Gli amori difficili	1958	grotta	costa	L00736	generico						sì	sì	-	generico_terrestre	2644	2650		mare
 L00739	S104	L'avventura di un poeta	raccolta	V006;V017	I racconti;Gli amori difficili	1958	acqua (mare)			generico				x	x	no	sì	-	generico_terrestre	4768	4773		mare
-L00740	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	skilift			generico			x			no	sì	-	generico_terrestre	33	40		Nessuno
-L00741	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	pista			generico						no	sì	-	generico_terrestre	3496	3501		Nessuno
-L00742	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	cima			generico						no	sì	-	generico_terrestre	4348	4352		Nessuno
-L00743	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	stazione di partenza			generico						no	sì	-	generico_terrestre	8643	8663		Nessuno
-L00744	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	colle			generico					x	no	sì	-	generico_terrestre	12082	12087		Nessuno
+L00740	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	skilift			generico			x			no	sì	-	generico_terrestre	33	40		nessuno
+L00741	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	pista			generico						no	sì	-	generico_terrestre	3496	3501		nessuno
+L00742	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	cima			generico						no	sì	-	generico_terrestre	4348	4352		nessuno
+L00743	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	stazione di partenza			generico						no	sì	-	generico_terrestre	8643	8663		nessuno
+L00744	S105	L'avventura di uno sciatore	raccolta	«Successo»;V017	«Successo»;Gli amori difficili	1959	colle			generico					x	no	sì	-	generico_terrestre	12082	12087		nessuno
 L00745	V008	Il cavaliere inesistente	volume	V008	Il cavaliere inesistente	1959	Parigi	Francia	L00746	nominato	comune		x			sì	sì	no	nominato_terrestre	50	56		guerra;viaggio
 L00746	V008	Il cavaliere inesistente	volume	V008	Il cavaliere inesistente	1959	Francia			nominato	nazione					sì	sì	no	nominato_terrestre	85	92		guerra;viaggio
 L00747	V008	Il cavaliere inesistente	volume	V008	Il cavaliere inesistente	1959	campo	Parigi	L00745	generico						sì	sì	-	generico_terrestre	8428	8433		guerra;viaggio
@@ -806,8 +806,8 @@ L00800	V009	La giornata di uno scrutatore	volume	V009	La giornata di uno scrutat
 L00801	V009	La giornata di uno scrutatore	volume	V009	La giornata di uno scrutatore	1963	veranda	Cottolengo o Piccola Casa della Divina Provvidenza	L00793	generico						sì	sì	-	generico_terrestre	103237	103244		paesaggio urbano
 L00802	V009	La giornata di uno scrutatore	volume	V009	La giornata di uno scrutatore	1963	ufficio	Cottolengo o Piccola Casa della Divina Provvidenza	L00793	generico						sì	sì	-	generico_terrestre	111275	111282		paesaggio urbano
 L00803	V009	La giornata di uno scrutatore	volume	V009	La giornata di uno scrutatore	1963	dormitori	Cottolengo o Piccola Casa della Divina Provvidenza	L00793	generico						sì	sì	-	generico_terrestre	114210	114219		paesaggio urbano
-L00804	S107	Diario in clinica		«L'Europa letteraria»	«L'Europa letteraria»	1963	reparto	clinica	L00805	generico						no	sì	-	generico_terrestre	2580	2587		Nessuno
-L00805	S107	Diario in clinica		«L'Europa letteraria»	«L'Europa letteraria»	1963	clinica			generico						no	sì	-	generico_terrestre	5462	5469		Nessuno
+L00804	S107	Diario in clinica		«L'Europa letteraria»	«L'Europa letteraria»	1963	reparto	clinica	L00805	generico						no	sì	-	generico_terrestre	2580	2587		nessuno
+L00805	S107	Diario in clinica		«L'Europa letteraria»	«L'Europa letteraria»	1963	clinica			generico						no	sì	-	generico_terrestre	5462	5469		nessuno
 L00806	S108	Marcovaldo al supermarket	raccolta	«Il Corriere dei Piccoli»;V011	«Il Corriere dei Piccoli»;Marcovaldo	1963	città			generico						no	sì	-	generico_terrestre	46	51		paesaggio urbano
 L00807	S108	Marcovaldo al supermarket	raccolta	«Il Corriere dei Piccoli»;V011	«Il Corriere dei Piccoli»;Marcovaldo	1963	supermarket	città	L00806	generico			x	x		no	sì	-	generico_terrestre	2206	2217		paesaggio urbano
 L00808	S108	Marcovaldo al supermarket	raccolta	«Il Corriere dei Piccoli»;V011	«Il Corriere dei Piccoli»;Marcovaldo	1963	impalcatura	città	L00806	generico					x	no	sì	-	generico_terrestre	9586	9597		paesaggio urbano
@@ -965,11 +965,11 @@ L00959	S131	Gli anni-luce	raccolta	V013;V023	Le cosmicomiche;Le cosmicomiche vec
 L00960	S132	La spirale	raccolta	V013;V023	Le cosmicomiche;Le cosmicomiche vecchie e nuove	1965	scoglio	mare	L00961	generico			x		x	no	sì	-	generico_terrestre	491	498		mare
 L00961	S132	La spirale	raccolta	V013;V023	Le cosmicomiche;Le cosmicomiche vecchie e nuove	1965	mare			generico						no	sì	-	generico_terrestre	6852	6856		mare
 L00962	S132	La spirale	raccolta	V013;V023	Le cosmicomiche;Le cosmicomiche vecchie e nuove	1965	conchiglia			generico						no	sì	-	generico_terrestre	11985	11995		mare
-L00963	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	savana			generico			x			no	sì	-	generico_terrestre	2551	2557		Nessuno
-L00964	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	vuoto			generico						no	sì	-	generico_terrestre	5660	5665		Nessuno
-L00965	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	punto			generico					x	no	sì	-	generico_terrestre	8358	8363		Nessuno
-L00966	S134	I. Mitosi	raccolta	«Nuova Corrente»;V014;V023	«Nuova Corrente»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	spazio			generico			x			no	sì	-	generico_terrestre	5795	5801		Nessuno
-L00967	S134	I. Mitosi	raccolta	«Nuova Corrente»;V014;V023	«Nuova Corrente»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	vuoto			generico						no	sì	-	generico_terrestre	6922	6927		Nessuno
+L00963	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	savana			generico			x			no	sì	-	generico_terrestre	2551	2557		nessuno
+L00964	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	vuoto			generico						no	sì	-	generico_terrestre	5660	5665		nessuno
+L00965	S133	Ti con zero	raccolta	Almanacco Letterario Bompiani 1967;V014;V023	Almanacco Letterario Bompiani 1967;Ti con Zero;Le cosmicomiche vecchie e nuove	1966	punto			generico					x	no	sì	-	generico_terrestre	8358	8363		nessuno
+L00966	S134	I. Mitosi	raccolta	«Nuova Corrente»;V014;V023	«Nuova Corrente»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	spazio			generico			x			no	sì	-	generico_terrestre	5795	5801		nessuno
+L00967	S134	I. Mitosi	raccolta	«Nuova Corrente»;V014;V023	«Nuova Corrente»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	vuoto			generico						no	sì	-	generico_terrestre	6922	6927		nessuno
 L00968	S135	L'inseguimento	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	città			generico			x			no	sì	-	generico_terrestre	240	245		paesaggio urbano
 L00969	S135	L'inseguimento	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	incrocio	città	L00968	generico			x	x		no	sì	-	generico_terrestre	1248	1256		paesaggio urbano
 L00970	S135	L'inseguimento	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	via	città	L00968	generico					x	no	sì	-	generico_terrestre	6627	6630		paesaggio urbano
@@ -986,20 +986,20 @@ L00980	S136	I cristalli	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti c
 L00981	S136	I cristalli	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Staten Island	New York	L00975	nominato	distretto					sì	sì	no	nominato_terrestre	13071	13084		paesaggio urabno; paesaggio cosmico
 L00982	S136	I cristalli	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Battery	New York	L00975	nominato	landmark					sì	sì	no	nominato_terrestre	14961	14968		paesaggio urabno; paesaggio cosmico
 L00983	S136	I cristalli	raccolta	«Il Giorno»;V014;V015;V023	«Il Giorno»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Downtown	New York	L00975	nominato	landmark				x	sì	sì	no	nominato_terrestre	15109	15117		paesaggio urabno; paesaggio cosmico
-L00984	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	contrade	Terra	L00995	generico						no	sì	-	generico_terrestre	6062	6070		Nessuno
-L00985	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	continente	Terra	L00995	generico				x		no	sì	-	generico_terrestre	7206	7216		Nessuno
-L00986	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	costa	Terra	L00995	generico						no	sì	-	generico_terrestre	9282	9287		Nessuno
-L00987	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	colline	Terra	L00995	generico						no	sì	-	generico_terrestre	9306	9313		Nessuno
-L00988	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Continente degli Uccelli	Terra	L00995	nominato						no	sì	sì	inventato	12252	12276		Nessuno
-L00989	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	baratro	Terra	L00995	generico						no	sì	-	generico_terrestre	12539	12546		Nessuno
-L00990	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	mondo	Terra	L00995	generico						no	sì	-	generico_terrestre	14018	14023		Nessuno
-L00991	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	monte	Terra	L00995	generico						no	sì	-	generico_terrestre	15418	15423		Nessuno
-L00992	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Paese degli Uccelli	Terra	L00995	nominato						no	sì	sì	inventato	16935	16954		Nessuno
-L00993	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	cella	Terra	L00995	generico						no	sì	-	generico_terrestre	17261	17266		Nessuno
-L00994	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	sala	Terra	L00995	generico					x	no	sì	-	generico_terrestre	17489	17493		Nessuno
-L00995	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Terra			nominato	pianeta	sì				no	no	no	nominato_non_terrestre	-	-		Nessuno
-L00996	S138	La memoria del mondo	raccolta	«Il Giorno»;V015	«Il Giorno»;La memoria del mondo	1967	laboratori			generico						no	sì	-	generico_terrestre	2348	2358		Nessuno
-L00997	S138	La memoria del mondo	raccolta	«Il Giorno»;V015	«Il Giorno»;La memoria del mondo	1967	fondazione			generico				x		no	sì	-	generico_terrestre	2413	2423		Nessuno
+L00984	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	contrade	Terra	L00995	generico						no	sì	-	generico_terrestre	6062	6070		nessuno
+L00985	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	continente	Terra	L00995	generico				x		no	sì	-	generico_terrestre	7206	7216		nessuno
+L00986	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	costa	Terra	L00995	generico						no	sì	-	generico_terrestre	9282	9287		nessuno
+L00987	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	colline	Terra	L00995	generico						no	sì	-	generico_terrestre	9306	9313		nessuno
+L00988	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Continente degli Uccelli	Terra	L00995	nominato						no	sì	sì	inventato	12252	12276		nessuno
+L00989	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	baratro	Terra	L00995	generico						no	sì	-	generico_terrestre	12539	12546		nessuno
+L00990	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	mondo	Terra	L00995	generico						no	sì	-	generico_terrestre	14018	14023		nessuno
+L00991	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	monte	Terra	L00995	generico						no	sì	-	generico_terrestre	15418	15423		nessuno
+L00992	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Paese degli Uccelli	Terra	L00995	nominato						no	sì	sì	inventato	16935	16954		nessuno
+L00993	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	cella	Terra	L00995	generico						no	sì	-	generico_terrestre	17261	17266		nessuno
+L00994	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	sala	Terra	L00995	generico					x	no	sì	-	generico_terrestre	17489	17493		nessuno
+L00995	S137	L'origine degli uccelli	raccolta	«Linus»;V014;V015;V023	«Linus»;Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	Terra			nominato	pianeta	sì				no	no	no	nominato_non_terrestre	-	-		nessuno
+L00996	S138	La memoria del mondo	raccolta	«Il Giorno»;V015	«Il Giorno»;La memoria del mondo	1967	laboratori			generico						no	sì	-	generico_terrestre	2348	2358		nessuno
+L00997	S138	La memoria del mondo	raccolta	«Il Giorno»;V015	«Il Giorno»;La memoria del mondo	1967	fondazione			generico				x		no	sì	-	generico_terrestre	2413	2423		nessuno
 L00998	S139	Il sangue, il mare	raccolta	«Rendiconti»;V014;V023	«Rendiconti»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	mare			generico						no	sì	-	generico_terrestre	1167	1171		paesaggio urbano;mare
 L00999	S139	Il sangue, il mare	raccolta	«Rendiconti»;V014;V023	«Rendiconti»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	Stazione di servizio	Codogno	L01000	generico	landmark		x			sì	sì	-	generico_terrestre	2716	2747		paesaggio urbano;mare
 L01000	S139	Il sangue, il mare	raccolta	«Rendiconti»;V014;V023	«Rendiconti»;Ti con Zero;Le cosmicomiche vecchie e nuove	1967	Codogno			nominato						sì	sì	no	nominato_terrestre	2740	2747		paesaggio urbano;mare
@@ -1034,8 +1034,8 @@ L01028	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e 
 L01029	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	terre emerse			generico						no	sì	-	generico_terrestre	2956	2968		mare
 L01030	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	paludi			generico						no	sì	-	generico_terrestre	5487	5493		mare
 L01031	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	foresta			generico						no	sì	-	generico_terrestre	7491	7498		mare
-L01032	S144	Il conte di Montecristo	raccolta	V014;V015;V023	Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	cella	castello d'If	L01033	generico			x	x	x	no	sì	-	generico_terrestre	36	41		Nessuno
-L01033	S144	Il conte di Montecristo	raccolta	V014;V015;V023	Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	castello d'If			nominato	landmark		x	x	x	sì	sì	no	nominato_terrestre	81	94		Nessuno
+L01032	S144	Il conte di Montecristo	raccolta	V014;V015;V023	Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	cella	castello d'If	L01033	generico			x	x	x	no	sì	-	generico_terrestre	36	41		nessuno
+L01033	S144	Il conte di Montecristo	raccolta	V014;V015;V023	Ti con Zero;La memoria del mondo;Le cosmicomiche vecchie e nuove	1967	castello d'If			nominato	landmark		x	x	x	sì	sì	no	nominato_terrestre	81	94		nessuno
 L01034	S145	Le figlie della Luna	raccolta	«Playmen»;V015;V023	«Playmen»;La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	Terra			nominato	pianeta		x			sì	no	no	nominato_non_terrestre	1246	1251		paesaggio cosmico;metropoli
 L01035	S145	Le figlie della Luna	raccolta	«Playmen»;V015;V023	«Playmen»;La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	New York	Terra	L01034	nominato	comune					sì	sì	no	nominato_terrestre	1677	1685		paesaggio cosmico;metropoli
 L01036	S145	Le figlie della Luna	raccolta	«Playmen»;V015;V023	«Playmen»;La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	grandi magazzini	New York	L01035	generico						sì	sì	-	generico_terrestre	3137	3153		paesaggio cosmico;metropoli
@@ -1063,16 +1063,16 @@ L01057	S147	Tempesta solare	raccolta	V015;V023	La memoria del mondo;Le cosmicomi
 L01058	S147	Tempesta solare	raccolta	V015;V023	La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	mare	Terra		generico						no	sì	-	generico_terrestre	2270	2274		paesaggio cosmico;metropoli
 L01059	S147	Tempesta solare	raccolta	V015;V023	La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	Lancashire	Terra		nominato	territorio					sì	sì	no	nominato_terrestre	10586	10596		paesaggio cosmico;metropoli
 L01060	S147	Tempesta solare	raccolta	V015;V023	La memoria del mondo;Le cosmicomiche vecchie e nuove	1968	casa	Lancashire		generico					x	sì	sì	-	generico_terrestre	10393	10397		paesaggio cosmico;metropoli
-L01061	S148	Le conchiglie e il tempo	raccolta	V015	La memoria del mondo	1968	Terra			nominato	pianeta					sì	no	no	nominato_non_terrestre	60	65		Nessuno
-L01062	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	capitale			generico			x			no	sì	-	generico_terrestre	61	69		Nessuno
-L01063	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	piazze			generico						no	sì	-	generico_terrestre	114	120		Nessuno
-L01064	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	bar			generico				x		no	sì	-	generico_terrestre	1275	1278		Nessuno
-L01065	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	scantinato	Russia	L01067	generico						no	sì	-	generico_terrestre	12073	12083		Nessuno
-L01066	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	vie	Russia	L01067	generico					x	no	sì	-	generico_terrestre	25033	25036		Nessuno
-L01067	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	Russia			nominato	nazione	sì				sì	sì	no	nominato_terrestre	-	-	sì	Nessuno
-L01068	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	bosco			generico			x			no	sì	-	generico_terrestre	68	73		Nessuno
-L01069	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	castello			generico				x		no	sì	-	generico_terrestre	78	86		Nessuno
-L01070	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	sala	castello	L01069	generico					x	no	sì	-	generico_terrestre	604	608		Nessuno
+L01061	S148	Le conchiglie e il tempo	raccolta	V015	La memoria del mondo	1968	Terra			nominato	pianeta					sì	no	no	nominato_non_terrestre	60	65		nessuno
+L01062	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	capitale			generico			x			no	sì	-	generico_terrestre	61	69		nessuno
+L01063	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	piazze			generico						no	sì	-	generico_terrestre	114	120		nessuno
+L01064	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	bar			generico				x		no	sì	-	generico_terrestre	1275	1278		nessuno
+L01065	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	scantinato	Russia	L01067	generico						no	sì	-	generico_terrestre	12073	12083		nessuno
+L01066	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	vie	Russia	L01067	generico					x	no	sì	-	generico_terrestre	25033	25036		nessuno
+L01067	S149	La decapitazione dei capi		«Il caffè letterario e satirico»	«Il caffè letterario e satirico»	1969	Russia			nominato	nazione	sì				sì	sì	no	nominato_terrestre	-	-	sì	nessuno
+L01068	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	bosco			generico			x			no	sì	-	generico_terrestre	68	73		nessuno
+L01069	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	castello			generico				x		no	sì	-	generico_terrestre	78	86		nessuno
+L01070	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	sala	castello	L01069	generico					x	no	sì	-	generico_terrestre	604	608		nessuno
 L01071	S150	Dall'opaco		Adelphiana 1971	Adelphiana 1971	1971	balaustra			generico			x	x	x	no	sì	-	generico_terrestre	234	243		natura ligure
 L01072	S150	Dall'opaco		Adelphiana 1971	Adelphiana 1971	1971	golfo			generico						no	sì	-	generico_terrestre	7533	7538		natura ligure
 L01073	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	profumeria	Parigi		generico			x			sì	sì	-	generico_terrestre	1266	1276		metropoli
@@ -1092,7 +1092,7 @@ L01086	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	Passy	Parigi		generic
 L01087	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	palazzo	Parigi		generico						sì	sì	-	generico_terrestre	22030	22037		metropoli
 L01088	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	Embankment	Londra		nominato	landmark					sì	sì	no	nominato_terrestre	24109	24119		metropoli
 L01089	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	stanze	Londra		generico					x	sì	sì	-	generico_terrestre	24130	24136		metropoli
-L01090	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	Londra			nominato	comune	sì				sì	sì	no	nominato_terrestre	-	-	sì	Nessuno
+L01090	S151	Il nome, il naso		«Playboy»	«Playboy»	1972	Londra			nominato	comune	sì				sì	sì	no	nominato_terrestre	-	-	sì	nessuno
 L01091	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Impero mongolo	Levante	L01103	nominato	territorio		x			sì	sì	no	nominato_terrestre	1369	1375		paesaggio urbano;viaggio
 L01092	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Diomira	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	1938	1945		paesaggio urbano;viaggio
 L01093	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Isidora	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	2701	2708		paesaggio urbano;viaggio
@@ -1154,7 +1154,7 @@ L01148	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Marozia	I
 L01149	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Pentesilea	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	136616	136626		paesaggio urbano;viaggio
 L01150	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Teodora	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	139420	139427		paesaggio urbano;viaggio
 L01151	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Berenice	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	141654	141662		paesaggio urbano;viaggio
-L01152	S152	La taverna dei destini incrociati	volume	V019	Il castello dei destini incrociati (riediz)	1973	taverna			generico						no	sì	-	generico_terrestre	51653	51660		Nessuno
+L01152	S152	La taverna dei destini incrociati	volume	V019	Il castello dei destini incrociati (riediz)	1973	taverna			generico						no	sì	-	generico_terrestre	51653	51660		nessuno
 L01153	S153	Ricordo di una battaglia		«Corriere della sera»	«Corriere della sera»	1974	memoria			generico						no	no	no	generico_non_terrestre	617	624		guerra
 L01154	S154	Autobiografia di uno spettatore		F. Fellini, Quattro film	F. Fellini, Quattro film	1974	cinema	Sanremo	L01157	generico						sì	sì	-	generico_terrestre	1744	1750		paesaggio urbano;metropoli
 L01155	S154	Autobiografia di uno spettatore		F. Fellini, Quattro film	F. Fellini, Quattro film	1974	via principale	Sanremo	L01157	generico						sì	sì	-	generico_terrestre	7606	7620		paesaggio urbano;metropoli
@@ -1171,17 +1171,17 @@ L01165	S156	La glaciazione		«Corriere della sera»	«Corriere della sera»	1975
 L01166	S156	La glaciazione		«Corriere della sera»	«Corriere della sera»	1975	casa			generico			x			no	sì	-	generico_terrestre	1641	1645		mare
 L01167	S156	La glaciazione		«Corriere della sera»	«Corriere della sera»	1975	mare artico			nominato	mare					sì	sì	no	nominato_terrestre	4537	4548		mare
 L01168	S156	La glaciazione		«Corriere della sera»	«Corriere della sera»	1975	stanza	casa	L01166	generico					x	no	sì	-	generico_terrestre	5814	5820		mare
-L01169	S157	L'uomo di Neanderthal		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	Neander			nominato	territorio		x	x	x	sì	sì	no	nominato_terrestre	82	89		Nessuno
-L01170	S158	Montezuma		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	rovine	Impero (atzeco)	L01171	generico			x		x	sì	sì	-	generico_terrestre	13765	13771		Nessuno
-L01171	S158	Montezuma		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	Impero (atzeco)			nominato	impero					sì	sì	no	nominato_terrestre	18186	18192		Nessuno
+L01169	S157	L'uomo di Neanderthal		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	Neander			nominato	territorio		x	x	x	sì	sì	no	nominato_terrestre	82	89		nessuno
+L01170	S158	Montezuma		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	rovine	Impero (atzeco)	L01171	generico			x		x	sì	sì	-	generico_terrestre	13765	13771		nessuno
+L01171	S158	Montezuma		Aa. Vv., Le interviste imposibili	Aa. Vv., Le interviste imposibili	1975	Impero (atzeco)			nominato	impero					sì	sì	no	nominato_terrestre	18186	18192		nessuno
 L01172	S159	Prima che tu dica «Pronto»		«Corriere della sera»	«Corriere della sera»	1975	città	Europa	L01170	generico			x		x	sì	sì	-	generico_terrestre	370	375		metropoli
 L01173	S159	Prima che tu dica «Pronto»		«Corriere della sera»	«Corriere della sera»	1975	Europa			nominato	continente					sì	sì	no	nominato_terrestre	482	488		metropoli
 L01174	S160	La corsa delle giraffe	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	zoo di Vincennes	Parigi	L01175	nominato	landmark		x		x	sì	sì	no	nominato_terrestre	47	63		metropoli
 L01175	S160	La corsa delle giraffe	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	Parigi			nominato	comune	sì				sì	sì	no	nominato_terrestre	-	-		metropoli
-L01176	S161	Del mordersi la lingua	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
-L01177	S162	Il fischio del merlo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	prato			generico			x		x	no	sì	-	generico_terrestre	3060	3065		Nessuno
-L01178	S162	Il fischio del merlo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	giardino			generico			x		x	no	sì	-	generico_terrestre	5174	5182		Nessuno
-L01179	S163	Del prendersela coi giovani	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
+L01176	S161	Del mordersi la lingua	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
+L01177	S162	Il fischio del merlo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	prato			generico			x		x	no	sì	-	generico_terrestre	3060	3065		nessuno
+L01178	S162	Il fischio del merlo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	giardino			generico			x		x	no	sì	-	generico_terrestre	5174	5182		nessuno
+L01179	S163	Del prendersela coi giovani	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
 L01180	S164	Lettura di un'onda	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	mare			generico				x		no	sì	-	generico_terrestre	23	27		mare
 L01181	S164	Lettura di un'onda	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	riva			generico			x			no	sì	-	generico_terrestre	77	81		mare
 L01182	S164	Lettura di un'onda	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1975	costa			generico						no	sì	-	generico_terrestre	1422	1427		mare
@@ -1198,7 +1198,7 @@ L01192	S168	Serpenti e teschi	raccolta	«Corriere della sera»;V022	«Corriere d
 L01193	S168	Serpenti e teschi	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1976	Tula	Messico	L01192	nominato	città antica					sì	sì	no	nominato_terrestre	76	80		viaggio
 L01194	S168	Serpenti e teschi	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1976	Tempio della Stella del Mattino	Tula	L01193	nominato	landmark					sì	sì	no	nominato_terrestre	457	488		viaggio
 L01195	S168	Serpenti e teschi	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1976	Muro dei Serpenti	Tula	L01193	nominato	landmark					sì	sì	no	nominato_terrestre	4418	4435		viaggio
-L01196	S169	Il richiamo dell'acqua		-V. Gobbi/S. Toresella, Acquedotti ieri e oggi	-V. Gobbi/S. Toresella, Acquedotti ieri e oggi	1976	doccia (bagno)			generico			x		x	no	sì	no	generico_terrestre	56	62		Nessuno
+L01196	S169	Il richiamo dell'acqua		-V. Gobbi/S. Toresella, Acquedotti ieri e oggi	-V. Gobbi/S. Toresella, Acquedotti ieri e oggi	1976	doccia (bagno)			generico			x		x	no	sì	no	generico_terrestre	56	62		nessuno
 L01197	S170	L'aiola di sabbia	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	Tempio Ryoanji	Kyoto	L01198	nominato	landmark		x		x	sì	sì	no	nominato_terrestre	326	340		viaggio
 L01198	S170	L'aiola di sabbia	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	Kyoto	Giappone	L01199	nominato	comune					sì	sì	no	nominato_terrestre	344	349		viaggio
 L01199	S170	L'aiola di sabbia	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	Giappone			nominato	nazione					sì	sì	no	nominato_terrestre	2041	2049		viaggio
@@ -1208,13 +1208,13 @@ L01202	S171	La poubelle agréée		«Paragone»	«Paragone»	1977	Parigi			nomina
 L01203	S171	La poubelle agréée		«Paragone»	«Paragone»	1977	garage	Quattordicesimo Arrodissement	L01205	generico						sì	sì	no	generico_terrestre	3532	3538		metropoli
 L01204	S171	La poubelle agréée		«Paragone»	«Paragone»	1977	marciapiede	Quattordicesimo Arrodissement	L01205	generico						sì	sì	no	generico_terrestre	33282	33293		metropoli
 L01205	S171	La poubelle agréée		«Paragone»	«Paragone»	1977	Quattordicesimo Arrodissement	Parigi	L01202	nominato	territorio (quartiere)					sì	sì	no	nominato_terrestre	33298	33328		metropoli
-L01206	S172	Il seno nudo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	spiaggia			generico			x	x	x	no	sì	-	generico_terrestre	50	58		Nessuno
-L01207	S172	Il seno nudo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	costa			generico						no	sì	-	generico_terrestre	1949	1954		Nessuno
-L01208	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	collina			generico			x			no	sì	-	generico_terrestre	856	863		Nessuno
-L01209	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	strada			generico						no	sì	-	generico_terrestre	4096	4102		Nessuno
-L01210	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	casa			generico					x	no	sì	-	generico_terrestre	6965	6969		Nessuno
-L01211	S174	Parafrasi		Paraphrases	Paraphrases	1978	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
-L01212	S175	Lo specchio e il bersaglio		«Corriere della sera»	«Corriere della sera»	1978	distese			generico						no	sì	-	generico_terrestre	9301	9308		Nessuno
+L01206	S172	Il seno nudo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	spiaggia			generico			x	x	x	no	sì	-	generico_terrestre	50	58		nessuno
+L01207	S172	Il seno nudo	raccolta	«Corriere della sera»;V022	«Corriere della sera»;Palomar	1977	costa			generico						no	sì	-	generico_terrestre	1949	1954		nessuno
+L01208	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	collina			generico			x			no	sì	-	generico_terrestre	856	863		nessuno
+L01209	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	strada			generico						no	sì	-	generico_terrestre	4096	4102		nessuno
+L01210	S173	Il crollo del tempo		«Il Caffè»	«Il Caffè»	1977	casa			generico					x	no	sì	-	generico_terrestre	6965	6969		nessuno
+L01211	S174	Parafrasi		Paraphrases	Paraphrases	1978	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
+L01212	S175	Lo specchio e il bersaglio		«Corriere della sera»	«Corriere della sera»	1978	distese			generico						no	sì	-	generico_terrestre	9301	9308		nessuno
 L01213	S175	Lo specchio e il bersaglio		«Corriere della sera»	«Corriere della sera»	1978	sabbia			generico						no	sì	-	generico_terrestre	9452	9458		paesaggio urbano;viaggio;metropoli
 L01214	S175	Lo specchio e il bersaglio		«Corriere della sera»	«Corriere della sera»	1978	città			generico						no	sì	-	generico_terrestre	11118	11123		paesaggio urbano;viaggio;metropoli
 L01215	V021	Se una notte d'inverno un viaggiatore	volume	V021	Se una notte d'inverno un viaggiatore	1979	libreria			generico			x			no	sì	-	generico_terrestre	3638	3646		paesaggio urbano;viaggio;metropoli
@@ -1294,17 +1294,17 @@ L01288	V021	Se una notte d'inverno un viaggiatore	volume	V021	Se una notte d'inv
 L01289	V021	Se una notte d'inverno un viaggiatore	volume	V021	Se una notte d'inverno un viaggiatore	1979	Prospettiva	città	L01288	nominato	landmark					no	sì	sì	inventato	430430	430441		paesaggio urbano;viaggio;metropoli
 L01290	V021	Se una notte d'inverno un viaggiatore	volume	V021	Se una notte d'inverno un viaggiatore	1979	biblioteca			generico						no	sì	-	generico_terrestre	445966	445976		paesaggio urbano;viaggio;metropoli
 L01291	V021	Se una notte d'inverno un viaggiatore	volume	V021	Se una notte d'inverno un viaggiatore	1979	letto			generico					x	no	sì	-	generico_terrestre	458045	458050		paesaggio urbano;viaggio;metropoli
-L01292	S176	La coscienza a posto		«la Repubblica»	«la Repubblica»	1980	paese			generico						no	sì	-	generico_terrestre	80	85		Nessuno
-L01293	S177	Quattro favole d'Esopo per Valerio Adami		«Derrière le miroir»	«Derrière le miroir»	1980	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-	sì	Nessuno
+L01292	S176	La coscienza a posto		«la Repubblica»	«la Repubblica»	1980	paese			generico						no	sì	-	generico_terrestre	80	85		nessuno
+L01293	S177	Quattro favole d'Esopo per Valerio Adami		«Derrière le miroir»	«Derrière le miroir»	1980	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-	sì	nessuno
 L01294	S178	Il gorilla albino	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1980	zoo 	Barcellona	L01295	nominato	landmark		x		x	sì	sì	no	generico_terrestre	25	28		metropoli
 L01295	S178	Il gorilla albino	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1980	Barcellona			nominato	comune					sì	sì	no	nominato_terrestre	32	42		metropoli
 L01296	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	Inferi			nominato	regno		x		x	no	no	sì	inventato	240	246		paesaggio cosmico;mito
 L01297	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	vulcano	Terra	L01298	generico				x		sì	sì	-	generico_terrestre	8948	8955		paesaggio cosmico;mito
 L01298	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	Terra			nominato	pianeta					sì	sì	no	nominato_non_terrestre	9223	9228		paesaggio cosmico;mito
 L01299	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	Vesuvio	Terra	L01298	nominato	landmark					sì	sì	no	nominato_terrestre	13387	13394		paesaggio cosmico;mito
-L01299b	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	Ercolano	Terra	L01050	nominato	comune					sì	sì	no	nominato_terrestre	13467	13475		Nessuno
+L01299b	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	Ercolano	Terra	L01050	nominato	comune					sì	sì	no	nominato_terrestre	13467	13475		nessuno
 L01300	S179	L'altra euridice		«Gran Bazaar»	«Gran Bazaar»	1980	stanza	Terra	L01298	generico						sì	sì	-	generico_terrestre	14870	14876		paesaggio cosmico;mito
-L01301	S180	Essere pietra (per Alberto Magnelli)		Magnelli. Les pierres: 1931-1935	Magnelli. Les pierres: 1931-1935	1981	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
+L01301	S180	Essere pietra (per Alberto Magnelli)		Magnelli. Les pierres: 1931-1935	Magnelli. Les pierres: 1931-1935	1981	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
 L01302	S181	Le memorie di Casanova		I. Calvino/M. Campigli, Le memorie di Casanova	I. Calvino/M. Campigli, Le memorie di Casanova	1981	xxx			nominato	comune					no	sì	sì	inventato	60	63		paesaggio urbano
 L01303	S181	Le memorie di Casanova		I. Calvino/M. Campigli, Le memorie di Casanova	I. Calvino/M. Campigli, Le memorie di Casanova	1981	stanza			generico						no	sì	-	generico_terrestre	6353	6359		paesaggio urbano
 L01304	S181	Le memorie di Casanova		I. Calvino/M. Campigli, Le memorie di Casanova	I. Calvino/M. Campigli, Le memorie di Casanova	1981	città			generico						no	sì	-	generico_terrestre	13666	13671		paesaggio urbano
@@ -1320,24 +1320,24 @@ L01313	S185	Sapore Sapere		«FMR»	«FMR»	1982	Messico			nominato	nazione					s
 L01314	S185	Sapore Sapere		«FMR»	«FMR»	1982	Monte Alban	Oaxaca	L01310	nominato	landmark			x		sì	sì	no	nominato_terrestre	16031	16042		viaggio
 L01315	S185	Sapore Sapere		«FMR»	«FMR»	1982	caffè	Oaxaca	L01310	generico						sì	sì	-	generico_terrestre	28613	28618		viaggio
 L01316	S185	Sapore Sapere		«FMR»	«FMR»	1982	Palenque	Messico	L01313	nominato	landmark					sì	sì	no	nominato_terrestre	38715	38723		viaggio
-L01317	S186	Il mondo guarda il mondo	raccolta	«Cnac Magazine»;V022	«Cnac Magazine»;Palomar	1982	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
+L01317	S186	Il mondo guarda il mondo	raccolta	«Cnac Magazine»;V022	«Cnac Magazine»;Palomar	1982	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
 L01318	S187	La pancia del geco	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1982	terrazzo	Casa Palomar	L01320	generico						no	sì	-	generico_terrestre	24	32		paesaggio urbano
 L01319	S187	La pancia del geco	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1982	soggiorno	Casa Palomar	L01320	generico			x		x	no	sì	-	generico_terrestre	262	271		paesaggio urbano
 L01320	S187	La pancia del geco	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1982	casa Palomar			nominato			x		x	no	sì	sì	inventato	275	287		paesaggio urbano
-L01321	S188	Quattro studi dal vero		Gnoli	Gnoli	1983	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
+L01321	S188	Quattro studi dal vero		Gnoli	Gnoli	1983	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
 L01322	S189	Viaggio nelle città di de Chirico		«FMR»	«FMR»	1983	città			generico			x	x	x	no	sì	-	generico_terrestre	685	690		paesaggio urbano
 L01323	S190	La spada del sole	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	riva			generico			x			no	sì	-	generico_terrestre	497	501		mare
 L01324	S190	La spada del sole	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	mare			generico				x		no	sì	-	generico_terrestre	808	812		mare
 L01325	S190	La spada del sole	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	casa			generico					x	no	sì	-	generico_terrestre	9262	9266		mare
-L01326	S191	La contemplazione delle stelle	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	spiaggia			generico			x		x	no	sì	-	generico_terrestre	617	625		Nessuno
-L01327	S191	La contemplazione delle stelle	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	costa			generico						no	sì	-	generico_terrestre	650	655		Nessuno
-L01328	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	patio			generico			x			no	sì	-	generico_terrestre	55	60		Nessuno
-L01329	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	marciapiede			generico						no	sì	-	generico_terrestre	257	268		Nessuno
-L01330	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	terreno	patio	L01328	generico						no	sì	-	generico_terrestre	710	717		Nessuno
-L01331	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	praticello	patio	L01328	generico					x	no	sì	-	generico_terrestre	1723	1733		Nessuno
-L01332	S193	Il prato infinito	raccolta	V022	Palomar	1983	prato			generico			x	x	x	no	sì	-	generico_terrestre	63	68		Nessuno
-L01333	S194	Luna di pomeriggio	raccolta	V022	Palomar	1983	strade			generico						no	sì	-	generico_terrestre	4403	4409		Nessuno
-L01334	S194	Luna di pomeriggio	raccolta	V022	Palomar	1983	casa			generico					x	no	sì	-	generico_terrestre	4610	4614		Nessuno
+L01326	S191	La contemplazione delle stelle	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	spiaggia			generico			x		x	no	sì	-	generico_terrestre	617	625		nessuno
+L01327	S191	La contemplazione delle stelle	raccolta	«la Repubblica»;V022	«la Repubblica»;Palomar	1983	costa			generico						no	sì	-	generico_terrestre	650	655		nessuno
+L01328	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	patio			generico			x			no	sì	-	generico_terrestre	55	60		nessuno
+L01329	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	marciapiede			generico						no	sì	-	generico_terrestre	257	268		nessuno
+L01330	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	terreno	patio	L01328	generico						no	sì	-	generico_terrestre	710	717		nessuno
+L01331	S192	Gli amori delle tartarughe	raccolta	V022	Palomar	1983	praticello	patio	L01328	generico					x	no	sì	-	generico_terrestre	1723	1733		nessuno
+L01332	S193	Il prato infinito	raccolta	V022	Palomar	1983	prato			generico			x	x	x	no	sì	-	generico_terrestre	63	68		nessuno
+L01333	S194	Luna di pomeriggio	raccolta	V022	Palomar	1983	strade			generico						no	sì	-	generico_terrestre	4403	4409		nessuno
+L01334	S194	Luna di pomeriggio	raccolta	V022	Palomar	1983	casa			generico					x	no	sì	-	generico_terrestre	4610	4614		nessuno
 L01335	S195	Dal terrazzo	raccolta	V022	Palomar	1983	terrazzo	Roma	L01336	generico			x		x	sì	sì	-	generico_terrestre	58	66		metropoli
 L01336	S195	Dal terrazzo	raccolta	V022	Palomar	1983	Roma			nominato	comune		x			sì	sì	no	nominato_terrestre	711	715		metropoli
 L01337	S196	Il museo dei formaggi	raccolta	V022	Palomar	1983	Parigi			nominato	comune					sì	sì	no	nominato_terrestre	81	87		metropoli
@@ -1346,8 +1346,8 @@ L01339	S197	Il marmo e il sangue	raccolta	V022	Palomar	1983	macelleria			generic
 L01340	S198	L'ordine degli squamati	raccolta	V022	Palomar	1983	Parigi			nominato	comune					sì	sì	no	nominato_terrestre	91	97		metropoli
 L01341	S198	L'ordine degli squamati	raccolta	V022	Palomar	1983	rettilario	Jardin des Plantes	L01342	generico	landmark		x	x	x	sì	sì	-	generico_terrestre	133	143		metropoli
 L01342	S198	L'ordine degli squamati	raccolta	V022	Palomar	1983	Jardin des Plantes	Parigi	L01340	nominato	landmark					sì	sì	no	nominato_terrestre	148	166		metropoli
-L01343	S199	Il modello dei modelli	raccolta	V022	Palomar	1983	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		Nessuno
-L01344	S200	L'universo come specchio	raccolta	V022	Palomar	1983	vie			generico					x	no	sì	-	generico_terrestre	6662	6665		Nessuno
+L01343	S199	Il modello dei modelli	raccolta	V022	Palomar	1983	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
+L01344	S200	L'universo come specchio	raccolta	V022	Palomar	1983	vie			generico					x	no	sì	-	generico_terrestre	6662	6665		nessuno
 L01345	S201	Come imparare a essere morto	raccolta	V022	Palomar	1983	mare			generico				x		no	sì	-	generico_terrestre	2908	2912		mare
 L01346	S202	L'ultimo canale		«la Repubblica»	«la Repubblica»	1984	clinica	città	L01348	generico			x			no	sì	-	generico_terrestre	498	505		paesaggio urbano
 L01347	S202	L'ultimo canale		«la Repubblica»	«la Repubblica»	1984	vie	città	L01348	generico				x		no	sì	-	generico_terrestre	5166	5169		paesaggio urbano
@@ -1359,11 +1359,11 @@ L01352	S203	Il ricordo è bendato		Cremonini. Opere dal 1960 al 1984	Cremonini. 
 L01353	S203	Il ricordo è bendato		Cremonini. Opere dal 1960 al 1984	Cremonini. Opere dal 1960 al 1984	1984	piattaforma			generico						-	sì	-	generico_terrestre	5140	5151		paesaggio urbano;mare
 L01354	S203	Il ricordo è bendato		Cremonini. Opere dal 1960 al 1984	Cremonini. Opere dal 1960 al 1984	1984	spiaggia			generico						-	sì	-	generico_terrestre	4485	4493		paesaggio urbano;mare
 L01355	S203	Il ricordo è bendato		Cremonini. Opere dal 1960 al 1984	Cremonini. Opere dal 1960 al 1984	1984	caffè			generico						-	sì	-	generico_terrestre	5852	5857		paesaggio urbano;mare
-L01356	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	sala del trono	palazzo	L01357	generico			x			no	sì	-	generico_terrestre	5078	5092		Nessuno
-L01357	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	palazzo	città	L01358	generico						no	sì	-	generico_terrestre	6009	6016		Nessuno
-L01358	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	città			generico				x		no	sì	-	generico_terrestre	40004	40009		Nessuno
-L01359	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	campagna			generico					x	no	sì	-	generico_terrestre	40238	40346		Nessuno
-L01360	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	grotta	campagna	L01359	generico						no	sì	-	generico_terrestre	41928	41934		Nessuno
-L01361	S205	Il niente e il poco	raccolta	«la Repubblica»;V023	«la Repubblica»;Le cosmicomiche vecchie e nuove	1984	universo			generico			x	x	x	no	no	-	generico_non_terrestre	410	418		Nessuno
+L01356	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	sala del trono	palazzo	L01357	generico			x			no	sì	-	generico_terrestre	5078	5092		nessuno
+L01357	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	palazzo	città	L01358	generico						no	sì	-	generico_terrestre	6009	6016		nessuno
+L01358	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	città			generico				x		no	sì	-	generico_terrestre	40004	40009		nessuno
+L01359	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	campagna			generico					x	no	sì	-	generico_terrestre	40238	40346		nessuno
+L01360	S204	Un re in ascolto		«la Repubblica»	«la Repubblica»	1984	grotta	campagna	L01359	generico						no	sì	-	generico_terrestre	41928	41934		nessuno
+L01361	S205	Il niente e il poco	raccolta	«la Repubblica»;V023	«la Repubblica»;Le cosmicomiche vecchie e nuove	1984	universo			generico			x	x	x	no	no	-	generico_non_terrestre	410	418		nessuno
 L01362	S206	L'implosione	raccolta	«la Repubblica»;V023	«la Repubblica»;Le cosmicomiche vecchie e nuove	1984	galassia			generico			x			no	no	-	generico_non_terrestre	1964	1972		paesaggio cosmico
 L01363	S206	L'implosione	raccolta	«la Repubblica»;V023	«la Repubblica»;Le cosmicomiche vecchie e nuove	1984	buco (nero)			generico					x	no	no	-	generico_non_terrestre	9334	9338		paesaggio cosmico
