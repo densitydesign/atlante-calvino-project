@@ -683,7 +683,7 @@ V.openAll = () => {
 	function runAll(nodesList) {
 		nodesList.forEach( n => {
 			if (n.totalSubNodes > 0) {
-				toggleSubnodes(n, false);
+				openSubnodes(n, false);
 				runAll(n.subNodes);
 			}
 		});
@@ -696,7 +696,7 @@ V.openAll = () => {
 V.closeAll = () => {
 
 	rootNodes.forEach(function(d){
-		toggleSubnodes(d, false);
+		closeSubnodes(d, false);
 	})
 	// simulation.force("x").strength(1)
 	// simulation.force("y").strength(1)
