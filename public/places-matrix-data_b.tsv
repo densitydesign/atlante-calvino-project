@@ -59,7 +59,7 @@ L00056	S016	Ultimo viene il corvo	raccolta	«L'Unità» (Milano);V002;V006	«L'U
 L00057	S016	Ultimo viene il corvo	raccolta	«L'Unità» (Milano);V002;V006	«L'Unità» (Milano);Ultimo viene il corvo;I racconti	1947	valletta			generico						no	sì	-	generico_terrestre	7096	7104		guerra;natura ligure;protagonista bambino
 L00058	S016	Ultimo viene il corvo	raccolta	«L'Unità» (Milano);V002;V006	«L'Unità» (Milano);Ultimo viene il corvo;I racconti	1947	radura			generico					x	no	sì	-	generico_terrestre	7238	7244		guerra;natura ligure;protagonista bambino
 L00059	S017	Visti alla mensa	raccolta	«L'Unità» (Milano);V002	«L'Unità» (Milano);Ultimo viene il corvo	1947	Torino (città)			nominato	comune	sì				sì	sì	no	nominato_terrestre	405	410		paesaggio urbano
-L00060	S017	Visti alla mensa	raccolta	«L'Unità» (Milano);V002	«L'Unità» (Milano);Ultimo viene il corvo	1947	mensa	Torino	L00059	generico			x		x	sì	sì	-	generico_terrestre	2117	2122	sì	paesaggio urbano
+L00060	S017	Visti alla mensa	raccolta	«L'Unità» (Milano);V002	«L'Unità» (Milano);Ultimo viene il corvo	1947	mensa	Torino	L00060	generico			x		x	sì	sì	-	generico_terrestre	2117	2122	sì	paesaggio urbano
 L00061	S018	L'occhio del padrone	raccolta	«L'Unità» (Genova);V002;V006	«L'Unità» (Genova);Ultimo viene il corvo;I racconti	1947	vigna	vallata	L00062	generico						no	sì	-	generico_terrestre	1332	1337		guerra;natura ligure;protagonista bambino
 L00062	S018	L'occhio del padrone	raccolta	«L'Unità» (Genova);V002;V006	«L'Unità» (Genova);Ultimo viene il corvo;I racconti	1947	vallata			generico						no	sì	-	generico_terrestre	1662	1669		guerra;natura ligure;protagonista bambino
 L00063	S018	L'occhio del padrone	raccolta	«L'Unità» (Genova);V002;V006	«L'Unità» (Genova);Ultimo viene il corvo;I racconti	1947	fascia	vallata	L00062	generico					x	no	sì	-	generico_terrestre	3189	3195		guerra;natura ligure;protagonista bambino
@@ -168,7 +168,7 @@ L00164	S034	Dollari e vecchie mondane	raccolta	Antologia Einaudi 1948;V002;V006	
 L00165	S035	Freddo a Napoli	altro	«Unità» (Torino)	«Unità» (Torino)	1949	Napoli			nominato	comune		x		x	sì	sì	no	nominato_terrestre	39	45		paesaggio urbano
 L00166	S035	Freddo a Napoli	altro	«Unità» (Torino)	«Unità» (Torino)	1949	via Toledo	Napoli	L00165	nominato	landmark					sì	sì	no	nominato_terrestre	2102	2108		paesaggio urbano
 L00167	S036	Lasciare Anna	altro	«Unità» (Torino)	«Unità» (Torino)	1949	marciapiede	Torino (città)	L00168	generico			x			sì	sì	-	generico_terrestre	44	55	sì	paesaggio urbano
-L00168	S036	Lasciare Anna	altro	«Unità» (Torino)	«Unità» (Torino)	1949	Torino (città)			nominato	comune	sì				sì	sì	no	nominato_terrestre	550	555		paesaggio urbano
+L00168	S036	Lasciare Anna	altro	«Unità» (Torino)	«Unità» (Torino)	1949	Torino (città)		L00168	nominato	comune	sì				sì	sì	no	nominato_terrestre	550	555		paesaggio urbano
 L00169	S036	Lasciare Anna	altro	«Unità» (Torino)	«Unità» (Torino)	1949	vie	Torino (città)	L00168	generico						sì	sì	-	generico_terrestre	2863	2866		paesaggio urbano
 L00170	S036	Lasciare Anna	altro	«Unità» (Torino)	«Unità» (Torino)	1949	crocevia	Torino (città)	L00168	generico						sì	sì	-	generico_terrestre	4819	4827		paesaggio urbano
 L00171	S037	Un pomeriggio, Adamo	raccolta	V002;V006	Ultimo viene il corvo;I racconti	1949	cucina	casa	L00173	generico			x		x	no	sì	-	generico_terrestre	621	627		guerra;natura ligure;protagonista bambino
@@ -495,7 +495,7 @@ L00490	S076	Dove va l'avvoltoio?	altro	«Il contemporaneo»	«Il contemporaneo»
 L00491	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Champs Elysèes	Parigi	L00494	nominato	landmark		x			sì	sì	no	nominato_terrestre	95	109		metropoli
 L00492	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Rue de la Paix	Parigi	L00494	nominato	landmark		x			sì	sì	no	nominato_terrestre	118	132		metropoli
 L00493	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	studio	Parigi	L00494	generico				x		sì	sì	-	generico_terrestre	1754	1760		metropoli
-L00494	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Parigi			nominato	comune					sì	sì	no	nominato_terrestre	3101	3107		metropoli
+L00494	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Parigi	Parigi	L00494	nominato	comune					sì	sì	no	nominato_terrestre	3101	3107		metropoli
 L00495	S077	Il dittatore	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Recanati			nominato	comune				x	sì	sì	no	nominato_terrestre	3896	3904		metropoli
 L00496	S078	Lo jus primae noctis	altro	«Il contemporaneo»	«Il contemporaneo»	1954	paese			generico			x			no	sì	-	generico_terrestre	33	38	sì	paesaggio urbano;fabbrica
 L00497	S078	Lo jus primae noctis	altro	«Il contemporaneo»	«Il contemporaneo»	1954	Edi-Piaf (fabbrica)	paese	L00496	nominato	landmark			x		no	sì	sì	inventato	164	172		paesaggio urbano;fabbrica
@@ -875,7 +875,7 @@ L00869	S115	I figli di Babbo Natale	raccolta	V011	Marcovaldo	1963	via	città	L00
 L00870	S115	I figli di Babbo Natale	raccolta	V011	Marcovaldo	1963	bosco			generico					x	no	sì	-	generico_terrestre	14027	14032		paesaggio urbano;protagonista bambino;fabbrica
 L00871	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	caffè	città	L00873	generico						no	sì	-	generico_terrestre	863	868		paesaggio urbano
 L00872	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	casa	città	L00873	generico						no	sì	-	generico_terrestre	1003	1007		paesaggio urbano
-L00873	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	città			generico			x			no	sì	-	generico_terrestre	1631	1636		paesaggio urbano
+L00873	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	città	città	L00873	generico			x			no	sì	-	generico_terrestre	1631	1636		paesaggio urbano
 L00874	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	strada	città	L00873	generico						no	sì	-	generico_terrestre	2104	2110		paesaggio urbano
 L00875	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	ripe	fiume	L00876	generico						no	sì	-	generico_terrestre	2316	2320		paesaggio urbano
 L00876	S116	Dov'è più azzurro il fiume	raccolta	V011	Marcovaldo	1963	fiume	città	L00873	generico				x		no	sì	-	generico_terrestre	2532	2537		paesaggio urbano
@@ -1029,7 +1029,7 @@ L01023	S142	II. Meiosi	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e 
 L01024	S142	II. Meiosi	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	oasi	Terra	L01020	generico						no	sì	-	generico_terrestre	18759	18763		mare
 L01025	S142	II. Meiosi	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	palmeto	oasi	L01024	generico					x	no	sì	-	generico_terrestre	18946	18953		mare
 L01026	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	mare			generico			x			no	sì	-	generico_terrestre	2333	2337		mare
-L01027	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	fondali	mare	L01026	generico						no	sì	-	generico_terrestre	2867	2874		mare
+L01027	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	fondali	mare	L01027	generico						no	sì	-	generico_terrestre	2867	2874		mare
 L01028	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	fungaie			generico						no	sì	-	generico_terrestre	2897	2904		mare
 L01029	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	terre emerse			generico						no	sì	-	generico_terrestre	2956	2968		mare
 L01030	S143	III. Morte	raccolta	V014;V023	Ti con Zero;Le cosmicomiche vecchie e nuove	1967	paludi			generico						no	sì	-	generico_terrestre	5487	5493		mare
