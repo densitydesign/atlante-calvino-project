@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import ParseMatrixData from '../../PlacesMatrixView/parse-matrix-data';
+import _ from 'lodash';
 
 const V = {}
 
@@ -27,6 +28,14 @@ const collisionPadding = 0.5;
 let graph, nodes = [], links = [], hullsData = [],
 		rootNodes = [], storedFilters,
 		last=0, openAllState=false
+
+let surviveFilter = {
+			'byPublicationType': [],
+			'byTheme': [],
+			'bySearch': []
+		}
+
+let surviveFilterArrays = []
 
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
@@ -406,7 +415,7 @@ V.initialize = (el, data, filters) => {
   link = g.append('g').classed('links', true).selectAll('.link');
   hull = g.append('g').classed('hulls', true).selectAll('.hull');
   node = g.append('g').classed('nodes', true).selectAll('.node');
-	presumed = g.append('g').classed('presumeds', true).selectAll('.presumed');
+	presumed = g.append('g').classed('presumed', true).selectAll('.presumed');
   label = g.append('g').classed('labels', true).selectAll('.label');
   information = g.append('g').classed('informations', true).selectAll('.information');
 
@@ -475,7 +484,7 @@ V.initialize = (el, data, filters) => {
 }
 
 V.update = (data, filters) => {
-  // console.log('update viz')
+  console.log('update viz')
 
   // This is because react must call the update without data
   if (!data) data = graph
@@ -563,7 +572,6 @@ V.update = (data, filters) => {
     presumed = presumed.enter().append('circle')
 			.classed('presumed', true)
 			.attr('r', 1.5)
-			// .attr('fill', '#333')
 			.attr('fill', function(d) { return d3.color(color(d.category)).darker(1) })
 			.attr('cx', d => {
         return d.x
@@ -638,42 +646,79 @@ V.update = (data, filters) => {
 				V.closeAll();
 			}
 		}
+
 		if (filters.selectedPublications) {
-			if (filters.selectedPublications === 'tutti') {
-				node.classed('faded', false)
+
+			console.log(filters.selectedPublications)
+			// console.log( nodes.map(d=>d.id).join('\n') )
+
+			if (filters.selectedPublications !== 'tutti') {
+				let pubTypes = Array.isArray(filters.selectedPublications)?filters.selectedPublications:[filters.selectedPublications];
+				surviveFilterArrays[0] = nodes.filter( d=>{
+					let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
+					return check.indexOf(true) > -1;
+				}).map(d=>d.id);
 			} else {
-				node.classed('faded', false).classed('faded', d => {
-					if (filters.selectedPublications === 'altro') {
-						return  !d.publicationType === ""
-					} else {
-						return !d.publicationType.includes(filters.selectedPublications)
-					}
-				})
+				surviveFilter.byPublicationType = [];
 			}
+
 		}
 		if (filters.selectedThemes) {
-			if (filters.selectedThemes === 'tutti') {
-				node.classed('faded', false)
+			// console.log('filter by theme to be implemented', nodes)
+
+			if (filters.selectedThemes !== 'tutti') {
+				let pubThemes = Array.isArray(filters.selectedThemes)?filters.selectedThemes:[filters.selectedThemes];
+				surviveFilterArrays[1] = nodes.filter( d=>{
+					let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
+					return check.indexOf(true) > -1;
+				}).map(d=>d.id);
 			} else {
-				node.classed('faded', false).classed('faded', d => {
-					if (d.themes) {
-						return !d.themes.includes(filters.selectedThemes)
-					} else {
-						return true
-					}
-				})
+				surviveFilter.byTheme = [];
 			}
+
+			// if (filters.selectedThemes === 'tutti') {
+			// 	node.classed('faded', false)
+			// } else {
+			// 	node.classed('faded', false).classed('faded', d => {
+			// 		if (d.themes) {
+			// 			return !d.themes.includes(filters.selectedThemes)
+			// 		} else {
+			// 			return true
+			// 		}
+			// 	})
+			// }
 		}
 		if (filters.search) {
-			if (filters.search.length > 0) {
-				node
-					.classed('faded', true)
-					.filter(d=>filters.search.indexOf(d.id)>-1)
-					.classed('faded', false)
-			} else {
-				node.classed('faded', false)
-			}
+			console.log('filter by search to be implemented')
+			// if (filters.search.length > 0) {
+			// 	node
+			// 		.classed('faded', true)
+			// 		.filter(d=>filters.search.indexOf(d.id)>-1)
+			// 		.classed('faded', false)
+			// } else {
+			// 	node.classed('faded', false)
+			// }
 		}
+
+		console.log("surviveFilter", surviveFilter)
+
+		let mergeSurvived = [];
+
+		console.log(surviveFilterArrays)
+
+		surviveFilterArrays.forEach((d,i) => {
+			if (i===0) {
+				mergeSurvived = d;
+			} else {
+				mergeSurvived = _.intersection(mergeSurvived, surviveFilterArrays[i]);
+			}
+		})
+
+		console.log("mergeSurvived", mergeSurvived)
+
+		// node.filter(d=>mergeSurvived.indexOf(d.id) < 0)
+		// 		.classed('faded', true);
+
 	}
 
 }

@@ -18,10 +18,10 @@ ParseMatrixData.parser = (rawData) => {
 			'year': +d.year,
 			'category': d['Categoria'],
 			'totalSubNodes':0,
-      'publicationType': d['Pubblicazione Fonte'],
+      'publicationType': d['Pubblicazione Fonte'].split(';'),
       'pubVenueTitle': d['Pubblicazioni Titoli'],
       'isGuessed': d['Luogo desunto'],
-      'themes': d['Tema']
+      'themes': d['Tema'].split(';')
 		}
 		return obj
 	})
