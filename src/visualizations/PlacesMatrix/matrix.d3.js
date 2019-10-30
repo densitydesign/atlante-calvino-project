@@ -29,14 +29,6 @@ let graph, nodes = [], links = [], hullsData = [],
 		rootNodes = [], storedFilters,
 		last=0, openAllState=false
 
-let surviveFilter = {
-			'byPublicationType': [],
-			'byTheme': [],
-			'bySearch': []
-		}
-
-let surviveFilterArrays = []
-
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
 let xAxisCall, yAxisCall;
@@ -337,7 +329,7 @@ V.initialize = (el, data, filters) => {
   r = d3.scalePow()
     .exponent(0.5)
     // .range([15,75])
-    .range([3.5,25])
+    .range([3,25])
     .domain([1,d3.max(data.nodes, function(d){ return d.totalSubNodes })])
   color = d3.scaleOrdinal().domain(categories).range(categoriesColors)
 
@@ -437,7 +429,8 @@ V.initialize = (el, data, filters) => {
 			})
   	)
   	.force("collision", d3.forceCollide(function(d){
-  			return d.opened ? r(1)+collisionPadding : r(d.totalSubNodes + 1)+collisionPadding
+				let thisCollisionPadding = d.totalSubNodes>0 ? collisionPadding+2 : collisionPadding;
+  			return d.opened ? r(1)+thisCollisionPadding : r(d.totalSubNodes + 1)+thisCollisionPadding
   		})
   		.iterations(8)
   		.strength(0.35)
@@ -484,7 +477,7 @@ V.initialize = (el, data, filters) => {
 }
 
 V.update = (data, filters) => {
-  console.log('update viz')
+  // console.log('update viz')
 
   // This is because react must call the update without data
   if (!data) data = graph
@@ -647,78 +640,37 @@ V.update = (data, filters) => {
 			}
 		}
 
-		if (filters.selectedPublications) {
+		let surviveFilters = []
 
-			console.log(filters.selectedPublications)
-			// console.log( nodes.map(d=>d.id).join('\n') )
+		let pubTypes = filters.selectedPublications;
+		surviveFilters[0] = nodes.filter( d=>{
+			let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
+			return check.indexOf(true) > -1;
+		}).map(d=>d.id);
 
-			if (filters.selectedPublications !== 'tutti') {
-				let pubTypes = Array.isArray(filters.selectedPublications)?filters.selectedPublications:[filters.selectedPublications];
-				surviveFilterArrays[0] = nodes.filter( d=>{
-					let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
-					return check.indexOf(true) > -1;
-				}).map(d=>d.id);
-			} else {
-				surviveFilter.byPublicationType = [];
-			}
+		let pubThemes = filters.selectedThemes;
+		surviveFilters[1] = nodes.filter( d=>{
+			let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
+			return check.indexOf(true) > -1;
+		}).map(d=>d.id);
 
-		}
-		if (filters.selectedThemes) {
-			// console.log('filter by theme to be implemented', nodes)
-
-			if (filters.selectedThemes !== 'tutti') {
-				let pubThemes = Array.isArray(filters.selectedThemes)?filters.selectedThemes:[filters.selectedThemes];
-				surviveFilterArrays[1] = nodes.filter( d=>{
-					let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
-					return check.indexOf(true) > -1;
-				}).map(d=>d.id);
-			} else {
-				surviveFilter.byTheme = [];
-			}
-
-			// if (filters.selectedThemes === 'tutti') {
-			// 	node.classed('faded', false)
-			// } else {
-			// 	node.classed('faded', false).classed('faded', d => {
-			// 		if (d.themes) {
-			// 			return !d.themes.includes(filters.selectedThemes)
-			// 		} else {
-			// 			return true
-			// 		}
-			// 	})
-			// }
-		}
-		if (filters.search) {
-			console.log('filter by search to be implemented')
-			// if (filters.search.length > 0) {
-			// 	node
-			// 		.classed('faded', true)
-			// 		.filter(d=>filters.search.indexOf(d.id)>-1)
-			// 		.classed('faded', false)
-			// } else {
-			// 	node.classed('faded', false)
-			// }
+		if (filters.search.length) {
+			surviveFilters[2] = filters.search
 		}
 
-		console.log("surviveFilter", surviveFilter)
-
+		console.log('surviveFilters', surviveFilters)
 		let mergeSurvived = [];
-
-		console.log(surviveFilterArrays)
-
-		surviveFilterArrays.forEach((d,i) => {
+		surviveFilters.forEach((d,i) => {
 			if (i===0) {
 				mergeSurvived = d;
 			} else {
-				mergeSurvived = _.intersection(mergeSurvived, surviveFilterArrays[i]);
+				if (surviveFilters[i].length) {
+					mergeSurvived = _.intersection(mergeSurvived, surviveFilters[i]);
+				}
 			}
 		})
-
-		console.log("mergeSurvived", mergeSurvived)
-
-		// node.filter(d=>mergeSurvived.indexOf(d.id) < 0)
-		// 		.classed('faded', true);
-
+		console.log("survived", mergeSurvived.length)
+		node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
 	}
 
 }
