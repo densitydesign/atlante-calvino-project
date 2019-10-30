@@ -22,7 +22,7 @@ const categoriesColors = [
 	'#cecece'
 ]
 
-const collisionPadding = 0.5;
+const collisionPadding = 0.25;
 
 // data
 let graph, nodes = [], links = [], hullsData = [],
@@ -364,42 +364,79 @@ V.initialize = (el, data, filters) => {
 
 	yAxis.selectAll('.tick').on('click', function(d){
 
-		let toOpen = []
+		if (d3.select(this).classed('selected') === false ) {
 
-		nodes.forEach(n0=>{
-			console.log('n0',n0);
-			if (n0.totalSubNodes>0){
-				if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
-					toOpen.push(n0);
-				}
-				n0.subNodes.forEach(n1=>{
-					console.log('n1',n1);
-					if(n1.totalSubNodes>0) {
-						if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
-							toOpen.push(n0);
-							toOpen.push(n1);
-						}
-						n1.subNodes.forEach(n2=>{
-							console.log('n2',n2);
-							if(n2.totalSubNodes>0) {
-								if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
-									toOpen.push(n0);
-									toOpen.push(n1);
-									toOpen.push(n2);
-								}
-							}
-						})
-					}
-				})
+			if (d3.selectAll('.tick.selected').size() > 0) {
+				rootNodes.forEach(n=>{closeSubnodes(n,false)});
+				d3.selectAll('.tick.selected').classed('selected', false);
 			}
-		})
 
-		toOpen.forEach(n=>{openSubnodes(n,false)});
+			let toOpen = []
+			nodes.forEach(n0=>{
+				// console.log('n0',n0);
+				if (n0.totalSubNodes>0){
+					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
+						toOpen.push(n0);
+					}
+					n0.subNodes.forEach(n1=>{
+						// console.log('n1',n1);
+						if(n1.totalSubNodes>0) {
+							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
+								toOpen.push(n0);
+								toOpen.push(n1);
+							}
+							n1.subNodes.forEach(n2=>{
+								// console.log('n2',n2);
+								if(n2.totalSubNodes>0) {
+									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
+										toOpen.push(n0);
+										toOpen.push(n1);
+										toOpen.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toOpen.forEach(n=>{openSubnodes(n,false)});
+			node.filter(nn=>{return nn.category!==d}).style('opacity',0.1)
+		} else {
+			let toClose = []
+			nodes.forEach(n0=>{
+				// console.log('n0',n0);
+				if (n0.totalSubNodes>0){
+					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
+						toClose.push(n0);
+					}
+					n0.subNodes.forEach(n1=>{
+						// console.log('n1',n1);
+						if(n1.totalSubNodes>0) {
+							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
+								toClose.push(n0);
+								toClose.push(n1);
+							}
+							n1.subNodes.forEach(n2=>{
+								// console.log('n2',n2);
+								if(n2.totalSubNodes>0) {
+									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
+										toClose.push(n0);
+										toClose.push(n1);
+										toClose.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toClose.forEach(n=>{closeSubnodes(n,false)});
+			node.style('opacity',1)
+		}
 
 		V.update(graph, storedFilters);
 
-		node.filter(nn=>{return nn.category!==d}).style('opacity',0.1)
-
+		d3.select(this).classed('selected', !d3.select(this).classed('selected'))
 
 		// highlightCategories(toHighlight, 'do reset')
 	})

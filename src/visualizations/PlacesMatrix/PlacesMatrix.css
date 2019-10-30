@@ -28,3 +28,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.tick.selected {
+  font-weight: bold;
+}
