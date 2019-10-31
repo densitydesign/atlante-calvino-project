@@ -44,8 +44,9 @@ class PlacesMatrixView extends Component {
       })
       .then(data=>{
         this.setState({
-          data: data,
-          dataTimeFilter: d3.extent(data.nodes, d => d.year),
+          data: data.graph,
+          originalData: data.data,
+          dataTimeFilter: d3.extent(data.graph.nodes, d => d.year),
           themes: ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
           publicationsTypes: ['raccolta','volume','altro'],
           searchOptions: [
@@ -150,7 +151,7 @@ class PlacesMatrixView extends Component {
           { !this.state.isLoading && <MultipleSelection style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un tema" id="multiple-selection-themes"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
-          { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} options={this.state.searchOptions} searchRecord={this.searchRecord} search={this.state.filters.search} resetSearch={this.resetSearch} title="Cerca"/> }
+          { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} originalData={this.state.originalData} options={this.state.searchOptions} searchRecord={this.searchRecord} search={this.state.filters.search} resetSearch={this.resetSearch} minLength={1} title="Cerca"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 1'}} /> }
           { !this.state.isLoading && <MoreInfo style={{gridColumn: 'span 1'}}></MoreInfo>}
@@ -159,7 +160,7 @@ class PlacesMatrixView extends Component {
 
         <BodyViz className="the-body-viz">
           { this.state.isLoading && <Loading /> }
-          { !this.state.isLoading && <PlacesMatrix data={this.state.data} filters={this.state.filters} /> }
+          { !this.state.isLoading && <PlacesMatrix data={this.state.data} originalData={this.state.originalData} filters={this.state.filters} /> }
         </BodyViz>
       </div>
     );

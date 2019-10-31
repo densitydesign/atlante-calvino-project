@@ -11,7 +11,7 @@ class FilterSearch extends Component {
   constructor(props) {
     super(props);
 
-    let allTitles = this.props.data.nodes.map(d=>d.pubVenueTitle.split(';'));
+    let allTitles = this.props.originalData.map(d=>d.pubVenueTitle.split(';'));
     allTitles = _.flattenDeep(allTitles);
     allTitles = d3.nest()
       .key(d=>d)
@@ -20,7 +20,7 @@ class FilterSearch extends Component {
 
     let nodesByPublicationTitle = []
     allTitles.forEach( d => {
-      let publishedHere = this.props.data.nodes.filter( e => { return e.pubVenueTitle.includes(d) })
+      let publishedHere = this.props.originalData.filter( e => { return e.pubVenueTitle.includes(d) })
       let obj = {
         key: d,
         values: publishedHere.map(d=>d.id)
@@ -53,7 +53,6 @@ class FilterSearch extends Component {
   }
 
   searching(value) {
-    // console.log('Searching:', this.state.option, value)
     let nestedData = [];
     if (this.state.option.label === 'raccolta') {
       nestedData = this.state.nodesByPublicationTitle.filter( d => {
@@ -62,7 +61,7 @@ class FilterSearch extends Component {
     } else {
       nestedData = d3.nest()
         .key( d => d[this.state.option.dimension])
-        .entries(this.props.data.nodes)
+        .entries(this.props.originalData)
         .map( d => {
           return {
             key: d.key,
@@ -97,7 +96,7 @@ class FilterSearch extends Component {
       <div className="filter-search" style={this.props.style}>
         <h5>{this.props.title}</h5>
         <SimpleDropDown style={{display: 'inline-block'}} options={this.props.options.map(d=>d.label)} changeOption={this.changeOption}/>
-        <SimpleSearch style={{display: 'inline-block'}} searching={this.searching} previewSearch={this.state.previewSearch} selectResult={this.selectResult} />
+        <SimpleSearch style={{display: 'inline-block'}} searching={this.searching} previewSearch={this.state.previewSearch} selectResult={this.selectResult} minLength={this.props.minLength} />
         { (this.props.search && this.props.search.length>0) && <span onClick={this.resetSearch}><FontAwesomeIcon icon={faTimesCircle} /></span>}
       </div>
     );

@@ -7,7 +7,8 @@ class PlacesMatrix extends Component {
     this._chart = V.initialize(
         this._rootNode,
         this.props.data,
-        this.props.filters
+        this.props.filters,
+        this.props.originalData
     );
   }
 
