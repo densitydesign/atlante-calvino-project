@@ -25,7 +25,7 @@ const categoriesColors = [
 const collisionPadding = 0.25;
 
 // data
-let graph, nodes = [], links = [], hullsData = [],
+let theOriginalData, graph, nodes = [], links = [], hullsData = [],
 		rootNodes = [], storedFilters,
 		last=0, openAllState=false
 
@@ -154,8 +154,9 @@ function closeSubnodes(d,noRestart) {
 }
 
 function toggleSubnodes(d, noRestart) {
-	// console.log('toggle sub nodes')
-  if (d.opened) {
+	console.log('toggle sub nodes', d.opened)
+  if(d.opened) {
+		console.log(d.id, "is open, let's close it!")
 
     d.opened = false;
     d.fx = null;
@@ -214,6 +215,7 @@ function toggleSubnodes(d, noRestart) {
     return;
   }
   if (d.subNodes && d.subNodes.length){
+		console.log(d.id, `is not open, let's open it! (no restart = ${noRestart})`)
 		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
 		d.fx = d.x*1;
 		d.fy = d.y*1;
@@ -248,6 +250,8 @@ function toggleSubnodes(d, noRestart) {
     nodes = graph.nodes;
     links = graph.edges;
     if (noRestart !== false) {
+			console.log("noRestart !== false, let's update the chart!")
+			storedFilters.update = true;
       V.update(graph, storedFilters);
     }
   } else {
@@ -273,13 +277,15 @@ function highlightCategories(arr, doReset) {
 	// label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
 }
 
-V.initialize = (el, data, filters) => {
+V.initialize = (el, data, filters, originalData) => {
   // console.log('init',data, filters)
 
   // Since React calls the update without data, at the beginning store data
   // so that when time-filter is used (and React calls update) there is data to use
   graph = data
   rootNodes = data.nodes.filter( d => d.totalSubNodes>0);
+	theOriginalData = originalData;
+
   // //get themes
   // let themes = []
   // d3.nest()
@@ -576,6 +582,7 @@ V.update = (data, filters) => {
 
   			// get the double tap
   			if ((d3.event.timeStamp - last) < 500) {
+					console.log('toggle subnodes of', d)
           toggleSubnodes(d);
 					return;
         }
@@ -692,10 +699,31 @@ V.update = (data, filters) => {
 		}).map(d=>d.id);
 
 		if (filters.search.length) {
-			surviveFilters[2] = filters.search
+			surviveFilters[2] = filters.search;
+			let parents2open=[];
+			filters.search.forEach(s=>{
+				search4Parent(s);
+			});
+			function search4Parent(nodeId){
+				const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
+				if (thisNode.part_of !== "") {
+					parents2open.push(thisNode.part_of);
+					search4Parent(thisNode.part_of);
+				}
+			}
+			// I technically should open interesting parents, but it is kind of ahard.
+			// Provisionally solve the issue by highliting parents
+			surviveFilters[2] = _.union(surviveFilters[2], parents2open)
+
+			// To fix it I probably need to write a new method just for the filters (V.filter).
+			// parents2open.forEach((parentId,i)=>{
+			// 	const parent = theOriginalData.filter(od=>od.id===parentId)[0]
+			// 	openSubnodes(parent, false);
+			// })
+
 		}
 
-		console.log('surviveFilters', surviveFilters)
+		// console.log('surviveFilters', surviveFilters)
 		let mergeSurvived = [];
 		surviveFilters.forEach((d,i) => {
 			if (i===0) {
@@ -706,7 +734,7 @@ V.update = (data, filters) => {
 				}
 			}
 		})
-		console.log("survived", mergeSurvived.length)
+		// console.log("survived", mergeSurvived.length)
 		node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
 	}
 
