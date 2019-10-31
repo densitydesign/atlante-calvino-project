@@ -154,10 +154,7 @@ function closeSubnodes(d,noRestart) {
 }
 
 function toggleSubnodes(d, noRestart) {
-	console.log('toggle sub nodes', d.opened)
   if(d.opened) {
-		console.log(d.id, "is open, let's close it!")
-
     d.opened = false;
     d.fx = null;
     d.fy = null;
@@ -215,7 +212,6 @@ function toggleSubnodes(d, noRestart) {
     return;
   }
   if (d.subNodes && d.subNodes.length){
-		console.log(d.id, `is not open, let's open it! (no restart = ${noRestart})`)
 		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
 		d.fx = d.x*1;
 		d.fy = d.y*1;
@@ -250,7 +246,6 @@ function toggleSubnodes(d, noRestart) {
     nodes = graph.nodes;
     links = graph.edges;
     if (noRestart !== false) {
-			console.log("noRestart !== false, let's update the chart!")
 			storedFilters.update = true;
       V.update(graph, storedFilters);
     }
@@ -527,6 +522,36 @@ V.update = (data, filters) => {
   nodes = data.nodes;
   links = data.edges;
 
+	storedFilters = filters
+
+	if (filters.search.length) {
+
+		let parents2open = [];
+		filters.search.forEach(s=>{
+			search4Parent(s);
+		});
+		function search4Parent(nodeId){
+			const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
+			if (thisNode.part_of !== "") {
+				parents2open.push(thisNode.part_of);
+				search4Parent(thisNode.part_of);
+			}
+		}
+
+		// I technically should open interesting parents, but it is kind of ahard.
+		// Provisionally solve the issue by highliting parents
+		// surviveFilters[2] = _.union(surviveFilters[2], parents2open)
+
+		// To fix it I probably need to write a new method just for the filters (V.filter).
+		if (parents2open.length > 0) {
+			parents2open.reverse().forEach((parentId,i)=>{
+				const parent = theOriginalData.filter(od=>od.id===parentId)[0]
+				openSubnodes(parent, false);
+			})
+			filters.update = true
+		}
+	}
+
   if (filters.update) {
 
 		let isTimeFiltered = false;
@@ -670,9 +695,13 @@ V.update = (data, filters) => {
   	simulation.alpha(1).restart();
   }
 
+	V.filter(filters);
+
+}
+
+V.filter = filters => {
 	if (filters) {
 		// store filters
-		storedFilters = filters
 		// do filters here
 		if (filters.openAll !== undefined && filters.openAll !== openAllState) {
 			console.log('open or close all', filters.openAll)
@@ -700,6 +729,7 @@ V.update = (data, filters) => {
 
 		if (filters.search.length) {
 			surviveFilters[2] = filters.search;
+
 			let parents2open=[];
 			filters.search.forEach(s=>{
 				search4Parent(s);
@@ -714,12 +744,6 @@ V.update = (data, filters) => {
 			// I technically should open interesting parents, but it is kind of ahard.
 			// Provisionally solve the issue by highliting parents
 			surviveFilters[2] = _.union(surviveFilters[2], parents2open)
-
-			// To fix it I probably need to write a new method just for the filters (V.filter).
-			// parents2open.forEach((parentId,i)=>{
-			// 	const parent = theOriginalData.filter(od=>od.id===parentId)[0]
-			// 	openSubnodes(parent, false);
-			// })
 
 		}
 
@@ -737,7 +761,6 @@ V.update = (data, filters) => {
 		// console.log("survived", mergeSurvived.length)
 		node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
 	}
-
 }
 
 V.openAll = () => {
