@@ -318,13 +318,21 @@ V.initialize = (el, data, filters, originalData) => {
 
 	let zoom = d3.zoom()
 			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
-	    .scaleExtent([1, 12])
+	    .scaleExtent([1, 10])
 	    .on("zoom", zoomed);
 
 	svg.call(zoom).on("dblclick.zoom", null);
 
 	function zoomed() {
 	  g.attr("transform", d3.event.transform);
+		let one_rem = parseInt(d3.select('html').style('font-size'));
+		d3.select('.labels')
+			.style('font-size', d=>{
+				let cssRemSize = 0.75;
+				let k = cssRemSize * 1/d3.event.transform.k;
+				k+='rem';
+				return k;
+			})
 	}
 
   // Scales

@@ -10,14 +10,6 @@
   display: none;
 }
 
-/* .sub-node {
-  stroke: black;
-} */
-
-.label {
-  font-size: 0.75rem;
-}
-
 .label.make-visible {
   display: block !important;
 }
