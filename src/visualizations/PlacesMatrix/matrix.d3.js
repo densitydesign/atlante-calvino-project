@@ -35,7 +35,7 @@ let xAxisCall, yAxisCall;
 margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }
 
 // elements
-let svg, g, xAxis, yAxis, hull, link, node, presumed, label, information
+let svg, g, gigi, xAxis, yAxis, hull, link, node, presumed, label, information
 
 // force-layout
 let simulation
@@ -43,13 +43,16 @@ let simulation
 function openSubnodes(d,noRestart) {
 	if (d.subNodes && d.subNodes.length){
 		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
-		d.fx = d.x*1;
-		d.fy = d.y*1;
+		if (d.part_of === '') {
+			d.fx = d.x*1;
+			d.fy = d.y*1;
+		}
 
     d.subNodes.forEach(function(subNode, i){
 			subNode.x = d.x;
 			subNode.y = d.y;
     })
+
     d.opened = true;
 
     // Make convex hull
@@ -146,6 +149,17 @@ function closeSubnodes(d,noRestart) {
 
 function toggleSubnodes(d, noRestart) {
   if(d.opened) {
+    closeSubnodes(d, noRestart);
+  }
+  if (d.subNodes && d.subNodes.length){
+		openSubnodes(d,noRestart);
+  } else {
+    console.log('No nodes to expand')
+  }
+}
+
+function toggleSubnodesOLD(d, noRestart) {
+  if(d.opened) {
     d.opened = false;
     d.fx = null;
     d.fy = null;
@@ -204,8 +218,10 @@ function toggleSubnodes(d, noRestart) {
   }
   if (d.subNodes && d.subNodes.length){
 		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
-		d.fx = d.x*1;
-		d.fy = d.y*1;
+		if (d.part_of === '') {
+			d.fx = d.x*1;
+			d.fy = d.y*1;
+		}
 
     d.subNodes.forEach(function(subNode, i){
 			subNode.x = d.x;
@@ -257,6 +273,7 @@ function highlightNodes(arr, doReset){
 }
 
 const displayTitle = (arr) => {
+
 	// show work title
 	information = information.data(arr, function(d) { return d.id; });
 	information.exit().remove();
@@ -324,8 +341,15 @@ V.initialize = (el, data, filters, originalData) => {
 	svg.call(zoom).on("dblclick.zoom", null);
 
 	function zoomed() {
-	  g.attr("transform", d3.event.transform);
+	  gigi.attr("transform", d3.event.transform);
+		yAxis.attr("transform", d3.event.transform);
+
+		// x axis resize taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
+		let new_x = d3.event.transform.rescaleX(x);
+		xAxis.call(xAxisCall.scale(new_x))
+
 		let one_rem = parseInt(d3.select('html').style('font-size'));
+
 		d3.select('.labels')
 			.style('font-size', d=>{
 				let cssRemSize = 0.75;
@@ -333,6 +357,9 @@ V.initialize = (el, data, filters, originalData) => {
 				k+='rem';
 				return k;
 			})
+
+		information
+			.attr('x', d => (new_x(d.year) >= width/2) ? new_x(d.year)+4.8 : new_x(d.year)-3.2);
 	}
 
   // Scales
@@ -467,35 +494,32 @@ V.initialize = (el, data, filters, originalData) => {
 		// highlightCategories(toHighlight, 'do reset')
 	})
 
-  link = g.append('g').classed('links', true).selectAll('.link');
-  hull = g.append('g').classed('hulls', true).selectAll('.hull');
-  node = g.append('g').classed('nodes', true).selectAll('.node');
-	presumed = g.append('g').classed('presumed', true).selectAll('.presumed');
-  label = g.append('g').classed('labels', true).selectAll('.label');
+	gigi = g.append('g')
+
+  link = gigi.append('g').classed('links', true).selectAll('.link');
+  hull = gigi.append('g').classed('hulls', true).selectAll('.hull');
+  node = gigi.append('g').classed('nodes', true).selectAll('.node');
+	presumed = gigi.append('g').classed('presumed', true).selectAll('.presumed');
+  label = gigi.append('g').classed('labels', true).selectAll('.label');
   information = g.append('g').classed('informations', true).selectAll('.information');
 
   simulation = d3.forceSimulation(nodes)
-  	// .force("charge", d3.forceManyBody().strength(-1))
   	.force("link", d3.forceLink()
-  		.strength( 0.2 )
-  		.distance( r.range()[0] + 1 )
+  		.strength( 0.1 )
+  		.distance( r.range()[0] )
   		.id(function(d) { return d.id; })
   	)
-  	.force("x", d3.forceX(function(d) { return d.x })
-  		.strength(function(d) {
-  			return d.part_of === '' ? 1 : 0;
-  		})
+  	.force("x", d3.forceX(d=>d.x)
+  		.strength(1)
   	)
-  	.force("y", d3.forceY(function(d) { return d.y })
-  		.strength(function(d) {
-				return d.part_of === '' ? 0.7 : 0;
-			})
+  	.force("y", d3.forceY(d=>d.y)
+		.strength(1)
   	)
   	.force("collision", d3.forceCollide(function(d){
 				let thisCollisionPadding = d.totalSubNodes>0 ? collisionPadding+2 : collisionPadding;
   			return d.opened ? r(1)+thisCollisionPadding : r(d.totalSubNodes + 1)+thisCollisionPadding
   		})
-  		.iterations(8)
+  		.iterations(12)
   		.strength(0.35)
   	)
   	.on("tick", ticked)
@@ -505,7 +529,7 @@ V.initialize = (el, data, filters, originalData) => {
     .stop()
 
   function ticked() {
-  	node.attr("cx", function(d) { return d.x; })
+  	node.attr("cx", function(d) { d.positionedYear = x.invert(d.x); return d.x; })
   		.attr("cy", function(d) { return d.y; });
 		presumed.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
@@ -523,8 +547,8 @@ V.initialize = (el, data, filters, originalData) => {
   	})
 
 		if (simulation.alpha() < 0.15) {
-			simulation.force("x").strength(0)
-			simulation.force("y").strength(0)
+			simulation.force("x").strength(0.5)
+			simulation.force("y").strength(0.1)
 		}
   }
 
@@ -579,7 +603,7 @@ V.update = (data, filters) => {
 				isTimeFiltered = true;
 				simulation.force("x").strength(1);
 				simulation.force("y").strength(0.7);
-				console.log("isTimeFiltered")
+				// console.log("isTimeFiltered")
 			}
 
 			x.domain(d3.extent(nodes.filter( d => {
@@ -592,8 +616,12 @@ V.update = (data, filters) => {
 		// Set x and y of subNodes
 		data.nodes.forEach(d => {
 			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year);
-			d.fx = (d.fx&&!isTimeFiltered) ? x(d.year) : null;
 			d.y = d.y ? d.y : y(d.category);
+
+			if(d.fx&&isTimeFiltered) {
+				d.fx = null
+			}
+
 		})
 
     // Update the force layout
