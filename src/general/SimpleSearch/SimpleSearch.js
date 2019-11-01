@@ -9,7 +9,7 @@ class SimpleSearch extends Component {
   }
 
   handleTyping(event){
-    if (event.target.value.length > 3) {
+    if (event.target.value.length >= this.props.minLength) {
       this.debounceTyping(event.target.value)
     }
   }

@@ -4,6 +4,12 @@
   --dark-green: darkslategrey;
   --header-height: 66px;
   --app-border-top: 6px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
 }
 
 h5 {
