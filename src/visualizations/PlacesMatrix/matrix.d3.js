@@ -27,7 +27,7 @@ const collisionPadding = 0.25;
 // data
 let theOriginalData, graph, nodes = [], links = [], hullsData = [],
 		rootNodes = [], storedFilters,
-		last=0, openAllState=false
+		last=0, openAllState=false, resetByClick = false
 
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
@@ -39,15 +39,6 @@ let svg, g, xAxis, yAxis, hull, link, node, presumed, label, information
 
 // force-layout
 let simulation
-
-function reset() {
-  node.style('opacity', 1);
-	presumed.style('opacity', 1);
-  label.classed('selected', false).style('display', 'none');
-  // remove work title
-  information = information.data([], function(d) { return d.id; });
-  information.exit().remove();
-}
 
 function openSubnodes(d,noRestart) {
 	if (d.subNodes && d.subNodes.length){
@@ -260,7 +251,23 @@ function highlightNodes(arr, doReset){
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
 		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
     label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
+
+		displayTitle([d]);
   })
+}
+
+const displayTitle = (arr) => {
+	// show work title
+	information = information.data(arr, function(d) { return d.id; });
+	information.exit().remove();
+	information = information.enter().append("text")
+		.classed('information', true)
+		.classed('label', true)
+		.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
+		.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
+		.attr('y', height - 10)
+		.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+		.merge(information);
 }
 
 function highlightCategories(arr, doReset) {
@@ -270,6 +277,15 @@ function highlightCategories(arr, doReset) {
 	node.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
 	presumed.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
 	// label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
+}
+
+function reset() {
+	if (resetByClick) return;
+  node.style('opacity', 1);
+	presumed.style('opacity', 1);
+  label.classed('selected', false).style('display', 'none');
+  // remove work title
+  displayTitle([]);
 }
 
 V.initialize = (el, data, filters, originalData) => {
@@ -302,7 +318,7 @@ V.initialize = (el, data, filters, originalData) => {
 
 	let zoom = d3.zoom()
 			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
-	    .scaleExtent([1, 3])
+	    .scaleExtent([1, 12])
 	    .on("zoom", zoomed);
 
 	svg.call(zoom).on("dblclick.zoom", null);
@@ -343,6 +359,7 @@ V.initialize = (el, data, filters, originalData) => {
   	.attr('height', height)
   	.attr('fill', 'transparent')
   	.on('click', function(d){
+			resetByClick = false;
 			if ((d3.event.timeStamp - last) < 500) reset();
 			last = d3.event.timeStamp;
 		});
@@ -480,23 +497,16 @@ V.initialize = (el, data, filters, originalData) => {
     .stop()
 
   function ticked() {
-
-  	node
-			.attr("cx", function(d) { return d.x; })
+  	node.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
-
-		presumed
-			.attr("cx", function(d) { return d.x; })
+		presumed.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
-
   	label.attr("x", function(d) { return d.x; })
   		.attr("y", function(d) { return d.y; });
-
   	link.attr("x1", function(d) { return d.source.x; })
   		.attr("y1", function(d) { return d.source.y; })
   		.attr("x2", function(d) { return d.target.x; })
   		.attr("y2", function(d) { return d.target.y; });
-
   	hull.attr("d", function(d){
   		let thisHullPoints = d.map( d => { return [d.x, d.y] });
   		var points = thisHullPoints;
@@ -508,7 +518,6 @@ V.initialize = (el, data, filters, originalData) => {
 			simulation.force("x").strength(0)
 			simulation.force("y").strength(0)
 		}
-
   }
 
   V.update(data, filters)
@@ -587,23 +596,11 @@ V.update = (data, filters) => {
     node = node.enter().append('circle')
       .attr('class', d => `node`)
 			.classed('sub-node', d => d.part_of !== '' )
-			// .on('dblclick', function(d) {
-			// 	console.log('dblclick')
-      //   d3.event.preventDefault();
-	    // })
       .on('click', function(d){
 
-  			// show work title
-  			information = information.data([d], function(d) { return d.id; });
-  			information.exit().remove();
-  			information = information.enter().append("text")
-  				.classed('information', true)
-  				.classed('label', true)
-  				.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
-  				.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
-  				.attr('y', height - 10)
-  				.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-  				.merge(information);
+				resetByClick = d;
+
+				highlightNodes([d], 'do reset opacity');
 
   			// get the double tap
   			if ((d3.event.timeStamp - last) < 500) {
@@ -611,10 +608,19 @@ V.update = (data, filters) => {
           toggleSubnodes(d);
 					return;
         }
-
 				last = d3.event.timeStamp;
-				highlightNodes([d], 'do reset opacity');
   		})
+			.on('mouseenter', d=>{
+				if (!resetByClick || d.source === resetByClick.source) {
+					highlightNodes([d], 'do reset opacity');
+				}
+			})
+			.on('mouseleave', d=>{
+				if (!resetByClick || d.source === resetByClick.source) {
+					reset();
+				}
+				label.filter( e=>e.id===d.id).classed('selected', false).style('display','none');
+			})
       .attr('key', d=> d.id)
       .attr('cx', d => {
         return d.x
@@ -678,14 +684,6 @@ V.update = (data, filters) => {
   			return color(d[0].category)
   		})
   		.style('opacity', .25)
-  		.on('click', d => {
-  			// d3.event.preventDefault;
-  			// get the double tap
-  			if ((d3.event.timeStamp - last) < 500) {
-          toggleSubnodes(d[0]);
-        }
-        last = d3.event.timeStamp;
-  		})
   		.merge(hull);
 
     simulation.nodes(nodes);

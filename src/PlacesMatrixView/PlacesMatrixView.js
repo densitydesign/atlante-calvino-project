@@ -132,7 +132,7 @@ class PlacesMatrixView extends Component {
   }
 
   render() {
-    console.log('filters',this.state.filters)
+    // console.log('filters',this.state.filters)
     return (
       <div>
         <HeaderViz>

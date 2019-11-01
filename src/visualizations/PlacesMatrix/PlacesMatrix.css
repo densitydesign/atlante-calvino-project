@@ -29,6 +29,10 @@
   user-select: none;
 }
 
+.presumed {
+  pointer-events: none;
+}
+
 .tick.selected {
   font-weight: bold;
 }
