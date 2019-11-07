@@ -1075,23 +1075,23 @@ L01069	V016	Il castello dei destini incrociati	volume	V016	Il castello dei desti
 L01070	V016	Il castello dei destini incrociati	volume	V016	Il castello dei destini incrociati	1969	sala	castello	L01069	generico					x	no	sì	-	generico_terrestre	604	608		nessuno
 L01071	S150	Dall'opaco	altro	Adelphiana 1971	Adelphiana 1971	1971	balaustra			generico			x	x	x	no	sì	-	generico_terrestre	234	243		natura ligure
 L01072	S150	Dall'opaco	altro	Adelphiana 1971	Adelphiana 1971	1971	golfo			generico						no	sì	-	generico_terrestre	7533	7538		natura ligure
-L01073	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	profumeria	Parigi		generico			x			sì	sì	-	generico_terrestre	1266	1276		metropoli
-L01074	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Champs Elysèes	Parigi		nominato	landmark					sì	sì	no	nominato_terrestre	1352	1366		metropoli
-L01075	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	galleria	Parigi		generico						sì	sì	-	generico_terrestre	1491	1499		metropoli
+L01073	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	profumeria	Parigi	L01076	generico			x			sì	sì	-	generico_terrestre	1266	1276		metropoli
+L01074	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Champs Elysèes	Parigi	L01076	nominato	landmark					sì	sì	no	nominato_terrestre	1352	1366		metropoli
+L01075	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	galleria	Parigi	L01076	generico						sì	sì	-	generico_terrestre	1491	1499		metropoli
 L01076	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Parigi			nominato	comune		x			sì	sì	no	nominato_terrestre	2159	2165		metropoli
 L01077	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	savana			generico						no	sì	-	generico_terrestre	6664	6670		metropoli
 L01078	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	foresta			generico						no	sì	-	generico_terrestre	6674	6681		metropoli
 L01079	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	palude			generico						no	sì	-	generico_terrestre	6685	6691		metropoli
 L01080	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	erba			generico						no	sì	-	generico_terrestre	7869	7873		metropoli
-L01081	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	docks	Londra		generico						sì	sì	-	generico_terrestre	10124	10129		metropoli
-L01082	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	moquette	Londra		generico						sì	sì	-	generico_terrestre	11354	11362		metropoli
-L01083	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	saloni	Faubourg Saint-Honoré		generico						sì	sì	-	generico_terrestre	15340	15346		metropoli
-L01084	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Faubourg Saint-Honoré	Parigi		nominato	sobborgo (territorio)					sì	sì	no	nominato_terrestre	15351	15372		metropoli
-L01085	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Bois de Boulogne	Parigi		nominato	landmark					sì	sì	no	nominato_terrestre	21842	21858		metropoli
-L01086	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Passy	Parigi		generico	quartiere (territorio)					sì	sì	-	generico_terrestre	22010	22015		metropoli
-L01087	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	palazzo	Parigi		generico						sì	sì	-	generico_terrestre	22030	22037		metropoli
-L01088	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Embankment	Londra		nominato	landmark					sì	sì	no	nominato_terrestre	24109	24119		metropoli
-L01089	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	stanze	Londra		generico					x	sì	sì	-	generico_terrestre	24130	24136		metropoli
+L01081	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	docks	Londra	L01090	generico						sì	sì	-	generico_terrestre	10124	10129		metropoli
+L01082	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	moquette	Londra	L01090	generico						sì	sì	-	generico_terrestre	11354	11362		metropoli
+L01083	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	saloni	Faubourg Saint-Honoré	L01084	generico						sì	sì	-	generico_terrestre	15340	15346		metropoli
+L01084	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Faubourg Saint-Honoré	Parigi	L01076	nominato	sobborgo (territorio)					sì	sì	no	nominato_terrestre	15351	15372		metropoli
+L01085	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Bois de Boulogne	Parigi	L01076	nominato	landmark					sì	sì	no	nominato_terrestre	21842	21858		metropoli
+L01086	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Passy	Parigi	L01076	generico	quartiere (territorio)					sì	sì	-	generico_terrestre	22010	22015		metropoli
+L01087	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	palazzo	Parigi	L01076	generico						sì	sì	-	generico_terrestre	22030	22037		metropoli
+L01088	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Embankment	Londra	L01090	nominato	landmark					sì	sì	no	nominato_terrestre	24109	24119		metropoli
+L01089	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	stanze	Londra	L01090	generico					x	sì	sì	-	generico_terrestre	24130	24136		metropoli
 L01090	S151	Il nome, il naso	altro	«Playboy»	«Playboy»	1972	Londra			nominato	comune	sì				sì	sì	no	nominato_terrestre	-	-	sì	nessuno
 L01091	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Impero mongolo	Levante	L01103	nominato	territorio		x			sì	sì	no	nominato_terrestre	1369	1375		paesaggio urbano;viaggio
 L01092	V018	Le città invisibili	volume	V018	Le città invisibili	1972	Diomira	Impero mongolo	L01091	nominato	nazione					no	sì	sì	inventato	1938	1945		paesaggio urbano;viaggio
