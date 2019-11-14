@@ -15,9 +15,10 @@ class PlacesMatrix extends Component {
 
   componentDidUpdate() {
     console.log('componentDidUpdate')
-    V.update(
-       this.props.filters
-    );
+    if (this.props.filters.update) {
+      V.update(this.props.filters);
+    }
+    V.filter(this.props.filters, this.props.originalData);
   }
 
   componentWillUnmount() {
