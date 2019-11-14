@@ -12,11 +12,11 @@ let graph, nodes = [],
 	links = [],
 	hullsData = [],
 	last = 0,
+	globalFilters,
 	openAllState = false;
 
 // Dimensions and scales
-let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
-	width, height;
+let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }, width, height;
 let xAxisCall, yAxisCall;
 
 // elements
@@ -126,6 +126,7 @@ V.initialize = (el, data, filters) => {
 
 	//Store data in global variable
 	graph = data;
+	globalFilters = filters;
 
 	// Precalculating the position of nodes allows to make them appear in place
 	graph.nodes = graph.nodes.map(d => {
@@ -140,8 +141,9 @@ V.initialize = (el, data, filters) => {
 
 V.update = (filters) => {
 	console.log('update');
-	console.log('filters (just to set the span):', filters);
 	console.log('graph:', graph)
+
+	if (filters) globalFilters = filters
 
 	// update data
 	nodes = graph.nodes;
@@ -155,7 +157,7 @@ V.update = (filters) => {
 	})
 
 	// Update x domain
-	x.domain(filters.span)
+	x.domain(globalFilters.span)
 	xAxis.call(xAxisCall);
 
 	// calculate new fx
@@ -174,7 +176,7 @@ V.update = (filters) => {
 		.on('click', d => {
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
-				toggleSubnodes(d, 'restart the force', filters);
+				toggleSubnodes(d, 'restart the force');
 				return;
 			}
 			last = d3.event.timeStamp;
@@ -235,8 +237,7 @@ V.filter = (filters,theOriginalData) => {
 	console.log('update');
 	console.log('filters:', filters);
 	console.log('graph:', graph)
-
-
+	globalFilters = filters;
 
 	let surviveFilters = []
 
@@ -294,18 +295,18 @@ V.destroy = () => {}
 
 export default V
 
-const toggleSubnodes = (d, doRestart, filters) => {
+const toggleSubnodes = (d, doRestart) => {
 	console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
 	if(d.opened) {
-		closeSubnodes(d, doRestart, filters);
+		closeSubnodes(d, doRestart);
 	} else if(d.subNodes && d.subNodes.length) {
-		openSubnodes(d, doRestart, filters);
+		openSubnodes(d, doRestart);
 	} else {
 		console.log('No nodes to expand');
 	}
 }
 
-const openSubnodes = (d, doRestart, filters) => {
+const openSubnodes = (d, doRestart) => {
 	console.log("let's OPEN the sub nodes of", d.label, d.id)
 	d.opened = true;
 	// fix the position only if it is a "root node"
@@ -344,11 +345,11 @@ const openSubnodes = (d, doRestart, filters) => {
 	nodes = graph.nodes;
 	links = graph.edges;
 	if(doRestart === 'restart the force') {
-		V.update(filters);
+		V.update();
 	}
 }
 
-const closeSubnodes = (d, doRestart, filters) => {
+const closeSubnodes = (d, doRestart) => {
 	console.log("let's close the sub nodes of", d.label, d.id);
 
 	d.opened = false;
@@ -400,7 +401,7 @@ const closeSubnodes = (d, doRestart, filters) => {
 	} )
 
 	if (doRestart === 'restart the force') {
-		V.update(filters);
+		V.update();
 	}
 }
 
