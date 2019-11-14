@@ -3,23 +3,25 @@ import './PlacesMatrix.css'
 import V from './matrix.d3'
 
 class PlacesMatrix extends Component {
+
   componentDidMount() {
+    console.log('componentDidMount')
     this._chart = V.initialize(
         this._rootNode,
         this.props.data,
-        this.props.filters,
-        this.props.originalData
+        this.props.filters
     );
   }
 
   componentDidUpdate() {
+    console.log('componentDidUpdate')
     V.update(
-       null,
        this.props.filters
     );
   }
 
   componentWillUnmount() {
+    console.log('componentWillUnmount')
     V.destroy(this._rootNode);
   }
 
