@@ -153,6 +153,8 @@ V.update = (filters) => {
 	nodes.forEach(d => {
 		if(d.fx) {
 			d.correspondingYear = x.invert(d.fx)
+		} else {
+			delete d.correspondingYear;
 		}
 	})
 
@@ -353,8 +355,8 @@ const closeSubnodes = (d, doRestart) => {
 	console.log("let's close the sub nodes of", d.label, d.id);
 
 	d.opened = false;
-	d.fx = null;
-	d.fy = null;
+	delete d.fx;
+	delete d.fy;
 
 	var subNodes2Remove = [];
 	var hulls2Remove = [d.id]
