@@ -145,7 +145,11 @@ V.update = (filters) => {
 
 	if (filters.update) {
 
-		// update fx
+		// update data
+		nodes = graph.nodes;
+		links = graph.edges;
+
+		// update fx before updating the x scale
 		nodes.forEach(d=>{
 			if(d.fx){
 				d.correspondingYear = x.invert(d.fx)
@@ -156,11 +160,7 @@ V.update = (filters) => {
 		x.domain(filters.span)
 		xAxis.call(xAxisCall);
 
-		// update data
-		nodes = graph.nodes;
-		links = graph.edges;
-
-		// update fx
+		// calculate new fx
 		nodes.forEach(d=>{
 			if(d.correspondingYear){
 				d.fx = x(d.correspondingYear)
