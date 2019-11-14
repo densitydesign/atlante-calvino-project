@@ -28,9 +28,9 @@ let simulation
 const V = {}
 
 V.initialize = (el, data, filters) => {
-	console.log('init');
-	console.log('data:', data);
-	console.log('filters:', filters);
+	// console.log('init');
+	// console.log('data:', data);
+	// console.log('filters:', filters);
 
 	// Root element and dimensions
 	svg = d3.select(el).style('touch-action', 'manipulation');
@@ -89,7 +89,7 @@ V.initialize = (el, data, filters) => {
 		.force("collision", d3.forceCollide(function(d) {
 			let thisCollisionPadding = d.totalSubNodes > 0 ? collisionPadding + 2 : collisionPadding;
 			return d.opened ? r(1) + thisCollisionPadding : r(d.totalSubNodes + 1) + thisCollisionPadding
-		}).strength(.6))
+		}).strength(.3).iterations(12))
 		.force("link", d3.forceLink()
 			.strength(0.05)
 			.distance(r.range()[0])
@@ -140,8 +140,8 @@ V.initialize = (el, data, filters) => {
 }
 
 V.update = (filters) => {
-	console.log('update');
-	console.log('graph:', graph)
+	// console.log('update');
+	// console.log('graph:', graph);
 
 	if (filters) globalFilters = filters
 
@@ -236,9 +236,9 @@ V.update = (filters) => {
 }
 
 V.filter = (filters,theOriginalData) => {
-	console.log('update');
-	console.log('filters:', filters);
-	console.log('graph:', graph)
+	// console.log('filter');
+	// console.log('filters:', filters);
+	// console.log('graph:', graph)
 	globalFilters = filters;
 
 	let surviveFilters = []
