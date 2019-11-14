@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HeaderViz from '../general/HeaderViz'
 import BodyViz from '../general/BodyViz';
 import MainMenu from '../general/MainMenu';
 import * as d3 from 'd3';
@@ -14,20 +13,14 @@ import FilterSearch from '../general/FilterSearch'
 import MoreInfo from '../general/MoreInfo';
 
 import PlacesMatrix from '../visualizations/PlacesMatrix';
-import ParseMatrixData from './parse-matrix-data'
+import ParseMatrixData from './parse-matrix-data';
+
 class PlacesMatrixView extends Component {
 
   constructor(props){
     super(props);
     this.loadData = this.loadData.bind(this);
-    this.state = {
-      data:'data still not loaded',
-      isLoading: true,
-      openAll: false,
-      filters: {
-        search: []
-      }
-    };
+    this.state = { data:'data still not loaded', isLoading: true };
     this.openAll = this.openAll.bind(this);
     this.changeSpan = this.changeSpan.bind(this);
     this.changePublications = this.changePublications.bind(this);
@@ -58,9 +51,10 @@ class PlacesMatrixView extends Component {
           filters: {
             update: true,
             openAll: false,
-            selectedThemes: ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
-            selectedPublications: ['raccolta','volume','altro'],
-            search: []
+            themes: ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
+            kinds: ['raccolta','volume','altro'],
+            search: [],
+            span: d3.extent(data.graph.nodes, d => d.year)
           }
         })
       })
@@ -72,10 +66,9 @@ class PlacesMatrixView extends Component {
 
   changeSpan(newSpan) {
     this.setState(prevState => ({
-      span: newSpan,
       filters: {                    // object that we want to update
         ...prevState.filters,       // keep all other key-value pairs
-        timeFilter:newSpan,         // update the value of specific key
+        span:newSpan,
         update: true                // update the value of specific key
       }
     }))
@@ -85,7 +78,7 @@ class PlacesMatrixView extends Component {
     this.setState(prevState => ({
       filters: {                    // object that we want to update
         ...prevState.filters,       // keep all other key-value pairs
-        selectedPublications: newPublications,  // update the value of specific key
+        kinds: newPublications,  // update the value of specific key
         update: false
       }
     }))
@@ -95,7 +88,7 @@ class PlacesMatrixView extends Component {
     this.setState(prevState => ({
       filters: {                    // object that we want to update
         ...prevState.filters,       // keep all other key-value pairs
-        selectedThemes: newThemes,  // update the value of specific key
+        themes: newThemes,  // update the value of specific key
         update: false
       }
     }))
@@ -105,7 +98,7 @@ class PlacesMatrixView extends Component {
     this.setState(prevState => ({
       filters: {                    // object that we want to update
         ...prevState.filters,       // keep all other key-value pairs
-        search: searchResults,  // update the value of specific key
+        search: searchResults,      // update the value of specific key
         update: false
       }
     }))
@@ -135,8 +128,8 @@ class PlacesMatrixView extends Component {
     // console.log('filters',this.state.filters)
     return (
       <div>
-        <HeaderViz>
-          <MainMenu style={{gridColumn: 'span 1'}}/>
+        <div className="the-header">
+          <MainMenu className="main-menu" style={{gridColumn: 'span 1'}}/>
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 2'}} /> }
           { !this.state.isLoading && <SetOption style={{gridColumn: 'span 2'}} selected={this.openAll} title="Apri tutto"/> }
@@ -156,7 +149,7 @@ class PlacesMatrixView extends Component {
           { this.state.isLoading && <Loading style={{gridColumn: 'span 1'}} /> }
           { !this.state.isLoading && <MoreInfo style={{gridColumn: 'span 1'}}></MoreInfo>}
 
-        </HeaderViz>
+        </div>
 
         <BodyViz className="the-body-viz">
           { this.state.isLoading && <Loading /> }
