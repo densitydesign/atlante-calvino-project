@@ -16,7 +16,8 @@ let graph, nodes = [],
 	openAllState = false;
 
 // Dimensions and scales
-let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }, width, height;
+let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
+	width, height;
 let xAxisCall, yAxisCall;
 
 // elements
@@ -143,7 +144,7 @@ V.update = (filters) => {
 	// console.log('update');
 	// console.log('graph:', graph);
 
-	if (filters) globalFilters = filters
+	if(filters) globalFilters = filters
 
 	// update data
 	nodes = graph.nodes;
@@ -235,7 +236,9 @@ V.update = (filters) => {
 
 }
 
-V.filter = (filters,theOriginalData) => {
+console.log("sistemare la ricerca")
+
+V.filter = (filters, theOriginalData) => {
 	// console.log('filter');
 	// console.log('filters:', filters);
 	// console.log('graph:', graph)
@@ -244,35 +247,36 @@ V.filter = (filters,theOriginalData) => {
 	let surviveFilters = []
 
 	let pubTypes = filters.kinds;
-	surviveFilters[0] = nodes.filter( d=>{
-		let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
+	surviveFilters[0] = nodes.filter(d => {
+		let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1)
 		return check.indexOf(true) > -1;
-	}).map(d=>d.id);
+	}).map(d => d.id);
 
 	let pubThemes = filters.themes;
-	surviveFilters[1] = nodes.filter( d=>{
-		let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
+	surviveFilters[1] = nodes.filter(d => {
+		let check = pubThemes.map(e => d.themes.indexOf(e) > -1)
 		return check.indexOf(true) > -1;
-	}).map(d=>d.id);
+	}).map(d => d.id);
 
-	if (filters.search.length) {
+	if(filters.search.length) {
 		surviveFilters[2] = filters.search;
 
-		let parents2open=[];
-		filters.search.forEach(s=>{
+		let parents2open = [];
+		filters.search.forEach(s => {
 			search4Parent(s);
 		});
-		function search4Parent(nodeId){
-			const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
-			if (thisNode.part_of !== "") {
+
+		function search4Parent(nodeId) {
+			const thisNode = theOriginalData.filter(od => od.id === nodeId)[0];
+			if(thisNode.part_of !== "") {
 				parents2open.push(thisNode.part_of);
 				search4Parent(thisNode.part_of);
 			}
 		}
 
-		if (parents2open.length > 0) {
-			parents2open.reverse().forEach((parentId,i)=>{
-				const parent = theOriginalData.filter(od=>od.id===parentId)[0]
+		if(parents2open.length > 0) {
+			parents2open.reverse().forEach((parentId, i) => {
+				const parent = theOriginalData.filter(od => od.id === parentId)[0]
 				openSubnodes(parent, 'do not restart the force');
 			})
 
@@ -283,14 +287,14 @@ V.filter = (filters,theOriginalData) => {
 
 	// console.log('surviveFilters', surviveFilters)
 	let mergeSurvived = [];
-	surviveFilters.forEach((d,i) => {
-		if (i===0) {
+	surviveFilters.forEach((d, i) => {
+		if(i === 0) {
 			mergeSurvived = d;
 		} else {
 			mergeSurvived = _.intersection(mergeSurvived, surviveFilters[i]);
 		}
 	})
-	node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
+	node.classed('faded', d => mergeSurvived.indexOf(d.id) < 0);
 }
 
 V.destroy = () => {}
@@ -298,7 +302,7 @@ V.destroy = () => {}
 export default V
 
 const toggleSubnodes = (d, doRestart) => {
-	console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
+	// console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
 	if(d.opened) {
 		closeSubnodes(d, doRestart);
 	} else if(d.subNodes && d.subNodes.length) {
@@ -309,12 +313,11 @@ const toggleSubnodes = (d, doRestart) => {
 }
 
 const openSubnodes = (d, doRestart) => {
-	console.log("let's OPEN the sub nodes of", d.label, d.id)
 	d.opened = true;
 	// fix the position only if it is a "root node"
-	if (d.part_of === '') {
-		d.fx = d.x*1;
-		d.fy = d.y*1;
+	if(d.part_of === '') {
+		d.fx = d.x * 1;
+		d.fy = d.y * 1;
 	}
 
 	// make subnodes appear at the place of their parent
@@ -352,8 +355,6 @@ const openSubnodes = (d, doRestart) => {
 }
 
 const closeSubnodes = (d, doRestart) => {
-	console.log("let's close the sub nodes of", d.label, d.id);
-
 	d.opened = false;
 	delete d.fx;
 	delete d.fy;
@@ -363,8 +364,8 @@ const closeSubnodes = (d, doRestart) => {
 
 	// recursive functions, it makes possible to close contained cluster of nodes
 	function collectSubNodes(parentNode) {
-		parentNode.subNodes.forEach( childNode => {
-			if (childNode.opened) {
+		parentNode.subNodes.forEach(childNode => {
+			if(childNode.opened) {
 				childNode.opened = false;
 				hulls2Remove.push(childNode.id);
 				collectSubNodes(childNode);
@@ -377,22 +378,22 @@ const closeSubnodes = (d, doRestart) => {
 
 	// cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
 	// Probably not the best way, but the simplest at the moment of the coding.
-	subNodes2Remove.forEach( subNodes => {
+	subNodes2Remove.forEach(subNodes => {
 
-		let toRemove = subNodes.map( d => d.id)
-		let filtered = nodes.filter( el => {
-			return !toRemove.includes( el.id );
+		let toRemove = subNodes.map(d => d.id)
+		let filtered = nodes.filter(el => {
+			return !toRemove.includes(el.id);
 		})
 
 		// remove this hull
-		hullsData = hullsData.filter(function(h){
-			return !hulls2Remove.includes( h[0].id );
+		hullsData = hullsData.filter(function(h) {
+			return !hulls2Remove.includes(h[0].id);
 		})
 
 		// remove extra points from the outer hull
-		hullsData.forEach(function(thisHull,i){
-			hullsData[i] = thisHull.filter(function(n){
-				return !toRemove.includes( n.id );
+		hullsData.forEach(function(thisHull, i) {
+			hullsData[i] = thisHull.filter(function(n) {
+				return !toRemove.includes(n.id);
 			})
 		})
 
@@ -400,9 +401,9 @@ const closeSubnodes = (d, doRestart) => {
 		graph = ParseMatrixData.calculateNetwork(filtered)
 		nodes = graph.nodes;
 		links = graph.edges;
-	} )
+	})
 
-	if (doRestart === 'restart the force') {
+	if(doRestart === 'restart the force') {
 		V.update();
 	}
 }
