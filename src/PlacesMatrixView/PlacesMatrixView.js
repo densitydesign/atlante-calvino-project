@@ -99,7 +99,7 @@ class PlacesMatrixView extends Component {
       filters: {                    // object that we want to update
         ...prevState.filters,       // keep all other key-value pairs
         search: searchResults,      // update the value of specific key
-        update: true
+        update: false
       }
     }))
   }

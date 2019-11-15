@@ -177,9 +177,10 @@ V.update = (filters) => {
 		.classed('sub-node', d => d.part_of !== '')
 		.attr('key', d => d.id)
 		.on('click', d => {
+			// console.log('clicked on', d)
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
-				toggleSubnodes(d, 'restart the force');
+				toggleSubnodes( d, 'restart the force');
 				return;
 			}
 			last = d3.event.timeStamp;
@@ -219,6 +220,8 @@ V.update = (filters) => {
 		.text(d => d.label)
 		.merge(label);
 
+	console.log('hullsData', hullsData);
+
 	// Apply the general update pattern to the convex hulls.
 	hull = hull.data(hullsData, d => d[0].id);
 	hull.exit().remove();
@@ -236,8 +239,6 @@ V.update = (filters) => {
 
 }
 
-console.log("sistemare la ricerca")
-
 V.filter = (filters, theOriginalData) => {
 	// console.log('filter');
 	// console.log('filters:', filters);
@@ -246,19 +247,10 @@ V.filter = (filters, theOriginalData) => {
 
 	let surviveFilters = []
 
-	let pubTypes = filters.kinds;
-	surviveFilters[0] = nodes.filter(d => {
-		let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1)
-		return check.indexOf(true) > -1;
-	}).map(d => d.id);
-
-	let pubThemes = filters.themes;
-	surviveFilters[1] = nodes.filter(d => {
-		let check = pubThemes.map(e => d.themes.indexOf(e) > -1)
-		return check.indexOf(true) > -1;
-	}).map(d => d.id);
-
+	// the search can open parent-nodes, so can modyfy the data structure and the BodyViz
+	// for this reason put it before the others
 	if(filters.search.length) {
+
 		surviveFilters[2] = filters.search;
 
 		let parents2open = [];
@@ -276,16 +268,28 @@ V.filter = (filters, theOriginalData) => {
 
 		if(parents2open.length > 0) {
 			parents2open.reverse().forEach((parentId, i) => {
-				const parent = theOriginalData.filter(od => od.id === parentId)[0]
+				const parent_id = theOriginalData.filter(od => od.id === parentId)[0].id;
+				surviveFilters[2].push(parent_id);
+				const parent = nodes.filter(d=>d.id===parent_id)[0]
 				openSubnodes(parent, 'do not restart the force');
 			})
 
 			V.update(filters)
 		}
-
 	}
 
-	// console.log('surviveFilters', surviveFilters)
+	let pubTypes = filters.kinds;
+	surviveFilters[0] = nodes.filter(d => {
+		let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1)
+		return check.indexOf(true) > -1;
+	}).map(d => d.id);
+
+	let pubThemes = filters.themes;
+	surviveFilters[1] = nodes.filter(d => {
+		let check = pubThemes.map(e => d.themes.indexOf(e) > -1)
+		return check.indexOf(true) > -1;
+	}).map(d => d.id);
+
 	let mergeSurvived = [];
 	surviveFilters.forEach((d, i) => {
 		if(i === 0) {
@@ -313,11 +317,16 @@ const toggleSubnodes = (d, doRestart) => {
 }
 
 const openSubnodes = (d, doRestart) => {
+	// If it happens that the node is already open, just skip.
+	if (d.opened) return;
+
+	// If not, let's open it
 	d.opened = true;
+
 	// fix the position only if it is a "root node"
 	if(d.part_of === '') {
-		d.fx = d.x * 1;
-		d.fy = d.y * 1;
+		d.fx = d.x;
+		d.fy = d.y;
 	}
 
 	// make subnodes appear at the place of their parent
@@ -355,6 +364,9 @@ const openSubnodes = (d, doRestart) => {
 }
 
 const closeSubnodes = (d, doRestart) => {
+	// If it is already opened or if it has no children, just skip
+	if (d.opened || d.totalSubNodes === 0) return;
+
 	d.opened = false;
 	delete d.fx;
 	delete d.fy;
