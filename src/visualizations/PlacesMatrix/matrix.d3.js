@@ -38,6 +38,18 @@ V.initialize = (el, data, filters) => {
 	width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
 	height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
+	svg.append('rect')
+		.attr('width', width + margin.left + margin.right)
+		.attr('height', height + margin.top + margin.bottom)
+		.classed('reset-rect', true)
+		.on('click', d=>{
+			if((d3.event.timeStamp - last) < 500) {
+				console.log('reset')
+				reset();
+			}
+			last = d3.event.timeStamp;
+		})
+
 	// Scales
 	x = d3.scaleTime()
 		.range([0, width])
@@ -92,7 +104,7 @@ V.initialize = (el, data, filters) => {
 			return d.opened ? r(1) + thisCollisionPadding : r(d.totalSubNodes + 1) + thisCollisionPadding
 		}).strength(.3).iterations(12))
 		.force("link", d3.forceLink()
-			.strength(0.05)
+			.strength(0.1)
 			.distance(r.range()[0])
 			.id(function(d) { return d.id; })
 		)
@@ -175,15 +187,26 @@ V.update = (filters) => {
 	node = node.enter().append('circle')
 		.attr('class', d => `node`)
 		.classed('sub-node', d => d.part_of !== '')
+		// .classed('selected', d => d.isSelected )
 		.attr('key', d => d.id)
+		.on('mouseenter', d=>{
+			label.filter(l=>l.id===d.id).style('display','block')
+			node.style('opacity', .25).filter(n=>n.source === d.source).style('opacity', 1)
+		})
+		.on('mouseleave', d=>{
+			label.filter(l=>l.id===d.id).style('display','none')
+			node.style('opacity', '')
+		})
 		.on('click', d => {
 			// console.log('clicked on', d)
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
 				toggleSubnodes( d, 'restart the force');
-				return;
 			}
 			last = d3.event.timeStamp;
+			// do this after the nodes have been opened
+			selectLabel(d);
+			selectSameComposition(d);
 		})
 		.merge(node)
 		.style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
@@ -219,8 +242,6 @@ V.update = (filters) => {
 		.style('pointer-events', 'none')
 		.text(d => d.label)
 		.merge(label);
-
-	console.log('hullsData', hullsData);
 
 	// Apply the general update pattern to the convex hulls.
 	hull = hull.data(hullsData, d => d[0].id);
@@ -305,11 +326,40 @@ V.destroy = () => {}
 
 export default V
 
+
+
+const selectLabel = (d) => {
+	label.filter(l=>l.id===d.id).classed('selected', true)
+}
+
+const unselectLabel = (d) => {
+	label.filter(l=>l.id===d.id).classed('selected', false)
+}
+
+const selectSameComposition = (d) => {
+	svg.classed('there-is-selection', true)
+	node.filter(n=>n.source === d.source).classed('selected', true)
+}
+const unselectSameComposition = (d) => {
+	node.filter(n=>n.source === d.source).classed('selected', false)
+
+	if(svg.select('.selected').size() === 0) {
+		svg.classed('there-is-selection', false)
+	}
+}
+
+const reset = () => {
+	svg.selectAll('*').classed('selected', false);
+	svg.classed('there-is-selection', false)
+}
+
 const toggleSubnodes = (d, doRestart) => {
 	// console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
 	if(d.opened) {
+		unselectLabel(d);
 		closeSubnodes(d, doRestart);
 	} else if(d.subNodes && d.subNodes.length) {
+		selectLabel(d);
 		openSubnodes(d, doRestart);
 	} else {
 		console.log('No nodes to expand');
@@ -333,6 +383,7 @@ const openSubnodes = (d, doRestart) => {
 	d.subNodes.forEach(function(subNode) {
 		subNode.x = d.x;
 		subNode.y = d.y;
+		// subNode.isSelected = true;
 	})
 
 	// Make convex hull
@@ -365,7 +416,7 @@ const openSubnodes = (d, doRestart) => {
 
 const closeSubnodes = (d, doRestart) => {
 	// If it is already opened or if it has no children, just skip
-	if (d.opened || d.totalSubNodes === 0) return;
+	if (!d.opened || d.totalSubNodes === 0) return;
 
 	d.opened = false;
 	delete d.fx;

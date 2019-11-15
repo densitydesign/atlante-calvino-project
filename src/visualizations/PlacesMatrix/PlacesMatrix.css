@@ -10,6 +10,10 @@
   display: none;
 }
 
+.reset-rect {
+  fill: transparent;
+}
+
 .label.make-visible {
   display: block !important;
 }
@@ -27,4 +31,19 @@
 
 .tick.selected {
   font-weight: bold;
+}
+
+.label.selected {
+  display: block !important;
+  /* opacity: 1 !important; */
+  fill: #333;
+  font-weight: 300;
+}
+
+.there-is-selection .node {
+  opacity: 0.25;
+}
+
+.node.selected {
+  opacity: 1 !important;
 }
