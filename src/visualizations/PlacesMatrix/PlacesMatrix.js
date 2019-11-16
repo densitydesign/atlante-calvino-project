@@ -13,8 +13,17 @@ class PlacesMatrix extends Component {
     );
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     console.log('componentDidUpdate')
+
+    if (this.props.filters.openAll !== prevProps.filters.openAll) {
+      if (this.props.filters.openAll) {
+        V.openAll();
+      } else {
+        V.closeAll();
+      }
+    }
+
     if (this.props.filters.update) {
       V.update(this.props.filters);
     }

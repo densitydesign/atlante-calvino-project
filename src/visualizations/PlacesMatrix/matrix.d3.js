@@ -322,6 +322,31 @@ V.filter = (filters, theOriginalData) => {
 	node.classed('faded', d => mergeSurvived.indexOf(d.id) < 0);
 }
 
+V.openAll = () => {
+	runAll(nodes);
+	function runAll(nodesList) {
+		nodesList.forEach( n => {
+			if (n.totalSubNodes > 0) {
+				openSubnodes(n, 'do not restart simulation');
+				runAll(n.subNodes);
+			}
+		});
+	}
+	// // simulation.force("x").strength(1)
+	// // simulation.force("y").strength(1)
+	// V.update(graph, storedFilters);
+}
+
+V.closeAll = () => {
+	nodes.filter(d=>d.part_of==='').forEach(function(d){
+		closeSubnodes(d, 'do not restart simulation');
+	})
+	// // simulation.force("x").strength(1)
+	// // simulation.force("y").strength(1)
+	// V.update(graph, storedFilters);
+}
+
+
 V.destroy = () => {}
 
 export default V
@@ -331,7 +356,6 @@ export default V
 const selectLabel = (d) => {
 	label.filter(l=>l.id===d.id).classed('selected', true)
 }
-
 const unselectLabel = (d) => {
 	label.filter(l=>l.id===d.id).classed('selected', false)
 }
@@ -365,7 +389,6 @@ const toggleSubnodes = (d, doRestart) => {
 		console.log('No nodes to expand');
 	}
 }
-
 const openSubnodes = (d, doRestart) => {
 	// If it happens that the node is already open, just skip.
 	if (d.opened) return;
@@ -413,7 +436,6 @@ const openSubnodes = (d, doRestart) => {
 		V.update();
 	}
 }
-
 const closeSubnodes = (d, doRestart) => {
 	// If it is already opened or if it has no children, just skip
 	if (!d.opened || d.totalSubNodes === 0) return;
