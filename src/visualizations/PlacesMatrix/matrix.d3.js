@@ -106,7 +106,7 @@ V.initialize = (el, data, filters) => {
 			return d.opened ? r(1) + thisCollisionPadding : r(d.totalSubNodes + 1) + thisCollisionPadding
 		}).strength(.3).iterations(12))
 		.force("link", d3.forceLink()
-			.strength(0.1)
+			.strength(0.3)
 			.distance(r.range()[0])
 			.id(function(d) { return d.id; })
 		)
@@ -165,7 +165,7 @@ V.initialize = (el, data, filters) => {
 		label.style('font-size', newSize+'px')
 
 		// display all labels of selected compositions
-		if (d3.event.transform.k>2.5){
+		if (d3.event.transform.k>2.75){
 			d3.selectAll('.node.selected').each(d=>{
 				label.filter(l => l.id === d.id).classed('zoom-selected', true)
 			})
@@ -401,6 +401,9 @@ const openSubnodes = (d, doRestart) => {
 	if(d.part_of === '') {
 		d.fx = d.x;
 		d.fy = d.y;
+	} else {
+		d.x = nodes.filter(n=>n.id===d.part_of)[0].x
+		d.fy = nodes.filter(n=>n.id===d.part_of)[0].y + r.range()[0]*2*3
 	}
 
 	// make subnodes appear at the place of their parent
