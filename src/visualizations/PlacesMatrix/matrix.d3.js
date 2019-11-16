@@ -28,6 +28,8 @@ let simulation
 
 const V = {}
 
+export default V
+
 V.initialize = (el, data, filters) => {
 	// console.log('init');
 	// console.log('data:', data);
@@ -42,7 +44,7 @@ V.initialize = (el, data, filters) => {
 		.attr('width', width + margin.left + margin.right)
 		.attr('height', height + margin.top + margin.bottom)
 		.classed('reset-rect', true)
-		.on('click', d=>{
+		.on('click', d => {
 			if((d3.event.timeStamp - last) < 500) {
 				console.log('reset')
 				reset();
@@ -189,24 +191,25 @@ V.update = (filters) => {
 		.classed('sub-node', d => d.part_of !== '')
 		// .classed('selected', d => d.isSelected )
 		.attr('key', d => d.id)
-		.on('mouseenter', d=>{
-			label.filter(l=>l.id===d.id).style('display','block')
-			node.style('opacity', .25).filter(n=>n.source === d.source).style('opacity', 1)
+		.on('mouseenter', d => {
+			label.filter(l => l.id === d.id).style('display', 'block')
+			node.style('opacity', .25).filter(n => n.source === d.source).style('opacity', 1)
 		})
-		.on('mouseleave', d=>{
-			label.filter(l=>l.id===d.id).style('display','none')
+		.on('mouseleave', d => {
+			label.filter(l => l.id === d.id).style('display', 'none')
 			node.style('opacity', '')
 		})
 		.on('click', d => {
 			// console.log('clicked on', d)
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
-				toggleSubnodes( d, 'restart the force');
+				toggleSubnodes(d, 'restart the force');
 			}
 			last = d3.event.timeStamp;
 			// do this after the nodes have been opened
 			selectLabel(d);
 			selectSameComposition(d);
+			displayTitle([d]);
 		})
 		.merge(node)
 		.style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
@@ -291,7 +294,7 @@ V.filter = (filters, theOriginalData) => {
 			parents2open.reverse().forEach((parentId, i) => {
 				const parent_id = theOriginalData.filter(od => od.id === parentId)[0].id;
 				surviveFilters[2].push(parent_id);
-				const parent = nodes.filter(d=>d.id===parent_id)[0]
+				const parent = nodes.filter(d => d.id === parent_id)[0]
 				openSubnodes(parent, 'do not restart the force');
 			})
 
@@ -324,74 +327,29 @@ V.filter = (filters, theOriginalData) => {
 
 V.openAll = () => {
 	runAll(nodes);
+
 	function runAll(nodesList) {
-		nodesList.forEach( n => {
-			if (n.totalSubNodes > 0) {
+		nodesList.forEach(n => {
+			if(n.totalSubNodes > 0) {
 				openSubnodes(n, 'do not restart simulation');
 				runAll(n.subNodes);
 			}
 		});
 	}
-	// // simulation.force("x").strength(1)
-	// // simulation.force("y").strength(1)
-	// V.update(graph, storedFilters);
 }
 
 V.closeAll = () => {
-	nodes.filter(d=>d.part_of==='').forEach(function(d){
+	nodes.filter(d => d.part_of === '').forEach(function(d) {
 		closeSubnodes(d, 'do not restart simulation');
 	})
-	// // simulation.force("x").strength(1)
-	// // simulation.force("y").strength(1)
-	// V.update(graph, storedFilters);
 }
-
 
 V.destroy = () => {}
 
-export default V
-
-
-
-const selectLabel = (d) => {
-	label.filter(l=>l.id===d.id).classed('selected', true)
-}
-const unselectLabel = (d) => {
-	label.filter(l=>l.id===d.id).classed('selected', false)
-}
-
-const selectSameComposition = (d) => {
-	svg.classed('there-is-selection', true)
-	node.filter(n=>n.source === d.source).classed('selected', true)
-}
-const unselectSameComposition = (d) => {
-	node.filter(n=>n.source === d.source).classed('selected', false)
-
-	if(svg.select('.selected').size() === 0) {
-		svg.classed('there-is-selection', false)
-	}
-}
-
-const reset = () => {
-	svg.selectAll('*').classed('selected', false);
-	svg.classed('there-is-selection', false)
-}
-
-const toggleSubnodes = (d, doRestart) => {
-	// console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
-	if(d.opened) {
-		unselectLabel(d);
-		closeSubnodes(d, doRestart);
-	} else if(d.subNodes && d.subNodes.length) {
-		selectLabel(d);
-		openSubnodes(d, doRestart);
-	} else {
-		console.log('No nodes to expand');
-	}
-}
+// Other functions
 const openSubnodes = (d, doRestart) => {
 	// If it happens that the node is already open, just skip.
-	if (d.opened) return;
+	if(d.opened) return;
 
 	// If not, let's open it
 	d.opened = true;
@@ -438,7 +396,7 @@ const openSubnodes = (d, doRestart) => {
 }
 const closeSubnodes = (d, doRestart) => {
 	// If it is already opened or if it has no children, just skip
-	if (!d.opened || d.totalSubNodes === 0) return;
+	if(!d.opened || d.totalSubNodes === 0) return;
 
 	d.opened = false;
 	delete d.fx;
@@ -491,6 +449,59 @@ const closeSubnodes = (d, doRestart) => {
 	if(doRestart === 'restart the force') {
 		V.update();
 	}
+}
+const toggleSubnodes = (d, doRestart) => {
+	// console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
+	if(d.opened) {
+		unselectLabel(d);
+		closeSubnodes(d, doRestart);
+	} else if(d.subNodes && d.subNodes.length) {
+		selectLabel(d);
+		openSubnodes(d, doRestart);
+	} else {
+		console.log('No nodes to expand');
+	}
+}
+
+// Interactions
+
+const displayTitle = (arr) => {
+	// show composition title
+	information = information.data(arr, function(d) { return d.id; });
+	information.exit().remove();
+	information = information.enter().append("text")
+		.classed('information', true)
+		.classed('label', true)
+		.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
+		.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
+		.attr('y', height - 10)
+		.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+		.merge(information);
+}
+
+const selectLabel = (d) => {
+	label.filter(l => l.id === d.id).classed('selected', true)
+}
+const unselectLabel = (d) => {
+	label.filter(l => l.id === d.id).classed('selected', false)
+}
+
+const selectSameComposition = (d) => {
+	svg.classed('there-is-selection', true)
+	node.filter(n => n.source === d.source).classed('selected', true)
+}
+const unselectSameComposition = (d) => {
+	node.filter(n => n.source === d.source).classed('selected', false)
+
+	if(svg.select('.selected').size() === 0) {
+		svg.classed('there-is-selection', false)
+	}
+}
+
+const reset = () => {
+	svg.selectAll('*').classed('selected', false);
+	svg.classed('there-is-selection', false)
+	displayTitle([]);
 }
 
 //
