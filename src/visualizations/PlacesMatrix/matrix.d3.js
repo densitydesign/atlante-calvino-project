@@ -106,7 +106,7 @@ V.initialize = (el, data, filters) => {
 			return d.opened ? r(1) + thisCollisionPadding : r(d.totalSubNodes + 1) + thisCollisionPadding
 		}).strength(.3).iterations(12))
 		.force("link", d3.forceLink()
-			.strength(0.3)
+			.strength(.45)
 			.distance(r.range()[0])
 			.id(function(d) { return d.id; })
 		)
@@ -165,7 +165,7 @@ V.initialize = (el, data, filters) => {
 		label.style('font-size', newSize+'px')
 
 		// display all labels of selected compositions
-		if (d3.event.transform.k>2.75){
+		if (d3.event.transform.k>3){
 			d3.selectAll('.node.selected').each(d=>{
 				label.filter(l => l.id === d.id).classed('zoom-selected', true)
 			})
