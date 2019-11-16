@@ -16,7 +16,8 @@ let graph, nodes = [],
 	openAllState = false;
 
 // Dimensions and scales
-let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }, originalLabelsSize,
+let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
+	originalLabelsSize,
 	width, height;
 let xAxisCall, yAxisCall;
 
@@ -93,6 +94,89 @@ V.initialize = (el, data, filters) => {
 			.attr("x", 4)
 			.attr("dy", -y.step() / 10));
 
+	yAxis.selectAll('.tick').on('click', function(d) {
+
+		if(d3.select(this).classed('cat-selected') === false) {
+
+			if(d3.selectAll('.tick.cat-selected').size() > 0) {
+				nodes.filter(nnn=>nnn.part_of==='').forEach(n => { closeSubnodes(n, false) });
+				d3.selectAll('.tick.cat-selected').classed('cat-selected', false);
+			}
+
+			let toOpen = []
+			nodes.forEach(n0 => {
+				// console.log('n0',n0);
+				if(n0.totalSubNodes > 0) {
+					if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+						toOpen.push(n0);
+					}
+					n0.subNodes.forEach(n1 => {
+						// console.log('n1',n1);
+						if(n1.totalSubNodes > 0) {
+							if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+								toOpen.push(n0);
+								toOpen.push(n1);
+							}
+							n1.subNodes.forEach(n2 => {
+								// console.log('n2',n2);
+								if(n2.totalSubNodes > 0) {
+									if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+										toOpen.push(n0);
+										toOpen.push(n1);
+										toOpen.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toOpen.forEach(n => { openSubnodes(n, false) });
+		} else {
+			let toClose = []
+			nodes.forEach(n0 => {
+				// console.log('n0',n0);
+				if(n0.totalSubNodes > 0) {
+					if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+						toClose.push(n0);
+					}
+					n0.subNodes.forEach(n1 => {
+						// console.log('n1',n1);
+						if(n1.totalSubNodes > 0) {
+							if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+								toClose.push(n0);
+								toClose.push(n1);
+							}
+							n1.subNodes.forEach(n2 => {
+								// console.log('n2',n2);
+								if(n2.totalSubNodes > 0) {
+									if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+										toClose.push(n0);
+										toClose.push(n1);
+										toClose.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toClose.forEach(n => { closeSubnodes(n, false) });
+			node.style('opacity', 1)
+		}
+
+		V.update(globalFilters);
+
+		d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
+
+		if(d3.select(this).classed('cat-selected')){
+			node.filter(nn => { return nn.category === d }).each(nn=>selectNode(nn))
+		} else {
+			node.filter(nn => { return nn.category === d }).each(nn=>unselectNode(nn))
+		}
+
+	})
+
 	link = g_forceLayout.append('g').classed('links', true).selectAll('.link');
 	hull = g_forceLayout.append('g').classed('hulls', true).selectAll('.hull');
 	node = g_forceLayout.append('g').classed('nodes', true).selectAll('.node');
@@ -142,9 +226,12 @@ V.initialize = (el, data, filters) => {
 	// handle the zoom function
 
 	let zoom = d3.zoom()
-			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
-			.scaleExtent([1, 10])
-			.on("zoom", zoomed);
+		.translateExtent([
+			[0, 0],
+			[width + margin.left + margin.right, height + margin.top + margin.bottom]
+		])
+		.scaleExtent([1, 10])
+		.on("zoom", zoomed);
 
 	function zoomed() {
 		// so a simple resize+translate for the main group and the y axis
@@ -157,23 +244,23 @@ V.initialize = (el, data, filters) => {
 		xAxis.call(xAxisCall.scale(new_x))
 
 		// rescale labels
-		if(!originalLabelsSize){
+		if(!originalLabelsSize) {
 			originalLabelsSize = d3.select('.label').style('font-size');
 			originalLabelsSize = parseFloat(originalLabelsSize);
 		}
-		const newSize = originalLabelsSize/d3.event.transform.k
-		label.style('font-size', newSize+'px')
+		const newSize = originalLabelsSize / d3.event.transform.k
+		label.style('font-size', newSize + 'px')
 
 		// display all labels of selected compositions
-		if (d3.event.transform.k>3){
-			d3.selectAll('.node.selected').each(d=>{
+		if(d3.event.transform.k > 3) {
+			d3.selectAll('.node.selected').each(d => {
 				label.filter(l => l.id === d.id).classed('zoom-selected', true)
 			})
 		} else {
 			label.classed('zoom-selected', false)
 		}
 
-		information.attr('x', d => (new_x(d.year) >= width/2) ? new_x(d.year)+4.8 : new_x(d.year)-3.2);
+		information.attr('x', d => (new_x(d.year) >= width / 2) ? new_x(d.year) + 4.8 : new_x(d.year) - 3.2);
 	}
 
 	svg.call(zoom).on("dblclick.zoom", null);
@@ -340,7 +427,7 @@ V.filter = (filters, theOriginalData) => {
 			V.update(filters)
 
 			filters.search.forEach(an_id => {
-				selectLabel({id: an_id})
+				selectLabel({ id: an_id })
 			})
 		}
 	}
@@ -402,8 +489,8 @@ const openSubnodes = (d, doRestart) => {
 		d.fx = d.x;
 		d.fy = d.y;
 	} else {
-		d.x = nodes.filter(n=>n.id===d.part_of)[0].x
-		d.fy = nodes.filter(n=>n.id===d.part_of)[0].y + r.range()[0]*2*3
+		d.x = nodes.filter(n => n.id === d.part_of)[0].x
+		d.fy = nodes.filter(n => n.id === d.part_of)[0].y + r.range()[0] * 2 * 3
 	}
 
 	// make subnodes appear at the place of their parent
@@ -529,6 +616,19 @@ const selectLabel = (d) => {
 }
 const unselectLabel = (d) => {
 	label.filter(l => l.id === d.id).classed('selected', false)
+}
+
+const selectNode = (d) => {
+	svg.classed('there-is-selection', true)
+	node.filter(n => n.id === d.id).classed('selected', true)
+}
+const unselectNode = (d) => {
+	node.filter(n => n.id === d.id).classed('selected', false)
+
+	if(svg.select('.selected').size() === 0) {
+		console.log('no selected found')
+		svg.classed('there-is-selection', false)
+	}
 }
 
 const selectSameComposition = (d) => {
