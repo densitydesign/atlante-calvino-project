@@ -33,11 +33,18 @@
   font-weight: bold;
 }
 
-.label.selected, .label.zoom-selected {
-  display: block !important;
-  /* opacity: 1 !important; */
-  fill: #333;
+.label {
+  fill:#666;
   font-weight: 300;
+}
+
+.label.zoom-selected {
+  display: block !important;
+}
+.label.selected {
+  display: block !important;
+  fill:black;
+  font-weight: 500;
 }
 
 .there-is-selection .node {

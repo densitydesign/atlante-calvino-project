@@ -314,7 +314,7 @@ V.filter = (filters, theOriginalData) => {
 	// for this reason put it before the others
 	if(filters.search.length) {
 
-		surviveFilters[2] = filters.search;
+		surviveFilters[2] = _.clone(filters.search, true);
 
 		let parents2open = [];
 		filters.search.forEach(s => {
@@ -338,6 +338,10 @@ V.filter = (filters, theOriginalData) => {
 			})
 
 			V.update(filters)
+
+			filters.search.forEach(an_id => {
+				selectLabel({id: an_id})
+			})
 		}
 	}
 
@@ -537,7 +541,7 @@ const unselectSameComposition = (d) => {
 }
 
 const reset = () => {
-	svg.selectAll('*').classed('selected', false);
+	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
 }
