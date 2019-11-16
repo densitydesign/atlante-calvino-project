@@ -33,7 +33,7 @@
   font-weight: bold;
 }
 
-.label.selected {
+.label.selected, .label.zoom-selected {
   display: block !important;
   /* opacity: 1 !important; */
   fill: #333;

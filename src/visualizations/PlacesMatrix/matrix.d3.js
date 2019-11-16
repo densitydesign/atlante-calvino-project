@@ -16,7 +16,7 @@ let graph, nodes = [],
 	openAllState = false;
 
 // Dimensions and scales
-let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
+let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }, originalLabelsSize,
 	width, height;
 let xAxisCall, yAxisCall;
 
@@ -138,6 +138,45 @@ V.initialize = (el, data, filters) => {
 			return roundedHull(convexHull, d);
 		})
 	}
+
+	// handle the zoom function
+
+	let zoom = d3.zoom()
+			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
+			.scaleExtent([1, 10])
+			.on("zoom", zoomed);
+
+	function zoomed() {
+		// so a simple resize+translate for the main group and the y axis
+		g_forceLayout.attr("transform", d3.event.transform);
+		yAxis.attr("transform", d3.event.transform);
+
+		// the x axis has to be resscaled according to the zoom
+		// taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
+		let new_x = d3.event.transform.rescaleX(x);
+		xAxis.call(xAxisCall.scale(new_x))
+
+		// rescale labels
+		if(!originalLabelsSize){
+			originalLabelsSize = d3.select('.label').style('font-size');
+			originalLabelsSize = parseFloat(originalLabelsSize);
+		}
+		const newSize = originalLabelsSize/d3.event.transform.k
+		label.style('font-size', newSize+'px')
+
+		// display all labels of selected compositions
+		if (d3.event.transform.k>2.5){
+			d3.selectAll('.node.selected').each(d=>{
+				label.filter(l => l.id === d.id).classed('zoom-selected', true)
+			})
+		} else {
+			label.classed('zoom-selected', false)
+		}
+
+		information.attr('x', d => (new_x(d.year) >= width/2) ? new_x(d.year)+4.8 : new_x(d.year)-3.2);
+	}
+
+	svg.call(zoom).on("dblclick.zoom", null);
 
 	//Store data in global variable
 	graph = data;
@@ -471,7 +510,6 @@ const displayTitle = (arr) => {
 	information.exit().remove();
 	information = information.enter().append("text")
 		.classed('information', true)
-		.classed('label', true)
 		.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
 		.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
 		.attr('y', height - 10)
