@@ -72,7 +72,6 @@ class FilterSearch extends Component {
           return d.key.toLowerCase().includes(value.toLowerCase())
         })
     }
-    // console.log(nestedData)
     if (nestedData.length) {
       this.setState({
         previewSearch: nestedData

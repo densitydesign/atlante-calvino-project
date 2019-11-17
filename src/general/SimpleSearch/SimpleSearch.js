@@ -19,6 +19,8 @@ class SimpleSearch extends Component {
   }, 250);
 
   selectResult(event){
+    // fill the input with the selected result
+    const the_input = document.getElementsByClassName('filter-search')[0].getElementsByTagName('input')[0].value = event.target.innerHTML
     this.props.selectResult(event.target.getAttribute('data-attr'))
   }
 

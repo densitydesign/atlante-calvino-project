@@ -108,7 +108,7 @@ V.initialize = (el, data, filters) => {
 					d3.selectAll('.tick')
 						.classed('cat-selected', false)
 						.select('rect')
-							.attr('fill', 'transparent')
+						.attr('fill', 'transparent')
 				}
 
 				let toOpen = []
@@ -475,7 +475,13 @@ V.filter = (filters, theOriginalData) => {
 			mergeSurvived = _.intersection(mergeSurvived, surviveFilters[i]);
 		}
 	})
-	node.classed('faded', d => mergeSurvived.indexOf(d.id) < 0);
+
+	reset();
+
+	mergeSurvived.forEach(m => {
+		const this_node = nodes.filter(n => n.id === m);
+		if(this_node.length > 0) selectNode(this_node[0]);
+	})
 }
 
 V.openAll = () => {
@@ -620,7 +626,6 @@ const toggleSubnodes = (d, doRestart) => {
 }
 
 // Interactions
-
 const displayTitle = (arr) => {
 	// show composition title
 	information = information.data(arr, function(d) { return d.id; });
@@ -670,6 +675,109 @@ const reset = () => {
 	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
+}
+
+const exportSelected = () => {
+	const selected = svg.selectAll('.selected')
+	let selectedData = selected.data()
+
+	selectedData = d3.nest()
+		.key(d => d.source)
+		.entries(selectedData)
+		.map(d => {
+			return {
+				'composition_id': d.key,
+				'composition_title': d.values[0].sourceTitle
+			}
+		})
+
+	// console.log(selectedData);
+	//
+	// console.log(globalFilters);
+
+	let envs = '';
+	if(globalFilters.themes.length === 0) {
+		envs = '👀 No environments selected\n'
+	} else {
+		if(globalFilters.themes.length === 7) {
+			envs += `(🐖 All environments)\n`
+		} else {
+			envs += '\n'
+		}
+		globalFilters.themes.forEach((d) => {
+			envs += `- "${d}"\n`;
+		})
+	}
+
+	let pubTypes = '';
+	if(globalFilters.kinds.length == 0) {
+		pubTypes = '👀 No venues selected\n'
+	} else {
+		if(globalFilters.kinds.length === 3) {
+			pubTypes += `(🐖 All venues)\n`
+		} else {
+			envs += '\n'
+		}
+		globalFilters.kinds.forEach((d) => {
+			pubTypes += `- "${d}"\n`;
+		})
+	}
+
+	let searchedTerm = '- No search'
+	if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
+
+const export_data = `Exporting composition titles highlighted through the following filters:
+
+📚 Publication venues ${pubTypes}
+
+🏞 Environments ${envs}
+
+🕵️‍♀️ Searched term:
+${searchedTerm}
+
+composition_id\tcomposition_title
+${selectedData.map(d=>{
+	return d.composition_id + '\t' + d.composition_title
+}).join(`
+`)}
+`
+	// console.log(export_data)
+
+	let the_date = new Date()
+
+	the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
+
+	download(export_data, `selection [${the_date}].txt`, 'text/plain')
+
+	// Function to download data to a file
+	function download(data, filename, type) {
+		console.log('download')
+		var file = new Blob([data], { type: type });
+		if(window.navigator.msSaveOrOpenBlob) // IE10+
+			window.navigator.msSaveOrOpenBlob(file, filename);
+		else { // Others
+			var a = document.createElement("a"),
+				url = URL.createObjectURL(file);
+			a.href = url;
+			a.download = filename;
+			document.body.appendChild(a);
+			a.click();
+			setTimeout(function() {
+				document.body.removeChild(a);
+				window.URL.revokeObjectURL(url);
+			}, 0);
+		}
+	}
+
+}
+
+// trigger actions with keyboard
+
+document.addEventListener('keydown', triggerActions);
+
+function triggerActions(e) {
+	if(e.key === 'd') exportSelected();
+	// if (e.key === 'L') label.classed('make-visible', false)
 }
 
 //
