@@ -36,12 +36,14 @@ class PlacesMatrixView extends Component {
         return graph;
       })
       .then(data=>{
+        const themes = ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano",'nessuno']
+        const kinds = ['raccolta','volume','altro']
         this.setState({
           data: data.graph,
           originalData: data.data,
           dataTimeFilter: d3.extent(data.graph.nodes, d => d.year),
-          themes: ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
-          publicationsTypes: ['raccolta','volume','altro'],
+          themes: themes,
+          publicationsTypes: kinds,
           searchOptions: [
             { label: 'luogo', dimension: 'label'},
             { label: 'raccolta', dimension: 'pubVenueTitle'},
@@ -51,8 +53,8 @@ class PlacesMatrixView extends Component {
           filters: {
             update: true,
             openAll: false,
-            themes: ["fabbrica","guerra","mare","metropoli","natura ligure","paesaggio urbano","protagonista bambino","viaggio","paesaggio cosmico","mito", 'nessuno'],
-            kinds: ['raccolta','volume','altro'],
+            themes: themes,
+            kinds: kinds,
             search: [],
             span: d3.extent(data.graph.nodes, d => d.year)
           }
@@ -141,7 +143,7 @@ class PlacesMatrixView extends Component {
           { !this.state.isLoading && <MultipleSelection style={{gridColumn: 'span 4'}} options={this.state.publicationsTypes} changeOptions={this.changePublications} title="Tipo di pubblicazione" id="multiple-selection-publications"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
-          { !this.state.isLoading && <MultipleSelection style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un tema" id="multiple-selection-themes"/> }
+          { !this.state.isLoading && <MultipleSelection style={{gridColumn: 'span 4'}} options={this.state.themes} changeOptions={this.changeThemes} title="Evidenzia un ambiente" id="multiple-selection-themes"/> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 6'}} /> }
           { !this.state.isLoading && <FilterSearch style={{gridColumn: 'span 6'}} data={this.state.data} originalData={this.state.originalData} options={this.state.searchOptions} searchRecord={this.searchRecord} search={this.state.filters.search} resetSearch={this.resetSearch} minLength={1} title="Cerca"/> }
