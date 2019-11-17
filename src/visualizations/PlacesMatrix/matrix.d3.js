@@ -65,7 +65,11 @@ V.initialize = (el, data, filters) => {
 		.domain(categories)
 		.padding(0.5);
 
-	yAxisCall = d3.axisRight(y).tickSize(width).tickFormat(d => d.replace(/_/g, ' '));
+	yAxisCall = d3.axisRight(y)
+		.tickSize(width)
+		.tickFormat(d => {
+			return d.replace(/_/g, ' ')
+		});
 
 	r = d3.scalePow().exponent(0.5)
 		.range([3, 25])
@@ -94,88 +98,105 @@ V.initialize = (el, data, filters) => {
 			.attr("x", 4)
 			.attr("dy", -y.step() / 10));
 
-	yAxis.selectAll('.tick').on('click', function(d) {
+	yAxis.selectAll('.tick')
+		.on('click', function(d) {
 
+			if(d3.select(this).classed('cat-selected') === false) {
 
-		if(d3.select(this).classed('cat-selected') === false) {
+				if(d3.selectAll('.tick.cat-selected').size() > 0) {
+					nodes.filter(nnn => nnn.part_of === '').forEach(n => { closeSubnodes(n, false) });
+					d3.selectAll('.tick')
+						.classed('cat-selected', false)
+						.select('rect')
+							.attr('fill', 'transparent')
+				}
 
-			if(d3.selectAll('.tick.cat-selected').size() > 0) {
-				nodes.filter(nnn=>nnn.part_of==='').forEach(n => { closeSubnodes(n, false) });
-				d3.selectAll('.tick').classed('cat-selected', false);
+				let toOpen = []
+				nodes.forEach(n0 => {
+					// console.log('n0',n0);
+					if(n0.totalSubNodes > 0) {
+						if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+							toOpen.push(n0);
+						}
+						n0.subNodes.forEach(n1 => {
+							// console.log('n1',n1);
+							if(n1.totalSubNodes > 0) {
+								if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+									toOpen.push(n0);
+									toOpen.push(n1);
+								}
+								n1.subNodes.forEach(n2 => {
+									// console.log('n2',n2);
+									if(n2.totalSubNodes > 0) {
+										if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+											toOpen.push(n0);
+											toOpen.push(n1);
+											toOpen.push(n2);
+										}
+									}
+								})
+							}
+						})
+					}
+				})
+				toOpen.forEach(n => { openSubnodes(n, false) });
+
+				d3.select(this).select('rect')
+					.attr('fill', d => color(d))
+			} else {
+				let toClose = []
+				nodes.forEach(n0 => {
+					// console.log('n0',n0);
+					if(n0.totalSubNodes > 0) {
+						if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+							toClose.push(n0);
+						}
+						n0.subNodes.forEach(n1 => {
+							// console.log('n1',n1);
+							if(n1.totalSubNodes > 0) {
+								if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+									toClose.push(n0);
+									toClose.push(n1);
+								}
+								n1.subNodes.forEach(n2 => {
+									// console.log('n2',n2);
+									if(n2.totalSubNodes > 0) {
+										if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+											toClose.push(n0);
+											toClose.push(n1);
+											toClose.push(n2);
+										}
+									}
+								})
+							}
+						})
+					}
+				})
+				toClose.forEach(n => { closeSubnodes(n, false) });
+
+				d3.select(this).select('rect')
+					.attr('fill', 'transparent')
 			}
 
-			let toOpen = []
-			nodes.forEach(n0 => {
-				// console.log('n0',n0);
-				if(n0.totalSubNodes > 0) {
-					if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
-						toOpen.push(n0);
-					}
-					n0.subNodes.forEach(n1 => {
-						// console.log('n1',n1);
-						if(n1.totalSubNodes > 0) {
-							if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
-								toOpen.push(n0);
-								toOpen.push(n1);
-							}
-							n1.subNodes.forEach(n2 => {
-								// console.log('n2',n2);
-								if(n2.totalSubNodes > 0) {
-									if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
-										toOpen.push(n0);
-										toOpen.push(n1);
-										toOpen.push(n2);
-									}
-								}
-							})
-						}
-					})
-				}
-			})
-			toOpen.forEach(n => { openSubnodes(n, false) });
-		} else {
-			let toClose = []
-			nodes.forEach(n0 => {
-				// console.log('n0',n0);
-				if(n0.totalSubNodes > 0) {
-					if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
-						toClose.push(n0);
-					}
-					n0.subNodes.forEach(n1 => {
-						// console.log('n1',n1);
-						if(n1.totalSubNodes > 0) {
-							if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
-								toClose.push(n0);
-								toClose.push(n1);
-							}
-							n1.subNodes.forEach(n2 => {
-								// console.log('n2',n2);
-								if(n2.totalSubNodes > 0) {
-									if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
-										toClose.push(n0);
-										toClose.push(n1);
-										toClose.push(n2);
-									}
-								}
-							})
-						}
-					})
-				}
-			})
-			toClose.forEach(n => { closeSubnodes(n, false) });
-		}
+			V.update(globalFilters);
 
-		V.update(globalFilters);
+			if(d3.select(this).classed('cat-selected') === false) {
+				node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
+			} else {
+				node.each(nn => unselectNode(nn))
+			}
 
-		if(d3.select(this).classed('cat-selected') === false){
-			node.filter(nn => { return nn.category === d }).each(nn=>selectNode(nn))
-		} else {
-			node.each(nn=>unselectNode(nn))
-		}
-
-		// Now that everything is done, assign the class
-		d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
-	})
+			// Now that everything is done, assign the class
+			d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
+		})
+		.append('rect')
+		.attr('width', '14px')
+		.attr('height', '14px')
+		.attr('x', -14)
+		.attr('y', -22)
+		.attr('rx', 2)
+		.attr('fill', 'transparent')
+		.attr('stroke', d => color(d))
 
 	link = g_forceLayout.append('g').classed('links', true).selectAll('.link');
 	hull = g_forceLayout.append('g').classed('hulls', true).selectAll('.hull');
@@ -626,7 +647,6 @@ const unselectNode = (d) => {
 	node.filter(n => n.id === d.id).classed('selected', false)
 
 	if(svg.selectAll('.selected').size() === 0) {
-		console.log('no selected found')
 		svg.classed('there-is-selection', false)
 	}
 }
@@ -645,6 +665,7 @@ const unselectSameComposition = (d) => {
 
 const reset = () => {
 	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
+	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
 }

@@ -10,12 +10,15 @@
   display: none;
 }
 
+.y-axis .tick {
+  cursor: pointer;
+}
+
 .reset-rect {
   fill: transparent;
 }
 
-.cat-selected text {
-  fill: red;
+.cat-selected {
 }
 
 .label.make-visible {
