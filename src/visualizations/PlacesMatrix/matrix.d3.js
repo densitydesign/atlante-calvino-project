@@ -270,7 +270,9 @@ V.initialize = (el, data, filters) => {
 			originalLabelsSize = parseFloat(originalLabelsSize);
 		}
 		const newSize = originalLabelsSize / d3.event.transform.k
-		label.style('font-size', newSize + 'px')
+		// change style on the parent
+		// this will propagate the new size to all children (label)
+		d3.select('g.labels').style('font-size', newSize + 'px')
 
 		// display all labels of selected compositions
 		if(d3.event.transform.k > 3) {
