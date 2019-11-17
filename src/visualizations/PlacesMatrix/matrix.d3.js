@@ -96,11 +96,12 @@ V.initialize = (el, data, filters) => {
 
 	yAxis.selectAll('.tick').on('click', function(d) {
 
+
 		if(d3.select(this).classed('cat-selected') === false) {
 
 			if(d3.selectAll('.tick.cat-selected').size() > 0) {
 				nodes.filter(nnn=>nnn.part_of==='').forEach(n => { closeSubnodes(n, false) });
-				d3.selectAll('.tick.cat-selected').classed('cat-selected', false);
+				d3.selectAll('.tick').classed('cat-selected', false);
 			}
 
 			let toOpen = []
@@ -162,19 +163,18 @@ V.initialize = (el, data, filters) => {
 				}
 			})
 			toClose.forEach(n => { closeSubnodes(n, false) });
-			node.style('opacity', 1)
 		}
 
 		V.update(globalFilters);
 
-		d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
-
-		if(d3.select(this).classed('cat-selected')){
+		if(d3.select(this).classed('cat-selected') === false){
 			node.filter(nn => { return nn.category === d }).each(nn=>selectNode(nn))
 		} else {
-			node.filter(nn => { return nn.category === d }).each(nn=>unselectNode(nn))
+			node.each(nn=>unselectNode(nn))
 		}
 
+		// Now that everything is done, assign the class
+		d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
 	})
 
 	link = g_forceLayout.append('g').classed('links', true).selectAll('.link');
@@ -625,7 +625,7 @@ const selectNode = (d) => {
 const unselectNode = (d) => {
 	node.filter(n => n.id === d.id).classed('selected', false)
 
-	if(svg.select('.selected').size() === 0) {
+	if(svg.selectAll('.selected').size() === 0) {
 		console.log('no selected found')
 		svg.classed('there-is-selection', false)
 	}
@@ -638,7 +638,7 @@ const selectSameComposition = (d) => {
 const unselectSameComposition = (d) => {
 	node.filter(n => n.source === d.source).classed('selected', false)
 
-	if(svg.select('.selected').size() === 0) {
+	if(svg.selectAll('.selected').size() === 0) {
 		svg.classed('there-is-selection', false)
 	}
 }
