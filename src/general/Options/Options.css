@@ -13,6 +13,19 @@
   border-radius: 0;
 }
 
+.dropdown-toggle::after {
+  content: none;
+}
+
+.micro-title {
+  font-size: 0.5rem;
+  display: block;
+}
+
+.current-selection {
+
+}
+
 .dropdown-menu {
   width: 100%;
 }

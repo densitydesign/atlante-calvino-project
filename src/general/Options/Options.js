@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 import './Options.css'
 
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/Dropdown'
 
 class Options extends Component {
 
@@ -21,24 +21,15 @@ class Options extends Component {
 
   componentDidUpdate() {
     console.log('Update',this.props.title)
-  }
-
-  handleChangeOLD(event) {
-    const now_selected_name = event.target.getAttribute('name');
-    const node = ReactDOM.findDOMNode(this);
-    const items = node.querySelectorAll('.dropdown-item');
-
-    if (!this.props.data.multiple) {
-      items.forEach(d=>{
-        const name = d.getAttribute("name")
-        if (name!==now_selected_name) {
-          d.classList.remove("active")
-        }
-      })
+    if (this.props.data.reset) {
+      let newOptions = this.props.data.options.slice(0)
+      newOptions.forEach(d=>d.status=false)
+      if (this.props.changeOptions){
+        this.props.changeOptions(newOptions)
+      } else {
+        console.log('No function')
+      }
     }
-    event.target.classList.add("active")
-    const selection = Array.from(items).map(d=>{return {'name':d.name, 'status':d.classList.contains('active')} });
-    console.log('pass the selection', selection);
   }
 
   handleChange(event,ee) {
@@ -49,6 +40,9 @@ class Options extends Component {
 
     if (!this.props.data.multiple) {
       newOptions.forEach(d=>d.status=false)
+      this.setState({
+        selection:name
+      })
     }
 
     // If "all" is selected, invert the selection, then return
@@ -82,24 +76,47 @@ class Options extends Component {
   }
 
   render() {
+
+    if (!this.props.data.multiple) {
+      if (!this.state.selection) {
+        this.setState({
+          selection: this.props.data.options.filter(d=>d.status)[0].label
+        })
+      }
+    }
+
     return (
       <div className="options-container" style={this.props.style}>
-        <DropdownButton title={this.props.title} onToggle={this.toggleDropDown} show={this.state.show}>
-          {
-            this.props.data.options.map( (d,i) => {
-              return (
-                <Dropdown.Item key={i} name={d.label} onClick={this.handleChange} className={{'active':d.status}}>
-                  {d.label}
-                </Dropdown.Item>
+
+        <Dropdown>
+          <Dropdown.Toggle>
+            { !this.props.data.multiple && (
+                <div>
+                  <span class="micro-title">{this.props.title}</span>
+                  <span class="current-selection">{this.state.selection}</span>
+                </div>
               )
-            })
-          }
-          { this.props.data.multiple && (
-            <Dropdown.Item key={5} name="all" onClick={this.handleChange} className={{'active':false}}>
-              Inverti Selezione
-            </Dropdown.Item>
-          ) }
-        </DropdownButton>
+            }
+            { this.props.data.multiple && this.props.title }
+          </Dropdown.Toggle>
+          <Dropdown.Menu onToggle={this.toggleDropDown} show={this.state.show}>
+            {
+              this.props.data.options.map( (d,i) => {
+                return (
+                  <Dropdown.Item key={i} name={d.label} onClick={this.handleChange} className={{'active':d.status}}>
+                    {d.label}
+                  </Dropdown.Item>
+                )
+              })
+            }
+            { this.props.data.multiple && (
+              <Dropdown.Item key={5} name="all" onClick={this.handleChange} className={{'active':false}}>
+                Inverti Selezione
+              </Dropdown.Item>
+            ) }
+          </Dropdown.Menu>
+        </Dropdown>
+
       </div>
     )
   }
