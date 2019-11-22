@@ -1,81 +1,107 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
+import './Options.css'
+
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 class Options extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      show:undefined
+    }
     this.handleChange = this.handleChange.bind(this);
-    this.setOptions = this.setOptions.bind(this);
-  }
-
-  handleChange(event) {
-    const now_selected_name = event.target.getAttribute('name');
-    const node = ReactDOM.findDOMNode(this);
-    const options = node.querySelectorAll('input.option');
-
-    if (!this.props.data.multiple) {
-      options.forEach(d=>{
-        const name = d.getAttribute("name")
-        if (name!==now_selected_name) {
-          d.checked = false;
-        }
-      })
-    }
-
-    const selection = Array.from(options).map(d=>{return {'name':d.name, 'status':d.checked} });
-
-    // console.log(selection);
-
-    // // get all checkboxes
-    // let checkboxes = document.getElementById(this.props.id).getElementsByTagName('input');
-    // // convert from HTMLcollection into a JS array
-    // checkboxes = Array.from(checkboxes);
-    // // remap and filter
-    // checkboxes = checkboxes.map(d=>{return {'name':d.name, 'status':d.checked} });
-    // checkboxes = checkboxes.filter(d=>d.status)
-    // checkboxes = checkboxes.map(d=>d.name)
-    // this.props.changeOptions(checkboxes);
-  }
-
-  setOptions(new_selection) {
-    const node = ReactDOM.findDOMNode(this);
-    const options = node.querySelectorAll('input.option');
-    if (new_selection==='all') {
-      options.forEach(d=>{d.checked = true})
-    } else if (new_selection.length > 0){
-      options.forEach(d=>{
-        const is_checked = new_selection.indexOf(d.getAttribute("name")) > -1;
-        d.checked = is_checked;
-      })
-    } else {
-      options.forEach(d=>{d.checked = false})
-    }
+    this.toggleDropDown = this.toggleDropDown.bind(this);
   }
 
   componentDidMount() {
-    // console.log('mounted',this.props.title)
-    this.setOptions(this.props.data.set)
+    console.log('Mounted',this.props.title, this.props.data);
   }
 
   componentDidUpdate() {
-    console.log('update',this.props.title)
-    // this.setOptions(this.props.def_selection)
+    console.log('Update',this.props.title)
+  }
+
+  handleChangeOLD(event) {
+    const now_selected_name = event.target.getAttribute('name');
+    const node = ReactDOM.findDOMNode(this);
+    const items = node.querySelectorAll('.dropdown-item');
+
+    if (!this.props.data.multiple) {
+      items.forEach(d=>{
+        const name = d.getAttribute("name")
+        if (name!==now_selected_name) {
+          d.classList.remove("active")
+        }
+      })
+    }
+    event.target.classList.add("active")
+    const selection = Array.from(items).map(d=>{return {'name':d.name, 'status':d.classList.contains('active')} });
+    console.log('pass the selection', selection);
+  }
+
+  handleChange(event,ee) {
+    const name = event.target.getAttribute('name');
+
+    // A convenient way to clone an array, since it is a bad thing to directly modify the props
+    let newOptions = this.props.data.options.slice(0)
+
+    if (!this.props.data.multiple) {
+      newOptions.forEach(d=>d.status=false)
+    }
+
+    // If "all" is selected, invert the selection, then return
+    if (name==="all"){
+      newOptions.forEach(d=>d.status=!d.status);
+    } else {
+      const selected_item = newOptions.filter(d=>d.label===name)
+      if (selected_item.length>0) {
+        selected_item[0].status = !selected_item[0].status
+      }
+    }
+
+    if (this.props.changeOptions){
+      this.props.changeOptions(newOptions)
+    } else {
+      console.log('No function')
+    }
+
+  }
+
+  toggleDropDown(isOpen,event,metadata) {
+    if (metadata.source==="select"&&this.props.data.multiple){
+      this.setState({
+        show: true
+      })
+    } else {
+      this.setState({
+        show: undefined
+      })
+    }
   }
 
   render() {
-    return <div style={this.props.style} title={this.props.title}>
-      {this.props.title}
-      {
-        this.props.data.options.map( (d,i) => {
-          return (
-            <li key={i} name={d}>
-              <input className="option" type="checkbox" name={d} onChange={this.handleChange} defaultChecked={false} />{d}
-            </li>
-          )
-        })
-      }
-    </div>;
+    return (
+      <div className="options-container" style={this.props.style}>
+        <DropdownButton title={this.props.title} onToggle={this.toggleDropDown} show={this.state.show}>
+          {
+            this.props.data.options.map( (d,i) => {
+              return (
+                <Dropdown.Item key={i} name={d.label} onClick={this.handleChange} className={{'active':d.status}}>
+                  {d.label}
+                </Dropdown.Item>
+              )
+            })
+          }
+          { this.props.data.multiple && (
+            <Dropdown.Item key={5} name="all" onClick={this.handleChange} className={{'active':false}}>
+              Inverti Selezione
+            </Dropdown.Item>
+          ) }
+        </DropdownButton>
+      </div>
+    )
   }
 }
 
@@ -87,8 +113,7 @@ Options.defaultProps = {
   },
   data: {
     options: [],
-    multiple: false,
-    set: ''
+    multiple: false
   },
   title: 'Options',
 

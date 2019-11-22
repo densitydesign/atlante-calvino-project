@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import PlacesMatrixView from './PlacesMatrixView/PlacesMatrixView';
 import Trasformare from './Trasformare/Trasformare';
 // import ContainerComp from './ContainerComp/ContainerComp';
@@ -7,7 +8,7 @@ import Trasformare from './Trasformare/Trasformare';
 function App() {
   return (
     <div className="main">
-      <Trasformare />
+        <Trasformare />
     </div>
   );
 }

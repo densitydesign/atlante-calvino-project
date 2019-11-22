@@ -1,4 +1,5 @@
 import React, { Component, useEffect } from 'react';
+import GlobalData from '../GlobalData';
 
 import MainMenu from '../general/MainMenu';
 import VizTitle from '../general/VizTitle';
@@ -12,28 +13,91 @@ class Trasformare extends Component {
   constructor(props) {
     super(props);
 
+    this.changePubblicazioni = this.changePubblicazioni.bind(this);
+
     this.state = {
       data:'data still not loaded',
       isLoading: true,
+      cerca_per: {
+        multiple: false,
+        options: [
+          {
+            'label':'luogo',
+            'status':true
+          },
+          {
+            'label':'titolo',
+            'status':false
+          }
+        ]
+      },
       gruppi: {
         multiple: false,
-        options: ['aperti','chiusi'],
-        set: 'all'
+        options: [
+          {
+            'label':'aperti',
+            'status':false
+          },
+          {
+            'label':'chiusi',
+            'status':true
+          }
+        ]
+      },
+      pubblicazioni: {
+        multiple: true,
+        options: GlobalData.allVolumes.map(d=>{
+          return {
+            ...d,
+            'status':true
+          }
+        }),
+      },
+      ambienti: {
+        multiple: true,
+        options:  [
+          {
+            'label':'uno',
+            'status':true
+          },
+          {
+            'label':'due',
+            'status':true
+          },
+          {
+            'label':'tre',
+            'status':true
+          },
+          {
+            'label':'quattro',
+            'status':true
+          }
+        ]
       }
     };
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      console.log('test')
+  changePubblicazioni(newOptions) {
+    console.log('view changePubblicazioni', newOptions)
+    this.setState(prevState => ({
+      pubblicazioni: {
+        ...prevState.pubblicazioni,
+        options: newOptions
+      }
+    }))
+  }
 
-      this.setState(prevState => ({
-        gruppi: {                    // object that we want to update
-          ...prevState.gruppi,       // keep all other key-value pairs
-          set: []
-        }
-      }))
-    }, 6000)
+  componentDidMount() {
+    // setTimeout(() => {
+    //   console.log('test')
+    //
+    //   this.setState(prevState => ({
+    //     gruppi: {                    // object that we want to update
+    //       ...prevState.gruppi,       // keep all other key-value pairs
+    //       set: 'all'
+    //     }
+    //   }))
+    // }, 6000)
   }
 
   render() {
@@ -47,11 +111,8 @@ class Trasformare extends Component {
 
           <Options
             title="Cerca per"
+            data = {this.state.cerca_per}
             style={{gridColumn: 'span 5'}}
-            data={this.state.gruppi}
-            // multiple={this.state.gruppi.multiple}
-            // options={this.state.gruppi.options}
-            // set={this.state.gruppi.set}
           />
           <Search style={{gridColumn: 'span 5'}}/>
 
@@ -63,9 +124,14 @@ class Trasformare extends Component {
         </div>
 
         <div className="bottom-nav navigations">
-          <Options title="Gruppi" style={{gridColumn: 'span 5'}}/>
-          <Options title="Pubblicazione" style={{gridColumn: 'span 5'}}/>
-          <Options title="Ambienti" style={{gridColumn: 'span 5'}}/>
+          <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/>
+          <Options
+            title="Pubblicazioni"
+            data={this.state.pubblicazioni}
+            style={{gridColumn: 'span 5'}}
+            changeOptions={this.changePubblicazioni}
+          />
+          <Options title="Ambienti" data={this.state.ambienti} style={{gridColumn: 'span 5'}}/>
           <RangeFilter style={{gridColumn: 'span 9'}}/>
         </div>
       </div>
