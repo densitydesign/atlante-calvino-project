@@ -2,13 +2,10 @@
   background-color: var(--dark-green);
   color: white;
   opacity: .8;
-  height: var(--header-height);
-  height: var(--navigation-height);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding-bottom: 6px; */
   cursor: not-allowed;
 }
 
