@@ -80,7 +80,7 @@ class Options extends Component {
     return (
       <div className="options-container" style={this.props.style}>
 
-        <Dropdown>
+        <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
           <Dropdown.Toggle>
             { !this.props.data.multiple && (
                 <div>
