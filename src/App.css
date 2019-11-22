@@ -60,10 +60,9 @@ h5 {
   border-right: none;
   box-sizing: border-box;
   height: var(--navigation-height);
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  overflow: hidden;
   position: relative;
   z-index: 10000;
 }
