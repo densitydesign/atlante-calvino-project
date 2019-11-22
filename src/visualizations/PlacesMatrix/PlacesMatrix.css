@@ -6,10 +6,25 @@
   display: none;
 } */
 
-.tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
+.x-axis .tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
   display: none;
 }
 
-/* .sub-node {
-  stroke: black;
-} */
+.label.make-visible {
+  display: block !important;
+}
+
+.node {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.presumed {
+  pointer-events: none;
+}
+
+.tick.selected {
+  font-weight: bold;
+}

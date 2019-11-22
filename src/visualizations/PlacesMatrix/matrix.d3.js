@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import ParseMatrixData from '../../PlacesMatrixView/parse-matrix-data';
+import _ from 'lodash';
 
 const V = {}
 
@@ -21,12 +22,12 @@ const categoriesColors = [
 	'#cecece'
 ]
 
-const collisionPadding = 0.625;
+const collisionPadding = 0.25;
 
 // data
-let graph, nodes = [], links = [], hullsData = [],
+let theOriginalData, graph, nodes = [], links = [], hullsData = [],
 		rootNodes = [], storedFilters,
-		last=0, openAllState=false
+		last=0, openAllState=false, resetByClick = false
 
 // Dimensions and scales
 let x, y, r, color, margin, width, height;
@@ -34,24 +35,131 @@ let xAxisCall, yAxisCall;
 margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }
 
 // elements
-let svg, g, xAxis, yAxis, hull, link, node, presumed, label, information
+let svg, g, gigi, xAxis, yAxis, hull, link, node, presumed, label, information
 
 // force-layout
 let simulation
 
-function reset() {
-  node.style('opacity', 1);
-	presumed.style('opacity', 1);
-  label.classed('selected', false).style('display', 'none');
-  // remove work title
-  information = information.data([], function(d) { return d.id; });
-  information.exit().remove();
+function openSubnodes(d,noRestart) {
+	if (d.subNodes && d.subNodes.length){
+		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
+		if (d.part_of === '') {
+			d.fx = d.x*1;
+			d.fy = d.y*1;
+		}
+
+    d.subNodes.forEach(function(subNode, i){
+			subNode.x = d.x;
+			subNode.y = d.y;
+    })
+
+    d.opened = true;
+
+    // Make convex hull
+    var thisHullNodes = [d].concat(d.subNodes); // first element in array is always the one opened, so we can use its ID as identifier for the convex hull
+    hullsData.push(thisHullNodes);
+
+    // check if the first point of the hull is inside another hulls
+    // if so it means this hull should be part of that opened
+    // add these points to that hullsData
+    hullsData.forEach(function(thisHull){
+      // if the element is in the array, but is not the first
+      if (thisHull.indexOf(thisHullNodes[0]) > 0) {
+        thisHullNodes.forEach(function(n,i){
+          if (i !== 0) {
+            thisHull.push(n);
+          }
+        })
+      }
+    })
+
+    // calculate Graph
+    var augmentedNodes = nodes.concat(d.subNodes);
+    graph = ParseMatrixData.calculateNetwork(augmentedNodes);
+    nodes = graph.nodes;
+    links = graph.edges;
+    if (noRestart !== false) {
+      V.update(graph, storedFilters);
+    }
+  } else {
+    console.log('No nodes to expand')
+  }
+}
+
+function closeSubnodes(d,noRestart) {
+	if (d.opened) {
+
+    d.opened = false;
+    d.fx = null;
+    d.fy = null;
+
+    var subNodes2Remove = [];
+    var hulls2Remove = [d.id]
+
+    // recursive functions, it makes possible to close contained cluster of nodes
+    function collectSubNodes(parentNode) {
+      // console.log(`There are ${parentNode.subNodes.length} sub-nodes of ${parentNode.label}`)
+      parentNode.subNodes.forEach( childNode => {
+        if (childNode.opened) {
+          childNode.opened = false;
+          hulls2Remove.push(childNode.id);
+          collectSubNodes(childNode);
+        }
+      });
+      subNodes2Remove.push(parentNode.subNodes);
+      // console.log(`${parentNode.label} has ${parentNode.subNodes} nodes to be removed`);
+    }
+
+    collectSubNodes(d);
+
+    // cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
+    // Probably not the best way, but the simplest at the moment of the coding.
+    subNodes2Remove.forEach( subNodes => {
+
+      let toRemove = subNodes.map( d => d.id)
+      let filtered = nodes.filter( el => {
+        return !toRemove.includes( el.id );
+      })
+
+      // remove this hull
+      hullsData = hullsData.filter(function(h){
+        return !hulls2Remove.includes( h[0].id );
+      })
+
+      // remove extra points from the outer hull
+      hullsData.forEach(function(thisHull,i){
+        hullsData[i] = thisHull.filter(function(n){
+          return !toRemove.includes( n.id );
+        })
+      })
+
+      // calculate graph
+      graph = ParseMatrixData.calculateNetwork(filtered)
+			nodes = graph.nodes;
+	    links = graph.edges;
+    } )
+
+    if (noRestart !== false) {
+      V.update(graph, storedFilters);
+    }
+    // important to return here so to not do the following instructions
+    return;
+  }
 }
 
 function toggleSubnodes(d, noRestart) {
-	// console.log('toggle sub nodes')
-  if (d.opened) {
+  if(d.opened) {
+    closeSubnodes(d, noRestart);
+  }
+  if (d.subNodes && d.subNodes.length){
+		openSubnodes(d,noRestart);
+  } else {
+    console.log('No nodes to expand')
+  }
+}
 
+function toggleSubnodesOLD(d, noRestart) {
+  if(d.opened) {
     d.opened = false;
     d.fx = null;
     d.fy = null;
@@ -110,8 +218,10 @@ function toggleSubnodes(d, noRestart) {
   }
   if (d.subNodes && d.subNodes.length){
 		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
-		d.fx = d.x*1;
-		d.fy = d.y*1;
+		if (d.part_of === '') {
+			d.fx = d.x*1;
+			d.fy = d.y*1;
+		}
 
     d.subNodes.forEach(function(subNode, i){
 			subNode.x = d.x;
@@ -143,6 +253,7 @@ function toggleSubnodes(d, noRestart) {
     nodes = graph.nodes;
     links = graph.edges;
     if (noRestart !== false) {
+			storedFilters.update = true;
       V.update(graph, storedFilters);
     }
   } else {
@@ -150,22 +261,59 @@ function toggleSubnodes(d, noRestart) {
   }
 }
 
-function highlightNodes(arr){
-	reset();
+function highlightNodes(arr, doReset){
+	if (doReset) reset();
   arr.forEach( d => {
     node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
 		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
     label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
+
+		displayTitle([d]);
   })
 }
 
-V.initialize = (el, data, filters) => {
+const displayTitle = (arr) => {
+
+	// show work title
+	information = information.data(arr, function(d) { return d.id; });
+	information.exit().remove();
+	information = information.enter().append("text")
+		.classed('information', true)
+		.classed('label', true)
+		.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
+		.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
+		.attr('y', height - 10)
+		.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+		.merge(information);
+}
+
+function highlightCategories(arr, doReset) {
+	if (doReset) reset();
+	// console.log(arr)
+	let arrId = arr.map( d => d.id)
+	node.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
+	presumed.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
+	// label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
+}
+
+function reset() {
+	if (resetByClick) return;
+  node.style('opacity', 1);
+	presumed.style('opacity', 1);
+  label.classed('selected', false).style('display', 'none');
+  // remove work title
+  displayTitle([]);
+}
+
+V.initialize = (el, data, filters, originalData) => {
   // console.log('init',data, filters)
 
   // Since React calls the update without data, at the beginning store data
   // so that when time-filter is used (and React calls update) there is data to use
   graph = data
   rootNodes = data.nodes.filter( d => d.totalSubNodes>0);
+	theOriginalData = originalData;
+
   // //get themes
   // let themes = []
   // d3.nest()
@@ -185,11 +333,41 @@ V.initialize = (el, data, filters) => {
   width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
   height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
+	let zoom = d3.zoom()
+			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
+	    .scaleExtent([1, 10])
+	    .on("zoom", zoomed);
+
+	svg.call(zoom).on("dblclick.zoom", null);
+
+	function zoomed() {
+	  gigi.attr("transform", d3.event.transform);
+		yAxis.attr("transform", d3.event.transform);
+
+		// x axis resize taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
+		let new_x = d3.event.transform.rescaleX(x);
+		xAxis.call(xAxisCall.scale(new_x))
+
+		let one_rem = parseInt(d3.select('html').style('font-size'));
+
+		d3.select('.labels')
+			.style('font-size', d=>{
+				let cssRemSize = 0.75;
+				let k = cssRemSize * 1/d3.event.transform.k;
+				k+='rem';
+				return k;
+			})
+
+		information
+			.attr('x', d => (new_x(d.year) >= width/2) ? new_x(d.year)+4.8 : new_x(d.year)-3.2);
+	}
+
   // Scales
   x = d3.scaleTime()
     .range([0, width])
     .domain(d3.extent(data.nodes, d=>d.year));
   xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1))
+
   y = d3.scalePoint()
     .range([0, height])
     .padding(0.5);
@@ -199,10 +377,11 @@ V.initialize = (el, data, filters) => {
 			return d;
 		})
   y.domain(categories)
+
   r = d3.scalePow()
     .exponent(0.5)
     // .range([15,75])
-    .range([3.5,25])
+    .range([3,25])
     .domain([1,d3.max(data.nodes, function(d){ return d.totalSubNodes })])
   color = d3.scaleOrdinal().domain(categories).range(categoriesColors)
 
@@ -214,8 +393,12 @@ V.initialize = (el, data, filters) => {
   	.attr('width', width)
   	.attr('height', height)
   	.attr('fill', 'transparent')
-  	.on('click', reset);
-  g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`)
+  	.on('click', function(d){
+			resetByClick = false;
+			if ((d3.event.timeStamp - last) < 500) reset();
+			last = d3.event.timeStamp;
+		});
+  g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`).append('g')
   xAxis = g.append("g").attr("class", "x-axis")
   yAxis = g.append('g').attr("class", "y-axis")
 
@@ -232,34 +415,111 @@ V.initialize = (el, data, filters) => {
           .attr("x", 4)
           .attr("dy", -y.step()/10));
 
-  link = g.append('g').classed('links', true).selectAll('.link');
-  hull = g.append('g').classed('hulls', true).selectAll('.hull');
-  node = g.append('g').classed('nodes', true).selectAll('.node');
-	presumed = g.append('g').classed('presumeds', true).selectAll('.presumed');
-  label = g.append('g').classed('labels', true).selectAll('.label');
+	yAxis.selectAll('.tick').on('click', function(d){
+
+		if (d3.select(this).classed('selected') === false ) {
+
+			if (d3.selectAll('.tick.selected').size() > 0) {
+				rootNodes.forEach(n=>{closeSubnodes(n,false)});
+				d3.selectAll('.tick.selected').classed('selected', false);
+			}
+
+			let toOpen = []
+			nodes.forEach(n0=>{
+				// console.log('n0',n0);
+				if (n0.totalSubNodes>0){
+					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
+						toOpen.push(n0);
+					}
+					n0.subNodes.forEach(n1=>{
+						// console.log('n1',n1);
+						if(n1.totalSubNodes>0) {
+							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
+								toOpen.push(n0);
+								toOpen.push(n1);
+							}
+							n1.subNodes.forEach(n2=>{
+								// console.log('n2',n2);
+								if(n2.totalSubNodes>0) {
+									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
+										toOpen.push(n0);
+										toOpen.push(n1);
+										toOpen.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toOpen.forEach(n=>{openSubnodes(n,false)});
+			node.filter(nn=>{return nn.category!==d}).style('opacity',0.1)
+		} else {
+			let toClose = []
+			nodes.forEach(n0=>{
+				// console.log('n0',n0);
+				if (n0.totalSubNodes>0){
+					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
+						toClose.push(n0);
+					}
+					n0.subNodes.forEach(n1=>{
+						// console.log('n1',n1);
+						if(n1.totalSubNodes>0) {
+							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
+								toClose.push(n0);
+								toClose.push(n1);
+							}
+							n1.subNodes.forEach(n2=>{
+								// console.log('n2',n2);
+								if(n2.totalSubNodes>0) {
+									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
+										toClose.push(n0);
+										toClose.push(n1);
+										toClose.push(n2);
+									}
+								}
+							})
+						}
+					})
+				}
+			})
+			toClose.forEach(n=>{closeSubnodes(n,false)});
+			node.style('opacity',1)
+		}
+
+		V.update(graph, storedFilters);
+
+		d3.select(this).classed('selected', !d3.select(this).classed('selected'))
+
+		// highlightCategories(toHighlight, 'do reset')
+	})
+
+	gigi = g.append('g')
+
+  link = gigi.append('g').classed('links', true).selectAll('.link');
+  hull = gigi.append('g').classed('hulls', true).selectAll('.hull');
+  node = gigi.append('g').classed('nodes', true).selectAll('.node');
+	presumed = gigi.append('g').classed('presumed', true).selectAll('.presumed');
+  label = gigi.append('g').classed('labels', true).selectAll('.label');
   information = g.append('g').classed('informations', true).selectAll('.information');
 
   simulation = d3.forceSimulation(nodes)
-  	// .force("charge", d3.forceManyBody().strength(-1))
   	.force("link", d3.forceLink()
-  		.strength( 0.2 )
-  		.distance( r.range()[0] + 1 )
+  		.strength( 0.1 )
+  		.distance( r.range()[0] )
   		.id(function(d) { return d.id; })
   	)
-  	.force("x", d3.forceX(function(d) { return d.x })
-  		.strength(function(d) {
-  			return d.part_of === '' ? 1 : 0;
-  		})
+  	.force("x", d3.forceX(d=>d.x)
+  		.strength(1)
   	)
-  	.force("y", d3.forceY(function(d) { return d.y })
-  		.strength(function(d) {
-				return d.part_of === '' ? 0.7 : 0;
-			})
+  	.force("y", d3.forceY(d=>d.y)
+		.strength(1)
   	)
   	.force("collision", d3.forceCollide(function(d){
-  			return d.opened ? r(1)+collisionPadding : r(d.totalSubNodes + 1)+collisionPadding
+				let thisCollisionPadding = d.totalSubNodes>0 ? collisionPadding+2 : collisionPadding;
+  			return d.opened ? r(1)+thisCollisionPadding : r(d.totalSubNodes + 1)+thisCollisionPadding
   		})
-  		.iterations(8)
+  		.iterations(12)
   		.strength(0.35)
   	)
   	.on("tick", ticked)
@@ -269,23 +529,16 @@ V.initialize = (el, data, filters) => {
     .stop()
 
   function ticked() {
-
-  	node
-			.attr("cx", function(d) { return d.x; })
+  	node.attr("cx", function(d) { d.positionedYear = x.invert(d.x); return d.x; })
   		.attr("cy", function(d) { return d.y; });
-
-		presumed
-			.attr("cx", function(d) { return d.x; })
+		presumed.attr("cx", function(d) { return d.x; })
   		.attr("cy", function(d) { return d.y; });
-
   	label.attr("x", function(d) { return d.x; })
   		.attr("y", function(d) { return d.y; });
-
   	link.attr("x1", function(d) { return d.source.x; })
   		.attr("y1", function(d) { return d.source.y; })
   		.attr("x2", function(d) { return d.target.x; })
   		.attr("y2", function(d) { return d.target.y; });
-
   	hull.attr("d", function(d){
   		let thisHullPoints = d.map( d => { return [d.x, d.y] });
   		var points = thisHullPoints;
@@ -294,10 +547,9 @@ V.initialize = (el, data, filters) => {
   	})
 
 		if (simulation.alpha() < 0.15) {
-			simulation.force("x").strength(0)
-			simulation.force("y").strength(0)
+			simulation.force("x").strength(0.5)
+			simulation.force("y").strength(0.1)
 		}
-
   }
 
   V.update(data, filters)
@@ -311,6 +563,36 @@ V.update = (data, filters) => {
   nodes = data.nodes;
   links = data.edges;
 
+	storedFilters = filters
+
+	if (filters.search.length) {
+
+		let parents2open = [];
+		filters.search.forEach(s=>{
+			search4Parent(s);
+		});
+		function search4Parent(nodeId){
+			const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
+			if (thisNode.part_of !== "") {
+				parents2open.push(thisNode.part_of);
+				search4Parent(thisNode.part_of);
+			}
+		}
+
+		// I technically should open interesting parents, but it is kind of ahard.
+		// Provisionally solve the issue by highliting parents
+		// surviveFilters[2] = _.union(surviveFilters[2], parents2open)
+
+		// To fix it I probably need to write a new method just for the filters (V.filter).
+		if (parents2open.length > 0) {
+			parents2open.reverse().forEach((parentId,i)=>{
+				const parent = theOriginalData.filter(od=>od.id===parentId)[0]
+				openSubnodes(parent, false);
+			})
+			filters.update = true
+		}
+	}
+
   if (filters.update) {
 
 		let isTimeFiltered = false;
@@ -320,8 +602,8 @@ V.update = (data, filters) => {
 			if (filters.timeFilter[0].getFullYear() != x.domain()[0].getFullYear() || filters.timeFilter[1].getFullYear() != x.domain()[1].getFullYear()) {
 				isTimeFiltered = true;
 				simulation.force("x").strength(1);
-				simulation.force("y").strength(1);
-				console.log("isTimeFiltered")
+				simulation.force("y").strength(0.7);
+				// console.log("isTimeFiltered")
 			}
 
 			x.domain(d3.extent(nodes.filter( d => {
@@ -333,8 +615,13 @@ V.update = (data, filters) => {
 
 		// Set x and y of subNodes
 		data.nodes.forEach(d => {
-			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year)
-			d.y = d.y ? d.y : y(d.category)
+			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year);
+			d.y = d.y ? d.y : y(d.category);
+
+			if(d.fx&&isTimeFiltered) {
+				d.fx = null
+			}
+
 		})
 
     // Update the force layout
@@ -346,26 +633,30 @@ V.update = (data, filters) => {
       .attr('class', d => `node`)
 			.classed('sub-node', d => d.part_of !== '' )
       .on('click', function(d){
-        highlightNodes([d]);
 
-  			// show work title
-  			information = information.data([d], function(d) { return d.id; });
-  			information.exit().remove();
-  			information = information.enter().append("text")
-  				.classed('information', true)
-  				.classed('label', true)
-  				.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
-  				.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
-  				.attr('y', height - 10)
-  				.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-  				.merge(information);
+				resetByClick = d;
+
+				highlightNodes([d], 'do reset opacity');
 
   			// get the double tap
   			if ((d3.event.timeStamp - last) < 500) {
+					console.log('toggle subnodes of', d)
           toggleSubnodes(d);
+					return;
         }
-        last = d3.event.timeStamp;
+				last = d3.event.timeStamp;
   		})
+			.on('mouseenter', d=>{
+				if (!resetByClick || d.source === resetByClick.source) {
+					highlightNodes([d], 'do reset opacity');
+				}
+			})
+			.on('mouseleave', d=>{
+				if (!resetByClick || d.source === resetByClick.source) {
+					reset();
+				}
+				label.filter( e=>e.id===d.id).classed('selected', false).style('display','none');
+			})
       .attr('key', d=> d.id)
       .attr('cx', d => {
         return d.x
@@ -377,7 +668,7 @@ V.update = (data, filters) => {
       .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
   		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
   		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
-      .style('opacity', 1)
+      // .style('opacity', 1)
       .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
 
 		presumed = presumed.data(nodes.filter(d => { return d.isGuessed }), d => { return d.id })
@@ -385,7 +676,6 @@ V.update = (data, filters) => {
     presumed = presumed.enter().append('circle')
 			.classed('presumed', true)
 			.attr('r', 1.5)
-			// .attr('fill', '#333')
 			.attr('fill', function(d) { return d3.color(color(d.category)).darker(1) })
 			.attr('cx', d => {
         return d.x
@@ -430,14 +720,6 @@ V.update = (data, filters) => {
   			return color(d[0].category)
   		})
   		.style('opacity', .25)
-  		.on('click', d => {
-  			// d3.event.preventDefault;
-  			// get the double tap
-  			if ((d3.event.timeStamp - last) < 500) {
-          toggleSubnodes(d[0]);
-        }
-        last = d3.event.timeStamp;
-  		})
   		.merge(hull);
 
     simulation.nodes(nodes);
@@ -447,9 +729,13 @@ V.update = (data, filters) => {
   	simulation.alpha(1).restart();
   }
 
+	V.filter(filters);
+
+}
+
+V.filter = filters => {
 	if (filters) {
 		// store filters
-		storedFilters = filters
 		// do filters here
 		if (filters.openAll !== undefined && filters.openAll !== openAllState) {
 			console.log('open or close all', filters.openAll)
@@ -460,44 +746,55 @@ V.update = (data, filters) => {
 				V.closeAll();
 			}
 		}
-		if (filters.selectedPublications) {
-			if (filters.selectedPublications === 'tutti') {
-				node.classed('faded', false)
-			} else {
-				node.classed('faded', false).classed('faded', d => {
-					if (filters.selectedPublications === 'altro') {
-						return  !d.publicationType === ""
-					} else {
-						return !d.publicationType.includes(filters.selectedPublications)
-					}
-				})
-			}
-		}
-		if (filters.selectedThemes) {
-			if (filters.selectedThemes === 'tutti') {
-				node.classed('faded', false)
-			} else {
-				node.classed('faded', false).classed('faded', d => {
-					if (d.themes) {
-						return !d.themes.includes(filters.selectedThemes)
-					} else {
-						return true
-					}
-				})
-			}
-		}
-		if (filters.search) {
-			if (filters.search.length > 0) {
-				node
-					.classed('faded', true)
-					.filter(d=>filters.search.indexOf(d.id)>-1)
-					.classed('faded', false)
-			} else {
-				node.classed('faded', false)
-			}
-		}
-	}
 
+		let surviveFilters = []
+
+		let pubTypes = filters.selectedPublications;
+		surviveFilters[0] = nodes.filter( d=>{
+			let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
+			return check.indexOf(true) > -1;
+		}).map(d=>d.id);
+
+		let pubThemes = filters.selectedThemes;
+		surviveFilters[1] = nodes.filter( d=>{
+			let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
+			return check.indexOf(true) > -1;
+		}).map(d=>d.id);
+
+		if (filters.search.length) {
+			surviveFilters[2] = filters.search;
+
+			let parents2open=[];
+			filters.search.forEach(s=>{
+				search4Parent(s);
+			});
+			function search4Parent(nodeId){
+				const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
+				if (thisNode.part_of !== "") {
+					parents2open.push(thisNode.part_of);
+					search4Parent(thisNode.part_of);
+				}
+			}
+			// I technically should open interesting parents, but it is kind of ahard.
+			// Provisionally solve the issue by highliting parents
+			surviveFilters[2] = _.union(surviveFilters[2], parents2open)
+
+		}
+
+		// console.log('surviveFilters', surviveFilters)
+		let mergeSurvived = [];
+		surviveFilters.forEach((d,i) => {
+			if (i===0) {
+				mergeSurvived = d;
+			} else {
+				if (surviveFilters[i].length) {
+					mergeSurvived = _.intersection(mergeSurvived, surviveFilters[i]);
+				}
+			}
+		})
+		// console.log("survived", mergeSurvived.length)
+		node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
+	}
 }
 
 V.openAll = () => {
@@ -505,7 +802,7 @@ V.openAll = () => {
 	function runAll(nodesList) {
 		nodesList.forEach( n => {
 			if (n.totalSubNodes > 0) {
-				toggleSubnodes(n, false);
+				openSubnodes(n, false);
 				runAll(n.subNodes);
 			}
 		});
@@ -518,7 +815,7 @@ V.openAll = () => {
 V.closeAll = () => {
 
 	rootNodes.forEach(function(d){
-		toggleSubnodes(d, false);
+		closeSubnodes(d, false);
 	})
 	// simulation.force("x").strength(1)
 	// simulation.force("y").strength(1)
@@ -643,3 +940,12 @@ var roundedHull2 = function (polyPoints, data) {
         + ' L ' + p1 + ' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',')
         + ' L ' + p3 + ' A ' + [hullPadding, hullPadding, '0,0,0', p0].join(',');
 };
+
+
+/////// Interactions
+
+document.addEventListener('keydown', keyIsPressedHereYeah);
+function keyIsPressedHereYeah(e) {
+  if (e.key === 'l') label.classed('make-visible', true)
+	if (e.key === 'L') label.classed('make-visible', false)
+}

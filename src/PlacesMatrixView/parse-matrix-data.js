@@ -18,18 +18,18 @@ ParseMatrixData.parser = (rawData) => {
 			'year': +d.year,
 			'category': d['Categoria'],
 			'totalSubNodes':0,
-      'publicationType': d['Pubblicazione Fonte'],
+      'publicationType': d['Pubblicazione Fonte'].split(';'),
       'pubVenueTitle': d['Pubblicazioni Titoli'],
       'isGuessed': d['Luogo desunto'],
-      'themes': d['Tema']
+      'themes': d['Tema'].split(';')
 		}
 		return obj
 	})
-  data = ParseMatrixData.handleHierarchies(data)
 
-  const graph = ParseMatrixData.calculateNetwork(data);
-  // console.log(graph)
-  return graph;
+  const hierarchies = ParseMatrixData.handleHierarchies(data)
+
+  const graph = ParseMatrixData.calculateNetwork(hierarchies);
+  return {graph,data};
 }
 
 ParseMatrixData.handleHierarchies = (nodes) => {
@@ -105,7 +105,7 @@ ParseMatrixData.calculateNetwork = (nodes) => {
 				edges.push(obj);
 			})
 		})
-	return { 'nodes': nodes, 'edges': edges, 'root_nodes': nodes.filter(d => d.subNodes) }
+	return { 'nodes': nodes, 'edges': edges, 'root_nodes': nodes.filter(d => d.subNodes)}
 }
 
 export default ParseMatrixData

@@ -629,7 +629,7 @@ L00623	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V0
 L00624	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1957	cantiere	*** (Sanremo)	L00613	generico						sì	sì	-	generico_terrestre	104983	104991		paesaggio urbano
 L00625	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1957	Roma			nominato	comune					sì	sì	no	nominato_terrestre	144196	144200		paesaggio urbano
 L00626	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1957	Cannes			nominato	comune					sì	sì	no	nominato_terrestre	150113	150119		paesaggio urbano
-L00627	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1957	casa	*** (Sanremo)	L00613	generico						sì	sì	-	generico_terrestre	155406	155410		paesaggio urbano
+L00627	S088	La speculazione edilizia	raccolta;volume	«Botteghe Oscure»;V006;V010	«Botteghe Oscure»;I racconti;La speculazione edilizia	1958	casa	*** (Sanremo)	L00613	generico						sì	sì	-	generico_terrestre	155406	155410		paesaggio urbano
 L00628	S089	Dialogo sul satellite	altro	«Città aperta»	«Città aperta»	1958	razzo			generico					x	no	sì	-	generico_terrestre	7847	7852		paesaggio cosmico
 L00629	S089	Dialogo sul satellite	altro	«Città aperta»	«Città aperta»	1958	foresta			generico					x	no	sì	-	generico_terrestre	8116	8123		paesaggio cosmico
 L00630	S090	Monologo notturno d'un nobile scozzese	altro	«L'Espresso»	«L'Espresso»	1958	stanza	castello	L00631	generico			x	x	x	sì	sì	-	generico_terrestre	199	205		nessuno
@@ -1302,7 +1302,7 @@ L01296	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	Inferi		
 L01297	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	vulcano	Terra	L01298	generico				x		sì	sì	-	generico_terrestre	8948	8955		paesaggio cosmico;mito
 L01298	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	Terra			nominato	pianeta					sì	sì	no	nominato_non_terrestre	9223	9228		paesaggio cosmico;mito
 L01299	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	Vesuvio	Terra	L01298	nominato	landmark					sì	sì	no	nominato_terrestre	13387	13394		paesaggio cosmico;mito
-L01299b	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	Ercolano	Terra	L01298	nominato	comune					sì	sì	no	nominato_terrestre	13467	13475		nessuno
+L01299b	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	Ercolano	Terra	L01050	nominato	comune					sì	sì	no	nominato_terrestre	13467	13475		nessuno
 L01300	S179	L'altra euridice	altro	«Gran Bazaar»	«Gran Bazaar»	1980	stanza	Terra	L01298	generico						sì	sì	-	generico_terrestre	14870	14876		paesaggio cosmico;mito
 L01301	S180	Essere pietra (per Alberto Magnelli)	altro	Magnelli. Les pierres: 1931-1935	Magnelli. Les pierres: 1931-1935	1981	no ambientazione			-			-	-	-	-	-	-	no_ambientazione	-	-		nessuno
 L01302	S181	Le memorie di Casanova	altro	I. Calvino/M. Campigli, Le memorie di Casanova	I. Calvino/M. Campigli, Le memorie di Casanova	1981	xxx			nominato	comune					no	sì	sì	inventato	60	63		paesaggio urbano
