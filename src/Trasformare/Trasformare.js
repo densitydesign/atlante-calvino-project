@@ -32,6 +32,9 @@ class Trasformare extends Component {
           }
         ]
       },
+      ricerca: {
+
+      },
       gruppi: {
         multiple: false,
         options: [
