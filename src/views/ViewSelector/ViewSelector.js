@@ -6,7 +6,9 @@ export default class ViewSelector extends React.Component
   render()
   {
     return (
-      <Link to={this.props.route}>{this.props.text}</Link>
+      <div className={this.props.className}>
+        <Link to={this.props.route}>{this.props.text}</Link>
+      </div>
     );
   }
 }
