@@ -14,6 +14,9 @@ class Trasformare extends Component {
   constructor(props) {
     super(props);
 
+    this.changeCercaPer = this.changeCercaPer.bind(this);
+    this.changeRicerca = this.changeRicerca.bind(this);
+
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
 
     this.state = {
@@ -33,7 +36,32 @@ class Trasformare extends Component {
         ]
       },
       ricerca: {
-
+        options: [
+          {
+            // 'id':1,
+            'id-calvino':'S001',
+            'label':'uno',
+            'status':false
+          },
+          {
+            // 'id':2,
+            'id-calvino':'S002',
+            'label':'due',
+            'status':false
+          },
+          {
+            // 'id':3,
+            'id-calvino':'S003',
+            'label':'tre',
+            'status':false
+          },
+          {
+            // 'id':4,
+            'id-calvino':'S004',
+            'label':'quattro',
+            'status':false
+          }
+        ]
       },
       gruppi: {
         multiple: false,
@@ -81,8 +109,95 @@ class Trasformare extends Component {
     };
   }
 
+  changeCercaPer(newOptions) {
+    let selection = newOptions.filter(d=>d.status)
+    if (selection.length<1){
+      console.error('err');
+      return;
+    }
+    selection = selection[0].label
+    console.log(selection)
+
+    let research_options;
+
+    if (selection==='luogo') {
+      research_options = [
+        {
+          // 'id':1,
+          'id-calvino':'S001',
+          'label':'uno',
+          'status':false
+        },
+        {
+          // 'id':2,
+          'id-calvino':'S002',
+          'label':'due',
+          'status':false
+        },
+        {
+          // 'id':3,
+          'id-calvino':'S003',
+          'label':'tre',
+          'status':false
+        },
+        {
+          // 'id':4,
+          'id-calvino':'S004',
+          'label':'quattro',
+          'status':false
+        }
+      ]
+    } else {
+      research_options = [
+        {
+          // 'id':1,
+          'id-calvino':'S005',
+          'label':'cinque',
+          'status':false
+        },
+        {
+          // 'id':2,
+          'id-calvino':'S006',
+          'label':'sei',
+          'status':false
+        },
+        {
+          // 'id':3,
+          'id-calvino':'S007',
+          'label':'sette',
+          'status':false
+        },
+        {
+          // 'id':4,
+          'id-calvino':'S008',
+          'label':'otto',
+          'status':false
+        }
+      ]
+    }
+
+    this.setState(prevState => ({
+      cerca_per: {
+        ...prevState.cerca_per,
+        options: newOptions
+      },
+      ricerca: {
+        ...prevState.ricerca,
+        options: research_options
+      }
+    }))
+  }
+
+  changeRicerca(newOptions) {
+    this.setState(prevState => ({
+      ricerca: {
+        ...prevState.ricerca,
+        options: newOptions
+      }
+    }))
+  }
+
   changePubblicazioni(newOptions) {
-    console.log('view changePubblicazioni', newOptions)
     this.setState(prevState => ({
       pubblicazioni: {
         ...prevState.pubblicazioni,
@@ -118,10 +233,11 @@ class Trasformare extends Component {
               title="Cerca per"
               data = {this.state.cerca_per}
               style={{gridColumn: 'span 5'}}
+              changeOptions={this.changeCercaPer}
             /> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <Search style={{gridColumn: 'span 5'}}/> }
+          { !this.state.isLoading && <Search style={{gridColumn: 'span 5'}} data={this.state.ricerca} changeOptions={this.changeRicerca}/> }
 
           <MoreInfo style={{gridColumn: 'span 1'}}/>
         </div>
