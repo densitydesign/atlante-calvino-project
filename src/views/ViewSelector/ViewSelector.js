@@ -6,7 +6,7 @@ export default class ViewSelector extends React.Component
   render()
   {
     return (
-      <Link to="PhenomenaIntro">Fenomeni - Intro</Link>
+      <Link to={this.props.route}>{this.props.text}</Link>
     );
   }
 }
