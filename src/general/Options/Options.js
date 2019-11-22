@@ -9,7 +9,8 @@ class Options extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show:undefined
+      show:undefined,
+      selection: (this.props.data.multiple===false) ? this.props.data.options.filter(d=>d.status)[0].label : undefined
     }
     this.handleChange = this.handleChange.bind(this);
     this.toggleDropDown = this.toggleDropDown.bind(this);
@@ -76,15 +77,6 @@ class Options extends Component {
   }
 
   render() {
-
-    if (!this.props.data.multiple) {
-      if (!this.state.selection) {
-        this.setState({
-          selection: this.props.data.options.filter(d=>d.status)[0].label
-        })
-      }
-    }
-
     return (
       <div className="options-container" style={this.props.style}>
 
@@ -92,8 +84,8 @@ class Options extends Component {
           <Dropdown.Toggle>
             { !this.props.data.multiple && (
                 <div>
-                  <span class="micro-title">{this.props.title}</span>
-                  <span class="current-selection">{this.state.selection}</span>
+                  <span className="micro-title">{this.props.title}</span>
+                  <span className="current-selection">{this.state.selection}</span>
                 </div>
               )
             }
