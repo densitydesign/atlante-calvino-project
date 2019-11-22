@@ -4,6 +4,7 @@ import GlobalData from '../GlobalData';
 import MainMenu from '../general/MainMenu';
 import VizTitle from '../general/VizTitle';
 import MoreInfo from '../general/MoreInfo';
+import Loading from '../general/Loading';
 
 import Options from '../general/Options';
 import Search from '../general/Search';
@@ -17,7 +18,7 @@ class Trasformare extends Component {
 
     this.state = {
       data:'data still not loaded',
-      isLoading: true,
+      isLoading: false,
       cerca_per: {
         multiple: false,
         options: [
@@ -109,12 +110,15 @@ class Trasformare extends Component {
           <MainMenu className="main-menu" style={{gridColumn: 'span 1'}}/>
           <VizTitle title={this.props.title} style={{gridColumn: 'span 12'}}/>
 
-          <Options
-            title="Cerca per"
-            data = {this.state.cerca_per}
-            style={{gridColumn: 'span 5'}}
-          />
-          <Search style={{gridColumn: 'span 5'}}/>
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Options
+              title="Cerca per"
+              data = {this.state.cerca_per}
+              style={{gridColumn: 'span 5'}}
+            /> }
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Search style={{gridColumn: 'span 5'}}/> }
 
           <MoreInfo style={{gridColumn: 'span 1'}}/>
         </div>
@@ -124,15 +128,23 @@ class Trasformare extends Component {
         </div>
 
         <div className="bottom-nav navigations">
-          <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/>
-          <Options
-            title="Pubblicazioni"
-            data={this.state.pubblicazioni}
-            style={{gridColumn: 'span 5'}}
-            changeOptions={this.changePubblicazioni}
-          />
-          <Options title="Ambienti" data={this.state.ambienti} style={{gridColumn: 'span 5'}}/>
-          <RangeFilter style={{gridColumn: 'span 9'}}/>
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/> }
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Options
+              title="Pubblicazioni"
+              data={this.state.pubblicazioni}
+              style={{gridColumn: 'span 5'}}
+              changeOptions={this.changePubblicazioni}
+            /> }
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Options title="Ambienti" data={this.state.ambienti} style={{gridColumn: 'span 5'}}/> }
+
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <RangeFilter style={{gridColumn: 'span 9'}}/> }
         </div>
       </div>
     );
