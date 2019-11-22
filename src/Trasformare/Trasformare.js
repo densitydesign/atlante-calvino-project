@@ -18,6 +18,7 @@ class Trasformare extends Component {
     this.changeRicerca = this.changeRicerca.bind(this);
 
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
+    this.changeAmbienti = this.changeAmbienti.bind(this);
 
     this.state = {
       data:'data still not loaded',
@@ -206,6 +207,15 @@ class Trasformare extends Component {
     }))
   }
 
+  changeAmbienti(newOptions) {
+    this.setState(prevState => ({
+      ambienti: {
+        ...prevState.ambienti,
+        options: newOptions
+      }
+    }))
+  }
+
   componentDidMount() {
     // setTimeout(() => {
     //   console.log('test')
@@ -260,7 +270,12 @@ class Trasformare extends Component {
             /> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <Options title="Ambienti" data={this.state.ambienti} style={{gridColumn: 'span 5'}}/> }
+          { !this.state.isLoading && <Options
+              title="Ambienti"
+              data={this.state.ambienti}
+              style={{gridColumn: 'span 5'}}
+              changeOptions={this.changeAmbienti}
+            /> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
           { !this.state.isLoading && <RangeFilter style={{gridColumn: 'span 9'}}/> }
