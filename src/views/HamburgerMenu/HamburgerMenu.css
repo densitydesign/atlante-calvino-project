@@ -1,7 +1,21 @@
 .hamburger-menu {
   display : grid;
+  grid-template-rows : 1fr;
+  grid-template-columns : 2fr 4fr;
   border-top: 1px solid black;
   border-left: 1px solid black;
+}
+
+.hamburger-menu-sidebar {
+  display : grid;
+  grid-template-rows : 1fr 2fr;
+  grid-template-columns : 1fr;
+}
+
+.hamburger-menu-cell-grid {
+  display : grid;
+  grid-template-rows : 1fr 1fr 1fr 1fr;
+  grid-template-columns : 1fr 1fr 1fr 1fr;
 }
 
 .hamburger-menu-cell {
