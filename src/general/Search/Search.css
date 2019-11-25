@@ -1,0 +1,24 @@
+.rbt {
+    height: 100%;
+    width: 100%;
+    max-height: calc(var(--navigation-height) - 2px);
+}
+
+.rbt .rbt-input-multi {
+    height: 100%;
+    padding: 0.3rem 0;
+    border: none;
+    background-color: transparent;
+}
+
+.rbt .rbt-input-multi .rbt-input-wrapper {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.rbt .form-control:focus, .rbt .rbt-input-multi.focus {
+  box-shadow: none;
+}
