@@ -89,3 +89,9 @@ h5 {
   position: fixed;
   bottom: 0;
 }
+
+.viz-title {
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-size: 1.2857142857rem;
+}

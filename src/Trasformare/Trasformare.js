@@ -25,6 +25,7 @@ class Trasformare extends Component {
     this.changeCercaPer = this.changeCercaPer.bind(this);
     this.changeRicerca = this.changeRicerca.bind(this);
 
+    this.changeGruppi = this.changeGruppi.bind(this);
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
     this.changeAmbienti = this.changeAmbienti.bind(this);
     this.changeTimeSpan = this.changeTimeSpan.bind(this);
@@ -223,6 +224,12 @@ class Trasformare extends Component {
 
   }
 
+  changeGruppi(newOptions) {
+    this.setState({
+      statoGruppi: newOptions.filter(d=>d.status)[0].label
+    })
+  }
+
   changePubblicazioni(newOptions) {
 
     const criteria = newOptions.filter(d=>d.status).map(d=>d.label)
@@ -275,7 +282,7 @@ class Trasformare extends Component {
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       <div className="trasformare main">
 
@@ -305,13 +312,18 @@ class Trasformare extends Component {
         <div className="bottom-nav navigations">
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/> }
+          { !this.state.isLoading && <Options
+              title="Gruppi"
+              data={this.state.gruppi}
+              style={{gridColumn: 'span 5', textAlign: 'center'}}
+              changeOptions={this.changeGruppi}
+            /> }
 
           { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
           { !this.state.isLoading && <Options
               title="Pubblicazioni"
               data={this.state.pubblicazioni}
-              style={{gridColumn: 'span 5'}}
+              style={{gridColumn: 'span 5', textAlign: 'center'}}
               changeOptions={this.changePubblicazioni}
             /> }
 
@@ -319,7 +331,7 @@ class Trasformare extends Component {
           { !this.state.isLoading && <Options
               title="Ambienti"
               data={this.state.ambienti}
-              style={{gridColumn: 'span 5'}}
+              style={{gridColumn: 'span 5', textAlign: 'center'}}
               changeOptions={this.changeAmbienti}
             /> }
 
