@@ -20,7 +20,11 @@ class Search extends Component {
           //     return d
           //   })
 
-          this.props.changeOptions(selected)
+          if (selected.length > 0) {
+            this.props.changeOptions(selected)
+          } else {
+            this.props.changeOptions(this.props.data.options)
+          }
 
         }}
         options={this.props.data.options}

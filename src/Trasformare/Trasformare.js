@@ -119,8 +119,23 @@ class Trasformare extends Component {
             }
           })
 
+        let searchByLuogo = d3.nest()
+          .key(d=>d.label)
+          .entries(data.data)
+          .map(d=>{
+            return {
+              'label': d.key,
+              'id': d.values.map(dd=>dd.id),
+              'status': true
+            }
+          })
+          .sort((a, b) => a.label.localeCompare(b.label))
+
+
+
         let data_research = {
-          luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
+          // luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
+          luogo: searchByLuogo,
           raccolta: nodesByPublicationTitle,
           titolo: searchByCompositionTitle
         }
@@ -192,10 +207,11 @@ class Trasformare extends Component {
 
   changeRicerca(newOptions) {
 
-    // console.log(newOptions)
+    console.log(newOptions)
 
-    const toPreserve = newOptions.map(d=>d.id).flat()
-    console.log(toPreserve.length)
+    let toPreserve = newOptions.map(d=>d.id)
+    toPreserve = _.flattenDeep(toPreserve)
+    // console.log(toPreserve.length)
 
     this.setState(prevState => ({
       ricerca: {
@@ -251,7 +267,7 @@ class Trasformare extends Component {
   }
 
   render() {
-    console.log(this.state.filter.length)
+    // console.log(this.state.filter.length)
     return (
       <div className="trasformare main">
 
