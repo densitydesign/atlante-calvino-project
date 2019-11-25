@@ -78,13 +78,13 @@ class Trasformare extends Component {
         let kinds = data.data.map(d=>d.publicationType).flat()
         kinds = kinds.filter((d,i)=>kinds.indexOf(d)===i)
         kinds = kinds.filter((d)=>d!==''&&d!==" ")
-        kinds = kinds.map(d=> { return { 'label':d, 'state':true} } )
+        kinds = kinds.map(d=> { return { 'label':d, 'status':true} } )
         // console.log(kinds)
 
         let environments = data.data.map(d=>d.themes).flat()
         environments = environments.filter((d,i)=>environments.indexOf(d)===i)
         environments = environments.filter((d)=>d!==''&&d!==" ")
-        environments = environments.map(d=> { return { 'label':d, 'state':true} } )
+        environments = environments.map(d=> { return { 'label':d, 'status':true} } )
         // console.log(environments)
 
         let allTitles = data.data.map(d=>d.pubVenueTitle.split(';'));
@@ -130,6 +130,7 @@ class Trasformare extends Component {
         this.setState({
           data: data.graph,
           originalData: data.data,
+          filter: data.data.map(d=>d.id),
           isLoading: false,
           data_research: data_research,
           ricerca: {
@@ -215,7 +216,7 @@ class Trasformare extends Component {
   }
 
   render() {
-
+    console.log(this.state)
     return (
       <div className="trasformare main">
 
