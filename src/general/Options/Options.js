@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import './Options.css'
 
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -17,7 +16,7 @@ class Options extends Component {
   }
 
   componentDidMount() {
-    console.log('Mounted',this.props.title, this.props.data);
+    // console.log('Mounted',this.props.title, this.props.data);
   }
 
   componentDidUpdate() {
