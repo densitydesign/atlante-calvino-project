@@ -1,4 +1,5 @@
 import React from 'react';
+import './general/HK Grotesk/WEB/stylesheet.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import PlacesMatrixView from './PlacesMatrixView/PlacesMatrixView';

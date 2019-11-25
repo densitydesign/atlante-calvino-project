@@ -6,14 +6,9 @@
   --navigation-height: 48px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
-
   --navigation-borders: black;
-
-
-
-
   font-size: 14px;
-  font-family: sans-serif;
+  font-family: 'HKGrotesk', sans-serif;
 }
 
 body {
@@ -41,15 +36,15 @@ h5 {
   z-index: 10000;
 }
 
-.the-header > * {
+.the-header>* {
   padding: 0 15px;
   border-bottom: 1px solid var(--dark-green);
   max-height: 100%;
-    overflow: scroll;
+  overflow: scroll;
   box-sizing: border-box;
 }
 
-.the-header > *:not(:last-child) {
+.the-header>*:not(:last-child) {
   border-right: 1px solid var(--dark-green);
 }
 
@@ -67,17 +62,18 @@ h5 {
   z-index: 10000;
 }
 
-.navigations > *:not(:last-child) {
+.navigations>*:not(:last-child) {
   border-right: 1px solid var(--navigation-borders);
 }
 
-.navigations > div {
+.navigations>div {
   max-height: 100%;
+
+  display: flex;
+  align-items: center;
 }
 
-.navigations > div svg {
-
-}
+.navigations>div svg {}
 
 .top-nav {
   position: static;
