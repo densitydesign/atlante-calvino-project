@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import _ from 'lodash';
+
 import GlobalData from '../GlobalData';
 
 import MainMenu from '../general/MainMenu';
@@ -28,6 +30,7 @@ class Trasformare extends Component {
 
     this.state = {
       data: 'data still not loaded',
+      filter:[],
       isLoading: true,
       cerca_per: {
         multiple: false,
@@ -122,8 +125,6 @@ class Trasformare extends Component {
           titolo: searchByCompositionTitle
         }
 
-        console.log(data_research)
-
         let time = d3.extent(data.data, d => d.year)
         // console.log(time)
 
@@ -131,15 +132,18 @@ class Trasformare extends Component {
           data: data.graph,
           originalData: data.data,
           filter: data.data.map(d=>d.id),
+          noFilter: data.data.map(d=>d.id),
           isLoading: false,
           data_research: data_research,
           ricerca: {
             options: data_research.luogo
           },
+          toPreserveRicerca: data.data.map(d=>d.id),
           pubblicazioni: {
             multiple: true,
             options: kinds
           },
+          toPreservePubblicazioni: data.data.map(d=>d.id),
           volumi: {
             multiple: true,
             options: GlobalData.allVolumes.map(d=>{
@@ -149,10 +153,12 @@ class Trasformare extends Component {
               }
             }),
           },
+          toPreserveVolumi: data.data.map(d=>d.id),
           ambienti: {
             multiple: true,
             options: environments
           },
+          toPreserveAmbienti: data.data.map(d=>d.id),
           time: {
             extent: time,
             filter: time
@@ -185,29 +191,58 @@ class Trasformare extends Component {
   }
 
   changeRicerca(newOptions) {
+
+    // console.log(newOptions)
+
+    const toPreserve = newOptions.map(d=>d.id).flat()
+    console.log(toPreserve.length)
+
     this.setState(prevState => ({
       ricerca: {
         ...prevState.ricerca,
-        options: newOptions
-      }
+        // options: newOptions
+      },
+      toPreserveRicerca: toPreserve,
+      filter: _.intersection(prevState.noFilter, toPreserve, prevState.toPreservePubblicazioni, prevState.toPreserveVolumi, prevState.toPreserveAmbienti)
     }))
+
   }
 
   changePubblicazioni(newOptions) {
+
+    const criteria = newOptions.filter(d=>d.status).map(d=>d.label)
+    const toPreserve = this.state.originalData.filter(node=>{
+      return node.publicationType.filter(value => criteria.includes(value)).length > 0
+    }).map(d=>d.id)
+    console.log(toPreserve.length)
+
     this.setState(prevState => ({
       pubblicazioni: {
         ...prevState.pubblicazioni,
         options: newOptions
-      }
+      },
+      toPreservePubblicazioni: toPreserve,
+      filter: _.intersection(prevState.noFilter, prevState.toPreserveRicerca, toPreserve, prevState.toPreserveVolumi, prevState.toPreserveAmbienti)
     }))
   }
 
   changeAmbienti(newOptions) {
+
+    const criteria = newOptions.filter(d=>d.status).map(d=>d.label)
+    const toPreserve = this.state.originalData.filter(node=>{
+      return node.themes.filter(value => criteria.includes(value)).length > 0
+    }).map(d=>d.id)
+    console.log(toPreserve.length)
+
+    // this.filterData()
+
     this.setState(prevState => ({
       ambienti: {
         ...prevState.ambienti,
         options: newOptions
-      }
+      },
+      toPreserveAmbienti: toPreserve,
+      filter: _.intersection(prevState.noFilter, prevState.toPreserveRicerca, prevState.toPreservePubblicazioni, prevState.toPreserveVolumi, toPreserve)
     }))
   }
 
@@ -216,7 +251,7 @@ class Trasformare extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.filter.length)
     return (
       <div className="trasformare main">
 
