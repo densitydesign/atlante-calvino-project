@@ -1,0 +1,10 @@
+
+.nav-menu-cell-grid {
+  display : grid;
+  grid-template-rows : 1fr 1fr 1fr 1fr;
+  padding : 100px;
+}
+
+.nav-menu-cell {
+  text-align : left;
+}

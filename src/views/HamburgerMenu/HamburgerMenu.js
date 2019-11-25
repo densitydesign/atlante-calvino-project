@@ -4,6 +4,7 @@ import NavMenu from '../NavMenu/NavMenu';
 import ViewSelector from '../ViewSelector/ViewSelector';
 
 import './HamburgerMenu.css';
+import '../NavMenu/NavMenu.css';
 
 export default class HamburgerMenu extends React.Component
 {
@@ -12,7 +13,7 @@ export default class HamburgerMenu extends React.Component
     return (
       <div className="hamburger-menu">
         <div className="hamburger-menu-sidebar">
-          <ViewSelector className="hamburger-menu-cell" route="Compass" text="Bussola" />
+          <ViewSelector className="compass-selector-cell" route="Compass" text="Bussola" />
           <NavMenu />
         </div>
         
