@@ -20,7 +20,7 @@ const GlobalData = {
     {"id":"V018","label":"Le città invisibili"},
     {"id":"V019","label":"Il castello dei destini incrociati (riediz)"},
     {"id":"V020","label":"Eremita a Parigi"},
-    {"id":"V021","label":"Se una notte d\'inverno un viaggiatore"},
+    {"id":"V021","label":"Se una notte d'inverno un viaggiatore"},
     {"id":"V022","label":"Palomar"},
     {"id":"V023","label":"Le cosmicomiche vecchie e nuove"}
   ]
