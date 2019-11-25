@@ -8,6 +8,10 @@
   font-family: sans-serif;
 }
 
+html,body {
+  height : 100vh;
+}
+
 body {
   margin: 0;
 }
