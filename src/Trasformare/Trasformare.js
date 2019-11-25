@@ -273,18 +273,18 @@ class Trasformare extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{gridColumn: 'span 1'}}/>
-          <PageTitle title={this.props.title} style={{gridColumn: 'span 12'}}/>
+          <PageTitle title={this.props.title} style={{gridColumn: 'span 11'}}/>
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 2'}} /> }
           { !this.state.isLoading && <Options
               title="Cerca per"
               data = {this.state.cerca_per}
-              style={{gridColumn: 'span 4'}}
+              style={{gridColumn: 'span 2'}}
               changeOptions={this.changeCercaPer}
             /> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <Search style={{gridColumn: 'span 5'}} data={this.state.ricerca} changeOptions={this.changeRicerca}/> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 8'}} /> }
+          { !this.state.isLoading && <Search style={{gridColumn: 'span 8'}} data={this.state.ricerca} changeOptions={this.changeRicerca}/> }
 
           <MoreInfo style={{gridColumn: 'span 1'}}/>
           <Bussola style={{gridColumn: 'span 1'}}/>
@@ -296,27 +296,27 @@ class Trasformare extends Component {
 
         <div className="bottom-nav navigations">
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
+          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 4'}}/> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
           { !this.state.isLoading && <Options
               title="Pubblicazioni"
               data={this.state.pubblicazioni}
-              style={{gridColumn: 'span 5'}}
+              style={{gridColumn: 'span 4'}}
               changeOptions={this.changePubblicazioni}
             /> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
           { !this.state.isLoading && <Options
               title="Ambienti"
               data={this.state.ambienti}
-              style={{gridColumn: 'span 5'}}
+              style={{gridColumn: 'span 4'}}
               changeOptions={this.changeAmbienti}
             /> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
-          { !this.state.isLoading && <RangeFilter style={{gridColumn: 'span 9'}}/> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 12'}} /> }
+          { !this.state.isLoading && <RangeFilter style={{gridColumn: 'span 12'}}/> }
         </div>
       </div>
     );
