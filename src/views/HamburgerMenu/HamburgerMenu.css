@@ -1,6 +1,14 @@
 .hamburger-menu {
-  color : red;
   display : grid;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.hamburger-menu-cell {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  text-align: center;
+  padding: 10px;
 }
 
 .hamburger-menu-cell-11 {
