@@ -41,7 +41,7 @@ class Trasformare extends Component {
             'status':true
           },
           {
-            'label':'raccolta',
+            'label':'titolo pubblicazione',
             'status':false
           },
           {
@@ -137,7 +137,7 @@ class Trasformare extends Component {
         let data_research = {
           // luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
           luogo: searchByLuogo,
-          raccolta: nodesByPublicationTitle,
+          'titolo pubblicazione': nodesByPublicationTitle,
           titolo: searchByCompositionTitle
         }
 
@@ -175,10 +175,8 @@ class Trasformare extends Component {
             options: environments
           },
           toPreserveAmbienti: data.data.map(d=>d.id),
-          time: {
-            extent: time,
-            filter: time
-          }
+          timeExtent: time,
+          timeFilter: time
         })
       })
   }
@@ -264,7 +262,12 @@ class Trasformare extends Component {
   }
 
   changeTimeSpan(newOptions) {
-    console.log(newOptions)
+    newOptions = newOptions.map(d=>{
+      return +new Date(d)
+    })
+    this.setState({
+      'timeFilter': newOptions
+    })
   }
 
   componentDidMount() {
@@ -272,7 +275,7 @@ class Trasformare extends Component {
   }
 
   render() {
-    // console.log(this.state.filter.length)
+    // console.log(this.state)
     return (
       <div className="trasformare main">
 
@@ -323,7 +326,7 @@ class Trasformare extends Component {
           { this.state.isLoading && <Loading style={{gridColumn: 'span 9'}} /> }
           { !this.state.isLoading && <RangeFilter
               style={{gridColumn: 'span 9'}}
-              data={this.state.time.extent}
+              data={this.state.timeExtent}
               changeOptions={this.changeTimeSpan}
             /> }
         </div>

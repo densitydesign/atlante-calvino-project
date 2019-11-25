@@ -12,9 +12,12 @@ Viz.initialize = (el, data, changeSpan) => {
 
   const m = 15;
   Viz.margin = { top: 0, right: m, bottom: el.getBoundingClientRect().height - 20, left: m }
-  Viz.svg = d3.select(el);
   Viz.width = el.getBoundingClientRect().width - Viz.margin.left - Viz.margin.right;
   Viz.height = el.getBoundingClientRect().height - Viz.margin.top - Viz.margin.bottom;
+
+  Viz.svg = d3.select(el).append('svg')
+    .attr('width', Viz.width + Viz.margin.left + Viz.margin.right)
+    .attr('height', Viz.height + Viz.margin.top + Viz.margin.bottom)
 
   Viz.svg.append("defs").append("clipPath")
       .attr("id", "timeclip")

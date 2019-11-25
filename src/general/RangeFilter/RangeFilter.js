@@ -5,16 +5,12 @@ import Viz from './range-filter.d3'
 
 class RangeFilter extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this._chart = Viz.initialize(this._rootNode, this.props.data, this.props.changeOptions);
   }
 
   componentDidUpdate() {
-    Viz.update(this.props.data);
+    // Viz.update(this.props.data);
   }
 
   componentWillUnmount() {
@@ -26,7 +22,8 @@ class RangeFilter extends Component {
   }
 
   render() {
-    return <div style={this.props.style}><svg ref={this._setRef.bind(this)}></svg></div>;
+    // console.log(this.props.data)
+    return <div style={this.props.style} ref={this._setRef.bind(this)}></div>;
   }
 }
 
