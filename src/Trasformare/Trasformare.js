@@ -27,6 +27,7 @@ class Trasformare extends Component {
 
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
     this.changeAmbienti = this.changeAmbienti.bind(this);
+    this.changeTimeSpan = this.changeTimeSpan.bind(this);
 
     this.state = {
       data: 'data still not loaded',
@@ -262,6 +263,10 @@ class Trasformare extends Component {
     }))
   }
 
+  changeTimeSpan(newOptions) {
+    console.log(newOptions)
+  }
+
   componentDidMount() {
     this.loadData();
   }
@@ -296,27 +301,31 @@ class Trasformare extends Component {
 
         <div className="bottom-nav navigations">
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
-          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 4'}}/> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { !this.state.isLoading && <Options title="Gruppi" data={this.state.gruppi} style={{gridColumn: 'span 5'}}/> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
           { !this.state.isLoading && <Options
               title="Pubblicazioni"
               data={this.state.pubblicazioni}
-              style={{gridColumn: 'span 4'}}
+              style={{gridColumn: 'span 5'}}
               changeOptions={this.changePubblicazioni}
             /> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
           { !this.state.isLoading && <Options
               title="Ambienti"
               data={this.state.ambienti}
-              style={{gridColumn: 'span 4'}}
+              style={{gridColumn: 'span 5'}}
               changeOptions={this.changeAmbienti}
             /> }
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 12'}} /> }
-          { !this.state.isLoading && <RangeFilter style={{gridColumn: 'span 12'}}/> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 9'}} /> }
+          { !this.state.isLoading && <RangeFilter
+              style={{gridColumn: 'span 9'}}
+              data={this.state.time.extent}
+              changeOptions={this.changeTimeSpan}
+            /> }
         </div>
       </div>
     );

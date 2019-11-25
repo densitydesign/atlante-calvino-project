@@ -71,6 +71,14 @@ h5 {
   border-right: 1px solid var(--navigation-borders);
 }
 
+.navigations > div {
+  max-height: 100%;
+}
+
+.navigations > div svg {
+
+}
+
 .top-nav {
   position: static;
   top: 0;
