@@ -1,14 +1,20 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component } from 'react';
+import * as d3 from 'd3';
 import GlobalData from '../GlobalData';
 
 import MainMenu from '../general/MainMenu';
-import VizTitle from '../general/VizTitle';
+import PageTitle from '../general/PageTitle';
 import MoreInfo from '../general/MoreInfo';
+import Bussola from '../general/Bussola';
+
 import Loading from '../general/Loading';
 
 import Options from '../general/Options';
 import Search from '../general/Search';
 import RangeFilter from '../general/RangeFilter';
+
+// import PlacesMatrix from '../visualizations/PlacesMatrix';
+import ParseMatrixData from './parse-matrix-data';
 
 class Trasformare extends Component {
   constructor(props) {
@@ -21,8 +27,8 @@ class Trasformare extends Component {
     this.changeAmbienti = this.changeAmbienti.bind(this);
 
     this.state = {
-      data:'data still not loaded',
-      isLoading: false,
+      data: 'data still not loaded',
+      isLoading: true,
       cerca_per: {
         multiple: false,
         options: [
@@ -31,35 +37,11 @@ class Trasformare extends Component {
             'status':true
           },
           {
+            'label':'raccolta',
+            'status':false
+          },
+          {
             'label':'titolo',
-            'status':false
-          }
-        ]
-      },
-      ricerca: {
-        options: [
-          {
-            // 'id':1,
-            'id-calvino':'S001',
-            'label':'uno',
-            'status':false
-          },
-          {
-            // 'id':2,
-            'id-calvino':'S002',
-            'label':'due',
-            'status':false
-          },
-          {
-            // 'id':3,
-            'id-calvino':'S003',
-            'label':'tre',
-            'status':false
-          },
-          {
-            // 'id':4,
-            'id-calvino':'S004',
-            'label':'quattro',
             'status':false
           }
         ]
@@ -76,38 +58,106 @@ class Trasformare extends Component {
             'status':true
           }
         ]
-      },
-      pubblicazioni: {
-        multiple: true,
-        options: GlobalData.allVolumes.map(d=>{
-          return {
-            ...d,
-            'status':true
-          }
-        }),
-      },
-      ambienti: {
-        multiple: true,
-        options:  [
-          {
-            'label':'uno',
-            'status':true
-          },
-          {
-            'label':'due',
-            'status':true
-          },
-          {
-            'label':'tre',
-            'status':true
-          },
-          {
-            'label':'quattro',
-            'status':true
-          }
-        ]
       }
     };
+  }
+
+  loadData() {
+    d3.tsv('./places-matrix-data.tsv')
+      .then( data => {
+        const graph = ParseMatrixData.parser(data);
+        return graph;
+      })
+      .then(data=>{
+
+        let themes = data.data.map(d=>d.themes).flat()
+        themes = themes.filter((d,i)=>themes.indexOf(d)===i)
+        themes = themes.filter((d)=>d!==''&&d!==" ")
+        // console.log(themes)
+
+        let kinds = data.data.map(d=>d.publicationType).flat()
+        kinds = kinds.filter((d,i)=>kinds.indexOf(d)===i)
+        kinds = kinds.filter((d)=>d!==''&&d!==" ")
+        kinds = kinds.map(d=> { return { 'label':d, 'state':true} } )
+        // console.log(kinds)
+
+        let environments = data.data.map(d=>d.themes).flat()
+        environments = environments.filter((d,i)=>environments.indexOf(d)===i)
+        environments = environments.filter((d)=>d!==''&&d!==" ")
+        environments = environments.map(d=> { return { 'label':d, 'state':true} } )
+        // console.log(environments)
+
+        let allTitles = data.data.map(d=>d.pubVenueTitle.split(';'));
+        allTitles = allTitles.flat();
+        allTitles = d3.nest()
+          .key(d=>d)
+          .entries(allTitles)
+          .map(d=>d.key);
+
+        let nodesByPublicationTitle = []
+        allTitles.forEach( d => {
+          let publishedHere = data.data.filter( e => { return e.pubVenueTitle.includes(d) })
+          let obj = {
+            'label': d,
+            'id': [publishedHere.map(d=>d.id)],
+            'status': true
+          }
+          nodesByPublicationTitle.push(obj)
+        })
+
+        let searchByCompositionTitle = d3.nest()
+          .key(d=>d.sourceTitle)
+          .entries(data.data)
+          .map(d=>{
+            return {
+              'label': d.key,
+              'id': d.values.map(dd=>dd.id),
+              'status': true
+            }
+          })
+
+        let data_research = {
+          luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
+          raccolta: nodesByPublicationTitle,
+          titolo: searchByCompositionTitle
+        }
+
+        console.log(data_research)
+
+        let time = d3.extent(data.data, d => d.year)
+        // console.log(time)
+
+        this.setState({
+          data: data.graph,
+          originalData: data.data,
+          isLoading: false,
+          data_research: data_research,
+          ricerca: {
+            options: data_research.luogo
+          },
+          pubblicazioni: {
+            multiple: true,
+            options: kinds
+          },
+          volumi: {
+            multiple: true,
+            options: GlobalData.allVolumes.map(d=>{
+              return {
+                ...d,
+                'status':true
+              }
+            }),
+          },
+          ambienti: {
+            multiple: true,
+            options: environments
+          },
+          time: {
+            extent: time,
+            filter: time
+          }
+        })
+      })
   }
 
   changeCercaPer(newOptions) {
@@ -119,63 +169,7 @@ class Trasformare extends Component {
     selection = selection[0].label
     console.log(selection)
 
-    let research_options;
-
-    if (selection==='luogo') {
-      research_options = [
-        {
-          // 'id':1,
-          'id-calvino':'S001',
-          'label':'uno',
-          'status':false
-        },
-        {
-          // 'id':2,
-          'id-calvino':'S002',
-          'label':'due',
-          'status':false
-        },
-        {
-          // 'id':3,
-          'id-calvino':'S003',
-          'label':'tre',
-          'status':false
-        },
-        {
-          // 'id':4,
-          'id-calvino':'S004',
-          'label':'quattro',
-          'status':false
-        }
-      ]
-    } else {
-      research_options = [
-        {
-          // 'id':1,
-          'id-calvino':'S005',
-          'label':'cinque',
-          'status':false
-        },
-        {
-          // 'id':2,
-          'id-calvino':'S006',
-          'label':'sei',
-          'status':false
-        },
-        {
-          // 'id':3,
-          'id-calvino':'S007',
-          'label':'sette',
-          'status':false
-        },
-        {
-          // 'id':4,
-          'id-calvino':'S008',
-          'label':'otto',
-          'status':false
-        }
-      ]
-    }
+    let research_options = this.state.data_research[selection];
 
     this.setState(prevState => ({
       cerca_per: {
@@ -217,16 +211,7 @@ class Trasformare extends Component {
   }
 
   componentDidMount() {
-    // setTimeout(() => {
-    //   console.log('test')
-    //
-    //   this.setState(prevState => ({
-    //     gruppi: {                    // object that we want to update
-    //       ...prevState.gruppi,       // keep all other key-value pairs
-    //       set: 'all'
-    //     }
-    //   }))
-    // }, 6000)
+    this.loadData();
   }
 
   render() {
@@ -236,13 +221,13 @@ class Trasformare extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{gridColumn: 'span 1'}}/>
-          <VizTitle title={this.props.title} style={{gridColumn: 'span 12'}}/>
+          <PageTitle title={this.props.title} style={{gridColumn: 'span 12'}}/>
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 5'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 4'}} /> }
           { !this.state.isLoading && <Options
               title="Cerca per"
               data = {this.state.cerca_per}
-              style={{gridColumn: 'span 5'}}
+              style={{gridColumn: 'span 4'}}
               changeOptions={this.changeCercaPer}
             /> }
 
@@ -250,6 +235,7 @@ class Trasformare extends Component {
           { !this.state.isLoading && <Search style={{gridColumn: 'span 5'}} data={this.state.ricerca} changeOptions={this.changeRicerca}/> }
 
           <MoreInfo style={{gridColumn: 'span 1'}}/>
+          <Bussola style={{gridColumn: 'span 1'}}/>
         </div>
 
         <div className="the-body-viz">
