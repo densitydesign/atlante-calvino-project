@@ -12,6 +12,8 @@ import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import PlacesMatrixView from '../../PlacesMatrixView/PlacesMatrixView';
+import ContainerComp from '../../ContainerComp/ContainerComp';
 
 export default function AtlasRouter()
 {
@@ -33,9 +35,9 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/transforming">processi / trasformare</Route>
-      <Route exact path="/Process/doubting">processi / dubitare</Route>
       <Route exact path="/Process/combining">processi / combinare</Route>
+      <Route exact path="/Process/doubting">processi / dubitare</Route>
+      <Route exact path="/Process/transforming"><PlacesMatrixView /></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>
