@@ -1,0 +1,16 @@
+
+.back-from-main-menu {
+  background-color: var(--dark-green);
+  color: white;
+  opacity: .8;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  cursor: not-allowed;
+}
+
+.back-from-main-menu:hover {
+  opacity: 1;
+}
