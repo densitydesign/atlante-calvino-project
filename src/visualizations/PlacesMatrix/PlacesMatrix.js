@@ -5,14 +5,14 @@ import V from './matrix.d3'
 class PlacesMatrix extends Component {
 
   componentDidMount() {
-    console.log('componentDidMount')
+    // console.log('componentDidMount')
     V.initialize(this._rootNode, this.props.data)
     V.update(this.props.timeFilter);
     V.filter(this.props.filter)
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate')
+    // console.log('componentDidUpdate')
 
     if (this.props.filter !== prevProps.filter) {
       V.filter(this.props.filter)

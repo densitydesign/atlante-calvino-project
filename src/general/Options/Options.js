@@ -20,7 +20,7 @@ class Options extends Component {
   }
 
   componentDidUpdate() {
-    console.log('Update',this.props.title)
+    // console.log('Update',this.props.title)
     if (this.props.data.reset) {
       let newOptions = this.props.data.options.slice(0)
       newOptions.forEach(d=>d.status=false)

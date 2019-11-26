@@ -255,7 +255,7 @@ class Trasformare extends Component {
     const toPreserve = this.state.originalData.filter(node=>{
       return node.themes.filter(value => criteria.includes(value)).length > 0
     }).map(d=>d.id)
-    console.log(toPreserve.length)
+    // console.log(toPreserve.length)
 
     // this.filterData()
 
@@ -283,7 +283,7 @@ class Trasformare extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="trasformare main">
 
