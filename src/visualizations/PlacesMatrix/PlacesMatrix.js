@@ -6,28 +6,30 @@ class PlacesMatrix extends Component {
 
   componentDidMount() {
     console.log('componentDidMount')
-    this._chart = V.initialize(
-        this._rootNode,
-        this.props.data,
-        this.props.filters
-    );
+    V.initialize(this._rootNode, this.props.data)
+    V.update(this.props.timeFilter);
+    V.filter(this.props.filter)
   }
 
   componentDidUpdate(prevProps, prevState) {
     console.log('componentDidUpdate')
 
-    if (this.props.filters.openAll !== prevProps.filters.openAll) {
-      if (this.props.filters.openAll) {
-        V.openAll();
-      } else {
-        V.closeAll();
-      }
+    if (this.props.filter !== prevProps.filter) {
+      V.filter(this.props.filter)
     }
 
-    if (this.props.filters.update) {
-      V.update(this.props.filters);
-    }
-    V.filter(this.props.filters, this.props.originalData);
+    // if (this.props.filters.openAll !== prevProps.filters.openAll) {
+    //   if (this.props.filters.openAll) {
+    //     V.openAll();
+    //   } else {
+    //     V.closeAll();
+    //   }
+    // }
+    //
+    // if (this.props.filters.update) {
+    //   V.update(this.props.filters);
+    // }
+    // V.filter(this.props.filters, this.props.originalData);
   }
 
   componentWillUnmount() {

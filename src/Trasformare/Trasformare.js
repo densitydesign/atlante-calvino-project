@@ -15,7 +15,7 @@ import Options from '../general/Options';
 import Search from '../general/Search';
 import RangeFilter from '../general/RangeFilter';
 
-// import PlacesMatrix from '../visualizations/PlacesMatrix';
+import PlacesMatrix from '../visualizations/PlacesMatrix';
 import ParseMatrixData from './parse-matrix-data';
 
 class Trasformare extends Component {
@@ -177,7 +177,8 @@ class Trasformare extends Component {
           },
           toPreserveAmbienti: data.data.map(d=>d.id),
           timeExtent: time,
-          timeFilter: time
+          timeFilter: time,
+          update: false
         })
       })
   }
@@ -306,7 +307,13 @@ class Trasformare extends Component {
         </div>
 
         <div className="the-body-viz">
-          Body Viz
+        { this.state.isLoading && <Loading /> }
+        { !this.state.isLoading && <PlacesMatrix
+            data={this.state.data}
+            originalData={this.state.originalData}
+            filter={this.state.filter}
+            timeFilter={this.state.timeFilter}
+        /> }
         </div>
 
         <div className="bottom-nav navigations">

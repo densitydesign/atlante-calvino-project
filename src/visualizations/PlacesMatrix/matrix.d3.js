@@ -56,7 +56,7 @@ V.initialize = (el, data, filters) => {
 	// Scales
 	x = d3.scaleTime()
 		.range([0, width])
-		.domain(filters.span);
+		.domain(d3.extent(data.nodes, d => d.year));
 
 	xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1));
 
@@ -303,11 +303,11 @@ V.initialize = (el, data, filters) => {
 
 }
 
-V.update = (filters) => {
+V.update = (timeFilter) => {
 	// console.log('update');
 	// console.log('graph:', graph);
 
-	if(filters) globalFilters = filters
+	// if(filters) globalFilters = filters
 
 	// update data
 	nodes = graph.nodes;
@@ -323,7 +323,7 @@ V.update = (filters) => {
 	})
 
 	// Update x domain
-	x.domain(globalFilters.span)
+	x.domain(timeFilter)
 	xAxis.call(xAxisCall);
 
 	// calculate new fx
@@ -412,7 +412,18 @@ V.update = (filters) => {
 
 }
 
-V.filter = (filters, theOriginalData) => {
+V.filter = (filter) => {
+	console.log('viz', filter)
+
+	reset();
+
+	filter.forEach(m => {
+		const this_node = nodes.filter(n => n.id === m);
+		if(this_node.length > 0) selectNode(this_node[0]);
+	})
+}
+
+V.filter2 = (filters, theOriginalData) => {
 	// console.log('filter');
 	// console.log('filters:', filters);
 	// console.log('graph:', graph)
@@ -726,7 +737,7 @@ const exportSelected = () => {
 	let searchedTerm = '- No search'
 	if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
 
-const export_data = `Exporting composition titles highlighted through the following filters:
+	const export_data = `Exporting composition titles highlighted through the following filters:
 
 📚 Publication venues ${pubTypes}
 
@@ -739,7 +750,7 @@ composition_id\tcomposition_title
 ${selectedData.map(d=>{
 	return d.composition_id + '\t' + d.composition_title
 }).join(`
-`)}
+	`)}
 `
 	// console.log(export_data)
 
