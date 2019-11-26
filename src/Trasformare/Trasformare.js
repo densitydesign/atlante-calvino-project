@@ -288,13 +288,13 @@ class Trasformare extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{gridColumn: 'span 1'}}/>
-          <PageTitle title={this.props.title} style={{gridColumn: 'span 11'}}/>
+          <PageTitle title={this.props.title} style={{gridColumn: 'span 10'}}/>
 
-          { this.state.isLoading && <Loading style={{gridColumn: 'span 2'}} /> }
+          { this.state.isLoading && <Loading style={{gridColumn: 'span 3'}} /> }
           { !this.state.isLoading && <Options
               title="Cerca per"
               data = {this.state.cerca_per}
-              style={{gridColumn: 'span 2'}}
+              style={{gridColumn: 'span 3'}}
               changeOptions={this.changeCercaPer}
             /> }
 

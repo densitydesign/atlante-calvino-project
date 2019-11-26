@@ -67,10 +67,12 @@ h5 {
 
 .navigations>div {
   max-height: 100%;
-  padding: 0 10px;
-
   display: flex;
   align-items: center;
+}
+
+.page-title, .options-container > .dropdown > button, .search-component {
+ padding: 0 10px;
 }
 
 .navigations>div svg {}

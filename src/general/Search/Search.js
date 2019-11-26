@@ -7,7 +7,7 @@ import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 class Search extends Component {
   render() {
     let isSelection = false;
-    return <div style={this.props.style}>
+    return <div className="search-component" style={this.props.style}>
       { !isSelection && <span style={
           {fontSize: '1rem',
           position: 'relative',

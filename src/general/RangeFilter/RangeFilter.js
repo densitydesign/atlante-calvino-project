@@ -10,7 +10,6 @@ class RangeFilter extends Component {
   }
 
   componentDidUpdate() {
-    // Viz.update(this.props.data);
   }
 
   componentWillUnmount() {
@@ -23,7 +22,7 @@ class RangeFilter extends Component {
 
   render() {
     // console.log(this.props.data)
-    return <div style={this.props.style} ref={this._setRef.bind(this)}></div>;
+    return <div style={this.props.style} ref={this._setRef.bind(this)}><svg className="range-filter"></svg></div>;
   }
 }
 
