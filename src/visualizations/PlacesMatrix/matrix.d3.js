@@ -12,7 +12,7 @@ let graph, nodes = [],
 	links = [],
 	hullsData = [],
 	last = 0,
-	globalFilters,
+	globalTimeFilter,
 	openAllState = false;
 
 // Dimensions and scales
@@ -31,7 +31,7 @@ const V = {}
 
 export default V
 
-V.initialize = (el, data, filters) => {
+V.initialize = (el, data, filter) => {
 	// console.log('init');
 	// console.log('data:', data);
 	// console.log('filters:', filters);
@@ -177,8 +177,7 @@ V.initialize = (el, data, filters) => {
 				d3.select(this).select('rect')
 					.attr('fill', 'transparent')
 			}
-
-			V.update(globalFilters);
+			V.update();
 
 			if(d3.select(this).classed('cat-selected') === false) {
 				node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
@@ -290,7 +289,7 @@ V.initialize = (el, data, filters) => {
 
 	//Store data in global variable
 	graph = data;
-	globalFilters = filters;
+	globalTimeFilter = filter;
 
 	// Precalculating the position of nodes allows to make them appear in place
 	graph.nodes = graph.nodes.map(d => {
@@ -306,8 +305,11 @@ V.initialize = (el, data, filters) => {
 V.update = (timeFilter) => {
 	// console.log('update');
 	// console.log('graph:', graph);
-
-	// if(filters) globalFilters = filters
+	if (timeFilter) {
+		globalTimeFilter = timeFilter
+	} else {
+		timeFilter = globalTimeFilter
+	}
 
 	// update data
 	nodes = graph.nodes;
@@ -421,7 +423,7 @@ V.filter2 = (filters, theOriginalData) => {
 	// console.log('filter');
 	// console.log('filters:', filters);
 	// console.log('graph:', graph)
-	globalFilters = filters;
+	// globalTimeFilter = filters;
 
 	let surviveFilters = []
 
@@ -689,106 +691,106 @@ const reset = () => {
 	displayTitle([]);
 }
 
-const exportSelected = () => {
-	const selected = svg.selectAll('.selected')
-	let selectedData = selected.data()
-
-	selectedData = d3.nest()
-		.key(d => d.source)
-		.entries(selectedData)
-		.map(d => {
-			return {
-				'composition_id': d.key,
-				'composition_title': d.values[0].sourceTitle
-			}
-		})
-
-	// console.log(selectedData);
-	//
-	// console.log(globalFilters);
-
-	let envs = '';
-	if(globalFilters.themes.length === 0) {
-		envs = '👀 No environments selected\n'
-	} else {
-		if(globalFilters.themes.length === 7) {
-			envs += `(🐖 All environments)\n`
-		} else {
-			envs += '\n'
-		}
-		globalFilters.themes.forEach((d) => {
-			envs += `- "${d}"\n`;
-		})
-	}
-
-	let pubTypes = '';
-	if(globalFilters.kinds.length == 0) {
-		pubTypes = '👀 No venues selected\n'
-	} else {
-		if(globalFilters.kinds.length === 3) {
-			pubTypes += `(🐖 All venues)\n`
-		} else {
-			envs += '\n'
-		}
-		globalFilters.kinds.forEach((d) => {
-			pubTypes += `- "${d}"\n`;
-		})
-	}
-
-	let searchedTerm = '- No search'
-	if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
-
-	const export_data = `Exporting composition titles highlighted through the following filters:
-
-📚 Publication venues ${pubTypes}
-
-🏞 Environments ${envs}
-
-🕵️‍♀️ Searched term:
-${searchedTerm}
-
-composition_id\tcomposition_title
-${selectedData.map(d=>{
-	return d.composition_id + '\t' + d.composition_title
-}).join(`
-	`)}
-`
-	// console.log(export_data)
-
-	let the_date = new Date()
-
-	the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
-
-	download(export_data, `selection [${the_date}].txt`, 'text/plain')
-
-	// Function to download data to a file
-	function download(data, filename, type) {
-		console.log('download')
-		var file = new Blob([data], { type: type });
-		if(window.navigator.msSaveOrOpenBlob) // IE10+
-			window.navigator.msSaveOrOpenBlob(file, filename);
-		else { // Others
-			var a = document.createElement("a"),
-				url = URL.createObjectURL(file);
-			a.href = url;
-			a.download = filename;
-			document.body.appendChild(a);
-			a.click();
-			setTimeout(function() {
-				document.body.removeChild(a);
-				window.URL.revokeObjectURL(url);
-			}, 0);
-		}
-	}
-
-}
+// const exportSelected = () => {
+// 	const selected = svg.selectAll('.selected')
+// 	let selectedData = selected.data()
+//
+// 	selectedData = d3.nest()
+// 		.key(d => d.source)
+// 		.entries(selectedData)
+// 		.map(d => {
+// 			return {
+// 				'composition_id': d.key,
+// 				'composition_title': d.values[0].sourceTitle
+// 			}
+// 		})
+//
+// 	// console.log(selectedData);
+// 	//
+// 	// console.log(globalFilters);
+//
+// 	let envs = '';
+// 	if(globalFilters.themes.length === 0) {
+// 		envs = '👀 No environments selected\n'
+// 	} else {
+// 		if(globalFilters.themes.length === 7) {
+// 			envs += `(🐖 All environments)\n`
+// 		} else {
+// 			envs += '\n'
+// 		}
+// 		globalFilters.themes.forEach((d) => {
+// 			envs += `- "${d}"\n`;
+// 		})
+// 	}
+//
+// 	let pubTypes = '';
+// 	if(globalFilters.kinds.length == 0) {
+// 		pubTypes = '👀 No venues selected\n'
+// 	} else {
+// 		if(globalFilters.kinds.length === 3) {
+// 			pubTypes += `(🐖 All venues)\n`
+// 		} else {
+// 			envs += '\n'
+// 		}
+// 		globalFilters.kinds.forEach((d) => {
+// 			pubTypes += `- "${d}"\n`;
+// 		})
+// 	}
+//
+// 	let searchedTerm = '- No search'
+// 	if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
+//
+// 	const export_data = `Exporting composition titles highlighted through the following filters:
+//
+// 📚 Publication venues ${pubTypes}
+//
+// 🏞 Environments ${envs}
+//
+// 🕵️‍♀️ Searched term:
+// ${searchedTerm}
+//
+// composition_id\tcomposition_title
+// ${selectedData.map(d=>{
+// 	return d.composition_id + '\t' + d.composition_title
+// }).join(`
+// 	`)}
+// `
+// 	// console.log(export_data)
+//
+// 	let the_date = new Date()
+//
+// 	the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
+//
+// 	download(export_data, `selection [${the_date}].txt`, 'text/plain')
+//
+// 	// Function to download data to a file
+// 	function download(data, filename, type) {
+// 		console.log('download')
+// 		var file = new Blob([data], { type: type });
+// 		if(window.navigator.msSaveOrOpenBlob) // IE10+
+// 			window.navigator.msSaveOrOpenBlob(file, filename);
+// 		else { // Others
+// 			var a = document.createElement("a"),
+// 				url = URL.createObjectURL(file);
+// 			a.href = url;
+// 			a.download = filename;
+// 			document.body.appendChild(a);
+// 			a.click();
+// 			setTimeout(function() {
+// 				document.body.removeChild(a);
+// 				window.URL.revokeObjectURL(url);
+// 			}, 0);
+// 		}
+// 	}
+//
+// }
 
 // trigger actions with keyboard
 
 document.addEventListener('keydown', triggerActions);
 
 function triggerActions(e) {
-	if(e.key === 'd') exportSelected();
+	// if(e.key === 'd') exportSelected();
 	// if (e.key === 'L') label.classed('make-visible', false)
 }
 
