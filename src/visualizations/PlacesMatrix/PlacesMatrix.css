@@ -54,7 +54,7 @@
   font-weight: 500;
 }
 
-.there-is-selection .node {
+.there-is-selection .node, .there-is-filter .filtered {
   opacity: 0.25;
 }
 

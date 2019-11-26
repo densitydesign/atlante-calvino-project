@@ -413,14 +413,8 @@ V.update = (timeFilter) => {
 }
 
 V.filter = (filter) => {
-	console.log('viz', filter)
-
-	reset();
-
-	filter.forEach(m => {
-		const this_node = nodes.filter(n => n.id === m);
-		if(this_node.length > 0) selectNode(this_node[0]);
-	})
+	// console.log('viz', filter)
+	applyFilter(filter, 'do reset');
 }
 
 V.filter2 = (filters, theOriginalData) => {
@@ -669,6 +663,12 @@ const unselectNode = (d) => {
 	}
 }
 
+const applyFilter = (filter, doReset) => {
+	if (doReset==='do reset') {reset();}
+	svg.classed('there-is-filter', true)
+	node.classed('filtered', false).filter(n => filter.indexOf(n.id) < 0).classed('filtered', true)
+}
+
 const selectSameComposition = (d) => {
 	svg.classed('there-is-selection', true)
 	node.filter(n => n.source === d.source).classed('selected', true)
@@ -683,6 +683,7 @@ const unselectSameComposition = (d) => {
 
 const reset = () => {
 	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
+	node.classed('filtered', false)
 	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
