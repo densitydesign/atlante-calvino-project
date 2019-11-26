@@ -18,6 +18,11 @@ class PlacesMatrix extends Component {
       V.filter(this.props.filter)
     }
 
+    if (this.props.timeFilter !== prevProps.timeFilter) {
+      V.update(this.props.timeFilter)
+    }
+
+
     // if (this.props.filters.openAll !== prevProps.filters.openAll) {
     //   if (this.props.filters.openAll) {
     //     V.openAll();
