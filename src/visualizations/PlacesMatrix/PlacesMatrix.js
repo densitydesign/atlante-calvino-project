@@ -22,6 +22,16 @@ class PlacesMatrix extends Component {
       V.update(this.props.timeFilter)
     }
 
+    if (this.props.gruppi !== prevProps.gruppi) {
+      console.log(this.props.gruppi)
+      if (this.props.gruppi === 'aperti') {
+        V.openAll();
+      } else if (this.props.gruppi === 'chiusi') {
+        V.closeAll();
+      }
+      V.update();
+    }
+
 
     // if (this.props.filters.openAll !== prevProps.filters.openAll) {
     //   if (this.props.filters.openAll) {

@@ -313,6 +313,7 @@ class Trasformare extends Component {
             originalData={this.state.originalData}
             filter={this.state.filter}
             timeFilter={this.state.timeFilter}
+            gruppi={this.state.gruppi.options.filter(d=>d.status)[0].label}
         /> }
         </div>
 
