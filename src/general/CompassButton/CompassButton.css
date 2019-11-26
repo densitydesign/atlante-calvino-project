@@ -1,0 +1,15 @@
+.compass-button {
+  background-color: var(--dark-green);
+  color: white;
+  opacity: .8;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  cursor: not-allowed;
+}
+
+.compass-button:hover {
+  opacity: 1;
+}
