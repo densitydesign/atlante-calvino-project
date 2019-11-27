@@ -32,7 +32,7 @@ export default V
 
 V.initialize = (el, data, _originalData) => {
 	// console.log('init');
-	console.log('data:', data);
+	// console.log('data:', data);
 	// console.log('filters:', filters);
 
 	originalData = _originalData;
