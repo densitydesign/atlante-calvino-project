@@ -12,8 +12,7 @@ let graph, nodes = [],
 	links = [],
 	hullsData = [],
 	last = 0,
-	globalTimeFilter,
-	openAllState = false;
+	globalTimeFilter;
 
 // Dimensions and scales
 let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
@@ -864,7 +863,7 @@ var roundedHull = function(polyPoints, data) {
 	segments = segments.map(function(segment, index) {
 		var pathFragment = "";
 		if(index === 0) {
-			var pathFragment = 'M ' + segments[segments.length - 1][1] + ' ';
+			pathFragment = 'M ' + segments[segments.length - 1][1] + ' ';
 		}
 		pathFragment += arcData + segment[0] + ' L ' + segment[1];
 
