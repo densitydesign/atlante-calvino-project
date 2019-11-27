@@ -31,20 +31,6 @@ class PlacesMatrix extends Component {
       }
       V.update();
     }
-
-
-    // if (this.props.filters.openAll !== prevProps.filters.openAll) {
-    //   if (this.props.filters.openAll) {
-    //     V.openAll();
-    //   } else {
-    //     V.closeAll();
-    //   }
-    // }
-    //
-    // if (this.props.filters.update) {
-    //   V.update(this.props.filters);
-    // }
-    // V.filter(this.props.filters, this.props.originalData);
   }
 
   componentWillUnmount() {
@@ -55,7 +41,6 @@ class PlacesMatrix extends Component {
   _setRef(componentNode) {
       this._rootNode = componentNode;
   }
-
 
   render() {
     const style={

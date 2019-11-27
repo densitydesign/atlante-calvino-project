@@ -16,7 +16,6 @@ class Search extends Component {
       <Typeahead
         multiple
         onChange={(selected) => {
-          console.log('wowowo', selected)
 
           // const filtered_data = { ...this.props.data }
           //

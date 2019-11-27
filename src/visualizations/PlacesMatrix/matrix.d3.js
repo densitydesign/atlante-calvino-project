@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import ParseMatrixData from '../../PlacesMatrixView/parse-matrix-data';
+import ParseMatrixData from '../../utilities/parse-matrix-data';
 import _ from 'lodash';
 
 const categories = ['generico_non_terrestre', 'nominato_non_terrestre', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
@@ -691,8 +691,10 @@ const reset = () => {
 }
 
 // const exportSelected = () => {
-// 	const selected = svg.selectAll('.selected')
+// 	const selected = svg.selectAll('.selected, .filtered')
 // 	let selectedData = selected.data()
+//
+// 	console.log(selectedData)
 //
 // 	selectedData = d3.nest()
 // 		.key(d => d.source)
@@ -704,56 +706,58 @@ const reset = () => {
 // 			}
 // 		})
 //
-// 	// console.log(selectedData);
+// 	console.log(selectedData);
 // 	//
 // 	// console.log(globalFilters);
 //
-// 	let envs = '';
-// 	if(globalFilters.themes.length === 0) {
-// 		envs = '👀 No environments selected\n'
-// 	} else {
-// 		if(globalFilters.themes.length === 7) {
-// 			envs += `(🐖 All environments)\n`
-// 		} else {
-// 			envs += '\n'
-// 		}
-// 		globalFilters.themes.forEach((d) => {
-// 			envs += `- "${d}"\n`;
-// 		})
-// 	}
+// 	// let envs = '';
+// 	// if(globalFilters.themes.length === 0) {
+// 	// 	envs = '👀 No environments selected\n'
+// 	// } else {
+// 	// 	if(globalFilters.themes.length === 7) {
+// 	// 		envs += `(🐖 All environments)\n`
+// 	// 	} else {
+// 	// 		envs += '\n'
+// 	// 	}
+// 	// 	globalFilters.themes.forEach((d) => {
+// 	// 		envs += `- "${d}"\n`;
+// 	// 	})
+// 	// }
+// 	//
+// 	// let pubTypes = '';
+// 	// if(globalFilters.kinds.length == 0) {
+// 	// 	pubTypes = '👀 No venues selected\n'
+// 	// } else {
+// 	// 	if(globalFilters.kinds.length === 3) {
+// 	// 		pubTypes += `(🐖 All venues)\n`
+// 	// 	} else {
+// 	// 		envs += '\n'
+// 	// 	}
+// 	// 	globalFilters.kinds.forEach((d) => {
+// 	// 		pubTypes += `- "${d}"\n`;
+// 	// 	})
+// 	// }
 //
-// 	let pubTypes = '';
-// 	if(globalFilters.kinds.length == 0) {
-// 		pubTypes = '👀 No venues selected\n'
-// 	} else {
-// 		if(globalFilters.kinds.length === 3) {
-// 			pubTypes += `(🐖 All venues)\n`
-// 		} else {
-// 			envs += '\n'
-// 		}
-// 		globalFilters.kinds.forEach((d) => {
-// 			pubTypes += `- "${d}"\n`;
-// 		})
-// 	}
+// 	// let searchedTerm = '- No search'
+// 	// if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
+// 	//
+// 	let export_data;
 //
-// 	let searchedTerm = '- No search'
-// 	if(d3.select('.filter-search input').property("value") !== '') searchedTerm = d3.select('.filter-search input').property("value")
-//
-// 	const export_data = `Exporting composition titles highlighted through the following filters:
-//
-// 📚 Publication venues ${pubTypes}
-//
-// 🏞 Environments ${envs}
-//
-// 🕵️‍♀️ Searched term:
-// ${searchedTerm}
-//
-// composition_id\tcomposition_title
-// ${selectedData.map(d=>{
-// 	return d.composition_id + '\t' + d.composition_title
-// }).join(`
-// 	`)}
-// `
+// // 	export_data = `Exporting composition titles highlighted through the following filters:
+// //
+// // 📚 Publication venues ${pubTypes}
+// //
+// // 🏞 Environments ${envs}
+// //
+// // 🕵️‍♀️ Searched term:
+// // ${searchedTerm}
+// //
+// // composition_id\tcomposition_title
+// // ${selectedData.map(d=>{
+// // 	return d.composition_id + '\t' + d.composition_title
+// // }).join(`
+// // 	`)}
+// // `
 // 	// console.log(export_data)
 //
 // 	let the_date = new Date()
@@ -783,15 +787,14 @@ const reset = () => {
 // 	}
 //
 // }
-
-// trigger actions with keyboard
-
-document.addEventListener('keydown', triggerActions);
-
-function triggerActions(e) {
-	// if(e.key === 'd') exportSelected();
-	// if (e.key === 'L') label.classed('make-visible', false)
-}
+//
+// // trigger actions with keyboard
+//
+// document.addEventListener('keydown', triggerActions);
+//
+// function triggerActions(e) {
+// 	if(e.key === 'd') exportSelected();
+// }
 
 //
 //
