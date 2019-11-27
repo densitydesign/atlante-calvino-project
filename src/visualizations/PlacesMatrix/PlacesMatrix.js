@@ -6,7 +6,7 @@ class PlacesMatrix extends Component {
 
   componentDidMount() {
     // console.log('componentDidMount')
-    V.initialize(this._rootNode, this.props.data)
+    V.initialize(this._rootNode, this.props.data, this.props.originalData)
     V.update(this.props.timeFilter);
     V.filter(this.props.filter)
   }
@@ -15,7 +15,11 @@ class PlacesMatrix extends Component {
     // console.log('componentDidUpdate')
 
     if (this.props.filter !== prevProps.filter) {
-      V.filter(this.props.filter)
+      if (this.props.searched.length !== this.props.originalData.length) {
+        V.openOnSearch(this.props.searched)
+      }
+      const selectThoseLabels = this.props.searched;
+      V.filter(this.props.filter, selectThoseLabels)
     }
 
     if (this.props.timeFilter !== prevProps.timeFilter) {

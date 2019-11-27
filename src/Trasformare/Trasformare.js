@@ -197,7 +197,7 @@ class Trasformare extends Component {
 
 		let toPreserve = newOptions.map(d => d.id)
 		toPreserve = _.flattenDeep(toPreserve)
-		// console.log(toPreserve.length)
+		// console.log(toPreserve)
 
 		this.setState(prevState => ({
 			ricerca: {
@@ -330,29 +330,15 @@ class Trasformare extends Component {
 	render() {
 		// console.log(this.state)
 
-		return ( <
-			div className = "trasformare main" > < div className = "top-nav navigations" > < MainMenu className = "main-menu"
-			style = {
-				{
-					gridColumn: 'span 1'
-				}
-			}
-			/> <PageTitle title = {
-			this.props.title
-		}
-		style = {
-			{
-				gridColumn: 'span 10'
-			}
-		}
-		/> {
-		this.state.isLoading && < Loading style = {
-			{
-				gridColumn: 'span 3'
-			}
-		}
-		/>
-	} {
+		return (
+			<div className = "trasformare main">
+				<div className = "top-nav navigations">
+					<MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
+					<PageTitle title = {this.props.title} style = {{gridColumn: 'span 10'}}/>
+
+					{ this.state.isLoading && < Loading style = {{gridColumn: 'span 3'}}/> }
+
+					{
 		!this.state.isLoading && < Options title = "Cerca per"
 		data = {
 			this.state.cerca_per
@@ -398,31 +384,22 @@ class Trasformare extends Component {
 /> < /
 div >
 
-	<
-	div className = "the-body-viz" > {
-		this.state.isLoading && < Loading / >
-	} {
-		!this.state.isLoading && < PlacesMatrix data = {
-			this.state.data
-		}
-		originalData = {
-			this.state.originalData
-		}
-		filter = {
-			this.state.filter
-		}
-		timeFilter = {
-			this.state.timeFilter
-		}
-		gruppi = {
-			this.state.gruppi.options.filter(d => d.status)[0].label
-		}
-		/>
-	} < /
-div >
+	<div className = "the-body-viz" >
 
-	<
-	div className = "bottom-nav navigations" >
+		{this.state.isLoading && <Loading/>}
+		{	!this.state.isLoading &&
+			<PlacesMatrix
+				data = {this.state.data}
+				originalData = {this.state.originalData}
+				filter = {this.state.filter}
+				searched = {this.state.toPreserveRicerca}
+				timeFilter = {this.state.timeFilter}
+				gruppi = {this.state.gruppi.options.filter(d => d.status)[0].label}
+			/> }
+
+	</div>
+
+	<div className = "bottom-nav navigations">
 
 	{
 		this.state.isLoading && < Loading style = { { gridColumn: 'span 5' } }

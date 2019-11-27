@@ -8,7 +8,7 @@ const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c',
 const collisionPadding = 0.25;
 
 // data
-let graph, nodes = [],
+let originalData, graph, nodes = [],
 	links = [],
 	hullsData = [],
 	last = 0,
@@ -30,10 +30,12 @@ const V = {}
 
 export default V
 
-V.initialize = (el, data, filter) => {
+V.initialize = (el, data, _originalData) => {
 	// console.log('init');
-	// console.log('data:', data);
+	console.log('data:', data);
 	// console.log('filters:', filters);
+
+	originalData = _originalData;
 
 	// Root element and dimensions
 	svg = d3.select(el).style('touch-action', 'manipulation');
@@ -288,7 +290,7 @@ V.initialize = (el, data, filter) => {
 
 	//Store data in global variable
 	graph = data;
-	globalTimeFilter = filter;
+	// globalTimeFilter = filter;
 
 	// Precalculating the position of nodes allows to make them appear in place
 	graph.nodes = graph.nodes.map(d => {
@@ -413,9 +415,44 @@ V.update = (timeFilter) => {
 
 }
 
-V.filter = (filter) => {
+V.filter = (filter, selectLabelsArr) => {
 	// console.log('viz', filter)
 	applyFilter(filter, 'do reset');
+	if (selectLabelsArr && selectLabelsArr.length!==originalData.length) {
+		selectLabelsArr.forEach(an_id => {
+			const obj = { id: an_id }
+			selectLabel(obj)
+		})
+	}
+}
+
+V.openOnSearch = (arr) => {
+	let parents2open = [];
+	arr.forEach(s => {
+		search4Parent(s);
+	});
+
+	// console.log(parents2open);
+
+	function search4Parent(nodeId) {
+		const thisNode = originalData.filter(od => od.id === nodeId)[0];
+		if(thisNode.part_of !== "") {
+			parents2open.push(thisNode.part_of);
+			search4Parent(thisNode.part_of);
+		}
+	}
+
+	if(parents2open.length > 0) {
+		parents2open.reverse().forEach((parentId, i) => {
+			const parent_id = originalData.filter(od => od.id === parentId)[0].id;
+			// surviveFilters[2].push(parent_id);
+			const parent = nodes.filter(d => d.id === parent_id)[0]
+			openSubnodes(parent, 'do not restart the force');
+		})
+
+		V.update()
+	}
+
 }
 
 V.filter2 = (filters, theOriginalData) => {
