@@ -337,156 +337,76 @@ class Trasformare extends Component {
 					<PageTitle title = {this.props.title} style = {{gridColumn: 'span 10'}}/>
 
 					{ this.state.isLoading && < Loading style = {{gridColumn: 'span 3'}}/> }
+					{	!this.state.isLoading &&
+						<Options title = "Cerca per"
+							data = {this.state.cerca_per}
+							style = {{gridColumn: 'span 3'}}
+							changeOptions = {this.changeCercaPer}
+						/> }
 
-					{
-		!this.state.isLoading && < Options title = "Cerca per"
-		data = {
-			this.state.cerca_per
-		}
-		style = {
-			{
-				gridColumn: 'span 3'
-			}
-		}
-		changeOptions = {
-			this.changeCercaPer
-		}
-		/>
-	} {
-		this.state.isLoading && < Loading style = {
-			{
-				gridColumn: 'span 8'
-			}
-		}
-		/>
-	} {
-		!this.state.isLoading && < Search style = {
-			{
-				gridColumn: 'span 8'
-			}
-		}
-		data = {
-			this.state.ricerca
-		}
-		changeOptions = {
-			this.changeRicerca
-		}
-		/ >
-	} < MoreInfo style = {
-		{
-			gridColumn: 'span 1'
-		}
+					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 8'}}/>}
+					{	!this.state.isLoading &&
+						<Search
+							style = {{gridColumn: 'span 8'}}
+							data = {this.state.ricerca}
+							changeOptions = {this.changeRicerca}
+						/> }
+					<MoreInfo style = {{gridColumn: 'span 1'}}/>
+					<Bussola style = {{gridColumn: 'span 1'}}/>
+				</div>
+
+				<div className = "the-body-viz" >
+					{this.state.isLoading && <Loading/>}
+					{	!this.state.isLoading &&
+						<PlacesMatrix
+							data = {this.state.data}
+							originalData = {this.state.originalData}
+							filter = {this.state.filter}
+							searched = {this.state.toPreserveRicerca}
+							timeFilter = {this.state.timeFilter}
+							gruppi = {this.state.gruppi.options.filter(d => d.status)[0].label}
+						/> }
+				</div>
+
+				<div className = "bottom-nav navigations">
+
+					{this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+					{	!this.state.isLoading &&
+						<Options title = "Gruppi"
+							data = {this.state.gruppi}
+							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							changeOptions = {this.changeGruppi}
+						/> }
+
+					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
+					{	!this.state.isLoading &&
+						<Options
+							title = "Pubblicazioni"
+							data = {this.state.pubblicazioni}
+							style = {{gridColumn: 'span 5', textAlign: 'center'}}
+							changeOptions = { this.changePubblicazioni }
+						/> }
+
+					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
+					{	!this.state.isLoading &&
+						<Options
+							title = "Ambienti"
+							data = {this.state.ambienti}
+							style = {{gridColumn: 'span 5', textAlign: 'center'}}
+							changeOptions = {this.changeAmbienti}
+						/> }
+
+					{ this.state.isLoading && <Loading style = {{gridColumn: 'span 9'}}/>}
+					{	!this.state.isLoading &&
+						<RangeFilter
+							style = {{gridColumn: 'span 9'}}
+							data = {this.state.timeExtent}
+							changeOptions = {this.changeTimeSpan}
+						/> }
+				</div>
+			</div >
+		);
 	}
-	/> <Bussola style = { {
-	gridColumn: 'span 1'
-}
-}
-/> < /
-div >
-
-	<div className = "the-body-viz" >
-
-		{this.state.isLoading && <Loading/>}
-		{	!this.state.isLoading &&
-			<PlacesMatrix
-				data = {this.state.data}
-				originalData = {this.state.originalData}
-				filter = {this.state.filter}
-				searched = {this.state.toPreserveRicerca}
-				timeFilter = {this.state.timeFilter}
-				gruppi = {this.state.gruppi.options.filter(d => d.status)[0].label}
-			/> }
-
-	</div>
-
-	<div className = "bottom-nav navigations">
-
-	{
-		this.state.isLoading && < Loading style = { { gridColumn: 'span 5' } }
-		/ >
-	} {
-		!this.state.isLoading && < Options title = "Gruppi"
-		data = {
-			this.state.gruppi
-		}
-		style = {
-			{
-				gridColumn: 'span 5',
-				textAlign: 'center'
-			}
-		}
-		changeOptions = {
-			this.changeGruppi
-		}
-		/>
-	} {
-		this.state.isLoading && < Loading style = {
-			{
-				gridColumn: 'span 5'
-			}
-		}
-		/>
-	} {
-		!this.state.isLoading && < Options title = "Pubblicazioni"
-		data = {
-			this.state.pubblicazioni
-		}
-		style = {
-			{
-				gridColumn: 'span 5',
-				textAlign: 'center'
-			}
-		}
-		changeOptions = {
-			this.changePubblicazioni
-		}
-		/>
-	} {
-		this.state.isLoading && < Loading style = {
-			{
-				gridColumn: 'span 5'
-			}
-		}
-		/>
-	} {
-		!this.state.isLoading && < Options title = "Ambienti"
-		data = {
-			this.state.ambienti
-		}
-		style = {
-			{
-				gridColumn: 'span 5',
-				textAlign: 'center'
-			}
-		}
-		changeOptions = {
-			this.changeAmbienti
-		}
-		/>
-	} {
-		this.state.isLoading && < Loading style = {
-			{
-				gridColumn: 'span 9'
-			}
-		}
-		/>
-	} {
-		!this.state.isLoading && < RangeFilter style = {
-			{
-				gridColumn: 'span 9'
-			}
-		}
-		data = {
-			this.state.timeExtent
-		}
-		changeOptions = {
-			this.changeTimeSpan
-		}
-		/>
-	} < /
-div > <
-	/div >);
-}
 }
 
 export default Trasformare;
