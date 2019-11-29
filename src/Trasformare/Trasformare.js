@@ -197,7 +197,11 @@ class Trasformare extends Component {
 
 		let toPreserve = newOptions.map(d => d.id)
 		toPreserve = _.flattenDeep(toPreserve)
-		// console.log(toPreserve)
+
+		// In case it is empty, to prevent bugs, make it equal to any other fitler
+		if(toPreserve.length === 0) {
+			toPreserve = this.state.toPreserveVolumi
+		}
 
 		this.setState(prevState => ({
 			ricerca: {

@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import ParseMatrixData from '../../utilities/parse-matrix-data';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const categories = ['generico_non_terrestre', 'nominato_non_terrestre', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
 const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c', '#cecece']
@@ -418,7 +418,8 @@ V.update = (timeFilter) => {
 V.filter = (filter, selectLabelsArr) => {
 	// console.log('viz', filter)
 	applyFilter(filter, 'do reset');
-	if (selectLabelsArr && selectLabelsArr.length!==originalData.length) {
+
+	if (selectLabelsArr && selectLabelsArr.length <= 5) {
 		selectLabelsArr.forEach(an_id => {
 			const obj = { id: an_id }
 			selectLabel(obj)
