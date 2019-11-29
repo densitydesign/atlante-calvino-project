@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 
-import ViewSelector from '../ViewSelector/ViewSelector';
+import SplashScreen from '../SplashScreen/SplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
@@ -21,7 +21,8 @@ export default function AtlasRouter()
   return (
     <BrowserRouter>
 
-      <Route exact path="/"><HamburgerMenu /></Route>
+      <Route exact path="/"><SplashScreen /></Route>
+      <Route exact path="/Home"><HamburgerMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
