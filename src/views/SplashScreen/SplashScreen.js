@@ -1,38 +1,44 @@
 
 import React from 'react';
 import V from './logo.js';
+import * as d3 from 'd3';
 
 import './SplashScreen.css';
 
 export default class SplashScreen extends React.Component
 {
+  constructor(props)
+  {
+    super(props);
+    this.loadData = this.loadData.bind(this);
+    this.state = {
+      data : "data still not loaded",
+      isLoading : true
+    };
+  }
+
+  loadData()
+  {
+    d3
+      .xml("./logo-big-polygons-01.svg")
+      .then(xml => xml)
+      .then(data => {
+        this.setState({
+          data : data,
+          isLoading : false
+        });
+      })
+  }
+
   componentDidMount()
   {
-    this._chart = V.initialize(
-      this._rootNode,
-      this.props.data,
-      this.props.originalData);
-  }
-
-  componentDidUpdate()
-  {
-    V.update(null);
-  }
-
-  componentWillUnmount()
-  {
-    V.destroy(this._rootNode);
-  }
-
-  _setRef(componentNode)
-  {
-    this._rootNode = componentNode;
+    this.loadData();
   }
 
   render()
   {
-    return <div>pippo</div>;
-/*    
+//    return <div>pippo</div>;
+    
     return (
       <section class="container-fluid">
         <section id="interactive-logo" class="container">
@@ -43,6 +49,6 @@ export default class SplashScreen extends React.Component
         </section>
       </section>
     );
-*/
+
   }
 }

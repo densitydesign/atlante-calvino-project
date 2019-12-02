@@ -1,15 +1,19 @@
 
 import * as d3 from 'd3';
+import * as SVGPoints from 'svg-points';
 
 const V = {};
 const svgUrl = "./assets/logo-big-polygons-01.svg";
 
+const margin = { top : 0, right : 50, bottom : 30, left : 50 };
+let width, height;
+
+let svg;
+
+/*
 d3
   .xml(svgUrl)
-  .mimeType("image/svg+xml")
-  .get(function(error, xml) {
-
-    if (error) throw error;
+  .then(function(xml) {
 
     document
       .getElementById('logo-box')
@@ -93,7 +97,7 @@ d3
         {
           flag++;
         }
-      })
+      });
       // if the flag is grater than one, the point is inside a letter eye
       if(flag == 1) 
       {
@@ -103,27 +107,7 @@ d3
       {
         return false;
       }
-    }
-
-    // A function for randomly adding circles to the nodes array
-    function addNodes(n) 
-    {
-      for (let i = 0; i < n; i++) 
-      {
-        let myX = d3.randomUniform(configuration.margin.left, configuration.margin.right)();
-        let myY = d3.randomUniform(configuration.margin.top, configuration.margin.bottom)();
-        let myRadius = Math.round(fibonacci[Math.round(d3.randomUniform(1, 4)())]) / 3.1;
-
-        nodes.push({ 'id': i, 'r': myRadius, 'x': myX, 'y': myY });
-      }
-      if (configuration.radiusRootNode && !rootNode) 
-      {
-        rootNode = nodes[0];
-        rootNode.fx = configuration.rootPosition[0];
-        rootNode.fy = configuration.rootPosition[1];
-        rootNode.r = configuration.radiusRootNode;
-      }
-    }
+    }    
 
     let collideForce = d3.forceCollide(function(d) { return d.r + configuration.collisionMargin });
 
@@ -235,7 +219,7 @@ d3
     });
 
     calogo.on("touchend", function() {
-      
+
       d3
         .select('.root-node')
         .transition()
@@ -263,9 +247,14 @@ d3
     });
 
   }); // end of everything
+*/
 
+V.initialize = (el, data) => {
+  svg = d3.select(el);
+  width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
+  height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
+}
 /*
-V.initialize
 V.update
 V.destroy
 */
