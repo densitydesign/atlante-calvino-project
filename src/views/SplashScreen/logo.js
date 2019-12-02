@@ -250,9 +250,9 @@ d3
 */
 
 V.initialize = (el, data) => {
-  svg = d3.select(el);
-  width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
-  height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
+//  svg = d3.select(el);
+//  width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
+//  height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 }
 /*
 V.update
