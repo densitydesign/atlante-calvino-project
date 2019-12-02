@@ -2,6 +2,7 @@
 import React from 'react';
 import V from './logo.js';
 import * as d3 from 'd3';
+import AnimatedLogo from './AnimatedLogo';
 
 import './SplashScreen.css';
 
@@ -43,8 +44,7 @@ export default class SplashScreen extends React.Component
       <section class="container-fluid">
         <section id="interactive-logo" class="container">
           <div class="row d-flex align-items-center">
-            <div id="logo-box" class="col-12 col-sm-12 col-md-12 col-lg-10 mx-auto d-flex flex-column justify-content-center">
-            </div>
+            <AnimatedLogo />
           </div>
         </section>
       </section>
