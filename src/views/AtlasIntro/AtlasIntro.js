@@ -26,6 +26,12 @@ class AtlasIntro extends React.Component
         <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
           Forma
         </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
+          Dubbio
+        </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
+          Spazio
+        </div>
         <div style={{background:"green", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
           FASI
           <br />
@@ -49,6 +55,12 @@ class AtlasIntro extends React.Component
         <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
           Forma
         </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
+          Dubbio
+        </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
+          Spazio
+        </div>        
         <div style={{background:"cyan", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
           Bussola
           <br />
@@ -71,6 +83,12 @@ class AtlasIntro extends React.Component
         </div>
         <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
           Forma
+        </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
+          Dubbio
+        </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
+          Spazio
         </div>
         <div style={{background:"gray", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
           About<br />
@@ -95,6 +113,12 @@ class AtlasIntro extends React.Component
         <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
           Forma
         </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
+          Dubbio
+        </div>
+        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
+          Spazio
+        </div>        
         <div style={{background:"gray", position:"absolute", top:1000 - 1000, width:200}}>
           About<br />
           Strumenti<br />
