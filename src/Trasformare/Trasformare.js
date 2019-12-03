@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import _ from 'lodash';
 
-import GlobalData from '../GlobalData';
+import GlobalData from '../utilities/GlobalData';
 
 import MainMenu from '../general/MainMenu';
 import PageTitle from '../general/PageTitle';
