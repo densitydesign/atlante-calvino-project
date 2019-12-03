@@ -14,6 +14,10 @@ class AtlasIntro extends React.Component
     this.render_impl = this.render_impl.bind(this);
   }
 
+  getVisibleItemInitialY() { return 500; }
+  getDeltaY() { return 1000; }
+  getInvisibleItemInitialY() { return this.getVisibleItemInitialY() + this.getDeltaY(); }
+
   phasesUp(id, transitionData)
   {
     return (
@@ -21,7 +25,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
         <div className="atlas-intro">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"white", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+            <div style={{background:"white", position:"absolute", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
               SFERE
               <br />
               <br />
@@ -34,7 +38,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
           </div>
-          <div style={{background:"green", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+          <div style={{background:"green", position:"absolute", top: this.getInvisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
             FASI
             <br />
             <br />
@@ -53,7 +57,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
         <div className="atlas-intro">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"green", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+            <div style={{background:"green", position:"absolute", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
               FASI
               <br />
               <br />
@@ -66,7 +70,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
           </div>
-          <div style={{background:"cyan", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+          <div style={{background:"cyan", position:"absolute", top: this.getInvisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
             Bussola
             <br />
             <br />
@@ -85,7 +89,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
         <div className="atlas-intro">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"cyan", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+            <div style={{background:"cyan", position:"absolute", top: this.getVisibleItemInitialY() - transitionData.percent * 0.4 * this.getDeltaY(), width:200}}>
               Bussola
               <br />
               <br />
@@ -98,7 +102,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
           </div>
-          <div style={{background:"gray", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+          <div style={{background:"gray", position:"absolute", top: this.getInvisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
             About<br />
             Strumenti<br />
             Rassegna<br />
@@ -117,7 +121,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
         <div className="atlas-intro">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"cyan", position:"absolute", top:500 - 1000, width:200}}>
+            <div style={{background:"cyan", position:"absolute", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY(), width:200}}>
               Bussola
               <br />
               <br />
@@ -130,13 +134,12 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
           </div>
-          <div style={{background:"gray", position:"absolute", top:1000 - 1000, width:200}}>
-            About<br />
-            Strumenti<br />
-            Rassegna<br />
-            Articoli<br />
-          </div>
-        
+            <div style={{background:"gray", position:"absolute", top: this.getInvisibleItemInitialY() - this.getDeltaY(), width:200}}>
+              About<br />
+              Strumenti<br />
+              Rassegna<br />
+              Articoli<br />
+            </div>        
         </div>
       </div>
     );    
