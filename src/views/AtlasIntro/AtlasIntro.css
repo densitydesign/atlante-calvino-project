@@ -1,0 +1,32 @@
+.atlas-intro {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 4fr;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  height: 90.5vh;
+  font-family: 'HK Grotesk';
+}
+
+.atlas-intro-sidebar {
+  display: grid;
+  grid-template-rows: 0.375fr 0.625fr;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.atlas-intro-cell-grid {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.atlas-intro-cell {
+  padding-top : calc(50% - 3em);
+  border-bottom : 1px solid black;
+  border-right : 1px solid black;
+  text-align : center;
+}
+

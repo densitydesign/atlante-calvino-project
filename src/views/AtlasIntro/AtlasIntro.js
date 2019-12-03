@@ -19,26 +19,28 @@ class AtlasIntro extends React.Component
     return (
       <div>
         <AtlasIntroHeader />
-        <div style={{background:"red", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
-          SFERE
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
-          Forma
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
-          Dubbio
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
-          Spazio
-        </div>
-        <div style={{background:"green", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
-          FASI
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+        <div className="atlas-intro">
+          <div className="atlas-intro-sidebar">
+            <div style={{background:"white", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+              SFERE
+              <br />
+              <br />
+              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+            </div>
+          </div>
+          <div className="atlas-intro-cell-grid">
+            <div className="atlas-intro-cell"></div>
+            <div className="atlas-intro-cell">Forma</div>
+            <div className="atlas-intro-cell">Dubbio</div>
+            <div className="atlas-intro-cell">Spazio</div>
+          </div>
+          <div style={{background:"green", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+            FASI
+            <br />
+            <br />
+            Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+          </div>
+
         </div>
       </div>
     );
@@ -49,26 +51,28 @@ class AtlasIntro extends React.Component
     return (
       <div>
         <AtlasIntroHeader />
-        <div style={{background:"green", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
-          FASI
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
-          Forma
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
-          Dubbio
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
-          Spazio
-        </div>        
-        <div style={{background:"cyan", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
-          Bussola
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+        <div className="atlas-intro">
+          <div className="atlas-intro-sidebar">
+            <div style={{background:"green", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+              FASI
+              <br />
+              <br />
+              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+            </div>
+          </div>
+          <div className="atlas-intro-cell-grid">
+            <div className="atlas-intro-cell"></div>
+            <div className="atlas-intro-cell">Forma</div>
+            <div className="atlas-intro-cell">Dubbio</div>
+            <div className="atlas-intro-cell">Spazio</div>
+          </div>
+          <div style={{background:"cyan", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+            Bussola
+            <br />
+            <br />
+            Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+          </div>
+        
         </div>
       </div>
     );
@@ -79,26 +83,28 @@ class AtlasIntro extends React.Component
     return (
       <div>
         <AtlasIntroHeader />
-        <div style={{background:"cyan", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
-          Bussola
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
-          Forma
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
-          Dubbio
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
-          Spazio
-        </div>
-        <div style={{background:"gray", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
-          About<br />
-          Strumenti<br />
-          Rassegna<br />
-          Articoli<br />
+        <div className="atlas-intro">
+          <div className="atlas-intro-sidebar">
+            <div style={{background:"cyan", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
+              Bussola
+              <br />
+              <br />
+              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+            </div>
+          </div>
+          <div className="atlas-intro-cell-grid">
+            <div className="atlas-intro-cell"></div>
+            <div className="atlas-intro-cell">Forma</div>
+            <div className="atlas-intro-cell">Dubbio</div>
+            <div className="atlas-intro-cell">Spazio</div>
+          </div>
+          <div style={{background:"gray", position:"absolute", top:1000 - transitionData.percent * 1000, width:200}}>
+            About<br />
+            Strumenti<br />
+            Rassegna<br />
+            Articoli<br />
+          </div>
+
         </div>
       </div>
     );
@@ -109,26 +115,28 @@ class AtlasIntro extends React.Component
     return (
       <div>
         <AtlasIntroHeader />
-        <div style={{background:"cyan", position:"absolute", top:500 - 1000, width:200}}>
-          Bussola
-          <br />
-          <br />
-          Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:500, height: 500}}>
-          Forma
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:600, height: 500}}>
-          Dubbio
-        </div>
-        <div style={{background:"yellow", position:"absolute", top:100, right:700, height: 500}}>
-          Spazio
-        </div>        
-        <div style={{background:"gray", position:"absolute", top:1000 - 1000, width:200}}>
-          About<br />
-          Strumenti<br />
-          Rassegna<br />
-          Articoli<br />
+        <div className="atlas-intro">
+          <div className="atlas-intro-sidebar">
+            <div style={{background:"cyan", position:"absolute", top:500 - 1000, width:200}}>
+              Bussola
+              <br />
+              <br />
+              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+            </div>
+          </div>
+          <div className="atlas-intro-cell-grid">
+            <div className="atlas-intro-cell"></div>
+            <div className="atlas-intro-cell">Forma</div>
+            <div className="atlas-intro-cell">Dubbio</div>
+            <div className="atlas-intro-cell">Spazio</div>
+          </div>
+          <div style={{background:"gray", position:"absolute", top:1000 - 1000, width:200}}>
+            About<br />
+            Strumenti<br />
+            Rassegna<br />
+            Articoli<br />
+          </div>
+        
         </div>
       </div>
     );    
