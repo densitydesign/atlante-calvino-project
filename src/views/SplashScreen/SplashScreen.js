@@ -39,12 +39,30 @@ export default class SplashScreen extends React.Component
   render()
   {
 //    return <div>pippo</div>;
-    
+
+/*
     return (
-      <section class="container-fluid">
-        <section id="interactive-logo" class="container">
-          <div class="row d-flex align-items-center">
+      <section className="container-fluid">
+        <section id="interactive-logo" className="container">
+          <div className="row d-flex align-items-center">
             <AnimatedLogo />
+          </div>
+        </section>
+      </section>
+    );
+*/
+
+console.log("this.state.data.documentElement", this.state.data.documentElement);
+//const s = new XMLSerializer().serializeToString(this.state.data.documentElement);
+//const s = this.state.data.documentElement.toString();
+//console.log("s : ", s);
+
+    return (
+      <section className="container-fluid">
+        <section id="interactive-logo" className="container">
+          <div className="row d-flex align-items-center">
+            <div id="logo-box" className="col-12 col-sm-12 col-md-12 col-lg-10 mx-auto d-flex flex-column justify-content-center" dangerouslySetInnerHTML={{__html: this.state.data.documentElement}} >
+            </div>
           </div>
         </section>
       </section>
