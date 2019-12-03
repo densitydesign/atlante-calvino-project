@@ -1,6 +1,7 @@
 import React from 'react';
 import ParallaxScroll from 'react-scroll-transitions';
 import { withRouter } from 'react-router-dom';
+import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
 
 import './AtlasIntro.css';
 
@@ -17,6 +18,7 @@ class AtlasIntro extends React.Component
   {
     return (
       <div>
+        <AtlasIntroHeader />
         <div style={{background:"red", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
           SFERE
           <br />
@@ -46,6 +48,7 @@ class AtlasIntro extends React.Component
   {
     return (
       <div>
+        <AtlasIntroHeader />
         <div style={{background:"green", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
           FASI
           <br />
@@ -75,6 +78,7 @@ class AtlasIntro extends React.Component
   {
     return (
       <div>
+        <AtlasIntroHeader />
         <div style={{background:"cyan", position:"absolute", top:500 - transitionData.percent * 1000, width:200}}>
           Bussola
           <br />
@@ -104,6 +108,7 @@ class AtlasIntro extends React.Component
   {
     return (
       <div>
+        <AtlasIntroHeader />
         <div style={{background:"cyan", position:"absolute", top:500 - 1000, width:200}}>
           Bussola
           <br />
