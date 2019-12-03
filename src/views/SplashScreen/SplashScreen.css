@@ -65,8 +65,7 @@ h5.uppercase {
 }
 
 a {
-    color: darkslategrey;
-    text-decoration: underline;
+    color: black;
 }
 
 a:hover {
