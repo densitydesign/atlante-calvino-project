@@ -28,6 +28,15 @@
   border-right: 1px solid black;
 }
 
+.atlas-intro-sidebar2 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  height: calc(2 * (100vh - var(--header-height)));  
+}
+
 .atlas-intro-sidebar-monoblock {
   background: white;
   position: relative;

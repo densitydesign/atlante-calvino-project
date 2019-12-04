@@ -74,16 +74,19 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar">
+          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"green", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ background:"green" }}>
               FASI
               <br />
               <br />
+            </div>
+
+            <div className="atlas-intro-sidebar-monoblock" style={{ background:"green" }}>
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ background:"cyan" }}>
               Bussola
               <br />
               <br />
