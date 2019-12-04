@@ -4,7 +4,7 @@
   grid-template-columns: 2fr 4fr;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: 90.5vh;
+  height: calc(100vh - var(--header-height));
   font-family: 'HK Grotesk';
 }
 
@@ -15,7 +15,8 @@
   grid-template-columns: 2fr 4fr;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: 190.5vh;
+  border-bottom: 1px solid black;
+  height: calc(2 * (100vh - var(--header-height)));
   font-family: 'HK Grotesk';
 }
 
