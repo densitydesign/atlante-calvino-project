@@ -12,10 +12,19 @@ class AtlasIntro extends React.Component
     super(props);
 
     this.render_impl = this.render_impl.bind(this);
+
+    const headerHeight = window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue("--header-height");
+
+    // remove the px postfix and parse the value of headerHeight
+    const headerHeight_n = Number.parseInt(headerHeight.substring(0, headerHeight.length - 2));
+
+    this.gridHeight = window.innerHeight - headerHeight_n;
   }
 
   getVisibleItemInitialY() { return 0; }
-  getDeltaY() { return 1000; }
+  getDeltaY() { return this.gridHeight; }
   getInvisibleItemInitialY() { return this.getVisibleItemInitialY() + this.getDeltaY(); }
 
   phasesUp(id, transitionData)
@@ -107,10 +116,13 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar">
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - transitionData.percent * 0.4 * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() }}>
               Bussola
               <br />
               <br />
+            </div>
+
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() - 0.4 * transitionData.percent * this.getDeltaY() }}>
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
             </div>
 
@@ -151,7 +163,6 @@ class AtlasIntro extends React.Component
               Bussola
               <br />
               <br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{background:"gray", top: this.getVisibleItemInitialY() - this.getDeltaY() }}>
