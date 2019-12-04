@@ -8,9 +8,20 @@
   font-family: 'HK Grotesk';
 }
 
+.atlas-intro-scrollable {
+  display: grid;
+  position: absolute;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 4fr;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  height: 190.5vh;
+  font-family: 'HK Grotesk';
+}
+
 .atlas-intro-sidebar {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
