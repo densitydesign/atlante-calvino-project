@@ -10,10 +10,16 @@
 
 .atlas-intro-sidebar {
   display: grid;
-  grid-template-rows: 0.375fr 0.625fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+}
+
+.atlas-intro-sidebar-monoblock {
+  background: white;
+  position: relative;
+  width: 100%;
 }
 
 .atlas-intro-cell-grid {

@@ -14,7 +14,7 @@ class AtlasIntro extends React.Component
     this.render_impl = this.render_impl.bind(this);
   }
 
-  getVisibleItemInitialY() { return 500; }
+  getVisibleItemInitialY() { return 0; }
   getDeltaY() { return 1000; }
   getInvisibleItemInitialY() { return this.getVisibleItemInitialY() + this.getDeltaY(); }
 
@@ -25,7 +25,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
         <div className="atlas-intro">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"white", position:"absolute", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY(), width:200}}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
               SFERE
               <br />
               <br />
