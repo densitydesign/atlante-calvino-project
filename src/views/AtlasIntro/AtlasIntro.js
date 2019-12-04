@@ -143,28 +143,37 @@ class AtlasIntro extends React.Component
     return (
       <div>
         <AtlasIntroHeader />
-        <div className="atlas-intro">
+
+        <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar">
-            <div style={{background:"cyan", position:"absolute", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY(), width:200}}>
+
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() }}>
               Bussola
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
             </div>
+
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"gray", top: this.getVisibleItemInitialY() - this.getDeltaY() }}>
+              About<br />
+              Strumenti<br />
+              Rassegna<br />
+              Articoli<br />
+            </div>
+
           </div>
+        </div>
+          
+        <div id="staticGrid" className="atlas-intro">
+          <div />
           <div className="atlas-intro-cell-grid">
             <div className="atlas-intro-cell"></div>
             <div className="atlas-intro-cell">Forma</div>
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
           </div>
-            <div style={{background:"gray", position:"absolute", top: this.getInvisibleItemInitialY() - this.getDeltaY(), width:200}}>
-              About<br />
-              Strumenti<br />
-              Rassegna<br />
-              Articoli<br />
-            </div>        
         </div>
+
       </div>
     );    
   }
