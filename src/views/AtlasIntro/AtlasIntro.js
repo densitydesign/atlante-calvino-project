@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
 
 import './AtlasIntro.css';
+import '../HamburgerMenu/HamburgerMenu.css';
 
 class AtlasIntro extends React.Component
 {
@@ -36,14 +37,14 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar">
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"yellow", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
               SFERE
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"green", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
               FASI
               <br />
               <br />
@@ -76,20 +77,20 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ background:"green" }}>
+            <div className="atlas-intro-sidebar-monoblock" >
               FASI
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ background:"cyan" }}>
-              Bussola
+            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" >
+              BUSSOLA
               <br />
               <br />              
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ background:"orange" }}>
+            <div className="atlas-intro-sidebar-monoblock" >
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
@@ -119,14 +120,14 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar3">
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY(), zIndex: 10 }}>
-              Bussola
+            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
+              BUSSOLA
               <br />
               <br />
             </div>
 
 {/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
@@ -163,8 +164,8 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar4" style={{ top: this.getVisibleItemInitialY() }}>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan" }}>
-              Bussola
+            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" >
+              BUSSOLA
               <br />
               <br />
             </div>
