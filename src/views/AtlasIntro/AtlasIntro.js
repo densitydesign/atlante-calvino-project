@@ -35,7 +35,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar">
+          <div id="sidebar" className="atlas-intro-sidebar">
 
             <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
               SFERE
@@ -50,6 +50,16 @@ class AtlasIntro extends React.Component
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
             </div>
+
+          </div>
+
+          <div id="rows" className="atlas-intro-row-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
+
+            <div /> {/* the empty page, before scrolling */}
+            <div /> {/* the first, empty row (it's the row of column headers) */}
+            <div>Fenomeno</div> {/* the first table row, and below the others */}
+            <div>Processo</div>
+            <div>Problema</div>            
 
           </div>
         </div>

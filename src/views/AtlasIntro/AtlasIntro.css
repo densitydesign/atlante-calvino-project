@@ -59,6 +59,16 @@
   position: relative;
 }
 
+/*
+grid-template-rows:
+one empty page (4fr, to be scrolled up), then the populated page, with 1 empty row (column headers), then three populated rows
+*/
+.atlas-intro-row-grid {
+  position: relative;
+  display: grid;
+  grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
+}
+
 .atlas-intro-sidebar-monoblock {
   background: white;
   position: relative;
