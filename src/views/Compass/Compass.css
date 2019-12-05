@@ -1,0 +1,80 @@
+
+/*
+
+#panel {
+  height: 100vh;
+  width: 100vh;
+}
+
+#compass {
+  height: 100%;
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+}
+
+#fishbones {
+  height: 100%;
+  width: 25%;  
+  float: left;
+  border: 1px solid black;
+}
+
+#winding {
+  height: 100%;
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+}
+
+#networks {
+  height: 100%;
+  width: 25%;
+  float: left;
+  border: 1px solid black;
+}
+
+*/
+
+.open {
+  width: 40vh;
+}
+
+.closed {
+  width: 10vh;
+}
+
+#compass {
+  height: 100vh;
+  width: 40vh;
+  float: left;
+  border: 1px solid black;
+}
+
+#fishbones {
+  height: 100vh;
+  width: 10vh;
+  float: left;
+  border: 1px solid black;
+  transition: width 2s;
+}
+
+#fishbones:focus {
+  width: 40vh;
+}
+
+#winding {
+  height: 100vh;
+  width: 10vh;
+  float: left;
+  border: 1px solid black;
+  transition: width 2s;
+}
+
+#networks {
+  height: 100vh;
+  width: 10vh;
+  float: left;
+  border: 1px solid black;
+  transition: width 2s;
+}
