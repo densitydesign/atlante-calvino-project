@@ -117,19 +117,20 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar">
+          <div className="atlas-intro-sidebar3">
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY(), zIndex: 10 }}>
               Bussola
               <br />
               <br />
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() - 0.4 * transitionData.percent * this.getDeltaY() }}>
+{/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"gray", top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"lightgray", top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
               About<br />
               Strumenti<br />
               Rassegna<br />
