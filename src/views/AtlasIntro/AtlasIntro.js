@@ -161,15 +161,15 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar">
+          <div className="atlas-intro-sidebar4" style={{ top: this.getVisibleItemInitialY() }}>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan", top: this.getVisibleItemInitialY() - 0.4 * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"cyan" }}>
               Bussola
               <br />
               <br />
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"gray", top: this.getVisibleItemInitialY() - this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"gray" }}>
               About<br />
               Strumenti<br />
               Rassegna<br />
