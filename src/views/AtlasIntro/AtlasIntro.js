@@ -57,9 +57,9 @@ class AtlasIntro extends React.Component
 
             <div /> {/* the empty page, before scrolling */}
             <div /> {/* the first, empty row (it's the row of column headers) */}
-            <div>Fenomeno</div> {/* the first table row, and below the others */}
-            <div>Processo</div>
-            <div>Problema</div>            
+            <div class="atlas-intro-table-horizontal-row">Fenomeno</div> {/* the first table row, and below the others */}
+            <div class="atlas-intro-table-horizontal-row">Processo</div>
+            <div class="atlas-intro-table-horizontal-row">Problema</div>
 
           </div>
         </div>

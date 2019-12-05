@@ -69,6 +69,10 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
   grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
 }
 
+.atlas-intro-table-horizontal-row {
+  border-top: 1px solid black;
+}
+
 .atlas-intro-sidebar-monoblock {
   background: white;
   position: relative;
