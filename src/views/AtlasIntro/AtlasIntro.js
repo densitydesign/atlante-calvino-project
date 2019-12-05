@@ -169,7 +169,7 @@ class AtlasIntro extends React.Component
               <br />
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"gray" }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{background:"lightgray" }}>
               About<br />
               Strumenti<br />
               Rassegna<br />

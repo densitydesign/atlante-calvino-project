@@ -31,7 +31,7 @@
 
 .atlas-intro-sidebar2 {
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 0.375fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
@@ -41,7 +41,7 @@
 
 .atlas-intro-sidebar3 {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 0.375fr 0.625fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
@@ -51,7 +51,7 @@
 
 .atlas-intro-sidebar4 {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.375fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
