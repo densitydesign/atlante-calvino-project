@@ -18,3 +18,5 @@ class MainMenu extends Component {
 }
 
 export default MainMenu;
+
+MainMenu.defaultProps = { style: {gridColumn: 'span 1'}}

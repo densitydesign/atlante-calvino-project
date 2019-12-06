@@ -13,7 +13,7 @@ html:lang(en-UK) :not(:lang(en-UK)) {
 }
 
 body {
-    font-family: 'Crimson Text', serif;
+    /* font-family: 'Crimson Text', serif; */
 }
 
 body.navbar-displayed {

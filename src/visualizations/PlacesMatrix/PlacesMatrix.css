@@ -10,6 +10,17 @@
   display: none;
 }
 
+.y-axis .tick {
+  cursor: pointer;
+}
+
+.reset-rect {
+  fill: transparent;
+}
+
+.cat-selected {
+}
+
 .label.make-visible {
   display: block !important;
 }
@@ -27,4 +38,26 @@
 
 .tick.selected {
   font-weight: bold;
+}
+
+.label {
+  fill:#666;
+  font-weight: 300;
+}
+
+.label.zoom-selected {
+  display: block !important;
+}
+.label.selected {
+  display: block !important;
+  fill:black;
+  font-weight: 500;
+}
+
+.there-is-selection .node, .there-is-filter .filtered {
+  opacity: 0.25;
+}
+
+.node.selected {
+  opacity: 1 !important;
 }

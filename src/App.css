@@ -3,9 +3,12 @@
   --calvino-red: tomato;
   --dark-green: darkslategrey;
   --header-height: 66px;
+  --navigation-height: 48px;
+  --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
+  --navigation-borders: black;
   font-size: 14px;
-  font-family: sans-serif;
+  font-family: 'HKGrotesk', sans-serif;
 }
 
 a {
@@ -23,4 +26,81 @@ body {
 h5 {
   margin: 0;
   white-space: nowrap;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.the-header {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  border-top: var(--app-border-top) solid var(--calvino-red);
+  height: var(--header-height);
+  max-height: var(--header-height);
+  position: relative;
+  z-index: 10000;
+}
+
+.the-header>* {
+  padding: 0 15px;
+  border-bottom: 1px solid var(--dark-green);
+  max-height: 100%;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+.the-header>*:not(:last-child) {
+  border-right: 1px solid var(--dark-green);
+}
+
+.navigations {
+  border: 1px solid var(--navigation-borders);
+  border-left: none;
+  border-right: none;
+  box-sizing: border-box;
+  height: var(--navigation-height);
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  position: relative;
+  z-index: 10000;
+}
+
+.navigations>*:not(:last-child) {
+  border-right: 1px solid var(--navigation-borders);
+}
+
+.navigations>div {
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.page-title, .options-container > .dropdown > button, .search-component {
+ padding: 0 10px;
+}
+
+.navigations>div svg {}
+
+.top-nav {
+  position: static;
+  top: 0;
+}
+
+.the-body-viz {
+  height: calc(100vh - var(--navigation-height-by-2));
+  display: flex;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+}
+
+.viz-title {
+  text-transform: uppercase;
+  font-size: 1.2857142857rem;
 }

@@ -48,7 +48,7 @@ class AtlasIntro extends React.Component
               FASI
               <br />
               <br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen          
+              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
           </div>
@@ -57,9 +57,9 @@ class AtlasIntro extends React.Component
 
             <div /> {/* the empty page, before scrolling */}
             <div /> {/* the first, empty row (it's the row of column headers) */}
-            <div class="atlas-intro-table-horizontal-row">Fenomeno</div> {/* the first table row, and below the others */}
-            <div class="atlas-intro-table-horizontal-row">Processo</div>
-            <div class="atlas-intro-table-horizontal-row">Problema</div>
+            <div className="atlas-intro-table-horizontal-row">Fenomeno</div> {/* the first table row, and below the others */}
+            <div className="atlas-intro-table-horizontal-row">Processo</div>
+            <div className="atlas-intro-table-horizontal-row">Problema</div>
 
           </div>
         </div>
@@ -97,7 +97,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" >
               BUSSOLA
               <br />
-              <br />              
+              <br />
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" >
@@ -114,7 +114,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Forma</div>
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
-          </div>        
+          </div>
         </div>
 
       </div>
@@ -189,7 +189,7 @@ class AtlasIntro extends React.Component
 
           </div>
         </div>
-          
+
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
@@ -201,7 +201,7 @@ class AtlasIntro extends React.Component
         </div>
 
       </div>
-    );    
+    );
   }
 
   render_impl(id, transitionData)

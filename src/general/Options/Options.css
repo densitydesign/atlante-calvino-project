@@ -1,0 +1,56 @@
+.options-container {
+
+}
+
+.options-container > .dropdown {
+  width: 100%;
+  height: 100%;
+}
+
+.options-container > .dropdown > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.btn-primary {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+
+    text-align: inherit;
+    text-transform: uppercase;
+    font-size: 1.2857142857rem;
+
+    padding: 0;
+}
+
+.btn-primary span.micro-title {
+  font-style: italic;
+  font-size: 0.5714285714rem;
+  display: block;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #666;
+    border: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.current-selection {
+
+}
+
+.dropdown-menu {
+  width: 100%;
+}

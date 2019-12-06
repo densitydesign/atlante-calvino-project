@@ -5,7 +5,7 @@ import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
 class MoreInfo extends Component {
   render() {
-    return <div className="more-info"><FontAwesomeIcon icon={faQuestionCircle} /></div>;
+    return <div style={this.props.style} className="more-info"><FontAwesomeIcon icon={faQuestionCircle} /></div>;
   }
 }
 

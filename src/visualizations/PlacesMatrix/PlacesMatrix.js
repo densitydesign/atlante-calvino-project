@@ -3,30 +3,48 @@ import './PlacesMatrix.css'
 import V from './matrix.d3'
 
 class PlacesMatrix extends Component {
+
   componentDidMount() {
-    this._chart = V.initialize(
-        this._rootNode,
-        this.props.data,
-        this.props.filters,
-        this.props.originalData
-    );
+    // console.log('componentDidMount')
+    V.initialize(this._rootNode, this.props.data, this.props.originalData)
+    V.update(this.props.timeFilter);
+    V.filter(this.props.filter)
   }
 
-  componentDidUpdate() {
-    V.update(
-       null,
-       this.props.filters
-    );
+  componentDidUpdate(prevProps, prevState) {
+    // console.log('componentDidUpdate')
+
+    if (this.props.filter !== prevProps.filter) {
+      if (this.props.searched.length !== this.props.originalData.length) {
+        V.openOnSearch(this.props.searched)
+      }
+      const selectThoseLabels = this.props.searched;
+      V.filter(this.props.filter, selectThoseLabels)
+    }
+
+    if (this.props.timeFilter !== prevProps.timeFilter) {
+      V.update(this.props.timeFilter)
+    }
+
+    if (this.props.gruppi !== prevProps.gruppi) {
+      console.log(this.props.gruppi)
+      if (this.props.gruppi === 'aperti') {
+        V.openAll();
+      } else if (this.props.gruppi === 'chiusi') {
+        V.closeAll();
+      }
+      V.update();
+    }
   }
 
   componentWillUnmount() {
+    console.log('componentWillUnmount')
     V.destroy(this._rootNode);
   }
 
   _setRef(componentNode) {
       this._rootNode = componentNode;
   }
-
 
   render() {
     const style={
