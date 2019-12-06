@@ -12,8 +12,8 @@ export default class HamburgerMenu extends React.Component
   render()
   {
     return (
-      <div>
-        <HamburgerMenuHeader />
+      <div className="hamburger-menu-container">
+        <HamburgerMenuHeader /> 
         <div className="hamburger-menu">
           <div className="hamburger-menu-sidebar">
             <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA" />
