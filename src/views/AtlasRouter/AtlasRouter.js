@@ -6,23 +6,27 @@ import {
   Route
 } from 'react-router-dom';
 
-import ViewSelector from '../ViewSelector/ViewSelector';
+import SplashScreen from '../SplashScreen/SplashScreen';
+import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
+import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
-import PlacesMatrixView from '../../PlacesMatrixView/PlacesMatrixView';
-import ContainerComp from '../../ContainerComp/ContainerComp';
+import Trasformare from '../../Trasformare';
+// import PlacesMatrixView from '../../PlacesMatrixView/PlacesMatrixView';
+// import ContainerComp from '../../ContainerComp/ContainerComp';
 
 export default function AtlasRouter()
 {
   return (
     <BrowserRouter>
 
-      <Route exact path="/">
-        <HamburgerMenu />        
-      </Route>
+      <Route exact path="/"><StaticSplashScreen /></Route>
+      <Route exact path="/SplashScreen"><SplashScreen /></Route>
+      <Route exact path="/Home"><HamburgerMenu /></Route>
+      <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
       <Route exact path="/Spheres/shapes">sfere / le forme</Route>
@@ -37,7 +41,7 @@ export default function AtlasRouter()
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
       <Route exact path="/Process/combining">processi / combinare</Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
-      <Route exact path="/Process/transforming"><PlacesMatrixView /></Route>
+      <Route exact path="/Process/transforming"><Trasformare/></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>

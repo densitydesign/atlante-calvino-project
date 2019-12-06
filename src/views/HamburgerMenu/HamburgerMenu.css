@@ -4,7 +4,8 @@
   grid-template-columns : 2fr 4fr;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: 100vh
+  height: 90.5vh;
+  font-family: 'HK Grotesk';
 }
 
 .hamburger-menu-sidebar {
@@ -19,7 +20,6 @@
   padding-top : calc(50% - 3em);
   padding-left : 100px;
   border-bottom : 1px solid black;
-  border-right : 1px solid black;
   text-align : left;
 }
 

@@ -1,832 +1,660 @@
 import * as d3 from 'd3';
-import ParseMatrixData from '../../PlacesMatrixView/parse-matrix-data';
-import _ from 'lodash';
+import ParseMatrixData from '../../utilities/parse-matrix-data';
+// import _ from 'lodash';
 
-const V = {}
-
-const categories = [
-	'generico_non_terrestre',
-	'nominato_non_terrestre',
-	'nominato_terrestre',
-	'generico_terrestre',
-	'inventato',
-	'no_ambientazione'
-]
-
-const categoriesColors = [
-	'#3131ff',
-	'#bbbbff',
-	'#ffce00',
-	'#ff6c39',
-	'#00c19c',
-	'#cecece'
-]
+const categories = ['generico_non_terrestre', 'nominato_non_terrestre', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
+const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c', '#cecece']
 
 const collisionPadding = 0.25;
 
 // data
-let theOriginalData, graph, nodes = [], links = [], hullsData = [],
-		rootNodes = [], storedFilters,
-		last=0, openAllState=false, resetByClick = false
+let originalData, graph, nodes = [],
+	links = [],
+	hullsData = [],
+	last = 0,
+	globalTimeFilter;
 
 // Dimensions and scales
-let x, y, r, color, margin, width, height;
+let x, y, r, color, margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 },
+	originalLabelsSize,
+	width, height;
 let xAxisCall, yAxisCall;
-margin = { 'top': 0, 'right': 50, 'bottom': 30, 'left': 50 }
 
 // elements
-let svg, g, gigi, xAxis, yAxis, hull, link, node, presumed, label, information
+let svg, g, g_forceLayout, xAxis, yAxis, hull, link, node, presumed, label, information
 
 // force-layout
 let simulation
 
-function openSubnodes(d,noRestart) {
-	if (d.subNodes && d.subNodes.length){
-		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
-		if (d.part_of === '') {
-			d.fx = d.x*1;
-			d.fy = d.y*1;
-		}
+const V = {}
 
-    d.subNodes.forEach(function(subNode, i){
-			subNode.x = d.x;
-			subNode.y = d.y;
-    })
+export default V
 
-    d.opened = true;
+V.initialize = (el, data, _originalData) => {
+	// console.log('init');
+	// console.log('data:', data);
+	// console.log('filters:', filters);
 
-    // Make convex hull
-    var thisHullNodes = [d].concat(d.subNodes); // first element in array is always the one opened, so we can use its ID as identifier for the convex hull
-    hullsData.push(thisHullNodes);
+	originalData = _originalData;
 
-    // check if the first point of the hull is inside another hulls
-    // if so it means this hull should be part of that opened
-    // add these points to that hullsData
-    hullsData.forEach(function(thisHull){
-      // if the element is in the array, but is not the first
-      if (thisHull.indexOf(thisHullNodes[0]) > 0) {
-        thisHullNodes.forEach(function(n,i){
-          if (i !== 0) {
-            thisHull.push(n);
-          }
-        })
-      }
-    })
+	// Root element and dimensions
+	svg = d3.select(el).style('touch-action', 'manipulation');
+	width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
+	height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
-    // calculate Graph
-    var augmentedNodes = nodes.concat(d.subNodes);
-    graph = ParseMatrixData.calculateNetwork(augmentedNodes);
-    nodes = graph.nodes;
-    links = graph.edges;
-    if (noRestart !== false) {
-      V.update(graph, storedFilters);
-    }
-  } else {
-    console.log('No nodes to expand')
-  }
-}
+	svg.append('rect')
+		.attr('width', width + margin.left + margin.right)
+		.attr('height', height + margin.top + margin.bottom)
+		.classed('reset-rect', true)
+		.on('click', d => {
+			if((d3.event.timeStamp - last) < 500) {
+				console.log('reset')
+				reset();
+			}
+			last = d3.event.timeStamp;
+		})
 
-function closeSubnodes(d,noRestart) {
-	if (d.opened) {
+	// Scales
+	x = d3.scaleTime()
+		.range([0, width])
+		.domain(d3.extent(data.nodes, d => d.year));
 
-    d.opened = false;
-    d.fx = null;
-    d.fy = null;
+	xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1));
 
-    var subNodes2Remove = [];
-    var hulls2Remove = [d.id]
+	y = d3.scalePoint()
+		.range([0, height])
+		.domain(categories)
+		.padding(0.5);
 
-    // recursive functions, it makes possible to close contained cluster of nodes
-    function collectSubNodes(parentNode) {
-      // console.log(`There are ${parentNode.subNodes.length} sub-nodes of ${parentNode.label}`)
-      parentNode.subNodes.forEach( childNode => {
-        if (childNode.opened) {
-          childNode.opened = false;
-          hulls2Remove.push(childNode.id);
-          collectSubNodes(childNode);
-        }
-      });
-      subNodes2Remove.push(parentNode.subNodes);
-      // console.log(`${parentNode.label} has ${parentNode.subNodes} nodes to be removed`);
-    }
+	yAxisCall = d3.axisRight(y)
+		.tickSize(width)
+		.tickFormat(d => {
+			return d.replace(/_/g, ' ')
+		});
 
-    collectSubNodes(d);
+	r = d3.scalePow().exponent(0.5)
+		.range([3, 25])
+		.domain([1, d3.max(data.nodes, function(d) { return d.totalSubNodes })]);
 
-    // cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
-    // Probably not the best way, but the simplest at the moment of the coding.
-    subNodes2Remove.forEach( subNodes => {
+	color = d3.scaleOrdinal().domain(categories).range(categoriesColors);
 
-      let toRemove = subNodes.map( d => d.id)
-      let filtered = nodes.filter( el => {
-        return !toRemove.includes( el.id );
-      })
+	// Groups and scales
+	g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`);
+	xAxis = g.append("g").attr("class", "x-axis");
+	yAxis = g.append('g').attr("class", "y-axis");
+	g_forceLayout = g.append('g');
 
-      // remove this hull
-      hullsData = hullsData.filter(function(h){
-        return !hulls2Remove.includes( h[0].id );
-      })
+	xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall);
 
-      // remove extra points from the outer hull
-      hullsData.forEach(function(thisHull,i){
-        hullsData[i] = thisHull.filter(function(n){
-          return !toRemove.includes( n.id );
-        })
-      })
+	yAxis.attr("transform", `translate(0, 0)`)
+		.call(yAxisCall)
+		.call(g => g.selectAll(".tick text")
+			.style("text-transform", "capitalize"))
+		.call(g => g.select(".domain")
+			.remove())
+		.call(g => g.selectAll(".tick line")
+			.attr("stroke-opacity", 0.5)
+			.attr("stroke-dasharray", "2,2"))
+		.call(g => g.selectAll(".tick text")
+			.attr("x", 4)
+			.attr("dy", -y.step() / 10));
 
-      // calculate graph
-      graph = ParseMatrixData.calculateNetwork(filtered)
-			nodes = graph.nodes;
-	    links = graph.edges;
-    } )
+	yAxis.selectAll('.tick')
+		.on('click', function(d) {
 
-    if (noRestart !== false) {
-      V.update(graph, storedFilters);
-    }
-    // important to return here so to not do the following instructions
-    return;
-  }
-}
+			if(d3.select(this).classed('cat-selected') === false) {
 
-function toggleSubnodes(d, noRestart) {
-  if(d.opened) {
-    closeSubnodes(d, noRestart);
-  }
-  if (d.subNodes && d.subNodes.length){
-		openSubnodes(d,noRestart);
-  } else {
-    console.log('No nodes to expand')
-  }
-}
+				if(d3.selectAll('.tick.cat-selected').size() > 0) {
+					nodes.filter(nnn => nnn.part_of === '').forEach(n => { closeSubnodes(n, false) });
+					d3.selectAll('.tick')
+						.classed('cat-selected', false)
+						.select('rect')
+						.attr('fill', 'transparent')
+				}
 
-function toggleSubnodesOLD(d, noRestart) {
-  if(d.opened) {
-    d.opened = false;
-    d.fx = null;
-    d.fy = null;
+				let toOpen = []
+				nodes.forEach(n0 => {
+					// console.log('n0',n0);
+					if(n0.totalSubNodes > 0) {
+						if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+							toOpen.push(n0);
+						}
+						n0.subNodes.forEach(n1 => {
+							// console.log('n1',n1);
+							if(n1.totalSubNodes > 0) {
+								if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+									toOpen.push(n0);
+									toOpen.push(n1);
+								}
+								n1.subNodes.forEach(n2 => {
+									// console.log('n2',n2);
+									if(n2.totalSubNodes > 0) {
+										if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+											toOpen.push(n0);
+											toOpen.push(n1);
+											toOpen.push(n2);
+										}
+									}
+								})
+							}
+						})
+					}
+				})
+				toOpen.forEach(n => { openSubnodes(n, false) });
 
-    var subNodes2Remove = [];
-    var hulls2Remove = [d.id]
+				d3.select(this).select('rect')
+					.attr('fill', d => color(d))
+			} else {
+				let toClose = []
+				nodes.forEach(n0 => {
+					// console.log('n0',n0);
+					if(n0.totalSubNodes > 0) {
+						if(n0.subNodes.map(n => n.category).indexOf(d) > -1) {
+							toClose.push(n0);
+						}
+						n0.subNodes.forEach(n1 => {
+							// console.log('n1',n1);
+							if(n1.totalSubNodes > 0) {
+								if(n1.subNodes.map(n => n.category).indexOf(d) > -1) {
+									toClose.push(n0);
+									toClose.push(n1);
+								}
+								n1.subNodes.forEach(n2 => {
+									// console.log('n2',n2);
+									if(n2.totalSubNodes > 0) {
+										if(n2.subNodes.map(n => n.category).indexOf(d) > -1) {
+											toClose.push(n0);
+											toClose.push(n1);
+											toClose.push(n2);
+										}
+									}
+								})
+							}
+						})
+					}
+				})
+				toClose.forEach(n => { closeSubnodes(n, false) });
 
-    // recursive functions, it makes possible to close contained cluster of nodes
-    function collectSubNodes(parentNode) {
-      // console.log(`There are ${parentNode.subNodes.length} sub-nodes of ${parentNode.label}`)
-      parentNode.subNodes.forEach( childNode => {
-        if (childNode.opened) {
-          childNode.opened = false;
-          hulls2Remove.push(childNode.id);
-          collectSubNodes(childNode);
-        }
-      });
-      subNodes2Remove.push(parentNode.subNodes);
-      // console.log(`${parentNode.label} has ${parentNode.subNodes} nodes to be removed`);
-    }
+				d3.select(this).select('rect')
+					.attr('fill', 'transparent')
+			}
+			V.update();
 
-    collectSubNodes(d);
+			if(d3.select(this).classed('cat-selected') === false) {
+				node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
+			} else {
+				node.each(nn => unselectNode(nn))
+			}
 
-    // cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
-    // Probably not the best way, but the simplest at the moment of the coding.
-    subNodes2Remove.forEach( subNodes => {
+			// Now that everything is done, assign the class
+			d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
+		})
+		.append('rect')
+		.attr('width', '14px')
+		.attr('height', '14px')
+		.attr('x', -14)
+		.attr('y', -22)
+		.attr('rx', 2)
+		.attr('fill', 'transparent')
+		.attr('stroke', d => color(d))
 
-      let toRemove = subNodes.map( d => d.id)
-      let filtered = nodes.filter( el => {
-        return !toRemove.includes( el.id );
-      })
+	link = g_forceLayout.append('g').classed('links', true).selectAll('.link');
+	hull = g_forceLayout.append('g').classed('hulls', true).selectAll('.hull');
+	node = g_forceLayout.append('g').classed('nodes', true).selectAll('.node');
+	presumed = g_forceLayout.append('g').classed('presumed', true).selectAll('.presumed');
+	label = g_forceLayout.append('g').classed('labels', true).selectAll('.label');
+	information = g.append('g').classed('informations', true).selectAll('.information');
 
-      // remove this hull
-      hullsData = hullsData.filter(function(h){
-        return !hulls2Remove.includes( h[0].id );
-      })
+	simulation = d3.forceSimulation(nodes)
+		.force("collision", d3.forceCollide(function(d) {
+			let thisCollisionPadding = d.totalSubNodes > 0 ? collisionPadding + 2 : collisionPadding;
+			return d.opened ? r(1) + thisCollisionPadding : r(d.totalSubNodes + 1) + thisCollisionPadding
+		}).strength(.3).iterations(12))
+		.force("link", d3.forceLink()
+			.strength(.45)
+			.distance(r.range()[0])
+			.id(function(d) { return d.id; })
+		)
+		.force("x", d3.forceX(d => x(d.year)))
+		.force("y", d3.forceY(d => y(d.category)).strength(d => d.part_of === '' ? 0.1 : 0))
+		.on("tick", ticked)
+		.on("end", () => { console.log('simulation ended') })
+		.stop()
 
-      // remove extra points from the outer hull
-      hullsData.forEach(function(thisHull,i){
-        hullsData[i] = thisHull.filter(function(n){
-          return !toRemove.includes( n.id );
-        })
-      })
+	function ticked() {
+		node.attr("cx", (d, i) => d.x)
+			.attr("cy", d => d.y);
 
-      // calculate graph
-      graph = ParseMatrixData.calculateNetwork(filtered)
-			nodes = graph.nodes;
-	    links = graph.edges;
-    } )
+		presumed.attr("cx", function(d) { return d.x; })
+			.attr("cy", function(d) { return d.y; });
 
-    if (noRestart !== false) {
-      V.update(graph, storedFilters);
-    }
-    // important to return here so to not do the following instructions
-    return;
-  }
-  if (d.subNodes && d.subNodes.length){
-		// nodes.forEach(d=>{d.fx=null;d.fy=null;})
-		if (d.part_of === '') {
-			d.fx = d.x*1;
-			d.fy = d.y*1;
-		}
+		label.attr("x", function(d) { return d.x; })
+			.attr("y", function(d) { return d.y; });
 
-    d.subNodes.forEach(function(subNode, i){
-			subNode.x = d.x;
-			subNode.y = d.y;
-    })
-    d.opened = true;
+		link.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
 
-    // Make convex hull
-    var thisHullNodes = [d].concat(d.subNodes); // first element in array is always the one opened, so we can use its ID as identifier for the convex hull
-    hullsData.push(thisHullNodes);
+		hull.attr("d", function(d) {
+			let thisHullPoints = d.map(d => { return [d.x, d.y] });
+			var points = thisHullPoints;
+			var convexHull = (points.length < 3) ? points : d3.polygonHull(points);
+			return roundedHull(convexHull, d);
+		})
+	}
 
-    // check if the first point of the hull is inside another hulls
-    // if so it means this hull should be part of that opened
-    // add these points to that hullsData
-    hullsData.forEach(function(thisHull){
-      // if the element is in the array, but is not the first
-      if (thisHull.indexOf(thisHullNodes[0]) > 0) {
-        thisHullNodes.forEach(function(n,i){
-          if (i !== 0) {
-            thisHull.push(n);
-          }
-        })
-      }
-    })
-
-    // calculate Graph
-    var augmentedNodes = nodes.concat(d.subNodes);
-    graph = ParseMatrixData.calculateNetwork(augmentedNodes);
-    nodes = graph.nodes;
-    links = graph.edges;
-    if (noRestart !== false) {
-			storedFilters.update = true;
-      V.update(graph, storedFilters);
-    }
-  } else {
-    console.log('No nodes to expand')
-  }
-}
-
-function highlightNodes(arr, doReset){
-	if (doReset) reset();
-  arr.forEach( d => {
-    node.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
-		presumed.filter(function(e){ return e.source !== d.source; }).style('opacity', 0.1);
-    label.filter(function(e){ return d.id === e.id }).classed('selected', true).style('display','block');
-
-		displayTitle([d]);
-  })
-}
-
-const displayTitle = (arr) => {
-
-	// show work title
-	information = information.data(arr, function(d) { return d.id; });
-	information.exit().remove();
-	information = information.enter().append("text")
-		.classed('information', true)
-		.classed('label', true)
-		.attr('text-anchor', d => (x(d.year) >= width/2) ? 'end' : 'start')
-		.attr('x', d => (x(d.year) >= width/2) ? x(d.year)+4.8 : x(d.year)-3.2)
-		.attr('y', height - 10)
-		.text( d => (x(d.year) >= width/2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-		.merge(information);
-}
-
-function highlightCategories(arr, doReset) {
-	if (doReset) reset();
-	// console.log(arr)
-	let arrId = arr.map( d => d.id)
-	node.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
-	presumed.filter(function(n){ return arrId.indexOf(n.id) < 0 }).style('opacity', 0.1);
-	// label.filter(function(n){ return arrId.indexOf(n.id) > -1 }).classed('selected', true).style('display','block');
-}
-
-function reset() {
-	if (resetByClick) return;
-  node.style('opacity', 1);
-	presumed.style('opacity', 1);
-  label.classed('selected', false).style('display', 'none');
-  // remove work title
-  displayTitle([]);
-}
-
-V.initialize = (el, data, filters, originalData) => {
-  // console.log('init',data, filters)
-
-  // Since React calls the update without data, at the beginning store data
-  // so that when time-filter is used (and React calls update) there is data to use
-  graph = data
-  rootNodes = data.nodes.filter( d => d.totalSubNodes>0);
-	theOriginalData = originalData;
-
-  // //get themes
-  // let themes = []
-  // d3.nest()
-  //   .key(d=>d.theme)
-  //   .entries(graph.nodes)
-  //   .map(d=>d.key)
-  //   .forEach(d=>{ themes = themes.concat(d.split(';')) });
-  // themes = d3.nest()
-  //   .key(d=>d)
-  //   .entries(themes)
-  //   .map(d=>d.key)
-  //   .sort();
-  // console.log(JSON.stringify(themes))
-
-  // Root and dimensions
-  svg = d3.select(el).style('touch-action', 'manipulation');
-  width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
-  height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
+	// handle the zoom function
 
 	let zoom = d3.zoom()
-			.translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]])
-	    .scaleExtent([1, 10])
-	    .on("zoom", zoomed);
-
-	svg.call(zoom).on("dblclick.zoom", null);
+		.translateExtent([
+			[0, 0],
+			[width + margin.left + margin.right, height + margin.top + margin.bottom]
+		])
+		.scaleExtent([1, 10])
+		.on("zoom", zoomed);
 
 	function zoomed() {
-	  gigi.attr("transform", d3.event.transform);
+		// so a simple resize+translate for the main group and the y axis
+		g_forceLayout.attr("transform", d3.event.transform);
 		yAxis.attr("transform", d3.event.transform);
 
-		// x axis resize taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
+		// the x axis has to be resscaled according to the zoom
+		// taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
 		let new_x = d3.event.transform.rescaleX(x);
 		xAxis.call(xAxisCall.scale(new_x))
 
-		let one_rem = parseInt(d3.select('html').style('font-size'));
+		// rescale labels
+		if(!originalLabelsSize) {
+			originalLabelsSize = d3.select('.label').style('font-size');
+			originalLabelsSize = parseFloat(originalLabelsSize);
+		}
+		const newSize = originalLabelsSize / d3.event.transform.k
+		// change style on the parent
+		// this will propagate the new size to all children (label)
+		d3.select('g.labels').style('font-size', newSize + 'px')
 
-		d3.select('.labels')
-			.style('font-size', d=>{
-				let cssRemSize = 0.75;
-				let k = cssRemSize * 1/d3.event.transform.k;
-				k+='rem';
-				return k;
+		// display all labels of selected compositions
+		if(d3.event.transform.k > 3) {
+			d3.selectAll('.node.selected').each(d => {
+				label.filter(l => l.id === d.id).classed('zoom-selected', true)
 			})
-
-		information
-			.attr('x', d => (new_x(d.year) >= width/2) ? new_x(d.year)+4.8 : new_x(d.year)-3.2);
-	}
-
-  // Scales
-  x = d3.scaleTime()
-    .range([0, width])
-    .domain(d3.extent(data.nodes, d=>d.year));
-  xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1))
-
-  y = d3.scalePoint()
-    .range([0, height])
-    .padding(0.5);
-  yAxisCall = d3.axisRight(y).tickSize(width)
-		.tickFormat(function(d){
-			d = d.replace(/_/g, ' ')
-			return d;
-		})
-  y.domain(categories)
-
-  r = d3.scalePow()
-    .exponent(0.5)
-    // .range([15,75])
-    .range([3,25])
-    .domain([1,d3.max(data.nodes, function(d){ return d.totalSubNodes })])
-  color = d3.scaleOrdinal().domain(categories).range(categoriesColors)
-
-
-  // elements
-  svg.append('rect')
-  	.classed('reset', true)
-  	.attr('x', margin.left)
-  	.attr('width', width)
-  	.attr('height', height)
-  	.attr('fill', 'transparent')
-  	.on('click', function(d){
-			resetByClick = false;
-			if ((d3.event.timeStamp - last) < 500) reset();
-			last = d3.event.timeStamp;
-		});
-  g = svg.append('g').attr("transform", `translate(${margin.left},${margin.top})`).append('g')
-  xAxis = g.append("g").attr("class", "x-axis")
-  yAxis = g.append('g').attr("class", "y-axis")
-
-  yAxis.attr("transform", `translate(0, 0)`)
-    .call(yAxisCall)
-    .call(g => g.selectAll(".tick text")
-          .style("text-transform", "capitalize"))
-    .call(g => g.select(".domain")
-          .remove())
-      .call(g => g.selectAll(".tick line")
-          .attr("stroke-opacity", 0.5)
-          .attr("stroke-dasharray", "2,2"))
-      .call(g => g.selectAll(".tick text")
-          .attr("x", 4)
-          .attr("dy", -y.step()/10));
-
-	yAxis.selectAll('.tick').on('click', function(d){
-
-		if (d3.select(this).classed('selected') === false ) {
-
-			if (d3.selectAll('.tick.selected').size() > 0) {
-				rootNodes.forEach(n=>{closeSubnodes(n,false)});
-				d3.selectAll('.tick.selected').classed('selected', false);
-			}
-
-			let toOpen = []
-			nodes.forEach(n0=>{
-				// console.log('n0',n0);
-				if (n0.totalSubNodes>0){
-					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
-						toOpen.push(n0);
-					}
-					n0.subNodes.forEach(n1=>{
-						// console.log('n1',n1);
-						if(n1.totalSubNodes>0) {
-							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
-								toOpen.push(n0);
-								toOpen.push(n1);
-							}
-							n1.subNodes.forEach(n2=>{
-								// console.log('n2',n2);
-								if(n2.totalSubNodes>0) {
-									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
-										toOpen.push(n0);
-										toOpen.push(n1);
-										toOpen.push(n2);
-									}
-								}
-							})
-						}
-					})
-				}
-			})
-			toOpen.forEach(n=>{openSubnodes(n,false)});
-			node.filter(nn=>{return nn.category!==d}).style('opacity',0.1)
 		} else {
-			let toClose = []
-			nodes.forEach(n0=>{
-				// console.log('n0',n0);
-				if (n0.totalSubNodes>0){
-					if (n0.subNodes.map(n=>n.category).indexOf(d) > -1) {
-						toClose.push(n0);
-					}
-					n0.subNodes.forEach(n1=>{
-						// console.log('n1',n1);
-						if(n1.totalSubNodes>0) {
-							if (n1.subNodes.map(n=>n.category).indexOf(d) > -1) {
-								toClose.push(n0);
-								toClose.push(n1);
-							}
-							n1.subNodes.forEach(n2=>{
-								// console.log('n2',n2);
-								if(n2.totalSubNodes>0) {
-									if (n2.subNodes.map(n=>n.category).indexOf(d) > -1) {
-										toClose.push(n0);
-										toClose.push(n1);
-										toClose.push(n2);
-									}
-								}
-							})
-						}
-					})
-				}
-			})
-			toClose.forEach(n=>{closeSubnodes(n,false)});
-			node.style('opacity',1)
+			label.classed('zoom-selected', false)
 		}
 
-		V.update(graph, storedFilters);
+		information.attr('x', d => (new_x(d.year) >= width / 2) ? new_x(d.year) + 4.8 : new_x(d.year) - 3.2);
+	}
 
-		d3.select(this).classed('selected', !d3.select(this).classed('selected'))
+	svg.call(zoom).on("dblclick.zoom", null);
 
-		// highlightCategories(toHighlight, 'do reset')
+	//Store data in global variable
+	graph = data;
+	// globalTimeFilter = filter;
+
+	// Precalculating the position of nodes allows to make them appear in place
+	graph.nodes = graph.nodes.map(d => {
+		return {
+			...d,
+			x: x(d.year),
+			y: y(d.category)
+		}
 	})
 
-	gigi = g.append('g')
-
-  link = gigi.append('g').classed('links', true).selectAll('.link');
-  hull = gigi.append('g').classed('hulls', true).selectAll('.hull');
-  node = gigi.append('g').classed('nodes', true).selectAll('.node');
-	presumed = gigi.append('g').classed('presumed', true).selectAll('.presumed');
-  label = gigi.append('g').classed('labels', true).selectAll('.label');
-  information = g.append('g').classed('informations', true).selectAll('.information');
-
-  simulation = d3.forceSimulation(nodes)
-  	.force("link", d3.forceLink()
-  		.strength( 0.1 )
-  		.distance( r.range()[0] )
-  		.id(function(d) { return d.id; })
-  	)
-  	.force("x", d3.forceX(d=>d.x)
-  		.strength(1)
-  	)
-  	.force("y", d3.forceY(d=>d.y)
-		.strength(1)
-  	)
-  	.force("collision", d3.forceCollide(function(d){
-				let thisCollisionPadding = d.totalSubNodes>0 ? collisionPadding+2 : collisionPadding;
-  			return d.opened ? r(1)+thisCollisionPadding : r(d.totalSubNodes + 1)+thisCollisionPadding
-  		})
-  		.iterations(12)
-  		.strength(0.35)
-  	)
-  	.on("tick", ticked)
-    .on("end", () => {
-			console.log('simulation ended')
-		})
-    .stop()
-
-  function ticked() {
-  	node.attr("cx", function(d) { d.positionedYear = x.invert(d.x); return d.x; })
-  		.attr("cy", function(d) { return d.y; });
-		presumed.attr("cx", function(d) { return d.x; })
-  		.attr("cy", function(d) { return d.y; });
-  	label.attr("x", function(d) { return d.x; })
-  		.attr("y", function(d) { return d.y; });
-  	link.attr("x1", function(d) { return d.source.x; })
-  		.attr("y1", function(d) { return d.source.y; })
-  		.attr("x2", function(d) { return d.target.x; })
-  		.attr("y2", function(d) { return d.target.y; });
-  	hull.attr("d", function(d){
-  		let thisHullPoints = d.map( d => { return [d.x, d.y] });
-  		var points = thisHullPoints;
-  		var convexHull = (points.length < 3) ? points : d3.polygonHull(points);
-  		return roundedHull(convexHull, d);
-  	})
-
-		if (simulation.alpha() < 0.15) {
-			simulation.force("x").strength(0.5)
-			simulation.force("y").strength(0.1)
-		}
-  }
-
-  V.update(data, filters)
 }
 
-V.update = (data, filters) => {
-  // console.log('update viz')
-
-  // This is because react must call the update without data
-  if (!data) data = graph
-  nodes = data.nodes;
-  links = data.edges;
-
-	storedFilters = filters
-
-	if (filters.search.length) {
-
-		let parents2open = [];
-		filters.search.forEach(s=>{
-			search4Parent(s);
-		});
-		function search4Parent(nodeId){
-			const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
-			if (thisNode.part_of !== "") {
-				parents2open.push(thisNode.part_of);
-				search4Parent(thisNode.part_of);
-			}
-		}
-
-		// I technically should open interesting parents, but it is kind of ahard.
-		// Provisionally solve the issue by highliting parents
-		// surviveFilters[2] = _.union(surviveFilters[2], parents2open)
-
-		// To fix it I probably need to write a new method just for the filters (V.filter).
-		if (parents2open.length > 0) {
-			parents2open.reverse().forEach((parentId,i)=>{
-				const parent = theOriginalData.filter(od=>od.id===parentId)[0]
-				openSubnodes(parent, false);
-			})
-			filters.update = true
-		}
+V.update = (timeFilter) => {
+	// console.log('update');
+	// console.log('graph:', graph);
+	if (timeFilter) {
+		globalTimeFilter = timeFilter
+	} else {
+		timeFilter = globalTimeFilter
 	}
 
-  if (filters.update) {
+	// update data
+	nodes = graph.nodes;
+	links = graph.edges;
 
-		let isTimeFiltered = false;
-
-		if (filters.timeFilter) {
-
-			if (filters.timeFilter[0].getFullYear() != x.domain()[0].getFullYear() || filters.timeFilter[1].getFullYear() != x.domain()[1].getFullYear()) {
-				isTimeFiltered = true;
-				simulation.force("x").strength(1);
-				simulation.force("y").strength(0.7);
-				// console.log("isTimeFiltered")
-			}
-
-			x.domain(d3.extent(nodes.filter( d => {
-				const date = new Date(d.year)
-				return date >= filters.timeFilter[0] && date <= filters.timeFilter[1]
-			}), d=>d.year))
-	    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall)
+	// update fx before updating the x scale
+	nodes.forEach(d => {
+		if(d.fx) {
+			d.correspondingYear = x.invert(d.fx)
+		} else {
+			delete d.correspondingYear;
 		}
+	})
 
-		// Set x and y of subNodes
-		data.nodes.forEach(d => {
-			d.x = (d.x&&!isTimeFiltered) ? d.x : x(d.year);
-			d.y = d.y ? d.y : y(d.category);
+	// Update x domain
+	x.domain(timeFilter)
+	xAxis.call(xAxisCall);
 
-			if(d.fx&&isTimeFiltered) {
-				d.fx = null
-			}
+	// calculate new fx
+	nodes.forEach(d => {
+		if(d.correspondingYear) {
+			d.fx = x(d.correspondingYear)
+		}
+	})
 
+	node = node.data(nodes, d => { return d.id })
+	node.exit().remove();
+	node = node.enter().append('circle')
+		.attr('class', d => `node`)
+		.classed('sub-node', d => d.part_of !== '')
+		// .classed('selected', d => d.isSelected )
+		.attr('key', d => d.id)
+		.on('mouseenter', d => {
+			label.filter(l => l.id === d.id).style('display', 'block')
+			node.style('opacity', .25).filter(n => n.source === d.source).style('opacity', 1)
 		})
+		.on('mouseleave', d => {
+			label.filter(l => l.id === d.id).style('display', 'none')
+			node.style('opacity', '')
+		})
+		.on('click', d => {
+			// console.log('clicked on', d)
+			// if double click/tap
+			if((d3.event.timeStamp - last) < 500) {
+				toggleSubnodes(d, 'restart the force');
+			}
+			last = d3.event.timeStamp;
+			// do this after the nodes have been opened
+			selectLabel(d);
+			selectSameComposition(d);
+			displayTitle([d]);
+		})
+		.merge(node)
+		.style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
+		.attr("fill", d => d.opened === true ? 'white' : color(d.category))
+		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
+		.attr("r", function(d) { return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
 
-    // Update the force layout
-    simulation.force("x").x(function(d) { return d.x })
+	presumed = presumed.data(nodes.filter(d => d.isGuessed), d => d.id)
+	presumed.exit().remove();
+	presumed = presumed.enter().append('circle')
+		.classed('presumed', true)
+		.attr('r', 1.5)
+		.attr('fill', d => d3.color(color(d.category)).darker(1))
+		.merge(presumed)
 
-    node = node.data(nodes, d => { return d.id })
-    node.exit().remove();
-    node = node.enter().append('circle')
-      .attr('class', d => `node`)
-			.classed('sub-node', d => d.part_of !== '' )
-      .on('click', function(d){
+	// Apply the general update pattern to the links.
+	link = link.data(links, d => d.source.id + "-" + d.target.id);
+	link.exit().remove();
+	link = link.enter().append("line")
+		.classed('link', true)
+		.classed('part-of', function(d) { return d.kind === 'part_of' })
+		.attr('stroke-width', 0.5)
+		.attr('stroke', '#ccc')
+		.merge(link);
 
-				resetByClick = d;
+	// Apply the general update pattern to the labels.
+	label = label.data(nodes, d => d.id);
+	label.exit().remove();
+	label = label.enter().append("text")
+		.classed('label', true)
+		.style('display', 'none')
+		.attr('text-anchor', 'middle')
+		.style('pointer-events', 'none')
+		.text(d => d.label)
+		.merge(label);
 
-				highlightNodes([d], 'do reset opacity');
+	// Apply the general update pattern to the convex hulls.
+	hull = hull.data(hullsData, d => d[0].id);
+	hull.exit().remove();
+	hull = hull.enter().append("path")
+		.classed('hull', true)
+		.attr('fill', d => color(d[0].category))
+		.style('opacity', .25)
+		.merge(hull);
 
-  			// get the double tap
-  			if ((d3.event.timeStamp - last) < 500) {
-					console.log('toggle subnodes of', d)
-          toggleSubnodes(d);
-					return;
-        }
-				last = d3.event.timeStamp;
-  		})
-			.on('mouseenter', d=>{
-				if (!resetByClick || d.source === resetByClick.source) {
-					highlightNodes([d], 'do reset opacity');
-				}
-			})
-			.on('mouseleave', d=>{
-				if (!resetByClick || d.source === resetByClick.source) {
-					reset();
-				}
-				label.filter( e=>e.id===d.id).classed('selected', false).style('display','none');
-			})
-      .attr('key', d=> d.id)
-      .attr('cx', d => {
-        return d.x
-      })
-      .attr('cy', d => {
-        return d.y
-      })
-      .merge(node)
-      .style('cursor', function(d){ return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
-  		.attr("fill", function(d) { return d.opened===true ? 'white' : color(d.category); })
-  		.attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
-      // .style('opacity', 1)
-      .attr("r", function(d){ return d.opened ? r(1) : r(d.totalSubNodes + 1) }) // +1 means plus itself
-
-		presumed = presumed.data(nodes.filter(d => { return d.isGuessed }), d => { return d.id })
-    presumed.exit().remove();
-    presumed = presumed.enter().append('circle')
-			.classed('presumed', true)
-			.attr('r', 1.5)
-			.attr('fill', function(d) { return d3.color(color(d.category)).darker(1) })
-			.attr('cx', d => {
-        return d.x
-      })
-      .attr('cy', d => {
-        return d.y
-      })
-			.merge(presumed)
-
-    // Apply the general update pattern to the links.
-  	link = link.data(links, function(d) {
-  		return d.source.id + "-" + d.target.id;
-  	});
-  	link.exit().remove();
-  	link = link.enter().append("line")
-  		.classed('link', true)
-  		.classed('part-of', function(d) { return d.kind === 'part_of' })
-      .attr('stroke-width', 0.5)
-      .attr('stroke', '#ccc')
-  		.on('click', d => console.log(d))
-  		.merge(link);
-
-  	// Apply the general update pattern to the labels.
-  	label = label.data(nodes, function(d) { return d.id; });
-  	label.exit().remove();
-  	label = label.enter().append("text")
-  		.classed('label', true)
-  		.style('display', 'none')
-  		.attr('text-anchor', 'middle')
-      .style('pointer-events', 'none')
-  		.text(function(d){return d.label})
-  		.merge(label);
-
-  	// Apply the general update pattern to the convex hulls.
-  	hull = hull.data(hullsData, function(d) {
-  		return d[0].id;
-  	});
-  	hull.exit().remove();
-  	hull = hull.enter().append("path")
-  		.classed('hull', true)
-  		.attr('fill', function(d){
-  			return color(d[0].category)
-  		})
-  		.style('opacity', .25)
-  		.merge(hull);
-
-    simulation.nodes(nodes);
-		if (simulation.force("link")) {
-			simulation.force("link").links(links);
-		}
-  	simulation.alpha(1).restart();
-  }
-
-	V.filter(filters);
+	simulation.nodes(nodes);
+	if(simulation.force("link")) {
+		simulation.force("link").links(links);
+	}
+	simulation.alpha(1).restart();
 
 }
 
-V.filter = filters => {
-	if (filters) {
-		// store filters
-		// do filters here
-		if (filters.openAll !== undefined && filters.openAll !== openAllState) {
-			console.log('open or close all', filters.openAll)
-			openAllState = filters.openAll
-			if (openAllState === true) {
-				V.openAll();
-			} else {
-				V.closeAll();
-			}
-		}
+V.filter = (filter, selectLabelsArr) => {
+	// console.log('viz', filter)
+	applyFilter(filter, 'do reset');
 
-		let surviveFilters = []
-
-		let pubTypes = filters.selectedPublications;
-		surviveFilters[0] = nodes.filter( d=>{
-			let check = pubTypes.map(e => d.publicationType.indexOf(e) > -1 )
-			return check.indexOf(true) > -1;
-		}).map(d=>d.id);
-
-		let pubThemes = filters.selectedThemes;
-		surviveFilters[1] = nodes.filter( d=>{
-			let check = pubThemes.map(e => d.themes.indexOf(e) > -1 )
-			return check.indexOf(true) > -1;
-		}).map(d=>d.id);
-
-		if (filters.search.length) {
-			surviveFilters[2] = filters.search;
-
-			let parents2open=[];
-			filters.search.forEach(s=>{
-				search4Parent(s);
-			});
-			function search4Parent(nodeId){
-				const thisNode = theOriginalData.filter(od=>od.id===nodeId)[0];
-				if (thisNode.part_of !== "") {
-					parents2open.push(thisNode.part_of);
-					search4Parent(thisNode.part_of);
-				}
-			}
-			// I technically should open interesting parents, but it is kind of ahard.
-			// Provisionally solve the issue by highliting parents
-			surviveFilters[2] = _.union(surviveFilters[2], parents2open)
-
-		}
-
-		// console.log('surviveFilters', surviveFilters)
-		let mergeSurvived = [];
-		surviveFilters.forEach((d,i) => {
-			if (i===0) {
-				mergeSurvived = d;
-			} else {
-				if (surviveFilters[i].length) {
-					mergeSurvived = _.intersection(mergeSurvived, surviveFilters[i]);
-				}
-			}
+	if (selectLabelsArr && selectLabelsArr.length <= 5) {
+		selectLabelsArr.forEach(an_id => {
+			const obj = { id: an_id }
+			selectLabel(obj)
 		})
-		// console.log("survived", mergeSurvived.length)
-		node.classed('faded', d=>mergeSurvived.indexOf(d.id) < 0);
 	}
+}
+
+V.openOnSearch = (arr) => {
+	let parents2open = [];
+	arr.forEach(s => {
+		search4Parent(s);
+	});
+
+	// console.log(parents2open);
+
+	function search4Parent(nodeId) {
+		const thisNode = originalData.filter(od => od.id === nodeId)[0];
+		if(thisNode.part_of !== "") {
+			parents2open.push(thisNode.part_of);
+			search4Parent(thisNode.part_of);
+		}
+	}
+
+	if(parents2open.length > 0) {
+		parents2open.reverse().forEach((parentId, i) => {
+			const parent_id = originalData.filter(od => od.id === parentId)[0].id;
+			// surviveFilters[2].push(parent_id);
+			const parent = nodes.filter(d => d.id === parent_id)[0]
+			openSubnodes(parent, 'do not restart the force');
+		})
+
+		V.update()
+	}
+
 }
 
 V.openAll = () => {
 	runAll(nodes);
+
 	function runAll(nodesList) {
-		nodesList.forEach( n => {
-			if (n.totalSubNodes > 0) {
-				openSubnodes(n, false);
+		nodesList.forEach(n => {
+			if(n.totalSubNodes > 0) {
+				openSubnodes(n, 'do not restart simulation');
 				runAll(n.subNodes);
 			}
 		});
 	}
-	// simulation.force("x").strength(1)
-	// simulation.force("y").strength(1)
-	V.update(graph, storedFilters);
 }
 
 V.closeAll = () => {
-
-	rootNodes.forEach(function(d){
-		closeSubnodes(d, false);
+	nodes.filter(d => d.part_of === '').forEach(function(d) {
+		closeSubnodes(d, 'do not restart simulation');
 	})
-	// simulation.force("x").strength(1)
-	// simulation.force("y").strength(1)
-	V.update(graph, storedFilters);
 }
-
-
 
 V.destroy = () => {}
 
-export default V
+// Other functions
+const openSubnodes = (d, doRestart) => {
+	// If it happens that the node is already open, just skip.
+	if(d.opened) return;
+
+	// If not, let's open it
+	d.opened = true;
+
+	// fix the position only if it is a "root node"
+	if(d.part_of === '') {
+		d.fx = d.x;
+		d.fy = d.y;
+	} else {
+		d.x = nodes.filter(n => n.id === d.part_of)[0].x
+		d.fy = nodes.filter(n => n.id === d.part_of)[0].y + r.range()[0] * 2 * 3
+	}
+
+	// make subnodes appear at the place of their parent
+	d.subNodes.forEach(function(subNode) {
+		subNode.x = d.x;
+		subNode.y = d.y;
+		// subNode.isSelected = true;
+	})
+
+	// Make convex hull
+	var thisHullNodes = [d].concat(d.subNodes); // first element in array is always the one opened, so we can use its ID as identifier for the convex hull
+	hullsData.push(thisHullNodes);
+
+	// check if the first point of the hull is inside another hulls
+	// if so it means this hull should be part of that opened
+	// add these points to that hullsData
+	hullsData.forEach(function(thisHull) {
+		// if the element is in the array, but is not the first
+		if(thisHull.indexOf(thisHullNodes[0]) > 0) {
+			thisHullNodes.forEach(function(n, i) {
+				if(i !== 0) {
+					thisHull.push(n);
+				}
+			})
+		}
+	})
+
+	// calculate Graph
+	var augmentedNodes = nodes.concat(d.subNodes);
+	graph = ParseMatrixData.calculateNetwork(augmentedNodes);
+	nodes = graph.nodes;
+	links = graph.edges;
+	if(doRestart === 'restart the force') {
+		V.update();
+	}
+}
+const closeSubnodes = (d, doRestart) => {
+	// If it is already opened or if it has no children, just skip
+	if(!d.opened || d.totalSubNodes === 0) return;
+
+	d.opened = false;
+	delete d.fx;
+	delete d.fy;
+
+	var subNodes2Remove = [];
+	var hulls2Remove = [d.id]
+
+	// recursive functions, it makes possible to close contained cluster of nodes
+	function collectSubNodes(parentNode) {
+		parentNode.subNodes.forEach(childNode => {
+			if(childNode.opened) {
+				childNode.opened = false;
+				hulls2Remove.push(childNode.id);
+				collectSubNodes(childNode);
+			}
+		});
+		subNodes2Remove.push(parentNode.subNodes);
+	}
+
+	collectSubNodes(d);
+
+	// cycle in the subNodes2Remove array and for each list of sub-nodes to be removed remove and re-calculate the network.
+	// Probably not the best way, but the simplest at the moment of the coding.
+	subNodes2Remove.forEach(subNodes => {
+
+		let toRemove = subNodes.map(d => d.id)
+		let filtered = nodes.filter(el => {
+			return !toRemove.includes(el.id);
+		})
+
+		// remove this hull
+		hullsData = hullsData.filter(function(h) {
+			return !hulls2Remove.includes(h[0].id);
+		})
+
+		// remove extra points from the outer hull
+		hullsData.forEach(function(thisHull, i) {
+			hullsData[i] = thisHull.filter(function(n) {
+				return !toRemove.includes(n.id);
+			})
+		})
+
+		// calculate graph
+		graph = ParseMatrixData.calculateNetwork(filtered)
+		nodes = graph.nodes;
+		links = graph.edges;
+	})
+
+	if(doRestart === 'restart the force') {
+		V.update();
+	}
+}
+const toggleSubnodes = (d, doRestart) => {
+	// console.log("Ohhhhh, let's toggle the sub nodes of", d.label, d.id)
+	if(d.opened) {
+		unselectLabel(d);
+		closeSubnodes(d, doRestart);
+	} else if(d.subNodes && d.subNodes.length) {
+		selectLabel(d);
+		openSubnodes(d, doRestart);
+	} else {
+		console.log('No nodes to expand');
+	}
+}
+
+// Interactions
+const displayTitle = (arr) => {
+	// show composition title
+	information = information.data(arr, function(d) { return d.id; });
+	information.exit().remove();
+	information = information.enter().append("text")
+		.classed('information', true)
+		.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
+		.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
+		.attr('y', height - 10)
+		.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+		.merge(information);
+}
+
+const selectLabel = (d) => {
+	label.filter(l => l.id === d.id).classed('selected', true)
+}
+const unselectLabel = (d) => {
+	label.filter(l => l.id === d.id).classed('selected', false)
+}
+
+const selectNode = (d) => {
+	svg.classed('there-is-selection', true)
+	node.filter(n => n.id === d.id).classed('selected', true)
+}
+const unselectNode = (d) => {
+	node.filter(n => n.id === d.id).classed('selected', false)
+
+	if(svg.selectAll('.selected').size() === 0) {
+		svg.classed('there-is-selection', false)
+	}
+}
+
+const applyFilter = (filter, doReset) => {
+	if (doReset==='do reset') {reset();}
+	svg.classed('there-is-filter', true)
+	node.classed('filtered', false).filter(n => filter.indexOf(n.id) < 0).classed('filtered', true)
+}
+
+const selectSameComposition = (d) => {
+	svg.classed('there-is-selection', true)
+	node.filter(n => n.source === d.source).classed('selected', true)
+}
+const unselectSameComposition = (d) => {
+	node.filter(n => n.source === d.source).classed('selected', false)
+
+	if(svg.selectAll('.selected').size() === 0) {
+		svg.classed('there-is-selection', false)
+	}
+}
+
+const reset = () => {
+	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
+	node.classed('filtered', false)
+	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
+	svg.classed('there-is-selection', false)
+	displayTitle([]);
+}
 
 //
 //
@@ -839,113 +667,98 @@ export default V
 //
 
 var hullPadding = collisionPadding;
-// var pointRadius = 5;
-// var margin = hullPadding + pointRadius;
 
-var vecScale = function (scale, v) {
-    // Returns the vector 'v' scaled by 'scale'.
-    return [ scale * v[0], scale * v[1] ];
+var vecScale = function(scale, v) {
+	// Returns the vector 'v' scaled by 'scale'.
+	return [scale * v[0], scale * v[1]];
 }
 
-var vecSum = function (pv1, pv2) {
-    // Returns the sum of two vectors, or a combination of a point and a vector.
-    return [ pv1[0] + pv2[0], pv1[1] + pv2[1] ];
+var vecSum = function(pv1, pv2) {
+	// Returns the sum of two vectors, or a combination of a point and a vector.
+	return [pv1[0] + pv2[0], pv1[1] + pv2[1]];
 }
 
-var unitNormal = function (p0, p1) {
-    // Returns the unit normal to the line segment from p0 to p1.
-    var n = [ p0[1] - p1[1], p1[0] - p0[0] ];
-    var nLength = Math.sqrt (n[0]*n[0] + n[1]*n[1]);
-    return [ n[0] / nLength, n[1] / nLength ];
+var unitNormal = function(p0, p1) {
+	// Returns the unit normal to the line segment from p0 to p1.
+	var n = [p0[1] - p1[1], p1[0] - p0[0]];
+	var nLength = Math.sqrt(n[0] * n[0] + n[1] * n[1]);
+	return [n[0] / nLength, n[1] / nLength];
 };
 
 var strictHull = function(polyPoints) {
-    // This method returns a polygon given the specified points. The points are assumed to be in polygon order.
-    return (
-        'M ' + polyPoints[0]
-        + ' L '
-        + d3.range(1,polyPoints.length)
-            .map(function(i) {return polyPoints[i];})
-            .join(' L')
-        + ' Z'
-    );
+	// This method returns a polygon given the specified points. The points are assumed to be in polygon order.
+	return (
+		'M ' + polyPoints[0] +
+		' L ' +
+		d3.range(1, polyPoints.length)
+		.map(function(i) { return polyPoints[i]; })
+		.join(' L') +
+		' Z'
+	);
 };
 
-var roundedHull = function (polyPoints, data) {
-    // Returns the SVG path data string representing the polygon, expanded and rounded.
-
-	// console.log(polyPoints, data);
-
-	hullPadding = d3.max(data, function(d){
+var roundedHull = function(polyPoints, data) {
+	// Returns the SVG path data string representing the polygon, expanded and rounded.
+	hullPadding = d3.max(data, function(d) {
 		return d.opened ? r(1) + collisionPadding : r(d.totalSubNodes + 1) + collisionPadding;
 	})
 
-    // Handle special cases
-    if (!polyPoints || polyPoints.length < 1) return "";
-    if (polyPoints.length === 1) return roundedHull1 (polyPoints, data);
-    if (polyPoints.length === 2) return roundedHull2 (polyPoints, data);
+	// Handle special cases
+	if(!polyPoints || polyPoints.length < 1) return "";
+	if(polyPoints.length === 1) return roundedHull1(polyPoints, data);
+	if(polyPoints.length === 2) return roundedHull2(polyPoints, data);
 
-    var segments = new Array (polyPoints.length);
+	var segments = new Array(polyPoints.length);
 
-    // Calculate each offset (outwards) segment of the convex hull.
-    for (var segmentIndex = 0;  segmentIndex < segments.length;  ++segmentIndex) {
-        var p0 = (segmentIndex === 0) ? polyPoints[polyPoints.length-1] : polyPoints[segmentIndex-1];
-        var p1 = polyPoints[segmentIndex];
+	// Calculate each offset (outwards) segment of the convex hull.
+	for(var segmentIndex = 0; segmentIndex < segments.length; ++segmentIndex) {
+		var p0 = (segmentIndex === 0) ? polyPoints[polyPoints.length - 1] : polyPoints[segmentIndex - 1];
+		var p1 = polyPoints[segmentIndex];
 
-        // Compute the offset vector for the line segment, with length = hullPadding.
-        var offset = vecScale (hullPadding, unitNormal (p0, p1));
+		// Compute the offset vector for the line segment, with length = hullPadding.
+		var offset = vecScale(hullPadding, unitNormal(p0, p1));
 
-        segments[segmentIndex] = [ vecSum (p0, offset), vecSum (p1, offset) ];
-    }
+		segments[segmentIndex] = [vecSum(p0, offset), vecSum(p1, offset)];
+	}
 
-    var arcData = 'A ' + [hullPadding, hullPadding, '0,0,0,'].join(',');
+	var arcData = 'A ' + [hullPadding, hullPadding, '0,0,0,'].join(',');
 
-    segments = segments.map (function (segment, index) {
-        var pathFragment = "";
-        if (index === 0) {
-            var pathFragment = 'M ' + segments[segments.length-1][1] + ' ';
-        }
-        pathFragment += arcData + segment[0] + ' L ' + segment[1];
+	segments = segments.map(function(segment, index) {
+		var pathFragment = "";
+		if(index === 0) {
+			pathFragment = 'M ' + segments[segments.length - 1][1] + ' ';
+		}
+		pathFragment += arcData + segment[0] + ' L ' + segment[1];
 
-        return pathFragment;
-    });
+		return pathFragment;
+	});
 
-    return segments.join(' ');
+	return segments.join(' ');
 }
 
-var roundedHull1 = function (polyPoints, data) {
-    // Returns the path for a rounded hull around a single point (a circle).
+var roundedHull1 = function(polyPoints, data) {
+	// Returns the path for a rounded hull around a single point (a circle).
 
-    var p1 = [polyPoints[0][0], polyPoints[0][1] - hullPadding];
-    var p2 = [polyPoints[0][0], polyPoints[0][1] + hullPadding];
+	var p1 = [polyPoints[0][0], polyPoints[0][1] - hullPadding];
+	var p2 = [polyPoints[0][0], polyPoints[0][1] + hullPadding];
 
-    return 'M ' + p1
-        + ' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',')
-        + ' A ' + [hullPadding, hullPadding, '0,0,0', p1].join(',');
+	return 'M ' + p1 +
+		' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',') +
+		' A ' + [hullPadding, hullPadding, '0,0,0', p1].join(',');
 };
 
+var roundedHull2 = function(polyPoints, data) {
+	// Returns the path for a rounded hull around two points (a "capsule" shape).
 
-var roundedHull2 = function (polyPoints, data) {
-    // Returns the path for a rounded hull around two points (a "capsule" shape).
+	var offsetVector = vecScale(hullPadding, unitNormal(polyPoints[0], polyPoints[1]));
+	var invOffsetVector = vecScale(-1, offsetVector);
 
-    var offsetVector = vecScale (hullPadding, unitNormal (polyPoints[0], polyPoints[1]));
-    var invOffsetVector = vecScale (-1, offsetVector);
+	var p0 = vecSum(polyPoints[0], offsetVector);
+	var p1 = vecSum(polyPoints[1], offsetVector);
+	var p2 = vecSum(polyPoints[1], invOffsetVector);
+	var p3 = vecSum(polyPoints[0], invOffsetVector);
 
-    var p0 = vecSum (polyPoints[0], offsetVector);
-    var p1 = vecSum (polyPoints[1], offsetVector);
-    var p2 = vecSum (polyPoints[1], invOffsetVector);
-    var p3 = vecSum (polyPoints[0], invOffsetVector);
-
-    return 'M ' + p0
-        + ' L ' + p1 + ' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',')
-        + ' L ' + p3 + ' A ' + [hullPadding, hullPadding, '0,0,0', p0].join(',');
+	return 'M ' + p0 +
+		' L ' + p1 + ' A ' + [hullPadding, hullPadding, '0,0,0', p2].join(',') +
+		' L ' + p3 + ' A ' + [hullPadding, hullPadding, '0,0,0', p0].join(',');
 };
-
-
-/////// Interactions
-
-document.addEventListener('keydown', keyIsPressedHereYeah);
-function keyIsPressedHereYeah(e) {
-  if (e.key === 'l') label.classed('make-visible', true)
-	if (e.key === 'L') label.classed('make-visible', false)
-}
