@@ -1,6 +1,6 @@
 
 .hamburger-menu-container {
-  position:absolute;  
+  position:relative;  
   height: 100vh;
 }
 
@@ -10,7 +10,7 @@
   grid-template-columns : 2fr 4fr;
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--navigation-height));
   font-family: 'HK Grotesk';
 }
 
