@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
+
 import './Itineraries.css';
 
 export default class Itineraries extends React.Component
@@ -8,6 +10,8 @@ export default class Itineraries extends React.Component
   render()
   {
     return (
+      <>
+      <HamburgerIntroHeader />
       <div id="mainGrid">
         <div class="scrollable-column">
           <h2 id="doubt">Il Dubbio</h2>
@@ -30,6 +34,7 @@ export default class Itineraries extends React.Component
           </p>
         </div>
       </div>
+      </>
     );
   }
 }
