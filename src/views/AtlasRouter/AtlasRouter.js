@@ -16,8 +16,8 @@ import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
-// import PlacesMatrixView from '../../PlacesMatrixView/PlacesMatrixView';
-// import ContainerComp from '../../ContainerComp/ContainerComp';
+import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
+import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 
 export default function AtlasRouter()
 {
@@ -30,11 +30,6 @@ export default function AtlasRouter()
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
-{/*
-      <Route exact path="/Itineraries/doubt">sfere / il dubbio</Route>
-      <Route exact path="/Itineraries/spaces">sfere / gli spazi</Route>
-      <Route exact path="/Itineraries/shapes">sfere / le forme</Route>
-*/}
       <Route path="/Itineraries/"><Itineraries /></Route>
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
@@ -52,8 +47,8 @@ export default function AtlasRouter()
       <Route exact path="/Problem/cancellation">problema / cancellazione</Route>
       <Route exact path="/Problem/plot">problema / trama</Route>
 
-      <Route exact path="/About">About</Route>
-      <Route exact path="/Tools">Strumenti</Route>
+      <Route exact path="/About"><AboutAndContacts /></Route>
+      <Route exact path="/Tools"><ToolsAndMethods /></Route>
       <Route exact path="/News">Rassegna</Route>
       <Route exact path="/Papers">Articoli</Route>
 

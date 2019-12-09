@@ -8,21 +8,22 @@
   grid-template-rows : 1fr;
   grid-template-columns : 1fr 1fr;
   overflow:hidden;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */      
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */ 
+  position : fixed;
 }
 
 .scrollable-column {
   overflow-y : scroll;
   height : 85%;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */      
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */      
 }
 
 .unscrollable-column {
   overflow : hidden;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */      
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */      
 }
 
 .itineraries-block {
