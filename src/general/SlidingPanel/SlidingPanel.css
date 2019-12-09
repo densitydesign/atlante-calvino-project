@@ -1,0 +1,15 @@
+
+.sliding-panel {
+  float: left;
+  transition: width 0.5s;
+  height: 100vh;
+  border-left: 1px solid black;
+}
+
+.sliding-panel-open {  
+  width: 40%;
+}
+
+.sliding-panel-closed {
+  width : 15%;
+}
