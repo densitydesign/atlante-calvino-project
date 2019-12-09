@@ -15,6 +15,7 @@
     "react-bootstrap-typeahead": "^3.4.7",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",
+    "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.1.1",
     "react-scroll-transitions": "^1.2.1",
     "svg-points": "^6.0.1"

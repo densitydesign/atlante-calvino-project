@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default class ViewSelector extends React.Component
 {
@@ -7,7 +8,11 @@ export default class ViewSelector extends React.Component
   {
     return (
       <div className={this.props.className}>
-        <Link to={this.props.route}>{this.props.text}</Link>
+        {
+          this.props.route.includes("#") ? 
+          <HashLink to={this.props.route}>{this.props.text}</HashLink> :
+          <Link to={this.props.route}>{this.props.text}</Link>
+        }
       </div>
     );
   }
