@@ -15,6 +15,7 @@ import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import Trasformare from '../../Trasformare';
+import Itineraries from '../Itineraries/Itineraries';
 // import PlacesMatrixView from '../../PlacesMatrixView/PlacesMatrixView';
 // import ContainerComp from '../../ContainerComp/ContainerComp';
 
@@ -29,9 +30,12 @@ export default function AtlasRouter()
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
-      <Route exact path="/Spheres/shapes">sfere / le forme</Route>
-      <Route exact path="/Spheres/doubt">sfere / il dubbio</Route>
-      <Route exact path="/Spheres/spaces">sfere / gli spazi</Route>
+{/*
+      <Route exact path="/Itineraries/doubt">sfere / il dubbio</Route>
+      <Route exact path="/Itineraries/spaces">sfere / gli spazi</Route>
+      <Route exact path="/Itineraries/shapes">sfere / le forme</Route>
+*/}
+      <Route path="/Itineraries/"><Itineraries /></Route>
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
       <Route exact path="/Phenomena/shapeAnalysis">fenomeni / analisi della forma</Route>
