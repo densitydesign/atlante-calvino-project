@@ -33,15 +33,14 @@ export default class SlidingPanel extends React.Component
   {
     if(!this.wrapperRef) return;
 
-    if(this.wrapperRef.contains(event.target)) this.setState({ open : true });
-    else this.setState({ open : false });
+    this.setState({ open : this.wrapperRef.contains(event.target)});
   }
 
   render()
   {
     return (
       <div className={"sliding-panel " + (this.state.open ? "sliding-panel-open" : "sliding-panel-closed")} ref={this.setWrapperRef} style={{ float: "left", background : this.props.background }}>
-        {this.props.children}
+        {this.state.open ? (<><h3>{this.props.title}</h3><p>{this.props.text}</p></>) : (<h3>{this.props.title}</h3>)}
       </div>
     );
   }
