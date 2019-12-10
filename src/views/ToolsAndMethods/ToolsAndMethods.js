@@ -1,8 +1,8 @@
 
 import React from 'react';
 
-import ToolMethodCell from './ToolMethodCell';
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
+import ToolMethodCell from './ToolMethodCell';
 
 import './ToolsAndMethods.css';
 import '../../general/GridsWithScrollableColumns/GridWithScrollableColumn.css';

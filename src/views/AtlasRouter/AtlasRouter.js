@@ -18,6 +18,8 @@ import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
 import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
+import PressReview from '../PressReview/PressReview';
+import Articles from '../Articles/Articles';
 
 export default function AtlasRouter()
 {
@@ -49,8 +51,8 @@ export default function AtlasRouter()
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Tools"><ToolsAndMethods /></Route>
-      <Route exact path="/News">Rassegna</Route>
-      <Route exact path="/Papers">Articoli</Route>
+      <Route exact path="/News"><PressReview /></Route>
+      <Route exact path="/Papers"><Articles /></Route>
 
     </BrowserRouter>
   );
