@@ -1,6 +1,6 @@
 import React from 'react';
-import IntroLink from '../../general/IntroLink/IntroLink';
 import CompassButton from '../../general/CompassButton/CompassButton';
+import MainMenu from '../../general/MainMenu/MainMenu';
 
 export default class HamburgerCompassHeader extends React.Component
 {
@@ -8,9 +8,9 @@ export default class HamburgerCompassHeader extends React.Component
   {
     return (
       <div className="top-nav navigations">
-        <CompassButton style={{gridColumn: 'span 2'}} />
-        <div style={{gridColumn: 'span 20'}} />
-        <IntroLink style={{gridColumn: 'span 2'}} />
+        <MainMenu style={{ gridColumn : "span 1" }} />
+        <div style={{ gridColumn: "span 22" }} />
+        <CompassButton style={{ gridColumn : "span 1" }} />
       </div>
     );
   }
