@@ -1,0 +1,35 @@
+
+.tools-grid {
+  display : grid;
+  grid-template-rows : 1fr 1fr 1fr 1fr;
+  grid-template-columns : 1fr;
+  overflow-y : scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */ 
+}
+
+.method-type-box {
+  border-radius : 20px;
+  padding : 5px;
+  border : 2px solid black;  
+}
+
+.method-cell {
+  padding: 20px;
+  color: black;
+  background-color : white;  
+  border-bottom : 1px solid black;
+}
+
+.tool-type-box {
+  border-radius : 20px;
+  padding : 5px;
+  border : 2px solid white;  
+}
+
+.tool-cell {
+  padding: 20px;
+  color: white;
+  background-color : black;
+  border-bottom : 1px solid white;
+}
