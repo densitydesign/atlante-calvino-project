@@ -1,11 +1,12 @@
 
-.tools-grid {
+.grid-with-scrollable-column {
   display : grid;
-  grid-template-rows : 1fr 1fr 1fr 1fr;
+  grid-template-rows : 1fr;
   grid-template-columns : 1fr;
-  overflow-y : scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */ 
+  overflow : hidden;
+  -ms-overflow-style : none; /* Internet Explorer 10+ */
+  scrollbar-width : none; /* Firefox */ 
+  position : fixed;
 }
 
 .method-type-box {
