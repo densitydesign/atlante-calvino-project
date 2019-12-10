@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderViz from '../../general/HeaderViz';
 import IntroLink from '../../general/IntroLink/IntroLink';
 import MainMenu from '../../general/MainMenu/MainMenu';
 
