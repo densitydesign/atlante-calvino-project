@@ -12,7 +12,7 @@ export default class CompassButton extends React.Component
     return (
       <div className="compass-button" style={this.props.style}>
         <Link to={route}>
-          <FontAwesomeIcon icon={faCompass} />
+          <FontAwesomeIcon icon={faCompass} style={this.props.style} />
         </Link>
       </div>
     );
