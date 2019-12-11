@@ -22,9 +22,3 @@
   float: left;
   height: 50px;
 }
-
-.other-phases-subheader {
-  display : grid;
-  grid-template-columns : 1fr 1fr;
-  float: right;
-}

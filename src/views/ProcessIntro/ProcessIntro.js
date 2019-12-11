@@ -2,6 +2,9 @@ import React from 'react'
 
 import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
+import ArrowButton from '../../general/ArrowButton/ArrowButton';
+
+import '../../App.css';
 
 export default class ProcessIntro extends React.Component
 {
@@ -11,13 +14,19 @@ export default class ProcessIntro extends React.Component
       <>
         <HamburgerCompassHeader />
         <div className="category-intro-grid">
-          <div>
-            <h2>IL PROCESSO</h2>
-            <p>Al centro dell'idea di letteratura in Calvino sta il concetto di metamorfosi. Trasformare è il verbo che meglio rappresenta il complesso
-              legame tra cose, parole e immagini che la scritura mette in scena sotto i nostri occhi. D'altra parte ogni trasformazione conduce a un processo
-              di ricombinazione. L'arte di combinare tra loro segmenti di realtà e di racconto, moduli narrativi e insiemi di figure è quella che Calvino ha praticato
-              per tutta la vita. Senza dimenticarsi di dubitare ogni volta di quello che si sta facendo, per poter ricominciare.
-            </p>
+          <div className="category-intro-main-block">
+            <div>
+              <h2>IL PROCESSO</h2>
+              <p>Al centro dell'idea di letteratura in Calvino sta il concetto di metamorfosi. Trasformare è il verbo che meglio rappresenta il complesso
+                legame tra cose, parole e immagini che la scritura mette in scena sotto i nostri occhi. D'altra parte ogni trasformazione conduce a un processo
+                di ricombinazione. L'arte di combinare tra loro segmenti di realtà e di racconto, moduli narrativi e insiemi di figure è quella che Calvino ha praticato
+                per tutta la vita. Senza dimenticarsi di dubitare ogni volta di quello che si sta facendo, per poter ricominciare.
+              </p>
+            </div>
+            <div className="other-phases-subheader" >
+              <ArrowButton direction="left" text="FASE 1" route="/Phenomena/intro" />
+              <ArrowButton direction="right" text="FASE 3" route="/Problem/intro" />
+            </div>
           </div>
           <div className="category-subgrid">
             <CategoryEntryBlock smallTitle="dubbio" title="Cancellazione" description="Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen Frühlingsmorgen, die ich mit ganzem Herzen genieße. Ich bin allein und freue mich meines Lebens in dieser Gegend, die für solche Seelen geschaffen ist wie die meine. Ich bin so glücklich, mein Bester, so ganz in dem Gefühle von ruhigem Dasein versunken, daß meine Kunst darunter leidet. Ich könnte jetzt nicht zeichnen, nicht einen Strich, und bin nie ein größerer Maler gewesen als in diesen Augenblicken. Wenn das liebe Tal um mich dampft, und die hohe Sonne an der Oberfläche der undurchdringlichen Finsternis meines Waldes ruht, und nur einzelne Strahlen sich in das innere Heiligtum stehlen, ich dann im hohen Grase am fallenden Bache liege, und näher an der Erde" />

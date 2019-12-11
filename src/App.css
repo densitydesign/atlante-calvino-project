@@ -111,8 +111,20 @@ h5 {
   grid-template-columns : 1fr;
 }
 
+.category-intro-main-block {
+  display : grid;
+  grid-template-rows : 1fr;
+  grid-template-columns : 2fr 1fr;
+}
+
 .category-subgrid {
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 1fr 1fr 1fr;
+}
+
+.other-phases-subheader {
+  display : grid;
+  grid-template-columns : 1fr 1fr;
+  float: right;
 }

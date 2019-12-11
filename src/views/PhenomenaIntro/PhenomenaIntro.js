@@ -5,6 +5,7 @@ import LinkParagraph from './LinkParagraph';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
 import './PhenomenaIntro.css';
+import '../../App.css';
 
 export default class PhenomenaIntro extends React.Component
 {
