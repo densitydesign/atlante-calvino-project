@@ -33,7 +33,11 @@ export default class SlidingPanel extends React.Component
   {
     if(!this.wrapperRef) return;
 
-    this.setState({ open : this.wrapperRef.contains(event.target)});
+    this.setState({ open : this.wrapperRef.contains(event.target) });
+
+console.log("panel id : ", this.props.id);
+
+//    this.setState({ open : this.wrapperRef.contains(event.target) || this.props.getSelectedPanel() > Number.parseInt(this.props.id)});
   }
 
   render()
