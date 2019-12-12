@@ -1,15 +1,17 @@
 
-.sliding-panel {
-  float: left;
-  transition: width 0.5s;
-  height: 100vh;
+.sliding-panel { 
+  position : absolute;
+  transition: right 0.5s;
+  height: 100%;
+  width : 40%;
   border-left: 1px solid black;
 }
-
+/*
 .sliding-panel-open {  
-  width: 40%;
+  width : 40%;
 }
 
 .sliding-panel-closed {
   width : 15%;
 }
+*/
