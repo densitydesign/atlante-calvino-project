@@ -20,7 +20,7 @@ export default class ArrowButton extends React.Component {
 
     let line, arrowHead;
 
-    switch (this.props.direction) {
+    switch(this.props.arrowDirection) {
       case "left":
         line = leftLine;
         arrowHead = leftArrowHead;
@@ -29,15 +29,15 @@ export default class ArrowButton extends React.Component {
         line = rightLine;
         arrowHead = rightArrowHead;
         break;
-      default: throw `direction ${this.props.direction} not recognized`;
+      default: throw `direction ${this.props.arrowDirection} not recognized`;
     }
 
     return (
       <div className="arrow-button" style={this.props.style}>
         <Link to={this.props.route}>
           <div>
-            <span><strong>{this.props.text}</strong></span>
-            <svg>
+            <div style={{width : "120px", textAlign : this.props.textAlign}}><strong>{this.props.text}</strong></div>
+            <svg width="120px">
               <defs>
                 {arrowHead}
               </defs>

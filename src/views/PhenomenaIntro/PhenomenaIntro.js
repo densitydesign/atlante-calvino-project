@@ -19,8 +19,8 @@ export default class PhenomenaIntro extends React.Component
             <div className="subheaders-container">
               <small className="current-phase-subheader"><strong>FASE 1</strong></small>
               <div className="other-phases-subheader">
-                <ArrowButton direction="right" text="FASE 2" route="/Process/intro" />
-                <ArrowButton direction="right" text="FASE 3" route="/Problem/intro" />
+                <ArrowButton arrowDirection="right" textAlign="left" text="FASE 2" route="/Process/intro" />
+                <ArrowButton arrowDirection="right" textAlign="left" text="FASE 3" route="/Problem/intro" />
               </div> 
             </div>
             <div>

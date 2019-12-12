@@ -25,8 +25,8 @@ export default class ProcessIntro extends React.Component
               </p>
             </div>
             <div className="other-phases-subheader" >
-              <ArrowButton direction="left" text="FASE 1" route="/Phenomena/intro" />
-              <ArrowButton direction="right" text="FASE 3" route="/Problem/intro" />
+              <ArrowButton arrowDirection="left" textAlign="right" text="FASE 1" route="/Phenomena/intro" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="FASE 3" route="/Problem/intro" />
             </div>
           </div>
           <div className="category-subentries-grid">

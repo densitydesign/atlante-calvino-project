@@ -25,8 +25,8 @@ export default class ProblemIntro extends React.Component
               </p>
             </div>
             <div className="other-phases-subheader" >
-              <ArrowButton direction="left" text="FASE 1" route="/Phenomena/intro" />
-              <ArrowButton direction="left" text="FASE 2" route="/Process/intro" />
+              <ArrowButton arrowDirection="left" textAlign="right" text="FASE 1" route="/Phenomena/intro" />
+              <ArrowButton arrowDirection="left" textAlign="left" text="FASE 2" route="/Process/intro" />
             </div>
           </div>
           <div className="category-subentries-grid">
