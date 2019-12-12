@@ -17,8 +17,3 @@
   grid-template-columns : 1fr 1fr;
   height: 80px;
 }
-
-.current-phase-subheader {
-  float: left;
-  height: 50px;
-}
