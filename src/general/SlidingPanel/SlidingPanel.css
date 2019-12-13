@@ -2,9 +2,10 @@
 .sliding-panel { 
   position : absolute;
   transition: right 0.5s;
-  height: 100%;
-  width : 40%;
+  height: calc(100% - var(--navigation-height));
+  width : 60%;
   border-left: 1px solid black;
+  border-bottom: 1px solid black;
 }
 /*
 .sliding-panel-open {  

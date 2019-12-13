@@ -2,6 +2,7 @@
 import React from 'react';
 
 import './SlidingPanel.css';
+import '../../views/Compass/Compass.css';
 
 export default class SlidingPanel extends React.Component
 {
@@ -47,11 +48,10 @@ export default class SlidingPanel extends React.Component
 console.log("render panel");
     return (
       <div 
-        className={"sliding-panel " + (this.props.open ? "sliding-panel-open" : "sliding-panel-closed")} 
+        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)} 
         ref={this.setWrapperRef} 
         style={{ 
-          background : this.props.background,
-          right : Number.parseInt(this.props.right) + (this.props.open ? 400 : 0),
+          background : this.props.background,          
           zIndex : this.props.zIndex
         }}>
 
