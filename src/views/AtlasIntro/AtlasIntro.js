@@ -3,6 +3,7 @@ import ParallaxScroll from 'react-scroll-transitions';
 import { withRouter } from 'react-router-dom';
 import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
 
+import '../../App.css';
 import './AtlasIntro.css';
 import '../HamburgerMenu/HamburgerMenu.css';
 

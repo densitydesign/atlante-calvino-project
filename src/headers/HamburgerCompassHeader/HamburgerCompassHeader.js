@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css';
 import HeaderViz from '../../general/HeaderViz';
 import IntroLink from '../../general/IntroLink/IntroLink';
 import CompassButton from '../../general/CompassButton/CompassButton';

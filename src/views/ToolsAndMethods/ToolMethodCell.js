@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import '../../App.css';
 import './ToolsAndMethods.css';
 
 export default class ToolMethodCell extends React.Component
@@ -46,6 +47,6 @@ export default class ToolMethodCell extends React.Component
         <h3>{this.props.title}</h3>
         <p>{this.props.description}</p>
       </div>
-    );    
+    );
   }
 }

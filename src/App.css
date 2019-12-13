@@ -7,12 +7,18 @@
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
   --navigation-borders: black;
+  --text-color:black;
   font-size: 14px;
   font-family: 'HKGrotesk', sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color:var(--calvino-red);
 }
 
 html,body {
@@ -23,10 +29,39 @@ body {
   margin: 0;
 }
 
+
+h1 {
+  margin: 0;
+  white-space: nowrap;
+  font-size:2em;
+  color:var(--text-color);
+}
+
+h2 {
+  margin: 0;
+  white-space: nowrap;
+  font-size:1.8em;
+    color:var(--text-color);
+
+}
+
+h3 {
+  margin: 0;
+  white-space: nowrap;
+  font-size:1.5em;
+}
+
+h4 {
+  margin: 0;
+  white-space: nowrap;
+  font-size:1.2em;
+}
+
 h5 {
   margin: 0;
   white-space: nowrap;
 }
+
 
 .main {
   width: 100vw;

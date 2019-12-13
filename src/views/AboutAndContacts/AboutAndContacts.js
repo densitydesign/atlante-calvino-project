@@ -4,6 +4,7 @@ import React from 'react';
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 
 import '../../general/GridWithScrollableLeftColumn/GridWithScrollableLeftColumn.css';
+import '../../App.css';
 
 export default class AboutAndContacts extends React.Component
 {
@@ -60,7 +61,7 @@ export default class AboutAndContacts extends React.Component
               </ul>
             </address>
           </div>
-        </div>        
+        </div>
       </>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderViz from '../../general/HeaderViz';
 import SkipIntroLink from '../../general/SkipIntroLink/SkipIntroLink';
 
+import '../../App.css';
 import './AtlasIntroHeader.css';
 
 export default class AtlasIntroHeader extends React.Component

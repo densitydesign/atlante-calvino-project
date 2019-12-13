@@ -4,6 +4,7 @@ import React from 'react';
 import ToolMethodCell from './ToolMethodCell';
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 
+import '../../App.css';
 import './ToolsAndMethods.css';
 
 export default class ToolsAndMethods extends React.Component

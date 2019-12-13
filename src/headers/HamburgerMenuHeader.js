@@ -4,7 +4,9 @@ import BackFromMainMenu from '../general/BackFromMainMenu/BackFromMainMenu';
 import CompassButton from '../general/CompassButton/CompassButton';
 import IntroLink from '../general/IntroLink/IntroLink';
 
-export default class HamburgerMenuHeader extends React.Component 
+import '../App.css';
+
+export default class HamburgerMenuHeader extends React.Component
 {
   render()
   {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import '../../App.css';
 import './BackFromMainMenu.css';
 
 export default class BackFromMainMenu extends React.Component

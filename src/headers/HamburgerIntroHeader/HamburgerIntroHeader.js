@@ -3,6 +3,8 @@ import HeaderViz from '../../general/HeaderViz';
 import IntroLink from '../../general/IntroLink/IntroLink';
 import MainMenu from '../../general/MainMenu/MainMenu';
 
+import '../../App.css';
+
 export default class HamburgerIntroHeader extends React.Component
 {
   render()

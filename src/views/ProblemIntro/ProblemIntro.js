@@ -1,5 +1,6 @@
 import React from 'react'
 
+import '../../App.css';
 export default class ProblemIntro extends React.Component
 {
   render()
