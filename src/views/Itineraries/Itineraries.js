@@ -3,8 +3,9 @@ import React from 'react';
 
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 
+import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
+import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
 import '../../App.css';
-import '../../general/GridWithScrollableLeftColumn/GridWithScrollableLeftColumn.css';
 
 export default class Itineraries extends React.Component
 {

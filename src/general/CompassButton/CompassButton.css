@@ -1,8 +1,7 @@
 .compass-button {
-  background-color: var(--dark-blue);
-  color: white;
+  background-color: white;
   opacity: .8;
-  height: var(--header-height);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

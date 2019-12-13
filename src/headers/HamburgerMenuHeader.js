@@ -1,7 +1,5 @@
 import React from 'react';
-import HeaderViz from '../general/HeaderViz';
 import BackFromMainMenu from '../general/BackFromMainMenu/BackFromMainMenu';
-import CompassButton from '../general/CompassButton/CompassButton';
 import IntroLink from '../general/IntroLink/IntroLink';
 
 import '../App.css';

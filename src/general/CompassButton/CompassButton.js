@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompass } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import './CompassButton.js';
+import './CompassButton.css';
 
 export default class CompassButton extends React.Component
 {
@@ -13,7 +13,7 @@ export default class CompassButton extends React.Component
     return (
       <div className="compass-button" style={this.props.style}>
         <Link to={route}>
-          <FontAwesomeIcon icon={faCompass} />
+          <FontAwesomeIcon icon={faCompass} style={this.props.style} />
         </Link>
       </div>
     );

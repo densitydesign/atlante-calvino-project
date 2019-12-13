@@ -3,7 +3,8 @@ import React from 'react';
 
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 
-import '../../general/GridWithScrollableLeftColumn/GridWithScrollableLeftColumn.css';
+import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
+import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
 import '../../App.css';
 
 export default class AboutAndContacts extends React.Component

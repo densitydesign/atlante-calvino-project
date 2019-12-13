@@ -4,6 +4,7 @@ import React from 'react';
 import '../../App.css';
 import './ToolsAndMethods.css';
 
+
 export default class ToolMethodCell extends React.Component
 {
   constructor(props)
