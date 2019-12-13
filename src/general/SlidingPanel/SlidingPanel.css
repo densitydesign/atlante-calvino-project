@@ -2,7 +2,7 @@
 .sliding-panel { 
   background-color : white;
   position : absolute;
-  transition: right 0.5s;
+  transition: left 0.5s;
   height: calc(100% - var(--navigation-height));
   width : 60%;
   border-left: 1px solid black;

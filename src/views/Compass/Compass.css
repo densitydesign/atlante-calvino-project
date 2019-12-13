@@ -1,40 +1,9 @@
 
-/*
 
-#panel {
-  height: 100vh;
-  width: 100vh;
+:root {
+  --panel-border-width : 10%;
+  --description-panel-width : 40%;
 }
-
-#compass {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-#fishbones {
-  height: 100%;
-  width: 25%;  
-  float: left;
-  border: 1px solid black;
-}
-
-#winding {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-#networks {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-*/
 
 .open {
   width: 40vh;
@@ -46,62 +15,33 @@
 
 .compass-main-description {
   position: absolute;
+  background-color: white;
   height: calc(100% - var(--navigation-height));
-  width: 40%;
+  width: var(--description-panel-width);
   float: left;
   border: 1px solid black;
 }
 
 .panel1-open {
-  right : 160px;
+  left : calc(var(--description-panel-width) + 0 * var(--panel-border-width));
 }
 
 .panel1-closed {
-  right : -180px;
+  left : calc(100% - 3 * var(--panel-border-width));
 }
 
 .panel2-open {
-  right : 80px;
+  left : calc(var(--description-panel-width) + 1 * var(--panel-border-width));
 }
 
 .panel2-closed {
-  right : calc(-50% + 100px);
+  left : calc(100% - 2 * var(--panel-border-width));
 }
 
 .panel3-open {
-  right : 0px;
+  left : calc(var(--description-panel-width) + 2 * var(--panel-border-width));
 }
 
 .panel3-closed {
-  right : -50%;
+  left : calc(100% - 1 * var(--panel-border-width));
 }
-
-/*
-#fishbones {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
-}
-
-#fishbones:focus {
-  width: 40vh;
-}
-
-#winding {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
-}
-
-#networks {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
-}
-*/
