@@ -1,7 +1,9 @@
 /* common CSS */
 :root {
   --calvino-red: tomato;
-  --dark-green: darkslategrey;
+  --dark-green: black;
+  --light-blue:#ECECF4;
+  --dark-blue:#5151FC;
   --header-height: 66px;
   --navigation-height: 48px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
@@ -12,14 +14,25 @@
   font-family: 'HKGrotesk', sans-serif;
 }
 
+
+/* ELEMENTI COMUNI */
+
+
 a {
   text-decoration: none;
+  color:var(--text-color);
 }
 
-a:hover {
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, a:hover {
   text-decoration: none;
-  color:var(--calvino-red);
+  color:var(--dark-blue);
 }
+
+h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, a:focus {
+  text-decoration: underline;
+  color:var(--dark-blue);
+}
+
 
 html,body {
   height : 100vh;
@@ -35,13 +48,15 @@ h1 {
   white-space: nowrap;
   font-size:2em;
   color:var(--text-color);
+  transition: color 0.5s ease;
 }
 
 h2 {
   margin: 0;
   white-space: nowrap;
   font-size:1.8em;
-    color:var(--text-color);
+  transition: color 0.5s ease;
+  color:black;
 
 }
 
@@ -49,17 +64,23 @@ h3 {
   margin: 0;
   white-space: nowrap;
   font-size:1.5em;
+  transition: color 0.5s ease;
+  color:black;
 }
 
 h4 {
   margin: 0;
   white-space: nowrap;
   font-size:1.2em;
+  transition: color 0.5s ease;
+  color:black;
 }
 
 h5 {
   margin: 0;
   white-space: nowrap;
+  transition: color 0.5s ease;
+  color:black;
 }
 
 
@@ -67,28 +88,6 @@ h5 {
   width: 100vw;
   height: 100vh;
   position: relative;
-}
-
-.the-header {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  border-top: var(--app-border-top) solid var(--calvino-red);
-  height: var(--header-height);
-  max-height: var(--header-height);
-  position: relative;
-  z-index: 10000;
-}
-
-.the-header>* {
-  padding: 0 15px;
-  border-bottom: 1px solid var(--dark-green);
-  max-height: 100%;
-  overflow: scroll;
-  box-sizing: border-box;
-}
-
-.the-header>*:not(:last-child) {
-  border-right: 1px solid var(--dark-green);
 }
 
 .navigations {
@@ -138,4 +137,29 @@ h5 {
 .viz-title {
   text-transform: uppercase;
   font-size: 1.2857142857rem;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    background-color: white;
+    color: white;
+}
+
+#loghi {
+    overflow-y: hidden;
+}
+
+#logo-unige {
+    width: 100%;
+}
+
+#logo-polimi {
+    width: 82%;
+}
+
+#logo-dd {
+    width: 30%;
 }

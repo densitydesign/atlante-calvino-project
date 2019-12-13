@@ -11,9 +11,9 @@ export default class NavMenu extends React.Component
     return (
       <div className="nav-menu-cell-grid" >
         <div className="nav-menu-cell"><Link to="/About"><h2>About</h2></Link></div>
-        <div className="nav-menu-cell"><Link to="/Tools">Strumenti</Link></div>
-        <div className="nav-menu-cell"><Link to="/News">Rassegna</Link></div>
-        <div className="nav-menu-cell"><Link to="/Papers">Articoli</Link></div>
+        <div className="nav-menu-cell"><Link to="/Tools"><h2>Strumenti</h2></Link></div>
+        <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna</h2></Link></div>
+        <div className="nav-menu-cell"><Link to="/Papers"><h2>Articoli</h2></Link></div>
       </div>
     );
   }

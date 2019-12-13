@@ -1,8 +1,5 @@
 
 .intro-link {
-  background-color: white;
-  color: white;
-  opacity: .8;
   height: var(--navigation-height);
   display: flex;
   align-items: center;

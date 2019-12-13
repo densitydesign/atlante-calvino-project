@@ -11,7 +11,7 @@ export default class AtlasIntroHeader extends React.Component
   {
     return (
       <HeaderViz>
-        <div className="atlas-intro-header-bar" style={{gridColumn: 'span 22'}} />
+        <div className="atlas-intro-header-bar" style={{gridColumn: 'span 20'}} />
         <SkipIntroLink style={{gridColumn: 'span 2'}} />
       </HeaderViz>
     );
