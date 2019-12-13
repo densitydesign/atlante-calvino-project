@@ -47,7 +47,7 @@
 .compass-main-description {
   position: absolute;
   height: calc(100% - var(--navigation-height));
-  width: 40vh;
+  width: 40%;
   float: left;
   border: 1px solid black;
 }
@@ -65,7 +65,7 @@
 }
 
 .panel2-closed {
-  right : -260px;
+  right : calc(-50% + 100px);
 }
 
 .panel3-open {
@@ -73,7 +73,7 @@
 }
 
 .panel3-closed {
-  right : -340px;
+  right : -50%;
 }
 
 /*
