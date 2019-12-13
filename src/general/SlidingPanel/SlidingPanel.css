@@ -1,5 +1,6 @@
 
 .sliding-panel { 
+  background-color : white;
   position : absolute;
   transition: right 0.5s;
   height: calc(100% - var(--navigation-height));

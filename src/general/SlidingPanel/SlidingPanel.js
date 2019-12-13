@@ -51,7 +51,6 @@ console.log("render panel");
         className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)} 
         ref={this.setWrapperRef} 
         style={{ 
-          background : this.props.background,          
           zIndex : this.props.zIndex
         }}>
 
