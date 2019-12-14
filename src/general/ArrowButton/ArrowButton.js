@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default class ArrowButton extends React.Component {
   render() {
-    
+
     let leftArrowHead = (
       <marker id="leftArrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
         <polygon points="0 3.5, 10 0, 10 7" />
