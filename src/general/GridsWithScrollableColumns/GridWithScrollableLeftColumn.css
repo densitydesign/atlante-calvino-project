@@ -8,16 +8,11 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 1fr 1fr;
-  overflow:hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */ 
-  position : fixed;
 }
 
 .unscrollable-column {
-  overflow : hidden;
+  left:130%;
+  padding:7em 4em 4em 8em;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */      
+  scrollbar-width: none;  /* Firefox */
 }
-
-

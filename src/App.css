@@ -2,87 +2,91 @@
 :root {
   --calvino-red: tomato;
   --dark-green: black;
-  --light-blue:#ECECF4;
-  --dark-blue:#5151FC;
+  --light-blue: #ECECF4;
+  --dark-blue: #5151FC;
   --header-height: 66px;
   --navigation-height: 48px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
   --navigation-borders: black;
-  --text-color:black;
+  --text-color: black;
+  --app-border:1px solid black;
+  --app-border-bold:2px solid black;
   font-size: 14px;
   font-family: 'HKGrotesk', sans-serif;
 }
 
-
 /* ELEMENTI COMUNI */
-
-
 a {
   text-decoration: none;
-  color:var(--text-color);
+  color: var(--text-color);
 }
 
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, a:hover {
+p {
+font-size: 1.4em;
+}
+
+
+a:hover {
   text-decoration: none;
-  color:var(--dark-blue);
+  color: var(--dark-blue);
+  transition: color 1s ease;
 }
 
-h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, a:focus {
+a:focus {
   text-decoration: underline;
-  color:var(--dark-blue);
+  color: var(--dark-blue);
+  transition: color 0.5s ease;
 }
 
-
-html,body {
-  height : 100vh;
+html, body {
+  height: 100vh;
 }
 
 body {
   margin: 0;
 }
 
-
 h1 {
   margin: 0;
   white-space: nowrap;
-  font-size:2em;
-  color:var(--text-color);
-  transition: color 0.5s ease;
+  font-size: 2.3em;
+  color: var(--text-color);
+  margin-bottom:1em;
+
 }
 
 h2 {
   margin: 0;
   white-space: nowrap;
-  font-size:1.8em;
-  transition: color 0.5s ease;
-  color:black;
-
+  font-size: 1.8em;
+  color: black;
 }
 
 h3 {
   margin: 0;
   white-space: nowrap;
-  font-size:1.5em;
-  transition: color 0.5s ease;
-  color:black;
+  font-size: 1.5em;
+  color: black;
+  margin-bottom:1em;
 }
 
 h4 {
   margin: 0;
   white-space: nowrap;
-  font-size:1.2em;
-  transition: color 0.5s ease;
-  color:black;
+  font-size: 1.3em;
+  color: black;
 }
 
 h5 {
   margin: 0;
+  font-size: 1.2em;
+  font-weight: 100;
   white-space: nowrap;
-  transition: color 0.5s ease;
-  color:black;
+  color: black;
+  line-height: 1.4em;
+  margin-bottom:1em;
 }
-
 
 .main {
   width: 100vw;
@@ -90,8 +94,23 @@ h5 {
   position: relative;
 }
 
+ul {
+list-style-type: none;
+padding-left: 0px;
+}
+
+li {
+margin-bottom:0.5em;
+margin-top:0.5em;
+padding-left: 0px;
+}
+
+strong{
+  font-weight:700;
+}
+
 .navigations {
-  border: 1px solid var(--navigation-borders);
+  border: 2px solid var(--navigation-borders);
   border-left: none;
   border-right: none;
   box-sizing: border-box;
@@ -99,8 +118,8 @@ h5 {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  position: relative;
   z-index: 10000;
+  position: fixed;
 }
 
 .navigations>*:not(:last-child) {
@@ -113,14 +132,15 @@ h5 {
   align-items: center;
 }
 
-.page-title, .options-container > .dropdown > button, .search-component {
- padding: 0 10px;
+.page-title, .options-container>.dropdown>button, .search-component {
+  padding: 0 10px;
 }
 
 .navigations>div svg {}
 
 .top-nav {
-  position: static;
+  position: sticky;
+  background-color: white;
   top: 0;
 }
 
@@ -139,55 +159,59 @@ h5 {
   font-size: 1.2857142857rem;
 }
 
-
-
 /* FOOTER */
-
 footer {
-    background-color: white;
-    color: white;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  font-size: 0.7em;
+  padding:1.5em;
 }
 
 #loghi {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 #logo-unige {
-    width: 100%;
+  width: 100%;
 }
 
 #logo-polimi {
-    width: 82%;
+  width: 82%;
 }
 
 #logo-dd {
-    width: 30%;
+  width: 30%;
+}
+
 .category-intro-grid {
-  display : grid;
-  grid-template-rows : 0.8fr 1.2fr;
-  grid-template-columns : 1fr;
+  display: grid;
+  grid-template-rows: 0.8fr 1.2fr;
+  grid-template-columns: 1fr;
 }
 
 .category-intro-block-row {
-  display : grid;
-  grid-template-rows : 1fr;
-  grid-template-columns : 2fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .category-intro-main-block {
-  display : flex;
-  flex-direction : column;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-subentries-grid {
-  display : grid;
-  grid-template-rows : 1fr;
-  grid-template-columns : 1fr 1fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .other-phases-subheader {
-  display : grid;
-  grid-template-columns : 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   float: right;
 }
 

@@ -1,5 +1,9 @@
 import React from 'react'
 
+import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
+import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
+import ArrowButton from '../../general/ArrowButton/ArrowButton';
+
 import '../../App.css';
 
 export default class ProcessIntro extends React.Component

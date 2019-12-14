@@ -1,26 +1,26 @@
 
-.method-type-box {
+/* .method-type-box {
   border-radius : 20px;
   padding : 5px;
-  border : 2px solid black;  
+  border : 2px solid black;
 }
 
 .method-cell {
   padding: 20px;
   color: black;
-  background-color : white;  
+  background-color : white;
   border-bottom : 1px solid black;
-}
+} */
 
 .tool-type-box {
   border-radius : 20px;
-  padding : 5px;
-  border : 2px solid white;  
+  padding : 7px;
+  border:var(--app-border);
 }
 
 .tool-cell {
-  padding: 20px;
-  color: white;
-  background-color : black;
+  padding:4em 4em 0em 0em;
+  color: black;
+  background-color : white;
   border-bottom : 1px solid white;
 }

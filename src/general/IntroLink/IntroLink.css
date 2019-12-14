@@ -1,13 +1,7 @@
 
 .intro-link {
-  height: var(--navigation-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 6px;
   cursor: not-allowed;
-}
-
-.intro-link:hover {
-  opacity: 1;
 }

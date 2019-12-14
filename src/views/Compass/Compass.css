@@ -2,7 +2,7 @@
 
 :root {
   --compass-width-onepercent : 1%;
-  --panel-border-width-units : 10;
+  --panel-border-width-units : 6;
   --panel-border-width : calc(var(--compass-width-onepercent) * var(--panel-border-width-units));
   --description-panel-width-units : 40;
   --description-panel-width : calc(var(--compass-width-onepercent) * var(--description-panel-width-units));
@@ -11,21 +11,13 @@
   --sliding-panel-left-padding : calc(var(--compass-width-onepercent) * var(--sliding-panel-left-padding-units));
 }
 
-.open {
-  width: 40vh;
-}
-
-.closed {
-  width: 10vh;
-}
 
 .compass-main-description {
+  padding:7em 8em 4em 4em;
   position: absolute;
   background-color: white;
   height: calc(100% - var(--navigation-height));
-  width: var(--description-panel-width);
-  float: left;
-  border: 1px solid black;
+  width: 40%;
 }
 
 .panel1-open {
