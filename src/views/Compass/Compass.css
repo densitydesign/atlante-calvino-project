@@ -1,40 +1,15 @@
 
-/*
 
-#panel {
-  height: 100vh;
-  width: 100vh;
+:root {
+  --compass-width-onepercent : 1%;
+  --panel-border-width-units : 10;
+  --panel-border-width : calc(var(--compass-width-onepercent) * var(--panel-border-width-units));
+  --description-panel-width-units : 40;
+  --description-panel-width : calc(var(--compass-width-onepercent) * var(--description-panel-width-units));
+  --sliding-panel-width-units : calc(100 - var(--description-panel-width-units));
+  --sliding-panel-left-padding-units : calc(100 * var(--panel-border-width-units) / var(--sliding-panel-width-units));
+  --sliding-panel-left-padding : calc(var(--compass-width-onepercent) * var(--sliding-panel-left-padding-units));
 }
-
-#compass {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-#fishbones {
-  height: 100%;
-  width: 25%;  
-  float: left;
-  border: 1px solid black;
-}
-
-#winding {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-#networks {
-  height: 100%;
-  width: 25%;
-  float: left;
-  border: 1px solid black;
-}
-
-*/
 
 .open {
   width: 40vh;
@@ -44,37 +19,35 @@
   width: 10vh;
 }
 
-#compass {
-  height: 100vh;
-  width: 40vh;
+.compass-main-description {
+  position: absolute;
+  background-color: white;
+  height: calc(100% - var(--navigation-height));
+  width: var(--description-panel-width);
   float: left;
   border: 1px solid black;
 }
 
-#fishbones {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
+.panel1-open {
+  left : calc(var(--description-panel-width) + 0 * var(--panel-border-width));
 }
 
-#fishbones:focus {
-  width: 40vh;
+.panel1-closed {
+  left : calc(100% - 3 * var(--panel-border-width));
 }
 
-#winding {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
+.panel2-open {
+  left : calc(var(--description-panel-width) + 1 * var(--panel-border-width));
 }
 
-#networks {
-  height: 100vh;
-  width: 10vh;
-  float: left;
-  border: 1px solid black;
-  transition: width 2s;
+.panel2-closed {
+  left : calc(100% - 2 * var(--panel-border-width));
+}
+
+.panel3-open {
+  left : calc(var(--description-panel-width) + 2 * var(--panel-border-width));
+}
+
+.panel3-closed {
+  left : calc(100% - 1 * var(--panel-border-width));
 }
