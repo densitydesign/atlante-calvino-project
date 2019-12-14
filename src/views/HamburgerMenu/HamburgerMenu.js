@@ -5,7 +5,7 @@ import ViewSelector from '../ViewSelector/ViewSelector';
 import HamburgerMenuHeader from '../../headers/HamburgerMenuHeader';
 import { Link } from 'react-router-dom';
 
-
+import '../../App.css';
 import './HamburgerMenu.css';
 import '../NavMenu/NavMenu.css';
 

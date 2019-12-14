@@ -17,6 +17,11 @@
   font-family: 'HKGrotesk', sans-serif;
 }
 
+
+.col-lg-8{
+  padding-left:0px;
+}
+
 /* ELEMENTI COMUNI */
 a {
   text-decoration: none;
@@ -24,9 +29,14 @@ a {
 }
 
 p {
-font-size: 1.7em;
+font-size: 1.5em;
 }
 
+
+::selection{
+  color:white;
+  background-color: var(--dark-blue);
+}
 
 a:hover {
   text-decoration: none;
@@ -47,6 +57,8 @@ html, body {
 body {
   margin: 0;
 }
+
+
 
 h1 {
   margin: 0;
@@ -69,8 +81,8 @@ h3 {
   white-space: nowrap;
   font-size: 1.5em;
   color: black;
-  margin-bottom:1em;
-    font-family:"HKGrotesk";
+
+  font-family:"HKGrotesk";
 }
 
 h4 {
@@ -164,7 +176,7 @@ strong{
 /*BUTTON*/
 
 
-button{
+.button-text{
   border:var(--button-border);
   margin-top:2em;
   padding:0.5em 1.3em 0.5em 1.3em;
@@ -209,38 +221,4 @@ footer {
 
 #logo-dd {
   width: 30%;
-}
-
-.category-intro-grid {
-  display: grid;
-  grid-template-rows: 0.8fr 1.2fr;
-  grid-template-columns: 1fr;
-}
-
-.category-intro-block-row {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 1fr;
-}
-
-.category-intro-main-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.category-subentries-grid {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.other-phases-subheader {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  float: right;
-}
-
-.current-phase-subheader {
-  float: left;
-  height: 50px;
 }

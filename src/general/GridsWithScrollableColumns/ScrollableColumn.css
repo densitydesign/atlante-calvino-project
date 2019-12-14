@@ -1,17 +1,15 @@
-
 .scrollable-column-2 {
-  border-right:var(--app-border);
-  padding:7em 4em 13em 8em;
+  border-right: var(--app-border);
+  padding: 7em 4em 13em 8em;
   position: fixed;
-    width: auto;
-    height: 100%;
-    overflow: scroll;/* Firefox */
+  height: 100%;
+  overflow: scroll;
 }
 
 .scrollable-column {
-  padding:7em 4em 13em 8em;
-  position: fixed;
-    width: auto;
-    height: 100%;
-    overflow: scroll;/* Firefox */
+  border-right: var(--app-border);
+  grid-column: 1fr;
+  padding: 7em 4em 13em 8em;
+  overflow: scroll;
+  /* Firefox */
 }

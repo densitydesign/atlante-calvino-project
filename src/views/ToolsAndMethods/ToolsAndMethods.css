@@ -1,26 +1,11 @@
 
-/* .method-type-box {
-  border-radius : 20px;
-  padding : 5px;
-  border : 2px solid black;
-}
-
-.method-cell {
-  padding: 20px;
-  color: black;
-  background-color : white;
-  border-bottom : 1px solid black;
-} */
-
 .tool-type-box {
   border-radius : 20px;
   padding : 7px;
-  border:var(--app-border);
+  border:var(--button-border);
+  color: var(--dark-blue);
 }
 
 .tool-cell {
   padding:4em 4em 0em 0em;
-  color: black;
-  background-color : white;
-  border-bottom : 1px solid white;
 }

@@ -1,16 +1,17 @@
 
 import React from 'react';
 
+
 export default class Article extends React.Component
 {
   render()
   {
     return (
       <div>
-        <strong><span>{this.props.title}</span></strong><br />
-        <strong><span>{this.props.authors}, {this.props.year}</span></strong><br/>
+        <h2><span>{this.props.title}</span></h2><br />
+        <h3><span>{this.props.authors}, {this.props.year}</span></h3><br/>
         <br />
-        <strong><span>Abstract</span></strong><br />
+        <h4><span>Abstract</span></h4><br />
         <p>
           {this.props.abstract}
         </p>

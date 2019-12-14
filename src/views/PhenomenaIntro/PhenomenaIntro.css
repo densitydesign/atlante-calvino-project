@@ -4,29 +4,23 @@
   grid-template-rows : 1fr;
   grid-template-columns : 2fr 1fr;
   height:100%;
-  overflow : hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  top:100;
   position: fixed;
 }
 
 .itineraries-subgrid {
   padding:13em 4em 13em 4em;
-  display : grid;
   grid-template-rows : 1fr 1fr 1fr;
-  overflow: scroll;
+  overflow-y: scroll;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: 10px;
 }
 
 .itineraries-subgrid a {
-  margin: 0;
   white-space: nowrap;
   font-size: 1.5em;
   line-height: 1.7em;
   font-weight: 500;
   color: var(--dark-blue);
-  margin-top:0em;
 }
 
 .subheaders-container {
@@ -41,7 +35,4 @@
 .currentPhase{
 padding:7em 4em 13em 8em;
 border-right:var(--app-border);
-overflow : visible;
--ms-overflow-style: none;  /* Internet Explorer 10+ */
-scrollbar-width: none;  /* Firefox */
 }

@@ -50,3 +50,9 @@ a .compass-selector-cell  {
   align-items : center;
   justify-content: center;
 }
+
+.hamburger-menu-cell-grid :hover {
+  background-color:var(--dark-blue);;
+  color:white;
+  transition: color 1s ease;
+}

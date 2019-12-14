@@ -6,17 +6,17 @@ export default class ArrowButton extends React.Component {
 
     let leftArrowHead = (
       <marker id="leftArrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-        <polygon points="0 3.5, 10 0, 10 7" />
+        <polygon points="0 3.5, 10 7" />
       </marker>
     );
-    let leftLine = <line x1="0" y1="10" x2="120" y2="10" stroke="#000" strokeWidth="2" markerStart="url(#leftArrowhead)" />
+    let leftLine = <line x1="0" y1="10" x2="120" y2="10" stroke="#000" strokeWidth="1" markerStart="url(#leftArrowhead)" />
 
     let rightArrowHead = (
       <marker id="rightArrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-        <polygon points="10 3.5, 0 0, 0 7" />
+        <polygon points="10 3.5, 0 7" />
       </marker>
     );
-    let rightLine = <line x1="0" y1="10" x2="100" y2="10" stroke="#000" strokeWidth="2" markerEnd="url(#rightArrowhead)" />
+    let rightLine = <line x1="0" y1="10" x2="100" y2="10" stroke="#000" strokeWidth="1" markerEnd="url(#rightArrowhead)" />
 
     let line, arrowHead;
 

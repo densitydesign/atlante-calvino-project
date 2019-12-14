@@ -1,7 +1,9 @@
 
 .category-entry-block {
-  display : grid;
   grid-template-rows : 1fr 1fr 1fr;
-  grid-template-columns : 1fr;
-  border : solid 1px black;
+  grid-template-columns : 2fr;
+  max-width: 100%;
+  padding: 2em 4em 4em 0em;
+  border-right:var(--app-border);
+
 }
