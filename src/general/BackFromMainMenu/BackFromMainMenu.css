@@ -9,5 +9,6 @@
 }
 
 .back-from-main-menu:hover {
+  cursor : pointer;
   opacity: 1;
 }

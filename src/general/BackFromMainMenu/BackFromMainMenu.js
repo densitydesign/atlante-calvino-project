@@ -1,12 +1,20 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { useLastLocation } from 'react-router-last-location';
+import { Link, useHistory } from 'react-router-dom';
 import './BackFromMainMenu.css';
 
-export default class BackFromMainMenu extends React.Component
+const BackFromMainMenu = (props) =>
 {
-  render()
-  {
-    return <div className="back-from-main-menu" style={this.props.style}><FontAwesomeIcon icon={faMinus} /></div>;
-  }
+  const history = useHistory();
+  console.log("history : ", history);
+
+  return ( 
+    <div className="back-from-main-menu" style={props.style} onClick={() => history.goBack()}>
+        <FontAwesomeIcon icon={faMinus} />
+    </div>
+  );
 }
+
+export default BackFromMainMenu;
