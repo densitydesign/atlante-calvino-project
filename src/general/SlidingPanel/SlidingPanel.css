@@ -1,15 +1,40 @@
 
-.sliding-panel {
-  float: left;
-  transition: width 0.5s;
-  height: 100vh;
+.sliding-panel { 
+  grid-template-columns : 1fr 3fr;
+  grid-template-rows : 1fr;
+  background-color : white;
+  position : absolute;
+  transition: left 0.5s;
+  height: calc(100% - var(--navigation-height));
+  width : calc(100% - var(--description-panel-width));
   border-left: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
+.rotated-title {
+  background-color: white;
+  display : inline-block;
+  position : absolute;
+  transform : rotate(90deg) translate(50px);
+}
+
+.rotated-title > h1 {
+  display : block;
+  top: 0;
+  text-align : left;
+}
+
+.sliding-panel-main-text {
+  padding-left : var(--sliding-panel-left-padding);
+  position : absolute;
+}
+
+/*
 .sliding-panel-open {  
-  width: 40%;
+  width : 40%;
 }
 
 .sliding-panel-closed {
   width : 15%;
 }
+*/
