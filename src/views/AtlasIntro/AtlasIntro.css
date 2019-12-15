@@ -93,3 +93,16 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
   text-align : center;
 }
 
+.atlas-intro-cell-grid2 {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.atlas-intro-cell2 {
+  padding-top : calc(50% - 3em);
+  border-bottom : 1px solid black;
+  border-right : 1px solid black;
+  text-align : center;
+}

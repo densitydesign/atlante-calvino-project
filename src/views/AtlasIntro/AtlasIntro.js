@@ -106,7 +106,7 @@ class AtlasIntro extends React.Component
 
           </div>
         </div>
-
+{/*
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid">
@@ -116,6 +116,65 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Spazio</div>
           </div>
         </div>
+*/}
+
+        <div id="staticGrid" className="atlas-intro">
+          <div/>
+          <div className="atlas-intro-cell-grid2">
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2">Forma</div>
+            <div className="atlas-intro-cell2">Dubbio</div>
+            <div className="atlas-intro-cell2">Spazio</div>
+
+            <div className="atlas-intro-cell2">Fenomeno</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+          </div>
+        </div>
+
+{/*
+        <div className="hamburger-menu-cell-grid">
+
+          <div className="hamburger-menu-cell"></div>
+          <div className="hamburger-menu-cell">Dubbio</div>
+          <div className="hamburger-menu-cell">Spazi</div>
+          <div className="hamburger-menu-cell">Forma</div>
+          <div className="hamburger-menu-cell">Fenomeno</div>
+          <div className="hamburger-menu-cell">Dubbio</div>
+          <div className="hamburger-menu-cell">Spazio</div>
+          <div className="hamburger-menu-cell">Forma</div>
+          <div className="hamburger-menu-cell">Processo</div>
+          <div className="hamburger-menu-cell">Dubitare</div>
+          <div className="hamburger-menu-cell">Trasformare</div>
+          <div className="hamburger-menu-cell">Combinare</div>
+          <div className="hamburger-menu-cell">Problema</div>
+          <div className="hamburger-menu-cell">Trama</div>
+          <div className="hamburger-menu-cell">Realismo</div>
+          <div className="hamburger-menu-cell">Cancellazione</div>
+
+        </div>
+*/}
+
+
+
+
+
+
+
+
+
 
       </div>
     );
@@ -151,6 +210,7 @@ class AtlasIntro extends React.Component
           </div>
         </div>
 
+{/*
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
@@ -158,6 +218,33 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Forma</div>
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
+          </div>
+        </div>
+*/}
+
+        <div id="staticGrid" className="atlas-intro">
+          <div/>
+          <div className="atlas-intro-cell-grid2">
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2">Forma</div>
+            <div className="atlas-intro-cell2">Dubbio</div>
+            <div className="atlas-intro-cell2">Spazio</div>
+
+            <div className="atlas-intro-cell2">Fenomeno</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
           </div>
         </div>
 
@@ -189,7 +276,7 @@ class AtlasIntro extends React.Component
 
           </div>
         </div>
-
+{/*
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
@@ -197,6 +284,33 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell">Forma</div>
             <div className="atlas-intro-cell">Dubbio</div>
             <div className="atlas-intro-cell">Spazio</div>
+          </div>
+        </div>
+*/}
+
+        <div id="staticGrid" className="atlas-intro">
+          <div/>
+          <div className="atlas-intro-cell-grid2">
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2">Forma</div>
+            <div className="atlas-intro-cell2">Dubbio</div>
+            <div className="atlas-intro-cell2">Spazio</div>
+
+            <div className="atlas-intro-cell2">Fenomeno</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
           </div>
         </div>
 
