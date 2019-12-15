@@ -52,16 +52,29 @@ class AtlasIntro extends React.Component
             </div>
 
           </div>
-
+{/*
           <div id="rows" className="atlas-intro-row-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
 
-            <div /> {/* the empty page, before scrolling */}
-            <div /> {/* the first, empty row (it's the row of column headers) */}
-            <div className="atlas-intro-table-horizontal-row">Fenomeno</div> {/* the first table row, and below the others */}
+            <div /> // the empty page, before scrolling
+            <div /> // the first, empty row (it's the row of column headers)
+            <div className="atlas-intro-table-horizontal-row">Fenomeno</div> // the first table row, and below the others
             <div className="atlas-intro-table-horizontal-row">Processo</div>
             <div className="atlas-intro-table-horizontal-row">Problema</div>
 
           </div>
+*/}
+          
+
+          <div id="rows" className="atlas-intro-scrolling-cell-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
+
+            <div /><div /><div /><div /> {/* the empty page, before scrolling */}
+            <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
+            <div className="atlas-intro-cell2">Fenomeno</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
+            <div className="atlas-intro-cell2">Processo</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2">Problema</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
+
+          </div>
+
         </div>
 
         <div id="staticGrid" className="atlas-intro">
