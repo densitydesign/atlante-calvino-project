@@ -15,7 +15,7 @@
   background-color: white;
   display : inline-block;
   position : absolute;
-  transform : rotate(90deg) translate(50px);
+ /* transform : rotate(90deg) translate(50px); passed within props in order to tune the translate value */
 }
 
 .rotated-title > h1 {

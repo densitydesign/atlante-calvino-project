@@ -53,7 +53,7 @@ console.log("render panel");
         style={{ 
           zIndex : this.props.zIndex
         }}>
-        <div className="rotated-title"><h1>{this.props.title}</h1></div>
+        <div className="rotated-title" style={this.props.style}><h1>{this.props.title}</h1></div>
         <div className="sliding-panel-main-text-container">
           <div className="sliding-panel-main-text">
             <h3>{this.props.title}</h3>
