@@ -24,8 +24,13 @@
   text-align : left;
 }
 
-.sliding-panel-main-text {
+.sliding-panel-main-text-container {
   padding-left : var(--sliding-panel-left-padding);
+  position : absolute;
+}
+
+.sliding-panel-main-text {
+  width : 220%;
   position : absolute;
 }
 
