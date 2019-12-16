@@ -61,9 +61,9 @@ console.log("render panel");
           <div className="rotated-title"><h1>{this.props.title}</h1></div>
 
         <div className="sliding-panel-main-text">
-        <p><a href="" target="_blank">PDF<FontAwesomeIcon icon={faLink} size={20}></FontAwesomeIcon></a>
+        <p><a href="" target="_blank">PDF <FontAwesomeIcon icon={faLink} size={20}></FontAwesomeIcon></a>
         </p>
-          <p>{this.props.text}</p>  <button type="button" class="button-text">Esplora</button>
+          <p>{this.props.text}</p> <button type="button" class="button-text">Esplora</button>
         </div>
       </div>
     );

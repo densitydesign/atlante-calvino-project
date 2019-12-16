@@ -21,9 +21,7 @@
 .col-lg-8{
   padding-left:0px;
 }
-.fa{
-  font-size: 24em;
-}
+
 /* ELEMENTI COMUNI */
 a {
   text-decoration: none;
@@ -34,6 +32,11 @@ p {
 font-size: 1.5em;
 }
 
+img{
+  margin:3em 0em;
+  border:var(--app-border);
+  width: 50%;
+}
 
 strong{
   font-weight: 600;

@@ -1,9 +1,11 @@
 
 .tool-type-box {
+  font-weight: 400;
   border-radius : 20px;
-  padding : 7px;
-  border:var(--button-border);
-  color: var(--dark-blue);
+  margin-bottom:2em;
+  padding : 0.5em;
+  border:var(--app-border);
+  color: var(--text-color);
 }
 
 .tool-cell {

@@ -13,3 +13,10 @@
   overflow: scroll;
   /* Firefox */
 }
+
+.scrollable-column-3 {
+  padding: 7em 4em 13em 8em;
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
+}
