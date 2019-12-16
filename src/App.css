@@ -86,8 +86,6 @@ h3 {
   white-space: nowrap;
   font-size: 1.5em;
   color: black;
-
-  font-family:"HKGrotesk";
 }
 
 h4 {
@@ -225,3 +223,38 @@ footer {
 #logo-dd {
   width: 30%;
 }
+
+
+
+
+
+/* a {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark-blue);
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--dark-blue);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+} */

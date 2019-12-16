@@ -70,16 +70,14 @@
 
 .atlas-intro-sidebar-monoblock {
   border-right:var(---app-border-bold);
-  background-color:white;
   display : grid;
   padding : 100px;
-  transition: 1s ease;
 }
 
 .atlas-intro-cell-grid {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -92,10 +90,18 @@
 }
 
 .atlas-intro-cell2 {
-  padding-top : calc(50% - 3em);
   border-bottom : 1px solid black;
   border-right : 1px solid black;
   justify-content: center;
   text-align : center;
+  align-items: center;
+  display:flex;
+}
+
+.atlas-intro-cell3 {
+  border-right : 1px solid black;
+  justify-content: center;
+  text-align : center;
+  align-items: center;
   display:flex;
 }

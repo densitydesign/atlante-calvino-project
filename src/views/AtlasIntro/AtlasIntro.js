@@ -76,9 +76,18 @@ class AtlasIntro extends React.Component
 
             <div /><div /><div /><div /> {/* the empty page, before scrolling */}
             <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
-            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
-            <div className="atlas-intro-cell2"><h4>Processo</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
-            <div className="atlas-intro-cell2"><h4>Problema</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
+            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2" />
 
           </div>
 
@@ -87,10 +96,26 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
-            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"></div>
+
           </div>
         </div>
 
@@ -119,16 +144,13 @@ class AtlasIntro extends React.Component
 
             <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
             <h1>BUSSOLA</h1>
-              <br />
-              <br />
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
-              Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
-              Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
-              Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
-              Polyfon zwitschernd aßen. </p>
+              <p>Prima di iniziare il viaggio, ci vuole una bussola.
+              Per quello abbiamo creato tre visualizzazioni orientative,
+              che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
+              Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
             </div>
 
           </div>
@@ -149,9 +171,9 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
             <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
             <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
@@ -218,17 +240,14 @@ class AtlasIntro extends React.Component
 
             <div className="atlas-intro-sidebar-monoblock compass-selector-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
             <h1>BUSSOLA</h1>
-              <br />
-              <br />
             </div>
 
 {/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
             <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-              <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
-              Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
-              Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
-              Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
-              Polyfon zwitschernd aßen. </p>
+            <p>Prima di iniziare il viaggio, ci vuole una bussola.
+            Per quello abbiamo creato tre visualizzazioni orientative,
+            che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
+            Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
@@ -257,9 +276,9 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
             <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
             <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
@@ -294,8 +313,6 @@ class AtlasIntro extends React.Component
 
             <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
               <h1>BUSSOLA</h1>
-              <br />
-              <br />
             </div>
 
             <div className="atlas-intro-sidebar-monoblock">
@@ -323,9 +340,9 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
             <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
             <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>

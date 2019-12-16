@@ -17,10 +17,13 @@
 
 .itineraries-subgrid a {
   white-space: nowrap;
-  font-size: 1.5em;
   line-height: 1.7em;
   font-weight: 500;
   color: var(--dark-blue);
+}
+
+.itineraries-subgrid p {
+  margin-bottom:3em;
 }
 
 .subheaders-container {

@@ -59,7 +59,7 @@ a:hover .compass-selector-cell  {
 }
 
 .hamburger-menu-cell-grid :hover {
-  background-color:var(--dark-blue);;
+  background-color:var(--dark-blue);
   color:white;
   transition: color 1s ease;
 }

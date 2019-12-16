@@ -8,7 +8,7 @@ export default class LinkParagraph extends React.Component
   {
     return (
       <nav>
-        <Link to={this.props.route}>{this.props.linkText}</Link><br />
+        <Link to={this.props.route}><h1>{this.props.linkText}< /h1></Link>
         <p>
           {this.props.description}
         </p>
