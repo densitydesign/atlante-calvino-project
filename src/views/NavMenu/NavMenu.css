@@ -4,6 +4,8 @@
   display : grid;
   grid-template-rows : 1fr 1fr 1fr 1fr;
   padding : 100px;
+  border-top:var(--app-border);
+  transition: background-color 0.5s ease;
 }
 
 .nav-menu-cell {

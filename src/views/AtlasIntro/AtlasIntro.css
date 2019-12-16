@@ -3,8 +3,7 @@
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
   border-left: 1px solid black;
-  height: calc(100vh - var(--header-height));
-  font-family: 'HK Grotesk';
+  height: calc(100vh - var(--navigation-height));
 }
 
 .atlas-intro-scrollable {
@@ -13,25 +12,23 @@
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
   border-left: 1px solid black;
-  border-bottom: 1px solid black;
   width: 100%;
-  height: calc(2 * (100vh - var(--header-height)));
+  height: calc(2 * (100vh - var(--navigation-height)));
 }
 
 .atlas-intro-sidebar {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }
 
 .atlas-intro-sidebar2 {
   display: grid;
   grid-template-rows: 1fr 0.375fr 0.625fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid black;
-  height: calc(2 * (100vh - var(--header-height)));
+  border-bottom: 2px solid black;
+  height: calc(2 * (100vh - var(--navigation-height)));
   position: relative;
 }
 
@@ -39,8 +36,8 @@
   display: grid;
   grid-template-rows: 0.375fr 0.625fr 0.625fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid black;
-  height: calc(1.5 * (100vh - var(--header-height)));
+  border-bottom: 1px solid blue;
+  height: calc(1.5 * (100vh - var(--navigation-height)));
   position: relative;
 }
 
@@ -48,19 +45,15 @@
   display: grid;
   grid-template-rows: 0.375fr 0.625fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid black;
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--navigation-height));
   position: relative;
-}
+  transition: 1s ease;}
 
-/*
-grid-template-rows:
-one empty page (4fr, to be scrolled up), then the populated page, with 1 empty row (column headers), then three populated rows
-*/
 .atlas-intro-row-grid {
   position: relative;
   display: grid;
   grid-template-rows: 4fr 1fr 1fr 1fr 1fr;
+  transition: 1s ease;
 }
 
 .atlas-intro-scrolling-cell-grid {
@@ -72,12 +65,15 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
 
 .atlas-intro-table-horizontal-row {
   border-top: var(--app-border);
+  transition: 1s ease;
 }
 
 .atlas-intro-sidebar-monoblock {
-  background-color:var(--light-blue);
+  border-right:var(---app-border-bold);
+  background-color:white;
   display : grid;
   padding : 100px;
+  transition: 1s ease;
 }
 
 .atlas-intro-cell-grid {
@@ -87,25 +83,19 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.atlas-intro-cell {
-  padding-top : calc(50% - 3em);
-  border-bottom : 1px solid red;
-  border-right : 1px solid red;
-  text-align : left;
-  display:flex;
-  justify-content: center;
-}
-
 .atlas-intro-cell-grid2 {
   position: relative;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-left:var(--app-border-bold);
 }
 
 .atlas-intro-cell2 {
   padding-top : calc(50% - 3em);
   border-bottom : 1px solid black;
   border-right : 1px solid black;
+  justify-content: center;
   text-align : center;
+  display:flex;
 }

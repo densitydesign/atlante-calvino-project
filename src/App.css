@@ -33,6 +33,10 @@ font-size: 1.5em;
 }
 
 
+strong{
+  font-weight: 600;
+}
+
 ::selection{
   color:white;
   background-color: var(--dark-blue);
@@ -43,6 +47,7 @@ a:hover {
   color: var(--dark-blue);
   transition: color 1s ease;
 }
+
 
 a:focus {
   text-decoration: underline;
@@ -119,9 +124,6 @@ margin-top:0.5em;
 padding-left: 0px;
 }
 
-strong{
-  font-weight:700;
-}
 
 .navigations {
   border: 2px solid var(--navigation-borders);

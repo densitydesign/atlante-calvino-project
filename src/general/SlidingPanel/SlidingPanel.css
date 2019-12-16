@@ -25,11 +25,6 @@
     overflow: visible;
     white-space: nowrap;
 }
-
-
-
-.sliding-panel-main-text-container {
-  padding-left : var(--sliding-panel-left-padding);
-  position : absolute;
-  padding:12em 1em 1em 8em;
-}
+  .sliding-panel-main-text{
+    padding:12em 0em 0em 8em;
+  }

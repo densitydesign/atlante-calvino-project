@@ -38,18 +38,24 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div id="sidebar" className="atlas-intro-sidebar">
 
-            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
-              <h3>Sfere</h3>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+              <h1>Itinerari</h1>
               <br />
               <br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+              <p>Per entrare e muoversi dentro l’opera narrativa di Calvino abbiamo scelto tre itinerari.
+              Il primo riguarda il <strong>dubbio</strong>, il secondo lo spazio e il terzo la forma del racconto.
+              Sono tre scelte arbitrarie, ma che vanno a toccare alcuni fondamenti della scrittura calviniana,
+              invitandoci alla sua esplorazione.</p>
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
-              <h3>Fasi</h3>
+              <h1>Tappe</h1>
               <br />
               <br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+            <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+            Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+            Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.
+            Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen</p>
             </div>
 
           </div>
@@ -70,9 +76,9 @@ class AtlasIntro extends React.Component
 
             <div /><div /><div /><div /> {/* the empty page, before scrolling */}
             <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
-            <div className="atlas-intro-cell2">Fenomeno</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
-            <div className="atlas-intro-cell2">Processo</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
-            <div className="atlas-intro-cell2">Problema</div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
+            <div className="atlas-intro-cell2"><h4>Processo</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
+            <div className="atlas-intro-cell2"><h4>Problema</h4></div><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" /><div className="atlas-intro-cell2" />
 
           </div>
 
@@ -81,10 +87,10 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
-            <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell"><h3>Forma</h3></div>
-            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
           </div>
         </div>
 
@@ -102,10 +108,13 @@ class AtlasIntro extends React.Component
           <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              <h3>Fasi</h3>
+              <h1>Tappe</h1>
               <br />
               <br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+              <p>Ognuno dei tre itinerari si sviluppa in tre tappe.
+            <br />La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
+              La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno.
+              La terza tappa l’ombra del <strong>problema</strong> che sta dietro a tutto. </p>
             </div>
 
             <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
@@ -115,7 +124,11 @@ class AtlasIntro extends React.Component
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+              <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+              Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+              Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
+              Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
+              Polyfon zwitschernd aßen. </p>
             </div>
 
           </div>
@@ -136,21 +149,21 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2">Forma</div>
-            <div className="atlas-intro-cell2">Dubbio</div>
-            <div className="atlas-intro-cell2">Spazio</div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
 
-            <div className="atlas-intro-cell2">Fenomeno</div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-
-            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
@@ -211,7 +224,11 @@ class AtlasIntro extends React.Component
 
 {/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
             <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
+              <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+              Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+              Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
+              Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
+              Polyfon zwitschernd aßen. </p>
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
@@ -240,21 +257,21 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2">Forma</div>
-            <div className="atlas-intro-cell2">Dubbio</div>
-            <div className="atlas-intro-cell2">Spazio</div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
 
-            <div className="atlas-intro-cell2">Fenomeno</div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-
-            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
@@ -306,21 +323,21 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid2">
             <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2">Forma</div>
-            <div className="atlas-intro-cell2">Dubbio</div>
-            <div className="atlas-intro-cell2">Spazio</div>
+            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
 
-            <div className="atlas-intro-cell2">Fenomeno</div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-
-            <div className="atlas-intro-cell2">Processo</div>
+            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2">Problema</div>
+            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
