@@ -28,7 +28,7 @@
 
 
 
-.sliding-panel-main-text {
+.sliding-panel-main-text-container {
   padding-left : var(--sliding-panel-left-padding);
   position : absolute;
   padding:12em 1em 1em 8em;
