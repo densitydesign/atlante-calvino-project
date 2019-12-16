@@ -25,7 +25,6 @@
   justify-content: left;
   padding-left : 100px;
   border-bottom : var(--app-border);
-  text-align : left;
 }
 
 a .compass-selector-cell  {

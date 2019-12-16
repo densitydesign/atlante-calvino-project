@@ -5,7 +5,7 @@
   --light-blue: #ECECF4;
   --dark-blue: #5151FC;
   --header-height: 66px;
-  --navigation-height: 48px;
+  --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
   --navigation-borders: black;
@@ -205,6 +205,7 @@ footer {
   width:100%;
   font-size: 0.7em;
   padding:1.5em;
+  height: var(--navigation-height);
 }
 
 #loghi {

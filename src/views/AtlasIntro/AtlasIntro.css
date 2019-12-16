@@ -69,9 +69,9 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
 }
 
 .atlas-intro-sidebar-monoblock {
-  background: white;
-  position: relative;
-  width: 100%;
+  background-color:var(--light-blue);
+  display : grid;
+  padding : 100px;
 }
 
 .atlas-intro-cell-grid {
@@ -83,7 +83,9 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
 
 .atlas-intro-cell {
   padding-top : calc(50% - 3em);
-  border-bottom : 1px solid black;
-  border-right : 1px solid black;
-  text-align : center;
+  border-bottom : 1px solid red;
+  border-right : 1px solid red;
+  text-align : left;
+  display:flex;
+  justify-content: center;
 }
