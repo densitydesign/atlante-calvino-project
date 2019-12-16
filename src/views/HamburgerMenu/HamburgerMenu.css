@@ -16,7 +16,7 @@
   grid-template-rows : 0.375fr 0.625fr;
   grid-template-columns : 1fr;
   border-bottom:var(--app-border);
-  border-right: var(--app-border);
+  border-right: var(--app-border-bold);
 }
 
 .compass-selector-cell {
@@ -24,7 +24,6 @@
   align-items: center;
   justify-content: left;
   padding-left : 100px;
-  border-bottom : var(--app-border);
 }
 
 a .compass-selector-cell  {
@@ -34,6 +33,15 @@ a .compass-selector-cell  {
   transition: color 0.5s ease;
   color: black;
 }
+
+a:hover .compass-selector-cell  {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1.8em;
+  transition: color 0.5s ease;
+  color: var(--dark-blue);
+}
+
 
 .hamburger-menu-cell-grid {
   position : relative;
@@ -51,7 +59,7 @@ a .compass-selector-cell  {
 }
 
 .hamburger-menu-cell-grid :hover {
-  background-color:var(--dark-blue);;
+  background-color:var(--dark-blue);
   color:white;
   transition: color 1s ease;
 }

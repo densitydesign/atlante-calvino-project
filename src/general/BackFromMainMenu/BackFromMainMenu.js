@@ -11,7 +11,7 @@ const BackFromMainMenu = (props) =>
   const history = useHistory();
   console.log("history : ", history);
 
-  return ( 
+  return (
     <div className="back-from-main-menu" style={props.style} onClick={() => history.goBack()}>
         <FontAwesomeIcon icon={faMinus} />
     </div>

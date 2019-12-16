@@ -26,15 +26,14 @@ export default class PhenomenaIntro extends React.Component
             </div>
             <div className="col-md-12 col-lg-8">
               <h1>IL FENOMENO</h1>
-              <p>L'arcipelago esplora l'opera di Calvino come fosse un territorio. I suoi libri allora ci sono apparsi come un insieme di isole,
-                tra loro collegate in un arcipelago, che rappresentavano la voglia di esplorare il mondo come un insieme di fenomeni : gli elenchi, la nebbia e i luoghi.
-              </p>
-                <button type="button" class="button-text">Arcipelago</button>            </div>
+              <p>Per la prima tappa, quella dei fenomeni, abbiamo deciso di disegnare un territorio comune che i tre itinerari ci faranno esplorare.
+              <br /> Il territorio è formato ancora una volta dal corpus di tutte le opere di Calvino, che ci sforziamo di riunire in una forma visiva che possa aiutarci a meglio comprenderle.   </p>
+                <button type="button" class="button-text">Arcipelago</button></div>
           </div>
           <div className="itineraries-subgrid">
-            <LinkParagraph route="/archipelago" linkText="Forma" description="Calvino è sempre stato un maniaco degli elenchi. L'elenco può funzionare come marca di realismo o all'opposto come fuga nell'astrazione. Fa vedere alcune cose, ma se aumenta il suo voltaggio, scivolando nel delirio elencatorio, non fa vedere più nulla" />
-            <LinkParagraph route="/" linkText="Nebbia" description="Ci immerge in una densa nebbia, dove il territorio si cancella e il suo significato ci sfugge." />
-            <LinkParagraph route="/" linkText="Spazio" description="I luoghi allora diventano un appiglio incerto ma fondamentale tra visibile e invisibile." />
+            <LinkParagraph route="/archipelago" linkText="Nebbia" description="All’inizio c’è la nebbia. Una fitta nebbia, dove il territorio si cancella e il suo significato ci sfugge. La nebbia è uno dei grandi fenomeni della scrittura calviniana, per questo abbiamo scelto di cominciare da qui." />
+            <LinkParagraph route="/" linkText="Luoghi" description="I luoghi sono l’appiglio, incerto ma fondamentale, per connettere il visibile all’invisibile. Il corporeo all’incorporeo. Niente meglio di un tentativo di vederli tutti insieme, ci farà entrare nel cuore di cosa significhi rappresentare il reale." />
+            <LinkParagraph route="/" linkText="Elenchi" description="Calvino è sempre stato un maniaco degli elenchi. L’elenco può funzionare come marca di realismo o all’opposto come fuga nell’astrazione. Fa vedere alcune cose, ma se aumenta il suo voltaggio, scivolando nel delirio elencatorio, non fa vedere più nulla." />
           </div>
         </div>
       </>

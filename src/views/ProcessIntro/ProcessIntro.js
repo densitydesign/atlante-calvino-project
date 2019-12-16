@@ -20,11 +20,7 @@ export default class ProcessIntro extends React.Component
             <div className="category-intro-main-block">
               <small className="current-phase-subheader"><strong>FASE 2</strong></small>
               <h1>IL PROCESSO</h1>
-              <p>Al centro dell'idea di letteratura in Calvino sta il concetto di metamorfosi. Trasformare è il verbo che meglio rappresenta il complesso
-                legame tra cose, parole e immagini che la scritura mette in scena sotto i nostri occhi. D'altra parte ogni trasformazione conduce a un processo
-                di ricombinazione. L'arte di combinare tra loro segmenti di realtà e di racconto, moduli narrativi e insiemi di figure è quella che Calvino ha praticato
-                per tutta la vita. Senza dimenticarsi di dubitare ogni volta di quello che si sta facendo, per poter ricominciare.
-              </p>
+              <p>Con la seconda tappa, che riguarda i processi piuttosto che i fenomeni, ci spostiamo da oggetti di studio puntuali verso alcune azioni che cerchiamo di cogliere con tre verbi all’infinito. Dietro il fenomeno della nebbia andremo alla ricerca di come funziona il processo del dubitare, dietro lo spazio quello del trasformare e dietro gli elenchi quello del combinare.</p>
             </div>
             <div className="other-phases-subheader" >
               <ArrowButton arrowDirection="left" textAlign="right" text="FASE 1" route="/Phenomena/intro" />
@@ -32,9 +28,9 @@ export default class ProcessIntro extends React.Component
             </div>
           </div>
           <div className="category-subentries-grid">
-            <CategoryEntryBlock smallTitle="dubbio" title="Dubitare" description="Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen Frühlingsmorgen, die ich mit ganzem Herzen genieße. Ich bin allein und freue mich meines Lebens in dieser Gegend, die für solche Seelen geschaffen ist wie die meine. Ich bin so glücklich, mein Bester, so ganz in dem Gefühle von ruhigem Dasein versunken, daß meine Kunst darunter leidet. Ich könnte jetzt nicht zeichnen, nicht einen Strich." />
-            <CategoryEntryBlock smallTitle="spazio" title="Trasformare" description="Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen Frühlingsmorgen, die ich mit ganzem Herzen genieße. Ich bin allein und freue mich meines Lebens in dieser Gegend, die für solche Seelen geschaffen ist wie die meine. Ich bin so glücklich, mein Bester, so ganz in dem Gefühle von ruhigem Dasein versunken, daß meine Kunst darunter leidet. Ich könnte jetzt nicht zeichnen, nicht einen Strich."/>
-            <CategoryEntryBlock smallTitle="forma" title="Combinare" description="Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen Frühlingsmorgen, die ich mit ganzem Herzen genieße. Ich bin allein und freue mich meines Lebens in dieser Gegend, die für solche Seelen geschaffen ist wie die meine. Ich bin so glücklich, mein Bester, so ganz in dem Gefühle von ruhigem Dasein versunken, daß meine Kunst darunter leidet. Ich könnte jetzt nicht zeichnen, nicht einen Strich."/>
+            <CategoryEntryBlock smallTitle="DUBBIO" title="Dubitare" description="Dubitare vuol dire creare un testo che si rifiuta di rimanere sempre se stesso. Significa invitare il lettore e la lettrice a entrare dentro una scrittura simile a un campo di mine, che può esplodere in ogni momento." />
+            <CategoryEntryBlock smallTitle="SPAZIO" title="Trasformare" description="Trasformare vuol dire affidarsi a uno dei processi fondamentali della scrittura di Calvino: quello della metamorfosi. Dietro tutti i luoghi visitati da Marco Polo, non si nasconde infatti sempre Venezia?"/>
+            <CategoryEntryBlock smallTitle="FORMA" title="Combinare" description="Combinare vuole dire mettere in dubbio la linearità della narrazione. A tal punto da tendere il più delle volte a riscrivere una stessa trama elementare, basata sulla serie e sulla concatenazione. "/>
             </div>
         </div>
         </div>

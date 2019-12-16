@@ -26,14 +26,10 @@
   overflow: none;
 }
 
-#space {
-  margin-bottom: 2em;
+h1#space{
+  margin-top: 3em;
 }
 
-#doubt {
-  margin-bottom: 2em;
-}
-
-#shape {
-  margin-bottom: 2em;
+h1#shape {
+  margin-top: 3em;
 }

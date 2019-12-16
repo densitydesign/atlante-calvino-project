@@ -10,7 +10,7 @@ export default class CategoryEntryBlock extends React.Component
     return (
       <div className="category-entry-block">
         <strong>{this.props.smallTitle}</strong>
-        <h2>{this.props.title}</h2><br/>
+        <h2 className="title-category">{this.props.title}</h2><br/>
         <p>{this.props.description}</p>
       </div>
     );
