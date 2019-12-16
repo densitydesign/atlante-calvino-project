@@ -1,34 +1,39 @@
-
 ::-webkit-scrollbar {
-    display: none; /* chrome */
+  display: none;
+  /* chrome */
 }
 
 #mainGrid {
-  display : grid;
-  grid-template-rows : 1fr;
-  grid-template-columns : 1fr 1fr;
-  overflow:hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */ 
-  position : fixed;
-}
-
-.scrollable-column {
-  overflow-y : scroll;
-  height : 85%;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */      
+  border-right: var(--app-border);
+  padding: 7em 4em 13em 8em;
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
 }
 
 .unscrollable-column {
-  overflow : hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */      
+  left: 130%;
+    padding: 7em 4em 4em 8em;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .itineraries-block {
-  display : grid;
-  grid-template-rows : 1fr 1fr 1fr;
-  grid-template-columns : 1fr;
-  overflow : -moz-hidden-unscrollable;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  position: fixed;
+  height: 100%;
+  overflow: none;
+}
+
+#space {
+  margin-bottom: 2em;
+}
+
+#doubt {
+  margin-bottom: 2em;
+}
+
+#shape {
+  margin-bottom: 2em;
 }

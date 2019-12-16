@@ -1,48 +1,3 @@
-html {
-    font-size: 18px;
-}
-
-html:lang(it-IT) :not(:lang(it-IT)) {
-  display: none;
-}
-html:lang(fr-FR) :not(:lang(fr-FR)) {
-  display: none;
-}
-html:lang(en-UK) :not(:lang(en-UK)) {
-  display: none;
-}
-
-body {
-    /* font-family: 'Crimson Text', serif; */
-}
-
-body.navbar-displayed {
-    padding-top: 0px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: darkslategrey;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-h4 {
-    font-size: 1.05rem;
-}
-
-h5 {
-    font-size: 0.75rem;
-}
-
-h5.uppercase {
-    text-transform: uppercase;
-    letter-spacing: .65px;
-    font-weight: 600;
-    color: darkslategrey;
-}
 
 .fs-mb-126 {
     margin-bottom: 6.3rem;
@@ -62,15 +17,6 @@ h5.uppercase {
 
 .fs-mb-56 {
     margin-bottom: 2.8rem;
-}
-
-a {
-    color: black;
-}
-
-a:hover {
-    color: darkslategrey;
-    opacity: .8;
 }
 
 /* NAVBAR */
@@ -182,39 +128,13 @@ body.navbar-displayed #scroll-down {
     padding: 0.75rem 0 0 0;
 }
 
-
-
-
-/* FOOTER */
-
-footer {
-    background-color: tomato;
-    color: white;
-}
-
-#loghi {
-    overflow-y: hidden;
-}
-
-#logo-unige {
-    width: 100%;
-}
-
-#logo-polimi {
-    width: 82%;
-}
-
-#logo-dd {
-    width: 30%;
-}
-
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
     html {
         font-size: 20px;
     }
     h2 {
         font-size: 1.75rem;
-        color: darkslategrey;
+        color: black;
     }
     h3 {
         font-size: 1.25rem;
@@ -239,4 +159,4 @@ footer {
     #logo-dd {
         width: 46%;
     }
-}
+} */

@@ -2,7 +2,9 @@ import React from 'react';
 import BackFromMainMenu from '../general/BackFromMainMenu/BackFromMainMenu';
 import IntroLink from '../general/IntroLink/IntroLink';
 
-export default class HamburgerMenuHeader extends React.Component 
+import '../App.css';
+
+export default class HamburgerMenuHeader extends React.Component
 {
   render()
   {

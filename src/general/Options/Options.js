@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../App.css';
 import './Options.css'
 
 import Dropdown from 'react-bootstrap/Dropdown'

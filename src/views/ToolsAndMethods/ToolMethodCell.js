@@ -1,7 +1,11 @@
 
 import React from 'react';
 
+import '../../App.css';
 import './ToolsAndMethods.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class ToolMethodCell extends React.Component
@@ -31,7 +35,7 @@ export default class ToolMethodCell extends React.Component
         <span className="method-type-box">METODOLOGIA</span>
         <br/>
         <br/>
-        <h3>{this.props.title}</h3>
+        <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
       </div>
     );
@@ -44,9 +48,9 @@ export default class ToolMethodCell extends React.Component
         <span className="tool-type-box">STRUMENTO</span>
         <br/>
         <br/>
-        <h3>{this.props.title}</h3>
+        <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
       </div>
-    );    
+    );
   }
 }

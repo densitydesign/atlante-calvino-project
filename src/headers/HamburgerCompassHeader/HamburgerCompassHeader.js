@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css';
 import CompassButton from '../../general/CompassButton/CompassButton';
 import MainMenu from '../../general/MainMenu/MainMenu';
 

@@ -4,6 +4,7 @@ import V from './logo.js';
 import * as d3 from 'd3';
 import AnimatedLogo from './AnimatedLogo';
 
+import '../../App.css';
 import './SplashScreen.css';
 
 export default class SplashScreen extends React.Component

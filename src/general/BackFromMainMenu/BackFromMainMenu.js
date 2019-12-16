@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { useLastLocation } from 'react-router-last-location';
 import { Link, useHistory } from 'react-router-dom';
+import '../../App.css';
 import './BackFromMainMenu.css';
 
 const BackFromMainMenu = (props) =>

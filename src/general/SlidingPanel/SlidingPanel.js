@@ -1,8 +1,13 @@
 
 import React from 'react';
 
+
 import './SlidingPanel.css';
 import '../../views/Compass/Compass.css';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 export default class SlidingPanel extends React.Component
 {
@@ -47,18 +52,17 @@ export default class SlidingPanel extends React.Component
   {
 console.log("render panel");
     return (
-      <div 
-        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)} 
-        ref={this.setWrapperRef} 
-        style={{ 
+      <div
+        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)}
+        ref={this.setWrapperRef}
+        style={{
           zIndex : this.props.zIndex
         }}>
-        <div className="rotated-title" style={this.props.style}><h1>{this.props.title}</h1></div>
-        <div className="sliding-panel-main-text-container">
-          <div className="sliding-panel-main-text">
-            <h3>{this.props.title}</h3>
-            <p>{this.props.text}</p>
-          </div>
+          <div className="rotated-title"><h1>{this.props.title}</h1></div>
+
+        <div className="sliding-panel-main-text">
+        <p><a href="" target="_blank">PDF <FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a></p>
+          <p>{this.props.text}</p>
         </div>
       </div>
     );

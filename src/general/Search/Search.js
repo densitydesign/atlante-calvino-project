@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../App.css';
 import './Search.css';
 import {Typeahead} from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';

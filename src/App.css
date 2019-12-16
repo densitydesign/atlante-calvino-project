@@ -1,31 +1,105 @@
 /* common CSS */
 :root {
   --calvino-red: tomato;
-  --dark-green: darkslategrey;
+  --dark-green: black;
+  --light-blue: #ECECF4;
+  --dark-blue: #5151FC;
   --header-height: 66px;
-  --navigation-height: 48px;
+  --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
   --navigation-borders: black;
+  --text-color: black;
+  --app-border:1px solid black;
+  --app-border-bold:2px solid black;
+  --button-border:2px solid var(--dark-blue);
   font-size: 14px;
   font-family: 'HKGrotesk', sans-serif;
 }
 
-a {
-  text-decoration: none;
+
+.col-lg-8{
+  padding-left:0px;
 }
 
-html,body {
-  height : 100vh;
+/* ELEMENTI COMUNI */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+p {
+font-size: 1.5em;
+}
+
+
+::selection{
+  color:white;
+  background-color: var(--dark-blue);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--dark-blue);
+  transition: color 1s ease;
+}
+
+a:focus {
+  text-decoration: underline;
+  color: var(--dark-blue);
+  transition: color 0.5s ease;
+}
+
+html, body {
+  height: 100vh;
 }
 
 body {
   margin: 0;
 }
 
-h5 {
+
+
+h1 {
   margin: 0;
   white-space: nowrap;
+  font-size: 2.3em;
+  color: var(--text-color);
+  margin-bottom:1em;
+
+}
+
+h2 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1.8em;
+  color: black;
+}
+
+h3 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1.5em;
+  color: black;
+
+  font-family:"HKGrotesk";
+}
+
+h4 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1.3em;
+  color: black;
+}
+
+h5 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 100;
+  white-space: nowrap;
+  color: black;
+  line-height: 1.4em;
+  margin-bottom:1em;
 }
 
 .main {
@@ -34,30 +108,23 @@ h5 {
   position: relative;
 }
 
-.the-header {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  border-top: var(--app-border-top) solid var(--calvino-red);
-  height: var(--header-height);
-  max-height: var(--header-height);
-  position: relative;
-  z-index: 10000;
+ul {
+list-style-type: none;
+padding-left: 0px;
 }
 
-.the-header>* {
-  padding: 0 15px;
-  border-bottom: 1px solid var(--dark-green);
-  max-height: 100%;
-  overflow: scroll;
-  box-sizing: border-box;
+li {
+margin-bottom:0.5em;
+margin-top:0.5em;
+padding-left: 0px;
 }
 
-.the-header>*:not(:last-child) {
-  border-right: 1px solid var(--dark-green);
+strong{
+  font-weight:700;
 }
 
 .navigations {
-  border: 1px solid var(--navigation-borders);
+  border: 2px solid var(--navigation-borders);
   border-left: none;
   border-right: none;
   box-sizing: border-box;
@@ -65,8 +132,8 @@ h5 {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  position: relative;
   z-index: 10000;
+  position: fixed;
 }
 
 .navigations>*:not(:last-child) {
@@ -79,14 +146,15 @@ h5 {
   align-items: center;
 }
 
-.page-title, .options-container > .dropdown > button, .search-component {
- padding: 0 10px;
+.page-title, .options-container>.dropdown>button, .search-component {
+  padding: 0 10px;
 }
 
 .navigations>div svg {}
 
 .top-nav {
-  position: static;
+  position: sticky;
+  background-color: white;
   top: 0;
 }
 
@@ -105,36 +173,53 @@ h5 {
   font-size: 1.2857142857rem;
 }
 
-.category-intro-grid {
-  display : grid;
-  grid-template-rows : 0.8fr 1.2fr;
-  grid-template-columns : 1fr;
+/*BUTTON*/
+
+
+.button-text{
+  border:var(--button-border);
+  margin-top:2em;
+  padding:0.5em 1.3em 0.5em 1.3em;
+  font-size: 1.2em;
+  font-weight: 500;
+  color:var(--dark-blue);
+  text-transform: uppercase;
+  transition: color 1s ease;
+  font-family:"HKGrotesk";
 }
 
-.category-intro-block-row {
-  display : grid;
-  grid-template-rows : 1fr;
-  grid-template-columns : 2fr 1fr;
+button:hover{
+  background-color:var(--dark-blue);
+  border:var(--button-border);
+  color:white;
+  transition: color 1s ease;
 }
 
-.category-intro-main-block {
-  display : flex;
-  flex-direction : column;
+
+/* FOOTER */
+footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  font-size: 0.7em;
+  padding:1.5em;
+  height: var(--navigation-height);
 }
 
-.category-subentries-grid {
-  display : grid;
-  grid-template-rows : 1fr;
-  grid-template-columns : 1fr 1fr 1fr;
+#loghi {
+  overflow-y: hidden;
 }
 
-.other-phases-subheader {
-  display : grid;
-  grid-template-columns : 1fr 1fr;
-  float: right;
+#logo-unige {
+  width: 100%;
 }
 
-.current-phase-subheader {
-  float: left;
-  height: 50px;
+#logo-polimi {
+  width: 82%;
+}
+
+#logo-dd {
+  width: 30%;
 }

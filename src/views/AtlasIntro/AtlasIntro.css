@@ -2,7 +2,6 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
-  border-top: 1px solid black;
   border-left: 1px solid black;
   height: calc(100vh - var(--header-height));
   font-family: 'HK Grotesk';
@@ -13,7 +12,6 @@
   position: absolute;
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
-  border-top: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   width: 100%;
@@ -34,7 +32,6 @@
   grid-template-rows: 1fr 0.375fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
-  border-right: 1px solid black;
   height: calc(2 * (100vh - var(--header-height)));
   position: relative;
 }
@@ -44,7 +41,6 @@
   grid-template-rows: 0.375fr 0.625fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
-  border-right: 1px solid black;
   height: calc(1.5 * (100vh - var(--header-height)));
   position: relative;
 }
@@ -54,7 +50,6 @@
   grid-template-rows: 0.375fr 0.625fr;
   grid-template-columns: 1fr;
   border-bottom: 1px solid black;
-  border-right: 1px solid black;
   height: calc(100vh - var(--header-height));
   position: relative;
 }
@@ -77,13 +72,13 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
 }
 
 .atlas-intro-table-horizontal-row {
-  border-top: 1px solid black;
+  border-top: var(--app-border);
 }
 
 .atlas-intro-sidebar-monoblock {
-  background: white;
-  position: relative;
-  width: 100%;
+  background-color:var(--light-blue);
+  display : grid;
+  padding : 100px;
 }
 
 .atlas-intro-cell-grid {
@@ -95,9 +90,11 @@ one empty page (4fr, to be scrolled up), then the populated page, with 1 empty r
 
 .atlas-intro-cell {
   padding-top : calc(50% - 3em);
-  border-bottom : 1px solid black;
-  border-right : 1px solid black;
-  text-align : center;
+  border-bottom : 1px solid red;
+  border-right : 1px solid red;
+  text-align : left;
+  display:flex;
+  justify-content: center;
 }
 
 .atlas-intro-cell-grid2 {

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import '../../App.css';
 import './IntroLink.css';
 
 export default class IntroLink extends React.Component
@@ -12,7 +13,7 @@ export default class IntroLink extends React.Component
     const route = "/AtlasIntro";
     return (
       <div className="intro-link" style={this.props.style} >
-        <Link to={route}>INTRO</Link>
+        <Link to={route}><h4>INTRO</h4></Link>
       </div>
     );
   }

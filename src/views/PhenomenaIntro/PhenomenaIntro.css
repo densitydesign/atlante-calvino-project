@@ -3,17 +3,36 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 2fr 1fr;
-  height: 100%
+  height:100%;
+  top:100;
+  position: fixed;
 }
 
 .itineraries-subgrid {
-  display : grid;
+  padding:13em 4em 13em 4em;
   grid-template-rows : 1fr 1fr 1fr;
-  grid-template-columns : 1fr;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.itineraries-subgrid a {
+  white-space: nowrap;
+  font-size: 1.5em;
+  line-height: 1.7em;
+  font-weight: 500;
+  color: var(--dark-blue);
 }
 
 .subheaders-container {
   display : grid;
   grid-template-columns : 1fr 1fr;
   height: 80px;
+  overflow : hidden;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.currentPhase{
+padding:7em 4em 13em 8em;
+border-right:var(--app-border);
 }

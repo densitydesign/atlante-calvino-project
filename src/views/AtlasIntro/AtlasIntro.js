@@ -3,6 +3,7 @@ import ParallaxScroll from 'react-scroll-transitions';
 import { withRouter } from 'react-router-dom';
 import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
 
+import '../../App.css';
 import './AtlasIntro.css';
 import '../HamburgerMenu/HamburgerMenu.css';
 
@@ -38,14 +39,14 @@ class AtlasIntro extends React.Component
           <div id="sidebar" className="atlas-intro-sidebar">
 
             <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
-              SFERE
+              <h3>Sfere</h3>
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
-              FASI
+              <h3>Fasi</h3>
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
@@ -81,9 +82,9 @@ class AtlasIntro extends React.Component
           <div />
           <div className="atlas-intro-cell-grid">
             <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell">Forma</div>
-            <div className="atlas-intro-cell">Dubbio</div>
-            <div className="atlas-intro-cell">Spazio</div>
+            <div className="atlas-intro-cell"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
           </div>
         </div>
 
@@ -101,14 +102,14 @@ class AtlasIntro extends React.Component
           <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              FASI
+              <h3>Fasi</h3>
               <br />
               <br />
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" >
-              BUSSOLA
+            <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
+            <h1>BUSSOLA</h1>
               <br />
               <br />
             </div>
@@ -124,9 +125,9 @@ class AtlasIntro extends React.Component
           <div/>
           <div className="atlas-intro-cell-grid">
             <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell">Forma</div>
-            <div className="atlas-intro-cell">Dubbio</div>
-            <div className="atlas-intro-cell">Spazio</div>
+            <div className="atlas-intro-cell"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
           </div>
         </div>
 */}
@@ -202,8 +203,8 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar3">
 
-            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
-              BUSSOLA
+            <div className="atlas-intro-sidebar-monoblock compass-selector-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
+            <h1>BUSSOLA</h1>
               <br />
               <br />
             </div>
@@ -213,11 +214,11 @@ class AtlasIntro extends React.Component
               Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"lightgray", top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-              About<br />
-              Strumenti<br />
-              Rassegna<br />
-              Articoli<br />
+            <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
+            <h2>About</h2><br />
+              <h2>Strumenti</h2><br />
+              <h2>Rassegna</h2><br />
+              <h2>Articoli</h2><br />
             </div>
 
           </div>
@@ -228,9 +229,9 @@ class AtlasIntro extends React.Component
           <div />
           <div className="atlas-intro-cell-grid">
             <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell">Forma</div>
-            <div className="atlas-intro-cell">Dubbio</div>
-            <div className="atlas-intro-cell">Spazio</div>
+            <div className="atlas-intro-cell"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
           </div>
         </div>
 */}
@@ -274,17 +275,17 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar4" style={{ top: this.getVisibleItemInitialY() }}>
 
-            <div className="atlas-intro-sidebar-monoblock hamburger-menu-cell" >
-              BUSSOLA
+            <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
+              <h1>BUSSOLA</h1>
               <br />
               <br />
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{background:"lightgray" }}>
-              About<br />
-              Strumenti<br />
-              Rassegna<br />
-              Articoli<br />
+            <div className="atlas-intro-sidebar-monoblock">
+            <h2>About</h2><br />
+              <h2>Strumenti</h2><br />
+              <h2>Rassegna</h2><br />
+              <h2>Articoli</h2><br />
             </div>
 
           </div>
@@ -294,9 +295,9 @@ class AtlasIntro extends React.Component
           <div />
           <div className="atlas-intro-cell-grid">
             <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell">Forma</div>
-            <div className="atlas-intro-cell">Dubbio</div>
-            <div className="atlas-intro-cell">Spazio</div>
+            <div className="atlas-intro-cell"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
           </div>
         </div>
 */}

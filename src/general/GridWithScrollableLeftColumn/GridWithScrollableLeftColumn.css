@@ -10,7 +10,7 @@
   grid-template-columns : 1fr 1fr;
   overflow:hidden;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */ 
+  scrollbar-width: none;  /* Firefox */
   position : fixed;
 }
 
@@ -18,13 +18,12 @@
   overflow-y : scroll;
 /*  height : 85%; */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */      
+  scrollbar-width: none;  /* Firefox */
 }
 
 .unscrollable-column {
-  overflow : hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */      
+  left: 130%;
+    padding: 7em 4em 4em 8em;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
-
