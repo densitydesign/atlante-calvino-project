@@ -25,7 +25,7 @@ import Articles from '../Articles/Articles';
 export default function AtlasRouter()
 {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/atlante-calvino-project">
 
       <Route exact path="/"><StaticSplashScreen /></Route>
       <Route exact path="/SplashScreen"><SplashScreen /></Route>
