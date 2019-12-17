@@ -39,17 +39,21 @@ export default class PressReview extends React.Component
               this.state.data.filter(d=>d.section==="Rassegna").map((d,i)=>{
                 let externalLink;
                 if (d.link!=='') {
-                  externalLink = (<><a href={d.link} target="_blank">Link esterno</a>, </>);
+                  externalLink = (<><a href={d.link} target="_blank">Link esterno</a></>);
+                }
+                let archiveLink;
+                if (d.archive!=='') {
+                  archiveLink = (<>, <a href={d.archive} target="_blank">Versione archiviata</a></>);
                 }
                 let download;
                 if (d.download!=='') {
-                  download = (<><a href={d.download} target="_blank">PDF</a></>);
+                  download = (<>, <a href={d.download} target="_blank">PDF</a></>);
                 }
                 return (
                   <div className="pubblication-item" key={i}>
                     <h3>{d.title}</h3>
                     <p>{d.venue}, {d.date}, {d.pages}</p>
-                    <h5>{externalLink}{download}</h5>
+                    <h5>{externalLink}{archiveLink}{download}</h5>
                   </div>
                 )
               })
