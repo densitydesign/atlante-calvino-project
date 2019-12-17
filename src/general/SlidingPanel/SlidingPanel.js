@@ -4,7 +4,7 @@ import React from 'react';
 
 import './SlidingPanel.css';
 import '../../views/Compass/Compass.css';
-
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
@@ -51,6 +51,9 @@ export default class SlidingPanel extends React.Component
   render()
   {
 console.log("render panel");
+    
+    const interactiveViewLink = this.props.interactiveViewUrl ? <a className="button-text" href={this.props.interactiveViewUrl}>Esplora</a> : <></>;
+
     return (
       <div
         className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)}
@@ -59,11 +62,10 @@ console.log("render panel");
           zIndex : this.props.zIndex
         }}>
           <div className="rotated-title"><h1>{this.props.title}</h1></div>
-
         <div className="sliding-panel-main-text">
-        <p><a href="" target="_blank">PDF<FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
+        <p><a href={this.props.pdfUrl} target="_blank">PDF<FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
         </p>
-          <p>{this.props.text}</p>  <button type="button" class="button-text">Esplora</button>
+          <p>{this.props.text}</p> {interactiveViewLink}
         </div>
       </div>
     );

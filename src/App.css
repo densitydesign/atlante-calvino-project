@@ -186,6 +186,11 @@ padding-left: 0px;
   text-transform: uppercase;
   transition: color 1s ease;
   font-family:"HKGrotesk";
+  text-decoration: none;
+}
+
+a.button-text, a:visited.button-text{
+  text-decoration: none;
 }
 
 button:hover{
