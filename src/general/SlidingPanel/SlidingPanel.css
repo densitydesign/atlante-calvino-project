@@ -6,7 +6,7 @@
   position : absolute;
   transition: left 1s;
   height: calc(100% - var(--navigation-height));
-  width : 30%;
+  width : 45%;
   border-left: var(--app-border);
   display: flex;
 }
@@ -26,5 +26,5 @@
     white-space: nowrap;
 }
   .sliding-panel-main-text{
-    padding:12em 0em 0em 8em;
+    padding:8em 0em 0em 8em;
   }

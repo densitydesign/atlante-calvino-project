@@ -45,18 +45,19 @@ export default class AboutAndContacts extends React.Component
             <br/>
             <br/>
             <ul>
-              <li><em>Coordinatore Scientifico: </em>Michele Mauri</li>
+              <li>Michele Mauri</li>
               <li>Tommaso Elli</li>
               <li>Ángeles Briones</li>
               <li>Beatrice Gobbo</li>
               <li>Gabriele Colombo</li>
               <li>Marco Pappalepore</li>
+              <li>Serena Del Nero</li>
+              <li>Paolo Ciuccarelli</li>
             </ul>
 
           </div>
           <div className="unscrollable-column col-md-8 col-lg-8">
             <h1>CONTATTI</h1>
-            <strong>Contatti</strong>
             <address>
               <ul>
                 <li>Mail: <a href="mailto:atlantecalvino@unige.ch">atlantecalvino@unige.ch</a></li>
