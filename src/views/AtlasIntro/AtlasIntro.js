@@ -48,7 +48,7 @@ class AtlasIntro extends React.Component
               invitandoci alla sua esplorazione.</p>
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() +20}}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()+3}}>
               <h1>Tappe</h1>
               <br />
               <br />
@@ -168,10 +168,10 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
@@ -236,7 +236,7 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar3">
 
-            <div className="atlas-intro-sidebar-monoblock compass-selector-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
+            <div className="atlas-intro-sidebar-monoblock-2 compass-selector-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
             <h1>BUSSOLA</h1>
             </div>
 
@@ -273,10 +273,10 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"></div>
@@ -337,10 +337,10 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell2"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2 pop" ><h4>Fenomeno</h4></div>
             <div className="atlas-intro-cell2"><h5>Dubbio</h5></div>

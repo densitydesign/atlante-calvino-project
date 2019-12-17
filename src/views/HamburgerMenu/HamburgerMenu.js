@@ -20,7 +20,7 @@ export default class HamburgerMenu extends React.Component
           <div className="hamburger-menu-sidebar">
             <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA"><h1 dataClass=""/></ViewSelector>
 
-            <div className="nav-menu-cell-grid" >
+            <div className="nav-menu-cell-grid tint" >
               <div className="nav-menu-cell"><Link to="/About"><h2>About</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Tools"><h2>Strumenti</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna</h2></Link></div>
