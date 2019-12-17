@@ -8,6 +8,7 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 2fr 4fr;
+  border-left: 1px solid black;
   height: calc(100vh - var(--navigation-height));
 }
 
@@ -53,13 +54,24 @@ a:hover .compass-selector-cell  {
 .hamburger-menu-cell {
   border-bottom : var(--app-border);
   border-right :var(--app-border);
-  display: flex;
-  align-items : center;
   justify-content: center;
+  text-align : center;
+  align-items: center;
+  display:flex;
 }
 
 .hamburger-menu-cell-grid :hover {
   background-color:var(--dark-blue);
   color:white;
   transition: color 1s ease;
+}
+
+@keyframes tint { /* flame pulses */
+  0%   { background-color:white;}
+  100% { background-color:var(--light-blue);}
+}
+.tint {
+    background-color: var(--dark-blue);
+    opacity:1;
+    animation: tint 2s;
 }

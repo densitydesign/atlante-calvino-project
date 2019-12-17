@@ -65,7 +65,9 @@ console.log("render panel");
         <div className="sliding-panel-main-text">
         <p><a href={this.props.pdfUrl} target="_blank">PDF<FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
         </p>
-          <p>{this.props.text}</p> {interactiveViewLink}
+        <br />
+        <div><p>{this.props.text}</p>
+        <br /><br />{interactiveViewLink}</div>
         </div>
       </div>
     );

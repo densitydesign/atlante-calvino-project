@@ -16,14 +16,8 @@ export default class PressReview extends React.Component
       <>
         <HamburgerIntroHeader />
         <div className="grid-with-scrollable-column">
-          <div className="scrollable-column-2 col-md-12 col-lg-12" style={{ height : "95%" }}>
+          <div className="scrollable-column-3 col-md-12 col-lg-8">
             <h1>RASSEGNA STAMPA</h1>
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
-            <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
             <PressItem href="www.corriere.it" linkText="Calvino sul Corriere" note="Corriere della Sera, 10 settembre 2010" />
           </div>
         </div>
