@@ -11,3 +11,9 @@
 .tool-cell {
   padding:4em 4em 0em 0em;
 }
+
+.image{
+    margin:3em 0em;
+    border:var(--app-border);
+    width: 50%;
+}

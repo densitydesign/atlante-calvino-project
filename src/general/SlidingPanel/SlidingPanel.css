@@ -6,7 +6,7 @@
   position : absolute;
   transition: left 1s;
   height: calc(100% - var(--navigation-height));
-  width : 30%;
+  width : 45%;
   border-left: var(--app-border);
   display: flex;
 }
