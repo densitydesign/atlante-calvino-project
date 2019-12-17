@@ -128,7 +128,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()+ 20 }}>
+          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() + 100 }}>
 
             <div className="atlas-intro-sidebar-monoblock" >
               <h1>Tappe</h1>
