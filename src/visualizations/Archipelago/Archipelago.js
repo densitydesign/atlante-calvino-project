@@ -1,10 +1,15 @@
 
 import React from 'react';
 
-//import V from './archipelago.d3';
+import V from './archipelago.d3';
 
 export default class Archipelago extends React.Component
 {
+  componentDidMount()
+  {
+    V.initialize(this._rootNode);
+  }
+
   _setRef(componentNode)
   {
     this._rootNode = componentNode;

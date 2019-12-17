@@ -5,5 +5,11 @@ import Archipelago from './Archipelago';
 
 export default class Trasformare extends React.Component
 {
-  render = () => <Archipelago />;
+  render = () => {
+    return (
+      <div className="main">
+        <Archipelago />
+      </div>
+    );
+  }
 }
