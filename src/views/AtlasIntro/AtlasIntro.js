@@ -43,17 +43,17 @@ class AtlasIntro extends React.Component
               <br />
               <br />
               <p>Per entrare e muoversi dentro l’opera narrativa di Calvino abbiamo scelto tre itinerari.
-              Il primo riguarda il <strong>dubbio</strong>, il secondo lo spazio e il terzo la forma del racconto.
+              Il primo riguarda il <strong>dubbio</strong>, il secondo lo <strong>spazio</strong> e il terzo la <strong>forma</strong> del racconto.
               Sono tre scelte arbitrarie, ma che vanno a toccare alcuni fondamenti della scrittura calviniana,
               invitandoci alla sua esplorazione.</p>
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() +20}}>
               <h1>Tappe</h1>
               <br />
               <br />
-            <p>Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il fenomeno di cui stiamo parlando.
-            La seconda tappa il processo che viene innescato da questo fenomeno. La terza tappa l’ombra del problema che sta dietro a tutto. </p>
+            <p>Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
+            La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno. La terza tappa l’ombra del <strong>problema</strong> che sta dietro a tutto. </p>
             </div>
 
           </div>
@@ -70,7 +70,7 @@ class AtlasIntro extends React.Component
 */}
 
 
-          <div id="rows" className="atlas-intro-scrolling-cell-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
+          <div id="rows" className="atlas-intro-scrolling-cell-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() +20}}>
 
             <div /><div /><div /><div /> {/* the empty page, before scrolling */}
             <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
@@ -128,7 +128,7 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()+ 20 }}>
 
             <div className="atlas-intro-sidebar-monoblock" >
               <h1>Tappe</h1>
@@ -145,7 +145,7 @@ class AtlasIntro extends React.Component
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              <p>Prima di iniziare il viaggio, ci vuole una bussola.
+              <p>Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
               Per quello abbiamo creato tre visualizzazioni orientative,
               che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
               Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
@@ -242,7 +242,7 @@ class AtlasIntro extends React.Component
 
 {/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
             <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-            <p>Prima di iniziare il viaggio, ci vuole una bussola.
+            <p>Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
             Per quello abbiamo creato tre visualizzazioni orientative,
             che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
             Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>

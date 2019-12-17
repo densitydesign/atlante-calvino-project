@@ -181,7 +181,7 @@ font-size:1.1em;
 
 .button-text{
   border:var(--button-border);
-  margin-top:2em;
+  margin-top:3em;
   padding:0.5em 1.3em 0.5em 1.3em;
   font-size: 1.2em;
   font-weight: 500;
