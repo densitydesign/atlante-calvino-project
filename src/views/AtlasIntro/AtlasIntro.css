@@ -105,3 +105,17 @@
   align-items: center;
   display:flex;
 }
+
+@keyframes pop {
+33% { background-color:white};
+66% { background-color: var(--dark-blue); }
+}
+
+.pop{
+    background-color: var(--dark-blue);
+    animation: pop ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-fill-mode: both;
+    animation-duration: 1.5s ;
+  }

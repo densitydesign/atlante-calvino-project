@@ -23,6 +23,8 @@ export default class AboutAndContacts extends React.Component
             Département de langues et littératures romanes,<br/>
             Université de Genève
             </strong></h5>
+              <br/>
+                <br/>
             <p>
             L'équipe letteraria del progetto lavora all'interno dell'Unità d'italiano del Département de langues et littératures romanes dell'Université de Genève.
             <br/>Il gruppo riunisce specialiste di critica letteraria e in particolare dell'opera di Italo Calvino, che affronteranno l'analisi dell'intero corpus narrativo calviniano, articolando i risultati della loro ricerca in modalità compatibili con gli strumenti di visualizzazione sviluppati dal DensityDesign Research Lab.</p>
@@ -38,7 +40,8 @@ export default class AboutAndContacts extends React.Component
             <br/>
             <br/>
             <h5><strong>DensityDesign Research Lab,<br/>
-            Dipartimento di Design, Politecnico di Milano</strong><br/></h5>
+            Dipartimento di Design, Politecnico di Milano</strong><br/></h5>  <br/>
+                <br/>
             <p>Il laboratorio di ricerca DensityDesign è parte del Dipartimento di Design del Politecnico di Milano.
             Obiettivo del laboratorio è la rappresentazione di fenomeni complessi di natura sociale, organizzativa o urbana. A questi temi va aggiunto il crescente interesse per le Digital Humanities, ed in particolare per tutto ciò che sta all'intersezione fra le materie umanistiche e l'information design, come la progettazione di artefatti e metodi digitali per l'elaborazione, l'accesso e la visualizzazione dell'informazione.</p>
 

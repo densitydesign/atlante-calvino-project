@@ -52,10 +52,8 @@ class AtlasIntro extends React.Component
               <h1>Tappe</h1>
               <br />
               <br />
-            <p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
-            Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
-            Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.
-            Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen</p>
+            <p>Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il fenomeno di cui stiamo parlando.
+            La seconda tappa il processo che viene innescato da questo fenomeno. La terza tappa l’ombra del problema che sta dietro a tutto. </p>
             </div>
 
           </div>
@@ -344,20 +342,20 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell2"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell2"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2 pop" ><h4>Fenomeno</h4></div>
+            <div className="atlas-intro-cell2"><h5>Dubbio</h5></div>
+            <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
+            <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
 
             <div className="atlas-intro-cell2"><h4>Processo</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"><h5>Dubitare</h5></div>
+            <div className="atlas-intro-cell2"><h5>Trasformare</h5></div>
+            <div className="atlas-intro-cell2"><h5>Combinare</h5></div>
 
             <div className="atlas-intro-cell2"><h4>Problema</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"><h5>Cancellazione</h5></div>
+            <div className="atlas-intro-cell2"><h5>Realismo</h5></div>
+            <div className="atlas-intro-cell2"><h5>Trama</h5></div>
 
           </div>
         </div>

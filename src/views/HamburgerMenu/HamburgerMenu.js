@@ -47,9 +47,9 @@ export default class HamburgerMenu extends React.Component
             <ViewSelector className="hamburger-menu-cell" route="Process/combining" text="Combinare"><h5 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Problem/intro" text="Problema"><h4 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Problem/plot" text="Trama"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Problem/realism" text="Realismo"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/cancellation" text="Cancellazione"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Problem/realism" text="Realismo"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Problem/plot" text="Trama"><h5 dataClass=""/></ViewSelector>
 
           </div>
         </div>
