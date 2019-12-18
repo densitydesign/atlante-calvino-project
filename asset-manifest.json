@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/atlante-calvino-project/static/css/main.fbe35fe8.chunk.css",
-    "main.js": "/atlante-calvino-project/static/js/main.eea9beb1.chunk.js",
-    "main.js.map": "/atlante-calvino-project/static/js/main.eea9beb1.chunk.js.map",
+    "main.js": "/atlante-calvino-project/static/js/main.c1064c93.chunk.js",
+    "main.js.map": "/atlante-calvino-project/static/js/main.c1064c93.chunk.js.map",
     "runtime-main.js": "/atlante-calvino-project/static/js/runtime-main.401f0e3f.js",
     "runtime-main.js.map": "/atlante-calvino-project/static/js/runtime-main.401f0e3f.js.map",
     "static/css/2.441dd444.chunk.css": "/atlante-calvino-project/static/css/2.441dd444.chunk.css",
     "static/js/2.bec412a3.chunk.js": "/atlante-calvino-project/static/js/2.bec412a3.chunk.js",
     "static/js/2.bec412a3.chunk.js.map": "/atlante-calvino-project/static/js/2.bec412a3.chunk.js.map",
     "index.html": "/atlante-calvino-project/index.html",
-    "precache-manifest.ace025a5862761a5ea6655380c47f5a3.js": "/atlante-calvino-project/precache-manifest.ace025a5862761a5ea6655380c47f5a3.js",
+    "precache-manifest.7950123c6e552a8f33784c6613ff99c7.js": "/atlante-calvino-project/precache-manifest.7950123c6e552a8f33784c6613ff99c7.js",
     "service-worker.js": "/atlante-calvino-project/service-worker.js",
     "static/css/2.441dd444.chunk.css.map": "/atlante-calvino-project/static/css/2.441dd444.chunk.css.map",
     "static/css/main.fbe35fe8.chunk.css.map": "/atlante-calvino-project/static/css/main.fbe35fe8.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.441dd444.chunk.css",
     "static/js/2.bec412a3.chunk.js",
     "static/css/main.fbe35fe8.chunk.css",
-    "static/js/main.eea9beb1.chunk.js"
+    "static/js/main.c1064c93.chunk.js"
   ]
 }
