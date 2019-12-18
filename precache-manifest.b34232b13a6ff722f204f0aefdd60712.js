@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "07e4ff4fd418c51ba3aed5a2cb2e1d9e",
+    "revision": "dc408caab3aece002ceb74eb61646a5e",
     "url": "/atlante-calvino-project/index.html"
   },
   {
-    "revision": "d510ee52b01b421c6546",
+    "revision": "3ab88defef0358e31b53",
     "url": "/atlante-calvino-project/static/css/2.441dd444.chunk.css"
   },
   {
-    "revision": "740533ce1b17e7b87e76",
-    "url": "/atlante-calvino-project/static/css/main.c66e759d.chunk.css"
+    "revision": "baa38854920076465420",
+    "url": "/atlante-calvino-project/static/css/main.fbe35fe8.chunk.css"
   },
   {
-    "revision": "d510ee52b01b421c6546",
-    "url": "/atlante-calvino-project/static/js/2.ad5b2968.chunk.js"
+    "revision": "3ab88defef0358e31b53",
+    "url": "/atlante-calvino-project/static/js/2.bec412a3.chunk.js"
   },
   {
     "revision": "9e000e048c86d374cfd733203bcf0cf7",
-    "url": "/atlante-calvino-project/static/js/2.ad5b2968.chunk.js.LICENSE"
+    "url": "/atlante-calvino-project/static/js/2.bec412a3.chunk.js.LICENSE"
   },
   {
-    "revision": "740533ce1b17e7b87e76",
-    "url": "/atlante-calvino-project/static/js/main.21e97813.chunk.js"
+    "revision": "baa38854920076465420",
+    "url": "/atlante-calvino-project/static/js/main.274a4eeb.chunk.js"
   },
   {
     "revision": "87e7e2ec5ff70ca1c4b5",
