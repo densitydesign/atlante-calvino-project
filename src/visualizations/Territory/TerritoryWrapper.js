@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import Archipelago from './Archipelago';
+import Territory from './Territory';
 
-export default class ArchipelagoWrapper extends React.Component
+export default class TerritoryWrapper extends React.Component
 {
   loadData()
   {
@@ -13,7 +13,7 @@ export default class ArchipelagoWrapper extends React.Component
   render = () => {
     return (
       <div className="main">
-        <Archipelago />
+        <Territory />
       </div>
     );
   }

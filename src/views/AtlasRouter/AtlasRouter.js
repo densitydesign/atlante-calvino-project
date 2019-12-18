@@ -11,7 +11,7 @@ import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
-import ArchipelagoWrapper from '../../visualizations/Archipelago/ArchipelagoWrapper';
+import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
@@ -37,7 +37,7 @@ export default function AtlasRouter()
       <Route path="/Itineraries/"><Itineraries /></Route>
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
-      <Route exact path="/Phenomena/archipelago"><ArchipelagoWrapper /></Route>
+      <Route exact path="/Phenomena/territory"><TerritoryWrapper /></Route>
       <Route exact path="/Phenomena/shapeAnalysis">fenomeni / analisi della forma</Route>
       <Route exact path="/Phenomena/doubtAnalysis">fenomeni / analisi del dubbio</Route>
       <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
