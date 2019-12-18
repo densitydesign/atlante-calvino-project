@@ -63,7 +63,7 @@ class Trasformare extends Component {
 	}
 
 	loadData() {
-		d3.tsv('../../places-matrix-data.tsv').then(data => {
+    d3.tsv(process.env.PUBLIC_URL + '/places-matrix-data.tsv').then(data => {
 
 			console.log(data)
 
