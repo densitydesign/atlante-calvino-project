@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b857836cad1ebbc6133030a5979d726f",
+    "revision": "d751f4259e74cb4ace77563474b7678f",
     "url": "/atlante-calvino-project/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/css/2.441dd444.chunk.css"
   },
   {
-    "revision": "77a5c86d6d1c3edfeb75",
+    "revision": "0e4b9605229d7a73b633",
     "url": "/atlante-calvino-project/static/css/main.fbe35fe8.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/js/2.bec412a3.chunk.js.LICENSE"
   },
   {
-    "revision": "77a5c86d6d1c3edfeb75",
-    "url": "/atlante-calvino-project/static/js/main.c674f043.chunk.js"
+    "revision": "0e4b9605229d7a73b633",
+    "url": "/atlante-calvino-project/static/js/main.673b05cc.chunk.js"
   },
   {
     "revision": "87e7e2ec5ff70ca1c4b5",
