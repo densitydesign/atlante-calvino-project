@@ -7,7 +7,12 @@ export default class Territory extends React.Component
 {
   componentDidMount()
   {
-    V.initialize(this._rootNode);
+    V.initialize(this._rootNode, this.props.data);
+  }
+
+  componentWillUnmount()
+  {
+    V.destroy(this._rootNode);
   }
 
   _setRef(componentNode)
