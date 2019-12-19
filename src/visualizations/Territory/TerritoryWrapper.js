@@ -16,7 +16,8 @@ export default class TerritoryWrapper extends React.Component
     d3.json(process.env.PUBLIC_URL + "/territory_graphical_data.json").then(json => {
       const json_nodes = json.nodes;
       this.setState({
-        data : json_nodes
+        data : json_nodes,
+        isLoading : false
       });
     });
   }  
@@ -29,7 +30,7 @@ export default class TerritoryWrapper extends React.Component
   render() {
     return (
       <div className="main">
-        <Territory data={this.state.data} />
+        {!this.state.isLoading && <Territory data={this.state.data} /> }
       </div>
     );
   }
