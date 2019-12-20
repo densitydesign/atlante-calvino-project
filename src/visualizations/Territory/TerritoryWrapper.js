@@ -3,6 +3,8 @@ import React from 'react';
 import * as d3 from 'd3';
 
 import Territory from './Territory';
+import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
+import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 
 export default class TerritoryWrapper extends React.Component
 {
@@ -44,7 +46,9 @@ console.log("csv", csv);
   render() {
     return (
       <div className="main">
+        <AtlasIntroHeader />
         {!this.state.isLoading && <Territory data={this.state.data} /> }
+
       </div>
     );
   }
