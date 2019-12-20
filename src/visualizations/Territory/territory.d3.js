@@ -19,14 +19,52 @@ const V = {};
 
 export default V;
 
-V.initialize = (el, json_nodes) => {
-  if(!json_nodes || json_nodes === "data still not loaded") return;
+V.initialize = (el, input_data) => {
+  if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
+  let json_nodes = input_data.json_nodes;
+  data.x_csv2 = input_data.x_csv2;
+
+  let w = window.innerWidth;
+  let h = window.innerHeight - 6;
   svg = d3.select(el).style("touch-action", "manipulation");
-console.log("json_nodes : ", json_nodes);
+
+  const allowedCollections = data.allowedCollections.split(",");
+
+  json_nodes = json_nodes.filter(function(item) {
+
+    return (
+      data.allowedCollections = "all" ||
+      (allowedCollections.includes("undefined") && item.attributes.collections == undefined) ||
+      array_intersection(allowedCollections, item.attributes.collections).length > 0
+    );
+
+  });
+
+  json_nodes.forEach(
+    function(n)
+    {
+			// fix orientation of the viz
+			n.y *= -1;
+			// n.x*=-1;
+			// handle collections
+			if(n.attributes.collections) {
+				n.attributes.collections = n.attributes.collections.split(';');
+				// remove last element which is always empty due to the fat that all records end with a ";"
+				n.attributes.collections.pop();
+			} else {
+				n.attributes.collections = [];
+			}
+    });
+
+	// sort json_nodes so to have the upper in the background and not covering the ones in the foreground
+	json_nodes = json_nodes.sort((a, b) => a.y - b.y);
+
+	const size_ext = d3.extent(json_nodes, d => d.size);
+	data.min_size = size_ext[0] / 8;
 
   json_nodes.forEach(create_item_steps);
-
+console.log("json_nodes : ", json_nodes);
   const svg_main_group = svg.append("g");
 
   const g = svg_main_group.append("g").attr("class", "nodes");
@@ -42,6 +80,42 @@ console.log("json_nodes : ", json_nodes);
     x : (boundaries.left + boundaries.right) / 2,
     y : (boundaries.bottom + boundaries.top) / 2
   };
+
+	//add zoom capabilities
+	var zoom_handler = d3.zoom()
+		.on("zoom", zoom_actions);
+
+	zoom_handler(svg);
+
+	let usedSpace = 0.65;
+	let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+
+  centerTerritory(scale, 0, 0, 0);
+
+	//Zoom functions
+	function zoom_actions() {
+		g.attr("transform", d3.event.transform);
+//		metaball_group.attr("transform", d3.event.transform);
+//		place_hierarchies_group.attr("transform", d3.event.transform);
+//		place_hierarchies_group_2.attr("transform", d3.event.transform);
+//		label.attr('transform', function(d) {
+//			let one_rem = parseInt(d3.select('html').style('font-size'));
+//			let k = one_rem * (1 / (d3.event.transform.k / scale));
+//			let dy = (d.steps.length + 5) * step_increment;
+//			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+//			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+//		});
+	}
+
+  // Handle interface interactions
+  function centerTerritory(scale, x, y, duration) {
+    svg.transition()
+      .duration(duration)
+      .call(zoom_handler.transform, d3.zoomIdentity
+        .translate((w / 2) + x, (h / 2) + y)
+        .scale(scale)
+      );
+  }
 
   const text_nodes = g
     .selectAll(".node")
@@ -72,48 +146,12 @@ console.log("json_nodes : ", json_nodes);
     })
     .style("fill-opacity", 1)
     .style("stroke-opacity", .5);
-    
-/*  
-  width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
-  height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
-
-  let p1 = { x: 100, y: 100 };
-  let r1 = 50;
-  let c1 = "green";
-
-  let p2 = { x: 100, y: 230 };
-  let r2 = 40;
-  let c2 = "purple";
-
-  let p3 = { x : 100, y : 360 };
-  let r3 = 20;
-  let c3 = "red";
-
-  let jsonCircles = [
-      { x_axis: p1.x, y_axis: p1.y, radius: r1, color: c1 }, 
-  ];
-
-  if(json_nodes.length > 10) jsonCircles.push({ x_axis: p2.x, y_axis: p2.y, radius: r2, color: c2 });
-
-  if(json_nodes.length > 10) jsonCircles.push({ x_axis: p3.x, y_axis: p3.y, radius: r3, color: c3 });
-
-  let circles = svg
-      .selectAll("circle")
-      .data(jsonCircles)
-      .enter()
-      .append("circle");
-
-  let circleAttributes = circles
-      .attr("cx", function(d) { return d.x_axis; })
-      .attr("cy", function(d) { return d.y_axis; })
-      .attr("r", function(d) { return d.radius; })
-      .style("fill", function(d) { return d.color; });  
-*/
 };
 
 V.destroy = () => {};
 
-function interpolateSpline(x) {
+function interpolateSpline(x) 
+{
 	let y;
 
 	// The cubic spline interpolation has been calculated "heuristically" by using this service:
@@ -142,18 +180,22 @@ function interpolateSpline(x) {
 	return y
 }
 
-function create_item_steps(d) {
+function create_item_steps(d)
+{
+console.log("create_item_steps...");
 	// reverse the order of collections, so to have the older ones at the bottom of the hills
 	d.attributes.collections = d.attributes.collections.reverse()
 
 	d.steps = [];
 	// get different radii
+console.log("data.min_size : ", data.min_size);
 	for(var jj = (data.min_size); jj <= d.size; jj += data.min_size) {
 		let new_step_size = jj;
 		let ratio = new_step_size / d.size;
 		new_step_size = d.size * interpolateSpline(ratio);
 		d.steps.push(new_step_size);
 	}
+console.log("d.steps.length() : ", d.steps.length);
 
 	// get colors
 	d.steps = d.steps.map((s, i) => {
@@ -226,4 +268,76 @@ function create_item_steps(d) {
 	d.steps = d.steps.reverse();
 
 	return d.steps;
+}
+
+function prepareMetaballData(json_nodes, collection, lineColor) 
+{
+	let flattened_steps = flatten_items_steps(json_nodes);
+}
+
+function flatten_items_steps(nodes) 
+{
+	let flattened_steps = [];
+
+	for(let i = 0; i < nodes.length; ++i) {
+		let node = nodes[i];
+
+		for(let j = 0; j < node.steps.length; ++j) {
+			let step = node.steps[j];
+
+			let item = {
+				id: step.id,
+				x: node.x,
+				y: node.y,
+
+				r: step.r,
+				steps_length: node.steps.length,
+				step: step,
+
+				collections: node.attributes.collections,
+				first_elem: step.first_elem,
+				last_elem: step.last_elem,
+				n_steps: step.n_steps,
+				first_publication: step.first_publication,
+				generico_non_terrestre: step.generico_non_terrestre,
+				generico_terrestre: step.generico_terrestre,
+				inventato: step.inventato,
+				no_ambientazione: step.no_ambientazione,
+				nominato_non_terrestre: step.nominato_non_terrestre,
+				nominato_terrestre: step.nominato_terrestre,
+
+				nebbia_normalizzata: step.nebbia_normalizzata,
+				cancellazione_normalizzata: step.cancellazione_normalizzata,
+
+				nebbia: step.nebbia,
+				cancellazione: step.cancellazione,
+
+				norma_pct_caratteri_nebbia_cancellazione: step.norma_pct_caratteri_nebbia_cancellazione,
+
+				nebbia_words_ratio: step.nebbia_words_ratio,
+				cancellazione_words_ratio: step.cancellazione_words_ratio,
+				dubitative_ratio: step.dubitative_ratio
+			};
+
+			flattened_steps.push(item);
+		}
+	}
+
+	return flattened_steps;
+}
+
+function array_intersection(a1, a2) 
+{
+	let result = [];
+
+	if(a1 == undefined || a1.length == 0 || a2 == undefined || a2.length == 0) return result;
+
+	for(let i = 0; i < a1.length; ++i) {
+		let item = a1[i];
+
+		if(a2.includes(item))
+			result.push(item);
+	}
+
+	return result;
 }
