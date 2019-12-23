@@ -14,6 +14,7 @@ let data = {
 let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
+let center;
 
 const V = {};
 
@@ -76,7 +77,7 @@ console.log("json_nodes : ", json_nodes);
     left   : d3.min(json_nodes, d => d.x)
   };
 
-  const center = {
+  center = {
     x : (boundaries.left + boundaries.right) / 2,
     y : (boundaries.bottom + boundaries.top) / 2
   };
@@ -122,9 +123,9 @@ console.log("json_nodes : ", json_nodes);
     .data(json_nodes)
     .enter()
     .append("g")
-    .attr("class", "node")
+    .attr("class", "node circle_node")
     .attr("transform", function(d) {
-      return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
+      return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
     });
 
   const steps = text_nodes
@@ -154,6 +155,15 @@ V.setColor = (color) => {
 	d3
 	  .selectAll("circle")
 	  .attr("fill", color);
+}
+
+V.setTilt = (value) => {
+console.log("setTilt ", value);  
+  d3
+    .selectAll(".circle_node")
+    .attr("transform", d => {
+      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+    });
 }
 
 function interpolateSpline(x) 

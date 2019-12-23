@@ -17,7 +17,8 @@ export default class Territory extends React.Component
   }  
 
   territoryCallback = (value) => {
-    V.setColor(value);
+//    V.setColor(value);
+    V.setTilt(1);
   }  
 
   _setRef(componentNode)
