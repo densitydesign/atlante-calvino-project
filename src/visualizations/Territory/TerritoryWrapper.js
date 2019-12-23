@@ -48,6 +48,7 @@ console.log("csv", csv);
       <div className="main">
         <AtlasIntroHeader />
         {!this.state.isLoading && <Territory data={this.state.data} /> }
+        <TerritoryFooter />
 
       </div>
     );

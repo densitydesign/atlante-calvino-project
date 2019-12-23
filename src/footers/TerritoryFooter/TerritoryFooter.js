@@ -6,6 +6,19 @@ import '../../App.css';
 
 export default class TerritoryFooter extends React.Component
 {
+  state = {
+    steps : {
+      multiple : false,
+      options : [
+        { label : "dubbio", status : true },
+        { label : "forma", status : false },
+        { label : "realismo", setatus : false }
+      ]
+    }
+  };
+
+  changeSteps = (newOptions) => {};
+
   render()
   {
     return (
@@ -13,8 +26,9 @@ export default class TerritoryFooter extends React.Component
 
         <Options
           title="Tappe"
-          data={["Tappa 1", "Tappa 2", "Tappa 3"]}
+          data={this.state.steps}
           style={{gridColumn : "span 5", textAlign : "center" }}
+          changeOptions = { this.changeSteps }
         />
 
       </div>
