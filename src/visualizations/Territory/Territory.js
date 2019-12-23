@@ -8,12 +8,17 @@ export default class Territory extends React.Component
   componentDidMount()
   {
     V.initialize(this._rootNode, this.props.data);
+    this.props.containerSetTerritoryCallback(this.territoryCallback);
   }
 
   componentWillUnmount()
   {
     V.destroy(this._rootNode);
-  }
+  }  
+
+  territoryCallback = (value) => {
+    V.setColor(value);
+  }  
 
   _setRef(componentNode)
   {

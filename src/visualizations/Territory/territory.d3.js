@@ -150,6 +150,12 @@ console.log("json_nodes : ", json_nodes);
 
 V.destroy = () => {};
 
+V.setColor = (color) => { 
+	d3
+	  .selectAll("circle")
+	  .attr("fill", color);
+}
+
 function interpolateSpline(x) 
 {
 	let y;

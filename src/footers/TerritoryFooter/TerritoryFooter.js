@@ -17,7 +17,9 @@ export default class TerritoryFooter extends React.Component
     }
   };
 
-  changeSteps = (newOptions) => {};
+  changeSteps = (newOptions) => {
+    this.props.containerCallback("yellow");
+  };
 
   render()
   {

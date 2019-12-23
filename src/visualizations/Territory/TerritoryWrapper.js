@@ -43,12 +43,20 @@ console.log("csv", csv);
     this.loadData();
   }
 
+  setTerritoryCallback = (callback) => {
+    this.territoryCallback = callback;
+  }
+
+  territoryWrapperCallback = (value) => {
+    this.territoryCallback(value);
+  }
+
   render() {
     return (
       <div className="main">
         <AtlasIntroHeader />
-        {!this.state.isLoading && <Territory data={this.state.data} /> }
-        <TerritoryFooter />
+        {!this.state.isLoading && <Territory data={this.state.data} containerSetTerritoryCallback={this.setTerritoryCallback} /> }
+        <TerritoryFooter containerCallback={this.territoryWrapperCallback} />
 
       </div>
     );
