@@ -161,6 +161,8 @@ V.setTilt = (value) => {
 console.log("setTilt ", value);  
   d3
     .selectAll(".circle_node")
+    .transition()
+    .duration(2000)
     .attr("transform", d => {
       return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
     });
