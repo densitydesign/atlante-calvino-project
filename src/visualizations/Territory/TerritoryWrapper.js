@@ -43,20 +43,16 @@ console.log("csv", csv);
     this.loadData();
   }
 
-  setTerritoryCallback = (callback) => {
-    this.territoryCallback = callback;
-  }
+  containerSetTerritoryActivateDoubtStep = callback => this.territoryActivateDoubtStep = callback;
 
-  territoryWrapperCallback = (value) => {
-    this.territoryCallback(value);
-  }
+  callTerritoryActivateDoubtStep = value => this.territoryActivateDoubtStep(value);
 
   render() {
     return (
       <div className="main">
         <AtlasIntroHeader />
-        {!this.state.isLoading && <Territory data={this.state.data} containerSetTerritoryCallback={this.setTerritoryCallback} /> }
-        <TerritoryFooter containerCallback={this.territoryWrapperCallback} />
+        {!this.state.isLoading && <Territory data={this.state.data} containerSetTerritoryActivateDoubtStep={this.containerSetTerritoryActivateDoubtStep} /> }
+        <TerritoryFooter callTerritoryActivateDoubtStep={this.callTerritoryActivateDoubtStep} />
 
       </div>
     );

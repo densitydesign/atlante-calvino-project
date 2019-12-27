@@ -10,16 +10,17 @@ export default class TerritoryFooter extends React.Component
     steps : {
       multiple : false,
       options : [
-        { label : "dubbio", status : true },
+        { label : "territorio", status : true },
+        { label : "dubbio", status : false },
         { label : "forma", status : false },
         { label : "realismo", setatus : false }
       ]
     }
   };
 
-  changeSteps = (newOptions) => {
-    this.props.containerCallback("yellow");
-  };
+  changeSteps = newOptions => this.props.callTerritoryActivateDoubtStep(this.getActiveOption(newOptions));
+
+  getActiveOption = options => options.find(item => item.status === true).label;
 
   render()
   {
@@ -29,7 +30,7 @@ export default class TerritoryFooter extends React.Component
         <Options
           title="Tappe"
           data={this.state.steps}
-          style={{gridColumn : "span 5", textAlign : "center" }}
+          style={{ gridColumn : "span 8", textAlign : "center" }}
           changeOptions = { this.changeSteps }
         />
 

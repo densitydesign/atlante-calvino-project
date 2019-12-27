@@ -159,37 +159,24 @@ V.setColor = color => {
 	  .attr("fill", color);
 };
 
-V.setTilt = value => {
-console.log("setTilt ", value);  
+V.set_yRatio = yRatio => {
 
   d3
     .selectAll(".node")
     .transition()
     .duration(2000)
     .attr("transform", d => {
-      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
+      return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
     });
-
-  d3
-    .selectAll(".circle_node")
-//    .selectAll("circle")
-    .filter(d => !d.first_elem)
-//    .enter()
-    .transition()
-    .duration(2000)
-    .style("fill-opacity", 0)
-    .style("stroke-opacity", 0);
-
-/*
-  d3
-    .selectAll(".circle_node")
-    .transition()
-    .duration(2000)
-    .attr("transform", d => {
-      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
-    });
-*/
 };
+
+V.showHillsTops = opacity => d3
+  .selectAll(".circle_node")
+  .filter(d => !d.first_elem)
+  .transition()
+  .duration(2000)
+  .style("fill-opacity", opacity)
+  .style("stroke-opacity", opacity);
 
 function interpolateSpline(x) 
 {

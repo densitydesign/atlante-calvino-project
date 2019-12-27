@@ -165,6 +165,7 @@ font-size:1.1em;
 
 .bottom-nav {
   position: fixed;
+  background-color: white;
   bottom: 0;
 }
 
