@@ -123,7 +123,7 @@ console.log("json_nodes : ", json_nodes);
     .data(json_nodes)
     .enter()
     .append("g")
-    .attr("class", "node circle_node")
+    .attr("class", "node")
     .attr("transform", function(d) {
       return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
     });
@@ -137,10 +137,12 @@ console.log("json_nodes : ", json_nodes);
 
   steps
     .append("circle")
+    .attr("class", "circle_node")
     .attr("stroke", "black")
     .attr("stroke-width", 1.5)
     .attr("fill", "tomato")
-    .attr("r", d => d.r)   
+    .attr("first_elem", d => d.first_elem)
+    .attr("r", d => d.r)
     .attr("transform", function(d, i) {
       i = i * step_increment;
       return "translate(0," + i + ")";
@@ -151,22 +153,43 @@ console.log("json_nodes : ", json_nodes);
 
 V.destroy = () => {};
 
-V.setColor = (color) => { 
+V.setColor = color => { 
 	d3
 	  .selectAll("circle")
 	  .attr("fill", color);
-}
+};
 
-V.setTilt = (value) => {
+V.setTilt = value => {
 console.log("setTilt ", value);  
+
+  d3
+    .selectAll(".node")
+    .transition()
+    .duration(2000)
+    .attr("transform", d => {
+      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
+    });
+
+  d3
+    .selectAll(".circle_node")
+//    .selectAll("circle")
+    .filter(d => !d.first_elem)
+//    .enter()
+    .transition()
+    .duration(2000)
+    .style("fill-opacity", 0)
+    .style("stroke-opacity", 0);
+
+/*
   d3
     .selectAll(".circle_node")
     .transition()
     .duration(2000)
     .attr("transform", d => {
-      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+      return "scale(1, 1) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
     });
-}
+*/
+};
 
 function interpolateSpline(x) 
 {
