@@ -3,7 +3,7 @@ import React from 'react';
 import * as d3 from 'd3';
 
 import Territory from './Territory';
-import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
+import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 
 export default class TerritoryWrapper extends React.Component
@@ -43,16 +43,32 @@ console.log("csv", csv);
     this.loadData();
   }
 
-  containerSetTerritoryActivateDoubtStep = callback => this.territoryActivateDoubtStep = callback;
+  containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
+  callTerritoryHighlightHills = value => this.territorySetHighlightMode(value);
 
-  callTerritoryActivateDoubtStep = value => this.territoryActivateDoubtStep(value);
+  containerSetTerritorySetHillColoringMode = callback => this.territorySetHillColoringMode = callback;
+
+  hillColoringModeMap = new Map([
+    [ "cronologia", 1],
+    [ "volume", 2 ]
+  ]);  
+
+  callTerritorySetHillColoringMode = value =>
+    this.territorySetHillColoringMode(this.hillColoringModeMap.get(value));
 
   render() {
     return (
       <div className="main">
-        <AtlasIntroHeader />
-        {!this.state.isLoading && <Territory data={this.state.data} containerSetTerritoryActivateDoubtStep={this.containerSetTerritoryActivateDoubtStep} /> }
-        <TerritoryFooter callTerritoryActivateDoubtStep={this.callTerritoryActivateDoubtStep} />
+        <TerritoryHeader callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode} />
+
+        {!this.state.isLoading && 
+          <Territory 
+            data={this.state.data} 
+            containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
+            containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
+          /> }
+
+        <TerritoryFooter callTerritoryHighlightHills={this.callTerritoryHighlightHills} />
 
       </div>
     );
