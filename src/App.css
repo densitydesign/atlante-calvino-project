@@ -163,6 +163,12 @@ font-size:1.1em;
   display: flex;
 }
 
+.bottom-panel {
+  position: fixed;
+  background-color: white;
+  bottom: 1;
+}
+
 .bottom-nav {
   position: fixed;
   background-color: white;

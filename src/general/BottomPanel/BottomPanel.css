@@ -1,0 +1,9 @@
+
+.bottom-panel {
+  background-color : yellow;
+  position : absolute;
+  top: 70%;
+  height: 40%;
+  width : 100%;
+  z-index : 2;
+}

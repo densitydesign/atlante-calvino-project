@@ -4,7 +4,10 @@ import * as d3 from 'd3';
 
 import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
+import BottomPanel from '../../general/BottomPanel/BottomPanel';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
+
+import './TerritoryWrapper.css';
 
 export default class TerritoryWrapper extends React.Component
 {
@@ -61,12 +64,18 @@ console.log("csv", csv);
       <div className="main">
         <TerritoryHeader callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode} />
 
-        {!this.state.isLoading && 
-          <Territory 
-            data={this.state.data} 
-            containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
-            containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
-          /> }
+        <div className="territory-body">
+
+          {!this.state.isLoading && 
+            <Territory 
+              data={this.state.data} 
+              containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
+              containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
+            /> }
+
+          <BottomPanel />
+
+        </div>
 
         <TerritoryFooter callTerritoryHighlightHills={this.callTerritoryHighlightHills} />
 
