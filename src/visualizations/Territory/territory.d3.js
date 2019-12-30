@@ -16,167 +16,189 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 let svg;
 let center;
 
-const V = {};
+class VClass
+{
+  initialize = (el, input_data) => {
+    if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
-export default V;
+    let json_nodes = input_data.json_nodes;
+    data.x_csv2 = input_data.x_csv2;
 
-V.initialize = (el, input_data) => {
-  if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
+    let w = window.innerWidth;
+    let h = window.innerHeight - 6;
+    svg = d3.select(el).style("touch-action", "manipulation");
 
-  let json_nodes = input_data.json_nodes;
-  data.x_csv2 = input_data.x_csv2;
+    const allowedCollections = data.allowedCollections.split(",");
 
-  let w = window.innerWidth;
-  let h = window.innerHeight - 6;
-  svg = d3.select(el).style("touch-action", "manipulation");
+    json_nodes = json_nodes.filter(function(item) {
 
-  const allowedCollections = data.allowedCollections.split(",");
-
-  json_nodes = json_nodes.filter(function(item) {
-
-    return (
-      data.allowedCollections = "all" ||
-      (allowedCollections.includes("undefined") && item.attributes.collections == undefined) ||
-      array_intersection(allowedCollections, item.attributes.collections).length > 0
-    );
-
-  });
-
-  json_nodes.forEach(
-    function(n)
-    {
-			// fix orientation of the viz
-			n.y *= -1;
-			// n.x*=-1;
-			// handle collections
-			if(n.attributes.collections) {
-				n.attributes.collections = n.attributes.collections.split(';');
-				// remove last element which is always empty due to the fat that all records end with a ";"
-				n.attributes.collections.pop();
-			} else {
-				n.attributes.collections = [];
-			}
-    });
-
-	// sort json_nodes so to have the upper in the background and not covering the ones in the foreground
-	json_nodes = json_nodes.sort((a, b) => a.y - b.y);
-
-	const size_ext = d3.extent(json_nodes, d => d.size);
-	data.min_size = size_ext[0] / 8;
-
-  json_nodes.forEach(create_item_steps);
-console.log("json_nodes : ", json_nodes);
-  const svg_main_group = svg.append("g");
-
-  const g = svg_main_group.append("g").attr("class", "nodes");
-
-  const boundaries = {
-    top    : d3.min(json_nodes, d => d.y),
-    right  : d3.max(json_nodes, d => d.x),
-    bottom : d3.max(json_nodes, d => d.y),
-    left   : d3.min(json_nodes, d => d.x)
-  };
-
-  center = {
-    x : (boundaries.left + boundaries.right) / 2,
-    y : (boundaries.bottom + boundaries.top) / 2
-  };
-
-	//add zoom capabilities
-	var zoom_handler = d3.zoom()
-		.on("zoom", zoom_actions);
-
-	zoom_handler(svg);
-
-	let usedSpace = 0.65;
-	let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
-
-  centerTerritory(scale, 0, 0, 0);
-
-	//Zoom functions
-	function zoom_actions() {
-		g.attr("transform", d3.event.transform);
-//		metaball_group.attr("transform", d3.event.transform);
-//		place_hierarchies_group.attr("transform", d3.event.transform);
-//		place_hierarchies_group_2.attr("transform", d3.event.transform);
-//		label.attr('transform', function(d) {
-//			let one_rem = parseInt(d3.select('html').style('font-size'));
-//			let k = one_rem * (1 / (d3.event.transform.k / scale));
-//			let dy = (d.steps.length + 5) * step_increment;
-//			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-//			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
-//		});
-	}
-
-  // Handle interface interactions
-  function centerTerritory(scale, x, y, duration) {
-    svg.transition()
-      .duration(duration)
-      .call(zoom_handler.transform, d3.zoomIdentity
-        .translate((w / 2) + x, (h / 2) + y)
-        .scale(scale)
+      return (
+        data.allowedCollections = "all" ||
+        (allowedCollections.includes("undefined") && item.attributes.collections == undefined) ||
+        array_intersection(allowedCollections, item.attributes.collections).length > 0
       );
-  }
 
-  const text_nodes = g
-    .selectAll(".node")
-    .data(json_nodes)
-    .enter()
-    .append("g")
-    .attr("class", "node")
-    .attr("transform", function(d) {
-      return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
     });
 
-  const steps = text_nodes
-    .selectAll("circle")
-    .data(d => d.steps)
-    .enter();
+    json_nodes.forEach(
+      function(n)
+      {
+        // fix orientation of the viz
+        n.y *= -1;
+        // n.x*=-1;
+        // handle collections
+        if(n.attributes.collections) {
+          n.attributes.collections = n.attributes.collections.split(';');
+          // remove last element which is always empty due to the fat that all records end with a ";"
+          n.attributes.collections.pop();
+        } else {
+          n.attributes.collections = [];
+        }
+      });
 
-  const step_increment = -23;
+    // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
+    json_nodes = json_nodes.sort((a, b) => a.y - b.y);
 
-  steps
-    .append("circle")
-    .attr("class", "circle_node")
-    .attr("stroke", "black")
-    .attr("stroke-width", 1.5)
-    .attr("fill", "tomato")
-    .attr("first_elem", d => d.first_elem)
-    .attr("r", d => d.r)
-    .attr("transform", function(d, i) {
-      i = i * step_increment;
-      return "translate(0," + i + ")";
-    })
-    .style("fill-opacity", 1)
-    .style("stroke-opacity", .5);
-};
+    const size_ext = d3.extent(json_nodes, d => d.size);
+    data.min_size = size_ext[0] / 8;
 
-V.destroy = () => {};
+    json_nodes.forEach(create_item_steps);
+  console.log("json_nodes : ", json_nodes);
+    const svg_main_group = svg.append("g");
 
-V.setColor = color => { 
-	d3
-	  .selectAll("circle")
-	  .attr("fill", color);
-};
+    const g = svg_main_group.append("g").attr("class", "nodes");
 
-V.set_yRatio = yRatio => {
+    const boundaries = {
+      top    : d3.min(json_nodes, d => d.y),
+      right  : d3.max(json_nodes, d => d.x),
+      bottom : d3.max(json_nodes, d => d.y),
+      left   : d3.min(json_nodes, d => d.x)
+    };
 
-  d3
-    .selectAll(".node")
+    center = {
+      x : (boundaries.left + boundaries.right) / 2,
+      y : (boundaries.bottom + boundaries.top) / 2
+    };
+
+    this.colour = d3
+      .scaleLinear()
+      .domain(d3.extent(json_nodes, function(d) { return d.attributes.first_publication; }))
+      .range(["#ff6347", "#455A64"]);
+
+    //add zoom capabilities
+    var zoom_handler = d3.zoom()
+      .on("zoom", zoom_actions);
+
+    zoom_handler(svg);
+
+    let usedSpace = 0.65;
+    let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+
+    centerTerritory(scale, 0, 0, 0);
+
+    //Zoom functions
+    function zoom_actions() {
+      g.attr("transform", d3.event.transform);
+  //		metaball_group.attr("transform", d3.event.transform);
+  //		place_hierarchies_group.attr("transform", d3.event.transform);
+  //		place_hierarchies_group_2.attr("transform", d3.event.transform);
+  //		label.attr('transform', function(d) {
+  //			let one_rem = parseInt(d3.select('html').style('font-size'));
+  //			let k = one_rem * (1 / (d3.event.transform.k / scale));
+  //			let dy = (d.steps.length + 5) * step_increment;
+  //			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+  //			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+  //		});
+    }
+
+    // Handle interface interactions
+    function centerTerritory(scale, x, y, duration) {
+      svg.transition()
+        .duration(duration)
+        .call(zoom_handler.transform, d3.zoomIdentity
+          .translate((w / 2) + x, (h / 2) + y)
+          .scale(scale)
+        );
+    }
+
+    this.text_nodes = g
+      .selectAll(".node")
+      .data(json_nodes)
+      .enter()
+      .append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) {
+        return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+      });
+
+    const steps = this.text_nodes
+      .selectAll("circle")
+      .data(d => d.steps)
+      .enter();
+
+    const step_increment = -23;
+
+    steps
+      .append("circle")
+      .attr("class", "circle_node hill")
+      .attr("stroke", "black")
+      .attr("stroke-width", 1.5)
+      .attr("fill", "tomato")
+      .attr("first_elem", d => d.first_elem)
+      .attr("r", d => d.r)
+      .attr("transform", function(d, i) {
+        i = i * step_increment;
+        return "translate(0," + i + ")";
+      })
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", .5);
+
+    this.hillColoringMode = 1; // 1 : first publication year; 2 : collection
+  };
+
+  destroy = () => {};
+
+  setColor = color => { 
+    d3
+      .selectAll("circle")
+      .attr("fill", color);
+  };
+
+  set_yRatio = yRatio => {
+    d3
+      .selectAll(".node")
+      .transition()
+      .duration(2000)
+      .attr("transform", d => {
+        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
+      });
+  };
+
+  showHillsTops = opacity => d3
+    .selectAll(".circle_node")
+    .filter(d => !d.first_elem)
     .transition()
     .duration(2000)
-    .attr("transform", d => {
-      return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
-    });
-};
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);
 
-V.showHillsTops = opacity => d3
-  .selectAll(".circle_node")
-  .filter(d => !d.first_elem)
-  .transition()
-  .duration(2000)
-  .style("fill-opacity", opacity)
-  .style("stroke-opacity", opacity);
+  highlightHills = (filterCondition, colorScale) => {
+
+    if(!filterCondition)
+    {
+      this.text_nodes.style("display", "block");
+
+      d3.selectAll(".hill").style("fill-opacity", 1).style("stroke-opacity", 1);
+
+      switch(this.hillColoringMode)
+      {
+        case 1 : d3.selectAll(".hill").style("fill", d => this.colour(d.first_publication)); break;
+      }
+
+      return;
+    }
+  }
+}
 
 function interpolateSpline(x) 
 {
@@ -369,3 +391,7 @@ function array_intersection(a1, a2)
 
 	return result;
 }
+
+const V = new VClass();
+
+export default V;
