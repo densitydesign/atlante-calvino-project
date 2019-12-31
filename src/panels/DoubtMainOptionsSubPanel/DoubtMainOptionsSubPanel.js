@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import RadioButton from '../../general/RadioButton/RadioButton';
+
 import './DoubtMainOptionsSubPanel.css';
 
 export default class DoubtMainOptionsSubPanel extends React.Component
@@ -9,7 +11,7 @@ export default class DoubtMainOptionsSubPanel extends React.Component
   {
     return (
       <div className="doubt-main-options-subpanel">
-        test
+        <RadioButton />
       </div>
     );
   }
