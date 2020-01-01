@@ -20,7 +20,7 @@ export default class Territory extends React.Component
   setHighlightMode = value => {
     V.set_yRatio(1);
     V.showHillsTops(0);
-    V.highlightHills(value);
+    V.setHighlightMode(value);
   }
 
   setHillColoringMode = value => V.setHillColoringMode(value);

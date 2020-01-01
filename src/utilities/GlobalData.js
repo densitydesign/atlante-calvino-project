@@ -23,7 +23,15 @@ const GlobalData = {
     {"id":"V021","label":"Se una notte d'inverno un viaggiatore"},
     {"id":"V022","label":"Palomar"},
     {"id":"V023","label":"Le cosmicomiche vecchie e nuove"}
-  ]
+  ],
+  commands : {
+    doubt : {
+      fog : "fog",
+      cancellation : "cancellation",
+      all : "doubtAll",
+      percentage : "doubtPercentage",
+    }
+  }
 }
 
 export default GlobalData

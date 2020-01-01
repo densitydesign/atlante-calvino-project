@@ -16,7 +16,7 @@ export default class BottomPanel extends React.Component
           <span>SPAZIO</span>
           <span>FORMA</span>
         </div>
-        <DoubtPanel />
+        <DoubtPanel callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} />
       </div>
     );
   }

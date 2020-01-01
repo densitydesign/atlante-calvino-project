@@ -18,7 +18,7 @@ export default class TerritoryFooter extends React.Component
     }
   };
 
-  changeSteps = newOptions => this.props.callTerritoryHighlightHills(this.getActiveOption(newOptions));
+  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
 
   getActiveOption = options => options.find(item => item.status === true).label;
 

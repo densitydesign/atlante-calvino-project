@@ -47,7 +47,7 @@ console.log("csv", csv);
   }
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
-  callTerritoryHighlightHills = value => this.territorySetHighlightMode(value);
+  callTerritorySetHighlightMode = value => this.territorySetHighlightMode(value);
 
   containerSetTerritorySetHillColoringMode = callback => this.territorySetHillColoringMode = callback;
 
@@ -73,11 +73,11 @@ console.log("csv", csv);
               containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
             /> }
 
-          <BottomPanel />
+          <BottomPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
 
         </div>
 
-        <TerritoryFooter callTerritoryHighlightHills={this.callTerritoryHighlightHills} />
+        <TerritoryFooter callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
 
       </div>
     );

@@ -3,6 +3,7 @@ import React from 'react';
 
 import DoubtMainOptionsSubPanel from '../DoubtMainOptionsSubPanel/DoubtMainOptionsSubPanel';
 import PercentageSubPanel from '../PercentageSubPanel/PercentageSubPanel';
+import GlobalData from '../../utilities/GlobalData';
 
 import './DoubtPanel.css';
 
@@ -22,14 +23,19 @@ export default class DoubtPanel extends React.Component
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.fogRadioButtonId, pressed : true },
+      { id : this.fogRadioButtonId, pressed : false },
       { id : this.cancellationRadioButtonId, pressed : false },
       { id : this.allRadioButtonId, pressed : false },
       { id : this.percentageRadioButtonId, pressed : false }
     ]
   };
 
-  optionRadioButtonsMap = new Map();
+  optionRadioButtonsMap = new Map([
+    [ this.fogRadioButtonId,          { value : "fog" } ],
+    [ this.cancellationRadioButtonId, { value : "cancellation" } ],
+    [ this.allRadioButtonId,          { value : "doubtAll" } ],
+    [ this.percentageRadioButtonId,   { value : "doubtPercentage" } ]
+  ]);
 
   optionRadioButtonPressed = id => {
     const pressedButtonState = this.state.optionRadioButtonsStates.find(item => item.id === id);
@@ -47,10 +53,24 @@ export default class DoubtPanel extends React.Component
     otherButtons.forEach(button => button.pressed = false);
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
+
+    switch(id)
+    {
+      case this.fogRadioButtonId : 
+        this.props.callTerritorySetHighlightMode(GlobalData.commands.doubt.fog);
+        break;
+      case this.cancellationRadioButtonId : 
+        break;
+      case this.allRadioButtonId : 
+        break;
+      case this.percentageRadioButtonId : 
+        break;
+    }
   }
 
   render()
   {
+console.log("pippo");    
     return (
       <div className="doubt-panel">
         <div></div>

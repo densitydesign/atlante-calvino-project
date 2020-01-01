@@ -1,6 +1,8 @@
 
 import * as d3 from 'd3';
 
+import GlobalData from '../../utilities/GlobalData';
+
 let data = {
 	allowedCollections: "all", // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 	timeline_x: 0,
@@ -241,7 +243,7 @@ class VClass
   };
 
   highlightModeMap = new Map([
-    [ "nebbia", { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
+    [ GlobalData.commands.doubt.fog, { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
     [ "cancellazione", { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale } ],
     [ "generici non terrestri", { filterCondition : 'n_generico_non_terrestre', colorScale : this.generico_non_terrestre_color_scale } ],
     [ "nominati non terrestri", { filterCondition : 'n_nominato_non_terrestre', colorScale : this.nominato_non_terrestre_color_scale} ],
@@ -251,7 +253,7 @@ class VClass
     [ "senza ambientazione", { filterCondition : 'n_no_ambientazione', colorScale : this.no_ambientazione_color_scale} ]
   ]);
 
-  setHighlightingMode = value => {
+  setHighlightMode = value => {
     const highlightParameters = this.highlightModeMap.get(value);
 
     this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
