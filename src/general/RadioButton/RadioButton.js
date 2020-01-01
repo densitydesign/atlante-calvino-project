@@ -5,13 +5,6 @@ import './RadioButton.css';
 
 export default class RadioButton extends React.Component
 {
-/*  
-  state = {
-    pressed : false
-  };
-
-  setPressed = value => this.setState({ pressed : value });
-*/
   render()
   {
     return (

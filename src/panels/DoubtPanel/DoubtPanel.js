@@ -2,25 +2,30 @@
 import React from 'react';
 
 import DoubtMainOptionsSubPanel from '../DoubtMainOptionsSubPanel/DoubtMainOptionsSubPanel';
+import PercentageSubPanel from '../PercentageSubPanel/PercentageSubPanel';
 
 import './DoubtPanel.css';
 
 export default class DoubtPanel extends React.Component
 {
-  fogRadioButtonId = "fog";
+  fogRadioButtonId = "fogRadioButton";
   fogRadioButtonCaption = "NEBBIA";
 
-  cancellationRadioButtonId = "cancellation";
+  cancellationRadioButtonId = "cancellationRadioButton";
   cancellationRadioButtonCaption = "CANCELLAZIONE";
 
-  allRadioButtonId = "all";
-  allRadioButtonCaption = "TUTTO";  
+  allRadioButtonId = "allRadioButton";
+  allRadioButtonCaption = "TUTTO";
+
+  percentageRadioButtonId = "percentageRadioButton";
+  percentageRadioButtonCaption = "%";
 
   state = {
     optionRadioButtonsStates : [
       { id : this.fogRadioButtonId, pressed : true },
       { id : this.cancellationRadioButtonId, pressed : false },
-      { id : this.allRadioButtonId, pressed : false }
+      { id : this.allRadioButtonId, pressed : false },
+      { id : this.percentageRadioButtonId, pressed : false }
     ]
   };
 
@@ -63,6 +68,13 @@ export default class DoubtPanel extends React.Component
           allRadioButtonId={this.allRadioButtonId}
           allRadioButtonCaption={this.allRadioButtonCaption}
           allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
+        />
+        <PercentageSubPanel
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+
+          percentageRadioButtonId={this.percentageRadioButtonId}
+          percentageRadioButtonCaption={this.percentageRadioButtonCaption}
+          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
         />
       </div>
     );
