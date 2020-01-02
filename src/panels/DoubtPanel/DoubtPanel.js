@@ -31,10 +31,10 @@ export default class DoubtPanel extends React.Component
   };
 
   optionRadioButtonsMap = new Map([
-    [ this.fogRadioButtonId,          { value : "fog" } ],
-    [ this.cancellationRadioButtonId, { value : "cancellation" } ],
-    [ this.allRadioButtonId,          { value : "doubtAll" } ],
-    [ this.percentageRadioButtonId,   { value : "doubtPercentage" } ]
+    [ this.fogRadioButtonId,          { value : GlobalData.commands.territory.doubt.fog } ],
+    [ this.cancellationRadioButtonId, { value : GlobalData.commands.territory.doubt.cancellation } ],
+    [ this.allRadioButtonId,          { value : GlobalData.commands.territory.doubt.all } ],
+    [ this.percentageRadioButtonId,   { value : GlobalData.commands.territory.doubt.percentage } ]
   ]);
 
   optionRadioButtonPressed = id => {
@@ -55,9 +55,10 @@ export default class DoubtPanel extends React.Component
     switch(id)
     {
       case this.fogRadioButtonId : 
-        this.props.callTerritorySetHighlightMode(GlobalData.commands.doubt.fog);
+        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.fog);
         break;
       case this.cancellationRadioButtonId : 
+        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.cancellation);
         break;
       case this.allRadioButtonId : 
         break;
