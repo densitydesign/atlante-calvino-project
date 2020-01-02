@@ -1,6 +1,6 @@
 
 .doubt-panel {
-  background-color : pink;
+  background-color : white;
   display : grid;
   grid-template-columns : 1fr 1fr 1fr;
 }

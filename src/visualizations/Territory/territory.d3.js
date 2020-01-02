@@ -66,7 +66,7 @@ class VClass
     data.min_size = size_ext[0] / 8;
 
     json_nodes.forEach(create_item_steps);
-  console.log("json_nodes : ", json_nodes);
+
     const svg_main_group = svg.append("g");
 
     const g = svg_main_group.append("g").attr("class", "nodes");
@@ -138,6 +138,17 @@ class VClass
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
       .range(['#FFDDFF', 'violet']);
+
+    this.highlightModeMap = new Map([
+      [ GlobalData.commands.doubt.fog, { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
+      [ "cancellazione", { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale } ],
+      [ "generici non terrestri", { filterCondition : 'n_generico_non_terrestre', colorScale : this.generico_non_terrestre_color_scale } ],
+      [ "nominati non terrestri", { filterCondition : 'n_nominato_non_terrestre', colorScale : this.nominato_non_terrestre_color_scale} ],
+      [ "generici terrestri", { filterCondition : 'n_generico_terrestre', colorScale : this.generico_terrestre_color_scale} ],
+      [ "nominati terrestri", { filterCondition : 'n_nominato_terrestre', colorScale : this.nominato_terrestre_color_scale} ],
+      [ "inventati", { filterCondition : 'n_inventato', colorScale : this.inventato_color_scale} ],
+      [ "senza ambientazione", { filterCondition : 'n_no_ambientazione', colorScale : this.no_ambientazione_color_scale} ]
+    ]);
 
     //add zoom capabilities
     var zoom_handler = d3.zoom()
@@ -242,18 +253,8 @@ class VClass
     this.highlightHills();
   };
 
-  highlightModeMap = new Map([
-    [ GlobalData.commands.doubt.fog, { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
-    [ "cancellazione", { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale } ],
-    [ "generici non terrestri", { filterCondition : 'n_generico_non_terrestre', colorScale : this.generico_non_terrestre_color_scale } ],
-    [ "nominati non terrestri", { filterCondition : 'n_nominato_non_terrestre', colorScale : this.nominato_non_terrestre_color_scale} ],
-    [ "generici terrestri", { filterCondition : 'n_generico_terrestre', colorScale : this.generico_terrestre_color_scale} ],
-    [ "nominati terrestri", { filterCondition : 'n_nominato_terrestre', colorScale : this.nominato_terrestre_color_scale} ],
-    [ "inventati", { filterCondition : 'n_inventato', colorScale : this.inventato_color_scale} ],
-    [ "senza ambientazione", { filterCondition : 'n_no_ambientazione', colorScale : this.no_ambientazione_color_scale} ]
-  ]);
-
   setHighlightMode = value => {
+
     const highlightParameters = this.highlightModeMap.get(value);
 
     this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
@@ -282,7 +283,7 @@ class VClass
       .filter(d => !d[filterCondition])
       .transition()
       .duration(350)
-      .style("fill", "transparent");
+      .style("fill", d => "transparent");
 
     allHills
       .filter(d => d[filterCondition])
@@ -324,20 +325,17 @@ function interpolateSpline(x)
 
 function create_item_steps(d)
 {
-console.log("create_item_steps...");
 	// reverse the order of collections, so to have the older ones at the bottom of the hills
 	d.attributes.collections = d.attributes.collections.reverse()
 
 	d.steps = [];
 	// get different radii
-console.log("data.min_size : ", data.min_size);
 	for(var jj = (data.min_size); jj <= d.size; jj += data.min_size) {
 		let new_step_size = jj;
 		let ratio = new_step_size / d.size;
 		new_step_size = d.size * interpolateSpline(ratio);
 		d.steps.push(new_step_size);
 	}
-console.log("d.steps.length() : ", d.steps.length);
 
 	// get colors
 	d.steps = d.steps.map((s, i) => {
@@ -349,7 +347,6 @@ console.log("d.steps.length() : ", d.steps.length);
 		let first_elem = (i == (d.steps.length - 1));
 		let last_elem = (i == 0);
 		let n_steps = d.steps.length;
-
 		let csv_item = data.x_csv2[d.id];
 
 		return {

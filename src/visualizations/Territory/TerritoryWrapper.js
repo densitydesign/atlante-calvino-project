@@ -16,30 +16,28 @@ export default class TerritoryWrapper extends React.Component
     isLoading : true
   };
 
-  loadData()
+  loadData = () =>
   {
     d3.csv(process.env.PUBLIC_URL + "/territory_texts_data.csv").then(csv => {
 
-console.log("csv", csv);
+      let x_csv2 = csv.reduce(this.map_item_data, {});
 
-    let x_csv2 = [];
-/*
-      let x_csv2 = csv.reduce(
-        function(map, obj) {
-          map[obj.id] = this.calculate_item_data(obj);
-
-          return map;
-        }, {});
-*/
       d3.json(process.env.PUBLIC_URL + "/territory_graphical_data.json").then(json => {
         const json_nodes = json.nodes;
         this.setState({
-          data : {  json_nodes : json_nodes, x_csv2 : x_csv2 },
+          data : { json_nodes : json_nodes, x_csv2 : x_csv2 },
           isLoading : false
         });
       });
     });
   }
+
+  map_item_data = (map, obj) => {
+    map[obj.id] = this.calculate_item_data(obj);
+
+    return map;    
+  };
+
 
   componentDidMount()
   {

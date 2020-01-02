@@ -32,7 +32,7 @@ export default class Territory extends React.Component
 
   render()
   {
-    const style = { width : "100%", height : "70%", backgroundColor: "green", flexGrow : 1 };
+    const style = { width : "100%", height : "70%", flexGrow : 1 };
 
     return <svg id={this.props.id} style={style} ref={this._setRef.bind(this)}></svg>;
   }

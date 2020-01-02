@@ -23,10 +23,10 @@ export default class DoubtPanel extends React.Component
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.fogRadioButtonId, pressed : false },
+      { id : this.fogRadioButtonId,          pressed : false },
       { id : this.cancellationRadioButtonId, pressed : false },
-      { id : this.allRadioButtonId, pressed : false },
-      { id : this.percentageRadioButtonId, pressed : false }
+      { id : this.allRadioButtonId,          pressed : false },
+      { id : this.percentageRadioButtonId,   pressed : false }
     ]
   };
 
@@ -45,11 +45,9 @@ export default class DoubtPanel extends React.Component
     const optionRadioButtonsStatesCopy = [...this.state.optionRadioButtonsStates];
 
     const pressedButtonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === id);
-
     pressedButtonStateCopy.pressed = true;
 
     const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != id);
-
     otherButtons.forEach(button => button.pressed = false);
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
@@ -70,7 +68,6 @@ export default class DoubtPanel extends React.Component
 
   render()
   {
-console.log("pippo");    
     return (
       <div className="doubt-panel">
         <div></div>
