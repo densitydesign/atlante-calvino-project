@@ -94,6 +94,11 @@ class VClass
       .range(collections.map(d => d.c))
       .unknown('transparent');
 
+    const circled_numbers = d3
+      .scaleOrdinal()
+      .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+      .range(['➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒', '➓']);
+
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
@@ -150,42 +155,6 @@ class VClass
       [ "senza ambientazione", { filterCondition : 'n_no_ambientazione', colorScale : this.no_ambientazione_color_scale} ]
     ]);
 
-    //add zoom capabilities
-    var zoom_handler = d3.zoom()
-      .on("zoom", zoom_actions);
-
-    zoom_handler(svg);
-
-    let usedSpace = 0.65;
-    let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
-
-    centerTerritory(scale, 0, 0, 0);
-
-    //Zoom functions
-    function zoom_actions() {
-      g.attr("transform", d3.event.transform);
-  //		metaball_group.attr("transform", d3.event.transform);
-  //		place_hierarchies_group.attr("transform", d3.event.transform);
-  //		place_hierarchies_group_2.attr("transform", d3.event.transform);
-  //		label.attr('transform', function(d) {
-  //			let one_rem = parseInt(d3.select('html').style('font-size'));
-  //			let k = one_rem * (1 / (d3.event.transform.k / scale));
-  //			let dy = (d.steps.length + 5) * step_increment;
-  //			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-  //			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
-  //		});
-    }
-
-    // Handle interface interactions
-    function centerTerritory(scale, x, y, duration) {
-      svg.transition()
-        .duration(duration)
-        .call(zoom_handler.transform, d3.zoomIdentity
-          .translate((w / 2) + x, (h / 2) + y)
-          .scale(scale)
-        );
-    }
-
     this.text_nodes = g
       .selectAll(".node")
       .data(json_nodes)
@@ -219,6 +188,125 @@ class VClass
       .style("stroke-opacity", .5);
 
     this.setHillColoringMode(1);
+
+    let label = this.text_nodes
+      .selectAll('.label')
+      .data(function(d) {
+        let one_rem = parseInt(d3.select('html').style('font-size'));
+
+        if(d.attributes.collections && d.attributes.collections.length) 
+        {
+          // console.log('handle collections')
+          let collections = d.attributes.collections.reverse().map((e, i) => {
+            let obj = {
+              'id': e,
+              'index': i,
+              'length': d.attributes.collections.length,
+              'rem': one_rem
+            }
+            return obj;
+          });
+          d.attributes.collectionsTooltip = collections;
+        } 
+        else 
+        {
+          // console.log('handleNoCollections')
+          let obj = {
+            'first_publication': d.attributes.first_publication,
+            'rem': one_rem
+          }
+          d.attributes.collectionsTooltip = [obj];
+        }
+        return [d];
+      })
+      .enter()
+      .append('g')
+      .attr('class', 'label');
+
+    // Append title
+    let labelTitle = label
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('font-family', 'Crimson Text')
+      .attr('font-size', '1.1rem')
+      .text(function(d) {
+        // V016 - "il castello dei destini incrociati" gets anyway the first publication year in the label
+        if((d.attributes.type == 'romanzo' || d.attributes.type == 'ibrido') && d.id != "V016") {
+          return d.attributes.title;
+        } else {
+          return d.attributes.title + ', ' + d.attributes.first_publication;
+        }
+      });
+
+    // Append collections years
+    let labelCollectionsYears = label
+      .append('text')
+      .attr('text-anchor', 'middle')
+      .attr('x', function(d) { return 0; })
+      .attr('y', parseInt(d3.select('html').style('font-size')) + 1.5)
+      .attr('font-size', '0.8rem')
+      .selectAll('.labels-collections-years')
+      .data(d => d.attributes.collectionsTooltip)
+      .enter()
+      .append('tspan')
+      .attr('dx', (d, i) => i != 0 ? d.rem / 2 : 0)
+      .html((d, i) => {        
+        if(d.first_publication) {
+          return;
+          // remove first publication in the second row for short stories
+          // return '&#9737; ' + d.first_publication;
+        } else {
+          return '<tspan fill="' + this.col_collections(d.id) + '">' + circled_numbers(i) + '</tspan> ' + getCollections().filter(e => d.id == e.id)[0].year;
+        }
+      });
+
+    d3
+      .selectAll('.label text')
+      .each(function(d, i) {
+        clone_d3_selection(d3.select(this), '');
+        d3.select(this).classed('white-shadow', true);
+      });
+
+    //add zoom capabilities
+    var zoom_handler = d3
+      .zoom()
+      .on("zoom", zoom_actions);
+
+    zoom_handler(svg);
+
+    let usedSpace = 0.65;
+    let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+
+    centerTerritory(scale, 0, 0, 0);
+
+    //Zoom functions
+    function zoom_actions() 
+    {
+      g.attr("transform", d3.event.transform);
+  //		metaball_group.attr("transform", d3.event.transform);
+  //		place_hierarchies_group.attr("transform", d3.event.transform);
+  //		place_hierarchies_group_2.attr("transform", d3.event.transform);
+  		label.attr('transform', function(d) {
+  			let one_rem = parseInt(d3.select('html').style('font-size'));
+  			let k = one_rem * (1 / (d3.event.transform.k / scale));
+  			let dy = (d.steps.length + 5) * step_increment;
+  			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+  			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+  		});
+    }
+
+    // Handle interface interactions
+    function centerTerritory(scale, x, y, duration) 
+    {
+      svg.transition()
+        .duration(duration)
+        .call(
+          zoom_handler.transform, 
+          d3
+            .zoomIdentity
+            .translate((w / 2) + x, (h / 2) + y)
+            .scale(scale));
+    }
   };
 
   destroy = () => {};
@@ -658,6 +746,32 @@ function getCollections()
   ];
   
 	return collections;
+}
+
+function clone_d3_selection(selection, i) 
+{
+	// Assume the selection contains only one object, or just work
+	// on the first object. 'i' is an index to add to the id of the
+	// newly cloned DOM element.
+	const attr = selection.node().attributes;
+	const innerElements = selection.html()
+	const length = attr.length;
+	const node_name = selection.property("nodeName");
+  const parent = d3.select(selection.node().parentNode);
+  
+  const cloned = parent
+    .append(node_name)
+		.attr("id", selection.attr("id") + i)
+		.html(innerElements);
+
+  // Iterate on attributes and skip on "id"
+  for(let j = 0; j < length; ++j) 
+  {
+		if(attr[j].nodeName == "id") continue;
+		cloned.attr(attr[j].name, attr[j].value);
+  }
+  
+	return cloned;
 }
 
 const V = new VClass();

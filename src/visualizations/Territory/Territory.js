@@ -3,6 +3,8 @@ import React from 'react';
 
 import V from './territory.d3';
 
+import './Territory.css';
+
 export default class Territory extends React.Component
 {
   componentDidMount()

@@ -1,0 +1,23 @@
+
+.node .label {
+  opacity: 1e-16;
+  transition: opacity .5s;
+  pointer-events: none;
+  font-family: "HK Grotesk";
+  letter-spacing: 0.02rem;
+}
+
+.node:hover .label, .node .label.visible {
+  opacity: 1;
+}
+
+.label .white-shadow {
+  stroke: white;
+  stroke-width: 0.4rem;
+  fill: white;
+  stroke-linejoin: round;
+}
+
+.node circle {
+  shape-rendering: geometricprecision;
+}
