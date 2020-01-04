@@ -20,6 +20,7 @@ let center;
 let tilt = false;
 let step_increment = -23;
 let scale;
+let d3_event_transform_k;
 
 class VClass
 {
@@ -292,12 +293,16 @@ class VClass
   //		metaball_group.attr("transform", d3.event.transform);
   //		place_hierarchies_group.attr("transform", d3.event.transform);
   //		place_hierarchies_group_2.attr("transform", d3.event.transform);
+      d3_event_transform_k = d3.event.transform.k;
+
   		label.attr('transform', function(d) {
   			let one_rem = parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
   			let dy = (d.steps.length + 5) * step_increment;
-  			let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-  			return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+        let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+        
+        if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+        else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
   		});
     }
 
@@ -338,6 +343,25 @@ class VClass
       .attr("transform", d => {
         return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
       });
+
+    if(yRatio === 1) tilt = true;
+    else tilt = false;
+
+    let label = this.text_nodes
+      .selectAll('.label');   
+
+    label.attr('transform', function(d) {
+console.log("transforming");      
+      let one_rem = parseInt(d3.select('html').style('font-size'));
+      let k = one_rem * (1 / (d3_event_transform_k / scale));
+console.log("k : ", k);
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+
+      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+    });    
+
   };
 
   showHillsTops = opacity => d3
