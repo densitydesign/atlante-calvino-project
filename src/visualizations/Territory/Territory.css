@@ -1,6 +1,6 @@
 
 .node .label {
-  opacity: 1e-16;
+/*  opacity: 1e-16; */  /* comment his row to keep labels always visible */
   transition: opacity .5s;
   pointer-events: none;
   font-family: "HK Grotesk";

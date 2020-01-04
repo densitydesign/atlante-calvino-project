@@ -17,6 +17,7 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
+let step_increment = -23;
 
 class VClass
 {
@@ -170,7 +171,7 @@ class VClass
       .data(d => d.steps)
       .enter();
 
-    const step_increment = -23;
+//    this.step_increment = -23;
 
     steps
       .append("circle")
@@ -180,10 +181,13 @@ class VClass
 //      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
       .attr("r", d => d.r)
+/*      
       .attr("transform", function(d, i) {
         i = i * step_increment;
         return "translate(0," + i + ")";
       })
+*/
+      .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);
 
@@ -308,6 +312,13 @@ class VClass
             .scale(scale));
     }
   };
+
+  calculateHillStepTranslation = (d, i) => 
+  {
+    i = i * step_increment;
+
+    return "translate(0," + i + ")";
+  }
 
   destroy = () => {};
 
