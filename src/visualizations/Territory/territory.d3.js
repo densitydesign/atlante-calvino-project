@@ -151,6 +151,7 @@ class VClass
     this.highlightModeMap = new Map([
       [ GlobalData.commands.territory.doubt.fog, { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
       [ GlobalData.commands.territory.doubt.cancellation, { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale } ],
+      [ GlobalData.commands.territory.doubt.all, { filterCondition : 'dubitative_ratio', colorScale : this.dubitative_color_scale } ],
       [ "generici non terrestri", { filterCondition : 'n_generico_non_terrestre', colorScale : this.generico_non_terrestre_color_scale } ],
       [ "nominati non terrestri", { filterCondition : 'n_nominato_non_terrestre', colorScale : this.nominato_non_terrestre_color_scale} ],
       [ "generici terrestri", { filterCondition : 'n_generico_terrestre', colorScale : this.generico_terrestre_color_scale} ],

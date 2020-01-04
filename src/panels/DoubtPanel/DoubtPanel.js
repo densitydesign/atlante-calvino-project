@@ -61,6 +61,7 @@ export default class DoubtPanel extends React.Component
         this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.cancellation);
         break;
       case this.allRadioButtonId : 
+        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.all);
         break;
       case this.percentageRadioButtonId : 
         break;
