@@ -37,35 +37,22 @@ export default class DoubtPanel extends React.Component
     [ this.percentageRadioButtonId,   { value : GlobalData.commands.territory.doubt.percentage } ]
   ]);
 
-  optionRadioButtonPressed = id => {
-    const pressedButtonState = this.state.optionRadioButtonsStates.find(item => item.id === id);
+  optionRadioButtonPressed = radioButtonId => {
+    const pressedButtonState = this.state.optionRadioButtonsStates.find(item => item.id === radioButtonId);
 
     if(pressedButtonState.pressed) return;
 
     const optionRadioButtonsStatesCopy = [...this.state.optionRadioButtonsStates];
 
-    const pressedButtonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === id);
+    const pressedButtonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === radioButtonId);
     pressedButtonStateCopy.pressed = true;
 
-    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != id);
+    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != radioButtonId);
     otherButtons.forEach(button => button.pressed = false);
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
 
-    switch(id)
-    {
-      case this.fogRadioButtonId : 
-        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.fog);
-        break;
-      case this.cancellationRadioButtonId : 
-        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.cancellation);
-        break;
-      case this.allRadioButtonId : 
-        this.props.callTerritorySetHighlightMode(GlobalData.commands.territory.doubt.all);
-        break;
-      case this.percentageRadioButtonId : 
-        break;
-    }
+    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(radioButtonId).value);
   }
 
   render()

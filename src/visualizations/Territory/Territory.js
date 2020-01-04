@@ -19,11 +19,7 @@ export default class Territory extends React.Component
     V.destroy(this._rootNode);
   }
 
-  setHighlightMode = value => {
-    V.set_yRatio(1);
-    V.setHighlightMode(value);
-    V.showHillsTops(0);    
-  }
+  setHighlightMode = value => V.setHighlightMode(value);
 
   setHillColoringMode = value => V.setHillColoringMode(value);
 

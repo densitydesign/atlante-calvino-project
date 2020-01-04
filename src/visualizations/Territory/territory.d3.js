@@ -22,6 +22,12 @@ let step_increment = -23;
 let scale;
 let d3_event_transform_k;
 
+let PI = Math.PI;
+let arcMin = 75; // inner radius of the first arc
+let arcWidth = 38;
+let arcPad = 1; // padding between arcs
+let drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+
 class VClass
 {
   initialize = (el, input_data) => {
@@ -195,6 +201,79 @@ class VClass
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);
 
+///////////////////////////////////////////
+
+    let drawDubitativePhenomenaArc1 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(0 * 2 * PI)
+      .endAngle(function(d, i) {
+        return d.nebbia * 2 * PI;
+      });
+
+    let drawDubitativePhenomenaArc2 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.nebbia * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return d.cancellazione * 2 * PI;
+      });
+
+    let drawDubitativePhenomenaArc3 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.cancellazione * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return 2 * PI;
+      });
+
+///////////////////////////////////////////
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "blue")
+      .attr("class", "dubitativePhenomena_level_2")
+      .attr("d", drawDubitativePhenomenaArc1)
+      .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "red")
+      .attr("class", "dubitativePhenomena_level_2")
+      .attr("d", drawDubitativePhenomenaArc2)
+      .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "transparent")
+      .attr("class", "dubitativePhenomena_level_2")
+      .attr("d", drawDubitativePhenomenaArc3)
+      .style('fill-opacity', 0);
+
+///////////////////////////////////////////
+
     this.setHillColoringMode(1);
 
     let label = this.text_nodes
@@ -352,22 +431,28 @@ class VClass
       .selectAll('.label');   
 
     label.attr('transform', function(d) {
-console.log("transforming");      
+
       let one_rem = parseInt(d3.select('html').style('font-size'));
       let k = one_rem * (1 / (d3_event_transform_k / scale));
-console.log("k : ", k);
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
 
       if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
       else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
-    });    
+    });
 
   };
 
   showHillsTops = opacity => d3
     .selectAll(".circle_node")
     .filter(d => !d.first_elem)
+    .transition()
+    .duration(2000)
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);
+
+  showHills = opacity => d3
+    .selectAll(".circle_node")
     .transition()
     .duration(2000)
     .style("fill-opacity", opacity)
@@ -380,10 +465,35 @@ console.log("k : ", k);
   };
 
   setHighlightMode = value => {
+console.log("setHighlightMode");
+console.log("value : ", value);
+console.log("GlobalData.commands.territory.doubt.fog : ", "*" + GlobalData.commands.territory.doubt.fog + "*");
+    switch(value)
+    {
+      case GlobalData.commands.territory.doubt.fog :
+      case GlobalData.commands.territory.doubt.cancellation :
+      case GlobalData.commands.territory.doubt.all :
+console.log("tilting");
+        this.set_yRatio(1);      
 
-    const highlightParameters = this.highlightModeMap.get(value);
+        const highlightParameters = this.highlightModeMap.get(value);
 
-    this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        this.showHillsTops(0);
+
+        break;
+
+      case GlobalData.commands.territory.doubt.percentage :
+
+        this.set_yRatio(1);        
+
+        this.showDonuts();
+
+        this.showHills(0);
+
+        break;
+    }
   };
 
   highlightHills = (filterCondition, colorScale) => {
@@ -417,6 +527,13 @@ console.log("k : ", k);
       .duration(350)
       .style("fill", d => colorScale(d[filterCondition]));
   };
+
+  showDonuts = () => {
+		this.text_nodes
+			.selectAll('.dubitativePhenomena_level_2')
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+  }
 }
 
 function interpolateSpline(x) 
