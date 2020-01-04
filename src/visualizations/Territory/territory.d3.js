@@ -17,7 +17,9 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
+let tilt = false;
 let step_increment = -23;
+let scale;
 
 class VClass
 {
@@ -279,7 +281,7 @@ class VClass
     zoom_handler(svg);
 
     let usedSpace = 0.65;
-    let scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+    scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
 
     centerTerritory(scale, 0, 0, 0);
 
