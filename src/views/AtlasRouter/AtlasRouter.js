@@ -21,7 +21,7 @@ import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
-
+import Combine from '../../visualizations/Combine/Combine';
 
 export default function AtlasRouter()
 {
@@ -43,7 +43,7 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/combining">processi / combinare</Route>
+      <Route exact path="/Process/combining"><Combine /></Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
       <Route exact path="/Process/transforming"><Trasformare title="" /></Route>
 
