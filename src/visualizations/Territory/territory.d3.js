@@ -298,7 +298,7 @@ class VClass
   		label.attr('transform', function(d) {
   			let one_rem = parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
-  			let dy = (d.steps.length + 5) * step_increment;
+  			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
         let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
         
         if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
