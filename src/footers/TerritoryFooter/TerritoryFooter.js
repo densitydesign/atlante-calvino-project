@@ -56,8 +56,8 @@ export default class TerritoryFooter extends React.Component
           changeOptions = { this.changeSteps }
         />
 
-        <ToggleButton id={this.legendToggleButtonId} caption={this.legendToggleButtonCaption} pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} callStateContainerToggleButtonPressed={this.toggleButtonPressed} />
         <ToggleButton id={this.timeFilterToggleButtonId} caption={this.timeFilterToggleButtonCaption} pressed={this.state.toggleButtonsStates.find(item => item.id === this.timeFilterToggleButtonId).pressed} callStateContainerToggleButtonPressed={this.toggleButtonPressed} />
+        <ToggleButton id={this.legendToggleButtonId} caption={this.legendToggleButtonCaption} pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} callStateContainerToggleButtonPressed={this.toggleButtonPressed} />        
 
       </div>
     );

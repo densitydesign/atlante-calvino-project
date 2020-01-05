@@ -1,5 +1,5 @@
 
-.territory-bottom-panel {
+.territory-steps-panel {
   background-color : white;
   position : absolute;
   top: 70%;
@@ -9,9 +9,8 @@
   display : grid;
   grid-template-columns : 3fr 27fr 1fr;
 }
-/*
+
 .territory-button-grid {
   display : grid;
   grid-template-rows : 1fr 1fr 1fr;
 }
-*/
