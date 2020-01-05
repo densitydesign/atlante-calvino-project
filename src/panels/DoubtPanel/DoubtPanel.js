@@ -37,22 +37,22 @@ export default class DoubtPanel extends React.Component
     [ this.percentageRadioButtonId,   { value : GlobalData.commands.territory.doubt.percentage } ]
   ]);
 
-  optionRadioButtonPressed = radioButtonId => {
-    const pressedButtonState = this.state.optionRadioButtonsStates.find(item => item.id === radioButtonId);
+  optionRadioButtonPressed = buttonId => {
+    const buttonState = this.state.optionRadioButtonsStates.find(item => item.id === buttonId);
 
-    if(pressedButtonState.pressed) return;
+    if(buttonState.pressed) return;
 
     const optionRadioButtonsStatesCopy = [...this.state.optionRadioButtonsStates];
 
-    const pressedButtonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === radioButtonId);
-    pressedButtonStateCopy.pressed = true;
+    const buttonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === buttonId);
+    buttonStateCopy.pressed = true;
 
-    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != radioButtonId);
+    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != buttonId);
     otherButtons.forEach(button => button.pressed = false);
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
 
-    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(radioButtonId).value);
+    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
   }
 
   render()
