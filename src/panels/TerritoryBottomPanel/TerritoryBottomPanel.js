@@ -1,22 +1,22 @@
 
 import React from 'react';
 
-import DoubtPanel from '../../panels/DoubtPanel/DoubtPanel';
+import TerritoryDoubtPanel from '../TerritoryDoubtPanel/TerritoryDoubtPanel';
 
-import './BottomPanel.css';
+import './TerritoryBottomPanel.css';
 
-export default class BottomPanel extends React.Component
+export default class TerritoryBottomPanel extends React.Component
 {
   render()
   {
     return (
-      <div className="bottom-panel">
-        <div className="button-grid">
+      <div className="territory-bottom-panel">
+        <div className="territory-button-grid">
           <span>DUBBIO</span>
           <span>SPAZIO</span>
           <span>FORMA</span>
         </div>
-        <DoubtPanel callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} />
+        <TerritoryDoubtPanel callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} />
       </div>
     );
   }

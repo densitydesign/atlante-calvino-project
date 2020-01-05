@@ -1,5 +1,5 @@
 
-.bottom-panel {
+.territory-bottom-panel {
   background-color : white;
   position : absolute;
   top: 70%;
@@ -10,7 +10,7 @@
   grid-template-columns : 3fr 27fr 1fr;
 }
 
-.button-grid {
+.territory-button-grid {
   display : grid;
   grid-template-rows : 1fr 1fr 1fr;
 }

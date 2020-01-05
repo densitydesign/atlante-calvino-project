@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
-import BottomPanel from '../../general/BottomPanel/BottomPanel';
+import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 
 import './TerritoryWrapper.css';
@@ -71,7 +71,7 @@ export default class TerritoryWrapper extends React.Component
               containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
             /> }
 
-          <BottomPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
+          <TerritoryBottomPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
 
         </div>
 

@@ -1,13 +1,13 @@
 
 import React from 'react';
 
-import DoubtMainOptionsSubPanel from '../DoubtMainOptionsSubPanel/DoubtMainOptionsSubPanel';
-import PercentageSubPanel from '../PercentageSubPanel/PercentageSubPanel';
+import TerritoryDoubtMainOptionsSubPanel from '../TerritoryDoubtMainOptionsSubPanel/TerritoryDoubtMainOptionsSubPanel';
+import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
-import './DoubtPanel.css';
+import './TerritoryDoubtPanel.css';
 
-export default class DoubtPanel extends React.Component
+export default class TerritoryDoubtPanel extends React.Component
 {
   fogRadioButtonId = "fogRadioButton";
   fogRadioButtonCaption = "NEBBIA";
@@ -58,9 +58,9 @@ export default class DoubtPanel extends React.Component
   render()
   {
     return (
-      <div className="doubt-panel">
+      <div className="territory-doubt-panel">
         <div></div>
-        <DoubtMainOptionsSubPanel 
+        <TerritoryDoubtMainOptionsSubPanel 
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           fogRadioButtonId={this.fogRadioButtonId}
@@ -75,7 +75,7 @@ export default class DoubtPanel extends React.Component
           allRadioButtonCaption={this.allRadioButtonCaption}
           allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
         />
-        <PercentageSubPanel
+        <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           percentageRadioButtonId={this.percentageRadioButtonId}

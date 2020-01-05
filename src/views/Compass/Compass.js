@@ -1,6 +1,6 @@
 import React from 'react'
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
-import SlidingPanel from '../../general/SlidingPanel/SlidingPanel';
+import SlidingPanel from '../../panels/SlidingPanel/SlidingPanel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
