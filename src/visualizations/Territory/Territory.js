@@ -12,6 +12,7 @@ export default class Territory extends React.Component
     V.initialize(this._rootNode, this.props.data);
     this.props.containerSetTerritorySetHighlightMode(this.setHighlightMode);
     this.props.containerSetTerritorySetHillColoringMode(this.setHillColoringMode);
+    this.props.containerSetTerritoryShowHills(this.showHills);
   }
 
   componentWillUnmount()
@@ -22,6 +23,8 @@ export default class Territory extends React.Component
   setHighlightMode = value => V.setHighlightMode(value);
 
   setHillColoringMode = value => V.setHillColoringMode(value);
+
+  showHills = opacity => V.showHills(opacity);
 
   _setRef(componentNode)
   {

@@ -50,6 +50,9 @@ export default class TerritoryWrapper extends React.Component
 
   containerSetTerritorySetHillColoringMode = callback => this.territorySetHillColoringMode = callback;
 
+  containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;  
+  callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
+
   hillColoringModeMap = new Map([
     [ "cronologia", 1],
     [ "volume", 2 ]
@@ -70,11 +73,12 @@ export default class TerritoryWrapper extends React.Component
               data={this.state.data} 
               containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
               containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
+              containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
             /> }
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
 
-          <TerritoryBottomPanel />
+          <TerritoryBottomPanel callTerritoryShowHills={this.callTerritoryShowHills} />
 
         </div>
 
