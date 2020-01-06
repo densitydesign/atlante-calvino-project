@@ -1,0 +1,14 @@
+
+.territory-timeline-panel {
+  background-color : white;
+  position : absolute;
+  top: 70%;
+  height: 40%;
+  width : 100%;
+  z-index : 2;
+/*  
+  display : grid;
+  grid-template-columns : 3fr 27fr 1fr;
+*/
+  display : flex;
+}

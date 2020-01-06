@@ -7,13 +7,15 @@ import './TerritoryBottomPanel.css';
 */
 
 import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
+import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
 
 export default class TerritoryBottomPanel extends React.Component
 {
   render()
   {
+/*        <TerritoryLegendPanel /> */    
     return (
-        <TerritoryLegendPanel />
+      <TerritoryTimelinePanel />
     );
   }
 }
