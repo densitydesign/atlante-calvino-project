@@ -11,7 +11,7 @@ let data = {
 	keyboardCommandsOn: true,
 	metaballWantedCoves: true,
 	mode: 'default'
-}
+};
 
 let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
@@ -40,7 +40,7 @@ class VClass
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
 
-    const collections = getCollections();
+    const collections = GlobalData.collections;
     const allowedCollections = data.allowedCollections.split(",");
 
     json_nodes = json_nodes.filter(function(item) {
@@ -97,12 +97,6 @@ class VClass
       .scaleLinear()
       .domain(d3.extent(json_nodes, function(d) { return d.attributes.first_publication; }))
       .range(["#ff6347", "#455A64"]);
-
-    this.col_collections = d3
-      .scaleOrdinal()
-      .domain(collections.map(d => d.id))
-      .range(collections.map(d => d.c))
-      .unknown('transparent');
 
     const circled_numbers = d3
       .scaleOrdinal()
@@ -343,7 +337,7 @@ class VClass
           // remove first publication in the second row for short stories
           // return '&#9737; ' + d.first_publication;
         } else {
-          return '<tspan fill="' + this.col_collections(d.id) + '">' + circled_numbers(i) + '</tspan> ' + getCollections().filter(e => d.id == e.id)[0].year;
+          return '<tspan fill="' + GlobalData.col_collections(d.id) + '">' + circled_numbers(i) + '</tspan> ' + GlobalData.collections.filter(e => d.id == e.id)[0].year;
         }
       });
 
@@ -523,7 +517,7 @@ console.log("tilting");
       switch(this.hillColoringMode)
       {
         case 1 : allHills.style("fill", d => this.colour(d.first_publication)); break;
-        case 2 : allHills.style("fill", d => this.col_collections(d.collection)); break;
+        case 2 : allHills.style("fill", d => GlobalData.col_collections(d.collection)); break;
       }
 
       return;
@@ -736,185 +730,6 @@ function array_intersection(a1, a2)
 	}
 
 	return result;
-}
-
-function getCollections() 
-{
-	const collections = [
-    {
-			'n': 'Il sentiero dei nidi di ragno',
-			'id': 'V001',
-			'year': 1947,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Ultimo viene il corvo',
-			'id': 'V002',
-			'year': 1949,
-			'c': '#e9d05d',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Il visconte dimezzato',
-			'id': 'V003',
-			'year': 1952,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'L\'entrata in guerra',
-			'id': 'V004',
-			'year': 1954,
-			'c': '#12b259',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Il barone rampante',
-			'id': 'V005',
-			'year': 1957,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'I racconti',
-			'id': 'V006',
-			'year': 1958,
-			'c': '#476a70',
-			'has_metaball': true,
-			'concavityTolerance': 1.2
-		},
-		{
-			'n': 'La formica argentina',
-			'id': 'V007',
-			'year': 1957,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Il cavaliere inesistente',
-			'id': 'V008',
-			'year': 1959,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'La giornata di uno scrutatore',
-			'id': 'V009',
-			'year': 1963,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'La speculazione edilizia',
-			'id': 'V010',
-			'year': 1963,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Marcovaldo',
-			'id': 'V011',
-			'year': 1963,
-			'c': '#9f73b2',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'La nuvola di smog e la formica argentina',
-			'id': 'V012',
-			'year': 1965,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Le cosmicomiche',
-			'id': 'V013',
-			'year': 1965,
-			'c': '#e89fc0',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Ti con zero',
-			'id': 'V014',
-			'year': 1967,
-			'c': '#581745',
-			'has_metaball': true,
-			'concavityTolerance': 1.2
-		},
-		{
-			'n': 'La memoria del mondo',
-			'id': 'V015',
-			'year': 1968,
-			'c': '#00b1b3',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Il castello dei destini incrociati',
-			'id': 'V016',
-			'year': 1969,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Gli amori difficili',
-			'id': 'V017',
-			'year': 1970,
-			'c': '#f0be96',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Le città invisibili',
-			'id': 'V018',
-			'year': 1972,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Il castello dei destini incrociati (riedizione)',
-			'id': 'V019',
-			'year': 1973,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Eremita a Parigi',
-			'id': 'V020',
-			'year': 1974,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Se una notte d\'inverno un viaggiatore',
-			'id': 'V021',
-			'year': 1979,
-			'c': '#AEB6BF',
-			'has_metaball': false
-		},
-		{
-			'n': 'Palomar',
-			'id': 'V022',
-			'year': 1983,
-			'c': '#94d2ba',
-			'has_metaball': true,
-			'concavityTolerance': 1.1
-		},
-		{
-			'n': 'Cosmicomiche vecchie e nuove',
-			'id': 'V023',
-			'year': 1984,
-			'c': '#f1634b',
-			'has_metaball': true,
-			'concavityTolerance': 1.2
-		}
-  ];
-  
-	return collections;
 }
 
 function clone_d3_selection(selection, i) 

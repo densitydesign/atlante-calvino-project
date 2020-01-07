@@ -17,7 +17,7 @@ export default class TerritoryTimelinePanel extends React.Component
   {
     return (
       <div className="territory-timeline-panel">
-        <TerritoryTimelineWrapper />
+        <TerritoryTimelineWrapper data={this.props.data} />
       </div>
     );
   }

@@ -1,6 +1,10 @@
 
 import * as d3 from 'd3';
 
+import GlobalData from '../../utilities/GlobalData';
+
+let data = {};
+
 class VClass
 {
   initialize = (el, input_data) =>
@@ -9,7 +13,7 @@ class VClass
 
   destroy = () => {};
 
-  prepareTimeline = (json_nodes, col_collections) => 
+  prepareTimeline = json_nodes => 
   {
     let margin = { top: 10, right: 5, bottom: 10, left: 10 };
 
@@ -86,7 +90,7 @@ class VClass
       .append("g")
       .classed("cell_node", true);
 
-    let colls = getCollections().map(c => c.id);
+    let colls = GlobalData.collections.map(c => c.id);
 
     data.timeline_dot = cell
       .append("circle")
@@ -96,7 +100,7 @@ class VClass
       })
       .attr("cx", d => d.data.x)
       .attr("cy", d => d.data.y)
-      .attr("fill", d => d.data.attributes.collections.length ? col_collections(d.data.attributes.collections[0]) : "#FFFFFF")
+      .attr("fill", d => d.data.attributes.collections.length ? GlobalData.col_collections(d.data.attributes.collections[0]) : "#FFFFFF")
       .attr("stroke", d => {
         if(d.data.attributes.collections.length) {
           if(colls.includes(d.data.attributes.collections[0])) {
@@ -111,14 +115,14 @@ class VClass
         [0, 5],
         [data.timeline_width - margin.left - margin.right, data.timeline_height - 5]
       ])
-      .on("start brush", brushed);
+      .on("start brush", this.brushed);
 
     brushGroup
       .call(data.brush)
       .call(data.brush.move, [data.timeline_x.domain()[0], data.timeline_x.domain()[1]].map(data.timeline_x))
       .selectAll(".overlay")
       .each(d => d.type = "selection")
-      .on("mousedown touchstart", brushcentered);
+      .on("mousedown touchstart", this.brushcentered);
 
     // d3.select('.handle--e').style('stroke-dasharray', `0,6,${data.timeline_height-4},117`)
     // d3.select('.handle--w').style('stroke-dasharray', `0,${data.timeline_height+6+6},0`)
@@ -157,7 +161,7 @@ class VClass
     })
     .style('opacity', 0.1)
 
-    applyBeeSwarmFilter();
+//    applyBeeSwarmFilter();
   }
 }
 
