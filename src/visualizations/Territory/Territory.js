@@ -28,15 +28,12 @@ export default class Territory extends React.Component
         setDataExtent = extent  => V.setDataExtent(extent);
   applyBeeSwarmFilter = ()      => V.applyBeeSwarmFilter();
 
-  _setRef(componentNode)
-  {
-    this._rootNode = componentNode;
-  }
+  _setRef = componentNode => this._rootNode = componentNode;
 
   render()
   {
     const style = { width : "100%", height : "70%", flexGrow : 1 };
 
-    return <svg id={this.props.id} style={style} ref={this._setRef.bind(this)}></svg>;
+    return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
   }
 }
