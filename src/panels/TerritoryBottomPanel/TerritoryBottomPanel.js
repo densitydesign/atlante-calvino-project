@@ -15,7 +15,10 @@ export default class TerritoryBottomPanel extends React.Component
   {
 /*        <TerritoryLegendPanel /> */    
     return (
-      <TerritoryTimelinePanel callTerritoryShowHills={this.props.callTerritoryShowHills} />
+      <TerritoryTimelinePanel 
+        callTerritoryShowHills={this.props.callTerritoryShowHills}
+        callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
+        callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
     );
   }
 }

@@ -13,6 +13,8 @@ export default class Territory extends React.Component
     this.props.containerSetTerritorySetHighlightMode(this.setHighlightMode);
     this.props.containerSetTerritorySetHillColoringMode(this.setHillColoringMode);
     this.props.containerSetTerritoryShowHills(this.showHills);
+    this.props.containerSetTerritorySetDataExtent(this.setDataExtent);
+    this.props.containerSetTerritoryApplyBeeSwarmFilter(this.applyBeeSwarmFilter);
   }
 
   componentWillUnmount()
@@ -20,11 +22,11 @@ export default class Territory extends React.Component
     V.destroy(this._rootNode);
   }
 
-  setHighlightMode = value => V.setHighlightMode(value);
-
-  setHillColoringMode = value => V.setHillColoringMode(value);
-
-  showHills = opacity => V.showHills(opacity);
+     setHighlightMode = value   => V.setHighlightMode(value);
+  setHillColoringMode = value   => V.setHillColoringMode(value);
+            showHills = opacity => V.showHills(opacity);
+        setDataExtent = extent  => V.setDataExtent(extent);
+  applyBeeSwarmFilter = ()      => V.applyBeeSwarmFilter();
 
   _setRef(componentNode)
   {

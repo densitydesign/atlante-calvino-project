@@ -50,8 +50,14 @@ export default class TerritoryWrapper extends React.Component
 
   containerSetTerritorySetHillColoringMode = callback => this.territorySetHillColoringMode = callback;
 
-  containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;  
+  containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
+
+  containerSetTerritorySetDataExtent = callback => this.territorySetDataExtent = callback;
+  callTerritorySetDataExtent = extent => this.territorySetDataExtent(extent);
+
+  containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
+  callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
 
   hillColoringModeMap = new Map([
     [ "cronologia", 1],
@@ -74,11 +80,17 @@ export default class TerritoryWrapper extends React.Component
               containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
               containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
               containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
+              containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
+              containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
             /> }
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
 
-          <TerritoryBottomPanel callTerritoryShowHills={this.callTerritoryShowHills} />
+          <TerritoryBottomPanel 
+            callTerritoryShowHills={this.callTerritoryShowHills}
+            callTerritorySetDataExtent={this.callTerritorySetDataExtent}
+            callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
+          />
 
         </div>
 

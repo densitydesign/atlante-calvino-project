@@ -6,7 +6,9 @@ import './TerritoryTimelinePanel.css';
 export default class TerritoryTimelinePanel extends React.Component
 {
   rectClick = () => {
-    this.props.callTerritoryShowHills(0);
+//    this.props.callTerritoryShowHills(0);    
+    this.props.callTerritorySetDataExtent([1950, 1960]);
+    this.props.callTerritoryApplyBeeSwarmFilter();
   }
 
   render()

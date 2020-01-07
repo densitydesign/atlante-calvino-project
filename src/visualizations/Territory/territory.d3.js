@@ -458,6 +458,20 @@ class VClass
     .style("fill-opacity", opacity)
     .style("stroke-opacity", opacity);
 
+  setDataExtent = extent => data.extent = extent;
+
+  applyBeeSwarmFilter = () => {
+    d3
+      .selectAll('g.node')
+      .each(function(d) {
+        if(+d.attributes.first_publication >= data.extent[0] && +d.attributes.first_publication <= data.extent[1]) {
+          d3.select(this).style("opacity", 1);
+        } else {
+          d3.select(this).style("opacity", 0.15);
+        }
+      });
+  }  
+
   // 1 : first publication year; 2 : collection
   setHillColoringMode = value => {
     this.hillColoringMode = value;
