@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import GlobalData from '../../utilities/GlobalData';
 
 let data = {
-	allowedCollections: "all", // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
+//	allowedCollections: "all", // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 	timeline_x: 0,
 	timeline_y: 0,
 	timeline_dot: null,
@@ -31,6 +31,7 @@ let drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative 
 class VClass
 {
   initialize = (el, input_data) => {
+console.log("territory initialize");    
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
     let json_nodes = input_data.json_nodes;
@@ -41,9 +42,9 @@ class VClass
     svg = d3.select(el).style("touch-action", "manipulation");
 
     const collections = GlobalData.collections;
-    const allowedCollections = data.allowedCollections.split(",");
+//    const allowedCollections = data.allowedCollections.split(",");
 
-    json_nodes = json_nodes.filter(function(item) {
+/*    json_nodes = json_nodes.filter(function(item) {
 
       return (
         data.allowedCollections = "all" ||
@@ -51,9 +52,9 @@ class VClass
         array_intersection(allowedCollections, item.attributes.collections).length > 0
       );
 
-    });
+    });*/
 
-    json_nodes.forEach(
+/*    json_nodes.forEach(
       function(n)
       {
         // fix orientation of the viz
@@ -67,15 +68,15 @@ class VClass
         } else {
           n.attributes.collections = [];
         }
-      });
+      });*/
 
     // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
-    json_nodes = json_nodes.sort((a, b) => a.y - b.y);
+//    json_nodes = json_nodes.sort((a, b) => a.y - b.y);
 
-    const size_ext = d3.extent(json_nodes, d => d.size);
-    data.min_size = size_ext[0] / 8;
+//    const size_ext = d3.extent(json_nodes, d => d.size);
+//    data.min_size = size_ext[0] / 8;
 
-    json_nodes.forEach(create_item_steps);
+//    json_nodes.forEach(create_item_steps);
 
     const svg_main_group = svg.append("g");
 
@@ -544,36 +545,8 @@ console.log("tilting");
   }
 }
 
-function interpolateSpline(x) 
-{
-	let y;
 
-	// The cubic spline interpolation has been calculated "heuristically" by using this service:
-	// https://tools.timodenk.com/cubic-spline-interpolation
-
-	// Inserted values are:
-	// x, y
-	// 0, 0
-	// 0.1, 0.2
-	// 0.55, 0.65
-	// 0.8, 0.8
-	// 1, 1
-
-	if(x >= 0 && x <= 0.1) {
-		y = (-8.7269 * Math.pow(x, 3)) + (1.1764 * Math.pow(10, -60) * Math.pow(x, 2)) + (2.0873 * x) + (0);
-	} else if(x > 0.1 && x <= 0.55) {
-		y = (1.7416 * Math.pow(x, 3)) + (-3.1405 * Math.pow(x, 2)) + (2.4013 * x) + (-1.0468 * Math.pow(10, -2))
-	} else if(x > 0.55 && x <= 0.8) {
-		y = (2.2326 * Math.pow(x, 3)) + (-3.9507 * Math.pow(x, 2)) + (2.8469 * x) + (-9.2166 * Math.pow(10, -2))
-	} else if(x > 0.8 && x <= 1) {
-		y = (-2.3458 * Math.pow(x, 3)) + (7.0374 * Math.pow(x, 2)) + (-5.9436 * x) + (2.2520)
-	} else {
-		y = x
-	}
-
-	return y
-}
-
+/*
 function create_item_steps(d)
 {
 	// reverse the order of collections, so to have the older ones at the bottom of the hills
@@ -659,7 +632,7 @@ function create_item_steps(d)
 
 	return d.steps;
 }
-
+*/
 function prepareMetaballData(json_nodes, collection, lineColor) 
 {
 	let flattened_steps = flatten_items_steps(json_nodes);

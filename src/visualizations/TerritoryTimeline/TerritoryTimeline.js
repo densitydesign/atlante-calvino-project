@@ -7,6 +7,8 @@ export default class TerritoryTimeline extends React.Component
 {
   componentDidMount()
   {
+console.log("TerritoryTimeline.componentDidMount");
+console.log("this.props.data : ", this.props.data);    
     V.initialize(this._rootNode, this.props.data);    
   }
 
@@ -19,6 +21,6 @@ export default class TerritoryTimeline extends React.Component
 
   render()
   {
-    return <svg id={this.props.id} ref={this._setRef}></svg>;
+    return <svg id={this.props.id} width="100%" ref={this._setRef}></svg>;
   }
 }

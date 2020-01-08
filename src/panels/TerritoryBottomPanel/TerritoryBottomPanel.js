@@ -12,10 +12,11 @@ import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelineP
 export default class TerritoryBottomPanel extends React.Component
 {
   render()
-  {
+  {    
 /*        <TerritoryLegendPanel /> */    
     return (
       <TerritoryTimelinePanel 
+        data={this.props.data}
         callTerritoryShowHills={this.props.callTerritoryShowHills}
         callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
         callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
