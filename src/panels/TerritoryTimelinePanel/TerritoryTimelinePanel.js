@@ -15,9 +15,22 @@ export default class TerritoryTimelinePanel extends React.Component
 
   render()
   {
+if(this.props.callTerritoryApplyBeeSwarmFilter)
+{
+  console.log("TerritoryTimelinePanel.render() - this.props.callTerritoryApplyBeeSwarmFilter has value");
+}
+else
+{
+  console.log("TerritoryTimelinePanel.render() - this.props.callTerritoryApplyBeeSwarmFilter null");
+}
+
+
     return (
       <div className="territory-timeline-panel">
-        <TerritoryTimelineWrapper data={this.props.data} />
+        <TerritoryTimelineWrapper 
+          data={this.props.data}
+          callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
+          callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
       </div>
     );
   }

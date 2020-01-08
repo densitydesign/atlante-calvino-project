@@ -9,8 +9,22 @@ export default class TerritoryTimeline extends React.Component
   {
 console.log("TerritoryTimeline.componentDidMount");
 console.log("this.props.data : ", this.props.data);    
-    V.initialize(this._rootNode, this.props.data);    
-  }
+
+if(this.props.callTerritoryApplyBeeSwarmFilter)
+{
+  console.log("TerritoryTimeline.componentDidMount() - this.props.callTerritoryApplyBeeSwarmFilter has value");
+}
+else
+{
+  console.log("TerritoryTimeline.componentDidMount() - this.props.callTerritoryApplyBeeSwarmFilter null");
+}
+
+    V.initialize(
+      this._rootNode, 
+      this.props.data,
+      this.props.callTerritorySetDataExtent,
+      this.props.callTerritoryApplyBeeSwarmFilter);
+  }              
 
   componentWillUnmount()
   {

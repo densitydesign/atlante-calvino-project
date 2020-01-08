@@ -70,6 +70,15 @@ export default class TerritoryWrapper extends React.Component
 console.log("TerritoryWrapper.render()");
 console.log("data : ", this.state.data);
 
+if(this.callTerritoryApplyBeeSwarmFilter)
+{
+  console.log("TerritoryWrapper.render() - this.callTerritoryApplyBeeSwarmFilter has value");
+}
+else
+{
+  console.log("TerritoryWrapper.render() - this.callTerritoryApplyBeeSwarmFilter null");
+}
+
     return (
       <div className="main">
         <TerritoryHeader callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode} />

@@ -456,6 +456,9 @@ console.log("territory initialize");
   setDataExtent = extent => data.extent = extent;
 
   applyBeeSwarmFilter = () => {
+
+    if(!data.extent) return;
+
     d3
       .selectAll('g.node')
       .each(function(d) {
