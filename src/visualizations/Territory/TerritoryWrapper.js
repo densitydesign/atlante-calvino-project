@@ -158,7 +158,7 @@ function process_json_nodes(json_nodes, x_csv2, allowedCollections)
 
     return (
       allowedCollections = "all" ||
-      (allowedCollectionsSplit.includes("undefined") && item.attributes.collections == undefined) ||
+      (allowedCollectionsSplit.includes("undefined") && item.attributes.collections === undefined) ||
       array_intersection(allowedCollectionsSplit, item.attributes.collections).length > 0
     );
 
@@ -212,8 +212,8 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
     let pos_1 = i / d.steps.length;
     let pos_2 = pos_1 * d.attributes.collections.length;
     let collection_here = d.attributes.collections[Math.floor(pos_2)];
-    let first_elem = (i == (d.steps.length - 1));
-    let last_elem = (i == 0);
+    let first_elem = (i === (d.steps.length - 1));
+    let last_elem = (i === 0);
     let n_steps = d.steps.length;
     let csv_item = x_csv2[d.id];
 
@@ -226,48 +226,48 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'last_elem': last_elem,
       'n_steps': n_steps,
 
-      'generico_non_terrestre': csv_item == undefined ? 0 : csv_item.generico_non_terrestre,
-      'generico_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_non_terrestre_abs,
-      'n_generico_non_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_non_terrestre,
+      'generico_non_terrestre': csv_item === undefined ? 0 : csv_item.generico_non_terrestre,
+      'generico_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_non_terrestre_abs,
+      'n_generico_non_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_non_terrestre,
 
-      'generico_terrestre': csv_item == undefined ? 0 : csv_item.generico_terrestre,
-      'generico_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_terrestre_abs,
-      'n_generico_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_terrestre,
+      'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
+      'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
+      'n_generico_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_terrestre,
 
-      'inventato': csv_item == undefined ? 0 : csv_item.inventato,
-      'inventato_abs': csv_item == undefined ? 0 : csv_item.inventato_abs,
-      'n_inventato': csv_item == undefined ? 0 : csv_item.n_inventato,
+      'inventato': csv_item === undefined ? 0 : csv_item.inventato,
+      'inventato_abs': csv_item === undefined ? 0 : csv_item.inventato_abs,
+      'n_inventato': csv_item === undefined ? 0 : csv_item.n_inventato,
 
-      'no_ambientazione': csv_item == undefined ? 0 : csv_item.no_ambientazione,
-      'no_ambientazione_abs': csv_item == undefined ? 0 : csv_item.no_ambientazione_abs,
-      'n_no_ambientazione': csv_item == undefined ? 0 : csv_item.n_no_ambientazione,
+      'no_ambientazione': csv_item === undefined ? 0 : csv_item.no_ambientazione,
+      'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
+      'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
-      'nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre,
-      'nominato_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre_abs,
-      'n_nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_non_terrestre,
+      'nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre,
+      'nominato_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre_abs,
+      'n_nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_non_terrestre,
 
-      'nominato_terrestre': csv_item == undefined ? 0 : csv_item.nominato_terrestre,
-      'nominato_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_terrestre_abs,
-      'n_nominato_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_terrestre,
+      'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
+      'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
+      'n_nominato_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_terrestre,
 
-      'nebbia_normalizzata': csv_item == undefined ? 0 : csv_item.nebbia_normalizzata,
-      'cancellazione_normalizzata': csv_item == undefined ? 0 : csv_item.cancellazione_normalizzata,
-      'nebbia': csv_item == undefined ? 0 : csv_item.nebbia,
-      'cancellazione': csv_item == undefined ? 0 : csv_item.cancellazione,
-      'norma_pct_caratteri_nebbia_cancellazione': csv_item == undefined ? 0 : csv_item.norma_pct_caratteri_nebbia_cancellazione,
+      'nebbia_normalizzata': csv_item === undefined ? 0 : csv_item.nebbia_normalizzata,
+      'cancellazione_normalizzata': csv_item === undefined ? 0 : csv_item.cancellazione_normalizzata,
+      'nebbia': csv_item === undefined ? 0 : csv_item.nebbia,
+      'cancellazione': csv_item === undefined ? 0 : csv_item.cancellazione,
+      'norma_pct_caratteri_nebbia_cancellazione': csv_item === undefined ? 0 : csv_item.norma_pct_caratteri_nebbia_cancellazione,
 
-      'nebbia_words_ratio': csv_item == undefined ? 0 : csv_item.nebbia_words_ratio,
-      'cancellazione_words_ratio': csv_item == undefined ? 0 : csv_item.cancellazione_words_ratio,
-      'dubitative_ratio': csv_item == undefined ? 0 : csv_item.dubitative_ratio,
+      'nebbia_words_ratio': csv_item === undefined ? 0 : csv_item.nebbia_words_ratio,
+      'cancellazione_words_ratio': csv_item === undefined ? 0 : csv_item.cancellazione_words_ratio,
+      'dubitative_ratio': csv_item === undefined ? 0 : csv_item.dubitative_ratio,
 
-      'lists_f_ratio': csv_item == undefined ? 0 : csv_item.lists_f_ratio,
-      'lists_m_ratio': csv_item == undefined ? 0 : csv_item.lists_m_ratio,
-      'lists_p_ratio': csv_item == undefined ? 0 : csv_item.lists_p_ratio,
-      'lists_s_ratio': csv_item == undefined ? 0 : csv_item.lists_s_ratio,
+      'lists_f_ratio': csv_item === undefined ? 0 : csv_item.lists_f_ratio,
+      'lists_m_ratio': csv_item === undefined ? 0 : csv_item.lists_m_ratio,
+      'lists_p_ratio': csv_item === undefined ? 0 : csv_item.lists_p_ratio,
+      'lists_s_ratio': csv_item === undefined ? 0 : csv_item.lists_s_ratio,
 
-      'lists_are_present': csv_item == undefined ? 0 : csv_item.lists_are_present,
-      'lists_ratio_with_threshold': csv_item == undefined ? 0 : csv_item.lists_ratio_with_threshold,
-      'lists_ratio_is_below_threshold': csv_item == undefined ? false : csv_item.lists_ratio_is_below_threshold
+      'lists_are_present': csv_item === undefined ? 0 : csv_item.lists_are_present,
+      'lists_ratio_with_threshold': csv_item === undefined ? 0 : csv_item.lists_ratio_with_threshold,
+      'lists_ratio_is_below_threshold': csv_item === undefined ? false : csv_item.lists_ratio_is_below_threshold
     };
   });
 
@@ -328,10 +328,10 @@ function calculate_item_data(obj)
     cancellazione_words_ratio: (+obj.cancellazione_words_ratio),
     dubitative_ratio: (+obj.dubitative_ratio),
 
-    lists_f_ratio: lists_sum == 0 ? 0 : (+obj.n_lists_f) / lists_sum,
-    lists_m_ratio: lists_sum == 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m)) / lists_sum,
-    lists_p_ratio: lists_sum == 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p)) / lists_sum,
-    lists_s_ratio: lists_sum == 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p) + (+obj.n_lists_s)) / lists_sum,
+    lists_f_ratio: lists_sum === 0 ? 0 : (+obj.n_lists_f) / lists_sum,
+    lists_m_ratio: lists_sum === 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m)) / lists_sum,
+    lists_p_ratio: lists_sum === 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p)) / lists_sum,
+    lists_s_ratio: lists_sum === 0 ? 0 : ((+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p) + (+obj.n_lists_s)) / lists_sum,
 
     lists_are_present: lists_sum > 0,
     lists_ratio_with_threshold: Math.max(lists_ratio_threshold, lists_ratio),
@@ -357,7 +357,7 @@ function array_intersection(a1, a2)
 {
 	let result = [];
 
-	if(a1 == undefined || a1.length == 0 || a2 == undefined || a2.length == 0) return result;
+	if(a1 === undefined || a1.length === 0 || a2 === undefined || a2.length === 0) return result;
 
 	for(let i = 0; i < a1.length; ++i) {
 		let item = a1[i];

@@ -1,5 +1,4 @@
 import React from 'react';
-import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import '../../App.css';
 
 class Footer extends React.Component

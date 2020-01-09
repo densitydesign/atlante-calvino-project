@@ -47,7 +47,7 @@ export default class TerritoryDoubtPanel extends React.Component
     const buttonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === buttonId);
     buttonStateCopy.pressed = true;
 
-    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id != buttonId);
+    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id !== buttonId);
     otherButtons.forEach(button => button.pressed = false);
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });

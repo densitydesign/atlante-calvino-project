@@ -313,7 +313,7 @@ console.log("territory initialize");
       .attr('font-size', '1.1rem')
       .text(function(d) {
         // V016 - "il castello dei destini incrociati" gets anyway the first publication year in the label
-        if((d.attributes.type == 'romanzo' || d.attributes.type == 'ibrido') && d.id != "V016") {
+        if((d.attributes.type === 'romanzo' || d.attributes.type === 'ibrido') && d.id !== "V016") {
           return d.attributes.title;
         } else {
           return d.attributes.title + ', ' + d.attributes.first_publication;
@@ -331,14 +331,14 @@ console.log("territory initialize");
       .data(d => d.attributes.collectionsTooltip)
       .enter()
       .append('tspan')
-      .attr('dx', (d, i) => i != 0 ? d.rem / 2 : 0)
+      .attr('dx', (d, i) => i !== 0 ? d.rem / 2 : 0)
       .html((d, i) => {        
         if(d.first_publication) {
           return;
           // remove first publication in the second row for short stories
           // return '&#9737; ' + d.first_publication;
         } else {
-          return '<tspan fill="' + GlobalData.col_collections(d.id) + '">' + circled_numbers(i) + '</tspan> ' + GlobalData.collections.filter(e => d.id == e.id)[0].year;
+          return '<tspan fill="' + GlobalData.col_collections(d.id) + '">' + circled_numbers(i) + '</tspan> ' + GlobalData.collections.filter(e => d.id === e.id)[0].year;
         }
       });
 
@@ -374,7 +374,7 @@ console.log("territory initialize");
   			let one_rem = parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
   			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-        let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+        let translate_string = data.mode !== "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
         
         if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
         else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
@@ -430,7 +430,7 @@ console.log("territory initialize");
       let one_rem = parseInt(d3.select('html').style('font-size'));
       let k = one_rem * (1 / (d3_event_transform_k / scale));
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = data.mode != "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+      let translate_string = data.mode !== "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
 
       if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
       else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
@@ -505,6 +505,8 @@ console.log("tilting");
         this.showHills(0);
 
         break;
+
+      default : break;
     }
   };
 
@@ -522,6 +524,7 @@ console.log("tilting");
       {
         case 1 : allHills.style("fill", d => this.colour(d.first_publication)); break;
         case 2 : allHills.style("fill", d => GlobalData.col_collections(d.collection)); break;
+        default : break;
       }
 
       return;
@@ -696,7 +699,7 @@ function array_intersection(a1, a2)
 {
 	let result = [];
 
-	if(a1 == undefined || a1.length == 0 || a2 == undefined || a2.length == 0) return result;
+	if(a1 === undefined || a1.length === 0 || a2 === undefined || a2.length === 0) return result;
 
 	for(let i = 0; i < a1.length; ++i) {
 		let item = a1[i];
@@ -727,7 +730,7 @@ function clone_d3_selection(selection, i)
   // Iterate on attributes and skip on "id"
   for(let j = 0; j < length; ++j) 
   {
-		if(attr[j].nodeName == "id") continue;
+		if(attr[j].nodeName === "id") continue;
 		cloned.attr(attr[j].name, attr[j].value);
   }
   
