@@ -20,9 +20,9 @@ export default class TerritoryHeader extends React.Component
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
-  changeTextsData = newOptions => console.log("newOptions : ", newOptions);
+  changeTextsData = newOptions => this.props.callTerritoryApplySearchFilterBySearchResults(newOptions);
 
-  changeSearchInput = input => this.props.callTerritoryApplySearchFilter(input);
+  changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);
 
   render()
   {

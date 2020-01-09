@@ -60,8 +60,11 @@ export default class TerritoryWrapper extends React.Component
   containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
   callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
 
-  containerSetTerritoryApplySearchFilter = callback => this.territoryApplySearchFilter = callback;
-  callTerritoryApplySearchFilter = input => this.territoryApplySearchFilter(input);
+  containerSetTerritoryApplySearchFilterByInputText = callback => this.territoryApplySearchFilterByInputText = callback;
+  callTerritoryApplySearchFilterByInputText = input => this.territoryApplySearchFilterByInputText(input);
+
+  containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
+  callTerritoryApplySearchFilterBySearchResults = input => this.territoryApplySearchFilterBySearchResults(input);  
 
   hillColoringModeMap = new Map([
     [ "cronologia", 1],
@@ -85,7 +88,8 @@ console.log("territory wrapper - this.state.data.textsData : ", this.state.data.
         <TerritoryHeader 
           textsData={this.state.data.textsData}
           callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode}
-          callTerritoryApplySearchFilter={this.callTerritoryApplySearchFilter} 
+          callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
+          callTerritoryApplySearchFilterBySearchResults={this.callTerritoryApplySearchFilterBySearchResults}
         />
 
         <div className="territory-body">
@@ -97,7 +101,8 @@ console.log("territory wrapper - this.state.data.textsData : ", this.state.data.
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
-                containerSetTerritoryApplySearchFilter={this.containerSetTerritoryApplySearchFilter}
+                containerSetTerritoryApplySearchFilterByInputText={this.containerSetTerritoryApplySearchFilterByInputText}
+                containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               /> 
 
               <TerritoryBottomPanel 
@@ -194,7 +199,7 @@ function process_json_nodes(json_nodes, x_csv2, allowedCollections)
 }
 
 function getTextsData(json_nodes)
-{
+{  
   const collectionMap = new Map();
 
   GlobalData.collections.forEach(coll => collectionMap.set(coll.id, coll.n));
@@ -212,7 +217,7 @@ function getTextsData(json_nodes)
 
   const title_fn = d => d.attributes.title + " - " + textCollectionsMap.get(d.id).join(" ");
 
-  const textsData = { options : json_nodes.map(d => ({ label : d.attributes.title, id : d.id, desc : title_fn(d) })) };
+  const textsData = { options : json_nodes.map(d => ({ label : d.attributes.title, id : d.id, desc : title_fn(d), status : false })) };
 
   return textsData;
 }

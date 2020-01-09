@@ -15,7 +15,8 @@ export default class Territory extends React.Component
     this.props.containerSetTerritoryShowHills(this.showHills);
     this.props.containerSetTerritorySetDataExtent(this.setDataExtent);
     this.props.containerSetTerritoryApplyBeeSwarmFilter(this.applyBeeSwarmFilter);
-    this.props.containerSetTerritoryApplySearchFilter(this.applySearchFilter);
+    this.props.containerSetTerritoryApplySearchFilterByInputText(this.applySearchFilterByInputText);
+    this.props.containerSetTerritoryApplySearchFilterBySearchResults(this.applySearchFilterBySearchResults);
   }
 
   componentWillUnmount()
@@ -23,12 +24,13 @@ export default class Territory extends React.Component
     V.destroy(this._rootNode);
   }
 
-     setHighlightMode = value     => V.setHighlightMode(value);
-  setHillColoringMode = value     => V.setHillColoringMode(value);
-            showHills = opacity   => V.showHills(opacity);
-        setDataExtent = extent    => V.setDataExtent(extent);
-  applyBeeSwarmFilter = ()        => V.applyBeeSwarmFilter();
-    applySearchFilter = inputText => V.applySearchFilter(inputText);
+                  setHighlightMode =         value => V.setHighlightMode(value);
+               setHillColoringMode =         value => V.setHillColoringMode(value);
+                         showHills =       opacity => V.showHills(opacity);
+                     setDataExtent =        extent => V.setDataExtent(extent);
+               applyBeeSwarmFilter =            () => V.applyBeeSwarmFilter();
+      applySearchFilterByInputText =     inputText => V.applySearchFilterByInputText(inputText);
+  applySearchFilterBySearchResults = searchResults => V.applySearchFilterBySearchResults(searchResults);
 
   _setRef = componentNode => this._rootNode = componentNode;
 

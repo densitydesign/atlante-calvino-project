@@ -236,7 +236,7 @@ console.log("territory initialize");
 
     this.setHillColoringMode(1);
 
-    let label = this.text_nodes
+    this.label = this.text_nodes
       .selectAll('.label')
       .data(function(d) {
         let one_rem = parseInt(d3.select('html').style('font-size'));
@@ -271,7 +271,7 @@ console.log("territory initialize");
       .attr('class', 'label');
 
     // Append title
-    let labelTitle = label
+    let labelTitle = this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('font-family', 'Crimson Text')
@@ -286,7 +286,7 @@ console.log("territory initialize");
       });
 
     // Append collections years
-    let labelCollectionsYears = label
+    let labelCollectionsYears = this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('x', function(d) { return 0; })
@@ -335,7 +335,7 @@ console.log("territory initialize");
   //		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
 
-  		label.attr('transform', function(d) {
+  		V.label.attr('transform', function(d) {
   			let one_rem = parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
   			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
@@ -437,7 +437,7 @@ console.log("territory initialize");
       });
   }  
 
-  applySearchFilter = inputText => {
+  applySearchFilterByInputText = inputText => {
 
     const inputLowerCase = inputText.toLowerCase();
 
@@ -445,14 +445,24 @@ console.log("this.textsData : ", this.textsData);
 
     const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
 
+    this.applySearchFilterBySearchResults(results);
+  }
+
+  applySearchFilterBySearchResults = searchResults => {
+
     this.text_nodes.style("opacity", .35);
 
-    results.forEach(result => 
-//      function(result)
+    this.label.classed("visible", false);
+
+    searchResults.forEach(result => 
       {
         this.text_nodes
           .filter(text_node => text_node.id === result.id)
           .style("opacity", 1);
+
+        this.label
+          .filter(d => d.id === result.id)
+          .classed("visible", true);
       });
   }
 
