@@ -7,6 +7,7 @@ import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
 import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
 import TerritoryStepsPanel from '../../panels/TerritoryStepsPanel/TerritoryStepsPanel';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
+import GlobalData from '../../utilities/GlobalData';
 
 import './TerritoryWrapper.css';
 
@@ -30,7 +31,7 @@ export default class TerritoryWrapper extends React.Component
 
         const json_nodes = process_json_nodes(json.nodes, x_csv2, allowedCollections);
 
-        const textsData = getTextsData();
+        const textsData = getTextsData(json_nodes);
 
         this.setState({
           data : { json_nodes : json_nodes, x_csv2 : x_csv2, textsData : textsData },
@@ -192,15 +193,26 @@ function process_json_nodes(json_nodes, x_csv2, allowedCollections)
   return json_nodes;
 }
 
-function getTextsData()
+function getTextsData(json_nodes)
 {
-  const textsData = {
-    options : [
-      { label : "Il barone rampante", id : "V005", desc : "Il barone rampante" },
-      { label : "Il cavaliere inesistente", id : "V008", desc : "Il cavaliere inesistente" },
-      { label : "La pancia del geco", id : "S187", desc : "La pancia del geco Palomar" }
-    ]
-  };
+  const collectionMap = new Map();
+
+  GlobalData.collections.forEach(coll => collectionMap.set(coll.id, coll.n));
+
+  const textCollectionsMap = new Map();
+
+  json_nodes.forEach(d => {
+
+    if(!textCollectionsMap.get(d.id)) textCollectionsMap.set(d.id, []);
+
+    d.attributes.collections.forEach(coll_id => {
+      if(!textCollectionsMap.get(d.id).includes(coll_id)) textCollectionsMap.get(d.id).push(collectionMap.get(coll_id));
+    });
+  });
+
+  const title_fn = d => d.attributes.title + " - " + textCollectionsMap.get(d.id).join(" ");
+
+  const textsData = { options : json_nodes.map(d => ({ label : d.attributes.title, id : d.id, desc : title_fn(d) })) };
 
   return textsData;
 }
