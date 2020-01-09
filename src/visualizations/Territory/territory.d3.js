@@ -22,11 +22,11 @@ let step_increment = -23;
 let scale;
 let d3_event_transform_k;
 
-let PI = Math.PI;
-let arcMin = 75; // inner radius of the first arc
-let arcWidth = 38;
-let arcPad = 1; // padding between arcs
-let drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+const PI = Math.PI;
+const arcMin = 75; // inner radius of the first arc
+const arcWidth = 38;
+const arcPad = 1; // padding between arcs
+const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 
 class VClass
 {
@@ -41,42 +41,7 @@ console.log("territory initialize");
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
 
-    const collections = GlobalData.collections;
-//    const allowedCollections = data.allowedCollections.split(",");
-
-/*    json_nodes = json_nodes.filter(function(item) {
-
-      return (
-        data.allowedCollections = "all" ||
-        (allowedCollections.includes("undefined") && item.attributes.collections == undefined) ||
-        array_intersection(allowedCollections, item.attributes.collections).length > 0
-      );
-
-    });*/
-
-/*    json_nodes.forEach(
-      function(n)
-      {
-        // fix orientation of the viz
-        n.y *= -1;
-        // n.x*=-1;
-        // handle collections
-        if(n.attributes.collections) {
-          n.attributes.collections = n.attributes.collections.split(';');
-          // remove last element which is always empty due to the fat that all records end with a ";"
-          n.attributes.collections.pop();
-        } else {
-          n.attributes.collections = [];
-        }
-      });*/
-
-    // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
-//    json_nodes = json_nodes.sort((a, b) => a.y - b.y);
-
-//    const size_ext = d3.extent(json_nodes, d => d.size);
-//    data.min_size = size_ext[0] / 8;
-
-//    json_nodes.forEach(create_item_steps);
+//    const collections = GlobalData.collections;
 
     const svg_main_group = svg.append("g");
 
@@ -393,6 +358,8 @@ console.log("territory initialize");
             .translate((w / 2) + x, (h / 2) + y)
             .scale(scale));
     }
+
+    this.textsData = input_data.textsData;
   };
 
   destroy = () => {};
@@ -469,6 +436,25 @@ console.log("territory initialize");
         }
       });
   }  
+
+  applySearchFilter = inputText => {
+
+    const inputLowerCase = inputText.toLowerCase();
+
+console.log("this.textsData : ", this.textsData);    
+
+    const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
+
+    this.text_nodes.style("opacity", .35);
+
+    results.forEach(result => 
+//      function(result)
+      {
+        this.text_nodes
+          .filter(text_node => text_node.id === result.id)
+          .style("opacity", 1);
+      });
+  }
 
   // 1 : first publication year; 2 : collection
   setHillColoringMode = value => {
@@ -549,6 +535,8 @@ console.log("tilting");
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
   }
+
+  
 }
 
 
@@ -728,7 +716,7 @@ function clone_d3_selection(selection, i)
 		.html(innerElements);
 
   // Iterate on attributes and skip on "id"
-  for(let j = 0; j < length; ++j) 
+  for(let j = 0; j < length; ++j)
   {
 		if(attr[j].nodeName === "id") continue;
 		cloned.attr(attr[j].name, attr[j].value);

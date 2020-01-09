@@ -30,8 +30,10 @@ export default class TerritoryWrapper extends React.Component
 
         const json_nodes = process_json_nodes(json.nodes, x_csv2, allowedCollections);
 
+        const textsData = getTextsData();
+
         this.setState({
-          data : { json_nodes : json_nodes, x_csv2 : x_csv2 },
+          data : { json_nodes : json_nodes, x_csv2 : x_csv2, textsData : textsData },
           isLoading : false
         });
       });
@@ -57,6 +59,9 @@ export default class TerritoryWrapper extends React.Component
   containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
   callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
 
+  containerSetTerritoryApplySearchFilter = callback => this.territoryApplySearchFilter = callback;
+  callTerritoryApplySearchFilter = input => this.territoryApplySearchFilter(input);
+
   hillColoringModeMap = new Map([
     [ "cronologia", 1],
     [ "volume", 2 ]
@@ -67,27 +72,22 @@ export default class TerritoryWrapper extends React.Component
 
   render() {
 
-console.log("TerritoryWrapper.render()");
-console.log("data : ", this.state.data);
-
-if(this.callTerritoryApplyBeeSwarmFilter)
-{
-  console.log("TerritoryWrapper.render() - this.callTerritoryApplyBeeSwarmFilter has value");
-}
-else
-{
-  console.log("TerritoryWrapper.render() - this.callTerritoryApplyBeeSwarmFilter null");
-}
+console.log("territory wrapper - this.state.data.textsData : ", this.state.data.textsData);
 
     return (
       <div className="main">
-        <TerritoryHeader callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode} />
+
+        {!this.state.isLoading && 
+
+        <>
+
+        <TerritoryHeader 
+          textsData={this.state.data.textsData}
+          callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode}
+          callTerritoryApplySearchFilter={this.callTerritoryApplySearchFilter} 
+        />
 
         <div className="territory-body">
-
-          {!this.state.isLoading && 
-
-            <>
 
               <Territory 
                 data={this.state.data} 
@@ -96,6 +96,7 @@ else
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
+                containerSetTerritoryApplySearchFilter={this.containerSetTerritoryApplySearchFilter}
               /> 
 
               <TerritoryBottomPanel 
@@ -103,15 +104,15 @@ else
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
-              />
-            
-            </>
-
-            }
+              />            
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
 
         </div>
+
+        </>
+
+        }
 
         <TerritoryFooter callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
 
@@ -138,16 +139,16 @@ function interpolateSpline(x)
 	if(x >= 0 && x <= 0.1) {
 		y = (-8.7269 * Math.pow(x, 3)) + (1.1764 * Math.pow(10, -60) * Math.pow(x, 2)) + (2.0873 * x) + (0);
 	} else if(x > 0.1 && x <= 0.55) {
-		y = (1.7416 * Math.pow(x, 3)) + (-3.1405 * Math.pow(x, 2)) + (2.4013 * x) + (-1.0468 * Math.pow(10, -2))
+		y = (1.7416 * Math.pow(x, 3)) + (-3.1405 * Math.pow(x, 2)) + (2.4013 * x) + (-1.0468 * Math.pow(10, -2));
 	} else if(x > 0.55 && x <= 0.8) {
-		y = (2.2326 * Math.pow(x, 3)) + (-3.9507 * Math.pow(x, 2)) + (2.8469 * x) + (-9.2166 * Math.pow(10, -2))
+		y = (2.2326 * Math.pow(x, 3)) + (-3.9507 * Math.pow(x, 2)) + (2.8469 * x) + (-9.2166 * Math.pow(10, -2));
 	} else if(x > 0.8 && x <= 1) {
-		y = (-2.3458 * Math.pow(x, 3)) + (7.0374 * Math.pow(x, 2)) + (-5.9436 * x) + (2.2520)
+		y = (-2.3458 * Math.pow(x, 3)) + (7.0374 * Math.pow(x, 2)) + (-5.9436 * x) + (2.2520);
 	} else {
-		y = x
+		y = x;
 	}
 
-	return y
+	return y;
 }
 
 function process_json_nodes(json_nodes, x_csv2, allowedCollections)
@@ -189,6 +190,19 @@ function process_json_nodes(json_nodes, x_csv2, allowedCollections)
   json_nodes.forEach(d => create_item_steps(d, json_nodes_min_size, x_csv2));
 
   return json_nodes;
+}
+
+function getTextsData()
+{
+  const textsData = {
+    options : [
+      { label : "Il barone rampante", id : "V005", desc : "Il barone rampante" },
+      { label : "Il cavaliere inesistente", id : "V008", desc : "Il cavaliere inesistente" },
+      { label : "La pancia del geco", id : "S187", desc : "La pancia del geco Palomar" }
+    ]
+  };
+
+  return textsData;
 }
 
 function create_item_steps(d, json_nodes_min_size, x_csv2)

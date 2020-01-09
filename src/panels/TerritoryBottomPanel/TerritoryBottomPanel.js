@@ -13,24 +13,14 @@ export default class TerritoryBottomPanel extends React.Component
 {
   render()
   {    
-
-if(this.props.callTerritoryApplyBeeSwarmFilter)
-{
-  console.log("TerritoryBottomPanel.render() - this.props.callTerritoryApplyBeeSwarmFilter has value");
-}
-else
-{
-  console.log("TerritoryBottomPanel.render() - this.props.callTerritoryApplyBeeSwarmFilter null");
-}
-
-
 /*        <TerritoryLegendPanel /> */    
     return (
       <TerritoryTimelinePanel 
         data={this.props.data}
         callTerritoryShowHills={this.props.callTerritoryShowHills}
         callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
-        callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
+        callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter}
+      />
     );
   }
 }

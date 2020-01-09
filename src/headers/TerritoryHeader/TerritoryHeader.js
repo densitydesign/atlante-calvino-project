@@ -1,6 +1,7 @@
 import React from 'react';
 import MainMenu from '../../general/MainMenu/MainMenu';
 import Options from '../../general/Options/Options';
+import Search from '../../general/Search/Search';
 
 export default class TerritoryHeader extends React.Component
 {
@@ -12,14 +13,21 @@ export default class TerritoryHeader extends React.Component
         { label : "volume", status : false }
       ]
     }
+
   };
 
   changeHillColoringModes = newOptions => this.props.callTerritorySetHillColoringMode(this.getActiveOption(newOptions));
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
+  changeTextsData = newOptions => console.log("newOptions : ", newOptions);
+
+  changeSearchInput = input => this.props.callTerritoryApplySearchFilter(input);
+
   render()
   {
+console.log("territory header - this.props.textsData : ", this.props.textsData);
+
     return (
       <div className="top-nav navigations">
 
@@ -31,10 +39,16 @@ export default class TerritoryHeader extends React.Component
           title=""
           data={this.state.hillColoringModes}
           style={{ gridColumn : "span 8", textAlign : "center" }}
-          changeOptions = { this.changeHillColoringModes }
+          changeOptions={ this.changeHillColoringModes }
         />
 
-        <div style={{ gridColumn : "span 8" }} />
+        <Search
+          style={{gridColumn : "span 8"}}
+          data={this.props.textsData}
+          filterBy={["desc"]}
+          changeOptions={ this.changeTextsData }
+          onInputChange={ this.changeSearchInput }
+        />
 
       </div>
     );

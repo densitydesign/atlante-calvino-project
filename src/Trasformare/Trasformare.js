@@ -335,7 +335,7 @@ class Trasformare extends Component {
 	}
 
 	render() {
-		// console.log(this.state)
+console.log("this.state.ricerca : ", this.state.ricerca);
 
 		return (
 			<div className = "trasformare main">
