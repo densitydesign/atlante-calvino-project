@@ -15,7 +15,8 @@ export default class TerritoryWrapper extends React.Component
 {
   state = {
     data : "data still not loaded",
-    isLoading : true
+    isLoading : true,
+    territoryBottomPanelActive : false
   };
 
   loadData = () =>
@@ -105,12 +106,15 @@ console.log("territory wrapper - this.state.data.textsData : ", this.state.data.
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               /> 
 
+              {this.state.territoryBottomPanelActive &&
+
               <TerritoryBottomPanel 
                 data={this.state.data}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
               />            
+              }
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
 
