@@ -1,5 +1,6 @@
 
 import * as d3 from 'd3';
+import { checkMapAndInsert, CollectionMapNames, prepareMetaballData } from './metaballs';
 
 import GlobalData from '../../utilities/GlobalData';
 
@@ -34,14 +35,24 @@ class VClass
 console.log("territory initialize");    
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
-    let json_nodes = input_data.json_nodes;
+    const json_nodes = input_data.json_nodes;
     data.x_csv2 = input_data.x_csv2;
 
     let w = window.innerWidth;
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
 
-//    const collections = GlobalData.collections;
+    const collections = GlobalData.collections;
+    
+
+    json_nodes.forEach(node =>
+      node.steps.forEach(step =>
+        collections.forEach(coll => 
+          checkMapAndInsert(step, CollectionMapNames.metaballCorner, coll.id, false))));
+
+    collections
+      .filter(coll => (GlobalData.allowedCollections == "all" && coll.has_metaball) || GlobalData.allowedCollectionsSplit.includes(coll.id))
+      .forEach(coll => prepareMetaballData(json_nodes, coll, data.metaballWantedCoves));
 
     const svg_main_group = svg.append("g");
 
@@ -637,6 +648,7 @@ function create_item_steps(d)
 	return d.steps;
 }
 */
+/*
 function prepareMetaballData(json_nodes, collection, lineColor) 
 {
 	let flattened_steps = flatten_items_steps(json_nodes);
@@ -708,7 +720,7 @@ function array_intersection(a1, a2)
 
 	return result;
 }
-
+*/
 function clone_d3_selection(selection, i) 
 {
 	// Assume the selection contains only one object, or just work

@@ -175,6 +175,9 @@ const collections = [
   }
 ];
 
+const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
+
+
 const GlobalData = {
   allVolumes : [
     {"id":"V001","label":"Il sentiero dei nidi di ragno"},
@@ -212,6 +215,8 @@ const GlobalData = {
     }
   },
   collections : collections,
+  allowedCollections : allowedCollections,
+  allowedCollectionsSplit : allowedCollections.split(","),
   col_collections : d3
     .scaleOrdinal()
     .domain(collections.map(d => d.id))

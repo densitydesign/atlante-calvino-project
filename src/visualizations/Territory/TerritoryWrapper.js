@@ -163,21 +163,27 @@ function interpolateSpline(x)
 
 function process_json_nodes(json_nodes, x_csv2, allowedCollections)
 {
-  const allowedCollectionsSplit = allowedCollections.split(",");
-
+console.log("process_json_nodes()");
+console.log("json_nodes.length : ",  json_nodes.length);
+console.log("filtering json_nodes...");
   json_nodes = json_nodes.filter(function(item) {
-
+if(item.id === "S009")
+{
+console.log("GlobalData.allowedCollectionsSplit : ", GlobalData.allowedCollectionsSplit);
+console.log("item.attributes.collections : ", item.attributes.collections);
+}
     return (
-      allowedCollections = "all" ||
-      (allowedCollectionsSplit.includes("undefined") && item.attributes.collections === undefined) ||
-      array_intersection(allowedCollectionsSplit, item.attributes.collections).length > 0
+      GlobalData.allowedCollections === "all" ||
+      (GlobalData.allowedCollectionsSplit.includes("undefined") && item.attributes.collections === undefined) ||
+      array_intersection(GlobalData.allowedCollectionsSplit, item.attributes.collections).length > 0
     );
 
   });
-
+console.log("json_nodes.length : ",  json_nodes.length);
   json_nodes.forEach(
     function(n)
     {
+console.log("calculating json_node collections...");
       // fix orientation of the viz
       n.y *= -1;
       // n.x*=-1;
@@ -186,7 +192,9 @@ function process_json_nodes(json_nodes, x_csv2, allowedCollections)
         n.attributes.collections = n.attributes.collections.split(';');
         // remove last element which is always empty due to the fat that all records end with a ";"
         n.attributes.collections.pop();
+console.log("collections found for ", n.id);
       } else {
+console.log("no collections for ", n.id);
         n.attributes.collections = [];
       }
     });
