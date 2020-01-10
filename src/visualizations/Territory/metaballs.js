@@ -7,7 +7,7 @@ function addWantedCoves(vertex_array, boundary_points, concavityTolerance)
 
 	if(boundary_points_count(boundary_points) <= 3) return boundary_points;
 
-	let internal_points = arr_diff(vertex_array, boundary_points[0]);
+	const internal_points = arr_diff(vertex_array, boundary_points[0]);
 
 	let new_boundary_points = [];
 
@@ -28,8 +28,8 @@ function addWantedCoves(vertex_array, boundary_points, concavityTolerance)
 		do 
     {
 			added_new_internal_points = false;
-			let candidate_cove_points = [];
-			let boundary_dist = Math.sqrt(dsq(p1, p2));
+			const candidate_cove_points = [];
+			const boundary_dist = Math.sqrt(dsq(p1, p2));
 
 			for(let i = 0; i < internal_points.length; ++i) {
 				let ip = internal_points[i];
@@ -136,6 +136,7 @@ function ascendingCoords(a, b)
 
 function borderOrientationIsCounterclockwise(points)
 {
+console.log("borderOrientationIsCounterclockwise");
 	const namedCoordPoints = points.map(vectorPoint_to_namedCoordPoint);
 
 	const barycenter = pointsBarycenter(namedCoordPoints);
@@ -147,6 +148,15 @@ function borderOrientationIsCounterclockwise(points)
 	const minIndex = angles.indexOf(minAngle);
 
   const minSuccessorIndex = (minIndex + 1) % angles.length;
+
+console.log("points : ", points);  
+console.log("angles : ", angles);
+
+console.log("angles[minIndex] : ", angles[minIndex]);
+console.log("angles[minSuccessorIndex] : ", angles[minSuccessorIndex]);
+
+const result = angles[minSuccessorIndex] >= angles[minIndex];
+console.log("result : ", result);
 
 	return angles[minSuccessorIndex] >= angles[minIndex];
 //  return angles[2] > angles[1];
@@ -197,15 +207,15 @@ function boundary2(mesh)
 
 		while(q !== r[0]) 
     {
-			let p = q;
-			let qs = edges[p];
-			let n = qs.length;
+			const p = q;
+			const qs = edges[p];
+			const n = qs.length;
 
 			for(let i = 0; i < n; ++i) 
       {
 				q = qs[i];
 
-				let edge = [p, q].sort().join(":");
+				const edge = [p, q].sort().join(":");
 
 				if(counts[edge]) 
         {
@@ -218,7 +228,7 @@ function boundary2(mesh)
 		}
 	}
 
-	let transformed_array = r.map(id => pointMap.get(id));
+	const transformed_array = r.map(id => pointMap.get(id));
 
 	return [transformed_array];
 }
@@ -426,9 +436,9 @@ function metaball(
 
 	const maxSpread = Math.cos((predecessorCircle.r - centralCircle.r) / predecessorCentralCenterDistance);
 
-	let predecessorCentral_u_values = calculate_u(predecessorCircle, centralCircle);
+	const predecessorCentral_u_values = calculate_u(predecessorCircle, centralCircle);
 
-	let u1 = predecessorCentral_u_values[0];
+	const u1 = predecessorCentral_u_values[0];
 
 	const angleBetweenPredecessorCentralCenters = angle(predecessorCircle.p, centralCircle.p);
 
@@ -449,8 +459,6 @@ const angleBetweenCentralPredecessorCenters = angle(centralCircle.p, predecessor
 const externalAngle = angleBetweenCentralPredecessorCenters - angleBetweenCentralSuccessorCenters;
 const externalAngleIsConcave = Math.abs(externalAngle) < Math.PI;
 // console.log("externalAngleIsConcave : " + externalAngleIsConcave);
-
-let svgContainer = d3.select("svg");
 
 	// Point locations
 	const p1 = getCircleJoint2(predecessorCircle, centralCircle, v);
@@ -480,7 +488,7 @@ let svgContainer = d3.select("svg");
 
 function metaballArc(p1, p3, p4, h1, h3, largeArc, wrappingArc, r) 
 {
-	let s =
+	const s =
 		wrappingArc ?
 		'M' + p1.x + ' ' + p1.y + ' ' +
 		cubic1Path(p3, h1, h3) :
@@ -593,12 +601,9 @@ export function prepareMetaballData(
 	const alpha = 1000000; //150 * scale;
 	const asq = alpha * alpha;
 
-	var w = window.innerWidth;
-	let h = window.innerHeight;
+	const voronoi = d3.voronoi();
 
-	let voronoi = d3.voronoi();
-
-	let mesh = voronoi
+	const mesh = voronoi
 		.triangles(vertex_array)
 		.filter(
 			function(t) {
@@ -609,7 +614,7 @@ export function prepareMetaballData(
 			});
 
 	let boundary_points = boundary2(mesh);
-
+console.log("calling borderOrientationIsCounterclockwise - collection.id : ", collection.id);
 	if(!borderOrientationIsCounterclockwise(boundary_points[0])) 
   {
 		boundary_points[0] = boundary_points[0].reverse();
@@ -620,18 +625,18 @@ export function prepareMetaballData(
 
 	if(boundary_points.length == 0) return;
 
-	let point_circle_map = new Map();
+	const point_circle_map = new Map();
 
 	for(let i = 0; i < hillBase_circles.length; ++i) 
   {
 		point_circle_map.set(vertex_array[i], hillBase_circles[i]);
 	}
 
-	let ordered_boundary_circles = boundary_points[0]
+	const ordered_boundary_circles = boundary_points[0]
 		.slice(0, boundary_points_count(boundary_points))
 		.map(point => point_circle_map.get(point));
 
-	let nCirclesToBeDrawn = ordered_boundary_circles.length;
+	const nCirclesToBeDrawn = ordered_boundary_circles.length;
 //			let nCirclesToBeDrawn = 1;
 
 	renderMetaballLogically(collection, ordered_boundary_circles, nCirclesToBeDrawn);  
@@ -639,16 +644,16 @@ export function prepareMetaballData(
 
 function renderMetaballLogically(collection, hillBaseCircles, nCirclesToBeDrawn) 
 {
-	let nCircles = hillBaseCircles.length;
+	const nCircles = hillBaseCircles.length;
 
 	for(let i = 0; i < nCirclesToBeDrawn; ++i) {
 		let predecessorCircle = hillBaseCircles[i == 0 ? nCircles - 1 : i - 1];
 
-		let centralCircle = hillBaseCircles[i];
+		const centralCircle = hillBaseCircles[i];
 
-		let successorCircle = hillBaseCircles[i < nCircles - 1 ? i + 1 : 0];
+		const successorCircle = hillBaseCircles[i < nCircles - 1 ? i + 1 : 0];
 
-		let lobe = metaball(predecessorCircle, centralCircle, successorCircle);
+		const lobe = metaball(predecessorCircle, centralCircle, successorCircle);
 
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.metaballCorner, collection.id, true);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.lobe, collection.id, lobe);
