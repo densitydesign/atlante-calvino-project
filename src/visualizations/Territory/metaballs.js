@@ -148,7 +148,8 @@ function borderOrientationIsCounterclockwise(points)
 
   const minSuccessorIndex = (minIndex + 1) % angles.length;
 
-	return angles[minSuccessorIndex] > angles[minIndex];
+	return angles[minSuccessorIndex] >= angles[minIndex];
+//  return angles[2] > angles[1];
 }
 
 function boundary2(mesh) 
@@ -158,7 +159,7 @@ function boundary2(mesh)
 	let r;
 	let result = [];
 	let pointMap = new Map();
-console.log("mesh : ", mesh);
+
 	mesh.forEach(
 		triangle => {
 			for(let i = 0; i < 3; ++i) 
@@ -180,8 +181,6 @@ console.log("mesh : ", mesh);
 				else counts[k] = 1;
 			}
 		});
-
-console.log("counts : ", counts);
 
 	while(1)
   {
@@ -571,10 +570,8 @@ export function prepareMetaballData(
   collection, 
   metaballWantedCoves)
 {
-console.log("json_nodes : ", json_nodes);  
-console.log("collection : ", collection);
 	const flattened_steps = flatten_items_steps(json_nodes);
-console.log("flattened_steps : ", flattened_steps);
+
 	const hillBases = flattened_steps
 		.filter(function(d) {
 			return d.first_elem && d.collections.includes(collection.id);
@@ -582,7 +579,7 @@ console.log("flattened_steps : ", flattened_steps);
 
 	const metaballLineBaseSeparation = 30;
 	const metaballLineStepSeparation = 30;
-console.log("hillBases : ", hillBases);
+
 	const hillBase_circles = hillBases.map(hillBase => ({
 		p: { x: hillBase.x, y: hillBase.y },
 		r: hillBase.r + metaballLineBaseSeparation + metaballLineStepSeparation * (hillBase.collections.length - 1 - hillBase.collections.indexOf(collection)),
@@ -592,7 +589,7 @@ console.log("hillBases : ", hillBases);
 	}));
 
 	const vertex_array = circles_to_vector_points(hillBase_circles);
-console.log("hillBase_circles : ", hillBase_circles);
+
 	const alpha = 1000000; //150 * scale;
 	const asq = alpha * alpha;
 
@@ -600,8 +597,7 @@ console.log("hillBase_circles : ", hillBase_circles);
 	let h = window.innerHeight;
 
 	let voronoi = d3.voronoi();
-console.log("vertex_array : ", vertex_array);
-console.log("voronoi : ", voronoi);
+
 	let mesh = voronoi
 		.triangles(vertex_array)
 		.filter(

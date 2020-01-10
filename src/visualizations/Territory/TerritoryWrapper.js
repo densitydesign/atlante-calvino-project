@@ -75,10 +75,8 @@ export default class TerritoryWrapper extends React.Component
   callTerritorySetHillColoringMode = value =>
     this.territorySetHillColoringMode(this.hillColoringModeMap.get(value));
 
-  render() {
-
-console.log("territory wrapper - this.state.data.textsData : ", this.state.data.textsData);
-
+  render() 
+  {
     return (
       <div className="main">
 
@@ -163,15 +161,8 @@ function interpolateSpline(x)
 
 function process_json_nodes(json_nodes, x_csv2, allowedCollections)
 {
-console.log("process_json_nodes()");
-console.log("json_nodes.length : ",  json_nodes.length);
-console.log("filtering json_nodes...");
   json_nodes = json_nodes.filter(function(item) {
-if(item.id === "S009")
-{
-console.log("GlobalData.allowedCollectionsSplit : ", GlobalData.allowedCollectionsSplit);
-console.log("item.attributes.collections : ", item.attributes.collections);
-}
+
     return (
       GlobalData.allowedCollections === "all" ||
       (GlobalData.allowedCollectionsSplit.includes("undefined") && item.attributes.collections === undefined) ||
@@ -179,11 +170,10 @@ console.log("item.attributes.collections : ", item.attributes.collections);
     );
 
   });
-console.log("json_nodes.length : ",  json_nodes.length);
+
   json_nodes.forEach(
     function(n)
     {
-console.log("calculating json_node collections...");
       // fix orientation of the viz
       n.y *= -1;
       // n.x*=-1;
@@ -192,9 +182,7 @@ console.log("calculating json_node collections...");
         n.attributes.collections = n.attributes.collections.split(';');
         // remove last element which is always empty due to the fat that all records end with a ";"
         n.attributes.collections.pop();
-console.log("collections found for ", n.id);
       } else {
-console.log("no collections for ", n.id);
         n.attributes.collections = [];
       }
     });
