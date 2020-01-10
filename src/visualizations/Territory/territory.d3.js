@@ -43,7 +43,18 @@ console.log("territory initialize");
     svg = d3.select(el).style("touch-action", "manipulation");
 
     const collections = GlobalData.collections;
-    
+
+    const boundaries = {
+      top    : d3.min(json_nodes, d => d.y),
+      right  : d3.max(json_nodes, d => d.x),
+      bottom : d3.max(json_nodes, d => d.y),
+      left   : d3.min(json_nodes, d => d.x)
+    };
+
+    center = {
+      x : (boundaries.left + boundaries.right) / 2,
+      y : (boundaries.bottom + boundaries.top) / 2
+    };    
 
     json_nodes.forEach(node =>
       node.steps.forEach(step =>
@@ -56,19 +67,40 @@ console.log("territory initialize");
 
     const svg_main_group = svg.append("g");
 
+    const metaball_group = svg_main_group.append("g").attr("class", "metaball_nodes");
+
+    const metaball_nodes = metaball_group
+      .selectAll(".metaball_node")
+      .data(json_nodes)
+      .enter()
+      .append("g")
+      .attr("class", "metaball_node")
+      .attr("transform", function(d) {
+        return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+      });
+
+    const metaballs = metaball_nodes
+      .selectAll(".metaball")
+      .data(d => d.steps)
+      .enter();
+
+    collections.forEach(coll =>
+      metaballs
+        .filter(d => d[CollectionMapNames.metaballCorner].get(coll.id))
+        .append("svg:path")
+        .attr("class", d => "metaball collection_" + coll.id)
+        .attr("d", d => d[CollectionMapNames.lobe].get(coll.id))
+        .attr("fill", "none")
+        .attr("stroke", d => d[CollectionMapNames.lobeColor].get(coll.id))
+        .attr("stroke-opacity", 0)
+        .attr("stroke-width", 7)
+        .attr('transform', d => {
+          const delta_x = -(+d.x);
+          const delta_y = -(+d.y);
+          return 'translate(' + delta_x + ', ' + delta_y + ')'
+        }));
+
     const g = svg_main_group.append("g").attr("class", "nodes");
-
-    const boundaries = {
-      top    : d3.min(json_nodes, d => d.y),
-      right  : d3.max(json_nodes, d => d.x),
-      bottom : d3.max(json_nodes, d => d.y),
-      left   : d3.min(json_nodes, d => d.x)
-    };
-
-    center = {
-      x : (boundaries.left + boundaries.right) / 2,
-      y : (boundaries.bottom + boundaries.top) / 2
-    };
 
     this.colour = d3
       .scaleLinear()
@@ -79,6 +111,20 @@ console.log("territory initialize");
       .scaleOrdinal()
       .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
       .range(['➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒', '➓']);
+
+    const arcWidth = 38;
+    const arcPad = 1; // padding between arcs
+    const metaballsVisible = new Map();
+
+    collections
+      .filter(coll => coll.has_metaball)
+      .forEach(coll => metaballsVisible.set(coll.id, 1));
+    
+    metaballs
+      .selectAll(".metaball")
+      .transition()
+      .duration(450)
+      .style("stroke-opacity", function(d) { return metaballsVisible.get(d.collection) ? 1 : 0; });
 
     this.nebbia_color_scale = d3
       .scaleLinear()
@@ -341,7 +387,7 @@ console.log("territory initialize");
     function zoom_actions() 
     {
       g.attr("transform", d3.event.transform);
-  //		metaball_group.attr("transform", d3.event.transform);
+  		metaball_group.attr("transform", d3.event.transform);
   //		place_hierarchies_group.attr("transform", d3.event.transform);
   //		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
