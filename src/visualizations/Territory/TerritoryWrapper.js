@@ -156,9 +156,9 @@ function interpolateSpline(x)
 	return y;
 }
 
-function process_json_nodes(json_nodes, x_csv2)
+function process_json_nodes(all_json_nodes, x_csv2)
 {
-  json_nodes = json_nodes.filter(function(item) {
+  let json_nodes = all_json_nodes.filter(function(item) {
 
     return (
       GlobalData.allowedCollections === "all" ||
@@ -186,10 +186,10 @@ function process_json_nodes(json_nodes, x_csv2)
 
   // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
   json_nodes = json_nodes.sort((a, b) => a.y - b.y);      
-
-  const json_nodes_size_extent = d3.extent(json_nodes, d => d.size);
+console.log("json_nodes", json_nodes);
+  const json_nodes_size_extent = d3.extent(all_json_nodes, d => d.size);
   const json_nodes_min_size = json_nodes_size_extent[0] / 8;
-
+console.log("json_nodes_min_size", json_nodes_min_size);
   json_nodes.forEach(d => create_item_steps(d, json_nodes_min_size, x_csv2));
 
   return json_nodes;
