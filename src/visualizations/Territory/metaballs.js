@@ -134,9 +134,35 @@ function ascendingCoords(a, b)
 	return a[0] === b[0] ? b[1] - a[1] : b[0] - a[0];
 }
 
+function rotateArrayLeft(array, n)
+{
+  const a1 = array.slice(0, n);
+  const a2 = array.slice(n);
+  const rotatedArray = a2.concat(a1);
+
+  return rotatedArray;
+}
+
+function rotateArrayRight(array, n)
+{
+  const n2 = array.length - n;
+  const rotatedArray = rotateArrayLeft(array, n2);
+
+  return rotatedArray;  
+}
+
+function arrayDifferences(array)
+{
+console.log("arrayDifferences()");
+console.log("array", array);
+console.log("second items", array.slice(1, array.length));
+  return array.slice(1, array.length).map((d, i) => d - array[i]);
+}
+
 function borderOrientationIsCounterclockwise(points)
 {
-console.log("borderOrientationIsCounterclockwise");
+console.log("borderOrientationIsCounterclockwise()");
+console.log("points", points);
 	const namedCoordPoints = points.map(vectorPoint_to_namedCoordPoint);
 
 	const barycenter = pointsBarycenter(namedCoordPoints);
@@ -151,14 +177,16 @@ console.log("borderOrientationIsCounterclockwise");
 
 console.log("points : ", points);  
 console.log("angles : ", angles);
+console.log("minIndex", minIndex);
 
-console.log("angles[minIndex] : ", angles[minIndex]);
-console.log("angles[minSuccessorIndex] : ", angles[minSuccessorIndex]);
+  const rotatedAngles = rotateArrayLeft(angles, minIndex);
+console.log("rotatedAngles", rotatedAngles);
 
-const result = angles[minSuccessorIndex] >= angles[minIndex];
-console.log("result : ", result);
-
-	return angles[minSuccessorIndex] >= angles[minIndex];
+  const angleDifferences = arrayDifferences(rotatedAngles);
+console.log("angleDifferences", angleDifferences);
+  const negativeDifferencesCount = angleDifferences.reduce((n, val) => n + (val < 0), 0);
+console.log("negativeDifferencesCount", negativeDifferencesCount);
+  return negativeDifferencesCount == 0;
 //  return angles[2] > angles[1];
 }
 
@@ -227,9 +255,13 @@ function boundary2(mesh)
 			}
 		}
 	}
+console.log("r", r);
+console.log("pointMap", pointMap);
 
+const rr = r.map(id => pointMap.get(id));
+console.log("rr", rr);
 	const transformed_array = r.map(id => pointMap.get(id));
-
+console.log("transformed_array", transformed_array);
 	return [transformed_array];
 }
 
@@ -612,10 +644,14 @@ export function prepareMetaballData(
 					dsq(t[0], t[2]) < asq &&
 					dsq(t[1], t[2]) < asq);
 			});
-
-	let boundary_points = boundary2(mesh);
+console.log("mesh", mesh);
+  let boundary_points = boundary2(mesh);
+console.log("boundary_points", boundary_points);  
 console.log("calling borderOrientationIsCounterclockwise - collection.id : ", collection.id);
-	if(!borderOrientationIsCounterclockwise(boundary_points[0])) 
+
+  const border_points = boundary_points[0].slice(0, boundary_points[0].length - 1);
+
+	if(!borderOrientationIsCounterclockwise(border_points)) 
   {
 		boundary_points[0] = boundary_points[0].reverse();
 	}
@@ -644,6 +680,7 @@ console.log("calling borderOrientationIsCounterclockwise - collection.id : ", co
 
 function renderMetaballLogically(collection, hillBaseCircles, nCirclesToBeDrawn) 
 {
+console.log("hillBaseCircles", hillBaseCircles);
 	const nCircles = hillBaseCircles.length;
 
 	for(let i = 0; i < nCirclesToBeDrawn; ++i) {
@@ -652,9 +689,12 @@ function renderMetaballLogically(collection, hillBaseCircles, nCirclesToBeDrawn)
 		const centralCircle = hillBaseCircles[i];
 
 		const successorCircle = hillBaseCircles[i < nCircles - 1 ? i + 1 : 0];
+console.log("predecessorCircle", predecessorCircle); 
+console.log("centralCircle", centralCircle);
+console.log("successorCircle", successorCircle);
 
 		const lobe = metaball(predecessorCircle, centralCircle, successorCircle);
-
+console.log("lobe", lobe);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.metaballCorner, collection.id, true);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.lobe, collection.id, lobe);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.lobeColor, collection.id, collection.c);
