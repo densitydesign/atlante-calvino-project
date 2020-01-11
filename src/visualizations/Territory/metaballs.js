@@ -610,24 +610,26 @@ export function prepareMetaballData(
   collection, 
   metaballWantedCoves)
 {
+console.log("prepareMetaballData()");
+console.log("collection", collection);  
 	const flattened_steps = flatten_items_steps(json_nodes);
 
 	const hillBases = flattened_steps
 		.filter(function(d) {
 			return d.first_elem && d.collections.includes(collection.id);
 		});
-
+console.log("hillBases", hillBases);
 	const metaballLineBaseSeparation = 30;
 	const metaballLineStepSeparation = 30;
 
 	const hillBase_circles = hillBases.map(hillBase => ({
 		p: { x: hillBase.x, y: hillBase.y },
-		r: hillBase.r + metaballLineBaseSeparation + metaballLineStepSeparation * (hillBase.collections.length - 1 - hillBase.collections.indexOf(collection)),
+		r: hillBase.r + metaballLineBaseSeparation + metaballLineStepSeparation * (hillBase.collections.length - 1 - hillBase.collections.indexOf(collection.id)),
 		color: "#5151fc'",
 		step: hillBase.step,
 		id: hillBase.id
 	}));
-
+console.log("hillBase_circles", hillBase_circles);
 	const vertex_array = circles_to_vector_points(hillBase_circles);
 
 	const alpha = 1000000; //150 * scale;
@@ -667,7 +669,7 @@ console.log("calling borderOrientationIsCounterclockwise - collection.id : ", co
   {
 		point_circle_map.set(vertex_array[i], hillBase_circles[i]);
 	}
-
+console.log("point_circle_map", point_circle_map);
 	const ordered_boundary_circles = boundary_points[0]
 		.slice(0, boundary_points_count(boundary_points))
 		.map(point => point_circle_map.get(point));
