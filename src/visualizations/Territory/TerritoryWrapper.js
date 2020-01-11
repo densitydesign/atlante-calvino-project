@@ -27,10 +27,7 @@ export default class TerritoryWrapper extends React.Component
 
       d3.json(process.env.PUBLIC_URL + "/territory_graphical_data.json").then(json => {
 
-        // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
-        const allowedCollections = "all";
-
-        const json_nodes = process_json_nodes(json.nodes, x_csv2, allowedCollections);
+        const json_nodes = process_json_nodes(json.nodes, x_csv2);
 
         const textsData = getTextsData(json_nodes);
 
@@ -159,7 +156,7 @@ function interpolateSpline(x)
 	return y;
 }
 
-function process_json_nodes(json_nodes, x_csv2, allowedCollections)
+function process_json_nodes(json_nodes, x_csv2)
 {
   json_nodes = json_nodes.filter(function(item) {
 
