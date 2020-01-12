@@ -105,7 +105,7 @@ console.log("territory initialize");
     this.colour = d3
       .scaleLinear()
       .domain(d3.extent(json_nodes, function(d) { return d.attributes.first_publication; }))
-      .range(["#ff6347", "#455A64"]);
+      .range(["#00c19c", "#5151fc"]);
 
     const circled_numbers = d3
       .scaleOrdinal()

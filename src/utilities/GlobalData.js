@@ -13,7 +13,7 @@ const collections = [
     'n': 'Ultimo viene il corvo',
     'id': 'V002',
     'year': 1949,
-    'c': '#e9d05d',
+    'c': '#00c19c',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -28,7 +28,7 @@ const collections = [
     'n': 'L\'entrata in guerra',
     'id': 'V004',
     'year': 1954,
-    'c': '#12b259',
+    'c': '#8ae297',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -43,7 +43,7 @@ const collections = [
     'n': 'I racconti',
     'id': 'V006',
     'year': 1958,
-    'c': '#476a70',
+    'c': '#5151fc',
     'has_metaball': true,
     'concavityTolerance': 1.2
   },
@@ -79,7 +79,7 @@ const collections = [
     'n': 'Marcovaldo',
     'id': 'V011',
     'year': 1963,
-    'c': '#9f73b2',
+    'c': '#bbbbff',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -94,7 +94,7 @@ const collections = [
     'n': 'Le cosmicomiche',
     'id': 'V013',
     'year': 1965,
-    'c': '#e89fc0',
+    'c': '#97dadd',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -102,7 +102,7 @@ const collections = [
     'n': 'Ti con zero',
     'id': 'V014',
     'year': 1967,
-    'c': '#581745',
+    'c': '#ff3366',
     'has_metaball': true,
     'concavityTolerance': 1.2
   },
@@ -110,7 +110,7 @@ const collections = [
     'n': 'La memoria del mondo',
     'id': 'V015',
     'year': 1968,
-    'c': '#00b1b3',
+    'c': '#FFA500',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -125,7 +125,7 @@ const collections = [
     'n': 'Gli amori difficili',
     'id': 'V017',
     'year': 1970,
-    'c': '#f0be96',
+    'c': '#ffd93b',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -161,7 +161,7 @@ const collections = [
     'n': 'Palomar',
     'id': 'V022',
     'year': 1983,
-    'c': '#94d2ba',
+    'c': '#ff6c39',
     'has_metaball': true,
     'concavityTolerance': 1.1
   },
@@ -169,7 +169,7 @@ const collections = [
     'n': 'Cosmicomiche vecchie e nuove',
     'id': 'V023',
     'year': 1984,
-    'c': '#f1634b',
+    'c': '#00bfd3',
     'has_metaball': true,
     'concavityTolerance': 1.2
   }
