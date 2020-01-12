@@ -29,6 +29,7 @@ export default class TerritoryFooter extends React.Component
     ]
   };
 
+// set here bottom panel mode, rather than higlight mode
   changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
 
   getActiveOption = options => options.find(item => item.status === true).label;
@@ -56,8 +57,19 @@ export default class TerritoryFooter extends React.Component
           changeOptions = { this.changeSteps }
         />
 
-        <ToggleButton id={this.timeFilterToggleButtonId} caption={this.timeFilterToggleButtonCaption} pressed={this.state.toggleButtonsStates.find(item => item.id === this.timeFilterToggleButtonId).pressed} callStateContainerToggleButtonPressed={this.toggleButtonPressed} />
-        <ToggleButton id={this.legendToggleButtonId} caption={this.legendToggleButtonCaption} pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} callStateContainerToggleButtonPressed={this.toggleButtonPressed} />        
+        <ToggleButton 
+          id={this.timeFilterToggleButtonId} 
+          caption={this.timeFilterToggleButtonCaption} 
+          pressed={this.state.toggleButtonsStates.find(item => item.id === this.timeFilterToggleButtonId).pressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+        />
+
+        <ToggleButton 
+          id={this.legendToggleButtonId} 
+          caption={this.legendToggleButtonCaption} 
+          pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+        />
 
       </div>
     );
