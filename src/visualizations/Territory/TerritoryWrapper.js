@@ -56,8 +56,6 @@ export default class TerritoryWrapper extends React.Component
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
   callTerritorySetHighlightMode = value => this.territorySetHighlightMode(value);
 
-  containerSetTerritorySetHillColoringMode = callback => this.territorySetHillColoringMode = callback;
-
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
 
@@ -71,15 +69,9 @@ export default class TerritoryWrapper extends React.Component
   callTerritoryApplySearchFilterByInputText = input => this.territoryApplySearchFilterByInputText(input);
 
   containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
-  callTerritoryApplySearchFilterBySearchResults = input => this.territoryApplySearchFilterBySearchResults(input);  
+  callTerritoryApplySearchFilterBySearchResults = input => this.territoryApplySearchFilterBySearchResults(input);
 
-  hillColoringModeMap = new Map([
-    [ "cronologia", 1],
-    [ "volume", 2 ]
-  ]);  
-
-  callTerritorySetHillColoringMode = value =>
-    this.territorySetHillColoringMode(this.hillColoringModeMap.get(value));
+  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
 
   setBottomPanelMode = value => {
     this.setState({ bottomPanelMode : value });
@@ -107,7 +99,7 @@ export default class TerritoryWrapper extends React.Component
 
         <TerritoryHeader 
           textsData={this.state.data.textsData}
-          callTerritorySetHillColoringMode={this.callTerritorySetHillColoringMode}
+          callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
           callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
           callTerritoryApplySearchFilterBySearchResults={this.callTerritoryApplySearchFilterBySearchResults}
         />
@@ -117,7 +109,6 @@ export default class TerritoryWrapper extends React.Component
               <Territory 
                 data={this.state.data} 
                 containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
-                containerSetTerritorySetHillColoringMode={this.containerSetTerritorySetHillColoringMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}

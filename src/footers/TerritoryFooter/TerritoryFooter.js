@@ -17,7 +17,7 @@ export default class TerritoryFooter extends React.Component
   territoryLabel = "territorio";
   doubtLabel = "dubbio";
   shapeLabel = "forma";
-  realismLabel = "realism";
+  realismLabel = "realismo";
 
   state = {
     steps : {

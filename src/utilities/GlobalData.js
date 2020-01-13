@@ -204,6 +204,7 @@ const GlobalData = {
     {"id":"V022","label":"Palomar"},
     {"id":"V023","label":"Le cosmicomiche vecchie e nuove"}
   ],
+/*  
   commands : {
     territory : {
       doubt : {
@@ -214,6 +215,7 @@ const GlobalData = {
       }
     }
   },
+*/
   analysisModes : {
     noAnalysis : {
       chronology : "chronology",

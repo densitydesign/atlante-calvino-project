@@ -32,6 +32,15 @@ const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitativ
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
 
+const showHillModes = {
+  all : "all",
+  base : "base",
+  nothing : "nothing",
+};
+
+const donutsClasses = {
+    dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
+};
 
 class VClass
 {
@@ -176,22 +185,22 @@ console.log("territory initialize");
       .range(['#FFDDFF', 'violet']);
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology, { filterCondition : 'first_publication',         colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,    { filterCondition : 'collection',                colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.fog,             { filterCondition : 'nebbia_words_ratio',        colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.cancellation,    { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.all,             { filterCondition : 'dubitative_ratio',          colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.percentage,      {} ],
-      [ GlobalData.analysisModes.shape.proportion,      {} ],
-      [ GlobalData.analysisModes.shape.types,           {} ],
-      [ GlobalData.analysisModes.genericNonTerrestrial, { filterCondition : 'n_generico_non_terrestre',  colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedNonTerrestrial,   { filterCondition : 'n_nominato_non_terrestre',  colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.genericTerrestrial,    { filterCondition : 'n_generico_terrestre',      colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedTerrestrial,      { filterCondition : 'n_nominato_terrestre',      colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.invented,              { filterCondition : 'n_inventato',               colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.noSetting,             { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.proportion,            { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.hierarchy,             { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
+      [ GlobalData.analysisModes.noAnalysis.chronology, { filterCondition : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,    { filterCondition : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.fog,             { filterCondition : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.cancellation,    { filterCondition : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.all,             { filterCondition : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.percentage,      {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.shape.proportion,      {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.shape.types,           {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.genericNonTerrestrial, { filterCondition : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedNonTerrestrial,   { filterCondition : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.genericTerrestrial,    { filterCondition : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedTerrestrial,      { filterCondition : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.invented,              { filterCondition : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.noSetting,             { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.proportion,            { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.hierarchy,             { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
     ]);
 
     this.text_nodes = g
@@ -302,7 +311,6 @@ console.log("territory initialize");
 
 ///////////////////////////////////////////
 
-//    this.setHillColoringMode(1);
     this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
 
     this.label = this.text_nodes
@@ -489,12 +497,37 @@ console.log("territory initialize");
     .style("fill-opacity", opacity)
     .style("stroke-opacity", opacity);
 
+  showHillsBases = opacity => d3
+    .selectAll(".circle_node")
+    .filter(d => d.first_elem)
+    .transition()
+    .duration(2000)
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);  
+
   showHills = opacity => d3
     .selectAll(".circle_node")
     .transition()
     .duration(2000)
     .style("fill-opacity", opacity)
     .style("stroke-opacity", opacity);
+
+  applyShowHillMode = showHillMode => {
+    switch(showHillMode)
+    {
+      case showHillModes.all : 
+        this.showHills(1);
+        break;
+      case showHillModes.base :
+        this.showHillsTops(0);
+        this.showHillsBases(1);
+        break;
+      case showHillModes.nothing :
+        this.showHills(0);
+        break;
+      default : break;
+    }
+  };
 
   setDataExtent = extent => data.extent = extent;
 
@@ -551,8 +584,10 @@ console.log("this.textsData : ", this.textsData);
 */
 
   setHighlightMode = value => {
-
+console.log("setHighlightMode");
+console.log("value", value);
     const highlightParameters = this.analysisModeMap.get(value);
+console.log("highlightParameters", highlightParameters);
 
     switch(value)
     {
@@ -560,6 +595,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -567,6 +603,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -574,26 +611,32 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
+
+        break;
 
       case GlobalData.analysisModes.doubt.cancellation :
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
+
+        break;
 
       case GlobalData.analysisModes.doubt.all :
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
-
-        this.showHillsTops(0);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
       case GlobalData.analysisModes.doubt.percentage :
 
         this.set_yRatio(highlightParameters.tilt_factor);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
-        this.showDonuts();
+        this.showDonuts(donutsClasses.dubitativePhenomena_level_2, 1);
 
         this.showHills(0);
 
@@ -602,12 +645,14 @@ console.log("this.textsData : ", this.textsData);
       case GlobalData.analysisModes.shape.proportion :
 
         this.set_yRatio(highlightParameters.tilt_factor);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
       case GlobalData.analysisModes.shape.types :
 
         this.set_yRatio(highlightParameters.tilt_factor);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;    
 
@@ -615,6 +660,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -622,6 +668,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -629,6 +676,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -636,6 +684,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -643,6 +692,7 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -650,18 +700,21 @@ console.log("this.textsData : ", this.textsData);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
       case GlobalData.analysisModes.realism.proportion :
 
         this.set_yRatio(highlightParameters.tilt_factor);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
       case GlobalData.analysisModes.realism.hierarchy :
 
         this.set_yRatio(highlightParameters.tilt_factor);
+        this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
 
@@ -754,11 +807,12 @@ console.log("colorScale", colorScale);
       .style("fill", d => colorScale(d[filterCondition]));
   };
 
-  showDonuts = () => {
+  showDonuts = (donutsClass, opacity) => {
 		this.text_nodes
-			.selectAll('.dubitativePhenomena_level_2')
-			.style('fill-opacity', 1)
-			.style('stroke-opacity', 1);
+//			.selectAll('.dubitativePhenomena_level_2')
+      .selectAll("." + donutsClass)
+			.style('fill-opacity', opacity)
+			.style('stroke-opacity', opacity);
   }
 }
 

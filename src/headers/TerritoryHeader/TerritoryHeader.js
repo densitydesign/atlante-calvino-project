@@ -2,21 +2,30 @@ import React from 'react';
 import MainMenu from '../../general/MainMenu/MainMenu';
 import Options from '../../general/Options/Options';
 import Search from '../../general/Search/Search';
+import GlobalData from '../../utilities/GlobalData';
 
 export default class TerritoryHeader extends React.Component
 {
+  chronologyLabel = "cronologia";
+  volumesLabel = "volume";
+
   state = {
-    hillColoringModes : {
+    highlightModes : {
       multiple : false,
       options : [
-        { label : "cronologia", status : true },
-        { label : "volume", status : false }
+        { label : this.chronologyLabel, status : true },
+        { label : this.volumesLabel, status : false }
       ]
     }
 
   };
 
-  changeHillColoringModes = newOptions => this.props.callTerritorySetHillColoringMode(this.getActiveOption(newOptions));
+  highlightModeMap = new Map([
+    [ this.chronologyLabel, GlobalData.analysisModes.noAnalysis.chronology ],
+    [ this.volumesLabel, GlobalData.analysisModes.noAnalysis.volumes ]
+  ]);
+
+  changeHighlightModes = newOptions => this.props.callTerritorySetHighlightMode(this.highlightModeMap.get(this.getActiveOption(newOptions)));
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
@@ -37,9 +46,9 @@ console.log("territory header - this.props.textsData : ", this.props.textsData);
 
         <Options
           title=""
-          data={this.state.hillColoringModes}
+          data={this.state.highlightModes}
           style={{ gridColumn : "span 8", textAlign : "center" }}
-          changeOptions={ this.changeHillColoringModes }
+          changeOptions={ this.changeHighlightModes }
         />
 
         <Search
