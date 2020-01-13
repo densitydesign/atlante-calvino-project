@@ -23,11 +23,15 @@ let step_increment = -23;
 let scale;
 let d3_event_transform_k;
 
+
 const PI = Math.PI;
 const arcMin = 75; // inner radius of the first arc
 const arcWidth = 38;
 const arcPad = 1; // padding between arcs
 const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+const with_tilt_factor = 0.5773;
+const without_tilt_factor = 1;
+
 
 class VClass
 {
@@ -76,7 +80,7 @@ console.log("territory initialize");
       .append("g")
       .attr("class", "metaball_node")
       .attr("transform", function(d) {
-        return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        return "scale(1, " + with_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
     const metaballs = metaball_nodes
@@ -171,16 +175,23 @@ console.log("territory initialize");
       .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
       .range(['#FFDDFF', 'violet']);
 
-    this.highlightModeMap = new Map([
-      [ GlobalData.commands.territory.doubt.fog, { filterCondition : 'nebbia_words_ratio', colorScale : this.nebbia_color_scale } ],
-      [ GlobalData.commands.territory.doubt.cancellation, { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale } ],
-      [ GlobalData.commands.territory.doubt.all, { filterCondition : 'dubitative_ratio', colorScale : this.dubitative_color_scale } ],
-      [ "generici non terrestri", { filterCondition : 'n_generico_non_terrestre', colorScale : this.generico_non_terrestre_color_scale } ],
-      [ "nominati non terrestri", { filterCondition : 'n_nominato_non_terrestre', colorScale : this.nominato_non_terrestre_color_scale} ],
-      [ "generici terrestri", { filterCondition : 'n_generico_terrestre', colorScale : this.generico_terrestre_color_scale} ],
-      [ "nominati terrestri", { filterCondition : 'n_nominato_terrestre', colorScale : this.nominato_terrestre_color_scale} ],
-      [ "inventati", { filterCondition : 'n_inventato', colorScale : this.inventato_color_scale} ],
-      [ "senza ambientazione", { filterCondition : 'n_no_ambientazione', colorScale : this.no_ambientazione_color_scale} ]
+    this.analysisModeMap = new Map([
+      [ GlobalData.analysisModes.noAnalysis.chronology, { filterCondition : 'first_publication',         colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,    { filterCondition : 'collection',                colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.fog,             { filterCondition : 'nebbia_words_ratio',        colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.cancellation,    { filterCondition : 'cancellazione_words_ratio', colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.all,             { filterCondition : 'dubitative_ratio',          colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.percentage,      {} ],
+      [ GlobalData.analysisModes.shape.proportion,      {} ],
+      [ GlobalData.analysisModes.shape.types,           {} ],
+      [ GlobalData.analysisModes.genericNonTerrestrial, { filterCondition : 'n_generico_non_terrestre',  colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedNonTerrestrial,   { filterCondition : 'n_nominato_non_terrestre',  colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.genericTerrestrial,    { filterCondition : 'n_generico_terrestre',      colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedTerrestrial,      { filterCondition : 'n_nominato_terrestre',      colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.invented,              { filterCondition : 'n_inventato',               colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.noSetting,             { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.proportion,            { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.hierarchy,             { filterCondition : 'n_no_ambientazione',        colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
     ]);
 
     this.text_nodes = g
@@ -190,7 +201,7 @@ console.log("territory initialize");
       .append("g")
       .attr("class", "node")
       .attr("transform", function(d) {
-        return "scale(1, 0.5773) translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        return "scale(1, " + with_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
     const steps = this.text_nodes
@@ -291,7 +302,8 @@ console.log("territory initialize");
 
 ///////////////////////////////////////////
 
-    this.setHillColoringMode(1);
+//    this.setHillColoringMode(1);
+    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
 
     this.label = this.text_nodes
       .selectAll('.label')
@@ -399,7 +411,7 @@ console.log("territory initialize");
         let translate_string = data.mode !== "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
         
         if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-        else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+        else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
   		});
     }
 
@@ -426,7 +438,7 @@ console.log("territory initialize");
     i = i * step_increment;
 
     return "translate(0," + i + ")";
-  }  
+  };
 
   setColor = color => { 
     d3
@@ -440,13 +452,13 @@ console.log("territory initialize");
       .transition()
       .duration(2000)
       .attr("transform", d => {
-        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")"
+        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
     if(yRatio === 1) tilt = true;
     else tilt = false;
 
-    let label = this.text_nodes
+    const label = this.text_nodes
       .selectAll('.label');   
 
     label.attr('transform', function(d) {
@@ -457,9 +469,16 @@ console.log("territory initialize");
       let translate_string = data.mode !== "realismo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
 
       if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / 0.5773 + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
     });
 
+    const metaball_nodes = d3
+      .selectAll(".metaball_node")
+      .transition()
+      .duration(2000)
+      .attr("transform", d => {
+        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+      });
   };
 
   showHillsTops = opacity => d3
@@ -492,7 +511,7 @@ console.log("territory initialize");
           d3.select(this).style("opacity", 0.15);
         }
       });
-  }  
+  };
 
   applySearchFilterByInputText = inputText => {
 
@@ -503,7 +522,7 @@ console.log("this.textsData : ", this.textsData);
     const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
 
     this.applySearchFilterBySearchResults(results);
-  }
+  };
 
   applySearchFilterBySearchResults = searchResults => {
 
@@ -521,37 +540,58 @@ console.log("this.textsData : ", this.textsData);
           .filter(d => d.id === result.id)
           .classed("visible", true);
       });
-  }
+  };
 
+/*
   // 1 : first publication year; 2 : collection
   setHillColoringMode = value => {
     this.hillColoringMode = value;
-    this.highlightHills();
+//    this.highlightHills();
   };
+*/
 
   setHighlightMode = value => {
-console.log("setHighlightMode");
-console.log("value : ", value);
-console.log("GlobalData.commands.territory.doubt.fog : ", "*" + GlobalData.commands.territory.doubt.fog + "*");
+
+    const highlightParameters = this.analysisModeMap.get(value);
+
     switch(value)
     {
-      case GlobalData.commands.territory.doubt.fog :
-      case GlobalData.commands.territory.doubt.cancellation :
-      case GlobalData.commands.territory.doubt.all :
-console.log("tilting");
-        this.set_yRatio(1);      
+      case GlobalData.analysisModes.noAnalysis.chronology :
 
-        const highlightParameters = this.highlightModeMap.get(value);
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
 
+        break;
+
+      case GlobalData.analysisModes.noAnalysis.volumes :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.doubt.fog :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+      case GlobalData.analysisModes.doubt.cancellation :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+      case GlobalData.analysisModes.doubt.all :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
 
         this.showHillsTops(0);
 
         break;
 
-      case GlobalData.commands.territory.doubt.percentage :
+      case GlobalData.analysisModes.doubt.percentage :
 
-        this.set_yRatio(1);        
+        this.set_yRatio(highlightParameters.tilt_factor);
 
         this.showDonuts();
 
@@ -559,11 +599,77 @@ console.log("tilting");
 
         break;
 
+      case GlobalData.analysisModes.shape.proportion :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+
+        break;
+
+      case GlobalData.analysisModes.shape.types :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+
+        break;    
+
+      case GlobalData.analysisModes.realism.genericNonTerrestrial :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.namedNonTerrestrial :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.genericTerrestrial :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.namedTerrestrial :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.invented :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.noSetting :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+
+        break;
+
+      case GlobalData.analysisModes.realism.proportion :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+
+        break;
+
+      case GlobalData.analysisModes.realism.hierarchy :
+
+        this.set_yRatio(highlightParameters.tilt_factor);
+
+        break;
+
       default : break;
     }
   };
 
-  highlightHills = (filterCondition, colorScale) => {
+  highlightHills_old = (filterCondition, colorScale) => {
 
     const allHills = d3.selectAll(".hill");
 
@@ -596,14 +702,64 @@ console.log("tilting");
       .style("fill", d => colorScale(d[filterCondition]));
   };
 
+  highlightHills = (filterCondition, colorScale) => {
+
+console.log("highlightHills");
+console.log("filterCondition", filterCondition);
+console.log("colorScale", colorScale);
+
+    const allHills = d3.selectAll(".hill");
+
+    if(["first_publication", "collection"].includes(filterCondition))
+    {
+      this.text_nodes.style("display", "block");      
+
+      allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
+/*
+      switch(this.hillColoringMode)
+      {
+        case 1 : allHills.style("fill", d => this.colour(d.first_publication)); break;
+        case 2 : allHills.style("fill", d => GlobalData.col_collections(d.collection)); break;
+        default : break;
+      }
+*/
+/*
+      allHills
+        .filter(d => !d[filterCondition])
+        .transition()
+        .duration(350)
+        .style("fill", d => "transparent");
+*/
+
+
+      allHills
+        .filter(d => d[filterCondition])
+        .transition()
+        .duration(350)
+        .style("fill", d => colorScale(d[filterCondition]));
+
+      return;
+    }
+
+    allHills
+      .filter(d => !d[filterCondition])
+      .transition()
+      .duration(350)
+      .style("fill", d => "transparent");
+
+    allHills
+      .filter(d => d[filterCondition])
+      .transition()
+      .duration(350)
+      .style("fill", d => colorScale(d[filterCondition]));
+  };
+
   showDonuts = () => {
 		this.text_nodes
 			.selectAll('.dubitativePhenomena_level_2')
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
   }
-
-  
 }
 
 

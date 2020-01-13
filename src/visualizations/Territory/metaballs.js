@@ -153,16 +153,11 @@ function rotateArrayRight(array, n)
 
 function arrayDifferences(array)
 {
-console.log("arrayDifferences()");
-console.log("array", array);
-console.log("second items", array.slice(1, array.length));
   return array.slice(1, array.length).map((d, i) => d - array[i]);
 }
 
 function borderOrientationIsCounterclockwise(points)
 {
-console.log("borderOrientationIsCounterclockwise()");
-console.log("points", points);
 	const namedCoordPoints = points.map(vectorPoint_to_namedCoordPoint);
 
 	const barycenter = pointsBarycenter(namedCoordPoints);
@@ -175,17 +170,13 @@ console.log("points", points);
 
   const minSuccessorIndex = (minIndex + 1) % angles.length;
 
-console.log("points : ", points);  
-console.log("angles : ", angles);
-console.log("minIndex", minIndex);
-
   const rotatedAngles = rotateArrayLeft(angles, minIndex);
-console.log("rotatedAngles", rotatedAngles);
+
 
   const angleDifferences = arrayDifferences(rotatedAngles);
-console.log("angleDifferences", angleDifferences);
+
   const negativeDifferencesCount = angleDifferences.reduce((n, val) => n + (val < 0), 0);
-console.log("negativeDifferencesCount", negativeDifferencesCount);
+
   return negativeDifferencesCount == 0;
 //  return angles[2] > angles[1];
 }
@@ -255,13 +246,9 @@ function boundary2(mesh)
 			}
 		}
 	}
-console.log("r", r);
-console.log("pointMap", pointMap);
 
-const rr = r.map(id => pointMap.get(id));
-console.log("rr", rr);
 	const transformed_array = r.map(id => pointMap.get(id));
-console.log("transformed_array", transformed_array);
+
 	return [transformed_array];
 }
 
@@ -610,15 +597,13 @@ export function prepareMetaballData(
   collection, 
   metaballWantedCoves)
 {
-console.log("prepareMetaballData()");
-console.log("collection", collection);  
 	const flattened_steps = flatten_items_steps(json_nodes);
 
 	const hillBases = flattened_steps
 		.filter(function(d) {
 			return d.first_elem && d.collections.includes(collection.id);
 		});
-console.log("hillBases", hillBases);
+
 	const metaballLineBaseSeparation = 30;
 	const metaballLineStepSeparation = 30;
 
@@ -629,7 +614,7 @@ console.log("hillBases", hillBases);
 		step: hillBase.step,
 		id: hillBase.id
 	}));
-console.log("hillBase_circles", hillBase_circles);
+
 	const vertex_array = circles_to_vector_points(hillBase_circles);
 
 	const alpha = 1000000; //150 * scale;
@@ -646,10 +631,8 @@ console.log("hillBase_circles", hillBase_circles);
 					dsq(t[0], t[2]) < asq &&
 					dsq(t[1], t[2]) < asq);
 			});
-console.log("mesh", mesh);
+
   let boundary_points = boundary2(mesh);
-console.log("boundary_points", boundary_points);  
-console.log("calling borderOrientationIsCounterclockwise - collection.id : ", collection.id);
 
   const border_points = boundary_points[0].slice(0, boundary_points[0].length - 1);
 
@@ -669,7 +652,7 @@ console.log("calling borderOrientationIsCounterclockwise - collection.id : ", co
   {
 		point_circle_map.set(vertex_array[i], hillBase_circles[i]);
 	}
-console.log("point_circle_map", point_circle_map);
+
 	const ordered_boundary_circles = boundary_points[0]
 		.slice(0, boundary_points_count(boundary_points))
 		.map(point => point_circle_map.get(point));
@@ -682,7 +665,6 @@ console.log("point_circle_map", point_circle_map);
 
 function renderMetaballLogically(collection, hillBaseCircles, nCirclesToBeDrawn) 
 {
-console.log("hillBaseCircles", hillBaseCircles);
 	const nCircles = hillBaseCircles.length;
 
 	for(let i = 0; i < nCirclesToBeDrawn; ++i) {
@@ -691,12 +673,9 @@ console.log("hillBaseCircles", hillBaseCircles);
 		const centralCircle = hillBaseCircles[i];
 
 		const successorCircle = hillBaseCircles[i < nCircles - 1 ? i + 1 : 0];
-console.log("predecessorCircle", predecessorCircle); 
-console.log("centralCircle", centralCircle);
-console.log("successorCircle", successorCircle);
 
 		const lobe = metaball(predecessorCircle, centralCircle, successorCircle);
-console.log("lobe", lobe);
+
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.metaballCorner, collection.id, true);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.lobe, collection.id, lobe);
 		checkMapAndInsert(centralCircle.step, CollectionMapNames.lobeColor, collection.id, collection.c);

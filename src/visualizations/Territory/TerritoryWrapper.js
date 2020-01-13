@@ -81,7 +81,20 @@ export default class TerritoryWrapper extends React.Component
   callTerritorySetHillColoringMode = value =>
     this.territorySetHillColoringMode(this.hillColoringModeMap.get(value));
 
-  setBottomPanelMode = value => this.setState({ bottomPanelMode : value });
+  setBottomPanelMode = value => {
+    this.setState({ bottomPanelMode : value });
+
+    switch(value)
+    {
+      case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
+      case GlobalData.bottomPanelModes.doubt : this.territorySetHighlightMode(this.state.doubtAnalysisMode); break;
+      case GlobalData.bottomPanelModes.shape : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
+      case GlobalData.bottomPanelModes.realism : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
+      case GlobalData.bottomPanelModes.chronologicalFilter : break;
+      case GlobalData.bottomPanelModes.legend : break;
+      default : break;
+    }
+  };
 
   render() 
   {

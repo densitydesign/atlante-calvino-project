@@ -235,7 +235,9 @@ const GlobalData = {
       genericTerrestrial : "genericTerrestrial",
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
-      noSetting : "noSetting"
+      noSetting : "noSetting",
+      proportion : "proportion",
+      hierarchy : "hierarchy"
     }
   },
   bottomPanelModes : {
