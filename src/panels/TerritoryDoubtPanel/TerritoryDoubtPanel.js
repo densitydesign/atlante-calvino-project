@@ -31,10 +31,10 @@ export default class TerritoryDoubtPanel extends React.Component
   };
 
   optionRadioButtonsMap = new Map([
-    [ this.fogRadioButtonId,          { value : GlobalData.commands.territory.doubt.fog } ],
-    [ this.cancellationRadioButtonId, { value : GlobalData.commands.territory.doubt.cancellation } ],
-    [ this.allRadioButtonId,          { value : GlobalData.commands.territory.doubt.all } ],
-    [ this.percentageRadioButtonId,   { value : GlobalData.commands.territory.doubt.percentage } ]
+    [ this.fogRadioButtonId,          { value : GlobalData.analysisModes.doubt.fog } ],
+    [ this.cancellationRadioButtonId, { value : GlobalData.analysisModes.doubt.cancellation } ],
+    [ this.allRadioButtonId,          { value : GlobalData.analysisModes.doubt.all } ],
+    [ this.percentageRadioButtonId,   { value : GlobalData.analysisModes.doubt.percentage } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {

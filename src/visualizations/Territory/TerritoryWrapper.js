@@ -133,6 +133,7 @@ export default class TerritoryWrapper extends React.Component
                 shapePanelMode={this.state.shapePanelMode}
                 realismPanelMode={this.state.realismPanelMode}
                 data={this.state.data}
+                callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
