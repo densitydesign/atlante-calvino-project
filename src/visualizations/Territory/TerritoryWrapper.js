@@ -81,6 +81,8 @@ export default class TerritoryWrapper extends React.Component
   callTerritorySetHillColoringMode = value =>
     this.territorySetHillColoringMode(this.hillColoringModeMap.get(value));
 
+  setBottomPanelMode = value => this.setState({ bottomPanelMode : value });
+
   render() 
   {
     return (
@@ -132,7 +134,10 @@ export default class TerritoryWrapper extends React.Component
 
         }
 
-        <TerritoryFooter callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} />
+        <TerritoryFooter 
+          callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
+          setBottomPanelMode={this.setBottomPanelMode}
+        />
 
       </div>
     );

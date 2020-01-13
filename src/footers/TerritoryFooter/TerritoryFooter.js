@@ -2,6 +2,7 @@
 import React from 'react';
 import Options from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
+import GlobalData from '../../utilities/GlobalData';
 
 import '../../App.css';
 
@@ -13,14 +14,19 @@ export default class TerritoryFooter extends React.Component
   timeFilterToggleButtonId = "timeFilterToggleButton";
   timeFilterToggleButtonCaption = "FILTRO CRONOLOGICO";
 
+  territoryLabel = "territorio";
+  doubtLabel = "dubbio";
+  shapeLabel = "forma";
+  realismLabel = "realism";
+
   state = {
     steps : {
       multiple : false,
       options : [
-        { label : "territorio", status : true },
-        { label : "dubbio", status : false },
-        { label : "forma", status : false },
-        { label : "realismo", status : false }
+        { label : this.territoryLabel, status : true },
+        { label : this.doubtLabel, status : false },
+        { label : this.shapeLabel, status : false },
+        { label : this.realismLabel, status : false }
       ]
     },
     toggleButtonsStates : [
@@ -29,8 +35,16 @@ export default class TerritoryFooter extends React.Component
     ]
   };
 
+  stepLabelOptionPanelModeMap = new Map([
+    [ this.erritoryLabel, GlobalData.bottomPanelModes.noAnalysis ],
+    [ this.doubtLabel, GlobalData.bottomPanelModes.doubt ],
+    [ this.shapeLabel, GlobalData.bottomPanelModes.shape ],
+    [ this.realismLabel, GlobalData.bottomPanelModes.realism ]
+  ]);
+
 // set here bottom panel mode, rather than higlight mode
-  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
+//  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
+  changeSteps = newOptions => this.props.setBottomPanelMode(this.stepLabelOptionPanelModeMap.get(this.getActiveOption(newOptions)));
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
@@ -54,7 +68,7 @@ export default class TerritoryFooter extends React.Component
           title="Tappe"
           data={this.state.steps}
           style={{ gridColumn : "span 8", textAlign : "center" }}
-          changeOptions = { this.changeSteps }
+          changeOptions={this.changeSteps}
         />
 
         <ToggleButton 
