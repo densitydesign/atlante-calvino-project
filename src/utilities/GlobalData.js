@@ -214,6 +214,58 @@ const GlobalData = {
       }
     }
   },
+  analysisModes : {
+    noAnalysis : {
+      chronology : "chronology",
+      volumes : "volumes"
+    },
+    doubt : {
+      fog : "fog",
+      cancellation : "cancellation",
+      all : "all",
+      percentage : "percentage"
+    },
+    shape : {
+      proportion : "proportion",
+      types : "types"
+    },
+    realism : {
+      genericNonTerrestrial : "genericNonTerrestrial",
+      namedNonTerrestrial : "namedNonTerrestrial",
+      genericTerrestrial : "genericTerrestrial",
+      namedTerrestrial : "namedTerrestrial",
+      invented : "invented",
+      noSetting : "noSetting"
+    }
+  },
+  bottomPanelModes : {
+    noAnalysis : "none",
+    doubt : "doubt",
+    shape : "shape",
+    realism : "realism",
+    chronologicalFilter : "chronologicalFilter",
+    legend : "legend"
+  },
+  analysisPanelModes : {
+    doubt : {
+      fog : "fog",
+      cancellation : "cancellation",
+      all : "all",
+      percentage : "percentage"
+    },
+    shape : {
+      proportion : "proportion",
+      types : "types"
+    },
+    realism : {
+      genericNonTerrestrial : "genericNonTerrestrial",
+      namedNonTerrestrial : "namedNonTerrestrial",
+      genericTerrestrial : "genericTerrestrial",
+      namedTerrestrial : "namedTerrestrial",
+      invented : "invented",
+      noSetting : "noSetting"
+    }
+  },
   collections : collections,
   allowedCollections : allowedCollections,
   allowedCollectionsSplit : allowedCollections.split(","),

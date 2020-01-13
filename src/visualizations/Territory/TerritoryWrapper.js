@@ -16,7 +16,16 @@ export default class TerritoryWrapper extends React.Component
   state = {
     data : "data still not loaded",
     isLoading : true,
-    territoryBottomPanelActive : false
+
+    bottomPanelMode : GlobalData.bottomPanelModes.none,
+    doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
+    shapePanelMode : GlobalData.analysisPanelModes.shape.proportion,
+    realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial,
+    
+    noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
+    doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
+    shapeAnalysisMode : GlobalData.analysisModes.shape.proportion,
+    realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial
   };
 
   loadData = () =>
@@ -101,9 +110,13 @@ export default class TerritoryWrapper extends React.Component
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               /> 
 
-              {this.state.territoryBottomPanelActive &&
+              {this.state.bottomPanelMode != GlobalData.bottomPanelModes.none &&
 
               <TerritoryBottomPanel 
+                bottomPanelMode={this.state.bottomPanelMode}
+                doubtPanelMode={this.state.doubtPanelMode}
+                shapePanelMode={this.state.shapePanelMode}
+                realismPanelMode={this.state.realismPanelMode}
                 data={this.state.data}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
