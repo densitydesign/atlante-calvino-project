@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 
 function addWantedCoves(vertex_array, boundary_points, concavityTolerance) 
 {
-	if(boundary_points.length == 0) return [];
+	if(boundary_points.length === 0) return [];
 
 	if(boundary_points_count(boundary_points) <= 3) return boundary_points;
 
@@ -13,7 +13,7 @@ function addWantedCoves(vertex_array, boundary_points, concavityTolerance)
 
 	for(let i = 0; i < boundary_points[0].length; ++i) 
   {
-		let next_index = i == boundary_points[0].length - 1 ? 0 : i + 1;
+		let next_index = i === boundary_points[0].length - 1 ? 0 : i + 1;
 
 		let p1 = boundary_points[0][i];
 		new_boundary_points.push(p1);
@@ -99,7 +99,7 @@ function arrayEqualsAnother(array1, array2) {
 		return false;
 
 	// compare lengths - can save a lot of time
-	if(array1.length != array2.length)
+	if(array1.length !== array2.length)
 		return false;
 
 	for(var i = 0, l = array1.length; i < l; i++) {
@@ -108,8 +108,8 @@ function arrayEqualsAnother(array1, array2) {
 			// recurse into the nested arrays
 			if(!arrayEqualsAnother(array1[i], array2[i]))
 				return false;
-		} else if(array1[i] != array2[i]) {
-			// Warning - two different object instances will never be equal: {x:20} != {x:20}
+		} else if(array1[i] !== array2[i]) {
+			// Warning - two different object instances will never be equal: {x:20} !== {x:20}
 			return false;
 		}
 	}
@@ -177,7 +177,7 @@ function borderOrientationIsCounterclockwise(points)
 
   const negativeDifferencesCount = angleDifferences.reduce((n, val) => n + (val < 0), 0);
 
-  return negativeDifferencesCount == 0;
+  return negativeDifferencesCount === 0;
 //  return angles[2] > angles[1];
 }
 
@@ -217,7 +217,7 @@ function boundary2(mesh)
 
 		for(k in counts) break;
 
-		if(k == null) break;
+		if(k === null) break;
 
 		result.push(r = k.split(":"));
 		delete counts[k];
@@ -531,7 +531,7 @@ function minIndex(values, valueof)
 			++index;
 
 			if(
-        value != null &&
+        value !== null &&
 				(min > value || (min === undefined && value >= value))) 
       {
 				min = value; 
@@ -544,7 +544,7 @@ function minIndex(values, valueof)
 		for(let value of values) 
     {
 			if(
-        (value = valueof(value, ++index, values)) != null &&
+        (value = valueof(value, ++index, values)) !== null &&
 				(min > value || (min === undefined && value >= value))) 
       {
 				min = value; 
@@ -644,7 +644,7 @@ export function prepareMetaballData(
 	if(metaballWantedCoves)
 		boundary_points = addWantedCoves(vertex_array, boundary_points, collection.concavityTolerance);
 
-	if(boundary_points.length == 0) return;
+	if(boundary_points.length === 0) return;
 
 	const point_circle_map = new Map();
 
@@ -668,7 +668,7 @@ function renderMetaballLogically(collection, hillBaseCircles, nCirclesToBeDrawn)
 	const nCircles = hillBaseCircles.length;
 
 	for(let i = 0; i < nCirclesToBeDrawn; ++i) {
-		let predecessorCircle = hillBaseCircles[i == 0 ? nCircles - 1 : i - 1];
+		let predecessorCircle = hillBaseCircles[i === 0 ? nCircles - 1 : i - 1];
 
 		const centralCircle = hillBaseCircles[i];
 

@@ -116,7 +116,7 @@ export default class TerritoryWrapper extends React.Component
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               /> 
 
-              {this.state.bottomPanelMode != GlobalData.bottomPanelModes.none &&
+              {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.none &&
 
               <TerritoryBottomPanel 
                 bottomPanelMode={this.state.bottomPanelMode}

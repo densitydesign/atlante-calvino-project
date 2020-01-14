@@ -81,7 +81,7 @@ console.log("territory initialize");
           checkMapAndInsert(step, CollectionMapNames.metaballCorner, coll.id, false))));
 
     collections
-      .filter(coll => (GlobalData.allowedCollections == "all" && coll.has_metaball) || GlobalData.allowedCollectionsSplit.includes(coll.id))
+      .filter(coll => (GlobalData.allowedCollections === "all" && coll.has_metaball) || GlobalData.allowedCollectionsSplit.includes(coll.id))
       .forEach(coll => prepareMetaballData(json_nodes, coll, data.metaballWantedCoves));
 
     const svg_main_group = svg.append("g");
