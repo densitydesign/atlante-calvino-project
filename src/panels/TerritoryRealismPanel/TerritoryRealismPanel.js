@@ -27,8 +27,8 @@ export default class TerritoryRealismPanel extends React.Component
   noSettingRadioButtonId = "noSettingRadioButton";
   noSettingRadioButtonCaption = "NO AMBIENT";
 
-  percentageRadioButtonId = "percentageRadioButton";
-  percentageRadioButtonCaption = "%";
+  proportionRadioButtonId = "proportionRadioButton";
+  proportionRadioButtonCaption = "%";
 
   state = {
     optionRadioButtonsStates : [
@@ -38,7 +38,7 @@ export default class TerritoryRealismPanel extends React.Component
       { id : this.namedTerrestrialRadioButtonId,      pressed : false },
       { id : this.inventedRadioButtonId,              pressed : false },      
       { id : this.noSettingRadioButtonId,             pressed : false },
-      { id : this.percentageRadioButtonId,            pressed : false }
+      { id : this.proportionRadioButtonId,            pressed : false }
     ]
   };
 
@@ -49,7 +49,7 @@ export default class TerritoryRealismPanel extends React.Component
     [ this.namedTerrestrialRadioButtonId,      { value : GlobalData.analysisModes.realism.namedTerrestrial } ],
     [ this.inventedRadioButtonId,              { value : GlobalData.analysisModes.realism.invented } ],    
     [ this.noSettingRadioButtonId,             { value : GlobalData.analysisModes.realism.noSetting } ],
-    [ this.percentageRadioButtonId,            { value : GlobalData.analysisModes.realism.percentage } ]
+    [ this.proportionRadioButtonId,            { value : GlobalData.analysisModes.realism.proportion } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {
@@ -105,9 +105,9 @@ export default class TerritoryRealismPanel extends React.Component
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-          percentageRadioButtonId={this.percentageRadioButtonId}
-          percentageRadioButtonCaption={this.percentageRadioButtonCaption}
-          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
+          percentageRadioButtonId={this.proportionRadioButtonId}
+          percentageRadioButtonCaption={this.proportionRadioButtonCaption}
+          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
         />
       </div>
     );

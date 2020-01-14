@@ -228,7 +228,7 @@ const GlobalData = {
       percentage : "percentage"
     },
     shape : {
-      proportion : "proportion",
+      proportion : "shape_proportion",
       types : "types"
     },
     realism : {
@@ -238,7 +238,7 @@ const GlobalData = {
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
       noSetting : "noSetting",
-      proportion : "proportion",
+      proportion : "realism_proportion",
       hierarchy : "hierarchy"
     }
   },
@@ -258,7 +258,7 @@ const GlobalData = {
       percentage : "percentage"
     },
     shape : {
-      proportion : "proportion",
+      proportion : "shape_proportion",
       types : "types"
     },
     realism : {
@@ -267,7 +267,9 @@ const GlobalData = {
       genericTerrestrial : "genericTerrestrial",
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
-      noSetting : "noSetting"
+      noSetting : "noSetting",
+      proportion : "realism_proportion",
+      hierarchy : "hierarchy"
     }
   },
   collections : collections,

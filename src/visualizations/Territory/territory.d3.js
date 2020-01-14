@@ -39,6 +39,7 @@ const showHillModes = {
 };
 
 const customElementsClasses = {
+  places : "places",
   dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
 };
 
@@ -190,22 +191,22 @@ console.log("territory initialize");
       .range(['#FFDDFF', 'violet']);
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology, { customElementsClass : null, dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,    { customElementsClass : null, dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.fog,             { customElementsClass : null, dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.cancellation,    { customElementsClass : null, dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.all,             { customElementsClass : null, dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.percentage,      { customElementsClass : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.shape.proportion,      {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.shape.types,           {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.genericNonTerrestrial, { customElementsClass : null, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedNonTerrestrial,   { customElementsClass : null, dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.genericTerrestrial,    { customElementsClass : null, dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedTerrestrial,      { customElementsClass : null, dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.invented,              { customElementsClass : null, dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.noSetting,             { customElementsClass : null, dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.proportion,            { dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.hierarchy,             { dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
+      [ GlobalData.analysisModes.noAnalysis.chronology,         { customElementsClasses : null, dataMember : 'first_publication',            showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,            { customElementsClasses : null, dataMember : 'collection',                   showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.fog,                     { customElementsClasses : null, dataMember : 'nebbia_words_ratio',           showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.cancellation,            { customElementsClasses : null, dataMember : 'cancellazione_words_ratio',    showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.all,                     { customElementsClasses : null, dataMember : 'dubitative_ratio',             showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.percentage,              { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.shape.proportion,              {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.shape.types,                   {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.realism.genericNonTerrestrial, { customElementsClasses : null, dataMember : 'n_generico_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.namedNonTerrestrial,   { customElementsClasses : null, dataMember : 'n_nominato_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.genericTerrestrial,    { customElementsClasses : null, dataMember : 'n_generico_terrestre',         showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.namedTerrestrial,      { customElementsClasses : null, dataMember : 'n_nominato_terrestre',         showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.invented,              { customElementsClasses : null, dataMember : 'n_inventato',                  showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.noSetting,             { customElementsClasses : null, dataMember : 'n_no_ambientazione',           showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.proportion,            { customElementsClasses : customElementsClasses.places,                 showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.realism.hierarchy,             { dataMember : 'n_no_ambientazione',                                       showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
     ]);
 
     this.text_nodes = g
@@ -242,6 +243,202 @@ console.log("territory initialize");
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);
+
+///////////////////////////////////////////
+
+	let drawPlacesArc1 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(0 * 2 * PI)
+		.endAngle(function(d, i) {
+			return d.generico_non_terrestre * 2 * PI;
+		});
+
+	let drawPlacesArc2 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.generico_non_terrestre * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return d.generico_terrestre * 2 * PI;
+		});
+
+	let drawPlacesArc3 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.generico_terrestre * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return d.inventato * 2 * PI;
+		});
+
+	let drawPlacesArc4 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.inventato * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return d.no_ambientazione * 2 * PI;
+		});
+
+	let drawPlacesArc5 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.no_ambientazione * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return d.nominato_non_terrestre * 2 * PI;
+		});
+
+	let drawPlacesArc6 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.nominato_non_terrestre * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return d.nominato_terrestre * 2 * PI;
+		});
+
+	let drawPlacesArc7 = d3
+		.arc()
+		.innerRadius(function(d, i) {
+			return d.r - (i + 1) * arcWidth + arcPad;
+		})
+		.outerRadius(function(d, i) {
+			return d.r - i * arcWidth;
+		})
+		.startAngle(function(d, i) {
+			return d.nominato_terrestre * 2 * PI;
+		})
+		.endAngle(function(d, i) {
+			return 2 * PI;
+		});
+
+///////////////////////////////////////////
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#ff6c39")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc1)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "orange")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc2)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#bbbbff")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc3)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "darkgrey")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc4)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#5151fc")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc5)
+		.attr('transform', function(d, i) {
+			i = i * step_increment
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#00c19c")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc6)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "transparent")
+		.attr("class", customElementsClasses.places_full)
+		.attr("d", drawPlacesArc7)
+		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+		.style('fill-opacity', 0);
+/*
+	steps
+		.selectAll(".places")
+		.on("click", function(d) {
+			if(data.mode == "realismo-secondo-lvl")
+			{
+				togglePlaceHierarchy(d.id);
+				data.mode = "realismo-third-lvl";
+			}
+		});
+*/
 
 ///////////////////////////////////////////
 
@@ -294,7 +491,6 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "blue")
-      .attr("class", customElements)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
@@ -303,7 +499,6 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "red")
-      .attr("class", customElements)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
@@ -312,7 +507,6 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "transparent")
-      .attr("class", customElements)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc3)
       .style('fill-opacity', 0);
@@ -604,7 +798,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -613,7 +807,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -622,7 +816,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -631,7 +825,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -640,7 +834,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -648,7 +842,7 @@ console.log("highlightParameters", highlightParameters);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClass);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -671,6 +865,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -679,6 +874,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -687,6 +883,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -695,6 +892,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -703,6 +901,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -711,13 +910,15 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
       case GlobalData.analysisModes.realism.proportion :
-
+console.log("case proportion...");
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
 
         break;
 
@@ -830,10 +1031,12 @@ console.log("inside if");
       });
   };
 
-  highlightCustomElements = elementsClass => {
+  highlightCustomElements = elementsClasses => {
+console.log("highlightCustomElements()");
+console.log("elementsClasses", elementsClasses);
     this.showCustomElements(customElementsClasses.customElements, 0);
 
-    if(elementsClass) this.showCustomElements(elementsClass, 1);
+    if(elementsClasses) this.showCustomElements(elementsClasses, 1);
   }
 
   showCustomElements = (elementsClass, opacity) => {

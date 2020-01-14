@@ -31,8 +31,8 @@ export default class TerritoryStepsPanel extends React.Component
   };
 
   optionRadioButtonsMap = new Map([
-    [ this.doubtRadioButtonId, { value : GlobalData.bottomPanelModes.doubt } ],
-    [ this.shapeRadioButtonId, { value : GlobalData.bottomPanelModes.shape } ],
+    [ this.doubtRadioButtonId,   { value : GlobalData.bottomPanelModes.doubt } ],
+    [ this.shapeRadioButtonId,   { value : GlobalData.bottomPanelModes.shape } ],
     [ this.realismRadioButtonId, { value : GlobalData.bottomPanelModes.realism } ]
   ]);
 
