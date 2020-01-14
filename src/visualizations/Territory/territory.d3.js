@@ -38,7 +38,7 @@ const showHillModes = {
   nothing : "nothing",
 };
 
-const donutsClasses = {
+const customElementsClasses = {
     dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
 };
 
@@ -636,7 +636,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
-        this.showDonuts(donutsClasses.dubitativePhenomena_level_2, 1);
+        this.showCustomElements(customElementsClasses.dubitativePhenomena_level_2, 1);
 
         this.showHills(0);
 
@@ -765,6 +765,7 @@ console.log("colorScale", colorScale);
 
     if(["first_publication", "collection"].includes(filterCondition))
     {
+console.log("inside if");      
       this.text_nodes.style("display", "block");      
 
       allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
@@ -786,31 +787,42 @@ console.log("colorScale", colorScale);
 
 
       allHills
-        .filter(d => d[filterCondition])
+//        .filter(d => d[filterCondition])
         .transition()
         .duration(350)
-        .style("fill", d => colorScale(d[filterCondition]));
+        .style("fill", d => {
+console.log("d", d);
+console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));
+          return colorScale(d[filterCondition]);
+        });
 
       return;
-    }
+    }    
 
     allHills
       .filter(d => !d[filterCondition])
       .transition()
       .duration(350)
-      .style("fill", d => "transparent");
+      .style("fill", d => {
+console.log("d", d);
+console.log("transparent");
+        return "transparent"
+      });
 
     allHills
       .filter(d => d[filterCondition])
       .transition()
       .duration(350)
-      .style("fill", d => colorScale(d[filterCondition]));
+      .style("fill", d => {
+console.log("d", d);
+console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));        
+        return colorScale(d[filterCondition])
+      });
   };
 
-  showDonuts = (donutsClass, opacity) => {
-		this.text_nodes
-//			.selectAll('.dubitativePhenomena_level_2')
-      .selectAll("." + donutsClass)
+  showCustomElements = (elementsClass, opacity) => {
+    d3
+      .selectAll("." + elementsClass)
 			.style('fill-opacity', opacity)
 			.style('stroke-opacity', opacity);
   }

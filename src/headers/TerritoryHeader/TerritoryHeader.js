@@ -35,8 +35,6 @@ export default class TerritoryHeader extends React.Component
 
   render()
   {
-console.log("territory header - this.props.textsData : ", this.props.textsData);
-
     return (
       <div className="top-nav navigations">
 
