@@ -357,9 +357,6 @@ console.log("territory initialize");
 		.attr("fill", "#ff6c39")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -368,9 +365,6 @@ console.log("territory initialize");
 		.attr("fill", "orange")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -379,9 +373,6 @@ console.log("territory initialize");
 		.attr("fill", "#bbbbff")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -390,9 +381,6 @@ console.log("territory initialize");
 		.attr("fill", "darkgrey")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -401,10 +389,6 @@ console.log("territory initialize");
 		.attr("fill", "#5151fc")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
-		.attr('transform', function(d, i) {
-			i = i * step_increment
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -413,9 +397,6 @@ console.log("territory initialize");
 		.attr("fill", "#00c19c")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 
 	steps
@@ -424,9 +405,6 @@ console.log("territory initialize");
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc7)
-		.attr('transform', function(d, i) {
-			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-		})
 		.style('fill-opacity', 0);
 /*
 	steps
