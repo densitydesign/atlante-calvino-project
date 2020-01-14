@@ -39,8 +39,13 @@ const showHillModes = {
 };
 
 const customElementsClasses = {
-    dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
+  dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
 };
+
+Object.keys(customElementsClasses).forEach(key => 
+  customElementsClasses[key + "_full"] = ["customElements", customElementsClasses[key]].join(" "));
+
+customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
@@ -185,22 +190,22 @@ console.log("territory initialize");
       .range(['#FFDDFF', 'violet']);
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology, { filterCondition : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,    { filterCondition : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.fog,             { filterCondition : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.cancellation,    { filterCondition : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.all,             { filterCondition : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.percentage,      {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
+      [ GlobalData.analysisModes.noAnalysis.chronology, { customElementsClass : null, dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,    { customElementsClass : null, dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.fog,             { customElementsClass : null, dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.cancellation,    { customElementsClass : null, dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.all,             { customElementsClass : null, dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.doubt.percentage,      { customElementsClass : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
       [ GlobalData.analysisModes.shape.proportion,      {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
       [ GlobalData.analysisModes.shape.types,           {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.genericNonTerrestrial, { filterCondition : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedNonTerrestrial,   { filterCondition : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.genericTerrestrial,    { filterCondition : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.namedTerrestrial,      { filterCondition : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.invented,              { filterCondition : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.noSetting,             { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.proportion,            { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.hierarchy,             { filterCondition : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
+      [ GlobalData.analysisModes.genericNonTerrestrial, { customElementsClass : null, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedNonTerrestrial,   { customElementsClass : null, dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.genericTerrestrial,    { customElementsClass : null, dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.namedTerrestrial,      { customElementsClass : null, dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.invented,              { customElementsClass : null, dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.noSetting,             { customElementsClass : null, dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.proportion,            { dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
+      [ GlobalData.analysisModes.hierarchy,             { dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
     ]);
 
     this.text_nodes = g
@@ -289,7 +294,8 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "blue")
-      .attr("class", "dubitativePhenomena_level_2")
+      .attr("class", customElements)
+      .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
 
@@ -297,7 +303,8 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "red")
-      .attr("class", "dubitativePhenomena_level_2")
+      .attr("class", customElements)
+      .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
 
@@ -305,7 +312,8 @@ console.log("territory initialize");
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
       .attr("fill", "transparent")
-      .attr("class", "dubitativePhenomena_level_2")
+      .attr("class", customElements)
+      .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc3)
       .style('fill-opacity', 0);
 
@@ -594,40 +602,45 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.noAnalysis.chronology :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
       case GlobalData.analysisModes.noAnalysis.volumes :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
       case GlobalData.analysisModes.doubt.fog :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
       case GlobalData.analysisModes.doubt.cancellation :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
       case GlobalData.analysisModes.doubt.all :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
@@ -635,10 +648,7 @@ console.log("highlightParameters", highlightParameters);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
-
-        this.showCustomElements(customElementsClasses.dubitativePhenomena_level_2, 1);
-
-        this.showHills(0);
+        this.highlightCustomElements(highlightParameters.customElementsClass);
 
         break;
 
@@ -659,7 +669,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.genericNonTerrestrial :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -667,7 +677,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.namedNonTerrestrial :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -675,7 +685,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.genericTerrestrial :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -683,7 +693,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.namedTerrestrial :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -691,7 +701,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.invented :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -699,7 +709,7 @@ console.log("highlightParameters", highlightParameters);
       case GlobalData.analysisModes.realism.noSetting :
 
         this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.filterCondition, highlightParameters.colorScale);
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
 
         break;
@@ -722,11 +732,11 @@ console.log("highlightParameters", highlightParameters);
     }
   };
 
-  highlightHills_old = (filterCondition, colorScale) => {
+  highlightHills_old = (dataMember, colorScale) => {
 
     const allHills = d3.selectAll(".hill");
 
-    if(!filterCondition)
+    if(!dataMember)
     {
       this.text_nodes.style("display", "block");      
 
@@ -743,27 +753,27 @@ console.log("highlightParameters", highlightParameters);
     }
 
     allHills
-      .filter(d => !d[filterCondition])
+      .filter(d => !d[dataMember])
       .transition()
       .duration(350)
       .style("fill", d => "transparent");
 
     allHills
-      .filter(d => d[filterCondition])
+      .filter(d => d[dataMember])
       .transition()
       .duration(350)
-      .style("fill", d => colorScale(d[filterCondition]));
+      .style("fill", d => colorScale(d[dataMember]));
   };
 
-  highlightHills = (filterCondition, colorScale) => {
+  highlightHills = (dataMember, colorScale) => {
 
 console.log("highlightHills");
-console.log("filterCondition", filterCondition);
+console.log("dataMember", dataMember);
 console.log("colorScale", colorScale);
 
     const allHills = d3.selectAll(".hill");
 
-    if(["first_publication", "collection"].includes(filterCondition))
+    if(["first_publication", "collection"].includes(dataMember))
     {
 console.log("inside if");      
       this.text_nodes.style("display", "block");      
@@ -779,7 +789,7 @@ console.log("inside if");
 */
 /*
       allHills
-        .filter(d => !d[filterCondition])
+        .filter(d => !d[dataMember])
         .transition()
         .duration(350)
         .style("fill", d => "transparent");
@@ -787,20 +797,20 @@ console.log("inside if");
 
 
       allHills
-//        .filter(d => d[filterCondition])
+//        .filter(d => d[dataMember])
 //        .transition()
 //        .duration(350)
         .style("fill", d => {
 //console.log("d", d);
-//console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));
-          return colorScale(d[filterCondition]);
+//console.log("colorScale(d[dataMember])", colorScale(d[dataMember]));
+          return colorScale(d[dataMember]);
         });
 
       return;
     }    
 
     allHills
-      .filter(d => !d[filterCondition])
+      .filter(d => !d[dataMember])
 //      .transition()
 //      .duration(350)
       .style("fill", d => {
@@ -810,15 +820,21 @@ console.log("inside if");
       });
 
     allHills
-      .filter(d => d[filterCondition])
+      .filter(d => d[dataMember])
 //      .transition()
 //      .duration(350)
       .style("fill", d => {
 //console.log("d", d);
-//console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));        
-        return colorScale(d[filterCondition])
+//console.log("colorScale(d[dataMember])", colorScale(d[dataMember]));        
+        return colorScale(d[dataMember])
       });
   };
+
+  highlightCustomElements = elementsClass => {
+    this.showCustomElements(customElementsClasses.customElements, 0);
+
+    if(elementsClass) this.showCustomElements(elementsClass, 1);
+  }
 
   showCustomElements = (elementsClass, opacity) => {
     d3
