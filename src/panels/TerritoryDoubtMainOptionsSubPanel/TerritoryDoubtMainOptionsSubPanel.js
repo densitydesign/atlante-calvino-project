@@ -5,7 +5,7 @@ import RadioButton from '../../general/RadioButton/RadioButton';
 
 import './TerritoryDoubtMainOptionsSubPanel.css';
 
-export default class DoubtMainOptionsSubPanel extends React.Component
+export default class TerritoryDoubtMainOptionsSubPanel extends React.Component
 {
   render()
   {
