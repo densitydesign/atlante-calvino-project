@@ -788,11 +788,11 @@ console.log("inside if");
 
       allHills
 //        .filter(d => d[filterCondition])
-        .transition()
-        .duration(350)
+//        .transition()
+//        .duration(350)
         .style("fill", d => {
-console.log("d", d);
-console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));
+//console.log("d", d);
+//console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));
           return colorScale(d[filterCondition]);
         });
 
@@ -801,21 +801,21 @@ console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));
 
     allHills
       .filter(d => !d[filterCondition])
-      .transition()
-      .duration(350)
+//      .transition()
+//      .duration(350)
       .style("fill", d => {
-console.log("d", d);
-console.log("transparent");
+//console.log("d", d);
+//console.log("transparent");
         return "transparent"
       });
 
     allHills
       .filter(d => d[filterCondition])
-      .transition()
-      .duration(350)
+//      .transition()
+//      .duration(350)
       .style("fill", d => {
-console.log("d", d);
-console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));        
+//console.log("d", d);
+//console.log("colorScale(d[filterCondition])", colorScale(d[filterCondition]));        
         return colorScale(d[filterCondition])
       });
   };
