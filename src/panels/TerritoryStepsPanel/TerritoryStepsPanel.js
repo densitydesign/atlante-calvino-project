@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import RadioButton from '../../general/RadioButton/RadioButton';
+
 import TerritoryDoubtPanel from '../TerritoryDoubtPanel/TerritoryDoubtPanel';
 import TerritoryShapePanel from '../TerritoryShapePanel/TerritoryShapePanel';
 import TerritoryRealismPanel from '../TerritoryRealismPanel/TerritoryRealismPanel';
@@ -11,6 +13,49 @@ import GlobalData from '../../utilities/GlobalData';
 
 export default class TerritoryStepsPanel extends React.Component
 {
+  doubtRadioButtonId = "doubtRadioButton";
+  doubtRadioButtonCaption = "DUBBIO";
+
+  shapeRadioButtonId = "shapeRadioButton";
+  shapeRadioButtonCaption = "FORMA";
+
+  realismRadioButtonId = "realismRadioButton";
+  realismRadioButtonCaption = "REALISMO";
+
+  state = {
+    optionRadioButtonsStates : [
+      { id : this.doubtRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
+      { id : this.shapeRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
+      { id : this.realismRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.realism }
+    ]
+  };
+
+  optionRadioButtonsMap = new Map([
+    [ this.doubtRadioButtonId, { value : GlobalData.bottomPanelModes.doubt } ],
+    [ this.shapeRadioButtonId, { value : GlobalData.bottomPanelModes.shape } ],
+    [ this.realismRadioButtonId, { value : GlobalData.bottomPanelModes.realism } ]
+  ]);
+
+  optionRadioButtonPressed = buttonId => {
+    const buttonState = this.state.optionRadioButtonsStates.find(item => item.id === buttonId);
+
+    if(buttonState.pressed) return;
+
+    const optionRadioButtonsStatesCopy = [...this.state.optionRadioButtonsStates];
+
+    const buttonStateCopy = optionRadioButtonsStatesCopy.find(item => item.id === buttonId);
+    buttonStateCopy.pressed = true;
+
+    const otherButtons = optionRadioButtonsStatesCopy.filter(item => item.id !== buttonId);
+    otherButtons.forEach(button => button.pressed = false);
+
+    this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
+
+// !!! qui impostare non tanto l'highlight mode, quanto il panel mode (che implicherà il passaggio all'highlight mode memorizzato nel corrispondente panel state)
+//    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
+    this.props.containerSetBottomPanelMode(this.optionRadioButtonsMap.get(buttonId).value);
+  };
+
   render()
   {
     let rendering;
@@ -56,9 +101,28 @@ export default class TerritoryStepsPanel extends React.Component
     return (
       <div className="territory-steps-panel">
         <div className="territory-button-grid">
-          <span>DUBBIO</span>
-          <span>SPAZIO</span>
-          <span>FORMA</span>
+
+        <RadioButton 
+          id={this.doubtRadioButtonId} 
+          caption={this.doubtRadioButtonCaption} 
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.doubtRadioButtonId).pressed}
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+        />
+
+        <RadioButton 
+          id={this.shapeRadioButtonId} 
+          caption={this.shapeRadioButtonCaption} 
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.shapeRadioButtonId).pressed} 
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+        />
+
+        <RadioButton 
+          id={this.realismRadioButtonId}
+          caption={this.realismRadioButtonCaption}
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.realismRadioButtonId).pressed}
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+        />
+
         </div>
         {rendering}
       </div>

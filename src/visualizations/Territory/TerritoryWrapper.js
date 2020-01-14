@@ -23,7 +23,7 @@ export default class TerritoryWrapper extends React.Component
     realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial,
     
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
-    doubtAnalysisMode : GlobalData.analysisModes.doubt.cancellation,
+    doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.proportion,
     realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial
   };
@@ -124,6 +124,7 @@ export default class TerritoryWrapper extends React.Component
                 shapePanelMode={this.state.shapePanelMode}
                 realismPanelMode={this.state.realismPanelMode}
                 data={this.state.data}
+                containerSetBottomPanelMode={this.setBottomPanelMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}

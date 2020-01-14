@@ -53,7 +53,7 @@ export default class TerritoryDoubtPanel extends React.Component
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
 
     this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
-  }
+  };
 
   render()
   {

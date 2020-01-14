@@ -27,6 +27,7 @@ export default class TerritoryBottomPanel extends React.Component
 
         rendering = (
           <TerritoryStepsPanel 
+            containerSetBottomPanelMode={this.props.containerSetBottomPanelMode}
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode}
             bottomPanelMode={this.props.bottomPanelMode}
             doubtPanelMode={this.props.doubtPanelMode}
