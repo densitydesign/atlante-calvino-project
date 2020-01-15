@@ -253,7 +253,7 @@ console.log("territory initialize");
 
 		const place_hierarchies_nodes = place_hierarchies_group
 			.selectAll(".place_hierarchy_node")
-			.data(data.place_hierarchies_graphics_items)
+			.data(input_data.place_hierarchies_info.place_hierarchies_graphics_items)
 			.enter()
 			.append("g")
 			.attr("class", "place_hierarchy_node")
@@ -262,7 +262,7 @@ console.log("territory initialize");
 				return "scale(1, " + with_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
 			});
 
-		const graphical_ops = [];
+		let graphical_ops = [];
 
 		const place_hierarchies = place_hierarchies_nodes
 			.selectAll(".place_hierarchy")
@@ -362,14 +362,14 @@ console.log("territory initialize");
 				jellyfish_node_info.bbox = bbox;
 			});
 
-		for(let [k, jellyfish] of place_hierarchies)
+		for(let [k, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
 		{
 			visit(
 				jellyfish,
 				{},
-				(jn, status) => jn.bbox = data.place_hierarchy_node_info_map.get(jn.node_id).bbox);
+				(jn, status) => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
 
-			let j = data.json_node_map.get(jellyfish.caption);
+			let j = input_data.json_node_map.get(jellyfish.caption);
 			let radiusScaleFactor = j.steps[0].r / 30;
 
 			prepare_jellyfish_data_2(jellyfish, { x:0, y:0 }, radiusScaleFactor);
@@ -379,7 +379,7 @@ console.log("territory initialize");
       .selectAll(".place_hierarchy")
       .remove();
 
-    const place_hierarchies_info_2 = prepare_place_hierarchies_2(place_hierarchies);
+    const place_hierarchies_info_2 = prepare_place_hierarchies_2(place_hierarchies, input_data.json_node_map);
 
 		json_nodes.forEach(d => {
 			let item = place_hierarchies_info_2.place_hierarchies_graphics_item_map_2.get(d.id);
@@ -1482,7 +1482,7 @@ function clone_d3_selection(selection, i)
 	return cloned;
 }
 
-function prepare_place_hierarchies_2(place_hierarchies)
+function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
@@ -1502,7 +1502,13 @@ function prepare_place_hierarchies_2(place_hierarchies)
 		const place_hierarchy = data.place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-			draw_jellyfish(d.graphical_ops, place_hierarchy, { x : 0, y : 0 } /*place_hierarchy.circle_position*/, place_hierarchy.caption);
+			draw_jellyfish(
+        d.graphical_ops, 
+        place_hierarchy, 
+        { x : 0, y : 0 } /*place_hierarchy.circle_position*/, 
+        place_hierarchy.caption,
+        json_node_map);
+
 			place_hierarchies_graphics_item_map_2.set(d.caption, d);
 		}
 	});

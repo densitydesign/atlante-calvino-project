@@ -44,12 +44,18 @@ export default class TerritoryWrapper extends React.Component
 
         d3.json(process.env.PUBLIC_URL + "/places_hierarchy.json").then(place_hierarchies_json => {
 
-          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_node_map);
+          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_node_map, json_nodes);
 
           const textsData = getTextsData(json_nodes);
 
           this.setState({
-            data : { json_nodes : json_nodes, x_csv2 : x_csv2, textsData : textsData },
+            data : { 
+              json_nodes : json_nodes,
+              json_node_map : json_node_map,
+              x_csv2 : x_csv2, 
+              textsData : textsData, 
+              place_hierarchies_info : place_hierarchies_info
+            },
             isLoading : false
           });
         });

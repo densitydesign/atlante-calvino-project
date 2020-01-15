@@ -1,5 +1,6 @@
 
-import { draw_line } from './jellyfish_graphical_functions.js';
+import { draw_arc, draw_line, draw_point, draw_text, split_text } from './jellyfish_graphical_functions.js';
+import { normalizeAngle } from './support_functions';
 
 /*
 function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
@@ -253,9 +254,9 @@ function getProgressiveSumMap(valueMap)
 
 function MapToMap(map, f)
 {
-  let map2 = new Map();
+  const map2 = new Map();
 
-  for([key, value] of map)
+  for(let [key, value] of map)
   {
     map2.set(key, f(value));
   }
@@ -265,7 +266,7 @@ function MapToMap(map, f)
 
 function split_texts(hierarchy)
 {
-  let caption_split_threshold = 19;
+  const caption_split_threshold = 19;
 
   visit(
     hierarchy,
@@ -276,7 +277,7 @@ function split_texts(hierarchy)
       for(let i = 0; i < d.children.length; ++i)
       {
         let child = d.children[i];
-
+console.log("split_text", split_text);
         let caption_segments = split_text(child.caption, caption_split_threshold);
 
         child.caption = caption_segments[0];
@@ -459,7 +460,7 @@ function angleIsInLeftEmicircle(angle)
   return Math.PI / 2 < angle && angle < 3 * Math.PI / 2;
 }
 
-function draw_jellyfish_node(graphicsContainer, d, status, center, text_id)
+function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map)
 {
   let inLeftEmicircle = angleIsInLeftEmicircle(d.angle);
 
@@ -533,7 +534,7 @@ console.log("CR");
 
   if(d.level > 0 && d.hasPoint) draw_point(graphicsContainer, d.circle_position, textColor, text_id);
 
-  if(d.level > 0) draw_text(graphicsContainer, text_info, text_id);
+  if(d.level > 0) draw_text(graphicsContainer, text_info, text_id, json_node_map);
 
   if(d.children.length > 0)
   {
@@ -619,12 +620,12 @@ console.log("CR");
   }
 }
 
-export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id)
+export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id, json_node_map)
 {
   visit(
     jellyfish,
     {},
-    (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id));
+    (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map));
 }
 
 export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
@@ -809,4 +810,65 @@ console.log("d.children[i].node_id : " + d.children[i].node_id);
         d.circle_position.y = y;
       }
     });
+}
+
+function algebraicShortestAngleDifference(angle1, angle2)
+{
+  let a1 = normalizeAngle(angle1);
+  let a2 = normalizeAngle(angle2);
+
+  if(a2 == a1) return 0;
+
+  if(a2 > a1)
+  {
+	  let delta = a2 - a1;
+	  if(delta > Math.PI) return 2 * Math.PI - (delta);
+	  else return delta;
+  }
+  else
+  {
+	  let delta = a1 - a2;
+	  if(delta > Math.PI) return -(2 * Math.PI - (delta));
+	  else return -delta;
+  }
+}
+
+function calculate_startAngle(nodes, i)
+{
+  let startAngle =
+    nodes[i].angle -
+    deltaAngle(
+      nodes[mod(i - 1, nodes.length)].angle,
+      nodes[i].angle) / 2;
+
+  startAngle = normalizeAngle(startAngle + Math.PI / 2);
+
+  return startAngle;
+}
+
+function calculate_endAngle(nodes, i)
+{
+  let endAngle =
+    nodes[i].angle +
+    deltaAngle(
+      nodes[i].angle,
+      nodes[mod(i + 1, nodes.length)].angle) / 2;
+
+  endAngle = normalizeAngle(endAngle + Math.PI / 2);
+
+  return endAngle;
+}
+
+function deltaAngle(angle1, angle2)
+{
+  let a1 = normalizeAngle(angle1);
+  let a2 = normalizeAngle(angle2);
+
+  if(a1 > a2) return a2 + (2 * Math.PI - a1);
+  else return a2 - a1;
+}
+
+function mod(x, n)
+{
+  return (x % n + n) % n;
 }

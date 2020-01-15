@@ -1,5 +1,5 @@
 
-function draw_point(graphicsContainer, point, color, text_id)
+export function draw_point(graphicsContainer, point, color, text_id)
 {
   const point_radius = 5;
 
@@ -14,7 +14,7 @@ function draw_point(graphicsContainer, point, color, text_id)
   });
 }
 
-function draw_line(graphicsContainer, line, color, text_id)
+export function draw_line(graphicsContainer, line, color, text_id)
 {
   const line_width = 3;
 
@@ -45,7 +45,7 @@ function draw_simple_arc(graphicsContainer, arc, color, text_id)
   });
 }
 
-function draw_arc(graphicsContainer, arc, color, text_id)
+export function draw_arc(graphicsContainer, arc, color, text_id)
 {
   let epsilonAngle = 0.01;
 
@@ -103,7 +103,7 @@ function draw_arc(graphicsContainer, arc, color, text_id)
   draw_simple_arc(graphicsContainer, arc, color, text_id);
 }
 
-function split_text(text, threshold)
+export function split_text(text, threshold)
 {
 //console.log("split_text(" + text + ", " + threshold + ")");
   if(text.length <= threshold) return [text];
@@ -119,11 +119,11 @@ function split_text(text, threshold)
   else return [text];
 }
 
-function draw_text(graphicsContainer, text_info, text_id)
+export function draw_text(graphicsContainer, text_info, text_id, json_node_map)
 {
   let caption_split_threshold = 19;
 
-  let jn = data.json_node_map.get(text_info.text_id);
+  let jn = json_node_map.get(text_info.text_id);
 //if(jn) console.log("jn.hill_size : " + jn.size);
 
 /*
