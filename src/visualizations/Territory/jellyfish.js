@@ -1,4 +1,7 @@
 
+import { draw_line } from './jellyfish_graphical_functions.js';
+
+/*
 function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
 {
   if(jellyfish1.children.length == 0 || jellyfish2.children.length == 0) return 0;
@@ -20,6 +23,7 @@ function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
 
   return min_offset_found;
 }
+*/
 
 function calculate_width(hierarchy)
 {
@@ -615,7 +619,7 @@ console.log("CR");
   }
 }
 
-function draw_jellyfish(graphicsContainer, jellyfish, center, text_id)
+export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id)
 {
   visit(
     jellyfish,
@@ -623,7 +627,7 @@ function draw_jellyfish(graphicsContainer, jellyfish, center, text_id)
     (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id));
 }
 
-function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
+export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 {
 //console.log("prepare_jellyfish_data_2()");
   var level_maxTextLen_map = new Map();

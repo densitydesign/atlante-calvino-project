@@ -228,12 +228,10 @@ console.log("json_nodes_min_size", json_nodes_min_size);
   return json_nodes;
 }
 
-function process_place_hierarchies(place_hierarchies_json, json_node_map)
+function process_place_hierarchies(place_hierarchies_json, json_node_map, json_nodes)
 {
   const place_hierarchies = new Map();
   const place_hierarchy_node_info_map = new Map();
-
-  place_hierarchies_graphics_item_map = new Map()
 
   const center = { x : 0, y : 0 };
 
@@ -255,7 +253,7 @@ function process_place_hierarchies(place_hierarchies_json, json_node_map)
 
   const place_hierarchies_graphics_items = place_hierarchies_json.hierarchies.map(
     d => {
-      let text_group = {
+      const text_group = {
         caption : d.caption,
         graphical_ops : []
       };
@@ -263,18 +261,46 @@ function process_place_hierarchies(place_hierarchies_json, json_node_map)
       return text_group;
     });
 
-	data.place_hierarchies_graphics_item_map = new Map();
+	const place_hierarchies_graphics_item_map = new Map();
 
-	data.place_hierarchies_graphics_items.forEach(d => {
-		let place_hierarchy = data.place_hierarchies.get(d.caption);
+	place_hierarchies_graphics_items.forEach(d => {
+		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
 // MP20200115 - CAN'T DO IT HERE
 //			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption);
 
-			data.place_hierarchies_graphics_item_map.set(d.caption, d);
+			place_hierarchies_graphics_item_map.set(d.caption, d);
 		}
-	});    
+	});
+
+	json_nodes.forEach(d => {
+		const item = place_hierarchies_graphics_item_map.get(d.id);
+		if(item)
+		{
+			item.x = d.x;
+			item.y = d.y;
+		}
+	});
+
+	place_hierarchies_graphics_items.forEach(d => {
+		const jn = json_node_map.get(d.caption);
+
+		if(jn)
+		{
+			d.n_steps = jn.steps.length;
+			d.graphical_ops.forEach(grop => {
+				grop.hill_size = jn.size;
+				if(grop.caption_segments)
+				{
+					grop.caption_segments.forEach(cs => {
+						cs.hill_size = jn.size;
+					});
+				}
+			});
+//			d.r = jn.steps[0].r;
+		}
+	});  
 
   const place_hierarchies_info = {
     place_hierarchies                   : place_hierarchies,
