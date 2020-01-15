@@ -9,6 +9,8 @@ import TerritoryStepsPanel from '../../panels/TerritoryStepsPanel/TerritorySteps
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
 
+import { prepare_jellyfish_data, visit } from './jellyfish';
+
 import './TerritoryWrapper.css';
 
 export default class TerritoryWrapper extends React.Component
@@ -37,12 +39,19 @@ export default class TerritoryWrapper extends React.Component
       d3.json(process.env.PUBLIC_URL + "/territory_graphical_data.json").then(json => {
 
         const json_nodes = process_json_nodes(json.nodes, x_csv2);
+        const json_node_map = new Map();
+        json_nodes.forEach(d => json_node_map.set(d.id, d));
 
-        const textsData = getTextsData(json_nodes);
+        d3.json(process.env.PUBLIC_URL + "/places_hierarchy.json").then(place_hierarchies_json => {
 
-        this.setState({
-          data : { json_nodes : json_nodes, x_csv2 : x_csv2, textsData : textsData },
-          isLoading : false
+          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_node_map);
+
+          const textsData = getTextsData(json_nodes);
+
+          this.setState({
+            data : { json_nodes : json_nodes, x_csv2 : x_csv2, textsData : textsData },
+            isLoading : false
+          });
         });
       });
     });
@@ -217,6 +226,64 @@ console.log("json_nodes_min_size", json_nodes_min_size);
   json_nodes.forEach(d => create_item_steps(d, json_nodes_min_size, x_csv2));
 
   return json_nodes;
+}
+
+function process_place_hierarchies(place_hierarchies_json, json_node_map)
+{
+  const place_hierarchies = new Map();
+  const place_hierarchy_node_info_map = new Map();
+
+  place_hierarchies_graphics_item_map = new Map()
+
+  const center = { x : 0, y : 0 };
+
+  place_hierarchies_json.hierarchies.forEach(d => {
+    if(d.caption != "Terra" && d.caption != "S152")
+    {
+      const j = json_node_map.get(d.caption);
+
+      // if we have restricted the json_nodes via allowedCollections, some j values will be null : nothing to do in these iterations
+      if(!j) return;
+
+      const radiusScaleFactor = j.steps[0].r / 30;
+
+      place_hierarchies.set(d.caption, prepare_jellyfish_data(d, center, radiusScaleFactor));
+
+      visit(d, {}, (jn, status) => place_hierarchy_node_info_map.set(jn.node_id, {}));
+    }
+  });
+
+  const place_hierarchies_graphics_items = place_hierarchies_json.hierarchies.map(
+    d => {
+      let text_group = {
+        caption : d.caption,
+        graphical_ops : []
+      };
+
+      return text_group;
+    });
+
+	data.place_hierarchies_graphics_item_map = new Map();
+
+	data.place_hierarchies_graphics_items.forEach(d => {
+		let place_hierarchy = data.place_hierarchies.get(d.caption);
+		if(place_hierarchy)
+		{
+// MP20200115 - CAN'T DO IT HERE
+//			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption);
+
+			data.place_hierarchies_graphics_item_map.set(d.caption, d);
+		}
+	});    
+
+  const place_hierarchies_info = {
+    place_hierarchies                   : place_hierarchies,
+    place_hierarchy_node_info_map       : place_hierarchy_node_info_map,
+    place_hierarchies_graphics_items    : place_hierarchies_graphics_items,
+    place_hierarchies_graphics_item_map : place_hierarchies_graphics_item_map
+  };
+
+  return place_hierarchies_info;
 }
 
 function getTextsData(json_nodes)
