@@ -11,29 +11,13 @@ export default class TerritoryFooter extends React.Component
   legendToggleButtonId = "legendToggleButton";
   legendToggleButtonCaption = "LEGENDA";
 
-  timeFilterToggleButtonId = "timeFilterToggleButton";
-  timeFilterToggleButtonCaption = "FILTRO CRONOLOGICO";
+  chronologicalFilterToggleButtonId = "chronologicalFilterToggleButton";
+  chronologicalFilterToggleButtonCaption = "FILTRO CRONOLOGICO";
 
   territoryLabel = "territorio";
   doubtLabel = "dubbio";
   shapeLabel = "forma";
   realismLabel = "realismo";
-
-  state = {
-    steps : {
-      multiple : false,
-      options : [
-        { label : this.territoryLabel, status : true },
-        { label : this.doubtLabel, status : false },
-        { label : this.shapeLabel, status : false },
-        { label : this.realismLabel, status : false }
-      ]
-    },
-    toggleButtonsStates : [
-      { id : this.legendToggleButtonId, pressed : false },
-      { id : this.timeFilterToggleButtonId, pressed : false }
-    ]
-  };
 
   stepLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, GlobalData.bottomPanelModes.noAnalysis ],
@@ -41,6 +25,29 @@ export default class TerritoryFooter extends React.Component
     [ this.shapeLabel, GlobalData.bottomPanelModes.shape ],
     [ this.realismLabel, GlobalData.bottomPanelModes.realism ]
   ]);
+
+  toggleButtonsMap = new Map([
+    [ this.legendToggleButtonId,              { bottomPanelMode : GlobalData.bottomPanelModes.legend } ],
+    [ this.chronologicalFilterToggleButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.chronologicalFilter } ]
+  ]);
+
+  state = {
+    steps : {
+      multiple : false,
+      options : [
+        { label : this.territoryLabel, status : true },
+        { label : this.doubtLabel,     status : false },
+        { label : this.shapeLabel,     status : false },
+        { label : this.realismLabel,   status : false }
+      ]
+    },
+    toggleButtonsStates : [
+      { id : this.legendToggleButtonId,              pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).doubtPanelMode },
+      { id : this.chronologicalFilterToggleButtonId, pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).doubtPanelMode }
+    ]
+  };
+
+
 
 // set here bottom panel mode, rather than higlight mode
 //  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
@@ -57,6 +64,10 @@ export default class TerritoryFooter extends React.Component
     buttonStateCopy.pressed = !buttonStateCopy.pressed;
 
     this.setState({ toggleButtonsStates : toggleButtonsStatesCopy });
+
+    const value = this.toggleButtonsMap.get(buttonId);
+console.log("setBottomPanelMode()");    
+    this.props.setBottomPanelMode(value.bottomPanelMode);
   };
 
   render()
@@ -72,9 +83,9 @@ export default class TerritoryFooter extends React.Component
         />
 
         <ToggleButton 
-          id={this.timeFilterToggleButtonId} 
-          caption={this.timeFilterToggleButtonCaption} 
-          pressed={this.state.toggleButtonsStates.find(item => item.id === this.timeFilterToggleButtonId).pressed} 
+          id={this.chronologicalFilterToggleButtonId} 
+          caption={this.chronologicalFilterToggleButtonCaption} 
+          pressed={this.state.toggleButtonsStates.find(item => item.id === this.chronologicalFilterToggleButtonId).pressed} 
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
         />
 
