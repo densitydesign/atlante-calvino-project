@@ -358,7 +358,7 @@ console.log("territory initialize");
 		label_ids.forEach(
 			d => {
 				let bbox = document.getElementById(d).getBBox();
-				let jellyfish_node_info = data.place_hierarchy_node_info_map.get(d);
+				let jellyfish_node_info = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(d);
 				jellyfish_node_info.bbox = bbox;
 			});
 
@@ -379,7 +379,7 @@ console.log("territory initialize");
       .selectAll(".place_hierarchy")
       .remove();
 
-    const place_hierarchies_info_2 = prepare_place_hierarchies_2(place_hierarchies, input_data.json_node_map);
+    const place_hierarchies_info_2 = prepare_place_hierarchies_2(input_data.place_hierarchies_info.place_hierarchies, input_data.json_node_map);
 
 		json_nodes.forEach(d => {
 			let item = place_hierarchies_info_2.place_hierarchies_graphics_item_map_2.get(d.id);
@@ -407,7 +407,7 @@ console.log("territory initialize");
         return "scale(1, " + with_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
-    const graphical_ops_2 = [];
+    let graphical_ops_2 = [];
 
     const place_hierarchies_2 = place_hierarchies_nodes_2
       .selectAll(".place_hierarchy_2")
@@ -1485,7 +1485,7 @@ function clone_d3_selection(selection, i)
 function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
 {
 	const place_hierarchies_graphics_items_2 = [];
-
+console.log("place_hierarchies", place_hierarchies);
 	for(let [text_id, place_hierarchy] of place_hierarchies)
 	{
 			let text_group = {
@@ -1499,7 +1499,7 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
 	const place_hierarchies_graphics_item_map_2 = new Map();
 
 	place_hierarchies_graphics_items_2.forEach(d => {
-		const place_hierarchy = data.place_hierarchies.get(d.caption);
+		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
 			draw_jellyfish(

@@ -9,7 +9,7 @@ import TerritoryStepsPanel from '../../panels/TerritoryStepsPanel/TerritorySteps
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
 
-import { prepare_jellyfish_data, visit } from './jellyfish';
+import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
 import './TerritoryWrapper.css';
 
@@ -44,7 +44,7 @@ export default class TerritoryWrapper extends React.Component
 
         d3.json(process.env.PUBLIC_URL + "/places_hierarchy.json").then(place_hierarchies_json => {
 
-          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_node_map, json_nodes);
+          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map);
 
           const textsData = getTextsData(json_nodes);
 
@@ -234,7 +234,7 @@ console.log("json_nodes_min_size", json_nodes_min_size);
   return json_nodes;
 }
 
-function process_place_hierarchies(place_hierarchies_json, json_node_map, json_nodes)
+function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map)
 {
   const place_hierarchies = new Map();
   const place_hierarchy_node_info_map = new Map();
@@ -273,8 +273,7 @@ function process_place_hierarchies(place_hierarchies_json, json_node_map, json_n
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-// MP20200115 - CAN'T DO IT HERE
-//			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption);
+			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption, json_node_map);
 
 			place_hierarchies_graphics_item_map.set(d.caption, d);
 		}
