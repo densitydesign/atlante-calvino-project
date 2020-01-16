@@ -96,7 +96,7 @@ export default class TerritoryWrapper extends React.Component
       case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
       case GlobalData.bottomPanelModes.doubt : this.territorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.bottomPanelModes.shape : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.bottomPanelModes.realism : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
+      case GlobalData.bottomPanelModes.realism : this.territorySetHighlightMode(this.state.realismAnalysisMode); break;
       case GlobalData.bottomPanelModes.chronologicalFilter : break;
       case GlobalData.bottomPanelModes.legend : break;
       default : break;
