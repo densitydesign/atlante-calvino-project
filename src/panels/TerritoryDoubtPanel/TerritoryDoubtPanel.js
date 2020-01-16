@@ -21,21 +21,21 @@ export default class TerritoryDoubtPanel extends React.Component
   percentageRadioButtonId = "percentageRadioButton";
   percentageRadioButtonCaption = "%";
 
+  optionRadioButtonsMap = new Map([
+    [ this.fogRadioButtonId,          { analysisMode : GlobalData.analysisModes.doubt.fog,          doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog } ],
+    [ this.cancellationRadioButtonId, { analysisMode : GlobalData.analysisModes.doubt.cancellation, doubtPanelMode : GlobalData.analysisPanelModes.doubt.cancellation } ],
+    [ this.allRadioButtonId,          { analysisMode : GlobalData.analysisModes.doubt.all,          doubtPanelMode : GlobalData.analysisPanelModes.doubt.all } ],
+    [ this.percentageRadioButtonId,   { analysisMode : GlobalData.analysisModes.doubt.percentage,   doubtPanelMode : GlobalData.analysisPanelModes.doubt.percentage } ]
+  ]);
+
   state = {
     optionRadioButtonsStates : [
-      { id : this.fogRadioButtonId,          pressed : false },
-      { id : this.cancellationRadioButtonId, pressed : false },
-      { id : this.allRadioButtonId,          pressed : false },
-      { id : this.percentageRadioButtonId,   pressed : false }
+      { id : this.fogRadioButtonId,          pressed : this.props.doubtPanelMode === this.optionRadioButtonsMap.get(this.fogRadioButtonId).doubtPanelMode },
+      { id : this.cancellationRadioButtonId, pressed : this.props.doubtPanelMode === this.optionRadioButtonsMap.get(this.cancellationRadioButtonId).doubtPanelMode },
+      { id : this.allRadioButtonId,          pressed : this.props.doubtPanelMode === this.optionRadioButtonsMap.get(this.allRadioButtonId).doubtPanelMode },
+      { id : this.percentageRadioButtonId,   pressed : this.props.doubtPanelMode === this.optionRadioButtonsMap.get(this.percentageRadioButtonId).doubtPanelMode }
     ]
   };
-
-  optionRadioButtonsMap = new Map([
-    [ this.fogRadioButtonId,          { value : GlobalData.analysisModes.doubt.fog } ],
-    [ this.cancellationRadioButtonId, { value : GlobalData.analysisModes.doubt.cancellation } ],
-    [ this.allRadioButtonId,          { value : GlobalData.analysisModes.doubt.all } ],
-    [ this.percentageRadioButtonId,   { value : GlobalData.analysisModes.doubt.percentage } ]
-  ]);
 
   optionRadioButtonPressed = buttonId => {
     const buttonState = this.state.optionRadioButtonsStates.find(item => item.id === buttonId);
@@ -52,7 +52,9 @@ export default class TerritoryDoubtPanel extends React.Component
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
 
-    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
+    const value = this.optionRadioButtonsMap.get(buttonId);
+    this.props.callTerritorySetHighlightMode(value.analysisMode);
+    this.props.containerSetDoubtPanelMode(value.doubtPanelMode);
   };
 
   render()

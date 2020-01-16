@@ -103,6 +103,10 @@ export default class TerritoryWrapper extends React.Component
     }
   };
 
+  setDoubtPanelMode   = value => this.setState({   doubtPanelMode : value });
+  setShapePanelMode   = value => this.setState({   shapePanelMode : value });
+  setRealismPanelMode = value => this.setState({ realismPanelMode : value });
+
   render() 
   {
     return (
@@ -134,12 +138,27 @@ export default class TerritoryWrapper extends React.Component
               {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.none &&
 
               <TerritoryBottomPanel 
+
                 bottomPanelMode={this.state.bottomPanelMode}
-                doubtPanelMode={this.state.doubtPanelMode}
-                shapePanelMode={this.state.shapePanelMode}
-                realismPanelMode={this.state.realismPanelMode}
-                data={this.state.data}
                 containerSetBottomPanelMode={this.setBottomPanelMode}
+
+                doubtPanelMode={this.state.doubtPanelMode}
+                containerSetDoubtPanelMode={this.setDoubtPanelMode}
+
+                shapePanelMode={this.state.shapePanelMode}
+                containerSetShapePanelMode={this.setShapePanelMode}
+
+                realismPanelMode={this.state.realismPanelMode}
+                containerSetRealismPanelMode={this.setRealismPanelMode}
+
+                noAnalysisMode={this.state.noAnalysisMode}
+                doubtAnalysisMode={this.state.doubtAnalysisMode}
+                shapeAnalysisMode={this.state.shapeAnalysisMode}
+                realismAnalysisMode={this.state.realismAnalysisMode}
+
+                data={this.state.data}
+
+                
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}

@@ -36,7 +36,7 @@ export default class TerritoryFooter extends React.Component
   };
 
   stepLabelOptionPanelModeMap = new Map([
-    [ this.erritoryLabel, GlobalData.bottomPanelModes.noAnalysis ],
+    [ this.territoryLabel, GlobalData.bottomPanelModes.noAnalysis ],
     [ this.doubtLabel, GlobalData.bottomPanelModes.doubt ],
     [ this.shapeLabel, GlobalData.bottomPanelModes.shape ],
     [ this.realismLabel, GlobalData.bottomPanelModes.realism ]

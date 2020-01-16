@@ -33,29 +33,29 @@ export default class TerritoryRealismPanel extends React.Component
   placeHierarchiesRadioButtonId = "placeHierarchiesRadioButton";
   placeHierarchiesRadioButtonCaption = "MEDUSE";
 
+  optionRadioButtonsMap = new Map([
+    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial, realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial } ],
+    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.realism.namedNonTerrestrial,   realismPanelMode : GlobalData.analysisPanelModes.realism.namedNonTerrestrial } ],
+    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.realism.genericTerrestrial,    realismPanelMode : GlobalData.analysisPanelModes.realism.genericTerrestrial } ],
+    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.realism.namedTerrestrial,      realismPanelMode : GlobalData.analysisPanelModes.realism.namedTerrestrial } ],
+    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.realism.invented,              realismPanelMode : GlobalData.analysisPanelModes.realism.invented } ],    
+    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.realism.noSetting,             realismPanelMode : GlobalData.analysisPanelModes.realism.noSetting } ],
+    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.realism.proportion,            realismPanelMode : GlobalData.analysisPanelModes.realism.proportion } ],
+    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.realism.placeHierarchies,      realismPanelMode : GlobalData.analysisPanelModes.realism.placeHierarchies } ]
+  ]);  
+
   state = {
     optionRadioButtonsStates : [
-      { id : this.genericNonTerrestrialRadioButtonId, pressed : false },
-      { id : this.namedNonTerrestrialRadioButtonId,   pressed : false },
-      { id : this.genericTerrestrialRadioButtonId,    pressed : false },
-      { id : this.namedTerrestrialRadioButtonId,      pressed : false },
-      { id : this.inventedRadioButtonId,              pressed : false },      
-      { id : this.noSettingRadioButtonId,             pressed : false },
-      { id : this.proportionRadioButtonId,            pressed : false },
-      { id : this.placeHierarchiesRadioButtonId,      pressed : false }
+      { id : this.genericNonTerrestrialRadioButtonId, pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.genericNonTerrestrialRadioButtonId).realismPanelMode },
+      { id : this.namedNonTerrestrialRadioButtonId,   pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.namedNonTerrestrialRadioButtonId).realismPanelMode },
+      { id : this.genericTerrestrialRadioButtonId,    pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).realismPanelMode },
+      { id : this.namedTerrestrialRadioButtonId,      pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).realismPanelMode },
+      { id : this.inventedRadioButtonId,              pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).realismPanelMode },
+      { id : this.noSettingRadioButtonId,             pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.noSettingRadioButtonId).realismPanelMode },
+      { id : this.proportionRadioButtonId,            pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).realismPanelMode },
+      { id : this.placeHierarchiesRadioButtonId,      pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.placeHierarchiesRadioButtonId).realismPanelMode }
     ]
   };
-
-  optionRadioButtonsMap = new Map([
-    [ this.genericNonTerrestrialRadioButtonId, { value : GlobalData.analysisModes.realism.genericNonTerrestrial } ],
-    [ this.namedNonTerrestrialRadioButtonId,   { value : GlobalData.analysisModes.realism.namedNonTerrestrial } ],
-    [ this.genericTerrestrialRadioButtonId,    { value : GlobalData.analysisModes.realism.genericTerrestrial } ],
-    [ this.namedTerrestrialRadioButtonId,      { value : GlobalData.analysisModes.realism.namedTerrestrial } ],
-    [ this.inventedRadioButtonId,              { value : GlobalData.analysisModes.realism.invented } ],    
-    [ this.noSettingRadioButtonId,             { value : GlobalData.analysisModes.realism.noSetting } ],
-    [ this.proportionRadioButtonId,            { value : GlobalData.analysisModes.realism.proportion } ],
-    [ this.placeHierarchiesRadioButtonId,      { value : GlobalData.analysisModes.realism.placeHierarchies } ]
-  ]);
 
   optionRadioButtonPressed = buttonId => {
     const buttonState = this.state.optionRadioButtonsStates.find(item => item.id === buttonId);
@@ -72,7 +72,9 @@ export default class TerritoryRealismPanel extends React.Component
 
     this.setState({ optionRadioButtonsStates : optionRadioButtonsStatesCopy });
 
-    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
+    const value = this.optionRadioButtonsMap.get(buttonId);
+    this.props.callTerritorySetHighlightMode(value.analysisMode);
+    this.props.containerSetRealismPanelMode(value.realismPanelMode);
   };  
 
   render()

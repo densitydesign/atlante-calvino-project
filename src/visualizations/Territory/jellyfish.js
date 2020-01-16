@@ -277,7 +277,7 @@ function split_texts(hierarchy)
       for(let i = 0; i < d.children.length; ++i)
       {
         let child = d.children[i];
-console.log("split_text", split_text);
+
         let caption_segments = split_text(child.caption, caption_split_threshold);
 
         child.caption = caption_segments[0];

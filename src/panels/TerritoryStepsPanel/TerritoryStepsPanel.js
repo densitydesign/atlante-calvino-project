@@ -68,6 +68,7 @@ export default class TerritoryStepsPanel extends React.Component
           <TerritoryDoubtPanel 
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} 
             doubtPanelMode={this.props.doubtPanelMode}
+            containerSetDoubtPanelMode={this.props.containerSetDoubtPanelMode}
           />
         );
 
@@ -79,6 +80,7 @@ export default class TerritoryStepsPanel extends React.Component
           <TerritoryShapePanel 
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode}
             shapePanelMode={this.props.shapePanelMode}
+            containerSetShapePanelMode={this.props.containerSetShapePanelMode}
           />
         );
 
@@ -90,6 +92,7 @@ export default class TerritoryStepsPanel extends React.Component
           <TerritoryRealismPanel 
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} 
             realismPanelMode={this.props.realismPanelMode}
+            containerSetRealismPanelMode={this.props.containerSetRealismPanelMode}
           />
         );
 
