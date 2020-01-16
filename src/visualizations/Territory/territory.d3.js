@@ -502,9 +502,11 @@ console.log("territory initialize");
 		.outerRadius(function(d, i) {
 			return d.r - i * arcWidth;
 		})
-		.startAngle(0 * 2 * PI)
+		.startAngle(function(d, i) { 
+      return 0 * 2 * PI + placesArcFix(d);
+    })
 		.endAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI;
+			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc2 = d3
@@ -516,10 +518,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI;
+			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI;
+			return d.generico_terrestre * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc3 = d3
@@ -531,10 +533,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI;
+			return d.generico_terrestre * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.inventato * 2 * PI;
+			return d.inventato * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc4 = d3
@@ -546,10 +548,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.inventato * 2 * PI;
+			return d.inventato * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI;
+			return d.no_ambientazione * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc5 = d3
@@ -561,10 +563,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI;
+			return d.no_ambientazione * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI;
+			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc6 = d3
@@ -576,10 +578,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI;
+			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI;
+			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc7 = d3
@@ -591,10 +593,10 @@ console.log("territory initialize");
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI;
+			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return 2 * PI;
+			return 2 * PI + placesArcFix(d);
 		});
 
 ///////////////////////////////////////////
@@ -1558,6 +1560,18 @@ console.log("place_hierarchies", place_hierarchies);
   };
 
   return place_hierarchies_info_2;
+}
+
+function placesArcFix(d)
+{
+  // rotate some place proportion rings so that they match the place hierarchies
+
+  switch(d.id)
+  {
+    case "V005" : return Math.PI * 1 / 2;
+    case "V008" : return Math.PI * 3 / 4;
+    default : return 0;
+  }
 }
 
 const V = new VClass();
