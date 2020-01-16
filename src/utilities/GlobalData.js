@@ -239,7 +239,7 @@ const GlobalData = {
       invented : "invented",
       noSetting : "noSetting",
       proportion : "realism_proportion",
-      hierarchy : "hierarchy"
+      placeHierarchies : "placeHierarchies"
     }
   },
   bottomPanelModes : {
@@ -269,7 +269,7 @@ const GlobalData = {
       invented : "invented",
       noSetting : "noSetting",
       proportion : "realism_proportion",
-      hierarchy : "hierarchy"
+      placeHierarchies : "placeHierarchies"
     }
   },
   collections : collections,

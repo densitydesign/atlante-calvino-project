@@ -43,7 +43,8 @@ const showHillModes = {
 
 const customElementsClasses = {
   places : "places",
-  dubitativePhenomena_level_2 : "dubitativePhenomena_level_2"
+  dubitativePhenomena_level_2 : "dubitativePhenomena_level_2",
+  place_hierarchy_2 : "place_hierarchy_2"
 };
 
 Object.keys(customElementsClasses).forEach(key => 
@@ -194,22 +195,22 @@ console.log("territory initialize");
       .range(['#FFDDFF', 'violet']);
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology,         { customElementsClasses : null, dataMember : 'first_publication',            showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,            { customElementsClasses : null, dataMember : 'collection',                   showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.fog,                     { customElementsClasses : null, dataMember : 'nebbia_words_ratio',           showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.cancellation,            { customElementsClasses : null, dataMember : 'cancellazione_words_ratio',    showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.all,                     { customElementsClasses : null, dataMember : 'dubitative_ratio',             showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.doubt.percentage,              { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.shape.proportion,              {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.shape.types,                   {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor} ],
-      [ GlobalData.analysisModes.realism.genericNonTerrestrial, { customElementsClasses : null, dataMember : 'n_generico_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.namedNonTerrestrial,   { customElementsClasses : null, dataMember : 'n_nominato_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.genericTerrestrial,    { customElementsClasses : null, dataMember : 'n_generico_terrestre',         showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.namedTerrestrial,      { customElementsClasses : null, dataMember : 'n_nominato_terrestre',         showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.invented,              { customElementsClasses : null, dataMember : 'n_inventato',                  showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.noSetting,             { customElementsClasses : null, dataMember : 'n_no_ambientazione',           showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.proportion,            { customElementsClasses : customElementsClasses.places,                 showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ],
-      [ GlobalData.analysisModes.realism.hierarchy,             { dataMember : 'n_no_ambientazione',                                       showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor } ]
+      [ GlobalData.analysisModes.noAnalysis.chronology,         { customElementsClasses : null, dataMember : 'first_publication',            showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,            { customElementsClasses : null, dataMember : 'collection',                   showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.fog,                     { customElementsClasses : null, dataMember : 'nebbia_words_ratio',           showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.cancellation,            { customElementsClasses : null, dataMember : 'cancellazione_words_ratio',    showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.all,                     { customElementsClasses : null, dataMember : 'dubitative_ratio',             showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.percentage,              { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.proportion,              {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.types,                   {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.realism.genericNonTerrestrial, { customElementsClasses : null, dataMember : 'n_generico_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.namedNonTerrestrial,   { customElementsClasses : null, dataMember : 'n_nominato_non_terrestre',     showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.genericTerrestrial,    { customElementsClasses : null, dataMember : 'n_generico_terrestre',         showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.namedTerrestrial,      { customElementsClasses : null, dataMember : 'n_nominato_terrestre',         showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.invented,              { customElementsClasses : null, dataMember : 'n_inventato',                  showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.noSetting,             { customElementsClasses : null, dataMember : 'n_no_ambientazione',           showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.proportion,            { customElementsClasses : customElementsClasses.places,                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.realism.placeHierarchies,      { customElementsClasses : customElementsClasses.place_hierarchy_2,           showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
     this.text_nodes = g
@@ -283,7 +284,7 @@ console.log("territory initialize");
 			.filter(d => d.type === "arc")
 			.append("svg:path")
 			.attr("fill", d => d.fill)
-			.attr("class", d => "place_hierarchy place_hierarchy_" + d.text_id)
+			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id)
 			.attr("d", drawplace_hierarchyArc)
 			.style("display", "none")
 			.attr("transform", d => "translate(" + d.center.x + ", " + d.center.y + ")");      
@@ -298,7 +299,7 @@ console.log("territory initialize");
  			.attr("stroke", d => d.stroke)
 			.attr("stroke-width", d => d.stroke_width)
 			.style("display", "none")
- 			.attr("class", d => "place_hierarchy place_hierarchy_" + d.text_id);      
+ 			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);      
 
 		place_hierarchies
 			.filter(d => d.type === "circle")
@@ -312,7 +313,7 @@ console.log("territory initialize");
 			.attr("transform", d => {
 				return "translate(" + d.cx + ", " + d.cy + ")"
 			})
-			.attr("class", d => "place_hierarchy place_hierarchy_" + d.text_id);       
+			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);       
 
 		const fontSizeScale = d3
 			.scaleLinear()
@@ -340,7 +341,7 @@ console.log("territory initialize");
 			.attr("class", d => {
 				const label_class = "place_hierarchy_" + d.text_id;
 				label_classes.push(label_class);
-				return "place_hierarchy place_hierarchy_text " + label_class;
+				return "customElements place_hierarchy place_hierarchy_text " + label_class;
 			});    
 
 		text_ph_labels
@@ -404,7 +405,7 @@ console.log("territory initialize");
 
         if(!d.x || !d.y) return "";
 
-        return "scale(1, " + with_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        return "scale(1, " + without_tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
     let graphical_ops_2 = [];
@@ -421,7 +422,7 @@ console.log("territory initialize");
       .filter(d => d.type === "arc")
       .append("svg:path")
       .attr("fill", d => d.fill)
-      .attr("class", d => "place_hierarchy_2 place_hierarchy_2_" + d.text_id)
+      .attr("class", d => "customElements place_hierarchy_2 place_hierarchy_2_" + d.text_id)
       .attr("d", drawplace_hierarchyArc)
       .style("display", "none")
       .attr("transform", d => "translate(" + d.center.x + ", " + d.center.y + ")");
@@ -436,7 +437,7 @@ console.log("territory initialize");
       .attr("stroke", d => d.stroke)
       .attr("stroke-width", d => d.stroke_width)
       .style("display", "none")
-      .attr("class", d => "place_hierarchy_2 place_hierarchy_2_" + d.text_id);
+      .attr("class", d => "customElements place_hierarchy_2 place_hierarchy_2_" + d.text_id);
 
     place_hierarchies_2
       .filter(d => d.type === "circle")
@@ -448,7 +449,7 @@ console.log("territory initialize");
       .attr("class", "place_hierarchy_node_2")
       .style("display", "none")
       .attr("transform", d => "translate(" + d.cx + ", " + d.cy + ")")
-      .attr("class", d => "place_hierarchy_2 place_hierarchy_2_" + d.text_id);
+      .attr("class", d => "customElements place_hierarchy_2 place_hierarchy_2_" + d.text_id);
 
     const label_classes_2 = [];
     const label_ids_2 = [];
@@ -470,7 +471,7 @@ console.log("territory initialize");
       .attr("class", d => {
         let label_class = "place_hierarchy_2_" + d.text_id;
         label_classes_2.push(label_class);
-        return "place_hierarchy_2 place_hierarchy_text_2 " + label_class;
+        return "customElements place_hierarchy_2 place_hierarchy_text_2 " + label_class;
       });
 
     text_ph_labels_2
@@ -1047,6 +1048,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1056,6 +1058,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1065,6 +1068,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1074,6 +1078,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1083,6 +1088,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1091,6 +1097,7 @@ console.log("highlightParameters", highlightParameters);
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1098,6 +1105,8 @@ console.log("highlightParameters", highlightParameters);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1105,6 +1114,8 @@ console.log("highlightParameters", highlightParameters);
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;    
 
@@ -1114,6 +1125,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1123,6 +1135,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);        
 
         break;
 
@@ -1132,6 +1145,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1141,6 +1155,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1150,6 +1165,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1159,6 +1175,7 @@ console.log("highlightParameters", highlightParameters);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1167,13 +1184,16 @@ console.log("case proportion...");
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
-      case GlobalData.analysisModes.realism.hierarchy :
+      case GlobalData.analysisModes.realism.placeHierarchies :
 
         this.set_yRatio(highlightParameters.tilt_factor);
         this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);
+        this.showMetaballs(highlightParameters.show_metaballs);
 
         break;
 
@@ -1288,10 +1308,22 @@ console.log("elementsClasses", elementsClasses);
   }
 
   showCustomElements = (elementsClass, opacity) => {
+console.log("showCustomElements");
+console.log("opacity", opacity);
+console.log("Display", opacity ? "block" : "none");    
     d3
       .selectAll("." + elementsClass)
+      .style('display', opacity ? "block" : "none")
 			.style('fill-opacity', opacity)
 			.style('stroke-opacity', opacity);
+  }
+
+  showMetaballs = visible => {
+    d3
+      .selectAll(".metaball")
+      .transition()
+      .duration(1000)
+      .style("stroke-opacity", visible ? 1 : 0);
   }
 }
 

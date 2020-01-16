@@ -54,6 +54,13 @@ export default class TerritoryRealismMainOptionsSubPanel extends React.Component
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
         />                
 
+        <RadioButton 
+          id={this.props.placeHierarchiesRadioButtonId} 
+          caption={this.props.placeHierarchiesRadioButtonCaption} 
+          pressed={this.props.placeHierarchiesRadioButtonPressed} 
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
+        />        
+
       </div>
     );
   }
