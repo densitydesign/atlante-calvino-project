@@ -1,0 +1,8 @@
+
+.help-side-panel {
+  position : absolute;
+  right : 0;
+  top : 0px;
+  background-color : yellow;
+  z-index : 10001; /* to overcome z-index=10000 of 'navigations' style */
+}

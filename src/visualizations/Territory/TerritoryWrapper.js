@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
 import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
-import TerritoryStepsPanel from '../../panels/TerritoryStepsPanel/TerritoryStepsPanel';
+import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
 
@@ -111,6 +111,8 @@ export default class TerritoryWrapper extends React.Component
   {
     return (
       <div className="main">
+
+        <HelpSidePanel />
 
         {!this.state.isLoading && 
 
