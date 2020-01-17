@@ -1,8 +1,21 @@
 
+:root {
+  --help-side-panel-width : 30vw;
+}
+
 .help-side-panel {
   position : absolute;
-  right : 0;
   top : 0px;
+  height : 100%;
+  width : var(--help-side-panel-width);  
   background-color : yellow;
   z-index : 10001; /* to overcome z-index=10000 of 'navigations' style */
+}
+
+.help-side-panel-open {
+  right : 0vw;
+}
+
+.help-side-panel-closed {
+  right : calc(-1 * var(--help-side-panel-width));
 }

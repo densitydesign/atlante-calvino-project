@@ -8,7 +8,7 @@ export default class HelpSidePanel extends React.Component
   render()
   {
     return (
-      <div className="help-side-panel">
+      <div className="help-side-panel help-side-panel-open">
         Help
       </div>
     );
