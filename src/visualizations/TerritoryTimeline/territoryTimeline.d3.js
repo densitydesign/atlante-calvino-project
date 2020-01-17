@@ -1,5 +1,6 @@
 
 import * as d3 from 'd3';
+import _ from 'lodash';
 
 import GlobalData from '../../utilities/GlobalData';
 
@@ -87,8 +88,10 @@ else
       .range([minCircleRadius, maxCircleRadius])
       .domain([0, dmax]);
 
+    const json_nodes2 = _.cloneDeep(json_nodes);
+
     let simulation = d3
-      .forceSimulation(json_nodes)
+      .forceSimulation(json_nodes2)
       .force("x", d3.forceX(d => data.timeline_x(d.attributes.first_publication)).strength(1))
       .force("y", d3.forceY(data.timeline_height / 2))
       .force("collide", d3.forceCollide(d => rscale(d.attributes.txt_length) + 1))
@@ -117,7 +120,7 @@ else
         ])
         .x(d => d.x)
         .y(d => d.y)
-        .polygons(json_nodes))
+        .polygons(json_nodes2))
       .enter()
       .append("g")
       .classed("cell_node", true);
