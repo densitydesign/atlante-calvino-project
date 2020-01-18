@@ -27,7 +27,9 @@ export default class TerritoryWrapper extends React.Component
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.proportion,
-    realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial
+    realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial,
+
+    helpSidePanelOpen : false
   };
 
   loadData = () =>
@@ -107,12 +109,14 @@ export default class TerritoryWrapper extends React.Component
   setShapePanelMode   = value => this.setState({   shapePanelMode : value });
   setRealismPanelMode = value => this.setState({ realismPanelMode : value });
 
+  toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
+
   render() 
   {
     return (
       <div className="main">
 
-        <HelpSidePanel />
+        <HelpSidePanel open={this.state.helpSidePanelOpen} closeButtonClicked={this.toggleHelpSidePanel} />
 
         {!this.state.isLoading && 
 
@@ -123,6 +127,7 @@ export default class TerritoryWrapper extends React.Component
           callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
           callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
           callTerritoryApplySearchFilterBySearchResults={this.callTerritoryApplySearchFilterBySearchResults}
+          helpButtonClicked={this.toggleHelpSidePanel}
         />
 
         <div className="territory-body">

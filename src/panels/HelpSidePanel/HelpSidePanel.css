@@ -10,6 +10,7 @@
   width : var(--help-side-panel-width);  
   background-color : yellow;
   z-index : 10001; /* to overcome z-index=10000 of 'navigations' style */
+  transition: right 1s;
 }
 
 .help-side-panel-open {
@@ -17,5 +18,5 @@
 }
 
 .help-side-panel-closed {
-  right : calc(-1 * var(--help-side-panel-width));
+  right : -30vw
 }

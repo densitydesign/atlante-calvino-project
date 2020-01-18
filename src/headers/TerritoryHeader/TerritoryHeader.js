@@ -3,6 +3,8 @@ import MainMenu from '../../general/MainMenu/MainMenu';
 import Options from '../../general/Options/Options';
 import Search from '../../general/Search/Search';
 import GlobalData from '../../utilities/GlobalData';
+import CompassButton from '../../general/CompassButton/CompassButton';
+import MoreInfo from '../../general/MoreInfo/MoreInfo';
 
 export default class TerritoryHeader extends React.Component
 {
@@ -45,17 +47,23 @@ export default class TerritoryHeader extends React.Component
         <Options
           title=""
           data={this.state.highlightModes}
-          style={{ gridColumn : "span 8", textAlign : "center" }}
+          style={{ gridColumn : "span 7", textAlign : "center" }}
           changeOptions={ this.changeHighlightModes }
         />
 
         <Search
-          style={{gridColumn : "span 8"}}
+          style={{ gridColumn : "span 7" }}
           data={this.props.textsData}
           filterBy={["desc"]}
           changeOptions={ this.changeTextsData }
           onInputChange={ this.changeSearchInput }
         />
+
+        <MoreInfo 
+          style={{ gridColumn : "span 1" }}
+          onClicked={this.props.helpButtonClicked} />
+
+        <CompassButton style={{ gridColumn : "span 1" }} />
 
       </div>
     );
