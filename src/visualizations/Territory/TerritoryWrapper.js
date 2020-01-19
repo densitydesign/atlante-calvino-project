@@ -113,10 +113,19 @@ export default class TerritoryWrapper extends React.Component
 
   render() 
   {
+    const helpPage =
+      this.state.bottomPanelMode === GlobalData.bottomPanelModes.realism && 
+      this.state.realismPanelMode === GlobalData.analysisPanelModes.realism.placeHierarchies ? 
+      GlobalData.helpPages.territory.placeHierarchies : 
+      GlobalData.helpPages.territory.main;
+console.log("helpPage", helpPage);
     return (
       <div className="main">
 
-        <HelpSidePanel open={this.state.helpSidePanelOpen} closeButtonClicked={this.toggleHelpSidePanel} />
+        <HelpSidePanel 
+          open={this.state.helpSidePanelOpen} 
+          page={helpPage}
+          closeButtonClicked={this.toggleHelpSidePanel} />
 
         {!this.state.isLoading && 
 

@@ -272,6 +272,12 @@ const GlobalData = {
       placeHierarchies : "placeHierarchies"
     }
   },
+  helpPages : {
+    territory : {
+      main : "territoryMain",
+      placeHierarchies : "territoryPlaceHierarchies"
+    }
+  },
   collections : collections,
   allowedCollections : allowedCollections,
   allowedCollectionsSplit : allowedCollections.split(","),
