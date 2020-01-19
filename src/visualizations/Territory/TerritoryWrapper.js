@@ -24,6 +24,7 @@ export default class TerritoryWrapper extends React.Component
     shapePanelMode : GlobalData.analysisPanelModes.shape.proportion,
     realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial,
     
+    mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.proportion,
@@ -71,7 +72,47 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
-  callTerritorySetHighlightMode = value => this.territorySetHighlightMode(value);
+  callTerritorySetHighlightMode = value => {
+console.log("callTerritorySetHighlightMode");
+console.log("value", value);
+    switch(value)
+    {
+      case GlobalData.analysisModes.noAnalysis.chronology         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis,   noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.volumes            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis,   noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.fog                     : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.cancellation            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.all                     : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.percentage              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.proportion              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.types                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.noSetting             : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break
+      case GlobalData.analysisModes.realism.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+
+      default : throw "error : analysis mode " + value + " not recognized";
+    }    
+
+    this.territorySetHighlightMode(value);
+  }
+
+  setMainAnalysisMode = value => {
+console.log("setMainAnalysisMode");
+console.log("value", value); 
+console.log("this.state", this.state);
+    switch(value)
+    {
+      case GlobalData.analysisModes.noAnalysis : this.callTerritorySetHighlightMode(this.state.noAnalysisMode); break;
+      case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
+      case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
+      case GlobalData.analysisModes.realism    : this.callTerritorySetHighlightMode(this.state.realismAnalysisMode); break;
+      default : throw "setMainAnalysisMode : mainAnalysisMode not recognized";
+    }
+  }
 
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
@@ -92,7 +133,7 @@ export default class TerritoryWrapper extends React.Component
 
   setBottomPanelMode = value => {
     this.setState({ bottomPanelMode : value });
-
+/*
     switch(value)
     {
       case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
@@ -103,6 +144,7 @@ export default class TerritoryWrapper extends React.Component
       case GlobalData.bottomPanelModes.legend : break;
       default : break;
     }
+*/
   };
 
   setDoubtPanelMode   = value => this.setState({   doubtPanelMode : value });
@@ -113,18 +155,20 @@ export default class TerritoryWrapper extends React.Component
 
   render() 
   {
+console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
+console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);    
     const helpPage =
-      this.state.bottomPanelMode === GlobalData.bottomPanelModes.realism && 
-      this.state.realismPanelMode === GlobalData.analysisPanelModes.realism.placeHierarchies ? 
+      this.state.mainAnalysisMode === GlobalData.analysisModes.realism && 
+      this.state.realismAnalysisMode === GlobalData.analysisModes.realism.placeHierarchies ? 
       GlobalData.helpPages.territory.placeHierarchies : 
       GlobalData.helpPages.territory.main;
-console.log("helpPage", helpPage);
+
     return (
       <div className="main">
 
         <HelpSidePanel 
           open={this.state.helpSidePanelOpen} 
-          page={helpPage}
+          page={helpPage}          
           closeButtonClicked={this.toggleHelpSidePanel} />
 
         {!this.state.isLoading && 
@@ -191,7 +235,7 @@ console.log("helpPage", helpPage);
         }
 
         <TerritoryFooter 
-          callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
+          setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
         />
 
@@ -260,10 +304,10 @@ function process_json_nodes(all_json_nodes, x_csv2)
 
   // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
   json_nodes = json_nodes.sort((a, b) => a.y - b.y);      
-console.log("json_nodes", json_nodes);
+
   const json_nodes_size_extent = d3.extent(all_json_nodes, d => d.size);
   const json_nodes_min_size = json_nodes_size_extent[0] / 8;
-console.log("json_nodes_min_size", json_nodes_min_size);
+
   json_nodes.forEach(d => create_item_steps(d, json_nodes_min_size, x_csv2));
 
   return json_nodes;

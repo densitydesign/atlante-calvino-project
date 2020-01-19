@@ -55,7 +55,7 @@ customElementsClasses["customElements"] = "customElements";
 class VClass
 {
   initialize = (el, input_data) => {
-console.log("territory initialize");    
+
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
     const json_nodes = input_data.json_nodes;
@@ -1043,10 +1043,8 @@ console.log("this.textsData : ", this.textsData);
 */
 
   setHighlightMode = value => {
-console.log("setHighlightMode");
-console.log("value", value);
+
     const highlightParameters = this.analysisModeMap.get(value);
-console.log("highlightParameters", highlightParameters);
 
     switch(value)
     {
@@ -1245,15 +1243,11 @@ console.log("case proportion...");
 
   highlightHills = (dataMember, colorScale) => {
 
-console.log("highlightHills");
-console.log("dataMember", dataMember);
-console.log("colorScale", colorScale);
 
     const allHills = d3.selectAll(".hill");
 
     if(["first_publication", "collection"].includes(dataMember))
     {
-console.log("inside if");      
       this.text_nodes.style("display", "block");      
 
       allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
@@ -1309,17 +1303,12 @@ console.log("inside if");
   };
 
   highlightCustomElements = elementsClasses => {
-console.log("highlightCustomElements()");
-console.log("elementsClasses", elementsClasses);
     this.showCustomElements(customElementsClasses.customElements, 0);
 
     if(elementsClasses) this.showCustomElements(elementsClasses, 1);
   }
 
   showCustomElements = (elementsClass, opacity) => {
-console.log("showCustomElements");
-console.log("opacity", opacity);
-console.log("Display", opacity ? "block" : "none");    
     d3
       .selectAll("." + elementsClass)
       .style('display', opacity ? "block" : "none")
@@ -1526,7 +1515,7 @@ function clone_d3_selection(selection, i)
 function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
 {
 	const place_hierarchies_graphics_items_2 = [];
-console.log("place_hierarchies", place_hierarchies);
+
 	for(let [text_id, place_hierarchy] of place_hierarchies)
 	{
 			let text_group = {

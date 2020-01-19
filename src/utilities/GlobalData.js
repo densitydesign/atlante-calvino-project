@@ -278,6 +278,15 @@ const GlobalData = {
       placeHierarchies : "territoryPlaceHierarchies"
     }
   },
+  legendPages : {
+    territory : {
+      chronology : "chronology",
+      volumes : "volumes",
+      doubt : "doubt",
+      shape : "shape",
+      realism : "realism"
+    }
+  },
   collections : collections,
   allowedCollections : allowedCollections,
   allowedCollectionsSplit : allowedCollections.split(","),

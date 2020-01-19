@@ -494,14 +494,11 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
   {
     if(inLeftEmicircle)
     {
-console.log("CL");
-console.log("textDistance1 : " + textDistance1);
        angle = d.angle;
        textDistance = textDistance1 + 50;
     }
     else
     {
-console.log("CR");
       angle = d.angle + Math.PI;
       textDistance = textDistance2;
     }
@@ -697,10 +694,6 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
             // R -> L
             if(d.children[i].inLeftEmicircle)
             {
-console.log("L -> R");
-console.log("d.children[i].angle : " + d.children[i].angle);
-console.log("d.children[i].node_id : " + d.children[i].node_id);
-
               let deltaAngle = d.children[i - 1].angle - d.children[i].angle;
 
               // Tuning : this should be a function of the radius

@@ -20,10 +20,10 @@ export default class TerritoryFooter extends React.Component
   realismLabel = "realismo";
 
   stepLabelOptionPanelModeMap = new Map([
-    [ this.territoryLabel, GlobalData.bottomPanelModes.noAnalysis ],
-    [ this.doubtLabel, GlobalData.bottomPanelModes.doubt ],
-    [ this.shapeLabel, GlobalData.bottomPanelModes.shape ],
-    [ this.realismLabel, GlobalData.bottomPanelModes.realism ]
+    [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
+    [ this.doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
+    [ this.realismLabel,   { bottomPanelMode : GlobalData.bottomPanelModes.realism,    mainAnalysisMode : GlobalData.analysisModes.realism } ]
   ]);
 
   toggleButtonsMap = new Map([
@@ -51,7 +51,14 @@ export default class TerritoryFooter extends React.Component
 
 // set here bottom panel mode, rather than higlight mode
 //  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
-  changeSteps = newOptions => this.props.setBottomPanelMode(this.stepLabelOptionPanelModeMap.get(this.getActiveOption(newOptions)));
+  changeSteps = newOptions => {
+    const visualizationMode = this.stepLabelOptionPanelModeMap.get(this.getActiveOption(newOptions));
+
+console.log("visualizationMode", visualizationMode);
+
+    this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+    this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
+  }
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
@@ -66,8 +73,8 @@ export default class TerritoryFooter extends React.Component
     this.setState({ toggleButtonsStates : toggleButtonsStatesCopy });
 
     const value = this.toggleButtonsMap.get(buttonId);
-console.log("setBottomPanelMode()");    
-    this.props.setBottomPanelMode(value.bottomPanelMode);
+
+    this.props.setBottomPanelMode(value.bottomPanelMode);    
   };
 
   render()
