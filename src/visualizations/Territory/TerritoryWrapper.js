@@ -101,6 +101,7 @@ console.log("value", value);
   }
 
   setMainAnalysisMode = value => {
+console.log("-------------------");
 console.log("setMainAnalysisMode");
 console.log("value", value); 
 console.log("this.state", this.state);
@@ -163,6 +164,28 @@ console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);
       GlobalData.helpPages.territory.placeHierarchies : 
       GlobalData.helpPages.territory.main;
 
+    let legendPage;
+    if(this.state.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+    {
+      switch(this.state.noAnalysisMode)
+      {
+        case GlobalData.analysisModes.noAnalysis.chronology : legendPage = GlobalData.legendPages.territory.chronology; break;
+        case GlobalData.analysisModes.noAnalysis.volumes   : legendPage = GlobalData.legendPages.territory.volumes; break;
+        default : throw "noAnalysisMode not recognized : " + this.state.noAnalysisMode;
+      }
+    }
+    else
+    {
+      switch(this.state.mainAnalysisMode)
+      {
+        case GlobalData.analysisModes.doubt   : legendPage = GlobalData.legendPages.territory.doubt; break;
+        case GlobalData.analysisModes.shape   : legendPage = GlobalData.legendPages.territory.shape; break;
+        case GlobalData.analysisModes.realism : legendPage = GlobalData.legendPages.territory.realism; break;
+        default : throw "mainAnalysisMode not recognized.";
+      }
+    }
+
+
     return (
       <div className="main">
 
@@ -216,9 +239,11 @@ console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);
                 shapeAnalysisMode={this.state.shapeAnalysisMode}
                 realismAnalysisMode={this.state.realismAnalysisMode}
 
-                data={this.state.data}
+                legendPage={legendPage}
 
-                
+                data={this.state.data}
+                                
+                setMainAnalysisMode={this.setMainAnalysisMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}

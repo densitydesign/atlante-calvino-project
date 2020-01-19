@@ -31,9 +31,9 @@ export default class TerritoryStepsPanel extends React.Component
   };
 
   optionRadioButtonsMap = new Map([
-    [ this.doubtRadioButtonId,   { value : GlobalData.bottomPanelModes.doubt } ],
-    [ this.shapeRadioButtonId,   { value : GlobalData.bottomPanelModes.shape } ],
-    [ this.realismRadioButtonId, { value : GlobalData.bottomPanelModes.realism } ]
+    [ this.doubtRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ this.shapeRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
+    [ this.realismRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.realism, mainAnalysisMode : GlobalData.analysisModes.realism } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {
@@ -53,7 +53,10 @@ export default class TerritoryStepsPanel extends React.Component
 
 // !!! qui impostare non tanto l'highlight mode, quanto il panel mode (che implicherà il passaggio all'highlight mode memorizzato nel corrispondente panel state)
 //    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
-    this.props.containerSetBottomPanelMode(this.optionRadioButtonsMap.get(buttonId).value);
+
+    const visualizationMode = this.optionRadioButtonsMap.get(buttonId);
+    this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
+    this.props.containerSetBottomPanelMode(visualizationMode.bottomPanelMode);
   };
 
   render()

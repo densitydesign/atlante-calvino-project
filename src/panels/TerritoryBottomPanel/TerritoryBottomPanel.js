@@ -28,6 +28,7 @@ export default class TerritoryBottomPanel extends React.Component
         rendering = (
           <TerritoryStepsPanel 
             
+            setMainAnalysisMode={this.props.setMainAnalysisMode}
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode}
 
             bottomPanelMode={this.props.bottomPanelMode}
@@ -62,7 +63,7 @@ export default class TerritoryBottomPanel extends React.Component
       case GlobalData.bottomPanelModes.legend :
 
         rendering = (
-          <TerritoryLegendPanel />
+          <TerritoryLegendPanel page={this.props.legendPage} />
         );
 
         break;
