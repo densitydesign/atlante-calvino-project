@@ -23,7 +23,7 @@ export default class TerritoryBottomPanel extends React.Component
 
       case GlobalData.bottomPanelModes.doubt :
       case GlobalData.bottomPanelModes.shape :
-      case GlobalData.bottomPanelModes.realism :
+      case GlobalData.bottomPanelModes.space :
 
         internalPanel = (
           <TerritoryStepsPanel 
@@ -40,8 +40,8 @@ export default class TerritoryBottomPanel extends React.Component
             shapePanelMode={this.props.shapePanelMode}
             containerSetShapePanelMode={this.props.containerSetShapePanelMode}
 
-            realismPanelMode={this.props.realismPanelMode}
-            containerSetRealismPanelMode={this.props.containerSetRealismPanelMode}
+            spacePanelMode={this.props.spacePanelMode}
+            containerSetSpacePanelMode={this.props.containerSetSpacePanelMode}
           />
         );
 

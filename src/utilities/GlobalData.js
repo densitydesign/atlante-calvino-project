@@ -268,7 +268,7 @@ const GlobalData = {
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
       noSetting : "noSetting",
-      proportion : "realism_proportion",
+      proportion : "space_proportion",
       placeHierarchies : "placeHierarchies"
     }
   },

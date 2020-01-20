@@ -19,21 +19,21 @@ export default class TerritoryStepsPanel extends React.Component
   shapeRadioButtonId = "shapeRadioButton";
   shapeRadioButtonCaption = "FORMA";
 
-  realismRadioButtonId = "realismRadioButton";
-  realismRadioButtonCaption = "REALISMO";
+  spaceRadioButtonId = "spaceRadioButton";
+  spaceRadioButtonCaption = "SPAZIO";
 
   state = {
     optionRadioButtonsStates : [
       { id : this.doubtRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
       { id : this.shapeRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
-      { id : this.realismRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
+      { id : this.spaceRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
     ]
   };
 
   optionRadioButtonsMap = new Map([
     [ this.doubtRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
     [ this.shapeRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.realismRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ this.spaceRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {
@@ -96,8 +96,8 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
         rendering = (
           <TerritorySpacePanel 
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} 
-            realismPanelMode={this.props.realismPanelMode}
-            containerSetRealismPanelMode={this.props.containerSetRealismPanelMode}
+            spacePanelMode={this.props.spacePanelMode}
+            containerSetSpacePanelMode={this.props.containerSetSpacePanelMode}
           />
         );
 
@@ -125,9 +125,9 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
         />
 
         <RadioButton 
-          id={this.realismRadioButtonId}
-          caption={this.realismRadioButtonCaption}
-          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.realismRadioButtonId).pressed}
+          id={this.spaceRadioButtonId}
+          caption={this.spaceRadioButtonCaption}
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.spaceRadioButtonId).pressed}
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
         />
 

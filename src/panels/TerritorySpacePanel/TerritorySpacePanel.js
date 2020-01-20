@@ -34,26 +34,26 @@ export default class TerritorySpacePanel extends React.Component
   placeHierarchiesRadioButtonCaption = "MEDUSE";
 
   optionRadioButtonsMap = new Map([
-    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericNonTerrestrial, realismPanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial } ],
-    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedNonTerrestrial,   realismPanelMode : GlobalData.analysisPanelModes.space.namedNonTerrestrial } ],
-    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    realismPanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
-    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      realismPanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
-    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              realismPanelMode : GlobalData.analysisPanelModes.space.invented } ],    
-    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.space.noSetting,             realismPanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
-    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.space.proportion,            realismPanelMode : GlobalData.analysisPanelModes.space.proportion } ],
-    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      realismPanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
+    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericNonTerrestrial, spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial } ],
+    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedNonTerrestrial,   spacePanelMode : GlobalData.analysisPanelModes.space.namedNonTerrestrial } ],
+    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    spacePanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
+    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      spacePanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
+    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],    
+    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.space.noSetting,             spacePanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
+    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.space.proportion,            spacePanelMode : GlobalData.analysisPanelModes.space.proportion } ],
+    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      spacePanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
   ]);  
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.genericNonTerrestrialRadioButtonId, pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.genericNonTerrestrialRadioButtonId).realismPanelMode },
-      { id : this.namedNonTerrestrialRadioButtonId,   pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.namedNonTerrestrialRadioButtonId).realismPanelMode },
-      { id : this.genericTerrestrialRadioButtonId,    pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).realismPanelMode },
-      { id : this.namedTerrestrialRadioButtonId,      pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).realismPanelMode },
-      { id : this.inventedRadioButtonId,              pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).realismPanelMode },
-      { id : this.noSettingRadioButtonId,             pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.noSettingRadioButtonId).realismPanelMode },
-      { id : this.proportionRadioButtonId,            pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).realismPanelMode },
-      { id : this.placeHierarchiesRadioButtonId,      pressed : this.props.realismPanelMode === this.optionRadioButtonsMap.get(this.placeHierarchiesRadioButtonId).realismPanelMode }
+      { id : this.genericNonTerrestrialRadioButtonId, pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericNonTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.namedNonTerrestrialRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedNonTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.genericTerrestrialRadioButtonId,    pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.namedTerrestrialRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.inventedRadioButtonId,              pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).spacePanelMode },
+      { id : this.noSettingRadioButtonId,             pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.noSettingRadioButtonId).spacePanelMode },
+      { id : this.proportionRadioButtonId,            pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).spacePanelMode },
+      { id : this.placeHierarchiesRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.placeHierarchiesRadioButtonId).spacePanelMode }
     ]
   };
 
@@ -74,7 +74,7 @@ export default class TerritorySpacePanel extends React.Component
 
     const value = this.optionRadioButtonsMap.get(buttonId);
     this.props.callTerritorySetHighlightMode(value.analysisMode);
-    this.props.containerSetRealismPanelMode(value.realismPanelMode);
+    this.props.containerSetSpacePanelMode(value.spacePanelMode);
   };  
 
   render()

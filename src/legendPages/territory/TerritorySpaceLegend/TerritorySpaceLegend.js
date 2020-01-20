@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import './TerritoryRealismLegend.css';
+import './TerritorySpaceLegend.css';
 
-export default class TerritoryRealismLegend extends React.Component
+export default class TerritorySpaceLegend extends React.Component
 {
   render()
   {
