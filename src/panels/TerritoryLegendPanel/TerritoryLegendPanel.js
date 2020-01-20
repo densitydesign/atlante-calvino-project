@@ -2,7 +2,7 @@
 import React from 'react';
 
 import TerritoryChronologyLegend from '../../legendPages/territory/TerritoryChronologyLegend/TerritoryChronologyLegend';
-import TerritoryVolumensLegend from '../../legendPages/territory/TerritoryVolumesLegend/TerritoryVolumesLegend';
+import TerritoryVolumesLegend from '../../legendPages/territory/TerritoryVolumesLegend/TerritoryVolumesLegend';
 import TerritoryDoubtLegend from '../../legendPages/territory/TerritoryDoubtLegend/TerritoryDoubtLegend';
 import TerritoryShapeLegend from '../../legendPages/territory/TerritoryShapeLegend/TerritoryShapeLegend';
 import TerritoryRealismLegend from '../../legendPages/territory/TerritoryRealismLegend/TerritoryRealismLegend';
@@ -60,7 +60,7 @@ export default class TerritoryLegendPanel extends React.Component
     switch(this.props.page)
     {
       case GlobalData.legendPages.territory.chronology : legendPage = <TerritoryChronologyLegend />; break;
-      case GlobalData.legendPages.territory.volumes    : legendPage = <TerritoryVolumensLegend />; break;
+      case GlobalData.legendPages.territory.volumes    : legendPage = <TerritoryVolumesLegend />; break;
       case GlobalData.legendPages.territory.doubt      : legendPage = <TerritoryDoubtLegend />; break;
       case GlobalData.legendPages.territory.shape      : legendPage = <TerritoryShapeLegend />; break;
       case GlobalData.legendPages.territory.realism    : legendPage = <TerritoryRealismLegend />; break;

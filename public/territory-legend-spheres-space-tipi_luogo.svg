@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 209.5 58.6" style="enable-background:new 0 0 209.5 58.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HKGrotesk-Medium';}
+	.st1{font-size:9px;}
+	.st2{font-family:'HKGrotesk-Regular';}
+	.st3{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
+	.st4{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
+	.st5{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.25;}
+	.st6{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;}
+	.st7{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st8{fill:#BBBBFF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+</style>
+<g id="Group_260" transform="translate(-1.034 5.605)">
+	<text transform="matrix(1 0 0 1 1.5784 3.7299)" class="st0 st1">Terrestri</text>
+	<text transform="matrix(1 0 0 1 18.0614 40.3299)" class="st2 st1">Nominati</text>
+	<text transform="matrix(1 0 0 1 153.5614 39.7299)" class="st2 st1">No </text>
+	<text transform="matrix(1 0 0 1 153.5614 50.5299)" class="st2 st1">ambientazione</text>
+	<text transform="matrix(1 0 0 1 18.0614 20.7299)" class="st2 st1">Generici</text>
+	<path id="Oval" class="st3" d="M7.8,12.2c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2l0,0
+		C1.6,15,4.4,12.3,7.8,12.2z"/>
+	<path id="Oval-2" class="st4" d="M7.8,31.8c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2c0,0,0,0,0,0l0,0
+		C1.6,34.6,4.4,31.9,7.8,31.8z"/>
+	<circle id="Oval-3" class="st5" cx="142.8" cy="18.4" r="6.2"/>
+	<circle id="Oval-4" class="st6" cx="142.8" cy="37.4" r="6.2"/>
+	<text transform="matrix(1 0 0 1 70.5784 3.7299)" class="st0 st1">Non terrestri</text>
+	<text transform="matrix(1 0 0 1 87.0614 19.7299)" class="st2 st1">Generici</text>
+	<text transform="matrix(1 0 0 1 87.0614 40.3289)" class="st2 st1">Nominati</text>
+	<circle id="Oval-5" class="st7" cx="76.8" cy="38" r="6.2"/>
+	<circle id="Oval-6" class="st8" cx="76.8" cy="17.4" r="6.2"/>
+	<text transform="matrix(1 0 0 1 153.5784 20.7289)" class="st2 st1">Inventati</text>
+</g>
+</svg>

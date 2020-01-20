@@ -55,6 +55,8 @@ export default class TerritoryStepsPanel extends React.Component
 //    this.props.callTerritorySetHighlightMode(this.optionRadioButtonsMap.get(buttonId).value);
 
     const visualizationMode = this.optionRadioButtonsMap.get(buttonId);
+console.log("setting main analysis mode...");
+console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysisMode);
     this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
     this.props.containerSetBottomPanelMode(visualizationMode.bottomPanelMode);
   };

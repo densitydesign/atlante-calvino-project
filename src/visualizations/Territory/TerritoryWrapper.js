@@ -83,9 +83,9 @@ console.log("value", value);
       case GlobalData.analysisModes.doubt.cancellation            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
       case GlobalData.analysisModes.doubt.all                     : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
       case GlobalData.analysisModes.doubt.percentage              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.proportion              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.proportion              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
       case GlobalData.analysisModes.shape.types                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.realism.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
       case GlobalData.analysisModes.realism.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
       case GlobalData.analysisModes.realism.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
       case GlobalData.analysisModes.realism.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
@@ -184,7 +184,8 @@ console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);
         default : throw "mainAnalysisMode not recognized.";
       }
     }
-
+console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
+console.log("legendPage", legendPage);
 
     return (
       <div className="main">
