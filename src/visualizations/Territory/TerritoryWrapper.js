@@ -21,13 +21,13 @@ export default class TerritoryWrapper extends React.Component
 
     bottomPanelMode : GlobalData.bottomPanelModes.none,
     doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
-    shapePanelMode : GlobalData.analysisPanelModes.shape.proportion,
+    shapePanelMode : GlobalData.analysisPanelModes.shape.types,
     realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial,
     
     mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
-    shapeAnalysisMode : GlobalData.analysisModes.shape.proportion,
+    shapeAnalysisMode : GlobalData.analysisModes.shape.types,
     realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial,
 
     helpSidePanelOpen : false

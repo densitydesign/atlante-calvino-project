@@ -44,6 +44,8 @@ const showHillModes = {
 const customElementsClasses = {
   places : "places",
   dubitativePhenomena_level_2 : "dubitativePhenomena_level_2",
+  lists_level_3 : "lists_level_3",
+  lists_level_2 : "lists_level_2",
   place_hierarchy_2 : "place_hierarchy_2"
 };
 
@@ -207,8 +209,8 @@ class VClass
       [ GlobalData.analysisModes.doubt.cancellation,            { customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.all,                     { customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.percentage,              { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.proportion,              {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.types,                   {showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.proportion,              { customElementsClasses : customElementsClasses.lists_level_2,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.types,                   { customElementsClasses : customElementsClasses.lists_level_3,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
       [ GlobalData.analysisModes.realism.genericNonTerrestrial, { customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.realism.namedNonTerrestrial,   { customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.realism.genericTerrestrial,    { customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
@@ -767,6 +769,249 @@ class VClass
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc3)
       .style('fill-opacity', 0);
+
+///////////////////////////////////////////
+
+    let drawListsArc1 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(0 * 2 * PI)
+      .endAngle(function(d, i) {
+        return d.lists_f_ratio * 2 * PI;
+      });
+
+    let drawListsArc2 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.lists_f_ratio * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return d.lists_m_ratio * 2 * PI;
+      });
+
+    let drawListsArc3 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.lists_m_ratio * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return d.lists_p_ratio * 2 * PI;
+      });
+
+    let drawListsArc4 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.lists_p_ratio * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return d.lists_s_ratio * 2 * PI;
+      });
+
+    let drawListsArc5 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i + 1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.lists_s_ratio * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return 2 * PI;
+      });
+
+///////////////////////////////////////////
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#5151fc")
+		.attr("class", customElementsClasses.lists_level_3_full)
+		.attr("d", drawListsArc1)
+/*		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+*/		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#ff6c39")
+		.attr("class", customElementsClasses.lists_level_3_full)
+		.attr("d", drawListsArc2)
+/*		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+*/		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#00c19c")
+		.attr("class", customElementsClasses.lists_level_3_full)
+		.attr("d", drawListsArc3)
+/*		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+*/		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "#ffce00")
+		.attr("class", customElementsClasses.lists_level_3_full)
+		.attr("d", drawListsArc4)
+/*		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+*/		.style('fill-opacity', 0);
+
+	steps
+		.filter(function(d) { return d.first_elem })
+		.append("svg:path")
+		.attr("fill", "transparent")
+		.attr("class", customElementsClasses.lists_level_3_full)
+		.attr("d", drawListsArc5)
+/*		.attr('transform', function(d, i) {
+			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+		})
+*/		.style('fill-opacity', 0);      
+
+///////////////////////////////////////////
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "#5151fc")
+      .attr("class", customElementsClasses.lists_level_3_full)
+      .attr("d", drawListsArc1)
+ /*     .attr('transform', function(d, i) {
+        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+      })
+*/      .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "#ff6c39")
+      .attr("class", customElementsClasses.lists_level_3_full)
+      .attr("d", drawListsArc2)
+/*      .attr('transform', function(d, i) {
+        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+      })
+*/      .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "#00c19c")
+      .attr("class", customElementsClasses.lists_level_3_full)
+      .attr("d", drawListsArc3)
+ /*     .attr('transform', function(d, i) {
+        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+      })
+*/      .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "#ffce00")
+      .attr("class", customElementsClasses.lists_level_3_full)
+      .attr("d", drawListsArc4)
+ /*     .attr('transform', function(d, i) {
+        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+      })
+ */     .style('fill-opacity', 0);
+
+    steps
+      .filter(function(d) { return d.first_elem })
+      .append("svg:path")
+      .attr("fill", "transparent")
+      .attr("class", customElementsClasses.lists_level_3_full)
+      .attr("d", drawListsArc5)
+ /*     .attr('transform', function(d, i) {
+        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
+      })
+ */     .style('fill-opacity', 0);
+
+///////////////////////////////////////////
+
+    let drawListsOverallArc1 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i+1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(0 * 2 * PI)
+      .endAngle(function(d, i) {
+        return d.lists_ratio_with_threshold * 2 * PI;
+      });
+
+    let drawListsOverallArc2 = d3
+      .arc()
+      .innerRadius(function(d, i) {
+        return d.r - (i+1) * arcWidth + arcPad;
+      })
+      .outerRadius(function(d, i) {
+        return d.r - i * arcWidth;
+      })
+      .startAngle(function(d, i) {
+        return d.lists_ratio_with_threshold * 2 * PI;
+      })
+      .endAngle(function(d, i) {
+        return 2 * PI;
+      });
+
+///////////////////////////////////////////
+
+    steps
+      .filter(d => d.first_elem && d.lists_are_present)
+      .append("svg:path")
+      .attr("fill", d => d.lists_ratio_is_below_threshold ? "black" : "#ff6c39")
+      .attr("class", customElementsClasses.lists_level_2_full)
+      .attr("d", drawListsOverallArc1)
+/*      .attr('transform', function(d,i){
+        return 'translate(0,' + (d.n_steps-i) * step_increment + ')'
+      })
+*/      .style('fill-opacity',0);
+
+    steps
+      .filter(d => d.first_elem && d.lists_are_present)
+      .append("svg:path")
+      .attr("fill", "lightgrey")
+      .attr("class", customElementsClasses.lists_level_2_full)
+      .attr("d", drawListsOverallArc2)
+/*      .attr('transform', function(d,i){
+        return 'translate(0,' + (d.n_steps-i) * step_increment + ')'
+      })
+*/      .style('fill-opacity',0);
 
 ///////////////////////////////////////////
 
