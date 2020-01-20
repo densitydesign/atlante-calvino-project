@@ -231,14 +231,14 @@ const GlobalData = {
       proportion : "shape_proportion",
       types : "types"
     },
-    realism : {
+    space : {
       genericNonTerrestrial : "genericNonTerrestrial",
       namedNonTerrestrial : "namedNonTerrestrial",
       genericTerrestrial : "genericTerrestrial",
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
       noSetting : "noSetting",
-      proportion : "realism_proportion",
+      proportion : "space_proportion",
       placeHierarchies : "placeHierarchies"
     }
   },
@@ -246,7 +246,7 @@ const GlobalData = {
     noAnalysis : "none",
     doubt : "doubt",
     shape : "shape",
-    realism : "realism",
+    space : "space",
     chronologicalFilter : "chronologicalFilter",
     legend : "legend"
   },
@@ -261,7 +261,7 @@ const GlobalData = {
       proportion : "shape_proportion",
       types : "types"
     },
-    realism : {
+    space : {
       genericNonTerrestrial : "genericNonTerrestrial",
       namedNonTerrestrial : "namedNonTerrestrial",
       genericTerrestrial : "genericTerrestrial",
@@ -284,7 +284,7 @@ const GlobalData = {
       volumes : "volumes",
       doubt : "doubt",
       shape : "shape",
-      realism : "realism"
+      space : "space"
     }
   },
   collections : collections,

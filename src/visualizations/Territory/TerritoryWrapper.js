@@ -22,13 +22,13 @@ export default class TerritoryWrapper extends React.Component
     bottomPanelMode : GlobalData.bottomPanelModes.none,
     doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
     shapePanelMode : GlobalData.analysisPanelModes.shape.types,
-    realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial,
+    spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial,
     
     mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,
-    realismAnalysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial,
+    spaceAnalysisMode : GlobalData.analysisModes.space.genericNonTerrestrial,
 
     helpSidePanelOpen : false
   };
@@ -77,22 +77,22 @@ console.log("callTerritorySetHighlightMode");
 console.log("value", value);
     switch(value)
     {
-      case GlobalData.analysisModes.noAnalysis.chronology         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis,   noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.noAnalysis.volumes            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis,   noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.fog                     : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.cancellation            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.all                     : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.percentage              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,     doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.proportion              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.types                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,     shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.noSetting             : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
-      case GlobalData.analysisModes.realism.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break
-      case GlobalData.analysisModes.realism.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.realism, realismAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.chronology       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.volumes          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.fog                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.cancellation          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.all                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.percentage            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.types                 : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.noSetting             : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
+      case GlobalData.analysisModes.space.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
 
       default : throw "error : analysis mode " + value + " not recognized";
     }    
@@ -110,7 +110,7 @@ console.log("this.state", this.state);
       case GlobalData.analysisModes.noAnalysis : this.callTerritorySetHighlightMode(this.state.noAnalysisMode); break;
       case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.analysisModes.realism    : this.callTerritorySetHighlightMode(this.state.realismAnalysisMode); break;
+      case GlobalData.analysisModes.space    : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
       default : throw "setMainAnalysisMode : mainAnalysisMode not recognized";
     }
   }
@@ -140,7 +140,7 @@ console.log("this.state", this.state);
       case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
       case GlobalData.bottomPanelModes.doubt      : this.territorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.bottomPanelModes.shape      : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.bottomPanelModes.realism    : this.territorySetHighlightMode(this.state.realismAnalysisMode); break;
+      case GlobalData.bottomPanelModes.space    : this.territorySetHighlightMode(this.state.spaceAnalysisMode); break;
       case GlobalData.bottomPanelModes.chronologicalFilter : break;
       case GlobalData.bottomPanelModes.legend : break;
       default : break;
@@ -148,9 +148,9 @@ console.log("this.state", this.state);
 */
   };
 
-  setDoubtPanelMode   = value => this.setState({   doubtPanelMode : value });
-  setShapePanelMode   = value => this.setState({   shapePanelMode : value });
-  setRealismPanelMode = value => this.setState({ realismPanelMode : value });
+  setDoubtPanelMode = value => this.setState({ doubtPanelMode : value });
+  setShapePanelMode = value => this.setState({ shapePanelMode : value });
+  setSpacePanelMode = value => this.setState({ spacePanelMode : value });
 
   toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
 
@@ -159,10 +159,10 @@ console.log("this.state", this.state);
   render() 
   {
 console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
-console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);    
+console.log("this.state.spaceAnalysisMode", this.state.spaceAnalysisMode);    
     const helpPage =
-      this.state.mainAnalysisMode === GlobalData.analysisModes.realism && 
-      this.state.realismAnalysisMode === GlobalData.analysisModes.realism.placeHierarchies ? 
+      this.state.mainAnalysisMode === GlobalData.analysisModes.space && 
+      this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ? 
       GlobalData.helpPages.territory.placeHierarchies : 
       GlobalData.helpPages.territory.main;
 
@@ -182,7 +182,7 @@ console.log("this.state.realismAnalysisMode", this.state.realismAnalysisMode);
       {
         case GlobalData.analysisModes.doubt   : legendPage = GlobalData.legendPages.territory.doubt; break;
         case GlobalData.analysisModes.shape   : legendPage = GlobalData.legendPages.territory.shape; break;
-        case GlobalData.analysisModes.realism : legendPage = GlobalData.legendPages.territory.realism; break;
+        case GlobalData.analysisModes.space : legendPage = GlobalData.legendPages.territory.space; break;
         default : throw "mainAnalysisMode not recognized.";
       }
     }
@@ -234,13 +234,13 @@ console.log("legendPage", legendPage);
                 shapePanelMode={this.state.shapePanelMode}
                 containerSetShapePanelMode={this.setShapePanelMode}
 
-                realismPanelMode={this.state.realismPanelMode}
-                containerSetRealismPanelMode={this.setRealismPanelMode}
+                spacePanelMode={this.state.spacePanelMode}
+                containerSetSpacePanelMode={this.setSpacePanelMode}
 
                 noAnalysisMode={this.state.noAnalysisMode}
                 doubtAnalysisMode={this.state.doubtAnalysisMode}
                 shapeAnalysisMode={this.state.shapeAnalysisMode}
-                realismAnalysisMode={this.state.realismAnalysisMode}
+                spaceAnalysisMode={this.state.spaceAnalysisMode}
 
                 legendPage={legendPage}
 

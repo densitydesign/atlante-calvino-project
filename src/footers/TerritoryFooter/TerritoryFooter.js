@@ -17,13 +17,13 @@ export default class TerritoryFooter extends React.Component
   territoryLabel = "territorio";
   doubtLabel = "dubbio";
   shapeLabel = "forma";
-  realismLabel = "realismo";
+  spaceLabel = "spazio";
 
   stepLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
     [ this.doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
     [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.realismLabel,   { bottomPanelMode : GlobalData.bottomPanelModes.realism,    mainAnalysisMode : GlobalData.analysisModes.realism } ]
+    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,    mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   toggleButtonsMap = new Map([
@@ -38,7 +38,7 @@ export default class TerritoryFooter extends React.Component
         { label : this.territoryLabel, status : true },
         { label : this.doubtLabel,     status : false },
         { label : this.shapeLabel,     status : false },
-        { label : this.realismLabel,   status : false }
+        { label : this.spaceLabel,   status : false }
       ]
     },
     toggleButtonsStates : [

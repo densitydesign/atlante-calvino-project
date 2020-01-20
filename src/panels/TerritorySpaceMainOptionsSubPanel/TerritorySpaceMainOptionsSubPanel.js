@@ -3,14 +3,14 @@ import React from 'react';
 
 import RadioButton from '../../general/RadioButton/RadioButton';
 
-import './TerritoryRealismMainOptionsSubPanel.css'
+import './TerritorySpaceMainOptionsSubPanel.css'
 
-export default class TerritoryRealismMainOptionsSubPanel extends React.Component
+export default class TerritorySpaceMainOptionsSubPanel extends React.Component
 {
   render()
   {
     return (
-      <div className="territory-realism-main-options-subpanel">
+      <div className="territory-space-main-options-subpanel">
 
         <RadioButton 
           id={this.props.genericNonTerrestrialRadioButtonId} 

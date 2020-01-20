@@ -26,14 +26,14 @@ export default class TerritoryStepsPanel extends React.Component
     optionRadioButtonsStates : [
       { id : this.doubtRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
       { id : this.shapeRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
-      { id : this.realismRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.realism }
+      { id : this.realismRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
     ]
   };
 
   optionRadioButtonsMap = new Map([
     [ this.doubtRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
     [ this.shapeRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.realismRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.realism, mainAnalysisMode : GlobalData.analysisModes.realism } ]
+    [ this.realismRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {
@@ -91,7 +91,7 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
 
         break;
         
-      case GlobalData.bottomPanelModes.realism :
+      case GlobalData.bottomPanelModes.space :
 
         rendering = (
           <TerritorySpacePanel 

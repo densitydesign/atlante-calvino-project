@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import TerritoryRealismMainOptionsSubPanel from '../TerritoryRealismMainOptionsSubPanel/TerritoryRealismMainOptionsSubPanel';
+import TerritorySpaceMainOptionsSubPanel from '../TerritorySpaceMainOptionsSubPanel/TerritorySpaceMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
@@ -34,14 +34,14 @@ export default class TerritorySpacePanel extends React.Component
   placeHierarchiesRadioButtonCaption = "MEDUSE";
 
   optionRadioButtonsMap = new Map([
-    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.realism.genericNonTerrestrial, realismPanelMode : GlobalData.analysisPanelModes.realism.genericNonTerrestrial } ],
-    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.realism.namedNonTerrestrial,   realismPanelMode : GlobalData.analysisPanelModes.realism.namedNonTerrestrial } ],
-    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.realism.genericTerrestrial,    realismPanelMode : GlobalData.analysisPanelModes.realism.genericTerrestrial } ],
-    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.realism.namedTerrestrial,      realismPanelMode : GlobalData.analysisPanelModes.realism.namedTerrestrial } ],
-    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.realism.invented,              realismPanelMode : GlobalData.analysisPanelModes.realism.invented } ],    
-    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.realism.noSetting,             realismPanelMode : GlobalData.analysisPanelModes.realism.noSetting } ],
-    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.realism.proportion,            realismPanelMode : GlobalData.analysisPanelModes.realism.proportion } ],
-    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.realism.placeHierarchies,      realismPanelMode : GlobalData.analysisPanelModes.realism.placeHierarchies } ]
+    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericNonTerrestrial, realismPanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial } ],
+    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedNonTerrestrial,   realismPanelMode : GlobalData.analysisPanelModes.space.namedNonTerrestrial } ],
+    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    realismPanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
+    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      realismPanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
+    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              realismPanelMode : GlobalData.analysisPanelModes.space.invented } ],    
+    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.space.noSetting,             realismPanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
+    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.space.proportion,            realismPanelMode : GlobalData.analysisPanelModes.space.proportion } ],
+    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      realismPanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
   ]);  
 
   state = {
@@ -82,7 +82,7 @@ export default class TerritorySpacePanel extends React.Component
     return (
       <div className="territory-space-panel">
         <div></div>
-        <TerritoryRealismMainOptionsSubPanel 
+        <TerritorySpaceMainOptionsSubPanel 
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           genericNonTerrestrialRadioButtonId={this.genericNonTerrestrialRadioButtonId}
