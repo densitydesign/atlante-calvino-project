@@ -76,7 +76,7 @@ export default class TerritoryBottomPanel extends React.Component
       <div className="territory-bottom-panel">
         { internalPanel }
         <div className="side-container">
-          <PullDownButton style={{width : "100%" }} />
+          <PullDownButton style={{width : "100%" }} onClicked={this.props.onCloseButtonClicked} />
         </div>
       </div>
       

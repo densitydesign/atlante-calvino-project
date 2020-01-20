@@ -154,6 +154,8 @@ console.log("this.state", this.state);
 
   toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
 
+  onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.none });
+
   render() 
   {
 console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
@@ -249,6 +251,7 @@ console.log("legendPage", legendPage);
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
+                onCloseButtonClicked={this.onBottomPanelCloseButtonClicked}
               />            
               }
 
