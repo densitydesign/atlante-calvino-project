@@ -83,7 +83,7 @@ console.log("visualizationMode", visualizationMode);
       <div className="bottom-nav navigations">
 
         <Options
-          title="Tappe"
+          title="Sfere"
           data={this.state.steps}
           style={{ gridColumn : "span 8", textAlign : "center" }}
           changeOptions={this.changeSteps}
