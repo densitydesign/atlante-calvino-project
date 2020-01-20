@@ -7,6 +7,12 @@ import Search from '../../general/Search';
 import Loading from "../../general/Loading";
 
 import AltOptions  from "../../general/Options/AltOptions";
+import MarimekkoViz from './MarimekkoViz'
+
+import marimekkoData from './marimekko.json'
+
+import uniqBy from 'lodash/uniqBy'
+import pick from 'lodash/pick'
 
 
 const tipologiaOptions = [
@@ -37,10 +43,45 @@ const cercaOptions = [
 
 class Combine extends Component {
   state = {
-    isLoading: false
+    isLoading: false,
+    booksData: null,
+    cercaPer: 'titolo'
+    
   };
 
+
+  preprocessData = (data) => {
+    console.log(data)
+
+  }
+
+
+  componentDidMount(){
+    console.log("marimekkoData", marimekkoData)
+    this.preprocessData(marimekkoData)
+
+    const firstLevelRecords = marimekkoData.filter(item => item.livello === 'uno')
+    const booksData = uniqBy(firstLevelRecords, 'textID').map(item => {
+      let out = pick(item, ['textID', 'anno', 'mese', 'caratteri'])
+      out.caratteri = +out.caratteri
+      out.mese = +out.mese
+      out.anno = +out.anno
+      return out
+    })
+    
+    console.log("booksData", booksData)
+
+
+    this.setState({booksData})
+
+
+
+  }
+
   render() {
+
+    const { booksData, cercaPer } = this.state
+
     return (
       <div className="trasformare main">
         <div className="top-nav navigations">
@@ -52,7 +93,8 @@ class Combine extends Component {
             <AltOptions
               title="Cerca per"
               options={cercaOptions}
-              value={'titolo'}
+              value={cercaPer}
+              onChange={(x) => { this.setState({cercaPer: x.label})}}
               style={{ gridColumn: "span 3" }}
             />
           )}
@@ -67,6 +109,10 @@ class Combine extends Component {
           )}
           <MoreInfo style={{ gridColumn: "span 1" }} />
           <Bussola style={{ gridColumn: "span 1" }} />
+        </div>
+
+        <div className="the-body-viz">
+          {booksData && <MarimekkoViz booksData={booksData}/>}
         </div>
 
         <div className="bottom-nav navigations">
