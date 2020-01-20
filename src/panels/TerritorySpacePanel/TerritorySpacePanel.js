@@ -5,9 +5,9 @@ import TerritoryRealismMainOptionsSubPanel from '../TerritoryRealismMainOptionsS
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
-import './TerritoryRealismPanel.css';
+import './TerritorySpacePanel.css';
 
-export default class TerritoryRealismPanel extends React.Component
+export default class TerritorySpacePanel extends React.Component
 {
   genericNonTerrestrialRadioButtonId = "genericNonTerrestrialRadioButton";
   genericNonTerrestrialRadioButtonCaption = "GENERICI";
@@ -80,7 +80,7 @@ export default class TerritoryRealismPanel extends React.Component
   render()
   {
     return (
-      <div className="territory-doubt-panel">
+      <div className="territory-space-panel">
         <div></div>
         <TerritoryRealismMainOptionsSubPanel 
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}

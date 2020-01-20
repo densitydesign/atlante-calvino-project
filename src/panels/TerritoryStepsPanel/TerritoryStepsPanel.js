@@ -5,7 +5,7 @@ import RadioButton from '../../general/RadioButton/RadioButton';
 
 import TerritoryDoubtPanel from '../TerritoryDoubtPanel/TerritoryDoubtPanel';
 import TerritoryShapePanel from '../TerritoryShapePanel/TerritoryShapePanel';
-import TerritoryRealismPanel from '../TerritoryRealismPanel/TerritoryRealismPanel';
+import TerritorySpacePanel from '../TerritorySpacePanel/TerritorySpacePanel';
 
 import './TerritoryStepsPanel.css';
 
@@ -94,7 +94,7 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
       case GlobalData.bottomPanelModes.realism :
 
         rendering = (
-          <TerritoryRealismPanel 
+          <TerritorySpacePanel 
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode} 
             realismPanelMode={this.props.realismPanelMode}
             containerSetRealismPanelMode={this.props.containerSetRealismPanelMode}
