@@ -1,13 +1,11 @@
 
 .territory-legend-panel {
   background-color : white;
-  position : absolute;
-  top: 70%;
+/*  position : relative; */
+/*  top: 70%; */
   height: 40%;
-  width : 100%;
+  width : 96%;
   z-index : 2;
-  border-top : solid;
-  border-top-color : black;
   display : flex;
   flex-direction : row;
   flex-wrap : nowrap;

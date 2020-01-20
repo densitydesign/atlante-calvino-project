@@ -2,30 +2,30 @@
 import React from 'react';
 
 import TerritoryStepsPanel from '../TerritoryStepsPanel/TerritoryStepsPanel';
+import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
+import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
+
+import PullDownButton from '../../general/PullDownButton/PullDownButton';
 
 import './TerritoryBottomPanel.css';
 
-
 import GlobalData from '../../utilities/GlobalData';
-
-import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
-import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
 
 export default class TerritoryBottomPanel extends React.Component
 {
   render()
   {
-    let rendering;
+    let internalPanel;
 
     switch(this.props.bottomPanelMode)
     {
-      case GlobalData.bottomPanelModes.noAnalysis : rendering = <></>
+      case GlobalData.bottomPanelModes.noAnalysis : internalPanel = <></>
 
       case GlobalData.bottomPanelModes.doubt :
       case GlobalData.bottomPanelModes.shape :
       case GlobalData.bottomPanelModes.realism :
 
-        rendering = (
+        internalPanel = (
           <TerritoryStepsPanel 
             
             setMainAnalysisMode={this.props.setMainAnalysisMode}
@@ -49,7 +49,7 @@ export default class TerritoryBottomPanel extends React.Component
 
       case GlobalData.bottomPanelModes.chronologicalFilter :
 
-        rendering = (
+        internalPanel = (
           <TerritoryTimelinePanel 
             data={this.props.data}
             callTerritoryShowHills={this.props.callTerritoryShowHills}
@@ -62,15 +62,24 @@ export default class TerritoryBottomPanel extends React.Component
 
       case GlobalData.bottomPanelModes.legend :
 
-        rendering = (
+        internalPanel = (
           <TerritoryLegendPanel page={this.props.legendPage} />
         );
 
         break;
 
-      default : rendering = <></>
+      default : internalPanel = <></>
     }
 
-    return rendering;
+    return (
+      
+      <div className="territory-bottom-panel">
+        { internalPanel }
+        <div className="side-container">
+          <PullDownButton style={{width : "100%" }} />
+        </div>
+      </div>
+      
+    );
   }
 }
