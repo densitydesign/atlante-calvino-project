@@ -14,29 +14,10 @@ class VClass
     callTerritorySetDataExtent,
     callTerritoryApplyBeeSwarmFilter) =>
   {
-console.log("territory timeline initialize");    
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
-
-if(callTerritoryApplyBeeSwarmFilter)
-{
-  console.log("territoryTimeline.d3.js - VClass.initialize() - callTerritoryApplyBeeSwarmFilter has value");
-}
-else
-{
-  console.log("territoryTimeline.d3.js - VClass.initialize() - callTerritoryApplyBeeSwarmFilter null");
-}
 
     this.callTerritorySetDataExtent = callTerritorySetDataExtent;
     this.callTerritoryApplyBeeSwarmFilter = callTerritoryApplyBeeSwarmFilter;
-
-if(this.callTerritoryApplyBeeSwarmFilter)
-{
-  console.log("territoryTimeline.d3.js - VClass.initialize() - this.callTerritoryApplyBeeSwarmFilter has value");
-}
-else
-{
-  console.log("territoryTimeline.d3.js - VClass.initialize() - this.callTerritoryApplyBeeSwarmFilter null");
-}    
 
     this.prepareTimeline(el, input_data.json_nodes);
   }
