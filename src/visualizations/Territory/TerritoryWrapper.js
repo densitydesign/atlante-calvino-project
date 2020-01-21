@@ -19,7 +19,7 @@ export default class TerritoryWrapper extends React.Component
     data : "data still not loaded",
     isLoading : true,
 
-    bottomPanelMode : GlobalData.bottomPanelModes.none,
+    bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis,
     doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
     shapePanelMode : GlobalData.analysisPanelModes.shape.types,
     spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial,
@@ -162,7 +162,7 @@ console.log("this.state", this.state);
 
   toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
 
-  onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.none });
+  onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
   render() 
   {
@@ -225,7 +225,7 @@ console.log("this.state", this.state);
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               /> 
 
-              {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.none &&
+              {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.noAnalysis &&
 
               <TerritoryBottomPanel 
 
@@ -248,7 +248,8 @@ console.log("this.state", this.state);
 
                 legendPage={legendPage}
 
-                data={this.state.data}                
+                data={this.state.data}
+                dataExtent={this.state.dataExtent}
                                 
                 setMainAnalysisMode={this.setMainAnalysisMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}

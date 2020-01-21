@@ -10,7 +10,8 @@ class VClass
 {
   initialize = (
     el, 
-    input_data, 
+    input_data,
+    dataExtent,
     callTerritorySetDataExtent,
     callTerritoryApplyBeeSwarmFilter) =>
   {
@@ -19,12 +20,12 @@ class VClass
     this.callTerritorySetDataExtent = callTerritorySetDataExtent;
     this.callTerritoryApplyBeeSwarmFilter = callTerritoryApplyBeeSwarmFilter;
 
-    this.prepareTimeline(el, input_data.json_nodes);
+    this.prepareTimeline(el, input_data.json_nodes, dataExtent);
   }
 
   destroy = () => {};
 
-  prepareTimeline = (el, json_nodes) =>
+  prepareTimeline = (el, json_nodes, dataExtent) =>
   {
     let margin = { top: 10, right: 5, bottom: 10, left: 10 };
 
@@ -45,6 +46,7 @@ class VClass
     let brushGroup = timelineSvg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")")
 
     let x_time_ext = d3.extent(json_nodes, d => d.attributes.first_publication);
+    
     x_time_ext[0] = +x_time_ext[0] - 1;
     x_time_ext[1] = +x_time_ext[1] + 1;
 
@@ -133,7 +135,7 @@ class VClass
 
     brushGroup
       .call(data.brush)
-      .call(data.brush.move, [data.timeline_x.domain()[0], data.timeline_x.domain()[1]].map(data.timeline_x))
+      .call(data.brush.move, [dataExtent[0], dataExtent[1]].map(data.timeline_x))
       .selectAll(".overlay")
       .each(d => d.type = "selection")
       .on("mousedown touchstart", brushcentered);
@@ -166,7 +168,7 @@ class VClass
       var fp = +d.data.attributes.first_publication
       return fp < data_extent[0] || fp > data_extent[1]
     })
-    .style('opacity', 0.1)
+    .style('opacity', 0.1);
 
     if(this.callTerritoryApplyBeeSwarmFilter)
     {

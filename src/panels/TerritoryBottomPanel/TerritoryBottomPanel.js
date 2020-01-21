@@ -19,7 +19,9 @@ export default class TerritoryBottomPanel extends React.Component
 
     switch(this.props.bottomPanelMode)
     {
-      case GlobalData.bottomPanelModes.noAnalysis : internalPanel = <></>
+      case GlobalData.bottomPanelModes.noAnalysis : 
+      
+        internalPanel = <></>; break;
 
       case GlobalData.bottomPanelModes.doubt :
       case GlobalData.bottomPanelModes.shape :
@@ -52,6 +54,7 @@ export default class TerritoryBottomPanel extends React.Component
         internalPanel = (
           <TerritoryTimelinePanel 
             data={this.props.data}
+            dataExtent={this.props.dataExtent}
             callTerritoryShowHills={this.props.callTerritoryShowHills}
             callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
             callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter}

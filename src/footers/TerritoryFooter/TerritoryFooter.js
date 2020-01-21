@@ -40,11 +40,7 @@ export default class TerritoryFooter extends React.Component
         { label : this.shapeLabel,     status : false },
         { label : this.spaceLabel,     status : false }
       ]
-    },
-    toggleButtonsStates : [
-      { id : this.legendToggleButtonId,              pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode },
-      { id : this.chronologicalFilterToggleButtonId, pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode }
-    ]
+    }
   };
 
 
@@ -53,8 +49,6 @@ export default class TerritoryFooter extends React.Component
   changeItineraries = newOptions => {
     const visualizationMode = this.stepLabelOptionPanelModeMap.get(this.getActiveOption(newOptions));
 
-console.log("visualizationMode", visualizationMode);
-
     this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
     this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
   }
@@ -62,18 +56,13 @@ console.log("visualizationMode", visualizationMode);
   getActiveOption = options => options.find(item => item.status === true).label;
 
   toggleButtonPressed = buttonId => {
-    const buttonState = this.state.toggleButtonsStates.find(item => item.id === buttonId);
-
-    const toggleButtonsStatesCopy = [...this.state.toggleButtonsStates];
-
-    const buttonStateCopy = toggleButtonsStatesCopy.find(item => item.id === buttonId);
-    buttonStateCopy.pressed = !buttonStateCopy.pressed;
-
-    this.setState({ toggleButtonsStates : toggleButtonsStatesCopy });
 
     const value = this.toggleButtonsMap.get(buttonId);
 
-    this.props.setBottomPanelMode(value.bottomPanelMode);    
+    if(value.bottomPanelMode != this.props.bottomPanelMode)
+      this.props.setBottomPanelMode(value.bottomPanelMode);
+    else
+      this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis); 
   };
 
   render()
@@ -114,8 +103,5 @@ console.log("visualizationMode", visualizationMode);
 
 function matchPair(p1, p2)
 {
-//console.log("matchPair");
-//console.log("p1", p1);
-//console.log("p2", p2);  
   return p1[0] <= p2[0] && p1[1] >= p2[1];
 }

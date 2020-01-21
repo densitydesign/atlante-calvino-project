@@ -10,6 +10,7 @@ export default class TerritoryTimeline extends React.Component
     V.initialize(
       this._rootNode, 
       this.props.data,
+      this.props.dataExtent,
       this.props.callTerritorySetDataExtent,
       this.props.callTerritoryApplyBeeSwarmFilter);
   }              

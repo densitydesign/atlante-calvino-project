@@ -19,6 +19,7 @@ export default class TerritoryTimelinePanel extends React.Component
       <div className="territory-timeline-panel">
         <TerritoryTimelineWrapper 
           data={this.props.data}
+          dataExtent={this.props.dataExtent}
           callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
           callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
       </div>
