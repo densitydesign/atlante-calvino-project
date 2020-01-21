@@ -154,6 +154,7 @@ class Trasformare extends Component {
 					multiple: true,
 					options: kinds
 				},
+				ricercaOptionsSearched: [],
 				toPreservePubblicazioni: data.data.map(d => d.id),
 				volumi: {
 					multiple: true,
@@ -222,6 +223,7 @@ class Trasformare extends Component {
 				...prevState.ricerca,
 				// options: newOptions
 			},
+			ricercaOptionsSearched: newOptions,
 			toPreserveRicerca: toPreserve,
 			filter: _.intersection(prevState.noFilter,
 				toPreserve,
@@ -314,6 +316,7 @@ class Trasformare extends Component {
 
 		this.setState(prevState => ({
 			toPreserveRicerca: prevState.noFilter,
+			ricercaOptionsSearched: [],
 			toPreservePubblicazioni: prevState.noFilter,
 			pubblicazioni: {
 				...prevState.pubblicazioni,
@@ -342,9 +345,7 @@ class Trasformare extends Component {
 	downloadData(event) {
 		if(event.key !== 'd') return;
 
-    console.log(this.state)
-
-    const selected = d3.selectAll('.selected, .filtered')
+    const selected = d3.selectAll('.node:not(.filtered)')
   	let selectedData = selected.data()
 
   	selectedData = d3.nest()
@@ -361,7 +362,7 @@ class Trasformare extends Component {
 
     export_data += `Ambienti attivati: ${this.state.ambienti.options.filter(d=>d.status).map(d=>d.label).join(', ')}\n`
     export_data += `Pubblicazioni attivate: ${this.state.pubblicazioni.options.filter(d=>d.status).map(d=>d.label).join(', ')}\n`
-    export_data += `Ricerca effettuata: ${this.state.toPreserveRicerca.map(d=>this.state.originalData.find(e=>e.id===d).label).join(', ')}\n`
+    export_data += `Ricerca effettuata: ${this.state.ricercaOptionsSearched.map(d=>d.label).join(', ')}\n`
     export_data += `\n\n`
 
     export_data += `composition_id\tcomposition_title\n`
@@ -406,7 +407,7 @@ class Trasformare extends Component {
 	}
 
 	render() {
-		console.log("render", this.state)
+		// console.log("render", this.state)
 
 		return (
 			<div className = "trasformare main">

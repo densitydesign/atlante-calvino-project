@@ -115,7 +115,7 @@ function brushed() {
 		var span = d3.event.selection || Viz.x.range();
 		span = span.map(d => { return Viz.x.invert(d) })
 		if(d3.event.type === "end") {
-			console.log('filtered by time')
+			// console.log('filtered by time')
 			funcChangeSpan(span);
 		}
 		span = span.map(d => new Date(d));

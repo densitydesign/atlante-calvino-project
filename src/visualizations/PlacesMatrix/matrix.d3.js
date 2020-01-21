@@ -308,7 +308,7 @@ V.initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter) => {
 }
 
 V.update = (timeFilter) => {
-	console.log('update');
+	// console.log('update');
 	// console.log('graph:', graph);
 	if (timeFilter) {
 		globalTimeFilter = timeFilter
