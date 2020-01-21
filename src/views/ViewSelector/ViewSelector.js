@@ -18,7 +18,7 @@ export default class ViewSelector extends React.Component
       <div className={this.props.className}>
         {
           children.map((d,i)=>{
-            console.log(d);
+            // console.log(d);
             let this_class = ""
             if (d.props && d.props.dataClass) {
               this_class = d.props.dataClass

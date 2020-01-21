@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import ParseMatrixData from '../../utilities/parse-matrix-data';
 // import _ from 'lodash';
 
-const categories = ['generico_non_terrestre', 'nominato_non_terrestre', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
+const categories = ['generico_cosmico', 'nominato_cosmico', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
 const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c', '#cecece']
 
 const collisionPadding = 0.25;
@@ -30,7 +30,7 @@ const V = {}
 
 export default V
 
-V.initialize = (el, data, _originalData) => {
+V.initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter) => {
 	// console.log('init');
 	// console.log('data:', data);
 	// console.log('filters:', filters);
@@ -49,7 +49,8 @@ V.initialize = (el, data, _originalData) => {
 		.on('click', d => {
 			if((d3.event.timeStamp - last) < 500) {
 				console.log('reset')
-				reset();
+				reset('also categories');
+				_resetFilter();
 			}
 			last = d3.event.timeStamp;
 		})
@@ -102,8 +103,10 @@ V.initialize = (el, data, _originalData) => {
 	yAxis.selectAll('.tick')
 		.on('click', function(d) {
 
-			if(d3.select(this).classed('cat-selected') === false) {
+			let selectedCategory;
 
+			if(d3.select(this).classed('cat-selected') === false) {
+				selectedCategory = d;
 				if(d3.selectAll('.tick.cat-selected').size() > 0) {
 					nodes.filter(nnn => nnn.part_of === '').forEach(n => { closeSubnodes(n, false) });
 					d3.selectAll('.tick')
@@ -142,9 +145,9 @@ V.initialize = (el, data, _originalData) => {
 				})
 				toOpen.forEach(n => { openSubnodes(n, false) });
 
-				d3.select(this).select('rect')
-					.attr('fill', d => color(d))
+				d3.select(this).select('rect').attr('fill', d => color(d))
 			} else {
+				selectedCategory = null;
 				let toClose = []
 				nodes.forEach(n0 => {
 					// console.log('n0',n0);
@@ -174,20 +177,21 @@ V.initialize = (el, data, _originalData) => {
 					}
 				})
 				toClose.forEach(n => { closeSubnodes(n, false) });
-
-				d3.select(this).select('rect')
-					.attr('fill', 'transparent')
+				d3.select(this).select('rect').attr('fill', 'transparent')
 			}
+
 			V.update();
 
-			if(d3.select(this).classed('cat-selected') === false) {
-				node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
-			} else {
-				node.each(nn => unselectNode(nn))
-			}
+			// if(d3.select(this).classed('cat-selected') === false) {
+			// 	node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
+			// } else {
+			// 	node.each(nn => unselectNode(nn))
+			// }
 
 			// Now that everything is done, assign the class
 			d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
+
+			_onChangeCategorie(selectedCategory);
 		})
 		.append('rect')
 		.attr('width', '14px')
@@ -276,9 +280,15 @@ V.initialize = (el, data, _originalData) => {
 
 		// display all labels of selected compositions
 		if(d3.event.transform.k > 3) {
-			d3.selectAll('.node.selected').each(d => {
-				label.filter(l => l.id === d.id).classed('zoom-selected', true)
-			})
+
+			// // make visible the lables of nodes selected
+			// d3.selectAll('.node.selected').each(d => {
+			// 	label.filter(l => l.id === d.id).classed('zoom-selected', true)
+			// })
+
+			// all labels visible
+			label.classed('zoom-selected', true)
+
 		} else {
 			label.classed('zoom-selected', false)
 		}
@@ -346,22 +356,31 @@ V.update = (timeFilter) => {
 		.on('mouseenter', d => {
 			label.filter(l => l.id === d.id).style('display', 'block')
 			node.style('opacity', .25).filter(n => n.source === d.source).style('opacity', 1)
+			displayTitle(d);
 		})
 		.on('mouseleave', d => {
 			label.filter(l => l.id === d.id).style('display', 'none')
 			node.style('opacity', '')
+			displayTitle(d);
 		})
-		.on('click', d => {
+		.on('click', function(d) {
 			// console.log('clicked on', d)
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
 				toggleSubnodes(d, 'restart the force');
 			}
 			last = d3.event.timeStamp;
+
+			const isSelected = d3.select(this).classed('selected')
 			// do this after the nodes have been opened
-			selectLabel(d);
-			selectSameComposition(d);
-			displayTitle([d]);
+			if (!isSelected) {
+				selectLabel(d);
+				selectSameComposition(d);
+				displayTitle([d]);
+			} else {
+				unselectNode(d)
+				unselectLabel(d);
+			}
 		})
 		.merge(node)
 		.style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
@@ -598,17 +617,19 @@ const toggleSubnodes = (d, doRestart) => {
 }
 
 // Interactions
-const displayTitle = (arr) => {
-	// show composition title
-	information = information.data(arr, function(d) { return d.id; });
-	information.exit().remove();
-	information = information.enter().append("text")
-		.classed('information', true)
-		.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
-		.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
-		.attr('y', height - 10)
-		.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-		.merge(information);
+const displayTitle = (data) => {
+	if (Array.isArray(data)) {
+		// show composition title
+		information = information.data(data, function(d) { return d.id; });
+		information.exit().remove();
+		information = information.enter().append("text")
+			.classed('information', true)
+			.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
+			.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
+			.attr('y', height - 10)
+			.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+			.merge(information);
+	}
 }
 
 const selectLabel = (d) => {
@@ -630,7 +651,7 @@ const unselectNode = (d) => {
 	}
 }
 
-const applyFilter = (filter, doReset) => {
+const applyFilter = (filter, doReset,alsoCategories) => {
 	if (doReset==='do reset') {reset();}
 	svg.classed('there-is-filter', true)
 	node.classed('filtered', false).filter(n => filter.indexOf(n.id) < 0).classed('filtered', true)
@@ -648,10 +669,12 @@ const unselectSameComposition = (d) => {
 	}
 }
 
-const reset = () => {
+const reset = (alsoCategories) => {
 	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
 	node.classed('filtered', false)
-	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
+	if (alsoCategories === 'also categories') {
+		svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
+	}
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
 }
