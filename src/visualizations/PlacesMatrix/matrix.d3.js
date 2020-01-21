@@ -280,9 +280,15 @@ V.initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter) => {
 
 		// display all labels of selected compositions
 		if(d3.event.transform.k > 3) {
-			d3.selectAll('.node.selected').each(d => {
-				label.filter(l => l.id === d.id).classed('zoom-selected', true)
-			})
+
+			// // make visible the lables of nodes selected
+			// d3.selectAll('.node.selected').each(d => {
+			// 	label.filter(l => l.id === d.id).classed('zoom-selected', true)
+			// })
+
+			// all labels visible
+			label.classed('zoom-selected', true)
+
 		} else {
 			label.classed('zoom-selected', false)
 		}
@@ -350,22 +356,31 @@ V.update = (timeFilter) => {
 		.on('mouseenter', d => {
 			label.filter(l => l.id === d.id).style('display', 'block')
 			node.style('opacity', .25).filter(n => n.source === d.source).style('opacity', 1)
+			displayTitle(d);
 		})
 		.on('mouseleave', d => {
 			label.filter(l => l.id === d.id).style('display', 'none')
 			node.style('opacity', '')
+			displayTitle(d);
 		})
-		.on('click', d => {
+		.on('click', function(d) {
 			// console.log('clicked on', d)
 			// if double click/tap
 			if((d3.event.timeStamp - last) < 500) {
 				toggleSubnodes(d, 'restart the force');
 			}
 			last = d3.event.timeStamp;
+
+			const isSelected = d3.select(this).classed('selected')
 			// do this after the nodes have been opened
-			selectLabel(d);
-			selectSameComposition(d);
-			displayTitle([d]);
+			if (!isSelected) {
+				selectLabel(d);
+				selectSameComposition(d);
+				displayTitle([d]);
+			} else {
+				unselectNode(d)
+				unselectLabel(d);
+			}
 		})
 		.merge(node)
 		.style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
@@ -602,17 +617,19 @@ const toggleSubnodes = (d, doRestart) => {
 }
 
 // Interactions
-const displayTitle = (arr) => {
-	// show composition title
-	information = information.data(arr, function(d) { return d.id; });
-	information.exit().remove();
-	information = information.enter().append("text")
-		.classed('information', true)
-		.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
-		.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
-		.attr('y', height - 10)
-		.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
-		.merge(information);
+const displayTitle = (data) => {
+	if (Array.isArray(data)) {
+		// show composition title
+		information = information.data(data, function(d) { return d.id; });
+		information.exit().remove();
+		information = information.enter().append("text")
+			.classed('information', true)
+			.attr('text-anchor', d => (x(d.year) >= width / 2) ? 'end' : 'start')
+			.attr('x', d => (x(d.year) >= width / 2) ? x(d.year) + 4.8 : x(d.year) - 3.2)
+			.attr('y', height - 10)
+			.text(d => (x(d.year) >= width / 2) ? d.sourceTitle + ' ↓' : '↓ ' + d.sourceTitle)
+			.merge(information);
+	}
 }
 
 const selectLabel = (d) => {

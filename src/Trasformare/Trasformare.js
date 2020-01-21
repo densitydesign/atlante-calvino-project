@@ -186,7 +186,7 @@ class Trasformare extends Component {
 			return;
 		}
 		selection = selection[0].label
-		console.log(selection)
+		// console.log(selection)
 
 		let research_options = this.state.data_research[selection];
 
