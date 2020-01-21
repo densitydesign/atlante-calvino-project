@@ -1,0 +1,16 @@
+.topAxisRect {
+    stroke: #fff;
+    stroke-width: 1px;
+    fill: #000;
+}
+
+.topAxisText{
+    font-size: 10px;
+}
+
+
+
+.marimekkoRect {
+    fill: #fff;
+    stroke: #ccc;
+}
