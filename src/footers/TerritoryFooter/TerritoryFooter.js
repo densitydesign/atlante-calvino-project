@@ -92,7 +92,10 @@ console.log("visualizationMode", visualizationMode);
           id={this.chronologicalFilterToggleButtonId} 
           style={{ gridColumn : "span 8" }}
           caption={this.chronologicalFilterToggleButtonCaption} 
-          pressed={this.state.toggleButtonsStates.find(item => item.id === this.chronologicalFilterToggleButtonId).pressed} 
+          pressed={
+            this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode ||
+            !matchPair(this.props.dataExtent, GlobalData.defaultTerritoryDataExtent)
+          }
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
         />
 
@@ -100,11 +103,19 @@ console.log("visualizationMode", visualizationMode);
           id={this.legendToggleButtonId} 
           style={{ gridColumn : "span 8" }}
           caption={this.legendToggleButtonCaption} 
-          pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} 
+          pressed={this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode} 
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
         />
 
       </div>
     );
   }
+}
+
+function matchPair(p1, p2)
+{
+//console.log("matchPair");
+//console.log("p1", p1);
+//console.log("p2", p2);  
+  return p1[0] <= p2[0] && p1[1] >= p2[1];
 }

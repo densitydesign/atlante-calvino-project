@@ -31,9 +31,7 @@ class VClass
     let timelineSvg = d3.select(el);
 
     data.timeline_width = timelineSvg.node().getBoundingClientRect().width - margin.left - margin.right;
-  console.log("data.timeline_width : ", data.timeline_width);
     data.timeline_height = timelineSvg.node().getBoundingClientRect().height - margin.top - margin.bottom;
-  console.log("data.timeline_height : ", data.timeline_height);
 
     timelineSvg
       .attr("width", data.timeline_width + margin.left + margin.right)

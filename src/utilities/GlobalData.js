@@ -287,6 +287,7 @@ const GlobalData = {
       space : "space"
     }
   },
+  defaultTerritoryDataExtent : [1942, 1985],
   collections : collections,
   allowedCollections : allowedCollections,
   allowedCollectionsSplit : allowedCollections.split(","),

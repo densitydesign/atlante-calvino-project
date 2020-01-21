@@ -24,16 +24,16 @@ export default class TerritoryItinerariesPanel extends React.Component
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.doubtRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
-      { id : this.shapeRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
-      { id : this.spaceRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
+      { id : this.doubtRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
+      { id : this.shapeRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
+      { id : this.spaceRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
     ]
   };
 
   optionRadioButtonsMap = new Map([
-    [ this.doubtRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
-    [ this.shapeRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.spaceRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ this.doubtRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ this.shapeRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
+    [ this.spaceRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {

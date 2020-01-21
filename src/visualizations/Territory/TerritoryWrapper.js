@@ -30,7 +30,9 @@ export default class TerritoryWrapper extends React.Component
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,
     spaceAnalysisMode : GlobalData.analysisModes.space.genericNonTerrestrial,
 
-    helpSidePanelOpen : false
+    helpSidePanelOpen : false,
+
+    dataExtent : [...GlobalData.defaultTerritoryDataExtent]
   };
 
   loadData = () =>
@@ -110,7 +112,7 @@ console.log("this.state", this.state);
       case GlobalData.analysisModes.noAnalysis : this.callTerritorySetHighlightMode(this.state.noAnalysisMode); break;
       case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.analysisModes.space    : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
+      case GlobalData.analysisModes.space      : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
       default : throw "setMainAnalysisMode : mainAnalysisMode not recognized";
     }
   }
@@ -119,7 +121,13 @@ console.log("this.state", this.state);
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
 
   containerSetTerritorySetDataExtent = callback => this.territorySetDataExtent = callback;
-  callTerritorySetDataExtent = extent => this.territorySetDataExtent(extent);
+  callTerritorySetDataExtent = extent => {
+//console.log("extent", extent);
+//const extent2 = extent.map(d => Math.floor(d));
+//console.log("extent2",extent2);
+    this.setState({ dataExtent : extent });
+    this.territorySetDataExtent(extent);
+  }
 
   containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
   callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
@@ -158,8 +166,6 @@ console.log("this.state", this.state);
 
   render() 
   {
-console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
-console.log("this.state.spaceAnalysisMode", this.state.spaceAnalysisMode);    
     const helpPage =
       this.state.mainAnalysisMode === GlobalData.analysisModes.space && 
       this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ? 
@@ -186,8 +192,6 @@ console.log("this.state.spaceAnalysisMode", this.state.spaceAnalysisMode);
         default : throw "mainAnalysisMode not recognized.";
       }
     }
-console.log("this.state.mainAnalysisMode", this.state.mainAnalysisMode);
-console.log("legendPage", legendPage);
 
     return (
       <div className="main">
@@ -244,7 +248,7 @@ console.log("legendPage", legendPage);
 
                 legendPage={legendPage}
 
-                data={this.state.data}
+                data={this.state.data}                
                                 
                 setMainAnalysisMode={this.setMainAnalysisMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
@@ -263,7 +267,9 @@ console.log("legendPage", legendPage);
 
         }
 
-        <TerritoryFooter 
+        <TerritoryFooter
+          bottomPanelMode={this.state.bottomPanelMode}
+          dataExtent={this.state.dataExtent}
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
         />
