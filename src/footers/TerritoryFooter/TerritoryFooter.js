@@ -32,7 +32,7 @@ export default class TerritoryFooter extends React.Component
   ]);
 
   state = {
-    steps : {
+    itineraries : {
       multiple : false,
       options : [
         { label : this.territoryLabel, status : true },
@@ -50,8 +50,7 @@ export default class TerritoryFooter extends React.Component
 
 
 // set here bottom panel mode, rather than higlight mode
-//  changeSteps = newOptions => this.props.callTerritorySetHighlightMode(this.getActiveOption(newOptions));
-  changeSteps = newOptions => {
+  changeItineraries = newOptions => {
     const visualizationMode = this.stepLabelOptionPanelModeMap.get(this.getActiveOption(newOptions));
 
 console.log("visualizationMode", visualizationMode);
@@ -84,9 +83,9 @@ console.log("visualizationMode", visualizationMode);
 
         <Options
           title="Sfere"
-          data={this.state.steps}
+          data={this.state.itineraries}
           style={{ gridColumn : "span 8", textAlign : "center" }}
-          changeOptions={this.changeSteps}
+          changeOptions={this.changeItineraries}
         />
 
         <ToggleButton 

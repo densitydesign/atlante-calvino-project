@@ -7,11 +7,11 @@ import TerritoryDoubtPanel from '../TerritoryDoubtPanel/TerritoryDoubtPanel';
 import TerritoryShapePanel from '../TerritoryShapePanel/TerritoryShapePanel';
 import TerritorySpacePanel from '../TerritorySpacePanel/TerritorySpacePanel';
 
-import './TerritoryStepsPanel.css';
+import './TerritoryItinerariesPanel.css';
 
 import GlobalData from '../../utilities/GlobalData';
 
-export default class TerritoryStepsPanel extends React.Component
+export default class TerritoryItinerariesPanel extends React.Component
 {
   doubtRadioButtonId = "doubtRadioButton";
   doubtRadioButtonCaption = "DUBBIO";
@@ -26,14 +26,14 @@ export default class TerritoryStepsPanel extends React.Component
     optionRadioButtonsStates : [
       { id : this.doubtRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt },
       { id : this.shapeRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape },
-      { id : this.spaceRadioButtonId, pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
+      { id : this.spaceRadioButtonId,   pressed : this.props.bottomPanelMode === GlobalData.bottomPanelModes.space }
     ]
   };
 
   optionRadioButtonsMap = new Map([
     [ this.doubtRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
     [ this.shapeRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.spaceRadioButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ this.spaceRadioButtonId,   { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   optionRadioButtonPressed = buttonId => {
@@ -107,7 +107,7 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
     }
 
     return (
-      <div className="territory-steps-panel">
+      <div className="territory-itineraries-panel">
         <div className="territory-button-grid">
 
         <RadioButton 

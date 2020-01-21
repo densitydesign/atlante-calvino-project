@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import TerritoryStepsPanel from '../TerritoryStepsPanel/TerritoryStepsPanel';
+import TerritoryItinerariesPanel from '../TerritoryItinerariesPanel/TerritoryItinerariesPanel';
 import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
 import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
 
@@ -26,7 +26,7 @@ export default class TerritoryBottomPanel extends React.Component
       case GlobalData.bottomPanelModes.space :
 
         internalPanel = (
-          <TerritoryStepsPanel 
+          <TerritoryItinerariesPanel 
             
             setMainAnalysisMode={this.props.setMainAnalysisMode}
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode}
