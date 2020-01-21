@@ -21,7 +21,9 @@ export default class TerritoryBottomPanel extends React.Component
     {
       case GlobalData.bottomPanelModes.noAnalysis : 
       
-        internalPanel = <></>; break;
+        internalPanel = <></>; 
+        
+        break;
 
       case GlobalData.bottomPanelModes.doubt :
       case GlobalData.bottomPanelModes.shape :

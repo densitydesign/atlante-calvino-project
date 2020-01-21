@@ -178,7 +178,7 @@ console.log("this.state", this.state);
       switch(this.state.noAnalysisMode)
       {
         case GlobalData.analysisModes.noAnalysis.chronology : legendPage = GlobalData.legendPages.territory.chronology; break;
-        case GlobalData.analysisModes.noAnalysis.volumes   : legendPage = GlobalData.legendPages.territory.volumes; break;
+        case GlobalData.analysisModes.noAnalysis.volumes    : legendPage = GlobalData.legendPages.territory.volumes; break;
         default : throw "noAnalysisMode not recognized : " + this.state.noAnalysisMode;
       }
     }
@@ -186,8 +186,8 @@ console.log("this.state", this.state);
     {
       switch(this.state.mainAnalysisMode)
       {
-        case GlobalData.analysisModes.doubt   : legendPage = GlobalData.legendPages.territory.doubt; break;
-        case GlobalData.analysisModes.shape   : legendPage = GlobalData.legendPages.territory.shape; break;
+        case GlobalData.analysisModes.doubt : legendPage = GlobalData.legendPages.territory.doubt; break;
+        case GlobalData.analysisModes.shape : legendPage = GlobalData.legendPages.territory.shape; break;
         case GlobalData.analysisModes.space : legendPage = GlobalData.legendPages.territory.space; break;
         default : throw "mainAnalysisMode not recognized.";
       }
