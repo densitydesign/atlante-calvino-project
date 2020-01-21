@@ -11,12 +11,9 @@ import MarimekkoViz from './MarimekkoViz'
 
 import marimekkoData from './marimekko.json'
 
-import uniqBy from 'lodash/uniqBy'
-import pick from 'lodash/pick'
 
 
 const tipologiaOptions = [
-    { label : "tutti" },
     { label : "uno" },
     { label : "due" },
     { label : "tre" },
@@ -45,42 +42,25 @@ class Combine extends Component {
   state = {
     isLoading: false,
     booksData: null,
-    cercaPer: 'titolo'
+    
+    cercaPer: 'titolo',
+    dettaglio: 'ambito',
+    aggregazione: 'aggregato',
+    tipologia: tipologiaOptions.map(x => x.label),
     
   };
 
 
-  preprocessData = (data) => {
-    console.log(data)
-
-  }
-
+   
 
   componentDidMount(){
     console.log("marimekkoData", marimekkoData)
-    this.preprocessData(marimekkoData)
-
-    const firstLevelRecords = marimekkoData.filter(item => item.livello === 'uno')
-    const booksData = uniqBy(firstLevelRecords, 'textID').map(item => {
-      let out = pick(item, ['textID', 'anno', 'mese', 'caratteri'])
-      out.caratteri = +out.caratteri
-      out.mese = +out.mese
-      out.anno = +out.anno
-      return out
-    })
     
-    console.log("booksData", booksData)
-
-
-    this.setState({booksData})
-
-
-
   }
 
   render() {
 
-    const { booksData, cercaPer } = this.state
+    const { booksData, cercaPer, dettaglio, aggregazione, tipologia } = this.state
 
     return (
       <div className="trasformare main">
@@ -112,7 +92,7 @@ class Combine extends Component {
         </div>
 
         <div className="the-body-viz">
-          {booksData && <MarimekkoViz booksData={booksData}/>}
+          <MarimekkoViz data={marimekkoData} dettaglio={dettaglio}/>
         </div>
 
         <div className="bottom-nav navigations">
@@ -121,19 +101,24 @@ class Combine extends Component {
             multiple
             options={tipologiaOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
+            value={tipologia}
             onChange={(tipologia) => { console.log("tipologiaChanged", tipologia) }}
             
           />
 
           <AltOptions
             title="Dettaglio"
+            value={dettaglio}
+            onChange={(x) => { this.setState({dettaglio: x.label})}}
             options={dettaglioOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
             
           />
 
           <AltOptions
-            title="Aggregazioni"
+            title="Aggregazione"
+            value={aggregazione}
+            onChange={(x) => { this.setState({aggregazione: x.label})}}
             options={aggregazioneOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
             

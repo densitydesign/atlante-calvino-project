@@ -3,8 +3,9 @@ import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 // import sumBy from 'lodash/sumBy'
 import styles from "./Combine.module.css";
-
-const MIN_VIZ_HEIGHT = 400;
+import uniqBy from "lodash/uniqBy";
+import groupBy from "lodash/groupBy";
+import pick from "lodash/pick";
 
 function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   const margins = {
@@ -23,7 +24,13 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
                 height={4}
               ></rect>
               <g transform="translate(2 -2)">
-                <text  className={styles.topAxisText} x={5} transform={`rotate(-45)`}>{book.textID}</text>
+                <text
+                  className={styles.topAxisText}
+                  x={5}
+                  transform={`rotate(-45)`}
+                >
+                  {book.textID}
+                </text>
               </g>
             </g>
           ))}
@@ -33,23 +40,62 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   );
 }
 
-
-
-function MarimekkoChart({height, width, booksDataWithPositions}){
-  
-  return <svg style={{height, width}}>
-    {booksDataWithPositions.map(book => (<g key={book.textID} transform={`translate(${book.caratteriX})`}>
-      <rect className={styles.marimekkoRect} style={{height, width: book.caratteriWidth}}></rect>
-    </g>))}
-
-  </svg>
+function MarimekkoChart({ height, width, booksDataWithPositions }) {
+  return (
+    <svg style={{ height, width }}>
+      {booksDataWithPositions.map(book => (
+        <g key={book.textID} transform={`translate(${book.caratteriX})`}>
+          <rect
+            className={styles.marimekkoRect}
+            style={{ height, width: book.caratteriWidth }}
+          ></rect>
+        </g>
+      ))}
+    </svg>
+  );
 }
 
+const defaultOptions = {
+  dettaglio: "ambito"
+};
 
+const preprocessData = (data, options = {}) => {
+  const opts = {
+    ...defaultOptions,
+    ...options
+  };
 
+  const firstLevelRecords = data.filter(item => item.livello === "uno");
+  const booksData = uniqBy(firstLevelRecords, "textID").map(item => {
+    let out = pick(item, ["textID", "anno", "mese", "caratteri"]);
+    out.caratteri = +out.caratteri;
+    out.mese = +out.mese;
+    out.anno = +out.anno;
+    return out;
+  });
 
+  const dettaglioKey =
+    opts.dettaglio === "ambito"
+      ? "categorie di tipologia"
+      : "Cluster tipolegie";
 
-function MarimekkoViz({ booksData }) {
+  let chartBooks = groupBy(firstLevelRecords, dettaglioKey)
+  chartBooks = Object.keys(chartBooks)
+    .reduce((out, item, idx) => {
+      out[item] = sumBy(chartBooks[item], x => +x['somma ripetizioni'])
+      return out
+    }, {})
+  
+
+  console.log("chartBooks", chartBooks);
+
+  return {
+    booksData,
+    chartBooks,
+  };
+};
+
+function MarimekkoViz({ data, dettaglio }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
 
@@ -92,6 +138,10 @@ function MarimekkoViz({ booksData }) {
       window.removeEventListener("resize", measure, true);
     };
   }, []);
+
+  const { booksData, chartBooks } = useMemo(() => {
+    return preprocessData(data, { dettaglio });
+  }, [data, dettaglio]);
 
   const booksDataWithPositions = useMemo(() => {
     const totalChars = sumBy(booksData, "caratteri");
@@ -140,7 +190,11 @@ function MarimekkoViz({ booksData }) {
         <div className="col-sm-1"></div>
         <div className="col-sm-9 border" ref={vizContainerRef}>
           {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
-            <MarimekkoChart booksDataWithPositions={booksDataWithPositions} height={dimensions.vizHeight} width={dimensions.vizWidth}></MarimekkoChart>
+            <MarimekkoChart
+              booksDataWithPositions={booksDataWithPositions}
+              height={dimensions.vizHeight}
+              width={dimensions.vizWidth}
+            ></MarimekkoChart>
           )}
         </div>
         <div className="col-sm-2 px-2">legend here</div>
