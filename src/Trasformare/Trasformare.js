@@ -28,6 +28,10 @@ class Trasformare extends Component {
 		this.changeGruppi = this.changeGruppi.bind(this);
 		this.changePubblicazioni = this.changePubblicazioni.bind(this);
 		this.changeAmbienti = this.changeAmbienti.bind(this);
+		this.changeCategorie = this.changeCategorie.bind(this);
+
+		this.resetFilter = this.resetFilter.bind(this);
+
 		this.changeTimeSpan = this.changeTimeSpan.bind(this);
 
     this.downloadData = this.downloadData.bind(this);
@@ -65,7 +69,7 @@ class Trasformare extends Component {
 	loadData() {
 		d3.tsv('../../places-matrix-data.tsv').then(data => {
 
-			console.log(data)
+			// console.log(data)
 
 			const graph = ParseMatrixData.parser(data);
 			return graph;
@@ -166,6 +170,7 @@ class Trasformare extends Component {
 					options: environments
 				},
 				toPreserveAmbienti: data.data.map(d => d.id),
+				toPreserveCategorie: data.data.map(d => d.id),
 				timeExtent: time,
 				timeFilter: time,
 				update: false
@@ -196,6 +201,12 @@ class Trasformare extends Component {
 		}))
 	}
 
+	changeGruppi(newOptions) {
+		this.setState({
+			statoGruppi: newOptions.filter(d => d.status)[0].label
+		})
+	}
+
 	changeRicerca(newOptions) {
 
 		let toPreserve = newOptions.map(d => d.id)
@@ -212,15 +223,14 @@ class Trasformare extends Component {
 				// options: newOptions
 			},
 			toPreserveRicerca: toPreserve,
-			filter: _.intersection(prevState.noFilter, toPreserve, prevState.toPreservePubblicazioni, prevState.toPreserveVolumi, prevState.toPreserveAmbienti)
+			filter: _.intersection(prevState.noFilter,
+				toPreserve,
+				prevState.toPreservePubblicazioni,
+				prevState.toPreserveVolumi,
+				prevState.toPreserveAmbienti,
+				prevState.toPreserveCategorie)
 		}))
 
-	}
-
-	changeGruppi(newOptions) {
-		this.setState({
-			statoGruppi: newOptions.filter(d => d.status)[0].label
-		})
 	}
 
 	changePubblicazioni(newOptions) {
@@ -229,7 +239,6 @@ class Trasformare extends Component {
 		const toPreserve = this.state.originalData.filter(node => {
 			return node.publicationType.filter(value => criteria.includes(value)).length > 0
 		}).map(d => d.id)
-		console.log(toPreserve.length)
 
 		this.setState(prevState => ({
 			pubblicazioni: {
@@ -237,7 +246,12 @@ class Trasformare extends Component {
 				options: newOptions
 			},
 			toPreservePubblicazioni: toPreserve,
-			filter: _.intersection(prevState.noFilter, prevState.toPreserveRicerca, toPreserve, prevState.toPreserveVolumi, prevState.toPreserveAmbienti)
+			filter: _.intersection(prevState.noFilter,
+				prevState.toPreserveRicerca,
+				toPreserve,
+				prevState.toPreserveVolumi,
+				prevState.toPreserveAmbienti,
+				prevState.toPreserveCategorie)
 		}))
 	}
 
@@ -247,9 +261,6 @@ class Trasformare extends Component {
 		const toPreserve = this.state.originalData.filter(node => {
 			return node.themes.filter(value => criteria.includes(value)).length > 0
 		}).map(d => d.id)
-		// console.log(toPreserve.length)
-
-		// this.filterData()
 
 		this.setState(prevState => ({
 			ambienti: {
@@ -257,8 +268,68 @@ class Trasformare extends Component {
 				options: newOptions
 			},
 			toPreserveAmbienti: toPreserve,
-			filter: _.intersection(prevState.noFilter, prevState.toPreserveRicerca, prevState.toPreservePubblicazioni, prevState.toPreserveVolumi, toPreserve)
+			filter: _.intersection(prevState.noFilter,
+				prevState.toPreserveRicerca,
+				prevState.toPreservePubblicazioni,
+				prevState.toPreserveVolumi,
+				toPreserve,
+				prevState.toPreserveCategorie)
 		}))
+	}
+
+	changeCategorie(selectedCategory) {
+		let toPreserve = this.state.originalData.map(d => d.id);
+		if (selectedCategory) {
+			toPreserve = toPreserve.filter( d=>this.state.originalData.find(dd=>dd.id===d).category===selectedCategory );
+		}
+
+		this.setState(prevState => ({
+			toPreserveCategorie: toPreserve,
+			filter: _.intersection(prevState.noFilter,
+				prevState.toPreserveRicerca,
+				prevState.toPreservePubblicazioni,
+				prevState.toPreserveVolumi,
+				prevState.toPreserveAmbienti,
+				toPreserve
+			)
+		}))
+	}
+
+	resetFilter() {
+		console.log(this.state)
+
+		const ambientiOptions = this.state.ambienti.options.map(d=>{
+			return {
+				...d,
+				status: true
+			}
+		})
+
+		const pubblicazioniOptions = this.state.pubblicazioni.options.map(d=>{
+			return {
+				...d,
+				status: true
+			}
+		})
+
+		this.setState(prevState => ({
+			toPreserveRicerca: prevState.noFilter,
+			toPreservePubblicazioni: prevState.noFilter,
+			pubblicazioni: {
+				...prevState.pubblicazioni,
+				options: pubblicazioniOptions
+			},
+			toPreserveAmbienti: prevState.noFilter,
+			ambienti: {
+				...prevState.ambienti,
+				options: ambientiOptions
+			},
+			toPreserveVolumi: prevState.noFilter,
+			toPreserveCategorie: prevState.noFilter,
+			filter: prevState.noFilter
+		}));
+
+
 	}
 
 	changeTimeSpan(newOptions) {
@@ -335,7 +406,7 @@ class Trasformare extends Component {
 	}
 
 	render() {
-		// console.log(this.state)
+		console.log("render", this.state)
 
 		return (
 			<div className = "trasformare main">
@@ -372,6 +443,8 @@ class Trasformare extends Component {
 							searched = {this.state.toPreserveRicerca}
 							timeFilter = {this.state.timeFilter}
 							gruppi = {this.state.gruppi.options.filter(d => d.status)[0].label}
+							onChangeCategorie = {this.changeCategorie}
+							resetFilter = {this.resetFilter}
 						/> }
 				</div>
 
@@ -397,7 +470,7 @@ class Trasformare extends Component {
 					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
 					{	!this.state.isLoading &&
 						<Options
-							title = "Ambienti"
+							title = "Contesti"
 							data = {this.state.ambienti}
 							style = {{gridColumn: 'span 5', textAlign: 'center'}}
 							changeOptions = {this.changeAmbienti}

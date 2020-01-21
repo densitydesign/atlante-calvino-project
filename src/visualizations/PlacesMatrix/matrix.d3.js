@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import ParseMatrixData from '../../utilities/parse-matrix-data';
 // import _ from 'lodash';
 
-const categories = ['generico_non_terrestre', 'nominato_non_terrestre', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
+const categories = ['generico_cosmico', 'nominato_cosmico', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
 const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c', '#cecece']
 
 const collisionPadding = 0.25;
@@ -30,7 +30,7 @@ const V = {}
 
 export default V
 
-V.initialize = (el, data, _originalData) => {
+V.initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter) => {
 	// console.log('init');
 	// console.log('data:', data);
 	// console.log('filters:', filters);
@@ -49,7 +49,8 @@ V.initialize = (el, data, _originalData) => {
 		.on('click', d => {
 			if((d3.event.timeStamp - last) < 500) {
 				console.log('reset')
-				reset();
+				reset('also categories');
+				_resetFilter();
 			}
 			last = d3.event.timeStamp;
 		})
@@ -102,8 +103,10 @@ V.initialize = (el, data, _originalData) => {
 	yAxis.selectAll('.tick')
 		.on('click', function(d) {
 
-			if(d3.select(this).classed('cat-selected') === false) {
+			let selectedCategory;
 
+			if(d3.select(this).classed('cat-selected') === false) {
+				selectedCategory = d;
 				if(d3.selectAll('.tick.cat-selected').size() > 0) {
 					nodes.filter(nnn => nnn.part_of === '').forEach(n => { closeSubnodes(n, false) });
 					d3.selectAll('.tick')
@@ -142,9 +145,9 @@ V.initialize = (el, data, _originalData) => {
 				})
 				toOpen.forEach(n => { openSubnodes(n, false) });
 
-				d3.select(this).select('rect')
-					.attr('fill', d => color(d))
+				d3.select(this).select('rect').attr('fill', d => color(d))
 			} else {
+				selectedCategory = null;
 				let toClose = []
 				nodes.forEach(n0 => {
 					// console.log('n0',n0);
@@ -174,20 +177,21 @@ V.initialize = (el, data, _originalData) => {
 					}
 				})
 				toClose.forEach(n => { closeSubnodes(n, false) });
-
-				d3.select(this).select('rect')
-					.attr('fill', 'transparent')
+				d3.select(this).select('rect').attr('fill', 'transparent')
 			}
+
 			V.update();
 
-			if(d3.select(this).classed('cat-selected') === false) {
-				node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
-			} else {
-				node.each(nn => unselectNode(nn))
-			}
+			// if(d3.select(this).classed('cat-selected') === false) {
+			// 	node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
+			// } else {
+			// 	node.each(nn => unselectNode(nn))
+			// }
 
 			// Now that everything is done, assign the class
 			d3.select(this).classed('cat-selected', !d3.select(this).classed('cat-selected'))
+
+			_onChangeCategorie(selectedCategory);
 		})
 		.append('rect')
 		.attr('width', '14px')
@@ -304,7 +308,7 @@ V.initialize = (el, data, _originalData) => {
 }
 
 V.update = (timeFilter) => {
-	// console.log('update');
+	console.log('update');
 	// console.log('graph:', graph);
 	if (timeFilter) {
 		globalTimeFilter = timeFilter
@@ -630,7 +634,7 @@ const unselectNode = (d) => {
 	}
 }
 
-const applyFilter = (filter, doReset) => {
+const applyFilter = (filter, doReset,alsoCategories) => {
 	if (doReset==='do reset') {reset();}
 	svg.classed('there-is-filter', true)
 	node.classed('filtered', false).filter(n => filter.indexOf(n.id) < 0).classed('filtered', true)
@@ -648,10 +652,12 @@ const unselectSameComposition = (d) => {
 	}
 }
 
-const reset = () => {
+const reset = (alsoCategories) => {
 	svg.selectAll('*').classed('selected', false).classed('zoom-selected', false);
 	node.classed('filtered', false)
-	svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
+	if (alsoCategories === 'also categories') {
+		svg.selectAll('.tick').classed('cat-selected', false).selectAll('rect').attr('fill', 'transparent')
+	}
 	svg.classed('there-is-selection', false)
 	displayTitle([]);
 }
