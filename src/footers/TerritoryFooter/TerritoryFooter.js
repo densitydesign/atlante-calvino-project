@@ -23,7 +23,7 @@ export default class TerritoryFooter extends React.Component
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
     [ this.doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
     [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,    mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   toggleButtonsMap = new Map([
@@ -38,12 +38,12 @@ export default class TerritoryFooter extends React.Component
         { label : this.territoryLabel, status : true },
         { label : this.doubtLabel,     status : false },
         { label : this.shapeLabel,     status : false },
-        { label : this.spaceLabel,   status : false }
+        { label : this.spaceLabel,     status : false }
       ]
     },
     toggleButtonsStates : [
-      { id : this.legendToggleButtonId,              pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).doubtPanelMode },
-      { id : this.chronologicalFilterToggleButtonId, pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).doubtPanelMode }
+      { id : this.legendToggleButtonId,              pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode },
+      { id : this.chronologicalFilterToggleButtonId, pressed : this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode }
     ]
   };
 
@@ -91,6 +91,7 @@ console.log("visualizationMode", visualizationMode);
 
         <ToggleButton 
           id={this.chronologicalFilterToggleButtonId} 
+          style={{ gridColumn : "span 8" }}
           caption={this.chronologicalFilterToggleButtonCaption} 
           pressed={this.state.toggleButtonsStates.find(item => item.id === this.chronologicalFilterToggleButtonId).pressed} 
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
@@ -98,6 +99,7 @@ console.log("visualizationMode", visualizationMode);
 
         <ToggleButton 
           id={this.legendToggleButtonId} 
+          style={{ gridColumn : "span 8" }}
           caption={this.legendToggleButtonCaption} 
           pressed={this.state.toggleButtonsStates.find(item => item.id === this.legendToggleButtonId).pressed} 
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 

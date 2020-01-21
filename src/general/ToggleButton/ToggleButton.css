@@ -1,8 +1,19 @@
 
+.toggle-button {
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  border-right : solid;
+}
+
 .toggle-button-up {
-  background-color : white;
+  color : black;
+  background-color : white;  
+  border-right-color : black;
 }
 
 .toggle-button-down {
+  color : white;
   background-color : black;
+  border-right-color : white;
 }
