@@ -5,9 +5,6 @@ import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIn
 import ToolMethodCell from './ToolMethodCell';
 import Footer from '../../headers/Footer/Footer';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-
 import '../../App.css';
 import './ToolsAndMethods.css';
 import '../../general/GridsWithScrollableColumns/GridWithScrollableColumn.css';

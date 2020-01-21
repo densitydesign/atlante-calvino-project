@@ -49,7 +49,7 @@ export function draw_arc(graphicsContainer, arc, color, text_id)
 {
   let epsilonAngle = 0.01;
 
-  if(arc.endAngle == arc.startAngle)
+  if(arc.endAngle === arc.startAngle)
   {
     if(Math.abs(arc.startAngle - Math.PI / 2) > epsilonAngle)
     {

@@ -16,7 +16,7 @@ export default class ArrowButton extends React.Component {
       case "right":
         line = rightLine;
         break;
-      default: throw `direction ${this.props.arrowDirection} not recognized`;
+      default: throw new Error(`direction ${this.props.arrowDirection} not recognized`);
     }
 
     return (

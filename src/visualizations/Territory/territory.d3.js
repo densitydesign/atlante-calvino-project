@@ -333,7 +333,7 @@ class VClass
 		const label_ids = [];
 
 		const text_ph_labels = place_hierarchies
- 			.filter(d => d.type == "text")
+ 			.filter(d => d.type === "text")
 			.append("text")
 	    .style("fill", d => d.fill)
 	    .style("font-size", d => fontSizeScale(d.hill_size))

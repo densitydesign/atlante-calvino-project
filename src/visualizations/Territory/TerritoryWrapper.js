@@ -96,7 +96,7 @@ console.log("value", value);
       case GlobalData.analysisModes.space.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
       case GlobalData.analysisModes.space.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
 
-      default : throw "error : analysis mode " + value + " not recognized";
+      default : throw new Error("error : analysis mode " + value + " not recognized");
     }    
 
     this.territorySetHighlightMode(value);
@@ -113,7 +113,7 @@ console.log("this.state", this.state);
       case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
       case GlobalData.analysisModes.space      : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
-      default : throw "setMainAnalysisMode : mainAnalysisMode not recognized";
+      default : throw new Error("setMainAnalysisMode : mainAnalysisMode not recognized");
     }
   }
 
@@ -179,7 +179,7 @@ console.log("this.state", this.state);
       {
         case GlobalData.analysisModes.noAnalysis.chronology : legendPage = GlobalData.legendPages.territory.chronology; break;
         case GlobalData.analysisModes.noAnalysis.volumes    : legendPage = GlobalData.legendPages.territory.volumes; break;
-        default : throw "noAnalysisMode not recognized : " + this.state.noAnalysisMode;
+        default : throw new Error("noAnalysisMode not recognized : " + this.state.noAnalysisMode);
       }
     }
     else
@@ -189,7 +189,7 @@ console.log("this.state", this.state);
         case GlobalData.analysisModes.doubt : legendPage = GlobalData.legendPages.territory.doubt; break;
         case GlobalData.analysisModes.shape : legendPage = GlobalData.legendPages.territory.shape; break;
         case GlobalData.analysisModes.space : legendPage = GlobalData.legendPages.territory.space; break;
-        default : throw "mainAnalysisMode not recognized.";
+        default : throw new Error("mainAnalysisMode not recognized.");
       }
     }
 
@@ -357,7 +357,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
   const center = { x : 0, y : 0 };
 
   place_hierarchies_json.hierarchies.forEach(d => {
-    if(d.caption != "Terra" && d.caption != "S152")
+    if(d.caption !== "Terra" && d.caption !== "S152")
     {
       const j = json_node_map.get(d.caption);
 

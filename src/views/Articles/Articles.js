@@ -3,10 +3,6 @@ import React from 'react';
 
 import * as d3 from 'd3';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-// <FontAwesomeIcon icon={faExternalLinkAlt} />
-
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import Footer from '../../headers/Footer/Footer';
 

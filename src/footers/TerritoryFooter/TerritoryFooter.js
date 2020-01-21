@@ -59,7 +59,7 @@ export default class TerritoryFooter extends React.Component
 
     const value = this.toggleButtonsMap.get(buttonId);
 
-    if(value.bottomPanelMode != this.props.bottomPanelMode)
+    if(value.bottomPanelMode !== this.props.bottomPanelMode)
       this.props.setBottomPanelMode(value.bottomPanelMode);
     else
       this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis); 

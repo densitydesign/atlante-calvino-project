@@ -1,8 +1,6 @@
 import React from 'react'
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import SlidingPanel from '../../panels/SlidingPanel/SlidingPanel';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import './Compass.css';
 
@@ -31,18 +29,16 @@ export default class Compass extends React.Component
 
   setSelectedPanel(selectedPanel)
   {
-    this.state.selectedPanel = selectedPanel;
+    this.setState({ selectedPanel : selectedPanel });
   }
 
   panelClicked(panelId)
   {
     this.setState({ selectedPanel : panelId });
-console.log("panelClicked : ", panelId);
   }
 
   render()
   {
-console.log("render compass");
     return (
       <div>
         <HamburgerIntroHeader />

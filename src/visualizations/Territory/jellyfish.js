@@ -28,7 +28,7 @@ function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
 
 function calculate_width(hierarchy)
 {
-  if(hierarchy.children.length == 0) return 1;
+  if(hierarchy.children.length === 0) return 1;
   else
   {
     let children_total = 0;
@@ -47,8 +47,8 @@ function calculate_continuous_extension(hierarchy)
   let direct_child_gap = 1;
   let hierarchy_gap = 1;
 
-  if(hierarchy.children.length == 0) return 0;
-  else if(hierarchy.children.every(d => d.children.length == 0)) return (hierarchy.children.length - direct_child_gap);
+  if(hierarchy.children.length === 0) return 0;
+  else if(hierarchy.children.every(d => d.children.length === 0)) return (hierarchy.children.length - direct_child_gap);
   else
   {
     let total = 0;
@@ -151,7 +151,7 @@ export function visit(hierarchy, status, processItem)
 function visit_level(hierarchy, level, status, processItem)
 {
   if(+hierarchy.level > level) return;
-  else if(+hierarchy.level == level) processItem(hierarchy, level, status);
+  else if(+hierarchy.level === level) processItem(hierarchy, level, status);
   else hierarchy.children.forEach(d => visit_level(d, level, status, processItem));
 }
 
@@ -344,7 +344,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
   var max_x_value = status.extremes.max_x;
   var delta = max_x_value - min_x_value;
 
-  var scalingCoefficient = max_x_value2 == 0 ? 1 : delta * (max_x_value2 + 1) / max_x_value2;
+  var scalingCoefficient = max_x_value2 === 0 ? 1 : delta * (max_x_value2 + 1) / max_x_value2;
 
   visit(
     jellyfish,
@@ -357,7 +357,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level > 0 && d.children.length > 1 && d.children.every(dd => dd.children.length == 0))
+      if(d.level > 0 && d.children.length > 1 && d.children.every(dd => dd.children.length === 0))
       {
         let childrenAngles = d.children.map(d => d.angle);
 
@@ -414,7 +414,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level == 0)
+      if(d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;
@@ -573,11 +573,11 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
       d.color,
       text_id);
 
-    if(d.level == 0 || d.children.length > 1)
+    if(d.level === 0 || d.children.length > 1)
     {
       let arcWidth = 2;
 
-      if(d.level == 0)
+      if(d.level === 0)
       {
         for(let i = 0; i < d.children.length; ++i)
         {
@@ -781,7 +781,7 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level == 0)
+      if(d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;
@@ -810,7 +810,7 @@ function algebraicShortestAngleDifference(angle1, angle2)
   let a1 = normalizeAngle(angle1);
   let a2 = normalizeAngle(angle2);
 
-  if(a2 == a1) return 0;
+  if(a2 === a1) return 0;
 
   if(a2 > a1)
   {
