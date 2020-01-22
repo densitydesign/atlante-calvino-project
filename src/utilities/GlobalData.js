@@ -175,7 +175,7 @@ const collections = [
   }
 ];
 
-const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
+const allowedCollections = "V014"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 
 
 const GlobalData = {

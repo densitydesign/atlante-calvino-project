@@ -470,17 +470,21 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
     d.steps.push(new_step_size);
   }
 
+  const step_increment = -23;
+
   // get colors
   d.steps = d.steps.map((s, i) => {
 
     // assign to each step a collection
-    let pos_1 = i / d.steps.length;
-    let pos_2 = pos_1 * d.attributes.collections.length;
-    let collection_here = d.attributes.collections[Math.floor(pos_2)];
-    let first_elem = (i === (d.steps.length - 1));
-    let last_elem = (i === 0);
-    let n_steps = d.steps.length;
-    let csv_item = x_csv2[d.id];
+    const pos_1 = i / d.steps.length;
+    const pos_2 = pos_1 * d.attributes.collections.length;
+    const collection_here = d.attributes.collections[Math.floor(pos_2)];
+    const first_elem = (i === (d.steps.length - 1));
+    const last_elem = (i === 0);
+    const n_steps = d.steps.length;
+    const csv_item = x_csv2[d.id];
+    const step_index = n_steps - i - 1;
+    const step_y = step_index * step_increment;
 
     return {
       'r': s,
@@ -490,6 +494,8 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'first_elem': first_elem,
       'last_elem': last_elem,
       'n_steps': n_steps,
+      'step_index': step_index,
+      'step_y': step_y,
 
       'generico_non_terrestre': csv_item === undefined ? 0 : csv_item.generico_non_terrestre,
       'generico_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_non_terrestre_abs,

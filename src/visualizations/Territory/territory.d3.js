@@ -22,10 +22,9 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 let svg;
 let center;
 let tilt = false;
-let step_increment = -23;
 let scale;
 let d3_event_transform_k;
-
+let analysisMode;
 
 const PI = Math.PI;
 const arcMin = 75; // inner radius of the first arc
@@ -34,6 +33,7 @@ const arcPad = 1; // padding between arcs
 const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
+const step_increment = -23;
 
 const showHillModes = {
   all : "all",
@@ -245,7 +245,10 @@ class VClass
       .attr("stroke-width", 1.5)
 //      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
-      .attr("r", d => d.r)
+      .attr("r", d => 
+      {
+return        d.r;
+      })
 /*      
       .attr("transform", function(d, i) {
         i = i * step_increment;
@@ -1145,19 +1148,15 @@ class VClass
 
   destroy = () => {};
 
-  calculateHillStepTranslation = (d, i) => 
-  {
-    i = i * step_increment;
-
-    return "translate(0," + i + ")";
-  };
+  //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
+  calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
 
   setColor = color => { 
     d3
       .selectAll("circle")
       .attr("fill", color);
   };
-
+/*
   set_yRatio = yRatio => {
     d3
       .selectAll(".node")
@@ -1167,11 +1166,9 @@ class VClass
         return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
-    if(yRatio === 1) tilt = true;
-    else tilt = false;
+    tilt = yRatio === 1;
 
-    const label = this.text_nodes
-      .selectAll('.label');   
+    const label = this.text_nodes.selectAll('.label');   
 
     label.attr('transform', function(d) {
 
@@ -1192,6 +1189,52 @@ class VClass
         return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
   };
+*/
+  set_yRatio = yRatio => {
+
+    tilt = yRatio === 1;
+
+    if(tilt)
+    {
+      const t0 = svg.transition().duration(1000);
+      const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
+
+      t0.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+
+      t1
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });
+    }
+    else
+    {
+      const t1 = svg.transition().ease(d3.easeCircleOut).duration(1500);
+      const t0 = t1.transition().duration(1000);
+
+      t1
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });            
+
+      t0.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+    }
+
+    const label = this.text_nodes.selectAll('.label');   
+
+    label.attr('transform', function(d) {
+
+      let one_rem = parseInt(d3.select('html').style('font-size'));
+      let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+
+      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    });
+  }
 
   showHillsTops = opacity => d3
     .selectAll(".circle_node")
@@ -1289,6 +1332,7 @@ console.log("this.textsData : ", this.textsData);
 
   setHighlightMode = value => {
 
+console.log("analysisMode", analysisMode);
     const highlightParameters = this.analysisModeMap.get(value);
 
     switch(value)
@@ -1315,25 +1359,29 @@ console.log("this.textsData : ", this.textsData);
 
       case GlobalData.analysisModes.doubt.fog :
 
-//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
 
 //        d3.selectAll(".circle_node").transition().duration(2000).attr("transform", "");
+/*
+        const t0 = svg.transition().duration(1000);
+        const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
 
-          const t0 = svg.transition().duration(1000);
-          const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
+        t0.selectAll(".circle_node").attr("transform", "");
 
-          t0.selectAll(".circle_node").attr("transform", "");
+        t1
+          .selectAll(".node,.metaball_node")
+          .attr("transform", d => {
+            return "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+          });
+*/
+/*
+        this.set_yRatio(highlightParameters.tilt_factor);        
+        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
 
-          t1
-            .selectAll(".node,.metaball_node")
-            .attr("transform", d => {
-              return "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-            });
-
-//        this.applyShowHillMode(highlightParameters.showHillMode);
-//        this.highlightCustomElements(highlightParameters.customElementsClasses);        
-//        this.showMetaballs(highlightParameters.show_metaballs);
-//        this.set_yRatio(highlightParameters.tilt_factor);        
+        this.applyShowHillMode(highlightParameters.showHillMode);
+        this.highlightCustomElements(highlightParameters.customElementsClasses);        
+        this.showMetaballs(highlightParameters.show_metaballs);
+*/
+        this.change_hills_to_flat(analysisMode, value, highlightParameters);
 
         break;
 
@@ -1465,7 +1513,48 @@ console.log("case proportion...");
 
       default : break;
     }
+
+    analysisMode = value;
   };
+
+  change_hills_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".circle_node")
+      .attr("transform", "")
+      .filter(d => !d.first_elem)
+      .style("stroke-opacity", 0);
+
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    const t2 = t1.transition().duration(600);
+    t2
+      .selectAll(".hill")
+//      .filter(d => !d[highlightParameters.dataMember])
+      .style("fill", "transparent")
+
+/*
+    const t3 = t2.transition().duration(900);
+    t3
+      .selectAll(".circle_node")
+      .style("fill-opacity", 0)
+      .filter(d => !d.first_elem)
+      .style("stroke-opacity", 0);
+*/
+    const t4 = t2.transition().duration(700);
+    t4
+      .selectAll(".hill")
+      .filter(d => d.first_elem &&
+       d[highlightParameters.dataMember])
+      .style("stroke-opacity", 1)
+      .style("fill-opacity", 1)
+      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
+
+  }
 
   highlightHills_old = (dataMember, colorScale) => {
 
