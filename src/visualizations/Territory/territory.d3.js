@@ -1531,11 +1531,17 @@ console.log("case proportion...");
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
 
-    const t2 = t1.transition().duration(600);
+    const t1_1 = t1.transition().duration(1);
+    t1_1.selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .style("fill", "transparent");
+
+    const t2 = t1_1.transition().duration(600);
     t2
       .selectAll(".hill")
 //      .filter(d => !d[highlightParameters.dataMember])
       .style("fill", "transparent")
+//      .style("fill-opacity", 0);
 
 /*
     const t3 = t2.transition().duration(900);
