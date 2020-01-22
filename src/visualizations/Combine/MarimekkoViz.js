@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
+import sum from "lodash/sum";
 // import sumBy from 'lodash/sumBy'
 import styles from "./Combine.module.css";
 import uniqBy from "lodash/uniqBy";
@@ -40,17 +41,47 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   );
 }
 
-function MarimekkoChart({ height, width, booksDataWithPositions }) {
+function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
+  const heightScale = scaleLinear()
+    .domain([0, 1])
+    .range([0, height]);
   return (
     <svg style={{ height, width }}>
-      {booksDataWithPositions.map(book => (
-        <g key={book.textID} transform={`translate(${book.caratteriX})`}>
-          <rect
-            className={styles.marimekkoRect}
-            style={{ height, width: book.caratteriWidth }}
-          ></rect>
-        </g>
-      ))}
+      {booksDataWithPositions.map(book => {
+        const bookData = chartBooks[book.textID];
+        //annotating with top and height
+        const bookDataAnnotated = Object.keys(bookData)
+          .map(item => ({
+            name: item,
+            height: heightScale(bookData[item])
+          }))
+          .reduce((out, item, i) => {
+            if (i === 0) {
+              out.push({ ...item, top: 0 });
+            } else {
+              out.push({ ...item, top: out[i - 1].top + out[i - 1].height });
+            }
+            return out;
+          }, []);
+
+        return (
+          <g key={book.textID} transform={`translate(${book.caratteriX})`}>
+            <rect
+              className={styles.marimekkoRect}
+              style={{ height, width: book.caratteriWidth }}
+            ></rect>
+            {bookDataAnnotated.map(d => (
+              <rect
+                key={d.name}
+                y={d.top}
+                width={book.caratteriWidth}
+                height={d.height}
+                className={styles.marimekkoUnit}
+              ></rect>
+            ))}
+          </g>
+        );
+      })}
     </svg>
   );
 }
@@ -64,6 +95,7 @@ const preprocessData = (data, options = {}) => {
     ...defaultOptions,
     ...options
   };
+  
 
   const firstLevelRecords = data.filter(item => item.livello === "uno");
   const booksData = uniqBy(firstLevelRecords, "textID").map(item => {
@@ -74,24 +106,35 @@ const preprocessData = (data, options = {}) => {
     return out;
   });
 
+  
   const dettaglioKey =
     opts.dettaglio === "ambito"
       ? "categorie di tipologia"
       : "Cluster tipolegie";
 
-  let chartBooks = groupBy(firstLevelRecords, dettaglioKey)
-  chartBooks = Object.keys(chartBooks)
-    .reduce((out, item, idx) => {
-      out[item] = sumBy(chartBooks[item], x => +x['somma ripetizioni'])
-      return out
-    }, {})
-  
+  let chartBooks = groupBy(firstLevelRecords, "textID");
+  chartBooks = Object.keys(chartBooks).reduce((out, item, idx) => {
+    let chartBooksDetail = groupBy(chartBooks[item], dettaglioKey);
+    out[item] = Object.keys(chartBooksDetail).reduce((o, x) => {
+      o[x] = sumBy(chartBooksDetail[x], d => +d["somma ripetizioni"]);
+      return o;
+    }, {});
+
+    //normalizing data
+    const total = sum(Object.values(out[item]));
+    out[item] = Object.keys(out[item]).reduce((o, k) => {
+      o[k] = out[item][k] / total;
+      return o;
+    }, {});
+
+    return out;
+  }, {});
 
   console.log("chartBooks", chartBooks);
 
   return {
     booksData,
-    chartBooks,
+    chartBooks
   };
 };
 
@@ -171,6 +214,8 @@ function MarimekkoViz({ data, dettaglio }) {
     return booksDataAnnotated;
   }, [booksData, dimensions.vizWidth]);
 
+  const chartBooksDataWithPositions = useMemo(() => {}, [chartBooks]);
+
   console.log(booksDataWithPositions);
 
   return (
@@ -192,6 +237,7 @@ function MarimekkoViz({ data, dettaglio }) {
           {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
             <MarimekkoChart
               booksDataWithPositions={booksDataWithPositions}
+              chartBooks={chartBooks}
               height={dimensions.vizHeight}
               width={dimensions.vizWidth}
             ></MarimekkoChart>

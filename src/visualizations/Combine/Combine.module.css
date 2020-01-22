@@ -11,6 +11,11 @@
 
 
 .marimekkoRect {
-    fill: #fff;
+    fill:transparent;
     stroke: #ccc;
+}
+
+.marimekkoUnit{
+    stroke: #222;
+    fill: #fff;
 }
