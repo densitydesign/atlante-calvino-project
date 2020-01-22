@@ -7,6 +7,18 @@ import styles from "./Combine.module.css";
 import uniqBy from "lodash/uniqBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
+import get from "lodash/get";
+import some from "lodash/some"
+import mappaCategorie from './mappa-categorie.json'
+
+
+const coloriCategorie = mappaCategorie.reduce((out, c) => {
+  out[c.categoria] = c.colore
+  return out
+},{})
+
+console.log("coloriCategorie", coloriCategorie)
+
 
 function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   const margins = {
@@ -45,15 +57,19 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
   const heightScale = scaleLinear()
     .domain([0, 1])
     .range([0, height]);
+
   return (
     <svg style={{ height, width }}>
       {booksDataWithPositions.map(book => {
         const bookData = chartBooks[book.textID];
+
         //annotating with top and height
-        const bookDataAnnotated = Object.keys(bookData)
+        const bookDataAnnotated = bookData
           .map(item => ({
-            name: item,
-            height: heightScale(bookData[item])
+            label: item.label,
+            value: item.value, 
+            color: item.color,
+            height: heightScale(item.value)
           }))
           .reduce((out, item, i) => {
             if (i === 0) {
@@ -70,13 +86,14 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
               className={styles.marimekkoRect}
               style={{ height, width: book.caratteriWidth }}
             ></rect>
-            {bookDataAnnotated.map(d => (
+            {bookDataAnnotated.map((d, i) => (
               <rect
-                key={d.name}
+                key={i}
                 y={d.top}
                 width={book.caratteriWidth}
                 height={d.height}
                 className={styles.marimekkoUnit}
+                fill={d.color}
               ></rect>
             ))}
           </g>
@@ -87,58 +104,107 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
 }
 
 const defaultOptions = {
-  dettaglio: "ambito"
+  dettaglio: "ambito",
+  aggregazione: "aggregato",
 };
 
-const preprocessData = (data, options = {}) => {
-  const opts = {
-    ...defaultOptions,
-    ...options
-  };
-  
 
-  const firstLevelRecords = data.filter(item => item.livello === "uno");
-  const booksData = uniqBy(firstLevelRecords, "textID").map(item => {
-    let out = pick(item, ["textID", "anno", "mese", "caratteri"]);
-    out.caratteri = +out.caratteri;
-    out.mese = +out.mese;
-    out.anno = +out.anno;
-    return out;
-  });
-
+const computeChartBooksAggregated = (firstLevelRecords, opts) => {
   
   const dettaglioKey =
-    opts.dettaglio === "ambito"
-      ? "categorie di tipologia"
-      : "Cluster tipolegie";
+  opts.dettaglio === "ambito"
+    ? "categorie di tipologia"
+    : "Cluster tipolegie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, item, idx) => {
+    
     let chartBooksDetail = groupBy(chartBooks[item], dettaglioKey);
     out[item] = Object.keys(chartBooksDetail).reduce((o, x) => {
       o[x] = sumBy(chartBooksDetail[x], d => +d["somma ripetizioni"]);
       return o;
     }, {});
 
-    //normalizing data
-    const total = sum(Object.values(out[item]));
+    //normalizing data and building an array of objects with {label, value, color}
+    const totalForBook = sum(Object.values(out[item]));
     out[item] = Object.keys(out[item]).reduce((o, k) => {
-      o[k] = out[item][k] / total;
+      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, k) : "#333"
+      const obj = {label: k, value: out[item][k] / totalForBook, color};
+      o.push(obj)
       return o;
-    }, {});
+    }, []);
 
     return out;
   }, {});
 
-  console.log("chartBooks", chartBooks);
+  return chartBooks
+}
 
+const computeChartBooksDisaggregated = (firstLevelRecords, opts) => {
+
+  const dettaglioKey =
+  opts.dettaglio === "ambito"
+    ? "categorie di tipologia"
+    : "Cluster tipolegie";
+
+  let chartBooks = groupBy(firstLevelRecords, "textID");
+  chartBooks = Object.keys(chartBooks).reduce((out, textID, idx) => {
+    const totalForBook = sumBy( chartBooks[textID], item => +item["somma ripetizioni"])
+    out[textID] = chartBooks[textID].map(record => {
+      const label = get(record, dettaglioKey)
+      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, label) : '#333'
+      return ({ 
+        label,
+        value: +record["somma ripetizioni"] / totalForBook,
+        color
+      })
+    })
+
+    return out;
+  }, {});
+  return chartBooks
+}
+
+const preprocessData = (data, options = {}) => {
+  const opts = {
+    ...defaultOptions,
+    ...options
+  };
+
+  const firstLevelRecords = data.filter(item => item.livello === "uno");
+  let byTipologia = groupBy(
+      uniqBy(data,  item => `${item.textID}+${item.livello}`).map(x => pick(x, ['textID', 'livello'])),
+      'textID'
+  )
+  byTipologia = Object.keys(byTipologia)
+    .reduce((out, item) => {
+      out[item] = byTipologia[item].map(x => x.livello).sort()
+      return out
+    }, {})
+  
+  const tipologiaSorted = opts.tipologia.sort()
+  const selectedByTipologia = Object.keys(byTipologia).filter(item => {
+    const matches = byTipologia[item].map(x => tipologiaSorted.indexOf(x) !== -1)
+    return some(matches)
+  } )
+  const booksData = uniqBy(firstLevelRecords, "textID")
+    .filter(item => selectedByTipologia.indexOf(item.textID) !== -1)
+    .map(item => {
+      let out = pick(item, ["textID", "anno", "mese", "caratteri"]);
+      out.caratteri = +out.caratteri;
+      out.mese = +out.mese;
+      out.anno = +out.anno;
+      return out;
+    });
+
+  const chartBooks = opts.aggregazione === 'aggregato' ?  computeChartBooksAggregated(firstLevelRecords, opts) : computeChartBooksDisaggregated(firstLevelRecords, opts)
   return {
     booksData,
     chartBooks
   };
 };
 
-function MarimekkoViz({ data, dettaglio }) {
+function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
 
@@ -168,8 +234,6 @@ function MarimekkoViz({ data, dettaglio }) {
       heightScale
     };
 
-    console.log(123, "measure", dimensions);
-
     setDimensions({ ...dimensions });
   };
 
@@ -183,8 +247,8 @@ function MarimekkoViz({ data, dettaglio }) {
   }, []);
 
   const { booksData, chartBooks } = useMemo(() => {
-    return preprocessData(data, { dettaglio });
-  }, [data, dettaglio]);
+    return preprocessData(data, { dettaglio, aggregazione, tipologia });
+  }, [data, dettaglio, aggregazione, tipologia]);
 
   const booksDataWithPositions = useMemo(() => {
     const totalChars = sumBy(booksData, "caratteri");
@@ -213,10 +277,6 @@ function MarimekkoViz({ data, dettaglio }) {
 
     return booksDataAnnotated;
   }, [booksData, dimensions.vizWidth]);
-
-  const chartBooksDataWithPositions = useMemo(() => {}, [chartBooks]);
-
-  console.log(booksDataWithPositions);
 
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">

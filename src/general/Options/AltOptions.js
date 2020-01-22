@@ -88,8 +88,6 @@ class AltOptions extends Component {
     } else {
       current = anySelected ? indices.map(i => options[i].label): []
     }
-    console.log("c", current, multiple)
-    
     return (
       <div className="options-container" style={style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>

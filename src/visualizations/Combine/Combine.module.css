@@ -8,14 +8,12 @@
     font-size: 10px;
 }
 
-
-
 .marimekkoRect {
     fill:transparent;
-    stroke: #ccc;
+    stroke: #222;
 }
 
 .marimekkoUnit{
-    stroke: #222;
-    fill: #fff;
+    stroke: #fff;
+    stroke-width: 0.2;
 }
