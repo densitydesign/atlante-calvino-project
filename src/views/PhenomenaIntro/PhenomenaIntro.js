@@ -19,15 +19,15 @@ export default class PhenomenaIntro extends React.Component
         <div className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
-              <small className="current-phase-subheader"><strong>FASE 1</strong></small>
+              <small className="current-phase-subheader"><strong>TAPPA 1</strong></small>
               <div className="other-phases-subheader">
-                <ArrowButton arrowDirection="right" textAlign="left" text="FASE 2" route="/Process/intro" />
-                <ArrowButton arrowDirection="right" textAlign="left" text="FASE 3" route="/Problem/intro" />
+                <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
+                <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
               </div>
             </div>
             <div className="col-md-12 col-lg-8">
               <h1>IL FENOMENO</h1>
-              <p>Per la prima tappa, quella dei fenomeni, abbiamo deciso di disegnare un territorio comune che i tre itinerari ci faranno esplorare.
+              <p className="intro">Per la prima tappa, quella dei fenomeni, abbiamo deciso di disegnare un territorio comune che i tre itinerari ci faranno esplorare.
               <br /> Il territorio è formato ancora una volta dal corpus di tutte le opere di Calvino, che ci sforziamo di riunire in una forma visiva che possa aiutarci a meglio comprenderle.   </p>
                 <Link to="/Phenomena/territory"><button type="button" class="button-text">Territorio</button></Link>
             </div>

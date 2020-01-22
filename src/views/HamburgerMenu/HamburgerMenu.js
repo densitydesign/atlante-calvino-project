@@ -21,7 +21,8 @@ export default class HamburgerMenu extends React.Component
             <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA"><h1 dataClass=""/></ViewSelector>
 
             <div className="nav-menu-cell-grid tint" >
-              <div className="nav-menu-cell"><Link to="/About"><h2>About</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/About"><h2>Équipe</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/Project"><h2>Progetto</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Tools"><h2>Strumenti</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Papers"><h2>Articoli</h2></Link></div>
@@ -33,7 +34,7 @@ export default class HamburgerMenu extends React.Component
 
             <div className="hamburger-menu-cell" />
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#doubt" text="Dubbio"><h3 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Itineraries/#spaces" text="Spazi"><h3 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Itineraries/#space" text="Spazio"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#shape" text="Forma"><h3 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Tappa 1"><h4 dataClass=""/></ViewSelector>

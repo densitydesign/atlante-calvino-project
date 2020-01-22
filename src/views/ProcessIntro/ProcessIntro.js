@@ -18,13 +18,13 @@ export default class ProcessIntro extends React.Component
           <div className="category-intro-grid">
             <div className="category-intro-block-row">
               <div className="category-intro-main-block">
-                <small className="current-phase-subheader"><strong>FASE 2</strong></small>
+                <small className="current-phase-subheader"><strong>TAPPA 2</strong></small>
                 <h1>IL PROCESSO</h1>
-                <p>Con la seconda tappa, che riguarda i processi piuttosto che i fenomeni, ci spostiamo da oggetti di studio puntuali verso alcune azioni che cerchiamo di cogliere con tre verbi all’infinito. Dietro il fenomeno della nebbia andremo alla ricerca di come funziona il processo del dubitare, dietro lo spazio quello del trasformare e dietro gli elenchi quello del combinare.</p>
+                <p className="intro">Con la seconda tappa, che riguarda i processi piuttosto che i fenomeni, ci spostiamo da oggetti di studio puntuali verso alcune azioni che cerchiamo di cogliere con tre verbi all’infinito. Dietro il fenomeno della nebbia andremo alla ricerca di come funziona il processo del dubitare, dietro lo spazio quello del trasformare e dietro gli elenchi quello del combinare.</p>
               </div>
               <div className="other-phases-subheader" >
-                <ArrowButton arrowDirection="left" textAlign="right" text="FASE 1" route="/Phenomena/intro" />
-                <ArrowButton arrowDirection="right" textAlign="left" text="FASE 3" route="/Problem/intro" />
+                <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/intro" />
+                <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
               </div>
             </div>
             <div className="category-subentries-grid">

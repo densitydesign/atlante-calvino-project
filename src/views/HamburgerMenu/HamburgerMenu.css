@@ -2,6 +2,7 @@
 .hamburger-menu-container {
   position:relative;
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .hamburger-menu {
@@ -29,7 +30,7 @@
 
 a .compass-selector-cell  {
   margin: 0;
-  white-space: nowrap;
+  var(--bg)-space: nowrap;
   font-size: 1.8em;
   transition: color 0.5s ease;
   color: black;
@@ -37,7 +38,7 @@ a .compass-selector-cell  {
 
 a:hover .compass-selector-cell  {
   margin: 0;
-  white-space: nowrap;
+  var(--bg)-space: nowrap;
   font-size: 1.8em;
   transition: color 0.5s ease;
   color: var(--dark-blue);
@@ -61,14 +62,13 @@ a:hover .compass-selector-cell  {
 }
 
 .hamburger-menu-cell-grid :hover {
-  background-color:var(--dark-blue);
-  color:white;
-  transition: color 1s ease;
+  color:var(--dark-blue);
+  transition: color 0.5s ease;
 }
 
 @keyframes tint { /* flame pulses */
-  0%   { background-color:white;}
-  100% { background-color:var(--light-blue);}
+  0%   { background-color:var(--bg);}
+  100% { background-color:var(--cool-bg-bg);}
 }
 .tint {
     background-color: var(--dark-blue);

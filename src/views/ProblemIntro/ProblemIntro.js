@@ -18,14 +18,14 @@ export default class ProblemIntro extends React.Component
         <div className="category-intro-grid">
           <div className="category-intro-block-row">
             <div className="category-intro-main-block">
-              <small className="current-phase-subheader"><strong>FASE 3</strong></small>
+              <small className="current-phase-subheader"><strong>TAPPA 3</strong></small>
               <h1>IL PROBLEMA</h1>
-              <p>Nella terza tappa cercheremo di inseguire l’ombra dei problemi dietro ai fenomeni e ai processi. Il timore della cancellazione, che nasconde a sua volta quello della cecità e della illeggibilità del testo. Il grande totem del realismo. E infine la tormentosa questione di come si costruisce una trama.
+              <p className="intro">Nella terza tappa cercheremo di inseguire l’ombra dei problemi dietro ai fenomeni e ai processi. Il timore della cancellazione, che nasconde a sua volta quello della cecità e della illeggibilità del testo. Il grande totem del realismo. E infine la tormentosa questione di come si costruisce una trama.
               </p>
             </div>
             <div className="other-phases-subheader" >
-              <ArrowButton arrowDirection="left" textAlign="right" text="FASE 1" route="/Phenomena/intro" />
-              <ArrowButton arrowDirection="left" textAlign="left" text="FASE 2" route="/Process/intro" />
+              <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/intro" />
+              <ArrowButton arrowDirection="left" textAlign="left" text="TAPPA 2" route="/Process/intro" />
             </div>
           </div>
           <div className="category-subentries-grid">

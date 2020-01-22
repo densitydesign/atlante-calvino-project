@@ -17,6 +17,7 @@ import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
 import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
+import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
@@ -52,6 +53,7 @@ export default function AtlasRouter()
       <Route exact path="/Problem/plot">problema / trama</Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
+      <Route exact path="/Project"><Project/></Route>
       <Route exact path="/Tools"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>
       <Route exact path="/Papers"><Articles /></Route>

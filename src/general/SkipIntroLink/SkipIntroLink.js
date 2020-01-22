@@ -11,7 +11,7 @@ export default class SkipIntroLink extends React.Component
     const route = "/Home";
     return (
       <div className="skip-intro-link" style={this.props.style} >
-        <Link to={route}><h4>SKIP INTRO</h4></Link>
+        <Link to={route}><h4>SALTA INTRO</h4></Link>
       </div>
     );
   }

@@ -4,13 +4,16 @@
 }
 
 .help-side-panel {
+  padding:4em;
+  border:1px solid black;
   position : absolute;
   top : 0px;
-  height : 100%;
-  width : var(--help-side-panel-width);  
-  background-color : yellow;
+  height : 100vh;
+  width : var(--help-side-panel-width);
+  background-color : var(--bg);
   z-index : 10001; /* to overcome z-index=10000 of 'navigations' style */
   transition: right 1s;
+  overflow-y: scroll;
 }
 
 .help-side-panel-open {

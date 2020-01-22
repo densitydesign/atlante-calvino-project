@@ -50,7 +50,7 @@ export default class SlidingPanel extends React.Component
   render()
   {
 console.log("render panel");
-    
+
     const interactiveViewLink = this.props.interactiveViewUrl ? <a className="button-text" href={this.props.interactiveViewUrl} target="blank">Esplora</a> : <></>;
 
     return (
@@ -62,7 +62,7 @@ console.log("render panel");
         }}>
           <div className="rotated-title"><h1>{this.props.title}</h1></div>
         <div className="sliding-panel-main-text">
-        <p><a href={this.props.pdfUrl} target="_blank" rel="noopener noreferrer">PDF<FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
+        <p><a class="link" href={this.props.pdfUrl} target="_blank" rel="noopener noreferrer">PDF <FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
         </p>
         <br />
         <div><p>{this.props.text}</p>
