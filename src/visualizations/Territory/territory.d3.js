@@ -1519,6 +1519,7 @@ console.log("case proportion...");
 
   change_hills_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
   {
+console.log("highlightParameters.dataMember", highlightParameters.dataMember);    
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1535,22 +1536,12 @@ console.log("case proportion...");
     t1_1.selectAll(".hill")
       .filter(d => !d.first_elem)
       .style("fill", "transparent");
-
+/*
     const t2 = t1_1.transition().duration(600);
     t2
       .selectAll(".hill")
-//      .filter(d => !d[highlightParameters.dataMember])
       .style("fill", "transparent")
-//      .style("fill-opacity", 0);
 
-/*
-    const t3 = t2.transition().duration(900);
-    t3
-      .selectAll(".circle_node")
-      .style("fill-opacity", 0)
-      .filter(d => !d.first_elem)
-      .style("stroke-opacity", 0);
-*/
     const t4 = t2.transition().duration(700);
     t4
       .selectAll(".hill")
@@ -1559,7 +1550,14 @@ console.log("case proportion...");
       .style("stroke-opacity", 1)
       .style("fill-opacity", 1)
       .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
-
+*/
+    const t2 = t1_1.transition().duration(700);
+    t2
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[highlightParameters.dataMember] ? highlightParameters.colorScale(d[highlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1)
+//      .style("fill-opacity", d => d.first_elem && d[highlightParameters.dataMember] ? 1 : 0);
   }
 
   highlightHills_old = (dataMember, colorScale) => {
