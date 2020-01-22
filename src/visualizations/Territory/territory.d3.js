@@ -1315,11 +1315,25 @@ console.log("this.textsData : ", this.textsData);
 
       case GlobalData.analysisModes.doubt.fog :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
+
+//        d3.selectAll(".circle_node").transition().duration(2000).attr("transform", "");
+
+          const t0 = svg.transition().duration(1000);
+          const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
+
+          t0.selectAll(".circle_node").attr("transform", "");
+
+          t1
+            .selectAll(".node,.metaball_node")
+            .attr("transform", d => {
+              return "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+            });
+
+//        this.applyShowHillMode(highlightParameters.showHillMode);
+//        this.highlightCustomElements(highlightParameters.customElementsClasses);        
+//        this.showMetaballs(highlightParameters.show_metaballs);
+//        this.set_yRatio(highlightParameters.tilt_factor);        
 
         break;
 
@@ -1805,6 +1819,15 @@ function placesArcFix(d)
     case "V005" : return Math.PI * 1 / 2;
     case "V008" : return Math.PI * 3 / 4;
     default : return 0;
+  }
+}
+
+function wait(ms)
+{
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
   }
 }
 
