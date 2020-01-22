@@ -1348,31 +1348,19 @@ console.log("analysisMode", analysisMode);
         break;
 
       case GlobalData.analysisModes.noAnalysis.volumes :
-
+/*
         this.set_yRatio(highlightParameters.tilt_factor);
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
         this.applyShowHillMode(highlightParameters.showHillMode);
         this.highlightCustomElements(highlightParameters.customElementsClasses);
         this.showMetaballs(highlightParameters.show_metaballs);
+*/
+        this.change_flat_to_hills(analysisMode, value, highlightParameters);
 
         break;
 
       case GlobalData.analysisModes.doubt.fog :
 
-
-//        d3.selectAll(".circle_node").transition().duration(2000).attr("transform", "");
-/*
-        const t0 = svg.transition().duration(1000);
-        const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
-
-        t0.selectAll(".circle_node").attr("transform", "");
-
-        t1
-          .selectAll(".node,.metaball_node")
-          .attr("transform", d => {
-            return "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-          });
-*/
 /*
         this.set_yRatio(highlightParameters.tilt_factor);        
         this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
@@ -1519,7 +1507,6 @@ console.log("case proportion...");
 
   change_hills_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
   {
-console.log("highlightParameters.dataMember", highlightParameters.dataMember);    
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1532,33 +1519,66 @@ console.log("highlightParameters.dataMember", highlightParameters.dataMember);
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
 
-    const t1_1 = t1.transition().duration(1);
-    t1_1.selectAll(".hill")
+    const t2 = t1.transition().duration(1);
+    t2.selectAll(".hill")
       .filter(d => !d.first_elem)
       .style("fill", "transparent");
-/*
-    const t2 = t1_1.transition().duration(600);
-    t2
-      .selectAll(".hill")
-      .style("fill", "transparent")
 
-    const t4 = t2.transition().duration(700);
-    t4
-      .selectAll(".hill")
-      .filter(d => d.first_elem &&
-       d[highlightParameters.dataMember])
-      .style("stroke-opacity", 1)
-      .style("fill-opacity", 1)
-      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
-*/
-    const t2 = t1_1.transition().duration(700);
-    t2
+    const t3 = t2.transition().duration(700);
+    t3
       .selectAll(".hill")
       .style("fill", d => d.first_elem && d[highlightParameters.dataMember] ? highlightParameters.colorScale(d[highlightParameters.dataMember]) : "transparent")
       .filter(d => d.first_elem)
-      .style("stroke-opacity", 1)
-//      .style("fill-opacity", d => d.first_elem && d[highlightParameters.dataMember] ? 1 : 0);
+      .style("stroke-opacity", 1);
   }
+
+  change_flat_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+    const t0 = svg.transition().duration(600);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
+
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+      
+
+    const t2 = t1.transition().duration(700);
+    t2
+      .selectAll(".circle_node")
+      .attr("transform", d => "translate(0, " + d.step_y + ")")
+      .style("stroke-opacity", 1);
+  }
+
+  change_hills_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_drawing_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_flat_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_drawing_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_hills_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_flat_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }
+
+  change_drawing_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  {
+  }  
 
   highlightHills_old = (dataMember, colorScale) => {
 
