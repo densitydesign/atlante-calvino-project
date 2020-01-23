@@ -82,8 +82,12 @@ class AltOptions extends Component {
         .map(k => selectedIndices[k] ? k : undefined)
         .filter(i => i !== undefined);
     const anySelected = !!indices.length
-    const current = multiple || !anySelected ? undefined : options[indices[0]].label
-
+    let current
+    if(!multiple){
+      current = anySelected ? options[indices[0]].label : undefined
+    } else {
+      current = anySelected ? indices.map(i => options[i].label): []
+    }
     return (
       <div className="options-container" style={style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
@@ -96,8 +100,16 @@ class AltOptions extends Component {
                 </span>
               </div>
             )}
-            {!multiple && !anySelected && title}
-            {multiple && title}
+            {multiple && anySelected && (
+              <div>
+                <span className="micro-title">{title}</span>
+                <span className="current-selection">
+                  {current.join(", ")}
+                </span>
+              </div>
+            )}
+            {!anySelected && title}
+            
           </Dropdown.Toggle>
           <Dropdown.Menu
             onToggle={multiple ? undefined : this.toggleDropDown}
