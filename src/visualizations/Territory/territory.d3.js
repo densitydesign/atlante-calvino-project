@@ -49,6 +49,24 @@ const customElementsClasses = {
   place_hierarchy_2 : "place_hierarchy_2"
 };
 
+const analysisModeGroups = {
+  hills : 2,
+  flat : 3,
+  drawing : 5  
+};
+
+const analysisModeChangeTypes = {
+  change_flat_to_hills : (-analysisModeGroups.flat) * analysisModeGroups.analysis,
+  change_hills_to_flat : (-analysisModeGroups.hills) * analysisModeGroups.flat,
+  change_hills_to_drawing : (-analysisModeGroups.hills) * analysisModeGroups.drawing,
+  change_drawing_to_hills : (-analysisModeGroups.drawing) * analysisModeGroups.hills,
+  change_flat_to_drawing : (-analysisModeGroups.flat) * analysisModeGroups.drawing,
+  change_drawing_to_flat : (-analysisModeGroups.drawing) * analysisModeGroups.flat,
+  change_hills_to_hills : (-analysisModeGroups.hills) * analysisModeGroups.hills,
+  change_flat_to_flat : (-analysisModeGroups.flat) * analysisModeGroups.flat,
+  change_drawing_to_drawing : (-analysisModeGroups.drawing) * analysisModeGroups.drawing
+};
+
 Object.keys(customElementsClasses).forEach(key => 
   customElementsClasses[key + "_full"] = ["customElements", customElementsClasses[key]].join(" "));
 
@@ -203,22 +221,22 @@ class VClass
       .unknown("white");
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology,       { customElementsClasses : null,                                    dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,          { customElementsClasses : null,                                    dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.fog,                   { customElementsClasses : null,                                    dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.cancellation,          { customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.all,                   { customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.percentage,            { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.proportion,            { customElementsClasses : customElementsClasses.lists_level_2,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.types,                 { customElementsClasses : customElementsClasses.lists_level_3,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.space.genericNonTerrestrial, { customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedNonTerrestrial,   { customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.genericTerrestrial,    { customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedTerrestrial,      { customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.invented,              { customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.noSetting,             { customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.proportion,            { customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.placeHierarchies,      { customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
+      [ GlobalData.analysisModes.noAnalysis.chronology,       { analysisModeGroup : analysisModeGroups.hills,   customElementsClasses : null,                                    dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor,    show_metaballs : true } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,          { analysisModeGroup : analysisModeGroups.hills,   customElementsClasses : null,                                    dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor,    show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.fog,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.cancellation,          { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.all,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.space.genericNonTerrestrial, { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedNonTerrestrial,   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedTerrestrial,      { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.invented,              { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.noSetting,             { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
     this.text_nodes = g
