@@ -1642,8 +1642,7 @@ console.log("case proportion...");
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
-      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
-      
+      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1670,10 +1669,20 @@ console.log("case proportion...");
 
   change_hills_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
   {
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
   }
 
   change_flat_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
   {
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[highlightParameters.dataMember] ? highlightParameters.colorScale(d[highlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);    
   }
 
   change_drawing_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
