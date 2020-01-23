@@ -78,12 +78,13 @@ a:focus {
 
 html, body {
   height: 100vh;
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
-  font-family:"HKGrotesk", sans-serif;}
+  font-family:"HKGrotesk", sans-serif;
+overflow-x: hidden;
+}
 
 
 
