@@ -175,7 +175,7 @@ font-size:1.1em;
 .navigations>div svg {}
 
 .top-nav {
-  position: fixed;
+  position: sticky;
   background-color: white;
   top: 0;
 }
