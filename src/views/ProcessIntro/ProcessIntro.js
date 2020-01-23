@@ -3,6 +3,7 @@ import React from 'react';
 import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import LinkParagraph from '../PhenomenaIntro/LinkParagraph';
 
 import '../../App.css';
 import './ProcessIntro.css';
@@ -28,9 +29,9 @@ export default class ProcessIntro extends React.Component
               </div>
             </div>
             <div className="category-subentries-grid">
-              <CategoryEntryBlock smallTitle="DUBBIO" title="Dubitare" description="Dubitare vuol dire creare un testo che si rifiuta di rimanere sempre se stesso. Significa invitare il lettore e la lettrice a entrare dentro una scrittura simile a un campo di mine, che può esplodere in ogni momento." />
-              <CategoryEntryBlock smallTitle="SPAZIO" title="Trasformare" description="Trasformare vuol dire affidarsi a uno dei processi fondamentali della scrittura di Calvino: quello della metamorfosi. Dietro tutti i luoghi visitati da Marco Polo, non si nasconde infatti sempre Venezia?"/>
-              <CategoryEntryBlock smallTitle="FORMA" title="Combinare" description="Combinare vuole dire mettere in dubbio la linearità della narrazione. A tal punto da tendere il più delle volte a riscrivere una stessa trama elementare, basata sulla serie e sulla concatenazione. "/>
+              <CategoryEntryBlock smallTitle="Itinerario > DUBBIO" linkText="Dubitare" description="Dubitare vuol dire creare un testo che si rifiuta di rimanere sempre se stesso. Significa invitare il lettore e la lettrice a entrare dentro una scrittura simile a un campo di mine, che può esplodere in ogni momento." />
+              <CategoryEntryBlock smallTitle="Itinerario > SPAZIO" linkText="Trasformare" description="Trasformare vuol dire affidarsi a uno dei processi fondamentali della scrittura di Calvino: quello della metamorfosi. Dietro tutti i luoghi visitati da Marco Polo, non si nasconde infatti sempre Venezia?"/>
+              <CategoryEntryBlock smallTitle="Itinerario > FORMA" linkText="Combinare" description="Combinare vuole dire mettere in dubbio la linearità della narrazione. A tal punto da tendere il più delle volte a riscrivere una stessa trama elementare, basata sulla serie e sulla concatenazione. "/>
             </div>
           </div>
         </div>

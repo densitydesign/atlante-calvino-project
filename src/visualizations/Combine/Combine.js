@@ -46,7 +46,7 @@ class Combine extends Component {
     isLoading: false,
     booksData: null,
     cercaPer: 'titolo'
-    
+
   };
 
 
@@ -68,7 +68,7 @@ class Combine extends Component {
       out.anno = +out.anno
       return out
     })
-    
+
     console.log("booksData", booksData)
 
 
@@ -86,7 +86,7 @@ class Combine extends Component {
       <div className="trasformare main">
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={"Hello combine :)"} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={this.props.title} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
@@ -122,21 +122,21 @@ class Combine extends Component {
             options={tipologiaOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
             onChange={(tipologia) => { console.log("tipologiaChanged", tipologia) }}
-            
+
           />
 
           <AltOptions
             title="Dettaglio"
             options={dettaglioOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
-            
+
           />
 
           <AltOptions
             title="Aggregazioni"
             options={aggregazioneOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
-            
+
           />
         </div>
       </div>

@@ -19,6 +19,9 @@
   font-family: 'HKGrotesk', sans-serif;
 }
 
+title{
+  text-transform: uppercase;
+}
 
 .col-lg-8{
   padding-left:0px;
@@ -75,6 +78,7 @@ a:focus {
 
 html, body {
   height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -86,7 +90,7 @@ body {
 h1 {
   margin: 0;
   white-space: nowrap;
-  font-size: 2.6em;
+  font-size: 2.4em;
   color: var(--text-color);
   margin-bottom:1em;
 
@@ -171,7 +175,7 @@ font-size:1.1em;
 .navigations>div svg {}
 
 .top-nav {
-  position: sticky;
+  position: fixed;
   background-color: white;
   top: 0;
 }
@@ -219,12 +223,12 @@ a.button-text, a:visited.button-text{
   text-decoration: none;
 }
 
-button:hover{
-  background-color:var(--dark-blue);
-  border:var(--button-border);
-  color:white;
-  transition: color 1s ease;
+/* BOTTONI DELLE VIZ */
+
+.btn-primary{
+  font-weight: 600;
 }
+
 
 
 /* FOOTER */
@@ -254,8 +258,6 @@ footer {
 #logo-dd {
   width: 30%;
 }
-
-
 
 
 

@@ -1,4 +1,14 @@
 
 .territory-doubt-main-options-subpanel {
   background-color : white;
+  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+.territory-doubt-main-options-subpanel .radio-button-down, .territory-doubt-main-options-subpanel .radio-button-up  {
+  display: grid;
+  outline: 1px solid black;
 }

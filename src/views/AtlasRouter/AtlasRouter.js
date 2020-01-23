@@ -37,15 +37,15 @@ export default function AtlasRouter()
       <Route path="/Itineraries/"><Itineraries /></Route>
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
-      <Route exact path="/Phenomena/territory"><TerritoryWrapper /></Route>
+      <Route exact path="/Phenomena/territory"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" /></Route>
       <Route exact path="/Phenomena/shapeAnalysis">fenomeni / analisi della forma</Route>
       <Route exact path="/Phenomena/doubtAnalysis">fenomeni / analisi del dubbio</Route>
       <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/combining"><Combine /></Route>
+      <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
-      <Route exact path="/Process/transforming"><Trasformare title="Matrice dei luoghi" /></Route>
+      <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>

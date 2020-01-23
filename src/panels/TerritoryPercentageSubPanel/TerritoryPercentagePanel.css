@@ -1,0 +1,5 @@
+
+.territory-percentage-panel {
+  background-color : red;
+  grid-column: 18 / span 7;
+}

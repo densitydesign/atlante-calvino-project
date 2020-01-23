@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 import './MainMenu.css';
 
 class MainMenu extends Component {
+  componentDidMount()
+  {
+    document.addEventListener("mousedown", this.handleClick);
+  }
+
+  componentWillUnmount()
+  {
+    document.removeEventListener("mousedown", this.handleClick);
+  }
+
+  setWrapperRef = node => this.wrapperRef = node;
+
+  handleClick = event => {
+    if(!this.wrapperRef) return;
+
+    if(this.wrapperRef.contains(event.target)) this.props.onClicked(this.props.id);
+  };
+
   render() {
     const route = "/Home";
     return (
@@ -16,6 +34,8 @@ class MainMenu extends Component {
     );
   }
 }
+
+
 
 export default MainMenu;
 

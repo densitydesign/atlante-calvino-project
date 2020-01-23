@@ -8,6 +8,7 @@ import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBot
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
+import PageTitle from "../../general/PageTitle";
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -23,7 +24,7 @@ export default class TerritoryWrapper extends React.Component
     doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
     shapePanelMode : GlobalData.analysisPanelModes.shape.types,
     spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial,
-    
+
     mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
@@ -54,11 +55,11 @@ export default class TerritoryWrapper extends React.Component
           const textsData = getTextsData(json_nodes);
 
           this.setState({
-            data : { 
+            data : {
               json_nodes : json_nodes,
               json_node_map : json_node_map,
-              x_csv2 : x_csv2, 
-              textsData : textsData, 
+              x_csv2 : x_csv2,
+              textsData : textsData,
               place_hierarchies_info : place_hierarchies_info
             },
             isLoading : false
@@ -97,7 +98,7 @@ console.log("value", value);
       case GlobalData.analysisModes.space.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
 
       default : throw new Error("error : analysis mode " + value + " not recognized");
-    }    
+    }
 
     this.territorySetHighlightMode(value);
   }
@@ -105,7 +106,7 @@ console.log("value", value);
   setMainAnalysisMode = value => {
 console.log("-------------------");
 console.log("setMainAnalysisMode");
-console.log("value", value); 
+console.log("value", value);
 console.log("this.state", this.state);
     switch(value)
     {
@@ -164,12 +165,12 @@ console.log("this.state", this.state);
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
-  render() 
+  render()
   {
     const helpPage =
-      this.state.mainAnalysisMode === GlobalData.analysisModes.space && 
-      this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ? 
-      GlobalData.helpPages.territory.placeHierarchies : 
+      this.state.mainAnalysisMode === GlobalData.analysisModes.space &&
+      this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ?
+      GlobalData.helpPages.territory.placeHierarchies :
       GlobalData.helpPages.territory.main;
 
     let legendPage;
@@ -196,16 +197,16 @@ console.log("this.state", this.state);
     return (
       <div className="main">
 
-        <HelpSidePanel 
-          open={this.state.helpSidePanelOpen} 
-          page={helpPage}          
+        <HelpSidePanel
+          open={this.state.helpSidePanelOpen}
+          page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
 
-        {!this.state.isLoading && 
+        {!this.state.isLoading &&
 
         <>
 
-        <TerritoryHeader 
+        <TerritoryHeader
           textsData={this.state.data.textsData}
           callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
           callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
@@ -215,19 +216,19 @@ console.log("this.state", this.state);
 
         <div className="territory-body">
 
-              <Territory 
-                data={this.state.data} 
-                containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
+              <Territory
+                data={this.state.data}
+                containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
                 containerSetTerritoryApplySearchFilterByInputText={this.containerSetTerritoryApplySearchFilterByInputText}
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
-              /> 
+              />
 
               {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.noAnalysis &&
 
-              <TerritoryBottomPanel 
+              <TerritoryBottomPanel
 
                 bottomPanelMode={this.state.bottomPanelMode}
                 containerSetBottomPanelMode={this.setBottomPanelMode}
@@ -250,14 +251,14 @@ console.log("this.state", this.state);
 
                 data={this.state.data}
                 dataExtent={this.state.dataExtent}
-                                
+
                 setMainAnalysisMode={this.setMainAnalysisMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
                 onCloseButtonClicked={this.onBottomPanelCloseButtonClicked}
-              />            
+              />
               }
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
@@ -280,7 +281,7 @@ console.log("this.state", this.state);
   }
 }
 
-function interpolateSpline(x) 
+function interpolateSpline(x)
 {
 	let y;
 
@@ -339,7 +340,7 @@ function process_json_nodes(all_json_nodes, x_csv2)
     });
 
   // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
-  json_nodes = json_nodes.sort((a, b) => a.y - b.y);      
+  json_nodes = json_nodes.sort((a, b) => a.y - b.y);
 
   const json_nodes_size_extent = d3.extent(all_json_nodes, d => d.size);
   const json_nodes_min_size = json_nodes_size_extent[0] / 8;
@@ -420,7 +421,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 			});
 //			d.r = jn.steps[0].r;
 		}
-	});  
+	});
 
   const place_hierarchies_info = {
     place_hierarchies                   : place_hierarchies,
@@ -433,7 +434,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 }
 
 function getTextsData(json_nodes)
-{  
+{
   const collectionMap = new Map();
 
   GlobalData.collections.forEach(coll => collectionMap.set(coll.id, coll.n));
@@ -546,10 +547,10 @@ function map_item_data(map, obj)
 {
   map[obj.id] = calculate_item_data(obj);
 
-  return map;    
+  return map;
 };
 
-function calculate_item_data(obj) 
+function calculate_item_data(obj)
 {
   const lists_sum = (+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p) + (+obj.n_lists_s);
   const text_length = +obj.text_length;
@@ -618,7 +619,7 @@ function calculate_item_data(obj)
   return item_data;
 }
 
-function array_intersection(a1, a2) 
+function array_intersection(a1, a2)
 {
 	let result = [];
 

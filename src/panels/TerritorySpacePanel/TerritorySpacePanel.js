@@ -5,6 +5,9 @@ import TerritorySpaceMainOptionsSubPanel from '../TerritorySpaceMainOptionsSubPa
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
+import RadioButton from '../../general/RadioButton/RadioButton';
+
+
 import './TerritorySpacePanel.css';
 
 export default class TerritorySpacePanel extends React.Component
@@ -38,11 +41,11 @@ export default class TerritorySpacePanel extends React.Component
     [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedNonTerrestrial,   spacePanelMode : GlobalData.analysisPanelModes.space.namedNonTerrestrial } ],
     [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    spacePanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
     [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      spacePanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
-    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],    
+    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],
     [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.space.noSetting,             spacePanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
     [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.space.proportion,            spacePanelMode : GlobalData.analysisPanelModes.space.proportion } ],
     [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      spacePanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
-  ]);  
+  ]);
 
   state = {
     optionRadioButtonsStates : [
@@ -75,14 +78,15 @@ export default class TerritorySpacePanel extends React.Component
     const value = this.optionRadioButtonsMap.get(buttonId);
     this.props.callTerritorySetHighlightMode(value.analysisMode);
     this.props.containerSetSpacePanelMode(value.spacePanelMode);
-  };  
+  };
 
   render()
   {
     return (
+      <>
       <div className="territory-space-panel">
-        <div></div>
-        <TerritorySpaceMainOptionsSubPanel 
+
+        <TerritorySpaceMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           genericNonTerrestrialRadioButtonId={this.genericNonTerrestrialRadioButtonId}
@@ -95,7 +99,7 @@ export default class TerritorySpacePanel extends React.Component
 
           genericTerrestrialRadioButtonId={this.genericTerrestrialRadioButtonId}
           genericTerrestrialRadioButtonCaption={this.genericTerrestrialRadioButtonCaption}
-          genericTerrestrialRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.genericTerrestrialRadioButtonId).pressed}          
+          genericTerrestrialRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.genericTerrestrialRadioButtonId).pressed}
 
           namedTerrestrialRadioButtonId={this.namedTerrestrialRadioButtonId}
           namedTerrestrialRadioButtonCaption={this.namedTerrestrialRadioButtonCaption}
@@ -109,10 +113,19 @@ export default class TerritorySpacePanel extends React.Component
           noSettingRadioButtonCaption={this.noSettingRadioButtonCaption}
           noSettingRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.noSettingRadioButtonId).pressed}
 
-          placeHierarchiesRadioButtonId={this.placeHierarchiesRadioButtonId}
-          placeHierarchiesRadioButtonCaption={this.placeHierarchiesRadioButtonCaption}
-          placeHierarchiesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.placeHierarchiesRadioButtonId).pressed}
+/>
+
+        </div>
+
+        <div className="territory-percentage-panel">
+
+        <RadioButton
+          id={this.placeHierarchiesRadioButtonId}
+          caption={this.placeHierarchiesRadioButtonCaption}
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.placeHierarchiesRadioButtonId).pressed}
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
         />
+
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
@@ -121,6 +134,7 @@ export default class TerritorySpacePanel extends React.Component
           percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
         />
       </div>
+        </>
     );
   }
 }

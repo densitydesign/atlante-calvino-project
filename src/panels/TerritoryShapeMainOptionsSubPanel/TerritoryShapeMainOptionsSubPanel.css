@@ -1,4 +1,5 @@
 
 .territory-shape-main-options-subpanel {
   background-color : white;
+  grid-column: 11 / span 7;
 }

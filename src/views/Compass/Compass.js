@@ -1,5 +1,5 @@
 import React from 'react'
-import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
+import HamburgerCloseHeader from '../../headers/HamburgerCloseHeader/HamburgerCloseHeader';
 import SlidingPanel from '../../panels/SlidingPanel/SlidingPanel';
 
 import './Compass.css';
@@ -41,7 +41,7 @@ export default class Compass extends React.Component
   {
     return (
       <div>
-        <HamburgerIntroHeader />
+        <HamburgerCloseHeader />
 
           <div className="compass-main-description">
             <h1>Bussola</h1>
