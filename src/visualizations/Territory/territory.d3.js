@@ -1627,27 +1627,33 @@ console.log("case proportion...");
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }  
 
-  tilt_labels(highlightParameters)
+  tilt_labels = highlightParameters =>
   {
+console.log("tilt_labels");    
     const label = this.text_nodes.selectAll('.label');   
 
+    const tilt_applied = highlightParameters.tilt_factor === with_tilt_factor;
+console.log("tilt_applied", tilt_applied);
+console.log("d3_event_transform_k", d3_event_transform_k);
     label.attr('transform', function(d) {
 
       let one_rem = Number.parseInt(d3.select('html').style('font-size'));
       let k = one_rem * (1 / (d3_event_transform_k / scale));
 
-      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let dy = tilt_applied ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      if(!tilt_applied) return translate_string + 'scale(' + k + ',' + k + ')';
       else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
     });
   }
 
-  change_hills_to_flat(
+  change_hills_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
+    this.tilt_labels(newHighlightParameters);
+
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1673,10 +1679,12 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);
   }
 
-  change_flat_to_hills(
+  change_flat_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
+    this.tilt_labels(newHighlightParameters);
+
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
@@ -1694,10 +1702,12 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);
   }
 
-  change_hills_to_drawing(
+  change_hills_to_drawing = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
+    this.tilt_labels(newHighlightParameters);
+
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1725,10 +1735,12 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);
   }
 
-  change_drawing_to_hills(
+  change_drawing_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
+    this.tilt_labels(newHighlightParameters);
+
     const t0 = svg.transition().duration(800);
     t0
       .selectAll(".hill")
@@ -1760,9 +1772,9 @@ console.log("case proportion...");
       .style("display", "none");
   }
 
-  change_flat_to_drawing(
+  change_flat_to_drawing = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
     const t0 = svg.transition().duration(700);
     t0
@@ -1779,9 +1791,9 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);
   }
 
-  change_drawing_to_flat(
+  change_drawing_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
     const t0 = svg.transition().duration(800);
     t0
@@ -1802,9 +1814,9 @@ console.log("case proportion...");
       .style("display", "none");
   }
 
-  change_hills_to_hills(
+  change_hills_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
     const t0 = svg.transition().duration(700);
     t0
@@ -1812,9 +1824,9 @@ console.log("case proportion...");
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
   }
 
-  change_flat_to_flat(
+  change_flat_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
     const t0 = svg.transition().duration(700);
     t0
@@ -1824,9 +1836,9 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);    
   }
 
-  change_drawing_to_drawing(
+  change_drawing_to_drawing = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
 /*    
     const oldLock = {};
