@@ -56,10 +56,7 @@ class Combine extends Component {
       <div className="trasformare main">
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle
-            title={"Hello combine :)"}
-            style={{ gridColumn: "span 10" }}
-          />
+          <PageTitle title={this.props.title} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (

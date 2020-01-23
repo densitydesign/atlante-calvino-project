@@ -1,8 +1,11 @@
 
 .radio-button-up {
   background-color : white;
+  padding:1em 1em 1em 1em;
 }
 
 .radio-button-down {
   background-color : black;
+  color:white;
+  padding:1em 1em 1em 1em;
 }

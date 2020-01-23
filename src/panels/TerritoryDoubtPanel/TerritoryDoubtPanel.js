@@ -60,9 +60,9 @@ export default class TerritoryDoubtPanel extends React.Component
   render()
   {
     return (
+      <>
       <div className="territory-doubt-panel">
-        <div></div>
-        <TerritoryDoubtMainOptionsSubPanel 
+        <TerritoryDoubtMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           fogRadioButtonId={this.fogRadioButtonId}
@@ -77,6 +77,8 @@ export default class TerritoryDoubtPanel extends React.Component
           allRadioButtonCaption={this.allRadioButtonCaption}
           allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
         />
+        </div>
+        <div className="territory-percentage-panel">
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
@@ -84,7 +86,8 @@ export default class TerritoryDoubtPanel extends React.Component
           percentageRadioButtonCaption={this.percentageRadioButtonCaption}
           percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
         />
-      </div>
+        </div>
+        </>
     );
   }
 }

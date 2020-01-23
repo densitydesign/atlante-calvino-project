@@ -42,7 +42,7 @@ class AtlasIntro extends React.Component
               <h1>Itinerari</h1>
               <br />
               <br />
-              <p>Per entrare e muoversi dentro l’opera narrativa di Calvino abbiamo scelto tre itinerari.
+              <p className="intro">Per entrare e muoversi dentro l’opera narrativa di Calvino abbiamo scelto tre itinerari.
               Il primo riguarda il <strong>dubbio</strong>, il secondo lo <strong>spazio</strong> e il terzo la <strong>forma</strong> del racconto.
               Sono tre scelte arbitrarie, ma che vanno a toccare alcuni fondamenti della scrittura calviniana,
               invitandoci alla sua esplorazione.</p>
@@ -52,7 +52,7 @@ class AtlasIntro extends React.Component
               <h1>Tappe</h1>
               <br />
               <br />
-            <p>Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
+            <p className="intro">Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
             La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno. La terza tappa l’ombra del <strong>problema</strong> che sta dietro a tutto. </p>
             </div>
 
@@ -134,7 +134,7 @@ class AtlasIntro extends React.Component
               <h1>Tappe</h1>
               <br />
               <br />
-              <p>Ognuno dei tre itinerari si sviluppa in tre tappe.
+              <p className="intro">Ognuno dei tre itinerari si sviluppa in tre tappe.
             <br />La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
               La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno.
               La terza tappa l’ombra del <strong>problema</strong> che sta dietro a tutto. </p>
@@ -145,7 +145,7 @@ class AtlasIntro extends React.Component
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" >
-              <p>Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
+              <p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
               Per quello abbiamo creato tre visualizzazioni orientative,
               che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
               Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
@@ -242,14 +242,15 @@ class AtlasIntro extends React.Component
 
 {/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
             <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-            <p>Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
+            <p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
             Per quello abbiamo creato tre visualizzazioni orientative,
             che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
             Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-            <h2>About</h2><br />
+            <h2>Équipe</h2><br />
+            <h2>Progetto</h2><br />
               <h2>Strumenti</h2><br />
               <h2>Rassegna</h2><br />
               <h2>Articoli</h2><br />
@@ -314,7 +315,8 @@ class AtlasIntro extends React.Component
             </div>
 
             <div className="atlas-intro-sidebar-monoblock">
-            <h2>About</h2><br />
+            <h2>Équipe</h2><br />
+            <h2>Progetto</h2><br />
               <h2>Strumenti</h2><br />
               <h2>Rassegna</h2><br />
               <h2>Articoli</h2><br />

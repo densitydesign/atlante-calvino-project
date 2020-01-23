@@ -3,12 +3,11 @@
   display : flex;
   justify-content : center;
   align-items : center;
-  border-right : solid;
 }
 
 .toggle-button-up {
   color : black;
-  background-color : white;  
+  background-color : white;
   border-right-color : black;
 }
 
