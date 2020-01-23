@@ -238,7 +238,7 @@ class VClass
       [ GlobalData.analysisModes.space.namedTerrestrial,      { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.invented,              { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.noSetting,             { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
@@ -1353,7 +1353,8 @@ console.log("this.textsData : ", this.textsData);
 
   setHighlightMode = newAnalysisMode => {
 
-console.log("analysisMode", currentAnalysisMode);
+console.log("setHighlightMode");
+console.log("newAnalysisMode", newAnalysisMode);
 
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
@@ -1629,12 +1630,10 @@ console.log("case proportion...");
 
   tilt_labels = highlightParameters =>
   {
-console.log("tilt_labels");    
     const label = this.text_nodes.selectAll('.label');   
 
     const tilt_applied = highlightParameters.tilt_factor === with_tilt_factor;
-console.log("tilt_applied", tilt_applied);
-console.log("d3_event_transform_k", d3_event_transform_k);
+
     label.attr('transform', function(d) {
 
       let one_rem = Number.parseInt(d3.select('html').style('font-size'));
@@ -1776,6 +1775,8 @@ console.log("d3_event_transform_k", d3_event_transform_k);
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+console.log("change_flat_to_drawing");
+
     const t0 = svg.transition().duration(700);
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
