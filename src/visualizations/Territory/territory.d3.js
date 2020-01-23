@@ -229,9 +229,9 @@ class VClass
       [ GlobalData.analysisModes.doubt.fog,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.cancellation,          { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.all,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true} ],
+      [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericNonTerrestrial, { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.namedNonTerrestrial,   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
@@ -1141,7 +1141,7 @@ return        d.r;
       d3_event_transform_k = d3.event.transform.k;
 
   		V.label.attr('transform', function(d) {
-  			let one_rem = parseInt(d3.select('html').style('font-size'));
+  			let one_rem = Number.parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
   			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
         let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
@@ -1532,61 +1532,81 @@ console.log("case proportion...");
     {
       case analysisModeChangeTypes.change_none_to_hills :
 
-        this.change_none_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_none_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_flat_to_hills : 
 
-        this.change_flat_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_flat_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_hills_to_flat : 
 
-        this.change_hills_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_hills_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_hills_to_drawing : 
 
-        this.change_flat_to_drawing(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_hills_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_drawing_to_hills : 
 
-        this.change_drawing_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_drawing_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_flat_to_drawing : 
 
-        this.change_flat_to_drawing(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_flat_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_drawing_to_flat : 
 
-        this.change_drawing_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_drawing_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
       
       case analysisModeChangeTypes.change_hills_to_hills : 
 
-        this.change_hills_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_hills_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_flat_to_flat : 
 
-        this.change_flat_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_flat_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
       case analysisModeChangeTypes.change_drawing_to_drawing : 
 
-        this.change_drawing_to_drawing(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
+        this.change_drawing_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
 
         break;
 
@@ -1596,7 +1616,37 @@ console.log("case proportion...");
     currentAnalysisMode = newAnalysisMode;
   };
 
-  change_hills_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_none_to_hills(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }  
+
+  tilt_labels(highlightParameters)
+  {
+    const label = this.text_nodes.selectAll('.label');   
+
+    label.attr('transform', function(d) {
+
+      let one_rem = Number.parseInt(d3.select('html').style('font-size'));
+      let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+
+      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    });
+  }
+
+  change_hills_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
     const t0 = svg.transition().duration(700);
     t0
@@ -1608,7 +1658,7 @@ console.log("case proportion...");
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
-      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
 
     const t2 = t1.transition().duration(1);
     t2.selectAll(".hill")
@@ -1618,31 +1668,24 @@ console.log("case proportion...");
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".hill")
-      .style("fill", d => d.first_elem && d[highlightParameters.dataMember] ? highlightParameters.colorScale(d[highlightParameters.dataMember]) : "transparent")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
   }
 
-  change_none_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
-  {
-    this.set_yRatio(highlightParameters.tilt_factor);
-    this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-    this.applyShowHillMode(highlightParameters.showHillMode);
-    this.highlightCustomElements(highlightParameters.customElementsClasses);
-    this.showMetaballs(highlightParameters.show_metaballs);    
-  }
-
-  change_flat_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_flat_to_hills(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
-      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
 
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
-      .attr("transform", d => "scale(1, " + highlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1651,43 +1694,200 @@ console.log("case proportion...");
       .style("stroke-opacity", 1);
   }
 
-  change_hills_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_hills_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".circle_node")
+      .attr("transform", "")
+      .filter(d => !d.first_elem)
+      .style("stroke-opacity", 0);
+
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    const t2 = t1.transition().duration(700);
+    t2
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    const t3 = t2.transition().duration(600);
+    t3
+      .selectAll(".hill")
+      .style("fill", "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
   }
 
-  change_drawing_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_drawing_to_hills(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
+    const t0 = svg.transition().duration(800);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]))
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(700);
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);
+
+    const t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    t2
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
+
+    const t3 = t2.transition().duration(700);
+    t3
+      .selectAll(".circle_node")
+      .attr("transform", d => "translate(0, " + d.step_y + ")")
+      .style("stroke-opacity", 1)
+      .style("fill-opacity", 1);
+
+    const t4 = t3.transition().duration(1);
+    t4
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style("display", "none");
   }
 
-  change_flat_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_flat_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    const t1 = t0.transition().duration(600);
+    t1
+      .selectAll(".hill")
+      .style("fill", "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
   }
 
-  change_drawing_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_drawing_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
+    const t0 = svg.transition().duration(800);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(700);
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);
+
+    const t2 = t1.transition().duration(1);
+    t2
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style("display", "none");
   }
 
-  change_hills_to_hills(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_hills_to_hills(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
-      .style("fill", d => highlightParameters.colorScale(d[highlightParameters.dataMember]));
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
   }
 
-  change_flat_to_flat(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_flat_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
-      .style("fill", d => d.first_elem && d[highlightParameters.dataMember] ? highlightParameters.colorScale(d[highlightParameters.dataMember]) : "transparent")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);    
   }
 
-  change_drawing_to_drawing(oldAnalysisMode, newAnalysisMode, highlightParameters)
+  change_drawing_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
   {
-  }  
+/*    
+    const oldLock = {};
+    const newLock = {};
+
+    function hideOld(object, duration)
+    {
+      d3
+        .select(oldLock)
+        .transition()
+        .duration(duration)
+        .tween("style:fill-opacity", function() {
+          const i = d3.interpolateNumber(1, 0);
+
+          return function(t) { object.style("fill-opacity", i); };
+        });
+    }
+
+    function showNew(object, duration)
+    {
+      d3
+        .select(newLock)
+        .transition()
+        .duration(duration)
+        .tween("style:fill-opacity", function() {
+          const i = d3.interpolateNumber(0, 1);
+
+          return function(t) { object.style("fill-opacity", i); };
+        });
+    }
+
+    svg
+      .select("." + oldHighlightParameters.customElementsClasses)
+      .call(hideOld, 2000)
+      .exit()
+      .select("." + newHighlightParameters.customElementsClasses)
+      .call(showNew, 2000);
+*/
+/*
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll("." + oldHighlightParameters.customElementsClasses + ",." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1)
+			.style('stroke-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1);
+*/
+
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    const t1 = t0.transition().duration(700);
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);    
+  }
 
   highlightHills_old = (dataMember, colorScale) => {
 
