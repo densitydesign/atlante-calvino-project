@@ -171,56 +171,80 @@ class VClass
       .duration(450)
       .style("stroke-opacity", function(d) { return metaballsVisible.get(d.collection) ? 1 : 0; });
 
+    this.colors = {
+      nebbia_color_scale_start : '#D6D6F7',
+      nebbia_color_scale_end : '#5151FC',
+      cancellazione_color_scale_start : '#FCD0DB',
+      cancellazione_color_scale_end : '#FF3366',
+      generico_non_terrestre_color_scale_start : '#DDDDDD',
+      generico_non_terrestre_color_scale_end : 'red',
+      generico_terrestre_color_scale_start : '#DDDDDD',
+      generico_terrestre_color_scale_end : 'orange',
+      inventato_color_scale_start : '#DDDDDD',
+      inventato_color_scale_end : 'fuchsia',
+      no_ambientazione_color_scale_start : '#DDDDDD',
+      no_ambientazione_color_scale_end : 'darkgrey',
+      nominato_non_terrestre_color_scale_start : '#DDDDDD',
+      nominato_non_terrestre_color_scale_end : 'blue',
+      nominato_terrestre_color_scale_start : '#DDDDDD',
+      nominato_terrestre_color_scale_end : 'dodgerblue',
+      dubitative_color_scale_start : '#C2FAEF',
+      dubitative_color_scale_end : '#00C19C',
+      placeHierarchies_color_scale_start : 'white',
+      placeHierarchies_color_scale_end : 'white',
+      placeHierarchies_unknown : 'white'
+    }
+
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range(['#DDDDFF', 'blue']);
+      .range([this.colors.nebbia_color_scale_start, this.colors.nebbia_color_scale_end]);
   
     this.cancellazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range(['#FFDDDD', 'red']);
+      .range([this.colors.cancellazione_color_scale_start, this.colors.cancellazione_color_scale_end]);
 
     this.generico_non_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_non_terrestre))
-      .range(['#DDDDDD', 'red']);
+      .range([this.colors.generico_non_terrestre_color_scale_start, this.colors.generico_non_terrestre_color_scale_end]);
   
     this.generico_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range(['#DDDDDD', 'orange']);
+      .range([this.colors.generico_terrestre_color_scale_start, this.colors.generico_terrestre_color_scale_end]);
   
     this.inventato_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_inventato))
-      .range(['#DDDDDD', 'fuchsia']);
+      .range([this.colors.inventato_color_scale_start, this.colors.inventato_color_scale_end]);
   
     this.no_ambientazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_no_ambientazione))
-      .range(['#DDDDDD', 'darkgrey']);
+      .range([this.colors.no_ambientazione_color_scale_start, this.colors.no_ambientazione_color_scale_end]);
   
     this.nominato_non_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_non_terrestre))
-      .range(['#DDDDDD', 'blue']);
+      .range([this.colors.nominato_non_terrestre_color_scale_start, this.colors.nominato_non_terrestre_color_scale_end]);
   
     this.nominato_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_terrestre))
-      .range(['#DDDDDD', 'dodgerblue']);
+      .range([this.colors.nominato_terrestre_color_scale_start, this.colors.nominato_terrestre_color_scale_end]);
   
     this.dubitative_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
-      .range(['#FFDDFF', 'violet']);    
+      .range([this.colors.dubitative_color_scale_start, this.colors.dubitative_color_scale_end]);    
 
     this.placeHierarchies_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range(['white', 'white'])
-      .unknown("white");
+      .range([this.colors.placeHierarchies_color_scale_start, this.colors.placeHierarchies_color_scale_end])
+      .unknown(this.colors.placeHierarchies_unknown);
 
     this.analysisModeMap = new Map([
       [ undefined,                                            { analysisModeGroup : analysisModeGroups.none } ],
