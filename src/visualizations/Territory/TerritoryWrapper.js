@@ -75,8 +75,7 @@ export default class TerritoryWrapper extends React.Component
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
   callTerritorySetHighlightMode = value => {
-console.log("callTerritorySetHighlightMode");
-console.log("value", value);
+
     switch(value)
     {
       case GlobalData.analysisModes.noAnalysis.chronology       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
@@ -103,10 +102,7 @@ console.log("value", value);
   }
 
   setMainAnalysisMode = value => {
-console.log("-------------------");
-console.log("setMainAnalysisMode");
-console.log("value", value); 
-console.log("this.state", this.state);
+
     switch(value)
     {
       case GlobalData.analysisModes.noAnalysis : this.callTerritorySetHighlightMode(this.state.noAnalysisMode); break;
