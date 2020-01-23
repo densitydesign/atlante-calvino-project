@@ -36,17 +36,17 @@ export default class HamburgerMenu extends React.Component
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#spaces" text="Spazi"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#shape" text="Forma"><h3 dataClass=""/></ViewSelector>
 
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Fenomeno"><h4 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Tappa 1"><h4 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Phenomena/doubtAnalysis" text="Dubbio"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Phenomena/spaceAnalysis" text="Spazio"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Phenomena/shapeAnalysis" text="Forma"><h5 dataClass=""/></ViewSelector>
 
-            <ViewSelector className="hamburger-menu-cell" route="Process/intro" text="Processo"><h4 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Process/intro" text="Tappa 2"><h4 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Process/doubting" text="Dubitare"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Process/transforming" text="Trasformare"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Process/combining" text="Combinare"><h5 dataClass=""/></ViewSelector>
 
-            <ViewSelector className="hamburger-menu-cell" route="Problem/intro" text="Problema"><h4 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Problem/intro" text="Tappa 3"><h4 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/cancellation" text="Cancellazione"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/realism" text="Realismo"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/plot" text="Trama"><h5 dataClass=""/></ViewSelector>
