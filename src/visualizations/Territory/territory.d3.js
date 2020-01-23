@@ -172,10 +172,10 @@ class VClass
       .style("stroke-opacity", function(d) { return metaballsVisible.get(d.collection) ? 1 : 0; });
 
     this.colors = {
-      nebbia_color_scale_start : '#D6D6F7',
-      nebbia_color_scale_end : '#5151FC',
-      cancellazione_color_scale_start : '#FCD0DB',
-      cancellazione_color_scale_end : '#FF3366',
+      nebbia_bright : '#D6D6F7',
+      nebbia_dim : '#5151FC',
+      cancellazione_bright : '#FCD0DB',
+      cancellazione_dim : '#FF3366',
       generico_non_terrestre_color_scale_start : '#DDDDDD',
       generico_non_terrestre_color_scale_end : 'red',
       generico_terrestre_color_scale_start : '#DDDDDD',
@@ -198,12 +198,12 @@ class VClass
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.nebbia_color_scale_start, this.colors.nebbia_color_scale_end]);
+      .range([this.colors.nebbia_bright, this.colors.nebbia_dim]);
   
     this.cancellazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.cancellazione_color_scale_start, this.colors.cancellazione_color_scale_end]);
+      .range([this.colors.cancellazione_bright, this.colors.cancellazione_dim]);
 
     this.generico_non_terrestre_color_scale = d3
       .scaleLinear()
