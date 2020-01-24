@@ -1,5 +1,26 @@
-
 .territory-shape-main-options-subpanel {
-  background-color : white;
+  background-color: white;
   grid-column: 11 / span 7;
+  margin-left: 2em;
+}
+
+.categories-panel {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.2em;
+  width: 100%;
+}
+
+.categories-panel * {
+  width:100px;
+}
+
+.territory-shape-main-options-subpanel *{
+  margin-top: 0.5em
+}
+
+.territory-shape-main-options-subpanel .radio-button-down, .territory-shape-main-options-subpanel .radio-button-up {
+  display: grid;
+  outline: 1px solid black;
+  width: 50%;
 }

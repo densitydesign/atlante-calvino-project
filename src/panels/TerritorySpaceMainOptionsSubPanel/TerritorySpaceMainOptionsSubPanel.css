@@ -8,7 +8,9 @@
 }
 
 .territory-space-main-options-subpanel *{
-  width: 33.3%;
+  width: 31.5%;
+  margin-right:0.5em;
+  margin-bottom:0.5em;
 }
 
 .territory-space-main-options-subpanel .radio-button-down, .territory-space-main-options-subpanel .radio-button-up{
