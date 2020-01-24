@@ -13,7 +13,6 @@ export default class TerritorySpaceMainOptionsSubPanel extends React.Component
                 <div className="categories-panel"><h4>TERRESTRI</h4><h4>NON TERRESTRI</h4><h4>ALTRO</h4></div>
 
       <div className="territory-space-main-options-subpanel">
-      <h4>TERRESTRI</h4
         <RadioButton
           id={this.props.genericNonTerrestrialRadioButtonId}
           caption={this.props.genericNonTerrestrialRadioButtonCaption}
