@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import RadioButton from '../../general/RadioButton/RadioButton';
+import RadioButtonWithClose from '../../general/RadioButtonWithClose/RadioButtonWithClose';
 
 import TerritoryDoubtPanel from '../TerritoryDoubtPanel/TerritoryDoubtPanel';
 import TerritoryShapePanel from '../TerritoryShapePanel/TerritoryShapePanel';
@@ -61,6 +61,11 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
     this.props.containerSetBottomPanelMode(visualizationMode.bottomPanelMode);
   };
 
+  optionRadioButtonCloseButtonClicked = buttonId => {
+    this.props.setMainAnalysisMode(GlobalData.analysisModes.noAnalysis);
+    this.props.containerSetBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis);
+  };
+
   render()
   {
     let rendering;
@@ -110,25 +115,28 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
       <div className="territory-itineraries-panel">
         <div className="territory-button-grid">
 
-        <RadioButton 
+        <RadioButtonWithClose
           id={this.doubtRadioButtonId} 
           caption={this.doubtRadioButtonCaption} 
           pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.doubtRadioButtonId).pressed}
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+          callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
         />
 
-        <RadioButton 
+        <RadioButtonWithClose
           id={this.shapeRadioButtonId} 
           caption={this.shapeRadioButtonCaption} 
           pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.shapeRadioButtonId).pressed} 
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+          callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
         />
 
-        <RadioButton 
+        <RadioButtonWithClose 
           id={this.spaceRadioButtonId}
           caption={this.spaceRadioButtonCaption}
           pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.spaceRadioButtonId).pressed}
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+          callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
         />
 
         </div>
