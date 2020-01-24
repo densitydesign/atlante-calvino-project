@@ -9,7 +9,7 @@ export default class Territory extends React.Component
 {
   componentDidMount()
   {
-    V.initialize(this._rootNode, this.props.data);
+    V.initialize(this._rootNode, this.props.data, this.props.colors);
     this.props.containerSetTerritorySetHighlightMode(this.setHighlightMode);
     this.props.containerSetTerritoryShowHills(this.showHills);
     this.props.containerSetTerritorySetDataExtent(this.setDataExtent);
@@ -34,7 +34,7 @@ export default class Territory extends React.Component
 
   render()
   {
-    const style = { width : "100%", height : "70%", flexGrow : 1 };
+    const style = { width : "100%", height : "70%", flexGrow : 1};
 
     return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
   }

@@ -287,6 +287,31 @@ const GlobalData = {
       space : "space"
     }
   },
+  visualizationColors : {
+    territory : {
+      nebbia_bright : '#5151FC',
+      nebbia_dim : '#C5C5FC',
+      cancellazione_bright : '#FF3366',
+      cancellazione_dim : '#FCD0DB',
+      allDubitative_bright : '#00C19C',
+      allDubitative_dim : '#C2FAEF',      
+      generico_non_terrestre_color_scale_start : '#DDDDDD',
+      generico_non_terrestre_color_scale_end : 'red',
+      generico_terrestre_color_scale_start : '#DDDDDD',
+      generico_terrestre_color_scale_end : 'orange',
+      inventato_color_scale_start : '#DDDDDD',
+      inventato_color_scale_end : 'fuchsia',
+      no_ambientazione_color_scale_start : '#DDDDDD',
+      no_ambientazione_color_scale_end : 'darkgrey',
+      nominato_non_terrestre_color_scale_start : '#DDDDDD',
+      nominato_non_terrestre_color_scale_end : 'blue',
+      nominato_terrestre_color_scale_start : '#DDDDDD',
+      nominato_terrestre_color_scale_end : 'dodgerblue',
+      placeHierarchies_color_scale_start : 'white',
+      placeHierarchies_color_scale_end : 'white',
+      placeHierarchies_unknown : 'white'      
+    }
+  },
   defaultTerritoryDataExtent : [1942, 1985],
   collections : collections,
   allowedCollections : allowedCollections,

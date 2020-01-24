@@ -1,10 +1,15 @@
 
 .territory-doubt-main-options-subpanel {
-  background-color : white;
-  display: grid;
+  background-color: white;
+  grid-column: 11 / span 7;
   display: flex;
   flex-wrap: wrap;
+}
 
+.territory-doubt-main-options-subpanel *{
+width: 42%;
+margin-right:0.5em;
+margin-bottom: 0.5em
 }
 
 

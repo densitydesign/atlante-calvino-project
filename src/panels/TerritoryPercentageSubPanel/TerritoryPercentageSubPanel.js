@@ -10,7 +10,11 @@ export default class TerritoryPercentageSubPanel extends React.Component
   {
     return (
       <div className="territory-percentage-subpanel">
-        <RadioButton id={this.props.percentageRadioButtonId} caption={this.props.percentageRadioButtonCaption} pressed={this.props.percentageRadioButtonPressed} callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} />
+      <div className="title-panel"><h4>Percentuale</h4></div>
+        <RadioButton id={this.props.percentageRadioButtonId}
+        caption={this.props.percentageRadioButtonCaption}
+        pressed={this.props.percentageRadioButtonPressed}
+        callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} />
       </div>
     );
   }

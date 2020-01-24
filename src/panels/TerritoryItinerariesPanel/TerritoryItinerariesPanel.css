@@ -3,7 +3,8 @@
   display : grid;
   grid-column: 1 / span 3;
   border-right:1px solid black;
-  border-top:1px solid black;
+  font-size:1.3em;
+  text-align: center;
 }
 
 .territory-itineraries-panel{

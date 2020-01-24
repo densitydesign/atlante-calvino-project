@@ -25,6 +25,7 @@ let tilt = false;
 let scale;
 let d3_event_transform_k;
 let currentAnalysisMode;
+let colors;
 
 const PI = Math.PI;
 const arcMin = 75; // inner radius of the first arc
@@ -76,12 +77,14 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data) => {
+  initialize = (el, input_data, input_colors) => {
 
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
     const json_nodes = input_data.json_nodes;
     data.x_csv2 = input_data.x_csv2;
+
+    colors = input_colors;
 
     let w = window.innerWidth;
     let h = window.innerHeight - 6;
@@ -170,8 +173,8 @@ class VClass
       .transition()
       .duration(450)
       .style("stroke-opacity", function(d) { return metaballsVisible.get(d.collection) ? 1 : 0; });
-
-    this.colors = {
+/*
+    colors = {
       nebbia_bright : '#5151FC',
       nebbia_dim : '#C5C5FC',
       cancellazione_bright : '#FF3366',
@@ -194,57 +197,58 @@ class VClass
       placeHierarchies_color_scale_end : 'white',
       placeHierarchies_unknown : 'white'
     }
+*/
 
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.nebbia_dim, this.colors.nebbia_bright]);
+      .range([colors.nebbia_dim, colors.nebbia_bright]);
   
     this.cancellazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.cancellazione_dim, this.colors.cancellazione_bright]);
+      .range([colors.cancellazione_dim, colors.cancellazione_bright]);
 
     this.dubitative_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
-      .range([this.colors.allDubitative_dim, this.colors.allDubitative_bright]);    
+      .range([colors.allDubitative_dim, colors.allDubitative_bright]);    
 
     this.generico_non_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_non_terrestre))
-      .range([this.colors.generico_non_terrestre_color_scale_start, this.colors.generico_non_terrestre_color_scale_end]);
+      .range([colors.generico_non_terrestre_color_scale_start, colors.generico_non_terrestre_color_scale_end]);
   
     this.generico_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range([this.colors.generico_terrestre_color_scale_start, this.colors.generico_terrestre_color_scale_end]);
+      .range([colors.generico_terrestre_color_scale_start, colors.generico_terrestre_color_scale_end]);
   
     this.inventato_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_inventato))
-      .range([this.colors.inventato_color_scale_start, this.colors.inventato_color_scale_end]);
+      .range([colors.inventato_color_scale_start, colors.inventato_color_scale_end]);
   
     this.no_ambientazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_no_ambientazione))
-      .range([this.colors.no_ambientazione_color_scale_start, this.colors.no_ambientazione_color_scale_end]);
+      .range([colors.no_ambientazione_color_scale_start, colors.no_ambientazione_color_scale_end]);
   
     this.nominato_non_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_non_terrestre))
-      .range([this.colors.nominato_non_terrestre_color_scale_start, this.colors.nominato_non_terrestre_color_scale_end]);
+      .range([colors.nominato_non_terrestre_color_scale_start, colors.nominato_non_terrestre_color_scale_end]);
   
     this.nominato_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_terrestre))
-      .range([this.colors.nominato_terrestre_color_scale_start, this.colors.nominato_terrestre_color_scale_end]);
+      .range([colors.nominato_terrestre_color_scale_start, colors.nominato_terrestre_color_scale_end]);
   
     this.placeHierarchies_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range([this.colors.placeHierarchies_color_scale_start, this.colors.placeHierarchies_color_scale_end])
-      .unknown(this.colors.placeHierarchies_unknown);
+      .range([colors.placeHierarchies_color_scale_start, colors.placeHierarchies_color_scale_end])
+      .unknown(colors.placeHierarchies_unknown);
 
     this.analysisModeMap = new Map([
       [ undefined,                                            { analysisModeGroup : analysisModeGroups.none } ],
@@ -797,7 +801,7 @@ return        d.r;
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", this.colors.nebbia_bright)
+      .attr("fill", colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
@@ -805,7 +809,7 @@ return        d.r;
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", this.colors.cancellazione_bright)
+      .attr("fill", colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);

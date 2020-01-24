@@ -4,12 +4,15 @@ import React from 'react';
 import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritorySpaceMainOptionsSubPanel from '../TerritorySpaceMainOptionsSubPanel/TerritorySpaceMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
+import TerritoryplaceHierarchiesSubPanel from '../TerritoryplaceHierarchiesSubPanel/TerritoryplaceHierarchiesSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
 import RadioButton from '../../general/RadioButton/RadioButton';
 
 
 import './TerritorySpacePanel.css';
+
+
 
 export default class TerritorySpacePanel extends React.Component
 {
@@ -62,6 +65,7 @@ export default class TerritorySpacePanel extends React.Component
   };
 
   optionRadioButtonPressed = buttonId => {
+    console.log("buttonId", buttonId)
     const buttonState = this.state.optionRadioButtonsStates.find(item => item.id === buttonId);
 
     if(buttonState.pressed) return;
@@ -129,24 +133,23 @@ export default class TerritorySpacePanel extends React.Component
 />
 
         </div>
+        <div className="territory-percentage-panel">
+                <TerritoryPercentageSubPanel
+                  callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-        <div className="territory-percentage-subpanel">
+                  percentageRadioButtonId={this.proportionRadioButtonId}
+                  percentageRadioButtonCaption={this.proportionRadioButtonCaption}
+                  percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
+                />
 
-        <RadioButton
-          id={this.placeHierarchiesRadioButtonId}
-          caption={this.placeHierarchiesRadioButtonCaption}
-          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.placeHierarchiesRadioButtonId).pressed}
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
-        />
+                <TerritoryplaceHierarchiesSubPanel
+                  callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-        <TerritoryPercentageSubPanel
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
-
-          percentageRadioButtonId={this.proportionRadioButtonId}
-          percentageRadioButtonCaption={this.proportionRadioButtonCaption}
-          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
-        />
-      </div>
+                  placeHierarchiesRadioButtonId={this.placeHierarchiesRadioButtonId}
+                  placeHierarchiesRadioButtonCaption={this.placeHierarchiesRadioButtonCaption}
+                  placeHierarchiesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.placeHierarchiesRadioButtonId).pressed}
+                />
+                </div>
         </>
     );
   }

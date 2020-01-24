@@ -1,5 +1,4 @@
 
-
 .territory-bottom-panel {
   background-color : white;
   outline: 1px solid black;
@@ -9,4 +8,16 @@
   height: calc(var(--navigation-height)*3);
   z-index : 2;
   display : grid;
+}
+
+h4{
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+
+.title-panel{
+  margin-top:1.2em;
+  margin-bottom:1.2em;
+  display: block;
 }

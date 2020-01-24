@@ -2,4 +2,5 @@
 .territory-doubt-panel {
   background-color : white;
   grid-column: 11 / span 7;
+  margin-left:2em;
 }

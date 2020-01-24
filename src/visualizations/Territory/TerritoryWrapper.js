@@ -33,7 +33,7 @@ export default class TerritoryWrapper extends React.Component
 
     helpSidePanelOpen : false,
 
-    dataExtent : [...GlobalData.defaultTerritoryDataExtent]
+    dataExtent : [...GlobalData.defaultTerritoryDataExtent]    
   };
 
   loadData = () =>
@@ -213,6 +213,7 @@ export default class TerritoryWrapper extends React.Component
 
               <Territory
                 data={this.state.data}
+                colors={GlobalData.visualizationColors.territory}
                 containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
