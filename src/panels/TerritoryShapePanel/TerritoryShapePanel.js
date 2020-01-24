@@ -61,7 +61,7 @@ export default class TerritoryShapePanel extends React.Component
           typesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.typesRadioButtonId).pressed}
         />
         </div>
-          <div className="territory-percentage-panel">
+          <div className="territory-percentage-subpanel">
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 

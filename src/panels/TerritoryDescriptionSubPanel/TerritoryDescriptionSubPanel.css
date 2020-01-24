@@ -1,5 +1,5 @@
 
-.territory-description-sub-panel {
+.territory-description-subpanel {
   background-color : yellow;
-  grid-column: 4 / span 7;
+  grid-column: 1 / span 7;
 }

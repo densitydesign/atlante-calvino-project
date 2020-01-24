@@ -63,6 +63,9 @@ export default class TerritoryDoubtPanel extends React.Component
     return (
       <>
         <div className="territory-doubt-panel">
+{/*          <TerritoryDescriptionSubPanel
+          />          
+  */}
           <TerritoryDoubtMainOptionsSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
@@ -79,8 +82,8 @@ export default class TerritoryDoubtPanel extends React.Component
             allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
           />
         </div>
-        
-        <div className="territory-percentage-panel">
+
+        <div className="territory-percentage-subpanel">
           <TerritoryPercentageSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import RadioButton from '../../general/RadioButton/RadioButton';
-import './TerritoryPercentagePanel.css';
+import './TerritoryPercentageSubPanel.css';
 
 export default class TerritoryPercentageSubPanel extends React.Component
 {

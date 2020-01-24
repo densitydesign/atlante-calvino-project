@@ -117,7 +117,7 @@ export default class TerritorySpacePanel extends React.Component
 
         </div>
 
-        <div className="territory-percentage-panel">
+        <div className="territory-percentage-subpanel">
 
         <RadioButton
           id={this.placeHierarchiesRadioButtonId}
