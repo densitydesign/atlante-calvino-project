@@ -1,4 +1,4 @@
-id,generico_non_terrestre,generico_terrestre,inventato,no_ambientazione,nominato_non_terrestre,nominato_terrestre,pct_nebbia_normalizzata,pct_cancellazione_normalizzata,pct_nebbia,pct_cancellazione,norma_pct_caratteri_nebbia_cancellazione,nebbia_words_ratio,cancellazione_words_ratio,dubitative_ratio,n_lists_f,n_lists_m,n_lists_p,n_lists_s,text_length,n_generico_non_terrestre,n_generico_terrestre,n_inventato,n_no_ambientazione,n_nominato_non_terrestre,n_nominato_terrestre
+id,generico_cosmico,generico_terrestre,inventato,no_ambientazione,nominato_cosmico,nominato_terrestre,pct_nebbia_normalizzata,pct_cancellazione_normalizzata,pct_nebbia,pct_cancellazione,norma_pct_caratteri_nebbia_cancellazione,nebbia_words_ratio,cancellazione_words_ratio,dubitative_ratio,n_lists_f,n_lists_m,n_lists_p,n_lists_s,text_length,n_generico_cosmico,n_generico_terrestre,n_inventato,n_no_ambientazione,n_nominato_cosmico,n_nominato_terrestre
 S001,0.000,1.000,0.000,0.000,0.000,0.000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0
 S002,0.000,1.000,0.000,0.000,0.000,0.000,0,0,0,0,0,0,0,0,0,0,36,228,4066,0,1,0,0,0,0
 S003,0.000,1.000,0.000,0.000,0.000,0.000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
