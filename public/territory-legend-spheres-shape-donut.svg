@@ -1,59 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 219.4 65.3" style="enable-background:new 0 0 219.4 65.3;" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 206 51.7" style="enable-background:new 0 0 206 51.7;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
-	.st1{fill:none;stroke:#000000;stroke-width:3.0208;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#FFCC33;stroke-width:3.025;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:#FFA500;stroke-width:3.025;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:3.021;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FFA500;stroke-width:3.025;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
+	.st3{fill:none;stroke:#FFCC33;stroke-width:3.025;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#5151FC;stroke-width:3;stroke-miterlimit:10;}
 	.st5{fill:none;stroke:#00C19C;stroke-width:3;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#FF3366;stroke-width:3;stroke-miterlimit:10;}
 	.st7{font-family:'HKGrotesk-Regular';}
 	.st8{font-size:8px;}
-	.st9{fill:none;}
-	.st10{font-size:9px;}
+	.st9{font-size:9px;}
 </style>
-<g id="Layer_1">
-	<g id="Group-3" transform="translate(-32.86 47.62) rotate(-90)">
-		<path id="Path-6" class="st0" d="M30.2,68.7V58.5"/>
-	</g>
-	<g id="Group-3_2_" transform="translate(-32.86 47.62) rotate(-90)">
-		<path id="Path-6_2_" class="st0" d="M30.8,125.4v-10.7"/>
-	</g>
-	<g id="Group-3_1_" transform="translate(-32.86 47.62) rotate(-90)">
-		<path id="Path-6_1_" class="st0" d="M4.3,74.6V61"/>
-	</g>
-	<g id="Group-3_3_" transform="translate(-32.86 47.62) rotate(-90)">
-		<path id="Path-6_3_" class="st0" d="M4.3,125.8v-13.6"/>
-	</g>
-	<path class="st1" d="M60.1,3.2"/>
-	<path class="st1" d="M83.2,20"/>
-	<path class="st1" d="M74.4,47.1"/>
-	<path class="st1" d="M45.9,47.1"/>
-	<path class="st1" d="M37,20"/>
-	<path class="st2" d="M84.3,27.5c0-13.4-10.9-24.2-24.2-24.2"/>
-	<path class="st3" d="M60.1,51.7"/>
-	<path class="st4" d="M60.1,51.7c13.4,0,24.2-10.9,24.2-24.2"/>
-	<path class="st3" d="M35.8,27.5"/>
-	<path class="st5" d="M35.8,27.5c0,13.4,10.9,24.2,24.2,24.2"/>
-	<path class="st6" d="M60.1,3.2c-13.4,0-24.2,10.9-24.2,24.2"/>
-	<g>
-		<text transform="matrix(1 0 0 1 93.7126 18.645)" class="st7 st8">Sintgami</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 93.7124 44.6959)" class="st7 st8">Frasi</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 5.4217 18.645)" class="st7 st8">Misto</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 5.4218 44.6963)" class="st7 st8">Parole</text>
-	</g>
-	<rect x="133.9" y="3.2" class="st9" width="64.4" height="55.6"/>
-	<text transform="matrix(1 0 0 1 133.9126 9.4103)"><tspan x="0" y="0" class="st7 st10">Proporzione dei </tspan><tspan x="0" y="10.8" class="st7 st10">tipi di elenchi in </tspan><tspan x="0" y="21.6" class="st7 st10">base ai numeri </tspan><tspan x="0" y="32.4" class="st7 st10">di caratteri di </tspan><tspan x="0" y="43.2" class="st7 st10">ciascun testo.</tspan></text>
-</g>
 <g id="Isolation_Mode">
+</g>
+<g id="Group_294" transform="translate(0 -1.79)">
+	<path id="Path_110" class="st0" d="M80.8,12.6"/>
+	<path id="Path_111" class="st0" d="M72,39.7"/>
+	<path id="Path_112" class="st0" d="M43.5,39.7"/>
+	<path id="Path_113" class="st0" d="M34.6,12.6"/>
+	<path id="Path_115" class="st1" d="M57.7,44.3"/>
+	<path id="Path_117" class="st1" d="M33.4,20"/>
+	<g id="Group_295" transform="translate(0 11)">
+		<g id="Group-3_4_" transform="translate(20.198 15.997)">
+			<path id="Path-6_4_" class="st2" d="M13.2-6H3"/>
+		</g>
+		<g id="Group-3-2" transform="translate(61.461 15.375)">
+			<path id="Path-6-2" class="st2" d="M13.7-6H3"/>
+		</g>
+		<g id="Group-3-3" transform="translate(22.686 41.91)">
+			<path id="Path-6-3" class="st2" d="M16.6-6H3"/>
+		</g>
+		<g id="Group-3-4" transform="translate(58.918 41.91)">
+			<path id="Path-6-4" class="st2" d="M16.6-6H3"/>
+		</g>
+		<g id="Group_296" transform="translate(-1.99 5.01)">
+			<path id="Path_114" class="st3" d="M71.9,15c0-10.6-8.6-19.2-19.2-19.2"/>
+			<path id="Path_116" class="st4" d="M52.6,34.3c10.6,0,19.2-8.6,19.2-19.2"/>
+			<path id="Path_118" class="st5" d="M33.4,15c0,10.6,8.6,19.2,19.2,19.2h0"/>
+			<path id="Path_119" class="st6" d="M52.6-4.2C42-4.2,33.4,4.4,33.4,15c0,0,0,0,0,0"/>
+		</g>
+		<g id="Group_264" transform="translate(73.291 10.235)">
+			<g id="Group_263">
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Sintgami</text>
+			</g>
+		</g>
+		<g id="Group_266" transform="translate(73.291 36.286)">
+			<g id="Group_265">
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Frasi</text>
+			</g>
+		</g>
+		<g id="Group_268" transform="translate(0 10.235)">
+			<g id="Group_267">
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Misto</text>
+			</g>
+		</g>
+		<g id="Group_270" transform="translate(0 36.286)">
+			<g id="Group_269">
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Parole</text>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 118.4654 11)" class="st7 st9">Proporzione dei tipi di </text>
+	<text transform="matrix(1 0 0 1 118.4654 21.8)" class="st7 st9">elenchi in base ai </text>
+	<text transform="matrix(1 0 0 1 118.4654 32.6)" class="st7 st9">numeri di caratteri di </text>
+	<text transform="matrix(1 0 0 1 118.4654 43.4)" class="st7 st9">ciascun testo.</text>
 </g>
 </svg>

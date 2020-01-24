@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 121.2 65.3" style="enable-background:new 0 0 121.2 65.3;" xml:space="preserve">
+	 viewBox="0 0 148.3 50.1" style="enable-background:new 0 0 148.3 50.1;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#5151FC;stroke-width:3;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#00C19C;stroke-width:3;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#FF6C39;stroke-width:3;stroke-miterlimit:10;}
 	.st3{fill:none;stroke:#BBBBFF;stroke-width:3;stroke-miterlimit:10;}
 	.st4{fill:none;stroke:#FFA500;stroke-width:3;stroke-miterlimit:10;}
-	.st5{fill:none;}
-	.st6{font-family:'HKGrotesk-Regular';}
-	.st7{font-size:9px;}
+	.st5{font-family:'HKGrotesk-Regular';}
+	.st6{font-size:9px;}
 </style>
-<g id="Group_256" transform="translate(-37.031 -1.396)">
-	<path id="Path_97" class="st0" d="M72.1,42.8c6.7-4.9,9.6-13.6,7-21.5"/>
-	<path id="Path_100" class="st1" d="M42.5,21.2c-2.6,7.9,0.3,16.6,7,21.5"/>
-	<path id="Path_101" class="st2" d="M49.4,42.8c6.7,4.9,15.9,4.9,22.6,0"/>
-	<path id="Path_102" class="st3" d="M79.1,21.2c-2.6-7.9-10-13.3-18.3-13.3"/>
-	<path id="Path_103" class="st4" d="M60.8,7.9c-8.3,0-15.7,5.4-18.3,13.3"/>
-	<rect x="92.8" y="7.7" class="st5" width="65.5" height="53.8"/>
-	<text transform="matrix(1 0 0 1 92.7885 13.9524)"><tspan x="0" y="0" class="st6 st7">Proporzione dei </tspan><tspan x="0" y="10.8" class="st6 st7">tipi di luoghi che </tspan><tspan x="0" y="21.6" class="st6 st7">sono contenitori </tspan><tspan x="0" y="32.4" class="st6 st7">di altri luoghi in </tspan><tspan x="0" y="43.2" class="st6 st7">primo livello.</tspan></text>
+<g id="Group_285" transform="translate(-764.475 -614.489)">
+	<g id="Group_256" transform="translate(761.515 609.443)">
+		<path id="Path_97" class="st0" d="M35.8,42.9c6.7-4.9,9.6-13.6,7-21.5"/>
+		<path id="Path_100" class="st1" d="M6.2,21.4c-2.6,7.9,0.3,16.6,7,21.5"/>
+		<path id="Path_101" class="st2" d="M13.1,42.9c6.7,4.9,15.9,4.9,22.6,0"/>
+		<path id="Path_102" class="st3" d="M42.8,21.4c-2.6-7.9-10-13.3-18.3-13.3"/>
+		<path id="Path_103" class="st4" d="M24.5,8.1c-8.3,0-15.7,5.4-18.3,13.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 815.2546 629.5684)" class="st5 st6">Proporzione dei tipi di </text>
+	<text transform="matrix(1 0 0 1 815.2546 640.3683)" class="st5 st6">luoghi che sono </text>
+	<text transform="matrix(1 0 0 1 815.2546 651.1683)" class="st5 st6">contenitori di altri luoghi </text>
+	<text transform="matrix(1 0 0 1 815.2546 661.9684)" class="st5 st6">in primo livello.</text>
 </g>
 </svg>

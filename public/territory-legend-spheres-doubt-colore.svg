@@ -10,15 +10,15 @@
 	.st4{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
 	.st5{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
 </style>
-<g id="Group_241" transform="translate(-539.25 -609.25)">
-	<text transform="matrix(1 0 0 1 558.6526 636.2)" class="st0 st1">Nebbia</text>
-	<circle id="Oval" class="st2" cx="545.9" cy="632.9" r="6.2"/>
-	<text transform="matrix(1 0 0 1 558.6516 653.2)" class="st0 st1">Cancellazione</text>
-	<circle id="Oval-2" class="st3" cx="545.9" cy="650.9" r="6.2"/>
-	<text transform="matrix(1 0 0 1 558.6516 670.2)" class="st0 st1">Nebbia + cancellazione</text>
-	<text transform="matrix(1 0 0 1 558.6516 618.2)" class="st0 st1">senza occorrenze</text>
-	<circle id="Oval-3" class="st4" cx="545.9" cy="667.9" r="6.2"/>
-	<path id="Oval-4" class="st5" d="M545.9,609.7c3.4,0,6.2,2.8,6.2,6.2c0,3.4-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2c0,0,0,0,0,0
-		C539.7,612.5,542.5,609.7,545.9,609.7z"/>
+<g id="Group_241_1_" transform="translate(-539.25 -626.375)">
+	<text transform="matrix(1 0 0 1 558.613 636.325)" class="st0 st1">Nebbia</text>
+	<circle id="Oval_1_" class="st2" cx="545.9" cy="633" r="6.2"/>
+	<text transform="matrix(1 0 0 1 558.612 653.325)" class="st0 st1">Cancellazione</text>
+	<circle id="Oval-2_1_" class="st3" cx="545.9" cy="651" r="6.2"/>
+	<text transform="matrix(1 0 0 1 558.612 670.325)" class="st0 st1">Nebbia + cancellazione</text>
+	<text transform="matrix(1 0 0 1 558.612 687.325)" class="st0 st1">senza occorrenze</text>
+	<circle id="Oval-3_1_" class="st4" cx="545.9" cy="668" r="6.2"/>
+	<path id="Oval-4_1_" class="st5" d="M545.9,678.8c3.4,0,6.2,2.8,6.2,6.2c0,3.4-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2c0,0,0,0,0,0
+		C539.7,681.6,542.5,678.8,545.9,678.8z"/>
 </g>
 </svg>

@@ -1,81 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 126.1 65.3" style="enable-background:new 0 0 126.1 65.3;" xml:space="preserve">
+	 viewBox="0 0 158.7 77.1" style="enable-background:new 0 0 158.7 77.1;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
-	.st1{fill:none;}
+	.st1{fill:none;stroke:#666666;stroke-width:2;}
 	.st2{font-family:'HKGrotesk-Regular';}
-	.st3{font-size:9px;}
-	.st4{fill:none;stroke:#666666;stroke-width:2;}
-	.st5{font-size:8px;}
-	.st6{fill:none;stroke:#CCCCCC;stroke-width:2.5;}
-	.st7{fill:none;stroke:#666666;stroke-width:2.5;}
-	.st8{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:0.5;}
-	.st9{fill:#666666;stroke:#FFFFFF;stroke-width:0.5;}
-	.st10{fill:none;stroke:#000000;stroke-width:0.25;}
-	.st11{fill:none;stroke:#CCCCCC;stroke-width:0.75;}
-	.st12{fill:none;stroke:#666666;stroke-width:0.75;}
-	.st13{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:0.9;}
-	.st14{fill:#666666;stroke:#FFFFFF;stroke-width:0.9;}
+	.st3{font-size:8px;}
+	.st4{fill:none;stroke:#CCCCCC;stroke-width:2.5;}
+	.st5{fill:none;stroke:#666666;stroke-width:2.5;}
+	.st6{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:0.5;}
+	.st7{fill:#666666;stroke:#FFFFFF;stroke-width:0.5;}
+	.st8{fill:none;stroke:#000000;stroke-width:0.25;}
+	.st9{font-size:9px;}
 </style>
-<line class="st0" x1="14.5" y1="58.5" x2="14.5" y2="48.1"/>
-<rect x="72.3" y="3.2" class="st1" width="53.9" height="51.3"/>
-<text transform="matrix(1 0 0 1 72.2705 9.3956)"><tspan x="0" y="0" class="st2 st3">Relazione </tspan><tspan x="0" y="10.8" class="st2 st3">gerarchica </tspan><tspan x="0" y="21.6" class="st2 st3">dei luoghi </tspan><tspan x="0" y="32.4" class="st2 st3">che </tspan><tspan x="0" y="43.2" class="st2 st3">contengono </tspan></text>
-<line id="Line_104" class="st4" x1="40.3" y1="37.5" x2="57.5" y2="37.6"/>
-<text transform="matrix(1 0 0 1 0.6166 6.1519)" class="st2 st5">livello 1</text>
-<text transform="matrix(1 0 0 1 37.2584 6.1519)" class="st2 st5">2</text>
-<text transform="matrix(1 0 0 1 54.5142 6.1519)" class="st2 st5">3</text>
-<text transform="matrix(1 0 0 1 6.7232 63.4755)" class="st2 st5">luoghi</text>
-<path id="Path_74" class="st6" d="M21.9,45.2c-3.8,3.8-9.9,3.8-13.7,0c-3.8-3.8-3.8-9.9,0-13.7s9.9-3.8,13.7,0c0,0,0,0,0,0"/>
-<path id="Path_76" class="st4" d="M36.4,26c4.7,7.6,4.7,17.2,0,24.8"/>
-<path id="Path_77" class="st7" d="M36.1,25.9"/>
-<path id="Path_78" class="st4" d="M56.4,29.5c1.1,5,1.1,10.1,0,15"/>
-<path id="Path_79" class="st7" d="M21.9,31.5c3.8,3.8,3.8,9.9,0,13.7"/>
-<circle id="Ellipse_2" class="st8" cx="14.5" cy="28.6" r="1.4"/>
-<circle id="Ellipse_4" class="st8" cx="14.5" cy="48.1" r="1.4"/>
-<circle id="Ellipse_4_2_" class="st8" cx="5.3" cy="39" r="1.4"/>
-<line id="Line_112" class="st4" x1="25.2" y1="37.4" x2="40.3" y2="37.5"/>
-<circle id="Ellipse_6" class="st9" cx="24.7" cy="37.6" r="1.4"/>
-<circle id="Ellipse_7" class="st9" cx="39.9" cy="37.5" r="1.4"/>
-<circle id="Ellipse_8" class="st8" cx="36.5" cy="50.8" r="1.4"/>
-<circle id="Ellipse_9" class="st9" cx="36.6" cy="26" r="1.4"/>
-<circle id="Ellipse_10" class="st8" cx="56.7" cy="29.9" r="1.4"/>
-<circle id="Ellipse_11" class="st9" cx="56.4" cy="44.4" r="1.4"/>
-<line id="Line_115" class="st10" x1="25.2" y1="26.5" x2="25.2" y2="7.9"/>
-<line id="Line_116" class="st10" x1="39" y1="22" x2="39" y2="7.9"/>
-<line id="Line_117" class="st10" x1="55.9" y1="25" x2="55.9" y2="7.9"/>
-<rect x="67" y="-97.3" class="st1" width="53.9" height="51.3"/>
-<text transform="matrix(1 0 0 1 66.9738 -91.0656)"><tspan x="0" y="0" class="st2 st3">Relazione </tspan><tspan x="0" y="10.8" class="st2 st3">gerarchica </tspan><tspan x="0" y="21.6" class="st2 st3">dei luoghi </tspan><tspan x="0" y="32.4" class="st2 st3">che </tspan><tspan x="0" y="43.2" class="st2 st3">contengono </tspan></text>
-<line id="Line_104_1_" class="st7" x1="43.4" y1="-62.9" x2="52.2" y2="-62.9"/>
-<line id="Line_105_1_" class="st11" x1="51.5" y1="-70.6" x2="57.7" y2="-72.8"/>
-<line id="Line_106_5_" class="st12" x1="32.6" y1="-75.9" x2="36.2" y2="-78.5"/>
-<line id="Line_106_4_" class="st12" x1="21.3" y1="-62.9" x2="26.1" y2="-62.9"/>
-<line id="Line_106_3_" class="st12" x1="36.4" y1="-62.9" x2="42.2" y2="-62.9"/>
-<line id="Line_108_1_" class="st11" x1="0.1" y1="-75.4" x2="2.8" y2="-71.9"/>
-<line id="Line_110_1_" class="st11" x1="-1.4" y1="-49.8" x2="1.4" y2="-53.2"/>
-<text transform="matrix(1 0 0 1 -4.6802 -94.3093)" class="st2" style="font-size:6px;">livello 1</text>
-<text transform="matrix(1 0 0 1 29.2519 -94.3093)" class="st2" style="font-size:6px;">2</text>
-<text transform="matrix(1 0 0 1 49.2174 -94.3093)" class="st2" style="font-size:6px;">3</text>
-<text transform="matrix(1 0 0 1 15.1067 -37.7415)" class="st2" style="font-size:6px;">luoghi</text>
-<path id="Path_74_1_" class="st6" d="M16.6-55.2c-3.8,3.8-9.9,3.8-13.7,0c-3.8-3.8-3.8-9.9,0-13.7s9.9-3.8,13.7,0c0,0,0,0,0,0"/>
-<path id="Path_76_1_" class="st7" d="M31.1-74.4c4.7,7.6,4.7,17.2,0,24.8"/>
-<path id="Path_77_1_" class="st7" d="M30.8-74.6"/>
-<path id="Path_78_1_" class="st7" d="M51.1-70.9c1.1,5,1.1,10.1,0,15"/>
-<path id="Path_79_1_" class="st7" d="M16.6-69c3.8,3.8,3.8,9.9,0,13.7"/>
-<circle id="Ellipse_2_1_" class="st13" cx="4.2" cy="-70.1" r="1.4"/>
-<circle id="Ellipse_4_1_" class="st13" cx="2.9" cy="-55.3" r="1.4"/>
-<line id="Line_112_1_" class="st7" x1="26.9" y1="-63" x2="35" y2="-62.9"/>
-<circle id="Ellipse_6_1_" class="st14" cx="19.4" cy="-62.9" r="1.4"/>
-<circle id="Ellipse_7_1_" class="st14" cx="35" cy="-62.9" r="1.4"/>
-<line id="Line_113_1_" class="st11" x1="32.4" y1="-48.3" x2="36" y2="-45.1"/>
-<circle id="Ellipse_8_1_" class="st13" cx="31.3" cy="-49.7" r="1.4"/>
-<line id="Line_114_1_" class="st12" x1="51.2" y1="-56" x2="57.1" y2="-53.2"/>
-<circle id="Ellipse_9_1_" class="st14" cx="31.3" cy="-74.5" r="1.4"/>
-<circle id="Ellipse_10_1_" class="st13" cx="51.4" cy="-70.6" r="1.4"/>
-<circle id="Ellipse_11_1_" class="st14" cx="51.1" cy="-56.1" r="1.4"/>
-<line id="Line_115_1_" class="st10" x1="14" y1="-74.6" x2="14" y2="-92.6"/>
-<line id="Line_116_1_" class="st10" x1="31" y1="-80.5" x2="31" y2="-92.6"/>
-<line id="Line_117_1_" class="st10" x1="50.6" y1="-75.5" x2="50.6" y2="-92.6"/>
-<line class="st0" x1="22.9" y1="-43.7" x2="22.9" y2="-61.5"/>
+<g id="Group_291" transform="translate(-0.617 0.848)">
+	<line id="Line_131" class="st0" x1="22.3" y1="63.8" x2="22.3" y2="48"/>
+	<line id="Line_104" class="st1" x1="48.1" y1="37.4" x2="65.3" y2="37.5"/>
+	<text transform="matrix(1 0 0 1 2.4168 6.0378)" class="st2 st3">livello 1</text>
+	<text transform="matrix(1 0 0 1 42.8008 6.0378)" class="st2 st3">2</text>
+	<text transform="matrix(1 0 0 1 61.8787 6.0378)" class="st2 st3">3</text>
+	<text transform="matrix(1 0 0 1 14.5228 70.6613)" class="st2 st3">luoghi</text>
+	<path id="Path_74" class="st4" d="M29.7,45.1c-3.8,3.8-9.9,3.8-13.7,0c-3.8-3.8-3.8-9.9,0-13.7c3.8-3.8,9.9-3.8,13.7,0l0,0"/>
+	<path id="Path_76" class="st1" d="M44.2,25.9c4.7,7.6,4.7,17.2,0,24.8"/>
+	<path id="Path_77" class="st5" d="M43.9,25.8"/>
+	<path id="Path_78" class="st1" d="M64.2,29.4c1.1,4.9,1.1,10.1,0,15"/>
+	<path id="Path_79" class="st5" d="M29.7,31.4c3.8,3.8,3.8,9.9,0,13.7c0,0,0,0,0,0"/>
+	<circle id="Ellipse_2" class="st6" cx="22.3" cy="28.5" r="1.4"/>
+	<circle id="Ellipse_4" class="st6" cx="22.3" cy="48" r="1.4"/>
+	<circle id="Ellipse_4-2" class="st6" cx="13.1" cy="38.9" r="1.4"/>
+	<line id="Line_112" class="st1" x1="33" y1="37.3" x2="48.1" y2="37.4"/>
+	<circle id="Ellipse_6" class="st7" cx="32.5" cy="37.5" r="1.4"/>
+	<circle id="Ellipse_7" class="st7" cx="47.7" cy="37.4" r="1.4"/>
+	<circle id="Ellipse_8" class="st6" cx="44.3" cy="50.7" r="1.4"/>
+	<circle id="Ellipse_9" class="st7" cx="44.4" cy="25.9" r="1.4"/>
+	<circle id="Ellipse_10" class="st6" cx="64.5" cy="29.8" r="1.4"/>
+	<circle id="Ellipse_11" class="st7" cx="64.2" cy="44.3" r="1.4"/>
+	<line id="Line_115" class="st8" x1="27" y1="26.4" x2="27" y2="7.8"/>
+	<line id="Line_116" class="st8" x1="45.1" y1="22.9" x2="45.1" y2="7.8"/>
+	<line id="Line_117" class="st8" x1="64.1" y1="26.9" x2="64.1" y2="7.8"/>
+	<text transform="matrix(1 0 0 1 81.5458 9.0378)" class="st2 st9">Relazione </text>
+	<text transform="matrix(1 0 0 1 81.5458 19.8377)" class="st2 st9">gerarchica dei </text>
+	<text transform="matrix(1 0 0 1 81.5458 30.6377)" class="st2 st9">luoghi contengono.    </text>
+</g>
 </svg>

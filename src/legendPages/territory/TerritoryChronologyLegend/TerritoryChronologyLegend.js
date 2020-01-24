@@ -17,7 +17,7 @@ export default class TerritoryChronologyLegend extends React.Component
         </div>
 
         <div className="legend-block">
-        <div className="title-panel"><h4>Cronologia</h4></div>
+          <div className="title-panel"><h4>Cronologia</h4></div>
           <p>
             <img src={process.env.PUBLIC_URL + '/territory-legend-chronology-modalita.svg'} />
           </p>

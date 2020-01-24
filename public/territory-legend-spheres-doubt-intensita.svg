@@ -15,35 +15,35 @@
 <g id="Group_89" transform="translate(-86.75 34.187)">
 	<g id="Rectangle_90" transform="translate(86.75 -34.187)">
 		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-305.7959" y1="265.6319" x2="-306.7959" y2="265.6579" gradientTransform="matrix(97 0 0 -6 29759.9453 1604.2356)">
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-672.9713" y1="100.9716" x2="-673.9713" y2="100.9456" gradientTransform="matrix(97 0 0 6 65375.9453 -602.4179)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#5151FC"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<rect x="0.3" y="7.4" class="st0" width="97" height="6"/>
-		<rect x="0.4" y="7.5" class="st1" width="96.8" height="5.8"/>
+		<rect x="0.3" y="0.3" class="st0" width="97" height="6"/>
+		<rect x="0.4" y="0.4" class="st1" width="96.8" height="5.8"/>
 	</g>
 	<g id="Rectangle_171" transform="translate(86.75 -16.187)">
 		
-			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-305.7959" y1="247.6319" x2="-306.7959" y2="247.6579" gradientTransform="matrix(97 0 0 -6 29759.9453 1496.2356)">
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-672.9713" y1="100.9716" x2="-673.9713" y2="100.9456" gradientTransform="matrix(97 0 0 6 65375.9453 -602.4179)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#FF3366"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<rect x="0.3" y="7.4" class="st2" width="97" height="6"/>
-		<rect x="0.4" y="7.5" class="st3" width="96.8" height="5.8"/>
+		<rect x="0.3" y="0.3" class="st2" width="97" height="6"/>
+		<rect x="0.4" y="0.4" class="st3" width="96.8" height="5.8"/>
 	</g>
 	<g id="Rectangle_172" transform="translate(86.75 0.813)">
 		
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-305.7959" y1="230.6319" x2="-306.7959" y2="230.6579" gradientTransform="matrix(97 0 0 -6 29759.9453 1394.2356)">
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-672.9713" y1="100.9716" x2="-673.9713" y2="100.9456" gradientTransform="matrix(97 0 0 6 65375.9453 -602.4179)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="1" style="stop-color:#00C19C"/>
 			<stop  offset="1" style="stop-color:#000000"/>
 		</linearGradient>
-		<rect x="0.3" y="7.4" class="st4" width="97" height="6"/>
-		<rect x="0.4" y="7.5" class="st5" width="96.8" height="5.8"/>
+		<rect x="0.3" y="0.3" class="st4" width="97" height="6"/>
+		<rect x="0.4" y="0.4" class="st5" width="96.8" height="5.8"/>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 0.3984 5.4452)" class="st6 st7">+</text>
-<text transform="matrix(1 0 0 1 93.9007 4.7816)" class="st6 st7">-</text>
+<text transform="matrix(1 0 0 1 0.3984 48.632)" class="st6 st7">+</text>
+<text transform="matrix(1 0 0 1 93.9007 47.9684)" class="st6 st7">-</text>
 </svg>
