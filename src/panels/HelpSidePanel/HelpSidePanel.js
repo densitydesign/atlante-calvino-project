@@ -29,10 +29,12 @@ export default class HelpSidePanel extends React.Component
     }
 
     return (
+      <>
       <div className={"help-side-panel " + (this.props.open ? "help-side-panel-open" : "help-side-panel-closed")}>
-        <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
-        { helpPage }
+        <div> <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
+                      { helpPage }</div>
       </div>
+      </>
     );
   }
 }
