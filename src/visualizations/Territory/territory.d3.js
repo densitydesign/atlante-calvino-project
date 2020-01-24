@@ -172,10 +172,12 @@ class VClass
       .style("stroke-opacity", function(d) { return metaballsVisible.get(d.collection) ? 1 : 0; });
 
     this.colors = {
-      nebbia_bright : '#D6D6F7',
-      nebbia_dim : '#5151FC',
-      cancellazione_bright : '#FCD0DB',
-      cancellazione_dim : '#FF3366',
+      nebbia_bright : '#5151FC',
+      nebbia_dim : '#C5C5FC',
+      cancellazione_bright : '#FF3366',
+      cancellazione_dim : '#FCD0DB',
+      allDubitative_bright : '#00C19C',
+      allDubitative_dim : '#C2FAEF',      
       generico_non_terrestre_color_scale_start : '#DDDDDD',
       generico_non_terrestre_color_scale_end : 'red',
       generico_terrestre_color_scale_start : '#DDDDDD',
@@ -188,8 +190,6 @@ class VClass
       nominato_non_terrestre_color_scale_end : 'blue',
       nominato_terrestre_color_scale_start : '#DDDDDD',
       nominato_terrestre_color_scale_end : 'dodgerblue',
-      dubitative_color_scale_start : '#C2FAEF',
-      dubitative_color_scale_end : '#00C19C',
       placeHierarchies_color_scale_start : 'white',
       placeHierarchies_color_scale_end : 'white',
       placeHierarchies_unknown : 'white'
@@ -198,12 +198,17 @@ class VClass
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.nebbia_bright, this.colors.nebbia_dim]);
+      .range([this.colors.nebbia_dim, this.colors.nebbia_bright]);
   
     this.cancellazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range([this.colors.cancellazione_bright, this.colors.cancellazione_dim]);
+      .range([this.colors.cancellazione_dim, this.colors.cancellazione_bright]);
+
+    this.dubitative_color_scale = d3
+      .scaleLinear()
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
+      .range([this.colors.allDubitative_dim, this.colors.allDubitative_bright]);    
 
     this.generico_non_terrestre_color_scale = d3
       .scaleLinear()
@@ -235,11 +240,6 @@ class VClass
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_terrestre))
       .range([this.colors.nominato_terrestre_color_scale_start, this.colors.nominato_terrestre_color_scale_end]);
   
-    this.dubitative_color_scale = d3
-      .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
-      .range([this.colors.dubitative_color_scale_start, this.colors.dubitative_color_scale_end]);    
-
     this.placeHierarchies_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
@@ -797,7 +797,7 @@ return        d.r;
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", "blue")
+      .attr("fill", this.colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
@@ -805,7 +805,7 @@ return        d.r;
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", "red")
+      .attr("fill", this.colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
