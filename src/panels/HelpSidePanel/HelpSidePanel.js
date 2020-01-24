@@ -6,7 +6,10 @@ import CloseButton from '../../general/CloseButton/CloseButton';
 import GlobalData from '../../utilities/GlobalData';
 
 import TerritoryMainHelp from '../../helpPages/territory/TerritoryMainHelp/TerritoryMainHelp';
-import TerritoryPlaceHierarchiesHelp from '../../helpPages/territory/TerritoryPlaceHierarchiesHelp/TerritoryPlaceHierarchiesHelp';
+import TerritoryDoubtHelp from '../../helpPages/territory/TerritoryDoubtHelp/TerritoryDoubtHelp';
+import TerritoryShapeHelp from '../../helpPages/territory/TerritoryShapeHelp/TerritoryShapeHelp';
+import TerritorySpaceHelp from '../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp';
+
 
 import './HelpSidePanel.css';
 
@@ -18,8 +21,10 @@ export default class HelpSidePanel extends React.Component
 
     switch(this.props.page)
     {
-      case GlobalData.helpPages.territory.main             : helpPage = <TerritoryMainHelp />; break;
-      case GlobalData.helpPages.territory.placeHierarchies : helpPage = <TerritoryPlaceHierarchiesHelp />; break;
+      case GlobalData.helpPages.territory.main  : helpPage = <TerritoryMainHelp />; break;
+      case GlobalData.helpPages.territory.space : helpPage = <TerritorySpaceHelp />; break;
+      case GlobalData.helpPages.territory.doubt : helpPage = <TerritoryDoubtHelp />; break;
+      case GlobalData.helpPages.territory.shape : helpPage = <TerritoryShapeHelp />; break;
       default : break;
     }
 

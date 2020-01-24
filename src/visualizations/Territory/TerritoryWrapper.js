@@ -33,7 +33,7 @@ export default class TerritoryWrapper extends React.Component
 
     helpSidePanelOpen : false,
 
-    dataExtent : [...GlobalData.defaultTerritoryDataExtent]    
+    dataExtent : [...GlobalData.defaultTerritoryDataExtent]
   };
 
   loadData = () =>
@@ -162,11 +162,17 @@ export default class TerritoryWrapper extends React.Component
 
   render()
   {
-    const helpPage =
-      this.state.mainAnalysisMode === GlobalData.analysisModes.space &&
-      this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ?
-      GlobalData.helpPages.territory.placeHierarchies :
-      GlobalData.helpPages.territory.main;
+    let helpPage;
+
+      switch(this.state.mainAnalysisMode)
+      {
+        case GlobalData.analysisModes.space : helpPage = GlobalData.helpPages.territory.space; break;
+        case GlobalData.analysisModes.doubt : helpPage = GlobalData.helpPages.territory.doubt; break;
+        case GlobalData.analysisModes.shape : helpPage = GlobalData.helpPages.territory.shape; break;
+        case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main; break;
+        default:throw new Error("mainAnalysisMode not recognized.");
+      }
+
 
     let legendPage;
     if(this.state.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
