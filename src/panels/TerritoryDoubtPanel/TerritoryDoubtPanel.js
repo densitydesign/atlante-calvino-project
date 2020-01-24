@@ -62,10 +62,20 @@ export default class TerritoryDoubtPanel extends React.Component
   {
     return (
       <>
+        <TerritoryDescriptionSubPanel
+          title="L'ORGANIZZAZIONE DEI DUBBI"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+          informationSheetRoute=""
+          informationSheetDescription="SCHEDA"
+          itineraryStop2Route=""
+          itineraryStop2Description="TAPPA 2"
+          itineraryStop3Route=""
+          itineraryStop3Description="TAPPA 3"
+        />
+
         <div className="territory-doubt-panel">
-{/*          <TerritoryDescriptionSubPanel
-          />          
-  */}
+
+
           <TerritoryDoubtMainOptionsSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 

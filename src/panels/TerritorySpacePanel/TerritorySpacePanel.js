@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritorySpaceMainOptionsSubPanel from '../TerritorySpaceMainOptionsSubPanel/TerritorySpaceMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
@@ -84,6 +85,18 @@ export default class TerritorySpacePanel extends React.Component
   {
     return (
       <>
+
+        <TerritoryDescriptionSubPanel
+          title="L'ORGANIZZAZIONE DEI LUOGHI"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+          informationSheetRoute=""
+          informationSheetDescription="SCHEDA"
+          itineraryStop2Route="/Process/transforming"
+          itineraryStop2Description="TAPPA 2"
+          itineraryStop3Route=""
+          itineraryStop3Description="TAPPA 3"
+        />
+
       <div className="territory-space-panel">
 
         <TerritorySpaceMainOptionsSubPanel

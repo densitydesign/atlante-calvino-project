@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './TerritoryDescriptionSubPanel.css';
 
 export default class TerritoryDescriptionSubPanel extends React.Component
@@ -9,8 +11,16 @@ export default class TerritoryDescriptionSubPanel extends React.Component
   {
     return (
       <div className="territory-description-subpanel">
-        L'ORGANIZZAZIONE DEI LUOGHI
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin. Nunc eu rhoncus tortor, vitae vulputate dolor. Fusce interdum tortor id augue ullamcorper consequat a sed quam. In interdum elementum purus, at dapibus justo mollis rhoncus. Etiam rhoncus nec nulla a vulputate. Etiam tincidunt consectetur metus in condimentum. Pellentesque sapien lectus, consectetur eu risus non, rutrum pellentesque arcu. Curabitur eros magna, mattis sit amet nisi ut, lobortis pretium nibh. Morbi malesuada diam quis nunc aliquam, ac consequat
+        <h5>{this.props.title}</h5><br />
+        {this.props.text}
+        <br/>
+        <br/>
+        <div className="description-link-group">
+          <Link to={this.props.informationSheetRoute}><h6 className="step-link">{this.props.informationSheetDescription}</h6></Link>
+          <Link to={this.props.itineraryStop2Route}><h6 className="step-link">{this.props.itineraryStop2Description}</h6></Link>
+          <Link to={this.props.itineraryStop3Route}><h6 className="step-link">{this.props.itineraryStop3Description}</h6></Link>
+        </div>
+
       </div>
     );
   }

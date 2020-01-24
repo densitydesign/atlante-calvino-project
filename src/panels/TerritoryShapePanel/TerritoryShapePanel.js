@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritoryShapeMainOptionsSubPanel from '../TerritoryShapeMainOptionsSubPanel/TerritoryShapeMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
@@ -51,8 +52,20 @@ export default class TerritoryShapePanel extends React.Component
   {
     return (
       <>
+
+      <TerritoryDescriptionSubPanel
+        title="L'ORGANIZZAZIONE DELLE FORME"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+        informationSheetRoute=""
+        informationSheetDescription="SCHEDA"
+        itineraryStop2Route="/Process/combining"
+        itineraryStop2Description="TAPPA 2"
+        itineraryStop3Route=""
+        itineraryStop3Description="TAPPA 3"
+      />
+
       <div className="territory-shape-panel">
-        <div></div>
+
         <TerritoryShapeMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
