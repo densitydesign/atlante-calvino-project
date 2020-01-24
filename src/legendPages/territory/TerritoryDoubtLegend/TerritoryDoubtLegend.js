@@ -10,40 +10,30 @@ export default class TerritoryDoubtLegend extends React.Component
     return (
       <>
         <div className="legend-block">
-          <h4>DIMENSIONE</h4>
-          <p>
+          <div className="title-panel"><h4>Dimensione</h4></div>
             <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-dimensione.svg'} />
-          </p>
         </div>
 
         <div className="legend-block">
-          <h4>OCCORRENZE DI</h4>
-          <p>
+          <div className="title-panel"><h4>Occorrenze</h4></div>
             <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-colore.svg'} />
-          </p>
         </div>
 
         <div className="legend-block">
-          <h4>PERCENTUALE</h4>
-          <p>
+          <div className="title-panel"><h4>Percentuale</h4></div>
             <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-intensita.svg'} />
-          </p>
         </div>
 
         <div className="legend-block">
-          <h4>RAPPORTO NEBBIA/CANCELLAZIONE</h4>
-          <p>
+        <div className="title-panel"><h4>Rapporto Nebbia/Cancellazione</h4></div>
             <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-donut.svg'} />
-          </p>
-        </div>        
+        </div>
 
         <div className="legend-block">
-          <h4>DISPOSIZIONE</h4>
-          <p>
+          <div className="title-panel"><h4>Disposizione</h4></div>
             <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
-          </p>
-        </div>                
-      </> 
+        </div>
+      </>
     );
   }
 }

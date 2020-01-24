@@ -12,17 +12,12 @@
   justify-content : space-around;
 }
 
-.legend-block {
+.legend-block *{
   height: 100%;
-  margin-right: 4rem;
 }
 
-.legend-block > h4 {
-  text-align : center;
-  margin-bottom : 10px;
-}
 
-.legend-block > p > img {
+.legend-block img {
   height : 100%;
-  width : 100%;
+  width : 70%;
 }
