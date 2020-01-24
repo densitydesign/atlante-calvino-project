@@ -13,11 +13,6 @@
   margin-bottom:0.5em;
 }
 
-.territory-space-main-options-subpanel .radio-button-down, .territory-space-main-options-subpanel .radio-button-up{
-  display:grid;
-  outline:1px solid black;
-}
-
 
 .categories-panel *{
     width:33.3%;

@@ -93,7 +93,7 @@ export default class TerritoryDoubtPanel extends React.Component
           />
         </div>
 
-        <div className="territory-percentage-subpanel">
+        <div className="territory-percentage-panel">
           <TerritoryPercentageSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 

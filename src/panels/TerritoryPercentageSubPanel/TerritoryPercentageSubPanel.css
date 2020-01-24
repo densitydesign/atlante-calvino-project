@@ -11,12 +11,10 @@
 
 .territory-percentage-panel .radio-button-down, .territory-percentage-panel .radio-button-up {
   display: grid;
-  outline: 1px solid black;
 }
 
 .categories-panel {
   display: flex;
-  flex-wrap: wrap;
   margin-top: 1.2em;
   margin-bottom: 1.2em;
 }
