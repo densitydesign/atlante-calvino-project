@@ -15,5 +15,4 @@ margin-bottom: 0.5em
 
 .territory-doubt-main-options-subpanel .radio-button-down, .territory-doubt-main-options-subpanel .radio-button-up  {
   display: grid;
-  outline: 1px solid black;
 }

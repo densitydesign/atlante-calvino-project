@@ -11,7 +11,7 @@ export default class TerritoryDescriptionSubPanel extends React.Component
   {
     return (
       <div className="territory-description-subpanel">
-        <h5>{this.props.title}</h5><br />
+        <h4>{this.props.title}</h4><br />
         {this.props.text}
         <br/>
         <br/>

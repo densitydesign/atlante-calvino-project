@@ -2,16 +2,15 @@
 .territory-description-subpanel {
   grid-column: 4 / span 7;
   padding : 1em;
-  border-right : solid 1px black;
 }
 
 .description-link-group {
   width : 100%;
   display : flex;
   flex-direction : row;
-  justify-content: space-around;
 }
 
 .step-link {
   text-decoration : underline;
+  margin-right:2em;
 }
