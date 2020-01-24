@@ -16,11 +16,11 @@ import './TerritorySpacePanel.css';
 
 export default class TerritorySpacePanel extends React.Component
 {
-  genericNonTerrestrialRadioButtonId = "genericNonTerrestrialRadioButton";
-  genericNonTerrestrialRadioButtonCaption = "GENERICI";
+  genericCosmicRadioButtonId = "genericCosmicRadioButton";
+  genericCosmicRadioButtonCaption = "GENERICI";
 
-  namedNonTerrestrialRadioButtonId = "namedNonTerrestrialRadioButton";
-  namedNonTerrestrialRadioButtonCaption = "NOMINATI";
+  namedCosmicRadioButtonId = "namedCosmicRadioButton";
+  namedCosmicRadioButtonCaption = "NOMINATI";
 
   genericTerrestrialRadioButtonId = "genericTerrestrialRadioButton";
   genericTerrestrialRadioButtonCaption = "GENERICI";
@@ -41,8 +41,8 @@ export default class TerritorySpacePanel extends React.Component
   placeHierarchiesRadioButtonCaption = "MEDUSE";
 
   optionRadioButtonsMap = new Map([
-    [ this.genericNonTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericNonTerrestrial, spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial } ],
-    [ this.namedNonTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedNonTerrestrial,   spacePanelMode : GlobalData.analysisPanelModes.space.namedNonTerrestrial } ],
+    [ this.genericCosmicRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericCosmic, spacePanelMode : GlobalData.analysisPanelModes.space.genericCosmic } ],
+    [ this.namedCosmicRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedCosmic,   spacePanelMode : GlobalData.analysisPanelModes.space.namedCosmic } ],
     [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    spacePanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
     [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      spacePanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
     [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],
@@ -53,8 +53,8 @@ export default class TerritorySpacePanel extends React.Component
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.genericNonTerrestrialRadioButtonId, pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericNonTerrestrialRadioButtonId).spacePanelMode },
-      { id : this.namedNonTerrestrialRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedNonTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.genericCosmicRadioButtonId, pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericCosmicRadioButtonId).spacePanelMode },
+      { id : this.namedCosmicRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedCosmicRadioButtonId).spacePanelMode },
       { id : this.genericTerrestrialRadioButtonId,    pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).spacePanelMode },
       { id : this.namedTerrestrialRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).spacePanelMode },
       { id : this.inventedRadioButtonId,              pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).spacePanelMode },
@@ -106,13 +106,13 @@ export default class TerritorySpacePanel extends React.Component
         <TerritorySpaceMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-          genericNonTerrestrialRadioButtonId={this.genericNonTerrestrialRadioButtonId}
-          genericNonTerrestrialRadioButtonCaption={this.genericNonTerrestrialRadioButtonCaption}
-          genericNonTerrestrialRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.genericNonTerrestrialRadioButtonId).pressed}
+          genericCosmicRadioButtonId={this.genericCosmicRadioButtonId}
+          genericCosmicRadioButtonCaption={this.genericCosmicRadioButtonCaption}
+          genericCosmicRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.genericCosmicRadioButtonId).pressed}
 
-          namedNonTerrestrialRadioButtonId={this.namedNonTerrestrialRadioButtonId}
-          namedNonTerrestrialRadioButtonCaption={this.namedNonTerrestrialRadioButtonCaption}
-          namedNonTerrestrialRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.namedNonTerrestrialRadioButtonId).pressed}
+          namedCosmicRadioButtonId={this.namedCosmicRadioButtonId}
+          namedCosmicRadioButtonCaption={this.namedCosmicRadioButtonCaption}
+          namedCosmicRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.namedCosmicRadioButtonId).pressed}
 
           genericTerrestrialRadioButtonId={this.genericTerrestrialRadioButtonId}
           genericTerrestrialRadioButtonCaption={this.genericTerrestrialRadioButtonCaption}

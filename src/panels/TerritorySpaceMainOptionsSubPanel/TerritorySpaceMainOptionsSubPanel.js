@@ -11,22 +11,22 @@ export default class TerritorySpaceMainOptionsSubPanel extends React.Component
   render()
   {
     return (                  <>
-                <div className="categories-panel"><h4>TERRESTRI</h4><h4>NON TERRESTRI</h4><h4>ALTRO</h4></div>
+                <div className="categories-panel"><h4>TERRESTRI</h4><h4>COSMICI</h4><h4>ALTRO</h4></div>
 
       <div className="territory-space-main-options-subpanel">
         <RadioButton
-          id={this.props.genericNonTerrestrialRadioButtonId}
-          caption={this.props.genericNonTerrestrialRadioButtonCaption}
-          buttonColor={GlobalData.visualizationColors.territory.generico_non_terrestre_color_scale_end}
-          pressed={this.props.genericNonTerrestrialRadioButtonPressed}
+          id={this.props.genericCosmicRadioButtonId}
+          caption={this.props.genericCosmicRadioButtonCaption}
+          buttonColor={GlobalData.visualizationColors.territory.generico_cosmico_color_scale_end}
+          pressed={this.props.genericCosmicRadioButtonPressed}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
         <RadioButton
-          id={this.props.namedNonTerrestrialRadioButtonId}
-          caption={this.props.namedNonTerrestrialRadioButtonCaption}
-          buttonColor={GlobalData.visualizationColors.territory.nominato_non_terrestre_color_scale_end}
-          pressed={this.props.namedNonTerrestrialRadioButtonPressed}
+          id={this.props.namedCosmicRadioButtonId}
+          caption={this.props.namedCosmicRadioButtonCaption}
+          buttonColor={GlobalData.visualizationColors.territory.nominato_cosmico_color_scale_end}
+          pressed={this.props.namedCosmicRadioButtonPressed}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 

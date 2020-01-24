@@ -23,13 +23,13 @@ export default class TerritoryWrapper extends React.Component
     bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis,
     doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
     shapePanelMode : GlobalData.analysisPanelModes.shape.types,
-    spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial,
+    spacePanelMode : GlobalData.analysisPanelModes.space.genericCosmic,
 
     mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,
-    spaceAnalysisMode : GlobalData.analysisModes.space.genericNonTerrestrial,
+    spaceAnalysisMode : GlobalData.analysisModes.space.genericCosmic,
 
     helpSidePanelOpen : false,
 
@@ -87,8 +87,8 @@ export default class TerritoryWrapper extends React.Component
       case GlobalData.analysisModes.doubt.percentage            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
       case GlobalData.analysisModes.shape.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
       case GlobalData.analysisModes.shape.types                 : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericCosmic : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedCosmic   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
@@ -494,9 +494,9 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'step_index': step_index,
       'step_y': step_y,
 
-      'generico_non_terrestre': csv_item === undefined ? 0 : csv_item.generico_non_terrestre,
-      'generico_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_non_terrestre_abs,
-      'n_generico_non_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_non_terrestre,
+      'generico_cosmico': csv_item === undefined ? 0 : csv_item.generico_cosmico,
+      'generico_cosmico_abs': csv_item === undefined ? 0 : csv_item.generico_cosmico_abs,
+      'n_generico_cosmico': csv_item === undefined ? 0 : csv_item.n_generico_cosmico,
 
       'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
       'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
@@ -510,9 +510,9 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
-      'nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre,
-      'nominato_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre_abs,
-      'n_nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_non_terrestre,
+      'nominato_cosmico': csv_item === undefined ? 0 : csv_item.nominato_cosmico,
+      'nominato_cosmico_abs': csv_item === undefined ? 0 : csv_item.nominato_cosmico_abs,
+      'n_nominato_cosmico': csv_item === undefined ? 0 : csv_item.n_nominato_cosmico,
 
       'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
       'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
@@ -560,27 +560,27 @@ function calculate_item_data(obj)
   const lists_ratio = lists_sum / text_length;
 
   let item_data = {
-    generico_non_terrestre: (+obj.generico_non_terrestre),
-    generico_non_terrestre_abs: +obj.generico_non_terrestre,
-    n_generico_non_terrestre: +obj.n_generico_non_terrestre,
+    generico_cosmico: (+obj.generico_cosmico),
+    generico_cosmico_abs: +obj.generico_cosmico,
+    n_generico_cosmico: +obj.n_generico_cosmico,
 
-    generico_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre),
+    generico_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre),
     generico_terrestre_abs: +obj.generico_terrestre,
     n_generico_terrestre: +obj.n_generico_terrestre,
 
-    inventato: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato),
+    inventato: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato),
     inventato_abs: +obj.inventato,
     n_inventato: +obj.n_inventato,
 
-    no_ambientazione: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
+    no_ambientazione: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
     no_ambientazione_abs: +obj.no_ambientazione,
     n_no_ambientazione: +obj.n_no_ambientazione,
 
-    nominato_non_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_non_terrestre),
-    nominato_non_terrestre_abs: +obj.nominato_non_terrestre,
-    n_nominato_non_terrestre: +obj.n_nominato_non_terrestre,
+    nominato_cosmico: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico),
+    nominato_cosmico_abs: +obj.nominato_cosmico,
+    n_nominato_cosmico: +obj.n_nominato_cosmico,
 
-    nominato_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_non_terrestre) + (+obj.nominato_terrestre),
+    nominato_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico) + (+obj.nominato_terrestre),
     nominato_terrestre_abs: +obj.nominato_terrestre,
     n_nominato_terrestre: +obj.n_nominato_terrestre,
 

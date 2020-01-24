@@ -189,10 +189,10 @@ class VClass
       .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
       .range([colors.allDubitative_dim, colors.allDubitative_bright]);    
 
-    this.generico_non_terrestre_color_scale = d3
+    this.generico_cosmico_color_scale = d3
       .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_non_terrestre))
-      .range([colors.generico_non_terrestre_color_scale_start, colors.generico_non_terrestre_color_scale_end]);
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_cosmico))
+      .range([colors.generico_cosmico_color_scale_start, colors.generico_cosmico_color_scale_end]);
   
     this.generico_terrestre_color_scale = d3
       .scaleLinear()
@@ -209,10 +209,10 @@ class VClass
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_no_ambientazione))
       .range([colors.no_ambientazione_color_scale_start, colors.no_ambientazione_color_scale_end]);
   
-    this.nominato_non_terrestre_color_scale = d3
+    this.nominato_cosmico_color_scale = d3
       .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_non_terrestre))
-      .range([colors.nominato_non_terrestre_color_scale_start, colors.nominato_non_terrestre_color_scale_end]);
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_cosmico))
+      .range([colors.nominato_cosmico_color_scale_start, colors.nominato_cosmico_color_scale_end]);
   
     this.nominato_terrestre_color_scale = d3
       .scaleLinear()
@@ -235,14 +235,14 @@ class VClass
       [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.genericNonTerrestrial, { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedNonTerrestrial,   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.genericCosmic, { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',  showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedCosmic,   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',  showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.namedTerrestrial,      { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.invented,              { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.noSetting,             { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
+      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_cosmico',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
     this.text_nodes = g
@@ -535,7 +535,7 @@ return        d.r;
       return 0 * 2 * PI + placesArcFix(d);
     })
 		.endAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc2 = d3
@@ -547,7 +547,7 @@ return        d.r;
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
 			return d.generico_terrestre * 2 * PI + placesArcFix(d);
@@ -595,7 +595,7 @@ return        d.r;
 			return d.no_ambientazione * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc6 = d3
@@ -607,7 +607,7 @@ return        d.r;
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
 			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
@@ -709,7 +709,7 @@ return        d.r;
     })
     .startAngle(0 * 2 * PI)
     .endAngle(function(d, i) {
-//					return d.generico_non_terrestre * 2 * PI;
+//					return d.generico_cosmico * 2 * PI;
       return 2 * PI;
     });
 
@@ -1449,7 +1449,7 @@ console.log("newAnalysisMode", newAnalysisMode);
 
         break;    
 
-      case GlobalData.analysisModes.space.genericNonTerrestrial :
+      case GlobalData.analysisModes.space.genericCosmic :
 
         this.set_yRatio(newHighlightParameters.tilt_factor);
         this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
@@ -1459,7 +1459,7 @@ console.log("newAnalysisMode", newAnalysisMode);
 
         break;
 
-      case GlobalData.analysisModes.space.namedNonTerrestrial :
+      case GlobalData.analysisModes.space.namedCosmic :
 
         this.set_yRatio(newHighlightParameters.tilt_factor);
         this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
@@ -2059,9 +2059,9 @@ function create_item_steps(d)
 			'last_elem': last_elem,
 			'n_steps': n_steps,
 
-			'generico_non_terrestre': csv_item == undefined ? 0 : csv_item.generico_non_terrestre,
-			'generico_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_non_terrestre_abs,
-      'n_generico_non_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_non_terrestre,
+			'generico_cosmico': csv_item == undefined ? 0 : csv_item.generico_cosmico,
+			'generico_cosmico_abs': csv_item == undefined ? 0 : csv_item.generico_cosmico_abs,
+      'n_generico_cosmico': csv_item == undefined ? 0 : csv_item.n_generico_cosmico,
 
 			'generico_terrestre': csv_item == undefined ? 0 : csv_item.generico_terrestre,
 			'generico_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_terrestre_abs,
@@ -2075,9 +2075,9 @@ function create_item_steps(d)
 			'no_ambientazione_abs': csv_item == undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item == undefined ? 0 : csv_item.n_no_ambientazione,
 
-			'nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre,
-			'nominato_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre_abs,
-      'n_nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_non_terrestre,
+			'nominato_cosmico': csv_item == undefined ? 0 : csv_item.nominato_cosmico,
+			'nominato_cosmico_abs': csv_item == undefined ? 0 : csv_item.nominato_cosmico_abs,
+      'n_nominato_cosmico': csv_item == undefined ? 0 : csv_item.n_nominato_cosmico,
 
 			'nominato_terrestre': csv_item == undefined ? 0 : csv_item.nominato_terrestre,
 			'nominato_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_terrestre_abs,
@@ -2140,11 +2140,11 @@ function flatten_items_steps(nodes)
 				last_elem: step.last_elem,
 				n_steps: step.n_steps,
 				first_publication: step.first_publication,
-				generico_non_terrestre: step.generico_non_terrestre,
+				generico_cosmico: step.generico_cosmico,
 				generico_terrestre: step.generico_terrestre,
 				inventato: step.inventato,
 				no_ambientazione: step.no_ambientazione,
-				nominato_non_terrestre: step.nominato_non_terrestre,
+				nominato_cosmico: step.nominato_cosmico,
 				nominato_terrestre: step.nominato_terrestre,
 
 				nebbia_normalizzata: step.nebbia_normalizzata,
