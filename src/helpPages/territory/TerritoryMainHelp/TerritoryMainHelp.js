@@ -32,7 +32,7 @@ Di conseguenza, osservando il territorio, è possibile riconoscere un anello est
 <p>La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>
 <h4>Uso del colore</h4>
 <img src={process.env.PUBLIC_URL + '/territory-legend-chronology-modalita.svg'} className="img-fluid"/>
-<p>L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al glicine, attiva nella modalità Cronologia, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>
+<p>L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al glicine, attiva nella modalità <em>Cronologia</em>, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>
 <p >Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi.
 Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcuni contorni (metaballs).</p>
 
