@@ -5,6 +5,7 @@ import Search from '../../general/Search/Search';
 import GlobalData from '../../utilities/GlobalData';
 import CompassButton from '../../general/CompassButton/CompassButton';
 import MoreInfo from '../../general/MoreInfo/MoreInfo';
+import PageTitle from "../../general/PageTitle";
 
 export default class TerritoryHeader extends React.Component
 {
@@ -41,8 +42,8 @@ export default class TerritoryHeader extends React.Component
       <div className="top-nav navigations">
 
         <MainMenu style={{ gridColumn : "span 1" }} />
+        <PageTitle title={"L'ARCIPELAGO DELLE OPERE ORDINATE PER"} style={{ gridColumn: "span 7" }} />
 
-        <span style={{ gridColumn : "span 7" }}>L'ARCIPELAGO DELLE OPERE DI ITALO CALVINO PER</span>
 
         <Options
           title=""
@@ -59,7 +60,7 @@ export default class TerritoryHeader extends React.Component
           onInputChange={ this.changeSearchInput }
         />
 
-        <MoreInfo 
+        <MoreInfo
           style={{ gridColumn : "span 1" }}
           onClicked={this.props.helpButtonClicked} />
 

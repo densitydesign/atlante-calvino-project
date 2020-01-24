@@ -1,8 +1,10 @@
 /* common CSS */
 :root {
+  --bg:#FBFBFC;
   --calvino-red: tomato;
   --dark-green: black;
-  --light-blue: #ECECF4;
+  --cool-bg-bg: #F3F1EC;
+  --cool-bg:#F1F1F5;
   --dark-blue: #5151FC;
   --header-height: 66px;
   --navigation-height: 58px;
@@ -17,6 +19,9 @@
   font-family: 'HKGrotesk', sans-serif;
 }
 
+title{
+  text-transform: uppercase;
+}
 
 .col-lg-8{
   padding-left:0px;
@@ -28,17 +33,33 @@ a {
   color: var(--text-color);
 }
 
-p {
-font-size: 1.3em;
-line-height: 1.6em;
+.link {
+  color: var(--dark-blue);
 }
+
+a.link:hover {
+  color: black;
+}
+
+
+p {
+font-size: 1.4em;
+line-height: 1.4em;
+}
+
+
+p.intro {
+font-size: 1.7em;
+line-height: 1.5em;
+}
+
 
 strong{
   font-weight: 600;
 }
 
 ::selection{
-  color:white;
+  color:var(--bg);
   background-color: var(--dark-blue);
 }
 
@@ -61,14 +82,16 @@ html, body {
 
 body {
   margin: 0;
-  font-family:"HKGrotesk", sans-serif;}
+  font-family:"HKGrotesk", sans-serif;
+overflow-x: hidden;
+}
 
 
 
 h1 {
   margin: 0;
   white-space: nowrap;
-  font-size: 2.3em;
+  font-size: 2.4em;
   color: var(--text-color);
   margin-bottom:1em;
 
@@ -201,12 +224,12 @@ a.button-text, a:visited.button-text{
   text-decoration: none;
 }
 
-button:hover{
-  background-color:var(--dark-blue);
-  border:var(--button-border);
-  color:white;
-  transition: color 1s ease;
+/* BOTTONI DELLE VIZ */
+
+.btn-primary{
+  font-weight: 600;
 }
+
 
 
 /* FOOTER */
@@ -236,8 +259,6 @@ footer {
 #logo-dd {
   width: 30%;
 }
-
-
 
 
 

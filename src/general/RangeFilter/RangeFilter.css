@@ -10,7 +10,7 @@
 }
 
 .range-filter rect.selection {
-  fill: #aaa;
+  fill: var(--cool-bg-bg);
   stroke: none;
   fill-opacity: 1;
 }

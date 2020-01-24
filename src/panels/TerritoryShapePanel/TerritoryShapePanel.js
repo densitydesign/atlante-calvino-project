@@ -5,6 +5,8 @@ import TerritoryShapeMainOptionsSubPanel from '../TerritoryShapeMainOptionsSubPa
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
+import './TerritoryShapePanel.css';
+
 export default class TerritoryShapePanel extends React.Component
 {
   typesRadioButtonId = "allRadioButton";
@@ -48,23 +50,27 @@ export default class TerritoryShapePanel extends React.Component
   render()
   {
     return (
+      <>
       <div className="territory-shape-panel">
         <div></div>
-        <TerritoryShapeMainOptionsSubPanel 
+        <TerritoryShapeMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           typesRadioButtonId={this.typesRadioButtonId}
           typesRadioButtonCaption={this.typesRadioButtonCaption}
           typesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.typesRadioButtonId).pressed}
         />
+        </div>
+          <div className="territory-percentage-panel">
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           percentageRadioButtonId={this.proportionRadioButtonId}
           percentageRadioButtonCaption={this.proportionRadioButtonCaption}
           percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
-        />
-      </div>
+          />
+          </div>
+          </>
     );
   }
 }

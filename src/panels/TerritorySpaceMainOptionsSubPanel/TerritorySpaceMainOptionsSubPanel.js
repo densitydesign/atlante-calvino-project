@@ -12,54 +12,48 @@ export default class TerritorySpaceMainOptionsSubPanel extends React.Component
     return (
       <div className="territory-space-main-options-subpanel">
 
-        <RadioButton 
-          id={this.props.genericNonTerrestrialRadioButtonId} 
-          caption={this.props.genericNonTerrestrialRadioButtonCaption} 
-          pressed={this.props.genericNonTerrestrialRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
+        <RadioButton
+          id={this.props.genericNonTerrestrialRadioButtonId}
+          caption={this.props.genericNonTerrestrialRadioButtonCaption}
+          pressed={this.props.genericNonTerrestrialRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
-        <RadioButton 
-          id={this.props.namedNonTerrestrialRadioButtonId} 
-          caption={this.props.namedNonTerrestrialRadioButtonCaption} 
-          pressed={this.props.namedNonTerrestrialRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
+        <RadioButton
+          id={this.props.namedNonTerrestrialRadioButtonId}
+          caption={this.props.namedNonTerrestrialRadioButtonCaption}
+          pressed={this.props.namedNonTerrestrialRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
-        <RadioButton 
-          id={this.props.genericTerrestrialRadioButtonId} 
-          caption={this.props.genericTerrestrialRadioButtonCaption} 
-          pressed={this.props.genericTerrestrialRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
+        <RadioButton
+          id={this.props.genericTerrestrialRadioButtonId}
+          caption={this.props.genericTerrestrialRadioButtonCaption}
+          pressed={this.props.genericTerrestrialRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
-        <RadioButton 
-          id={this.props.namedTerrestrialRadioButtonId} 
-          caption={this.props.namedTerrestrialRadioButtonCaption} 
-          pressed={this.props.namedTerrestrialRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
+        <RadioButton
+          id={this.props.namedTerrestrialRadioButtonId}
+          caption={this.props.namedTerrestrialRadioButtonCaption}
+          pressed={this.props.namedTerrestrialRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
-        <RadioButton 
-          id={this.props.inventedRadioButtonId} 
-          caption={this.props.inventedRadioButtonCaption} 
-          pressed={this.props.inventedRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
-        />        
+        <RadioButton
+          id={this.props.inventedRadioButtonId}
+          caption={this.props.inventedRadioButtonCaption}
+          pressed={this.props.inventedRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
+        />
 
-        <RadioButton 
-          id={this.props.noSettingRadioButtonId} 
-          caption={this.props.noSettingRadioButtonCaption} 
-          pressed={this.props.noSettingRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
-        />                
+        <RadioButton
+          id={this.props.noSettingRadioButtonId}
+          caption={this.props.noSettingRadioButtonCaption}
+          pressed={this.props.noSettingRadioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
+        />
 
-        <RadioButton 
-          id={this.props.placeHierarchiesRadioButtonId} 
-          caption={this.props.placeHierarchiesRadioButtonCaption} 
-          pressed={this.props.placeHierarchiesRadioButtonPressed} 
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed} 
-        />        
 
       </div>
     );
