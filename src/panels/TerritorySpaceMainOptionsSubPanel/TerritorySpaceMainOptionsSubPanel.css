@@ -17,3 +17,8 @@
   display:grid;
   outline:1px solid black;
 }
+
+
+.categories-panel *{
+    width:33.3%;
+  }

@@ -18,7 +18,7 @@ export default class TerritoryShapeMainOptionsSubPanel extends React.Component
           pressed={this.props.typesRadioButtonPressed}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
-<div className="categories-panel"><h4>Misto</h4><h4>Parole</h4><h4>Sintagmi</h4><h4>Frasi</h4></div>
+<div className="categories-panel-shape"><h4>Misto</h4><h4>Parole</h4><h4>Sintagmi</h4><h4>Frasi</h4></div>
       </div>
     );
   }

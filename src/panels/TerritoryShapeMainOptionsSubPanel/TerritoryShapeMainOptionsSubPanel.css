@@ -4,15 +4,14 @@
   margin-left: 2em;
 }
 
-.categories-panel {
+.categories-panel-shape {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1.2em;
-  width: 100%;
 }
 
-.categories-panel * {
-  width:33.3%;
+.categories-panel-shape * {
+  width: 90px;;
 }
 
 .territory-shape-main-options-subpanel *{

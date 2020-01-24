@@ -12,8 +12,9 @@
   justify-content : space-around;
 }
 
-.legend-block *{
+.legend-block {
   height: 100%;
+  margin-right: 4rem;
 }
 
 
