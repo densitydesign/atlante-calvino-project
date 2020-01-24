@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import './TerritoryDoubtLegend.css';
+import './TerritorySpaceOccurrencesLegend.css';
 
 export default class TerritorySpaceOccurrencesLegend extends React.Component
 {

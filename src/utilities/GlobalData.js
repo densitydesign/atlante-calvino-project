@@ -280,11 +280,21 @@ const GlobalData = {
   },
   legendPages : {
     territory : {
-      chronology : "chronology",
-      volumes : "volumes",
-      doubt : "doubt",
-      shape : "shape",
-      space : "space"
+      chronology       : "chronology",
+      volumes          : "volumes",
+
+      doubt            : "doubt",
+      doubtOccurrences : "doubtOccurrences",
+      doubtProportion  : "doubtProportion",
+
+      shape            : "shape",
+      shapeProportion1 : "shapeProportion1",
+      shapeProportion2 : "shapeProportion2",
+
+      space            : "space",
+      spaceOccurrences : "spaceOccurrences",
+      spaceProportion  : "spaceProportion",
+      spaceHierarchies : "spaceHierarchies"
     }
   },
   visualizationColors : {
