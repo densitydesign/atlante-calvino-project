@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritoryDoubtMainOptionsSubPanel from '../TerritoryDoubtMainOptionsSubPanel/TerritoryDoubtMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
@@ -61,33 +62,34 @@ export default class TerritoryDoubtPanel extends React.Component
   {
     return (
       <>
-      <div className="territory-doubt-panel">
-        <TerritoryDoubtMainOptionsSubPanel
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+        <div className="territory-doubt-panel">
+          <TerritoryDoubtMainOptionsSubPanel
+            callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-          fogRadioButtonId={this.fogRadioButtonId}
-          fogRadioButtonCaption={this.fogRadioButtonCaption}
-          fogRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.fogRadioButtonId).pressed}
+            fogRadioButtonId={this.fogRadioButtonId}
+            fogRadioButtonCaption={this.fogRadioButtonCaption}
+            fogRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.fogRadioButtonId).pressed}
 
-          cancellationRadioButtonId={this.cancellationRadioButtonId}
-          cancellationRadioButtonCaption={this.cancellationRadioButtonCaption}
-          cancellationRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.cancellationRadioButtonId).pressed}
+            cancellationRadioButtonId={this.cancellationRadioButtonId}
+            cancellationRadioButtonCaption={this.cancellationRadioButtonCaption}
+            cancellationRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.cancellationRadioButtonId).pressed}
 
-          allRadioButtonId={this.allRadioButtonId}
-          allRadioButtonCaption={this.allRadioButtonCaption}
-          allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
-        />
+            allRadioButtonId={this.allRadioButtonId}
+            allRadioButtonCaption={this.allRadioButtonCaption}
+            allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
+          />
         </div>
+        
         <div className="territory-percentage-panel">
-        <TerritoryPercentageSubPanel
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+          <TerritoryPercentageSubPanel
+            callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-          percentageRadioButtonId={this.percentageRadioButtonId}
-          percentageRadioButtonCaption={this.percentageRadioButtonCaption}
-          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
-        />
+            percentageRadioButtonId={this.percentageRadioButtonId}
+            percentageRadioButtonCaption={this.percentageRadioButtonCaption}
+            percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
+          />
         </div>
-        </>
+      </>
     );
   }
 }
