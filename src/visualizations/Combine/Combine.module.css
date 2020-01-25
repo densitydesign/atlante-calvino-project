@@ -17,3 +17,39 @@
     stroke: #fff;
     stroke-width: 0.2;
 }
+
+.withLegendItemSelected .marimekkoRect {
+    opacity: 0.5;
+    stroke-opacity: 0.5;
+}
+
+.withLegendItemSelected .marimekkoRect.selected {
+    opacity: 1 !important;
+    stroke-opacity: 1 !important;
+}
+
+
+.legendGroupText{
+    font-size: 14px;
+}
+
+
+
+.legendEntryColor{
+    height: 10px;
+    width: 30px;
+    border-radius: 3px;
+    margin-right: 6px;
+}
+
+.legendItemsSelected .legendEntryColor{
+    opacity: 0.5;
+}
+
+.legendItemsSelected .selected .legendEntryColor{
+    opacity: 1;
+}
+
+.legendEntryText{
+    font-size: 12px;
+}
