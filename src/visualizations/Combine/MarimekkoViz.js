@@ -9,7 +9,13 @@ import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import get from "lodash/get";
 import some from "lodash/some"
+import keyBy from 'lodash/keyBy'
 import mappaCategorie from './mappa-categorie.json'
+import mappaClusterTipologie from './mappa-cluster-tipologie.json'
+import volumi from './volumi.json'
+
+
+const volumiByID = keyBy(volumi, 'textID')
 
 
 const coloriCategorie = mappaCategorie.reduce((out, c) => {
@@ -17,7 +23,10 @@ const coloriCategorie = mappaCategorie.reduce((out, c) => {
   return out
 },{})
 
-console.log("coloriCategorie", coloriCategorie)
+const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
+  out[c.valore] = c.colore
+  return out
+},{})
 
 
 function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
@@ -36,13 +45,13 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
                 width={book.caratteriWidth}
                 height={4}
               ></rect>
-              <g transform="translate(2 -2)">
+              <g transform="translate(2 0)">
                 <text
                   className={styles.topAxisText}
                   x={5}
                   transform={`rotate(-45)`}
                 >
-                  {book.textID}
+                  {book.titolo}
                 </text>
               </g>
             </g>
@@ -128,7 +137,7 @@ const computeChartBooksAggregated = (firstLevelRecords, opts) => {
     //normalizing data and building an array of objects with {label, value, color}
     const totalForBook = sum(Object.values(out[item]));
     out[item] = Object.keys(out[item]).reduce((o, k) => {
-      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, k) : "#333"
+      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, k) : get(coloriClusterTipologie, k)
       const obj = {label: k, value: out[item][k] / totalForBook, color};
       o.push(obj)
       return o;
@@ -152,7 +161,7 @@ const computeChartBooksDisaggregated = (firstLevelRecords, opts) => {
     const totalForBook = sumBy( chartBooks[textID], item => +item["somma ripetizioni"])
     out[textID] = chartBooks[textID].map(record => {
       const label = get(record, dettaglioKey)
-      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, label) : '#333'
+      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, label) : get(coloriClusterTipologie, label)
       return ({ 
         label,
         value: +record["somma ripetizioni"] / totalForBook,
@@ -194,7 +203,12 @@ const preprocessData = (data, options = {}) => {
       out.caratteri = +out.caratteri;
       out.mese = +out.mese;
       out.anno = +out.anno;
-      return out;
+
+      const dataVolume = get(volumiByID, item.textID)
+      return {
+        ...out,
+        titolo: dataVolume.titolo,
+      };
     });
 
   const chartBooks = opts.aggregazione === 'aggregato' ?  computeChartBooksAggregated(firstLevelRecords, opts) : computeChartBooksDisaggregated(firstLevelRecords, opts)

@@ -1,11 +1,11 @@
 [
-{"categoria":"esteriore","valore":"esteriore","colore":"#00AD7C"}
+{"categoria":"esteriore","valore":"esteriore","colore":"#47C983"}
 ,
-{"categoria":"interiore","valore":"interiore","colore":"#0251E5"}
+{"categoria":"interiore","valore":"interiore","colore":"#0351E5"}
 ,
-{"categoria":"esteriore/interiore","valore":"misto","colore":"#9604FF"}
+{"categoria":"esteriore/interiore","valore":"misto","colore":"#9606FF"}
 ,
 {"categoria":"forma","valore":"forma","colore":"#FFCB3E"}
 ,
-{"categoria":"forma/ambientazione","valore":"misto","colore":"#9604FF"}
+{"categoria":"forma/ambientazione","valore":"misto","colore":"#D9FD12"}
 ]
