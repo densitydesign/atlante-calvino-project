@@ -2266,7 +2266,7 @@ console.log("tilt", tilt);
     let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
     let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-    if(!tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+    if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
     else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
   });
 }
