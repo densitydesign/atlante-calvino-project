@@ -228,8 +228,8 @@ const GlobalData = {
       percentage : "percentage"
     },
     shape : {
-      proportion : "shape_proportion",
-      types : "types"
+      types : "types",
+      proportion : "shape_proportion"
     },
     space : {
       genericCosmic : "genericCosmic",

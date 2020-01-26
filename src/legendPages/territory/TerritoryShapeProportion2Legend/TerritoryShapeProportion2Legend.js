@@ -9,30 +9,26 @@ export default class TerritoryShapeProportion2Legend extends React.Component
   {
     return (
       <>
-        <div className="legend-block">
-          <div className="title-panel"><h4>Dimensione</h4></div>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-dimensione.svg'} />
+
+  \     <div className="legend-block">
+          <div className="title-panel"><h3>FORMA</h3></div>
         </div>
 
         <div className="legend-block">
-          <div className="title-panel"><h4>Occorrenze</h4></div>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-colore.svg'} />
+          <div className="title-panel"><h4>DISPOSIZIONE</h4></div>
+          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
         </div>
 
         <div className="legend-block">
-          <div className="title-panel"><h4>Percentuale</h4></div>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-intensita.svg'} />
+          <div className="title-panel"><h4>DIMENSIONE</h4></div>
+          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-dimensione.svg'} />
         </div>
 
         <div className="legend-block">
-        <div className="title-panel"><h4>Rapporto Nebbia/Cancellazione</h4></div>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-donut.svg'} />
+          <div className="title-panel"><h4>PROPORZIONI ELENCHI</h4></div>
+          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-shape-proporzioni.svg'} />
         </div>
 
-        <div className="legend-block">
-          <div className="title-panel"><h4>Disposizione</h4></div>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
-        </div>
       </>
     );
   }

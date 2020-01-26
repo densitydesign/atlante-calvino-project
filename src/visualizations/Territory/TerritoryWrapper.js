@@ -168,7 +168,10 @@ export default class TerritoryWrapper extends React.Component
       GlobalData.helpPages.territory.placeHierarchies :
       GlobalData.helpPages.territory.main;
 
+    
+/* 
     let legendPage;
+
     if(this.state.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
     {
       switch(this.state.noAnalysisMode)
@@ -188,6 +191,14 @@ export default class TerritoryWrapper extends React.Component
         default : throw new Error("mainAnalysisMode not recognized.");
       }
     }
+*/
+
+    const legendPage = selectLegendPage(
+      this.state.mainAnalysisMode,
+      this.state.noAnalysisMode,
+      this.state.doubtAnalysisMode,
+      this.state.shapeAnalysisMode,
+      this.state.spaceAnalysisMode);
 
     return (
       <div className="main">
@@ -275,6 +286,103 @@ export default class TerritoryWrapper extends React.Component
       </div>
     );
   }
+}
+
+function selectLegendPage(
+  mainAnalysisMode, 
+  noAnalysisMode,
+  doubtAnalysisMode,
+  shapeAnalysisMode,
+  spaceAnalysisMode)
+{
+  let legendPage;
+
+console.log("selectLegendPage()");
+console.log("mainAnalysisMode", mainAnalysisMode);
+console.log("noAnalysisMode", noAnalysisMode);
+console.log("doubtAnalysisMode", doubtAnalysisMode);  
+console.log("shapeAnalysisMode", shapeAnalysisMode);  
+console.log("spaceAnalysisMode", spaceAnalysisMode);  
+
+  switch(true)
+  {
+    case 
+      mainAnalysisMode === GlobalData.analysisModes.noAnalysis &&
+      noAnalysisMode   === GlobalData.analysisModes.noAnalysis.chronology :
+
+      legendPage = GlobalData.legendPages.territory.chronology;
+      break;
+
+    case 
+      mainAnalysisMode === GlobalData.analysisModes.noAnalysis &&
+      noAnalysisMode   === GlobalData.analysisModes.noAnalysis.volumes :
+
+      legendPage = GlobalData.legendPages.territory.volumes;
+      break;
+
+    case mainAnalysisMode === GlobalData.analysisModes.doubt && 
+      [
+        GlobalData.analysisModes.doubt.fog,
+        GlobalData.analysisModes.doubt.cancellation,
+        GlobalData.analysisModes.doubt.all
+      ].includes(doubtAnalysisMode) : 
+      
+      legendPage = GlobalData.legendPages.territory.doubtOccurrences; 
+      break;
+
+    case 
+      mainAnalysisMode  === GlobalData.analysisModes.doubt &&
+      doubtAnalysisMode === GlobalData.analysisModes.doubt.percentage : 
+
+      legendPage = GlobalData.legendPages.territory.doubtProportion;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.shape &&
+      shapeAnalysisMode === GlobalData.analysisModes.shape.types :
+
+      legendPage = GlobalData.legendPages.territory.shapeProportion1;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.shape &&
+      shapeAnalysisMode === GlobalData.analysisModes.shape.proportion :
+
+      legendPage = GlobalData.legendPages.territory.shapeProportion2;
+      break;
+    
+    case
+      mainAnalysisMode === GlobalData.analysisModes.space &&
+      [
+        GlobalData.analysisModes.space.genericCosmic,
+        GlobalData.analysisModes.space.namedCosmic,
+        GlobalData.analysisModes.space.genericTerrestrial,
+        GlobalData.analysisModes.space.namedTerrestrial,
+        GlobalData.analysisModes.space.invented,
+        GlobalData.analysisModes.space.noSetting,
+      ].includes(spaceAnalysisMode) :
+
+      legendPage = GlobalData.legendPages.territory.spaceOccurrences;
+      break;
+
+    case 
+      mainAnalysisMode  === GlobalData.analysisModes.space &&
+      spaceAnalysisMode === GlobalData.analysisModes.space.proportion :
+
+      legendPage = GlobalData.legendPages.territory.spaceProportion;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.space &&
+      spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies :
+
+      legendPage = GlobalData.legendPages.territory.spaceHierarchies;
+      break;
+
+    default : throw new Error("legend - analysis mode not mapped");
+  }
+  
+  return legendPage;
 }
 
 function interpolateSpline(x)
