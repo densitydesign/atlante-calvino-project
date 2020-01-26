@@ -100,7 +100,7 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks, sel
                 y={d.top}
                 width={book.caratteriWidth}
                 height={d.height}
-                className={`${styles.marimekkoUnit}  ${selectedLegendEntries[d.label] ? 'selected' : ''}`}
+                className={`${styles.marimekkoUnit}  ${selectedLegendEntries[d.label] ? styles.selected : ''}`}
                 fill={d.color}
               ></rect>
             ))}
@@ -117,11 +117,12 @@ function MarimekkoLegend({
   legendMap
 }) {
   const byGruppo = groupBy(legendMap.filter(x => x.gruppo), "gruppo");
-  const currentSelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k])
+  const anyLegendEntrySelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k]).length
 
   return (
-    <div className={`h-100 v-100 ${currentSelected.length > 0 ? styles.legendItemsSelected : ''}`} >
-      <div>
+    <div className={`h-100 v-100 ${anyLegendEntrySelected ? styles.legendItemsSelected : ''}`} >
+      <div style={{height: 40}} className="d-flex flex-column justify-content-center">
+        <div>
         <button
           className="btn btn-sm btn-outline-dark"
           onClick={() => {
@@ -130,8 +131,9 @@ function MarimekkoLegend({
         >
           RESET
         </button>
+        </div>
       </div>
-      <div className="mt-3">
+      <div className="mt-1">
         <h4>LEGENDA</h4>
       </div>
       {Object.keys(byGruppo).map(gruppo => (
@@ -280,6 +282,11 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
   const topAxisContainerRef = useRef();
 
   const [selectedLegendEntries, setSelectedLegendEntries] = useState({});
+
+  //resetting legend entries when dettaglio changes
+  useEffect(() => {
+    setSelectedLegendEntries({})
+  }, [dettaglio])
 
   const [dimensions, setDimensions] = useState({
     vizWidth: 0,

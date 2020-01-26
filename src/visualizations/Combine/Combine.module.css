@@ -10,7 +10,8 @@
 
 .marimekkoRect {
     fill:transparent;
-    stroke: #222;
+    stroke: #444;
+    stroke-width: 0.5;
 }
 
 .marimekkoUnit{
@@ -18,14 +19,13 @@
     stroke-width: 0.2;
 }
 
-.withLegendItemSelected .marimekkoRect {
-    opacity: 0.5;
-    stroke-opacity: 0.5;
+.withLegendItemSelected .marimekkoUnit {
+    opacity: 0.2;
+    /* stroke-opacity: 0.5; */
 }
 
-.withLegendItemSelected .marimekkoRect.selected {
-    opacity: 1 !important;
-    stroke-opacity: 1 !important;
+.withLegendItemSelected .marimekkoUnit.selected {
+    opacity: 1;
 }
 
 
@@ -43,7 +43,7 @@
 }
 
 .legendItemsSelected .legendEntryColor{
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .legendItemsSelected .selected .legendEntryColor{
