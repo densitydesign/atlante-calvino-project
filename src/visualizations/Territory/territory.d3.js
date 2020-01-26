@@ -1137,6 +1137,7 @@ return        d.r;
     //Zoom functions
     function zoom_actions() 
     {
+console.log("tilt", tilt);      
       g.attr("transform", d3.event.transform);
   		metaball_group.attr("transform", d3.event.transform);
   		place_hierarchies_group.attr("transform", d3.event.transform);
@@ -1147,7 +1148,7 @@ return        d.r;
   			let one_rem = Number.parseInt(d3.select('html').style('font-size'));
   			let k = one_rem * (1 / (d3.event.transform.k / scale));
   			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-        let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+        let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
         
         if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
         else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
@@ -1215,9 +1216,9 @@ return        d.r;
   };
 */
   set_yRatio = yRatio => {
-
+console.log("setting tilt...");
     tilt = yRatio === 1;
-
+console.log("tilt", tilt);
     if(tilt)
     {
       const t0 = svg.transition().duration(1000);
@@ -1253,7 +1254,7 @@ return        d.r;
       let k = one_rem * (1 / (d3_event_transform_k / scale));
 
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
       if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
       else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
@@ -1643,7 +1644,7 @@ console.log("case proportion...");
       let k = one_rem * (1 / (d3_event_transform_k / scale));
 
       let dy = tilt_applied ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
+      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
       if(!tilt_applied) return translate_string + 'scale(' + k + ',' + k + ')';
       else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
@@ -1654,8 +1655,6 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    this.tilt_labels(newHighlightParameters);
-
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1667,6 +1666,9 @@ console.log("case proportion...");
     t1
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    tilt = true;
+    this.tilt_labels(newHighlightParameters);
 
     const t2 = t1.transition().duration(1);
     t2.selectAll(".hill")
@@ -1685,8 +1687,6 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    this.tilt_labels(newHighlightParameters);
-
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
@@ -1696,6 +1696,9 @@ console.log("case proportion...");
     t1
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
+
+    tilt = false;
+    this.tilt_labels(newHighlightParameters);
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1708,8 +1711,6 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    this.tilt_labels(newHighlightParameters);
-
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1721,6 +1722,9 @@ console.log("case proportion...");
     t1
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    tilt = true;
+    this.tilt_labels(newHighlightParameters);
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1741,8 +1745,6 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    this.tilt_labels(newHighlightParameters);
-
     const t0 = svg.transition().duration(800);
     t0
       .selectAll(".hill")
@@ -1761,6 +1763,9 @@ console.log("case proportion...");
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
 
+    tilt = false;
+    this.tilt_labels(newHighlightParameters);
+
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".circle_node")
@@ -1778,8 +1783,6 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-console.log("change_flat_to_drawing");
-
     const t0 = svg.transition().duration(700);
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
