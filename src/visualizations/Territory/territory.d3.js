@@ -1137,22 +1137,12 @@ return        d.r;
     //Zoom functions
     function zoom_actions() 
     {
-console.log("tilt", tilt);      
       g.attr("transform", d3.event.transform);
   		metaball_group.attr("transform", d3.event.transform);
   		place_hierarchies_group.attr("transform", d3.event.transform);
   		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
-
-  		V.label.attr('transform', function(d) {
-  			let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-  			let k = one_rem * (1 / (d3.event.transform.k / scale));
-  			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-        let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
-        
-        if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-        else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
-  		});
+      tilt_labels(V.text_nodes);
     }
 
     // Handle interface interactions
@@ -1632,25 +1622,6 @@ console.log("case proportion...");
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }  
 
-  tilt_labels = highlightParameters =>
-  {
-    const label = this.text_nodes.selectAll('.label');   
-
-    const tilt_applied = highlightParameters.tilt_factor === with_tilt_factor;
-
-    label.attr('transform', function(d) {
-
-      let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-
-      let dy = tilt_applied ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
-
-      if(!tilt_applied) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
-    });
-  }
-
   change_hills_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
@@ -1668,7 +1639,7 @@ console.log("case proportion...");
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
 
     tilt = true;
-    this.tilt_labels(newHighlightParameters);
+    tilt_labels(this.text_nodes);
 
     const t2 = t1.transition().duration(1);
     t2.selectAll(".hill")
@@ -1698,7 +1669,7 @@ console.log("case proportion...");
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
 
     tilt = false;
-    this.tilt_labels(newHighlightParameters);
+    tilt_labels(this.text_nodes);
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1724,7 +1695,7 @@ console.log("case proportion...");
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
 
     tilt = true;
-    this.tilt_labels(newHighlightParameters);
+    tilt_labels(this.text_nodes);
 
     const t2 = t1.transition().duration(700);
     t2
@@ -1764,7 +1735,7 @@ console.log("case proportion...");
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
 
     tilt = false;
-    this.tilt_labels(newHighlightParameters);
+    tilt_labels(this.text_nodes);
 
     const t3 = t2.transition().duration(700);
     t3
@@ -2279,6 +2250,25 @@ function getAnalysisModeChangeType(oldAnalysisModeGroup, newAnalysisModeGroup)
   else factor = -1;
 
   return factor * oldAnalysisModeGroup * newAnalysisModeGroup;
+}
+
+function tilt_labels(text_nodes)
+{
+console.log("tilt_labels");
+console.log("tilt", tilt);  
+  const label = text_nodes.selectAll('.label');   
+
+  label.attr('transform', function(d) {
+
+    let one_rem = Number.parseInt(d3.select('html').style('font-size'));
+    let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+    let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+    let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
+
+    if(!tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+    else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+  });
 }
 
 const V = new VClass();
