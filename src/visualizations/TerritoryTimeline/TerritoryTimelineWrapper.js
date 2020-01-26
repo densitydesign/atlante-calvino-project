@@ -8,6 +8,7 @@ export default class TerritoryTimelineWrapper extends React.Component
   render()
   {
     return <TerritoryTimeline 
+      id="timeline"
       data={this.props.data}
       dataExtent={this.props.dataExtent}
       callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}

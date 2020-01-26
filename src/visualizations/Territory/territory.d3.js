@@ -2258,10 +2258,10 @@ console.log("tilt_labels");
 console.log("tilt", tilt);  
   const label = text_nodes.selectAll('.label');   
 
-  label.attr('transform', function(d) {
+  let one_rem = Number.parseInt(d3.select('html').style('font-size'));
+  let k = one_rem * (1 / (d3_event_transform_k / scale));
 
-    let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-    let k = one_rem * (1 / (d3_event_transform_k / scale));
+  label.attr('transform', function(d) {
 
     let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
     let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';

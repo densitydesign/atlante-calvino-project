@@ -260,6 +260,21 @@ footer {
   width: 30%;
 }
 
+#timeline .selection {
+  fill: transparent;
+  fill-opacity: 1;
+  stroke: black;
+  stroke-width: 1.5;
+}
+
+#timeline .handle {
+  fill:black;
+  height:20px;
+  opacity: 1;
+  stroke: none;
+  stroke-width: 5px;
+  stroke:transparent;
+}
 
 
 /* a {
