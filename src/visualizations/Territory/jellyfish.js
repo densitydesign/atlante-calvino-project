@@ -436,7 +436,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, col
     jellyfish,
     {},
     (d, status) => {
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;
@@ -597,11 +597,11 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
       d.color,
       text_id);
 
-    if(d.level === 0 || d.children.length > 1)
+    if(+d.level === 0 || d.children.length > 1)
     {
       let arcWidth = 2;
 
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         for(let i = 0; i < d.children.length; ++i)
         {
@@ -804,7 +804,7 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;
