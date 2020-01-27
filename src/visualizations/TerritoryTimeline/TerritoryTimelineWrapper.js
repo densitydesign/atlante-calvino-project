@@ -12,6 +12,7 @@ export default class TerritoryTimelineWrapper extends React.Component
       data={this.props.data}
       dataExtent={this.props.dataExtent}
       callTerritorySetDataExtent={this.props.callTerritorySetDataExtent}
-      callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} />
+      callTerritoryApplyBeeSwarmFilter={this.props.callTerritoryApplyBeeSwarmFilter} 
+    />;
   }
 }

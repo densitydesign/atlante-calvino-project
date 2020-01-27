@@ -29,7 +29,7 @@ export default class PhenomenaIntro extends React.Component
               <h1>IL FENOMENO</h1>
               <p className="intro">Per la prima tappa, quella dei fenomeni, abbiamo deciso di disegnare un territorio comune che i tre itinerari ci faranno esplorare.
               <br /> Il territorio è formato ancora una volta dal corpus di tutte le opere di Calvino, che ci sforziamo di riunire in una forma visiva che possa aiutarci a meglio comprenderle.   </p>
-                <Link to="/Phenomena/territory"><button type="button" class="button-text">Territorio</button></Link>
+                <Link to="/Phenomena/territory"><button type="button" className="button-text">Territorio</button></Link>
             </div>
           </div>
           <div className="itineraries-subgrid">

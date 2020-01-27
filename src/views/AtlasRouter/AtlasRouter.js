@@ -22,6 +22,9 @@ import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
 import Combine from '../../visualizations/Combine/Combine';
+import DoubtInformationSheet from '../../informationSheets/DoubtInformationSheet/DoubtInformationSheet';
+import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet/ShapeInformationSheet';
+import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet/SpaceInformationSheet';
 
 export default function AtlasRouter()
 {
@@ -38,14 +41,26 @@ export default function AtlasRouter()
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
       <Route exact path="/Phenomena/territory"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" /></Route>
+
       <Route exact path="/Phenomena/shapeAnalysis">fenomeni / analisi della forma</Route>
+      <Route exact path="/Phenomena/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
+
       <Route exact path="/Phenomena/doubtAnalysis">fenomeni / analisi del dubbio</Route>
+      <Route exact path="/Phenomena/doubtAnalysis/informationSheet"><DoubtInformationSheet /></Route>
+
       <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
+      <Route exact path="/Phenomena/spaceAnalysis/informationSheet"><SpaceInformationSheet /></Route>
+
+
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
       <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
+
+
+
+
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>

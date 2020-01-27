@@ -21,7 +21,7 @@ class VClass
     this.callTerritoryApplyBeeSwarmFilter = callTerritoryApplyBeeSwarmFilter;
 
     this.prepareTimeline(el, input_data.json_nodes, dataExtent);
-  }
+  };
 
   destroy = () => {};
 
@@ -153,7 +153,7 @@ class VClass
     cell
       .append("title")
       .text(d => d.data.id + "\n" + d.data.first_publication);
-  }
+  };
 
   brushed = () =>
   {
@@ -178,7 +178,7 @@ class VClass
     {
       console.log("method null");
     }
-  }
+  };
 }
 
 function brushcentered() 
