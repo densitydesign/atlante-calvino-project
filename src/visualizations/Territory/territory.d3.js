@@ -633,7 +633,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ff6c39")
+		.attr("fill", colors.generico_cosmico_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
@@ -641,7 +641,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "orange")
+		.attr("fill", colors.generico_terrestre_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
@@ -649,7 +649,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#bbbbff")
+		.attr("fill", colors.inventato_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
@@ -657,7 +657,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "darkgrey")
+		.attr("fill", colors.no_ambientazione_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
@@ -665,7 +665,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#5151fc")
+		.attr("fill", colors.nominato_cosmico_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
@@ -673,7 +673,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#00c19c")
+		.attr("fill", colors.nominato_terrestre_color_scale_end)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
