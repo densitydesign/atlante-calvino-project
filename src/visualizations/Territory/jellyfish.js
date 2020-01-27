@@ -308,8 +308,6 @@ function split_texts(hierarchy)
 
 export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, colors)
 {
-console.log("prepare_jellyfish_data");
-console.log("colors", colors);  
   split_texts(hierarchy);
   let jellyfish = process_hierarchy_continuously(hierarchy, 0, 0, colors);
 
@@ -464,8 +462,6 @@ function angleIsInLeftEmicircle(angle)
 
 function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map, colors)
 {
-console.log("draw_jellyfish_node");
-console.log("colors", colors);  
   let inLeftEmicircle = angleIsInLeftEmicircle(d.angle);
 
 //if(d.text_id === "V021") console.log("setting inLeftEmicircle(text_id : " + d.text_id + ")");
@@ -623,21 +619,14 @@ console.log("colors", colors);
 
 export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id, json_node_map, colors)
 {
-console.log("draw_jellyfish");
-console.log("colors", colors);  
   visit(
     jellyfish,
     {},
-    (d, status) => {
-console.log("inside visit of draw_jellyfish");
-console.log("colors", colors);      
-      draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map, colors)
-    });
+    (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map, colors));
 }
 
 export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 {
-//console.log("prepare_jellyfish_data_2()");
   var level_maxTextLen_map = new Map();
 
   visit(

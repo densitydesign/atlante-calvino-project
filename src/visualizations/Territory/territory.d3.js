@@ -414,7 +414,7 @@ return        d.r;
     place_hierarchies
       .selectAll(".place_hierarchy")
       .remove();
-console.log("colors", colors);
+
     const place_hierarchies_info_2 = prepare_place_hierarchies_2(
       input_data.place_hierarchies_info.place_hierarchies, 
       input_data.json_node_map, 
@@ -1152,9 +1152,9 @@ console.log("colors", colors);
   };
 */
   set_yRatio = yRatio => {
-console.log("setting tilt...");
+
     tilt = yRatio === 1;
-console.log("tilt", tilt);
+
     if(tilt)
     {
       const t0 = svg.transition().duration(1000);
@@ -2149,8 +2149,6 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-console.log("calling draw_jellyfish...");
-console.log("colors", colors);      
 			draw_jellyfish(
         d.graphical_ops, 
         place_hierarchy, 
