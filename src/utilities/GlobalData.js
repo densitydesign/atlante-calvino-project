@@ -334,6 +334,12 @@ const GlobalData = {
                    nominato_cosmico_bright : territoryColorPalette.brightBlue,
                     nominato_terrestre_dim : territoryColorPalette.dimCyan,
                  nominato_terrestre_bright : territoryColorPalette.brightCyan,
+                                     misto : territoryColorPalette.brightAmaranth,
+                                    parole : territoryColorPalette.brightCyan,
+                                  sintagmi : territoryColorPalette.brightGold,
+                                     frasi : territoryColorPalette.brightBlue,
+               lists_ratio_below_threshold : "black",
+               lists_ratio_above_threshold : territoryColorPalette.brightOrange,
         placeHierarchies_color_scale_start : 'white',
           placeHierarchies_color_scale_end : 'white',
                   placeHierarchies_unknown : 'white'

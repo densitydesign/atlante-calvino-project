@@ -877,7 +877,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#5151fc")
+		.attr("fill", colors.frasi)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc1)
 /*		.attr('transform', function(d, i) {
@@ -888,7 +888,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ff6c39")
+		.attr("fill", colors.misto)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc2)
 /*		.attr('transform', function(d, i) {
@@ -899,7 +899,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#00c19c")
+		.attr("fill", colors.parole)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc3)
 /*		.attr('transform', function(d, i) {
@@ -910,7 +910,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ffce00")
+		.attr("fill", colors.sintagmi)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc4)
 /*		.attr('transform', function(d, i) {
@@ -928,63 +928,6 @@ return        d.r;
 			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
 		})
 */		.style('fill-opacity', 0);      
-
-///////////////////////////////////////////
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#5151fc")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc1)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#ff6c39")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc2)
-/*      .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#00c19c")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc3)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#ffce00")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc4)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
- */     .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "transparent")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc5)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
- */     .style('fill-opacity', 0);
 
 ///////////////////////////////////////////
 
@@ -1021,7 +964,7 @@ return        d.r;
     steps
       .filter(d => d.first_elem && d.lists_are_present)
       .append("svg:path")
-      .attr("fill", d => d.lists_ratio_is_below_threshold ? "black" : "#ff6c39")
+      .attr("fill", d => d.lists_ratio_is_below_threshold ? colors.lists_ratio_below_threshold : colors.lists_ratio_above_threshold)
       .attr("class", customElementsClasses.lists_level_2_full)
       .attr("d", drawListsOverallArc1)
 /*      .attr('transform', function(d,i){
