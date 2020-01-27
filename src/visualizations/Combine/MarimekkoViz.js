@@ -13,6 +13,7 @@ import MarimekkoLegend from './MarimekkoLegend'
 import MarimekkoTopAxis from './MarimekkoTopAxis'
 import MarimekkoChart from './MarimekkoChart'
 
+
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
@@ -197,6 +198,10 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     };
   }, []);
 
+  //current book handling
+  //#TODO: move to url
+  const [currentTextID, setCurrentTextID] = useState(null);
+
   const { booksData, chartBooks } = useMemo(() => {
     return preprocessData(data, { dettaglio, aggregazione, tipologia });
   }, [data, dettaglio, aggregazione, tipologia]);
@@ -229,10 +234,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     return booksDataAnnotated;
   }, [booksData, dimensions.vizWidth]);
 
-  //current book handling
-  //#TODO: move to url
-  const [currentTextID, setCurrentTextID] = useState(null);
-
+  
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
       <div className="row no-gutters h-100">
@@ -240,12 +242,13 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
         <div className="col-sm-9 d-flex flex-column">
           <div className="row no-gutters" style={{ flex: 2, minHeight: 100 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
-              <MarimekkoTopAxis
+              {dimensions.vizWidth && <MarimekkoTopAxis
                 height={dimensions.topAxisHeight}
                 width={dimensions.vizWidth}
                 booksDataWithPositions={booksDataWithPositions}
                 setCurrentTextID={setCurrentTextID}
-              />
+                currentTextID={currentTextID}
+              />}
             </div>
           </div>
 

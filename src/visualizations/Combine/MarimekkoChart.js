@@ -20,16 +20,16 @@ function MarimekkoBook({
   const translateToDetail = `translate(0px)`
   
   const props = useSpring({ 
-    // config: { friction: 50},
+    config: { friction: 50},
     from: { opacity :1,  transform: translateToList, width: book.caratteriWidth},
   
     to: [{opacity: show ? 1 : 0, transform: isCurrent ? translateToDetail : translateToList, width: book.caratteriWidth}, 
-      {width: 200}]
+      {width:  isCurrent ?  200 : book.caratteriWidth}]
     })
     
   
   // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
-  console.log(props)
+  // console.log(props)
 
   return (
     <animated.g

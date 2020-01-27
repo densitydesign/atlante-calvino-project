@@ -1,19 +1,31 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
+import { useChain, useSpring, animated } from "react-spring";
 import styles from "./Combine.module.css";
 
 export default function MarimekkoTopAxis({
   width,
   height,
   booksDataWithPositions,
-  setCurrentTextID
+  setCurrentTextID,
+  currentTextID,
 }) {
   const margins = {
     bottom: 15
   };
 
+  const isBookDetail = !!currentTextID
+
+  const props = useSpring({ 
+    delay: 1200,
+    // config: { friction: 50},
+    from: { width: width, left: 0},
+  
+    to: {width: isBookDetail ? width / 2 : width, left: isBookDetail ?  width / 2 : 0}
+    })
+
   return (
-    <div style={{ height, width, overflow: "hidden" }}>
-      <svg style={{ height, width, overflow: "hidden" }}>
+    <animated.div style={{ height, width:props.width, overflow: "hidden"}}>
+      <animated.svg className="position-absolute" style={{ height, width:props.width, overflow: "hidden", left:props.left }} >
         <g transform={`translate(0 ${height - margins.bottom})`}>
           {booksDataWithPositions.map(book => (
             <g key={book.textID} transform={`translate(${book.caratteriX})`}>
@@ -37,7 +49,7 @@ export default function MarimekkoTopAxis({
             </g>
           ))}
         </g>
-      </svg>
-    </div>
+      </animated.svg>
+    </animated.div>
   );
 }
