@@ -177,7 +177,7 @@ const collections = [
 
 const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 
-const colorPalette = {
+const territoryColorPalette = {
   brightBlue     : "#5151FC",     dimBlue : "#C5C5FC",
   brightAmaranth : "#FF3366", dimAmaranth : "#FCD0DB",
   brightCyan     : "#00C19C",     dimCyan : "#C2FAEF",
@@ -316,24 +316,24 @@ const GlobalData = {
   },
   visualizationColors : {
     territory : {
-                             nebbia_bright : colorPalette.brightBlue,
-                                nebbia_dim : colorPalette.dimBlue,
-                      cancellazione_bright : colorPalette.brightAmaranth,
-                         cancellazione_dim : colorPalette.dimAmaranth,
-                      allDubitative_bright : colorPalette.brightCyan,
-                         allDubitative_dim : colorPalette.dimCyan,
-        generico_cosmico_color_scale_start : colorPalette.dimViolet,
-          generico_cosmico_color_scale_end : colorPalette.brightViolet,
-      generico_terrestre_color_scale_start : colorPalette.dimGold,
-        generico_terrestre_color_scale_end : colorPalette.brightGold,
-               inventato_color_scale_start : colorPalette.dimOrange,
-                 inventato_color_scale_end : colorPalette.brightOrange,
-        no_ambientazione_color_scale_start : colorPalette.lightComfit,
-          no_ambientazione_color_scale_end : colorPalette.grey,
-        nominato_cosmico_color_scale_start : colorPalette.dimBlue,
-          nominato_cosmico_color_scale_end : colorPalette.brightBlue,
-      nominato_terrestre_color_scale_start : colorPalette.dimCyan,
-        nominato_terrestre_color_scale_end : colorPalette.brightCyan,
+                             nebbia_bright : territoryColorPalette.brightBlue,
+                                nebbia_dim : territoryColorPalette.dimBlue,
+                      cancellazione_bright : territoryColorPalette.brightAmaranth,
+                         cancellazione_dim : territoryColorPalette.dimAmaranth,
+                      allDubitative_bright : territoryColorPalette.brightCyan,
+                         allDubitative_dim : territoryColorPalette.dimCyan,
+                      generico_cosmico_dim : territoryColorPalette.dimViolet,
+                   generico_cosmico_bright : territoryColorPalette.brightViolet,
+                    generico_terrestre_dim : territoryColorPalette.dimGold,
+                 generico_terrestre_bright : territoryColorPalette.brightGold,
+                             inventato_dim : territoryColorPalette.dimOrange,
+                          inventato_bright : territoryColorPalette.brightOrange,
+                      no_ambientazione_dim : territoryColorPalette.lightComfit,
+                   no_ambientazione_bright : territoryColorPalette.grey,
+                      nominato_cosmico_dim : territoryColorPalette.dimBlue,
+                   nominato_cosmico_bright : territoryColorPalette.brightBlue,
+                    nominato_terrestre_dim : territoryColorPalette.dimCyan,
+                 nominato_terrestre_bright : territoryColorPalette.brightCyan,
         placeHierarchies_color_scale_start : 'white',
           placeHierarchies_color_scale_end : 'white',
                   placeHierarchies_unknown : 'white'

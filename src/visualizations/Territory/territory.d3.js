@@ -192,32 +192,32 @@ class VClass
     this.generico_cosmico_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_cosmico))
-      .range([colors.generico_cosmico_color_scale_start, colors.generico_cosmico_color_scale_end]);
+      .range([colors.generico_cosmico_dim, colors.generico_cosmico_bright]);
   
     this.generico_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range([colors.generico_terrestre_color_scale_start, colors.generico_terrestre_color_scale_end]);
+      .range([colors.generico_terrestre_dim, colors.generico_terrestre_bright]);
   
     this.inventato_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_inventato))
-      .range([colors.inventato_color_scale_start, colors.inventato_color_scale_end]);
+      .range([colors.inventato_dim, colors.inventato_bright]);
   
     this.no_ambientazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_no_ambientazione))
-      .range([colors.no_ambientazione_color_scale_start, colors.no_ambientazione_color_scale_end]);
+      .range([colors.no_ambientazione_dim, colors.no_ambientazione_bright]);
   
     this.nominato_cosmico_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_cosmico))
-      .range([colors.nominato_cosmico_color_scale_start, colors.nominato_cosmico_color_scale_end]);
+      .range([colors.nominato_cosmico_dim, colors.nominato_cosmico_bright]);
   
     this.nominato_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_terrestre))
-      .range([colors.nominato_terrestre_color_scale_start, colors.nominato_terrestre_color_scale_end]);
+      .range([colors.nominato_terrestre_dim, colors.nominato_terrestre_bright]);
   
     this.placeHierarchies_color_scale = d3
       .scaleLinear()
@@ -235,14 +235,14 @@ class VClass
       [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.genericCosmic, { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',  showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedCosmic,   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',  showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.genericCosmic,         { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedCosmic,           { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',        showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.namedTerrestrial,      { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.invented,              { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.noSetting,             { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_cosmico',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
+      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
     this.text_nodes = g
@@ -633,7 +633,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.generico_cosmico_color_scale_end)
+		.attr("fill", colors.generico_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
@@ -641,7 +641,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.generico_terrestre_color_scale_end)
+		.attr("fill", colors.generico_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
@@ -649,7 +649,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.inventato_color_scale_end)
+		.attr("fill", colors.inventato_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
@@ -657,7 +657,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.no_ambientazione_color_scale_end)
+		.attr("fill", colors.no_ambientazione_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
@@ -665,7 +665,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.nominato_cosmico_color_scale_end)
+		.attr("fill", colors.nominato_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
@@ -673,7 +673,7 @@ return        d.r;
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", colors.nominato_terrestre_color_scale_end)
+		.attr("fill", colors.nominato_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
