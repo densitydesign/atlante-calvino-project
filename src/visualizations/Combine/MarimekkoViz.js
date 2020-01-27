@@ -3,13 +3,16 @@ import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
 // import sumBy from 'lodash/sumBy'
-import styles from "./Combine.module.css";
 import uniqBy from "lodash/uniqBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import get from "lodash/get";
 import some from "lodash/some";
 import keyBy from "lodash/keyBy";
+import MarimekkoLegend from './MarimekkoLegend'
+import MarimekkoTopAxis from './MarimekkoTopAxis'
+import MarimekkoChart from './MarimekkoChart'
+
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
@@ -26,139 +29,7 @@ const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
   return out;
 }, {});
 
-function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
-  const margins = {
-    bottom: 15
-  };
 
-  return (
-    <div style={{ height, width, overflow: "hidden" }}>
-      <svg style={{ height, width, overflow: "hidden" }}>
-        <g transform={`translate(0 ${height - margins.bottom})`}>
-          {booksDataWithPositions.map(book => (
-            <g key={book.textID} transform={`translate(${book.caratteriX})`}>
-              <rect
-                className={styles.topAxisRect}
-                width={book.caratteriWidth}
-                height={4}
-              ></rect>
-              <g transform="translate(2 0)">
-                <text
-                  className={styles.topAxisText}
-                  x={5}
-                  transform={`rotate(-45)`}
-                >
-                  {book.titolo}
-                </text>
-              </g>
-            </g>
-          ))}
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks, selectedLegendEntries }) {
-  const heightScale = scaleLinear()
-    .domain([0, 1])
-    .range([0, height]);
-
-  const anyLegendEntrySelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k]).length > 0
-
-  return (
-    <svg style={{ height, width }} className={anyLegendEntrySelected ? styles.withLegendItemSelected : ''}>
-      {booksDataWithPositions.map(book => {
-        const bookData = chartBooks[book.textID];
-
-        //annotating with top and height
-        const bookDataAnnotated = bookData
-          .map(item => ({
-            label: item.label,
-            value: item.value,
-            color: item.color,
-            height: heightScale(item.value)
-          }))
-          .reduce((out, item, i) => {
-            if (i === 0) {
-              out.push({ ...item, top: 0 });
-            } else {
-              out.push({ ...item, top: out[i - 1].top + out[i - 1].height });
-            }
-            return out;
-          }, []);
-
-        return (
-          <g key={book.textID} transform={`translate(${book.caratteriX})`}>
-            <rect
-              className={`${styles.marimekkoRect}`}
-              style={{ height, width: book.caratteriWidth }}
-            ></rect>
-            {bookDataAnnotated.map((d, i) => (
-              <rect
-                key={i}
-                y={d.top}
-                width={book.caratteriWidth}
-                height={d.height}
-                className={`${styles.marimekkoUnit}  ${selectedLegendEntries[d.label] ? styles.selected : ''}`}
-                fill={d.color}
-              ></rect>
-            ))}
-          </g>
-        );
-      })}
-    </svg>
-  );
-}
-
-function MarimekkoLegend({
-  selectedLegendEntries,
-  setSelectedLegendEntries,
-  legendMap
-}) {
-  const byGruppo = groupBy(legendMap.filter(x => x.gruppo), "gruppo");
-  const anyLegendEntrySelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k]).length
-
-  return (
-    <div className={`h-100 v-100 ${anyLegendEntrySelected ? styles.legendItemsSelected : ''}`} >
-      <div style={{height: 40}} className="d-flex flex-column justify-content-center">
-        <div>
-        <button
-          className="btn btn-sm btn-outline-dark"
-          onClick={() => {
-            setSelectedLegendEntries({});
-          }}
-        >
-          RESET
-        </button>
-        </div>
-      </div>
-      <div className="mt-1">
-        <h4>LEGENDA</h4>
-      </div>
-      {Object.keys(byGruppo).map(gruppo => (
-        <div key={gruppo}>
-          <div className={styles.legendGroupText}>{gruppo}</div>
-          <div>
-            {byGruppo[gruppo].map((item, i) => (
-              <div key={i} className={`w-100 d-flex align-items-center ${styles.legendEntry} ${selectedLegendEntries[item.valore] ? styles.selected : ''}`}>
-                <div
-                  className={styles.legendEntryColor}
-                  style={{ backgroundColor: item.colore }}
-                  onClick={() => {
-                    const newEntries = {...selectedLegendEntries, [item.valore]: !!!selectedLegendEntries[item.valore]}
-                    setSelectedLegendEntries(newEntries)
-                  }}
-                ></div>
-                <span className={styles.legendEntryText}>{item.valore}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 const defaultOptions = {
   dettaglio: "ambito",
@@ -285,8 +156,8 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
 
   //resetting legend entries when dettaglio changes
   useEffect(() => {
-    setSelectedLegendEntries({})
-  }, [dettaglio])
+    setSelectedLegendEntries({});
+  }, [dettaglio]);
 
   const [dimensions, setDimensions] = useState({
     vizWidth: 0,
@@ -358,6 +229,10 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     return booksDataAnnotated;
   }, [booksData, dimensions.vizWidth]);
 
+  //current book handling
+  //#TODO: move to url
+  const [currentTextID, setCurrentTextID] = useState(null);
+
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
       <div className="row no-gutters h-100">
@@ -369,6 +244,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
                 height={dimensions.topAxisHeight}
                 width={dimensions.vizWidth}
                 booksDataWithPositions={booksDataWithPositions}
+                setCurrentTextID={setCurrentTextID}
               />
             </div>
           </div>
@@ -382,6 +258,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
                   height={dimensions.vizHeight}
                   width={dimensions.vizWidth}
                   selectedLegendEntries={selectedLegendEntries}
+                  currentTextID={currentTextID}
                 ></MarimekkoChart>
               )}
             </div>
@@ -399,8 +276,6 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
           ></MarimekkoLegend>
         </div>
       </div>
-
-      
     </div>
   );
 }
