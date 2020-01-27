@@ -8,17 +8,23 @@ import uniqBy from "lodash/uniqBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import get from "lodash/get";
-import some from "lodash/some"
-import mappaCategorie from './mappa-categorie.json'
+import some from "lodash/some";
+import keyBy from "lodash/keyBy";
+import mappaCategorie from "./mappa-categorie.json";
+import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
+import volumi from "./volumi.json";
 
+const volumiByID = keyBy(volumi, "textID");
 
 const coloriCategorie = mappaCategorie.reduce((out, c) => {
-  out[c.categoria] = c.colore
-  return out
-},{})
+  out[c.categoria] = c.colore;
+  return out;
+}, {});
 
-console.log("coloriCategorie", coloriCategorie)
-
+const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
+  out[c.valore] = c.colore;
+  return out;
+}, {});
 
 function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   const margins = {
@@ -36,13 +42,13 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
                 width={book.caratteriWidth}
                 height={4}
               ></rect>
-              <g transform="translate(2 -2)">
+              <g transform="translate(2 0)">
                 <text
                   className={styles.topAxisText}
                   x={5}
                   transform={`rotate(-45)`}
                 >
-                  {book.textID}
+                  {book.titolo}
                 </text>
               </g>
             </g>
@@ -53,13 +59,15 @@ function MarimekkoTopAxis({ width, height, booksDataWithPositions }) {
   );
 }
 
-function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
+function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks, selectedLegendEntries }) {
   const heightScale = scaleLinear()
     .domain([0, 1])
     .range([0, height]);
 
+  const anyLegendEntrySelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k]).length > 0
+
   return (
-    <svg style={{ height, width }}>
+    <svg style={{ height, width }} className={anyLegendEntrySelected ? styles.withLegendItemSelected : ''}>
       {booksDataWithPositions.map(book => {
         const bookData = chartBooks[book.textID];
 
@@ -67,7 +75,7 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
         const bookDataAnnotated = bookData
           .map(item => ({
             label: item.label,
-            value: item.value, 
+            value: item.value,
             color: item.color,
             height: heightScale(item.value)
           }))
@@ -83,7 +91,7 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
         return (
           <g key={book.textID} transform={`translate(${book.caratteriX})`}>
             <rect
-              className={styles.marimekkoRect}
+              className={`${styles.marimekkoRect}`}
               style={{ height, width: book.caratteriWidth }}
             ></rect>
             {bookDataAnnotated.map((d, i) => (
@@ -92,7 +100,7 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
                 y={d.top}
                 width={book.caratteriWidth}
                 height={d.height}
-                className={styles.marimekkoUnit}
+                className={`${styles.marimekkoUnit}  ${selectedLegendEntries[d.label] ? styles.selected : ''}`}
                 fill={d.color}
               ></rect>
             ))}
@@ -103,22 +111,68 @@ function MarimekkoChart({ height, width, booksDataWithPositions, chartBooks }) {
   );
 }
 
+function MarimekkoLegend({
+  selectedLegendEntries,
+  setSelectedLegendEntries,
+  legendMap
+}) {
+  const byGruppo = groupBy(legendMap.filter(x => x.gruppo), "gruppo");
+  const anyLegendEntrySelected = Object.keys(selectedLegendEntries || {}).filter(k => selectedLegendEntries[k]).length
+
+  return (
+    <div className={`h-100 v-100 ${anyLegendEntrySelected ? styles.legendItemsSelected : ''}`} >
+      <div style={{height: 40}} className="d-flex flex-column justify-content-center">
+        <div>
+        <button
+          className="btn btn-sm btn-outline-dark"
+          onClick={() => {
+            setSelectedLegendEntries({});
+          }}
+        >
+          RESET
+        </button>
+        </div>
+      </div>
+      <div className="mt-1">
+        <h4>LEGENDA</h4>
+      </div>
+      {Object.keys(byGruppo).map(gruppo => (
+        <div key={gruppo}>
+          <div className={styles.legendGroupText}>{gruppo}</div>
+          <div>
+            {byGruppo[gruppo].map((item, i) => (
+              <div key={i} className={`w-100 d-flex align-items-center ${styles.legendEntry} ${selectedLegendEntries[item.valore] ? styles.selected : ''}`}>
+                <div
+                  className={styles.legendEntryColor}
+                  style={{ backgroundColor: item.colore }}
+                  onClick={() => {
+                    const newEntries = {...selectedLegendEntries, [item.valore]: !!!selectedLegendEntries[item.valore]}
+                    setSelectedLegendEntries(newEntries)
+                  }}
+                ></div>
+                <span className={styles.legendEntryText}>{item.valore}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const defaultOptions = {
   dettaglio: "ambito",
-  aggregazione: "aggregato",
+  aggregazione: "aggregato"
 };
 
-
 const computeChartBooksAggregated = (firstLevelRecords, opts) => {
-  
   const dettaglioKey =
-  opts.dettaglio === "ambito"
-    ? "categorie di tipologia"
-    : "Cluster tipolegie";
+    opts.dettaglio === "ambito"
+      ? "categorie di tipologia"
+      : "Cluster tipolegie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, item, idx) => {
-    
     let chartBooksDetail = groupBy(chartBooks[item], dettaglioKey);
     out[item] = Object.keys(chartBooksDetail).reduce((o, x) => {
       o[x] = sumBy(chartBooksDetail[x], d => +d["somma ripetizioni"]);
@@ -128,42 +182,50 @@ const computeChartBooksAggregated = (firstLevelRecords, opts) => {
     //normalizing data and building an array of objects with {label, value, color}
     const totalForBook = sum(Object.values(out[item]));
     out[item] = Object.keys(out[item]).reduce((o, k) => {
-      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, k) : "#333"
-      const obj = {label: k, value: out[item][k] / totalForBook, color};
-      o.push(obj)
+      const color =
+        opts.dettaglio === "ambito"
+          ? get(coloriCategorie, k)
+          : get(coloriClusterTipologie, k);
+      const obj = { label: k, value: out[item][k] / totalForBook, color };
+      o.push(obj);
       return o;
     }, []);
 
     return out;
   }, {});
 
-  return chartBooks
-}
+  return chartBooks;
+};
 
 const computeChartBooksDisaggregated = (firstLevelRecords, opts) => {
-
   const dettaglioKey =
-  opts.dettaglio === "ambito"
-    ? "categorie di tipologia"
-    : "Cluster tipolegie";
+    opts.dettaglio === "ambito"
+      ? "categorie di tipologia"
+      : "Cluster tipolegie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, textID, idx) => {
-    const totalForBook = sumBy( chartBooks[textID], item => +item["somma ripetizioni"])
+    const totalForBook = sumBy(
+      chartBooks[textID],
+      item => +item["somma ripetizioni"]
+    );
     out[textID] = chartBooks[textID].map(record => {
-      const label = get(record, dettaglioKey)
-      const color = opts.dettaglio === 'ambito' ? get(coloriCategorie, label) : '#333'
-      return ({ 
+      const label = get(record, dettaglioKey);
+      const color =
+        opts.dettaglio === "ambito"
+          ? get(coloriCategorie, label)
+          : get(coloriClusterTipologie, label);
+      return {
         label,
         value: +record["somma ripetizioni"] / totalForBook,
         color
-      })
-    })
+      };
+    });
 
     return out;
   }, {});
-  return chartBooks
-}
+  return chartBooks;
+};
 
 const preprocessData = (data, options = {}) => {
   const opts = {
@@ -173,20 +235,23 @@ const preprocessData = (data, options = {}) => {
 
   const firstLevelRecords = data.filter(item => item.livello === "uno");
   let byTipologia = groupBy(
-      uniqBy(data,  item => `${item.textID}+${item.livello}`).map(x => pick(x, ['textID', 'livello'])),
-      'textID'
-  )
-  byTipologia = Object.keys(byTipologia)
-    .reduce((out, item) => {
-      out[item] = byTipologia[item].map(x => x.livello).sort()
-      return out
-    }, {})
-  
-  const tipologiaSorted = opts.tipologia.sort()
+    uniqBy(data, item => `${item.textID}+${item.livello}`).map(x =>
+      pick(x, ["textID", "livello"])
+    ),
+    "textID"
+  );
+  byTipologia = Object.keys(byTipologia).reduce((out, item) => {
+    out[item] = byTipologia[item].map(x => x.livello).sort();
+    return out;
+  }, {});
+
+  const tipologiaSorted = opts.tipologia.sort();
   const selectedByTipologia = Object.keys(byTipologia).filter(item => {
-    const matches = byTipologia[item].map(x => tipologiaSorted.indexOf(x) !== -1)
-    return some(matches)
-  } )
+    const matches = byTipologia[item].map(
+      x => tipologiaSorted.indexOf(x) !== -1
+    );
+    return some(matches);
+  });
   const booksData = uniqBy(firstLevelRecords, "textID")
     .filter(item => selectedByTipologia.indexOf(item.textID) !== -1)
     .map(item => {
@@ -194,10 +259,18 @@ const preprocessData = (data, options = {}) => {
       out.caratteri = +out.caratteri;
       out.mese = +out.mese;
       out.anno = +out.anno;
-      return out;
+
+      const dataVolume = get(volumiByID, item.textID);
+      return {
+        ...out,
+        titolo: dataVolume.titolo
+      };
     });
 
-  const chartBooks = opts.aggregazione === 'aggregato' ?  computeChartBooksAggregated(firstLevelRecords, opts) : computeChartBooksDisaggregated(firstLevelRecords, opts)
+  const chartBooks =
+    opts.aggregazione === "aggregato"
+      ? computeChartBooksAggregated(firstLevelRecords, opts)
+      : computeChartBooksDisaggregated(firstLevelRecords, opts);
   return {
     booksData,
     chartBooks
@@ -207,6 +280,13 @@ const preprocessData = (data, options = {}) => {
 function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
+
+  const [selectedLegendEntries, setSelectedLegendEntries] = useState({});
+
+  //resetting legend entries when dettaglio changes
+  useEffect(() => {
+    setSelectedLegendEntries({})
+  }, [dettaglio])
 
   const [dimensions, setDimensions] = useState({
     vizWidth: 0,
@@ -280,33 +360,47 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
 
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
-      <div className="row no-gutters" style={{ flex: 2, minHeight: 100 }}>
+      <div className="row no-gutters h-100">
         <div className="col-sm-1"></div>
-        <div className="col-sm-9" ref={topAxisContainerRef}>
-          <MarimekkoTopAxis
-            height={dimensions.topAxisHeight}
-            width={dimensions.vizWidth}
-            booksDataWithPositions={booksDataWithPositions}
-          />
+        <div className="col-sm-9 d-flex flex-column">
+          <div className="row no-gutters" style={{ flex: 2, minHeight: 100 }}>
+            <div className="col-sm-12" ref={topAxisContainerRef}>
+              <MarimekkoTopAxis
+                height={dimensions.topAxisHeight}
+                width={dimensions.vizWidth}
+                booksDataWithPositions={booksDataWithPositions}
+              />
+            </div>
+          </div>
+
+          <div className="row no-gutters w-100" style={{ flex: 10 }}>
+            <div className="col-sm-12" ref={vizContainerRef}>
+              {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
+                <MarimekkoChart
+                  booksDataWithPositions={booksDataWithPositions}
+                  chartBooks={chartBooks}
+                  height={dimensions.vizHeight}
+                  width={dimensions.vizWidth}
+                  selectedLegendEntries={selectedLegendEntries}
+                ></MarimekkoChart>
+              )}
+            </div>
+          </div>
+          <div className="row no-gutters" style={{ flex: 1 }}></div>
+        </div>
+
+        <div className="col-sm-2 pl-4 pt-5">
+          <MarimekkoLegend
+            legendMap={
+              dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
+            }
+            setSelectedLegendEntries={setSelectedLegendEntries}
+            selectedLegendEntries={selectedLegendEntries}
+          ></MarimekkoLegend>
         </div>
       </div>
 
-      <div className="row no-gutters w-100" style={{ flex: 10 }}>
-        <div className="col-sm-1"></div>
-        <div className="col-sm-9 border" ref={vizContainerRef}>
-          {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
-            <MarimekkoChart
-              booksDataWithPositions={booksDataWithPositions}
-              chartBooks={chartBooks}
-              height={dimensions.vizHeight}
-              width={dimensions.vizWidth}
-            ></MarimekkoChart>
-          )}
-        </div>
-        <div className="col-sm-2 px-2">legend here</div>
-      </div>
-
-      <div className="row no-gutters" style={{ flex: 1 }}></div>
+      
     </div>
   );
 }

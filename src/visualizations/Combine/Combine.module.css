@@ -10,10 +10,46 @@
 
 .marimekkoRect {
     fill:transparent;
-    stroke: #222;
+    stroke: #444;
+    stroke-width: 0.5;
 }
 
 .marimekkoUnit{
     stroke: #fff;
     stroke-width: 0.2;
+}
+
+.withLegendItemSelected .marimekkoUnit {
+    opacity: 0.2;
+    /* stroke-opacity: 0.5; */
+}
+
+.withLegendItemSelected .marimekkoUnit.selected {
+    opacity: 1;
+}
+
+
+.legendGroupText{
+    font-size: 14px;
+}
+
+
+
+.legendEntryColor{
+    height: 10px;
+    width: 30px;
+    border-radius: 3px;
+    margin-right: 6px;
+}
+
+.legendItemsSelected .legendEntryColor{
+    opacity: 0.2;
+}
+
+.legendItemsSelected .selected .legendEntryColor{
+    opacity: 1;
+}
+
+.legendEntryText{
+    font-size: 12px;
 }
