@@ -2201,8 +2201,6 @@ function getAnalysisModeChangeType(oldAnalysisModeGroup, newAnalysisModeGroup)
 
 function tilt_labels(text_nodes)
 {
-console.log("tilt_labels");
-console.log("tilt", tilt);  
   const label = text_nodes.selectAll('.label');   
 
   let one_rem = Number.parseInt(d3.select('html').style('font-size'));

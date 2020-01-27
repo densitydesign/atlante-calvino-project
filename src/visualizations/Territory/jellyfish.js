@@ -72,7 +72,7 @@ function process_hierarchy(hierarchy, x, y, colors)
     position : { x : x, y : y },
     children : []
   };
-
+/*
   switch(hierarchy.type)
   {
       case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
@@ -82,6 +82,8 @@ function process_hierarchy(hierarchy, x, y, colors)
       case "inventato"              : jellyfish.color = colors.inventato_bright; break;
       case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(hierarchy.type, colors);
 
   let progressive_x = x;
   hierarchy.children.forEach(d => {
@@ -107,7 +109,7 @@ function process_hierarchy_continuously(hierarchy, x, y, colors)
     circle_position : { x : 0, y : 0 },
     children : []
   };
-
+/*
   switch(hierarchy.basal_type)
   {
       case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
@@ -117,6 +119,8 @@ function process_hierarchy_continuously(hierarchy, x, y, colors)
       case "inventato"              : jellyfish.color = colors.inventato_bright; break;
       case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(hierarchy.basal_type, colors);
 
   let hierarchy_gap = 1;
   let absolute_progressive_x = x;
@@ -183,8 +187,24 @@ function visit_levels(hierarchy, status, processItem)
   }
 }
 
+function map_color(text, colors)
+{
+  switch(text)
+  {
+      case "generico_terrestre"     : return colors.generico_terrestre_bright;
+      case "generico_non_terrestre" : return colors.generico_cosmico_bright;
+      case "nominato_terrestre"     : return colors.nominato_terrestre_bright;
+      case "nominato_non_terrestre" : return colors.nominato_cosmico_bright;
+      case "inventato"              : return colors.inventato_bright;
+      case "no_ambientazione"       : return colors.no_ambientazione_bright;
+
+      default : return undefined;
+  }  
+}
+
 function prepare_for_graphics(jellyfish, colors)
 {
+/*  
   switch(jellyfish.basal_type)
   {
       case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
@@ -194,6 +214,8 @@ function prepare_for_graphics(jellyfish, colors)
       case "inventato"              : jellyfish.color = colors.inventato_bright; break;
       case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(jellyfish.basal_type, colors);
 
   jellyfish.stripe_position.x = jellyfish.logical_position.x * 20 + 10;
   jellyfish.stripe_position.y = jellyfish.logical_position.y * 20 + 10;
@@ -477,7 +499,7 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
 //if(d.hill_size) console.log("d.hill_size : " + d.hill_size);
 //console.log("d :");
 //console.log(d);
-
+/*
   switch(d.local_type)
   {
       case "generico_terrestre"     : textColor = colors.generico_terrestre_bright;   break;
@@ -487,6 +509,8 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
       case "inventato"              : textColor = colors.inventato_bright; break;
       case "no_ambientazione"       : textColor = colors.no_ambientazione_bright;  break;
   }
+*/
+  textColor = map_color(d.local_type, colors);
 
   let angle, textDistance;
 
