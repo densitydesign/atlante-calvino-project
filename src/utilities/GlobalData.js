@@ -204,7 +204,7 @@ const GlobalData = {
     {"id":"V022","label":"Palomar"},
     {"id":"V023","label":"Le cosmicomiche vecchie e nuove"}
   ],
-/*  
+/*
   commands : {
     territory : {
       doubt : {
@@ -275,7 +275,10 @@ const GlobalData = {
   helpPages : {
     territory : {
       main : "territoryMain",
-      placeHierarchies : "territoryPlaceHierarchies"
+      placeHierarchies : "territoryPlaceHierarchies",
+      doubt : "territoryDoubt",
+      shape : "territoryShape",
+      place : "territoryPlace",
     }
   },
   legendPages : {
@@ -319,7 +322,7 @@ const GlobalData = {
       nominato_terrestre_color_scale_end : 'dodgerblue',
       placeHierarchies_color_scale_start : 'white',
       placeHierarchies_color_scale_end : 'white',
-      placeHierarchies_unknown : 'white'      
+      placeHierarchies_unknown : 'white'
     }
   },
   defaultTerritoryDataExtent : [1942, 1985],

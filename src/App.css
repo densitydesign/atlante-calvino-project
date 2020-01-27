@@ -90,7 +90,6 @@ overflow-x: hidden;
 
 h1 {
   margin: 0;
-  white-space: nowrap;
   font-size: 2.4em;
   color: var(--text-color);
   margin-bottom:1em;
@@ -99,21 +98,18 @@ h1 {
 
 h2 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.8em;
   color: black;
 }
 
 h3 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.5em;
   color: black;
 }
 
 h4 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.3em;
   color: black;
 }
@@ -122,7 +118,6 @@ h5 {
   margin: 0;
   font-size: 1.2em;
   font-weight: 100;
-  white-space: nowrap;
   color: black;
   line-height: 1.4em;
 }
@@ -276,34 +271,6 @@ footer {
   stroke:transparent;
 }
 
-
-/* a {
-  position: relative;
-  color: var(--text-color);
-  text-decoration: none;
+.dropdown-item.active, .dropdown-item:active{
+  background-color: red !important;
 }
-
-a:hover {
-  color: var(--dark-blue);
-}
-
-a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--dark-blue);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-} */
