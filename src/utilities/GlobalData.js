@@ -183,7 +183,7 @@ const territoryColorPalette = {
   brightCyan     : "#00C19C",     dimCyan : "#C2FAEF",
   brightGold     : "#FFA500",     dimGold : "#FDDDA1",
   brightViolet   : "#BBBBFF",   dimViolet : "#E2E2FD",
-  brightOrange   : "#FF6C39",   dimOrange : "#E2E2FD",
+  brightOrange   : "#FF6C39",   dimOrange : "#FFCDBC",
   grey           : "#C6CACF",
   lightComfit    : "#F8F8FF",
   green          : "#8AE297",

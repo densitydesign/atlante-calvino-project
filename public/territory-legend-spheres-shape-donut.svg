@@ -6,13 +6,12 @@
 	.st0{fill:none;stroke:#000000;stroke-width:3.021;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#FFA500;stroke-width:3.025;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
-	.st3{fill:none;stroke:#FFCC33;stroke-width:3.025;stroke-miterlimit:10;}
-	.st4{fill:none;stroke:#5151FC;stroke-width:3;stroke-miterlimit:10;}
-	.st5{fill:none;stroke:#00C19C;stroke-width:3;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#FF3366;stroke-width:3;stroke-miterlimit:10;}
-	.st7{font-family:'HKGrotesk-Regular';}
-	.st8{font-size:8px;}
-	.st9{font-size:9px;}
+	.st3{fill:none;stroke:#5151FC;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#00C19C;stroke-width:3;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FF3366;stroke-width:3;stroke-miterlimit:10;}
+	.st6{font-family:'HKGrotesk-Regular';}
+	.st7{font-size:8px;}
+	.st8{font-size:9px;}
 </style>
 <g id="Isolation_Mode">
 </g>
@@ -37,35 +36,35 @@
 			<path id="Path-6-4" class="st2" d="M16.6-6H3"/>
 		</g>
 		<g id="Group_296" transform="translate(-1.99 5.01)">
-			<path id="Path_114" class="st3" d="M71.9,15c0-10.6-8.6-19.2-19.2-19.2"/>
-			<path id="Path_116" class="st4" d="M52.6,34.3c10.6,0,19.2-8.6,19.2-19.2"/>
-			<path id="Path_118" class="st5" d="M33.4,15c0,10.6,8.6,19.2,19.2,19.2h0"/>
-			<path id="Path_119" class="st6" d="M52.6-4.2C42-4.2,33.4,4.4,33.4,15c0,0,0,0,0,0"/>
+			<path id="Path_114" class="st1" d="M71.9,15c0-10.6-8.6-19.2-19.2-19.2"/>
+			<path id="Path_116" class="st3" d="M52.6,34.3c10.6,0,19.2-8.6,19.2-19.2"/>
+			<path id="Path_118" class="st4" d="M33.4,15c0,10.6,8.6,19.2,19.2,19.2l0,0"/>
+			<path id="Path_119" class="st5" d="M52.6-4.2C42-4.2,33.4,4.4,33.4,15l0,0"/>
 		</g>
 		<g id="Group_264" transform="translate(73.291 10.235)">
 			<g id="Group_263">
-				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Sintgami</text>
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st6 st7">Sintgami</text>
 			</g>
 		</g>
 		<g id="Group_266" transform="translate(73.291 36.286)">
 			<g id="Group_265">
-				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Frasi</text>
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st6 st7">Frasi</text>
 			</g>
 		</g>
 		<g id="Group_268" transform="translate(0 10.235)">
 			<g id="Group_267">
-				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Misto</text>
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st6 st7">Misto</text>
 			</g>
 		</g>
 		<g id="Group_270" transform="translate(0 36.286)">
 			<g id="Group_269">
-				<text transform="matrix(1 0 0 1 2.9744 1)" class="st7 st8">Parole</text>
+				<text transform="matrix(1 0 0 1 2.9744 1)" class="st6 st7">Parole</text>
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 118.4654 11)" class="st7 st9">Proporzione dei tipi di </text>
-	<text transform="matrix(1 0 0 1 118.4654 21.8)" class="st7 st9">elenchi in base ai </text>
-	<text transform="matrix(1 0 0 1 118.4654 32.6)" class="st7 st9">numeri di caratteri di </text>
-	<text transform="matrix(1 0 0 1 118.4654 43.4)" class="st7 st9">ciascun testo.</text>
+	<text transform="matrix(1 0 0 1 118.4654 11)" class="st6 st8">Proporzione dei tipi di </text>
+	<text transform="matrix(1 0 0 1 118.4654 21.8)" class="st6 st8">elenchi in base ai </text>
+	<text transform="matrix(1 0 0 1 118.4654 32.6)" class="st6 st8">numeri di caratteri di </text>
+	<text transform="matrix(1 0 0 1 118.4654 43.4)" class="st6 st8">ciascun testo.</text>
 </g>
 </svg>

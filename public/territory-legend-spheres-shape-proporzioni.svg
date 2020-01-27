@@ -11,7 +11,7 @@
 	.st5{fill:none;stroke:#FFCC33;stroke-width:3.025;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#CCCCCC;stroke-width:3;stroke-miterlimit:10;}
 	.st7{fill:none;stroke:#FF9900;stroke-width:3;stroke-miterlimit:10;}
-	.st8{fill:none;stroke:#00CCCC;stroke-width:3;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
 </style>
 <g id="Group_299" transform="translate(1.5)">
 	<g id="Group-3" transform="translate(22.644 9.551)">
@@ -35,16 +35,16 @@
 		</g>
 	</g>
 	<path id="Path_124" class="st5" d="M54.9,23.5"/>
-	<path id="Path_125" class="st6" d="M17.1,20.3c-9.3,0-16.8,7.5-16.8,16.8S7.8,54,17.1,54c5.2,0,10.1-2.4,13.3-6.6"/>
-	<path id="Path_126" class="st6" d="M30.5,47.4c2.3-2.9,3.5-6.6,3.5-10.3"/>
-	<path id="Path_127" class="st7" d="M34,37.2c0-9.3-7.5-16.8-16.8-16.8"/>
-	<path id="Path_128" class="st6" d="M47,37.2C47,46.5,54.5,54,63.8,54c9.3,0,16.8-7.5,16.8-16.8c0-5.2-2.4-10.1-6.6-13.3"/>
-	<path id="Path_129" class="st8" d="M74.1,23.8c-2.9-2.3-6.6-3.5-10.3-3.5"/>
-	<path id="Path_130" class="st6" d="M63.8,20.3c-9.3,0-16.8,7.5-16.8,16.8"/>
+	<path class="st6" d="M16.9,20.4c-9.3,0-16.8,7.5-16.8,16.8S7.7,54,16.9,54s16.8-7.5,16.8-16.8"/>
+	<path class="st7" d="M33.7,37.2c0-9.3-7.5-16.8-16.8-16.8"/>
 	<text transform="matrix(1 0 0 1 91.2509 8.1322)" class="st3 st4">Elenchi con </text>
 	<text transform="matrix(1 0 0 1 91.2509 17.7322)" class="st3 st4">presenza menore </text>
 	<text transform="matrix(1 0 0 1 91.2509 27.3323)" class="st3 st4">al 5% del testo.</text>
 	<line id="Line_132" class="st0" x1="23.7" y1="54" x2="23.7" y2="66.7"/>
 	<line id="Line_133" class="st0" x1="57.7" y1="54" x2="57.7" y2="66.7"/>
+	<path class="st6" d="M63.5,20.4c-9.3,0-16.8,7.5-16.8,16.8S54.2,54,63.5,54s16.8-7.5,16.8-16.8"/>
+	<path class="st8" d="M75.5,25.5c-3-3.1-7.3-5.1-12-5.1"/>
+	<path class="st7" d="M80.3,37.2"/>
+	<path class="st6" d="M80.3,37.2c0-4.6-1.8-8.7-4.8-11.7"/>
 </g>
 </svg>

@@ -414,8 +414,11 @@ return        d.r;
     place_hierarchies
       .selectAll(".place_hierarchy")
       .remove();
-
-    const place_hierarchies_info_2 = prepare_place_hierarchies_2(input_data.place_hierarchies_info.place_hierarchies, input_data.json_node_map);
+console.log("colors", colors);
+    const place_hierarchies_info_2 = prepare_place_hierarchies_2(
+      input_data.place_hierarchies_info.place_hierarchies, 
+      input_data.json_node_map, 
+      colors);
 
 		json_nodes.forEach(d => {
 			let item = place_hierarchies_info_2.place_hierarchies_graphics_item_map_2.get(d.id);
@@ -2126,7 +2129,7 @@ function clone_d3_selection(selection, i)
 	return cloned;
 }
 
-function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
+function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
@@ -2146,12 +2149,15 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
+console.log("calling draw_jellyfish...");
+console.log("colors", colors);      
 			draw_jellyfish(
         d.graphical_ops, 
         place_hierarchy, 
         { x : 0, y : 0 } /*place_hierarchy.circle_position*/, 
         place_hierarchy.caption,
-        json_node_map);
+        json_node_map,
+        colors);
 
 			place_hierarchies_graphics_item_map_2.set(d.caption, d);
 		}

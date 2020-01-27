@@ -50,7 +50,11 @@ export default class TerritoryWrapper extends React.Component
 
         d3.json(process.env.PUBLIC_URL + "/places_hierarchy.json").then(place_hierarchies_json => {
 
-          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map);
+          const place_hierarchies_info = process_place_hierarchies(
+            place_hierarchies_json, 
+            json_nodes, 
+            json_node_map,
+            GlobalData.visualizationColors.territory);
 
           const textsData = getTextsData(json_nodes);
 
@@ -460,7 +464,7 @@ function process_json_nodes(all_json_nodes, x_csv2)
   return json_nodes;
 }
 
-function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map)
+function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map, colors)
 {
   const place_hierarchies = new Map();
   const place_hierarchy_node_info_map = new Map();
@@ -477,7 +481,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 
       const radiusScaleFactor = j.steps[0].r / 30;
 
-      place_hierarchies.set(d.caption, prepare_jellyfish_data(d, center, radiusScaleFactor));
+      place_hierarchies.set(d.caption, prepare_jellyfish_data(d, center, radiusScaleFactor, GlobalData.visualizationColors.territory));
 
       visit(d, {}, (jn, status) => place_hierarchy_node_info_map.set(jn.node_id, {}));
     }
@@ -499,7 +503,14 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption, json_node_map);
+console.log("calling draw_jellyfish...");      
+			draw_jellyfish(
+        d.graphical_ops, 
+        place_hierarchy, 
+        place_hierarchy.circle_position, 
+        place_hierarchy.caption, 
+        json_node_map, 
+        colors);
 
 			place_hierarchies_graphics_item_map.set(d.caption, d);
 		}
