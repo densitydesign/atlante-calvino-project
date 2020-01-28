@@ -1659,13 +1659,25 @@ console.log("case proportion...");
       .style("fill", "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
+
+    const t4 = t3.transition().duration(1);
+    t4
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
   }
 
   change_drawing_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(800);
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]))
@@ -1678,7 +1690,22 @@ console.log("case proportion...");
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);
 
-    const t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    let t2;
+
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_2 = t1.transition().duration(200);
+      t1_2
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_2.transition().ease(d3.easeCircleOut).duration(900);
+    }
+    else
+    {
+      t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    }      
+    
     t2
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
@@ -1703,7 +1730,23 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(700);
+    let t0;
+
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+console.log("hiding metaballs");      
+      const t_1 = svg.transition().duration(200);
+      t_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t0 = t_1.transition().duration(700);
+    }
+    else
+    {
+      t0 = svg.transition().duration(700);
+    }
+
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
@@ -1716,6 +1759,12 @@ console.log("case proportion...");
       .style("fill", "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
+
+    const t2 = t1.transition().duration(1);
+    t2
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
   }
 
   change_drawing_to_flat = (
@@ -1873,7 +1922,13 @@ console.log("currentAnalysisMode", currentAnalysisMode);
   {
     switch(true)
     {
-      case d3.event.target.constructor.name === "SVGSVGElement" && currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.showAllPlaceHierarchies(); break;
+      case 
+        d3.event.target.constructor.name === "SVGSVGElement" && 
+        currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : 
+        
+        this.showAllPlaceHierarchies(); 
+        break;
+
       default : break;
     }
   }
