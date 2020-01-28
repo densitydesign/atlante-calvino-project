@@ -90,6 +90,8 @@ class VClass
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
 
+    svg.on("click", this.onSvgClicked);
+
     const collections = GlobalData.collections;
 
     const boundaries = {
@@ -1830,37 +1832,66 @@ console.log("case proportion...");
 console.log("first_elem clicked for " + d.id);
 console.log("currentAnalysisMode", currentAnalysisMode);
 
-    if(currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies)
+    switch(true)
     {
-      const selectedHierarchyClass = ".place_hierarchy_2_" + d.id;
-
-      const t0 = svg.transition().duration(100);
-      t0
-        .selectAll(selectedHierarchyClass)
-        .style("fill-opacity", 1)
-        .style("stroke-opacity", 1);
-
-      const t1 = t0.transition().duration(100);
-      t1
-        .selectAll(".hill")
-        .filter(dd => dd.first_elem && dd.id === d.id)
-        .style("stroke-opacity", 1);
-
-      const allOtherHierarchies = ".place_hierarchy_2:not(" + selectedHierarchyClass + ")";
-
-      const t2 = t1.transition().duration(100);
-      t2
-        .selectAll(allOtherHierarchies)
-        .style("fill-opacity", 0.2)
-        .style("stroke-opacity", 0.2);
-
-      const t3 = t2.transition().duration(100);
-      t3
-        .selectAll(".hill")
-        .filter(dd => dd.first_elem && dd.id !== d.id)
-        .style("stroke-opacity", 0.2);
+      case currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.highlightPlaceHierarchy(d); break;
+      default : break;
     }
   };
+
+  highlightPlaceHierarchy = d => {
+    const selectedHierarchyClass = ".place_hierarchy_2_" + d.id;
+
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(selectedHierarchyClass)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id === d.id)
+      .style("stroke-opacity", 1);
+
+    const allOtherHierarchies = ".place_hierarchy_2:not(" + selectedHierarchyClass + ")";
+
+    const t2 = t1.transition().duration(100);
+    t2
+      .selectAll(allOtherHierarchies)
+      .style("fill-opacity", 0.2)
+      .style("stroke-opacity", 0.2);
+
+    const t3 = t2.transition().duration(100);
+    t3
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id !== d.id)
+      .style("stroke-opacity", 0.2);
+  }
+
+  onSvgClicked = () =>
+  {
+    switch(true)
+    {
+      case d3.event.target.constructor.name === "SVGSVGElement" && currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.showAllPlaceHierarchies(); break;
+      default : break;
+    }
+  }
+
+  showAllPlaceHierarchies = () => 
+  {
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(".place_hierarchy_2")
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem)
+      .style("stroke-opacity", 1);
+  }  
 
   highlightHills_old = (dataMember, colorScale) => {
 
