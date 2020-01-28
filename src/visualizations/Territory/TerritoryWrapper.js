@@ -136,7 +136,7 @@ export default class TerritoryWrapper extends React.Component
   callTerritoryApplySearchFilterByInputText = input => this.territoryApplySearchFilterByInputText(input);
 
   containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
-  callTerritoryApplySearchFilterBySearchResults = input => this.territoryApplySearchFilterBySearchResults(input);
+  callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
 
   callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
 

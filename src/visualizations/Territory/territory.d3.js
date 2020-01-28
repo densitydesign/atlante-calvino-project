@@ -1257,33 +1257,41 @@ class VClass
       });
   };
 
-  applySearchFilterByInputText = inputText => {
-
+  applySearchFilterByInputText = inputText => 
+  {
     const inputLowerCase = inputText.toLowerCase();
+    const inputLowerCaseTrimmed = inputLowerCase.trim();
 
-console.log("this.textsData : ", this.textsData);    
+    const mustReset = inputLowerCaseTrimmed === "";
 
     const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
 
-    this.applySearchFilterBySearchResults(results);
+    this.applySearchFilterBySearchResults(mustReset, results);
   };
 
-  applySearchFilterBySearchResults = searchResults => {
-
-    this.text_nodes.style("opacity", .35);
-
+  applySearchFilterBySearchResults = (mustReset, searchResults) => 
+  {
     this.label.classed("visible", false);
 
-    searchResults.forEach(result => 
-      {
-        this.text_nodes
-          .filter(text_node => text_node.id === result.id)
-          .style("opacity", 1);
+    if(!mustReset)
+    {
+      this.text_nodes.style("opacity", .35);
 
-        this.label
-          .filter(d => d.id === result.id)
-          .classed("visible", true);
-      });
+      searchResults.forEach(result => 
+        {
+          this.text_nodes
+            .filter(text_node => text_node.id === result.id)
+            .style("opacity", 1);
+
+          this.label
+            .filter(d => d.id === result.id)
+            .classed("visible", true);
+        });
+    }
+    else
+    {
+      this.text_nodes.style("opacity", 1);
+    }
   };
 
 /*

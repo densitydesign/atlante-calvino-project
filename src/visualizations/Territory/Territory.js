@@ -23,12 +23,12 @@ export default class Territory extends React.Component
     V.destroy(this._rootNode);
   }
 
-                  setHighlightMode =         value => V.setHighlightMode(value);
-                         showHills =       opacity => V.showHills(opacity);
-                     setDataExtent =        extent => V.setDataExtent(extent);
-               applyBeeSwarmFilter =            () => V.applyBeeSwarmFilter();
-      applySearchFilterByInputText =     inputText => V.applySearchFilterByInputText(inputText);
-  applySearchFilterBySearchResults = searchResults => V.applySearchFilterBySearchResults(searchResults);
+                  setHighlightMode =                      value => V.setHighlightMode(value);
+                         showHills =                    opacity => V.showHills(opacity);
+                     setDataExtent =                     extent => V.setDataExtent(extent);
+               applyBeeSwarmFilter =                         () => V.applyBeeSwarmFilter();
+      applySearchFilterByInputText =                  inputText => V.applySearchFilterByInputText(inputText);
+  applySearchFilterBySearchResults = (mustReset, searchResults) => V.applySearchFilterBySearchResults(mustReset, searchResults);
 
   _setRef = componentNode => this._rootNode = componentNode;
 
