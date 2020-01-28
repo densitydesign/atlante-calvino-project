@@ -1,0 +1,48 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  font-size: var(--text-size);
+}
+
+main svg {
+  grid-column: 1 / span 24;
+}
+
+main article {
+  grid-column: 2 / span 14;
+}
+
+.viz--meta {
+  grid-column: 2 / span 22;
+}
+
+.viz--info {
+  height: 5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.viz--info p {
+  margin: 0;
+}
+
+#type-button {
+  text-align: right;
+}
+
+#type-button button {
+  background: var(--bg);
+  border: 1px solid var(--text-color);
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  transition: 0.3s ease;
+}
+
+.divided {
+  background: var(--text-color) !important;
+  color: var(--bg);
+}
+
+.viz--info #type-button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+circle:hover {
+  cursor: pointer;
+}
+
+.circle--selected {
+  transition: .3s ease;
+  opacity: 1;
+  stroke: 1px solid var(--text-color);
+}
+
+.axis {
+  transition: opacity 0.3s ease;
+}
+
+.tick text {
+  font-size: 1.3em;
+  font-family: 'HKGrotesk', sans-serif;
+}
+
+.domain {
+  display: none;
+}
+
+.tick line {
+  stroke-dasharray: 2;
+  stroke: #CCC;
+}
+
+.y line {
+  display: none;
+}
