@@ -2,6 +2,10 @@ circle:hover {
   cursor: pointer;
 }
 
+circle {
+  transition: opacity 0.3s ease;
+}
+
 .circle--selected {
   transition: .3s ease;
   opacity: 1;

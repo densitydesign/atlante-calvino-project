@@ -43,6 +43,6 @@ main article {
   color: var(--bg);
 }
 
-.viz--info #type-button:hover {
+.viz--info #type-button button:hover {
   cursor: pointer;
 }

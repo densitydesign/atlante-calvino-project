@@ -19,12 +19,11 @@ export default class ListTypesPerText extends React.Component
 
   render()
   {
-    const style={
+    const style = {
       width: '100%',
       height: '600px',
       marginTop: '2em',
-      marginBottom: '4em',
-      borderBottom: '1px solid #000000'
+      marginBottom: '4em'
     }
     return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
   }
