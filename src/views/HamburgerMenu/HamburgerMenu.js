@@ -38,9 +38,9 @@ export default class HamburgerMenu extends React.Component
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#shape" text="Forma"><h3 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Tappa 1"><h4 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/doubtAnalysis" text="Dubbio"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/spaceAnalysis" text="Spazio"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/shapeAnalysis" text="Forma"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/doubtAnalysis" text="Dubbio"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/spaceAnalysis" text="Spazio"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/shapeAnalysis" text="Forma"><h5 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Process/intro" text="Tappa 2"><h4 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Process/doubting" text="Dubitare"><h5 dataClass=""/></ViewSelector>

@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 
+import GlobalData from '../../utilities/GlobalData';
 import SplashScreen from '../SplashScreen/SplashScreen';
 import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
@@ -40,18 +41,16 @@ export default function AtlasRouter()
       <Route path="/Itineraries/"><Itineraries /></Route>
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
-      <Route exact path="/Phenomena/territory"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" /></Route>
+      <Route exact path="/Phenomena/territory"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" mainAnalysisMode={GlobalData.analysisModes.noAnalysis} /></Route>      
 
-      <Route exact path="/Phenomena/shapeAnalysis">fenomeni / analisi della forma</Route>
-      <Route exact path="/Phenomena/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
+      <Route exact path="/Phenomena/territory/doubtAnalysis"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" mainAnalysisMode={GlobalData.analysisModes.doubt} /></Route>
+      <Route exact path="/Phenomena/territory/doubtAnalysis/informationSheet"><DoubtInformationSheet /></Route>
 
-      <Route exact path="/Phenomena/doubtAnalysis">fenomeni / analisi del dubbio</Route>
-      <Route exact path="/Phenomena/doubtAnalysis/informationSheet"><DoubtInformationSheet /></Route>
+      <Route exact path="/Phenomena/territory/spaceAnalysis"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" mainAnalysisMode={GlobalData.analysisModes.space} /></Route>
+      <Route exact path="/Phenomena/territory/spaceAnalysis/informationSheet"><SpaceInformationSheet /></Route>
 
-      <Route exact path="/Phenomena/spaceAnalysis">fenomeni / analisi dello spazio</Route>
-      <Route exact path="/Phenomena/spaceAnalysis/informationSheet"><SpaceInformationSheet /></Route>
-
-
+      <Route exact path="/Phenomena/territory/shapeAnalysis"><TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" mainAnalysisMode={GlobalData.analysisModes.shape} /></Route>
+      <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
       <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>

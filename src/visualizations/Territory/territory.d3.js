@@ -59,6 +59,8 @@ const analysisModeGroups = {
 
 const analysisModeChangeTypes = {
   change_none_to_hills      : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.hills),
+  change_none_to_flat       : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.flat),
+  change_none_to_drawing    : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.drawing),
   change_hills_to_flat      : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.flat),
   change_flat_to_hills      : getAnalysisModeChangeType(analysisModeGroups.flat,    analysisModeGroups.hills),  
   change_hills_to_drawing   : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.drawing),
@@ -77,7 +79,7 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data, input_colors) => {
+  initialize = (el, input_data, input_colors, analysisMode) => {
 
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
@@ -991,7 +993,8 @@ class VClass
 
 ///////////////////////////////////////////
 
-    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+//    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+    this.setHighlightMode(analysisMode);
 
     this.label = this.text_nodes
       .selectAll('.label')
@@ -1490,6 +1493,22 @@ console.log("case proportion...");
 
         break;
 
+      case analysisModeChangeTypes.change_none_to_flat :
+
+        this.change_none_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_none_to_drawing :
+
+        this.change_none_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;                
+
       case analysisModeChangeTypes.change_flat_to_hills : 
 
         this.change_flat_to_hills(
@@ -1577,7 +1596,29 @@ console.log("case proportion...");
     this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
-  }  
+  }
+
+  change_none_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }
+
+  change_none_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }    
 
   change_hills_to_flat = (
     oldAnalysisMode, oldHighlightParameters,

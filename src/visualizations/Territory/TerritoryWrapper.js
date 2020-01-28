@@ -25,7 +25,7 @@ export default class TerritoryWrapper extends React.Component
     shapePanelMode : GlobalData.analysisPanelModes.shape.types,
     spacePanelMode : GlobalData.analysisPanelModes.space.genericCosmic,
 
-    mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
+    mainAnalysisMode : this.props.mainAnalysisMode,
     noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,
@@ -80,7 +80,8 @@ export default class TerritoryWrapper extends React.Component
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
   callTerritorySetHighlightMode = value => {
-
+console.log("callTerritorySetHighlightMode");
+console.log("value", value);
     switch(value)
     {
       case GlobalData.analysisModes.noAnalysis.chronology       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
@@ -91,8 +92,8 @@ export default class TerritoryWrapper extends React.Component
       case GlobalData.analysisModes.doubt.percentage            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
       case GlobalData.analysisModes.shape.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
       case GlobalData.analysisModes.shape.types                 : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericCosmic : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedCosmic   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericCosmic         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedCosmic           : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
       case GlobalData.analysisModes.space.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
@@ -168,14 +169,14 @@ export default class TerritoryWrapper extends React.Component
   {
     let helpPage;
 
-      switch(this.state.mainAnalysisMode)
-      {
-        case GlobalData.analysisModes.space : helpPage = GlobalData.helpPages.territory.space; break;
-        case GlobalData.analysisModes.doubt : helpPage = GlobalData.helpPages.territory.doubt; break;
-        case GlobalData.analysisModes.shape : helpPage = GlobalData.helpPages.territory.shape; break;
-        case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main; break;
-        default:throw new Error("mainAnalysisMode not recognized.");
-      }
+    switch(this.state.mainAnalysisMode)
+    {
+      case GlobalData.analysisModes.space : helpPage = GlobalData.helpPages.territory.space; break;
+      case GlobalData.analysisModes.doubt : helpPage = GlobalData.helpPages.territory.doubt; break;
+      case GlobalData.analysisModes.shape : helpPage = GlobalData.helpPages.territory.shape; break;
+      case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main; break;
+      default:throw new Error("mainAnalysisMode not recognized.");
+    }
 
 
     
@@ -210,6 +211,18 @@ export default class TerritoryWrapper extends React.Component
       this.state.shapeAnalysisMode,
       this.state.spaceAnalysisMode);
 
+    let analysisMode;
+
+    switch(this.state.mainAnalysisMode)
+    {
+      case GlobalData.analysisModes.noAnalysis : analysisMode = this.state.noAnalysisMode;    break;
+      case GlobalData.analysisModes.doubt      : analysisMode = this.state.doubtAnalysisMode; break;
+      case GlobalData.analysisModes.space      : analysisMode = this.state.spaceAnalysisMode; break;
+      case GlobalData.analysisModes.shape      : analysisMode = this.state.shapeAnalysisMode; break;
+
+      default : throw new Error("mainAnalysisMode not recognized : " + this.state.mainAnalysisMode);
+    }
+
     return (
       <div className="main">
 
@@ -233,6 +246,7 @@ export default class TerritoryWrapper extends React.Component
         <div className="territory-body">
 
               <Territory
+                analysisMode = {analysisMode}
                 data={this.state.data}
                 colors={GlobalData.visualizationColors.territory}
                 containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
