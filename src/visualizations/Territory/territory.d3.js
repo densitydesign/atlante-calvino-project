@@ -1646,7 +1646,22 @@ console.log("case proportion...");
     tilt = true;
     tilt_labels(this.text_nodes);
 
-    const t2 = t1.transition().duration(700);
+    let t2;
+
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t2 = t1_1.transition().duration(700);
+    }
+    else
+    {
+      t2 = t1.transition().duration(700);
+    }    
+
     t2
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
@@ -1734,7 +1749,6 @@ console.log("case proportion...");
 
     if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
     {
-console.log("hiding metaballs");      
       const t_1 = svg.transition().duration(200);
       t_1
         .selectAll(".metaball")
@@ -1771,7 +1785,13 @@ console.log("hiding metaballs");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(800);
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
       .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
@@ -1784,7 +1804,22 @@ console.log("hiding metaballs");
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);
 
-    const t2 = t1.transition().duration(1);
+    let t2;
+
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_1.transition().duration(1);
+    }
+    else
+    {
+      t2 = t1.transition().duration(1);
+    }
+
     t2
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style("display", "none");
