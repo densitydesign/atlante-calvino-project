@@ -1952,7 +1952,19 @@ console.log("change_none_to_flat");
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
-    const t1 = t0.transition().duration(700);
+    let t1;
+
+    if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
+    {
+      const t0_1 = t0.transition().duration(200);
+      t0_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", newHighlightParameters.show_metaballs ? 1 : 0);
+
+      t1 = t0_1.transition().duration(700);  
+    }
+    else t1 = t0.transition().duration(700);
+
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
