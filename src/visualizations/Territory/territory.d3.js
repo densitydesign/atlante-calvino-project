@@ -80,6 +80,7 @@ customElementsClasses["customElements"] = "customElements";
 class VClass
 {
   initialize = (el, input_data, input_colors, analysisMode) => {
+console.log("initialize");    
 
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
@@ -994,6 +995,7 @@ class VClass
 ///////////////////////////////////////////
 
 //    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+    currentAnalysisMode = undefined;
     this.setHighlightMode(analysisMode);
 
     this.label = this.text_nodes
@@ -1308,6 +1310,7 @@ class VClass
   setHighlightMode = newAnalysisMode => {
 
 console.log("setHighlightMode");
+console.log("currentAnalysisMode", currentAnalysisMode);
 console.log("newAnalysisMode", newAnalysisMode);
 
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
@@ -1602,6 +1605,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters)
   {
+console.log("change_none_to_flat");    
     this.set_yRatio(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
     this.applyShowHillMode(newHighlightParameters.showHillMode);
