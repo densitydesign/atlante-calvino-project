@@ -20,10 +20,11 @@ export default class TerritoryWrapper extends React.Component
     data : "data still not loaded",
     isLoading : true,
 
-    bottomPanelMode : this.props.bottomPanelMode,
-    doubtPanelMode  : GlobalData.analysisPanelModes.doubt.fog,
-    shapePanelMode  : GlobalData.analysisPanelModes.shape.types,
-    spacePanelMode  : GlobalData.analysisPanelModes.space.genericCosmic,
+    bottomPanelMode     : this.props.bottomPanelMode,
+    bottomPanelPosition : GlobalData.bottomPanelPositions.open,
+    doubtPanelMode      : GlobalData.analysisPanelModes.doubt.fog,
+    shapePanelMode      : GlobalData.analysisPanelModes.shape.types,
+    spacePanelMode      : GlobalData.analysisPanelModes.space.genericCosmic,
 
     mainAnalysisMode  : this.props.mainAnalysisMode,
     noAnalysisMode    : GlobalData.analysisModes.noAnalysis.chronology,
@@ -141,21 +142,17 @@ console.log("value", value);
 
   callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
 
-  setBottomPanelMode = value => {
-    this.setState({ bottomPanelMode : value });
-/*
-    switch(value)
-    {
-      case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
-      case GlobalData.bottomPanelModes.doubt      : this.territorySetHighlightMode(this.state.doubtAnalysisMode); break;
-      case GlobalData.bottomPanelModes.shape      : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.bottomPanelModes.space    : this.territorySetHighlightMode(this.state.spaceAnalysisMode); break;
-      case GlobalData.bottomPanelModes.chronologicalFilter : break;
-      case GlobalData.bottomPanelModes.legend : break;
-      default : break;
-    }
-*/
-  };
+  setBottomPanelMode        = value => this.setState({ bottomPanelMode     : value });
+
+  toggleBottomPanelPosition = () => 
+  {
+    const newValue = 
+      this.state.bottomPanelPosition === GlobalData.bottomPanelPositions.open ?
+      GlobalData.bottomPanelPositions.closed :
+      GlobalData.bottomPanelPositions.open;
+
+    this.setState({ bottomPanelPosition : newValue });
+  }
 
   setDoubtPanelMode = value => this.setState({ doubtPanelMode : value });
   setShapePanelMode = value => this.setState({ shapePanelMode : value });
@@ -262,6 +259,7 @@ console.log("value", value);
               <TerritoryBottomPanel
 
                 bottomPanelMode={this.state.bottomPanelMode}
+                bottomPanelPosition={this.state.bottomPanelPosition}
                 containerSetBottomPanelMode={this.setBottomPanelMode}
 
                 doubtPanelMode={this.state.doubtPanelMode}
@@ -305,6 +303,7 @@ console.log("value", value);
           dataExtent={this.state.dataExtent}
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
+          toggleBottomPanelPosition={this.toggleBottomPanelPosition}
         />
 
       </div>
@@ -320,13 +319,6 @@ function selectLegendPage(
   spaceAnalysisMode)
 {
   let legendPage;
-
-console.log("selectLegendPage()");
-console.log("mainAnalysisMode", mainAnalysisMode);
-console.log("noAnalysisMode", noAnalysisMode);
-console.log("doubtAnalysisMode", doubtAnalysisMode);  
-console.log("shapeAnalysisMode", shapeAnalysisMode);  
-console.log("spaceAnalysisMode", spaceAnalysisMode);  
 
   switch(true)
   {

@@ -17,17 +17,19 @@ export default class TerritoryBottomPanel extends React.Component
   {
     let internalPanel;
 
-    switch(this.props.bottomPanelMode)
+    switch(true)
     {
-      case GlobalData.bottomPanelModes.noAnalysis :
+      case 
+        this.props.bottomPanelPosition === GlobalData.bottomPanelPositions.closed ||
+        this.props.bottomPanelMode     === GlobalData.bottomPanelModes.noAnalysis :
 
-        internalPanel = <></>;
+        return <></>;
 
         break;
 
-      case GlobalData.bottomPanelModes.doubt :
-      case GlobalData.bottomPanelModes.shape :
-      case GlobalData.bottomPanelModes.space :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.space :
 
         internalPanel = (
           <TerritoryItinerariesPanel
@@ -51,7 +53,7 @@ export default class TerritoryBottomPanel extends React.Component
 
         break;
 
-      case GlobalData.bottomPanelModes.chronologicalFilter :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.chronologicalFilter :
 
         internalPanel = (
           <TerritoryTimelinePanel
@@ -65,7 +67,7 @@ export default class TerritoryBottomPanel extends React.Component
 
         break;
 
-      case GlobalData.bottomPanelModes.legend :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.legend :
 
         internalPanel = (
           <TerritoryLegendPanel page={this.props.legendPage} />
