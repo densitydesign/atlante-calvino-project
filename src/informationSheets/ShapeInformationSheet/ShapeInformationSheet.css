@@ -17,13 +17,25 @@ main article {
 }
 
 .viz--info {
-  height: 5em;
+  height: 9em;
   display: grid;
+  grid-template-rows: repeat(2, 4.5em);
   grid-template-columns: repeat(3, 1fr);
 }
 
 .viz--info p {
   margin: 0;
+}
+
+#title--values {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#title--values p {
+  font-size: 1.1em;
 }
 
 #type-button {

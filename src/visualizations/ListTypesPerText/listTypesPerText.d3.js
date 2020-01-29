@@ -18,16 +18,15 @@ class VClass {
 
     let svg = d3.select(el);
     let label = d3.select("#label p");
+    let titleValues = d3.select("#title--values");
     let typeButton = d3.select("#type-button button");
     let width = svg.node().getBoundingClientRect().width;
     let height = svg.node().getBoundingClientRect().height;
 
     svg.append("text")
-    .attr("x", 10)
-    .attr("y", height - margin.bottom / 1.6)
-    .text("Anno di pubblicazione →");
-
-    console.log(width, height)
+      .attr("x", 10)
+      .attr("y", height - margin.bottom / 1.6)
+      .text("Anno di pubblicazione →");
 
     let lists = [];
 
@@ -40,8 +39,8 @@ class VClass {
         if (d[value] * 1 > 0) {
           lists.push({
             'id': d.id,
-            'title' : d.title,
-            'date' : parseDate(d.date),
+            'title': d.title,
+            'date': parseDate(d.date),
             'type': typeLabels[index],
             'amount': d[value] * 1
           })
@@ -51,26 +50,26 @@ class VClass {
     })
 
     let x = d3.scaleTime()
-    .range([0 + margin.left, width - margin.right])
-    .domain(d3.extent(lists, d => d.date));
+      .range([0 + margin.left, width - margin.right])
+      .domain(d3.extent(lists, d => d.date));
 
     let type = d3.scalePoint()
-    .range([height - margin.bottom, 0 + margin.top])
-    .padding(0.5)
-    .domain(typeLabels);
+      .range([height - margin.bottom, 0 + margin.top])
+      .padding(0.5)
+      .domain(typeLabels);
 
     let color = d3.scaleOrdinal()
-    .range([
-      GlobalData.visualizationColors.territory.frasi,
-      GlobalData.visualizationColors.territory.misto,
-      GlobalData.visualizationColors.territory.parole,
-      GlobalData.visualizationColors.territory.sintagmi
-    ])
-    .domain(typeLabels);
+      .range([
+        GlobalData.visualizationColors.territory.frasi,
+        GlobalData.visualizationColors.territory.misto,
+        GlobalData.visualizationColors.territory.parole,
+        GlobalData.visualizationColors.territory.sintagmi
+      ])
+      .domain(typeLabels);
 
     let size = d3.scaleSqrt()
-    .range([1, 30])
-    .domain([0, d3.max(lists, d => d.amount)]);
+      .range([1, 30])
+      .domain([0, d3.max(lists, d => d.amount)]);
 
     // Assi
     let xAxis = svg.append('g')
@@ -78,10 +77,10 @@ class VClass {
       .call(d3.axisBottom(x).ticks(width / 120).tickSize(height - margin.top - margin.bottom).tickSizeOuter(0.0));
 
     let yAxis = svg.append('g')
-        .classed('y axis', true)
-        .attr("transform", `translate(${width - margin.right},0)`)
-        .call(d3.axisLeft(type).tickSize(width - margin.right - margin.left))
-        .style("opacity", 0);
+      .classed('y axis', true)
+      .attr("transform", `translate(${width - margin.right},0)`)
+      .call(d3.axisLeft(type).tickSize(width - margin.right - margin.left))
+      .style("opacity", 0);
 
     d3.selectAll(".y .tick text").attr("dx", "-1em");
 
@@ -102,13 +101,13 @@ class VClass {
     let simulation = d3.forceSimulation(lists)
       .force('x', d3.forceX(d => x(d.date)))
       .force('y', d3.forceY(height / 2))
-      .force('collision', d3.forceCollide().radius( d => size(d.amount) + 1 ))
+      .force('collision', d3.forceCollide().radius(d => size(d.amount) + 1))
       .on("tick", ticked)
       .restart();
 
     function ticked() {
       d3.selectAll("circle")
-      .attr("cx", (d) => {
+        .attr("cx", (d) => {
           return d.x
         })
         .attr("cy", d => {
@@ -119,54 +118,74 @@ class VClass {
     let grouped = false;
 
     typeButton.on("click", function() {
+      titleValues.selectAll("p").remove();
 
       grouped = !grouped;
 
-      if(grouped){
+      if (grouped) {
         typeButton.classed("divided", true)
-        .text("Unisci");
+          .text("Unisci");
 
         label.text("Clicca per scoprire titoli, anni.");
 
         d3.selectAll("circle").style("opacity", 1).style("stroke", "none");
 
         simulation.force('y', d3.forceY(d => type(d.type)))
-        .alpha(1)
-        .restart();
+          .alpha(1)
+          .restart();
         yAxis.style("opacity", 1);
       } else {
         typeButton.classed("divided", false)
-        .text("Dividi per tipologia");
+          .text("Dividi per tipologia");
 
         label.text("Clicca per scoprire titoli, anni.");
 
         d3.selectAll("circle").style("opacity", 1).style("stroke", "none");
 
         simulation.force("y", d3.forceY(height / 2))
-        .alpha(1)
-        .restart();
+          .alpha(1)
+          .restart();
         yAxis.style("opacity", 0);
       }
     })
 
     function getInfo(d) {
       label.text(d.title + ", " + formatDate(d.date));
+      titleValues.selectAll("p").remove();
 
       let selectedItem = d.title;
 
       d3.selectAll("circle").style("stroke", "none")
-      .style("opacity", 0.5);
+        .style("opacity", 0.5);
+
+      let sameTitle = [];
+
+      lists.forEach(d => {
+        if (d.title === selectedItem) {
+          sameTitle.push({
+            "type": d.type,
+            "value": d.amount
+          })
+        }
+      });
+
+      sameTitle.forEach(text => {
+
+        titleValues.append("p")
+        .text(text.type + ": " + text.value);
+      })
 
       d3.selectAll("circle")
-      .filter(d => selectedItem === d.title)
-      .style("stroke-width", 1)
-      .style("opacity", 1)
-      .style("stroke", "black");
+        .filter(d => selectedItem === d.title)
+        .style("stroke-width", 1)
+        .style("opacity", 1)
+        .style("stroke", "black");
 
       d3.select(this)
-      .style("opacity", 1)
-      .style("stroke-width", 2)
-      .style("stroke", "black");
+        .style("opacity", 1)
+        .style("stroke-width", 2)
+        .style("stroke", "black");
+
     }
 
   };

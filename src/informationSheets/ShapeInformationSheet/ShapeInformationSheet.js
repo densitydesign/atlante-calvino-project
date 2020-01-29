@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
@@ -18,9 +17,12 @@ export default class ShapeInformationSheet extends React.Component
           <div className="viz--meta">
             <h1>SCHEDA FORMA</h1>
             <div className="viz--info">
-              <div id="label"><p><i>Clicca per scoprire titoli, anni.</i></p></div>
+              <div id="label">
+                <p><i>Clicca per scoprire titoli, anni.</i></p>
+              </div>
               <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Forma_dimensione.svg"} width="650"/></p></div>
               <div id="type-button"><button>Dividi per tipologia</button></div>
+              <div id="title--values"></div>
             </div>
           </div>
           <ListTypesPerTextWrapper  />
