@@ -121,21 +121,21 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
           pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.doubtRadioButtonId).pressed}
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
           callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
-        />
-
-        <RadioButtonWithClose
-          id={this.shapeRadioButtonId} 
-          caption={this.shapeRadioButtonCaption} 
-          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.shapeRadioButtonId).pressed} 
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
-          callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
-        />
+        />          
 
         <RadioButtonWithClose 
           id={this.spaceRadioButtonId}
           caption={this.spaceRadioButtonCaption}
           pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.spaceRadioButtonId).pressed}
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed} 
+          callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
+        />          
+
+        <RadioButtonWithClose
+          id={this.shapeRadioButtonId} 
+          caption={this.shapeRadioButtonCaption} 
+          pressed={this.state.optionRadioButtonsStates.find(item => item.id === this.shapeRadioButtonId).pressed} 
+          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
           callStateContainerCloseButtonClicked={this.optionRadioButtonCloseButtonClicked}
         />
 
