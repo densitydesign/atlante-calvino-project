@@ -23,14 +23,14 @@ export default class TerritoryWrapper extends React.Component
     bottomPanelMode     : this.props.bottomPanelMode,
     bottomPanelPosition : GlobalData.bottomPanelPositions.open,
     doubtPanelMode      : GlobalData.analysisPanelModes.doubt.fog,
+    spacePanelMode      : GlobalData.analysisPanelModes.space.genericTerrestrial,    
     shapePanelMode      : GlobalData.analysisPanelModes.shape.types,
-    spacePanelMode      : GlobalData.analysisPanelModes.space.genericCosmic,
 
     mainAnalysisMode  : this.props.mainAnalysisMode,
     noAnalysisMode    : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
-    shapeAnalysisMode : GlobalData.analysisModes.shape.types,
-    spaceAnalysisMode : GlobalData.analysisModes.space.genericCosmic,
+    spaceAnalysisMode : GlobalData.analysisModes.space.genericTerrestrial,
+    shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
     helpSidePanelOpen : false,
 
@@ -80,27 +80,26 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
-  callTerritorySetHighlightMode = value => {
-console.log("callTerritorySetHighlightMode");
-console.log("value", value);
+  callTerritorySetHighlightMode = value => 
+  {
     switch(value)
     {
-      case GlobalData.analysisModes.noAnalysis.chronology       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.noAnalysis.volumes          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.fog                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.cancellation          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.all                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.percentage            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.types                 : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericCosmic         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedCosmic           : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.noSetting             : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
-      case GlobalData.analysisModes.space.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.chronology    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.volumes       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.fog                : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.cancellation       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.all                : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.percentage         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.proportion         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.types              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericCosmic      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedCosmic        : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.invented           : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.noSetting          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.proportion         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
+      case GlobalData.analysisModes.space.placeHierarchies   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
 
       default : throw new Error("error : analysis mode " + value + " not recognized");
     }
@@ -115,6 +114,7 @@ console.log("value", value);
       case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
       case GlobalData.analysisModes.space      : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
+
       default : throw new Error("setMainAnalysisMode : mainAnalysisMode not recognized");
     }
   }
@@ -168,10 +168,11 @@ console.log("value", value);
 
     switch(this.state.mainAnalysisMode)
     {
-      case GlobalData.analysisModes.space : helpPage = GlobalData.helpPages.territory.space; break;
-      case GlobalData.analysisModes.doubt : helpPage = GlobalData.helpPages.territory.doubt; break;
-      case GlobalData.analysisModes.shape : helpPage = GlobalData.helpPages.territory.shape; break;
-      case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main; break;
+      case GlobalData.analysisModes.space      : helpPage = GlobalData.helpPages.territory.space; break;
+      case GlobalData.analysisModes.doubt      : helpPage = GlobalData.helpPages.territory.doubt; break;
+      case GlobalData.analysisModes.shape      : helpPage = GlobalData.helpPages.territory.shape; break;
+      case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main;  break;
+
       default:throw new Error("mainAnalysisMode not recognized.");
     }
 
@@ -509,7 +510,6 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-console.log("calling draw_jellyfish...");      
 			draw_jellyfish(
         d.graphical_ops, 
         place_hierarchy, 

@@ -79,9 +79,8 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data, input_colors, analysisMode) => {
-console.log("initialize");    
-
+  initialize = (el, input_data, input_colors, analysisMode) => 
+  {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
     const json_nodes = input_data.json_nodes;
@@ -1307,12 +1306,8 @@ console.log("initialize");
   };
 */
 
-  setHighlightMode = newAnalysisMode => {
-
-console.log("setHighlightMode");
-console.log("currentAnalysisMode", currentAnalysisMode);
-console.log("newAnalysisMode", newAnalysisMode);
-
+  setHighlightMode = newAnalysisMode => 
+  {
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
 
