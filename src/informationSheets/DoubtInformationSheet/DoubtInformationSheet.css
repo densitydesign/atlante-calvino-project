@@ -1,0 +1,42 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  font-size: var(--text-size);
+}
+
+main svg {
+  grid-column: 2 / span 22;
+}
+
+main article {
+  grid-column: 2 / span 14;
+}
+
+
+.focus{
+  grid-column: 2 / span 22;
+}
+
+.viz--meta {
+  grid-column: 2 / span 22;
+}
+
+.viz--info {
+  height: 5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.viz--pic{
+  height: 300px;
+  width: 100%;
+}
+
+.text--right{
+  grid-column: 13 / span 8;
+  float:right;
+}
+
+.viz--info p {
+  margin: 0;
+}

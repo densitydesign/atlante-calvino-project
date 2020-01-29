@@ -16,6 +16,7 @@ class VClass {
 
     var width = document.body.clientWidth - margin.left - margin.right;
     var height = 300 - margin.top - margin.bottom;
+    let label = d3.select("#label p");
 
     var x, y;
 
@@ -46,7 +47,7 @@ class VClass {
       .x(d => x(d.data.date))
       .y0(d => y(d[0]))
       .y1(d => y(d[1]))
-      .curve(curveSankey);
+      .curve(d3.curveBasis);
 
     var xAxis = svg.append('g')
       .classed('x axis', true)
@@ -91,48 +92,6 @@ class VClass {
       return strokeDashArray
     })
 
-    function CurveSankey(context) {
-      this._context = context;
-    }
-
-    CurveSankey.prototype = {
-      areaStart: function() {
-        this._line = 0;
-      },
-      areaEnd: function() {
-        this._line = NaN;
-      },
-      lineStart: function() {
-        this._x = this._y = NaN;
-        this._point = 0;
-      },
-      lineEnd: function() {
-        if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
-        this._line = 1 - this._line;
-      },
-      point: function(x, y) {
-        x = +x, y = +y;
-        switch (this._point) {
-          case 0:
-            this._point = 1;
-            this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y);
-            break;
-
-          case 1:
-            this._point = 2;
-          default:
-            var mx = (x - this._x) / 2 + this._x;
-            this._context.bezierCurveTo(mx, this._y, mx, y, x, y);
-            break;
-        }
-
-        this._x = x, this._y = y;
-      }
-    };
-
-    var curveSankey = function(context) {
-      return new CurveSankey(context);
-    }
 
   };
 

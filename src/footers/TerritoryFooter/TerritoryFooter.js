@@ -15,9 +15,9 @@ export default class TerritoryFooter extends React.Component
   chronologicalFilterToggleButtonCaption = "FILTRO CRONOLOGICO";
 
   territoryLabel = "territorio";
-  doubtLabel = "dubbio";
-  shapeLabel = "forma";
-  spaceLabel = "spazio";
+  doubtLabel = "nebbia";
+  shapeLabel = "elenchi";
+  spaceLabel = "luoghi";
 
   stepLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
@@ -62,7 +62,7 @@ export default class TerritoryFooter extends React.Component
     if(value.bottomPanelMode !== this.props.bottomPanelMode)
       this.props.setBottomPanelMode(value.bottomPanelMode);
     else
-      this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis); 
+      this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis);
   };
 
   render()
@@ -77,23 +77,23 @@ export default class TerritoryFooter extends React.Component
           changeOptions={this.changeItineraries}
         />
 
-        <ToggleButton 
-          id={this.chronologicalFilterToggleButtonId} 
+        <ToggleButton
+          id={this.chronologicalFilterToggleButtonId}
           style={{ gridColumn : "span 8" }}
-          caption={this.chronologicalFilterToggleButtonCaption} 
+          caption={this.chronologicalFilterToggleButtonCaption}
           pressed={
             this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode ||
             !matchPair(this.props.dataExtent, GlobalData.defaultTerritoryDataExtent)
           }
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
-        <ToggleButton 
-          id={this.legendToggleButtonId} 
+        <ToggleButton
+          id={this.legendToggleButtonId}
           style={{ gridColumn : "span 8" }}
-          caption={this.legendToggleButtonCaption} 
-          pressed={this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode} 
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          caption={this.legendToggleButtonCaption}
+          pressed={this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode}
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
       </div>

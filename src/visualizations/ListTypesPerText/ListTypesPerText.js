@@ -21,7 +21,7 @@ export default class ListTypesPerText extends React.Component
   {
     const style = {
       width: '100%',
-      height: '600px',
+      height: '500px',
       marginTop: '2em',
       marginBottom: '4em'
     }

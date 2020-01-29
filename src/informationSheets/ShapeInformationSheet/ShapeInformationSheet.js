@@ -17,6 +17,7 @@ export default class ShapeInformationSheet extends React.Component
         <main>
           <div className="viz--meta">
             <h1>SCHEDA FORMA</h1>
+            <h2>  Lorem ipsum dolor sit amet</h2>
             <div className="viz--info">
               <div id="label"><p><i>Clicca per scoprire titoli, anni.</i></p></div>
               <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Forma_dimensione.svg"} width="650"/></p></div>
