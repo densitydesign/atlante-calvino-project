@@ -39,15 +39,15 @@ export default class Articles extends React.Component
               this.state.data.filter(d=>d.section==="Articoli").map((d,i)=>{
                 let externalLinkLink;
                 if (d.link!=='') {
-                  externalLinkLink = (<><a class="link" href={d.link} target="_blank" rel="noopener noreferrer">Link esterno</a></>);
+                  externalLinkLink = (<><a className="link" href={d.link} target="_blank" rel="noopener noreferrer">Link esterno</a></>);
                 }
                 let archiveLink;
                 if (d.archive!=='') {
-                  archiveLink = (<>, <a class="link" href={d.archive} target="_blank" rel="noopener noreferrer">Versione archiviata</a></>);
+                  archiveLink = (<>, <a className="link" href={d.archive} target="_blank" rel="noopener noreferrer">Versione archiviata</a></>);
                 }
                 let download;
                 if (d.download!=='') {
-                  download = (<>, <a a class="link" href={d.download} target="_blank" rel="noopener noreferrer">PDF</a></>);
+                  download = (<>, <a a className="link" href={d.download} target="_blank" rel="noopener noreferrer">PDF</a></>);
                 }
 
                 let pages;
