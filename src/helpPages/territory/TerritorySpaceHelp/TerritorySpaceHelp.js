@@ -12,9 +12,9 @@ export default class TerritorySpaceHelp extends React.Component
   {
     return (
       <>
-      <small>TAPPA 1 </small>
-      <h1>IL FENOMENO</h1>
-      <h2>Lo Spazio</h2>
+      <strong>Itinerario > SPAZIO</strong>
+      <h1>Il fenomeno dei luoghi</h1>
+
       <h3>La raccolta dei dati</h3>
       <p>Per dare una prima idea di come funzioni e si distribuisca il fenomeno spaziale nell’opera di Calvino, si è deciso di differenziare le tipologie di luoghi presenti nei testi, dando loro un nome e quindi una rappresentazione visiva generale.</p>
       <p> Abbiamo individuato cinque categorie, che ci permettessero di fornire una mappatura il più possibile completa: luoghi <span style={{color: '#bbbbff'}}>cosmici generici</span> (es. <em>lo spazio</em>), <span style={{color: '#5151fc'}}>cosmici nominati</span> (es. <em>la Luna</em>), luoghi <span style={{color: '#00c19c'}}>nominati terrestri</span> (es. <em>Sanremo</em>), luoghi <span style={{color: '#ffa500'}}>generici terrestri</span> (es. <em>una vallata</em>) e luoghi <span style={{color: '#ff6c39'}}>inventati</span>(es. <em>Ombrosa</em>). Generalmente, ogni testo presenta più luoghi d’ambientazione e non sempre appartenenti alla stessa categoria. Inoltre, può capitare che un luogo d’ambientazione contenga a sua volta un altro luogo e sia dunque necessario segnalare anche il rapporto gerarchico che li contraddistingue.</p>
