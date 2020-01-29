@@ -1623,6 +1623,7 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // flatten hills tops (but don't hide them yet)
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1630,6 +1631,7 @@ console.log("change_none_to_flat");
       .filter(d => !d.first_elem)
       .style("stroke-opacity", 0);
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1638,11 +1640,13 @@ console.log("change_none_to_flat");
     tilt = true;
     tilt_labels(this.text_nodes);
 
+    // hide the flattened hill tops
     const t2 = t1.transition().duration(1);
     t2.selectAll(".hill")
       .filter(d => !d.first_elem)
       .style("fill", "transparent");
 
+    // recolor hill bases
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".hill")
@@ -1655,11 +1659,13 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor whole hills
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1668,6 +1674,7 @@ console.log("change_none_to_flat");
     tilt = false;
     tilt_labels(this.text_nodes);
 
+    // raise flattened hills
     const t2 = t1.transition().duration(700);
     t2
       .selectAll(".circle_node")
@@ -1679,6 +1686,7 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // flatten hills
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1686,6 +1694,7 @@ console.log("change_none_to_flat");
       .filter(d => !d.first_elem)
       .style("stroke-opacity", 0);
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1696,6 +1705,7 @@ console.log("change_none_to_flat");
 
     let t2;
 
+    // if necessary, change visibility of metaballs
     if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
     {
       const t1_1 = t1.transition().duration(200);
@@ -1710,12 +1720,14 @@ console.log("change_none_to_flat");
       t2 = t1.transition().duration(700);
     }    
 
+    // show custom drawing
     t2
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
+    // make hill bases transparent
     const t3 = t2.transition().duration(600);
     t3
       .selectAll(".hill")
@@ -1723,6 +1735,7 @@ console.log("change_none_to_flat");
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // remove hill tops from display
     const t4 = t3.transition().duration(1);
     t4
       .selectAll(".hill")
@@ -1734,12 +1747,14 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // quickly restore to display (although hidden) the hill tops
     const t_1 = svg.transition().duration(1);
     t_1
       .selectAll(".hill")
       .filter(d => !d.first_elem)
       .attr("display", "block");
 
+    // recolor the hill bases
     const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
@@ -1747,6 +1762,7 @@ console.log("change_none_to_flat");
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // hide custom drawings
     const t1 = t0.transition().duration(700);
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
@@ -1755,6 +1771,7 @@ console.log("change_none_to_flat");
 
     let t2;
 
+    // if necessary, change visibility of metaballs
     if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
     {
       const t1_2 = t1.transition().duration(200);
@@ -1769,6 +1786,7 @@ console.log("change_none_to_flat");
       t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
     }      
     
+    // tilt
     t2
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
@@ -1776,6 +1794,7 @@ console.log("change_none_to_flat");
     tilt = false;
     tilt_labels(this.text_nodes);
 
+    // show hills
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".circle_node")
@@ -1783,6 +1802,7 @@ console.log("change_none_to_flat");
       .style("stroke-opacity", 1)
       .style("fill-opacity", 1);
 
+    // hide custom drawings
     const t4 = t3.transition().duration(1);
     t4
       .selectAll("." + oldHighlightParameters.customElementsClasses)
@@ -1795,6 +1815,7 @@ console.log("change_none_to_flat");
   {
     let t0;
 
+    // if necessary, change visibility of metaballs
     if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
     {
       const t_1 = svg.transition().duration(200);
@@ -1809,12 +1830,14 @@ console.log("change_none_to_flat");
       t0 = svg.transition().duration(700);
     }
 
+    // show custom drawings
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
+    // hide hill bases
     const t1 = t0.transition().duration(600);
     t1
       .selectAll(".hill")
@@ -1822,6 +1845,7 @@ console.log("change_none_to_flat");
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // quickly remove from drawing hill tops (necessary to have internal of hill bases wholly clickable, as in case of jellyfishes)
     const t2 = t1.transition().duration(1);
     t2
       .selectAll(".hill")
@@ -1833,12 +1857,14 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // quickly rebring to display (although hidden) the hill tops
     const t_1 = svg.transition().duration(1);
     t_1
       .selectAll(".hill")
       .filter(d => !d.first_elem)
       .attr("display", "block");
 
+    // recolor, if necessary in the new parameters, the hill bases, or otherwise make them transparent
     const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
@@ -1846,6 +1872,7 @@ console.log("change_none_to_flat");
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // hide custom drawings
     const t1 = t0.transition().duration(700);
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
@@ -1854,6 +1881,7 @@ console.log("change_none_to_flat");
 
     let t2;
 
+    // if necessary, change metaballs visibility
     if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
     {
       const t1_1 = t1.transition().duration(200);
@@ -1877,6 +1905,7 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor hills
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
@@ -1887,6 +1916,7 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor hill bases
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
@@ -1899,52 +1929,7 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-/*    
-    const oldLock = {};
-    const newLock = {};
-
-    function hideOld(object, duration)
-    {
-      d3
-        .select(oldLock)
-        .transition()
-        .duration(duration)
-        .tween("style:fill-opacity", function() {
-          const i = d3.interpolateNumber(1, 0);
-
-          return function(t) { object.style("fill-opacity", i); };
-        });
-    }
-
-    function showNew(object, duration)
-    {
-      d3
-        .select(newLock)
-        .transition()
-        .duration(duration)
-        .tween("style:fill-opacity", function() {
-          const i = d3.interpolateNumber(0, 1);
-
-          return function(t) { object.style("fill-opacity", i); };
-        });
-    }
-
-    svg
-      .select("." + oldHighlightParameters.customElementsClasses)
-      .call(hideOld, 2000)
-      .exit()
-      .select("." + newHighlightParameters.customElementsClasses)
-      .call(showNew, 2000);
-*/
-/*
-    const t0 = svg.transition().duration(700);
-    t0
-      .selectAll("." + oldHighlightParameters.customElementsClasses + ",." + newHighlightParameters.customElementsClasses)
-      .style('display', "block")
-			.style('fill-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1)
-			.style('stroke-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1);
-*/
-
+    // show new custom drawings
     const t0 = svg.transition().duration(700);
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
@@ -1954,6 +1939,7 @@ console.log("change_none_to_flat");
 
     let t1;
 
+    // if necessary, change metaballs visibility
     if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
     {
       const t0_1 = t0.transition().duration(200);
@@ -1965,6 +1951,7 @@ console.log("change_none_to_flat");
     }
     else t1 = t0.transition().duration(700);
 
+    // hide old custom drawings
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
