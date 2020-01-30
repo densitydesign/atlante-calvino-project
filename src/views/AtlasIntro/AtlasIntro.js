@@ -345,7 +345,7 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2 pop"><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2"><h5>Dubbio</h5></div>
+            <div className="atlas-intro-cell2"><h5>Nebbia</h5></div>
             <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
             <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
 
