@@ -28,7 +28,7 @@ const aggregazioneOptions = [
 
 const cercaOptions = [{ label: "titolo" }, { label: "boh" }];
 
-class Combine extends Component {
+class Trama extends Component {
   state = {
     isLoading: false,
     booksData: null,
@@ -127,4 +127,4 @@ class Combine extends Component {
   }
 }
 
-export default Combine;
+export default Trama;

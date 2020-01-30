@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { useChain, useSpring, animated } from "react-spring";
-import styles from "./Combine.module.css";
+import styles from "./Trama.module.css";
 
 export default function MarimekkoTopAxis({
   width,
