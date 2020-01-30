@@ -97,7 +97,7 @@ export default class TerritorySpacePanel extends React.Component
           informationSheetDescription="SCHEDA"
           itineraryStop2Route="/Process/transforming"
           itineraryStop2Description="TAPPA 2"
-          itineraryStop3Route=""
+          itineraryStop3Route="/Problem/realism"
           itineraryStop3Description="TAPPA 3"
         />
 

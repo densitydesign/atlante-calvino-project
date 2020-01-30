@@ -10,7 +10,8 @@ export default class LinkParagraph extends React.Component
       <nav>
       <strong>{this.props.smallTitle}</strong>
         <Link to={this.props.route}>
-          <h1 className="link title-category">{this.props.linkText}< /h1></Link>
+          <h1 className="link title-category">{this.props.linkText}</h1>
+        </Link>
         <p>
           {this.props.description}
         </p>

@@ -60,7 +60,7 @@ export default class TerritoryShapePanel extends React.Component
         informationSheetDescription="SCHEDA"
         itineraryStop2Route="/Process/combining"
         itineraryStop2Description="TAPPA 2"
-        itineraryStop3Route=""
+        itineraryStop3Route="/Problem/plot"
         itineraryStop3Description="TAPPA 3"
       />
 

@@ -29,9 +29,28 @@ export default class ProcessIntro extends React.Component
               </div>
             </div>
             <div className="category-subentries-grid">
-              <CategoryEntryBlock smallTitle="Itinerario > DUBBIO" linkText="Dubitare" description="Dubitare vuol dire creare un testo che si rifiuta di rimanere sempre se stesso. Significa invitare il lettore e la lettrice a entrare dentro una scrittura simile a un campo di mine, che può esplodere in ogni momento." />
-              <CategoryEntryBlock smallTitle="Itinerario > SPAZIO" linkText="Trasformare" description="Trasformare vuol dire affidarsi a uno dei processi fondamentali della scrittura di Calvino: quello della metamorfosi. Dietro tutti i luoghi visitati da Marco Polo, non si nasconde infatti sempre Venezia?"/>
-              <CategoryEntryBlock smallTitle="Itinerario > FORMA" linkText="Combinare" description="Combinare vuole dire mettere in dubbio la linearità della narrazione. A tal punto da tendere il più delle volte a riscrivere una stessa trama elementare, basata sulla serie e sulla concatenazione. "/>
+
+              <CategoryEntryBlock 
+                smallTitle="Itinerario > DUBBIO" 
+                linkText="Dubitare" 
+                route="/Process/doubting"
+                description="Dubitare vuol dire creare un testo che si rifiuta di rimanere sempre se stesso. Significa invitare il lettore e la lettrice a entrare dentro una scrittura simile a un campo di mine, che può esplodere in ogni momento." 
+              />
+
+              <CategoryEntryBlock 
+                smallTitle="Itinerario > SPAZIO" 
+                linkText="Trasformare" 
+                route="/Process/transforming"
+                description="Trasformare vuol dire affidarsi a uno dei processi fondamentali della scrittura di Calvino: quello della metamorfosi. Dietro tutti i luoghi visitati da Marco Polo, non si nasconde infatti sempre Venezia?"
+              />
+
+              <CategoryEntryBlock 
+                smallTitle="Itinerario > FORMA" 
+                linkText="Combinare" 
+                route="/Process/combining"
+                description="Combinare vuole dire mettere in dubbio la linearità della narrazione. A tal punto da tendere il più delle volte a riscrivere una stessa trama elementare, basata sulla serie e sulla concatenazione. "
+              />
+
             </div>
           </div>
         </div>

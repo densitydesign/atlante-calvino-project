@@ -29,9 +29,28 @@ export default class ProblemIntro extends React.Component
             </div>
           </div>
           <div className="category-subentries-grid">
-            <CategoryEntryBlock smallTitle="Itinerario > DUBBIO" linkText="Cancellazione" description="Scrivere è un modo per opporsi al vuoto della pagina. Ma anche per accogliere quel vuoto dentro la scrittura, che in Calvino combatte sempre ad armi impari contro la tendenza alla cancellazione del testo e alla scomparsa del suo significato. "/>
-            <CategoryEntryBlock smallTitle="Itinerario >SPAZIO" linkText="Realismo" description="Dopo aver attraversato gli spazi dell’opera di Calvino, il problema della rappresentazione della realtà resta intatto: dopo le infinite metamorfosi alle quali abbiamo assistito, come riconoscere il vero dal falso? "/>
-            <CategoryEntryBlock smallTitle="Itinerario >FORMA" linkText="Trama" description="Senza trame non ci sono narrazioni. Ma le narrazioni possono avere rapporti molto complicati con le trame. Come l’opera di Calvino dimostra in modo esemplare."/>
+
+            <CategoryEntryBlock 
+              smallTitle="Itinerario > DUBBIO" 
+              linkText="Cancellazione" 
+              route="/Problem/cancellation"
+              description="Scrivere è un modo per opporsi al vuoto della pagina. Ma anche per accogliere quel vuoto dentro la scrittura, che in Calvino combatte sempre ad armi impari contro la tendenza alla cancellazione del testo e alla scomparsa del suo significato. "
+            />
+
+            <CategoryEntryBlock 
+              smallTitle="Itinerario >SPAZIO" 
+              linkText="Realismo" 
+              route="/Problem/realism"
+              description="Dopo aver attraversato gli spazi dell’opera di Calvino, il problema della rappresentazione della realtà resta intatto: dopo le infinite metamorfosi alle quali abbiamo assistito, come riconoscere il vero dal falso? "
+            />
+
+            <CategoryEntryBlock 
+              smallTitle="Itinerario >FORMA" 
+              linkText="Trama" 
+              route="/Problem/plot"
+              description="Senza trame non ci sono narrazioni. Ma le narrazioni possono avere rapporti molto complicati con le trame. Come l’opera di Calvino dimostra in modo esemplare."
+            />
+
             </div>
         </div>
         </div>

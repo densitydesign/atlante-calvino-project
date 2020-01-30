@@ -33,9 +33,28 @@ export default class PhenomenaIntro extends React.Component
             </div>
           </div>
           <div className="itineraries-subgrid">
-            <LinkParagraph route="/territory" smallTitle="Itinerario > DUBBIO" linkText="Nebbia" description="All’inizio c’è la nebbia. Una fitta nebbia, dove il territorio si cancella e il suo significato ci sfugge. La nebbia è uno dei grandi fenomeni della scrittura calviniana, per questo abbiamo scelto di cominciare da qui." />
-            <LinkParagraph route="/" smallTitle="Itinerario > SPAZIO" linkText="Luoghi" description="I luoghi sono l’appiglio, incerto ma fondamentale, per connettere il visibile all’invisibile. Il corporeo all’incorporeo. Niente meglio di un tentativo di vederli tutti insieme, ci farà entrare nel cuore di cosa significhi rappresentare il reale." />
-            <LinkParagraph route="/" smallTitle="Itinerario > FORMA" linkText="Elenchi" description="Calvino è sempre stato un maniaco degli elenchi. L’elenco può funzionare come marca di realismo o all’opposto come fuga nell’astrazione. Fa vedere alcune cose, ma se aumenta il suo voltaggio, scivolando nel delirio elencatorio, non fa vedere più nulla." />
+
+            <LinkParagraph 
+              smallTitle="Itinerario > DUBBIO" 
+              linkText="Nebbia" 
+              route="/Phenomena/territory/doubtAnalysis" 
+              description="All’inizio c’è la nebbia. Una fitta nebbia, dove il territorio si cancella e il suo significato ci sfugge. La nebbia è uno dei grandi fenomeni della scrittura calviniana, per questo abbiamo scelto di cominciare da qui." 
+            />
+
+            <LinkParagraph 
+              route="/Phenomena/territory/spaceAnalysis" 
+              smallTitle="Itinerario > SPAZIO" 
+              linkText="Luoghi" 
+              description="I luoghi sono l’appiglio, incerto ma fondamentale, per connettere il visibile all’invisibile. Il corporeo all’incorporeo. Niente meglio di un tentativo di vederli tutti insieme, ci farà entrare nel cuore di cosa significhi rappresentare il reale." 
+            />
+
+            <LinkParagraph 
+              route="/Phenomena/territory/shapeAnalysis" 
+              smallTitle="Itinerario > FORMA" 
+              linkText="Elenchi" 
+              description="Calvino è sempre stato un maniaco degli elenchi. L’elenco può funzionare come marca di realismo o all’opposto come fuga nell’astrazione. Fa vedere alcune cose, ma se aumenta il suo voltaggio, scivolando nel delirio elencatorio, non fa vedere più nulla." 
+            />
+
           </div>
         </div>
       </>

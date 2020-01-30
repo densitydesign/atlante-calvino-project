@@ -42,14 +42,16 @@ export default function AtlasRouter()
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
       <Route exact path="/Phenomena/territory">
-        <TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper 
+          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
           bottomPanelMode={GlobalData.bottomPanelModes.noAnalysis}
           mainAnalysisMode={GlobalData.analysisModes.noAnalysis}
         />
       </Route>      
 
       <Route exact path="/Phenomena/territory/doubtAnalysis">
-        <TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper 
+          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
           bottomPanelMode={GlobalData.bottomPanelModes.doubt}
           mainAnalysisMode={GlobalData.analysisModes.doubt} 
         />
@@ -57,7 +59,8 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/doubtAnalysis/informationSheet"><DoubtInformationSheet /></Route>
 
       <Route exact path="/Phenomena/territory/spaceAnalysis">
-        <TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper 
+          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
           bottomPanelMode={GlobalData.bottomPanelModes.space}
           mainAnalysisMode={GlobalData.analysisModes.space} 
         />
@@ -65,7 +68,8 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/spaceAnalysis/informationSheet"><SpaceInformationSheet /></Route>
 
       <Route exact path="/Phenomena/territory/shapeAnalysis">
-        <TerritoryWrapper title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper 
+          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
           bottomPanelMode={GlobalData.bottomPanelModes.shape}
           mainAnalysisMode={GlobalData.analysisModes.shape} 
         />
@@ -73,17 +77,13 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
-
-
-
-
+      <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
-      <Route exact path="/Problem/realism">problema / realismo</Route>
       <Route exact path="/Problem/cancellation">problema / cancellazione</Route>
+      <Route exact path="/Problem/realism">problema / realismo</Route>      
       <Route exact path="/Problem/plot">problema / trama</Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
