@@ -4,7 +4,6 @@ import styles from "./Trama.module.css";
 import { useChain, useSpring, animated } from "react-spring";
 import { scaleLinear } from "d3";
 
-
 function MarimekkoBook({
   book,
   currentTextID,
@@ -12,48 +11,68 @@ function MarimekkoBook({
   selectedLegendEntries,
   height,
   width,
+  iceCycleData,
 }) {
-  const isCurrent = currentTextID === book.textID
-  const show = !currentTextID || isCurrent
+  const isCurrent = currentTextID === book.textID;
+  const show = !currentTextID || isCurrent;
 
-  const translateToList = `translate(${book.caratteriX}px)`
-  const translateToDetail = `translate(0px)`
-  
-  const props = useSpring({ 
-    config: { friction: 50},
-    from: { opacity :1,  transform: currentTextID ? translateToDetail : translateToList, width: isCurrent ?  200 : book.caratteriWidth},
-  
-    to: [{opacity: show ? 1 : 0, transform: isCurrent ? translateToDetail : translateToList, width: isCurrent ?  200 : book.caratteriWidth}, 
-      {width:  isCurrent ?  200 : book.caratteriWidth}]
-    })
-    
-  
+  const translateToList = `translate(${book.caratteriX}px)`;
+  const translateToDetail = `translate(0px)`;
+
+  console.log("book", bookDataAnnotated)
+
+  const icycleWidth = width / 10 * 8
+  const columnWidth = icycleWidth / 5
+
+  const props = useSpring({
+    config: { friction: 50 },
+    from: {
+      opacity: 1,
+      transform: currentTextID ? translateToDetail : translateToList,
+      width: isCurrent ? columnWidth : book.caratteriWidth
+    },
+
+    to: [
+      {
+        opacity: show ? 1 : 0,
+        transform: isCurrent ? translateToDetail : translateToList,
+        width: isCurrent ? columnWidth : book.caratteriWidth
+      },
+      { width: isCurrent ? columnWidth : book.caratteriWidth }
+    ]
+  });
+
   // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
   // console.log(props)
 
   return (
-    <animated.g
-      key={book.textID}
-      // transform={`translate(${book.caratteriX})`}
-      style={{transform:props.transform, opacity: props.opacity}}
-    >
-      <rect
-        className={`${styles.marimekkoRect}`}
-        style={{ height, width: props.width }}
-      ></rect>
-      {bookDataAnnotated.map((d, i) => (
-        <animated.rect
-          key={i}
-          y={d.top}
-          width={props.width}
-          height={d.height}
-          className={`${styles.marimekkoUnit}  ${
-            selectedLegendEntries[d.label] ? styles.selected : ""
-          }`}
-          fill={d.color}
-        ></animated.rect>
-      ))}
-    </animated.g>
+    <>
+      <animated.g
+        key={book.textID}
+        // transform={`translate(${book.caratteriX})`}
+        style={{ transform: props.transform, opacity: props.opacity }}
+      >
+        <rect
+          className={`${styles.marimekkoRect}`}
+          style={{ height, width: props.width }}
+        ></rect>
+        {bookDataAnnotated.map((d, i) => (
+          <animated.rect
+            key={i}
+            y={d.top}
+            width={props.width}
+            height={d.height}
+            className={`${styles.marimekkoUnit}  ${
+              selectedLegendEntries[d.label] ? styles.selected : ""
+            }`}
+            fill={d.color}
+          ></animated.rect>
+        ))}
+      </animated.g>
+      {isCurrent && <g>
+
+      </g>}
+    </>
   );
 }
 
@@ -63,7 +82,8 @@ export default function MarimekkoChart({
   booksDataWithPositions,
   chartBooks,
   selectedLegendEntries,
-  currentTextID
+  currentTextID,
+  iceCycleData
 }) {
   const heightScale = scaleLinear()
     .domain([0, 1])
@@ -108,6 +128,7 @@ export default function MarimekkoChart({
             selectedLegendEntries={selectedLegendEntries}
             height={height}
             width={width}
+            iceCycleData={iceCycleData}
           ></MarimekkoBook>
         );
       })}
