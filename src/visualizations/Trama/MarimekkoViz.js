@@ -149,7 +149,7 @@ const preprocessData = (data, options = {}) => {
   };
 };
 
-function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
+function MarimekkoViz({ data, dettaglio, aggregazione, setOptionsForDetail, tipologia }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
 
@@ -202,6 +202,14 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
   //#TODO: move to url
   const [currentTextID, setCurrentTextID] = useState(null);
 
+  //resetting aggregazione
+  useEffect(() => {
+    if(currentTextID){
+      setOptionsForDetail()
+    }
+  }, [currentTextID, setOptionsForDetail]);
+
+
   const { booksData, chartBooks } = useMemo(() => {
     return preprocessData(data, { dettaglio, aggregazione, tipologia });
   }, [data, dettaglio, aggregazione, tipologia]);
@@ -211,7 +219,8 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     const scaleChars = scaleLinear()
       .domain([0, totalChars])
       .range([0, dimensions.vizWidth]);
-    const booksDataAnnotated = booksData.reduce((out, item, i) => {
+    
+      const booksDataAnnotated = booksData.reduce((out, item, i) => {
       if (i === 0) {
         out.push({
           ...item,
@@ -240,7 +249,10 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     if(!currentTextID){
       return null
     }
-    return data.filter(row => row.textID === currentTextID)
+    return data.filter(row => row.textID === currentTextID).map(item => {
+      const tipologia = item["Cluster tipolegie"]
+      return {...item, color: coloriClusterTipologie[tipologia], label: tipologia}
+    })
 
   }, [currentTextID, data])
 

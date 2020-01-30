@@ -100,6 +100,10 @@ class Trama extends Component {
             data={marimekkoData}
             dettaglio={dettaglio}
             aggregazione={aggregazione}
+            setOptionsForDetail={() => {
+              if(this.state.aggregazione !== "non aggregato" || this.state.dettaglio !== "categorie"){
+                this.setState({aggregazione: "non aggregato", dettaglio: "categorie"})
+            }}}
             tipologia={tipologia}
           />
         </div>
