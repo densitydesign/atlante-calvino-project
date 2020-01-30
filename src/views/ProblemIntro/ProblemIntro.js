@@ -3,6 +3,7 @@ import React from 'react'
 import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import LinkParagraph from '../PhenomenaIntro/LinkParagraph';
 
 import '../../App.css';
 import './ProblemIntro.css';
@@ -18,7 +19,7 @@ export default class ProblemIntro extends React.Component
         <div className="category-intro-grid">
           <div className="category-intro-block-row">
             <div className="category-intro-main-block">
-              <small className="current-phase-subheader"><strong>TAPPA 3</strong></small>
+              <strong className="current-phase-subheader">TAPPA 3</strong>
               <h1>IL PROBLEMA</h1>
               <p className="intro">Nella terza tappa cercheremo di inseguire l’ombra dei problemi dietro ai fenomeni e ai processi. Il timore della cancellazione, che nasconde a sua volta quello della cecità e della illeggibilità del testo. Il grande totem del realismo. E infine la tormentosa questione di come si costruisce una trama.
               </p>

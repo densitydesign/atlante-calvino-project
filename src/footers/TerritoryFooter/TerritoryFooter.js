@@ -9,9 +9,9 @@ import '../../App.css';
 export default class TerritoryFooter extends React.Component
 {
   territoryLabel = "territorio";
-  doubtLabel = "dubbio";
-  shapeLabel = "forma";
-  spaceLabel = "spazio";
+  doubtLabel = "nebbia";
+  shapeLabel = "elenchi";
+  spaceLabel = "luoghi";
 
   itineraryLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
@@ -128,23 +128,23 @@ export default class TerritoryFooter extends React.Component
           />
         }
 
-        <ToggleButton 
-          id={this.chronologicalFilterToggleButtonId} 
+        <ToggleButton
+          id={this.chronologicalFilterToggleButtonId}
           style={{ gridColumn : "span 8" }}
-          caption={this.chronologicalFilterToggleButtonCaption} 
+          caption={this.chronologicalFilterToggleButtonCaption}
           pressed={
             this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode ||
             !matchPair(this.props.dataExtent, GlobalData.defaultTerritoryDataExtent)
           }
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
-        <ToggleButton 
-          id={this.legendToggleButtonId} 
+        <ToggleButton
+          id={this.legendToggleButtonId}
           style={{ gridColumn : "span 8" }}
-          caption={this.legendToggleButtonCaption} 
-          pressed={this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode} 
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          caption={this.legendToggleButtonCaption}
+          pressed={this.props.bottomPanelMode === this.toggleButtonsMap.get(this.legendToggleButtonId).bottomPanelMode}
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
       </div>

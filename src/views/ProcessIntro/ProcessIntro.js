@@ -19,7 +19,7 @@ export default class ProcessIntro extends React.Component
           <div className="category-intro-grid">
             <div className="category-intro-block-row">
               <div className="category-intro-main-block">
-                <small className="current-phase-subheader"><strong>TAPPA 2</strong></small>
+                <strong className="current-phase-subheader">TAPPA 2</strong>
                 <h1>IL PROCESSO</h1>
                 <p className="intro">Con la seconda tappa, che riguarda i processi piuttosto che i fenomeni, ci spostiamo da oggetti di studio puntuali verso alcune azioni che cerchiamo di cogliere con tre verbi all’infinito. Dietro il fenomeno della nebbia andremo alla ricerca di come funziona il processo del dubitare, dietro lo spazio quello del trasformare e dietro gli elenchi quello del combinare.</p>
               </div>

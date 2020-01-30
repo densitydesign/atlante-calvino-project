@@ -10,10 +10,6 @@ export default class TerritoryShapeProportion2Legend extends React.Component
     return (
       <>
 
-  \     <div className="legend-block">
-          <div className="title-panel"><h3>FORMA</h3></div>
-        </div>
-
         <div className="legend-block">
           <div className="title-panel"><h4>DISPOSIZIONE</h4></div>
           <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />

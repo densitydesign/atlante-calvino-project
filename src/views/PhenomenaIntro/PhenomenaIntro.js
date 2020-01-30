@@ -19,7 +19,7 @@ export default class PhenomenaIntro extends React.Component
         <div className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
-              <small className="current-phase-subheader"><strong>TAPPA 1</strong></small>
+              <strong className="current-phase-subheader">TAPPA 1</strong>
               <div className="other-phases-subheader">
                 <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
                 <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />

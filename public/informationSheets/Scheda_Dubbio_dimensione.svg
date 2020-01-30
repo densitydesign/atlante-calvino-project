@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 695.9 46.9" style="enable-background:new 0 0 695.9 46.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HKGrotesk-Regular';}
+	.st1{font-size:10px;}
+	.st2{fill:#0000FF;}
+	.st3{fill:#00095E;}
+	.st4{fill:#FF0000;}
+	.st5{fill:none;}
+	.st6{fill:none;stroke:#1D1D1B;stroke-width:0.25;stroke-miterlimit:10;}
+	.st7{fill:#1D1D1B;}
+	.st8{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;stroke-dasharray:1.1151,1.1151;}
+	.st10{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;stroke-dasharray:0.7582,0.7582;}
+	.st11{fill:#7F0000;}
+</style>
+<g id="Group_304" transform="translate(102 12.576)">
+	<g id="Group_306">
+		<g id="Group_312">
+			<text transform="matrix(1 0 0 1 -82.0423 23.2757)" class="st0 st1">Nebbia astratta</text>
+			<path id="Rectangle_179" class="st2" d="M-97.5,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5l0,0
+				C-102,17.1-100,15.1-97.5,15.1z"/>
+		</g>
+	</g>
+	<g id="Group_307" transform="translate(-9)">
+		<text transform="matrix(1 0 0 1 31.1891 23.2757)" class="st0 st1">Nebbia concreta</text>
+		<path id="Rectangle_180" class="st3" d="M15.7,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5l0,0
+			C11.2,17.1,13.2,15.1,15.7,15.1z"/>
+	</g>
+	<g id="Group_308" transform="translate(-18)">
+		<text transform="matrix(1 0 0 1 151.6253 23.2757)" class="st0 st1">Cancellazione astratta</text>
+		<path id="Rectangle_181" class="st4" d="M135.7,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5l0,0
+			C131.2,17.1,133.2,15.1,135.7,15.1z"/>
+	</g>
+	<g id="Group_305" transform="translate(8350 -9660.325)">
+		<g id="dimensione" transform="translate(-8032 9661.423)">
+			<g id="dimensione-X" transform="translate(0 0)">
+				<g id="Group-7">
+					<text transform="matrix(1 0 0 1 124.2023 21.9709)" class="st0 st1">Numero di occorrenze nel tempo</text>
+					<g>
+						<g>
+							<line class="st5" x1="111.7" y1="-7.4" x2="111.7" y2="23"/>
+							<g>
+								<line class="st6" x1="111.7" y1="-7.2" x2="111.7" y2="22.9"/>
+								<g>
+									<rect x="110.9" y="-7.4" class="st7" width="1.6" height="0.2"/>
+								</g>
+								<g>
+									<rect x="110.9" y="22.8" class="st7" width="1.6" height="0.2"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<line class="st5" x1="94.6" y1="-7.4" x2="110.1" y2="-7.4"/>
+							<g>
+								<line class="st8" x1="94.6" y1="-7.4" x2="95.1" y2="-7.4"/>
+								<line class="st9" x1="96.2" y1="-7.4" x2="109.1" y2="-7.4"/>
+								<line class="st8" x1="109.6" y1="-7.4" x2="110.1" y2="-7.4"/>
+							</g>
+						</g>
+						<path class="st6" d="M94.6-7.4c-6.1,0-6.1,25.9-12.2,25.9S76.3,23,70.2,23h36.7C100.7,23,100.7-7.4,94.6-7.4z"/>
+						<g>
+							<line class="st5" x1="106.8" y1="23" x2="110.1" y2="23"/>
+							<g>
+								<line class="st8" x1="106.8" y1="23" x2="107.3" y2="23"/>
+								<line class="st10" x1="108.1" y1="23" x2="109.2" y2="23"/>
+								<line class="st8" x1="109.6" y1="23" x2="110.1" y2="23"/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="Group_309" transform="translate(-27)">
+		<text transform="matrix(1 0 0 1 300.422 23.2757)" class="st0 st1">Cancellazione concreta</text>
+		<path id="Rectangle_182" class="st11" d="M284.5,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5l0,0
+			C280,17.1,282,15.1,284.5,15.1z"/>
+	</g>
+</g>
+</svg>
