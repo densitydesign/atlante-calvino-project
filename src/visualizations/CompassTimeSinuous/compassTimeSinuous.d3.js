@@ -1024,7 +1024,7 @@ class VClass {
         exit: function(el) {
           scrollytelling(el);
         },
-        offset: 0.5,
+        offset: 0.3,
       });
 
       enterView({
@@ -1035,7 +1035,7 @@ class VClass {
         exit: function(el) {
           scrollytelling(el);
         },
-        offset: 0.5,
+        offset: 0.3,
       });
 
       enterView({
@@ -1048,7 +1048,7 @@ class VClass {
           scrollytelling(el);
           d3.select('.legend').classed('open', true);
         },
-        offset: 1, // enter at middle of viewport
+        offset: 0.3, // enter at middle of viewport
       });
     }
 
