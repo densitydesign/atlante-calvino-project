@@ -21,9 +21,9 @@ function MarimekkoBook({
   
   const props = useSpring({ 
     config: { friction: 50},
-    from: { opacity :1,  transform: translateToList, width: book.caratteriWidth},
+    from: { opacity :1,  transform: currentTextID ? translateToDetail : translateToList, width: isCurrent ?  200 : book.caratteriWidth},
   
-    to: [{opacity: show ? 1 : 0, transform: isCurrent ? translateToDetail : translateToList, width: book.caratteriWidth}, 
+    to: [{opacity: show ? 1 : 0, transform: isCurrent ? translateToDetail : translateToList, width: isCurrent ?  200 : book.caratteriWidth}, 
       {width:  isCurrent ?  200 : book.caratteriWidth}]
     })
     
