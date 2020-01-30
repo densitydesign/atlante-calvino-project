@@ -10,6 +10,7 @@ import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';
+import CompassFlux from '../CompassFlux/CompassFlux';
 import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
@@ -39,6 +40,7 @@ export default function AtlasRouter()
       <Route exact path="/Compass"><Compass /></Route>
 
       <Route exact path="/Compass/time"><CompassTime /></Route>
+      <Route exact path="/Compass/flux"><CompassFlux /></Route>
 
       <Route path="/Itineraries/"><Itineraries /></Route>
 
