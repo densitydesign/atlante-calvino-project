@@ -24,10 +24,10 @@ import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
-import Combine from '../../visualizations/Combine/Combine';
 import DoubtInformationSheet from '../../informationSheets/DoubtInformationSheet/DoubtInformationSheet';
 import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet/ShapeInformationSheet';
 import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet/SpaceInformationSheet';
+import Trama from '../../visualizations/Trama/Trama';
 
 export default function AtlasRouter()
 {
@@ -84,12 +84,13 @@ export default function AtlasRouter()
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
       <Route exact path="/Process/doubting">processi / dubitare</Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
-      <Route exact path="/Process/combining"><Combine title="LA STRUTTURA DEI VOLUMI" /></Route>
+      <Route exact path="/Process/combining">processi / combinare</Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation">problema / cancellazione</Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>      
       <Route exact path="/Problem/plot">problema / trama</Route>
+      <Route exact path="/Problem/plot"><Trama title="LA STRUTTURA DEI VOLUMI" /></Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>

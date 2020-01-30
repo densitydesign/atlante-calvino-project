@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import groupBy from "lodash/groupBy";
-import styles from "./Combine.module.css";
+import styles from "./Trama.module.css";
 
 export default function MarimekkoLegend({
   selectedLegendEntries,
