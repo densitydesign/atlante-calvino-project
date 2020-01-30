@@ -24,6 +24,7 @@
     "react-router-last-location": "^2.0.1",
     "react-scripts": "^3.3.0",
     "react-scroll-transitions": "^1.2.1",
+    "react-spring": "^8.0.27",
     "svg-points": "^6.0.1"
   },
   "scripts": {

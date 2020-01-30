@@ -45,7 +45,7 @@ export default class Compass extends React.Component
 
           <div className="compass-main-description">
             <h1>Bussola</h1>
-            <div><p class="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
+            <div><p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
             <br></br>
             Per quello abbiamo creato tre visualizzazioni orientative, <em>I flussi dei racconti, Il tempo e le opere</em> e <em>L'arcipelago dei nomi'</em> che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
             Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.</p></div>

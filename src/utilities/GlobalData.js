@@ -264,6 +264,10 @@ const GlobalData = {
     chronologicalFilter : "chronologicalFilter",
     legend : "legend"
   },
+  bottomPanelPositions : {
+    open : "open",
+    closed : "closed"
+  },
   analysisPanelModes : {
     doubt : {
       fog : "fog",

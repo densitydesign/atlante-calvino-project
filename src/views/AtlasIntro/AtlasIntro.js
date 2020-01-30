@@ -74,15 +74,15 @@ class AtlasIntro extends React.Component
 
             <div /><div /><div /><div /> {/* the empty page, before scrolling */}
             <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
-            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
-            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
-            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
@@ -173,17 +173,17 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
@@ -279,17 +279,17 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2"><h4>Fenomeno</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
@@ -344,17 +344,17 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2 pop" ><h4>Fenomeno</h4></div>
-            <div className="atlas-intro-cell2"><h5>Dubbio</h5></div>
+            <div className="atlas-intro-cell2 pop"><h4>TAPPA 1</h4></div>
+            <div className="atlas-intro-cell2"><h5>Nebbia</h5></div>
             <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
             <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
 
-            <div className="atlas-intro-cell2"><h4>Processo</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
             <div className="atlas-intro-cell2"><h5>Dubitare</h5></div>
             <div className="atlas-intro-cell2"><h5>Trasformare</h5></div>
             <div className="atlas-intro-cell2"><h5>Combinare</h5></div>
 
-            <div className="atlas-intro-cell2"><h4>Problema</h4></div>
+            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2"><h5>Cancellazione</h5></div>
             <div className="atlas-intro-cell2"><h5>Realismo</h5></div>
             <div className="atlas-intro-cell2"><h5>Trama</h5></div>

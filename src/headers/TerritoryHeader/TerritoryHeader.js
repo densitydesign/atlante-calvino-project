@@ -32,7 +32,12 @@ export default class TerritoryHeader extends React.Component
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
-  changeTextsData = newOptions => this.props.callTerritoryApplySearchFilterBySearchResults(newOptions);
+  changeTextsData = newOptions => 
+  {
+    const mustReset = newOptions.length === 0;
+
+    this.props.callTerritoryApplySearchFilterBySearchResults(mustReset, newOptions);
+  }
 
   changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);
 
@@ -43,7 +48,6 @@ export default class TerritoryHeader extends React.Component
 
         <MainMenu style={{ gridColumn : "span 1" }} />
         <PageTitle title={"L'ARCIPELAGO DELLE OPERE ORDINATE PER"} style={{ gridColumn: "span 7" }} />
-
 
         <Options
           title=""

@@ -7,7 +7,6 @@ export default class RadioButton extends React.Component
 {
   render()
   {
-    console.log("buttonColor", this.props.buttonColor)
     return (
       <div
         id={this.props.id}

@@ -59,6 +59,8 @@ const analysisModeGroups = {
 
 const analysisModeChangeTypes = {
   change_none_to_hills      : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.hills),
+  change_none_to_flat       : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.flat),
+  change_none_to_drawing    : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.drawing),
   change_hills_to_flat      : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.flat),
   change_flat_to_hills      : getAnalysisModeChangeType(analysisModeGroups.flat,    analysisModeGroups.hills),  
   change_hills_to_drawing   : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.drawing),
@@ -77,8 +79,8 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data, input_colors) => {
-
+  initialize = (el, input_data, input_colors, analysisMode) => 
+  {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
     const json_nodes = input_data.json_nodes;
@@ -89,6 +91,8 @@ class VClass
     let w = window.innerWidth;
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
+
+    svg.on("click", this.onSvgClicked);
 
     const collections = GlobalData.collections;
 
@@ -262,17 +266,14 @@ class VClass
 
 //    this.step_increment = -23;
 
-    steps
+    const circles = steps
       .append("circle")
       .attr("class", "circle_node hill")
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
 //      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
-      .attr("r", d => 
-      {
-return        d.r;
-      })
+      .attr("r", d => d.r)
 /*      
       .attr("transform", function(d, i) {
         i = i * step_increment;
@@ -282,6 +283,10 @@ return        d.r;
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);
+
+    circles
+      .filter(d => d.first_elem)
+      .on("click", this.onFirstElementClicked);
 
 		const place_hierarchies_group = svg_main_group
 			.append("g")
@@ -988,7 +993,9 @@ return        d.r;
 
 ///////////////////////////////////////////
 
-    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+//    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+    currentAnalysisMode = undefined;
+    this.setHighlightMode(analysisMode);
 
     this.label = this.text_nodes
       .selectAll('.label')
@@ -1254,33 +1261,41 @@ return        d.r;
       });
   };
 
-  applySearchFilterByInputText = inputText => {
-
+  applySearchFilterByInputText = inputText => 
+  {
     const inputLowerCase = inputText.toLowerCase();
+    const inputLowerCaseTrimmed = inputLowerCase.trim();
 
-console.log("this.textsData : ", this.textsData);    
+    const mustReset = inputLowerCaseTrimmed === "";
 
     const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
 
-    this.applySearchFilterBySearchResults(results);
+    this.applySearchFilterBySearchResults(mustReset, results);
   };
 
-  applySearchFilterBySearchResults = searchResults => {
-
-    this.text_nodes.style("opacity", .35);
-
+  applySearchFilterBySearchResults = (mustReset, searchResults) => 
+  {
     this.label.classed("visible", false);
 
-    searchResults.forEach(result => 
-      {
-        this.text_nodes
-          .filter(text_node => text_node.id === result.id)
-          .style("opacity", 1);
+    if(!mustReset)
+    {
+      this.text_nodes.style("opacity", .35);
 
-        this.label
-          .filter(d => d.id === result.id)
-          .classed("visible", true);
-      });
+      searchResults.forEach(result => 
+        {
+          this.text_nodes
+            .filter(text_node => text_node.id === result.id)
+            .style("opacity", 1);
+
+          this.label
+            .filter(d => d.id === result.id)
+            .classed("visible", true);
+        });
+    }
+    else
+    {
+      this.text_nodes.style("opacity", 1);
+    }
   };
 
 /*
@@ -1291,11 +1306,8 @@ console.log("this.textsData : ", this.textsData);
   };
 */
 
-  setHighlightMode = newAnalysisMode => {
-
-console.log("setHighlightMode");
-console.log("newAnalysisMode", newAnalysisMode);
-
+  setHighlightMode = newAnalysisMode => 
+  {
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
 
@@ -1479,6 +1491,22 @@ console.log("case proportion...");
 
         break;
 
+      case analysisModeChangeTypes.change_none_to_flat :
+
+        this.change_none_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_none_to_drawing :
+
+        this.change_none_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;                
+
       case analysisModeChangeTypes.change_flat_to_hills : 
 
         this.change_flat_to_hills(
@@ -1566,12 +1594,36 @@ console.log("case proportion...");
     this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
-  }  
+  }
+
+  change_none_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+console.log("change_none_to_flat");    
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }
+
+  change_none_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }    
 
   change_hills_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // flatten hills tops (but don't hide them yet)
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1579,6 +1631,7 @@ console.log("case proportion...");
       .filter(d => !d.first_elem)
       .style("stroke-opacity", 0);
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1587,11 +1640,13 @@ console.log("case proportion...");
     tilt = true;
     tilt_labels(this.text_nodes);
 
+    // hide the flattened hill tops
     const t2 = t1.transition().duration(1);
     t2.selectAll(".hill")
       .filter(d => !d.first_elem)
       .style("fill", "transparent");
 
+    // recolor hill bases
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".hill")
@@ -1604,11 +1659,13 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor whole hills
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1617,6 +1674,7 @@ console.log("case proportion...");
     tilt = false;
     tilt_labels(this.text_nodes);
 
+    // raise flattened hills
     const t2 = t1.transition().duration(700);
     t2
       .selectAll(".circle_node")
@@ -1628,6 +1686,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // flatten hills
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".circle_node")
@@ -1635,6 +1694,7 @@ console.log("case proportion...");
       .filter(d => !d.first_elem)
       .style("stroke-opacity", 0);
 
+    // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
     t1
       .selectAll(".node,.metaball_node")
@@ -1643,39 +1703,90 @@ console.log("case proportion...");
     tilt = true;
     tilt_labels(this.text_nodes);
 
-    const t2 = t1.transition().duration(700);
+    let t2;
+
+    // if necessary, change visibility of metaballs
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t2 = t1_1.transition().duration(700);
+    }
+    else
+    {
+      t2 = t1.transition().duration(700);
+    }    
+
+    // show custom drawing
     t2
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
+    // make hill bases transparent
     const t3 = t2.transition().duration(600);
     t3
       .selectAll(".hill")
       .style("fill", "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
+
+    // remove hill tops from display
+    const t4 = t3.transition().duration(1);
+    t4
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
   }
 
   change_drawing_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(800);
+    // quickly restore to display (although hidden) the hill tops
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    // recolor the hill bases
+    const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]))
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // hide custom drawings
     const t1 = t0.transition().duration(700);
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);
 
-    const t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    let t2;
+
+    // if necessary, change visibility of metaballs
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_2 = t1.transition().duration(200);
+      t1_2
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_2.transition().ease(d3.easeCircleOut).duration(900);
+    }
+    else
+    {
+      t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    }      
+    
+    // tilt
     t2
       .selectAll(".node,.metaball_node")
       .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
@@ -1683,6 +1794,7 @@ console.log("case proportion...");
     tilt = false;
     tilt_labels(this.text_nodes);
 
+    // show hills
     const t3 = t2.transition().duration(700);
     t3
       .selectAll(".circle_node")
@@ -1690,6 +1802,7 @@ console.log("case proportion...");
       .style("stroke-opacity", 1)
       .style("fill-opacity", 1);
 
+    // hide custom drawings
     const t4 = t3.transition().duration(1);
     t4
       .selectAll("." + oldHighlightParameters.customElementsClasses)
@@ -1700,39 +1813,89 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(700);
+    let t0;
+
+    // if necessary, change visibility of metaballs
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+      const t_1 = svg.transition().duration(200);
+      t_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t0 = t_1.transition().duration(700);
+    }
+    else
+    {
+      t0 = svg.transition().duration(700);
+    }
+
+    // show custom drawings
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
+    // hide hill bases
     const t1 = t0.transition().duration(600);
     t1
       .selectAll(".hill")
       .style("fill", "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
+
+    // quickly remove from drawing hill tops (necessary to have internal of hill bases wholly clickable, as in case of jellyfishes)
+    const t2 = t1.transition().duration(1);
+    t2
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
   }
 
   change_drawing_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-    const t0 = svg.transition().duration(800);
+    // quickly rebring to display (although hidden) the hill tops
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    // recolor, if necessary in the new parameters, the hill bases, or otherwise make them transparent
+    const t0 = t_1.transition().duration(800);
     t0
       .selectAll(".hill")
       .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
       .filter(d => d.first_elem)
       .style("stroke-opacity", 1);
 
+    // hide custom drawings
     const t1 = t0.transition().duration(700);
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);
 
-    const t2 = t1.transition().duration(1);
+    let t2;
+
+    // if necessary, change metaballs visibility
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_1.transition().duration(1);
+    }
+    else
+    {
+      t2 = t1.transition().duration(1);
+    }
+
     t2
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style("display", "none");
@@ -1742,6 +1905,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor hills
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
@@ -1752,6 +1916,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    // recolor hill bases
     const t0 = svg.transition().duration(700);
     t0
       .selectAll(".hill")
@@ -1764,52 +1929,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-/*    
-    const oldLock = {};
-    const newLock = {};
-
-    function hideOld(object, duration)
-    {
-      d3
-        .select(oldLock)
-        .transition()
-        .duration(duration)
-        .tween("style:fill-opacity", function() {
-          const i = d3.interpolateNumber(1, 0);
-
-          return function(t) { object.style("fill-opacity", i); };
-        });
-    }
-
-    function showNew(object, duration)
-    {
-      d3
-        .select(newLock)
-        .transition()
-        .duration(duration)
-        .tween("style:fill-opacity", function() {
-          const i = d3.interpolateNumber(0, 1);
-
-          return function(t) { object.style("fill-opacity", i); };
-        });
-    }
-
-    svg
-      .select("." + oldHighlightParameters.customElementsClasses)
-      .call(hideOld, 2000)
-      .exit()
-      .select("." + newHighlightParameters.customElementsClasses)
-      .call(showNew, 2000);
-*/
-/*
-    const t0 = svg.transition().duration(700);
-    t0
-      .selectAll("." + oldHighlightParameters.customElementsClasses + ",." + newHighlightParameters.customElementsClasses)
-      .style('display', "block")
-			.style('fill-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1)
-			.style('stroke-opacity', d => d.classed(oldHighlightParameters.customElementsClasses) ? 0 : 1);
-*/
-
+    // show new custom drawings
     const t0 = svg.transition().duration(700);
     t0
       .selectAll("." + newHighlightParameters.customElementsClasses)
@@ -1817,13 +1937,98 @@ console.log("case proportion...");
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
-    const t1 = t0.transition().duration(700);
+    let t1;
+
+    // if necessary, change metaballs visibility
+    if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
+    {
+      const t0_1 = t0.transition().duration(200);
+      t0_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", newHighlightParameters.show_metaballs ? 1 : 0);
+
+      t1 = t0_1.transition().duration(700);  
+    }
+    else t1 = t0.transition().duration(700);
+
+    // hide old custom drawings
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);    
   }
+
+  onFirstElementClicked = d => {
+console.log("first_elem clicked for " + d.id);
+console.log("currentAnalysisMode", currentAnalysisMode);
+
+    switch(true)
+    {
+      case currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.highlightPlaceHierarchy(d); break;
+      default : break;
+    }
+  };
+
+  highlightPlaceHierarchy = d => {
+    const selectedHierarchyClass = ".place_hierarchy_2_" + d.id;
+
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(selectedHierarchyClass)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id === d.id)
+      .style("stroke-opacity", 1);
+
+    const allOtherHierarchies = ".place_hierarchy_2:not(" + selectedHierarchyClass + ")";
+
+    const t2 = t1.transition().duration(100);
+    t2
+      .selectAll(allOtherHierarchies)
+      .style("fill-opacity", 0.2)
+      .style("stroke-opacity", 0.2);
+
+    const t3 = t2.transition().duration(100);
+    t3
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id !== d.id)
+      .style("stroke-opacity", 0.2);
+  }
+
+  onSvgClicked = () =>
+  {
+    switch(true)
+    {
+      case 
+        d3.event.target.constructor.name === "SVGSVGElement" && 
+        currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : 
+        
+        this.showAllPlaceHierarchies(); 
+        break;
+
+      default : break;
+    }
+  }
+
+  showAllPlaceHierarchies = () => 
+  {
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(".place_hierarchy_2")
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem)
+      .style("stroke-opacity", 1);
+  }  
 
   highlightHills_old = (dataMember, colorScale) => {
 
