@@ -1,9 +1,9 @@
 import React from 'react';
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
-import CompassFluxBonesWrapper from '../../visualizations/CompassFluxBones/CompassFluxBonesWrapper';
+import CompassLische from '../../visualizations/CompassLische/CompassLische';
 
-import V from './compassFlux.d3';
+import V from './compassFlux.d3'
 
 import './CompassFlux.css';
 
@@ -61,7 +61,7 @@ export default class CompassFlux extends React.Component
 <div className="container-fluid lische-box">
   <div className="row">
     <div className="col-12 lische my-lg-3 py-1 py-md-4">
-    <CompassFluxBonesWrapper />
+    <CompassLische id="lische"/>
     </div>
   </div>
         </div>
