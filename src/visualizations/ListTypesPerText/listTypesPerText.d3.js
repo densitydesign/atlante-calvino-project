@@ -172,7 +172,7 @@ class VClass {
       sameTitle.forEach(text => {
 
         titleValues.append("p")
-        .text(text.type + ": " + text.value);
+        .text(text.type + ": " + text.value.toLocaleString());
       })
 
       d3.selectAll("circle")
