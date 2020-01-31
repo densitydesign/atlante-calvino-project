@@ -2,18 +2,17 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
-// import sumBy from 'lodash/sumBy'
+import some from "lodash/some";
 import uniqBy from "lodash/uniqBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import get from "lodash/get";
-import some from "lodash/some";
+import maxBy from "lodash/maxBy";
 import keyBy from "lodash/keyBy";
-import MarimekkoLegend from './MarimekkoLegend'
-import MarimekkoTopAxis from './MarimekkoTopAxis'
-import MarimekkoChart from './MarimekkoChart'
-
-
+import MarimekkoLegend from "./MarimekkoLegend";
+import MarimekkoTopAxis from "./MarimekkoTopAxis";
+import MarimekkoChart from "./MarimekkoChart";
+import { levelMaps, computeHorizontalPositions } from "./helpers";
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
@@ -30,18 +29,17 @@ const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
   return out;
 }, {});
 
-
-
 const defaultOptions = {
   dettaglio: "ambito",
-  aggregazione: "aggregato"
+  aggregazione: "aggregato",
+  ricerca: [],
 };
 
 const computeChartBooksAggregated = (firstLevelRecords, opts) => {
   const dettaglioKey =
     opts.dettaglio === "ambito"
       ? "categorie di tipologia"
-      : "Cluster tipolegie";
+      : "cluster tipologie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, item, idx) => {
@@ -73,7 +71,7 @@ const computeChartBooksDisaggregated = (firstLevelRecords, opts) => {
   const dettaglioKey =
     opts.dettaglio === "ambito"
       ? "categorie di tipologia"
-      : "Cluster tipolegie";
+      : "cluster tipologie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, textID, idx) => {
@@ -105,27 +103,27 @@ const preprocessData = (data, options = {}) => {
     ...options
   };
 
-  const firstLevelRecords = data.filter(item => item.livello === "uno");
-  let byTipologia = groupBy(
-    uniqBy(data, item => `${item.textID}+${item.livello}`).map(x =>
-      pick(x, ["textID", "livello"])
-    ),
-    "textID"
-  );
-  byTipologia = Object.keys(byTipologia).reduce((out, item) => {
-    out[item] = byTipologia[item].map(x => x.livello).sort();
-    return out;
-  }, {});
+  let firstLevelRecords = data.filter(item => item.livello === "uno");
+  if(Array.isArray(opts.ricerca) && opts.ricerca.length > 0 ){
+    const ricercaLookup = keyBy(opts.ricerca)
+    firstLevelRecords = firstLevelRecords.filter(x => ricercaLookup[x.textID])
+  }
+  const levelsMapped = uniqBy(data, item => `${item.textID}+${item.livello}`)
+    .map(x => pick(x, ["textID", "livello"]))
+    .map(x => ({ ...x, livelloNum: levelMaps[x.livello] }));
 
-  const tipologiaSorted = opts.tipologia.sort();
-  const selectedByTipologia = Object.keys(byTipologia).filter(item => {
-    const matches = byTipologia[item].map(
-      x => tipologiaSorted.indexOf(x) !== -1
-    );
-    return some(matches);
-  });
+  const levelsMappedById = groupBy(levelsMapped, "textID");
+
+  const tipologiaLookup = Object.keys(levelsMappedById).reduce(
+    (acc, textID) => {
+      acc[textID] = maxBy(levelsMappedById[textID], "livelloNum").livello;
+      return acc;
+    },
+    {}
+  );
+
   const booksData = uniqBy(firstLevelRecords, "textID")
-    .filter(item => selectedByTipologia.indexOf(item.textID) !== -1)
+    .filter(item => opts.tipologia.indexOf(tipologiaLookup[item.textID]) !== -1)
     .map(item => {
       let out = pick(item, ["textID", "anno", "mese", "caratteri"]);
       out.caratteri = +out.caratteri;
@@ -149,7 +147,16 @@ const preprocessData = (data, options = {}) => {
   };
 };
 
-function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
+function MarimekkoViz({
+  data,
+  dettaglio,
+  aggregazione,
+  setOptionsForDetail,
+  tipologia,
+  ricerca,
+  currentTextID,
+  setCurrentTextID,
+}) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
 
@@ -198,71 +205,57 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     };
   }, []);
 
-  //current book handling
-  //#TODO: move to url
-  const [currentTextID, setCurrentTextID] = useState(null);
+  
+  //resetting aggregazione
+  useEffect(() => {
+    if (!!currentTextID) {
+      setOptionsForDetail();
+    } 
+  }, [currentTextID, setOptionsForDetail]);
 
   const { booksData, chartBooks } = useMemo(() => {
-    return preprocessData(data, { dettaglio, aggregazione, tipologia });
-  }, [data, dettaglio, aggregazione, tipologia]);
+    return preprocessData(data, { dettaglio, aggregazione, tipologia, ricerca });
+  }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
-  const booksDataWithPositions = useMemo(() => {
-    const totalChars = sumBy(booksData, "caratteri");
-    const scaleChars = scaleLinear()
-      .domain([0, totalChars])
-      .range([0, dimensions.vizWidth]);
-    const booksDataAnnotated = booksData.reduce((out, item, i) => {
-      if (i === 0) {
-        out.push({
-          ...item,
-          caratteriPos: 0,
-          caratteriX: 0,
-          caratteriWidth: scaleChars(item.caratteri)
-        });
-      } else {
-        const caratteriPos = out[i - 1].caratteriPos + out[i - 1].caratteri;
-        out.push({
-          ...item,
-          caratteriPos,
-          caratteriX: scaleChars(caratteriPos),
-          caratteriWidth: scaleChars(item.caratteri)
-        });
-      }
-      return out;
-    }, []);
-
-    return booksDataAnnotated;
-  }, [booksData, dimensions.vizWidth]);
-
+  const booksDataWithPositions = useMemo(() => {return computeHorizontalPositions(booksData, dimensions.vizWidth)}, [booksData, dimensions.vizWidth]);
 
   //getting al data for current text for displaying icecycle
   const iceCycleData = useMemo(() => {
-    if(!currentTextID){
-      return null
+    if (!currentTextID) {
+      return null;
     }
-    return data.filter(row => row.textID === currentTextID)
+    return data
+      .filter(row => row.textID === currentTextID)
+      .map(item => {
+        const tipologia = item["cluster tipologie"];
+        return {
+          ...item,
+          color: coloriClusterTipologie[tipologia],
+          label: tipologia
+        };
+      });
+  }, [currentTextID, data]);
 
-  }, [currentTextID, data])
-
-  
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
       <div className="row no-gutters h-100">
         <div className="col-sm-1"></div>
         <div className="col-sm-9 d-flex flex-column">
-          <div className="row no-gutters" style={{ flex: 2, minHeight: 100 }}>
+          <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
-              {dimensions.vizWidth && <MarimekkoTopAxis
-                height={dimensions.topAxisHeight}
-                width={dimensions.vizWidth}
-                booksDataWithPositions={booksDataWithPositions}
-                setCurrentTextID={setCurrentTextID}
-                currentTextID={currentTextID}
-              />}
+              {dimensions.vizWidth && (
+                <MarimekkoTopAxis
+                  height={dimensions.topAxisHeight}
+                  width={dimensions.vizWidth}
+                  booksData={booksData}
+                  setCurrentTextID={setCurrentTextID}
+                  currentTextID={currentTextID}
+                />
+              )}
             </div>
           </div>
 
-          <div className="row no-gutters w-100" style={{ flex: 10 }}>
+          <div className="row no-gutters w-100" style={{ flex: 8 }}>
             <div className="col-sm-12" ref={vizContainerRef}>
               {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
                 <MarimekkoChart
@@ -271,13 +264,17 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
                   height={dimensions.vizHeight}
                   width={dimensions.vizWidth}
                   selectedLegendEntries={selectedLegendEntries}
+                  setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                   iceCycleData={iceCycleData}
                 ></MarimekkoChart>
               )}
             </div>
           </div>
-          <div className="row no-gutters" style={{ flex: 1 }}></div>
+          <div
+            className="row no-gutters"
+            style={{ flex: 1, minHeight: 80 }}
+          ></div>
         </div>
 
         <div className="col-sm-2 pl-4 pt-5">

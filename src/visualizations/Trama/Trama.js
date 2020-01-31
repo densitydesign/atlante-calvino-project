@@ -8,8 +8,14 @@ import Loading from "../../general/Loading";
 
 import AltOptions from "../../general/Options/AltOptions";
 import MarimekkoViz from "./MarimekkoViz";
-
 import marimekkoData from "./marimekko.json";
+import volumi from "./volumi.json";
+
+const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
+
+console.log("searchOptions", searchOptions)
+
+
 
 const tipologiaOptions = [
   { label: "uno" },
@@ -26,41 +32,65 @@ const aggregazioneOptions = [
   { label: "non aggregato" }
 ];
 
-const cercaOptions = [{ label: "titolo" }, { label: "boh" }];
+const cercaOptions = [{ label: "volume" }];
 
 class Trama extends Component {
   state = {
     isLoading: false,
     booksData: null,
 
-    cercaPer: "titolo",
+    cercaPer: "volume",
     dettaglio: "ambito",
     aggregazione: "aggregato",
-    tipologia: tipologiaOptions.map(x => x.label)
+    tipologia: tipologiaOptions.map(x => x.label),
+    ricerca: [],
+
+    controlsEnabled: true,
+    currentTextID: null,
   };
+
+  setCurrentTextID = (currentTextID) => {
+    const oldValue = this.state.currentTextID
+    if(currentTextID === oldValue){
+      return
+    }
+    const newState = {currentTextID, controlsEnabled: !currentTextID}
+    this.setState(newState)
+  }
+
+  changeRicerca = (newOptions) => {
+    this.setState({ricerca: newOptions.map(x => x.value)})
+
+  }
 
   componentDidMount() {}
 
   render() {
     const {
-      booksData,
       cercaPer,
       dettaglio,
       aggregazione,
-      tipologia
+      tipologia,
+      ricerca,
+      controlsEnabled,
+      currentTextID,
     } = this.state;
 
     return (
       <div className="trasformare main">
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={this.props.title} style={{ gridColumn: "span 10" }} />
+          <PageTitle
+            title={"LA STRUTTURA DEI VOLUMI"}
+            style={{ gridColumn: "span 10" }}
+          />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
             <AltOptions
               title="Cerca per"
               options={cercaOptions}
+              disabled={true}
               value={cercaPer}
               onChange={x => {
                 this.setState({ cercaPer: x.label });
@@ -72,8 +102,8 @@ class Trama extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 8" }} />}
           {!this.state.isLoading && (
             <Search
-              style={{ gridColumn: "span 8" }}
-              data={{ options: [] }}
+              style={{ gridColumn: "span 8", pointerEvents: currentTextID ? 'none' : undefined }}
+              data={{options:searchOptions}}
               changeOptions={this.changeRicerca}
             />
           )}
@@ -97,7 +127,14 @@ class Trama extends Component {
             data={marimekkoData}
             dettaglio={dettaglio}
             aggregazione={aggregazione}
+            ricerca={ricerca}
+            setOptionsForDetail={() => {
+              if(this.state.aggregazione !== "non aggregato" || this.state.dettaglio !== "categorie"){
+                this.setState({aggregazione: "non aggregato", dettaglio: "categorie"})
+            }}}
             tipologia={tipologia}
+            currentTextID={currentTextID}
+            setCurrentTextID={this.setCurrentTextID}
           />
         </div>
 
@@ -105,8 +142,10 @@ class Trama extends Component {
           <AltOptions
             title="Tipologia"
             multiple
+            disabled={!controlsEnabled}
             options={tipologiaOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
+            allowEmpty={false}
             value={tipologia}
             onChange={tipologia => {
               this.setState({ tipologia: tipologia.map(x => x.label) });
@@ -115,6 +154,8 @@ class Trama extends Component {
 
           <AltOptions
             title="Dettaglio"
+            allowEmpty={false}
+            disabled={!controlsEnabled}
             value={dettaglio}
             onChange={x => {
               this.setState({ dettaglio: x.label });
@@ -125,6 +166,8 @@ class Trama extends Component {
 
           <AltOptions
             title="Aggregazione"
+            allowEmpty={false}
+            disabled={!controlsEnabled}
             value={aggregazione}
             onChange={x => {
               this.setState({ aggregazione: x.label });

@@ -42,8 +42,25 @@ class AltOptions extends Component {
 
   handleChange = index => {
     const { selectedIndices } = this.state;
-    const { multiple, options, onChange } = this.props;
+    const { multiple, options, onChange, allowEmpty, disabled } = this.props;
+
+    if (disabled) {
+      return;
+    }
     const newSelected = !selectedIndices[index];
+
+    if (multiple && !allowEmpty) {
+      const howMany = Object.keys(selectedIndices).filter(
+        x => selectedIndices[x]
+      ).length;
+      if (howMany === 1 && selectedIndices[index]) {
+        return;
+      }
+    }
+
+    if (!multiple && !allowEmpty && selectedIndices[index]) {
+      return;
+    }
 
     if (!multiple) {
       this.setState({ selectedIndices: { [index]: newSelected } });
@@ -63,30 +80,37 @@ class AltOptions extends Component {
   };
 
   toggleDropDown = (isOpen, event, metadata) => {
-    const { multiple } = this.props;
+    
+    const { multiple, disabled } = this.props;
+    if(disabled){
+      this.setState({
+        show: false
+      });
+      return
+    }
     if (metadata.source === "select" && multiple) {
       this.setState({
         show: true
       });
     } else {
       this.setState({
-        show: undefined
+        show: !this.state.show
       });
     }
   };
 
   render() {
     const { selectedIndices } = this.state;
-    const { multiple, title, value, style, options=[] } = this.props;
+    const { multiple, title, value, style, options = [] } = this.props;
     const indices = Object.keys(selectedIndices)
-        .map(k => selectedIndices[k] ? k : undefined)
-        .filter(i => i !== undefined);
-    const anySelected = !!indices.length
-    let current
-    if(!multiple){
-      current = anySelected ? options[indices[0]].label : undefined
+      .map(k => (selectedIndices[k] ? k : undefined))
+      .filter(i => i !== undefined);
+    const anySelected = !!indices.length;
+    let current;
+    if (!multiple) {
+      current = anySelected ? options[indices[0]].label : undefined;
     } else {
-      current = anySelected ? indices.map(i => options[i].label): []
+      current = anySelected ? indices.map(i => options[i].label) : [];
     }
     return (
       <div className="options-container" style={style}>
@@ -95,21 +119,16 @@ class AltOptions extends Component {
             {!multiple && anySelected && (
               <div>
                 <span className="micro-title">{title}</span>
-                <span className="current-selection">
-                  {current}
-                </span>
+                <span className="current-selection">{current}</span>
               </div>
             )}
             {multiple && anySelected && (
               <div>
                 <span className="micro-title">{title}</span>
-                <span className="current-selection">
-                  {current.join(", ")}
-                </span>
+                <span className="current-selection">{current.join(", ")}</span>
               </div>
             )}
             {!anySelected && title}
-            
           </Dropdown.Toggle>
           <Dropdown.Menu
             onToggle={multiple ? undefined : this.toggleDropDown}
@@ -143,5 +162,6 @@ AltOptions.defaultProps = {
   multiple: false,
   title: "Options",
   value: null,
-  onChange: value => {}
+  onChange: value => {},
+  allowEmpty: true
 };
