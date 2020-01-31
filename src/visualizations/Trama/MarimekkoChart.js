@@ -7,8 +7,7 @@ import sortBy from "lodash/sortBy";
 import omit from "lodash/omit";
 import find from "lodash/find";
 import { extent } from "d3-array";
-import { levelMaps } from './helpers'
-
+import { levelMaps } from "./helpers";
 
 function MarimekkoBookIcycle({
   book,
@@ -40,7 +39,7 @@ function MarimekkoBookIcycle({
     const sequenceScale = scaleLinear()
       .range([0, height])
       // .domain([bookExtentStart[0], bookExtentEnd[1]]);
-      .domain([0, +book.caratteri])
+      .domain([0, +book.caratteri]);
 
     //annotation for levels <> "uno"
     const byLevelAnnotated = Object.keys(omit(byLevelSorted, "uno")).reduce(
@@ -49,7 +48,9 @@ function MarimekkoBookIcycle({
           listOfBlocks.push({
             ...sequence,
             y1: sequenceScale(+sequence.starts_at),
-            h: sequenceScale(+sequence.ends_at) - sequenceScale(+sequence.starts_at)
+            h:
+              sequenceScale(+sequence.ends_at) -
+              sequenceScale(+sequence.starts_at)
           });
           return listOfBlocks;
         }, []);
@@ -59,7 +60,6 @@ function MarimekkoBookIcycle({
     );
     return byLevelAnnotated;
   }, [book.caratteri, height, iceCycleData]);
-
 
   const isDetail = !!currentTextID;
   const wasDetailRef = useRef(false);
@@ -76,7 +76,7 @@ function MarimekkoBookIcycle({
   const translateToList = `translateX(${book.caratteriX}px)`;
   const translateToDetail = `translateX(0px)`;
 
-  const [levelsTranslated, setLevelsTranslated] = useState(1)
+  const [levelsTranslated, setLevelsTranslated] = useState(1);
 
   const props = useSpring({
     // config: { friction: 50 },
@@ -85,114 +85,97 @@ function MarimekkoBookIcycle({
       opacity: 1,
       transform: translateToList,
       width: book.caratteriWidth,
-      levelsOpen: 0,
+      levelsOpen: 0
     },
 
     to: [
       {
         opacity: isVisible ? 1 : 0,
         transform: isCurrentDetail ? translateToDetail : translateToList,
-        width: isCurrentDetail || wasDetail ? columnWidth : book.caratteriWidth,
-        levelsOpen: levelsTranslated,
+        width: isCurrentDetail ? columnWidth : book.caratteriWidth,
+        levelsOpen: levelsTranslated
       },
       {
         // width: isCurrentDetail ? columnWidth : book.caratteriWidth,
         transform:
           isCurrentDetail || wasDetail ? translateToDetail : translateToList,
-        levelsOpen: 1,
+        levelsOpen: 1
       }
     ],
 
     onFrame({ levelsOpen }) {
-      const x = Math.floor(levelsOpen)
-      if(levelsTranslated !== x){
-        setLevelsTranslated(levelsOpen)
+      const x = Math.floor(levelsOpen);
+      if (levelsTranslated !== x) {
+        setLevelsTranslated(levelsOpen);
       }
     }
-
-    
   });
 
-  // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
-  // console.log(props)
+  return (
+    isDetail && (
+      <>
+        {iCycleDataAnnotated &&
+          Object.keys(iCycleDataAnnotated).map(levelName => {
+            const levelValue = levelMaps[levelName];
+            const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
 
-  return isDetail && (
-    <>
+            return (
+              <animated.g
+                key={levelName}
+                style={{
+                  transform: translate,
+                  opacity: props.levelsOpen
+                }}
+              >
+                {iCycleDataAnnotated[levelName].map(block => (
+                  <rect
+                    title={levelName}
+                    style={{ fill: block.color }}
+                    className={`${styles.marimekkoUnit}  ${
+                      styles.marimekkoUnitIceCycle
+                    } ${
+                      selectedLegendEntries[block.label] ? styles.selected : ""
+                    }`}
+                    key={block["ID SEQ"]}
+                    width={columnWidth}
+                    y={block.y1}
+                    height={block.h}
+                  ></rect>
+                ))}
+              </animated.g>
+            );
+          })}
 
-
-{iCycleDataAnnotated &&
-            Object.keys(iCycleDataAnnotated).map(
-              levelName => {
-                const levelValue = levelMaps[levelName]
-                const translate = `translateX(${(levelValue - 1) * columnWidth}px)`
-
-                return (
-                  <animated.g
-                    key={levelName}
-                    style={{
-                      transform : translate,
-                      opacity: props.levelsOpen,
-                    }}
-                  >
-                    {iCycleDataAnnotated[levelName].map(block => (
-                      <rect
-                        title={levelName}
-                        style={{ fill: block.color }}
-                        className={`${styles.marimekkoUnit}  ${styles.marimekkoUnitIceCycle} ${
-                          selectedLegendEntries[block.label]
-                            ? styles.selected
-                            : ""
-                        }`}
-                        key={block['ID SEQ']}
-                        width={columnWidth}
-                        y={block.y1}
-                        height={block.h}
-                      ></rect>
-                    ))}
-                  </animated.g>
-                )
-              }
-            )}
-
-
-
-
-
-
-      <animated.g
-        key={book.textID}
-        style={{
-          transform: props.transform,
-          opacity: props.opacity
-        }}
-      >
-        <rect
-          className={`${styles.marimekkoRect}`}
+        <animated.g
+          key={book.textID}
           style={{
-            height,
-            width: props.width
+            transform: props.transform,
+            opacity: props.opacity
           }}
-        ></rect>
-        {bookDataAnnotated.map((d, i) => (
-          <animated.rect
-            key={i}
-            y={d.top}
-            width={props.width}
-            height={d.height}
-            className={`${styles.marimekkoUnit}  ${
-              selectedLegendEntries[d.label] ? styles.selected : ""
-            }`}
-            fill={d.color}
-            stroke={"none"}
-          ></animated.rect>
-        ))}
-      </animated.g>
-
-       
-          
-   
-     
-    </>
+        >
+          {/* <rect
+            className={`${styles.marimekkoRect}`}
+            style={{
+              height,
+              width: props.width
+            }}
+          ></rect> */}
+          {bookDataAnnotated.map((d, i) => (
+            <animated.rect
+              key={i}
+              y={d.top}
+              width={props.width}
+              height={d.height}
+              className={`${styles.marimekkoUnit}  ${
+                selectedLegendEntries[d.label] ? styles.selected : ""
+              }`}
+              fill={d.color}
+              stroke={"none"}
+            ></animated.rect>
+          ))}
+        </animated.g>
+      </>
+    )
   );
 }
 
@@ -224,7 +207,7 @@ function MarimekkoBook({
           style={{
             height,
             width: book.caratteriWidth,
-            cursor: 'pointer',
+            cursor: "pointer"
           }}
           onClick={() => setCurrentTextID(book.textID)}
         ></rect>
@@ -240,7 +223,7 @@ function MarimekkoBook({
             }`}
             fill={d.color}
             stroke={"none"}
-            style={{pointerEvents: 'none'}}
+            style={{ pointerEvents: "none" }}
           ></animated.rect>
         ))}
       </animated.g>
