@@ -26,7 +26,7 @@
   bottom: var(--navigation-height);
   width : 33%;
   height: calc(var(--navigation-height)*3);
-  z-index : 2;
+  z-index : 20;
   display : grid;
   grid-column : 1 / span 3;
   border-right : 1px solid black;
