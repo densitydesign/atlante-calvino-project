@@ -257,7 +257,7 @@ const GlobalData = {
     }
   },
   bottomPanelModes : {
-    noAnalysis : "none",
+    noAnalysis : "noAnalysis",
     doubt : "doubt",
     shape : "shape",
     space : "space",

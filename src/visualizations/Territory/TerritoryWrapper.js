@@ -142,9 +142,9 @@ export default class TerritoryWrapper extends React.Component
   containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
   callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
 
-  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
+//  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
 
-  setBottomPanelMode        = value => this.setState({ bottomPanelMode     : value });
+  setBottomPanelMode = value => this.setState({ bottomPanelMode : value });
 
   toggleBottomPanelPosition = () => 
   {
@@ -155,6 +155,8 @@ export default class TerritoryWrapper extends React.Component
 
     this.setState({ bottomPanelPosition : newValue });
   }
+
+  setBottomPanelPosition = value => this.setState({ bottomPanelPosition : value });
 
   containerSetItineraryDropUpRadioButtonPressed = callback => this.itineraryDropUpRadioButtonPressed = callback;
   callItineraryDropUpRadioButtonPressed = buttonId => this.itineraryDropUpRadioButtonPressed(buttonId);
@@ -329,6 +331,7 @@ export default class TerritoryWrapper extends React.Component
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
           toggleBottomPanelPosition={this.toggleBottomPanelPosition}
+          setBottomPanelPosition={this.setBottomPanelPosition}
           toggleItineraryDropUpPosition={this.toggleItineraryDropUpPosition}
           containerSetItineraryDropUpRadioButtonPressed={this.containerSetItineraryDropUpRadioButtonPressed}
         />

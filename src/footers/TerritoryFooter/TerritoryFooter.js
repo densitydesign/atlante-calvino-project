@@ -28,10 +28,10 @@ export default class TerritoryFooter extends React.Component
   ]);
 
   analysisModeItineraryMap = new Map([
-    [ GlobalData.analysisModes.noAnalysis, this.territoryLabel ],
-    [ GlobalData.analysisModes.doubt,      this.doubtLabel ],
-    [ GlobalData.analysisModes.space,      this.spaceLabel ],
-    [ GlobalData.analysisModes.shape,      this.shapeLabel ]
+    [ GlobalData.analysisModes.noAnalysis, { label : this.territoryLabel, bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis } ],
+    [ GlobalData.analysisModes.doubt,      { label : this.doubtLabel,     bottomPanelMode : GlobalData.bottomPanelModes.doubt } ],
+    [ GlobalData.analysisModes.space,      { label : this.spaceLabel,     bottomPanelMode : GlobalData.bottomPanelModes.space } ],
+    [ GlobalData.analysisModes.shape,      { label : this.shapeLabel,     bottomPanelMode : GlobalData.bottomPanelModes.shape } ]
   ]);
 
   analysisModeToggleButtonId = "analysisModeToggleButton";
@@ -107,13 +107,31 @@ console.log("toggle bottom panel");
 
       case this.chronologicalFilterToggleButtonId :
       case this.legendToggleButtonId :
-
+console.log("1");
         const value = this.toggleButtonsMap.get(buttonId);
 
         if(value.bottomPanelMode !== this.props.bottomPanelMode)
+        {
+console.log("2");          
           this.props.setBottomPanelMode(value.bottomPanelMode);
+        }
         else
-          this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis); 
+        {
+console.log("3"); 
+          if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+          {
+console.log("4");
+            this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis);
+          }
+          else
+          {
+const xxx = this.analysisModeItineraryMap.get(this.props.mainAnalysisMode).bottomPanelMode;
+console.log("xxx", xxx);
+
+            this.props.setBottomPanelMode(xxx);
+            this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.closed);
+          }
+        }
 
         break;
 
@@ -136,7 +154,7 @@ console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);
           id={this.analysisModeToggleButtonId} 
           style={{ gridColumn : "span 8" }}
           caption={
-            this.analysisModeItineraryMap.get(this.props.mainAnalysisMode)}
+            this.analysisModeItineraryMap.get(this.props.mainAnalysisMode).label}
           pressed={this.props.mainAnalysisMode !== GlobalData.analysisModes.noAnalysis}
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
         />
