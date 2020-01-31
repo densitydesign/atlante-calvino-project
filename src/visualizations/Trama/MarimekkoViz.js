@@ -154,6 +154,8 @@ function MarimekkoViz({
   setOptionsForDetail,
   tipologia,
   ricerca,
+  currentTextID,
+  setCurrentTextID,
 }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
@@ -203,15 +205,12 @@ function MarimekkoViz({
     };
   }, []);
 
-  //current book handling
-  //#TODO: move to url
-  const [currentTextID, setCurrentTextID] = useState(null);
-
+  
   //resetting aggregazione
   useEffect(() => {
-    if (currentTextID) {
+    if (!!currentTextID) {
       setOptionsForDetail();
-    }
+    } 
   }, [currentTextID, setOptionsForDetail]);
 
   const { booksData, chartBooks } = useMemo(() => {
@@ -265,6 +264,7 @@ function MarimekkoViz({
                   height={dimensions.vizHeight}
                   width={dimensions.vizWidth}
                   selectedLegendEntries={selectedLegendEntries}
+                  setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                   iceCycleData={iceCycleData}
                 ></MarimekkoChart>

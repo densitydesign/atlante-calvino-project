@@ -44,7 +44,19 @@ class Trama extends Component {
     aggregazione: "aggregato",
     tipologia: tipologiaOptions.map(x => x.label),
     ricerca: [],
+
+    controlsEnabled: true,
+    currentTextID: null,
   };
+
+  setCurrentTextID = (currentTextID) => {
+    const oldValue = this.state.currentTextID
+    if(currentTextID === oldValue){
+      return
+    }
+    const newState = {currentTextID, controlsEnabled: !currentTextID}
+    this.setState(newState)
+  }
 
   changeRicerca = (newOptions) => {
     this.setState({ricerca: newOptions.map(x => x.value)})
@@ -60,6 +72,8 @@ class Trama extends Component {
       aggregazione,
       tipologia,
       ricerca,
+      controlsEnabled,
+      currentTextID,
     } = this.state;
 
     return (
@@ -119,6 +133,8 @@ class Trama extends Component {
                 this.setState({aggregazione: "non aggregato", dettaglio: "categorie"})
             }}}
             tipologia={tipologia}
+            currentTextID={currentTextID}
+            setCurrentTextID={this.setCurrentTextID}
           />
         </div>
 
@@ -126,6 +142,7 @@ class Trama extends Component {
           <AltOptions
             title="Tipologia"
             multiple
+            disabled={!controlsEnabled}
             options={tipologiaOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
             allowEmpty={false}
@@ -138,6 +155,7 @@ class Trama extends Component {
           <AltOptions
             title="Dettaglio"
             allowEmpty={false}
+            disabled={!controlsEnabled}
             value={dettaglio}
             onChange={x => {
               this.setState({ dettaglio: x.label });
@@ -149,6 +167,7 @@ class Trama extends Component {
           <AltOptions
             title="Aggregazione"
             allowEmpty={false}
+            disabled={!controlsEnabled}
             value={aggregazione}
             onChange={x => {
               this.setState({ aggregazione: x.label });

@@ -76,6 +76,7 @@ export default function MarimekkoTopAxis({
                   onClick={() => {
                     setCurrentTextID(book.textID);
                   }}
+                  style={{cursor: 'pointer',}}
                 >
                   {book.titolo}
                 </text>

@@ -80,8 +80,12 @@ class AltOptions extends Component {
   };
 
   toggleDropDown = (isOpen, event, metadata) => {
+    
     const { multiple, disabled } = this.props;
     if(disabled){
+      this.setState({
+        show: false
+      });
       return
     }
     if (metadata.source === "select" && multiple) {
@@ -90,7 +94,7 @@ class AltOptions extends Component {
       });
     } else {
       this.setState({
-        show: undefined
+        show: !this.state.show
       });
     }
   };

@@ -139,7 +139,6 @@ function MarimekkoBookIcycle({
           {iCycleDataAnnotated &&
             Object.keys(iCycleDataAnnotated).map(
               levelName => {
-                console.log("level", levelName, levelMaps[levelName], iCycleDataAnnotated[levelName])
                 return (
                   <g
                     key={levelName}
@@ -175,6 +174,7 @@ function MarimekkoBookIcycle({
 function MarimekkoBook({
   book,
   currentTextID,
+  setCurrentTextID,
   bookDataAnnotated,
   selectedLegendEntries,
   height,
@@ -198,8 +198,10 @@ function MarimekkoBook({
           className={`${styles.marimekkoRect}`}
           style={{
             height,
-            width: book.caratteriWidth
+            width: book.caratteriWidth,
+            cursor: 'pointer',
           }}
+          onClick={() => setCurrentTextID(book.textID)}
         ></rect>
 
         {bookDataAnnotated.map((d, i) => (
@@ -213,6 +215,7 @@ function MarimekkoBook({
             }`}
             fill={d.color}
             stroke={"none"}
+            style={{pointerEvents: 'none'}}
           ></animated.rect>
         ))}
       </animated.g>
@@ -227,6 +230,7 @@ export default function MarimekkoChart({
   chartBooks,
   selectedLegendEntries,
   currentTextID,
+  setCurrentTextID,
   iceCycleData,
   coloriClusterTipologie
 }) {
@@ -284,6 +288,7 @@ export default function MarimekkoChart({
                 key={book.textID}
                 book={book}
                 currentTextID={currentTextID}
+                setCurrentTextID={setCurrentTextID}
                 bookDataAnnotated={bookDataAnnotated}
                 selectedLegendEntries={selectedLegendEntries}
                 height={height}
