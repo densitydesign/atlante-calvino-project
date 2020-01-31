@@ -58,10 +58,8 @@ function MarimekkoBookIcycle({
       {}
     );
     return byLevelAnnotated;
-  }, [height, iceCycleData]);
+  }, [book.caratteri, height, iceCycleData]);
 
-
-  console.log("iCycleDataAnnotated", iCycleDataAnnotated)
 
   const isDetail = !!currentTextID;
   const wasDetailRef = useRef(false);
@@ -78,27 +76,41 @@ function MarimekkoBookIcycle({
   const translateToList = `translateX(${book.caratteriX}px)`;
   const translateToDetail = `translateX(0px)`;
 
+  const [levelsTranslated, setLevelsTranslated] = useState(1)
+
   const props = useSpring({
-    config: { friction: 50 },
+    // config: { friction: 50 },
 
     from: {
       opacity: 1,
       transform: translateToList,
-      width: book.caratteriWidth
+      width: book.caratteriWidth,
+      levelsOpen: 0,
     },
 
     to: [
       {
         opacity: isVisible ? 1 : 0,
         transform: isCurrentDetail ? translateToDetail : translateToList,
-        width: isCurrentDetail || wasDetail ? columnWidth : book.caratteriWidth
+        width: isCurrentDetail || wasDetail ? columnWidth : book.caratteriWidth,
+        levelsOpen: levelsTranslated,
       },
       {
-        width: isCurrentDetail ? columnWidth : book.caratteriWidth,
+        // width: isCurrentDetail ? columnWidth : book.caratteriWidth,
         transform:
-          isCurrentDetail || wasDetail ? translateToDetail : translateToList
+          isCurrentDetail || wasDetail ? translateToDetail : translateToList,
+        levelsOpen: 1,
       }
-    ]
+    ],
+
+    onFrame({ levelsOpen }) {
+      const x = Math.floor(levelsOpen)
+      if(levelsTranslated !== x){
+        setLevelsTranslated(levelsOpen)
+      }
+    }
+
+    
   });
 
   // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
@@ -106,6 +118,47 @@ function MarimekkoBookIcycle({
 
   return isDetail && (
     <>
+
+
+{iCycleDataAnnotated &&
+            Object.keys(iCycleDataAnnotated).map(
+              levelName => {
+                const levelValue = levelMaps[levelName]
+                const translate = `translateX(${(levelValue - 1) * columnWidth}px)`
+
+                return (
+                  <animated.g
+                    key={levelName}
+                    style={{
+                      transform : translate,
+                      opacity: props.levelsOpen,
+                    }}
+                  >
+                    {iCycleDataAnnotated[levelName].map(block => (
+                      <rect
+                        title={levelName}
+                        style={{ fill: block.color }}
+                        className={`${styles.marimekkoUnit}  ${styles.marimekkoUnitIceCycle} ${
+                          selectedLegendEntries[block.label]
+                            ? styles.selected
+                            : ""
+                        }`}
+                        key={block['ID SEQ']}
+                        width={columnWidth}
+                        y={block.y1}
+                        height={block.h}
+                      ></rect>
+                    ))}
+                  </animated.g>
+                )
+              }
+            )}
+
+
+
+
+
+
       <animated.g
         key={book.textID}
         style={{
@@ -136,35 +189,7 @@ function MarimekkoBookIcycle({
       </animated.g>
 
        
-          {iCycleDataAnnotated &&
-            Object.keys(iCycleDataAnnotated).map(
-              levelName => {
-                return (
-                  <g
-                    key={levelName}
-                    style={{
-                      transform : `translateX(${(levelMaps[levelName] - 1) * columnWidth}px)`
-                    }}
-                  >
-                    {iCycleDataAnnotated[levelName].map(block => (
-                      <rect
-                        title={levelName}
-                        style={{ fill: block.color }}
-                        className={`${styles.marimekkoUnit}  ${
-                          selectedLegendEntries[block.label]
-                            ? styles.selected
-                            : ""
-                        }`}
-                        key={block['ID SEQ']}
-                        width={columnWidth}
-                        y={block.y1}
-                        height={block.h}
-                      ></rect>
-                    ))}
-                  </g>
-                )
-              }
-            )}
+          
    
      
     </>

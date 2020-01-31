@@ -20,6 +20,10 @@
   transition: fill 0.5s linear;
 }
 
+.marimekkoUnitIceCycle {
+    transition: opacity 1s linear;
+}
+
 .withLegendItemSelected .marimekkoUnit {
   opacity: 0.2;
   /* stroke-opacity: 0.5; */
