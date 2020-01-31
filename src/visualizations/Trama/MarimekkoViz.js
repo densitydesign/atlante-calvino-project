@@ -41,7 +41,7 @@ const computeChartBooksAggregated = (firstLevelRecords, opts) => {
   const dettaglioKey =
     opts.dettaglio === "ambito"
       ? "categorie di tipologia"
-      : "Cluster tipolegie";
+      : "cluster tipologie";
 
   let chartBooks = groupBy(firstLevelRecords, "textID");
   chartBooks = Object.keys(chartBooks).reduce((out, item, idx) => {
@@ -250,7 +250,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, setOptionsForDetail, tipo
       return null
     }
     return data.filter(row => row.textID === currentTextID).map(item => {
-      const tipologia = item["Cluster tipolegie"]
+      const tipologia = item["cluster tipologie"]
       return {...item, color: coloriClusterTipologie[tipologia], label: tipologia}
     })
 
@@ -262,7 +262,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, setOptionsForDetail, tipo
       <div className="row no-gutters h-100">
         <div className="col-sm-1"></div>
         <div className="col-sm-9 d-flex flex-column">
-          <div className="row no-gutters" style={{ flex: 2, minHeight: 100 }}>
+          <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
               {dimensions.vizWidth && <MarimekkoTopAxis
                 height={dimensions.topAxisHeight}
@@ -274,7 +274,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, setOptionsForDetail, tipo
             </div>
           </div>
 
-          <div className="row no-gutters w-100" style={{ flex: 10 }}>
+          <div className="row no-gutters w-100" style={{ flex: 8 }}>
             <div className="col-sm-12" ref={vizContainerRef}>
               {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
                 <MarimekkoChart
@@ -289,7 +289,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, setOptionsForDetail, tipo
               )}
             </div>
           </div>
-          <div className="row no-gutters" style={{ flex: 1 }}></div>
+          <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}></div>
         </div>
 
         <div className="col-sm-2 pl-4 pt-5">

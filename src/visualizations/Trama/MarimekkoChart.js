@@ -5,6 +5,7 @@ import { useChain, useSpring, animated } from "react-spring";
 import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy";
 import omit from "lodash/omit";
+import find from "lodash/find";
 import { extent } from "d3-array";
 
 const levelMaps = {
@@ -15,7 +16,7 @@ const levelMaps = {
   cinque: 5
 };
 
-function MarimekkoBook({
+function MarimekkoBookIcycle({
   book,
   currentTextID,
   bookDataAnnotated,
@@ -24,28 +25,15 @@ function MarimekkoBook({
   width,
   iceCycleData
 }) {
-  const isCurrent = currentTextID === book.textID;
-
-  const show = !currentTextID || isCurrent;
-
-  const previousDetail = useRef(null);
-  useEffect(() => {
-    previousDetail.current = currentTextID;
-  }, [currentTextID]);
-
-  const fromDetail = !!previousDetail.current;
-
-  const translateToList = `translate(${book.caratteriX}px)`;
-  const translateToDetail = `translate(0px)`;
-
+  // utility measures
   const icycleWidth = (width / 10) * 8;
   const columnWidth = icycleWidth / 5;
 
+  //annotating data
   const iCycleDataAnnotated = useMemo(() => {
     if (!iceCycleData) {
       return null;
     }
-    // const levels = uniqBy(iceCycleData, x => x.livello)
     const byLevel = groupBy(iceCycleData, x => x.livello);
 
     const byLevelSorted = Object.keys(byLevel).reduce((acc, item) => {
@@ -57,7 +45,8 @@ function MarimekkoBook({
     const bookExtentEnd = extent(byLevelSorted["uno"], x => +x.ends_at);
     const sequenceScale = scaleLinear()
       .range([0, height])
-      .domain([bookExtentStart[0], bookExtentEnd[1]]);
+      // .domain([bookExtentStart[0], bookExtentEnd[1]]);
+      .domain([0, +book.caratteri])
 
     //annotation for levels <> "uno"
     const byLevelAnnotated = Object.keys(omit(byLevelSorted, "uno")).reduce(
@@ -66,7 +55,7 @@ function MarimekkoBook({
           listOfBlocks.push({
             ...sequence,
             y1: sequenceScale(+sequence.starts_at),
-            h: sequenceScale(+sequence.ends_at - sequence.starts_at)
+            h: sequenceScale(+sequence.ends_at) - sequenceScale(+sequence.starts_at)
           });
           return listOfBlocks;
         }, []);
@@ -74,30 +63,46 @@ function MarimekkoBook({
       },
       {}
     );
-    console.log("byLevelAnnotated", byLevelAnnotated);
     return byLevelAnnotated;
   }, [height, iceCycleData]);
 
-  console.log("iCycleDataAnnotated", iCycleDataAnnotated);
+
+  console.log("iCycleDataAnnotated", iCycleDataAnnotated)
+
+  const isDetail = !!currentTextID;
+  const wasDetailRef = useRef(false);
+  useEffect(() => {
+    wasDetailRef.current = isDetail;
+  }, [isDetail]);
+  const wasDetail = wasDetailRef.current;
+  const isCurrentDetail = currentTextID === book.textID;
+
+  // wether the current book is visible or not
+  const isVisible = isCurrentDetail || !isDetail;
+
+  // target positions for transation
+  const translateToList = `translateX(${book.caratteriX}px)`;
+  const translateToDetail = `translateX(0px)`;
 
   const props = useSpring({
     config: { friction: 50 },
+
     from: {
       opacity: 1,
-      transform:
-        fromDetail || currentTextID ? translateToDetail : translateToList,
-      width: fromDetail || isCurrent ? columnWidth : book.caratteriWidth
+      transform: translateToList,
+      width: book.caratteriWidth
     },
 
     to: [
       {
-        opacity: show ? 1 : 0,
-        transform: currentTextID ? translateToDetail : translateToList,
-        width: isCurrent ? columnWidth : book.caratteriWidth
+        opacity: isVisible ? 1 : 0,
+        transform: isCurrentDetail ? translateToDetail : translateToList,
+        width: isCurrentDetail || wasDetail ? columnWidth : book.caratteriWidth
       },
       {
-        transform: isCurrent ? translateToDetail : translateToList,
-        width: isCurrent ? columnWidth : book.caratteriWidth
+        width: isCurrentDetail ? columnWidth : book.caratteriWidth,
+        transform:
+          isCurrentDetail || wasDetail ? translateToDetail : translateToList
       }
     ]
   });
@@ -105,23 +110,20 @@ function MarimekkoBook({
   // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
   // console.log(props)
 
-  return (
+  return isDetail && (
     <>
       <animated.g
         key={book.textID}
-        // transform={`translate(${book.caratteriX})`}
         style={{
-          transform:
-              isCurrent
-              ? props.transform
-              : translateToList,
+          transform: props.transform,
           opacity: props.opacity
         }}
       >
         <rect
           className={`${styles.marimekkoRect}`}
-          style={{ height, 
-            width: fromDetail && isCurrent ? columnWidth : props.width 
+          style={{
+            height,
+            width: props.width
           }}
         ></rect>
         {bookDataAnnotated.map((d, i) => (
@@ -134,37 +136,92 @@ function MarimekkoBook({
               selectedLegendEntries[d.label] ? styles.selected : ""
             }`}
             fill={d.color}
+            stroke={"none"}
           ></animated.rect>
         ))}
       </animated.g>
-      {isCurrent && (
-        <g>
+
+       
           {iCycleDataAnnotated &&
-            sortBy(Object.keys(iCycleDataAnnotated), k => levelMaps[k]).map(
-              levelName => (
-                <g
-                  key={levelName}
-                  transform={`translate(${(levelMaps[levelName] - 1) *
-                    columnWidth})`}
-                >
-                  {iCycleDataAnnotated[levelName].map(block => (
-                    <rect
-                      style={{ fill: block.color }}
-                      className={`${styles.marimekkoUnit}  ${
-                        selectedLegendEntries[block.label] ? styles.selected : ""
-                      }`}
-                      dataLevel={levelName}
-                      key={block.id}
-                      width={columnWidth}
-                      y={block.y1}
-                      height={block.h}
-                    ></rect>
-                  ))}
-                </g>
-              )
+            Object.keys(iCycleDataAnnotated).map(
+              levelName => {
+                console.log("level", levelName, levelMaps[levelName], iCycleDataAnnotated[levelName])
+                return (
+                  <g
+                    key={levelName}
+                    style={{
+                      transform : `translateX(${(levelMaps[levelName] - 1) * columnWidth}px)`
+                    }}
+                  >
+                    {iCycleDataAnnotated[levelName].map(block => (
+                      <rect
+                        title={levelName}
+                        style={{ fill: block.color }}
+                        className={`${styles.marimekkoUnit}  ${
+                          selectedLegendEntries[block.label]
+                            ? styles.selected
+                            : ""
+                        }`}
+                        key={block['ID SEQ']}
+                        width={columnWidth}
+                        y={block.y1}
+                        height={block.h}
+                      ></rect>
+                    ))}
+                  </g>
+                )
+              }
             )}
-        </g>
-      )}
+   
+     
+    </>
+  );
+}
+
+function MarimekkoBook({
+  book,
+  currentTextID,
+  bookDataAnnotated,
+  selectedLegendEntries,
+  height,
+  width
+}) {
+  // target positions for transation
+  const translateToList = `translate(${book.caratteriX}px)`;
+
+  // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
+  // console.log(props)
+
+  return (
+    <>
+      <animated.g
+        key={book.textID}
+        style={{
+          transform: translateToList
+        }}
+      >
+        <rect
+          className={`${styles.marimekkoRect}`}
+          style={{
+            height,
+            width: book.caratteriWidth
+          }}
+        ></rect>
+
+        {bookDataAnnotated.map((d, i) => (
+          <animated.rect
+            key={i}
+            y={d.top}
+            width={book.caratteriWidth}
+            height={d.height}
+            className={`${styles.marimekkoUnit}  ${
+              selectedLegendEntries[d.label] ? styles.selected : ""
+            }`}
+            fill={d.color}
+            stroke={"none"}
+          ></animated.rect>
+        ))}
+      </animated.g>
     </>
   );
 }
@@ -188,44 +245,80 @@ export default function MarimekkoChart({
       k => selectedLegendEntries[k]
     ).length > 0;
 
+  const mappedBooks = useMemo(() => {
+    let out = {};
+    booksDataWithPositions.forEach(book => {
+      const bookData = chartBooks[book.textID];
+      //annotating with top and height
+      out[book.textID] = bookData
+        .map(item => ({
+          label: item.label,
+          value: item.value,
+          color: item.color,
+          height: heightScale(item.value)
+        }))
+        .reduce((out, item, i) => {
+          if (i === 0) {
+            out.push({ ...item, top: 0 });
+          } else {
+            out.push({ ...item, top: out[i - 1].top + out[i - 1].height });
+          }
+          return out;
+        }, []);
+    });
+
+    return out;
+  }, [booksDataWithPositions, chartBooks, heightScale]);
+
+  const currentBook = useMemo(() => {
+    return find(booksDataWithPositions, x => x.textID === currentTextID);
+  }, [booksDataWithPositions, currentTextID]);
+
   return (
-    <svg
-      style={{ height, width, position: "absolute" }}
-      className={anyLegendEntrySelected ? styles.withLegendItemSelected : ""}
-    >
-      {booksDataWithPositions.map(book => {
-        const bookData = chartBooks[book.textID];
+    <>
+      {!currentTextID && (
+        <svg
+          style={{ height, width, position: "absolute", zIndex: 0 }}
+          className={
+            anyLegendEntrySelected ? styles.withLegendItemSelected : ""
+          }
+        >
+          {booksDataWithPositions.map(book => {
+            const bookDataAnnotated = mappedBooks[book.textID];
+            return (
+              <MarimekkoBook
+                key={book.textID}
+                book={book}
+                currentTextID={currentTextID}
+                bookDataAnnotated={bookDataAnnotated}
+                selectedLegendEntries={selectedLegendEntries}
+                height={height}
+                width={width}
+                iceCycleData={iceCycleData}
+              ></MarimekkoBook>
+            );
+          })}
+        </svg>
+      )}
 
-        //annotating with top and height
-        const bookDataAnnotated = bookData
-          .map(item => ({
-            label: item.label,
-            value: item.value,
-            color: item.color,
-            height: heightScale(item.value)
-          }))
-          .reduce((out, item, i) => {
-            if (i === 0) {
-              out.push({ ...item, top: 0 });
-            } else {
-              out.push({ ...item, top: out[i - 1].top + out[i - 1].height });
-            }
-            return out;
-          }, []);
-
-        return (
-          <MarimekkoBook
-            key={book.textID}
-            book={book}
+      {currentTextID && (
+        <svg
+          style={{ height, width, position: "absolute", zIndex: 2 }}
+          className={
+            anyLegendEntrySelected ? styles.withLegendItemSelected : ""
+          }
+        >
+          <MarimekkoBookIcycle
+            book={currentBook}
             currentTextID={currentTextID}
-            bookDataAnnotated={bookDataAnnotated}
+            bookDataAnnotated={mappedBooks[currentTextID]}
             selectedLegendEntries={selectedLegendEntries}
             height={height}
             width={width}
             iceCycleData={iceCycleData}
-          ></MarimekkoBook>
-        );
-      })}
-    </svg>
+          ></MarimekkoBookIcycle>
+        </svg>
+      )}
+    </>
   );
 }
