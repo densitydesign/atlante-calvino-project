@@ -63,12 +63,14 @@ export default class TerritoryFooter extends React.Component
   getActiveOption = options => options.find(item => item.status === true).label;
 
   toggleButtonPressed = buttonId => {    
-
+console.log("toggleButtonPressed");
+console.log("buttonId", buttonId);
     switch(buttonId)
     {
       case this.analysisModeToggleButtonId :
 
-        this.props.toggleBottomPanelPosition();
+//        this.props.toggleBottomPanelPosition();
+        this.props.toggleItineraryDropUpPosition();
 
         break;
 
@@ -84,7 +86,7 @@ export default class TerritoryFooter extends React.Component
 
         break;
 
-      default : throw new Error("buttonId not recognized : " + buttonId);
+      default : console.log("buttonId", buttonId);
     }
   };
 
@@ -93,7 +95,7 @@ export default class TerritoryFooter extends React.Component
     return (
       <div className="bottom-nav navigations">
 
-        {
+        {/*
           ![
             GlobalData.bottomPanelModes.doubt, 
             GlobalData.bottomPanelModes.space,
@@ -106,15 +108,16 @@ export default class TerritoryFooter extends React.Component
             style={{ gridColumn : "span 8", textAlign : "center" }}
             changeOptions={this.changeItineraries}
           />
-        }
+*/        }
 
         {
+/*          
           [
             GlobalData.bottomPanelModes.doubt, 
             GlobalData.bottomPanelModes.space,
             GlobalData.bottomPanelModes.shape
           ].includes(this.props.bottomPanelMode) &&
-
+*/
           <ToggleButton 
             id={this.analysisModeToggleButtonId} 
             style={{ gridColumn : "span 8" }}

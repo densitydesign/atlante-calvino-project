@@ -6,6 +6,7 @@ import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
 import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
+import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
 import PageTitle from "../../general/PageTitle";
@@ -20,11 +21,12 @@ export default class TerritoryWrapper extends React.Component
     data : "data still not loaded",
     isLoading : true,
 
-    bottomPanelMode     : this.props.bottomPanelMode,
-    bottomPanelPosition : GlobalData.bottomPanelPositions.open,
-    doubtPanelMode      : GlobalData.analysisPanelModes.doubt.fog,
-    spacePanelMode      : GlobalData.analysisPanelModes.space.genericTerrestrial,    
-    shapePanelMode      : GlobalData.analysisPanelModes.shape.types,
+    itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
+    bottomPanelMode         : this.props.bottomPanelMode,
+    bottomPanelPosition     : GlobalData.bottomPanelPositions.open,
+    doubtPanelMode          : GlobalData.analysisPanelModes.doubt.fog,
+    spacePanelMode          : GlobalData.analysisPanelModes.space.genericTerrestrial,    
+    shapePanelMode          : GlobalData.analysisPanelModes.shape.types,
 
     mainAnalysisMode  : this.props.mainAnalysisMode,
     noAnalysisMode    : GlobalData.analysisModes.noAnalysis.chronology,
@@ -154,6 +156,16 @@ export default class TerritoryWrapper extends React.Component
     this.setState({ bottomPanelPosition : newValue });
   }
 
+  toggleItineraryDropUpPosition = () =>
+  {
+    const newValue =
+      this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
+      GlobalData.itineraryDropUpPositions.closed :
+      GlobalData.itineraryDropUpPositions.open;
+
+    this.setState({ itineraryDropUpPosition : newValue });
+  }
+
   setDoubtPanelMode = value => this.setState({ doubtPanelMode : value });
   setShapePanelMode = value => this.setState({ shapePanelMode : value });
   setSpacePanelMode = value => this.setState({ spacePanelMode : value });
@@ -255,6 +267,12 @@ export default class TerritoryWrapper extends React.Component
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               />
 
+              {this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open &&
+
+              <TerritoryItinerariesDropUp />
+
+              }
+
               {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.noAnalysis &&
 
               <TerritoryBottomPanel
@@ -305,6 +323,7 @@ export default class TerritoryWrapper extends React.Component
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
           toggleBottomPanelPosition={this.toggleBottomPanelPosition}
+          toggleItineraryDropUpPosition={this.toggleItineraryDropUpPosition}
         />
 
       </div>

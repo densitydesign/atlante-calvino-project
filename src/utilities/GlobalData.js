@@ -268,6 +268,10 @@ const GlobalData = {
     open : "open",
     closed : "closed"
   },
+  itineraryDropUpPositions : {
+    open : "open",
+    closed : "closed"
+  },
   analysisPanelModes : {
     doubt : {
       fog : "fog",
