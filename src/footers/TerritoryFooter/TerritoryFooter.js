@@ -109,11 +109,13 @@ console.log("toggle bottom panel");
       case this.legendToggleButtonId :
 console.log("1");
         const value = this.toggleButtonsMap.get(buttonId);
+console.log("value", value);
 
         if(value.bottomPanelMode !== this.props.bottomPanelMode)
         {
 console.log("2");          
           this.props.setBottomPanelMode(value.bottomPanelMode);
+          this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.open);
         }
         else
         {
