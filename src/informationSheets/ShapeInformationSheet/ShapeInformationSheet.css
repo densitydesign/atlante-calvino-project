@@ -9,7 +9,7 @@ main svg {
 }
 
 main article {
-  grid-column: 2 / span 12;
+  grid-column: 2 / span 14;
   margin-bottom:2em;
 }
 
@@ -18,12 +18,12 @@ main article h3 {
 }
 
 .focus {
-  grid-column: 2 / span 12;
+  grid-column: 2 / span 14;
   margin-bottom:2em;
 }
 
 .focus-2 {
-  grid-column: 2 / span 22;
+  grid-column: 2 / span 18;
   margin-bottom:2em;
 }
 
@@ -39,12 +39,13 @@ main article h3 {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.viz--pic{
-  height: 300px;
-  width: 100%;
-  margin:2em 0em 2em 0em;
 
+.viz--pic{
+  margin:2em 0em 2em 0em;
+    width: auto;
+    height: 300px;
 }
+
 
 .viz--info p {
   margin: 0;

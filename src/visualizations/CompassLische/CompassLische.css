@@ -12,3 +12,7 @@ svg#lische {
   position: sticky;
   top: var(--navigation-height);
 }
+
+#lische .reset {
+  fill: var(--bg);
+}
