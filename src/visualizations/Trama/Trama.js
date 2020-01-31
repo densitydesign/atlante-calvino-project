@@ -102,7 +102,7 @@ class Trama extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 8" }} />}
           {!this.state.isLoading && (
             <Search
-              style={{ gridColumn: "span 8" }}
+              style={{ gridColumn: "span 8", pointerEvents: currentTextID ? 'none' : undefined }}
               data={{options:searchOptions}}
               changeOptions={this.changeRicerca}
             />
