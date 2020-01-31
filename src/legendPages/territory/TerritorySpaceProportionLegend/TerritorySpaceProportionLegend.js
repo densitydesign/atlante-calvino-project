@@ -11,10 +11,6 @@ export default class TerritorySpaceProportionLegend extends React.Component
       <>
 
         <div className="legend-block">
-          <div className="title-panel"><h3>SPAZIO</h3></div>
-        </div>
-
-        <div className="legend-block">
           <div className="title-panel"><h4>DISPOSIZIONE</h4></div>
           <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
         </div>
@@ -34,7 +30,7 @@ export default class TerritorySpaceProportionLegend extends React.Component
           <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-space-donut.svg'} />
         </div>
 
-      </>      
+      </>
     );
   }
 }

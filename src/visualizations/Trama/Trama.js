@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MainMenu from "../../general/MainMenu";
 import PageTitle from "../../general/PageTitle";
 import MoreInfo from "../../general/MoreInfo";
-import Bussola from "../../general/Bussola";
+import CompassButton from "../../general/CompassButton/CompassButton";
 import Search from "../../general/Search";
 import Loading from "../../general/Loading";
 
@@ -28,7 +28,7 @@ const aggregazioneOptions = [
 
 const cercaOptions = [{ label: "titolo" }, { label: "boh" }];
 
-class Combine extends Component {
+class Trama extends Component {
   state = {
     isLoading: false,
     booksData: null,
@@ -39,9 +39,7 @@ class Combine extends Component {
     tipologia: tipologiaOptions.map(x => x.label)
   };
 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
   render() {
     const {
@@ -79,12 +77,28 @@ class Combine extends Component {
               changeOptions={this.changeRicerca}
             />
           )}
-          <MoreInfo style={{ gridColumn: "span 1" }} />
-          <Bussola style={{ gridColumn: "span 1" }} />
+          <MoreInfo
+            style={{ gridColumn: "span 1" }}
+            onClicked={() => {
+               alert("clicked!")
+            }}
+          />
+          <CompassButton
+            style={{
+              gridColumn: "span 1",
+              color: "white",
+              backgroundColor: "black"
+            }}
+          />
         </div>
 
         <div className="the-body-viz">
-          <MarimekkoViz data={marimekkoData} dettaglio={dettaglio} aggregazione={aggregazione} tipologia={tipologia}/>
+          <MarimekkoViz
+            data={marimekkoData}
+            dettaglio={dettaglio}
+            aggregazione={aggregazione}
+            tipologia={tipologia}
+          />
         </div>
 
         <div className="bottom-nav navigations">
@@ -124,4 +138,4 @@ class Combine extends Component {
   }
 }
 
-export default Combine;
+export default Trama;

@@ -1,0 +1,21 @@
+.axis {
+  transition: opacity 0.3s ease;
+}
+
+.tick text {
+  font-size: 1.3em;
+  font-family: 'HKGrotesk', sans-serif;
+}
+
+.domain {
+  display: none;
+}
+
+.tick line {
+  stroke-dasharray: 2;
+  stroke: #CCC;
+}
+
+.y line {
+  display: none;
+}

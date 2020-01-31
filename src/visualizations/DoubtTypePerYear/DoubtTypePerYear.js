@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import V from './listTypesPerText.d3';
+import V from './DoubtTypePerYear.d3';
 
-export default class ListTypesPerText extends React.Component
+export default class DoubtTypePerYear extends React.Component
 {
   componentDidMount()
   {
@@ -21,7 +21,7 @@ export default class ListTypesPerText extends React.Component
   {
     const style = {
       width: '100%',
-      height: '500px',
+      height: '300px',
       marginTop: '2em',
       marginBottom: '4em'
     }

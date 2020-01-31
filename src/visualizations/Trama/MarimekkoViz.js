@@ -234,6 +234,16 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
     return booksDataAnnotated;
   }, [booksData, dimensions.vizWidth]);
 
+
+  //getting al data for current text for displaying icecycle
+  const iceCycleData = useMemo(() => {
+    if(!currentTextID){
+      return null
+    }
+    return data.filter(row => row.textID === currentTextID)
+
+  }, [currentTextID, data])
+
   
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
@@ -262,6 +272,7 @@ function MarimekkoViz({ data, dettaglio, aggregazione, tipologia }) {
                   width={dimensions.vizWidth}
                   selectedLegendEntries={selectedLegendEntries}
                   currentTextID={currentTextID}
+                  iceCycleData={iceCycleData}
                 ></MarimekkoChart>
               )}
             </div>

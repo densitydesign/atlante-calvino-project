@@ -31,15 +31,12 @@ export default class TerritoryLegendPanel extends React.Component
       case GlobalData.legendPages.territory.chronology       : legendPage = <TerritoryChronologyLegend />; break;
       case GlobalData.legendPages.territory.volumes          : legendPage = <TerritoryVolumesLegend />; break;
 
-      case GlobalData.legendPages.territory.doubt            : legendPage = <TerritoryDoubtLegend />; break;
       case GlobalData.legendPages.territory.doubtOccurrences : legendPage = <TerritoryDoubtOccurrencesLegend />; break;
       case GlobalData.legendPages.territory.doubtProportion  : legendPage = <TerritoryDoubtProportionLegend />; break;
 
-      case GlobalData.legendPages.territory.shape            : legendPage = <TerritoryShapeLegend />; break;
       case GlobalData.legendPages.territory.shapeProportion1 : legendPage = <TerritoryShapeProportion1Legend />; break;
       case GlobalData.legendPages.territory.shapeProportion2 : legendPage = <TerritoryShapeProportion2Legend />; break;
 
-      case GlobalData.legendPages.territory.space            : legendPage = <TerritorySpaceLegend />; break;
       case GlobalData.legendPages.territory.spaceOccurrences : legendPage = <TerritorySpaceOccurrencesLegend />; break;
       case GlobalData.legendPages.territory.spaceProportion  : legendPage = <TerritorySpaceProportionLegend />; break;
       case GlobalData.legendPages.territory.spaceHierarchies : legendPage = <TerritorySpaceHierarchiesLegend />; break;
@@ -47,19 +44,19 @@ export default class TerritoryLegendPanel extends React.Component
       default : break;
     }
 
-        
 
 
-       
-       
-
-      
-       
-       
 
 
-       
-       
+
+
+
+
+
+
+
+
+
 
 
 

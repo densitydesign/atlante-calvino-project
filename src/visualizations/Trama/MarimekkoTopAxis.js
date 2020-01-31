@@ -1,31 +1,52 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { useChain, useSpring, animated } from "react-spring";
-import styles from "./Combine.module.css";
+import styles from "./Trama.module.css";
 
 export default function MarimekkoTopAxis({
   width,
   height,
   booksDataWithPositions,
   setCurrentTextID,
-  currentTextID,
+  currentTextID
 }) {
   const margins = {
     bottom: 15
   };
 
-  const isBookDetail = !!currentTextID
+  const isBookDetail = !!currentTextID;
 
-  const props = useSpring({ 
+  const props = useSpring({
     delay: 1200,
     // config: { friction: 50},
-    from: { width: width, left: 0},
-  
-    to: {width: isBookDetail ? width / 2 : width, left: isBookDetail ?  width / 2 : 0}
-    })
+    from: { width: width, left: 0, opacity: 0 },
+
+    to: {
+      width: isBookDetail ? width / 2 : width,
+      left: isBookDetail ? width / 2 : 0,
+      opacity: isBookDetail ? 1 : 0,
+    }
+  });
 
   return (
-    <animated.div style={{ height, width:props.width, overflow: "hidden"}}>
-      <animated.svg className="position-absolute" style={{ height, width:props.width, overflow: "hidden", left:props.left }} >
+    <animated.div style={{ height, width: props.width, overflow: "hidden" }}>
+      {isBookDetail && (
+        <animated.button
+          onClick={() => { setCurrentTextID(null)}}
+          className="btn btn-outline-dark position-absolute"
+          style={{ top: height - margins.bottom - 50, opacity: props.opacity }}
+        >
+          BACK
+        </animated.button>
+      )}
+      <animated.svg
+        className="position-absolute"
+        style={{
+          height,
+          width: props.width,
+          overflow: "hidden",
+          left: props.left
+        }}
+      >
         <g transform={`translate(0 ${height - margins.bottom})`}>
           {booksDataWithPositions.map(book => (
             <g key={book.textID} transform={`translate(${book.caratteriX})`}>
