@@ -76,6 +76,7 @@ class Trama extends Component {
             <AltOptions
               title="Cerca per"
               options={cercaOptions}
+              disabled={true}
               value={cercaPer}
               onChange={x => {
                 this.setState({ cercaPer: x.label });
@@ -136,6 +137,7 @@ class Trama extends Component {
 
           <AltOptions
             title="Dettaglio"
+            allowEmpty={false}
             value={dettaglio}
             onChange={x => {
               this.setState({ dettaglio: x.label });
@@ -146,6 +148,7 @@ class Trama extends Component {
 
           <AltOptions
             title="Aggregazione"
+            allowEmpty={false}
             value={aggregazione}
             onChange={x => {
               this.setState({ aggregazione: x.label });
