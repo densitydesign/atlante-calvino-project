@@ -91,7 +91,7 @@ export default class CompassLische extends React.Component
               d="M183.41 123.87H328.58V130.55H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 129.72)"
             >
@@ -114,7 +114,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1086.42H328.59V1093.1000000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1092.25)"
             >
@@ -175,7 +175,7 @@ export default class CompassLische extends React.Component
               d="M183.42 896.85H328.59V903.53H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 902.83)"
             >
@@ -213,7 +213,7 @@ export default class CompassLische extends React.Component
               d="M183.41 890.16H328.58V896.8399999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 896.14)"
             >
@@ -244,7 +244,7 @@ export default class CompassLische extends React.Component
               d="M183.41 870.11H328.58V876.79H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 876.09)"
             >
@@ -281,7 +281,7 @@ export default class CompassLische extends React.Component
               d="M183.42 863.43H328.59V870.1099999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 869.41)"
             >
@@ -328,7 +328,7 @@ export default class CompassLische extends React.Component
               d="M183.41 856.74H328.58V863.42H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 862.72)"
             >
@@ -375,7 +375,7 @@ export default class CompassLische extends React.Component
               d="M183.41 850.06H328.58V856.7399999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 856.04)"
             >
@@ -426,7 +426,7 @@ export default class CompassLische extends React.Component
               d="M183.42 793.05H328.59V799.7299999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 798.84)"
             >
@@ -467,7 +467,7 @@ export default class CompassLische extends React.Component
               d="M183.42 779.68H328.59V786.3599999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 785.47)"
             >
@@ -498,7 +498,7 @@ export default class CompassLische extends React.Component
               d="M183.41 766.31H328.58V772.9899999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 772.1)"
             >
@@ -539,7 +539,7 @@ export default class CompassLische extends React.Component
               d="M183.42 759.63H328.59V766.31H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 765.42)"
             >
@@ -576,7 +576,7 @@ export default class CompassLische extends React.Component
               d="M183.42 746.26H328.59V752.9399999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 752.05)"
             >
@@ -623,7 +623,7 @@ export default class CompassLische extends React.Component
               d="M183.42 726.21H328.59V732.89H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 732)"
             >
@@ -670,7 +670,7 @@ export default class CompassLische extends React.Component
               d="M183.41 719.52H328.58V726.1999999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 725.32)"
             >
@@ -708,7 +708,7 @@ export default class CompassLische extends React.Component
               d="M183.42 712.84H328.59V719.52H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 718.63)"
             >
@@ -732,7 +732,7 @@ export default class CompassLische extends React.Component
               d="M183.41 706.15H328.58V712.8299999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 711.95)"
             >
@@ -766,7 +766,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path d="M320.41 688.69l1.69 1.49.36-2.14 1 .3-.86 2 2.11-.27v1l-2.11-.26.86 2-1 .31-.36-2.15-1.69 1.5-.59-.81 2-1.06-2-1.06.59-.85z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 692.95)"
             >
@@ -804,7 +804,7 @@ export default class CompassLische extends React.Component
               d="M183.41 623.46H328.58V630.14H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 629.26)"
             >
@@ -828,7 +828,7 @@ export default class CompassLische extends React.Component
               d="M183.41 610.09H328.58V616.77H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 615.9)"
             >
@@ -852,7 +852,7 @@ export default class CompassLische extends React.Component
               d="M183.41 544.3H328.58V550.9799999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 550.11)"
             >
@@ -876,7 +876,7 @@ export default class CompassLische extends React.Component
               d="M183.42 537.59H328.59V544.27H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 543.43)"
             >
@@ -919,7 +919,7 @@ export default class CompassLische extends React.Component
               d="M183.42 530.94H328.59V537.62H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 536.75)"
             >
@@ -976,7 +976,7 @@ export default class CompassLische extends React.Component
               d="M183.42 517.57H328.59V524.25H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 523.38)"
             >
@@ -1033,7 +1033,7 @@ export default class CompassLische extends React.Component
               d="M183.42 484.09H328.59V490.77H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 489.96)"
             >
@@ -1090,7 +1090,7 @@ export default class CompassLische extends React.Component
               d="M183.42 438.41H328.59V445.09000000000003H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 444.23)"
             >
@@ -1145,7 +1145,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path d="M320.41 433.26l1.69 1.49.36-2.14 1 .3-.86 2 2.11-.27v1l-2.11-.25.86 2-1 .31-.36-2.15-1.69 1.5-.59-.81 2-1.06-2-1.05.59-.87z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 437.54)"
             >
@@ -1202,7 +1202,7 @@ export default class CompassLische extends React.Component
               d="M183.41 425.04H328.58V431.72H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 430.86)"
             >
@@ -1249,7 +1249,7 @@ export default class CompassLische extends React.Component
               d="M183.42 418.36H328.59V425.04H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 424.18)"
             >
@@ -1306,7 +1306,7 @@ export default class CompassLische extends React.Component
               d="M183.41 399.37H328.58V406.01H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 405.18)"
             >
@@ -1337,7 +1337,7 @@ export default class CompassLische extends React.Component
               d="M183.42 373.67H328.59V380.35H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 379.49)"
             >
@@ -1367,7 +1367,7 @@ export default class CompassLische extends React.Component
               d="M183.41 314.56H328.58V321.24H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 320.39)"
             >
@@ -1398,7 +1398,7 @@ export default class CompassLische extends React.Component
               d="M183.42 307.88H328.59V314.56H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 313.71)"
             >
@@ -1427,7 +1427,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7F7F7" d="M183.42 262.12H328.59V268.8H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 267.97)"
             >
@@ -1456,7 +1456,7 @@ export default class CompassLische extends React.Component
               d="M183.42 248.75H328.59V255.43H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 254.61)"
             >
@@ -1507,7 +1507,7 @@ export default class CompassLische extends React.Component
               d="M183.42 242.09H328.59V248.77H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 247.92)"
             >
@@ -1555,7 +1555,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.42 228.72H328.59V235.4H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 234.56)"
             >
@@ -1606,7 +1606,7 @@ export default class CompassLische extends React.Component
               d="M183.41 222.01H328.58V228.69H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 227.87)"
             >
@@ -1651,7 +1651,7 @@ export default class CompassLische extends React.Component
               d="M183.41 215.35H328.58V222.03H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 221.19)"
             >
@@ -1698,7 +1698,7 @@ export default class CompassLische extends React.Component
               d="M183.41 208.64H328.58V215.32H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 214.51)"
             >
@@ -1744,7 +1744,7 @@ export default class CompassLische extends React.Component
               d="M183.41 117.18H328.58V123.86000000000001H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 123.04)"
             >
@@ -1765,7 +1765,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#E5E4E3" d="M183.42 32.4H328.59V39.08H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 38.25)"
             >
@@ -1786,7 +1786,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7F7F7" d="M183.41 39.08H328.58V45.76H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 44.93)"
             >
@@ -1807,7 +1807,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#E5E4E3" d="M183.42 45.77H328.59V52.45H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 51.62)"
             >
@@ -1830,7 +1830,7 @@ export default class CompassLische extends React.Component
               d="M183.41 58.08H328.58V64.75999999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 63.93)"
             >
@@ -1887,7 +1887,7 @@ export default class CompassLische extends React.Component
               d="M183.41 70.4H328.58V77.08000000000001H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 76.25)"
             >
@@ -1944,7 +1944,7 @@ export default class CompassLische extends React.Component
               d="M183.42 83.77H328.59V90.44999999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 89.62)"
             >
@@ -1989,7 +1989,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7F7F7" d="M183.41 90.45H328.58V97.13H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 96.3)"
             >
@@ -2015,7 +2015,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#FEFCF6" d="M183.42 103.82H328.59V110.5H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 109.67)"
             >
@@ -2067,7 +2067,7 @@ export default class CompassLische extends React.Component
               d="M183.41 136.19H328.58V142.87H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 142.04)"
             >
@@ -2090,7 +2090,7 @@ export default class CompassLische extends React.Component
               d="M183.42 142.88H328.59V149.56H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 148.72)"
             >
@@ -2143,7 +2143,7 @@ export default class CompassLische extends React.Component
               d="M183.42 149.56H328.59V156.24H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 155.4)"
             >
@@ -2188,7 +2188,7 @@ export default class CompassLische extends React.Component
               d="M183.41 156.24H328.58V162.92000000000002H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 162.09)"
             >
@@ -2232,7 +2232,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.41 162.92H328.58V169.6H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 168.77)"
             >
@@ -2278,7 +2278,7 @@ export default class CompassLische extends React.Component
               d="M183.42 169.61H328.59V176.29000000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 175.45)"
             >
@@ -2301,7 +2301,7 @@ export default class CompassLische extends React.Component
               d="M183.41 176.29H328.58V182.97H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 182.14)"
             >
@@ -2348,7 +2348,7 @@ export default class CompassLische extends React.Component
               d="M183.41 182.97H328.58V189.65H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 188.82)"
             >
@@ -2399,7 +2399,7 @@ export default class CompassLische extends React.Component
               d="M183.42 189.66H328.59V196.34H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 195.5)"
             >
@@ -2450,7 +2450,7 @@ export default class CompassLische extends React.Component
               d="M183.41 201.98H328.58V208.66H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 207.82)"
             >
@@ -2496,7 +2496,7 @@ export default class CompassLische extends React.Component
               d="M183.42 235.38H328.59V242.06H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 241.24)"
             >
@@ -2520,7 +2520,7 @@ export default class CompassLische extends React.Component
               d="M183.42 255.46H328.59V262.14H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 261.29)"
             >
@@ -2540,7 +2540,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.41 268.82H328.58V275.5H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 274.66)"
             >
@@ -2587,7 +2587,7 @@ export default class CompassLische extends React.Component
               d="M183.41 275.48H328.58V282.16H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 281.34)"
             >
@@ -2627,7 +2627,7 @@ export default class CompassLische extends React.Component
               d="M183.42 287.83H328.59V294.51H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 293.66)"
             >
@@ -2651,7 +2651,7 @@ export default class CompassLische extends React.Component
               d="M183.42 294.51H328.59V301.19H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 300.34)"
             >
@@ -2680,7 +2680,7 @@ export default class CompassLische extends React.Component
               d="M183.41 301.19H328.58V307.87H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 307.02)"
             >
@@ -2715,7 +2715,7 @@ export default class CompassLische extends React.Component
               d="M183.42 321.25H328.59V327.93H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 327.07)"
             >
@@ -2756,7 +2756,7 @@ export default class CompassLische extends React.Component
               d="M183.42 327.93H328.59V334.61H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 333.76)"
             >
@@ -2807,7 +2807,7 @@ export default class CompassLische extends React.Component
               d="M183.41 334.61H328.58V341.29H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 340.44)"
             >
@@ -2835,7 +2835,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.42 341.3H328.59V347.98H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 347.13)"
             >
@@ -2864,7 +2864,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#E5E4E3" d="M183.42 353.62H328.59V360.3H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 359.44)"
             >
@@ -2885,7 +2885,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7F7F7" d="M183.42 360.3H328.59V366.98H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="matrix(1.01 0 0 1 186.8 366.12)"
             >
@@ -2919,7 +2919,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path d="M320.41 368.43l1.69 1.48.36-2.14 1 .3-.86 2 2.11-.27v1l-2.11-.25.86 2-1 .3-.36-2.15-1.69 1.5-.59-.81 2-1.06-2-1 .59-.9z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 372.81)"
             >
@@ -2966,7 +2966,7 @@ export default class CompassLische extends React.Component
               d="M183.42 380.35H328.59V387.03000000000003H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 386.18)"
             >
@@ -3004,7 +3004,7 @@ export default class CompassLische extends React.Component
               d="M183.42 392.67H328.59V399.35H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 398.49)"
             >
@@ -3028,7 +3028,7 @@ export default class CompassLische extends React.Component
               d="M183.41 411.67H328.58V418.35H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 417.49)"
             >
@@ -3052,7 +3052,7 @@ export default class CompassLische extends React.Component
               d="M183.42 451.78H328.59V458.46H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 457.59)"
             >
@@ -3076,7 +3076,7 @@ export default class CompassLische extends React.Component
               d="M183.41 458.46H328.58V465.14H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 464.28)"
             >
@@ -3100,7 +3100,7 @@ export default class CompassLische extends React.Component
               d="M183.41 465.14H328.58V471.82H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 470.96)"
             >
@@ -3124,7 +3124,7 @@ export default class CompassLische extends React.Component
               d="M183.41 477.46H328.58V484.14H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 483.28)"
             >
@@ -3161,7 +3161,7 @@ export default class CompassLische extends React.Component
               d="M183.42 811.95H328.59V818.63H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 817.84)"
             >
@@ -3199,7 +3199,7 @@ export default class CompassLische extends React.Component
               d="M183.42 497.46H328.59V504.14H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 503.33)"
             >
@@ -3229,7 +3229,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#D9E7E9" d="M183.42 504.2H328.59V510.88H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 510.01)"
             >
@@ -3282,7 +3282,7 @@ export default class CompassLische extends React.Component
               d="M183.42 510.85H328.59V517.49H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 516.7)"
             >
@@ -3339,7 +3339,7 @@ export default class CompassLische extends React.Component
               d="M183.41 524.22H328.58V530.86H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 530.06)"
             >
@@ -3378,7 +3378,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#E5E4E3" d="M183.41 556.62H328.58V563.3H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 562.43)"
             >
@@ -3411,7 +3411,7 @@ export default class CompassLische extends React.Component
               d="M183.41 563.27H328.58V569.9499999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 569.11)"
             >
@@ -3443,7 +3443,7 @@ export default class CompassLische extends React.Component
               d="M183.42 569.99H328.59V576.67H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 575.8)"
             >
@@ -3467,7 +3467,7 @@ export default class CompassLische extends React.Component
               d="M183.42 576.64H328.59V583.3199999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 582.48)"
             >
@@ -3491,7 +3491,7 @@ export default class CompassLische extends React.Component
               d="M183.42 583.36H328.59V590.04H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 589.16)"
             >
@@ -3512,7 +3512,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7F7F7" d="M183.41 590H328.58V596.68H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 595.85)"
             >
@@ -3536,7 +3536,7 @@ export default class CompassLische extends React.Component
               d="M183.42 596.73H328.59V603.41H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 602.53)"
             >
@@ -3560,7 +3560,7 @@ export default class CompassLische extends React.Component
               d="M183.41 603.37H328.58V610.05H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 609.21)"
             >
@@ -3584,7 +3584,7 @@ export default class CompassLische extends React.Component
               d="M183.41 616.74H328.58V623.42H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 622.58)"
             >
@@ -3608,7 +3608,7 @@ export default class CompassLische extends React.Component
               d="M183.42 630.11H328.59V636.79H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 635.95)"
             >
@@ -3635,7 +3635,7 @@ export default class CompassLische extends React.Component
               d="M183.35 649.08H328.52V655.76H183.35z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 654.95)"
             >
@@ -3679,7 +3679,7 @@ export default class CompassLische extends React.Component
               d="M183.42 680.43H328.59V687.1099999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 686.27)"
             >
@@ -3703,7 +3703,7 @@ export default class CompassLische extends React.Component
               d="M183.42 699.47H328.59V706.15H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 705.27)"
             >
@@ -3742,7 +3742,7 @@ export default class CompassLische extends React.Component
               d="M183.41 732.89H328.58V739.5699999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 738.68)"
             >
@@ -3798,7 +3798,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path d="M320.41 741.06l1.69 1.48.36-2.14 1 .3-.86 2 2.11-.27v1l-2.11-.26.86 2-1 .31-.36-2.15-1.69 1.49-.59-.81 2-1.05-2-1.06.59-.84z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 745.37)"
             >
@@ -3829,7 +3829,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1473.88H328.59V1480.5600000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1479.6)"
             >
@@ -3854,7 +3854,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1572.89H328.59V1579.5700000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1578.81)"
             >
@@ -3897,7 +3897,7 @@ export default class CompassLische extends React.Component
               d="M183.41 752.94H328.58V759.62H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 758.73)"
             >
@@ -3948,7 +3948,7 @@ export default class CompassLische extends React.Component
               d="M183.41 772.99H328.58V779.67H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 778.78)"
             >
@@ -3989,7 +3989,7 @@ export default class CompassLische extends React.Component
               d="M183.41 786.36H328.58V793.04H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 792.15)"
             >
@@ -4030,7 +4030,7 @@ export default class CompassLische extends React.Component
               d="M183.41 799.73H328.58V806.41H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 805.52)"
             >
@@ -4058,7 +4058,7 @@ export default class CompassLische extends React.Component
               d="M183.41 824.47H328.58V831.15H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 830.26)"
             >
@@ -4082,7 +4082,7 @@ export default class CompassLische extends React.Component
               d="M183.41 836.69H328.58V843.37H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 842.67)"
             >
@@ -4115,7 +4115,7 @@ export default class CompassLische extends React.Component
               d="M183.42 843.38H328.59V850.06H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 849.36)"
             >
@@ -4156,7 +4156,7 @@ export default class CompassLische extends React.Component
               d="M183.42 876.8H328.59V883.4799999999999H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 882.78)"
             >
@@ -4187,7 +4187,7 @@ export default class CompassLische extends React.Component
               d="M183.41 883.48H328.58V890.16H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 889.46)"
             >
@@ -4224,7 +4224,7 @@ export default class CompassLische extends React.Component
               d="M183.41 903.53H328.58V910.2099999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 909.51)"
             >
@@ -4292,7 +4292,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1079.8H328.58V1086.48H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1085.56)"
             >
@@ -4333,7 +4333,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1612.14H328.58V1618.8200000000002H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1617.86)"
             >
@@ -4351,7 +4351,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1586.25H328.58V1592.93H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1592.17)"
             >
@@ -4369,7 +4369,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1579.57H328.59V1586.25H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1585.49)"
             >
@@ -4399,7 +4399,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1560.76H328.58V1567.44H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1566.49)"
             >
@@ -4430,7 +4430,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1554.08H328.59V1560.76H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1559.8)"
             >
@@ -4461,7 +4461,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1547.39H328.58V1554.0700000000002H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1553.12)"
             >
@@ -4492,7 +4492,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1540.71H328.58V1547.39H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1546.44)"
             >
@@ -4523,7 +4523,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1534.03H328.59V1540.71H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1539.75)"
             >
@@ -4554,7 +4554,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1527.34H328.58V1534.02H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1533.07)"
             >
@@ -4585,7 +4585,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1520.66H328.58V1527.3400000000001H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1526.39)"
             >
@@ -4616,7 +4616,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1513.98H328.59V1520.66H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1519.7)"
             >
@@ -4655,7 +4655,7 @@ export default class CompassLische extends React.Component
             ></path>
             <circle cx="179.32" cy="1510.54" r="2.13" fill="#5F5F5E"></circle>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1513.02)"
             >
@@ -4678,7 +4678,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1500.61H328.58V1507.29H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1506.34)"
             >
@@ -4709,7 +4709,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1493.93H328.59V1500.6100000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1499.65)"
             >
@@ -4750,7 +4750,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1487.24H328.58V1493.92H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1492.97)"
             >
@@ -4788,7 +4788,7 @@ export default class CompassLische extends React.Component
               d="M175.9 1483.81c-44.69 0-44.69 5.53-89.38 5.53"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1486.29)"
             >
@@ -4811,7 +4811,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1461.37H328.58V1468.05H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1467.29)"
             >
@@ -4852,7 +4852,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1454.69H328.59V1461.3700000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1460.6)"
             >
@@ -4894,7 +4894,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1448.01H328.59V1454.69H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1453.92)"
             >
@@ -4914,7 +4914,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#FAFCFB" d="M183.41 1441.32H328.58V1448H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1447.24)"
             >
@@ -4949,7 +4949,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1434.64H328.59V1441.3200000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1440.55)"
             >
@@ -4970,7 +4970,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#EBF4F0" d="M183.41 1422.32H328.58V1429H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1428.24)"
             >
@@ -5005,7 +5005,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1415.64H328.58V1422.3200000000002H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1421.55)"
             >
@@ -5023,7 +5023,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1408.96H328.59V1415.64H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1414.87)"
             >
@@ -5048,7 +5048,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1396.64H328.58V1403.3200000000002H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1402.55)"
             >
@@ -5071,7 +5071,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1389.96H328.59V1396.64H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1395.87)"
             >
@@ -5113,7 +5113,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1383.27H328.58V1389.95H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="matrix(1.01 0 0 1 186.8 1389.18)"
             >
@@ -5137,7 +5137,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1376.59H328.58V1383.27H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1382.5)"
             >
@@ -5161,7 +5161,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1364.36H328.58V1371.04H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1370.18)"
             >
@@ -5178,7 +5178,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1357.76H328.58V1364.44H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1363.5)"
             >
@@ -5203,7 +5203,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1345.28H328.59V1351.96H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1351.18)"
             >
@@ -5226,7 +5226,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1338.59H328.58V1345.27H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1344.5)"
             >
@@ -5268,7 +5268,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1331.91H328.59V1338.5900000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1337.82)"
             >
@@ -5291,7 +5291,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1325.23H328.59V1331.91H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1331.13)"
             >
@@ -5326,7 +5326,7 @@ export default class CompassLische extends React.Component
               d="M183.62 1312.91H328.78999999999996V1319.43H183.62z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1318.82)"
             >
@@ -5350,7 +5350,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1306.23H328.59V1312.91H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1312.13)"
             >
@@ -5385,7 +5385,7 @@ export default class CompassLische extends React.Component
               d="M183.49 1299.71H328.65999999999997V1306.23H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1305.45)"
             >
@@ -5409,7 +5409,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1293.02H328.58V1299.7H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1298.77)"
             >
@@ -5450,7 +5450,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1280.54H328.58V1287.22H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1286.45)"
             >
@@ -5491,7 +5491,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1273.86H328.58V1280.54H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1279.77)"
             >
@@ -5532,7 +5532,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1267.18H328.59V1273.8600000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1273.08)"
             >
@@ -5573,7 +5573,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1260.49H328.58V1267.17H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1266.4)"
             >
@@ -5614,7 +5614,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1253.81H328.58V1260.49H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1259.72)"
             >
@@ -5655,7 +5655,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1247.13H328.59V1253.8100000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1253.03)"
             >
@@ -5697,7 +5697,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1240.44H328.58V1247.1200000000001H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1246.35)"
             >
@@ -5714,7 +5714,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1233.76H328.58V1240.44H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1239.67)"
             >
@@ -5732,7 +5732,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1227.08H328.59V1233.76H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1232.98)"
             >
@@ -5757,7 +5757,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1220.4H328.59V1227.0800000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1226.3)"
             >
@@ -5781,7 +5781,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1151.23H328.59V1157.91H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1156.98)"
             >
@@ -5798,7 +5798,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1163.54H328.58V1170.22H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1169.3)"
             >
@@ -5823,7 +5823,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1175.86H328.58V1182.54H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1181.61)"
             >
@@ -5847,7 +5847,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1208.23H328.58V1214.91H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1213.98)"
             >
@@ -5864,7 +5864,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1201.55H328.59V1208.23H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1207.3)"
             >
@@ -5878,7 +5878,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1194.86H328.58V1201.54H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1200.62)"
             >
@@ -5903,7 +5903,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1188.18H328.59V1194.8600000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1193.93)"
             >
@@ -5926,7 +5926,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1138.91H328.59V1145.5900000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1144.66)"
             >
@@ -5957,7 +5957,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1132.22H328.58V1138.9H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1137.98)"
             >
@@ -5998,7 +5998,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1125.54H328.58V1132.22H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1131.3)"
             >
@@ -6039,7 +6039,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1118.86H328.59V1125.54H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1124.61)"
             >
@@ -6090,7 +6090,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1106.54H328.59V1113.22H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1112.3)"
             >
@@ -6141,7 +6141,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1099.78H328.58V1106.46H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1105.61)"
             >
@@ -6182,7 +6182,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1093.17H328.58V1099.8500000000001H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1098.93)"
             >
@@ -6223,7 +6223,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1073.05H328.59V1079.73H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1078.88)"
             >
@@ -6278,7 +6278,7 @@ export default class CompassLische extends React.Component
               d="M183.49 1066.43H328.65999999999997V1073.1100000000001H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1072.2)"
             >
@@ -6323,7 +6323,7 @@ export default class CompassLische extends React.Component
               d="M183.5 1027.38H328.66999999999996V1034.0600000000002H183.5z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1033.15)"
             >
@@ -6368,7 +6368,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1039.7H328.59V1046.38H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1045.46)"
             >
@@ -6419,7 +6419,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1059.75H328.59V1066.43H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1065.51)"
             >
@@ -6480,7 +6480,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1053.07H328.59V1059.75H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1058.83)"
             >
@@ -6541,7 +6541,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1046.38H328.59V1053.0600000000002H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1052.15)"
             >
@@ -6602,7 +6602,7 @@ export default class CompassLische extends React.Component
               d="M183.41 1015.06H328.58V1021.7399999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1020.83)"
             >
@@ -6643,7 +6643,7 @@ export default class CompassLische extends React.Component
               d="M531.41 939.86c-101.41 0-101.41 71.86-202.82 71.86"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1014.15)"
             >
@@ -6684,7 +6684,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1001.7H328.59V1008.38H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1007.46)"
             >
@@ -6735,7 +6735,7 @@ export default class CompassLische extends React.Component
               d="M531.41 927.77c-101.41 0-101.41 70.58-202.82 70.58"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1000.78)"
             >
@@ -6776,7 +6776,7 @@ export default class CompassLische extends React.Component
               d="M183.42 988.33H328.59V995.01H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 994.1)"
             >
@@ -6827,7 +6827,7 @@ export default class CompassLische extends React.Component
               d="M183.49 981.61H328.65999999999997V988.29H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 987.41)"
             >
@@ -6882,7 +6882,7 @@ export default class CompassLische extends React.Component
               d="M183.49 974.94H328.65999999999997V981.62H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 980.73)"
             >
@@ -6943,7 +6943,7 @@ export default class CompassLische extends React.Component
               d="M183.49 968.26H328.65999999999997V974.9399999999999H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 974.04)"
             >
@@ -6998,7 +6998,7 @@ export default class CompassLische extends React.Component
               d="M183.5 961.58H328.66999999999996V968.26H183.5z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 967.36)"
             >
@@ -7059,7 +7059,7 @@ export default class CompassLische extends React.Component
               d="M183.49 954.9H328.65999999999997V961.5799999999999H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 960.68)"
             >
@@ -7111,7 +7111,7 @@ export default class CompassLische extends React.Component
               d="M183.49 948.23H328.65999999999997V954.91H183.49z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 953.99)"
             >
@@ -7172,7 +7172,7 @@ export default class CompassLische extends React.Component
               d="M183.41 935.9H328.58V942.5799999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 941.68)"
             >
@@ -7220,7 +7220,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F7ECF1" d="M183.42 929.22H328.59V935.9H183.42z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 934.99)"
             >
@@ -7271,7 +7271,7 @@ export default class CompassLische extends React.Component
               d="M183.41 922.53H328.58V929.2099999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 928.31)"
             >
@@ -7332,7 +7332,7 @@ export default class CompassLische extends React.Component
               d="M183.41 915.85H328.58V922.53H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 921.63)"
             >
@@ -7413,7 +7413,7 @@ export default class CompassLische extends React.Component
               d="M183.41 445.09H328.58V451.77H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 450.91)"
             >
@@ -7470,7 +7470,7 @@ export default class CompassLische extends React.Component
               d="M183.41 490.83H328.58V497.51H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 496.64)"
             >
@@ -7527,7 +7527,7 @@ export default class CompassLische extends React.Component
               d="M183.41 636.83H328.58V643.51H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 642.63)"
             >
@@ -7584,7 +7584,7 @@ export default class CompassLische extends React.Component
               d="M183.42 661.47H328.59V668.15H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 667.27)"
             >
@@ -7641,7 +7641,7 @@ export default class CompassLische extends React.Component
               d="M183.41 673.78H328.58V680.4599999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 679.58)"
             >
@@ -7678,7 +7678,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1599.62H328.59V1606.3H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1605.54)"
             >
@@ -7719,7 +7719,7 @@ export default class CompassLische extends React.Component
               d="M183.42 1592.94H328.59V1599.6200000000001H183.42z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.75 1598.86)"
             >
@@ -7760,7 +7760,7 @@ export default class CompassLische extends React.Component
               d="M183.41 77.08H328.58V83.75999999999999H183.41z"
             ></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 82.93)"
             >
@@ -7810,7 +7810,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.41 97.13H328.58V103.81H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 102.99)"
             >
@@ -7864,7 +7864,7 @@ export default class CompassLische extends React.Component
             ></path>
             <path fill="#F9F5DE" d="M183.41 110.5H328.58V117.18H183.41z"></path>
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="7"
               transform="translate(186.76 116.35)"
             >
@@ -8374,7 +8374,7 @@ export default class CompassLische extends React.Component
         <g data-name="magazines_">
           <g data-name="roma_fascista_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(37.232 104.7)"
             >
@@ -8384,7 +8384,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="aretusa_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(58.252 127.04)"
             >
@@ -8394,7 +8394,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="politecnico_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(47.173 150.52)"
             >
@@ -8434,7 +8434,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="darsena_nuova_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(32.38 311.22)"
             >
@@ -8444,7 +8444,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="rivista_n_i_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(47.494 336.68)"
             >
@@ -8454,7 +8454,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="agora_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(64.318 358.74)"
             >
@@ -8464,7 +8464,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_settimanale_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(37.842 379.03)"
             >
@@ -8474,7 +8474,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="rinascita_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(54.119 410.41)"
             >
@@ -8494,7 +8494,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="inventario_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(50.107 468.22)"
             >
@@ -8504,7 +8504,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="paragone_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(52.506 495.03)"
             >
@@ -8514,7 +8514,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="botteghe_oscure_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(27.166 521.84)"
             >
@@ -8524,7 +8524,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="nuovi_argomenti_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(26.724 551.48)"
             >
@@ -8534,7 +8534,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_ponte_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(58.58 574.11)"
             >
@@ -8544,7 +8544,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="incontri_oggi_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(40.13 602.3)"
             >
@@ -8554,7 +8554,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_contemporaneo_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(22.193 671.95)"
             >
@@ -8564,7 +8564,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_caffe_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(59.955 730.89)"
             >
@@ -8584,7 +8584,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="citta_aperta_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(42.767 807.81)"
             >
@@ -8594,7 +8594,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="l_espresso_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(47.712 843.56)"
             >
@@ -8604,7 +8604,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="nuova_corrente_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(31.306 866.64)"
             >
@@ -8614,7 +8614,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_mondo_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(54.083 893.65)"
             >
@@ -8624,7 +8624,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="tempo_presente_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(28.423 919.07)"
             >
@@ -8634,7 +8634,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="il_verri_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(61.146 944.6)"
             >
@@ -8644,7 +8644,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="successo_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(53.384 974.74)"
             >
@@ -8654,7 +8654,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="questo_e_altro_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(35.642 1003.31)"
             >
@@ -8664,7 +8664,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="l_europa_letteraria_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(19.943 1033.09)"
             >
@@ -8674,7 +8674,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="corriere_dei_piccoli_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(18.752 1073.48)"
             >
@@ -8694,7 +8694,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="linus_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(66.818 1163.6)"
             >
@@ -8704,7 +8704,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="rendiconti_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(48.31 1191.86)"
             >
@@ -8714,7 +8714,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="playmen_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(55.517 1220.04)"
             >
@@ -8724,7 +8724,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="playboy_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(57.993 1248.33)"
             >
@@ -8754,7 +8754,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="derriere_le_miroir_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(24.685 1419.98)"
             >
@@ -8764,7 +8764,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="gran_bazaar_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(41.806 1459.58)"
             >
@@ -8774,7 +8774,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="fmr_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(68.58 1488.81)"
             >
@@ -8784,7 +8784,7 @@ export default class CompassLische extends React.Component
           </g>
           <g data-name="cnac_magazine_">
             <text
-              fontFamily="'HKGrotesk-Regular'"
+              fontFamily="'HKGrotesk'"
               fontSize="8"
               transform="translate(28.197 1522.77)"
             >
