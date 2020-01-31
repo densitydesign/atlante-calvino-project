@@ -1,29 +1,38 @@
 
 import React from 'react';
-import Options from '../../general/Options/Options';
+//import Options from '../../general/Options/Options';
+import AltOptions from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
 import GlobalData from '../../utilities/GlobalData';
 
 import '../../App.css';
 
+const territoryLabel = "territorio";
+const     doubtLabel = "nebbia";
+const     shapeLabel = "elenchi";
+const     spaceLabel = "luoghi";
+
+const itineraryOptions = [
+  { label : territoryLabel },
+  { label :     doubtLabel },
+  { label :     spaceLabel },
+  { label :     shapeLabel }
+];
+
 export default class TerritoryFooter extends React.Component
 {
-  territoryLabel = "territorio";
-  doubtLabel = "nebbia";
-  shapeLabel = "elenchi";
-  spaceLabel = "luoghi";
 
   itineraryLabelOptionPanelModeMap = new Map([
-    [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
-    [ this.doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
-    [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
+    [ doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
+    [ spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
   optionPanelModeItineraryMap = new Map([
-    [ GlobalData.bottomPanelModes.doubt, this.doubtLabel ],
-    [ GlobalData.bottomPanelModes.space, this.spaceLabel ],
-    [ GlobalData.bottomPanelModes.shape, this.shapeLabel ]
+    [ GlobalData.bottomPanelModes.doubt, doubtLabel ],
+    [ GlobalData.bottomPanelModes.space, spaceLabel ],
+    [ GlobalData.bottomPanelModes.shape, shapeLabel ]
   ]);
 
   analysisModeToggleButtonId = "analysisModeToggleButton";
@@ -39,7 +48,7 @@ export default class TerritoryFooter extends React.Component
     [ this.legendToggleButtonId,              { bottomPanelMode     : GlobalData.bottomPanelModes.legend } ],
     [ this.chronologicalFilterToggleButtonId, { bottomPanelMode     : GlobalData.bottomPanelModes.chronologicalFilter } ]
   ]);
-
+/*
   state = {
     itineraries : {
       multiple : false,
@@ -50,6 +59,11 @@ export default class TerritoryFooter extends React.Component
         { label : this.shapeLabel,     status : false }        
       ]
     }
+  };
+*/
+
+  state = {
+    itinerary : null//itineraryOptions.map(d => d.label)
   };
 
 // set here bottom panel mode, rather than higlight mode
@@ -90,6 +104,37 @@ export default class TerritoryFooter extends React.Component
 
   render()
   {
+    const { itinerary } = this.state;
+
+/*
+          <Options
+            title="Sfere"
+            data={this.state.itineraries}
+            style={{ gridColumn : "span 8", textAlign : "center" }}
+            changeOptions={this.changeItineraries}
+          />
+
+          <AltOptions
+            title="Itinerari"
+            options={itinerary}
+            style={{ gridColumn: "span 8", textAlign: "center" }}
+            value={itinerary}
+            onChange={
+//              itinerary => this.setState({ itinerary : itinerary.map(x => x.label) })
+
+              itinerary => {
+                const visualizationMode = this.itineraryLabelOptionPanelModeMap.get(itinerary);
+
+                this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+                this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
+              }
+
+            }
+          />
+*/
+
+console.log("itinerary", itinerary);
+
     return (
       <div className="bottom-nav navigations">
 
@@ -99,13 +144,24 @@ export default class TerritoryFooter extends React.Component
             GlobalData.bottomPanelModes.space,
             GlobalData.bottomPanelModes.shape
           ].includes(this.props.bottomPanelMode) &&
+          <AltOptions
+            title="Itinerari"
+            options={itinerary}
+            style={{ gridColumn: "span 8", textAlign: "center" }}
+            value={itinerary}
+            onChange={
+//              itinerary => this.setState({ itinerary : itinerary.map(x => x.label) })
 
-          <Options
-            title="Sfere"
-            data={this.state.itineraries}
-            style={{ gridColumn : "span 8", textAlign : "center" }}
-            changeOptions={this.changeItineraries}
+              itinerary => {
+                const visualizationMode = this.itineraryLabelOptionPanelModeMap.get(itinerary);
+
+                this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+                this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
+              }
+
+            }
           />
+          
         }
 
         {
