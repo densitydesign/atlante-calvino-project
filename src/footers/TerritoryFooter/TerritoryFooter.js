@@ -10,28 +10,28 @@ import '../../App.css';
 export default class TerritoryFooter extends React.Component
 {
   territoryLabel = "TERRITORIO";
-  doubtLabel = "NEBBIA";
-  spaceLabel = "LUOGHI";
-  shapeLabel = "ELENCHI";
+      doubtLabel = "NEBBIA";
+      spaceLabel = "LUOGHI";
+      shapeLabel = "ELENCHI";
 
   itineraryLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
     [ this.doubtLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
-    [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ],
+    [ this.shapeLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ]    
   ]);
 
   analysisButtonVisualizationModeMap = new Map([
-    [ TerritoryItinerariesDropUp.doubtButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
-    [ TerritoryItinerariesDropUp.spaceButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
-    [ TerritoryItinerariesDropUp.shapeButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
+    [ TerritoryItinerariesDropUp.doubtButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.doubt, mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ TerritoryItinerariesDropUp.spaceButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space, mainAnalysisMode : GlobalData.analysisModes.space } ],
+    [ TerritoryItinerariesDropUp.shapeButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.shape, mainAnalysisMode : GlobalData.analysisModes.shape } ]
   ]);
 
-  optionPanelModeItineraryMap = new Map([
-    [ GlobalData.bottomPanelModes.noAnalysis, this.territoryLabel ],
-    [ GlobalData.bottomPanelModes.doubt, this.doubtLabel ],
-    [ GlobalData.bottomPanelModes.space, this.spaceLabel ],
-    [ GlobalData.bottomPanelModes.shape, this.shapeLabel ]
+  analysisModeItineraryMap = new Map([
+    [ GlobalData.analysisModes.noAnalysis, this.territoryLabel ],
+    [ GlobalData.analysisModes.doubt,      this.doubtLabel ],
+    [ GlobalData.analysisModes.space,      this.spaceLabel ],
+    [ GlobalData.analysisModes.shape,      this.shapeLabel ]
   ]);
 
   analysisModeToggleButtonId = "analysisModeToggleButton";
@@ -44,8 +44,8 @@ export default class TerritoryFooter extends React.Component
   legendToggleButtonCaption = "LEGENDA";
 
   toggleButtonsMap = new Map([
-    [ this.legendToggleButtonId,              { bottomPanelMode     : GlobalData.bottomPanelModes.legend } ],
-    [ this.chronologicalFilterToggleButtonId, { bottomPanelMode     : GlobalData.bottomPanelModes.chronologicalFilter } ]
+    [ this.legendToggleButtonId,              { bottomPanelMode : GlobalData.bottomPanelModes.legend } ],
+    [ this.chronologicalFilterToggleButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.chronologicalFilter } ]
   ]);
 
   state = {
@@ -71,16 +71,25 @@ export default class TerritoryFooter extends React.Component
   getActiveOption = options => options.find(item => item.status === true).label;
 
   toggleButtonPressed = buttonId => {    
+console.log("-------------------");
 console.log("toggleButtonPressed");
 console.log("buttonId", buttonId);
+console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);        
+console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
+
     switch(buttonId)
     {
       case this.analysisModeToggleButtonId :
-
-        if(this.props.bottomPanelMode === GlobalData.bottomPanelModes.noAnalysis)
+        if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+        {
+console.log("toggle drop up");          
           this.props.toggleItineraryDropUpPosition();
+        }
         else 
+        {
+console.log("toggle bottom panel");
           this.props.toggleBottomPanelPosition();
+        }
 
         break;
 
@@ -119,44 +128,18 @@ console.log("buttonId", buttonId);
 
   render()
   {
+console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);
     return (
       <div className="bottom-nav navigations">
 
-        {/*
-          ![
-            GlobalData.bottomPanelModes.doubt, 
-            GlobalData.bottomPanelModes.space,
-            GlobalData.bottomPanelModes.shape
-          ].includes(this.props.bottomPanelMode) &&
-
-          <Options
-            title="Sfere"
-            data={this.state.itineraries}
-            style={{ gridColumn : "span 8", textAlign : "center" }}
-            changeOptions={this.changeItineraries}
-          />
-*/        }
-
-        {
-/*          
-          [
-            GlobalData.bottomPanelModes.doubt, 
-            GlobalData.bottomPanelModes.space,
-            GlobalData.bottomPanelModes.shape
-          ].includes(this.props.bottomPanelMode) &&
-*/
-          <ToggleButton 
-            id={this.analysisModeToggleButtonId} 
-            style={{ gridColumn : "span 8" }}
-            caption={this.optionPanelModeItineraryMap.get(this.props.bottomPanelMode)}
-            pressed={
-              false
-//              this.props.bottomPanelMode === this.toggleButtonsMap.get(this.chronologicalFilterToggleButtonId).bottomPanelMode ||
-//              !matchPair(this.props.dataExtent, GlobalData.defaultTerritoryDataExtent)
-            }
-            callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
-          />
-        }
+        <ToggleButton 
+          id={this.analysisModeToggleButtonId} 
+          style={{ gridColumn : "span 8" }}
+          caption={
+            this.analysisModeItineraryMap.get(this.props.mainAnalysisMode)}
+          pressed={this.props.mainAnalysisMode !== GlobalData.analysisModes.noAnalysis}
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+        />
 
         <ToggleButton
           id={this.chronologicalFilterToggleButtonId}

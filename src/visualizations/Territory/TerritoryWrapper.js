@@ -323,6 +323,7 @@ export default class TerritoryWrapper extends React.Component
         }
 
         <TerritoryFooter
+          mainAnalysisMode={this.state.mainAnalysisMode}
           bottomPanelMode={this.state.bottomPanelMode}
           dataExtent={this.state.dataExtent}
           setMainAnalysisMode={this.setMainAnalysisMode}
