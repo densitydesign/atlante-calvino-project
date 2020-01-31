@@ -107,6 +107,9 @@ console.log("toggle bottom panel");
 
       case this.chronologicalFilterToggleButtonId :
       case this.legendToggleButtonId :
+
+        this.props.setItineraryDropUpPosition(GlobalData.itineraryDropUpPositions.closed);
+
 console.log("1");
         const value = this.toggleButtonsMap.get(buttonId);
 console.log("value", value);

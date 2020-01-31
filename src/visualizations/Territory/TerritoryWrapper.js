@@ -171,6 +171,8 @@ export default class TerritoryWrapper extends React.Component
     this.setState({ itineraryDropUpPosition : newValue });
   }
 
+  setItineraryDropUpPosition = value => this.setState({ itineraryDropUpPosition : value });
+
   setDoubtPanelMode = value => this.setState({ doubtPanelMode : value });
   setShapePanelMode = value => this.setState({ shapePanelMode : value });
   setSpacePanelMode = value => this.setState({ spacePanelMode : value });
@@ -333,6 +335,7 @@ export default class TerritoryWrapper extends React.Component
           toggleBottomPanelPosition={this.toggleBottomPanelPosition}
           setBottomPanelPosition={this.setBottomPanelPosition}
           toggleItineraryDropUpPosition={this.toggleItineraryDropUpPosition}
+          setItineraryDropUpPosition={this.setItineraryDropUpPosition}
           containerSetItineraryDropUpRadioButtonPressed={this.containerSetItineraryDropUpRadioButtonPressed}
         />
 
