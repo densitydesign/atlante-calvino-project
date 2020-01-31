@@ -7,14 +7,8 @@ import sortBy from "lodash/sortBy";
 import omit from "lodash/omit";
 import find from "lodash/find";
 import { extent } from "d3-array";
+import { levelMaps } from './constants'
 
-const levelMaps = {
-  uno: 1,
-  due: 2,
-  tre: 3,
-  quattro: 4,
-  cinque: 5
-};
 
 function MarimekkoBookIcycle({
   book,
