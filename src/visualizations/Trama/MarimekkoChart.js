@@ -92,7 +92,7 @@ function MarimekkoBookIcycle({
       {
         opacity: isVisible ? 1 : 0,
         transform: isCurrentDetail ? translateToDetail : translateToList,
-        width: isCurrentDetail ? columnWidth : book.caratteriWidth,
+        width: columnWidth,
         levelsOpen: levelsTranslated
       },
       {
