@@ -82,12 +82,10 @@ console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
       case this.analysisModeToggleButtonId :
         if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
         {
-console.log("toggle drop up");          
           this.props.toggleItineraryDropUpPosition();
         }
         else 
         {
-console.log("toggle bottom panel");
           this.props.toggleBottomPanelPosition();
         }
 
