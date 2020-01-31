@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import groupBy from "lodash/groupBy";
 import styles from "./Trama.module.css";
-import { useChain, useSpring, animated } from "react-spring";
+import { useTransition, useSpring, animated } from "react-spring";
 import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy";
 import omit from "lodash/omit";
@@ -280,33 +280,40 @@ export default function MarimekkoChart({
     return find(booksDataWithPositions, x => x.textID === currentTextID);
   }, [booksDataWithPositions, currentTextID]);
 
+  const transitions = useTransition(!currentTextID, null, {
+    from: { opacity: 1 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+    })
+
   return (
     <>
-      {!currentTextID && (
-        <svg
-          style={{ height, width, position: "absolute", zIndex: 0 }}
-          className={
-            anyLegendEntrySelected ? styles.withLegendItemSelected : ""
-          }
-        >
-          {booksDataWithPositions.map(book => {
-            const bookDataAnnotated = mappedBooks[book.textID];
-            return (
-              <MarimekkoBook
-                key={book.textID}
-                book={book}
-                currentTextID={currentTextID}
-                setCurrentTextID={setCurrentTextID}
-                bookDataAnnotated={bookDataAnnotated}
-                selectedLegendEntries={selectedLegendEntries}
-                height={height}
-                width={width}
-                iceCycleData={iceCycleData}
-              ></MarimekkoBook>
-            );
-          })}
-        </svg>
+      {transitions.map(({ item, key, props }) =>
+        item && <animated.svg
+        style={{ height, width, position: "absolute", zIndex: 0, opacity:props.opacity }}
+        className={
+          anyLegendEntrySelected ? styles.withLegendItemSelected : ""
+        }
+      >
+        {booksDataWithPositions.map(book => {
+          const bookDataAnnotated = mappedBooks[book.textID];
+          return (
+            <MarimekkoBook
+              key={book.textID}
+              book={book}
+              currentTextID={currentTextID}
+              setCurrentTextID={setCurrentTextID}
+              bookDataAnnotated={bookDataAnnotated}
+              selectedLegendEntries={selectedLegendEntries}
+              height={height}
+              width={width}
+              iceCycleData={iceCycleData}
+            ></MarimekkoBook>
+          );
+        })}
+      </animated.svg>
       )}
+       
 
       {currentTextID && (
         <svg
