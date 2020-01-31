@@ -7,7 +7,14 @@ import './TerritoryItinerariesDropUp.css';
 
 export default class TerritoryItinerariesDropUp extends React.Component
 {
-  radioButtonPressed = buttonId => console.log("buttonId", buttonId);
+  static get doubtButtonId() { return "doubtButton"; }
+  doubtButtonCaption = "DUBBIO";
+
+  static get spaceButtonId() { return "spaceButton"; }
+  spaceButtonCaption = "SPAZIO";
+
+  static get shapeButtonId() { return  "shapeButton"; }
+  shapeButtonCaption = "FORMA";
 
   render()
   {
@@ -15,27 +22,27 @@ export default class TerritoryItinerariesDropUp extends React.Component
       <div className="territory-itineraries-drop-up">
 
         <RadioButton
-          id={"b1"}
-          caption={"b1"}
-          buttonColor={"red"}
+          id={TerritoryItinerariesDropUp.doubtButtonId}
+          caption={this.doubtButtonCaption}
+          buttonColor={"white"}
           pressed={false}
-          callStateContainerRadioButtonPressed={this.radioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
         <RadioButton
-          id={"b2"}
-          caption={"b2"}
-          buttonColor={"green"}
+          id={TerritoryItinerariesDropUp.spaceButtonId}
+          caption={this.spaceButtonCaption}
+          buttonColor={"white"}
           pressed={false}
-          callStateContainerRadioButtonPressed={this.radioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
         <RadioButton
-          id={"b3"}
-          caption={"b3"}
-          buttonColor={"blue"}
+          id={TerritoryItinerariesDropUp.shapeButtonId}
+          caption={this.shapeButtonCaption}
+          buttonColor={"white"}
           pressed={false}
-          callStateContainerRadioButtonPressed={this.radioButtonPressed}
+          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
 
       </div>

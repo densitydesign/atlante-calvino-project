@@ -156,6 +156,9 @@ export default class TerritoryWrapper extends React.Component
     this.setState({ bottomPanelPosition : newValue });
   }
 
+  containerSetItineraryDropUpRadioButtonPressed = callback => this.itineraryDropUpRadioButtonPressed = callback;
+  callItineraryDropUpRadioButtonPressed = buttonId => this.itineraryDropUpRadioButtonPressed(buttonId);
+
   toggleItineraryDropUpPosition = () =>
   {
     const newValue =
@@ -269,7 +272,9 @@ export default class TerritoryWrapper extends React.Component
 
               {this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open &&
 
-              <TerritoryItinerariesDropUp />
+              <TerritoryItinerariesDropUp
+                callStateContainerRadioButtonPressed={this.callItineraryDropUpRadioButtonPressed}
+              />
 
               }
 
@@ -324,6 +329,7 @@ export default class TerritoryWrapper extends React.Component
           setBottomPanelMode={this.setBottomPanelMode}
           toggleBottomPanelPosition={this.toggleBottomPanelPosition}
           toggleItineraryDropUpPosition={this.toggleItineraryDropUpPosition}
+          containerSetItineraryDropUpRadioButtonPressed={this.containerSetItineraryDropUpRadioButtonPressed}
         />
 
       </div>

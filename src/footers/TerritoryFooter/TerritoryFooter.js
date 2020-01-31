@@ -3,15 +3,16 @@ import React from 'react';
 import Options from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
 import GlobalData from '../../utilities/GlobalData';
+import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 
 import '../../App.css';
 
 export default class TerritoryFooter extends React.Component
 {
-  territoryLabel = "territorio";
-  doubtLabel = "nebbia";
-  shapeLabel = "elenchi";
-  spaceLabel = "luoghi";
+  territoryLabel = "TERRITORIO";
+  doubtLabel = "NEBBIA";
+  spaceLabel = "LUOGHI";
+  shapeLabel = "ELENCHI";
 
   itineraryLabelOptionPanelModeMap = new Map([
     [ this.territoryLabel, { bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis, mainAnalysisMode : GlobalData.analysisModes.noAnalysis } ],
@@ -20,7 +21,14 @@ export default class TerritoryFooter extends React.Component
     [ this.spaceLabel,     { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
   ]);
 
+  analysisButtonVisualizationModeMap = new Map([
+    [ TerritoryItinerariesDropUp.doubtButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.doubt,      mainAnalysisMode : GlobalData.analysisModes.doubt } ],
+    [ TerritoryItinerariesDropUp.spaceButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.shape,      mainAnalysisMode : GlobalData.analysisModes.shape } ],
+    [ TerritoryItinerariesDropUp.shapeButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.space,      mainAnalysisMode : GlobalData.analysisModes.space } ]
+  ]);
+
   optionPanelModeItineraryMap = new Map([
+    [ GlobalData.bottomPanelModes.noAnalysis, this.territoryLabel ],
     [ GlobalData.bottomPanelModes.doubt, this.doubtLabel ],
     [ GlobalData.bottomPanelModes.space, this.spaceLabel ],
     [ GlobalData.bottomPanelModes.shape, this.shapeLabel ]
@@ -69,8 +77,22 @@ console.log("buttonId", buttonId);
     {
       case this.analysisModeToggleButtonId :
 
-//        this.props.toggleBottomPanelPosition();
+        if(this.props.bottomPanelMode === GlobalData.bottomPanelModes.noAnalysis)
+          this.props.toggleItineraryDropUpPosition();
+        else 
+          this.props.toggleBottomPanelPosition();
+
+        break;
+
+      case TerritoryItinerariesDropUp.doubtButtonId :
+      case TerritoryItinerariesDropUp.spaceButtonId :
+      case TerritoryItinerariesDropUp.shapeButtonId :
+
+        const visualizationMode = this.analysisButtonVisualizationModeMap.get(buttonId);
+
         this.props.toggleItineraryDropUpPosition();
+        this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+        this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
 
         break;
 
@@ -89,6 +111,11 @@ console.log("buttonId", buttonId);
       default : console.log("buttonId", buttonId);
     }
   };
+
+  componentDidMount()
+  {
+    this.props.containerSetItineraryDropUpRadioButtonPressed(this.toggleButtonPressed);
+  }
 
   render()
   {
