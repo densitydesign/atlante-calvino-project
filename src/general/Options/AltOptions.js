@@ -80,7 +80,10 @@ class AltOptions extends Component {
   };
 
   toggleDropDown = (isOpen, event, metadata) => {
-    const { multiple } = this.props;
+    const { multiple, disabled } = this.props;
+    if(disabled){
+      return
+    }
     if (metadata.source === "select" && multiple) {
       this.setState({
         show: true
