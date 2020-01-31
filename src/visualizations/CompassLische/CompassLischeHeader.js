@@ -10,7 +10,7 @@ function LischeHeader() {
     >
       <path fill="none" d="M0 0H692.51V16H0z" opacity="0.8"></path>
       <text
-        fontFamily="HKGrotesk-Regular, HK Grotesk"
+        fontFamily="HKGrotesk-Regular, HKGrotesk"
         fontSize="9"
         letterSpacing=".099em"
         transform="translate(21.79 11)"
@@ -28,7 +28,7 @@ function LischeHeader() {
         d="M10 16L86.36 16"
       ></path>
       <text
-        fontFamily="HKGrotesk-Regular, HK Grotesk"
+        fontFamily="HKGrotesk-Regular, HKGrotesk"
         fontSize="9"
         letterSpacing=".096em"
         transform="translate(230.84 11)"
@@ -52,7 +52,7 @@ function LischeHeader() {
         d="M183.41 16L328.59 16"
       ></path>
       <text
-        fontFamily="HKGrotesk-Regular, HK Grotesk"
+        fontFamily="HKGrotesk-Regular, HKGrotesk"
         fontSize="9"
         letterSpacing=".096em"
         transform="translate(517.35 11)"
