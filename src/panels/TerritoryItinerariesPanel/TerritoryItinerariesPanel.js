@@ -16,11 +16,11 @@ export default class TerritoryItinerariesPanel extends React.Component
   doubtRadioButtonId = "doubtRadioButton";
   doubtRadioButtonCaption = "NEBBIA";
 
-  shapeRadioButtonId = "shapeRadioButton";
-  shapeRadioButtonCaption = "ELENCHI";
-
   spaceRadioButtonId = "spaceRadioButton";
   spaceRadioButtonCaption = "LUOGHI";
+
+  shapeRadioButtonId = "shapeRadioButton";
+  shapeRadioButtonCaption = "ELENCHI";
 
   state = {
     optionRadioButtonsStates : [

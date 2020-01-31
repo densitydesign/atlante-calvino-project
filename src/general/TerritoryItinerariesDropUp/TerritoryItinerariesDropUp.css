@@ -24,7 +24,7 @@
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);
-  width : 33%;
+  width : 33.33%;
   height: calc(var(--navigation-height)*3);
   z-index : 20;
   display : grid;
