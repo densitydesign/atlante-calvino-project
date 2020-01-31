@@ -12,7 +12,7 @@ import keyBy from "lodash/keyBy";
 import MarimekkoLegend from "./MarimekkoLegend";
 import MarimekkoTopAxis from "./MarimekkoTopAxis";
 import MarimekkoChart from "./MarimekkoChart";
-import { levelMaps } from "./constants";
+import { levelMaps, computeHorizontalPositions } from "./helpers";
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
@@ -218,34 +218,7 @@ function MarimekkoViz({
     return preprocessData(data, { dettaglio, aggregazione, tipologia, ricerca });
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
-  const booksDataWithPositions = useMemo(() => {
-    const totalChars = sumBy(booksData, "caratteri");
-    const scaleChars = scaleLinear()
-      .domain([0, totalChars])
-      .range([0, dimensions.vizWidth]);
-
-    const booksDataAnnotated = booksData.reduce((out, item, i) => {
-      if (i === 0) {
-        out.push({
-          ...item,
-          caratteriPos: 0,
-          caratteriX: 0,
-          caratteriWidth: scaleChars(item.caratteri)
-        });
-      } else {
-        const caratteriPos = out[i - 1].caratteriPos + out[i - 1].caratteri;
-        out.push({
-          ...item,
-          caratteriPos,
-          caratteriX: scaleChars(caratteriPos),
-          caratteriWidth: scaleChars(item.caratteri)
-        });
-      }
-      return out;
-    }, []);
-
-    return booksDataAnnotated;
-  }, [booksData, dimensions.vizWidth]);
+  const booksDataWithPositions = useMemo(() => {return computeHorizontalPositions(booksData, dimensions.vizWidth)}, [booksData, dimensions.vizWidth]);
 
   //getting al data for current text for displaying icecycle
   const iceCycleData = useMemo(() => {
@@ -275,7 +248,7 @@ function MarimekkoViz({
                 <MarimekkoTopAxis
                   height={dimensions.topAxisHeight}
                   width={dimensions.vizWidth}
-                  booksDataWithPositions={booksDataWithPositions}
+                  booksData={booksData}
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                 />
