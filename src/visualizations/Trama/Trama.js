@@ -8,8 +8,14 @@ import Loading from "../../general/Loading";
 
 import AltOptions from "../../general/Options/AltOptions";
 import MarimekkoViz from "./MarimekkoViz";
-
 import marimekkoData from "./marimekko.json";
+import volumi from "./volumi.json";
+
+const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
+
+console.log("searchOptions", searchOptions)
+
+
 
 const tipologiaOptions = [
   { label: "uno" },
@@ -26,28 +32,34 @@ const aggregazioneOptions = [
   { label: "non aggregato" }
 ];
 
-const cercaOptions = [{ label: "titolo" }, { label: "boh" }];
+const cercaOptions = [{ label: "volume" }];
 
 class Trama extends Component {
   state = {
     isLoading: false,
     booksData: null,
 
-    cercaPer: "titolo",
+    cercaPer: "volume",
     dettaglio: "ambito",
     aggregazione: "aggregato",
-    tipologia: tipologiaOptions.map(x => x.label)
+    tipologia: tipologiaOptions.map(x => x.label),
+    ricerca: [],
   };
+
+  changeRicerca = (newOptions) => {
+    this.setState({ricerca: newOptions.map(x => x.value)})
+
+  }
 
   componentDidMount() {}
 
   render() {
     const {
-      booksData,
       cercaPer,
       dettaglio,
       aggregazione,
-      tipologia
+      tipologia,
+      ricerca,
     } = this.state;
 
     return (
@@ -55,7 +67,7 @@ class Trama extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
-            title={"Hello combine :)"}
+            title={"LA STRUTTURA DEI VOLUMI"}
             style={{ gridColumn: "span 10" }}
           />
 
@@ -76,7 +88,7 @@ class Trama extends Component {
           {!this.state.isLoading && (
             <Search
               style={{ gridColumn: "span 8" }}
-              data={{ options: [] }}
+              data={{options:searchOptions}}
               changeOptions={this.changeRicerca}
             />
           )}
@@ -100,6 +112,7 @@ class Trama extends Component {
             data={marimekkoData}
             dettaglio={dettaglio}
             aggregazione={aggregazione}
+            ricerca={ricerca}
             setOptionsForDetail={() => {
               if(this.state.aggregazione !== "non aggregato" || this.state.dettaglio !== "categorie"){
                 this.setState({aggregazione: "non aggregato", dettaglio: "categorie"})

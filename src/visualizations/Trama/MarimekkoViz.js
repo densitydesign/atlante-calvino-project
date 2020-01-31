@@ -31,7 +31,8 @@ const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
 
 const defaultOptions = {
   dettaglio: "ambito",
-  aggregazione: "aggregato"
+  aggregazione: "aggregato",
+  ricerca: [],
 };
 
 const computeChartBooksAggregated = (firstLevelRecords, opts) => {
@@ -102,7 +103,11 @@ const preprocessData = (data, options = {}) => {
     ...options
   };
 
-  const firstLevelRecords = data.filter(item => item.livello === "uno");
+  let firstLevelRecords = data.filter(item => item.livello === "uno");
+  if(Array.isArray(opts.ricerca) && opts.ricerca.length > 0 ){
+    const ricercaLookup = keyBy(opts.ricerca)
+    firstLevelRecords = firstLevelRecords.filter(x => ricercaLookup[x.textID])
+  }
   const levelsMapped = uniqBy(data, item => `${item.textID}+${item.livello}`)
     .map(x => pick(x, ["textID", "livello"]))
     .map(x => ({ ...x, livelloNum: levelMaps[x.livello] }));
@@ -147,7 +152,8 @@ function MarimekkoViz({
   dettaglio,
   aggregazione,
   setOptionsForDetail,
-  tipologia
+  tipologia,
+  ricerca,
 }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
@@ -209,8 +215,8 @@ function MarimekkoViz({
   }, [currentTextID, setOptionsForDetail]);
 
   const { booksData, chartBooks } = useMemo(() => {
-    return preprocessData(data, { dettaglio, aggregazione, tipologia });
-  }, [data, dettaglio, aggregazione, tipologia]);
+    return preprocessData(data, { dettaglio, aggregazione, tipologia, ricerca });
+  }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
   const booksDataWithPositions = useMemo(() => {
     const totalChars = sumBy(booksData, "caratteri");
