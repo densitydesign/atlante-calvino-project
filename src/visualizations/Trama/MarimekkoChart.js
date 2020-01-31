@@ -79,7 +79,7 @@ function MarimekkoBookIcycle({
   const [levelsTranslated, setLevelsTranslated] = useState(1);
 
   const props = useSpring({
-    // config: { friction: 50 },
+    config: { precision: 0.1 },
 
     from: {
       opacity: 1,

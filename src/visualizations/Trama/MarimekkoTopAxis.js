@@ -25,7 +25,7 @@ export default function MarimekkoTopAxis({
 
   const props = useSpring({
     delay: isBookDetail ? 1200 : 0,
-    // config: { friction: 50},
+    config: { precision: 0.1},
     from: { width: width, left: 0, opacity: 0 },
 
     to: {
