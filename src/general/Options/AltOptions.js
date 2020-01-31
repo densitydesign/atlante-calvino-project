@@ -42,8 +42,15 @@ class AltOptions extends Component {
 
   handleChange = index => {
     const { selectedIndices } = this.state;
-    const { multiple, options, onChange } = this.props;
+    const { multiple, options, onChange, allowEmpty } = this.props;
     const newSelected = !selectedIndices[index];
+
+    if((multiple && !allowEmpty)){
+      const howMany = Object.keys(selectedIndices).filter(x => selectedIndices[x]).length
+      if(howMany === 1 && selectedIndices[index]){
+        return
+      }
+    }
 
     if (!multiple) {
       this.setState({ selectedIndices: { [index]: newSelected } });
@@ -143,5 +150,6 @@ AltOptions.defaultProps = {
   multiple: false,
   title: "Options",
   value: null,
-  onChange: value => {}
+  onChange: value => {},
+  allowEmpty: true,
 };

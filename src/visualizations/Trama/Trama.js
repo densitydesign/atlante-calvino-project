@@ -114,6 +114,7 @@ class Trama extends Component {
             multiple
             options={tipologiaOptions}
             style={{ gridColumn: "span 8", textAlign: "center" }}
+            allowEmpty={false}
             value={tipologia}
             onChange={tipologia => {
               this.setState({ tipologia: tipologia.map(x => x.label) });
