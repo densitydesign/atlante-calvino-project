@@ -17,14 +17,14 @@ export default class TerritoryShapePanel extends React.Component
   proportionRadioButtonCaption = "%";
 
   optionRadioButtonsMap = new Map([
-    [ this.typesRadioButtonId,          { analysisMode : GlobalData.analysisModes.shape.types,          shapePanelMode : GlobalData.analysisPanelModes.shape.types } ],
-    [ this.proportionRadioButtonId,     { analysisMode : GlobalData.analysisModes.shape.proportion,     shapePanelMode : GlobalData.analysisPanelModes.shape.proportion } ]
+    [ this.typesRadioButtonId,      { analysisMode : GlobalData.analysisModes.shape.types,      shapePanelMode : GlobalData.analysisPanelModes.shape.types } ],
+    [ this.proportionRadioButtonId, { analysisMode : GlobalData.analysisModes.shape.proportion, shapePanelMode : GlobalData.analysisPanelModes.shape.proportion } ]
   ]);
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.typesRadioButtonId,        pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.typesRadioButtonId).shapePanelMode },
-      { id : this.proportionRadioButtonId,   pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).shapePanelMode }
+      { id : this.typesRadioButtonId,      pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.typesRadioButtonId).shapePanelMode },
+      { id : this.proportionRadioButtonId, pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).shapePanelMode }
     ]
   };
 
@@ -45,11 +45,14 @@ export default class TerritoryShapePanel extends React.Component
 
     const value = this.optionRadioButtonsMap.get(buttonId);
     this.props.callTerritorySetHighlightMode(value.analysisMode);
-    this.props.containerSetShapePanelMode(value.doubtPanelMode);
+    this.props.containerSetShapePanelMode(value.shapePanelMode);
   };
 
   render()
   {
+const pressed = this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed;
+console.log("pressed", pressed);
+
     return (
       <>
 
@@ -73,9 +76,9 @@ export default class TerritoryShapePanel extends React.Component
           typesRadioButtonCaption={this.typesRadioButtonCaption}
           typesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.typesRadioButtonId).pressed}
         />
-        </div>
+      </div>
 
-          <div className="territory-percentage-panel">
+      <div className="territory-percentage-panel">
 
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
@@ -83,9 +86,11 @@ export default class TerritoryShapePanel extends React.Component
           percentageRadioButtonId={this.proportionRadioButtonId}
           percentageRadioButtonCaption={this.proportionRadioButtonCaption}
           percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
-          />
-          </div>
-          </>
+        />
+
+      </div>
+
+      </>
     );
   }
 }

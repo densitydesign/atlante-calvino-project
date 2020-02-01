@@ -19,11 +19,12 @@ export default class TerritoryShapeMainOptionsSubPanel extends React.Component
           pressed={this.props.typesRadioButtonPressed}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
-        <div className="categories-panel-shape">
-          <h4 style={{ color : GlobalData.visualizationColors.territory.misto }}>Misto</h4>
+        <div className="categories-panel-shape">          
           <h4 style={{ color : GlobalData.visualizationColors.territory.parole }}>Parole</h4>
           <h4 style={{ color : GlobalData.visualizationColors.territory.sintagmi }}>Sintagmi</h4>
-          <h4 style={{ color : GlobalData.visualizationColors.territory.frasi }}>Frasi</h4></div>
+          <h4 style={{ color : GlobalData.visualizationColors.territory.frasi }}>Frasi</h4>
+          <h4 style={{ color : GlobalData.visualizationColors.territory.misto }}>Misto</h4>
+        </div>
       </div>
     );
   }
