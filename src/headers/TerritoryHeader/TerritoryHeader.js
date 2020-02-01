@@ -95,6 +95,15 @@ export default class TerritoryHeader extends React.Component
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
         />
 
+        {this.props.isLoading &&
+        <div
+          className="search-component" style={{ gridColumn : "span 7", marginBottom : "5px" }}
+        >
+        /
+        </div>
+        }
+
+        {!this.props.isLoading &&
         <Search
           style={{ gridColumn : "span 7" }}
           data={this.props.textsData}
@@ -102,6 +111,8 @@ export default class TerritoryHeader extends React.Component
           changeOptions={ this.changeTextsData }
           onInputChange={ this.changeSearchInput }
         />
+        }
+
 
         <MoreInfo
           style={{ gridColumn : "span 1" }}

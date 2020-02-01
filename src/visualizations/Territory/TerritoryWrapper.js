@@ -263,11 +263,10 @@ export default class TerritoryWrapper extends React.Component
           page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
 
-        {!this.state.isLoading &&
-
         <>
 
         <TerritoryHeader
+          isLoading={this.state.isLoading}
           mainAnalysisMode={this.state.mainAnalysisMode}
           noAnalysisMode={this.state.noAnalysisMode}
           textsData={this.state.data.textsData}
@@ -287,6 +286,8 @@ export default class TerritoryWrapper extends React.Component
 
         <div className="territory-body">
 
+        {!this.state.isLoading &&          
+
               <Territory
                 analysisMode = {analysisMode}
                 data={this.state.data}
@@ -298,6 +299,8 @@ export default class TerritoryWrapper extends React.Component
                 containerSetTerritoryApplySearchFilterByInputText={this.containerSetTerritoryApplySearchFilterByInputText}
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
               />
+
+        }
 
               {this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open &&
 
@@ -349,7 +352,7 @@ export default class TerritoryWrapper extends React.Component
 
         </>
 
-        }
+        
 
         <TerritoryFooter
           mainAnalysisMode={this.state.mainAnalysisMode}
