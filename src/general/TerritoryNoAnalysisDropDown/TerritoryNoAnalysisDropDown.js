@@ -3,8 +3,10 @@
 import React from 'react';
 
 import RadioButton from '../RadioButton/RadioButton';
+import ToggleButton from '../ToggleButton/ToggleButton';
 
 import './TerritoryNoAnalysisDropDown.css';
+import GlobalData from '../../utilities/GlobalData';
 
 export default class TerritoryNoAnalysisDropDown extends React.Component
 {
@@ -19,20 +21,26 @@ export default class TerritoryNoAnalysisDropDown extends React.Component
     return (
       <div className="territory-no-analysis-drop-down">
 
-        <RadioButton
+        <ToggleButton
           id={TerritoryNoAnalysisDropDown.chronologyButtonId}
           caption={this.chronologyButtonCaption}
           buttonColor={"white"}
-          pressed={false}
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
+          pressed={
+            this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis && 
+            this.props.noAnalysisMode   === GlobalData.analysisModes.noAnalysis.chronology
+          }
+          callStateContainerToggleButtonPressed={this.props.callStateContainerToggleButtonPressed}
         />
 
-        <RadioButton
+        <ToggleButton
           id={TerritoryNoAnalysisDropDown.volumesButtonId}
           caption={this.volumesButtonCaption}
           buttonColor={"white"}
-          pressed={false}
-          callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
+          pressed={
+            this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis && 
+            this.props.noAnalysisMode   === GlobalData.analysisModes.noAnalysis.volumes
+          }
+          callStateContainerToggleButtonPressed={this.props.callStateContainerToggleButtonPressed}
         />
 
       </div>

@@ -280,7 +280,9 @@ export default class TerritoryWrapper extends React.Component
 
         {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&
         <TerritoryNoAnalysisDropDown
-          callStateContainerRadioButtonPressed={this.callNoAnalysisDropDownRadioButtonPressed}
+          mainAnalysisMode={this.state.mainAnalysisMode}
+          noAnalysisMode={this.state.noAnalysisMode}
+          callStateContainerToggleButtonPressed={this.callNoAnalysisDropDownRadioButtonPressed}
         />
         }
 
