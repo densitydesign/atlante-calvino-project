@@ -256,6 +256,10 @@ const GlobalData = {
       placeHierarchies : "placeHierarchies"
     }
   },
+  noAnalysisDropDownPositions : {
+    open : "open",
+    closed : "closed"
+  },
   bottomPanelModes : {
     noAnalysis : "noAnalysis",
     doubt : "doubt",
@@ -341,11 +345,11 @@ const GlobalData = {
                       nominato_cosmico_dim : territoryColorPalette.dimBlue,
                    nominato_cosmico_bright : territoryColorPalette.brightBlue,
                     nominato_terrestre_dim : territoryColorPalette.dimCyan,
-                 nominato_terrestre_bright : territoryColorPalette.brightCyan,
-                                     misto : territoryColorPalette.brightAmaranth,
+                 nominato_terrestre_bright : territoryColorPalette.brightCyan,                                     
                                     parole : territoryColorPalette.brightCyan,
                                   sintagmi : territoryColorPalette.brightGold,
                                      frasi : territoryColorPalette.brightBlue,
+                                     misto : territoryColorPalette.brightAmaranth,                                     
                lists_ratio_below_threshold : "black",
                lists_ratio_above_threshold : territoryColorPalette.brightOrange,
         placeHierarchies_color_scale_start : 'white',

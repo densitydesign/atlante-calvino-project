@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 
 import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
+import TerritoryNoAnalysisDropDown from '../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown';
 import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
@@ -21,12 +22,13 @@ export default class TerritoryWrapper extends React.Component
     data : "data still not loaded",
     isLoading : true,
 
-    itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
-    bottomPanelMode         : this.props.bottomPanelMode,
-    bottomPanelPosition     : GlobalData.bottomPanelPositions.open,
-    doubtPanelMode          : GlobalData.analysisPanelModes.doubt.fog,
-    spacePanelMode          : GlobalData.analysisPanelModes.space.genericTerrestrial,    
-    shapePanelMode          : GlobalData.analysisPanelModes.shape.types,
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+    itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
+    bottomPanelMode            : this.props.bottomPanelMode,
+    bottomPanelPosition        : GlobalData.bottomPanelPositions.open,
+    doubtPanelMode             : GlobalData.analysisPanelModes.doubt.fog,
+    spacePanelMode             : GlobalData.analysisPanelModes.space.genericTerrestrial,    
+    shapePanelMode             : GlobalData.analysisPanelModes.shape.types,
 
     mainAnalysisMode  : this.props.mainAnalysisMode,
     noAnalysisMode    : GlobalData.analysisModes.noAnalysis.chronology,
@@ -124,6 +126,21 @@ export default class TerritoryWrapper extends React.Component
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
 
+  toggleNoAnalysisDropDownPosition = () =>
+  {
+    const newValue =
+      this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open ?
+      GlobalData.noAnalysisDropDownPositions.closed :
+      GlobalData.noAnalysisDropDownPositions.open;
+
+    this.setState({ noAnalysisDropDownPosition : newValue });    
+  }
+
+  setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
+
+  containerSetNoAnalysisDropDownRadioButtonPressed = callback => this.noAnalysisDropDownRadioButtonPressed = callback;
+  callNoAnalysisDropDownRadioButtonPressed = buttonId => this.noAnalysisDropDownRadioButtonPressed(buttonId);
+
   containerSetTerritorySetDataExtent = callback => this.territorySetDataExtent = callback;
   callTerritorySetDataExtent = extent => {
 //console.log("extent", extent);
@@ -143,6 +160,7 @@ export default class TerritoryWrapper extends React.Component
   callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
 
 //  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
+
 
   setBottomPanelMode = value => this.setState({ bottomPanelMode : value });
 
@@ -253,12 +271,22 @@ export default class TerritoryWrapper extends React.Component
         <>
 
         <TerritoryHeader
+          mainAnalysisMode={this.state.mainAnalysisMode}
+          noAnalysisMode={this.state.noAnalysisMode}
           textsData={this.state.data.textsData}
           callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
           callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
           callTerritoryApplySearchFilterBySearchResults={this.callTerritoryApplySearchFilterBySearchResults}
           helpButtonClicked={this.toggleHelpSidePanel}
+          toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
+          containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
         />
+
+        {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&
+        <TerritoryNoAnalysisDropDown
+          callStateContainerRadioButtonPressed={this.callNoAnalysisDropDownRadioButtonPressed}
+        />
+        }
 
         <div className="territory-body">
 

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Options from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
 import GlobalData from '../../utilities/GlobalData';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
@@ -34,8 +33,7 @@ export default class TerritoryFooter extends React.Component
     [ GlobalData.analysisModes.shape,      { label : this.shapeLabel,     bottomPanelMode : GlobalData.bottomPanelModes.shape } ]
   ]);
 
-  analysisModeToggleButtonId = "analysisModeToggleButton";
-  analysisModeToggleButtonCaption = "FILTRO CRONOLOGICO";
+  analysisModeToggleButtonId = "footerAnalysisModeToggleButton";
 
   chronologicalFilterToggleButtonId = "chronologicalFilterToggleButton";
   chronologicalFilterToggleButtonCaption = "FILTRO CRONOLOGICO";
@@ -47,18 +45,6 @@ export default class TerritoryFooter extends React.Component
     [ this.legendToggleButtonId,              { bottomPanelMode : GlobalData.bottomPanelModes.legend } ],
     [ this.chronologicalFilterToggleButtonId, { bottomPanelMode : GlobalData.bottomPanelModes.chronologicalFilter } ]
   ]);
-
-  state = {
-    itineraries : {
-      multiple : false,
-      options : [
-        { label : this.territoryLabel, status : true },
-        { label : this.doubtLabel,     status : false },
-        { label : this.spaceLabel,     status : false },
-        { label : this.shapeLabel,     status : false }        
-      ]
-    }
-  };
 
 // set here bottom panel mode, rather than higlight mode
   changeItineraries = newOptions => {
@@ -156,7 +142,7 @@ console.log("4");
 
         break;
 
-      default : console.log("buttonId", buttonId);
+      default : console.log("buttonId", buttonId); break;
     }
   };
 

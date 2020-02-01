@@ -1,0 +1,15 @@
+
+.territory-no-analysis-drop-down {
+  background-color : white;
+  outline: 1px solid black;
+  position : fixed;
+  top: var(--navigation-height);
+  width : 33.33%;
+  height: calc(var(--navigation-height)*2);
+  z-index : 20;
+  display : grid;
+  grid-column : 1 / span 3;
+  border-right : 1px solid black;
+  font-size : 1.3em;
+  text-align : center;
+}
