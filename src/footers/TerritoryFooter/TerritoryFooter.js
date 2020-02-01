@@ -113,22 +113,17 @@ console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
 
         this.props.setItineraryDropUpPosition(GlobalData.itineraryDropUpPositions.closed);
 
-console.log("1");
         const value = this.toggleButtonsMap.get(buttonId);
-console.log("value", value);
 
         if(value.bottomPanelMode !== this.props.bottomPanelMode)
         {
-console.log("2");          
           this.props.setBottomPanelMode(value.bottomPanelMode);
           this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.open);
         }
         else
         {
-console.log("3"); 
           if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
           {
-console.log("4");
             this.props.setBottomPanelMode(GlobalData.bottomPanelModes.noAnalysis);
           }
           else
@@ -153,7 +148,6 @@ console.log("4");
 
   render()
   {
-console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);
     return (
       <div className="bottom-nav navigations">
 

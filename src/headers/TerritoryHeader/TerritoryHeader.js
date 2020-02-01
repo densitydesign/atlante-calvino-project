@@ -7,18 +7,14 @@ import GlobalData from '../../utilities/GlobalData';
 import CompassButton from '../../general/CompassButton/CompassButton';
 import MoreInfo from '../../general/MoreInfo/MoreInfo';
 import PageTitle from "../../general/PageTitle";
+import TerritoryNoAnalysisDropDown from '../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown';
 
 export default class TerritoryHeader extends React.Component
 {
   analysisLabel = "ANALISI";
   chronologyLabel = "CRONOLOGIA";
-  volumesLabel = "VOLUME";
-/*
-  highlightModeMap = new Map([
-    [ this.chronologyLabel, GlobalData.analysisModes.noAnalysis.chronology ],
-    [ this.volumesLabel, GlobalData.analysisModes.noAnalysis.volumes ]
-  ]);
-*/
+  volumesLabel = "VOLUMI";
+
   noAnalysisModeVisualizationMap = new Map([
     [ GlobalData.analysisModes.noAnalysis.chronology, { label : this.chronologyLabel } ],
     [ GlobalData.analysisModes.noAnalysis.volumes,    { label : this.volumesLabel } ]
@@ -26,14 +22,14 @@ export default class TerritoryHeader extends React.Component
 
   analysisModeToggleButtonId = "headerAnalysisModeToggleButton";
 
+  analysisButtonVisualizationModeMap = new Map([
+    [ TerritoryNoAnalysisDropDown.chronologyButtonId, { analysisMode : GlobalData.analysisModes.noAnalysis.chronology } ],
+    [ TerritoryNoAnalysisDropDown.volumesButtonId,    { analysisMode : GlobalData.analysisModes.noAnalysis.volumes } ]
+  ]);  
+
 //  changeHighlightModes = newOptions => this.props.callTerritorySetHighlightMode(this.highlightModeMap.get(this.getActiveOption(newOptions)));
 
   toggleButtonPressed = buttonId => {    
-console.log("-------------------");
-console.log("toggleButtonPressed");
-console.log("buttonId", buttonId);
-console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);        
-console.log("this.props.noAnalysisMode", this.props.noAnalysisMode);
     
     switch(buttonId)
     {
@@ -44,6 +40,16 @@ console.log("this.props.noAnalysisMode", this.props.noAnalysisMode);
         }
 
         break;  
+
+      case TerritoryNoAnalysisDropDown.chronologyButtonId :
+      case TerritoryNoAnalysisDropDown.volumesButtonId :
+
+        this.props.toggleNoAnalysisDropDownPosition();
+
+        const visualizationMode = this.analysisButtonVisualizationModeMap.get(buttonId);
+        this.props.callTerritorySetHighlightMode(visualizationMode.analysisMode);
+
+        break;
 
       default : console.log("buttonId", buttonId); break;
     }
@@ -83,7 +89,7 @@ console.log("this.props.noAnalysisMode", this.props.noAnalysisMode);
 
         <ToggleButton 
           id={this.analysisModeToggleButtonId} 
-          style={{ gridColumn : "span 8" }}
+          style={{ gridColumn : "span 7", textAlign : "center" }}
           caption={analysisModeToggleButtonCaption}
           pressed={this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis}
           callStateContainerToggleButtonPressed={this.toggleButtonPressed} 

@@ -143,9 +143,6 @@ export default class TerritoryWrapper extends React.Component
 
   containerSetTerritorySetDataExtent = callback => this.territorySetDataExtent = callback;
   callTerritorySetDataExtent = extent => {
-//console.log("extent", extent);
-//const extent2 = extent.map(d => Math.floor(d));
-//console.log("extent2",extent2);
     this.setState({ dataExtent : extent });
     this.territorySetDataExtent(extent);
   }
