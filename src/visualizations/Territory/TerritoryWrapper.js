@@ -123,6 +123,13 @@ export default class TerritoryWrapper extends React.Component
     }
   }
 
+  territorySvgClicked = () => {
+    this.setState({
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
+  }
+
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
 
@@ -228,7 +235,11 @@ export default class TerritoryWrapper extends React.Component
   setShapePanelMode = value => this.setState({ shapePanelMode : value });
   setSpacePanelMode = value => this.setState({ spacePanelMode : value });
 
-  toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
+  toggleHelpSidePanel = () => this.setState({ 
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+    itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
+    helpSidePanelOpen : !this.state.helpSidePanelOpen 
+  });
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
@@ -336,6 +347,7 @@ export default class TerritoryWrapper extends React.Component
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
                 containerSetTerritoryApplySearchFilterByInputText={this.containerSetTerritoryApplySearchFilterByInputText}
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
+                containerOnSvgClicked={this.territorySvgClicked}
               />
 
         }

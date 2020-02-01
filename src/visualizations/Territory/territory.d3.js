@@ -79,9 +79,11 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data, input_colors, analysisMode) => 
+  initialize = (el, input_data, input_colors, analysisMode, containerOnSvgClicked) => 
   {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
+
+    this.containerOnSvgClicked = containerOnSvgClicked;
 
     const json_nodes = input_data.json_nodes;
     data.x_csv2 = input_data.x_csv2;
@@ -1090,6 +1092,7 @@ class VClass
     //Zoom functions
     function zoom_actions() 
     {
+      containerOnSvgClicked();
       g.attr("transform", d3.event.transform);
   		metaball_group.attr("transform", d3.event.transform);
   		place_hierarchies_group.attr("transform", d3.event.transform);
@@ -2002,6 +2005,8 @@ console.log("currentAnalysisMode", currentAnalysisMode);
 
   onSvgClicked = () =>
   {
+    this.containerOnSvgClicked();
+
     switch(true)
     {
       case 
@@ -2012,7 +2017,7 @@ console.log("currentAnalysisMode", currentAnalysisMode);
         break;
 
       default : break;
-    }
+    }    
   }
 
   showAllPlaceHierarchies = () => 

@@ -9,7 +9,12 @@ export default class Territory extends React.Component
 {
   componentDidMount()
   {
-    V.initialize(this._rootNode, this.props.data, this.props.colors, this.props.analysisMode);
+    V.initialize(
+      this._rootNode, 
+      this.props.data, 
+      this.props.colors, 
+      this.props.analysisMode,
+      this.props.containerOnSvgClicked);
     
     this.props.containerSetTerritorySetHighlightMode(this.setHighlightMode);
     this.props.containerSetTerritoryShowHills(this.showHills);
