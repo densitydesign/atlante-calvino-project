@@ -2,7 +2,7 @@
 import React from 'react';
 
 import RadioButton from '../../general/RadioButton/RadioButton';
-import './TerritoryplaceHierarchiesSubPanel.css';
+import './TerritoryPlaceHierarchiesSubPanel.css';
 
 export default class TerritoryplaceHierarchiesSubPanel extends React.Component
 {
