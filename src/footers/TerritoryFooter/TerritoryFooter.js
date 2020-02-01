@@ -80,13 +80,32 @@ console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
     switch(buttonId)
     {
       case this.analysisModeToggleButtonId :
-        if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+        if([
+          GlobalData.bottomPanelModes.chronologicalFilter,
+          GlobalData.bottomPanelModes.legend
+        ].includes(this.props.bottomPanelMode))
         {
-          this.props.toggleItineraryDropUpPosition();
+          if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+          {
+            this.props.toggleItineraryDropUpPosition();
+          }
+          else
+          {
+            const bottomPanelMode = this.analysisModeItineraryMap.get(this.props.mainAnalysisMode).bottomPanelMode;
+
+            this.props.setBottomPanelMode(bottomPanelMode);
+          }
         }
-        else 
+        else
         {
-          this.props.toggleBottomPanelPosition();
+          if(this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
+          {
+            this.props.toggleItineraryDropUpPosition();
+          }
+          else 
+          {
+            this.props.toggleBottomPanelPosition();
+          }
         }
 
         break;
@@ -128,10 +147,9 @@ console.log("4");
           }
           else
           {
-const xxx = this.analysisModeItineraryMap.get(this.props.mainAnalysisMode).bottomPanelMode;
-console.log("xxx", xxx);
+            const bottomPanelMode = this.analysisModeItineraryMap.get(this.props.mainAnalysisMode).bottomPanelMode;
 
-            this.props.setBottomPanelMode(xxx);
+            this.props.setBottomPanelMode(bottomPanelMode);
             this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.closed);
           }
         }
