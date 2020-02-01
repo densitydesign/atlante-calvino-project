@@ -151,18 +151,45 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
-  callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
+  callTerritoryApplyBeeSwarmFilter = () => {
+
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });    
+
+    this.territoryApplyBeeSwarmFilter();
+  }
 
   containerSetTerritoryApplySearchFilterByInputText = callback => this.territoryApplySearchFilterByInputText = callback;
-  callTerritoryApplySearchFilterByInputText = input => this.territoryApplySearchFilterByInputText(input);
+  callTerritoryApplySearchFilterByInputText = input => {
+
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
+
+    this.territoryApplySearchFilterByInputText(input);
+  }
 
   containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
-  callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
+  callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => {
+
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
+
+    this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
+  }
 
 //  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
 
 
-  setBottomPanelMode = value => this.setState({ bottomPanelMode : value });
+  setBottomPanelMode = value => this.setState({ 
+    bottomPanelMode : value,
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+  });    
 
   toggleBottomPanelPosition = () => 
   {
@@ -171,7 +198,10 @@ export default class TerritoryWrapper extends React.Component
       GlobalData.bottomPanelPositions.closed :
       GlobalData.bottomPanelPositions.open;
 
-    this.setState({ bottomPanelPosition : newValue });
+    this.setState({ 
+      bottomPanelPosition : newValue,
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+    });
   }
 
   setBottomPanelPosition = value => this.setState({ bottomPanelPosition : value });
