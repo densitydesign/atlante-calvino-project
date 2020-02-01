@@ -133,7 +133,10 @@ export default class TerritoryWrapper extends React.Component
       GlobalData.noAnalysisDropDownPositions.closed :
       GlobalData.noAnalysisDropDownPositions.open;
 
-    this.setState({ noAnalysisDropDownPosition : newValue });    
+    this.setState({ 
+      noAnalysisDropDownPosition : newValue, 
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
   }
 
   setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
@@ -181,9 +184,12 @@ export default class TerritoryWrapper extends React.Component
     const newValue =
       this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
       GlobalData.itineraryDropUpPositions.closed :
-      GlobalData.itineraryDropUpPositions.open;
+      GlobalData.itineraryDropUpPositions.open;    
 
-    this.setState({ itineraryDropUpPosition : newValue });
+    this.setState({ 
+      itineraryDropUpPosition : newValue, 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+    });
   }
 
   setItineraryDropUpPosition = value => this.setState({ itineraryDropUpPosition : value });
