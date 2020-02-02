@@ -5,11 +5,14 @@ import MoreInfo from "../../general/MoreInfo";
 import CompassButton from "../../general/CompassButton/CompassButton";
 import Search from "../../general/Search";
 import Loading from "../../general/Loading";
+import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 
 import AltOptions from "../../general/Options/AltOptions";
 import MarimekkoViz from "./MarimekkoViz";
 import marimekkoData from "./marimekko.json";
 import volumi from "./volumi.json";
+
+import GlobalData from '../../utilities/GlobalData';
 
 const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
 
@@ -47,6 +50,8 @@ class Trama extends Component {
 
     controlsEnabled: true,
     currentTextID: null,
+
+    helpSidePanelOpen : false
   };
 
   setCurrentTextID = (currentTextID) => {
@@ -63,6 +68,10 @@ class Trama extends Component {
 
   }
 
+  toggleHelpSidePanel = () => this.setState({ 
+    helpSidePanelOpen : !this.state.helpSidePanelOpen 
+  });  
+
   componentDidMount() {}
 
   render() {
@@ -74,10 +83,19 @@ class Trama extends Component {
       ricerca,
       controlsEnabled,
       currentTextID,
+      helpSidePanelOpen
     } = this.state;
+
+    const helpPage = GlobalData.helpPages.plot.main;
 
     return (
       <div className="trasformare main">
+
+        <HelpSidePanel
+          open={helpSidePanelOpen}
+          page={helpPage}
+          closeButtonClicked={this.toggleHelpSidePanel} />
+
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
@@ -109,9 +127,7 @@ class Trama extends Component {
           )}
           <MoreInfo
             style={{ gridColumn: "span 1" }}
-            onClicked={() => {
-               alert("clicked!")
-            }}
+            onClicked={this.toggleHelpSidePanel}
           />
           <CompassButton
             style={{

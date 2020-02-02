@@ -7,7 +7,8 @@ import GlobalData from '../utilities/GlobalData';
 import MainMenu from '../general/MainMenu';
 import PageTitle from '../general/PageTitle';
 import MoreInfo from '../general/MoreInfo';
-import Bussola from '../general/Bussola';
+import CompassButton from '../general/CompassButton/CompassButton';
+import HelpSidePanel from '../panels/HelpSidePanel/HelpSidePanel';
 
 import Loading from '../general/Loading';
 
@@ -62,7 +63,8 @@ class Trasformare extends Component {
 					'label': 'chiusi',
 					'status': true
 				}]
-			}
+      },
+      helpSidePanelOpen : false
 		};
 	}
 
@@ -395,7 +397,11 @@ class Trasformare extends Component {
   		}
   	}
 
-	}
+  }
+  
+  toggleHelpSidePanel = () => this.setState({ 
+    helpSidePanelOpen : !this.state.helpSidePanelOpen 
+  });    
 
 	componentDidMount() {
 		this.loadData();
@@ -407,10 +413,18 @@ class Trasformare extends Component {
 	}
 
 	render() {
-		// console.log("render", this.state)
+    // console.log("render", this.state)
+    
+    const helpPage = GlobalData.helpPages.transform.main;
 
 		return (
 			<div className = "trasformare main">
+
+        <HelpSidePanel
+          open={this.state.helpSidePanelOpen}
+          page={helpPage}
+          closeButtonClicked={this.toggleHelpSidePanel} />
+
 				<div className = "top-nav navigations">
 					<MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
 					<PageTitle title = {"LA MATRICE DEI LUOGHI"} style = {{gridColumn: 'span 10'}}/>
@@ -430,8 +444,17 @@ class Trasformare extends Component {
 							data = {this.state.ricerca}
 							changeOptions = {this.changeRicerca}
 						/> }
-					<MoreInfo style = {{gridColumn: 'span 1'}}/>
-					<Bussola style = {{gridColumn: 'span 1'}}/>
+          <MoreInfo
+            style={{ gridColumn: "span 1" }}
+            onClicked={this.toggleHelpSidePanel}
+          />
+          <CompassButton
+            style={{
+              gridColumn: "span 1",
+              color: "white",
+              backgroundColor: "black"
+            }}
+          />
 				</div>
 
 				<div className = "the-body-viz" >

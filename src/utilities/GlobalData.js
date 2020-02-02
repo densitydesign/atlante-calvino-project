@@ -305,6 +305,12 @@ const GlobalData = {
       doubt : "territoryDoubt",
       shape : "territoryShape",
       place : "territoryPlace",
+    },
+    transform : {
+      main : "transformMain"
+    },
+    plot : {
+      main : "plotMain"
     }
   },
   legendPages : {

@@ -10,6 +10,9 @@ import TerritoryDoubtHelp from '../../helpPages/territory/TerritoryDoubtHelp/Ter
 import TerritoryShapeHelp from '../../helpPages/territory/TerritoryShapeHelp/TerritoryShapeHelp';
 import TerritorySpaceHelp from '../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp';
 
+import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/TransformMainHelp';
+
+import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
 
 import './HelpSidePanel.css';
 
@@ -25,6 +28,11 @@ export default class HelpSidePanel extends React.Component
       case GlobalData.helpPages.territory.space : helpPage = <TerritorySpaceHelp />; break;
       case GlobalData.helpPages.territory.doubt : helpPage = <TerritoryDoubtHelp />; break;
       case GlobalData.helpPages.territory.shape : helpPage = <TerritoryShapeHelp />; break;
+
+      case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
+
+      case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
+
       default : break;
     }
 
