@@ -97,7 +97,7 @@ export default class TerritoryHeader extends React.Component
 
         {this.props.isLoading &&
         <div
-          className="search-component" style={{ gridColumn : "span 7", marginBottom : "5px" }}
+          className="search-component" style={{ gridColumn : "span 7", paddingBottom : "5px" }}
         >
         /
         </div>

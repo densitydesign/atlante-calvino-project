@@ -27,7 +27,7 @@ class VClass
 
   prepareTimeline = (el, json_nodes, dataExtent) =>
   {
-    let margin = { top: 10, right: 5, bottom: 10, left: 10 };
+    let margin = { top: 10, right: 0, bottom: 10, left: 20 };
 
     let timelineSvg = d3.select(el);
 
@@ -82,7 +82,8 @@ class VClass
 
     timelineSvg
       .append("g")
-      .attr("class", "axis axis--x")
+      .style("font-size", "8px")
+      .classed("axis axis--x", true)
       .attr("transform", "translate(" + margin.left + "," + (data.timeline_height) + ")")
       .call(d3
         .axisBottom(data.timeline_x)
@@ -115,7 +116,7 @@ class VClass
         return rscale(+d.data.attributes.txt_length);
       })
       .attr("cx", d => d.data.x)
-      .attr("cy", d => d.data.y)
+      .attr("cy", d => d.data.y - 10)
       .attr("fill", d => d.data.attributes.collections.length ? GlobalData.col_collections(d.data.attributes.collections[0]) : "#FFFFFF")
       .attr("stroke", d => {
         if(d.data.attributes.collections.length) {

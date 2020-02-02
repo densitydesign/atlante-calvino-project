@@ -3,8 +3,9 @@
   background-color : white;
   outline: 1px solid black;
   position : fixed;
+  left : 33.33%;
   top: var(--navigation-height);
-  width : 33.33%;
+  width : 29.13%;
   height: calc(var(--navigation-height)*2);
   z-index : 20;
   display : grid;
