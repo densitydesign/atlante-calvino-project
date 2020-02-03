@@ -17,7 +17,8 @@ export default class CompassFlux extends React.Component
       <>
         <HamburgerCompassHeader />
         <div id="main--bones" className="container-fluid">
-        <div className="row">
+                <h4>Bussola</h4>
+        <div className="row intro">
     <div className="col-12">
       <h1 className="my-3 font-italic">I racconti di Italo Calvino: <br className="d-block d-sm-none d-md-block d-lg-none"/>dai periodici alle raccolte</h1>
     </div>

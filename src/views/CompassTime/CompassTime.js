@@ -15,9 +15,9 @@ export default class CompassTime extends React.Component
       <>
       <HamburgerCompassHeader />
       <div id="main--sinuous">
-
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+        <h4>Bussola</h4>
+          <div className="row intro">
             <div className="col-12 col-lg-9">
               <h1>Il tempo e le opere</h1>
               <p>La visualizzazione rappresenta gli snodi pi&#xF9; importanti della carriera editoriale di Italo Calvino: le principali opere pubblicate in quarant&#x2019;anni di attivit&#xE0; e le collaborazioni giornalistiche pi&#xF9; durature. Ha una forma sinusoidale che mette in evidenza la scansione temporale in decenni e le differenti direzioni intraprese e sperimentate nel corso del tempo.</p>

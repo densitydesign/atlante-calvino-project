@@ -299,11 +299,22 @@ footer {
   float: left;
 }
 
-
-
 .dropdown-item{
   margin-bottom:1px solid black;
   padding:0.3em;
+}
+
+.dropdown-item *{
+height:2000px;
+}
+
+
+.dropdown-menu a:hover{
+  cursor:pointer;
+  text-decoration: none;
+  background-color: var(--dark-blue);
+  transition: color 1s ease;
+
 }
 
 .dropdown-item.active, .dropdown-item:active{

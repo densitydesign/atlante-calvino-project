@@ -23,6 +23,8 @@ export default class CompassLische extends React.Component
   {
     return(
       <>
+      <div>
+      <main>
       <LischeHeader />
       <svg
         id={this.props.id}
@@ -8831,6 +8833,8 @@ export default class CompassLische extends React.Component
           </text>
         </g>
       </svg>
+      </main>
+      </div>
     </>
   );
   }
