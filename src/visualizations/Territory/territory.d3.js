@@ -273,22 +273,20 @@ class VClass
       .attr("class", "circle_node hill")
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
-//      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
       .attr("r", d => d.r)
-/*      
-      .attr("transform", function(d, i) {
-        i = i * step_increment;
-        return "translate(0," + i + ")";
-      })
-*/
-      .attr("transform", this.calculateHillStepTranslation)
-      .style("fill-opacity", 1)
-      .style("stroke-opacity", .5);
+	  	.style('fill-opacity', 1e-16)
+  		.style('stroke-opacity', 1e-16)
+//		.transition()
+//		.duration(1000)
+//		.delay(function(d) { return (d.first_publication - 1940) * 100 })
+//      .attr("transform", this.calculateHillStepTranslation)
+//      .style("fill-opacity", 1)
+//      .style("stroke-opacity", .5);
 
-    circles
-      .filter(d => d.first_elem)
-      .on("click", this.onFirstElementClicked);
+//    circles
+//      .filter(d => d.first_elem)
+//      .on("click", this.onFirstElementClicked);
 
 		const place_hierarchies_group = svg_main_group
 			.append("g")
@@ -1115,6 +1113,14 @@ class VClass
     }
 
     this.textsData = input_data.textsData;
+
+    circles
+      .transition()
+  		.duration(700)
+  		.delay(function(d) { return (d.first_publication - 1940) * 100 })
+      .attr("transform", this.calculateHillStepTranslation)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", .5);    
   };
 
   destroy = () => {};
