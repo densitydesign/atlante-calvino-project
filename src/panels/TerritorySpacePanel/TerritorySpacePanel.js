@@ -4,7 +4,7 @@ import React from 'react';
 import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritorySpaceMainOptionsSubPanel from '../TerritorySpaceMainOptionsSubPanel/TerritorySpaceMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
-import TerritoryplaceHierarchiesSubPanel from '../TerritoryplaceHierarchiesSubPanel/TerritoryplaceHierarchiesSubPanel';
+import TerritoryPlaceHierarchiesSubPanel from '../TerritoryPlaceHierarchiesSubPanel/TerritoryPlaceHierarchiesSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
 import RadioButton from '../../general/RadioButton/RadioButton';
@@ -142,7 +142,7 @@ export default class TerritorySpacePanel extends React.Component
                   percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
                 />
 
-                <TerritoryplaceHierarchiesSubPanel
+                <TerritoryPlaceHierarchiesSubPanel
                   callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
                   placeHierarchiesRadioButtonId={this.placeHierarchiesRadioButtonId}
