@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import GlobalData from '../../utilities/GlobalData';
-import SplashScreen from '../SplashScreen/SplashScreen';
+import SplashScreen from '../../visualizations/SplashScreen/SplashScreen';
 import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
