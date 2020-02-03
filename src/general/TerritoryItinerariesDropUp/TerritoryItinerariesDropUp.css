@@ -29,7 +29,19 @@
   z-index : 20;
   display : grid;
   grid-column : 1 / span 3;
-  border-right : 1px solid black;
   font-size : 1.3em;
   text-align : center;
+}
+
+/* Landscape */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+.territory-itineraries-drop-up {
+    width : 33.33%;
+}
+
 }

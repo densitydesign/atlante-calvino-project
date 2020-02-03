@@ -12,5 +12,5 @@
 }
 
 .main-menu a:hover{
-  color:white;
+  color:var(--bg);
 }

@@ -143,9 +143,10 @@ font-size:1.1em;
 
 
 .navigations {
-  border: 2px solid var(--navigation-borders);
-  border-left: none;
-  border-right: none;
+  border-top: 2px solid var(--navigation-borders);
+  border-bottom: 2px solid var(--navigation-borders);
+  border-right: 1px solid var(--navigation-borders);
+  border-left: 1px solid var(--navigation-borders);
   box-sizing: border-box;
   height: var(--navigation-height);
   width: 100vw;
@@ -274,4 +275,27 @@ footer {
 
 .dropdown-item.active, .dropdown-item:active{
   background-color: red !important;
+}
+
+/*MEDIA QUERIES
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
 }

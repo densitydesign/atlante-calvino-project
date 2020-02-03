@@ -18,8 +18,8 @@ export default class DoubtInformationSheet extends React.Component
         <div>
         <main>
           <div className="viz--meta">
-            <h1>SCHEDA DUBBIO</h1>
-            <h2>Occorrenze campo semantico del dubbio</h2>
+            <h1>Nebbia. Scheda di approfondimento</h1>
+            <h2>Analisi di occorrenze del campo semantico del dubbio</h2>
             <div className="viz--info">
               <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="800"/></p></div>
             </div>
@@ -53,12 +53,13 @@ Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno ne
 </p>
 
 <div className="references">
+<h4>Note</h4>
 <p>D. Scarpa, Italo Calvino, Milano, Mondadori, 2005.</p>
 </div>
           </div>
 
           <div className="sheet--info">
-            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/doubtAnalysis" />
+            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/territory/doubtAnalysis" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
           </div>

@@ -47,36 +47,36 @@ export default function AtlasRouter()
 
       <Route exact path="/Phenomena/intro"><PhenomenaIntro /></Route>
       <Route exact path="/Phenomena/territory">
-        <TerritoryWrapper 
-          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper
+          title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.noAnalysis}
           mainAnalysisMode={GlobalData.analysisModes.noAnalysis}
         />
-      </Route>      
+      </Route>
 
       <Route exact path="/Phenomena/territory/doubtAnalysis">
-        <TerritoryWrapper 
-          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper
+          title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.doubt}
-          mainAnalysisMode={GlobalData.analysisModes.doubt} 
+          mainAnalysisMode={GlobalData.analysisModes.doubt}
         />
       </Route>
       <Route exact path="/Phenomena/territory/doubtAnalysis/informationSheet"><DoubtInformationSheet /></Route>
 
       <Route exact path="/Phenomena/territory/spaceAnalysis">
-        <TerritoryWrapper 
-          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper
+          title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.space}
-          mainAnalysisMode={GlobalData.analysisModes.space} 
+          mainAnalysisMode={GlobalData.analysisModes.space}
         />
       </Route>
       <Route exact path="/Phenomena/territory/spaceAnalysis/informationSheet"><SpaceInformationSheet /></Route>
 
       <Route exact path="/Phenomena/territory/shapeAnalysis">
-        <TerritoryWrapper 
-          title="L'ARCIPELAGO DELLE OPERE ORDINATE PER" 
+        <TerritoryWrapper
+          title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.shape}
-          mainAnalysisMode={GlobalData.analysisModes.shape} 
+          mainAnalysisMode={GlobalData.analysisModes.shape}
         />
       </Route>
       <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>

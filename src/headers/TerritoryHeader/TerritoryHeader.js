@@ -25,12 +25,12 @@ export default class TerritoryHeader extends React.Component
   analysisButtonVisualizationModeMap = new Map([
     [ TerritoryNoAnalysisDropDown.chronologyButtonId, { analysisMode : GlobalData.analysisModes.noAnalysis.chronology } ],
     [ TerritoryNoAnalysisDropDown.volumesButtonId,    { analysisMode : GlobalData.analysisModes.noAnalysis.volumes } ]
-  ]);  
+  ]);
 
 //  changeHighlightModes = newOptions => this.props.callTerritorySetHighlightMode(this.highlightModeMap.get(this.getActiveOption(newOptions)));
 
-  toggleButtonPressed = buttonId => {    
-    
+  toggleButtonPressed = buttonId => {
+
     switch(buttonId)
     {
       case this.analysisModeToggleButtonId :
@@ -39,7 +39,7 @@ export default class TerritoryHeader extends React.Component
           this.props.toggleNoAnalysisDropDownPosition();
         }
 
-        break;  
+        break;
 
       case TerritoryNoAnalysisDropDown.chronologyButtonId :
       case TerritoryNoAnalysisDropDown.volumesButtonId :
@@ -57,14 +57,14 @@ export default class TerritoryHeader extends React.Component
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
-  changeTextsData = newOptions => 
+  changeTextsData = newOptions =>
   {
     const mustReset = newOptions.length === 0;
 
     this.props.callTerritoryApplySearchFilterBySearchResults(mustReset, newOptions);
   }
 
-  changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);  
+  changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);
 
   componentDidMount()
   {
@@ -85,14 +85,14 @@ export default class TerritoryHeader extends React.Component
       <div className="top-nav navigations">
 
         <MainMenu style={{ gridColumn : "span 1" }} />
-        <PageTitle title={"L'ARCIPELAGO DELLE OPERE ORDINATE PER"} style={{ gridColumn: "span 7" }} />
+        <PageTitle title={"L'ARCIPELAGO DELLE OPERE PER"} style={{ gridColumn: "span 7" }} />
 
-        <ToggleButton 
-          id={this.analysisModeToggleButtonId} 
+        <ToggleButton
+          id={this.analysisModeToggleButtonId}
           style={{ gridColumn : "span 7", textAlign : "center" }}
           caption={analysisModeToggleButtonCaption}
           pressed={this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis}
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
         {this.props.isLoading &&
