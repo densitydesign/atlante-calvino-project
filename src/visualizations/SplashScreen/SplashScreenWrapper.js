@@ -7,6 +7,11 @@ export default class SplashScreenWrapper extends React.Component
 {
   render() 
   {
-    return <SplashScreen />;
+    return ( 
+      <>
+        <SplashScreen />
+        <h2>Letteratura e visualizzazione</h2>
+      </>
+    );
   }
 }

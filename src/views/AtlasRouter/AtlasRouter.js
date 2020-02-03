@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import GlobalData from '../../utilities/GlobalData';
-import SplashScreen from '../../visualizations/SplashScreen/SplashScreen';
+import SplashScreenWrapper from '../../visualizations/SplashScreen/SplashScreenWrapper';
 import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
@@ -35,7 +35,7 @@ export default function AtlasRouter()
     <BrowserRouter basename="/atlante-calvino-project">
 
       <Route exact path="/"><StaticSplashScreen /></Route>
-      <Route exact path="/SplashScreen"><SplashScreen /></Route>
+      <Route exact path="/SplashScreen"><SplashScreenWrapper /></Route>
       <Route exact path="/Home"><HamburgerMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>

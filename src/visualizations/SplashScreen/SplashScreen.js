@@ -70,8 +70,8 @@ console.log("this.state.data.documentElement", this.state.data.documentElement);
     );
 */
 
-    const style = { width : "100vh", height : "100vh", flexGrow : 1};
+    const style = { width : "100vh", height : "80vh", flexGrow : 1, enableBackground : "new 0 0 324.8 150"};
 
-    return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
+    return <svg id={this.props.id} style={style} ref={this._setRef} viewBox="0 0 324.8 150"></svg>;
   }
 }

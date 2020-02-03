@@ -41,8 +41,8 @@ class VClass
 */
 
         let 
-          width = 600,
-          height = 600,
+          width = 900,
+          height = 900,
           rootNode,
           nodes = [],
           node = calogo.selectAll(".node"),
@@ -161,9 +161,9 @@ console.log("drawGraph");
               .classed('node', true)
               .classed('is-inside', function(d) { return checkIfInside([d.x, d.y]) })
               .classed('root-node', function(d) { if (d.id == 0) { return true } else { return false } })
-              .style("fill", "transparent")
+              .style("fill", "white")
               .style("stroke", "black")
-              .style("stroke-width", 1)
+              .style("stroke-width", 0.4)
               .attr('cx', function(d) { return d.x; })
               .attr('cy', function(d) { return d.y; })
               .attr("r", 0)
