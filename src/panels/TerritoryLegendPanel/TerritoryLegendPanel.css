@@ -1,6 +1,6 @@
 
 .territory-legend-panel {
-  background-color : white;
+  background-color : var(--bg);
 /*  position : relative; */
 /*  top: 70%; */
   height: 40%;

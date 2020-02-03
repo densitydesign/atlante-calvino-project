@@ -1,6 +1,6 @@
 /*
 .territory-itineraries-drop-up {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);
@@ -20,7 +20,7 @@
 */
 
 .territory-itineraries-drop-up {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);
@@ -32,6 +32,13 @@
   font-size : 1.3em;
   text-align : center;
 }
+
+
+.territory-itineraries-drop-up *{
+  background-color : var(--bg);
+  outline:1px solid black;
+}
+
 
 /* Landscape */
 @media only screen

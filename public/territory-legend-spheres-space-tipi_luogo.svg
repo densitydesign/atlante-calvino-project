@@ -5,12 +5,12 @@
 <style type="text/css">
 	.st0{font-family:'HKGrotesk-Regular';}
 	.st1{font-size:9px;}
-	.st2{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
-	.st3{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
-	.st4{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.25;}
-	.st5{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;}
-	.st6{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st7{fill:#BBBBFF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st2{fill:#FFA500;stroke:#FBFBFC;stroke-width:0.5;}
+	.st3{fill:#00C19C;stroke:#FBFBFC;stroke-width:0.5;}
+	.st4{fill:#FF6C39;stroke:#FBFBFC;stroke-width:0.25;}
+	.st5{fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;}
+	.st6{fill:#5151FC;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st7{fill:#BBBBFF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 </style>
 <text transform="matrix(1 0 0 1 24.1579 28.4367)" class="st0 st1">Nominati terrestri</text>
 <text transform="matrix(1 0 0 1 24.1579 105.8368)" class="st0 st1">No ambientazione</text>

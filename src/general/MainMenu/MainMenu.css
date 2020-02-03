@@ -1,5 +1,5 @@
 .main-menu {
-  background-color: white;
+  background-color: var(--bg);
   height: 100%;
   display: flex;
   align-items: center;

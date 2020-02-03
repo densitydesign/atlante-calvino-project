@@ -398,10 +398,10 @@ class Trasformare extends Component {
   	}
 
   }
-  
-  toggleHelpSidePanel = () => this.setState({ 
-    helpSidePanelOpen : !this.state.helpSidePanelOpen 
-  });    
+
+  toggleHelpSidePanel = () => this.setState({
+    helpSidePanelOpen : !this.state.helpSidePanelOpen
+  });
 
 	componentDidMount() {
 		this.loadData();
@@ -414,7 +414,7 @@ class Trasformare extends Component {
 
 	render() {
     // console.log("render", this.state)
-    
+
     const helpPage = GlobalData.helpPages.transform.main;
 
 		return (
@@ -433,14 +433,14 @@ class Trasformare extends Component {
 					{	!this.state.isLoading &&
 						<Options title = "Cerca per"
 							data = {this.state.cerca_per}
-							style = {{gridColumn: 'span 3'}}
+							style = {{gridColumn: 'span 4'}}
 							changeOptions = {this.changeCercaPer}
 						/> }
 
 					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 8'}}/>}
 					{	!this.state.isLoading &&
 						<Search
-							style = {{gridColumn: 'span 8'}}
+							style = {{gridColumn: 'span 7'}}
 							data = {this.state.ricerca}
 							changeOptions = {this.changeRicerca}
 						/> }

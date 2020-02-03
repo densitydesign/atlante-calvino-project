@@ -1,5 +1,5 @@
 .compass-button {
-  background-color: white;
+  background-color: var(--bg);
   opacity: .8;
   height: 100%;
   display: flex;

@@ -56,9 +56,9 @@ html {
 }
 
 #main--sinuous .label.white-shadow {
-  stroke: white;
+  stroke: var(--bg);
   stroke-width: 0.125rem;
-  fill: white;
+  fill: var(--bg);
   stroke-linejoin: round;
 }
 
@@ -224,7 +224,7 @@ html {
 }
 
 #main--sinuous .how-to>div {
-  background-color: white;
+  background-color: var(--bg);
   padding: .8rem;
   border: 1px solid var(--c-text);
   border-radius: 3px;
@@ -387,7 +387,7 @@ html {
 }
 
 #main--sinuous .legend-circle {
-  background: white;
+  background: var(--bg);
   border: 1px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -401,7 +401,7 @@ html {
 }
 
 #main--sinuous .legend-article-circle {
-  background: white;
+  background: var(--bg);
   border: 2px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

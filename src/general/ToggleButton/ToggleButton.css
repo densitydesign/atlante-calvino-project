@@ -7,12 +7,12 @@
 
 .toggle-button-up {
   color : black;
-  background-color : white;
+  background-color : var(--bg);
   border-right-color : black;
 }
 
 .toggle-button-down {
-  color : white;
+  color : var(--bg);
   background-color : black;
-  border-right-color : white;
+  border-right-color : var(--bg);
 }

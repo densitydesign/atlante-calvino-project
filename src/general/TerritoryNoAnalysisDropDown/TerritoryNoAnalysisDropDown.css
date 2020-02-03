@@ -1,6 +1,6 @@
 
 .territory-no-analysis-drop-down {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   left : 33.33%;

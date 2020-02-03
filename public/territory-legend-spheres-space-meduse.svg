@@ -9,8 +9,8 @@
 	.st3{font-size:8px;}
 	.st4{fill:none;stroke:#CCCCCC;stroke-width:2.5;}
 	.st5{fill:none;stroke:#666666;stroke-width:2.5;}
-	.st6{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:0.5;}
-	.st7{fill:#666666;stroke:#FFFFFF;stroke-width:0.5;}
+	.st6{fill:#CCCCCC;stroke:#FBFBFC;stroke-width:0.5;}
+	.st7{fill:#666666;stroke:#FBFBFC;stroke-width:0.5;}
 	.st8{fill:none;stroke:#000000;stroke-width:0.25;}
 	.st9{font-size:9px;}
 </style>

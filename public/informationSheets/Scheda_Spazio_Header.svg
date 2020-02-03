@@ -12,26 +12,26 @@
 	.st6{font-size:8px;}
 	.st7{fill:none;stroke:#CCCCCC;stroke-width:2.5;}
 	.st8{fill:none;stroke:#666666;stroke-width:2.5;}
-	.st9{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:0.5;}
-	.st10{fill:#666666;stroke:#FFFFFF;stroke-width:0.5;}
+	.st9{fill:#CCCCCC;stroke:#FBFBFC;stroke-width:0.5;}
+	.st10{fill:#666666;stroke:#FBFBFC;stroke-width:0.5;}
 	.st11{fill:none;stroke:#000000;stroke-width:0.25;}
 	.st12{font-size:9px;}
-	.st13{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
-	.st14{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
-	.st15{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st13{fill:#FFA500;stroke:#FBFBFC;stroke-width:0.5;}
+	.st14{fill:#00C19C;stroke:#FBFBFC;stroke-width:0.5;}
+	.st15{fill:#FF6C39;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st16{display:none;}
 	.st17{display:inline;}
-	.st18{display:inline;fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
-	.st19{display:inline;fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
-	.st20{display:inline;fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.25;}
-	.st21{display:inline;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;}
-	.st22{display:inline;fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st23{display:inline;fill:#BBBBFF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st18{display:inline;fill:#FFA500;stroke:#FBFBFC;stroke-width:0.5;}
+	.st19{display:inline;fill:#00C19C;stroke:#FBFBFC;stroke-width:0.5;}
+	.st20{display:inline;fill:#FF6C39;stroke:#FBFBFC;stroke-width:0.25;}
+	.st21{display:inline;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;}
+	.st22{display:inline;fill:#5151FC;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st23{display:inline;fill:#BBBBFF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st24{fill:none;stroke:#00C19C;stroke-width:3.6447;}
 	.st25{fill:none;stroke:#00C19C;stroke-width:2.5;}
-	.st26{fill:#00C19C;stroke:#FFFFFF;stroke-width:1.2526;}
-	.st27{fill:#FF6C39;stroke:#FFFFFF;stroke-width:1.2526;}
-	.st28{fill:#FFA500;stroke:#FFFFFF;stroke-width:1.2526;}
+	.st26{fill:#00C19C;stroke:#FBFBFC;stroke-width:1.2526;}
+	.st27{fill:#FF6C39;stroke:#FBFBFC;stroke-width:1.2526;}
+	.st28{fill:#FFA500;stroke:#FBFBFC;stroke-width:1.2526;}
 	.st29{fill:#00C19C;}
 	.st30{enable-background:new    ;}
 	.st31{fill:#FF6C39;}

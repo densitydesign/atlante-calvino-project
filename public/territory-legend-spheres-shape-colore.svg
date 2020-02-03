@@ -5,11 +5,11 @@
 <style type="text/css">
 	.st0{font-family:'HKGrotesk-Regular';}
 	.st1{font-size:9px;}
-	.st2{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
-	.st3{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
-	.st4{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st5{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st6{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
+	.st2{fill:#FF3366;stroke:#FBFBFC;stroke-width:0.5;}
+	.st3{fill:#FFA500;stroke:#FBFBFC;stroke-width:0.5;}
+	.st4{fill:#5151FC;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st5{fill:#00C19C;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st6{fill:#FBFBFC;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
 </style>
 <g id="Group_293" transform="translate(0.25 0.25)">
 	<text transform="matrix(1 0 0 1 28.6122 49.4238)" class="st0 st1">Sintagmi</text>

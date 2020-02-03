@@ -20,7 +20,7 @@
 <g id="Rectangle_174" transform="translate(0 75)">
 	
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-305.7799" y1="215.1547" x2="-306.7799" y2="215.1807" gradientTransform="matrix(97 0 0 -6 29759.9453 1294.7913)">
-		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0" style="stop-color:#FBFBFC"/>
 		<stop  offset="0" style="stop-color:#5151FC;stop-opacity:6.300000e-02"/>
 		<stop  offset="1" style="stop-color:#5151FC"/>
 		<stop  offset="1" style="stop-color:#000000"/>

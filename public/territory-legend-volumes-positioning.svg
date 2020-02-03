@@ -6,7 +6,7 @@
 	.st0{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
 	.st1{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;stroke-dasharray:1.506,1.506;}
 	.st2{filter:url(#Adobe_OpacityMaskFilter);}
-	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FBFBFC;}
 	.st4{mask:url(#mask-2_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
 	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
 	.st6{mask:url(#mask-4_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
@@ -21,24 +21,24 @@
 	.st15{mask:url(#mask-12_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
 	.st16{filter:url(#Adobe_OpacityMaskFilter_6_);}
 	
-		.st17{mask:url(#mask-14_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st17{mask:url(#mask-14_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st18{filter:url(#Adobe_OpacityMaskFilter_7_);}
 	
-		.st19{mask:url(#mask-16_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st19{mask:url(#mask-16_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st20{filter:url(#Adobe_OpacityMaskFilter_8_);}
 	
-		.st21{mask:url(#mask-18_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st21{mask:url(#mask-18_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st22{filter:url(#Adobe_OpacityMaskFilter_9_);}
 	.st23{mask:url(#mask-20_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
 	.st24{filter:url(#Adobe_OpacityMaskFilter_10_);}
 	
-		.st25{mask:url(#mask-22_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st25{mask:url(#mask-22_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st26{filter:url(#Adobe_OpacityMaskFilter_11_);}
 	
-		.st27{mask:url(#mask-24_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st27{mask:url(#mask-24_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st28{filter:url(#Adobe_OpacityMaskFilter_12_);}
 	
-		.st29{mask:url(#mask-26_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+		.st29{mask:url(#mask-26_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
 	.st30{filter:url(#Adobe_OpacityMaskFilter_13_);}
 	.st31{mask:url(#mask-28_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
 	.st32{font-family:'HKGrotesk-Regular';}

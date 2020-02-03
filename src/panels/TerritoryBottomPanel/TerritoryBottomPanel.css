@@ -1,6 +1,6 @@
 
 .territory-bottom-panel {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);

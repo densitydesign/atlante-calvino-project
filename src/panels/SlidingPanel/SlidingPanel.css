@@ -2,7 +2,7 @@
 .sliding-panel {
   grid-template-columns : 1fr 3fr;
   grid-template-rows : 1fr;
-  background-color : white;
+  background-color : var(--bg);
   position : absolute;
   transition: left 1s;
   height: calc(100% - var(--navigation-height));

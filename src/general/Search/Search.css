@@ -24,7 +24,7 @@
 }
 
 .rbt-token {
-  background-color: white !important;
+  background-color: var(--bg) !important;
   border-color:var(--dark-blue)!important;
   border: 1px solid!important;
   border-radius: 0px !important;
