@@ -6,6 +6,7 @@
   width:100%;
   display: flex;
   text-align: center;
+  cursor : pointer;
 }
 
 .radio-button-with-close-down {
@@ -16,6 +17,7 @@
   width:100%;
   display: flex;
   text-align: center;
+  cursor : pointer;
 }
 
 .close-button-wrapper {
