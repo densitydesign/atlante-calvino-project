@@ -59,7 +59,8 @@ a:hover .compass-selector-cell  {
   text-align : center;
   align-items: center;
   display:flex;
-  background-repeat : no-repeat;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 .hamburger-menu-cell-grid :hover {
