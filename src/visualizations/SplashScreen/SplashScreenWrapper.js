@@ -12,7 +12,7 @@ export default class SplashScreenWrapper extends React.Component
     return ( 
       <Link to="/AtlasIntro">
         <SplashScreen />
-        <h2>Letteratura e visualizzazione</h2>
+        <h2 text-align="center" width="100vh" style={{ marginLeft : "60vh" }}>Letteratura e visualizzazione</h2>
       </Link>
     );
   }
