@@ -20,7 +20,7 @@ export default class CompassFlux extends React.Component
                 <h4>Bussola</h4>
         <div className="row intro">
     <div className="col-12">
-      <h1 className="my-3 font-italic">I racconti di Italo Calvino: <br className="d-block d-sm-none d-md-block d-lg-none"/>dai periodici alle raccolte</h1>
+      <h1>I racconti di Italo Calvino: <br className="d-block d-sm-none d-md-block d-lg-none"/>dai periodici alle raccolte</h1>
     </div>
     <div className="col-8 col-xl-8">
       <p>La visualizzazione ricostruisce le vicende editoriali dei racconti pubblicati da Italo Calvino, che hanno spesso visto la luce su riviste e quotidiani prima di confluire nelle raccolte. La scrittura dei racconti ha occupato Calvino per tutto l&#x2019;arco della sua carriera e costituisce la spina dorsale della sua opera. La maggior parte dei testi &#xE8; uscita in prima battuta su quotidiani e riviste (mostrati sulla sinistra), che nel corso del Novecento hanno largamente contribuito alla fortuna della narrativa breve.</p>

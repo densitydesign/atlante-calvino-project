@@ -38,7 +38,7 @@ export default class CompassTime extends React.Component
               <CompassTimeSinuousWrapper />
             </div>
             <div className="col-10 offset-lg-0 col-lg-4 col-xl-4 scrollytelling-container">
-              <p>Ecco come leggere la visualizzazione:</p>
+              <h4>Come si legge la visualizzazione:</h4>
               <div className="legend open">
                 <div className="legend-content">
                   <h4>Legenda</h4>
