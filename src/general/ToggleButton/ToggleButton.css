@@ -3,16 +3,19 @@
   display : flex;
   justify-content : center;
   align-items : center;
+  cursor : pointer;
 }
 
 .toggle-button-up {
   color : black;
   background-color : white;
   border-right-color : black;
+  cursor : pointer;
 }
 
 .toggle-button-down {
   color : white;
   background-color : black;
   border-right-color : white;
+  cursor : pointer;
 }

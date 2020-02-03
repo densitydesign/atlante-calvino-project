@@ -1037,7 +1037,7 @@ class VClass
     let labelTitle = this.label
       .append('text')
       .attr('text-anchor', 'middle')
-      .attr('font-family', 'Crimson Text')
+      .attr('font-family', "'HKGrotesk', sans-serif")
       .attr('font-size', '1.1rem')
       .text(function(d) {
         // V016 - "il castello dei destini incrociati" gets anyway the first publication year in the label
