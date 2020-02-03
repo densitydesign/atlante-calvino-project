@@ -48,8 +48,6 @@ main article h3 {
   grid-template-columns: repeat(6, 1fr);
 }
 
-
-
 .viz--pic{
   margin:2em 0em 2em 0em;
     grid-column: 2 / span 10;

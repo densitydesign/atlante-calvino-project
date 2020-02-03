@@ -302,12 +302,12 @@ footer {
 .dropdown-item{
   margin-bottom:1px solid black;
   padding:0.3em;
+
 }
 
-.dropdown-item *{
-height:2000px;
+.dropdown-menu{
+  transform: translate3d(0px, -68px, 0px);
 }
-
 
 .dropdown-menu a:hover{
   cursor:pointer;

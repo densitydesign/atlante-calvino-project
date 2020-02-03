@@ -1,5 +1,7 @@
 
 import React from 'react';
+import ArrowButton from '../../../general/ArrowButton/ArrowButton';
+import { Link } from 'react-router-dom';
 
 import './TransformMainHelp.css';
 
@@ -45,7 +47,12 @@ Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modali
 <img src={process.env.PUBLIC_URL + '/panel/cerca.png'} className="big"/>
 <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
 
+<div className="sheet--info">
+  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
+  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
+</div>
       </>
+
     );
   }
 }
