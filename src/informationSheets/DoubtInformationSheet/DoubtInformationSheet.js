@@ -58,7 +58,7 @@ Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno ne
           </div>
 
           <div className="sheet--info">
-            <ArrowButton arrowDirection="none" textAlign="right" text="ANALISI" route="/Phenomena/doubtAnalysis" />
+            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/doubtAnalysis" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
           </div>

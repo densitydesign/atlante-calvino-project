@@ -26,7 +26,7 @@ class VClass {
     svg.append("text")
       .attr("x", 10)
       .attr("y", height - margin.bottom / 1.6)
-      .text("Anno di pubblicazione →");
+      .text("Anno pubblicazione →");
 
     let lists = [];
 
