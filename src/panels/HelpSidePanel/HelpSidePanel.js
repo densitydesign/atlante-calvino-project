@@ -14,9 +14,14 @@ import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/Trans
 
 import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
 
+import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
+import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
+
 import './HelpSidePanel.css';
 
 export default class HelpSidePanel extends React.Component
+
+
 {
   render()
   {
@@ -32,6 +37,9 @@ export default class HelpSidePanel extends React.Component
       case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
+
+      case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
+      case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;
 
       default : break;
     }

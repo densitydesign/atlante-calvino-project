@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
+import HamburgerInfoCompassHeader from '../../headers/HamburgerInfoCompassHeader/HamburgerInfoCompassHeader';
 import CompassTimeSinuousWrapper from '../../visualizations/CompassTimeSinuous/CompassTimeSinuousWrapper';
 
 import './CompassTime.css';
@@ -13,7 +13,7 @@ export default class CompassTime extends React.Component
 
     return (
       <>
-      <HamburgerCompassHeader />
+      <HamburgerInfoCompassHeader />
       <div id="main--sinuous">
         <div className="container-fluid">
         <h4>Bussola</h4>

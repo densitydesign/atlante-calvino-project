@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
+import HamburgerInfoCompassHeader from '../../headers/HamburgerInfoCompassHeader/HamburgerInfoCompassHeader';
 import CompassLische from '../../visualizations/CompassLische/CompassLische';
 
 import V from './compassFlux.d3'
@@ -15,7 +15,7 @@ export default class CompassFlux extends React.Component
 
     return (
       <>
-        <HamburgerCompassHeader />
+        <HamburgerInfoCompassHeader />
         <div id="main--bones" className="container-fluid">
                 <h4>Bussola</h4>
         <div className="row intro">
