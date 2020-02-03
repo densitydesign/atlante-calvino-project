@@ -47,7 +47,8 @@ class VClass {
       .x(d => x(d.data.date))
       .y0(d => y(d[0]))
       .y1(d => y(d[1]))
-      .curve(d3.curveBasis);
+      .curve(d3.curveCatmullRom);
+
 
     var xAxis = svg.append('g')
       .classed('x axis', true)
@@ -91,7 +92,6 @@ class VClass {
       strokeDashArray += ((x(1986) - margin.left) - (x(1971) - margin.left));
       return strokeDashArray
     })
-
 
   };
 
