@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 257 76" style="enable-background:new 0 0 257 76;" xml:space="preserve">
+<svg version="1.1" id="cronologia" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 182 132.3" style="enable-background:new 0 0 182 132.3;" xml:space="preserve">
 <style type="text/css">
 	.st0{font-family:'HKGrotesk-Regular';}
-	.st1{font-size:9px;}
-	.st2{fill:#00C19C;stroke:#444444;stroke-width:0.25;}
-	.st3{fill:#00BAC1;stroke:#444444;stroke-width:0.25;}
-	.st4{fill:#5151FC;stroke:#444444;stroke-width:0.25;}
+	.st1{font-size:10px;}
+	.st2{fill:#00C19C;stroke:#444444;stroke-width:0.1774;}
+	.st3{fill:#00BAC1;stroke:#444444;stroke-width:0.1774;}
+	.st4{fill:#5151FC;stroke:#444444;stroke-width:0.1774;}
 	.st5{fill:#566973;}
+	.st6{fill:none;}
 </style>
-<title>modalita-cronologia</title>
-<desc>Created with Sketch.</desc>
-<g id="modalita-cronologia" transform="translate(-0.375 -0.574)">
-	<text transform="matrix(1 0 0 1 18.959 74.7737)" class="st0 st1">1943</text>
-	<text transform="matrix(1 0 0 1 216.891 74.7737)" class="st0 st1">1985</text>
-	<g id="Group" transform="translate(0 0.399)">
-		<ellipse id="Oval" class="st2" cx="31.6" cy="34" rx="30.6" ry="17.7"/>
-		<ellipse id="Oval-2" class="st2" cx="31.6" cy="29.9" rx="26.6" ry="15.4"/>
-		<ellipse id="Oval-3" class="st2" cx="31.6" cy="25.8" rx="23.6" ry="13.6"/>
-		<ellipse id="Oval-4" class="st2" cx="31.6" cy="21.8" rx="21.4" ry="12.4"/>
-		<ellipse id="Oval-5" class="st2" cx="31.6" cy="17.7" rx="19.4" ry="11.2"/>
-		<ellipse id="Oval-6" class="st2" cx="31.6" cy="13.6" rx="16.8" ry="9.7"/>
-		<ellipse id="Oval-7" class="st2" cx="31.6" cy="9.5" rx="13" ry="7.5"/>
-		<ellipse id="Oval-8" class="st2" cx="31.6" cy="5.5" rx="7.5" ry="4.3"/>
+<g id="modalita-cronologia_1_" transform="translate(-0.375 -0.574)">
+	<g>
+		<text transform="matrix(1 0 0 1 12.1089 75.4096)" class="st0 st1">1943</text>
 	</g>
-	<g id="Group-2" transform="translate(98 0.399)">
-		<ellipse id="Oval-9" class="st3" cx="31.7" cy="34" rx="30.6" ry="17.7"/>
-		<ellipse id="Oval-10" class="st3" cx="31.7" cy="29.9" rx="26.6" ry="15.4"/>
-		<ellipse id="Oval-11" class="st3" cx="31.7" cy="25.8" rx="23.6" ry="13.6"/>
-		<ellipse id="Oval-12" class="st3" cx="31.7" cy="21.8" rx="21.4" ry="12.4"/>
-		<ellipse id="Oval-13" class="st3" cx="31.7" cy="17.7" rx="19.4" ry="11.2"/>
-		<ellipse id="Oval-14" class="st3" cx="31.7" cy="13.6" rx="16.8" ry="9.7"/>
-		<ellipse id="Oval-15" class="st3" cx="31.7" cy="9.5" rx="13" ry="7.5"/>
-		<ellipse id="Oval-16" class="st3" cx="31.7" cy="5.5" rx="7.5" ry="4.3"/>
+	<g>
+		<text transform="matrix(1 0 0 1 148.4726 75.4094)" class="st0 st1">1985</text>
 	</g>
-	<g id="Group-2-2" transform="translate(195 0.699)">
-		<ellipse id="Oval-17" class="st4" cx="31.1" cy="33.7" rx="30.6" ry="17.7"/>
-		<ellipse id="Oval-18" class="st4" cx="31.1" cy="29.6" rx="26.6" ry="15.4"/>
-		<ellipse id="Oval-19" class="st4" cx="31.1" cy="25.5" rx="23.6" ry="13.6"/>
-		<ellipse id="Oval-20" class="st4" cx="31.1" cy="21.5" rx="21.4" ry="12.4"/>
-		<ellipse id="Oval-21" class="st4" cx="31.1" cy="17.4" rx="19.4" ry="11.2"/>
-		<ellipse id="Oval-22" class="st4" cx="31.1" cy="13.3" rx="16.8" ry="9.7"/>
-		<ellipse id="Oval-23" class="st4" cx="31.1" cy="9.2" rx="13" ry="7.5"/>
-		<ellipse id="Oval-24" class="st4" cx="31.1" cy="5.2" rx="7.5" ry="4.3"/>
+	<g id="Group_3_" transform="translate(0 0.399)">
+		<ellipse id="Oval_1_" class="st2" cx="22.4" cy="40.3" rx="21.7" ry="12.6"/>
+		<ellipse id="Oval-2_1_" class="st2" cx="22.4" cy="37.4" rx="18.9" ry="10.9"/>
+		<ellipse id="Oval-3_1_" class="st2" cx="22.4" cy="34.5" rx="16.7" ry="9.6"/>
+		<ellipse id="Oval-4_1_" class="st2" cx="22.4" cy="31.7" rx="15.2" ry="8.8"/>
+		<ellipse id="Oval-5_1_" class="st2" cx="22.4" cy="28.8" rx="13.8" ry="7.9"/>
+		<ellipse id="Oval-6_1_" class="st2" cx="22.4" cy="25.9" rx="11.9" ry="6.9"/>
+		<ellipse id="Oval-7_1_" class="st2" cx="22.4" cy="23" rx="9.2" ry="5.3"/>
+		<ellipse id="Oval-8_1_" class="st2" cx="22.4" cy="20.1" rx="5.3" ry="3.1"/>
 	</g>
-	<g id="Group-3" transform="translate(30 60.399)">
-		<rect id="Rectangle" x="0.5" y="1.7" class="st5" width="197" height="1"/>
+	<g id="Group-2_2_" transform="translate(98 0.399)">
+		<ellipse id="Oval-9_1_" class="st3" cx="-6" cy="40.3" rx="21.7" ry="12.6"/>
+		<ellipse id="Oval-10_1_" class="st3" cx="-6" cy="37.4" rx="18.9" ry="10.9"/>
+		<ellipse id="Oval-11_1_" class="st3" cx="-6" cy="34.5" rx="16.7" ry="9.6"/>
+		<ellipse id="Oval-12_1_" class="st3" cx="-6" cy="31.7" rx="15.2" ry="8.8"/>
+		<ellipse id="Oval-13_1_" class="st3" cx="-6" cy="28.8" rx="13.8" ry="7.9"/>
+		<ellipse id="Oval-14_1_" class="st3" cx="-6" cy="25.9" rx="11.9" ry="6.9"/>
+		<ellipse id="Oval-15_1_" class="st3" cx="-6" cy="23" rx="9.2" ry="5.3"/>
+		<ellipse id="Oval-16_1_" class="st3" cx="-6" cy="20.1" rx="5.3" ry="3.1"/>
 	</g>
+	<g id="Group-2-2_1_" transform="translate(195 0.699)">
+		<ellipse id="Oval-17_1_" class="st4" cx="-34.6" cy="40" rx="21.7" ry="12.6"/>
+		<ellipse id="Oval-18_1_" class="st4" cx="-34.6" cy="37.1" rx="18.9" ry="10.9"/>
+		<ellipse id="Oval-19_1_" class="st4" cx="-34.6" cy="34.2" rx="16.7" ry="9.6"/>
+		<ellipse id="Oval-20_1_" class="st4" cx="-34.6" cy="31.4" rx="15.2" ry="8.8"/>
+		<ellipse id="Oval-21_1_" class="st4" cx="-34.6" cy="28.5" rx="13.8" ry="7.9"/>
+		<ellipse id="Oval-22_1_" class="st4" cx="-34.6" cy="25.6" rx="11.9" ry="6.9"/>
+		<ellipse id="Oval-23_1_" class="st4" cx="-34.6" cy="22.7" rx="9.2" ry="5.3"/>
+		<ellipse id="Oval-24_1_" class="st4" cx="-34.6" cy="19.8" rx="5.3" ry="3.1"/>
+	</g>
+	<g id="Group-3_2_" transform="translate(30 60.399)">
+		<rect id="Rectangle_2_" x="-8.4" y="0.7" class="st5" width="139.8" height="1.2"/>
+	</g>
+</g>
+<g>
+	<polygon class="st6" points="182,132 0,132.3 0,0.3 182,0 	"/>
 </g>
 </svg>
