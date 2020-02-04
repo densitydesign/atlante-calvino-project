@@ -15,7 +15,7 @@ export default class HamburgerMenu extends React.Component
   {
     return (
       <div className="hamburger-menu-container">
-        <HamburgerMenuHeader />
+        <HamburgerMenuHeader backRoute={this.props.route} />
         <div className="hamburger-menu hamburger-menu-open">
           <div className="hamburger-menu-sidebar">
             <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA"><h1 dataClass=""/></ViewSelector>
