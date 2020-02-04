@@ -11,9 +11,11 @@ const BackFromMainMenu = props =>
   console.log("history : ", history);
 
   return (
-    props.route ?
-    <Link to={this.props.route}>
-      <FontAwesomeIcon icon={faMinus} />
+    props.backRoute ?
+    <Link to={props.backRoute}>
+      <div className="back-from-main-menu" style={props.style} >
+        <FontAwesomeIcon icon={faMinus} />
+      </div>
     </Link> :
     <div className="back-from-main-menu" style={props.style} onClick={() => history.goBack()}>
         <FontAwesomeIcon icon={faMinus} />
