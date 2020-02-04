@@ -39,7 +39,11 @@
 ,
 {"valore":"digressione","gruppo":"Contenuto/Forma","colore":"#D9FD12"}
 ,
-{"valore":"cornice","gruppo":"Forma","colore":"#F2CA22"}
+{"valore":"#N/A","gruppo":"Forma","colore":"#F2CA22"}
 ,
-{"valore":"ipotesi","gruppo":"Interiore","colore":"#DAE6FD"}
+{"valore":"cornice","gruppo":"Interiore","colore":"#DAE6FD"}
+,
+{"valore":"ipotesi","gruppo":"","colore":""}
+,
+{"valore":"x","gruppo":"","colore":""}
 ]
