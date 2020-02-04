@@ -52,7 +52,7 @@ export default function MarimekkoLegend({
               >
                 <div
                   className={styles.legendEntryColor}
-                  style={{ backgroundColor: item.colore }}
+                  style={{ backgroundColor: item.colore, cursor:'pointer' }}
                   onClick={() => {
                     const newEntries = {
                       ...selectedLegendEntries,

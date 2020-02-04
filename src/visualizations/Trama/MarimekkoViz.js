@@ -2,7 +2,6 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
-import some from "lodash/some";
 import uniqBy from "lodash/uniqBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
@@ -32,7 +31,7 @@ const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
 const defaultOptions = {
   dettaglio: "ambito",
   aggregazione: "aggregato",
-  ricerca: [],
+  ricerca: []
 };
 
 const computeChartBooksAggregated = (firstLevelRecords, opts) => {
@@ -104,9 +103,9 @@ const preprocessData = (data, options = {}) => {
   };
 
   let firstLevelRecords = data.filter(item => item.livello === "uno");
-  if(Array.isArray(opts.ricerca) && opts.ricerca.length > 0 ){
-    const ricercaLookup = keyBy(opts.ricerca)
-    firstLevelRecords = firstLevelRecords.filter(x => ricercaLookup[x.textID])
+  if (Array.isArray(opts.ricerca) && opts.ricerca.length > 0) {
+    const ricercaLookup = keyBy(opts.ricerca);
+    firstLevelRecords = firstLevelRecords.filter(x => ricercaLookup[x.textID]);
   }
   const levelsMapped = uniqBy(data, item => `${item.textID}+${item.livello}`)
     .map(x => pick(x, ["textID", "livello"]))
@@ -155,7 +154,7 @@ function MarimekkoViz({
   tipologia,
   ricerca,
   currentTextID,
-  setCurrentTextID,
+  setCurrentTextID
 }) {
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
@@ -205,19 +204,25 @@ function MarimekkoViz({
     };
   }, []);
 
-  
   //resetting aggregazione
   useEffect(() => {
     if (!!currentTextID) {
       setOptionsForDetail();
-    } 
+    }
   }, [currentTextID, setOptionsForDetail]);
 
   const { booksData, chartBooks } = useMemo(() => {
-    return preprocessData(data, { dettaglio, aggregazione, tipologia, ricerca });
+    return preprocessData(data, {
+      dettaglio,
+      aggregazione,
+      tipologia,
+      ricerca
+    });
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
-  const booksDataWithPositions = useMemo(() => {return computeHorizontalPositions(booksData, dimensions.vizWidth)}, [booksData, dimensions.vizWidth]);
+  const booksDataWithPositions = useMemo(() => {
+    return computeHorizontalPositions(booksData, dimensions.vizWidth);
+  }, [booksData, dimensions.vizWidth]);
 
   //getting al data for current text for displaying icecycle
   const iceCycleData = useMemo(() => {

@@ -112,70 +112,60 @@ function MarimekkoBookIcycle({
   });
 
   return (
-    isDetail && (
-      <>
-        {iCycleDataAnnotated &&
-          Object.keys(iCycleDataAnnotated).map(levelName => {
-            const levelValue = levelMaps[levelName];
-            const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
+    <>
+      {iCycleDataAnnotated &&
+        Object.keys(iCycleDataAnnotated).map(levelName => {
+          const levelValue = levelMaps[levelName];
+          const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
+          return (
+            <animated.g
+              key={levelName}
+              style={{
+                transform: translate,
+                opacity: props.levelsOpen
+              }}
+            >
+              {iCycleDataAnnotated[levelName].map(block => (
+                <rect
+                  title={levelName}
+                  style={{ fill: block.color }}
+                  className={`${styles.marimekkoUnit}  ${
+                    styles.marimekkoUnitIceCycle
+                  } ${
+                    selectedLegendEntries[block.label] ? styles.selected : ""
+                  }`}
+                  key={block["ID SEQ"]}
+                  width={columnWidth}
+                  y={block.y1}
+                  height={block.h}
+                ></rect>
+              ))}
+            </animated.g>
+          );
+        })}
 
-            return (
-              <animated.g
-                key={levelName}
-                style={{
-                  transform: translate,
-                  opacity: props.levelsOpen
-                }}
-              >
-                {iCycleDataAnnotated[levelName].map(block => (
-                  <rect
-                    title={levelName}
-                    style={{ fill: block.color }}
-                    className={`${styles.marimekkoUnit}  ${
-                      styles.marimekkoUnitIceCycle
-                    } ${
-                      selectedLegendEntries[block.label] ? styles.selected : ""
-                    }`}
-                    key={block["ID SEQ"]}
-                    width={columnWidth}
-                    y={block.y1}
-                    height={block.h}
-                  ></rect>
-                ))}
-              </animated.g>
-            );
-          })}
-
-        <animated.g
-          key={book.textID}
-          style={{
-            transform: props.transform,
-            opacity: props.opacity
-          }}
-        >
-          {/* <rect
-            className={`${styles.marimekkoRect}`}
-            style={{
-              height,
-              width: props.width
-            }}
-          ></rect> */}
-          {bookDataAnnotated.map((d, i) => (
-            <animated.rect
-              key={i}
-              y={d.top}
-              width={props.width}
-              height={d.height}
-              className={`${styles.marimekkoUnit}  ${
-                selectedLegendEntries[d.label] ? styles.selected : ""
-              }`}
-              fill={d.color}
-              stroke={"none"}
-            ></animated.rect>
-          ))}
-        </animated.g>
-      </>
-    )
+      <animated.g
+        key={book.textID}
+        style={{
+          transform: props.transform,
+          opacity: props.opacity,
+        }}
+      >
+        {bookDataAnnotated.map((d, i) => (
+          <animated.rect
+            key={i}
+            y={d.top}
+            width={props.width}
+            height={d.height}
+            className={`${styles.marimekkoUnit}  ${
+              selectedLegendEntries[d.label] ? styles.selected : ""
+            }`}
+            fill={d.color}
+            stroke={"none"}
+          ></animated.rect>
+        ))}
+      </animated.g>
+    </>
   );
 }
 
@@ -282,38 +272,46 @@ export default function MarimekkoChart({
 
   const transitions = useTransition(!currentTextID, null, {
     from: { opacity: 1 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-    })
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  });
 
   return (
     <>
-      {transitions.map(({ item, key, props }) =>
-        item && <animated.svg
-        style={{ height, width, position: "absolute", zIndex: 0, opacity:props.opacity }}
-        className={
-          anyLegendEntrySelected ? styles.withLegendItemSelected : ""
-        }
-      >
-        {booksDataWithPositions.map(book => {
-          const bookDataAnnotated = mappedBooks[book.textID];
-          return (
-            <MarimekkoBook
-              key={book.textID}
-              book={book}
-              currentTextID={currentTextID}
-              setCurrentTextID={setCurrentTextID}
-              bookDataAnnotated={bookDataAnnotated}
-              selectedLegendEntries={selectedLegendEntries}
-              height={height}
-              width={width}
-              iceCycleData={iceCycleData}
-            ></MarimekkoBook>
-          );
-        })}
-      </animated.svg>
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.svg
+              style={{
+                height,
+                width,
+                position: "absolute",
+                zIndex: 0,
+                opacity: props.opacity
+              }}
+              className={
+                anyLegendEntrySelected ? styles.withLegendItemSelected : ""
+              }
+            >
+              {booksDataWithPositions.map(book => {
+                const bookDataAnnotated = mappedBooks[book.textID];
+                return (
+                  <MarimekkoBook
+                    key={book.textID}
+                    book={book}
+                    currentTextID={currentTextID}
+                    setCurrentTextID={setCurrentTextID}
+                    bookDataAnnotated={bookDataAnnotated}
+                    selectedLegendEntries={selectedLegendEntries}
+                    height={height}
+                    width={width}
+                    iceCycleData={iceCycleData}
+                  ></MarimekkoBook>
+                );
+              })}
+            </animated.svg>
+          )
       )}
-       
 
       {currentTextID && (
         <svg
