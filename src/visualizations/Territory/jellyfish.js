@@ -373,6 +373,9 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, col
     {},
     (d, status) => {
       d.angle = d.stripe_position.x / scalingCoefficient * 2 * Math.PI;
+
+// MP20200204 - rotational fix for specific jellyfishes which give problems in default angle setting
+if(d.text_id === "S008") d.angle -= Math.PI / 8;
     });
 
   visit(
