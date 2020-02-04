@@ -374,7 +374,7 @@ class AtlasIntro extends React.Component
       case "compassIntroUp"               : return this.compassIntroUp(id, transitionData);
       case "navMenuUp"                    : return this.navMenuUp(id, transitionData);
       case "makeCompassPermanent"         : return this.makeCompassPermanent(id, transitionData);
-      case "makeCompassPermanentFinished" : this.props.history.push('/Home'); return;
+      case "makeCompassPermanentFinished" : this.props.history.push('/IntroFinished'); return;
       default : break;
     }
   }
