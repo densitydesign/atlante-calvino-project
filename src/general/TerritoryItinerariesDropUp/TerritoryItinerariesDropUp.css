@@ -21,7 +21,7 @@
 
 .territory-itineraries-drop-up {
   background-color : white;
-  outline: 1px solid black;
+/*  outline: 1px solid black; */
   position : fixed;
   bottom: var(--navigation-height);
   width : 33.33%;
