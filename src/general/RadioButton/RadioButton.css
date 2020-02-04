@@ -18,3 +18,13 @@
   display: flex;
   cursor : pointer;
 }
+
+.radio-button-drop-up {
+  background-color : white;
+  padding:0.6em;
+  width:100%;
+  display: flex;
+  border-top: 1px solid;
+  text-align: center !important;
+  cursor : pointer;
+}

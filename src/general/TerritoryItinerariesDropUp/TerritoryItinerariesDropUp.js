@@ -25,6 +25,7 @@ export default class TerritoryItinerariesDropUp extends React.Component
           id={TerritoryItinerariesDropUp.doubtButtonId}
           caption={this.doubtButtonCaption}
           buttonColor={"black"}
+          buttonUpClass={"radio-button-drop-up"}
           pressed={false}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
@@ -33,6 +34,7 @@ export default class TerritoryItinerariesDropUp extends React.Component
           id={TerritoryItinerariesDropUp.spaceButtonId}
           caption={this.spaceButtonCaption}
           buttonColor={"black"}
+          buttonUpClass={"radio-button-drop-up"}
           pressed={false}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
@@ -41,6 +43,7 @@ export default class TerritoryItinerariesDropUp extends React.Component
           id={TerritoryItinerariesDropUp.shapeButtonId}
           caption={this.shapeButtonCaption}
           buttonColor={"black"}
+          buttonUpClass={"radio-button-drop-up"}
           pressed={false}
           callStateContainerRadioButtonPressed={this.props.callStateContainerRadioButtonPressed}
         />
