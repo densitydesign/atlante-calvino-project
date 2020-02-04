@@ -15,13 +15,14 @@ export default class HamburgerMenu extends React.Component
   {
     return (
       <div className="hamburger-menu-container">
-        <HamburgerMenuHeader />
-        <div className="hamburger-menu">
+        <HamburgerMenuHeader backRoute={this.props.backRoute} />
+        <div className="hamburger-menu hamburger-menu-open">
           <div className="hamburger-menu-sidebar">
             <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA"><h1 dataClass=""/></ViewSelector>
 
             <div className="nav-menu-cell-grid tint" >
-              <div className="nav-menu-cell"><Link to="/About"><h2>About</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/About"><h2>Équipe</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/Project"><h2>Progetto</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Tools"><h2>Strumenti</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Papers"><h2>Articoli</h2></Link></div>
@@ -33,23 +34,23 @@ export default class HamburgerMenu extends React.Component
 
             <div className="hamburger-menu-cell" />
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#doubt" text="Dubbio"><h3 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Itineraries/#spaces" text="Spazi"><h3 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Itineraries/#space" text="Spazio"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Itineraries/#shape" text="Forma"><h3 dataClass=""/></ViewSelector>
 
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Tappa 1"><h4 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/doubtAnalysis" text="Dubbio"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/spaceAnalysis" text="Spazio"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Phenomena/shapeAnalysis" text="Forma"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/intro" text="Tappa 1" image="/menu_tappa_1.svg"><h4 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/doubtAnalysis" text="Nebbia" image="/menu_nebbia.svg" ><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/spaceAnalysis" text="Luoghi" image="/menu_luoghi.svg"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Phenomena/territory/shapeAnalysis" text="Elenchi" image="/menu_elenchi.svg" ><h5 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Process/intro" text="Tappa 2"><h4 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Process/doubting" text="Dubitare"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Process/transforming" text="Trasformare"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Process/doubting" text="Dubitare" image="/menu_dubitare.svg"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Process/transforming" text="Trasformare" image="/menu_trasformare.svg"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Process/combining" text="Combinare"><h5 dataClass=""/></ViewSelector>
 
             <ViewSelector className="hamburger-menu-cell" route="Problem/intro" text="Tappa 3"><h4 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/cancellation" text="Cancellazione"><h5 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell" route="Problem/realism" text="Realismo"><h5 dataClass=""/></ViewSelector>
-            <ViewSelector className="hamburger-menu-cell" route="Problem/plot" text="Trama"><h5 dataClass=""/></ViewSelector>
+            <ViewSelector className="hamburger-menu-cell" route="Problem/plot" text="Trama" image="/menu_trama.svg"><h5 dataClass=""/></ViewSelector>
 
           </div>
         </div>

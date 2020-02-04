@@ -22,10 +22,10 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 let svg;
 let center;
 let tilt = false;
-let step_increment = -23;
 let scale;
 let d3_event_transform_k;
-
+let currentAnalysisMode;
+let colors;
 
 const PI = Math.PI;
 const arcMin = 75; // inner radius of the first arc
@@ -34,6 +34,7 @@ const arcPad = 1; // padding between arcs
 const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
+const step_increment = -23;
 
 const showHillModes = {
   all : "all",
@@ -49,6 +50,28 @@ const customElementsClasses = {
   place_hierarchy_2 : "place_hierarchy_2"
 };
 
+const analysisModeGroups = {
+  none : 2,
+  hills : 3,
+  flat : 5,
+  drawing : 7  
+};
+
+const analysisModeChangeTypes = {
+  change_none_to_hills      : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.hills),
+  change_none_to_flat       : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.flat),
+  change_none_to_drawing    : getAnalysisModeChangeType(analysisModeGroups.none,    analysisModeGroups.drawing),
+  change_hills_to_flat      : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.flat),
+  change_flat_to_hills      : getAnalysisModeChangeType(analysisModeGroups.flat,    analysisModeGroups.hills),  
+  change_hills_to_drawing   : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.drawing),
+  change_drawing_to_hills   : getAnalysisModeChangeType(analysisModeGroups.drawing, analysisModeGroups.hills),
+  change_flat_to_drawing    : getAnalysisModeChangeType(analysisModeGroups.flat,    analysisModeGroups.drawing),
+  change_drawing_to_flat    : getAnalysisModeChangeType(analysisModeGroups.drawing, analysisModeGroups.flat),
+  change_hills_to_hills     : getAnalysisModeChangeType(analysisModeGroups.hills,   analysisModeGroups.hills),
+  change_flat_to_flat       : getAnalysisModeChangeType(analysisModeGroups.flat,    analysisModeGroups.flat),
+  change_drawing_to_drawing : getAnalysisModeChangeType(analysisModeGroups.drawing, analysisModeGroups.drawing)
+};
+
 Object.keys(customElementsClasses).forEach(key => 
   customElementsClasses[key + "_full"] = ["customElements", customElementsClasses[key]].join(" "));
 
@@ -56,16 +79,22 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data) => {
-
+  initialize = (el, input_data, input_colors, analysisMode, containerOnSvgClicked) => 
+  {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
+
+    this.containerOnSvgClicked = containerOnSvgClicked;
 
     const json_nodes = input_data.json_nodes;
     data.x_csv2 = input_data.x_csv2;
 
+    colors = input_colors;
+
     let w = window.innerWidth;
     let h = window.innerHeight - 6;
     svg = d3.select(el).style("touch-action", "manipulation");
+
+    svg.on("click", this.onSvgClicked);
 
     const collections = GlobalData.collections;
 
@@ -154,71 +183,72 @@ class VClass
     this.nebbia_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range(['#DDDDFF', 'blue']);
+      .range([colors.nebbia_dim, colors.nebbia_bright]);
   
     this.cancellazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.nebbia_words_ratio))
-      .range(['#FFDDDD', 'red']);
+      .range([colors.cancellazione_dim, colors.cancellazione_bright]);
 
-    this.generico_non_terrestre_color_scale = d3
+    this.dubitative_color_scale = d3
       .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_non_terrestre))
-      .range(['#DDDDDD', 'red']);
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
+      .range([colors.allDubitative_dim, colors.allDubitative_bright]);    
+
+    this.generico_cosmico_color_scale = d3
+      .scaleLinear()
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_cosmico))
+      .range([colors.generico_cosmico_dim, colors.generico_cosmico_bright]);
   
     this.generico_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range(['#DDDDDD', 'orange']);
+      .range([colors.generico_terrestre_dim, colors.generico_terrestre_bright]);
   
     this.inventato_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_inventato))
-      .range(['#DDDDDD', 'fuchsia']);
+      .range([colors.inventato_dim, colors.inventato_bright]);
   
     this.no_ambientazione_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_no_ambientazione))
-      .range(['#DDDDDD', 'darkgrey']);
+      .range([colors.no_ambientazione_dim, colors.no_ambientazione_bright]);
   
-    this.nominato_non_terrestre_color_scale = d3
+    this.nominato_cosmico_color_scale = d3
       .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_non_terrestre))
-      .range(['#DDDDDD', 'blue']);
+      .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_cosmico))
+      .range([colors.nominato_cosmico_dim, colors.nominato_cosmico_bright]);
   
     this.nominato_terrestre_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_nominato_terrestre))
-      .range(['#DDDDDD', 'dodgerblue']);
+      .range([colors.nominato_terrestre_dim, colors.nominato_terrestre_bright]);
   
-    this.dubitative_color_scale = d3
-      .scaleLinear()
-      .domain(d3.extent(Object.values(data.x_csv2), d => d.dubitative_ratio))
-      .range(['#FFDDFF', 'violet']);    
-
     this.placeHierarchies_color_scale = d3
       .scaleLinear()
       .domain(d3.extent(Object.values(data.x_csv2), d => d.n_generico_terrestre))
-      .range(['white', 'white'])
-      .unknown("white");
+      .range([colors.placeHierarchies_color_scale_start, colors.placeHierarchies_color_scale_end])
+      .unknown(colors.placeHierarchies_unknown);
 
     this.analysisModeMap = new Map([
-      [ GlobalData.analysisModes.noAnalysis.chronology,       { customElementsClasses : null,                                    dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.noAnalysis.volumes,          { customElementsClasses : null,                                    dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.fog,                   { customElementsClasses : null,                                    dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.cancellation,          { customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.all,                   { customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.doubt.percentage,            { customElementsClasses : customElementsClasses.dubitativePhenomena_level_2, showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.proportion,            { customElementsClasses : customElementsClasses.lists_level_2,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.shape.types,                 { customElementsClasses : customElementsClasses.lists_level_3,  showHillMode : showHillModes.nothing, tilt_factor : without_tilt_factor, show_metaballs : true} ],
-      [ GlobalData.analysisModes.space.genericNonTerrestrial, { customElementsClasses : null,                                    dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.generico_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedNonTerrestrial,   { customElementsClasses : null,                                    dataMember : 'n_nominato_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.nominato_non_terrestre_color_scale, tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.genericTerrestrial,    { customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.namedTerrestrial,      { customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.invented,              { customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.noSetting,             { customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.proportion,            { customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.space.placeHierarchies,      { customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_non_terrestre',  showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
+      [ undefined,                                            { analysisModeGroup : analysisModeGroups.none } ],
+      [ GlobalData.analysisModes.noAnalysis.chronology,       { analysisModeGroup : analysisModeGroups.hills,   customElementsClasses : null,                                    dataMember : 'first_publication',         showHillMode : showHillModes.all,     colorScale : this.colour,                             tilt_factor : with_tilt_factor,    show_metaballs : true } ],
+      [ GlobalData.analysisModes.noAnalysis.volumes,          { analysisModeGroup : analysisModeGroups.hills,   customElementsClasses : null,                                    dataMember : 'collection',                showHillMode : showHillModes.all,     colorScale : GlobalData.col_collections,              tilt_factor : with_tilt_factor,    show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.fog,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'nebbia_words_ratio',        showHillMode : showHillModes.base,    colorScale : this.nebbia_color_scale,                 tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.cancellation,          { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'cancellazione_words_ratio', showHillMode : showHillModes.base,    colorScale : this.cancellazione_color_scale,          tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.all,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.genericCosmic,         { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedCosmic,           { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',        showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.namedTerrestrial,      { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_terrestre',      showHillMode : showHillModes.base,    colorScale : this.nominato_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.invented,              { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_inventato',               showHillMode : showHillModes.base,    colorScale : this.inventato_color_scale,              tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.noSetting,             { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_no_ambientazione',        showHillMode : showHillModes.base,    colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.places,                                                      showHillMode : showHillModes.nothing, colorScale : this.no_ambientazione_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.space.placeHierarchies,      { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.place_hierarchy_2, dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.placeHierarchies_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : false } ]
     ]);
 
     this.text_nodes = g
@@ -238,7 +268,7 @@ class VClass
 
 //    this.step_increment = -23;
 
-    steps
+    const circles = steps
       .append("circle")
       .attr("class", "circle_node hill")
       .attr("stroke", "black")
@@ -255,6 +285,10 @@ class VClass
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);
+
+    circles
+      .filter(d => d.first_elem)
+      .on("click", this.onFirstElementClicked);
 
 		const place_hierarchies_group = svg_main_group
 			.append("g")
@@ -388,7 +422,10 @@ class VClass
       .selectAll(".place_hierarchy")
       .remove();
 
-    const place_hierarchies_info_2 = prepare_place_hierarchies_2(input_data.place_hierarchies_info.place_hierarchies, input_data.json_node_map);
+    const place_hierarchies_info_2 = prepare_place_hierarchies_2(
+      input_data.place_hierarchies_info.place_hierarchies, 
+      input_data.json_node_map, 
+      colors);
 
 		json_nodes.forEach(d => {
 			let item = place_hierarchies_info_2.place_hierarchies_graphics_item_map_2.get(d.id);
@@ -508,7 +545,7 @@ class VClass
       return 0 * 2 * PI + placesArcFix(d);
     })
 		.endAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc2 = d3
@@ -520,7 +557,7 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
 			return d.generico_terrestre * 2 * PI + placesArcFix(d);
@@ -568,7 +605,7 @@ class VClass
 			return d.no_ambientazione * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc6 = d3
@@ -580,7 +617,7 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_non_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
 			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
@@ -606,7 +643,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ff6c39")
+		.attr("fill", colors.generico_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
@@ -614,7 +651,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "orange")
+		.attr("fill", colors.generico_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
@@ -622,7 +659,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#bbbbff")
+		.attr("fill", colors.inventato_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
@@ -630,7 +667,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "darkgrey")
+		.attr("fill", colors.no_ambientazione_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
@@ -638,7 +675,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#5151fc")
+		.attr("fill", colors.nominato_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
@@ -646,7 +683,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#00c19c")
+		.attr("fill", colors.nominato_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
@@ -682,7 +719,7 @@ class VClass
     })
     .startAngle(0 * 2 * PI)
     .endAngle(function(d, i) {
-//					return d.generico_non_terrestre * 2 * PI;
+//					return d.generico_cosmico * 2 * PI;
       return 2 * PI;
     });
 
@@ -749,7 +786,7 @@ class VClass
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", "blue")
+      .attr("fill", colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
@@ -757,7 +794,7 @@ class VClass
     steps
       .filter(function(d) { return d.first_elem })
       .append("svg:path")
-      .attr("fill", "red")
+      .attr("fill", colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
@@ -850,7 +887,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#5151fc")
+		.attr("fill", colors.frasi)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc1)
 /*		.attr('transform', function(d, i) {
@@ -861,7 +898,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ff6c39")
+		.attr("fill", colors.misto)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc2)
 /*		.attr('transform', function(d, i) {
@@ -872,7 +909,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#00c19c")
+		.attr("fill", colors.parole)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc3)
 /*		.attr('transform', function(d, i) {
@@ -883,7 +920,7 @@ class VClass
 	steps
 		.filter(function(d) { return d.first_elem })
 		.append("svg:path")
-		.attr("fill", "#ffce00")
+		.attr("fill", colors.sintagmi)
 		.attr("class", customElementsClasses.lists_level_3_full)
 		.attr("d", drawListsArc4)
 /*		.attr('transform', function(d, i) {
@@ -901,63 +938,6 @@ class VClass
 			return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
 		})
 */		.style('fill-opacity', 0);      
-
-///////////////////////////////////////////
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#5151fc")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc1)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#ff6c39")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc2)
-/*      .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#00c19c")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc3)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
-*/      .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "#ffce00")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc4)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
- */     .style('fill-opacity', 0);
-
-    steps
-      .filter(function(d) { return d.first_elem })
-      .append("svg:path")
-      .attr("fill", "transparent")
-      .attr("class", customElementsClasses.lists_level_3_full)
-      .attr("d", drawListsArc5)
- /*     .attr('transform', function(d, i) {
-        return 'translate(0,' + (d.n_steps - i) * step_increment + ')'
-      })
- */     .style('fill-opacity', 0);
 
 ///////////////////////////////////////////
 
@@ -994,7 +974,7 @@ class VClass
     steps
       .filter(d => d.first_elem && d.lists_are_present)
       .append("svg:path")
-      .attr("fill", d => d.lists_ratio_is_below_threshold ? "black" : "#ff6c39")
+      .attr("fill", d => d.lists_ratio_is_below_threshold ? colors.lists_ratio_below_threshold : colors.lists_ratio_above_threshold)
       .attr("class", customElementsClasses.lists_level_2_full)
       .attr("d", drawListsOverallArc1)
 /*      .attr('transform', function(d,i){
@@ -1015,7 +995,9 @@ class VClass
 
 ///////////////////////////////////////////
 
-    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+//    this.setHighlightMode(GlobalData.analysisModes.noAnalysis.chronology);
+    currentAnalysisMode = undefined;
+    this.setHighlightMode(analysisMode);
 
     this.label = this.text_nodes
       .selectAll('.label')
@@ -1055,7 +1037,7 @@ class VClass
     let labelTitle = this.label
       .append('text')
       .attr('text-anchor', 'middle')
-      .attr('font-family', 'Crimson Text')
+      .attr('font-family', "'HKGrotesk', sans-serif")
       .attr('font-size', '1.1rem')
       .text(function(d) {
         // V016 - "il castello dei destini incrociati" gets anyway the first publication year in the label
@@ -1110,21 +1092,13 @@ class VClass
     //Zoom functions
     function zoom_actions() 
     {
+      containerOnSvgClicked();
       g.attr("transform", d3.event.transform);
   		metaball_group.attr("transform", d3.event.transform);
   		place_hierarchies_group.attr("transform", d3.event.transform);
   		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
-
-  		V.label.attr('transform', function(d) {
-  			let one_rem = parseInt(d3.select('html').style('font-size'));
-  			let k = one_rem * (1 / (d3.event.transform.k / scale));
-  			let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-        let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-        
-        if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-        else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
-  		});
+      tilt_labels(V.text_nodes);
     }
 
     // Handle interface interactions
@@ -1145,19 +1119,15 @@ class VClass
 
   destroy = () => {};
 
-  calculateHillStepTranslation = (d, i) => 
-  {
-    i = i * step_increment;
-
-    return "translate(0," + i + ")";
-  };
+  //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
+  calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
 
   setColor = color => { 
     d3
       .selectAll("circle")
       .attr("fill", color);
   };
-
+/*
   set_yRatio = yRatio => {
     d3
       .selectAll(".node")
@@ -1167,11 +1137,9 @@ class VClass
         return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
 
-    if(yRatio === 1) tilt = true;
-    else tilt = false;
+    tilt = yRatio === 1;
 
-    const label = this.text_nodes
-      .selectAll('.label');   
+    const label = this.text_nodes.selectAll('.label');   
 
     label.attr('transform', function(d) {
 
@@ -1192,6 +1160,52 @@ class VClass
         return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
       });
   };
+*/
+  set_yRatio = yRatio => {
+
+    tilt = yRatio === 1;
+
+    if(tilt)
+    {
+      const t0 = svg.transition().duration(1000);
+      const t1 = t0.transition().ease(d3.easeCircleOut).duration(1500);
+
+      t0.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+
+      t1
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });
+    }
+    else
+    {
+      const t1 = svg.transition().ease(d3.easeCircleOut).duration(1500);
+      const t0 = t1.transition().duration(1000);
+
+      t1
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });            
+
+      t0.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+    }
+
+    const label = this.text_nodes.selectAll('.label');   
+
+    label.attr('transform', function(d) {
+
+      let one_rem = parseInt(d3.select('html').style('font-size'));
+      let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
+
+      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    });
+  }
 
   showHillsTops = opacity => d3
     .selectAll(".circle_node")
@@ -1250,33 +1264,41 @@ class VClass
       });
   };
 
-  applySearchFilterByInputText = inputText => {
-
+  applySearchFilterByInputText = inputText => 
+  {
     const inputLowerCase = inputText.toLowerCase();
+    const inputLowerCaseTrimmed = inputLowerCase.trim();
 
-console.log("this.textsData : ", this.textsData);    
+    const mustReset = inputLowerCaseTrimmed === "";
 
     const results = this.textsData.options.filter(d => d.desc.toLowerCase().includes(inputLowerCase));
 
-    this.applySearchFilterBySearchResults(results);
+    this.applySearchFilterBySearchResults(mustReset, results);
   };
 
-  applySearchFilterBySearchResults = searchResults => {
-
-    this.text_nodes.style("opacity", .35);
-
+  applySearchFilterBySearchResults = (mustReset, searchResults) => 
+  {
     this.label.classed("visible", false);
 
-    searchResults.forEach(result => 
-      {
-        this.text_nodes
-          .filter(text_node => text_node.id === result.id)
-          .style("opacity", 1);
+    if(!mustReset)
+    {
+      this.text_nodes.style("opacity", .35);
 
-        this.label
-          .filter(d => d.id === result.id)
-          .classed("visible", true);
-      });
+      searchResults.forEach(result => 
+        {
+          this.text_nodes
+            .filter(text_node => text_node.id === result.id)
+            .style("opacity", 1);
+
+          this.label
+            .filter(d => d.id === result.id)
+            .classed("visible", true);
+        });
+    }
+    else
+    {
+      this.text_nodes.style("opacity", 1);
+    }
   };
 
 /*
@@ -1287,171 +1309,731 @@ console.log("this.textsData : ", this.textsData);
   };
 */
 
-  setHighlightMode = value => {
+  setHighlightMode = newAnalysisMode => 
+  {
+    const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
+    const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
 
-    const highlightParameters = this.analysisModeMap.get(value);
-
-    switch(value)
+    const analysisModeChangeType = getAnalysisModeChangeType(currentHighlightParameters.analysisModeGroup, newHighlightParameters.analysisModeGroup);
+/*
+    switch(analysisModeChangeType)
     {
       case GlobalData.analysisModes.noAnalysis.chronology :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.noAnalysis.volumes :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+//        this.set_yRatio(highlightParameters.tilt_factor);
+//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
+//        this.applyShowHillMode(highlightParameters.showHillMode);
+//        this.highlightCustomElements(highlightParameters.customElementsClasses);
+//        this.showMetaballs(highlightParameters.show_metaballs);
+
+        this.change_flat_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
 
         break;
 
       case GlobalData.analysisModes.doubt.fog :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+
+//        this.set_yRatio(highlightParameters.tilt_factor);        
+//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
+
+//        this.applyShowHillMode(highlightParameters.showHillMode);
+//        this.highlightCustomElements(highlightParameters.customElementsClasses);        
+//        this.showMetaballs(highlightParameters.show_metaballs);
+
+        this.change_hills_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
 
         break;
 
       case GlobalData.analysisModes.doubt.cancellation :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.doubt.all :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.doubt.percentage :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.shape.proportion :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.shape.types :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;    
 
-      case GlobalData.analysisModes.space.genericNonTerrestrial :
+      case GlobalData.analysisModes.space.genericCosmic :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
-      case GlobalData.analysisModes.space.namedNonTerrestrial :
+      case GlobalData.analysisModes.space.namedCosmic :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);        
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);        
 
         break;
 
       case GlobalData.analysisModes.space.genericTerrestrial :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.space.namedTerrestrial :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.space.invented :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.space.noSetting :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.space.proportion :
 console.log("case proportion...");
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       case GlobalData.analysisModes.space.placeHierarchies :
 
-        this.set_yRatio(highlightParameters.tilt_factor);
-        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-        this.applyShowHillMode(highlightParameters.showHillMode);
-        this.highlightCustomElements(highlightParameters.customElementsClasses);
-        this.showMetaballs(highlightParameters.show_metaballs);
+        this.set_yRatio(newHighlightParameters.tilt_factor);
+        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+        this.applyShowHillMode(newHighlightParameters.showHillMode);
+        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+        this.showMetaballs(newHighlightParameters.show_metaballs);
 
         break;
 
       default : break;
     }
+*/
+
+    switch(analysisModeChangeType)
+    {
+      case analysisModeChangeTypes.change_none_to_hills :
+
+        this.change_none_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_none_to_flat :
+
+        this.change_none_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_none_to_drawing :
+
+        this.change_none_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;                
+
+      case analysisModeChangeTypes.change_flat_to_hills : 
+
+        this.change_flat_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_hills_to_flat : 
+
+        this.change_hills_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_hills_to_drawing : 
+
+        this.change_hills_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_drawing_to_hills : 
+
+        this.change_drawing_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_flat_to_drawing : 
+
+        this.change_flat_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_drawing_to_flat : 
+
+        this.change_drawing_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+      
+      case analysisModeChangeTypes.change_hills_to_hills : 
+
+        this.change_hills_to_hills(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_flat_to_flat : 
+
+        this.change_flat_to_flat(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      case analysisModeChangeTypes.change_drawing_to_drawing : 
+
+        this.change_drawing_to_drawing(
+          currentAnalysisMode, currentHighlightParameters,
+              newAnalysisMode,     newHighlightParameters);
+
+        break;
+
+      default : throw new Error("analysis mode change type not recognized : " + analysisModeChangeType);
+    }
+
+    currentAnalysisMode = newAnalysisMode;
   };
+
+  change_none_to_hills(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }
+
+  change_none_to_flat(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+console.log("change_none_to_flat");    
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }
+
+  change_none_to_drawing(
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters)
+  {
+    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightCustomElements(newHighlightParameters.customElementsClasses);
+    this.showMetaballs(newHighlightParameters.show_metaballs);    
+  }    
+
+  change_hills_to_flat = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // flatten hills tops (but don't hide them yet)
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".circle_node")
+      .attr("transform", "")
+      .filter(d => !d.first_elem)
+      .style("stroke-opacity", 0);
+
+    // tilt
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    tilt = true;
+    tilt_labels(this.text_nodes);
+
+    // hide the flattened hill tops
+    const t2 = t1.transition().duration(1);
+    t2.selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .style("fill", "transparent");
+
+    // recolor hill bases
+    const t3 = t2.transition().duration(700);
+    t3
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+  }
+
+  change_flat_to_hills = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // recolor whole hills
+    const t0 = svg.transition().duration(600);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
+
+    // tilt
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
+
+    tilt = false;
+    tilt_labels(this.text_nodes);
+
+    // raise flattened hills
+    const t2 = t1.transition().duration(700);
+    t2
+      .selectAll(".circle_node")
+      .attr("transform", d => "translate(0, " + d.step_y + ")")
+      .style("stroke-opacity", 1);
+  }
+
+  change_hills_to_drawing = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // flatten hills
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".circle_node")
+      .attr("transform", "")
+      .filter(d => !d.first_elem)
+      .style("stroke-opacity", 0);
+
+    // tilt
+    const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
+    t1
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");
+
+    tilt = true;
+    tilt_labels(this.text_nodes);
+
+    let t2;
+
+    // if necessary, change visibility of metaballs
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t2 = t1_1.transition().duration(700);
+    }
+    else
+    {
+      t2 = t1.transition().duration(700);
+    }    
+
+    // show custom drawing
+    t2
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    // make hill bases transparent
+    const t3 = t2.transition().duration(600);
+    t3
+      .selectAll(".hill")
+      .style("fill", "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    // remove hill tops from display
+    const t4 = t3.transition().duration(1);
+    t4
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
+  }
+
+  change_drawing_to_hills = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // quickly restore to display (although hidden) the hill tops
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    // recolor the hill bases
+    const t0 = t_1.transition().duration(800);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]))
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    // hide custom drawings
+    const t1 = t0.transition().duration(700);
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);
+
+    let t2;
+
+    // if necessary, change visibility of metaballs
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_2 = t1.transition().duration(200);
+      t1_2
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_2.transition().ease(d3.easeCircleOut).duration(900);
+    }
+    else
+    {
+      t2 = t1.transition().ease(d3.easeCircleOut).duration(900);
+    }      
+    
+    // tilt
+    t2
+      .selectAll(".node,.metaball_node")
+      .attr("transform", d => "scale(1, " + newHighlightParameters.tilt_factor + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")");      
+
+    tilt = false;
+    tilt_labels(this.text_nodes);
+
+    // show hills
+    const t3 = t2.transition().duration(700);
+    t3
+      .selectAll(".circle_node")
+      .attr("transform", d => "translate(0, " + d.step_y + ")")
+      .style("stroke-opacity", 1)
+      .style("fill-opacity", 1);
+
+    // hide custom drawings
+    const t4 = t3.transition().duration(1);
+    t4
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style("display", "none");
+  }
+
+  change_flat_to_drawing = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    let t0;
+
+    // if necessary, change visibility of metaballs
+    if(oldHighlightParameters.show_metaballs && !newHighlightParameters.show_metaballs)
+    {
+      const t_1 = svg.transition().duration(200);
+      t_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 0);
+
+      t0 = t_1.transition().duration(700);
+    }
+    else
+    {
+      t0 = svg.transition().duration(700);
+    }
+
+    // show custom drawings
+    t0
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    // hide hill bases
+    const t1 = t0.transition().duration(600);
+    t1
+      .selectAll(".hill")
+      .style("fill", "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    // quickly remove from drawing hill tops (necessary to have internal of hill bases wholly clickable, as in case of jellyfishes)
+    const t2 = t1.transition().duration(1);
+    t2
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "none");
+  }
+
+  change_drawing_to_flat = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // quickly rebring to display (although hidden) the hill tops
+    const t_1 = svg.transition().duration(1);
+    t_1
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .attr("display", "block");
+
+    // recolor, if necessary in the new parameters, the hill bases, or otherwise make them transparent
+    const t0 = t_1.transition().duration(800);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);
+
+    // hide custom drawings
+    const t1 = t0.transition().duration(700);
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);
+
+    let t2;
+
+    // if necessary, change metaballs visibility
+    if(!oldHighlightParameters.show_metaballs && newHighlightParameters.show_metaballs)
+    {
+      const t1_1 = t1.transition().duration(200);
+      t1_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", 1);
+
+      t2 = t1_1.transition().duration(1);
+    }
+    else
+    {
+      t2 = t1.transition().duration(1);
+    }
+
+    t2
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style("display", "none");
+  }
+
+  change_hills_to_hills = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // recolor hills
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
+  }
+
+  change_flat_to_flat = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // recolor hill bases
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll(".hill")
+      .style("fill", d => d.first_elem && d[newHighlightParameters.dataMember] ? newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]) : "transparent")
+      .filter(d => d.first_elem)
+      .style("stroke-opacity", 1);    
+  }
+
+  change_drawing_to_drawing = (
+    oldAnalysisMode, oldHighlightParameters,
+    newAnalysisMode, newHighlightParameters) =>
+  {
+    // show new custom drawings
+    const t0 = svg.transition().duration(700);
+    t0
+      .selectAll("." + newHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 1)
+			.style('stroke-opacity', 1);
+
+    let t1;
+
+    // if necessary, change metaballs visibility
+    if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
+    {
+      const t0_1 = t0.transition().duration(200);
+      t0_1
+        .selectAll(".metaball")
+        .style("stroke-opacity", newHighlightParameters.show_metaballs ? 1 : 0);
+
+      t1 = t0_1.transition().duration(700);  
+    }
+    else t1 = t0.transition().duration(700);
+
+    // hide old custom drawings
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);    
+  }
+
+  onFirstElementClicked = d => {
+console.log("first_elem clicked for " + d.id);
+console.log("currentAnalysisMode", currentAnalysisMode);
+
+    switch(true)
+    {
+      case currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.highlightPlaceHierarchy(d); break;
+      default : break;
+    }
+  };
+
+  highlightPlaceHierarchy = d => {
+    const selectedHierarchyClass = ".place_hierarchy_2_" + d.id;
+
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(selectedHierarchyClass)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id === d.id)
+      .style("stroke-opacity", 1);
+
+    const allOtherHierarchies = ".place_hierarchy_2:not(" + selectedHierarchyClass + ")";
+
+    const t2 = t1.transition().duration(100);
+    t2
+      .selectAll(allOtherHierarchies)
+      .style("fill-opacity", 0.2)
+      .style("stroke-opacity", 0.2);
+
+    const t3 = t2.transition().duration(100);
+    t3
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem && dd.id !== d.id)
+      .style("stroke-opacity", 0.2);
+  }
+
+  onSvgClicked = () =>
+  {
+    this.containerOnSvgClicked();
+
+    switch(true)
+    {
+      case 
+        d3.event.target.constructor.name === "SVGSVGElement" && 
+        currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : 
+        
+        this.showAllPlaceHierarchies(); 
+        break;
+
+      default : break;
+    }    
+  }
+
+  showAllPlaceHierarchies = () => 
+  {
+    const t0 = svg.transition().duration(100);
+    t0
+      .selectAll(".place_hierarchy_2")
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", 1);
+
+    const t1 = t0.transition().duration(100);
+    t1
+      .selectAll(".hill")
+      .filter(dd => dd.first_elem)
+      .style("stroke-opacity", 1);
+  }  
 
   highlightHills_old = (dataMember, colorScale) => {
 
@@ -1607,9 +2189,9 @@ function create_item_steps(d)
 			'last_elem': last_elem,
 			'n_steps': n_steps,
 
-			'generico_non_terrestre': csv_item == undefined ? 0 : csv_item.generico_non_terrestre,
-			'generico_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_non_terrestre_abs,
-      'n_generico_non_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_non_terrestre,
+			'generico_cosmico': csv_item == undefined ? 0 : csv_item.generico_cosmico,
+			'generico_cosmico_abs': csv_item == undefined ? 0 : csv_item.generico_cosmico_abs,
+      'n_generico_cosmico': csv_item == undefined ? 0 : csv_item.n_generico_cosmico,
 
 			'generico_terrestre': csv_item == undefined ? 0 : csv_item.generico_terrestre,
 			'generico_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_terrestre_abs,
@@ -1623,9 +2205,9 @@ function create_item_steps(d)
 			'no_ambientazione_abs': csv_item == undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item == undefined ? 0 : csv_item.n_no_ambientazione,
 
-			'nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre,
-			'nominato_non_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_non_terrestre_abs,
-      'n_nominato_non_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_non_terrestre,
+			'nominato_cosmico': csv_item == undefined ? 0 : csv_item.nominato_cosmico,
+			'nominato_cosmico_abs': csv_item == undefined ? 0 : csv_item.nominato_cosmico_abs,
+      'n_nominato_cosmico': csv_item == undefined ? 0 : csv_item.n_nominato_cosmico,
 
 			'nominato_terrestre': csv_item == undefined ? 0 : csv_item.nominato_terrestre,
 			'nominato_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_terrestre_abs,
@@ -1688,11 +2270,11 @@ function flatten_items_steps(nodes)
 				last_elem: step.last_elem,
 				n_steps: step.n_steps,
 				first_publication: step.first_publication,
-				generico_non_terrestre: step.generico_non_terrestre,
+				generico_cosmico: step.generico_cosmico,
 				generico_terrestre: step.generico_terrestre,
 				inventato: step.inventato,
 				no_ambientazione: step.no_ambientazione,
-				nominato_non_terrestre: step.nominato_non_terrestre,
+				nominato_cosmico: step.nominato_cosmico,
 				nominato_terrestre: step.nominato_terrestre,
 
 				nebbia_normalizzata: step.nebbia_normalizzata,
@@ -1757,7 +2339,7 @@ function clone_d3_selection(selection, i)
 	return cloned;
 }
 
-function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
+function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
@@ -1782,7 +2364,8 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map)
         place_hierarchy, 
         { x : 0, y : 0 } /*place_hierarchy.circle_position*/, 
         place_hierarchy.caption,
-        json_node_map);
+        json_node_map,
+        colors);
 
 			place_hierarchies_graphics_item_map_2.set(d.caption, d);
 		}
@@ -1806,6 +2389,41 @@ function placesArcFix(d)
     case "V008" : return Math.PI * 3 / 4;
     default : return 0;
   }
+}
+
+function wait(ms)
+{
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
+function getAnalysisModeChangeType(oldAnalysisModeGroup, newAnalysisModeGroup)
+{
+  let factor;
+  if(oldAnalysisModeGroup <= newAnalysisModeGroup) factor = 1;
+  else factor = -1;
+
+  return factor * oldAnalysisModeGroup * newAnalysisModeGroup;
+}
+
+function tilt_labels(text_nodes)
+{
+  const label = text_nodes.selectAll('.label');   
+
+  let one_rem = Number.parseInt(d3.select('html').style('font-size'));
+  let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+  label.attr('transform', function(d) {
+
+    let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+    let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
+
+    if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+    else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+  });
 }
 
 const V = new VClass();

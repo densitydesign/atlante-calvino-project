@@ -10,7 +10,7 @@ export default class HamburgerMenuHeader extends React.Component
   {
     return (
       <div className="top-nav navigations">
-        <BackFromMainMenu style={{gridColumn: 'span 1'}} />
+        <BackFromMainMenu style={{gridColumn: 'span 1'}} backRoute={this.props.backRoute} />
         <div style={{gridColumn: 'span 21'}} />
         <IntroLink style={{gridColumn: 'span 2'}} />
       </div>

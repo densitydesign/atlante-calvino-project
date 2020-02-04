@@ -64,7 +64,7 @@ function calculate_continuous_extension(hierarchy)
   }
 }
 
-function process_hierarchy(hierarchy, x, y)
+function process_hierarchy(hierarchy, x, y, colors)
 {
   let jellyfish = {
     caption : hierarchy.caption,
@@ -72,27 +72,29 @@ function process_hierarchy(hierarchy, x, y)
     position : { x : x, y : y },
     children : []
   };
-
+/*
   switch(hierarchy.type)
   {
-      case "generico_terrestre"     : jellyfish.color = "orange";   break;
-      case "generico_non_terrestre" : jellyfish.color = "red";  break;
-      case "nominato_terrestre"     : jellyfish.color = "dodgerblue"; break;
-      case "nominato_non_terrestre" : jellyfish.color = "blue";  break;
-      case "inventato"              : jellyfish.color = "fuchsia"; break;
-      case "no_ambientazione"       : jellyfish.color = "darkgrey";  break;
+      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
+      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
+      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
+      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
+      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
+      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(hierarchy.type, colors);
 
   let progressive_x = x;
   hierarchy.children.forEach(d => {
-    jellyfish.children.push(process_hierarchy(d, progressive_x, y + 1))
+    jellyfish.children.push(process_hierarchy(d, progressive_x, y + 1, colors))
     progressive_x = progressive_x + calculate_width(d);
   });
 
   return jellyfish;
 }
 
-function process_hierarchy_continuously(hierarchy, x, y)
+function process_hierarchy_continuously(hierarchy, x, y, colors)
 {
   let jellyfish = {
     text_id : hierarchy.text_id,
@@ -107,16 +109,18 @@ function process_hierarchy_continuously(hierarchy, x, y)
     circle_position : { x : 0, y : 0 },
     children : []
   };
-
+/*
   switch(hierarchy.basal_type)
   {
-      case "generico_terrestre"     : jellyfish.color = "orange";   break;
-      case "generico_non_terrestre" : jellyfish.color = "red";  break;
-      case "nominato_terrestre"     : jellyfish.color = "dodgerblue"; break;
-      case "nominato_non_terrestre" : jellyfish.color = "blue";  break;
-      case "inventato"              : jellyfish.color = "fuchsia"; break;
-      case "no_ambientazione"       : jellyfish.color = "darkgrey";  break;
+      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
+      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
+      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
+      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
+      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
+      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(hierarchy.basal_type, colors);
 
   let hierarchy_gap = 1;
   let absolute_progressive_x = x;
@@ -124,7 +128,7 @@ function process_hierarchy_continuously(hierarchy, x, y)
 
   for(let i = 0; i < hierarchy.children.length; ++i)
   {
-    jellyfish.children.push(process_hierarchy_continuously(hierarchy.children[i], absolute_progressive_x, y + 1));
+    jellyfish.children.push(process_hierarchy_continuously(hierarchy.children[i], absolute_progressive_x, y + 1, colors));
 
     let delta = 0;
 
@@ -183,22 +187,40 @@ function visit_levels(hierarchy, status, processItem)
   }
 }
 
-function prepare_for_graphics(jellyfish)
+function map_color(text, colors)
 {
+  switch(text)
+  {
+      case "generico_terrestre"     : return colors.generico_terrestre_bright;
+      case "generico_non_terrestre" : return colors.generico_cosmico_bright;
+      case "nominato_terrestre"     : return colors.nominato_terrestre_bright;
+      case "nominato_non_terrestre" : return colors.nominato_cosmico_bright;
+      case "inventato"              : return colors.inventato_bright;
+      case "no_ambientazione"       : return colors.no_ambientazione_bright;
+
+      default : return undefined;
+  }  
+}
+
+function prepare_for_graphics(jellyfish, colors)
+{
+/*  
   switch(jellyfish.basal_type)
   {
-      case "generico_terrestre"     : jellyfish.color = "orange";   break;
-      case "generico_non_terrestre" : jellyfish.color = "red";  break;
-      case "nominato_terrestre"     : jellyfish.color = "dodgerblue"; break;
-      case "nominato_non_terrestre" : jellyfish.color = "blue";  break;
-      case "inventato"              : jellyfish.color = "fuchsia"; break;
-      case "no_ambientazione"       : jellyfish.color = "darkgrey";  break;
+      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
+      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
+      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
+      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
+      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
+      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
   }
+*/
+  jellyfish.color = map_color(jellyfish.basal_type, colors);
 
   jellyfish.stripe_position.x = jellyfish.logical_position.x * 20 + 10;
   jellyfish.stripe_position.y = jellyfish.logical_position.y * 20 + 10;
 
-  jellyfish.children.forEach(d => prepare_for_graphics(d));
+  jellyfish.children.forEach(d => prepare_for_graphics(d, colors));
 }
 
 function draw_jellyfish_stripe(graphicsContainer, jellyfish, text_id)
@@ -306,10 +328,10 @@ function split_texts(hierarchy)
     });
 }
 
-export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
+export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, colors)
 {
   split_texts(hierarchy);
-  let jellyfish = process_hierarchy_continuously(hierarchy, 0, 0);
+  let jellyfish = process_hierarchy_continuously(hierarchy, 0, 0, colors);
 
   let status2 = { extremes : { min_x : 1000000, max_x : 0 } };
 
@@ -327,7 +349,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
 
 
 
-  prepare_for_graphics(jellyfish);
+  prepare_for_graphics(jellyfish, colors);
 
   let status = { extremes : { min_x : 1000000, max_x : 0 } };
 
@@ -351,6 +373,9 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
     {},
     (d, status) => {
       d.angle = d.stripe_position.x / scalingCoefficient * 2 * Math.PI;
+
+// MP20200204 - rotational fix for specific jellyfishes which give problems in default angle setting
+if(d.text_id === "S008") d.angle -= Math.PI / 8;
     });
 
   visit(
@@ -414,7 +439,7 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;
@@ -460,7 +485,7 @@ function angleIsInLeftEmicircle(angle)
   return Math.PI / 2 < angle && angle < 3 * Math.PI / 2;
 }
 
-function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map)
+function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map, colors)
 {
   let inLeftEmicircle = angleIsInLeftEmicircle(d.angle);
 
@@ -477,16 +502,18 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
 //if(d.hill_size) console.log("d.hill_size : " + d.hill_size);
 //console.log("d :");
 //console.log(d);
-
+/*
   switch(d.local_type)
   {
-      case "generico_terrestre"     : textColor = "orange";   break;
-      case "generico_non_terrestre" : textColor = "red";  break;
-      case "nominato_terrestre"     : textColor = "dodgerblue"; break;
-      case "nominato_non_terrestre" : textColor = "blue";  break;
-      case "inventato"              : textColor = "fuchsia"; break;
-      case "no_ambientazione"       : textColor = "darkgrey";  break;
+      case "generico_terrestre"     : textColor = colors.generico_terrestre_bright;   break;
+      case "generico_non_terrestre" : textColor = colors.generico_cosmico_bright;  break;
+      case "nominato_terrestre"     : textColor = colors.nominato_terrestre_bright; break;
+      case "nominato_non_terrestre" : textColor = colors.nominato_cosmico_bright;  break;
+      case "inventato"              : textColor = colors.inventato_bright; break;
+      case "no_ambientazione"       : textColor = colors.no_ambientazione_bright;  break;
   }
+*/
+  textColor = map_color(d.local_type, colors);
 
   let angle, textDistance;
 
@@ -573,11 +600,11 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
       d.color,
       text_id);
 
-    if(d.level === 0 || d.children.length > 1)
+    if(+d.level === 0 || d.children.length > 1)
     {
       let arcWidth = 2;
 
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         for(let i = 0; i < d.children.length; ++i)
         {
@@ -617,17 +644,16 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
   }
 }
 
-export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id, json_node_map)
+export function draw_jellyfish(graphicsContainer, jellyfish, center, text_id, json_node_map, colors)
 {
   visit(
     jellyfish,
     {},
-    (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map));
+    (d, status) => draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json_node_map, colors));
 }
 
 export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 {
-//console.log("prepare_jellyfish_data_2()");
   var level_maxTextLen_map = new Map();
 
   visit(
@@ -781,7 +807,7 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
     jellyfish,
     {},
     (d, status) => {
-      if(d.level === 0)
+      if(+d.level === 0)
       {
         d.circle_position.x = center.x;
         d.circle_position.y = center.y;

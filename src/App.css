@@ -1,8 +1,10 @@
 /* common CSS */
 :root {
+  --bg:#FBFBFC;
   --calvino-red: tomato;
   --dark-green: black;
-  --light-blue: #ECECF4;
+  --cool-bg-bg: #F3F1EC;
+  --cool-bg:#F1F1F5;
   --dark-blue: #5151FC;
   --header-height: 66px;
   --navigation-height: 58px;
@@ -13,10 +15,14 @@
   --app-border:1px solid black;
   --app-border-bold:2px solid black;
   --button-border:2px solid var(--dark-blue);
+  --text-size: 14px;
   font-size: 14px;
   font-family: 'HKGrotesk', sans-serif;
 }
 
+title{
+  text-transform: uppercase;
+}
 
 .col-lg-8{
   padding-left:0px;
@@ -28,17 +34,33 @@ a {
   color: var(--text-color);
 }
 
-p {
-font-size: 1.3em;
-line-height: 1.6em;
+.link {
+  color: var(--dark-blue);
 }
+
+a.link:hover {
+  color: black;
+}
+
+
+p {
+font-size: 1.4em;
+line-height: 1.4em;
+}
+
+
+p.intro {
+font-size: 1.7em;
+line-height: 1.5em;
+}
+
 
 strong{
   font-weight: 600;
 }
 
 ::selection{
-  color:white;
+  color:var(--bg);
   background-color: var(--dark-blue);
 }
 
@@ -61,14 +83,15 @@ html, body {
 
 body {
   margin: 0;
-  font-family:"HKGrotesk", sans-serif;}
+  font-family:"HKGrotesk", sans-serif;
+  overflow-x: hidden;
+}
 
 
 
 h1 {
   margin: 0;
-  white-space: nowrap;
-  font-size: 2.3em;
+  font-size: 2.4em;
   color: var(--text-color);
   margin-bottom:1em;
 
@@ -76,21 +99,18 @@ h1 {
 
 h2 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.8em;
   color: black;
 }
 
 h3 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.5em;
   color: black;
 }
 
 h4 {
   margin: 0;
-  white-space: nowrap;
   font-size: 1.3em;
   color: black;
 }
@@ -99,7 +119,6 @@ h5 {
   margin: 0;
   font-size: 1.2em;
   font-weight: 100;
-  white-space: nowrap;
   color: black;
   line-height: 1.4em;
 }
@@ -201,12 +220,12 @@ a.button-text, a:visited.button-text{
   text-decoration: none;
 }
 
-button:hover{
-  background-color:var(--dark-blue);
-  border:var(--button-border);
-  color:white;
-  transition: color 1s ease;
+/* BOTTONI DELLE VIZ */
+
+.btn-primary{
+  font-weight: 600;
 }
+
 
 
 /* FOOTER */
@@ -237,37 +256,22 @@ footer {
   width: 30%;
 }
 
-
-
-
-
-/* a {
-  position: relative;
-  color: var(--text-color);
-  text-decoration: none;
+#timeline .selection {
+  fill: transparent;
+  fill-opacity: 1;
+  stroke: black;
+  stroke-width: 1.5;
 }
 
-a:hover {
-  color: var(--dark-blue);
+#timeline .handle {
+  fill:black;
+  height:20px;
+  opacity: 1;
+  stroke: none;
+  stroke-width: 5px;
+  stroke:transparent;
 }
 
-a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--dark-blue);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+.dropdown-item.active, .dropdown-item:active{
+  background-color: red !important;
 }
-
-a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-} */

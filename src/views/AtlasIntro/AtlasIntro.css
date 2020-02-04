@@ -65,7 +65,7 @@
 
 
 .atlas-intro-sidebar-monoblock {
-  background: white;
+  background: var(--bg);
   border-right:var(---app-border-bold);
   position:relative;
   width: 100%;
@@ -115,9 +115,9 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0)
 }
 
   @keyframes pop { /* flame pulses */
-    0%   { background-color:white;}
+    0%   { background-color:var(--bg);}
     50%  { background-color: var(--dark-blue);}
-    100% { background-color:white;}
+    100% { background-color:var(--bg);}
   }
   .pop {
       background-color: var(--dark-blue);

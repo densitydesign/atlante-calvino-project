@@ -177,6 +177,20 @@ const collections = [
 
 const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 
+const territoryColorPalette = {
+  brightBlue     : "#5151FC",     dimBlue : "#C5C5FC",
+  brightAmaranth : "#FF3366", dimAmaranth : "#FCD0DB",
+  brightCyan     : "#00C19C",     dimCyan : "#C2FAEF",
+  brightGold     : "#FFA500",     dimGold : "#FDDDA1",
+  brightViolet   : "#BBBBFF",   dimViolet : "#E2E2FD",
+  brightOrange   : "#FF6C39",   dimOrange : "#FFCDBC",
+  grey           : "#C6CACF",
+  lightComfit    : "#F8F8FF",
+  green          : "#8AE297",
+  yellow         : "#FFD93B",
+  turquoise      : "#00BFD3",
+  paleTurquoise  : "#97DADD"
+};
 
 const GlobalData = {
   allVolumes : [
@@ -204,7 +218,7 @@ const GlobalData = {
     {"id":"V022","label":"Palomar"},
     {"id":"V023","label":"Le cosmicomiche vecchie e nuove"}
   ],
-/*  
+/*
   commands : {
     territory : {
       doubt : {
@@ -228,12 +242,12 @@ const GlobalData = {
       percentage : "percentage"
     },
     shape : {
-      proportion : "shape_proportion",
-      types : "types"
+      types : "types",
+      proportion : "shape_proportion"
     },
     space : {
-      genericNonTerrestrial : "genericNonTerrestrial",
-      namedNonTerrestrial : "namedNonTerrestrial",
+      genericCosmic : "genericCosmic",
+      namedCosmic : "namedCosmic",
       genericTerrestrial : "genericTerrestrial",
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
@@ -242,13 +256,25 @@ const GlobalData = {
       placeHierarchies : "placeHierarchies"
     }
   },
+  noAnalysisDropDownPositions : {
+    open : "open",
+    closed : "closed"
+  },
   bottomPanelModes : {
-    noAnalysis : "none",
+    noAnalysis : "noAnalysis",
     doubt : "doubt",
     shape : "shape",
     space : "space",
     chronologicalFilter : "chronologicalFilter",
     legend : "legend"
+  },
+  bottomPanelPositions : {
+    open : "open",
+    closed : "closed"
+  },
+  itineraryDropUpPositions : {
+    open : "open",
+    closed : "closed"
   },
   analysisPanelModes : {
     doubt : {
@@ -262,8 +288,8 @@ const GlobalData = {
       types : "types"
     },
     space : {
-      genericNonTerrestrial : "genericNonTerrestrial",
-      namedNonTerrestrial : "namedNonTerrestrial",
+      genericCosmic : "genericCosmic",
+      namedCosmic : "namedCosmic",
       genericTerrestrial : "genericTerrestrial",
       namedTerrestrial : "namedTerrestrial",
       invented : "invented",
@@ -275,16 +301,66 @@ const GlobalData = {
   helpPages : {
     territory : {
       main : "territoryMain",
-      placeHierarchies : "territoryPlaceHierarchies"
+      placeHierarchies : "territoryPlaceHierarchies",
+      doubt : "territoryDoubt",
+      shape : "territoryShape",
+      place : "territoryPlace",
+    },
+    transform : {
+      main : "transformMain"
+    },
+    plot : {
+      main : "plotMain"
     }
   },
   legendPages : {
     territory : {
-      chronology : "chronology",
-      volumes : "volumes",
-      doubt : "doubt",
-      shape : "shape",
-      space : "space"
+      chronology       : "chronology",
+      volumes          : "volumes",
+
+      doubt            : "doubt",
+      doubtOccurrences : "doubtOccurrences",
+      doubtProportion  : "doubtProportion",
+
+      shape            : "shape",
+      shapeProportion1 : "shapeProportion1",
+      shapeProportion2 : "shapeProportion2",
+
+      space            : "space",
+      spaceOccurrences : "spaceOccurrences",
+      spaceProportion  : "spaceProportion",
+      spaceHierarchies : "spaceHierarchies"
+    }
+  },
+  visualizationColors : {
+    territory : {
+                             nebbia_bright : territoryColorPalette.brightBlue,
+                                nebbia_dim : territoryColorPalette.dimBlue,
+                      cancellazione_bright : territoryColorPalette.brightAmaranth,
+                         cancellazione_dim : territoryColorPalette.dimAmaranth,
+                      allDubitative_bright : territoryColorPalette.brightCyan,
+                         allDubitative_dim : territoryColorPalette.dimCyan,
+                      generico_cosmico_dim : territoryColorPalette.dimViolet,
+                   generico_cosmico_bright : territoryColorPalette.brightViolet,
+                    generico_terrestre_dim : territoryColorPalette.dimGold,
+                 generico_terrestre_bright : territoryColorPalette.brightGold,
+                             inventato_dim : territoryColorPalette.dimOrange,
+                          inventato_bright : territoryColorPalette.brightOrange,
+                      no_ambientazione_dim : territoryColorPalette.lightComfit,
+                   no_ambientazione_bright : territoryColorPalette.grey,
+                      nominato_cosmico_dim : territoryColorPalette.dimBlue,
+                   nominato_cosmico_bright : territoryColorPalette.brightBlue,
+                    nominato_terrestre_dim : territoryColorPalette.dimCyan,
+                 nominato_terrestre_bright : territoryColorPalette.brightCyan,                                     
+                                    parole : territoryColorPalette.brightCyan,
+                                  sintagmi : territoryColorPalette.brightGold,
+                                     frasi : territoryColorPalette.brightBlue,
+                                     misto : territoryColorPalette.brightAmaranth,                                     
+               lists_ratio_below_threshold : "black",
+               lists_ratio_above_threshold : territoryColorPalette.brightOrange,
+        placeHierarchies_color_scale_start : 'white',
+          placeHierarchies_color_scale_end : 'white',
+                  placeHierarchies_unknown : 'white'
     }
   },
   defaultTerritoryDataExtent : [1942, 1985],

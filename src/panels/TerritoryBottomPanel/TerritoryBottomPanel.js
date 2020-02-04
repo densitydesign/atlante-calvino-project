@@ -5,7 +5,7 @@ import TerritoryItinerariesPanel from '../TerritoryItinerariesPanel/TerritoryIti
 import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
 import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
 
-import PullDownButton from '../../general/PullDownButton/PullDownButton';
+// import PullDownButton from '../../general/PullDownButton/PullDownButton';
 
 import './TerritoryBottomPanel.css';
 
@@ -17,21 +17,23 @@ export default class TerritoryBottomPanel extends React.Component
   {
     let internalPanel;
 
-    switch(this.props.bottomPanelMode)
+    switch(true)
     {
-      case GlobalData.bottomPanelModes.noAnalysis : 
-      
-        internalPanel = <></>; 
-        
+      case 
+        this.props.bottomPanelPosition === GlobalData.bottomPanelPositions.closed ||
+        this.props.bottomPanelMode     === GlobalData.bottomPanelModes.noAnalysis :
+
+        return <></>;
+
         break;
 
-      case GlobalData.bottomPanelModes.doubt :
-      case GlobalData.bottomPanelModes.shape :
-      case GlobalData.bottomPanelModes.space :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.space :
 
         internalPanel = (
-          <TerritoryItinerariesPanel 
-            
+          <TerritoryItinerariesPanel
+
             setMainAnalysisMode={this.props.setMainAnalysisMode}
             callTerritorySetHighlightMode={this.props.callTerritorySetHighlightMode}
 
@@ -51,10 +53,10 @@ export default class TerritoryBottomPanel extends React.Component
 
         break;
 
-      case GlobalData.bottomPanelModes.chronologicalFilter :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.chronologicalFilter :
 
         internalPanel = (
-          <TerritoryTimelinePanel 
+          <TerritoryTimelinePanel
             data={this.props.data}
             dataExtent={this.props.dataExtent}
             callTerritoryShowHills={this.props.callTerritoryShowHills}
@@ -65,7 +67,7 @@ export default class TerritoryBottomPanel extends React.Component
 
         break;
 
-      case GlobalData.bottomPanelModes.legend :
+      case this.props.bottomPanelMode === GlobalData.bottomPanelModes.legend :
 
         internalPanel = (
           <TerritoryLegendPanel page={this.props.legendPage} />
@@ -77,14 +79,12 @@ export default class TerritoryBottomPanel extends React.Component
     }
 
     return (
-      
+
       <div className="territory-bottom-panel">
         { internalPanel }
-        <div className="side-container">
-          <PullDownButton style={{width : "100%" }} onClicked={this.props.onCloseButtonClicked} />
-        </div>
+
       </div>
-      
+
     );
   }
 }

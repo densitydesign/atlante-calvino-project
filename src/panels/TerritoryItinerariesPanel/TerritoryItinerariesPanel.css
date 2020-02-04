@@ -1,14 +1,13 @@
 
-.territory-itineraries-panel {
-  background-color : white;
-  height: 40%;
-  width : 96%;
-  z-index : 2;
-  display : grid;
-  grid-template-columns : 3fr 27fr 1fr;
-}
-
 .territory-button-grid {
   display : grid;
-  grid-template-rows : 1fr 1fr 1fr 1fr 1fr;
+  grid-column: 1 / span 3;
+  border-right:1px solid black;
+  font-size:1.3em;
+  text-align: center;
+}
+
+.territory-itineraries-panel{
+  display: grid;
+  grid-template-columns : repeat(24,1fr);
 }

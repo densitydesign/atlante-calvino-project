@@ -14,8 +14,12 @@ export default class ViewSelector extends React.Component
       children.push(obj)
     }
 
+    const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
+
+console.log("viewSelector.render()");
     return (
-      <div className={this.props.className}>
+
+      <div className={this.props.className} style={style} >
         {
           children.map((d,i)=>{
             // console.log(d);

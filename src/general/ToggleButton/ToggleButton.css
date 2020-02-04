@@ -3,17 +3,33 @@
   display : flex;
   justify-content : center;
   align-items : center;
-  border-right : solid;
+  cursor : pointer;
 }
 
 .toggle-button-up {
   color : black;
-  background-color : white;  
+  background-color : white;
   border-right-color : black;
+  cursor : pointer;
 }
 
 .toggle-button-down {
   color : white;
   background-color : black;
   border-right-color : white;
+  cursor : pointer;
+}
+
+.toggle-button-drop-up {
+  color : black;
+  background-color : white;
+  border-bottom : 1px solid black;
+  cursor : pointer;
+}
+
+.toggle-button-drop-down {
+  color : white;
+  background-color : black;
+  border-bottom : 1px solid black;
+  cursor : pointer;
 }

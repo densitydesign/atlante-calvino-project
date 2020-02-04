@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 127.3 53.6" style="enable-background:new 0 0 127.3 53.6;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 91.7 132.2" style="enable-background:new 0 0 91.7 132.2;" xml:space="preserve">
 <style type="text/css">
 	.st0{font-family:'HKGrotesk-Regular';}
-	.st1{font-size:9px;}
+	.st1{font-size:12px;}
 	.st2{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
-	.st3{fill:#FFD93B;stroke:#FFFFFF;stroke-width:0.5;}
+	.st3{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
 	.st4{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st5{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st5{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
 	.st6{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
+	.st7{fill:none;}
 </style>
-<g id="Group_260" transform="translate(-1.034 -0.65)">
-	<text transform="matrix(1 0 0 1 94.5962 11.1949)" class="st0 st1">Sintagmi</text>
-	<text transform="matrix(1 0 0 1 18.0792 11.1949)" class="st0 st1">Misto</text>
-	<path id="Oval" class="st2" d="M7.8,2.7c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2l0,0
-		C1.6,5.5,4.4,2.7,7.8,2.7z"/>
-	<path id="Oval-2" class="st3" d="M84.3,2.7c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2c0,0,0,0,0,0l0,0
-		C78.1,5.5,80.9,2.7,84.3,2.7z"/>
-	<text transform="matrix(1 0 0 1 18.0792 30.1949)" class="st0 st1">Parole</text>
-	<text transform="matrix(1 0 0 1 18.0792 49.1949)" class="st0 st1">Senza elenco</text>
-	<text transform="matrix(1 0 0 1 94.5962 30.1949)" class="st0 st1">Frasi</text>
-	<circle id="Oval-5" class="st4" cx="84.3" cy="27.9" r="6.2"/>
-	<circle id="Oval-6" class="st5" cx="7.8" cy="27.9" r="6.2"/>
-	<circle id="Oval-6-2" class="st6" cx="7.8" cy="46.9" r="6.2"/>
+<g id="Layer_1">
+</g>
+<g id="elenchi_1">
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 23.7188 10.1394)" class="st0 st1">Misto</text>
+			<path id="Oval_11_" class="st2" d="M6.5,0.4c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2s-6.2-2.7-6.2-6.2l0,0C0.3,3.2,3,0.5,6.5,0.4
+				z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 23.7188 33.8804)" class="st0 st1">Parole</text>
+			<path id="Oval-2_9_" class="st3" d="M6.5,24.1c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2s-6.2-2.8-6.2-6.2l0,0l0,0
+				C0.3,26.9,3,24.2,6.5,24.1z"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 23.7188 81.362)" class="st0 st1">Frasi</text>
+			<circle id="Oval-5_8_" class="st4" cx="6.5" cy="77.8" r="6.2"/>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 23.7188 57.6212)" class="st0 st1">Sintagmi</text>
+			<circle id="Oval-6_9_" class="st5" cx="6.5" cy="54.1" r="6.2"/>
+		</g>
+		<g>
+			<circle id="Oval-3_6_" class="st6" cx="6.5" cy="101.5" r="6.2"/>
+			<text transform="matrix(1 0 0 1 23.7188 105.1027)" class="st0 st1">Senza elenco</text>
+		</g>
+		<rect y="0" class="st7" width="91.7" height="132"/>
+		<rect y="0.2" class="st7" width="91.7" height="132"/>
+	</g>
 </g>
 </svg>

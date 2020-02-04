@@ -1,8 +1,30 @@
 
 .radio-button-up {
   background-color : white;
+  padding:0.6em;
+  width:100%;
+  display: flex;
+  border: 1px solid;
+  text-align: center !important;
+  cursor : pointer;
 }
 
 .radio-button-down {
-  background-color : black;
+  text-align: center !important;
+  background-color: black;
+  color:white;
+  padding:0.6em;
+  width:100%;
+  display: flex;
+  cursor : pointer;
+}
+
+.radio-button-drop-up {
+  background-color : white;
+  padding:0.6em;
+  width:100%;
+  display: flex;
+  border-top: 1px solid;
+  text-align: center !important;
+  cursor : pointer;
 }

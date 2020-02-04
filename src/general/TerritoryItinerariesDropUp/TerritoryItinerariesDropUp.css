@@ -1,0 +1,35 @@
+/*
+.territory-itineraries-drop-up {
+  background-color : white;
+  outline: 1px solid black;
+  position : fixed;
+  bottom: var(--navigation-height);
+  width : 33%;
+  height: calc(var(--navigation-height)*3);
+  z-index : 2;
+  display : grid;
+}
+
+.territory-itineraries-drop-up-button-grid {
+  display : grid;
+  grid-column : 1 / span 3;
+  border-right : 1px solid black;
+  font-size : 1.3em;
+  text-align : center;
+}
+*/
+
+.territory-itineraries-drop-up {
+  background-color : white;
+/*  outline: 1px solid black; */
+  position : fixed;
+  bottom: var(--navigation-height);
+  width : 33.33%;
+  height: calc(var(--navigation-height)*3);
+  z-index : 20;
+  display : grid;
+  grid-column : 1 / span 3;
+  border-right : 1px solid black;
+  font-size : 1.3em;
+  text-align : center;
+}

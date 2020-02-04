@@ -1,9 +1,12 @@
 
 import React from 'react';
 
+import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritoryShapeMainOptionsSubPanel from '../TerritoryShapeMainOptionsSubPanel/TerritoryShapeMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
+
+import './TerritoryShapePanel.css';
 
 export default class TerritoryShapePanel extends React.Component
 {
@@ -14,14 +17,14 @@ export default class TerritoryShapePanel extends React.Component
   proportionRadioButtonCaption = "%";
 
   optionRadioButtonsMap = new Map([
-    [ this.typesRadioButtonId,          { analysisMode : GlobalData.analysisModes.shape.types,          shapePanelMode : GlobalData.analysisPanelModes.shape.types } ],
-    [ this.proportionRadioButtonId,     { analysisMode : GlobalData.analysisModes.shape.proportion,     shapePanelMode : GlobalData.analysisPanelModes.shape.proportion } ]
+    [ this.typesRadioButtonId,      { analysisMode : GlobalData.analysisModes.shape.types,      shapePanelMode : GlobalData.analysisPanelModes.shape.types } ],
+    [ this.proportionRadioButtonId, { analysisMode : GlobalData.analysisModes.shape.proportion, shapePanelMode : GlobalData.analysisPanelModes.shape.proportion } ]
   ]);
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.typesRadioButtonId,        pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.typesRadioButtonId).shapePanelMode },
-      { id : this.proportionRadioButtonId,   pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).shapePanelMode }
+      { id : this.typesRadioButtonId,      pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.typesRadioButtonId).shapePanelMode },
+      { id : this.proportionRadioButtonId, pressed : this.props.shapePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).shapePanelMode }
     ]
   };
 
@@ -42,21 +45,41 @@ export default class TerritoryShapePanel extends React.Component
 
     const value = this.optionRadioButtonsMap.get(buttonId);
     this.props.callTerritorySetHighlightMode(value.analysisMode);
-    this.props.containerSetShapePanelMode(value.doubtPanelMode);
+    this.props.containerSetShapePanelMode(value.shapePanelMode);
   };
 
   render()
   {
+const pressed = this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed;
+console.log("pressed", pressed);
+
     return (
+      <>
+
+      <TerritoryDescriptionSubPanel
+        title="L'ORGANIZZAZIONE DELLE FORME"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+        informationSheetRoute="/Phenomena/territory/shapeAnalysis/informationSheet"
+        informationSheetDescription="SCHEDA"
+        itineraryStop2Route="/Process/combining"
+        itineraryStop2Description="TAPPA 2"
+        itineraryStop3Route="/Problem/plot"
+        itineraryStop3Description="TAPPA 3"
+      />
+
       <div className="territory-shape-panel">
-        <div></div>
-        <TerritoryShapeMainOptionsSubPanel 
+
+        <TerritoryShapeMainOptionsSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           typesRadioButtonId={this.typesRadioButtonId}
           typesRadioButtonCaption={this.typesRadioButtonCaption}
           typesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.typesRadioButtonId).pressed}
         />
+      </div>
+
+      <div className="territory-percentage-panel">
+
         <TerritoryPercentageSubPanel
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
@@ -64,7 +87,10 @@ export default class TerritoryShapePanel extends React.Component
           percentageRadioButtonCaption={this.proportionRadioButtonCaption}
           percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed}
         />
+
       </div>
+
+      </>
     );
   }
 }

@@ -64,7 +64,7 @@ export default class AboutAndContacts extends React.Component
             <address>
               <ul>
                 <li>Mail: <a href="mailto:atlantecalvino@unige.ch">atlantecalvino@unige.ch</a></li>
-                <li>Twitter: <a href="https://twitter.com/intent/tweet?screen_name=AtlanteCalvino&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">@AtlanteCalvino</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+                <li>Twitter: <a href="https://twitter.com/intent/tweet?screen_name=AtlanteCalvino&ref_src=twsrc%5Etfw" className="twitter-mention-button" data-show-count="false">@AtlanteCalvino</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
               </ul>
             </address>
           </div>

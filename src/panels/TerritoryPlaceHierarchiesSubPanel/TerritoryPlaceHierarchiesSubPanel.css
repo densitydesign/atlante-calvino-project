@@ -1,0 +1,17 @@
+.territory-percentage-panel {
+  grid-column: 18 / span 7;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2em;
+}
+
+.categories-panel {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.categories-panel * {
+  padding-right: 1.2em;
+}

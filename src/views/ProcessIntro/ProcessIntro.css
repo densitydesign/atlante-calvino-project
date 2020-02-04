@@ -22,8 +22,10 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 0em 0em 2em 8em;
+    padding: 2em 4em 4em 0em;;
   grid-column-gap: 4em;
+  border-right:var(--app-border);
+
 }
 
 .other-phases-subheader {
@@ -41,6 +43,15 @@
   position:fixed;
 }
 
+.category-entry-block {
+  grid-template-rows : 1fr 1fr 1fr;
+  grid-template-columns : 2fr;
+  max-width: 100%;
+  padding: 2em 4em 4em 0em;
+  border-right:var(--app-border);
+
+}
+
 .title-category{
-  margin-top:1em;
+  margin-top:0.5em;
 }

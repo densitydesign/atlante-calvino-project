@@ -4,10 +4,13 @@ import * as d3 from 'd3';
 
 import Territory from './Territory';
 import TerritoryHeader from '../../headers/TerritoryHeader/TerritoryHeader';
+import TerritoryNoAnalysisDropDown from '../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown';
 import TerritoryBottomPanel from '../../panels/TerritoryBottomPanel/TerritoryBottomPanel';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
+import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
+import PageTitle from "../../general/PageTitle";
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -19,16 +22,19 @@ export default class TerritoryWrapper extends React.Component
     data : "data still not loaded",
     isLoading : true,
 
-    bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis,
-    doubtPanelMode : GlobalData.analysisPanelModes.doubt.fog,
-    shapePanelMode : GlobalData.analysisPanelModes.shape.types,
-    spacePanelMode : GlobalData.analysisPanelModes.space.genericNonTerrestrial,
-    
-    mainAnalysisMode : GlobalData.analysisModes.noAnalysis,
-    noAnalysisMode : GlobalData.analysisModes.noAnalysis.chronology,
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+    itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
+    bottomPanelMode            : this.props.bottomPanelMode,
+    bottomPanelPosition        : GlobalData.bottomPanelPositions.open,
+    doubtPanelMode             : GlobalData.analysisPanelModes.doubt.fog,
+    spacePanelMode             : GlobalData.analysisPanelModes.space.genericTerrestrial,    
+    shapePanelMode             : GlobalData.analysisPanelModes.shape.types,
+
+    mainAnalysisMode  : this.props.mainAnalysisMode,
+    noAnalysisMode    : GlobalData.analysisModes.noAnalysis.chronology,
     doubtAnalysisMode : GlobalData.analysisModes.doubt.fog,
-    shapeAnalysisMode : GlobalData.analysisModes.shape.types,
-    spaceAnalysisMode : GlobalData.analysisModes.space.genericNonTerrestrial,
+    spaceAnalysisMode : GlobalData.analysisModes.space.genericTerrestrial,
+    shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
     helpSidePanelOpen : false,
 
@@ -49,16 +55,20 @@ export default class TerritoryWrapper extends React.Component
 
         d3.json(process.env.PUBLIC_URL + "/places_hierarchy.json").then(place_hierarchies_json => {
 
-          const place_hierarchies_info = process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map);
+          const place_hierarchies_info = process_place_hierarchies(
+            place_hierarchies_json, 
+            json_nodes, 
+            json_node_map,
+            GlobalData.visualizationColors.territory);
 
           const textsData = getTextsData(json_nodes);
 
           this.setState({
-            data : { 
+            data : {
               json_nodes : json_nodes,
               json_node_map : json_node_map,
-              x_csv2 : x_csv2, 
-              textsData : textsData, 
+              x_csv2 : x_csv2,
+              textsData : textsData,
               place_hierarchies_info : place_hierarchies_info
             },
             isLoading : false
@@ -74,105 +84,184 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritorySetHighlightMode = callback => this.territorySetHighlightMode = callback;
-  callTerritorySetHighlightMode = value => {
-console.log("callTerritorySetHighlightMode");
-console.log("value", value);
+  callTerritorySetHighlightMode = value => 
+  {
     switch(value)
     {
-      case GlobalData.analysisModes.noAnalysis.chronology       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.noAnalysis.volumes          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.fog                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.cancellation          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.all                   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.doubt.percentage            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.shape.types                 : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericNonTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedNonTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.genericTerrestrial    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.namedTerrestrial      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.invented              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.noSetting             : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
-      case GlobalData.analysisModes.space.proportion            : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
-      case GlobalData.analysisModes.space.placeHierarchies      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.chronology    : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.noAnalysis.volumes       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.noAnalysis, noAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.fog                : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.cancellation       : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.all                : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.doubt.percentage         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.doubt,   doubtAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.proportion         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.shape.types              : this.setState({ mainAnalysisMode : GlobalData.analysisModes.shape,   shapeAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericCosmic      : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedCosmic        : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.genericTerrestrial : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.namedTerrestrial   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.invented           : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.noSetting          : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
+      case GlobalData.analysisModes.space.proportion         : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break
+      case GlobalData.analysisModes.space.placeHierarchies   : this.setState({ mainAnalysisMode : GlobalData.analysisModes.space,   spaceAnalysisMode : value }); break;
 
       default : throw new Error("error : analysis mode " + value + " not recognized");
-    }    
+    }
 
     this.territorySetHighlightMode(value);
   }
 
   setMainAnalysisMode = value => {
-console.log("-------------------");
-console.log("setMainAnalysisMode");
-console.log("value", value); 
-console.log("this.state", this.state);
     switch(value)
     {
       case GlobalData.analysisModes.noAnalysis : this.callTerritorySetHighlightMode(this.state.noAnalysisMode); break;
       case GlobalData.analysisModes.doubt      : this.callTerritorySetHighlightMode(this.state.doubtAnalysisMode); break;
       case GlobalData.analysisModes.shape      : this.callTerritorySetHighlightMode(this.state.shapeAnalysisMode); break;
       case GlobalData.analysisModes.space      : this.callTerritorySetHighlightMode(this.state.spaceAnalysisMode); break;
+
       default : throw new Error("setMainAnalysisMode : mainAnalysisMode not recognized");
     }
+  }
+
+  territorySvgClicked = () => {
+    this.setState({
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
   }
 
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
   callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
 
+  toggleNoAnalysisDropDownPosition = () =>
+  {
+    const newValue =
+      this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open ?
+      GlobalData.noAnalysisDropDownPositions.closed :
+      GlobalData.noAnalysisDropDownPositions.open;
+
+    this.setState({ 
+      noAnalysisDropDownPosition : newValue, 
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
+  }
+
+  setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
+
+  containerSetNoAnalysisDropDownRadioButtonPressed = callback => this.noAnalysisDropDownRadioButtonPressed = callback;
+  callNoAnalysisDropDownRadioButtonPressed = buttonId => this.noAnalysisDropDownRadioButtonPressed(buttonId);
+
   containerSetTerritorySetDataExtent = callback => this.territorySetDataExtent = callback;
   callTerritorySetDataExtent = extent => {
-//console.log("extent", extent);
-//const extent2 = extent.map(d => Math.floor(d));
-//console.log("extent2",extent2);
     this.setState({ dataExtent : extent });
     this.territorySetDataExtent(extent);
   }
 
   containerSetTerritoryApplyBeeSwarmFilter = callback => this.territoryApplyBeeSwarmFilter = callback;
-  callTerritoryApplyBeeSwarmFilter = () => this.territoryApplyBeeSwarmFilter();
+  callTerritoryApplyBeeSwarmFilter = () => {
+
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });    
+
+    this.territoryApplyBeeSwarmFilter();
+  }
 
   containerSetTerritoryApplySearchFilterByInputText = callback => this.territoryApplySearchFilterByInputText = callback;
-  callTerritoryApplySearchFilterByInputText = input => this.territoryApplySearchFilterByInputText(input);
+  callTerritoryApplySearchFilterByInputText = input => {
+
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
+
+    this.territoryApplySearchFilterByInputText(input);
+  }
 
   containerSetTerritoryApplySearchFilterBySearchResults = callback => this.territoryApplySearchFilterBySearchResults = callback;
-  callTerritoryApplySearchFilterBySearchResults = input => this.territoryApplySearchFilterBySearchResults(input);
+  callTerritoryApplySearchFilterBySearchResults = (mustReset, searchResults) => {
 
-  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
+    this.setState({ 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+    });
 
-  setBottomPanelMode = value => {
-    this.setState({ bottomPanelMode : value });
-/*
-    switch(value)
-    {
-      case GlobalData.bottomPanelModes.noAnalysis : this.territorySetHighlightMode(this.state.noAnalysisMode); break;
-      case GlobalData.bottomPanelModes.doubt      : this.territorySetHighlightMode(this.state.doubtAnalysisMode); break;
-      case GlobalData.bottomPanelModes.shape      : this.territorySetHighlightMode(this.state.shapeAnalysisMode); break;
-      case GlobalData.bottomPanelModes.space    : this.territorySetHighlightMode(this.state.spaceAnalysisMode); break;
-      case GlobalData.bottomPanelModes.chronologicalFilter : break;
-      case GlobalData.bottomPanelModes.legend : break;
-      default : break;
-    }
-*/
-  };
+    this.territoryApplySearchFilterBySearchResults(mustReset, searchResults);
+  }
+
+//  callTerritorySetHillColoringMode = value => this.territorySetHighlightMode(value);
+
+
+  setBottomPanelMode = value => this.setState({ 
+    bottomPanelMode : value,
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+  });    
+
+  toggleBottomPanelPosition = () => 
+  {
+    const newValue = 
+      this.state.bottomPanelPosition === GlobalData.bottomPanelPositions.open ?
+      GlobalData.bottomPanelPositions.closed :
+      GlobalData.bottomPanelPositions.open;
+
+    this.setState({ 
+      bottomPanelPosition : newValue,
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+    });
+  }
+
+  setBottomPanelPosition = value => this.setState({ bottomPanelPosition : value });
+
+  containerSetItineraryDropUpRadioButtonPressed = callback => this.itineraryDropUpRadioButtonPressed = callback;
+  callItineraryDropUpRadioButtonPressed = buttonId => this.itineraryDropUpRadioButtonPressed(buttonId);
+
+  toggleItineraryDropUpPosition = () =>
+  {
+    const newValue =
+      this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
+      GlobalData.itineraryDropUpPositions.closed :
+      GlobalData.itineraryDropUpPositions.open;    
+
+    this.setState({ 
+      itineraryDropUpPosition : newValue, 
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+    });
+  }
+
+  setItineraryDropUpPosition = value => this.setState({ itineraryDropUpPosition : value });
 
   setDoubtPanelMode = value => this.setState({ doubtPanelMode : value });
   setShapePanelMode = value => this.setState({ shapePanelMode : value });
   setSpacePanelMode = value => this.setState({ spacePanelMode : value });
 
-  toggleHelpSidePanel = () => this.setState({ helpSidePanelOpen : !this.state.helpSidePanelOpen });
+  toggleHelpSidePanel = () => this.setState({ 
+    noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+    itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
+    helpSidePanelOpen : !this.state.helpSidePanelOpen 
+  });
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
-  render() 
+  render()
   {
-    const helpPage =
-      this.state.mainAnalysisMode === GlobalData.analysisModes.space && 
-      this.state.spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies ? 
-      GlobalData.helpPages.territory.placeHierarchies : 
-      GlobalData.helpPages.territory.main;
+    let helpPage;
 
+    switch(this.state.mainAnalysisMode)
+    {
+      case GlobalData.analysisModes.space      : helpPage = GlobalData.helpPages.territory.space; break;
+      case GlobalData.analysisModes.doubt      : helpPage = GlobalData.helpPages.territory.doubt; break;
+      case GlobalData.analysisModes.shape      : helpPage = GlobalData.helpPages.territory.shape; break;
+      case GlobalData.analysisModes.noAnalysis : helpPage = GlobalData.helpPages.territory.main;  break;
+
+      default:throw new Error("mainAnalysisMode not recognized.");
+    }
+
+
+    
+/* 
     let legendPage;
+
     if(this.state.mainAnalysisMode === GlobalData.analysisModes.noAnalysis)
     {
       switch(this.state.noAnalysisMode)
@@ -192,44 +281,91 @@ console.log("this.state", this.state);
         default : throw new Error("mainAnalysisMode not recognized.");
       }
     }
+*/
+
+    const legendPage = selectLegendPage(
+      this.state.mainAnalysisMode,
+      this.state.noAnalysisMode,
+      this.state.doubtAnalysisMode,
+      this.state.shapeAnalysisMode,
+      this.state.spaceAnalysisMode);
+
+    let analysisMode;
+
+    switch(this.state.mainAnalysisMode)
+    {
+      case GlobalData.analysisModes.noAnalysis : analysisMode = this.state.noAnalysisMode;    break;
+      case GlobalData.analysisModes.doubt      : analysisMode = this.state.doubtAnalysisMode; break;
+      case GlobalData.analysisModes.space      : analysisMode = this.state.spaceAnalysisMode; break;
+      case GlobalData.analysisModes.shape      : analysisMode = this.state.shapeAnalysisMode; break;
+
+      default : throw new Error("mainAnalysisMode not recognized : " + this.state.mainAnalysisMode);
+    }
 
     return (
       <div className="main">
 
-        <HelpSidePanel 
-          open={this.state.helpSidePanelOpen} 
-          page={helpPage}          
+        <HelpSidePanel
+          open={this.state.helpSidePanelOpen}
+          page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
-
-        {!this.state.isLoading && 
 
         <>
 
-        <TerritoryHeader 
+        <TerritoryHeader
+          isLoading={this.state.isLoading}
+          mainAnalysisMode={this.state.mainAnalysisMode}
+          noAnalysisMode={this.state.noAnalysisMode}
           textsData={this.state.data.textsData}
           callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
           callTerritoryApplySearchFilterByInputText={this.callTerritoryApplySearchFilterByInputText}
           callTerritoryApplySearchFilterBySearchResults={this.callTerritoryApplySearchFilterBySearchResults}
           helpButtonClicked={this.toggleHelpSidePanel}
+          toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
+          containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
         />
+
+        {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&
+        <TerritoryNoAnalysisDropDown
+          mainAnalysisMode={this.state.mainAnalysisMode}
+          noAnalysisMode={this.state.noAnalysisMode}
+          callStateContainerToggleButtonPressed={this.callNoAnalysisDropDownRadioButtonPressed}
+        />
+        }
 
         <div className="territory-body">
 
-              <Territory 
-                data={this.state.data} 
-                containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode} 
+        {!this.state.isLoading &&          
+
+              <Territory
+                analysisMode = {analysisMode}
+                data={this.state.data}
+                colors={GlobalData.visualizationColors.territory}
+                containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
                 containerSetTerritoryApplyBeeSwarmFilter={this.containerSetTerritoryApplyBeeSwarmFilter}
                 containerSetTerritoryApplySearchFilterByInputText={this.containerSetTerritoryApplySearchFilterByInputText}
                 containerSetTerritoryApplySearchFilterBySearchResults={this.containerSetTerritoryApplySearchFilterBySearchResults}
-              /> 
+                containerOnSvgClicked={this.territorySvgClicked}
+              />
+
+        }
+
+              {this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open &&
+
+              <TerritoryItinerariesDropUp
+                callStateContainerRadioButtonPressed={this.callItineraryDropUpRadioButtonPressed}
+              />
+
+              }
 
               {this.state.bottomPanelMode !== GlobalData.bottomPanelModes.noAnalysis &&
 
-              <TerritoryBottomPanel 
+              <TerritoryBottomPanel
 
                 bottomPanelMode={this.state.bottomPanelMode}
+                bottomPanelPosition={this.state.bottomPanelPosition}
                 containerSetBottomPanelMode={this.setBottomPanelMode}
 
                 doubtPanelMode={this.state.doubtPanelMode}
@@ -250,14 +386,14 @@ console.log("this.state", this.state);
 
                 data={this.state.data}
                 dataExtent={this.state.dataExtent}
-                                
+
                 setMainAnalysisMode={this.setMainAnalysisMode}
                 callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
                 callTerritoryShowHills={this.callTerritoryShowHills}
                 callTerritorySetDataExtent={this.callTerritorySetDataExtent}
                 callTerritoryApplyBeeSwarmFilter={this.callTerritoryApplyBeeSwarmFilter}
                 onCloseButtonClicked={this.onBottomPanelCloseButtonClicked}
-              />            
+              />
               }
 
      {/*     <TerritoryStepsPanel callTerritorySetHighlightMode={this.callTerritorySetHighlightMode} /> */}
@@ -266,13 +402,19 @@ console.log("this.state", this.state);
 
         </>
 
-        }
+        
 
         <TerritoryFooter
+          mainAnalysisMode={this.state.mainAnalysisMode}
           bottomPanelMode={this.state.bottomPanelMode}
           dataExtent={this.state.dataExtent}
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}
+          toggleBottomPanelPosition={this.toggleBottomPanelPosition}
+          setBottomPanelPosition={this.setBottomPanelPosition}
+          toggleItineraryDropUpPosition={this.toggleItineraryDropUpPosition}
+          setItineraryDropUpPosition={this.setItineraryDropUpPosition}
+          containerSetItineraryDropUpRadioButtonPressed={this.containerSetItineraryDropUpRadioButtonPressed}
         />
 
       </div>
@@ -280,7 +422,97 @@ console.log("this.state", this.state);
   }
 }
 
-function interpolateSpline(x) 
+function selectLegendPage(
+  mainAnalysisMode, 
+  noAnalysisMode,
+  doubtAnalysisMode,
+  shapeAnalysisMode,
+  spaceAnalysisMode)
+{
+  let legendPage;
+
+  switch(true)
+  {
+    case 
+      mainAnalysisMode === GlobalData.analysisModes.noAnalysis &&
+      noAnalysisMode   === GlobalData.analysisModes.noAnalysis.chronology :
+
+      legendPage = GlobalData.legendPages.territory.chronology;
+      break;
+
+    case 
+      mainAnalysisMode === GlobalData.analysisModes.noAnalysis &&
+      noAnalysisMode   === GlobalData.analysisModes.noAnalysis.volumes :
+
+      legendPage = GlobalData.legendPages.territory.volumes;
+      break;
+
+    case mainAnalysisMode === GlobalData.analysisModes.doubt && 
+      [
+        GlobalData.analysisModes.doubt.fog,
+        GlobalData.analysisModes.doubt.cancellation,
+        GlobalData.analysisModes.doubt.all
+      ].includes(doubtAnalysisMode) : 
+      
+      legendPage = GlobalData.legendPages.territory.doubtOccurrences; 
+      break;
+
+    case 
+      mainAnalysisMode  === GlobalData.analysisModes.doubt &&
+      doubtAnalysisMode === GlobalData.analysisModes.doubt.percentage : 
+
+      legendPage = GlobalData.legendPages.territory.doubtProportion;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.shape &&
+      shapeAnalysisMode === GlobalData.analysisModes.shape.types :
+
+      legendPage = GlobalData.legendPages.territory.shapeProportion1;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.shape &&
+      shapeAnalysisMode === GlobalData.analysisModes.shape.proportion :
+
+      legendPage = GlobalData.legendPages.territory.shapeProportion2;
+      break;
+    
+    case
+      mainAnalysisMode === GlobalData.analysisModes.space &&
+      [
+        GlobalData.analysisModes.space.genericCosmic,
+        GlobalData.analysisModes.space.namedCosmic,
+        GlobalData.analysisModes.space.genericTerrestrial,
+        GlobalData.analysisModes.space.namedTerrestrial,
+        GlobalData.analysisModes.space.invented,
+        GlobalData.analysisModes.space.noSetting,
+      ].includes(spaceAnalysisMode) :
+
+      legendPage = GlobalData.legendPages.territory.spaceOccurrences;
+      break;
+
+    case 
+      mainAnalysisMode  === GlobalData.analysisModes.space &&
+      spaceAnalysisMode === GlobalData.analysisModes.space.proportion :
+
+      legendPage = GlobalData.legendPages.territory.spaceProportion;
+      break;
+
+    case
+      mainAnalysisMode  === GlobalData.analysisModes.space &&
+      spaceAnalysisMode === GlobalData.analysisModes.space.placeHierarchies :
+
+      legendPage = GlobalData.legendPages.territory.spaceHierarchies;
+      break;
+
+    default : throw new Error("legend - analysis mode not mapped");
+  }
+  
+  return legendPage;
+}
+
+function interpolateSpline(x)
 {
 	let y;
 
@@ -339,7 +571,7 @@ function process_json_nodes(all_json_nodes, x_csv2)
     });
 
   // sort json_nodes so to have the upper in the background and not covering the ones in the foreground
-  json_nodes = json_nodes.sort((a, b) => a.y - b.y);      
+  json_nodes = json_nodes.sort((a, b) => a.y - b.y);
 
   const json_nodes_size_extent = d3.extent(all_json_nodes, d => d.size);
   const json_nodes_min_size = json_nodes_size_extent[0] / 8;
@@ -349,7 +581,7 @@ function process_json_nodes(all_json_nodes, x_csv2)
   return json_nodes;
 }
 
-function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map)
+function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node_map, colors)
 {
   const place_hierarchies = new Map();
   const place_hierarchy_node_info_map = new Map();
@@ -366,7 +598,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 
       const radiusScaleFactor = j.steps[0].r / 30;
 
-      place_hierarchies.set(d.caption, prepare_jellyfish_data(d, center, radiusScaleFactor));
+      place_hierarchies.set(d.caption, prepare_jellyfish_data(d, center, radiusScaleFactor, GlobalData.visualizationColors.territory));
 
       visit(d, {}, (jn, status) => place_hierarchy_node_info_map.set(jn.node_id, {}));
     }
@@ -388,7 +620,13 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 		const place_hierarchy = place_hierarchies.get(d.caption);
 		if(place_hierarchy)
 		{
-			draw_jellyfish(d.graphical_ops, place_hierarchy, place_hierarchy.circle_position, place_hierarchy.caption, json_node_map);
+			draw_jellyfish(
+        d.graphical_ops, 
+        place_hierarchy, 
+        place_hierarchy.circle_position, 
+        place_hierarchy.caption, 
+        json_node_map, 
+        colors);
 
 			place_hierarchies_graphics_item_map.set(d.caption, d);
 		}
@@ -420,7 +658,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 			});
 //			d.r = jn.steps[0].r;
 		}
-	});  
+	});
 
   const place_hierarchies_info = {
     place_hierarchies                   : place_hierarchies,
@@ -433,7 +671,7 @@ function process_place_hierarchies(place_hierarchies_json, json_nodes, json_node
 }
 
 function getTextsData(json_nodes)
-{  
+{
   const collectionMap = new Map();
 
   GlobalData.collections.forEach(coll => collectionMap.set(coll.id, coll.n));
@@ -470,17 +708,21 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
     d.steps.push(new_step_size);
   }
 
+  const step_increment = -23;
+
   // get colors
   d.steps = d.steps.map((s, i) => {
 
     // assign to each step a collection
-    let pos_1 = i / d.steps.length;
-    let pos_2 = pos_1 * d.attributes.collections.length;
-    let collection_here = d.attributes.collections[Math.floor(pos_2)];
-    let first_elem = (i === (d.steps.length - 1));
-    let last_elem = (i === 0);
-    let n_steps = d.steps.length;
-    let csv_item = x_csv2[d.id];
+    const pos_1 = i / d.steps.length;
+    const pos_2 = pos_1 * d.attributes.collections.length;
+    const collection_here = d.attributes.collections[Math.floor(pos_2)];
+    const first_elem = (i === (d.steps.length - 1));
+    const last_elem = (i === 0);
+    const n_steps = d.steps.length;
+    const csv_item = x_csv2[d.id];
+    const step_index = n_steps - i - 1;
+    const step_y = step_index * step_increment;
 
     return {
       'r': s,
@@ -490,10 +732,12 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'first_elem': first_elem,
       'last_elem': last_elem,
       'n_steps': n_steps,
+      'step_index': step_index,
+      'step_y': step_y,
 
-      'generico_non_terrestre': csv_item === undefined ? 0 : csv_item.generico_non_terrestre,
-      'generico_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_non_terrestre_abs,
-      'n_generico_non_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_non_terrestre,
+      'generico_cosmico': csv_item === undefined ? 0 : csv_item.generico_cosmico,
+      'generico_cosmico_abs': csv_item === undefined ? 0 : csv_item.generico_cosmico_abs,
+      'n_generico_cosmico': csv_item === undefined ? 0 : csv_item.n_generico_cosmico,
 
       'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
       'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
@@ -507,9 +751,9 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
-      'nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre,
-      'nominato_non_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_non_terrestre_abs,
-      'n_nominato_non_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_non_terrestre,
+      'nominato_cosmico': csv_item === undefined ? 0 : csv_item.nominato_cosmico,
+      'nominato_cosmico_abs': csv_item === undefined ? 0 : csv_item.nominato_cosmico_abs,
+      'n_nominato_cosmico': csv_item === undefined ? 0 : csv_item.n_nominato_cosmico,
 
       'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
       'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
@@ -546,10 +790,10 @@ function map_item_data(map, obj)
 {
   map[obj.id] = calculate_item_data(obj);
 
-  return map;    
+  return map;
 };
 
-function calculate_item_data(obj) 
+function calculate_item_data(obj)
 {
   const lists_sum = (+obj.n_lists_f) + (+obj.n_lists_m) + (+obj.n_lists_p) + (+obj.n_lists_s);
   const text_length = +obj.text_length;
@@ -557,27 +801,27 @@ function calculate_item_data(obj)
   const lists_ratio = lists_sum / text_length;
 
   let item_data = {
-    generico_non_terrestre: (+obj.generico_non_terrestre),
-    generico_non_terrestre_abs: +obj.generico_non_terrestre,
-    n_generico_non_terrestre: +obj.n_generico_non_terrestre,
+    generico_cosmico: (+obj.generico_cosmico),
+    generico_cosmico_abs: +obj.generico_cosmico,
+    n_generico_cosmico: +obj.n_generico_cosmico,
 
-    generico_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre),
+    generico_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre),
     generico_terrestre_abs: +obj.generico_terrestre,
     n_generico_terrestre: +obj.n_generico_terrestre,
 
-    inventato: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato),
+    inventato: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato),
     inventato_abs: +obj.inventato,
     n_inventato: +obj.n_inventato,
 
-    no_ambientazione: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
+    no_ambientazione: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
     no_ambientazione_abs: +obj.no_ambientazione,
     n_no_ambientazione: +obj.n_no_ambientazione,
 
-    nominato_non_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_non_terrestre),
-    nominato_non_terrestre_abs: +obj.nominato_non_terrestre,
-    n_nominato_non_terrestre: +obj.n_nominato_non_terrestre,
+    nominato_cosmico: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico),
+    nominato_cosmico_abs: +obj.nominato_cosmico,
+    n_nominato_cosmico: +obj.n_nominato_cosmico,
 
-    nominato_terrestre: (+obj.generico_non_terrestre) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_non_terrestre) + (+obj.nominato_terrestre),
+    nominato_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico) + (+obj.nominato_terrestre),
     nominato_terrestre_abs: +obj.nominato_terrestre,
     n_nominato_terrestre: +obj.n_nominato_terrestre,
 
@@ -618,7 +862,7 @@ function calculate_item_data(obj)
   return item_data;
 }
 
-function array_intersection(a1, a2) 
+function array_intersection(a1, a2)
 {
 	let result = [];
 

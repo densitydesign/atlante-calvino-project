@@ -1,24 +1,15 @@
 
 import React from 'react';
-import V from './logo.js';
+
 import * as d3 from 'd3';
-import AnimatedLogo from './AnimatedLogo';
+
+import V from './splashScreen.d3';
 
 import '../../App.css';
 import './SplashScreen.css';
 
 export default class SplashScreen extends React.Component
 {
-  constructor(props)
-  {
-    super(props);
-    this.loadData = this.loadData.bind(this);
-    this.state = {
-      data : "data still not loaded",
-      isLoading : true
-    };
-  }
-
   loadData()
   {
     d3
@@ -35,7 +26,16 @@ export default class SplashScreen extends React.Component
   componentDidMount()
   {
     this.loadData();
+
+    V.initialize(this._rootNode);
   }
+  
+  componentWillUnmount()
+  {
+    V.destroy(this._rootNode);
+  }
+
+  _setRef = componentNode => this._rootNode = componentNode;
 
   render()
   {
@@ -52,7 +52,7 @@ export default class SplashScreen extends React.Component
       </section>
     );
 */
-
+/*
 console.log("this.state.data.documentElement", this.state.data.documentElement);
 //const s = new XMLSerializer().serializeToString(this.state.data.documentElement);
 //const s = this.state.data.documentElement.toString();
@@ -68,6 +68,10 @@ console.log("this.state.data.documentElement", this.state.data.documentElement);
         </section>
       </section>
     );
+*/
 
+    const style = { width : "100vh", height : "80vh", marginLeft : "30vh", flexGrow : 1, enableBackground : "new 0 0 324.8 150"};
+
+    return <svg id={this.props.id} style={style} ref={this._setRef} viewBox="0 0 324.8 150"></svg>;
   }
 }

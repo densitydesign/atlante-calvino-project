@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import TerritoryDescriptionSubPanel from '../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel';
 import TerritoryDoubtMainOptionsSubPanel from '../TerritoryDoubtMainOptionsSubPanel/TerritoryDoubtMainOptionsSubPanel';
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
@@ -60,31 +61,48 @@ export default class TerritoryDoubtPanel extends React.Component
   render()
   {
     return (
-      <div className="territory-doubt-panel">
-        <div></div>
-        <TerritoryDoubtMainOptionsSubPanel 
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
-
-          fogRadioButtonId={this.fogRadioButtonId}
-          fogRadioButtonCaption={this.fogRadioButtonCaption}
-          fogRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.fogRadioButtonId).pressed}
-
-          cancellationRadioButtonId={this.cancellationRadioButtonId}
-          cancellationRadioButtonCaption={this.cancellationRadioButtonCaption}
-          cancellationRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.cancellationRadioButtonId).pressed}
-
-          allRadioButtonId={this.allRadioButtonId}
-          allRadioButtonCaption={this.allRadioButtonCaption}
-          allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
+      <>
+        <TerritoryDescriptionSubPanel
+          title="L'ORGANIZZAZIONE DEI DUBBI"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+          informationSheetRoute="/Phenomena/territory/doubtAnalysis/informationSheet"
+          informationSheetDescription="SCHEDA"
+          itineraryStop2Route="/Process/doubting"
+          itineraryStop2Description="TAPPA 2"
+          itineraryStop3Route="/Problem/cancellation"
+          itineraryStop3Description="TAPPA 3"
         />
-        <TerritoryPercentageSubPanel
-          callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
-          percentageRadioButtonId={this.percentageRadioButtonId}
-          percentageRadioButtonCaption={this.percentageRadioButtonCaption}
-          percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
-        />
-      </div>
+        <div className="territory-doubt-panel">
+
+
+          <TerritoryDoubtMainOptionsSubPanel
+            callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+
+            fogRadioButtonId={this.fogRadioButtonId}
+            fogRadioButtonCaption={this.fogRadioButtonCaption}
+            fogRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.fogRadioButtonId).pressed}
+
+            cancellationRadioButtonId={this.cancellationRadioButtonId}
+            cancellationRadioButtonCaption={this.cancellationRadioButtonCaption}
+            cancellationRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.cancellationRadioButtonId).pressed}
+
+            allRadioButtonId={this.allRadioButtonId}
+            allRadioButtonCaption={this.allRadioButtonCaption}
+            allRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.allRadioButtonId).pressed}
+          />
+        </div>
+
+        <div className="territory-percentage-panel">
+          <TerritoryPercentageSubPanel
+            callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
+
+            percentageRadioButtonId={this.percentageRadioButtonId}
+            percentageRadioButtonCaption={this.percentageRadioButtonCaption}
+            percentageRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.percentageRadioButtonId).pressed}
+          />
+        </div>
+      </>
     );
   }
 }

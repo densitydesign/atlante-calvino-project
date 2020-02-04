@@ -1,0 +1,24 @@
+.territory-percentage-panel {
+  grid-column: 18 / span 7;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2em;
+}
+
+.territory-percentage-panel * {
+  width: 50%;
+}
+
+.territory-percentage-panel .radio-button-down, .territory-percentage-panel .radio-button-up {
+  display: grid;
+}
+
+.categories-panel {
+  display: flex;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.categories-panel * {
+  padding-right: 1.2em;
+}

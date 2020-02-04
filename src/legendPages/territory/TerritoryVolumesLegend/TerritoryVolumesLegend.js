@@ -35,8 +35,8 @@ export default class TerritoryVolumesLegend extends React.Component
           <p>
             <img src={process.env.PUBLIC_URL + '/territory-legend-volumes-positioning.svg'} />
           </p>
-        </div>        
-      </> 
+        </div>
+      </>
     );
   }
 }
