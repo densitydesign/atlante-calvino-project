@@ -1955,11 +1955,11 @@ console.log("change_none_to_flat");
     else t1 = t0.transition().duration(700);
 
     // hide old custom drawings
-    t1
-      .selectAll("." + oldHighlightParameters.customElementsClasses)
-      .style('display', "block")
-			.style('fill-opacity', 0)
-			.style('stroke-opacity', 0);    
+//    t1
+//      .selectAll("." + oldHighlightParameters.customElementsClasses)
+//      .style('display', "block")
+//			.style('fill-opacity', 0)
+//			.style('stroke-opacity', 0);    
   }
 
   onFirstElementClicked = d => {
@@ -2386,7 +2386,41 @@ function placesArcFix(d)
   switch(d.id)
   {
     case "V005" : return Math.PI * 1 / 2;
+    case "S012" : return Math.PI * 1 / 2;
+//    case "S032" : return Math.PI * /;
+//    case "S008" : return Math.PI * /;
+//    case "V003" : return Math.PI * /;
+    case "S081" : return Math.PI * 25 / 32;
+//    case "S076" : return Math.PI * /;
+    case "S089" : return Math.PI * 1 / 2;
     case "V008" : return Math.PI * 3 / 4;
+//    case "S149" : return Math.PI * /;
+//    case "S151" : return Math.PI * /;
+//    case "S156" : return Math.PI * /;
+//    case "V021" : return Math.PI * /;
+//    case "S179" : return Math.PI * /;
+//    case "S181" : return Math.PI * /;
+//    case "S203" : return Math.PI * /;
+//    case "S119" : return Math.PI * /;
+//    case "S123" : return Math.PI * /;
+//    case "S142" : return Math.PI * /;
+//    case "S139" : return Math.PI * /;
+//    case "S140" : return Math.PI * /;
+//    case "S095" : return Math.PI * /;
+//    case "S097" : return Math.PI * /;
+//    case "S104" : return Math.PI * /;
+//    case "S050" : return Math.PI * /;
+//    case "S101" : return Math.PI * /;
+//    case "S048" : return Math.PI * /;
+//    case "S088" : return Math.PI * /;
+//    case "S065" : return Math.PI * /;
+//    case "S072" : return Math.PI * /;
+//    case "S067" : return Math.PI * /;
+//    case "S007" : return Math.PI * /;
+//    case "S022" : return Math.PI * /;
+//    case "S041" : return Math.PI * /;
+//    case "S014" : return Math.PI * /;
+
     default : return 0;
   }
 }
