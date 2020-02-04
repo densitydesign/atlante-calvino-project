@@ -274,7 +274,10 @@ class VClass
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
       .attr("first_elem", d => d.first_elem)
-      .attr("r", d => d.r)
+      .attr("r", d => {
+//console.log("d", d);
+        return d.r;
+      })
 	  	.style('fill-opacity', 1e-16)
   		.style('stroke-opacity', 1e-16)
 //		.transition()
@@ -1113,20 +1116,27 @@ class VClass
     }
 
     this.textsData = input_data.textsData;
+console.log("reached point for chronological animation");
 
-    circles
-      .transition()
-  		.duration(700)
+    const tt0 = svg.transition().duration(400);
+
+    const tt1 = tt0.transition();
+    tt1
+      .selectAll(".circle_node")
   		.delay(function(d) { return (d.first_publication - 1940) * 100 })
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);    
+
   };
 
   destroy = () => {};
 
   //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
-  calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
+  calculateHillStepTranslation = d => {
+console.log("calculateHillStepTranslation");    
+    return "translate(0," + d.step_y + ")";
+  }
 
   setColor = color => { 
     d3
@@ -1168,7 +1178,7 @@ class VClass
   };
 */
   set_yRatio = yRatio => {
-
+console.log("set_yRatio");
     tilt = yRatio === 1;
 
     if(tilt)
@@ -1598,7 +1608,9 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters)
   {
-    this.set_yRatio(newHighlightParameters.tilt_factor);
+console.log("change_none_to_hills");
+console.log("calling set_yRatio");    
+//    this.set_yRatio(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
     this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
