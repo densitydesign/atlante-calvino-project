@@ -19,3 +19,17 @@
   border-right-color : white;
   cursor : pointer;
 }
+
+.toggle-button-drop-up {
+  color : black;
+  background-color : white;
+  border-bottom : 1px solid black;
+  cursor : pointer;
+}
+
+.toggle-button-drop-down {
+  color : white;
+  background-color : black;
+  border-bottom : 1px solid black;
+  cursor : pointer;
+}
