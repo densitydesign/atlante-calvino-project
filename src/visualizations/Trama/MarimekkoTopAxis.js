@@ -86,13 +86,13 @@ export default function MarimekkoTopAxis({
           {booksDataWithPositions.map(book => (
             <g key={book.textID} transform={`translate(${book.caratteriX})`}>
               <rect
-                className={styles.topAxisRect}
+                className={book.textID === currentTextID ? styles.topAxisRectEmpty : styles.topAxisRect}
                 width={book.caratteriWidth}
                 height={4}
               ></rect>
               <g transform="translate(2 0)">
                 <text
-                  className={styles.topAxisText}
+                  className={book.textID === currentTextID ?  styles.topAxisTextEmpty : styles.topAxisText }
                   x={5}
                   transform={`rotate(-45)`}
                   onClick={() => {

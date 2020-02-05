@@ -1,6 +1,5 @@
-import sumBy from 'lodash/sumBy'
-import { scaleLinear } from 'd3'
-
+import sumBy from "lodash/sumBy";
+import { scaleLinear } from "d3";
 
 export const levelMaps = {
   uno: 1,
@@ -10,22 +9,17 @@ export const levelMaps = {
   cinque: 5
 };
 
-
+const RIGHT_PADDING = 40
+const RIGHT_PADDING_SAME_WIDTH = 100
 
 export const computeHorizontalPositions = (booksData, width, sameWidth) => {
-  const totalChars = sumBy(booksData, "caratteri");
-  const scaleChars = scaleLinear()
-    .domain([0, totalChars])
-    .range([0, width]);
-
-  if(sameWidth){
-    const bookWidth = width / booksData.length
+  if (sameWidth) {
+    const bookWidth = width / booksData.length;
 
     const scaleSameWith = scaleLinear()
-    .domain([0, booksData.length])
-    .range([0, width]);
+      .domain([0, booksData.length])
+      .range([0, width - RIGHT_PADDING_SAME_WIDTH]);
 
-    console.log("into samewidth!")
     return booksData.reduce((out, item, i) => {
       if (i === 0) {
         out.push({
@@ -45,28 +39,30 @@ export const computeHorizontalPositions = (booksData, width, sameWidth) => {
       }
       return out;
     }, []);
+  } else {
+    const totalChars = sumBy(booksData, "caratteri");
+    const scaleChars = scaleLinear()
+      .domain([0, totalChars])
+      .range([0, width - RIGHT_PADDING]);
 
+    return booksData.reduce((out, item, i) => {
+      if (i === 0) {
+        out.push({
+          ...item,
+          caratteriPos: 0,
+          caratteriX: 0,
+          caratteriWidth: scaleChars(item.caratteri)
+        });
+      } else {
+        const caratteriPos = out[i - 1].caratteriPos + out[i - 1].caratteri;
+        out.push({
+          ...item,
+          caratteriPos,
+          caratteriX: scaleChars(caratteriPos),
+          caratteriWidth: scaleChars(item.caratteri)
+        });
+      }
+      return out;
+    }, []);
   }
-
-  const booksDataAnnotated = booksData.reduce((out, item, i) => {
-    if (i === 0) {
-      out.push({
-        ...item,
-        caratteriPos: 0,
-        caratteriX: 0,
-        caratteriWidth: scaleChars(item.caratteri)
-      });
-    } else {
-      const caratteriPos = out[i - 1].caratteriPos + out[i - 1].caratteri;
-      out.push({
-        ...item,
-        caratteriPos,
-        caratteriX: scaleChars(caratteriPos),
-        caratteriWidth: scaleChars(item.caratteri)
-      });
-    }
-    return out;
-  }, []);
-
-  return booksDataAnnotated;
-}
+};

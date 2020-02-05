@@ -2,10 +2,24 @@
   stroke: #fff;
   stroke-width: 1px;
   fill: #000;
+  transition: fill 0.5s linear;
+}
+
+.topAxisRectEmpty{
+  stroke: #fff;
+  stroke-width: 1px;
+  fill: #fff;
 }
 
 .topAxisText {
   font-size: 10px;
+  fill: #000;
+  transition: fill 0.5s linear;
+}
+
+.topAxisTextEmpty {
+    font-size: 10px;
+    fill: #fff;
 }
 
 .marimekkoRect {
