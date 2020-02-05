@@ -15,8 +15,8 @@ export default function MarimekkoSlider({
 }) {
   const [ref, { x, y, width, height }] = useDimensions();
 
-  const SLIDER_WIDTH = 50;
-  const CURSOR_HEIGHT = 18;
+  const SLIDER_WIDTH = 30;
+  const CURSOR_HEIGHT = 10;
   const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width])
 
   const yScale = useMemo(() => {
@@ -74,7 +74,8 @@ export default function MarimekkoSlider({
         <>
           <rect
             className={styles.slide}
-            height={height}
+            y={10}
+            height={height - 20}
             width={SLIDER_WIDTH}
             x={sliderX}
           ></rect>
@@ -106,8 +107,8 @@ export default function MarimekkoSlider({
             axis={"y"}
             position={{ x: 0, y: cursorY }}
             bounds={{
-              top: CURSOR_HEIGHT / 2,
-              bottom: height - CURSOR_HEIGHT / 2
+              top: 10,
+              bottom: height - 10
             }}
           >
             <rect
