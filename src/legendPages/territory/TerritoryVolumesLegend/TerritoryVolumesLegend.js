@@ -12,21 +12,21 @@ export default class TerritoryVolumesLegend extends React.Component
         <div className="legend-block">
           <h4>DISPOSIZIONE</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-positioning2.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-positioning.svg'} />
           </p>
         </div>
 
         <div className="legend-block">
           <h4>DIMENSIONE</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione2.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione.svg'} />
           </p>
         </div>
 
         <div className="legend-block">
           <h4>RACCOLTA</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita2.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita.svg'} />
           </p>
         </div>
 
