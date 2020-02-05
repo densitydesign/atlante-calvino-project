@@ -18,8 +18,12 @@
   margin-right: 4rem;
 }
 
+.legend-block h4 {
+  margin-top: 0.5em;
+}
 
 .legend-block img {
+  margin-top: 0.8em;
   height : auto;
-  width : 30%;
+  width : 100%;
 }

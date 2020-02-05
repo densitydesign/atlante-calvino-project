@@ -19,7 +19,7 @@ export default class TerritoryVolumesLegend extends React.Component
         <div className="legend-block">
           <h4>DIMENSIONE</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimension2.svg'} />
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default class TerritoryVolumesLegend extends React.Component
         <div className="legend-block">
           <h4>VOLUMI</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-codice_colori_large2.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-codice_colori_large.svg'} />
           </p>
         </div>
       </>
