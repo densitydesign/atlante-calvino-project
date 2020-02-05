@@ -12,11 +12,41 @@ export const levelMaps = {
 
 
 
-export const computeHorizontalPositions = (booksData, width) => {
+export const computeHorizontalPositions = (booksData, width, sameWidth) => {
   const totalChars = sumBy(booksData, "caratteri");
   const scaleChars = scaleLinear()
     .domain([0, totalChars])
     .range([0, width]);
+
+  if(sameWidth){
+    const bookWidth = width / booksData.length
+
+    const scaleSameWith = scaleLinear()
+    .domain([0, booksData.length])
+    .range([0, width]);
+
+    console.log("into samewidth!")
+    return booksData.reduce((out, item, i) => {
+      if (i === 0) {
+        out.push({
+          ...item,
+          caratteriPos: 0,
+          caratteriX: 0,
+          caratteriWidth: bookWidth
+        });
+      } else {
+        const caratteriPos = out[i - 1].caratteriPos + out[i - 1].caratteri;
+        out.push({
+          ...item,
+          caratteriPos,
+          caratteriX: scaleSameWith(i),
+          caratteriWidth: bookWidth
+        });
+      }
+      return out;
+    }, []);
+
+  }
 
   const booksDataAnnotated = booksData.reduce((out, item, i) => {
     if (i === 0) {
