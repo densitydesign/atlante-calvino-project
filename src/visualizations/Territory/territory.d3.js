@@ -1123,7 +1123,7 @@ console.log("reached point for chronological animation");
     const tt1 = tt0.transition();
     tt1
       .selectAll(".circle_node")
-  		.delay(function(d) { return (d.first_publication - 1940) * 100 })
+  		.delay(function(d) { return (d.first_publication - 1940) * 200 })
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5);    
