@@ -104,6 +104,7 @@ console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
 
         this.props.toggleItineraryDropUpPosition();
         this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+        this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.open);
         this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
 
         break;
