@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useCallback, useState } from "react";
+import React, { useEffect, useMemo, useCallback, useState, useRef } from "react";
 import styles from "./Trama.module.css";
 import useDimensions from "react-use-dimensions";
 import { scaleLinear } from "d3";
@@ -16,8 +16,8 @@ export default function MarimekkoSlider({
   const [ref, { x, y, width, height }] = useDimensions();
 
   const SLIDER_WIDTH = 50;
-  const sliderX = width / 2 - SLIDER_WIDTH / 2;
   const CURSOR_HEIGHT = 18;
+  const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width])
 
   const yScale = useMemo(() => {
     return scaleLinear()
@@ -64,7 +64,9 @@ export default function MarimekkoSlider({
     return currentSequencesSelected && currentSequencesSelected.length;
   }, [currentSequencesSelected]);
 
-  const [dragging, setDragging] = useState(false);
+  
+  const dragging = useRef(0)
+
 
   return (
     <svg className={styles.slider} ref={ref}>
@@ -87,12 +89,12 @@ export default function MarimekkoSlider({
             // allowAnyClick
             onDrag={handleDrag}
             onStart={e => {
-              setDragging(e.timeStamp);
+              dragging.current = e.timeStamp;
             }}
             onStop={e =>
               //
               {
-                if (e.timeStamp - dragging < 200) {
+                if (e.timeStamp - dragging.current < 200) {
                   if (selected) {
                     setCurrentSequencesSelected([]);
                   } else if (currentSequences && currentSequences.length) {

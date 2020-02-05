@@ -36,7 +36,6 @@ function MarimekkoBookIcycle({
       return null;
     }
     const byLevel = groupBy(iceCycleData, x => x.livello);
-
     const byLevelSorted = Object.keys(byLevel).reduce((acc, item) => {
       acc[item] = sortBy(byLevel[item], x => +x.starts_at);
       return acc;
@@ -200,11 +199,7 @@ function MarimekkoBook({
   width
 }) {
   // target positions for transation
-  const translateToList = `translate(${book.caratteriX}px)`;
-
-  // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
-  // console.log(props)
-
+  const translateToList = useMemo(() => `translate(${book.caratteriX}px)`, [book.caratteriX])
   const heightScale = scaleLinear()
     .domain([0, 1])
     .range([0, height]);
@@ -283,10 +278,12 @@ export default function MarimekkoChart({
   currentPosition,
   currentSequencesSelected
 }) {
-  const anyLegendEntrySelected =
-    Object.keys(selectedLegendEntries || {}).filter(
+  const anyLegendEntrySelected = useMemo(() => {
+    return Object.keys(selectedLegendEntries || {}).filter(
       k => selectedLegendEntries[k]
     ).length > 0;
+  }, [selectedLegendEntries])
+    
 
   const transitions = useTransition(!currentTextID, null, {
     from: { opacity: 1 },
@@ -313,14 +310,12 @@ export default function MarimekkoChart({
               }
             >
               {booksDataWithPositions.map(book => {
-                // const bookDataAnnotated = mappedBooks[book.textID];
                 return (
                   <MarimekkoBook
                     key={book.textID}
                     book={book}
                     currentTextID={currentTextID}
                     setCurrentTextID={setCurrentTextID}
-                    // bookDataAnnotated={bookDataAnnotated}
                     selectedLegendEntries={selectedLegendEntries}
                     height={height}
                     width={width}

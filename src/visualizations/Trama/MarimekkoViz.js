@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
@@ -188,7 +188,7 @@ function MarimekkoViz({
     heightScale: null
   });
 
-  const measure = () => {
+  const measure = useCallback(() => {
     const vizRect = vizContainerRef.current.getBoundingClientRect();
     const topAxisRect = topAxisContainerRef.current.getBoundingClientRect();
     const widthScale = scaleLinear()
@@ -207,7 +207,7 @@ function MarimekkoViz({
     };
 
     setDimensions({ ...dimensions });
-  };
+  }, [])
 
   // this is like "componentDidMount" (useEffect with empty deps is evaluated only after first render)
   useEffect(() => {
@@ -257,8 +257,8 @@ function MarimekkoViz({
       });
   }, [currentTextID, data]);
 
-  const icycleWidth = (dimensions.vizWidth / 10) * 8;
-  const columnWidth = icycleWidth / 5;
+  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [dimensions.vizWidth]);
+  const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
   const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);

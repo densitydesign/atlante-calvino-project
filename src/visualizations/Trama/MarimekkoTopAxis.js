@@ -24,7 +24,7 @@ export default function MarimekkoTopAxis({
     return find(booksData, x => x.textID === currentTextID);
   }, [booksData, currentTextID]);
 
-  const isBookDetail = !!currentTextID;
+  const isBookDetail = useMemo(() => !!currentTextID, [currentTextID])
 
   const props = useSpring({
     delay: isBookDetail ? 1200 : 0,
