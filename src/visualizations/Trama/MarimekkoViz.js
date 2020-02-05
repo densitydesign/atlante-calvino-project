@@ -3,6 +3,8 @@ import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
 import uniqBy from "lodash/uniqBy";
+import uniq from "lodash/uniq";
+
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import find from "lodash/find";
@@ -25,7 +27,7 @@ const coloriCategorie = mappaCategorie.reduce((out, c) => {
   return out;
 }, {});
 
-const coloriClusterTipologie = mappaClusterTipologie.reduce((out, c) => {
+const coloriClusterTipologie = mappaClusterTipologie.filter(x => x.gruppo).reduce((out, c) => {
   out[c.valore] = c.colore;
   return out;
 }, {});
@@ -135,10 +137,16 @@ const preprocessData = (data, options = {}) => {
       out.mese = +out.mese;
       out.anno = +out.anno;
 
+      //mapping seq occurrences
+      const sequencesMapForBook = keyBy(
+        uniq(firstLevelRecords.filter(x => x.textID === item.textID).map(x => x.seq))
+      );
+
       const dataVolume = get(volumiByID, item.textID);
       return {
         ...out,
-        titolo: dataVolume.titolo
+        titolo: dataVolume.titolo,
+        sequencesMapForBook
       };
     });
 
@@ -253,9 +261,19 @@ function MarimekkoViz({
   const columnWidth = icycleWidth / 5;
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
+  const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);
+
+  const sequencesSelected = useMemo(() => {
+    if(!currentSequencesSelected){
+      return null
+    }
+    return uniq(currentSequencesSelected.map(x => x.seq))
+  }, [currentSequencesSelected]) 
+
   useEffect(() => {
     setCurrentPosition(0);
     setCurrentSequences([]);
+    setCurrentSequencesSelected([]);
   }, [currentTextID]);
 
   const currentBook = useMemo(() => {
@@ -282,6 +300,8 @@ function MarimekkoViz({
                 setCurrentSequences={setCurrentSequences}
                 currentPosition={currentPosition}
                 setCurrentPosition={setCurrentPosition}
+                currentSequencesSelected={currentSequencesSelected}
+                setCurrentSequencesSelected={setCurrentSequencesSelected}
               ></MarimekkoSlider>
             )}
           </div>
@@ -301,6 +321,7 @@ function MarimekkoViz({
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                   currentPosition={currentPosition}
+                  sequencesSelected={sequencesSelected}
                 />
               )}
             </div>
@@ -320,6 +341,7 @@ function MarimekkoViz({
                   currentBook={currentBook}
                   iceCycleData={iceCycleData}
                   currentPosition={currentPosition}
+                  currentSequencesSelected={currentSequencesSelected}
                 ></MarimekkoChart>
               )}
             </div>
@@ -332,10 +354,17 @@ function MarimekkoViz({
                   style={{ width: columnWidth, left: columnWidth * i }}
                   key={i}
                 >
-                  <div className="text-center w-100" style={{borderBottom: `solid 3px ${coloriClusterTipologie[seq["cluster tipologie"]]}`}}>
-                    {seq["cluster tipologie"]}
+                  <div
+                    className="text-center w-100"
+                    style={{
+                      borderBottom: `solid 3px ${
+                        coloriClusterTipologie[seq["cluster tipologie"]]
+                      }`
+                    }}
+                  >
+                    {seq["tipologia"]}
                   </div>
-                  <div className="text-center w-100" >
+                  <div className="text-center w-100">
                     <small>
                       <b>{seq["ID SEQ"]}</b> s:{seq["starts_at"]} e:
                       {seq["ends_at"]} {seq["livello"]}

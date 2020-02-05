@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import groupBy from "lodash/groupBy";
+import keyBy from "lodash/keyBy";
+import uniq from "lodash/uniq";
 import styles from "./Trama.module.css";
 import { useTransition, useSpring, animated } from "react-spring";
 import { scaleLinear } from "d3";
@@ -17,14 +19,15 @@ function MarimekkoBookIcycle({
   height,
   width,
   iceCycleData,
-  currentPosition
+  currentPosition,
+  currentSequencesSelected
 }) {
   // utility measures
   const icycleWidth = (width / 10) * 8;
   const columnWidth = icycleWidth / 5;
 
   const sequenceScale = scaleLinear()
-    .range([0+10, height-10])
+    .range([0 + 10, height - 10])
     .domain([0, +book.caratteri]);
 
   //annotating data
@@ -72,7 +75,13 @@ function MarimekkoBookIcycle({
   const translateToDetail = `translateX(0px)`;
 
   const [levelsTranslated, setLevelsTranslated] = useState(1);
-  
+
+  const sequencesSelected = useMemo(() => {
+    if(!currentSequencesSelected){
+      return null
+    }
+    return keyBy(uniq(currentSequencesSelected.map(x => x.seq)))
+  }, [currentSequencesSelected]) 
 
   const props = useSpring({
     config: { precision: 0.1 },
@@ -112,8 +121,8 @@ function MarimekkoBookIcycle({
   }, [currentPosition, sequenceScale]);
 
   const numLevels = useMemo(() => {
-   return Object.keys(iCycleDataAnnotated).length 
-  }, [iCycleDataAnnotated])
+    return Object.keys(iCycleDataAnnotated).length;
+  }, [iCycleDataAnnotated]);
 
   return (
     <>
@@ -132,7 +141,7 @@ function MarimekkoBookIcycle({
               {iCycleDataAnnotated[levelName].map(block => (
                 <rect
                   title={levelName}
-                  style={{ fill: block.color }}
+                  style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block.seq] ? 1 : 0.2 : 1}}
                   className={`${styles.marimekkoUnit}  ${
                     styles.marimekkoUnitIceCycle
                   } ${
@@ -158,7 +167,7 @@ function MarimekkoBookIcycle({
         {iCycleDataAnnotated["uno"].map(block => (
           <rect
             title={"uno"}
-            style={{ fill: block.color }}
+            style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block.seq] ? 1 : 0.2 : 1} }
             className={`${styles.marimekkoUnit}  ${
               styles.marimekkoUnitIceCycle
             } ${selectedLegendEntries[block.label] ? styles.selected : ""}`}
@@ -271,7 +280,8 @@ export default function MarimekkoChart({
   setCurrentTextID,
   iceCycleData,
   currentBook,
-  currentPosition
+  currentPosition,
+  currentSequencesSelected
 }) {
   const anyLegendEntrySelected =
     Object.keys(selectedLegendEntries || {}).filter(
@@ -339,6 +349,7 @@ export default function MarimekkoChart({
             width={width}
             iceCycleData={iceCycleData}
             currentPosition={currentPosition}
+            currentSequencesSelected={currentSequencesSelected}
           ></MarimekkoBookIcycle>
         </svg>
       )}

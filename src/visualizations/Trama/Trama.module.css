@@ -11,6 +11,13 @@
   fill: #fff;
 }
 
+.topAxisRectNoSeq{
+    stroke: #fff;
+  stroke-width: 1px;
+  fill:#ccc;
+  opacity: 0.3;
+}
+
 .topAxisText {
   font-size: 10px;
   fill: #000;
@@ -20,6 +27,12 @@
 .topAxisTextEmpty {
     font-size: 10px;
     fill: #fff;
+}
+
+.topAxisTextNoSeq{
+    font-size: 10px;
+    fill: #000;
+    opacity: 0.3;
 }
 
 .marimekkoRect {
@@ -93,6 +106,11 @@
     fill: #fff;
     rx: 4px;
     cursor: pointer;
+    transition: fill 0.5s linear;
+}
+
+.cursorSelected{
+    fill: #222;
 }
 
 .cursorLine {

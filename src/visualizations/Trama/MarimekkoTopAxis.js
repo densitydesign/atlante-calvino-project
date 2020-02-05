@@ -1,8 +1,9 @@
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef, useCallback } from "react";
 import { useChain, useSpring, animated } from "react-spring";
 import styles from "./Trama.module.css";
 import { computeHorizontalPositions } from "./helpers";
 import find from "lodash/find";
+import some from "lodash/some";
 
 export default function MarimekkoTopAxis({
   width,
@@ -10,7 +11,8 @@ export default function MarimekkoTopAxis({
   booksData,
   setCurrentTextID,
   currentTextID,
-  currentPosition
+  currentPosition,
+  sequencesSelected
 }) {
   const margins = {
     bottom: 15
@@ -46,12 +48,45 @@ export default function MarimekkoTopAxis({
       : computeHorizontalPositions(booksData, width / 2, true);
   }, [booksData, width, short]);
 
+  const getCurrenBookClasses = useCallback(
+    book => {
+      if (book.textID === currentTextID && currentTextID) {
+        return {
+          text: styles.topAxisTextEmpty,
+          rect: styles.topAxisRectEmpty
+        };
+      } else {
+        if (!sequencesSelected || !sequencesSelected.length) {
+          return {
+            text: styles.topAxisText,
+            rect: styles.topAxisRect
+          };
+        } else {
+          const isCurrentSeq = some(
+            sequencesSelected.map(s => book.sequencesMapForBook[s])
+          );
+          return isCurrentSeq
+            ? {
+                text: styles.topAxisText,
+                rect: styles.topAxisRect
+              }
+            : {
+                text: styles.topAxisTextNoSeq,
+                rect: styles.topAxisRectNoSeq
+              };
+        }
+      }
+    },
+    [currentTextID, sequencesSelected]
+  );
+
   return (
     <animated.div style={{ height, width: props.width, overflow: "hidden" }}>
-
-      {currentTextID && <div className="position-absolute">
-            <small>Slider position: {currentPosition}</small>
-            </div>}
+      {currentTextID && (
+        <div className="position-absolute">
+          <small>Slider position: {currentPosition}</small>
+        </div>
+      )}
       {isBookDetail && (
         <animated.div
           className="pl-2 position-absolute border rounded border-dark d-flex align-items-center"
@@ -83,28 +118,31 @@ export default function MarimekkoTopAxis({
         }}
       >
         <g transform={`translate(0 ${height - margins.bottom})`}>
-          {booksDataWithPositions.map(book => (
-            <g key={book.textID} transform={`translate(${book.caratteriX})`}>
-              <rect
-                className={book.textID === currentTextID ? styles.topAxisRectEmpty : styles.topAxisRect}
-                width={book.caratteriWidth}
-                height={4}
-              ></rect>
-              <g transform="translate(2 0)">
-                <text
-                  className={book.textID === currentTextID ?  styles.topAxisTextEmpty : styles.topAxisText }
-                  x={5}
-                  transform={`rotate(-45)`}
-                  onClick={() => {
-                    setCurrentTextID(book.textID);
-                  }}
-                  style={{ cursor: "pointer" }}
-                >
-                  {book.titolo}
-                </text>
+          {booksDataWithPositions.map(book => {
+            const bookClasses = getCurrenBookClasses(book);
+            return (
+              <g key={book.textID} transform={`translate(${book.caratteriX})`}>
+                <rect
+                  className={bookClasses.rect}
+                  width={book.caratteriWidth}
+                  height={4}
+                ></rect>
+                <g transform={`translate(${currentTextID ? 4 : 2} 0)`}>
+                  <text
+                    className={bookClasses.text}
+                    x={5}
+                    transform={`rotate(-45)`}
+                    onClick={() => {
+                      setCurrentTextID(book.textID);
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {book.titolo}
+                  </text>
+                </g>
               </g>
-            </g>
-          ))}
+            );
+          })}
         </g>
       </animated.svg>
     </animated.div>
