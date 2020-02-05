@@ -10,30 +10,30 @@ export default class TerritoryVolumesLegend extends React.Component
     return (
       <>
         <div className="legend-block">
+          <h4>DISPOSIZIONE</h4>
+          <p>
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-positioning2.svg'} />
+          </p>
+        </div>
+
+        <div className="legend-block">
           <h4>DIMENSIONE</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + 'legendTerritory/territory-legend-noAnalysis-dimensione.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione2.svg'} />
           </p>
         </div>
 
         <div className="legend-block">
           <h4>RACCOLTA</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + 'legendTerritory/territory-legend-volumes-modalita.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita2.png'} />
           </p>
         </div>
 
         <div className="legend-block">
           <h4>VOLUMI</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + 'legendTerritory/territory-legend-volumes-codice_colori_large.png'} />
-          </p>
-        </div>
-
-        <div className="legend-block">
-          <h4>DISPOSIZIONE</h4>
-          <p>
-            <img src={process.env.PUBLIC_URL + 'legendTerritory/territory-legend-volumes-positioning.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-codice_colori_large2.svg'} />
           </p>
         </div>
       </>
