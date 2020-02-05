@@ -205,12 +205,12 @@ function MarimekkoViz({
     };
   }, []);
 
-  
+
   //resetting aggregazione
   useEffect(() => {
     if (!!currentTextID) {
       setOptionsForDetail();
-    } 
+    }
   }, [currentTextID, setOptionsForDetail]);
 
   const { booksData, chartBooks } = useMemo(() => {
@@ -277,7 +277,7 @@ function MarimekkoViz({
           ></div>
         </div>
 
-        <div className="col-sm-2 pl-4 pt-5">
+        <div className="col-sm-2 pl-4 pt-5 legend">
           <MarimekkoLegend
             legendMap={
               dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 123.5 132" style="enable-background:new 0 0 123.5 132;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HKGrotesk-Regular';}
+	.st1{font-size:10px;}
+	.st2{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st3{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.25;}
+	.st4{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
+	.st5{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st6{fill:none;}
+</style>
+<g>
+	<g>
+		<text transform="matrix(1 0 0 1 23.7189 10.0989)" class="st0 st1">Nebbia</text>
+		<path id="Oval_9_" class="st2" d="M6.5,0.3c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2S0.3,10,0.3,6.5l0,0C0.3,3.1,3,0.4,6.5,0.3z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 23.7189 33.8399)" class="st0 st1">Cancellazione</text>
+		<path id="Oval-2_7_" class="st3" d="M6.5,24.1c3.4,0,6.2,2.8,6.2,6.2s-2.8,6.2-6.2,6.2s-6.2-2.8-6.2-6.2l0,0l0,0
+			C0.3,26.9,3,24.2,6.5,24.1z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 23.7189 81.3215)" class="st0 st1">senza occorrenze</text>
+		<circle id="Oval-5_5_" class="st4" cx="6.5" cy="77.8" r="6.2"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 23.7189 57.5807)" class="st0 st1">Nebbia + cancellazione</text>
+		<circle id="Oval-6_5_" class="st5" cx="6.5" cy="54" r="6.2"/>
+	</g>
+	<rect class="st6" width="123" height="132"/>
+</g>
+</svg>
