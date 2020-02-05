@@ -16,10 +16,6 @@ import GlobalData from '../../utilities/GlobalData';
 
 const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
 
-console.log("searchOptions", searchOptions)
-
-
-
 const tipologiaOptions = [
   { label: "uno" },
   { label: "due" },

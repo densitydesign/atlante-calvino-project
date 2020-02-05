@@ -9,7 +9,8 @@ export default function MarimekkoTopAxis({
   height,
   booksData,
   setCurrentTextID,
-  currentTextID
+  currentTextID,
+  currentPosition
 }) {
   const margins = {
     bottom: 15
@@ -25,7 +26,7 @@ export default function MarimekkoTopAxis({
 
   const props = useSpring({
     delay: isBookDetail ? 1200 : 0,
-    config: { precision: 0.1},
+    config: { precision: 0.1 },
     from: { width: width, left: 0, opacity: 0 },
 
     to: {
@@ -47,10 +48,18 @@ export default function MarimekkoTopAxis({
 
   return (
     <animated.div style={{ height, width: props.width, overflow: "hidden" }}>
+
+      {currentTextID && <div className="position-absolute">
+            <small>Slider position: {currentPosition}</small>
+            </div>}
       {isBookDetail && (
         <animated.div
           className="pl-2 position-absolute border rounded border-dark d-flex align-items-center"
-          style={{ top: height - margins.bottom - 50, opacity: props.opacity, height: 34 }}
+          style={{
+            top: height - margins.bottom - 50,
+            opacity: props.opacity,
+            height: 34
+          }}
         >
           <span className="mr-2">{currentBook.titolo}</span>
           <animated.button
