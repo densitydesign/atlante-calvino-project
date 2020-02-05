@@ -26,7 +26,7 @@ export default class TerritoryVolumesLegend extends React.Component
         <div className="legend-block">
           <h4>RACCOLTA</h4>
           <p>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita2.png'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita2.svg'} />
           </p>
         </div>
 
