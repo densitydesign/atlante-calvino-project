@@ -328,15 +328,19 @@ function MarimekkoViz({
             <div className="position-absolute w-100">
               {currentSequences.map((seq, i) => (
                 <div
-                  className="position-absolute text-center"
+                  className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i }}
                   key={i}
                 >
-                  {seq["cluster tipologie"]}
-                  <br></br>
-                  <small>
-                    <b>{seq["ID SEQ"]}</b> s:{seq["starts_at"]} e:{seq["ends_at"]}
-                  </small>
+                  <div className="text-center w-100" style={{borderBottom: `solid 3px ${coloriClusterTipologie[seq["cluster tipologie"]]}`}}>
+                    {seq["cluster tipologie"]}
+                  </div>
+                  <div className="text-center w-100" >
+                    <small>
+                      <b>{seq["ID SEQ"]}</b> s:{seq["starts_at"]} e:
+                      {seq["ends_at"]} {seq["livello"]}
+                    </small>
+                  </div>
                 </div>
               ))}
             </div>

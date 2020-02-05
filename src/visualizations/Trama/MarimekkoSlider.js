@@ -36,6 +36,7 @@ export default function MarimekkoSlider({currentPosition, setCurrentPosition, cu
 
   const currentSequences = useMemo( () => {
     const out = iceCycleData.filter(item =>  item.starts_at <= currentPosition && item.ends_at >= currentPosition)
+    
     return out
   }, [iceCycleData, currentPosition])
 
@@ -48,7 +49,7 @@ export default function MarimekkoSlider({currentPosition, setCurrentPosition, cu
     {width && <>
       <rect className={styles.slide} height={height} width={SLIDER_WIDTH} x={sliderX}></rect>
       <line x1={width/2} x2={width} y1={cursorY} y2={cursorY} className={styles.cursorLine}></line>
-      <Draggable onDrag={handleDrag} axis={'y'} position={{x: 0, y: cursorY}}>
+      <Draggable onDrag={handleDrag} axis={'y'} position={{x: 0, y: cursorY}} bounds={{top: CURSOR_HEIGHT / 2, bottom: height- CURSOR_HEIGHT / 2}}>
         <rect className={styles.cursor} width={SLIDER_WIDTH}  y={-CURSOR_HEIGHT/2} x={sliderX} height={CURSOR_HEIGHT}></rect>
       </Draggable>
     
