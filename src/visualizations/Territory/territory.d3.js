@@ -1139,6 +1139,7 @@ console.log("calculateHillStepTranslation");
   }
 
   setColor = color => { 
+console.log("set color");    
     d3
       .selectAll("circle")
       .attr("fill", color);
@@ -1611,8 +1612,8 @@ console.log("case proportion...");
 console.log("change_none_to_hills");
 console.log("calling set_yRatio");    
 //    this.set_yRatio(newHighlightParameters.tilt_factor);
-    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+//    this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
@@ -2085,6 +2086,30 @@ console.log("currentAnalysisMode", currentAnalysisMode);
       .duration(350)
       .style("fill", d => colorScale(d[dataMember]));
   };
+
+  highlightHills_forAnimation = (dataMember, colorScale) => {
+
+    const allHills = d3.selectAll(".hill");
+
+    if(["first_publication", "collection"].includes(dataMember))
+    {
+      this.text_nodes.style("display", "block");      
+
+//      allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
+
+      allHills.style("fill", d => colorScale(d[dataMember]));
+
+      return;
+    }    
+
+    allHills
+      .filter(d => !d[dataMember])
+      .style("fill", "transparent");
+
+    allHills
+      .filter(d => d[dataMember])
+      .style("fill", d => colorScale(d[dataMember]));
+  };  
 
   highlightHills = (dataMember, colorScale) => {
 
