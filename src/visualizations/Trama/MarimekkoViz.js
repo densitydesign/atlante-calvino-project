@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import React, {
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+  useCallback
+} from "react";
 import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
@@ -27,10 +33,12 @@ const coloriCategorie = mappaCategorie.reduce((out, c) => {
   return out;
 }, {});
 
-const coloriClusterTipologie = mappaClusterTipologie.filter(x => x.gruppo).reduce((out, c) => {
-  out[c.valore] = c.colore;
-  return out;
-}, {});
+const coloriClusterTipologie = mappaClusterTipologie
+  .filter(x => x.gruppo)
+  .reduce((out, c) => {
+    out[c.valore] = c.colore;
+    return out;
+  }, {});
 
 const defaultOptions = {
   dettaglio: "ambito",
@@ -139,7 +147,11 @@ const preprocessData = (data, options = {}) => {
 
       //mapping seq occurrences
       const sequencesMapForBook = keyBy(
-        uniq(firstLevelRecords.filter(x => x.textID === item.textID).map(x => x.seq))
+        uniq(
+          firstLevelRecords
+            .filter(x => x.textID === item.textID)
+            .map(x => x.seq)
+        )
       );
 
       const dataVolume = get(volumiByID, item.textID);
@@ -207,7 +219,7 @@ function MarimekkoViz({
     };
 
     setDimensions({ ...dimensions });
-  }, [])
+  }, []);
 
   // this is like "componentDidMount" (useEffect with empty deps is evaluated only after first render)
   useEffect(() => {
@@ -257,18 +269,20 @@ function MarimekkoViz({
       });
   }, [currentTextID, data]);
 
-  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [dimensions.vizWidth]);
+  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [
+    dimensions.vizWidth
+  ]);
   const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
   const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);
 
   const sequencesSelected = useMemo(() => {
-    if(!currentSequencesSelected){
-      return null
+    if (!currentSequencesSelected) {
+      return null;
     }
-    return uniq(currentSequencesSelected.map(x => x.seq))
-  }, [currentSequencesSelected]) 
+    return uniq(currentSequencesSelected.map(x => x.seq));
+  }, [currentSequencesSelected]);
 
   useEffect(() => {
     setCurrentPosition(0);
@@ -376,14 +390,32 @@ function MarimekkoViz({
           </div>
         </div>
 
-        <div className="col-sm-2 pl-4 pt-5">
-          <MarimekkoLegend
-            legendMap={
-              dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
-            }
-            setSelectedLegendEntries={setSelectedLegendEntries}
-            selectedLegendEntries={selectedLegendEntries}
-          ></MarimekkoLegend>
+        <div className="col-sm-2 pl-3">
+          <div className="row no-gutters w-100" style={{ flex: 2, minHeight: 160 }}>
+            <div className="position-relative">
+              <button
+                className="btn btn-sm btn-outline-dark position-absolute"
+                style={{bottom: 15}}
+                onClick={() => {
+                  setSelectedLegendEntries({});
+                }}
+              >
+                RESET
+              </button>
+            </div>
+          </div>
+          <div
+            className="row no-gutters d-flex flex-row"
+            style={{ flex: 8 }}
+          >
+            <MarimekkoLegend
+              legendMap={
+                dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
+              }
+              setSelectedLegendEntries={setSelectedLegendEntries}
+              selectedLegendEntries={selectedLegendEntries}
+            ></MarimekkoLegend>
+          </div>
         </div>
       </div>
     </div>

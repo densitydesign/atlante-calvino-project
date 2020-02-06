@@ -27,8 +27,8 @@ export default function MarimekkoTopAxis({
   const isBookDetail = useMemo(() => !!currentTextID, [currentTextID])
 
   const props = useSpring({
-    delay: isBookDetail ? 1200 : 0,
-    config: { precision: 0.1 },
+    delay: isBookDetail ? 800 : 0,
+    config: { precision: 0.15 },
     from: { width: width, left: 0, opacity: 0 },
 
     to: {

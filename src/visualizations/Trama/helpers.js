@@ -14,7 +14,7 @@ const RIGHT_PADDING_SAME_WIDTH = 100
 
 export const computeHorizontalPositions = (booksData, width, sameWidth) => {
   if (sameWidth) {
-    const bookWidth = width / booksData.length;
+    const bookWidth = (width - RIGHT_PADDING_SAME_WIDTH) / booksData.length;
 
     const scaleSameWith = scaleLinear()
       .domain([0, booksData.length])

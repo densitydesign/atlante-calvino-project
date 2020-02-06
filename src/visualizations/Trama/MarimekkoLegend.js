@@ -21,7 +21,7 @@ export default function MarimekkoLegend({
         anyLegendEntrySelected ? styles.legendItemsSelected : ""
       }`}
     >
-      <div
+      {/* <div
         style={{ height: 40 }}
         className="d-flex flex-column justify-content-center"
       >
@@ -35,8 +35,8 @@ export default function MarimekkoLegend({
             RESET
           </button>
         </div>
-      </div>
-      <div className="mt-1">
+      </div> */}
+      <div className="">
         <h4>LEGENDA</h4>
       </div>
       {Object.keys(byGruppo).map(gruppo => (
