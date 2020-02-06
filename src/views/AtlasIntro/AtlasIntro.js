@@ -2,6 +2,7 @@ import React from 'react';
 import ParallaxScroll from 'react-scroll-transitions';
 import { withRouter } from 'react-router-dom';
 import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
+import IntroViewSelector from './IntroViewSelector.js';
 
 import '../../App.css';
 import './AtlasIntro.css';
@@ -335,15 +336,6 @@ class AtlasIntro extends React.Component
           </div>
         </div>
         const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
-*/}
-
-        <div id="staticGrid" className="atlas-intro">
-          <div/>
-          <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
             <div className="atlas-intro-cell2 pop" style={{ 
               backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_tappa_1.svg" + "')",
@@ -357,6 +349,20 @@ class AtlasIntro extends React.Component
               backgroundSize : "cover",
               backgroundRepeat: "no-repeat"
             }}><h5>Nebbia</h5></div>
+
+
+*/}
+
+        <div id="staticGrid" className="atlas-intro">
+          <div/>
+          <div className="atlas-intro-cell-grid2">
+            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+
+            <IntroViewSelector className="atlas-intro-cell2 pop" image="/menu_tappa_1.svg" transitionData={transitionData} keepLabelVisible={true}><h4>TAPPA 1</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" image="/menu_nebbia.svg" transitionData={transitionData}><h5>Nebbia</h5></IntroViewSelector>
             <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
             <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
 
