@@ -1957,11 +1957,11 @@ console.log("change_none_to_flat");
     else t1 = t0.transition().duration(700);
 
     // hide old custom drawings
-//    t1
-//      .selectAll("." + oldHighlightParameters.customElementsClasses)
-//      .style('display', "block")
-//			.style('fill-opacity', 0)
-//			.style('stroke-opacity', 0);    
+    t1
+      .selectAll("." + oldHighlightParameters.customElementsClasses)
+      .style('display', "block")
+			.style('fill-opacity', 0)
+			.style('stroke-opacity', 0);    
   }
 
   onFirstElementClicked = d => {
