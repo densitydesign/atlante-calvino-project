@@ -18,6 +18,7 @@
   background-color: var(--bg);
   height: calc(100% - var(--navigation-height));
   width: 40%;
+  overflow-x: hidden;
 }
 
 .panel1-open {
