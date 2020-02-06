@@ -273,22 +273,23 @@ class VClass
       .attr("class", "circle_node hill")
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
-//      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
-      .attr("r", d => d.r)
-/*      
-      .attr("transform", function(d, i) {
-        i = i * step_increment;
-        return "translate(0," + i + ")";
+      .attr("r", d => {
+//console.log("d", d);
+        return d.r;
       })
-*/
-      .attr("transform", this.calculateHillStepTranslation)
-      .style("fill-opacity", 1)
-      .style("stroke-opacity", .5);
+	  	.style('fill-opacity', 1e-16)
+  		.style('stroke-opacity', 1e-16)
+//		.transition()
+//		.duration(1000)
+//		.delay(function(d) { return (d.first_publication - 1940) * 100 })
+//      .attr("transform", this.calculateHillStepTranslation)
+//      .style("fill-opacity", 1)
+//      .style("stroke-opacity", .5);
 
-    circles
-      .filter(d => d.first_elem)
-      .on("click", this.onFirstElementClicked);
+//    circles
+//      .filter(d => d.first_elem)
+//      .on("click", this.onFirstElementClicked);
 
 		const place_hierarchies_group = svg_main_group
 			.append("g")
@@ -1117,14 +1118,30 @@ if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
     }
 
     this.textsData = input_data.textsData;
+console.log("reached point for chronological animation");
+
+    const tt0 = svg.transition().duration(400);
+
+    const tt1 = tt0.transition();
+    tt1
+      .selectAll(".circle_node")
+  		.delay(function(d) { return (d.first_publication - 1940) * 200 })
+      .attr("transform", this.calculateHillStepTranslation)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", .5);    
+
   };
 
   destroy = () => {};
 
   //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
-  calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
+  calculateHillStepTranslation = d => {
+console.log("calculateHillStepTranslation");    
+    return "translate(0," + d.step_y + ")";
+  }
 
   setColor = color => { 
+console.log("set color");    
     d3
       .selectAll("circle")
       .attr("fill", color);
@@ -1164,7 +1181,7 @@ if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
   };
 */
   set_yRatio = yRatio => {
-
+console.log("set_yRatio");
     tilt = yRatio === 1;
 
     if(tilt)
@@ -1594,9 +1611,11 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters)
   {
-    this.set_yRatio(newHighlightParameters.tilt_factor);
-    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+console.log("change_none_to_hills");
+console.log("calling set_yRatio");    
+//    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+//    this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
@@ -2069,6 +2088,30 @@ console.log("currentAnalysisMode", currentAnalysisMode);
       .duration(350)
       .style("fill", d => colorScale(d[dataMember]));
   };
+
+  highlightHills_forAnimation = (dataMember, colorScale) => {
+
+    const allHills = d3.selectAll(".hill");
+
+    if(["first_publication", "collection"].includes(dataMember))
+    {
+      this.text_nodes.style("display", "block");      
+
+//      allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
+
+      allHills.style("fill", d => colorScale(d[dataMember]));
+
+      return;
+    }    
+
+    allHills
+      .filter(d => !d[dataMember])
+      .style("fill", "transparent");
+
+    allHills
+      .filter(d => d[dataMember])
+      .style("fill", d => colorScale(d[dataMember]));
+  };  
 
   highlightHills = (dataMember, colorScale) => {
 
