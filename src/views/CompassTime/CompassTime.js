@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
+import HamburgerInfoCompassHeader from '../../headers/HamburgerInfoCompassHeader/HamburgerInfoCompassHeader';
 import CompassTimeSinuousWrapper from '../../visualizations/CompassTimeSinuous/CompassTimeSinuousWrapper';
 
 import './CompassTime.css';
@@ -13,11 +13,11 @@ export default class CompassTime extends React.Component
 
     return (
       <>
-      <HamburgerCompassHeader />
+      <HamburgerInfoCompassHeader />
       <div id="main--sinuous">
-
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+        <h4>Bussola</h4>
+          <div className="row intro">
             <div className="col-12 col-lg-9">
               <h1>Il tempo e le opere</h1>
               <p>La visualizzazione rappresenta gli snodi pi&#xF9; importanti della carriera editoriale di Italo Calvino: le principali opere pubblicate in quarant&#x2019;anni di attivit&#xE0; e le collaborazioni giornalistiche pi&#xF9; durature. Ha una forma sinusoidale che mette in evidenza la scansione temporale in decenni e le differenti direzioni intraprese e sperimentate nel corso del tempo.</p>
@@ -38,7 +38,7 @@ export default class CompassTime extends React.Component
               <CompassTimeSinuousWrapper />
             </div>
             <div className="col-10 offset-lg-0 col-lg-4 col-xl-4 scrollytelling-container">
-              <p>Ecco come leggere la visualizzazione:</p>
+              <h4>Come si legge la visualizzazione:</h4>
               <div className="legend open">
                 <div className="legend-content">
                   <h4>Legenda</h4>

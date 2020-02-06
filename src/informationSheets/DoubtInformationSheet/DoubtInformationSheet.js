@@ -15,19 +15,19 @@ export default class DoubtInformationSheet extends React.Component
     return (
       <>
         <HamburgerCompassHeader />
+        <div>
         <main>
           <div className="viz--meta">
-            <h1>SCHEDA DUBBIO</h1>
-            <h2>Occorrenze campo semantico del dubbio</h2>
+            <h1>Nebbia. Scheda di approfondimento</h1>
+            <h2>Analisi di occorrenze del campo semantico del dubbio</h2>
             <div className="viz--info">
-              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="650"/></p></div>
+              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="800"/></p></div>
             </div>
           </div>
           <DoubtTypePerYearWrapper  />
           <article>
-          <p>
-          Il grafico mostra i due fenomeni, <em>nebbia e cancellazione</em>, distribuiti cronologicamente e non più ancorati ai singoli testi. Le onde della <em>bump chart</em> evidenziano il loro impiego durante i quarant’anni di carriera dell’autore, consentendoci di leggere in parallelo i loro rispettivi “andamenti”.
-Le occorrenze inoltre sono distinte a seconda che siano state considerate <em>astratte</em> o <em>concrete</em>.
+          <p>Il grafico mostra i due fenomeni, <em>nebbia e cancellazione</em>, distribuiti cronologicamente e non più ancorati ai singoli testi. Le onde della <em>bump chart</em> evidenziano il loro impiego durante i quarant’anni di carriera dell’autore, consentendoci di leggere in parallelo i loro rispettivi “andamenti”.
+          Le occorrenze inoltre sono distinte a seconda che siano state considerate <em>astratte</em> o <em>concrete</em>.
 Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno nella narrazione: es. «c’era un po’ di nebbia verso il mare e l’aria era umida» (<em>Pranzo con un pastore</em>, 1948, p. 65); «Invece si limita a farci strisciare sopra un dito e a vedere l’impronta umida come la scia d’una nave, poi a cancellarla col maglione fregandoci con il gomito» (<em>La notte dei numeri</em>, 1958, pp. 213). Per astratto si intende una manifestazione “non fisica” del fenomeno nella narrazione: es. «un’ombra bruna sale dal fondo e come nella nebbia del ricordo lascia trasparire le sparse membra dell’oca» (<em>Un chilo e mezzo di grasso d’oca</em>, 1976, p. 63); «lei abbassava le ciglia e lui si sentì come cancellato» (<em>L’avventura di uno sciatore</em>, 1959, p. 123).
 </p>
 </article>
@@ -53,18 +53,19 @@ Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno ne
 </p>
 
 <div className="references">
+<h4>Note</h4>
 <p>D. Scarpa, Italo Calvino, Milano, Mondadori, 2005.</p>
 </div>
           </div>
 
           <div className="sheet--info">
-            <ArrowButton arrowDirection="none" textAlign="right" text="ANALISI" route="/Phenomena/doubtAnalysis" />
+            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/territory/doubtAnalysis" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
             <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
           </div>
 </article>
-
 </main>
+</div>
 
       </>
     );

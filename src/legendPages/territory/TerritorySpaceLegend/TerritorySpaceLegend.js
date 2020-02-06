@@ -10,40 +10,30 @@ export default class TerritorySpaceLegend extends React.Component
     return (
       <>
         <div className="legend-block">
-          <h5>DIMENSIONE</h5>
-          <p>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-dimensione.svg'} />
-          </p>
+              <div className="title-panel"><h4>Dimensione</h4></div>
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-dimensione.svg'} />
         </div>
 
         <div className="legend-block">
-          <h5>TIPOLOGIE DI LUOGHI</h5>
-          <p>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-space-tipi_luogo.svg'} />
-          </p>
+              <div className="title-panel"><h4>Tipologia</h4></div>
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-space-tipi_luogo.svg'} />
         </div>
 
         <div className="legend-block">
-          <h5>PROPORZIONI DEI LUOGHI</h5>
-          <p>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-space-donut.svg'} />
-          </p>
+<div className="title-panel"><h4>Proporzione dei luoghi</h4></div>
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-space-donut.svg'} />
         </div>
 
         <div className="legend-block">
-          <h5>LUOGHI CONTENITORI</h5>
-          <p>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-space-meduse.svg'} />
-          </p>
-        </div>        
+<div className="title-panel"><h4>Luoghi contenitori</h4></div>
+<img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-space-meduse.svg'} />
+        </div>
 
         <div className="legend-block">
-          <h5>DISPOSIZIONE</h5>
-          <p>
-            <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
-          </p>
-        </div>                
-      </> 
+          <div className="title-panel"><h4>Disposizioni</h4></div>
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-disposizione.svg'} />
+        </div>
+      </>
     );
   }
 }

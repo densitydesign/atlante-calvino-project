@@ -12,23 +12,23 @@ export default class TerritoryDoubtOccurrencesLegend extends React.Component
 
         <div className="legend-block">
           <div className="title-panel"><h4>DISPOSIZIONE</h4></div>
-          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-disposizione.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-disposizione.svg'} />
         </div>
 
         <div className="legend-block">
           <div className="title-panel"><h4>DIMENSIONE</h4></div>
-          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-dimensione.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-dimensione.svg'} />
         </div>
 
         <div className="legend-block">
           <div className="title-panel"><h4>OCCORRENZE DI</h4></div>
-          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-colore.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-doubt-colore.svg'} />
         </div>
 
         <div className="legend-block">
           <div className="title-panel"><h4>PERCENTUALE</h4></div>
-          <div className="title-panel"><h5>Sul totale per ogni occorrenza</h5></div>
-          <img src={process.env.PUBLIC_URL + '/territory-legend-spheres-doubt-intensita.svg'} />
+          <small>Sul totale per ogni occorrenza</small>
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-doubt-intensita.svg'} />
         </div>
 
       </>

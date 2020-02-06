@@ -12,9 +12,9 @@
 }
 
 .label .white-shadow {
-  stroke: white;
+  stroke: var(--bg);
   stroke-width: 0.4rem;
-  fill: white;
+  fill: var(--bg);
   stroke-linejoin: round;
 }
 

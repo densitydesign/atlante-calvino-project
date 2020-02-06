@@ -1,5 +1,8 @@
 
 import React from 'react';
+import ArrowButton from '../../../general/ArrowButton/ArrowButton';
+
+
 
 import './TerritorySpaceHelp.css';
 
@@ -25,6 +28,12 @@ export default class TerritorySpaceHelp extends React.Component
 <li>il terzo livello consente, una volta selezionato uno specifico testo, di conoscere nel dettaglio i nomi dei luoghi e la loro stratificazione.</li></ol>
 <h3>Cosa ci dice</h3>
 <p>Il risultato più evidente riguarda la distribuzione piuttosto costante nel tempo di luoghi generici e nominati terrestri, su cui si innestano alcune aree di natura diversa. Queste non sono mai totalmente autonome o isolabili; al contrario, intrattengono rapporti significativi tra loro. Per ragioni di chiarezza, nei primi due livelli si è scelto di escludere i luoghi contenuti all’interno di altri luoghi, rinunciando a eventuali rapporti di gerarchia, che sono invece ricostruibili grazie al terzo livello. </p>
+
+<div className="sheet--info">
+  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
+  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
+</div>
+
 
       </>
     );

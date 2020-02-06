@@ -2,13 +2,16 @@
     height: 94%; 
     width: 100%;
     max-height: calc(var(--navigation-height) - 2px);
+    background-color: transparent !important;
+    display: flex;
 }
 
 .rbt .rbt-input-multi {
     height: 100%;
+    display: flex;
     padding: 0.3rem 0;
     border: none;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .rbt .rbt-input-multi .rbt-input-wrapper {
@@ -17,6 +20,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    background-color: transparent !important;
 }
 
 .rbt .form-control:focus, .rbt .rbt-input-multi.focus {
@@ -24,18 +28,25 @@
 }
 
 .rbt-token {
-  background-color: white !important;
+  background-color: var(--bg) !important;
   border-color:var(--dark-blue)!important;
   border: 1px solid!important;
   border-radius: 0px !important;
   color: var(--dark-blue) !important;
   display: inline-block;
   line-height: 1em;
-  margin: 0px 3px 3px 5px !important;
+  margin: 0px 3px 3px 3px !important;
   padding: 4px 7px;
   position: relative;
 }
 
 .rbt-token-removeable{
   padding-right:30px !important;
+}
+
+.rbt .dropdown-item *{
+    font-size: 1em;
+    text-transform: capitalize;
+    text-align: left;
+    margin-left:1em;
 }

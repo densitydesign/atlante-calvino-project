@@ -13,7 +13,7 @@
 	.st7{fill:#D9D9D9;}
 	.st8{fill:#CCCCCC;}
 	.st9{fill:#F2F2F2;}
-	.st10{fill:#FFFFFF;}
+	.st10{fill:#FBFBFC;}
 	.st11{fill:#5F5F5E;}
 </style>
 <title>legenda</title>
@@ -30,7 +30,7 @@
 <path class="st2" d="M143.2,82c18.7,0,19.2-27.7,37.4-27.7"/>
 <path class="st2" d="M143.2,87.7c18.7,0,19.2-19.6,37.4-19.6"/>
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="799.7523" y1="-999.6801" x2="827.5023" y2="-999.6801" gradientTransform="matrix(6.245699e-17 -1.02 -1 -6.123234e-17 -837.8201 921.7999)">
-	<stop  offset="0.25" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.25" style="stop-color:#FBFBFC"/>
 	<stop  offset="1" style="stop-color:#CECECE"/>
 </linearGradient>
 <path class="st3" d="M143.2,109.7c18.7,0,19.2-27.7,37.4-27.7"/>

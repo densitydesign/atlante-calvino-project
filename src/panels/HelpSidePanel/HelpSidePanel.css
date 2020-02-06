@@ -8,7 +8,7 @@
   top: 0px;
   max-height: 100%;
   width: var(--help-side-panel-width);
-  background-color: white;
+  background-color: var(--bg);
   z-index: 10001;
   /* to overcome z-index=10000 of 'navigations' style */
   transition: right 1s;
@@ -23,7 +23,7 @@
 }
 
 .help-side-panel-closed {
-  right: -35vw
+  right: -35vw;
 }
 
 .help-side-panel p{
@@ -83,7 +83,7 @@
 }
 
 .st-box {
-  background-color: white;
+  background-color: var(--bg);
   border: 1px solid black;
   border-radius: 0px;
   padding: 1.5rem;

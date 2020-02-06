@@ -1,5 +1,4 @@
 .main-menu {
-  background-color: white;
   height: 100%;
   display: flex;
   align-items: center;
@@ -12,5 +11,5 @@
 }
 
 .main-menu a:hover{
-  color:white;
+  color:var(--bg);
 }

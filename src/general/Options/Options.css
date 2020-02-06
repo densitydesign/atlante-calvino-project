@@ -17,29 +17,26 @@
     color: inherit;
     background-color: inherit;
     border: none;
-
     text-align: inherit;
     text-transform: uppercase;
-    font-size: 1.2857142857rem;
-
+    font-size: 1.1em;
     padding: 0;
 }
 
 .btn-primary span.micro-title {
   font-style: italic;
-  font-size: 0.5714285714rem;
+  font-size: 0.6em;
   display: block;
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #666;
+    color: var(--bg);
+    background-color: black;
     border: none;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #000;
+    color: var(--bg);
     border: none;
 }
 
@@ -59,10 +56,15 @@ font-weight: 600;
   background-color: black;
   border: 0;
   border-radius: 2px;
-  color: #1f8dd6;
+  color: var(--dark-blue);
   display: inline-block;
   line-height: 1em;
   margin: 0 3px 3px 0;
   padding: 4px 7px;
   position: relative
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle
+{
+  background-color: black;
 }

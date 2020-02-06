@@ -1,93 +1,316 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 157.7 132" style="enable-background:new 0 0 157.7 132;" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 164 90" style="enable-background:new 0 0 164 90;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;}
-	.st1{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
-	.st2{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;stroke-dasharray:1.506,1.506;}
-	.st3{fill:none;stroke:#FF3366;stroke-width:0.5;}
-	.st4{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.25;}
-	.st5{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st6{font-family:'HKGrotesk-Regular';}
-	.st7{font-size:10px;}
+	.st0{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
+	.st1{fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;stroke-dasharray:1.506,1.506;}
+	.st2{filter:url(#Adobe_OpacityMaskFilter);}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FBFBFC;}
+	.st4{mask:url(#mask-2_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
+	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st6{mask:url(#mask-4_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
+	.st7{filter:url(#Adobe_OpacityMaskFilter_2_);}
+	.st8{mask:url(#mask-6_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
+	.st9{filter:url(#Adobe_OpacityMaskFilter_3_);}
+	.st10{mask:url(#mask-8_1_);fill:none;stroke:#999999;stroke-width:0.19;stroke-linecap:round;}
+	.st11{fill:none;stroke:#FF0066;stroke-width:0.5;}
+	.st12{filter:url(#Adobe_OpacityMaskFilter_4_);}
+	.st13{mask:url(#mask-10_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
+	.st14{filter:url(#Adobe_OpacityMaskFilter_5_);}
+	.st15{mask:url(#mask-12_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
+	.st16{filter:url(#Adobe_OpacityMaskFilter_6_);}
+	
+		.st17{mask:url(#mask-14_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st18{filter:url(#Adobe_OpacityMaskFilter_7_);}
+	
+		.st19{mask:url(#mask-16_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st20{filter:url(#Adobe_OpacityMaskFilter_8_);}
+	
+		.st21{mask:url(#mask-18_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st22{filter:url(#Adobe_OpacityMaskFilter_9_);}
+	.st23{mask:url(#mask-20_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
+	.st24{filter:url(#Adobe_OpacityMaskFilter_10_);}
+	
+		.st25{mask:url(#mask-22_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st26{filter:url(#Adobe_OpacityMaskFilter_11_);}
+	
+		.st27{mask:url(#mask-24_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st28{filter:url(#Adobe_OpacityMaskFilter_12_);}
+	
+		.st29{mask:url(#mask-26_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#C6CACF;stroke:#FBFBFC;stroke-width:0.25;stroke-linejoin:round;}
+	.st30{filter:url(#Adobe_OpacityMaskFilter_13_);}
+	.st31{mask:url(#mask-28_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
+	.st32{font-family:'HKGrotesk-Regular';}
+	.st33{font-size:9px;}
 </style>
-<g id="Layer_1">
-	<title>positioning</title>
-	<desc>Created with Sketch.</desc>
-</g>
-<g id="volumi">
-	<rect class="st0" width="157.7" height="132"/>
-	<g id="positioning_1_" transform="translate(-2.582 -2.18)">
-		<path id="Stroke-1_1_" class="st1" d="M73.2,2.2l0.6,0.4"/>
-		<path id="Stroke-2_1_" class="st2" d="M75,2.9l74,43"/>
-		<path id="Stroke-3_1_" class="st1" d="M149.2,46.2l0.7,0.4"/>
-		<path id="Stroke-4_1_" class="st1" d="M59.2,11.2l0.7,0.4"/>
-		<path id="Stroke-5_1_" class="st2" d="M60,11.9l74,43"/>
-		<path id="Stroke-6_1_" class="st1" d="M135.2,54.2l0.7,0.4"/>
-		<path id="Stroke-7_1_" class="st1" d="M45.2,19.2l0.7,0.4"/>
-		<path id="Stroke-8_1_" class="st2" d="M46,19.9l74,43"/>
-		<path id="Stroke-9_1_" class="st1" d="M120.2,62.2l0.7,0.4"/>
-		<path id="Stroke-10_1_" class="st1" d="M31.2,27.2l0.7,0.4"/>
-		<path id="Stroke-11_1_" class="st2" d="M32,27.9l74,43"/>
-		<path id="Stroke-12_1_" class="st1" d="M106.2,71.2l0.7,0.4"/>
-		<path id="Stroke-13_1_" class="st1" d="M16.2,35.2l0.7,0.4"/>
-		<path id="Stroke-14_1_" class="st2" d="M18,35.9l74,43"/>
-		<path id="Stroke-15_1_" class="st1" d="M92.2,79.2l0.7,0.4"/>
-		<g id="Group-18_1_" transform="translate(2.164 43)">
-			<path id="Stroke-16_1_" class="st1" d="M0.4,0.5l0.3,0.2"/>
+<title>positioning</title>
+<desc>Created with Sketch.</desc>
+<g id="positioning">
+	<path id="Stroke-1" class="st0" d="M73.3,2.3L74,2.7"/>
+	<path id="Stroke-2" class="st1" d="M75.2,3l74,43"/>
+	<path id="Stroke-3" class="st0" d="M149.3,46.3l0.7,0.4"/>
+	<path id="Stroke-4" class="st0" d="M59.3,11.3l0.7,0.4"/>
+	<path id="Stroke-5" class="st1" d="M60.2,12l74,43"/>
+	<path id="Stroke-6" class="st0" d="M135.3,54.3l0.7,0.4"/>
+	<path id="Stroke-7" class="st0" d="M45.3,19.3l0.7,0.4"/>
+	<path id="Stroke-8" class="st1" d="M46.2,20l74,43"/>
+	<path id="Stroke-9" class="st0" d="M120.3,62.3l0.7,0.4"/>
+	<path id="Stroke-10" class="st0" d="M31.3,27.3l0.7,0.4"/>
+	<path id="Stroke-11" class="st1" d="M32.2,28l74,43"/>
+	<path id="Stroke-12" class="st0" d="M106.3,71.3l0.7,0.4"/>
+	<path id="Stroke-13" class="st0" d="M16.3,35.3l0.7,0.4"/>
+	<path id="Stroke-14" class="st1" d="M18.2,36l74,43"/>
+	<path id="Stroke-15" class="st0" d="M92.3,79.3l0.7,0.4"/>
+	<g id="Group-18" transform="translate(2.163934, 43.000000)">
+		<g id="Clip-17">
 		</g>
-		<path id="Stroke-19_1_" class="st2" d="M4,43.9l74,43"/>
-		<g id="Group-26_1_" transform="translate(2.164 46)">
-			<g id="Group-22_1_" transform="translate(76.569 40.576)">
-				<path id="Stroke-20_1_" class="st1" d="M0.1,0.3l0.5,0.3"/>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0.5" y="0.5" width="0.5" height="0.4">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="0.5" y="0.5" width="0.5" height="0.4" id="mask-2_1_">
+			<g class="st2">
+				<polygon id="path-1_1_" class="st3" points="0.5,0.4 1,0.4 1,0.9 0.5,0.9 				"/>
 			</g>
-			<g id="Group-25_1_">
-				<path id="Stroke-23_1_" class="st1" d="M0.6,0.5l0.5-0.3"/>
-			</g>
-		</g>
-		<path id="Stroke-27_1_" class="st2" d="M4,45.9l74-43"/>
-		<path id="Stroke-28_1_" class="st1" d="M78.2,2.6l0.7-0.4"/>
-		<path id="Stroke-29_1_" class="st1" d="M16.2,54.6l0.7-0.4"/>
-		<path id="Stroke-30_1_" class="st2" d="M18,53.9l74-43"/>
-		<path id="Stroke-31_1_" class="st1" d="M92.2,11.6l0.7-0.4"/>
-		<path id="Stroke-32_1_" class="st1" d="M31.2,62.6l0.7-0.4"/>
-		<path id="Stroke-33_1_" class="st2" d="M32,61.9l74-43"/>
-		<path id="Stroke-34_1_" class="st1" d="M106.2,19.6l0.7-0.4"/>
-		<path id="Stroke-35_1_" class="st1" d="M45.2,71.6l0.7-0.4"/>
-		<path id="Stroke-36_1_" class="st2" d="M46,70.9l74-43"/>
-		<path id="Stroke-37_1_" class="st1" d="M120.2,27.6l0.7-0.4"/>
-		<path id="Stroke-38_1_" class="st1" d="M59.2,79.6l0.7-0.4"/>
-		<path id="Stroke-39_1_" class="st2" d="M60,78.9l74-43"/>
-		<path id="Stroke-40_1_" class="st1" d="M135.2,35.6l0.7-0.4"/>
-		<g id="Group-43_1_" transform="translate(73.164 87)">
-			<path id="Stroke-41_1_" class="st1" d="M0.3,0.4l0.4-0.2"/>
-		</g>
-		<path id="Stroke-44_1_" class="st2" d="M75,86.9l74-43"/>
-		<path id="Stroke-45_1_" class="st1" d="M149.2,43.6l0.7-0.4"/>
-		<path id="Stroke-46_1_" class="st3" d="M66,65.4c-2.2-1.3-2.8-3.2-1.6-4.8c0-0.1,0.1-0.1,0.1-0.2c0.9-1,0.4-1.3,0.2-1.5
-			c-0.3-0.2-0.7-0.3-1-0.4c-0.1,0-0.1,0-0.2-0.1C63,58.2,62.4,58,62,57.8c-2.5-1.4-2.5-3.8,0-5.2c2.6-1.3,5.6-1.4,8.3-0.4
-			c0.1,0,0.2,0.1,0.2,0.1c0.5,0.3,1.1,0.4,1.7,0.4c0.8-0.1,1.5-0.5,2.1-1c0.1,0,0.1-0.1,0.2-0.1c0.2-0.1,0.3-0.2,0.5-0.3
-			c4-2,8.7-2,12.7,0c3.1,1.8,3.5,4.6,1,6.6c0,0.1-0.1,0.1-0.2,0.2c-1.6,1.2-1,1.6-0.5,1.9l0,0c0.2,0.1,0.3,0.2,0.5,0.2
-			c0,0,0.1,0,0.1,0.1l0,0c0.2,0.1,0.3,0.1,0.5,0.2c2.5,1.4,2.5,3.8,0,5.2c-2.9,1.4-6.2,1.4-9.1,0c-0.1,0-0.1-0.1-0.2-0.1l-0.1-0.1
-			c-0.1-0.1-0.2-0.1-0.3-0.2c-0.7-0.4-1.4-0.6-3,0.2c-0.1,0-0.2,0.1-0.3,0.1C72.8,67.1,69.2,67,66,65.4z"/>
-		<g id="Group-77_1_" transform="translate(65.164 58)">
-			<ellipse id="Ellipse_12" class="st4" cx="7.4" cy="3.2" rx="7" ry="4"/>
-			<ellipse id="Ellipse_18" class="st4" cx="16.4" cy="-3.3" rx="7" ry="3.5"/>
-			<ellipse id="Ellipse_19" class="st5" cx="18.9" cy="-19.3" rx="5.5" ry="2.5"/>
-			<ellipse id="Ellipse_20" class="st5" cx="24.4" cy="-14.3" rx="5" ry="2.5"/>
-			<ellipse id="Ellipse_21" class="st5" cx="32.4" cy="-20.3" rx="7" ry="3.5"/>
-			<ellipse id="Ellipse_16" class="st4" cx="0.9" cy="-3.3" rx="4.5" ry="2.5"/>
-			<ellipse id="Ellipse_17" class="st4" cx="19.4" cy="5.2" rx="5" ry="3"/>
-			<ellipse id="Ellipse_13" class="st5" cx="-17.6" cy="-6.8" rx="5" ry="3"/>
-			<ellipse id="Ellipse_14" class="st5" cx="-17.1" cy="-12.8" rx="3.5" ry="2"/>
-			<ellipse id="Ellipse_15" class="st5" cx="-7.6" cy="-11.8" rx="5" ry="3"/>
-		</g>
-		<path id="Path-3_2_" d="M116.6,37.5l-2.9-5.2l0.4-0.2l3.6,6.4l-7.3-0.3v-0.5l5.9,0.2l-4.3-2.6c-11.6-6.2-28-9.2-43.6-7.8
-			c-17,1.5-31.5,7.9-40.3,18.6l-0.4-0.3c9-10.9,23.6-17.3,40.7-18.8c15.7-1.4,32.2,1.6,43.9,7.9L116.6,37.5z"/>
-		<text transform="matrix(1 0 0 1 85.5823 79.6458)" class="st6 st7">1. presenti nella</text>
-		<text transform="matrix(1 0 0 1 97.0181 92.4769)" class="st6 st7">stessa raccolta</text>
-		<text transform="matrix(1 0 0 1 51.8563 20.8785)" class="st6 st7">2. cronologia</text>
+		</mask>
+		<path id="Stroke-16" class="st4" d="M0.5,0.6l0.3,0.2"/>
 	</g>
+	<path id="Stroke-19" class="st1" d="M4.2,44l74,43"/>
+	<g id="Group-26" transform="translate(2.163934, 46.000000)">
+		<g id="Group-22" transform="translate(76.568807, 40.576271)">
+			<g id="Clip-21">
+			</g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="0.2" y="0.3" width="0.7" height="0.5">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="0.2" y="0.3" width="0.7" height="0.5" id="mask-4_1_">
+				<g class="st5">
+					<polygon id="path-3_1_" class="st3" points="0.2,0.2 0.9,0.2 0.9,0.7 0.2,0.7 					"/>
+				</g>
+			</mask>
+			<path id="Stroke-20" class="st6" d="M0.3,0.4l0.5,0.3"/>
+		</g>
+		<g id="Group-25">
+			<g id="Clip-24">
+			</g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="0.7" y="0.2" width="0.7" height="0.5">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="0.7" y="0.2" width="0.7" height="0.5" id="mask-6_1_">
+				<g class="st7">
+					<polygon id="path-5_1_" class="st3" points="0.7,0.1 1.4,0.1 1.4,0.8 0.7,0.8 					"/>
+				</g>
+			</mask>
+			<path id="Stroke-23" class="st8" d="M0.8,0.6l0.5-0.3"/>
+		</g>
+	</g>
+	<path id="Stroke-27" class="st1" d="M4.2,46l74-43"/>
+	<path id="Stroke-28" class="st0" d="M78.3,2.7L79,2.3"/>
+	<path id="Stroke-29" class="st0" d="M16.3,54.7l0.7-0.4"/>
+	<path id="Stroke-30" class="st1" d="M18.2,54l74-43"/>
+	<path id="Stroke-31" class="st0" d="M92.3,11.7l0.7-0.4"/>
+	<path id="Stroke-32" class="st0" d="M31.3,62.7l0.7-0.4"/>
+	<path id="Stroke-33" class="st1" d="M32.2,62l74-43"/>
+	<path id="Stroke-34" class="st0" d="M106.3,19.7l0.7-0.4"/>
+	<path id="Stroke-35" class="st0" d="M45.3,71.7l0.7-0.4"/>
+	<path id="Stroke-36" class="st1" d="M46.2,71l74-43"/>
+	<path id="Stroke-37" class="st0" d="M120.3,27.7l0.7-0.4"/>
+	<path id="Stroke-38" class="st0" d="M59.3,79.7l0.7-0.4"/>
+	<path id="Stroke-39" class="st1" d="M60.2,79l74-43"/>
+	<path id="Stroke-40" class="st0" d="M135.3,35.7l0.7-0.4"/>
+	<g id="Group-43" transform="translate(73.163934, 87.000000)">
+		<g id="Clip-42">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="0.4" y="0.2" width="0.5" height="0.4">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="0.4" y="0.2" width="0.5" height="0.4" id="mask-8_1_">
+			<g class="st9">
+				<polygon id="path-7_1_" class="st3" points="0.4,0.1 0.9,0.1 0.9,0.5 0.4,0.5 				"/>
+			</g>
+		</mask>
+		<path id="Stroke-41" class="st10" d="M0.5,0.5l0.3-0.2"/>
+	</g>
+	<path id="Stroke-44" class="st1" d="M75.2,87l74-43"/>
+	<path id="Stroke-45" class="st0" d="M149.3,43.7l0.7-0.4"/>
+	<path id="Stroke-46" class="st11" d="M66.2,65.5c-2.2-1.3-2.8-3.2-1.6-4.8c0-0.1,0.1-0.1,0.1-0.2c0.9-1,0.4-1.3,0.2-1.5
+		c-0.2-0.1-0.6-0.3-1-0.4c-0.1,0-0.2,0-0.2-0.1C63,58.4,62.5,58.2,62,58c-2.5-1.4-2.5-3.8,0-5.2c2.2-1.3,5.8-1.4,8.3-0.4
+		c0.1,0,0.2,0.1,0.2,0.1c0.9,0.4,1.4,0.4,1.7,0.4c0.6,0,1.3-0.4,2.1-1c0.1,0,0.1-0.1,0.2-0.1c0.1-0.1,0.3-0.2,0.5-0.3
+		c3.5-2,9.2-2,12.7,0c3.1,1.8,3.5,4.6,1,6.6c0,0.1-0.1,0.1-0.2,0.2c-1.6,1.2-1,1.6-0.5,1.9l0,0c0.1,0.1,0.3,0.2,0.5,0.2
+		c0.1,0,0.1,0,0.1,0.1c0,0,0,0,0,0c0.2,0.1,0.3,0.2,0.5,0.2c2.5,1.4,2.5,3.8,0,5.2c-2.5,1.4-6.6,1.4-9.1,0c-0.1,0-0.1-0.1-0.2-0.1
+		c0,0-0.1-0.1-0.1-0.1c-0.1-0.1-0.2-0.1-0.3-0.2c-0.7-0.4-1.4-0.6-3,0.2c-0.1,0-0.2,0.1-0.3,0.1C73.3,67.2,68.9,67.1,66.2,65.5z"/>
+	<g id="Group-50" transform="translate(79.163934, 60.000000)">
+		<g id="Clip-49">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_4_" filterUnits="userSpaceOnUse" x="-7" y="-3.4" width="24.9" height="13.7">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-7" y="-3.4" width="24.9" height="13.7" id="mask-10_1_">
+			<g class="st12">
+				<path id="path-9_1_" class="st3" d="M1.9,1.5c-2,1.1-2,2.9,0,4l0,0c2,1.1,5.3,1.1,7.3,0l0,0c2-1.1,2-2.9,0-4l0,0
+					C8.1,1,6.8,0.7,5.5,0.7l0,0C4.2,0.7,2.9,1,1.9,1.5L1.9,1.5z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-48" class="st13" points="5.5,-3.4 18,3.5 5.5,10.4 -7,3.5 		"/>
+	</g>
+	<g id="Group-53" transform="translate(73.163934, 51.000000)">
+		<g id="Clip-52">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_5_" filterUnits="userSpaceOnUse" x="-8.1" y="-4.3" width="32.1" height="17.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-8.1" y="-4.3" width="32.1" height="17.6" id="mask-12_1_">
+			<g class="st14">
+				<path id="path-11_1_" class="st3" d="M2.5,1.5c-3,1.7-3,4.3,0,6l0,0c3,1.7,7.9,1.7,10.9,0l0,0c3-1.7,3-4.3,0-6l0,0
+					C11.9,0.7,9.9,0.2,8,0.2l0,0C6,0.2,4,0.7,2.5,1.5L2.5,1.5z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-51" class="st15" points="8,-4.3 24,4.5 8,13.3 -8.1,4.5 		"/>
+	</g>
+	<g id="Group-56" transform="translate(44.163934, 49.000000)">
+		<g id="Clip-55">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_6_" filterUnits="userSpaceOnUse" x="-5.9" y="-3" width="19" height="10.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-5.9" y="-3" width="19" height="10.6" id="mask-14_1_">
+			<g class="st16">
+				<path id="path-13_1_" class="st3" d="M1.4,1c-1.2,0.7-1.2,1.8,0,2.4l0,0c1.2,0.7,3.2,0.7,4.4,0l0,0c1.2-0.7,1.2-1.8,0-2.4l0,0
+					C5.2,0.7,4.4,0.5,3.6,0.5l0,0C2.8,0.5,2,0.7,1.4,1L1.4,1z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-54" class="st17" points="3.6,-2.9 13,2.3 3.6,7.4 -5.8,2.3 		"/>
+	</g>
+	<g id="Group-59" transform="translate(54.163934, 44.000000)">
+		<g id="Clip-58">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_7_" filterUnits="userSpaceOnUse" x="-5.8" y="-3.5" width="19" height="10.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-5.8" y="-3.5" width="19" height="10.6" id="mask-16_1_">
+			<g class="st18">
+				<path id="path-15_1_" class="st3" d="M1.5,0.6C0.3,1.3,0.3,2.4,1.5,3l0,0C2.7,3.7,4.7,3.7,6,3l0,0c1.2-0.7,1.2-1.8,0-2.4l0,0
+					C5.3,0.2,4.5,0.1,3.7,0.1l0,0C2.9,0.1,2.1,0.2,1.5,0.6L1.5,0.6z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-57" class="st19" points="3.7,-3.4 13.1,1.8 3.7,7 -5.7,1.8 		"/>
+	</g>
+	<g id="Group-62" transform="translate(48.163934, 46.000000)">
+		<g id="Clip-61">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_8_" filterUnits="userSpaceOnUse" x="-6.1" y="-3.5" width="18.1" height="10.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-6.1" y="-3.5" width="18.1" height="10.6" id="mask-18_1_">
+			<g class="st20">
+				<path id="path-17_1_" class="st3" d="M0.9,0.6c-1.2,0.7-1.2,1.8,0,2.4l0,0C2.1,3.7,4,3.7,5.1,3l0,0c1.2-0.7,1.2-1.8,0-2.4l0,0
+					C4.5,0.2,3.8,0.1,3,0.1l0,0C2.2,0.1,1.5,0.2,0.9,0.6L0.9,0.6z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-60" class="st21" points="3,-3.4 12,1.8 3,7 -5.9,1.8 		"/>
+	</g>
+	<g id="Group-65" transform="translate(61.163934, 52.000000)">
+		<g id="Clip-64">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_9_" filterUnits="userSpaceOnUse" x="-7.2" y="-3.3" width="24.9" height="13.1">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-7.2" y="-3.3" width="24.9" height="13.1" id="mask-20_1_">
+			<g class="st22">
+				<path id="path-19_1_" class="st3" d="M1.6,1.3c-2,1.1-2,2.8,0,3.8l0,0c2,1.1,5.3,1.1,7.3,0l0,0c2-1.1,2-2.8,0-3.8l0,0
+					c-1-0.5-2.3-0.8-3.6-0.8l0,0C3.9,0.5,2.6,0.8,1.6,1.3L1.6,1.3z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-63" class="st23" points="5.2,-3.3 17.7,3.2 5.2,9.7 -7.2,3.2 		"/>
+	</g>
+	<g id="Group-68" transform="translate(81.163934, 36.000000)">
+		<g id="Clip-67">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_10_" filterUnits="userSpaceOnUse" x="-6.3" y="-3.1" width="19" height="11.3">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-6.3" y="-3.1" width="19" height="11.3" id="mask-22_1_">
+			<g class="st24">
+				<path id="path-21_1_" class="st3" d="M0.2,2.3c-0.3,1,0.9,2,2.6,2.1l0,0c1.7,0.2,3.3-0.5,3.6-1.5l0,0c0.3-1-0.9-2-2.6-2.1l0,0
+					c-0.2,0-0.4,0-0.5,0l0,0C1.8,0.7,0.4,1.4,0.2,2.3L0.2,2.3z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-66" class="st25" points="3.3,-3 12.7,2.6 3.3,8.1 -6.1,2.6 		"/>
+	</g>
+	<g id="Group-71" transform="translate(87.163934, 39.000000)">
+		<g id="Clip-70">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_11_" filterUnits="userSpaceOnUse" x="-6.2" y="-3.3" width="19" height="10.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-6.2" y="-3.3" width="19" height="10.6" id="mask-24_1_">
+			<g class="st26">
+				<path id="path-23_1_" class="st3" d="M0.2,1.7c-0.3,0.9,0.9,1.8,2.6,2l0,0c1.7,0.2,3.3-0.5,3.6-1.4l0,0c0.3-0.9-0.9-1.8-2.6-2
+					l0,0c-0.2,0-0.4,0-0.5,0l0,0C1.8,0.2,0.4,0.8,0.2,1.7L0.2,1.7z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-69" class="st27" points="3.3,-3.2 12.7,2 3.3,7.1 -6.1,2 		"/>
+	</g>
+	<g id="Group-74" transform="translate(89.163934, 35.000000)">
+		<g id="Clip-73">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_12_" filterUnits="userSpaceOnUse" x="-6.3" y="-3.3" width="19" height="10.6">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-6.3" y="-3.3" width="19" height="10.6" id="mask-26_1_">
+			<g class="st28">
+				<path id="path-25_1_" class="st3" d="M0.2,1.7c-0.3,0.9,0.9,1.8,2.6,2l0,0c1.7,0.2,3.3-0.5,3.6-1.4l0,0c0.3-0.9-0.9-1.8-2.6-2
+					l0,0c-0.2,0-0.4,0-0.5,0l0,0C1.8,0.3,0.4,0.9,0.2,1.7L0.2,1.7z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-72" class="st29" points="3.3,-3.2 12.7,2 3.3,7.2 -6.1,2 		"/>
+	</g>
+	<g id="Group-77" transform="translate(65.163934, 58.000000)">
+		<g id="Clip-76">
+		</g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter_13_" filterUnits="userSpaceOnUse" x="-7.4" y="-3.9" width="27.9" height="16.2">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-7.4" y="-3.9" width="27.9" height="16.2" id="mask-28_1_">
+			<g class="st30">
+				<path id="path-27_1_" class="st3" d="M2.1,1.6c-2.4,1.4-2.4,3.7,0,5.1l0,0c2.4,1.4,6.4,1.4,8.8,0l0,0c2.4-1.4,2.4-3.7,0-5.1l0,0
+					C9.8,0.9,8.2,0.6,6.5,0.6l0,0C4.9,0.6,3.3,0.9,2.1,1.6L2.1,1.6z"/>
+			</g>
+		</mask>
+		<polygon id="Fill-75" class="st31" points="6.5,-3.9 20.5,4.2 6.5,12.3 -7.4,4.2 		"/>
+	</g>
+	<path id="Path-3" d="M116.8,37.6l-2.9-5.2l0.4-0.2l3.6,6.4l-7.3-0.3l0-0.5l5.9,0.2l-4.3-2.6c-11.6-6.2-28-9.2-43.6-7.8
+		c-17,1.5-31.5,7.9-40.3,18.6L28,45.8C36.8,35,51.4,28.6,68.6,27.1c15.7-1.4,32.2,1.6,43.9,7.9L116.8,37.6z"/>
+	<text transform="matrix(1 0 0 1 95 55)" class="st32 st33">1. presenti nella</text>
+	<text transform="matrix(1 0 0 1 105 67)" class="st32 st33">stessa raccolta</text>
+	<text transform="matrix(1 0 0 1 52 21)" class="st32 st33">2. cronologia</text>
 </g>
 </svg>

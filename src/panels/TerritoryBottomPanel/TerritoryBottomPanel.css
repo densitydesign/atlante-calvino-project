@@ -1,6 +1,6 @@
 
 .territory-bottom-panel {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);
@@ -10,6 +10,7 @@
   display : grid;
 }
 
+
 h4{
   text-transform: uppercase;
   font-size: 1em;
@@ -18,6 +19,6 @@ h4{
 
 .title-panel{
   margin-top:1.2em;
-  margin-bottom:1.2em;
+  margin-bottom:0.8em;
   display: block;
 }
