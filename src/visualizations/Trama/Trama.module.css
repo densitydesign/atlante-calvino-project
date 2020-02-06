@@ -6,9 +6,9 @@
 }
 
 .topAxisRectEmpty{
-  stroke: #fff;
+  stroke: transparent;
   stroke-width: 1px;
-  fill: #fff;
+  fill: transparent;
 }
 
 .topAxisRectNoSeq{
@@ -26,7 +26,7 @@
 
 .topAxisTextEmpty {
     font-size: 10px;
-    fill: #fff;
+    fill: transparent;
 }
 
 .topAxisTextNoSeq{
