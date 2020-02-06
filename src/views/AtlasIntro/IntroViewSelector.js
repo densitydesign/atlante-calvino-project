@@ -15,16 +15,20 @@ export default class IntroViewSelector extends React.Component
       backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')",
       opacity : this.props.transitionData.percent,
       backgroundSize : "cover",
-      backgroundRepeat: "no-repeat"
+      backgroundRepeat: "no-repeat",
+      width : "100%",
+      height : "100%"
     } : 
     {};
 
     return (
 
-      <div className={this.props.className} style={style} >
-        {
-          children.map((d, i) => <d.type key={i} style={this.props.keepLabelVisible ? {opacity : 1} : {}}>{d.props.children}</d.type>)
-        }
+      <div className={this.props.className}>
+        <div className={this.props.className} style={style} >
+          {
+            children.map((d, i) => <d.type key={i} style={this.props.keepLabelVisible ? {opacity : 1} : {}}>{d.props.children}</d.type>)
+          }
+        </div>
       </div>
     );
   }
