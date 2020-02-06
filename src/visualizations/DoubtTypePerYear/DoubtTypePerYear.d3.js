@@ -32,7 +32,7 @@ class VClass {
 
     let color = d3.scaleOrdinal()
     .domain(data.columns.slice(1))
-    .range(["#00095E","#0000ff","#ff0000","#7F0000"]);
+    .range(["#00095E","#0000ff","#7F0000","#ff0000"]);
 
     x = d3.scaleLinear()
       .domain(d3.extent(data, d => d.date))
