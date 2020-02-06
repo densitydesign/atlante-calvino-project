@@ -5,7 +5,7 @@ main {
 }
 
 main svg {
-  grid-column: 2 / span 22;
+  grid-column: 2 / span 21;
 }
 
 main article {
@@ -29,7 +29,7 @@ main article h3 {
 }
 
 .viz--meta {
-  grid-column: 2 / span 22;
+  grid-column: 2 / span 21;
   margin-top: 4em;
 }
 

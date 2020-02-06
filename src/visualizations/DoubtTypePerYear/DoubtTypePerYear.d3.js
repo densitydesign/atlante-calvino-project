@@ -16,7 +16,6 @@ class VClass {
 
     var width = document.body.clientWidth - margin.left - margin.right;
     var height = 300 - margin.top - margin.bottom;
-    let label = d3.select("#label p");
 
     var x, y;
 
@@ -47,20 +46,27 @@ class VClass {
       .x(d => x(d.data.date))
       .y0(d => y(d[0]))
       .y1(d => y(d[1]))
-      .curve(d3.curveCatmullRom);
+      .curve(d3.curveBasis);
 
 
     var xAxis = svg.append('g')
       .classed('x axis', true)
       .attr("transform", `translate(0,${height - margin.bottom})`)
-      .call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0))
+      .call(d3.axisBottom(x).ticks(width / 100).tickSizeOuter(1))
+
 
     var yAxis = svg.append('g')
       .classed('y axis', true)
       .attr("transform", `translate(${margin.left},0)`)
       .call(d3.axisLeft(y))
 
-    svg.append("g").selectAll("path")
+      svg.append("text")
+        .attr("y", height - margin.bottom / 2)
+        .text("Anno →");
+
+    let stream = svg.append("g");
+
+      stream.selectAll("path")
       .data(series)
       .join("path")
       .attr("fill", ({
@@ -73,6 +79,9 @@ class VClass {
       .text(({
         key
       }) => key);
+
+      // stream.on("mousemove", tooltip)
+      // stream.on("touchmove", tooltip);
 
     d3.select('.x.axis .domain').style('stroke-dasharray', function() {
       var strokeDashArray = '';
@@ -92,6 +101,21 @@ class VClass {
       strokeDashArray += ((x(1986) - margin.left) - (x(1971) - margin.left));
       return strokeDashArray
     })
+
+    // let tooltipLine = stream.append("line")
+    // .attr("x0", 0)
+    // .attr("y0", 0)
+    // .attr("x1", 0)
+    // .attr("y1", height)
+    // .style("fill", "none")
+    // .style("stroke-width", 2)
+    // .style("stroke", "rgba(0,0,0,.3)");
+    //
+    // function tooltip(){
+    //   console.log(y.invert(d3.mouse(this)[1]));
+    //   tooltipLine.attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
+    // }
+
 
   };
 
