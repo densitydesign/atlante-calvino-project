@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
-export default class ViewSelector extends React.Component
+export default class IntroViewSelector extends React.Component
 {
   render()
   {
     let children = React.Children.toArray(this.props.children)
-    let the_link = this.props.route.includes("#") ? <HashLink to={this.props.route}>{this.props.text}</HashLink> : <Link to={this.props.route}>{this.props.text}</Link>
 
     if (children.length < 1) {
       let obj = { type: 'span'}
