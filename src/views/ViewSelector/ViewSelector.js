@@ -16,7 +16,6 @@ export default class ViewSelector extends React.Component
 
     const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
 
-console.log("viewSelector.render()");
     return (
 
       <div className={this.props.className} style={style} >

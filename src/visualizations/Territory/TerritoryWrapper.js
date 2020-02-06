@@ -140,9 +140,22 @@ export default class TerritoryWrapper extends React.Component
       GlobalData.noAnalysisDropDownPositions.closed :
       GlobalData.noAnalysisDropDownPositions.open;
 
+    // if we are opening the drop down, kill the bottom panel
+    const bottomPanelPosition = 
+      newValue === GlobalData.noAnalysisDropDownPositions.open ? 
+      GlobalData.bottomPanelPositions.closed :
+      this.state.bottomPanelPosition;
+
+    const bottomPanelMode =
+      newValue === GlobalData.noAnalysisDropDownPositions.open ?
+      GlobalData.bottomPanelModes.noAnalysis :
+      this.state.bottomPanelMode;
+
     this.setState({ 
       noAnalysisDropDownPosition : newValue, 
-      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
+      bottomPanelPosition : bottomPanelPosition,
+      bottomPanelMode : bottomPanelMode
     });
   }
 
@@ -221,11 +234,24 @@ export default class TerritoryWrapper extends React.Component
     const newValue =
       this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
       GlobalData.itineraryDropUpPositions.closed :
-      GlobalData.itineraryDropUpPositions.open;    
+      GlobalData.itineraryDropUpPositions.open;
+
+    const bottomPanelPosition = 
+      newValue === GlobalData.itineraryDropUpPositions.open ? 
+      GlobalData.bottomPanelPositions.closed :
+      this.state.bottomPanelPosition;
+
+
+    const bottomPanelMode =
+      newValue === GlobalData.itineraryDropUpPositions.open ?
+      GlobalData.bottomPanelModes.noAnalysis :
+      this.state.bottomPanelMode;
 
     this.setState({ 
       itineraryDropUpPosition : newValue, 
-      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      bottomPanelPosition : bottomPanelPosition,
+      bottomPanelMode : bottomPanelMode
     });
   }
 

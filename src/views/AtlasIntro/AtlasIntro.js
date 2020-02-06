@@ -2,6 +2,7 @@ import React from 'react';
 import ParallaxScroll from 'react-scroll-transitions';
 import { withRouter } from 'react-router-dom';
 import AtlasIntroHeader from '../../headers/AtlasIntroHeader/AtlasIntroHeader';
+import IntroViewSelector from './IntroViewSelector.js';
 
 import '../../App.css';
 import './AtlasIntro.css';
@@ -334,6 +335,22 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell"><h3>Spazio</h3></div>
           </div>
         </div>
+        const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
+
+            <div className="atlas-intro-cell2 pop" style={{ 
+              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_tappa_1.svg" + "')",
+              opacity : transitionData.percent,
+              backgroundSize : "cover",
+              backgroundRepeat: "no-repeat"
+            }}><h4>TAPPA 1</h4></div>
+            <div className="atlas-intro-cell2" style={{ 
+              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_nebbia.svg" + "')", 
+              opacity : transitionData.percent, 
+              backgroundSize : "cover",
+              backgroundRepeat: "no-repeat"
+            }}><h5>Nebbia</h5></div>
+
+
 */}
 
         <div id="staticGrid" className="atlas-intro">
@@ -344,20 +361,20 @@ class AtlasIntro extends React.Component
             <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2 pop"><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2"><h5>Nebbia</h5></div>
-            <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
-            <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
+            <IntroViewSelector className="atlas-intro-cell2 pop" image="/menu_tappa_1.svg" transitionData={transitionData} keepLabelVisible><h4>TAPPA 1</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_nebbia.svg"><h5>Nebbia</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_luoghi.svg"><h5>Luoghi</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_elenchi.svg"><h5>Elenchi</h5></IntroViewSelector>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
-            <div className="atlas-intro-cell2"><h5>Dubitare</h5></div>
-            <div className="atlas-intro-cell2"><h5>Trasformare</h5></div>
-            <div className="atlas-intro-cell2"><h5>Combinare</h5></div>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 2</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_dubitare.svg"><h5>Dubitare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_trasformare.svg"><h5>Trasformare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Combinare</h5></IntroViewSelector>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
-            <div className="atlas-intro-cell2"><h5>Cancellazione</h5></div>
-            <div className="atlas-intro-cell2"><h5>Realismo</h5></div>
-            <div className="atlas-intro-cell2"><h5>Trama</h5></div>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 3</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Cancellazione</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Realismo</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_trama.svg"><h5>Trama</h5></IntroViewSelector>
 
           </div>
         </div>

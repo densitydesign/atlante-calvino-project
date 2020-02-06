@@ -560,6 +560,7 @@ class VClass
 			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
+if(d.id === "S151") console.log("d.generico_terrestre", d.generico_terrestre);      
 			return d.generico_terrestre * 2 * PI + placesArcFix(d);
 		});
 
@@ -620,6 +621,7 @@ class VClass
 			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
+if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
 			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
 		});
 
@@ -1955,11 +1957,11 @@ console.log("change_none_to_flat");
     else t1 = t0.transition().duration(700);
 
     // hide old custom drawings
-    t1
-      .selectAll("." + oldHighlightParameters.customElementsClasses)
-      .style('display', "block")
-			.style('fill-opacity', 0)
-			.style('stroke-opacity', 0);    
+//    t1
+//      .selectAll("." + oldHighlightParameters.customElementsClasses)
+//      .style('display', "block")
+//			.style('fill-opacity', 0)
+//			.style('stroke-opacity', 0);    
   }
 
   onFirstElementClicked = d => {
@@ -2386,7 +2388,41 @@ function placesArcFix(d)
   switch(d.id)
   {
     case "V005" : return Math.PI * 1 / 2;
+    case "S012" : return Math.PI * 1 / 2;
+//    case "S032" : return Math.PI * /;
+//    case "S008" : return Math.PI * /;
+//    case "V003" : return Math.PI * /;
+    case "S081" : return Math.PI * 25 / 32;
+//    case "S076" : return Math.PI * /;
+    case "S089" : return Math.PI * 1 / 2;
     case "V008" : return Math.PI * 3 / 4;
+    case "S149" : return Math.PI * 6 / 10;
+    case "S151" : return Math.PI * 69 / 128;
+    case "S156" : return Math.PI * 5 / 12;
+//    case "V021" : return Math.PI * /;
+    case "S179" : return Math.PI * 1 / 2;
+    case "S181" : return Math.PI * 1 / 2;
+    case "S203" : return Math.PI * 1 / 2;
+    case "S119" : return Math.PI * 1 / 2;
+    case "S123" : return Math.PI * 21 / 32;
+    case "S142" : return Math.PI * 9 / 16;
+    case "S139" : return Math.PI * 30 / 48;
+    case "S140" : return Math.PI * 1 / 2;
+    case "S095" : return Math.PI * 1 / 2;
+    case "S097" : return Math.PI * 37 / 64;
+    case "S104" : return Math.PI * 37 / 48;
+    case "S050" : return Math.PI * 1 / 2;
+    case "S101" : return Math.PI * 21 / 32;
+    case "S048" : return Math.PI * 31 / 64;
+    case "S088" : return Math.PI * 133 / 256;
+    case "S065" : return Math.PI * 1 / 2;
+    case "S072" : return Math.PI * 1 / 2;
+    case "S067" : return Math.PI * 17 / 32;
+    case "S007" : return Math.PI * 17 / 32;
+    case "S022" : return Math.PI * 7 / 16;
+    case "S041" : return Math.PI * 1 / 2;
+    case "S014" : return Math.PI * 9 / 24;
+
     default : return 0;
   }
 }
