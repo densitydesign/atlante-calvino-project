@@ -16,10 +16,6 @@ import GlobalData from '../../utilities/GlobalData';
 
 const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
 
-console.log("searchOptions", searchOptions)
-
-
-
 const tipologiaOptions = [
   { label: "uno" },
   { label: "due" },
@@ -113,7 +109,7 @@ class Trama extends Component {
               onChange={x => {
                 this.setState({ cercaPer: x.label });
               }}
-              style={{ gridColumn: "span 3" }}
+              style={{ gridColumn: "span 3", pointerEvents: !controlsEnabled ? 'none' : undefined, opacity: !controlsEnabled ? 0.4 : undefined  }}
             />
           )}
 
@@ -160,7 +156,8 @@ class Trama extends Component {
             multiple
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            allLink='tutti'
+            style={{ gridColumn: "span 8", textAlign: "center", pointerEvents: !controlsEnabled ? 'none' : undefined, opacity: !controlsEnabled ? 0.4 : undefined }}
             allowEmpty={false}
             value={tipologia}
             onChange={tipologia => {
@@ -177,7 +174,7 @@ class Trama extends Component {
               this.setState({ dettaglio: x.label });
             }}
             options={dettaglioOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{ gridColumn: "span 8", textAlign: "center", pointerEvents: !controlsEnabled ? 'none' : undefined, opacity: !controlsEnabled ? 0.4 : undefined }}
           />
 
           <AltOptions
@@ -189,7 +186,7 @@ class Trama extends Component {
               this.setState({ aggregazione: x.label });
             }}
             options={aggregazioneOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{ gridColumn: "span 8", textAlign: "center", pointerEvents: !controlsEnabled ? 'none' : undefined, opacity: !controlsEnabled ? 0.4 : undefined }}
           />
         </div>
       </div>

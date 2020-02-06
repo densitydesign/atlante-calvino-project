@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import findIndex from "lodash/findIndex";
-import isEqual from "lodash/isEqual";
+import range from "lodash/range";
 import indexOf from "lodash/indexOf";
 import "../../App.css";
 import "./Options.css";
@@ -38,6 +38,19 @@ class AltOptions extends Component {
     if (oldProps.value !== this.props.value) {
       this.updateStateFromValue();
     }
+  }
+
+  handleSelectAll = () => {
+    const { options, onChange = []} = this.props
+    const selectedIndices = {};
+    range(options.length).forEach(i => (selectedIndices[i] = true));
+    this.setState({ selectedIndices });
+    const values = Object.keys(selectedIndices)
+        .sort()
+        .filter(x => selectedIndices[x])
+        .map(x => options[x]);
+      onChange(values);
+
   }
 
   handleChange = index => {
@@ -101,11 +114,12 @@ class AltOptions extends Component {
 
   render() {
     const { selectedIndices } = this.state;
-    const { multiple, title, value, style, options = [] } = this.props;
+    const { multiple, title, allLink, style, options = [] } = this.props;
     const indices = Object.keys(selectedIndices)
       .map(k => (selectedIndices[k] ? k : undefined))
       .filter(i => i !== undefined);
     const anySelected = !!indices.length;
+    const allSelected = indices.length === options.length
     let current;
     if (!multiple) {
       current = anySelected ? options[indices[0]].label : undefined;
@@ -145,6 +159,12 @@ class AltOptions extends Component {
                 </Dropdown.Item>
               );
             })}
+            {allLink && multiple && <Dropdown.Item
+                  onClick={() => this.handleSelectAll()}
+                  className={{ active: allSelected }}
+                >
+                  {allLink}
+                </Dropdown.Item>}
           </Dropdown.Menu>
         </Dropdown>
       </div>
@@ -163,5 +183,6 @@ AltOptions.defaultProps = {
   title: "Options",
   value: null,
   onChange: value => {},
-  allowEmpty: true
+  allowEmpty: true,
+  allLink: null,
 };
