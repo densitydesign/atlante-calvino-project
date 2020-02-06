@@ -303,7 +303,6 @@ class AtlasIntro extends React.Component
 
   makeCompassPermanent(id, transitionData)
   {
-console.log("makeCompassPermanent");    
     return (
       <div>
         <AtlasIntroHeader />
@@ -346,8 +345,18 @@ console.log("makeCompassPermanent");
             <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2 pop" style={{ backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" }}><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2"><h5>Nebbia</h5></div>
+            <div className="atlas-intro-cell2 pop" style={{ 
+              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_tappa_1.svg" + "')",
+              opacity : transitionData.percent,
+              backgroundSize : "cover",
+              backgroundRepeat: "no-repeat"
+            }}><h4>TAPPA 1</h4></div>
+            <div className="atlas-intro-cell2" style={{ 
+              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_nebbia.svg" + "')", 
+              opacity : transitionData.percent, 
+              backgroundSize : "cover",
+              backgroundRepeat: "no-repeat"
+            }}><h5>Nebbia</h5></div>
             <div className="atlas-intro-cell2"><h5>Luoghi</h5></div>
             <div className="atlas-intro-cell2"><h5>Elenchi</h5></div>
 
