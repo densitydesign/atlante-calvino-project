@@ -7,6 +7,10 @@ import './DoubtTypePerYear.css';
 class VClass {
   initialize = (el, input_data) => {
 
+    const doubtLabels = ['na', 'nc', 'ca', 'cc'];
+    const values = ['na', 'nc', 'ca', 'cc'];
+
+
     var margin = ({
       top: 10,
       right: 30,
@@ -25,22 +29,47 @@ class VClass {
 
     let data = input_data
 
+    let lists = [];
+
+    let parseDate = d3.timeParse("%Y-%m-%d");
+    let formatDate = d3.timeFormat("%Y");
+
+    input_data.forEach(function(d) {
+
+      values.forEach(function(value, index) {
+
+          lists.push({
+            'date': parseDate(d.date),
+          })
+
+      })
+
+    })
+
     data = data.sort(function(a, b) {
       return a.date - b.date;
     })
     var series = d3.stack().keys(data.columns.slice(1))(data)
 
     let color = d3.scaleOrdinal()
-    .domain(data.columns.slice(1))
-    .range(["#00095E","#0000ff","#7F0000","#ff0000"]);
+      .range([
+        GlobalData.visualizationColors.territory.nebbia_dim,
+        GlobalData.visualizationColors.territory.nebbia_bright,
+        GlobalData.visualizationColors.territory.cancellazione_dim,
+        GlobalData.visualizationColors.territory.cancellazione_bright,
+      ])
+      .domain(doubtLabels);
+
 
     x = d3.scaleLinear()
       .domain(d3.extent(data, d => d.date))
       .range([margin.left, width - margin.right])
 
+
     y = d3.scaleLinear()
       .domain([0, d3.max(series, d => d3.max(d, d => d[1]))]).nice()
       .range([height - margin.bottom, margin.top])
+
 
     var area = d3.area()
       .x(d => x(d.data.date))
@@ -62,7 +91,6 @@ class VClass {
 
       svg.append("text")
         .attr("y", height - margin.bottom / 2)
-        .text("Anno →");
 
     let stream = svg.append("g");
 
@@ -75,10 +103,8 @@ class VClass {
       .attr("d", function(d) {
         return area(d);
       })
-      .append("title")
-      .text(({
-        key
-      }) => key);
+        .style("stroke", "rgba(0,0,0,0.7)")
+        .style("stroke-width", 0.5);
 
       // stream.on("mousemove", tooltip)
       // stream.on("touchmove", tooltip);

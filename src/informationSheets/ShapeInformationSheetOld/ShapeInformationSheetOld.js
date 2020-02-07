@@ -21,7 +21,11 @@ export default class ShapeInformationSheet extends React.Component
             <h1>Elenchi</h1>
             <h2>Scheda di approfondimento</h2>
             <div className="viz--info">
-              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Forma_dimensione.svg"} width="400"/></p></div>
+              <div id="label">
+                <p><i>Clicca per scoprire titoli, anni.</i></p>
+              </div>
+              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Forma_dimensione.svg"} width="650"/></p></div>
+              <div id="type-button"><button>Dividi per tipologia</button></div>
               <div id="title--values"></div>
             </div>
           </div>

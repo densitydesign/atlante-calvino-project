@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   cursor: not-allowed;
-    transition: 1s ease;
+    transition: 0.3s ease;
 }
 
 .compass-button:hover {
@@ -19,5 +19,5 @@
 
 .fa-compass{
   background-color: transparent !important;
-  transition: 1s ease;
+  transition: 0.3s ease;
 }
