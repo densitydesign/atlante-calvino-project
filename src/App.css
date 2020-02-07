@@ -224,7 +224,6 @@ color:var(--list);
   background-color: var(--bg);
   text-transform: uppercase;
   transition: color 0.3s ease;
-  font-family:"HKGrotesk";
   text-decoration: none;
 }
 
@@ -236,7 +235,6 @@ a.button-text, a:visited.button-text{
 .button-text:hover{
   background-color: var(--dark-blue);
   color:var(--bg);
-  transition: color 0.3s ease;
 }
 
 
@@ -250,8 +248,6 @@ a.button-text, a:visited.button-text{
   font-weight: 600;
   background-color: var(--dark-blue);
 }
-
-
 
 
 /* FOOTER */
@@ -326,7 +322,6 @@ footer {
 
 .dropdown-item{
   font-size:1em;
-
 }
 
 
