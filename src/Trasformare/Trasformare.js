@@ -35,7 +35,7 @@ class Trasformare extends Component {
 
 		this.changeTimeSpan = this.changeTimeSpan.bind(this);
 
-    this.downloadData = this.downloadData.bind(this);
+    	this.downloadData = this.downloadData.bind(this);
 
 		this.state = {
 			data: 'data still not loaded',
@@ -63,8 +63,8 @@ class Trasformare extends Component {
 					'label': 'chiusi',
 					'status': true
 				}]
-      },
-      helpSidePanelOpen : false
+			},
+			helpSidePanelOpen : false
 		};
 	}
 
@@ -461,6 +461,7 @@ class Trasformare extends Component {
 					{this.state.isLoading && <Loading/>}
 					{	!this.state.isLoading &&
 						<PlacesMatrix
+							id="matrice-dei-luoghi"
 							data = {this.state.data}
 							originalData = {this.state.originalData}
 							filter = {this.state.filter}
