@@ -11,22 +11,22 @@ export default class TerritoryVolumesLegend extends React.Component
       <>
         <div className="legend-block">
             <div className="title-panel"><h4>Dimensione</h4></div>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-noAnalysis-dimensione.svg'} alt="legend information" />
         </div>
 
         <div className="legend-block">
             <div className="title-panel"><h4>Raccolta</h4></div>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-modalita.svg'} alt="legend information" />
         </div>
 
         <div className="legend-block">
     <div className="title-panel"><h4>Volumi</h4></div>
-    <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-codice_colori_large.svg'} />
+    <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-codice_colori_large.svg'} alt="legend information" />
         </div>
 
         <div className="legend-block">
               <div className="title-panel"><h4>Disposizione</h4></div>
-            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-positioning.svg'} />
+            <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-volumes-positioning.svg'} alt="legend information" />
         </div>
       </>
     );

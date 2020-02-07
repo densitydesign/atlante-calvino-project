@@ -10,7 +10,6 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
-import PageTitle from "../../general/PageTitle";
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 

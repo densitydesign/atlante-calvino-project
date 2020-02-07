@@ -7,7 +7,6 @@ import {
 
 import GlobalData from '../../utilities/GlobalData';
 import SplashScreenWrapper from '../../visualizations/SplashScreen/SplashScreenWrapper';
-import StaticSplashScreen from '../StaticSplashScreen/StaticSplashScreen';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';

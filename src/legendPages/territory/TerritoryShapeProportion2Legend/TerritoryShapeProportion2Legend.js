@@ -12,17 +12,17 @@ export default class TerritoryShapeProportion2Legend extends React.Component
 
         <div className="legend-block">
           <div className="title-panel"><h4>DISPOSIZIONE</h4></div>
-          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-disposizione.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-disposizione.svg'} alt="legend information" />
         </div>
 
         <div className="legend-block">
           <div className="title-panel"><h4>DIMENSIONE</h4></div>
-          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-dimensione.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-dimensione.svg'} alt="legend information" />
         </div>
 
         <div className="legend-block">
           <div className="title-panel"><h4>PROPORZIONI ELENCHI</h4></div>
-          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-shape-proporzioni.svg'} />
+          <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-shape-proporzioni.svg'} alt="legend information" />
         </div>
 
       </>

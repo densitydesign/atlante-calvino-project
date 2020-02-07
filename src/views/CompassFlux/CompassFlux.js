@@ -30,7 +30,7 @@ export default class CompassFlux extends React.Component
     <div className="col-3 col-xl-3">
     <h4 style={{ marginBottom: "2rem" }}>Come si legge la visualizzazione: </h4>
     <div className="legend">
-    <img src={ process.env.PUBLIC_URL + "/CompassLische/legenda.png" } style={{ width: "100%" }}/>
+    <img src={ process.env.PUBLIC_URL + "/CompassLische/legenda.png" } style={{ width: "100%" }} alt="information complement" />
     </div>
     </div>
 

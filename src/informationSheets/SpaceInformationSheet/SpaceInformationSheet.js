@@ -19,7 +19,7 @@ export default class SpaceInformationSheet extends React.Component
         <div className="viz--meta">
         <h1>Luoghi. Scheda di approfondimento</h1>
           <h2>Le città invisibili, 1972</h2>
-                <img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Spazio_Header.svg"}/>
+                <img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Spazio_Header.svg"} alt="information complement" />
                 </div>
                 <div className="viz--info">
                   </div>
