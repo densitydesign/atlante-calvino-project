@@ -8,7 +8,7 @@
 }
 
 
-#doubtTypes .tick line {
+.tick line {
   stroke-dasharray: 2;
   stroke: black;
 }
