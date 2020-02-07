@@ -322,7 +322,7 @@ class VClass
 			.outerRadius(d => d.outerRadius)
 			.startAngle(d => d.startAngle)
 			.endAngle(d => d.endAngle);
-
+/*
 		place_hierarchies
 			.filter(d => d.type === "arc")
 			.append("svg:path")
@@ -357,7 +357,7 @@ class VClass
 				return "translate(" + d.cx + ", " + d.cy + ")"
 			})
 			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);       
-
+*/
 		const fontSizeScale = d3
 			.scaleLinear()
 //			.domain(d3.extent(Object.values(place_hierarchies), d => d.hill_size))
