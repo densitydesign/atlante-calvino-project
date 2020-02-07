@@ -2,11 +2,7 @@
 import React from 'react';
 import ArrowButton from '../../../general/ArrowButton/ArrowButton';
 
-
-
 import './TerritorySpaceHelp.css';
-
-import { Link } from 'react-router-dom';
 
 export default class TerritorySpaceHelp extends React.Component
 

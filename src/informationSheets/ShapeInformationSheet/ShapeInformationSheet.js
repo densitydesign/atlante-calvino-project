@@ -3,7 +3,6 @@ import React from 'react';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ListTypesPerTextWrapper from '../../visualizations/ListTypesPerText/ListTypesPerTextWrapper';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
-import { Link } from 'react-router-dom';
 
 import '../../App.css';
 import './ShapeInformationSheet.css';

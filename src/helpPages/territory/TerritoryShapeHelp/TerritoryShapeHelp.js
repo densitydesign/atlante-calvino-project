@@ -1,8 +1,6 @@
 
 import React from 'react';
 import ArrowButton from '../../../general/ArrowButton/ArrowButton';
-import { Link } from 'react-router-dom';
-
 
 import './TerritoryShapeHelp.css';
 

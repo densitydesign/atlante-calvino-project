@@ -4,15 +4,12 @@ import React from 'react';
 import TerritoryChronologyLegend from '../../legendPages/territory/TerritoryChronologyLegend/TerritoryChronologyLegend';
 import TerritoryVolumesLegend from '../../legendPages/territory/TerritoryVolumesLegend/TerritoryVolumesLegend';
 
-import TerritoryDoubtLegend from '../../legendPages/territory/TerritoryDoubtLegend/TerritoryDoubtLegend';
 import TerritoryDoubtOccurrencesLegend from '../../legendPages/territory/TerritoryDoubtOccurrencesLegend/TerritoryDoubtOccurrencesLegend';
 import TerritoryDoubtProportionLegend from '../../legendPages/territory/TerritoryDoubtProportionLegend/TerritoryDoubtProportionLegend';
 
-import TerritoryShapeLegend from '../../legendPages/territory/TerritoryShapeLegend/TerritoryShapeLegend';
 import TerritoryShapeProportion1Legend from '../../legendPages/territory/TerritoryShapeProportion1Legend/TerritoryShapeProportion1Legend';
 import TerritoryShapeProportion2Legend from '../../legendPages/territory/TerritoryShapeProportion2Legend/TerritoryShapeProportion2Legend';
 
-import TerritorySpaceLegend from '../../legendPages/territory/TerritorySpaceLegend/TerritorySpaceLegend';
 import TerritorySpaceOccurrencesLegend from '../../legendPages/territory/TerritorySpaceOccurrencesLegend/TerritorySpaceOccurrencesLegend';
 import TerritorySpaceProportionLegend from '../../legendPages/territory/TerritorySpaceProportionLegend/TerritorySpaceProportionLegend';
 import TerritorySpaceHierarchiesLegend from '../../legendPages/territory/TerritorySpaceHierarchiesLegend/TerritorySpaceHierarchiesLegend';

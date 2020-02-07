@@ -35,7 +35,7 @@ export default class CompassFlux extends React.Component
     </div>
 
     <div className="col-12">
-      <p className="references">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
+      <p className="references">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank" rel="noopener noreferrer">Atlante Calvino: letteratura e visualizzazione</a>.
         </p>
       <p className="references"><strong>Coordinatrice e coordinatore scientifici</strong>: Francesca Serra, Paolo Ciuccarelli.<br/><strong>Autor*</strong>: Serena Del Nero, Virginia Giustetto, Valeria Cavalloro, Margherita Parigini, Tommaso Elli.</p>
     </div>

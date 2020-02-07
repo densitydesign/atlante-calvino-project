@@ -1,6 +1,5 @@
 import React from 'react';
 
-import NavMenu from '../NavMenu/NavMenu';
 import ViewSelector from '../ViewSelector/ViewSelector';
 import HamburgerMenuHeader from '../../headers/HamburgerMenuHeader';
 import { Link } from 'react-router-dom';

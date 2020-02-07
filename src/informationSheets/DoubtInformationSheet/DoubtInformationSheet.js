@@ -4,7 +4,6 @@ import React from 'react';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import DoubtTypePerYearWrapper from '../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
-import { Link } from 'react-router-dom';
 
 import './DoubtInformationSheet.css';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import MainMenu from '../../general/MainMenu/MainMenu';
-import Options from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
 import Search from '../../general/Search/Search';
 import GlobalData from '../../utilities/GlobalData';

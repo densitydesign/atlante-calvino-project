@@ -1978,7 +1978,7 @@ console.log("change_none_to_flat");
     let t1;
 
     // if necessary, change metaballs visibility
-    if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
+    if(oldHighlightParameters.show_metaballs !== newHighlightParameters.show_metaballs)
     {
       const t0_1 = t0.transition().duration(200);
       t0_1

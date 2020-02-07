@@ -3,7 +3,6 @@ import React from 'react';
 import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
-import LinkParagraph from '../PhenomenaIntro/LinkParagraph';
 
 import '../../App.css';
 import './ProcessIntro.css';
