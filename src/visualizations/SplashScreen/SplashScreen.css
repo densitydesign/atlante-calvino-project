@@ -170,12 +170,34 @@ body.navbar-displayed #scroll-down {
   enable-background : "new 0 0 324.8 150";
 }
 
+@keyframes splash-caption-animation {
+  0% {
+    color : var(--bg);
+  }
+  100% {
+    color : black;
+  }
+}
+
+@keyframes splash-description-animation {
+  0% {
+    color : var(--bg);
+  }
+  20% {
+    color : var(--bg)
+  }  
+  100% {
+    color : black;
+  }
+}
+
 .splash-screen-caption {
   top : 60%;
-  width : 40%;
-  left : 30%;
+  width : 30%;
+  left : 35%;
   position : absolute;
   text-align : center;
+  animation : 3s ease-in 0s 1 splash-caption-animation;
 }
 
 .splash-screen-description {
@@ -184,6 +206,8 @@ body.navbar-displayed #scroll-down {
   left : 20%;
   position : absolute;
   text-align : center;
+  color : black;
+  animation : 5s ease-in 0s 1 splash-description-animation;
 }
 
 .splash-screen-hand-icon {
