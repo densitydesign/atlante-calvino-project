@@ -7,3 +7,8 @@
 #main--bones h1{
   margin-top:1em;
 }
+
+.legend {
+  border:1px solid black;
+  padding:1em;
+}

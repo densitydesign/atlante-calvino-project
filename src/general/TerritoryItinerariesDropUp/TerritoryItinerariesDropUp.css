@@ -28,15 +28,12 @@
   height: calc(var(--navigation-height)*3);
   z-index : 20;
   display : grid;
-  grid-column : 1 / span 3;
-  font-size : 1.3em;
   text-align : center;
 }
 
 
 .territory-itineraries-drop-up *{
   background-color : var(--bg);
-  outline:1px solid black;
 }
 
 

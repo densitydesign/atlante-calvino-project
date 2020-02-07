@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HamburgerInfoCompassHeader from '../../headers/HamburgerInfoCompassHeader/HamburgerInfoCompassHeader';
+import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import CompassLische from '../../visualizations/CompassLische/CompassLische';
 
 import V from './compassFlux.d3'
@@ -15,7 +15,7 @@ export default class CompassFlux extends React.Component
 
     return (
       <>
-        <HamburgerInfoCompassHeader />
+        <HamburgerCompassHeader />
         <div id="main--bones" className="container-fluid">
                 <h4>Bussola</h4>
         <div className="row intro">
@@ -29,13 +29,15 @@ export default class CompassFlux extends React.Component
     </div>
     <div className="col-3 col-xl-3">
     <h4 style={{ marginBottom: "2rem" }}>Come si legge la visualizzazione: </h4>
+    <div className="legend">
     <img src={ process.env.PUBLIC_URL + "/CompassLische/legenda.png" } style={{ width: "100%" }}/>
     </div>
+    </div>
 
-    <div className="col-12 mt-3">
-      <p className="caption">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
+    <div className="col-12">
+      <p className="references">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
         </p>
-      <p className="caption">COORDINATORI SCIENTIFICI: Francesca Serra, Paolo Ciuccarelli.<br/>AUTORI: Serena Del Nero, Virginia Giustetto, Valeria Cavalloro, Margherita Parigini, Tommaso Elli.</p>
+      <p className="references"><strong>Coordinatrice e coordinatore scientifici</strong>: Francesca Serra, Paolo Ciuccarelli.<br/><strong>Autor*</strong>: Serena Del Nero, Virginia Giustetto, Valeria Cavalloro, Margherita Parigini, Tommaso Elli.</p>
     </div>
   </div>
 </div>

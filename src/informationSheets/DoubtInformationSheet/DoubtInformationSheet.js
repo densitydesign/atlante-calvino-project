@@ -21,7 +21,7 @@ export default class DoubtInformationSheet extends React.Component
             <h1>Nebbia. Scheda di approfondimento</h1>
             <h2>Analisi di occorrenze del campo semantico del dubbio</h2>
             <div className="viz--info">
-              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="800"/></p></div>
+              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="750"/></p></div>
             </div>
           </div>
           <DoubtTypePerYearWrapper  />
@@ -34,7 +34,7 @@ Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno ne
 <article className="focus">
           <div>
           <h3>Fine e inizio, astratto e concreto</h3>
-            <img src={process.env.PUBLIC_URL + "/informationSheets/nebbia-sheet-1.png"} width="300px" className="viz--pic" />
+            <img src={process.env.PUBLIC_URL + "/informationSheets/infosheet-nebbia-02.png"} width="300px" className="viz--pic" />
           <p>
           Mettere a confronto l’inizio e la fine della carriera narrativa di Calvino permette di scoprire un dettaglio non trascurabile del modo in cui l’autore ha impiegato i due fenomeni nel corso della sua carriera. Il paragone mostra un rovesciamento dei rapporti di forza tra i due: la presenza della nebbia, più intensa nella produzione narrativa dei primi vent’anni, mano a mano diminuisce a favore della cancellazione. Eppure sono numerosi i critici ad affermare che sono proprio le opere tardive a essere frequentate maggiormente dal fenomeno atmosferico: la critica infatti ha spesso descritto i testi degli ultimi anni come immersi in un banco di nebbia.
   La “cancellazione” è in un certo senso effetto o conseguenza della presenza della “nebbia”; a partire dagli anni Sessanta però sembra non ci sia più bisogno di integrare nel testo un elemento “fisico” in grado di giustificare la scomparsa dell’universo narrativo. La cancellazione si trasforma in una forza che trascende l’elemento naturale; l’universo narrativo si disfa senza cause apparenti sotto gli occhi del lettore.
@@ -48,7 +48,7 @@ Per <em>concreto</em> si intende una manifestazione “fisica” del fenomeno ne
 
           <p>
           È in questi anni che, prima di cominciare a scrivere le vicende dell’entità interstellare Qwfwq, Calvino conclude il suo percorso con il personaggio Marcovaldo. Nel 1963 vengono pubblicati gli ultimi racconti della serie, fra cui La fermata sbagliata: Marcovaldo va al cinema, uscendo dopo l’ultimo spettacolo scopre che la città è stata invasa dalla nebbia; incapace di trovare dei punti di riferimento per orientarsi, scende alla fermata sbagliata del tram e si perde. L’anno successivo, nel 1964, esce su «il Caffé» un racconto cosmicomico intitolato Un segno nello spazio: Qwfwq si decide dopo un lungo periodo di incertezza a lasciare un segno personale nell’universo, simbolo di se stesso ma anche punto di riferimento nello spazio sconfinato a cui è confrontato; dopo appena una rivoluzione della Galassia, scopre che qualcuno lo ha cancellato e riscritto, imitando maldestramente il suo gesto; ha inizio allora una catena di cancellazioni reciproche destinata a ricoprire di tracce illeggibili l’intero universo.</p>
-          <img src={process.env.PUBLIC_URL + "/informationSheets/nebbia-sheet-1.png"} className="viz--pic" />
+          <img src={process.env.PUBLIC_URL + "/informationSheets/infosheet-nebbia-01.png"} width="300px" className="viz--pic" />
 <p>Entrambi questi testi raccontano un ostacolo visivo, ma se nel primo caso ci troviamo di fronte a una “sottrazione” subita dal personaggio, nel secondo abbiamo a che vedere con una forma di “eliminazione” volontaria che assume il ruolo di motore della creazione. Questi anni coincidono con un momento di transizione ampiamente analizzato dalla critica, in cui Calvino sembra abbandonare la dimensione terrestre per dedicarsi a quella cosmica: la pubblicazione di Marcovaldo ha la funzione di «chiudere definitivamente una fase della sua vita e nell’annunciarne una nuova», lasciando una volta per tutte dietro di sé «l’impegno politico degli anni cinquanta»; il racconto cosmicomico invece «è un genere letterario con il quale egli si reinventa come scrittore» (cfr. Scarpa 2005, 29, 32). Il progressivo alzarsi e abbassarsi delle diverse onde nella visualizzazione rispecchia questo cambio di rotta: si scopre infatti che l’inversione di tendenza accennata in precedenza avviene proprio nell’intervallo visualizzato. Da questo momento in poi la cancellazione avrà la meglio sulla nebbia.
 </p>
 

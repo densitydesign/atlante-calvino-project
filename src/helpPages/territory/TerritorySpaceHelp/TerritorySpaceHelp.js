@@ -15,7 +15,7 @@ export default class TerritorySpaceHelp extends React.Component
   {
     return (
       <>
-      <strong>Itinerario > SPAZIO</strong>
+      <strong>Itinerario ⟶ SPAZIO</strong>
       <h1>Il fenomeno dei luoghi</h1>
 
       <h3>La raccolta dei dati</h3>

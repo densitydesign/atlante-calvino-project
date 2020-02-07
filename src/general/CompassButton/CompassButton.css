@@ -1,13 +1,23 @@
 .compass-button {
-  background-color: var(--bg);
-  opacity: .8;
+  color:var(--dark-blue) !important;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: not-allowed;
+    transition: 0.3s ease;
 }
 
 .compass-button:hover {
-  opacity: 1;
+  background-color: var(--dark-blue) !important;
+}
+
+.fa-compass:hover{
+    background-color: transparent !important;
+    color:black !important;
+}
+
+.fa-compass{
+  background-color: transparent !important;
+  transition: 0.3s ease;
 }

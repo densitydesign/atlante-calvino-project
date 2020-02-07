@@ -29,7 +29,7 @@ export default class SplashScreen extends React.Component
 
     V.initialize(this._rootNode);
   }
-  
+
   componentWillUnmount()
   {
     V.destroy(this._rootNode);

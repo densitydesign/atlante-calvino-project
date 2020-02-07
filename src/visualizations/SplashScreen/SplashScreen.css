@@ -53,11 +53,13 @@ body>.navbar p {
     cursor: pointer;
 }
 
+.introLogo{
+  text-align: center;
+}
 
-
-
-
-
+svg{
+  align-content: center;
+}
 /* CALOGO */
 
 #interactive-logo {
@@ -161,7 +163,7 @@ body.navbar-displayed #scroll-down {
     }
 } */
 
-.splash-screen-svg { 
+.splash-screen-svg {
   position : absolute;
   left : 25%;
   width : 50%;
@@ -185,7 +187,7 @@ body.navbar-displayed #scroll-down {
   }
   20% {
     color : var(--bg)
-  }  
+  }
   100% {
     color : black;
   }

@@ -6,6 +6,7 @@
   --cool-bg-bg: #F3F1EC;
   --cool-bg:#F1F1F5;
   --dark-blue: #5151FC;
+  --small-text:#3f3e4c;
   --header-height: 66px;
   --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
@@ -39,7 +40,7 @@ a {
 }
 
 a.link:hover {
-  color: black;
+  color: var(--text-color);
 }
 
 
@@ -67,7 +68,7 @@ strong{
 a:hover {
   text-decoration: none;
   color: var(--dark-blue);
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 }
 
 
@@ -86,7 +87,6 @@ body {
   font-family:"HKGrotesk", sans-serif;
   overflow-x: hidden;
   background-color: var(--bg);
-  border:1px-solid-black;
 }
 
 
@@ -121,7 +121,7 @@ h5 {
   margin: 0;
   font-size: 1.2em;
   font-weight: 100;
-  color: black;
+  color: var(--small-text);
   line-height: 1.4em;
 }
 
@@ -129,6 +129,15 @@ h5 {
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+
+
+ol {
+list-style-type:decimal;
+list-style-position: outside;
+padding-left: 0px;
+color:var(--small-text);
+font-size:1.1em;
 }
 
 ul {
@@ -141,11 +150,11 @@ margin-bottom:0.5em;
 margin-top:0.5em;
 padding-left: 0px;
 font-size:1.1em;
+color:var(--list);
 }
 
 
 .navigations {
-  border-top: 2px solid var(--navigation-borders);
   border-bottom: 2px solid var(--navigation-borders);
   box-sizing: border-box;
   height: var(--navigation-height);
@@ -187,6 +196,7 @@ font-size:1.1em;
   position: fixed;
   background-color: var(--bg);
   bottom: 0;
+    border-top: 2px solid var(--navigation-borders);
 }
 
 .viz-title {
@@ -208,12 +218,12 @@ font-size:1.1em;
   border:var(--button-border);
   margin-top:3em;
   padding:0.5em 1.3em 0.5em 1.3em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 500;
   color:var(--dark-blue);
+  background-color: var(--bg);
   text-transform: uppercase;
-  transition: color 1s ease;
-  font-family:"HKGrotesk";
+  transition: color 0.3s ease;
   text-decoration: none;
 }
 
@@ -221,12 +231,23 @@ a.button-text, a:visited.button-text{
   text-decoration: none;
 }
 
+
+.button-text:hover{
+  background-color: var(--dark-blue);
+  color:var(--bg);
+}
+
+
 /* BOTTONI DELLE VIZ */
 
 .btn-primary{
   font-weight: 600;
 }
 
+.btn-primary a:hover{
+  font-weight: 600;
+  background-color: var(--dark-blue);
+}
 
 
 /* FOOTER */
@@ -260,12 +281,12 @@ footer {
 #timeline .selection {
   fill: transparent;
   fill-opacity: 1;
-  stroke: black;
-  stroke-width: 1.5;
+  stroke: var(--text-color);
+  stroke-width: 1;
 }
 
 #timeline .handle {
-  fill:black;
+  fill:var(--text-color);
   height:20px;
   opacity: 1;
   stroke: none;
@@ -300,28 +321,38 @@ footer {
 }
 
 .dropdown-item{
-  margin-bottom:1px solid black;
-  padding:0.3em;
-
+  font-size:1em;
 }
 
-.dropdown-menu{
-  transform: translate3d(0px, -68px, 0px);
-}
 
 .dropdown-menu a:hover{
   cursor:pointer;
   text-decoration: none;
   background-color: var(--dark-blue);
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 
 }
 
 .dropdown-item.active, .dropdown-item:active{
   color:var(--bg);
   background-color: black;
-  outline: 1px solid black;
 }
+
+.references{
+  margin-top:2em;
+  font-style: italic;
+  font-size: 1em;
+}
+.references p{
+  margin-top:1em;
+  font-style: italic;
+  font-size: 1em;
+}
+
+.svg-inline--fa{
+  font-size:1.1em;
+}
+
 
 /*MEDIA QUERIES
 

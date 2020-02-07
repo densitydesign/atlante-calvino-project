@@ -7,6 +7,7 @@
   display: flex;
   text-align: center;
   cursor : pointer;
+    transition:1s ease;
 }
 
 .radio-button-with-close-down {
@@ -18,7 +19,14 @@
   display: flex;
   text-align: center;
   cursor : pointer;
+  transition:1s ease;
 }
+
+.radio-button-with-close-down:hover {
+color:var(--bg);
+background-color: var(--dark-blue);
+}
+
 
 .close-button-wrapper {
   padding-left : 20px;

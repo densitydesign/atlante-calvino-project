@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HamburgerInfoCompassHeader from '../../headers/HamburgerInfoCompassHeader/HamburgerInfoCompassHeader';
+import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import CompassTimeSinuousWrapper from '../../visualizations/CompassTimeSinuous/CompassTimeSinuousWrapper';
 
 import './CompassTime.css';
@@ -13,7 +13,7 @@ export default class CompassTime extends React.Component
 
     return (
       <>
-      <HamburgerInfoCompassHeader />
+  <HamburgerCompassHeader />
       <div id="main--sinuous">
         <div className="container-fluid">
         <h4>Bussola</h4>
@@ -25,9 +25,9 @@ export default class CompassTime extends React.Component
               <p className="item-reset-top" data-attribute="reset">Per dare un&#x2019;idea della importante attivit&#xE0; da intellettuale militante portata avanti parallelamente alla pubblicazione dei libri, il percorso mostra anche le tre principali collaborazioni di Calvino con i quotidiani: i circa trecento articoli scritti per &#xAB;l&#x2019;Unit&#xE0;&#xBB;, i settanta per il &#xAB;Corriere della Sera&#xBB; e i centoquaranta per &#xAB;la Repubblica&#xBB;.</p>
             </div>
             <div className="col-12 col-lg-9 mt-3">
-      				<p className="caption">&#x201C;Il tempo e le opere&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
+      				<p className="references">&#x201C;Il tempo e le opere&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
       					</p>
-      				<p className="caption">COORDINATRICE E COORDINATORE SCIENTIFICI: Francesca Serra, Paolo Ciuccarelli.<br/>AUTRICI E AUTORI: Tommaso Elli, Margherita Parigini, Virginia Giustetto, Valeria Cavalloro.</p>
+      				<p className="references"><strong>Coordinatrice e coordinatore scientifici</strong>: Francesca Serra, Paolo Ciuccarelli.<br/><strong>Autor*</strong>: Tommaso Elli, Margherita Parigini, Virginia Giustetto, Valeria Cavalloro.</p>
       			</div>
           </div>
       </div>

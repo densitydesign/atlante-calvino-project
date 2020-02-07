@@ -58,9 +58,7 @@ font-weight: 600;
   border-radius: 2px;
   color: var(--dark-blue);
   display: inline-block;
-  line-height: 1em;
   margin: 0 3px 3px 0;
-  padding: 4px 7px;
   position: relative
 }
 

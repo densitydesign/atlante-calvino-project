@@ -1,35 +1,32 @@
-#listTypes circle:hover {
-  cursor: pointer;
-}
-
- #listTypes circle {
+.axis {
   transition: opacity 0.3s ease;
 }
 
-#listTypes .circle--selected {
-  transition: .3s ease;
-  opacity: 1;
-  stroke: 1px solid var(--text-color);
-}
-
-#listTypes .axis {
-  transition: opacity 0.3s ease;
-}
-
-#listTypes .tick text {
+.tick text {
   font-size: 1.3em;
   font-family: 'HKGrotesk', sans-serif;
 }
 
-#listTypes .domain {
-  display: none;
-}
 
-#listTypes .tick line {
+.tick line {
   stroke-dasharray: 2;
-  stroke: #CCC;
+  stroke: black;
 }
 
-#listTypes .y line {
-  display: none;
+.x.axis{
+  border:1px solid grey;
+}
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }

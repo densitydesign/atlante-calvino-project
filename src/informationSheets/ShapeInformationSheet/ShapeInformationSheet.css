@@ -5,7 +5,7 @@ main {
 }
 
 main svg {
-  grid-column: 2 / span 22;
+  grid-column: 2 / span 21;
 }
 
 main article {
@@ -29,7 +29,7 @@ main article h3 {
 }
 
 .viz--meta {
-  grid-column: 2 / span 22;
+  grid-column: 2 / span 21;
   margin-top: 4em;
 }
 
@@ -48,34 +48,12 @@ main article h3 {
   grid-template-columns: repeat(6, 1fr);
 }
 
-
 .viz--pic{
   margin:2em 0em 2em 0em;
-  grid-column: 2 / span 10;
-  width: 100%;
+    grid-column: 2 / span 10;
+    width: 100%;
 }
 
 .viz--info p {
   margin: 0;
-}
-
-#main--shape #type-button {
-  text-align: right;
-}
-
-#main--shape #type-button button {
-  background: var(--bg);
-  border: 1px solid var(--text-color);
-  text-transform: uppercase;
-  padding: 0.5em 1em;
-  transition: 0.3s ease;
-}
-
-#main--shape .divided {
-  background: var(--text-color) !important;
-  color: var(--bg);
-}
-
-#main--shape .viz--info #type-button button:hover {
-  cursor: pointer;
 }

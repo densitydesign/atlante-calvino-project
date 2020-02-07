@@ -16,7 +16,6 @@
   color:var(--bg);
   padding:0.6em;
   width:100%;
-  display: flex;
   cursor : pointer;
 }
 
@@ -24,8 +23,15 @@
   background-color : white;
   padding:0.6em;
   width:100%;
-  display: flex;
   border-top: 1px solid;
-  text-align: center !important;
+  border-right: 1px solid black;
   cursor : pointer;
+  font-size: 1em;
+  transition:0.3s ease;
+}
+
+
+.radio-button-drop-up:hover {
+color:var(--bg);
+background-color: var(--dark-blue);
 }

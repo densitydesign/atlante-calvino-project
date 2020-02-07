@@ -16,7 +16,3 @@ svg#lische {
 #lische .reset {
   fill: var(--bg);
 }
-
-#main--bones .intro{
-  margin-bottom:2em;
-}
