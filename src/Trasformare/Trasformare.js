@@ -420,10 +420,10 @@ class Trasformare extends Component {
 		return (
 			<div className = "trasformare main">
 
-        <HelpSidePanel
-          open={this.state.helpSidePanelOpen}
-          page={helpPage}
-          closeButtonClicked={this.toggleHelpSidePanel} />
+				<HelpSidePanel
+					open={this.state.helpSidePanelOpen}
+					page={helpPage}
+					closeButtonClicked={this.toggleHelpSidePanel} />
 
 				<div className = "top-nav navigations">
 					<MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
@@ -431,30 +431,30 @@ class Trasformare extends Component {
 
 					{ this.state.isLoading && < Loading style = {{gridColumn: 'span 3'}}/> }
 					{	!this.state.isLoading &&
-						<Options title = "Cerca per"
-							data = {this.state.cerca_per}
-							style = {{gridColumn: 'span 4'}}
-							changeOptions = {this.changeCercaPer}
-						/> }
+					<Options title = "Cerca per"
+						data = {this.state.cerca_per}
+						style = {{gridColumn: 'span 4'}}
+						changeOptions = {this.changeCercaPer}
+					/> }
 
 					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 8'}}/>}
 					{	!this.state.isLoading &&
-						<Search
-							style = {{gridColumn: 'span 7'}}
-							data = {this.state.ricerca}
-							changeOptions = {this.changeRicerca}
-						/> }
-          <MoreInfo
-            style={{ gridColumn: "span 1" }}
-            onClicked={this.toggleHelpSidePanel}
-          />
-          <CompassButton
-            style={{
-              gridColumn: "span 1",
-              color: "white",
-              backgroundColor: "black"
-            }}
-          />
+					<Search
+						style = {{gridColumn: 'span 7'}}
+						data = {this.state.ricerca}
+						changeOptions = {this.changeRicerca}
+					/> }
+					<MoreInfo
+						style={{ gridColumn: "span 1" }}
+						onClicked={this.toggleHelpSidePanel}
+					/>
+					<CompassButton
+						style={{
+						gridColumn: "span 1",
+						color: "white",
+						backgroundColor: "black"
+						}}
+					/>
 				</div>
 
 				<div className = "the-body-viz" >

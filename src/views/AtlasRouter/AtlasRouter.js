@@ -28,6 +28,7 @@ import DoubtInformationSheet from '../../informationSheets/DoubtInformationSheet
 import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet/ShapeInformationSheet';
 import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet/SpaceInformationSheet';
 import Trama from '../../visualizations/Trama/Trama';
+import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 
 export default function AtlasRouter()
 {
@@ -83,7 +84,7 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/doubting">processi / dubitare</Route>
+      <Route exact path="/Process/doubting"><ProcessDoubting /></Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
       <Route exact path="/Process/combining">processi / combinare</Route>
 
