@@ -68,7 +68,7 @@ strong{
 a:hover {
   text-decoration: none;
   color: var(--dark-blue);
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 }
 
 
@@ -155,7 +155,6 @@ color:var(--list);
 
 
 .navigations {
-  border-top: 2px solid var(--navigation-borders);
   border-bottom: 2px solid var(--navigation-borders);
   box-sizing: border-box;
   height: var(--navigation-height);
@@ -197,6 +196,7 @@ color:var(--list);
   position: fixed;
   background-color: var(--bg);
   bottom: 0;
+    border-top: 2px solid var(--navigation-borders);
 }
 
 .viz-title {
@@ -223,7 +223,7 @@ color:var(--list);
   color:var(--dark-blue);
   background-color: var(--bg);
   text-transform: uppercase;
-  transition: color 1s ease;
+  transition: color 0.3s ease;
   font-family:"HKGrotesk";
   text-decoration: none;
 }
@@ -236,7 +236,7 @@ a.button-text, a:visited.button-text{
 .button-text:hover{
   background-color: var(--dark-blue);
   color:var(--bg);
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 }
 
 
@@ -325,27 +325,22 @@ footer {
 }
 
 .dropdown-item{
-  padding:0.3em;
   font-size:1em;
 
 }
 
-.dropdown-menu{
-  transform: translate3d(0px, -68px, 0px);
-}
 
 .dropdown-menu a:hover{
   cursor:pointer;
   text-decoration: none;
   background-color: var(--dark-blue);
-  transition: color 1s ease;
+  transition: color 0.3s ease;
 
 }
 
 .dropdown-item.active, .dropdown-item:active{
   color:var(--bg);
   background-color: black;
-  outline: 1px solid black;
 }
 
 .references{
