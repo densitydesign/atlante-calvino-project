@@ -17,7 +17,7 @@ let width,
     leaf_misto,
     treemap_soggetto,
 
-    x = d3.scaleBand().padding(0.2),
+    x = d3.scaleBand().padding(0.2).paddingOuter(10),
     xAxis,
     xAxisCall = d3.axisBottom(x),
     y = d3.scaleLinear(),
@@ -86,7 +86,14 @@ V.update = (data, stackMode) => {
             .style("cursor", "pointer")
             .on("mouseenter", d=>preSelection(d))
             .on("mouseleave", d=>removePreSelection(d))
-            .on("click", function(d){console.log(this, d.data); selection(d, d3.select(this).classed("selected"))});
+            .on("click", function(d){
+                console.log(this, d.data);
+                if (!d3.select(this).classed("selected")) {
+                    selection(d, d3.select(this).classed("selected"))
+                } else {
+                    removeSelectionAll();
+                }
+            });
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
@@ -103,12 +110,7 @@ V.update = (data, stackMode) => {
     const selection = (d,isSelected) => {
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
 
-        if (isSelected) {
-            removeSelection();
-            return;
-        }
-
-        const width_factor = 25;
+        const width_factor = x.paddingOuter() * 2;
         const bar_index = data.map(d=>d.id).indexOf(d.data.id);
         const width_treemap = x.bandwidth()*width_factor;
         const direction = bar_index*2>data.length?-1:1;
@@ -118,8 +120,8 @@ V.update = (data, stackMode) => {
             .transition()
             .duration(500)
             .style("opacity", 1)
-            .attr("transform", `translate(0,0)`)
-            // .attr("width", x.bandwidth()*width_factor);
+            .attr("transform", `translate(${ -width_treemap/2 + x.bandwidth()/2 },0)`)
+            .attr("width", x.bandwidth()*width_factor);
         
         const tick = xAxis.selectAll(".tick").filter((tick)=>tick===d.data.id)
         tick.transition()
@@ -132,7 +134,8 @@ V.update = (data, stackMode) => {
         })
         bars_on_left.transition()
             .duration(500)
-            .style("opacity", .6)
+            .style("opacity", .8)
+            .attr("width", x.bandwidth())
             .attr("transform", `translate(${ -width_treemap/2 }, 0)`);
         
         const ticks_on_left = xAxis.selectAll(".tick").filter((tick)=>{
@@ -141,7 +144,7 @@ V.update = (data, stackMode) => {
         })
         ticks_on_left.transition()
             .duration(500)
-            .style("opacity", .6)
+            .style("opacity", .8)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 - width_treemap/2 }, 0)`);
 
         const bars_on_right = d3.selectAll(".serie > rect").filter((rect)=>{
@@ -150,7 +153,7 @@ V.update = (data, stackMode) => {
         })
         bars_on_right.transition()
             .duration(500)
-            .style("opacity", .3)
+            .attr("width", x.bandwidth())
             .attr("transform", `translate(${ width_treemap/2 },0)`);
         
         const ticks_on_right = xAxis.selectAll(".tick").filter((tick)=>{
@@ -237,7 +240,7 @@ V.update = (data, stackMode) => {
         // console.log(data_soggetto)
     }
 
-    const removeSelection = () => {
+    const removeSelectionAll = () => {
         const allBars = d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
             .transition()
