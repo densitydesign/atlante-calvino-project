@@ -11,12 +11,42 @@ import CompassButton from '../../general/CompassButton/CompassButton';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 
 import Loading from '../../general/Loading';
-
 // import Options from '../../general/Options';
 // import Search from '../../general/Search';
 // import RangeFilter from '../../general/RangeFilter';
 
+import DoubtingStackedBars from '../../visualizations/DoubtingStackedBars/DoubtingStackedBars';
+
 class ProcessDoubting extends Component {
+  constructor(props) {
+    super(props);
+    this.loadData = this.loadData.bind(this);
+
+    this.state = {
+      data: 'data still not loaded',
+      isLoading: true,
+      stackMode: "normalized",
+    }
+  }
+
+  loadData() {
+    // console.log("get data");
+    d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
+      // console.log(json);
+      return json;
+    }).then(data=>{
+      this.setState({
+        data: data,
+        isLoading: false
+      })
+    })
+
+  }
+
+  componentDidMount() {
+		this.loadData();
+	}
+
   render() {
     return (
       <div className="process-doubting main">
@@ -43,7 +73,22 @@ class ProcessDoubting extends Component {
 					/>
         </div>
 
-        <div className="bottom-nav navigations"></div>
+        <div className="the-body-viz">
+          {	this.state.isLoading && <Loading style = {{width: '100%'}}/>}
+          {	!this.state.isLoading &&
+						<DoubtingStackedBars
+              data={this.state.data}
+              stackMode = {this.state.stackMode}
+            /> }
+        </div>
+
+        <div className="bottom-nav navigations">
+          {	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
+					{	!this.state.isLoading &&
+						<span style = {{gridColumn: 'span 24'}}>
+              data is loaded, questo spazio può essere utilizzato per dei filtri.
+            </span> }
+        </div>
         
       </div>
       
