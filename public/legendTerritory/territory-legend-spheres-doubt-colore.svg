@@ -61,14 +61,14 @@
 	.st55{fill:url(#SVGID_3_);}
 	.st56{fill:none;stroke:#FFA500;stroke-width:0.2;}
 	.st57{fill:none;stroke:#000000;stroke-width:0.65;stroke-miterlimit:10;}
-	.st58{font-family:'HKGrotesk-Regular';}
-	.st59{font-size:10px;}
-	.st60{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st61{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st62{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
+	.st58{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st59{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st60{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
+	.st61{font-family:'HKGrotesk-Regular';}
+	.st62{font-size:10px;}
 	.st63{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
 	.st64{fill:none;stroke:#5151FC;stroke-width:2.6845;stroke-linejoin:round;}
-	.st65{fill:none;stroke:#FF3366;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st65{fill:none;stroke:#00C19C;stroke-width:2.7599;stroke-miterlimit:10;}
 	.st66{fill:url(#SVGID_4_);}
 	.st67{fill:none;stroke:#5151FC;stroke-width:0.3;}
 	.st68{fill:url(#SVGID_5_);}
@@ -98,12 +98,13 @@
 	.st92{fill:none;stroke:#00C19C;stroke-width:2.76;stroke-miterlimit:10;}
 	.st93{fill:none;stroke:#FF3366;stroke-width:2.76;stroke-miterlimit:10;}
 	.st94{fill:none;stroke:#5151FC;stroke-width:2.76;stroke-miterlimit:10;}
-	.st95{fill:none;stroke:#FFA500;stroke-width:2.76;stroke-miterlimit:10;}
-	.st96{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
-	.st97{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
-	.st98{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
-	.st99{fill:none;stroke:#000000;stroke-width:2.76;stroke-miterlimit:10;}
-	.st100{fill:none;stroke:#00CCCC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st95{fill:none;stroke:#FF3366;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st96{fill:none;stroke:#FFA500;stroke-width:2.76;stroke-miterlimit:10;}
+	.st97{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
+	.st98{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
+	.st99{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st100{fill:none;stroke:#000000;stroke-width:2.76;stroke-miterlimit:10;}
+	.st101{fill:none;stroke:#00CCCC;stroke-width:2.76;stroke-miterlimit:10;}
 </style>
 <g id="Layer_1">
 </g>
@@ -115,22 +116,22 @@
 </g>
 <g id="nebbia_1">
 	<g>
-		<text transform="matrix(1 0 0 1 15.7377 13.0959)" class="st58 st59">nebbia</text>
-		<path id="Oval_15_" class="st60" d="M4.9,5.1c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2-4.7-4.7l0,0C0.2,7.2,2.2,5.2,4.9,5.1
-			z"/>
+		<text transform="matrix(1 0 0 1 15.7377 13.0959)" class="st61 st62">nebbia</text>
+		<path id="Oval_4_" class="st58" d="M4.9,5.1c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2-4.7-4.7l0,0C0.2,7.2,2.2,5.2,4.9,5.1z
+			"/>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 15.7377 33.3859)" class="st58 st59">cancellazione</text>
-		<path id="Oval-2_10_" class="st61" d="M4.9,25.4c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7l0,0l0,0
+		<text transform="matrix(1 0 0 1 15.7377 33.3859)" class="st61 st62">cancellazione</text>
+		<path id="Oval-2_3_" class="st59" d="M4.9,25.4c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7l0,0l0,0
 			C0.2,27.5,2.2,25.5,4.9,25.4z"/>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 15.7377 73.9647)" class="st58 st59">senza occorrenze</text>
-		<circle id="Oval-5_9_" class="st62" cx="4.9" cy="70.7" r="4.7"/>
+		<text transform="matrix(1 0 0 1 15.7377 73.9647)" class="st61 st62">senza occorrenze</text>
+		<circle id="Oval-5_3_" class="st60" cx="4.9" cy="70.7" r="4.7"/>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 15.7377 53.6755)" class="st58 st59">nebbia + cancellazione</text>
-		<circle id="Oval-6_10_" class="st63" cx="4.9" cy="50.4" r="4.7"/>
+		<text transform="matrix(1 0 0 1 15.7377 53.6755)" class="st61 st62">nebbia + cancellazione</text>
+		<circle id="Oval-6_3_" class="st63" cx="4.9" cy="50.4" r="4.7"/>
 	</g>
 	<rect class="st0" width="113.9" height="118"/>
 </g>

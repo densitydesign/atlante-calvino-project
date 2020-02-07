@@ -57,53 +57,54 @@
 	.st51{fill:url(#SVGID_1_);}
 	.st52{fill:none;stroke:#5151FC;stroke-width:0.2;}
 	.st53{fill:url(#SVGID_2_);}
-	.st54{fill:none;stroke:#FF3366;stroke-width:0.2;}
+	.st54{fill:none;stroke:#00C19C;stroke-width:0.2;}
 	.st55{fill:url(#SVGID_3_);}
-	.st56{fill:none;stroke:#00C19C;stroke-width:0.2;}
+	.st56{fill:none;stroke:#FFA500;stroke-width:0.2;}
 	.st57{fill:none;stroke:#000000;stroke-width:0.65;stroke-miterlimit:10;}
 	.st58{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st59{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
-	.st60{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
-	.st61{font-family:'HKGrotesk-Regular';}
-	.st62{font-size:10px;}
-	.st63{fill:none;stroke:#5151FC;stroke-width:2.6845;stroke-linejoin:round;}
-	.st64{fill:none;stroke:#00C19C;stroke-width:3.4397;stroke-miterlimit:10;}
-	.st65{fill:url(#SVGID_4_);}
-	.st66{fill:none;stroke:#5151FC;stroke-width:0.3;}
-	.st67{fill:url(#SVGID_5_);}
-	.st68{fill:none;stroke:#FF6C39;stroke-width:0.3;}
-	.st69{fill:url(#SVGID_6_);}
-	.st70{fill:none;stroke:#FFA500;stroke-width:0.3;}
-	.st71{fill:url(#SVGID_7_);}
-	.st72{fill:none;stroke:#00C19C;stroke-width:0.3;}
-	.st73{fill:url(#SVGID_8_);}
-	.st74{fill:none;stroke:#BBBBFF;stroke-width:0.3;}
-	.st75{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
+	.st59{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st60{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
+	.st61{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
+	.st62{font-family:'HKGrotesk-Regular';}
+	.st63{font-size:10px;}
+	.st64{fill:none;stroke:#5151FC;stroke-width:2.6845;stroke-linejoin:round;}
+	.st65{fill:none;stroke:#00C19C;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st66{fill:url(#SVGID_4_);}
+	.st67{fill:none;stroke:#5151FC;stroke-width:0.3;}
+	.st68{fill:url(#SVGID_5_);}
+	.st69{fill:none;stroke:#FF6C39;stroke-width:0.3;}
+	.st70{fill:url(#SVGID_6_);}
+	.st71{fill:none;stroke:#FFA500;stroke-width:0.3;}
+	.st72{fill:url(#SVGID_7_);}
+	.st73{fill:none;stroke:#00C19C;stroke-width:0.3;}
+	.st74{fill:url(#SVGID_8_);}
+	.st75{fill:none;stroke:#BBBBFF;stroke-width:0.3;}
 	.st76{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
 	.st77{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;}
 	.st78{fill:#BBBBFF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
 	.st79{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.25;}
 	.st80{fill:none;stroke:#5151FC;stroke-width:3.4397;stroke-miterlimit:10;}
-	.st81{fill:none;stroke:#FF6C39;stroke-width:3.4397;stroke-miterlimit:10;}
-	.st82{fill:none;stroke:#BBBBFF;stroke-width:3.44;stroke-miterlimit:10;}
-	.st83{fill:none;stroke:#FFA500;stroke-width:3.4397;stroke-miterlimit:10;}
-	.st84{fill:none;stroke:#444444;stroke-width:0.3929;stroke-dasharray:2.9859,2.9859;}
-	.st85{fill:none;stroke:#666666;stroke-width:3.44;}
-	.st86{fill:none;stroke:#CCCCCC;stroke-width:3.44;}
-	.st87{fill:none;stroke:#666666;stroke-width:3.9288;}
-	.st88{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:1.2;}
-	.st89{fill:#666666;stroke:#FFFFFF;stroke-width:1.2;}
-	.st90{fill:none;stroke:#000000;stroke-width:0.3929;}
-	.st91{fill:none;stroke:#00C19C;stroke-width:2.76;stroke-miterlimit:10;}
-	.st92{fill:none;stroke:#FF3366;stroke-width:2.76;stroke-miterlimit:10;}
-	.st93{fill:none;stroke:#5151FC;stroke-width:2.76;stroke-miterlimit:10;}
-	.st94{fill:none;stroke:#FF3366;stroke-width:2.7599;stroke-miterlimit:10;}
-	.st95{fill:none;stroke:#FFA500;stroke-width:2.76;stroke-miterlimit:10;}
-	.st96{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
-	.st97{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
-	.st98{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
-	.st99{fill:none;stroke:#000000;stroke-width:2.76;stroke-miterlimit:10;}
-	.st100{fill:none;stroke:#00CCCC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st81{fill:none;stroke:#00C19C;stroke-width:3.4397;stroke-miterlimit:10;}
+	.st82{fill:none;stroke:#FF6C39;stroke-width:3.4397;stroke-miterlimit:10;}
+	.st83{fill:none;stroke:#BBBBFF;stroke-width:3.44;stroke-miterlimit:10;}
+	.st84{fill:none;stroke:#FFA500;stroke-width:3.4397;stroke-miterlimit:10;}
+	.st85{fill:none;stroke:#444444;stroke-width:0.3929;stroke-dasharray:2.9859,2.9859;}
+	.st86{fill:none;stroke:#666666;stroke-width:3.44;}
+	.st87{fill:none;stroke:#CCCCCC;stroke-width:3.44;}
+	.st88{fill:none;stroke:#666666;stroke-width:3.9288;}
+	.st89{fill:#CCCCCC;stroke:#FFFFFF;stroke-width:1.2;}
+	.st90{fill:#666666;stroke:#FFFFFF;stroke-width:1.2;}
+	.st91{fill:none;stroke:#000000;stroke-width:0.3929;}
+	.st92{fill:none;stroke:#00C19C;stroke-width:2.76;stroke-miterlimit:10;}
+	.st93{fill:none;stroke:#FF3366;stroke-width:2.76;stroke-miterlimit:10;}
+	.st94{fill:none;stroke:#5151FC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st95{fill:none;stroke:#FF3366;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st96{fill:none;stroke:#FFA500;stroke-width:2.76;stroke-miterlimit:10;}
+	.st97{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
+	.st98{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
+	.st99{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st100{fill:none;stroke:#000000;stroke-width:2.76;stroke-miterlimit:10;}
+	.st101{fill:none;stroke:#00CCCC;stroke-width:2.76;stroke-miterlimit:10;}
 </style>
 <g id="Layer_1">
 </g>
@@ -118,10 +119,10 @@
 <g id="nebbia_2">
 	<g>
 		<g>
-			<text transform="matrix(1 0 0 1 2.441406e-04 28.3164)" class="st61 st62">nebbia</text>
+			<text transform="matrix(1 0 0 1 2.441406e-04 28.3164)" class="st62 st63">nebbia</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 33.9512 75.6865)" class="st61 st62">cancellazione</text>
+			<text transform="matrix(1 0 0 1 33.9512 75.6865)" class="st62 st63">cancellazione</text>
 		</g>
 		<g id="Group-3_4_" transform="translate(-32.86 47.62) rotate(-90)">
 			<path id="Path-6_1_" class="st42" d="M21.2,73.6V63.1"/>
@@ -130,13 +131,13 @@
 			<path id="Path-6-2" class="st42" d="M79.7,68.4V49"/>
 		</g>
 		<g id="Ellipse_22_1_" transform="translate(-18)">
-			<path id="Path_89" class="st63" d="M65,39.5c-8.7-8.7-8.7-22.9,0-31.6s22.9-8.7,31.6,0l0,0"/>
-			<path id="Path_90" class="st64" d="M96.6,7.9c8.7,8.7,8.7,22.9,0,31.6s-22.9,8.7-31.6,0"/>
+			<path id="Path_89" class="st64" d="M65,39.5c-8.7-8.7-8.7-22.9,0-31.6s22.9-8.7,31.6,0l0,0"/>
+			<path id="Path_90" class="st65" d="M96.6,7.9c8.7,8.7,8.7,22.9,0,31.6s-22.9,8.7-31.6,0"/>
 		</g>
 		<rect x="0" y="0.3" class="st0" width="209.9" height="118"/>
 		<g>
 			<rect x="108.1" y="6.4" class="st0" width="101.9" height="63.8"/>
-			<text transform="matrix(1 0 0 1 108.0515 13.3356)"><tspan x="0" y="0" class="st61 st62">proporzioni della  </tspan><tspan x="0" y="13" class="st61 st62">presenza di nebbia e </tspan><tspan x="0" y="26" class="st61 st62">cancellazione secondo  </tspan><tspan x="0" y="39" class="st61 st62">il numero di occorren</tspan><tspan x="93.1" y="39" class="st61 st62">-</tspan><tspan x="0" y="52" class="st61 st62">ze all’interno del testo</tspan></text>
+			<text transform="matrix(1 0 0 1 108.0515 13.3356)"><tspan x="0" y="0" class="st62 st63">proporzioni della  </tspan><tspan x="0" y="13" class="st62 st63">presenza di nebbia e </tspan><tspan x="0" y="26" class="st62 st63">cancellazione secondo  </tspan><tspan x="0" y="39" class="st62 st63">il numero di occorren</tspan><tspan x="93.1" y="39" class="st62 st63">-</tspan><tspan x="0" y="52" class="st62 st63">ze all’interno del testo</tspan></text>
 		</g>
 	</g>
 </g>
