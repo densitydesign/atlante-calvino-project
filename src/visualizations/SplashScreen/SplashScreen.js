@@ -70,15 +70,8 @@ console.log("this.state.data.documentElement", this.state.data.documentElement);
     );
 */
 
-    const style = { 
-      position : "absolute",
-      left : "25%",
-      width : "50%",
-      height : "56%",
-      flexGrow : 1, 
-      enableBackground : "new 0 0 324.8 150"
-    };
 
-    return <svg id={this.props.id} style={style} ref={this._setRef} viewBox="0 0 324.8 150"></svg>;
+
+    return <svg id={this.props.id} className="splash-screen-svg" ref={this._setRef} viewBox="0 0 324.8 150"></svg>;
   }
 }

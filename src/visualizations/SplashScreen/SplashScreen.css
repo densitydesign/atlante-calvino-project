@@ -160,3 +160,29 @@ body.navbar-displayed #scroll-down {
         width: 46%;
     }
 } */
+
+.splash-screen-svg { 
+  position : absolute;
+  left : 25%;
+  width : 50%;
+  height : 56%;
+  flex-grow : 1;
+  enable-background : "new 0 0 324.8 150";
+}
+
+.splash-screen-caption {
+  top : 60%;
+  width : 40%;
+  left : 30%;
+  position : absolute;
+  text-align : center;
+}
+
+.splash-screen-description {
+  top : 70%;
+  width : 60%;
+  left : 20%;
+  position : absolute;
+  text-align : center;
+}
+
