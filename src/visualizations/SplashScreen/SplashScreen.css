@@ -53,11 +53,13 @@ body>.navbar p {
     cursor: pointer;
 }
 
+.introLogo{
+  text-align: center;
+}
 
-
-
-
-
+svg{
+  align-content: center;
+}
 /* CALOGO */
 
 #interactive-logo {
@@ -127,36 +129,3 @@ body.navbar-displayed #scroll-down {
 #scroll-down:hover {
     padding: 0.75rem 0 0 0;
 }
-
-/* @media (min-width: 576px) {
-    html {
-        font-size: 20px;
-    }
-    h2 {
-        font-size: 1.75rem;
-        color: black;
-    }
-    h3 {
-        font-size: 1.25rem;
-    }
-    h5 {
-        font-size: 0.75rem;
-    }
-    body>.navbar {
-        padding: .5rem 1rem;
-    }
-    body>.navbar p {
-        font-size: 1rem;
-    }
-    #logo-unige {
-        width: 63%;
-    }
-
-    #logo-polimi {
-        width: 63%;
-    }
-
-    #logo-dd {
-        width: 46%;
-    }
-} */

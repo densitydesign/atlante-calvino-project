@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom';
 
 export default class SplashScreenWrapper extends React.Component
 {
-  render() 
+  render()
   {
-    return ( 
+    return (
       <Link to="/AtlasIntro">
         <SplashScreen />
-        <h2 text-align="center" width="100vh" style={{ marginLeft : "60vh" }}>Letteratura e visualizzazione</h2>
+        <div className="introLogo">
+        <h2>Letteratura e visualizzazione</h2>
+        </div>
       </Link>
     );
   }

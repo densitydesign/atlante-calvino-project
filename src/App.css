@@ -136,7 +136,9 @@ ol {
 list-style-type:decimal;
 list-style-position: outside;
 padding-left: 0px;
-color:var(--small-text)}
+color:var(--small-text);
+font-size:1.1em;
+}
 
 ul {
 list-style-type: none;
@@ -148,7 +150,7 @@ margin-bottom:0.5em;
 margin-top:0.5em;
 padding-left: 0px;
 font-size:1.1em;
-color:var(--list)
+color:var(--list);
 }
 
 
@@ -219,6 +221,7 @@ color:var(--list)
   font-size: 1em;
   font-weight: 500;
   color:var(--dark-blue);
+  background-color: var(--bg);
   text-transform: uppercase;
   transition: color 1s ease;
   font-family:"HKGrotesk";
@@ -229,11 +232,25 @@ a.button-text, a:visited.button-text{
   text-decoration: none;
 }
 
+
+.button-text:hover{
+  background-color: var(--dark-blue);
+  color:var(--bg);
+  transition: color 1s ease;
+}
+
+
 /* BOTTONI DELLE VIZ */
 
 .btn-primary{
   font-weight: 600;
 }
+
+.btn-primary a:hover{
+  font-weight: 600;
+  background-color: var(--dark-blue);
+}
+
 
 
 
@@ -340,6 +357,10 @@ footer {
   margin-top:1em;
   font-style: italic;
   font-size: 1em;
+}
+
+.svg-inline--fa{
+  font-size:1.1em;
 }
 
 
