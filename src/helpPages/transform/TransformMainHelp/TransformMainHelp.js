@@ -48,8 +48,8 @@ Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modali
 <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
 
 <div className="sheet--info">
-  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
-  <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
+  <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/spaceAnalysis" />
+    <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
 </div>
       </>
 
