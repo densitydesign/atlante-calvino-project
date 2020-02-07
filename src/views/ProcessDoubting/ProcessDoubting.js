@@ -31,7 +31,8 @@ class ProcessDoubting extends Component {
   }
 
   loadData() {
-    // console.log("get data");
+    // data comes from this notebook on ObservableHQ
+    // https://observablehq.com/@iosonosempreio/experiment-on-the-use-observablehq-for-easying-task-of-data
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       // console.log(json);
       return json;
