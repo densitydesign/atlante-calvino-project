@@ -186,3 +186,8 @@ body.navbar-displayed #scroll-down {
   text-align : center;
 }
 
+.splash-screen-hand-icon {
+  top : 80%;
+  left : 50%;
+  position : absolute;
+}
