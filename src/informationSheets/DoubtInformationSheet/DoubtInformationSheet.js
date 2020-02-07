@@ -21,7 +21,7 @@ export default class DoubtInformationSheet extends React.Component
             <h1>Nebbia. Scheda di approfondimento</h1>
             <h2>Analisi di occorrenze del campo semantico del dubbio</h2>
             <div className="viz--info">
-              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="800"/></p></div>
+              <div id="legend"><p><img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Dubbio_dimensione.svg"} width="750"/></p></div>
             </div>
           </div>
           <DoubtTypePerYearWrapper  />
