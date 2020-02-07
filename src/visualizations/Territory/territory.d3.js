@@ -287,9 +287,9 @@ class VClass
 //      .style("fill-opacity", 1)
 //      .style("stroke-opacity", .5);
 
-//    circles
-//      .filter(d => d.first_elem)
-//      .on("click", this.onFirstElementClicked);
+    circles
+      .filter(d => d.first_elem)
+      .on("click", this.onFirstElementClicked);
 
 		const place_hierarchies_group = svg_main_group
 			.append("g")
