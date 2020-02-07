@@ -361,7 +361,7 @@ const GlobalData = {
                                      frasi : territoryColorPalette.brightBlue,
                                      misto : territoryColorPalette.brightAmaranth,
                lists_ratio_below_threshold : "black",
-               lists_ratio_above_threshold : territoryColorPalette.brightOrange,
+               lists_ratio_above_threshold : territoryColorPalette.turquoise,
         placeHierarchies_color_scale_start : 'white',
           placeHierarchies_color_scale_end : 'white',
                   placeHierarchies_unknown : 'white'
