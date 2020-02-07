@@ -27,7 +27,6 @@ export default class TerritoryDoubtOccurrencesLegend extends React.Component
 
         <div className="legend-block">
           <div className="title-panel"><h4>PERCENTUALE</h4></div>
-          <small>Sul totale per ogni occorrenza</small>
           <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-doubt-intensita.svg'} />
         </div>
 
