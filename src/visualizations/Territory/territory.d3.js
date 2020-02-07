@@ -1119,16 +1119,30 @@ if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
 
     this.textsData = input_data.textsData;
 console.log("reached point for chronological animation");
+console.log("analysisMode", analysisMode);
 
-    const tt0 = svg.transition().duration(400);
+    if([
+      GlobalData.analysisModes.noAnalysis.chronology,
+      GlobalData.analysisModes.noAnalysis.volumes
+    ].includes(analysisMode))
+    {      
+      const tt0 = svg.transition().duration(400);
 
-    const tt1 = tt0.transition();
-    tt1
-      .selectAll(".circle_node")
-  		.delay(function(d) { return (d.first_publication - 1940) * 200 })
-      .attr("transform", this.calculateHillStepTranslation)
-      .style("fill-opacity", 1)
-      .style("stroke-opacity", .5);    
+      const tt1 = tt0.transition();
+      tt1
+        .selectAll(".circle_node")
+        .delay(function(d) { return (d.first_publication - 1940) * 200 })
+        .attr("transform", this.calculateHillStepTranslation)
+        .style("fill-opacity", 1)
+        .style("stroke-opacity", .5);
+    }
+    else
+    {
+      d3
+        .selectAll(".circle_node")
+        .style("fill-opacity", 1)
+        .style("stroke-opacity", .5);
+    }
 
   };
 
