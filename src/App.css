@@ -323,6 +323,18 @@ footer {
   outline: 1px solid black;
 }
 
+.references{
+  margin-top:2em;
+  font-style: italic;
+  font-size: 1em;
+}
+.references p{
+  margin-top:1em;
+  font-style: italic;
+  font-size: 1em;
+}
+
+
 /*MEDIA QUERIES
 
 /*
