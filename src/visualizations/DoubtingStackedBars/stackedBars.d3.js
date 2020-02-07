@@ -19,7 +19,7 @@ let width,
     xAxisCall = d3.axisBottom(x),
     y = d3.scaleLinear(),
     yAxis,
-    yAxisCall = d3.axisLeft(y).ticks(null, "s"),
+    yAxisCall = d3.axisLeft(y),
     color = d3.scaleOrdinal()
         .domain(stackModeProperties.absolute)
         .range(["#9469bf","#69bfbf","#94bf69","#cccccc"])
@@ -55,7 +55,7 @@ V.update = (data, stackMode) => {
     let series = d3.stack().keys(stackModeProperties[stackMode])(data)
 
     x.domain(data.map(d => d.id));
-    xAxis.call(xAxisCall.tickValues(data.map(d => d.id)))
+    xAxis.call(xAxisCall.tickFormat(d=>data.find(datum=>datum.id===d).title))
         .call(g => xAxis.selectAll(".domain").remove())
         .call(g => xAxis.selectAll(".tick").style("display", "none"));
 
