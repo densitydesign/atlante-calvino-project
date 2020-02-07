@@ -1,5 +1,5 @@
 .rbt {
-    height: 94%; 
+    height: 94%;
     width: 100%;
     max-height: calc(var(--navigation-height) - 2px);
     background-color: transparent !important;
@@ -40,13 +40,9 @@
   position: relative;
 }
 
-.rbt-token-removeable{
-  padding-right:30px !important;
-}
 
 .rbt .dropdown-item *{
     font-size: 1em;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
-    margin-left:1em;
 }

@@ -294,16 +294,12 @@ footer {
   stroke:transparent;
 }
 
-
-
 .dropdown-menu *{
     border-radius: 0px;
     height:auto;
     z-index : 20;
-    display : grid;
     grid-column : 1 / span 3;
     font-size : 1.1em;
-    text-align : center;
     position : relative;
     text-transform:uppercase;
     border-radius: 0px;
@@ -336,7 +332,7 @@ footer {
 .dropdown-item.active, .dropdown-item:active{
   color:var(--bg);
   background-color: black;
-}
+} */ */
 
 .references{
   margin-top:2em;
