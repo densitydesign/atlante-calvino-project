@@ -55,7 +55,7 @@ V.update = (data, stackMode) => {
     let series = d3.stack().keys(stackModeProperties[stackMode])(data)
 
     x.domain(data.map(d => d.id));
-    xAxis.call(xAxisCall.tickValues(data.map(d => d.id)))
+    xAxis.call(xAxisCall.tickFormat(d=>data.find(datum=>datum.id===d).title))
         .call(g => xAxis.selectAll(".domain").remove())
         .call(g => xAxis.selectAll(".tick").style("display", "none"));
 
