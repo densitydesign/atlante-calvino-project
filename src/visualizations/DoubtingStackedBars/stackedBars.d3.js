@@ -66,7 +66,7 @@ V.update = (data, stackMode) => {
     serie = serie.data(series)
     serie.exit().remove()
     serie = serie.enter().append("g")
-        .classed("serie", true)
+        .attr("class", (d,i)=>"serie serie-" + stackModeProperties[stackMode][i].replace("_perc","") )
             .join("g")
         .attr("fill", d => color(d.key.replace("_perc","")))
         .selectAll("rect")
@@ -79,7 +79,7 @@ V.update = (data, stackMode) => {
             .style("opacity", .8)
             .on("mouseenter", d=>preSelection(d))
             .on("mouseleave", d=>removePreSelection(d))
-            .on("click", (d)=>selection(d));
+            .on("click", function(d){selection(d, d3.select(this).classed("selected"))});
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
@@ -93,18 +93,22 @@ V.update = (data, stackMode) => {
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none")
     }
 
-    const selection = (d) => {
+    const selection = (d,isSelected) => {
         removeSelection();
+        if (isSelected) {
+            return;
+        }
 
-        const width_factor = 20;
-        const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id)
-        bar.transition()
-            .duration(0)
-            .attr("width", x.bandwidth()*width_factor)
-            .style("opacity", 1);;
-
+        const width_factor = 25;
         const bar_index = data.map(d=>d.id).indexOf(d.data.id);
         const direction = bar_index*2>data.length?-1:1;
+
+        const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
+        bar.classed("selected", true)
+            .transition()
+            .duration(0)
+            .attr("width", x.bandwidth()*width_factor)
+            .style("opacity", 1);
 
         const bars_to_move = d3.selectAll(".serie > rect").filter((rect)=>{
             const this_index = data.map(d=>d.id).indexOf(rect.data.id)
@@ -113,13 +117,22 @@ V.update = (data, stackMode) => {
         bars_to_move.transition()
             .duration(0)
             .attr("transform", `translate(${x.bandwidth()*(width_factor-1)*direction},0)`);
+        
+        // draw treemap here
+        const rect_misto = bar.filter(function(rect){
+            return d3.select(this.parentNode).classed("serie-misto")
+        })
+
+        console.log(rect_misto, rect_misto.attr("height"));
+        console.log(rect_misto.data())
     }
 
     const removeSelection = () => {
         const allBars = d3.selectAll(".serie > rect");
         allBars.attr("transform", `translate(0,0)`)
             .attr("width", x.bandwidth())
-            .style("opacity", .8);
+            .style("opacity", .8)
+            .classed("selected", false);
     }
 }
 

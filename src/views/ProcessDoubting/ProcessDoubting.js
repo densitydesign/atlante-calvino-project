@@ -25,6 +25,7 @@ class ProcessDoubting extends Component {
     this.state = {
       data: 'data still not loaded',
       isLoading: true,
+      stackMode: "absolute",
       stackMode: "normalized",
     }
   }
