@@ -1136,14 +1136,6 @@ console.log("analysisMode", analysisMode);
         .style("fill-opacity", 1)
         .style("stroke-opacity", .5);
     }
-    else
-    {
-      d3
-        .selectAll(".circle_node")
-        .style("fill-opacity", 1)
-        .style("stroke-opacity", .5);
-    }
-
   };
 
   destroy = () => {};
@@ -1194,7 +1186,8 @@ console.log("set color");
       });
   };
 */
-  set_yRatio = yRatio => {
+  set_yRatio = yRatio => 
+  {
 console.log("set_yRatio");
     tilt = yRatio === 1;
 
@@ -1240,6 +1233,47 @@ console.log("set_yRatio");
     });
   }
 
+  set_yRatio_withoutTransition = yRatio => 
+  {
+console.log("set_yRatio_withoutTransition");
+    tilt = yRatio === 1;
+
+    if(tilt)
+    {    
+      d3.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+
+      d3
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });
+    }
+    else
+    {    
+      d3
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });            
+
+      d3.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+    }
+
+    const label = this.text_nodes.selectAll('.label');   
+
+    label.attr('transform', function(d) {
+
+      let one_rem = parseInt(d3.select('html').style('font-size'));
+      let k = one_rem * (1 / (d3_event_transform_k / scale));
+
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
+
+      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
+      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    });
+  }  
+
   showHillsTops = opacity => d3
     .selectAll(".circle_node")
     .filter(d => !d.first_elem)
@@ -1275,6 +1309,50 @@ console.log("set_yRatio");
         break;
       case showHillModes.nothing :
         this.showHills(0);
+        break;
+      default : break;
+    }
+  };
+
+  showHillsTops_withoutTransition = opacity => {
+console.log("showHillsTops_withoutTransition");
+console.log("opacity", opacity);
+    d3
+    .selectAll(".circle_node")
+    .filter(d => !d.first_elem)
+    .style("fill-opacity", 0)
+    .style("stroke-opacity", 0);
+  }
+
+  showHillsBases_withoutTransition = opacity => d3
+    .selectAll(".circle_node")
+    .filter(d => d.first_elem)
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);  
+
+  showHills_withoutTransition = opacity => d3
+    .selectAll(".circle_node")
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);
+
+  applyShowHillMode_withoutTransition = showHillMode => 
+  {
+console.log("applyShowHillMode_withoutTransition");
+console.log("showHillMode", showHillMode);
+    switch(showHillMode)
+    {
+      case showHillModes.all : 
+console.log("cc 1");
+        this.showHills_withoutTransition(1);
+        break;
+      case showHillModes.base :
+console.log("cc 2");
+        this.showHillsTops_withoutTransition(0);
+        this.showHillsBases_withoutTransition(1);
+        break;
+      case showHillModes.nothing :
+console.log("cc 3");
+        this.showHills_withoutTransition(0);
         break;
       default : break;
     }
@@ -1344,9 +1422,11 @@ console.log("set_yRatio");
 
   setHighlightMode = newAnalysisMode => 
   {
+console.log("setHighlightMode");
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
+console.log("newAnalysisMode", newAnalysisMode);    
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
-
+console.log("newHighlightParameters", newHighlightParameters);
     const analysisModeChangeType = getAnalysisModeChangeType(currentHighlightParameters.analysisModeGroup, newHighlightParameters.analysisModeGroup);
 /*
     switch(analysisModeChangeType)
@@ -1528,7 +1608,7 @@ console.log("case proportion...");
         break;
 
       case analysisModeChangeTypes.change_none_to_flat :
-
+console.log("newHighlightParameters", newHighlightParameters);
         this.change_none_to_flat(
           currentAnalysisMode, currentHighlightParameters,
               newAnalysisMode,     newHighlightParameters);
@@ -1621,12 +1701,11 @@ console.log("case proportion...");
     currentAnalysisMode = newAnalysisMode;
   };
 
-  change_none_to_hills(
+  change_none_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
 console.log("change_none_to_hills");
-console.log("calling set_yRatio");    
 //    this.set_yRatio(newHighlightParameters.tilt_factor);
     this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
 //    this.applyShowHillMode(newHighlightParameters.showHillMode);
@@ -1634,25 +1713,27 @@ console.log("calling set_yRatio");
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
 
-  change_none_to_flat(
+  change_none_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
 console.log("change_none_to_flat");    
-    this.set_yRatio(newHighlightParameters.tilt_factor);
+console.log("newHighlightParameters", newHighlightParameters);
+
+    this.set_yRatio_withoutTransition(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.applyShowHillMode_withoutTransition(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
 
-  change_none_to_drawing(
+  change_none_to_drawing = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
-    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.set_yRatio_withoutTransition(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.applyShowHillMode_withoutTransition(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }    
