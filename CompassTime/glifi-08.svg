@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+  <title>glifi</title>
+  <g>
+    <circle cx="17" cy="17" r="9.98059" style="fill: #fff"/>
+    <circle cx="17" cy="17" r="5.68913" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 0.3499999940395355px"/>
+    <line x1="10.83718" y1="23.16282" x2="23.16282" y2="10.83718" style="fill: #231f20;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.5px"/>
+    <line x1="10.83718" y1="23.16282" x2="23.16282" y2="10.83718" style="fill: none;stroke: #231f20;stroke-miterlimit: 10;stroke-width: 0.3499999940395355px"/>
+  </g>
+</svg>
