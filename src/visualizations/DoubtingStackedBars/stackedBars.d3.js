@@ -31,8 +31,6 @@ let width,
 
 V.initialize = (el, data_for_update) => {
     console.log("initialize dubbio fase 2")
-    // console.log(el)
-
 
     width = d3.select(el).node().getBoundingClientRect().width;
     height = d3.select(el).node().getBoundingClientRect().height;
@@ -192,8 +190,8 @@ V.update = (data, stackMode) => {
             d3.select(".treemap-misto")
                 .attr("transform", `translate(${x_misto}, ${y_misto})`);
 
-            d3.selectAll(".circle-test").remove();
-            g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_misto).attr("cy",y_misto);
+            // d3.selectAll(".circle-test").remove();
+            // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_misto).attr("cy",y_misto);
 
             const root_misto = treemap(data_misto, width_treemap, height_misto);
             leaf_misto = leaf_misto.data(root_misto.leaves(), l=>d.data.id + '-' + l.data.name);
@@ -233,8 +231,8 @@ V.update = (data, stackMode) => {
             d3.select(".treemap-soggetto")
                 .attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
 
-            d3.selectAll(".circle-test").remove();
-            g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_soggetto).attr("cy",y_soggetto);
+            // d3.selectAll(".circle-test").remove();
+            // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_soggetto).attr("cy",y_soggetto);
 
             const root_soggetto = treemap(data_soggetto, width_treemap, height_soggetto);
             leaf_soggetto = leaf_soggetto.data(root_soggetto.leaves(), l=>d.data.id + '-' + l.data.name);
