@@ -13,7 +13,7 @@ import CompassButton from '../../general/CompassButton/CompassButton';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 
 import Loading from '../../general/Loading';
-// import Options from '../../general/Options';
+import Options from '../../general/Options';
 // import Search from '../../general/Search';
 // import RangeFilter from '../../general/RangeFilter';
 
@@ -23,12 +23,23 @@ class ProcessDoubting extends Component {
   constructor(props) {
     super(props);
     this.loadData = this.loadData.bind(this);
+    this.changeLunghezzaTesti = this.changeLunghezzaTesti.bind(this);
 
     this.state = {
       data: 'data still not loaded',
       isLoading: true,
       stackMode: "absolute",
-      stackMode: "normalized",
+      // stackMode: "normalized",
+      lunghezzaTesti: {
+				multiple: false,
+				options: [{
+					'label': 'assoluti',
+					'status': true
+				}, {
+					'label': 'normalizzati',
+					'status': false
+				}]
+			}
     }
   }
 
@@ -47,6 +58,19 @@ class ProcessDoubting extends Component {
 
   }
 
+  changeLunghezzaTesti(newOptions) {
+    let option;
+    switch (newOptions.find(d=>d.status).label){
+      case "assoluti":
+        option = "absolute";
+        break;
+      case "normalizzati":
+        option = "normalized";
+        break;
+    }
+    this.setState({ stackMode: option });
+  }
+
   componentDidMount() {
 		this.loadData();
 	}
@@ -62,7 +86,15 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Dubbi fase 2"} style = {{gridColumn: 'span 21'}}/>
+					<PageTitle title = {"Dubbi fase 2"} style = {{gridColumn: 'span 16'}}/>
+
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+					{	!this.state.isLoading &&
+						<Options title = "Valori"
+							data = {this.state.lunghezzaTesti}
+							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							changeOptions = {this.changeLunghezzaTesti}
+						/> }
 
           <MoreInfo
 						style={{ gridColumn: "span 1" }}

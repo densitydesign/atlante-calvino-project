@@ -58,7 +58,7 @@ V.initialize = (el, data_for_update) => {
 V.update = (data, stackMode) => {
     console.log("update dubbio fase 2")
 
-    let series = d3.stack().keys(stackModeProperties[stackMode])(data)
+    let series = d3.stack().keys(stackModeProperties[stackMode])(data);
 
     x.domain(data.map(d => d.id));
     xAxis.call(xAxisCall.tickFormat(d=>data.find(datum=>datum.id===d).title))
@@ -68,42 +68,87 @@ V.update = (data, stackMode) => {
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
         .call(g => yAxis.selectAll(".domain").remove());
+    
+    const removeSelectionAll = () => {
+        const allBars = d3.selectAll(".serie > rect");
+        allBars.classed("selected", false)
+            .transition()
+                .duration(500)
+                .attr("transform", `translate(0,0)`)
+                .attr("width", x.bandwidth())
+                .style("opacity", .8);
+        
+        const allTicks = xAxis.selectAll(".tick")
+        allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
+
+        leaf_misto = leaf_misto.data([]);
+        leaf_misto.exit().transition()
+            .duration(500)
+            .style("opacity",0)
+            .remove();
+        leaf_soggetto = leaf_soggetto.data([]);
+        leaf_soggetto.exit().transition()
+            .duration(500)
+            .style("opacity",0)
+            .remove();
+    }
+    
+    removeSelectionAll();
 
     serie = serie.data(series)
     serie.exit().remove()
     serie = serie.enter().append("g")
         .attr("class", (d,i)=>"serie serie-" + stackModeProperties[stackMode][i].replace("_perc","") )
-            .join("g")
+        .merge(serie)
         .attr("fill", d => color(d.key.replace("_perc","")))
-        .selectAll("rect")
-        .data(d => d)
-        .join("rect")
-            .attr("x", d => x(d.data.id))
-            .attr("y", d => y(d[1]))
-            .attr("height", d => y(d[0]) - y(d[1]))
-            .attr("width", x.bandwidth())
-            .style("opacity", .7)
-            .style("cursor", "pointer")
-            .on("mouseenter", d=>preSelection(d))
-            .on("mouseleave", d=>removePreSelection(d))
-            .on("click", function(d){
-                // console.log(this);
-                // console.log(d.data);
-                if (!d3.select(this).classed("selected")) {
-                    selection(d, d3.select(this).classed("selected"))
-                }
-                else {
-                    removeSelectionAll();
-                }
-            });
     
-        d3.selectAll(".serie").each(function(d){
-            const _class = d3.select(this).attr("class").split(" ")[1].split("-")[1]
-            d3.select(this).selectAll("rect").each(function(dd){
-                let _id = _class + '-' + dd.data.id;
-                d3.select(this).attr("id", _id )
-            })
-        })
+    let serie_rect = serie.selectAll("rect")
+
+    serie_rect = serie_rect.data(d=>d);
+    serie_rect.exit().remove();
+
+    serie_rect = serie_rect.enter().append("rect")
+        .merge(serie_rect)
+        .attr("x", d => x(d.data.id))
+        .attr("y", d => y(d[1]))
+        .attr("height", d => y(d[0]) - y(d[1]))
+        .attr("width", x.bandwidth())
+        .style("opacity", .7)
+        .style("cursor", "pointer")
+        .on("mouseenter", d=>preSelection(d))
+        .on("mouseleave", d=>removePreSelection(d))
+        .on("click", function(d){
+            // console.log(this);
+            // console.log(d.data);
+            if (!d3.select(this).classed("selected")) {
+                selection(d, d3.select(this).classed("selected"))
+            }
+            else {
+                removeSelectionAll();
+            }
+        });
+
+        // .selectAll("rect")
+        // .data(d => d)
+        // .join("rect")
+        //     .attr("x", d => x(d.data.id))
+        //     .attr("y", d => y(d[1]))
+        //     .attr("height", d => y(d[0]) - y(d[1]))
+        //     .attr("width", x.bandwidth())
+        //     .style("opacity", .7)
+        //     .style("cursor", "pointer")
+        //     .on("mouseenter", d=>preSelection(d))
+        //     .on("mouseleave", d=>removePreSelection(d))
+        //     .on("click", function(d){
+        //         // console.log(this);
+        //         // console.log(d.data);
+        //         if (!d3.select(this).classed("selected")) {
+        //             selection(d, d3.select(this).classed("selected"))
+        //         }
+        //         else {
+        //             removeSelectionAll();
+        //         }
+        //     });
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
@@ -266,26 +311,6 @@ V.update = (data, stackMode) => {
             .delay(500)
             .duration(250)
             .style("opacity",1);
-
-    }
-
-    const removeSelectionAll = () => {
-        const allBars = d3.selectAll(".serie > rect");
-        allBars.classed("selected", false)
-            .transition()
-                .duration(500)
-                .attr("transform", `translate(0,0)`)
-                .attr("width", x.bandwidth())
-                .style("opacity", .8);
-        
-        const allTicks = xAxis.selectAll(".tick")
-        allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
-
-        // const emptyTreemaps = treemap({}, 100, 100);
-        leaf_misto = leaf_misto.data([]);
-        leaf_misto.exit().remove();
-        leaf_soggetto = leaf_soggetto.data([]);
-        leaf_soggetto.exit().remove();
 
     }
 

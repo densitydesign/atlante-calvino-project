@@ -13,7 +13,6 @@ class DoubtingStackedBars extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.data !== this.props.data || prevProps.stackMode !== this.props.stackMode) {
-      console.log("new data")
       V.update(this.props.data, this.props.stackMode);
     }
   }
