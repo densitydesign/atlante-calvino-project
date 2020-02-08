@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import _ from 'lodash';
 
+import './ProcessDoubting.css'
+
 import GlobalData from '../../utilities/GlobalData';
 
 import MainMenu from '../../general/MainMenu';
@@ -79,6 +81,7 @@ class ProcessDoubting extends Component {
           {	this.state.isLoading && <Loading style = {{width: '100%'}}/>}
           {	!this.state.isLoading &&
 						<DoubtingStackedBars
+              id="doubting-stacked-bars"
               data={this.state.data}
               stackMode = {this.state.stackMode}
             /> }

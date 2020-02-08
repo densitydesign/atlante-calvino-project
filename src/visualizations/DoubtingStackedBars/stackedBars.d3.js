@@ -82,7 +82,7 @@ V.update = (data, stackMode) => {
             .attr("y", d => y(d[1]))
             .attr("height", d => y(d[0]) - y(d[1]))
             .attr("width", x.bandwidth())
-            .style("opacity", .8)
+            .style("opacity", .7)
             .style("cursor", "pointer")
             .on("mouseenter", d=>preSelection(d))
             .on("mouseleave", d=>removePreSelection(d))
@@ -91,28 +91,29 @@ V.update = (data, stackMode) => {
                 // console.log(d.data);
                 if (!d3.select(this).classed("selected")) {
                     selection(d, d3.select(this).classed("selected"))
-                } else {
+                }
+                else {
                     removeSelectionAll();
                 }
             });
     
-            d3.selectAll(".serie").each(function(d){
-                const _class = d3.select(this).attr("class").split(" ")[1].split("-")[1]
-                d3.select(this).selectAll("rect").each(function(dd){
-                    let _id = _class + '-' + dd.data.id;
-                    d3.select(this).attr("id", _id )
-                })
+        d3.selectAll(".serie").each(function(d){
+            const _class = d3.select(this).attr("class").split(" ")[1].split("-")[1]
+            d3.select(this).selectAll("rect").each(function(dd){
+                let _id = _class + '-' + dd.data.id;
+                d3.select(this).attr("id", _id )
             })
+        })
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
-        // bar.style("opacity", 1);
+        bar.style("opacity", 1);
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "block")
     }
 
     const removePreSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id)
-        // bar.style("opacity", .8)
+        bar.style("opacity", .7)
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none")
     }
 
@@ -122,7 +123,7 @@ V.update = (data, stackMode) => {
         const width_factor = x.paddingOuter() * 2;
         const bar_index = data.map(d=>d.id).indexOf(d.data.id);
         const width_treemap = x.bandwidth()*width_factor;
-        const direction = bar_index*2>data.length?-1:1;
+        // const direction = bar_index*2>data.length?-1:1;
 
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.classed("selected", true)
@@ -143,7 +144,7 @@ V.update = (data, stackMode) => {
         })
         bars_on_left.transition()
             .duration(500)
-            .style("opacity", .8)
+            .style("opacity", .7)
             .attr("width", x.bandwidth())
             .attr("transform", `translate(${ -width_treemap/2 }, 0)`);
         
@@ -153,7 +154,6 @@ V.update = (data, stackMode) => {
         })
         ticks_on_left.transition()
             .duration(500)
-            .style("opacity", .8)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 - width_treemap/2 }, 0)`);
 
         const bars_on_right = d3.selectAll(".serie > rect").filter((rect)=>{
@@ -171,7 +171,6 @@ V.update = (data, stackMode) => {
         })
         ticks_on_right.transition()
             .duration(500)
-            .style("opacity", .6)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 + width_treemap/2 }, 0)`);
         
         // draw treemap here
@@ -179,7 +178,6 @@ V.update = (data, stackMode) => {
 
         let data_misto = d.data.levels_doubt.find(k=>k.name=="misto");
         // console.log(d.data);
-        // console.log(data_misto);
 
         let height_misto = 0;
 
@@ -189,8 +187,7 @@ V.update = (data, stackMode) => {
             const x_misto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
             const y_misto = rect_misto.attr("y");
 
-            d3.select(".treemap-misto")
-                .attr("transform", `translate(${x_misto}, ${y_misto})`);
+            d3.select(".treemap-misto").attr("transform", `translate(${x_misto}, ${y_misto})`);
 
             // d3.selectAll(".circle-test").remove();
             // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_misto).attr("cy",y_misto);
@@ -198,7 +195,10 @@ V.update = (data, stackMode) => {
             data_misto = []
         }
 
+        console.log(data_misto);
+
         const root_misto = treemap(data_misto, width_treemap, height_misto);
+        console.log(root_misto.leaves());
         leaf_misto = leaf_misto.data(root_misto.leaves(), l=>d.data.id + '-' + l.data.name);
         leaf_misto.exit().remove();
         leaf_misto = leaf_misto.enter().append("g")
@@ -206,6 +206,8 @@ V.update = (data, stackMode) => {
             .merge(leaf_misto)
             .style("opacity",0)
             .attr("transform", d => `translate(${d.x0},${d.y0})`);
+        
+        console.log(leaf_misto);
         
         let leaf_misto_rect = leaf_misto.selectAll("rect").data(d=>[d])
         leaf_misto_rect.exit().remove()
@@ -221,8 +223,6 @@ V.update = (data, stackMode) => {
             .duration(250)
             .style("opacity",1);
 
-        
-
         let data_soggetto = d.data.levels_doubt.find(k=>k.name=="soggetto");
         // console.log(d.data);
         // console.log(data_soggetto);
@@ -235,8 +235,7 @@ V.update = (data, stackMode) => {
             const x_soggetto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
             const y_soggetto = rect_soggetto.attr("y");
 
-            d3.select(".treemap-soggetto")
-                .attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
+            d3.select(".treemap-soggetto").attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
 
             // d3.selectAll(".circle-test").remove();
             // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_soggetto).attr("cy",y_soggetto);
@@ -245,6 +244,7 @@ V.update = (data, stackMode) => {
         }
 
         const root_soggetto = treemap(data_soggetto, width_treemap, height_soggetto);
+
         leaf_soggetto = leaf_soggetto.data(root_soggetto.leaves(), l=>d.data.id + '-' + l.data.name);
         leaf_soggetto.exit().remove();
         leaf_soggetto = leaf_soggetto.enter().append("g")
@@ -280,6 +280,13 @@ V.update = (data, stackMode) => {
         
         const allTicks = xAxis.selectAll(".tick")
         allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
+
+        // const emptyTreemaps = treemap({}, 100, 100);
+        leaf_misto = leaf_misto.data([]);
+        leaf_misto.exit().remove();
+        leaf_soggetto = leaf_soggetto.data([]);
+        leaf_soggetto.exit().remove();
+
     }
 
     const treemap = (data, width, height) => d3.treemap()
@@ -290,7 +297,8 @@ V.update = (data, stackMode) => {
         .round(true)
     (d3.hierarchy(data)
         .sum(d => d.value)
-        .sort((a, b) => b.value - a.value))
+        // .sort((a, b) => b.value - a.value))
+        .sort((a, b) => b.name - a.name))
 }
 
 V.destroy = () => {
