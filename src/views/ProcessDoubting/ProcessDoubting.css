@@ -1,0 +1,7 @@
+#doubting-stacked-bars .selected {
+    opacity: 1 !important;
+}
+
+#doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
+    pointer-events: none;
+}
