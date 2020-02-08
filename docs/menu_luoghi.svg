@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 227.5 241.5" style="enable-background:new 0 0 227.5 241.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;}
+	.st1{clip-path:url(#SVGID_1_);}
+	.st2{fill:none;stroke:#4856A2;stroke-width:4.5645;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#4856A2;stroke-width:1.7117;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#4856A2;stroke-width:2.2822;}
+	.st5{fill:#4856A2;stroke:#FBFBFC;stroke-width:1.4575;}
+	.st6{fill:#4856A2;}
+	.st7{font-family:'ArialMT';}
+	.st8{font-size:4.9779px;}
+	.st9{font-size:4.978px;}
+</style>
+<g id="Layer_1">
+</g>
+<g id="Tappa_1">
+</g>
+<g id="transformare">
+</g>
+<g id="Luoghi">
+	<g class="st0">
+		<defs>
+			<rect id="SVGID_12_" class="st0" width="227.5" height="241.5"/>
+		</defs>
+		<clipPath id="SVGID_1_">
+			<use xlink:href="#SVGID_12_"  style="overflow:visible;"/>
+		</clipPath>
+		<g class="st1">
+			<g>
+				<circle class="st2" cx="136.2" cy="153.9" r="47.1"/>
+				<g transform="translate(-512.628173828125,-6080.2041015625)">
+					<path class="st3" d="M544,6235c-0.1-48.8,33.5-91.1,81-102.1l0.1,0.6c-47.2,10.9-80.6,53-80.5,101.5L544,6235z"/>
+					<line class="st4" x1="720.3" y1="6291.6" x2="729.9" y2="6299.2"/>
+					<line class="st4" x1="590.3" y1="6188.5" x2="567.1" y2="6170.1"/>
+					<circle class="st5" cx="685.2" cy="6263.8" r="2.3"/>
+					<circle class="st5" cx="729.9" cy="6299.2" r="2.3"/>
+					<circle class="st5" cx="611.7" cy="6205.4" r="2.3"/>
+					<circle class="st5" cx="544.6" cy="6234.9" r="2.3"/>
+					<circle class="st5" cx="548.3" cy="6207.3" r="2.3"/>
+					<circle class="st5" cx="559.2" cy="6181.6" r="2.3"/>
+					<circle class="st5" cx="576.5" cy="6159.8" r="2.3"/>
+					<circle class="st5" cx="599" cy="6143.3" r="2.3"/>
+					<circle class="st5" cx="625.1" cy="6133.4" r="2.3"/>
+					<text transform="matrix(0.7835 0.6213 -0.6213 0.7835 688.4275 6268.6387)" class="st6 st7 st8">Un tipo di luogo</text>
+					<text transform="matrix(0.7835 0.6213 -0.6213 0.7835 731.6199 6302.6719)" class="st6 st7 st8">Luogo</text>
+					<text transform="matrix(0.7835 0.6213 -0.6213 0.7835 592.0513 6191.3359)" class="st6 st7 st8">Un luogo</text>
+					<text transform="matrix(1 -2.749990e-03 2.749990e-03 1 498.3385 6235.5596)" class="st6 st7 st9">Un tipo di luogo</text>
+					<text transform="matrix(0.9647 0.2634 -0.2634 0.9647 504.2365 6195.8193)" class="st6 st7 st8">Un tipo di luogo</text>
+					<text transform="matrix(0.8599 0.5105 -0.5105 0.8599 517.9706 6158.6987)" class="st6 st7 st9">Un tipo di luogo</text>
+					<text transform="matrix(0.693 0.7209 -0.7209 0.693 543.9641 6127.0605)" class="st6 st7 st8">Un tipo di luogo</text>
+					<text transform="matrix(0.4763 0.8793 -0.8793 0.4763 575.2287 6103.9521)" class="st6 st7 st8">Un tipo di luogo</text>
+					<text transform="matrix(0.2252 0.9743 -0.9743 0.2252 614.6617 6090.8223)" class="st6 st7 st8">Un tipo di luogo</text>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Isolation_Mode">
+</g>
+<g id="elenchi">
+</g>
+</svg>
