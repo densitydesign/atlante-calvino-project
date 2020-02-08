@@ -1141,17 +1141,11 @@ console.log("analysisMode", analysisMode);
   destroy = () => {};
 
   //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
-  calculateHillStepTranslation = d => {
-console.log("calculateHillStepTranslation");    
-    return "translate(0," + d.step_y + ")";
-  }
+  calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
 
-  setColor = color => { 
-console.log("set color");    
-    d3
-      .selectAll("circle")
-      .attr("fill", color);
-  };
+  setColor = color => d3
+    .selectAll("circle")
+    .attr("fill", color);
 /*
   set_yRatio = yRatio => {
     d3
@@ -1314,15 +1308,11 @@ console.log("set_yRatio_withoutTransition");
     }
   };
 
-  showHillsTops_withoutTransition = opacity => {
-console.log("showHillsTops_withoutTransition");
-console.log("opacity", opacity);
-    d3
+  showHillsTops_withoutTransition = opacity => d3
     .selectAll(".circle_node")
     .filter(d => !d.first_elem)
     .style("fill-opacity", 0)
     .style("stroke-opacity", 0);
-  }
 
   showHillsBases_withoutTransition = opacity => d3
     .selectAll(".circle_node")
@@ -1337,21 +1327,16 @@ console.log("opacity", opacity);
 
   applyShowHillMode_withoutTransition = showHillMode => 
   {
-console.log("applyShowHillMode_withoutTransition");
-console.log("showHillMode", showHillMode);
     switch(showHillMode)
     {
       case showHillModes.all : 
-console.log("cc 1");
         this.showHills_withoutTransition(1);
         break;
       case showHillModes.base :
-console.log("cc 2");
         this.showHillsTops_withoutTransition(0);
         this.showHillsBases_withoutTransition(1);
         break;
       case showHillModes.nothing :
-console.log("cc 3");
         this.showHills_withoutTransition(0);
         break;
       default : break;
@@ -1717,9 +1702,6 @@ console.log("change_none_to_hills");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-console.log("change_none_to_flat");    
-console.log("newHighlightParameters", newHighlightParameters);
-
     this.set_yRatio_withoutTransition(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
     this.applyShowHillMode_withoutTransition(newHighlightParameters.showHillMode);
@@ -1782,6 +1764,7 @@ console.log("newHighlightParameters", newHighlightParameters);
     const t0 = svg.transition().duration(600);
     t0
       .selectAll(".hill")
+      .style("fill-opacity", 1)
       .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
 
     // tilt
