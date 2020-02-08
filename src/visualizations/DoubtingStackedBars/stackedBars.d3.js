@@ -16,6 +16,7 @@ let width,
     treemap_misto,
     leaf_misto,
     treemap_soggetto,
+    leaf_soggetto,
 
     x = d3.scaleBand().padding(0.2).paddingOuter(10),
     xAxis,
@@ -41,7 +42,8 @@ V.initialize = (el, data_for_update) => {
     serie = g.selectAll(".serie");
     treemap_misto = svg.append("g").classed("treemap-misto", true);
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
-    // treemap_soggetto = svg.append("g").classed("leaf-soggetto-g", true).selectAll("g")
+    treemap_soggetto = svg.append("g").classed("treemap-soggetto", true);
+    leaf_soggetto = treemap_soggetto.selectAll(".leaf-soggetto");
 
     x.range([margin.left, width - margin.right]);
     xAxis = svg.append("g").classed("axis x-axis", true)
@@ -87,13 +89,22 @@ V.update = (data, stackMode) => {
             .on("mouseenter", d=>preSelection(d))
             .on("mouseleave", d=>removePreSelection(d))
             .on("click", function(d){
-                console.log(this, d.data);
+                // console.log(this);
+                // console.log(d.data);
                 if (!d3.select(this).classed("selected")) {
                     selection(d, d3.select(this).classed("selected"))
                 } else {
                     removeSelectionAll();
                 }
             });
+    
+            d3.selectAll(".serie").each(function(d){
+                const _class = d3.select(this).attr("class").split(" ")[1].split("-")[1]
+                d3.select(this).selectAll("rect").each(function(dd){
+                    let _id = _class + '-' + dd.data.id;
+                    d3.select(this).attr("id", _id )
+                })
+            })
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
@@ -107,7 +118,7 @@ V.update = (data, stackMode) => {
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none")
     }
 
-    const selection = (d,isSelected) => {
+    const selection = (d, isSelected) => {
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
 
         const width_factor = x.paddingOuter() * 2;
@@ -166,78 +177,90 @@ V.update = (data, stackMode) => {
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 + width_treemap/2 }, 0)`);
         
         // draw treemap here
+        // ref: https://observablehq.com/@d3/treemap
 
-        // const rect_misto = bar.filter(function(rect){
-        //     return d3.select(this.parentNode).classed("serie-misto")
-        // })
+        let data_misto = d.data.levels_doubt.find(k=>k.name=="misto");
+        // console.log(d.data);
+        // console.log(data_misto);
 
-        // console.log(rect_misto.node())
+        if (data_misto) {
+            const rect_misto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-misto")} );            
+            const height_misto = rect_misto.attr("height");
+            const x_misto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
+            const y_misto = rect_misto.attr("y");
 
-        // const data_misto = rect_misto.data()[0].data.levels_doubt.find(d=>d.key==="misto");
+            d3.select(".treemap-misto")
+                .attr("transform", `translate(${x_misto}, ${y_misto})`);
 
-        // console.log(d.data)
+            d3.selectAll(".circle-test").remove();
+            g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_misto).attr("cy",y_misto);
 
-        // console.log( data.find(dd=>dd.id=d.data.id).levels_doubt )
+            const root_misto = treemap(data_misto, width_treemap, height_misto);
+            leaf_misto = leaf_misto.data(root_misto.leaves(), l=>d.data.id + '-' + l.data.name);
+            leaf_misto.exit().remove();
+            leaf_misto = leaf_misto.enter().append("g")
+                .classed("leaf-misto", true)
+                .merge(leaf_misto)
+                .style("opacity",0)
+                .attr("transform", d => `translate(${d.x0},${d.y0})`);
+            
+            let leaf_misto_rect = leaf_misto.selectAll("rect").data(d=>[d])
+            leaf_misto_rect.exit().remove()
+            leaf_misto_rect = leaf_misto_rect.enter().append("rect")
+                .merge(leaf_misto_rect)    
+                .attr("darkness", d=>d.data.name-1)
+                .attr("fill",d=> d3.color(color("misto")).darker( 0.5*(+d.data.name-1) ) )
+                .attr("width", d => d.x1 - d.x0)
+                .attr("height", d => d.y1 - d.y0);
 
-        // console.log(data_misto)
-        
-        // if (data_misto && data_misto.key && false) {
+            leaf_misto.transition()
+                .delay(500)
+                .duration(250)
+                .style("opacity",1);
 
-        //     const height_misto = rect_misto.attr("height");
-        //     const x_misto = rect_misto.attr("x");
-        //     const y_misto = rect_misto.attr("y");
-        //     const data_misto = rect_misto.data()[0].data.levels_doubt.find(d=>d.key==="misto");
-    
-        //     data_misto.name = data_misto.key;
-        //     data_misto.children = data_misto.values.map(c=>{
-        //         return {
-        //             'name': c.key,
-        //             'value': c.value
-        //         }
-        //     });
-        //     delete data_misto.key;
-        //     delete data_misto.values;
-        
-        //     // d3.selectAll(".leaf-misto-g").attr("transform", `translate(${x_misto}, ${y_misto})`)
-    
-        //     const root_misto = treemap(data_misto, width_treemap, height_misto);
-    
-        //     leaf_misto = leaf_misto.data(root_misto.leaves(), l=>d.data.id + '-' + l.data.name);
-        //     leaf_misto.exit().remove();
-        //     leaf_misto = leaf_misto.enter().append("g")
-        //         .classed("leaf-misto", true)
-        //         .merge(leaf_misto)
-        //         .attr("transform", d => `translate(${d.x0},${d.y0})`)
-    
-        //     leaf_misto.selectAll("rect").remove()
-        //     leaf_misto.append("rect")
-        //         .attr("id", l=>d.data.id + '-' + l.data.name)
-        //         .attr("darkness", d=>d.data.name-1)
-        //         .attr("fill", d => {
-        //             while (d.depth > 1) d = d.parent;
-        //             return d3.color(color("misto")).darker( 0.35*(+d.data.name-1) ); })
-        //         .attr("fill-opacity", 1)
-        //         .attr("width", d => d.x1 - d.x0)
-        //         .attr("height", d => d.y1 - d.y0);
-        // }
+        }
 
-        // const rect_soggetto = bar.filter(function(rect){
-        //     return d3.select(this.parentNode).classed("serie-soggetto")
-        // })
-        // const height_soggetto = rect_soggetto.attr("height");
-        // const data_soggetto = rect_soggetto.data()[0].data.levels_doubt.find(d=>d.key==="soggetto");
+        let data_soggetto = d.data.levels_doubt.find(k=>k.name=="soggetto");
+        // console.log(d.data);
+        // console.log(data_soggetto);
 
-        // data_soggetto.name = data_soggetto.key
-        // data_soggetto.children = data_soggetto.values.map(c=>{
-        //     return {
-        //         'name': c.key,
-        //         'value': c.value
-        //     }
-        // })
-        // delete data_soggetto.key
-        // delete data_soggetto.values
+        if (data_soggetto) {
+            const rect_soggetto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-soggetto")} );            
+            const height_soggetto = rect_soggetto.attr("height");
+            const x_soggetto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
+            const y_soggetto = rect_soggetto.attr("y");
 
-        // console.log(data_soggetto)
+            d3.select(".treemap-soggetto")
+                .attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
+
+            d3.selectAll(".circle-test").remove();
+            g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_soggetto).attr("cy",y_soggetto);
+
+            const root_soggetto = treemap(data_soggetto, width_treemap, height_soggetto);
+            leaf_soggetto = leaf_soggetto.data(root_soggetto.leaves(), l=>d.data.id + '-' + l.data.name);
+            leaf_soggetto.exit().remove();
+            leaf_soggetto = leaf_soggetto.enter().append("g")
+                .classed("leaf-soggetto", true)
+                .merge(leaf_soggetto)
+                .style("opacity",0)
+                .attr("transform", d => `translate(${d.x0},${d.y0})`);
+            
+            let leaf_soggetto_rect = leaf_soggetto.selectAll("rect").data(d=>[d])
+            leaf_soggetto_rect.exit().remove()
+            leaf_soggetto_rect = leaf_soggetto_rect.enter().append("rect")
+                .merge(leaf_soggetto_rect)    
+                .attr("darkness", d=>d.data.name-1)
+                .attr("fill",d=> d3.color(color("soggetto")).darker( 0.5*(+d.data.name-1) ) )
+                .attr("width", d => d.x1 - d.x0)
+                .attr("height", d => d.y1 - d.y0);
+
+            leaf_soggetto.transition()
+                .delay(500)
+                .duration(250)
+                .style("opacity",1);
+
+        }
+
     }
 
     const removeSelectionAll = () => {
@@ -255,6 +278,7 @@ V.update = (data, stackMode) => {
 
     const treemap = (data, width, height) => d3.treemap()
         .tile(d3.treemapBinary)
+        .tile(d3.treemapSquarify)
         .size([width, height])
         .padding(0)
         .round(true)
