@@ -1134,17 +1134,18 @@ console.log("analysisMode", analysisMode);
     {      
       containerSetAllowDropMenus(false);
 
-      this.end_tt0(containerSetAllowDropMenus);
+      this.showHillsProgressively(containerSetAllowDropMenus);
     }
   };
 
-  async end_tt0(containerSetAllowDropMenus)
+  async showHillsProgressively(containerSetAllowDropMenus)
   {
-    const tt0 = svg.transition().duration(400);    
-    const tt1 = tt0.transition();
-    await tt1
+    const delayFactor = 150;
+
+    await svg
+      .transition()
       .selectAll(".circle_node")
-      .delay(function(d) { return (d.first_publication - 1940) * 200 })
+      .delay(function(d) { return (d.first_publication - 1940) * delayFactor })
       .attr("transform", this.calculateHillStepTranslation)
       .style("fill-opacity", 1)
       .style("stroke-opacity", .5)

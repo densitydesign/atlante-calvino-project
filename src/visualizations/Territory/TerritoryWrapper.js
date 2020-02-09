@@ -161,11 +161,7 @@ export default class TerritoryWrapper extends React.Component
     });
   }
 
-  containerSetAllowDropMenus = value => {
-console.log("containerSetAllowDropMenus");
-console.log("value", value);
-     this.setState({ allowDropMenus : value });
-  }
+  containerSetAllowDropMenus = value => this.setState({ allowDropMenus : value });
 
   setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
 
