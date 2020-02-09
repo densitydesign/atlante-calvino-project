@@ -1132,10 +1132,13 @@ console.log("analysisMode", analysisMode);
       GlobalData.analysisModes.noAnalysis.volumes
     ].includes(analysisMode))
     {      
+      containerSetAllowDropMenus(false)
+
       const tt0_0 = svg.transition().duration(1);
-      tt0_0
-        .on("start", () => containerSetAllowDropMenus(false));
 /*      
+      tt0_0
+        .on("start", () => );
+     
         .select(".hill")
         .style("fill-opacity", d => {
 //          containerSetAllowDropMenus(false);
