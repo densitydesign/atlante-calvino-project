@@ -1134,18 +1134,7 @@ console.log("analysisMode", analysisMode);
     {      
       containerSetAllowDropMenus(false)
 
-      const tt0_0 = svg.transition().duration(1);
-/*      
-      tt0_0
-        .on("start", () => );
-     
-        .select(".hill")
-        .style("fill-opacity", d => {
-//          containerSetAllowDropMenus(false);
-          return 0;
-        });
-*/
-      const tt0 = tt0_0.transition().duration(400);
+      const tt0 = svg.transition().duration(400);
 
       this.end_tt0(tt0, containerSetAllowDropMenus);
     }
