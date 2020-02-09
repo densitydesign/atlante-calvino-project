@@ -36,6 +36,7 @@ export default class TerritoryWrapper extends React.Component
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
     helpSidePanelOpen : false,
+    allowDropMenus : false,
 
     dataExtent : [...GlobalData.defaultTerritoryDataExtent]
   };
@@ -130,10 +131,12 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
-  callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
+  callTerritoryShowHills = opacity => this.territoryShowHills(opacity);  
 
   toggleNoAnalysisDropDownPosition = () =>
   {
+    if(!this.state.allowDropMenus) return;
+
     const newValue =
       this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open ?
       GlobalData.noAnalysisDropDownPositions.closed :
@@ -156,6 +159,12 @@ export default class TerritoryWrapper extends React.Component
       bottomPanelPosition : bottomPanelPosition,
       bottomPanelMode : bottomPanelMode
     });
+  }
+
+  containerSetAllowDropMenus = value => {
+console.log("containerSetAllowDropMenus");
+console.log("value", value);
+     this.setState({ allowDropMenus : value });
   }
 
   setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
@@ -230,6 +239,8 @@ export default class TerritoryWrapper extends React.Component
 
   toggleItineraryDropUpPosition = () =>
   {
+    if(!this.state.allowDropMenus) return;
+
     const newValue =
       this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
       GlobalData.itineraryDropUpPositions.closed :
@@ -366,6 +377,7 @@ export default class TerritoryWrapper extends React.Component
                 analysisMode = {analysisMode}
                 data={this.state.data}
                 colors={GlobalData.visualizationColors.territory}
+                containerSetAllowDropMenus={this.containerSetAllowDropMenus}
                 containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}

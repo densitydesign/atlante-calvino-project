@@ -79,7 +79,13 @@ customElementsClasses["customElements"] = "customElements";
 
 class VClass
 {
-  initialize = (el, input_data, input_colors, analysisMode, containerOnSvgClicked) => 
+  initialize = (
+    el, 
+    input_data, 
+    input_colors, 
+    analysisMode, 
+    containerOnSvgClicked,
+    containerSetAllowDropMenus) => 
   {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
@@ -1126,17 +1132,36 @@ console.log("analysisMode", analysisMode);
       GlobalData.analysisModes.noAnalysis.volumes
     ].includes(analysisMode))
     {      
-      const tt0 = svg.transition().duration(400);
+      const tt0_0 = svg.transition().duration(1);
+      tt0_0
+        .on("start", () => containerSetAllowDropMenus(false));
+/*      
+        .select(".hill")
+        .style("fill-opacity", d => {
+//          containerSetAllowDropMenus(false);
+          return 0;
+        });
+*/
+      const tt0 = tt0_0.transition().duration(400);
 
-      const tt1 = tt0.transition();
-      tt1
-        .selectAll(".circle_node")
-        .delay(function(d) { return (d.first_publication - 1940) * 200 })
-        .attr("transform", this.calculateHillStepTranslation)
-        .style("fill-opacity", 1)
-        .style("stroke-opacity", .5);
+      this.end_tt0(tt0, containerSetAllowDropMenus);
     }
   };
+
+  async end_tt0(tt0, containerSetAllowDropMenus)
+  {
+    const tt1 = tt0.transition();
+    await tt1
+      .selectAll(".circle_node")
+      .delay(function(d) { return (d.first_publication - 1940) * 200 })
+      .attr("transform", this.calculateHillStepTranslation)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", .5)
+      .end();
+
+    containerSetAllowDropMenus(true);    
+  }
+
 
   destroy = () => {};
 
