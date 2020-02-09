@@ -1132,16 +1132,15 @@ console.log("analysisMode", analysisMode);
       GlobalData.analysisModes.noAnalysis.volumes
     ].includes(analysisMode))
     {      
-      containerSetAllowDropMenus(false)
+      containerSetAllowDropMenus(false);
 
-      const tt0 = svg.transition().duration(400);
-
-      this.end_tt0(tt0, containerSetAllowDropMenus);
+      this.end_tt0(containerSetAllowDropMenus);
     }
   };
 
-  async end_tt0(tt0, containerSetAllowDropMenus)
+  async end_tt0(containerSetAllowDropMenus)
   {
+    const tt0 = svg.transition().duration(400);    
     const tt1 = tt0.transition();
     await tt1
       .selectAll(".circle_node")
