@@ -27,7 +27,7 @@ function MarimekkoBookIcycle({
   const columnWidth = icycleWidth / 5;
 
   const sequenceScale = scaleLinear()
-    .range([0 + 10, height - 10])
+    .range([0 + 5, height - 5])
     .domain([0, +book.caratteri]);
 
   //annotating data

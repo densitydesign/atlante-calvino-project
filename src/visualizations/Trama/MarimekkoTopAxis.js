@@ -43,6 +43,8 @@ export default function MarimekkoTopAxis({
   });
 
   const booksDataWithPositions = useMemo(() => {
+    // const widthForLong = booksData.length < 5 ? width / 2 : width
+
     return !short
       ? computeHorizontalPositions(booksData, width, false)
       : computeHorizontalPositions(booksData, width / 2, true);

@@ -10,18 +10,26 @@ import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
 import uniqBy from "lodash/uniqBy";
 import uniq from "lodash/uniq";
-
+import sortBy from "lodash/sortBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import find from "lodash/find";
 import get from "lodash/get";
 import maxBy from "lodash/maxBy";
 import keyBy from "lodash/keyBy";
+import findLastIndex from "lodash/findLastIndex";
+import findIndex from "lodash/findIndex";
+
 import MarimekkoLegend from "./MarimekkoLegend";
 import MarimekkoTopAxis from "./MarimekkoTopAxis";
 import MarimekkoChart from "./MarimekkoChart";
-import MarimekkoSlider from "./MarimekkoSlider";
-import { levelMaps, computeHorizontalPositions } from "./helpers";
+import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSlider";
+import {
+  levelMaps,
+  computeHorizontalPositions,
+  computeSequences,
+  findAtChar
+} from "./helpers";
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
@@ -145,14 +153,17 @@ const preprocessData = (data, options = {}) => {
       out.mese = +out.mese;
       out.anno = +out.anno;
 
-      //mapping seq occurrences
-      const sequencesMapForBook = keyBy(
-        uniq(
-          firstLevelRecords
-            .filter(x => x.textID === item.textID)
-            .map(x => x.seq)
-        )
-      );
+      //
+      const sequencesMapForBook = computeSequences(data, item.textID);
+
+      // //mapping seq occurrences
+      // const sequencesMapForBook = keyBy(
+      //   uniq(
+      //     firstLevelRecords
+      //       .filter(x => x.textID === item.textID)
+      //       .map(x => x.seq)
+      //   )
+      // );
 
       const dataVolume = get(volumiByID, item.textID);
       return {
@@ -294,14 +305,63 @@ function MarimekkoViz({
     return find(booksDataWithPositions, x => x.textID === currentTextID);
   }, [booksDataWithPositions, currentTextID]);
 
+  //current sequence stuff
+  const sequences = useMemo(() => {
+    if(!currentBook){
+      return []
+    }
+    return sortBy(currentBook.sequencesMapForBook, x => x.starts_at);
+  }, [currentBook])
+
+  const currentIndex = useMemo(() => {
+    if(!currentBook){
+      return -1
+    }
+    return findLastIndex(sequences, item =>
+      findAtChar(item, currentPosition)
+    );
+
+  }, [currentBook, currentPosition, sequences])
+
+  
+  const sequencesIndexing = useMemo(() => {
+    if (!currentBook) {
+      return {
+        currentIndex: null,
+        prevPosition: null,
+        nextPosition: null
+      };
+    }
+     
+    const prevIndex = findLastIndex(
+      sequences,
+      x => x.starts_at < currentPosition
+    );
+    const nextIndex = findIndex(sequences, x => x.starts_at > currentPosition);
+    const prevPosition =
+      prevIndex === -1 ? null : sequences[prevIndex].starts_at;
+    const nextPosition =
+      nextIndex === -1 ? null : sequences[nextIndex].starts_at;
+    return {
+      currentIndex,
+      prevPosition,
+      nextPosition
+    };
+  }, [currentBook, currentIndex, currentPosition, sequences]);
+
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
       <div className="row no-gutters h-100">
         <div className="col-sm-1 d-flex flex-column">
-          <div
-            className="row no-gutters"
-            style={{ flex: 2, minHeight: 160 }}
-          ></div>
+          <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
+            <MarimekkoSliderArrow
+              up
+              currentBook={currentBook}
+              setCurrentPosition={setCurrentPosition}
+              nextPosition={sequencesIndexing.nextPosition}
+              prevPosition={sequencesIndexing.prevPosition}
+            ></MarimekkoSliderArrow>
+          </div>
           <div
             className="row no-gutters w-100 d-flex flex-row justify-content-center"
             style={{ flex: 8 }}
@@ -319,10 +379,15 @@ function MarimekkoViz({
               ></MarimekkoSlider>
             )}
           </div>
-          <div
-            className="row no-gutters"
-            style={{ flex: 1, minHeight: 80 }}
-          ></div>
+          <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}>
+            <MarimekkoSliderArrow
+              down
+              currentBook={currentBook}
+              setCurrentPosition={setCurrentPosition}
+              nextPosition={sequencesIndexing.nextPosition}
+              prevPosition={sequencesIndexing.prevPosition}
+            ></MarimekkoSliderArrow>
+          </div>
         </div>
         <div className="col-sm-9 d-flex flex-column">
           <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
@@ -391,11 +456,14 @@ function MarimekkoViz({
         </div>
 
         <div className="col-sm-2 pl-3">
-          <div className="row no-gutters w-100" style={{ flex: 2, minHeight: 160 }}>
+          <div
+            className="row no-gutters w-100"
+            style={{ flex: 2, minHeight: 160 }}
+          >
             <div className="position-relative">
               <button
                 className="btn btn-sm btn-outline-dark position-absolute"
-                style={{bottom: 15}}
+                style={{ bottom: 15 }}
                 onClick={() => {
                   setSelectedLegendEntries({});
                 }}
@@ -404,10 +472,7 @@ function MarimekkoViz({
               </button>
             </div>
           </div>
-          <div
-            className="row no-gutters d-flex flex-row"
-            style={{ flex: 8 }}
-          >
+          <div className="row no-gutters d-flex flex-row" style={{ flex: 8 }}>
             <MarimekkoLegend
               legendMap={
                 dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
