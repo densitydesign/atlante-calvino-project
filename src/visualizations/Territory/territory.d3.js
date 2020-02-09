@@ -1760,12 +1760,19 @@ console.log("change_none_to_hills");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    const t0_0 = svg.transition().duration(1);
+
+    t0_0
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .style("fill-opacity", 1);
+
     // recolor whole hills
-    const t0 = svg.transition().duration(600);
+    const t0 = t0_0.transition().duration(600);
     t0
       .selectAll(".hill")
-      .style("fill-opacity", 1)
-      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
+//      .style("fill-opacity", 1)
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));    
 
     // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
@@ -1781,7 +1788,7 @@ console.log("change_none_to_hills");
     t2
       .selectAll(".circle_node")
       .attr("transform", d => "translate(0, " + d.step_y + ")")
-      .style("stroke-opacity", 1);
+      .style("stroke-opacity", 1);     
   }
 
   change_hills_to_drawing = (
