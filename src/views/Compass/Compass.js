@@ -41,7 +41,7 @@ export default class Compass extends React.Component
   {
     return (
       <div>
-        <HamburgerCloseHeader />
+        <HamburgerCloseHeader containerToggleCompass={this.props.containerToggleCompass} />
 
           <div className="compass-main-description">
             <h1>Bussola</h1>

@@ -10,6 +10,7 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
+import Compass from '../../views/Compass/Compass';
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -20,6 +21,7 @@ export default class TerritoryWrapper extends React.Component
   state = {
     data : "data still not loaded",
     isLoading : true,
+    compassIsActive : false,
 
     noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
     itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
@@ -275,8 +277,15 @@ export default class TerritoryWrapper extends React.Component
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
+  containerToggleCompass = () => this.setState({ compassIsActive : !this.state.compassIsActive });
+
   render()
   {
+    if(this.state.compassIsActive)
+    {
+      return <Compass containerToggleCompass={this.containerToggleCompass} />
+    }
+
     let helpPage;
 
     switch(this.state.mainAnalysisMode)
@@ -355,6 +364,7 @@ export default class TerritoryWrapper extends React.Component
           helpButtonClicked={this.toggleHelpSidePanel}
           toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
           containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
+          containerToggleCompass={this.containerToggleCompass}
         />
 
         {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&
