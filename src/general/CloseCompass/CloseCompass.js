@@ -9,7 +9,7 @@ export default class CloseCompass extends React.Component
 {
   componentDidMount()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
 console.log("adding event listener");      
       document.addEventListener("mousedown", this.handleClick);
@@ -18,7 +18,7 @@ console.log("adding event listener");
 
   componentWillUnmount()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
       document.removeEventListener("mousedown", this.handleClick);
     }
@@ -30,12 +30,12 @@ console.log("adding event listener");
 console.log("clicked 1");        
     if(!this.wrapperRef) return;
 console.log("clicked 2");        
-    if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompass();
+    if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompassPanel();
   }
 
   render()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
 console.log("render 1");      
       return (

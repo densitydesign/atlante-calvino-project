@@ -20,8 +20,7 @@ export default class TerritoryWrapper extends React.Component
 {
   state = {
     data : "data still not loaded",
-    isLoading : true,
-    compassIsActive : false,
+    isLoading : true,    
 
     noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
     itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
@@ -37,6 +36,7 @@ export default class TerritoryWrapper extends React.Component
     spaceAnalysisMode : GlobalData.analysisModes.space.genericTerrestrial,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
+    compassPanelOpen  : false,
     helpSidePanelOpen : false,
     allowDropMenus : false,
 
@@ -277,7 +277,7 @@ export default class TerritoryWrapper extends React.Component
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
-  containerToggleCompass = () => this.setState({ compassIsActive : !this.state.compassIsActive });
+  containerToggleCompassPanel = () => this.setState({ compassPanelOpen : !this.state.compassPanelOpen });
 
   render()
   {
@@ -352,7 +352,9 @@ export default class TerritoryWrapper extends React.Component
           page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
 
-        <CompassPanel />
+        <CompassPanel
+          open={this.state.compassPanelOpen}
+          containerToggleCompassPanel={this.containerToggleCompassPanel} />
 
         <>
 
@@ -367,7 +369,7 @@ export default class TerritoryWrapper extends React.Component
           helpButtonClicked={this.toggleHelpSidePanel}
           toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
           containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
-          containerToggleCompass={this.containerToggleCompass}
+          containerToggleCompassPanel={this.containerToggleCompassPanel}
         />
 
         {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&

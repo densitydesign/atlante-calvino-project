@@ -117,7 +117,7 @@ export default class TerritoryHeader extends React.Component
           style={{ gridColumn : "span 1" }}
           onClicked={this.props.helpButtonClicked} />
 
-        <CompassButton style={{ gridColumn : "span 1", color : "white", backgroundColor : "black" }} containerToggleCompass={this.props.containerToggleCompass} />
+        <CompassButton style={{ gridColumn : "span 1", color : "white", backgroundColor : "black" }} containerToggleCompassPanel={this.props.containerToggleCompassPanel} />
 
       </div>
     );

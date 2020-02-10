@@ -9,7 +9,7 @@ export default class CompassButton extends React.Component
 {
   componentDidMount()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
       document.addEventListener("mousedown", this.handleClick);
     }
@@ -17,7 +17,7 @@ export default class CompassButton extends React.Component
 
   componentWillUnmount()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
       document.removeEventListener("mousedown", this.handleClick);
     }
@@ -28,12 +28,12 @@ export default class CompassButton extends React.Component
   handleClick = event => {
     if(!this.wrapperRef) return;
 
-    if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompass();
+    if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompassPanel();
   }
 
   render()
   {
-    if(this.props.containerToggleCompass)
+    if(this.props.containerToggleCompassPanel)
     {
       return (
         <div className="compass-button" style={this.props.style} ref={this.setWrapperRef}>
