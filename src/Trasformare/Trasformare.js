@@ -446,7 +446,6 @@ class Trasformare extends Component {
 					/> }
 					<MoreInfo
 						style={{ gridColumn: "span 1" }}
-						onClicked={this.toggleHelpSidePanel}
 					/>
 					<CompassButton
 						style={{

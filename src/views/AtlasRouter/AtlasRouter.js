@@ -35,10 +35,12 @@ export default function AtlasRouter()
   return (
     <BrowserRouter basename="/atlante-calvino-project">
 
-{/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
+{/*
       <Route exact path="/"><SplashScreenWrapper /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
+*/}
       <Route exact path="/Home"><HamburgerMenu /></Route>
+{/*      
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
@@ -84,8 +86,10 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
+*/}
       <Route exact path="/Process/doubting"><ProcessDoubting /></Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
+{/*
       <Route exact path="/Process/combining">processi / combinare</Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
@@ -98,7 +102,7 @@ export default function AtlasRouter()
       <Route exact path="/Tools"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>
       <Route exact path="/Papers"><Articles /></Route>
-
+*/}
     </BrowserRouter>
   );
 }
