@@ -11,7 +11,6 @@ export default class CloseCompassPanel extends React.Component
   {
     if(this.props.containerToggleCompassPanel)
     {
-console.log("adding event listener");      
       document.addEventListener("mousedown", this.handleClick);
     }
   }
@@ -27,9 +26,8 @@ console.log("adding event listener");
   setWrapperRef = node => this.wrapperRef = node;
 
   handleClick = event => {
-console.log("clicked 1");        
     if(!this.wrapperRef) return;
-console.log("clicked 2");        
+
     if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompassPanel();
   }
 

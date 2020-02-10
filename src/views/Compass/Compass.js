@@ -39,8 +39,6 @@ export default class Compass extends React.Component
 
   render()
   {
-console.log("compass.render");
-
     return (
       <div>
                 
