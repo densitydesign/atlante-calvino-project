@@ -20,7 +20,7 @@ export default class SplashScreenWrapper extends React.Component
       <Link to="/AtlasIntro">
         <SplashScreen />
         <h2 className="splash-screen-caption">Letteratura e visualizzazione</h2>
-        <h3 className="splash-screen-description">Eine wunderbare Heiterkeit hat meine ganze Seele eingenommen, gleich den süßen</h3>
+        <p className="splash-screen-description">Ecco una breve descrizione di ciò che è l'Atlante.<br/>Potrebbe essere lunga centoventi caratteri e approfondire la ricerca.</p>
         <FontAwesomeIcon className="splash-screen-hand-icon" icon={faHandPointDown} />
       </Link>
     );
