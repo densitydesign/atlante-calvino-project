@@ -597,7 +597,7 @@ L00592	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	mandorlo	Oli
 L00593	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	quercia	Olivabassa	L00589	generico						no	sì	-	generico_terrestre	256367	256374		natura ligure;mare	natura ligure;protagonista bambino;mare
 L00594	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	Quercia delle Cinque Passere	Ombrosa	L00541	nominato	landmark					sì	sì	-	inventato	269544	269572		natura ligure;mare	natura ligure;protagonista bambino;mare
 L00595	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	orti	Ombrosa	L00541	generico						sì	sì	-	generico_terrestre	271328	271332		natura ligure;mare	natura ligure;protagonista bambino;mare
-L00595b	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	Parigi			nominato	comune					sì	sì	no	nominato terrestre	13963	13969		natura ligure;mare	natura ligure;protagonista bambino;mare
+L00595b	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	Parigi			nominato	comune					sì	sì	no	nominato_terrestre	13963	13969		natura ligure;mare	natura ligure;protagonista bambino;mare
 L00596	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	bandita	Ombrosa	L00541	generico						sì	sì	-	generico_terrestre	285083	285090		natura ligure;mare	natura ligure;protagonista bambino;mare
 L00597	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	prato	Ombrosa	L00541	generico						sì	sì	-	generico_terrestre	285845	285850		natura ligure;mare	natura ligure;protagonista bambino;mare
 L00598	V005	Il barone rampante	romanzo	V005	Il barone rampante	1957	frassino	Ombrosa	L00541	generico						sì	sì	-	generico_terrestre	286229	286237		natura ligure;mare	natura ligure;protagonista bambino;mare
