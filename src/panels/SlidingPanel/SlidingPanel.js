@@ -55,7 +55,7 @@ console.log("render panel");
 
     return (
       <div
-        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)}
+        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName) + (this.props.hide ? " sliding-panel-hide" : "" )}
         ref={this.setWrapperRef}
         style={{
           zIndex : this.props.zIndex

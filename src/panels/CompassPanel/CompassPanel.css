@@ -3,7 +3,7 @@
 }
 
 .compass-panel {
-  padding: 4em;
+  padding: 0;
   position: fixed;
   top: 0px;
   max-height: 100%;
