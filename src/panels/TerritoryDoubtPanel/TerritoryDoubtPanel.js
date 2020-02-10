@@ -63,7 +63,7 @@ export default class TerritoryDoubtPanel extends React.Component
     return (
       <>
         <TerritoryDescriptionSubPanel
-          title="L'ORGANIZZAZIONE DEI DUBBI"
+          title="L'ORGANIZZAZIONE DELLA NEBBIA"
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
           informationSheetRoute="/Phenomena/territory/doubtAnalysis/informationSheet"
           informationSheetDescription="SCHEDA"
