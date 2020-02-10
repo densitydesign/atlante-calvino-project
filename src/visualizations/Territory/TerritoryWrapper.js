@@ -10,7 +10,7 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
-import Compass from '../../views/Compass/Compass';
+import CompassPanel from '../../panels/CompassPanel/CompassPanel';
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -281,11 +281,12 @@ export default class TerritoryWrapper extends React.Component
 
   render()
   {
+/*    
     if(this.state.compassIsActive)
     {
       return <Compass containerToggleCompass={this.containerToggleCompass} />
     }
-
+*/
     let helpPage;
 
     switch(this.state.mainAnalysisMode)
@@ -350,6 +351,8 @@ export default class TerritoryWrapper extends React.Component
           open={this.state.helpSidePanelOpen}
           page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
+
+        <CompassPanel />
 
         <>
 

@@ -20,8 +20,6 @@ import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBo
 import './HelpSidePanel.css';
 
 export default class HelpSidePanel extends React.Component
-
-
 {
   render()
   {
