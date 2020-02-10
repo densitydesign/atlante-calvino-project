@@ -39,9 +39,12 @@ export default class Compass extends React.Component
 
   render()
   {
+console.log("compass.render");
+
     return (
       <div>
-        <HamburgerCloseHeader />
+                
+        <HamburgerCloseHeader containerToggleCompassPanel={this.props.containerToggleCompassPanel} />
 
           <div className="compass-main-description">
             <h1>Bussola</h1>
@@ -51,31 +54,56 @@ export default class Compass extends React.Component
             Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.</p></div>
           </div>
           <div>
-            <SlidingPanel id="1" open={this.state.selectedPanel >= 1} zIndex="1" openClassName="panel1-open" closedClassName="panel1-closed" title="I flussi dei racconti" getSelectedPanel={this.getSelectedPanel} setSelectedPanel={this.setSelectedPanel} panelClicked={this.panelClicked} interactiveViewUrl="/Compass/flux" pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip" text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo." />
-            <SlidingPanel id="2" open={this.state.selectedPanel >= 2} zIndex="2" openClassName="panel2-open" closedClassName="panel2-closed" title="Il tempo e le opere" getSelectedPanel={this.getSelectedPanel} setSelectedPanel={this.setSelectedPanel} panelClicked={this.panelClicked} interactiveViewUrl="/Compass/time" pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip" text="Si tratta di una mappa sintetica, che segue l’andamento dei quattro decenni della carriera letteraria di Calvino, mostrando gli snodi più importanti della sua storia editoriale: i principali volumi e le collaborazioni giornalistiche. La divisione per generi permette di seguire le oscillazioni tra forma breve e lunga, le sperimentazioni sulla struttura, l’articolarsi inquieto dell’opera in cerca della sua giusta forma." />
-            <SlidingPanel id="3" open={this.state.selectedPanel >= 3} zIndex="3" openClassName="panel3-open" closedClassName="panel3-closed" title="L'arcipelago dei nomi" getSelectedPanel={this.getSelectedPanel} setSelectedPanel={this.setSelectedPanel} panelClicked={this.panelClicked} interactiveViewUrl="" pdfUrl="http://atlantecalvino.unige.ch/assets/viz-03-arcipelago.zip" text="I saggi non saranno oggetto della nostra analisi, che si limita all’opera narrativa. Ma stanno sullo sfondo, come un arcipelago di isole e isolotti che con questo strumento si può circumnavigare, per farsi un’idea di quale sia stata la biblioteca mentale di Calvino. Quasi duemila nomi, citati nel gran numero di saggi e articoli che lo scrittore ha pubblicato nell’arco di quarant’anni, vengono qui riuniti per consentirne un’esplorazione inedita. " />
+
+            <SlidingPanel 
+              id="1" 
+              open={this.state.selectedPanel >= 1} 
+              zIndex="1" 
+              openClassName="panel1-open" 
+              closedClassName="panel1-closed" 
+              hide={this.props.hide}
+              title="I flussi dei racconti" 
+              getSelectedPanel={this.getSelectedPanel} 
+              setSelectedPanel={this.setSelectedPanel} 
+              panelClicked={this.panelClicked} 
+              interactiveViewUrl="/Compass/flux" 
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip" 
+              text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo." />
+
+            <SlidingPanel 
+              id="2" 
+              open={this.state.selectedPanel >= 2} 
+              zIndex="2" 
+              openClassName="panel2-open" 
+              closedClassName="panel2-closed" 
+              hide={this.props.hide}
+              title="Il tempo e le opere" 
+              getSelectedPanel={this.getSelectedPanel} 
+              setSelectedPanel={this.setSelectedPanel} 
+              panelClicked={this.panelClicked} 
+              interactiveViewUrl="/Compass/time" 
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip" 
+              text="Si tratta di una mappa sintetica, che segue l’andamento dei quattro decenni della carriera letteraria di Calvino, mostrando gli snodi più importanti della sua storia editoriale: i principali volumi e le collaborazioni giornalistiche. La divisione per generi permette di seguire le oscillazioni tra forma breve e lunga, le sperimentazioni sulla struttura, l’articolarsi inquieto dell’opera in cerca della sua giusta forma."
+            />
+
+            <SlidingPanel 
+              id="3" 
+              open={this.state.selectedPanel >= 3} 
+              zIndex="3" 
+              openClassName="panel3-open" 
+              closedClassName="panel3-closed" 
+              hide={this.props.hide}
+              title="L'arcipelago dei nomi" 
+              getSelectedPanel={this.getSelectedPanel} 
+              setSelectedPanel={this.setSelectedPanel} 
+              panelClicked={this.panelClicked} 
+              interactiveViewUrl="" 
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-03-arcipelago.zip" 
+              text="I saggi non saranno oggetto della nostra analisi, che si limita all’opera narrativa. Ma stanno sullo sfondo, come un arcipelago di isole e isolotti che con questo strumento si può circumnavigare, per farsi un’idea di quale sia stata la biblioteca mentale di Calvino. Quasi duemila nomi, citati nel gran numero di saggi e articoli che lo scrittore ha pubblicato nell’arco di quarant’anni, vengono qui riuniti per consentirne un’esplorazione inedita. " 
+            />
+
           </div>
-{/*
-          <div>
-            <SlidingPanel open="true">
-              Lische<br />
-              Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen
-            </SlidingPanel>
-            <SlidingPanel open="false">
-              Sinuosa<br />
-              Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens Vögel Rüben, Joghurt und Quark. „Fix, Schwyz!“ quäkt Jürgen blöd vom Paß. Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich. Falsches Üben von Xylophonmusik quält jeden größeren Zwerg. Heizölrückstoßabdämpfung.Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
-            </SlidingPanel>
-            <SlidingPanel open="false">
-              Reti<br />
-              Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft. Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften aber fast immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes Feld sind OpenType-Funktionalitäten. Je nach Software und Voreinstellungen können eingebaute Kapitälchen, Kerning oder Ligaturen (sehr pfiffig) nicht richtig dargestellt werden.Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen.
-            </SlidingPanel>
-          </div>
-*/}
-{/*
-          <div id="fishbones" ref={ fishbones => this.fishbones = fishbones }>Lische</div>
-          <div id="winding">Sinuosa</div>
-          <div id="networks">Reti</div>
-*/}
+
       </div>
     );
   }

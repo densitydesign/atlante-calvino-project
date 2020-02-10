@@ -10,6 +10,7 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
+import CompassPanel from '../../panels/CompassPanel/CompassPanel';
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -19,7 +20,7 @@ export default class TerritoryWrapper extends React.Component
 {
   state = {
     data : "data still not loaded",
-    isLoading : true,
+    isLoading : true,    
 
     noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
     itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
@@ -35,6 +36,7 @@ export default class TerritoryWrapper extends React.Component
     spaceAnalysisMode : GlobalData.analysisModes.space.genericTerrestrial,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
+    compassPanelOpen  : false,
     helpSidePanelOpen : false,
     allowDropMenus : false,
 
@@ -275,8 +277,16 @@ export default class TerritoryWrapper extends React.Component
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
+  containerToggleCompassPanel = () => this.setState({ compassPanelOpen : !this.state.compassPanelOpen });
+
   render()
   {
+/*    
+    if(this.state.compassIsActive)
+    {
+      return <Compass containerToggleCompass={this.containerToggleCompass} />
+    }
+*/
     let helpPage;
 
     switch(this.state.mainAnalysisMode)
@@ -342,6 +352,10 @@ export default class TerritoryWrapper extends React.Component
           page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
 
+        <CompassPanel
+          open={this.state.compassPanelOpen}
+          containerToggleCompassPanel={this.containerToggleCompassPanel} />
+
         <>
 
         <TerritoryHeader
@@ -355,6 +369,7 @@ export default class TerritoryWrapper extends React.Component
           helpButtonClicked={this.toggleHelpSidePanel}
           toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
           containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
+          containerToggleCompassPanel={this.containerToggleCompassPanel}
         />
 
         {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&

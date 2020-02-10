@@ -49,13 +49,13 @@ export default class SlidingPanel extends React.Component
 
   render()
   {
-console.log("render panel");
+console.log("SlidingPanel.render");
 
     const interactiveViewLink = this.props.interactiveViewUrl ? <a className="button-text" href={this.props.interactiveViewUrl} target="blank">Esplora</a> : <></>;
 
     return (
       <div
-        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName)}
+        className={"sliding-panel " + (this.props.open ? this.props.openClassName : this.props.closedClassName) + (this.props.hide ? " sliding-panel-hide" : "" )}
         ref={this.setWrapperRef}
         style={{
           zIndex : this.props.zIndex
