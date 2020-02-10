@@ -7,6 +7,7 @@
   --cool-bg:#F1F1F5;
   --dark-blue: #5151FC;
   --small-text:#3f3e4c;
+  --secondary-element:#C6CACF;
   --header-height: 66px;
   --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
