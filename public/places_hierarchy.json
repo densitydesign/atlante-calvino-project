@@ -12283,6 +12283,15 @@
         },
         {
           "text_id": "V005",
+          "node_id": "V005@Parigi",
+          "caption": "Parigi",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V005",
           "node_id": "V005@Olivabassa",
           "caption": "Olivabassa",
           "level": "1",
