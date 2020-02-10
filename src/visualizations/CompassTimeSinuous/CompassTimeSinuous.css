@@ -282,6 +282,7 @@ html {
   transition: height .35s ease;
   overflow: hidden;
   border: 1px solid var(--navigation-borders);
+  background-color: var(--bg);
 }
 
 #main--sinuous .legend.open .legend-content {

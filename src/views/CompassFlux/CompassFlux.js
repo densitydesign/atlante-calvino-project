@@ -6,6 +6,7 @@ import CompassLische from '../../visualizations/CompassLische/CompassLische';
 import V from './compassFlux.d3'
 
 import './CompassFlux.css';
+import '../../App.css'
 
 export default class CompassFlux extends React.Component
 {
