@@ -57,7 +57,7 @@ console.log("pressed", pressed);
       <>
 
       <TerritoryDescriptionSubPanel
-        title="L'ORGANIZZAZIONE DELLE FORME"
+        title="L'ORGANIZZAZIONE DEGLI ELENCHI"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
         informationSheetRoute="/Phenomena/territory/shapeAnalysis/informationSheet"
         informationSheetDescription="SCHEDA"
