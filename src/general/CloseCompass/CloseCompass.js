@@ -5,56 +5,16 @@ import { useHistory } from 'react-router-dom';
 import '../../App.css';
 import './CloseCompass.css';
 
-export default class CloseCompass extends React.Component
+const CloseCompass = (props) =>
 {
-  componentDidMount()
-  {
-    if(this.props.containerToggleCompassPanel)
-    {
-console.log("adding event listener");      
-      document.addEventListener("mousedown", this.handleClick);
-    }
-  }
+  const history = useHistory();
+  console.log("history : ", history);
 
-  componentWillUnmount()
-  {
-    if(this.props.containerToggleCompassPanel)
-    {
-      document.removeEventListener("mousedown", this.handleClick);
-    }
-  }
-
-  setWrapperRef = node => this.wrapperRef = node;
-
-  handleClick = event => {
-console.log("clicked 1");        
-    if(!this.wrapperRef) return;
-console.log("clicked 2");        
-    if(this.wrapperRef.contains(event.target)) this.props.containerToggleCompassPanel();
-  }
-
-  render()
-  {
-    const history = useHistory();
-
-    if(this.props.containerToggleCompassPanel)
-    {
-console.log("render 1");      
-      return (
-        <div className="back-from-main-menu" style={this.props.style} ref={this.setWrapperRef}>
-            <FontAwesomeIcon icon={faTimes} />
-        </div>
-      );
-    }
-    else
-    {      
-      console.log("history : ", history);
-
-      return (
-        <div className="back-from-main-menu" style={this.props.style} onClick={() => history.goBack()}>
-            <FontAwesomeIcon icon={faTimes} />
-        </div>
-      );
-    }
-  }
+  return (
+    <div className="back-from-main-menu" style={props.style} onClick={() => history.goBack()}>
+        <FontAwesomeIcon icon={faTimes} />
+    </div>
+  );
 }
+
+export default CloseCompass;

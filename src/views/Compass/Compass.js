@@ -45,7 +45,7 @@ console.log("compass.render");
       <div>
                 
         <HamburgerCloseHeader containerToggleCompassPanel={this.props.containerToggleCompassPanel} />
-{/*
+
           <div className="compass-main-description">
             <h1>Bussola</h1>
             <div><p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
@@ -103,7 +103,7 @@ console.log("compass.render");
             />
 
           </div>
-*/}
+
       </div>
     );
   }

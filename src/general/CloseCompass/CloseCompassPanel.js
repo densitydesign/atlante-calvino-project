@@ -35,16 +35,10 @@ console.log("clicked 2");
 
   render()
   {
-    const history = useHistory();
-
-    if(this.props.containerToggleCompassPanel)
-    {
-console.log("render 1");      
-      return (
-        <div className="back-from-main-menu" style={this.props.style} ref={this.setWrapperRef}>
-            <FontAwesomeIcon icon={faTimes} />
-        </div>
-      );
-    }
+    return (
+      <div className="back-from-main-menu" style={this.props.style} ref={this.setWrapperRef}>
+          <FontAwesomeIcon icon={faTimes} />
+      </div>
+    );
   }
 }
