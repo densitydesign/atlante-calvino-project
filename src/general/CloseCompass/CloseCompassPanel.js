@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import '../../App.css';
 import './CloseCompass.css';
 
-export default class CloseCompass extends React.Component
+export default class CloseCompassPanel extends React.Component
 {
   componentDidMount()
   {
@@ -42,16 +42,6 @@ console.log("clicked 2");
 console.log("render 1");      
       return (
         <div className="back-from-main-menu" style={this.props.style} ref={this.setWrapperRef}>
-            <FontAwesomeIcon icon={faTimes} />
-        </div>
-      );
-    }
-    else
-    {      
-      console.log("history : ", history);
-
-      return (
-        <div className="back-from-main-menu" style={this.props.style} onClick={() => history.goBack()}>
             <FontAwesomeIcon icon={faTimes} />
         </div>
       );

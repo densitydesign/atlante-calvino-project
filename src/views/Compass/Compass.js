@@ -39,10 +39,13 @@ export default class Compass extends React.Component
 
   render()
   {
+console.log("compass.render");
+
     return (
       <div>
+                
         <HamburgerCloseHeader containerToggleCompassPanel={this.props.containerToggleCompassPanel} />
-
+{/*
           <div className="compass-main-description">
             <h1>Bussola</h1>
             <div><p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
@@ -100,6 +103,7 @@ export default class Compass extends React.Component
             />
 
           </div>
+*/}
       </div>
     );
   }
