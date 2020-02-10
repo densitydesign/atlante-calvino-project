@@ -5,13 +5,67 @@ const V = {}
 let width,
     height,
     margin = {top: 20, right: 10, bottom: 40, left: 40},
+    showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
         "absolute": ["dubbio", "misto", "soggetto", "definitivo"]
     },
+    legendData = [
+        {
+          "id": "definitivo",
+          "color": "#F3F3F3",
+          "label": "Testo definitivo",
+          "percentage": undefined,
+          "baseCategory": true
+        },
+        {
+            "id": "space-1",
+            "color": "transparent",
+            "label": " ",
+            "percentage": undefined,
+            "baseCategory": true
+        },
+        {
+          "id": "soggetto",
+          "color": "#FFD337",
+          "label": "Testo soggetto",
+          "percentage": undefined,
+          "baseCategory": true
+        },
+        {
+            "id": "space-2",
+            "color": "transparent",
+            "label": " ",
+            "percentage": undefined,
+            "baseCategory": true
+        },
+        {
+          "id": "misto",
+          "color": "#33CDAF",
+          "label": "Testo misto",
+          "percentage": undefined,
+          "baseCategory": true
+        },
+        {
+            "id": "space-3",
+            "color": "transparent",
+            "label": " ",
+            "percentage": undefined,
+            "baseCategory": true
+        },
+        {
+          "id": "dubitativo",
+          "color": "#CFCFFF",
+          "label": "Testo dubitativo",
+          "percentage": undefined,
+          "baseCategory": true
+        },
+    ],
     
     svg,
     g,
+    legend,
+    legendItem,
     serie,
     treemap_misto,
     leaf_misto,
@@ -32,11 +86,13 @@ let width,
 V.initialize = (el, data_for_update) => {
     console.log("initialize dubbio fase 2")
 
-    width = d3.select(el).node().getBoundingClientRect().width;
+    width = d3.select(el).node().getBoundingClientRect().width * 0.85;
     height = d3.select(el).node().getBoundingClientRect().height;
 
     svg = d3.select(el);
     g = svg.append("g");
+    legend = svg.append("g").classed("legend", true).attr("transform", `translate(${width},0)`);
+    legendItem = legend.selectAll(".legend-item");
     serie = g.selectAll(".serie");
     treemap_misto = svg.append("g").classed("treemap-misto", true);
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
@@ -68,6 +124,29 @@ V.update = (data, stackMode) => {
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
         .call(g => yAxis.selectAll(".domain").remove());
+
+    const updateLegend = () => {
+        legendItem = legendItem.data(legendData, d=>d.id)
+        legendItem.exit().remove();
+        legendItem = legendItem.enter().append("g")
+            .classed("legend-item", true)
+            .attr("id", d=>d.id)
+            .on("click", (d)=>{
+                console.log(d);
+            })
+            .merge(legendItem)
+            // .attr("transform", (d,i)=>`translate(0,${i*20})`)
+            .html(d=> {
+                let this_percentage = ""
+                if (showPercentage && d.percentage) this_percentage = " ("+d.percentage.toFixed(2)+"%)";
+                let html = `<rect width="2rem" height="1rem" fill="${d.color}"></rect><text x="2.2rem" y="12">${d.label + '' + this_percentage}</text>`;
+                return html;
+            });  
+            
+        legendItem.transition()
+            .duration(0)
+            .attr("transform", (d,i)=>`translate(0,${i*20})`);
+    }
     
     const removeSelectionAll = () => {
         const allBars = d3.selectAll(".serie > rect");
@@ -91,9 +170,16 @@ V.update = (data, stackMode) => {
             .duration(500)
             .style("opacity",0)
             .remove();
+
+        legendData = legendData.filter(d=>d.baseCategory);
+
+        showPercentage = false;
+
+        updateLegend();
     }
     
-    removeSelectionAll();
+    removeSelectionAll();  // also calls updateLegend() inside
+    
 
     serie = serie.data(series)
     serie.exit().remove()
@@ -103,10 +189,8 @@ V.update = (data, stackMode) => {
         .attr("fill", d => color(d.key.replace("_perc","")))
     
     let serie_rect = serie.selectAll("rect")
-
     serie_rect = serie_rect.data(d=>d);
     serie_rect.exit().remove();
-
     serie_rect = serie_rect.enter().append("rect")
         .merge(serie_rect)
         .attr("x", d => x(d.data.id))
@@ -127,28 +211,6 @@ V.update = (data, stackMode) => {
                 removeSelectionAll();
             }
         });
-
-        // .selectAll("rect")
-        // .data(d => d)
-        // .join("rect")
-        //     .attr("x", d => x(d.data.id))
-        //     .attr("y", d => y(d[1]))
-        //     .attr("height", d => y(d[0]) - y(d[1]))
-        //     .attr("width", x.bandwidth())
-        //     .style("opacity", .7)
-        //     .style("cursor", "pointer")
-        //     .on("mouseenter", d=>preSelection(d))
-        //     .on("mouseleave", d=>removePreSelection(d))
-        //     .on("click", function(d){
-        //         // console.log(this);
-        //         // console.log(d.data);
-        //         if (!d3.select(this).classed("selected")) {
-        //             selection(d, d3.select(this).classed("selected"))
-        //         }
-        //         else {
-        //             removeSelectionAll();
-        //         }
-        //     });
     
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
@@ -163,6 +225,7 @@ V.update = (data, stackMode) => {
     }
 
     const selection = (d, isSelected) => {
+        legendData = legendData.filter(d=>d.baseCategory);
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
 
         const width_factor = x.paddingOuter() * 2;
@@ -234,16 +297,28 @@ V.update = (data, stackMode) => {
 
             d3.select(".treemap-misto").attr("transform", `translate(${x_misto}, ${y_misto})`);
 
-            // d3.selectAll(".circle-test").remove();
-            // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_misto).attr("cy",y_misto);
+            legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
+            legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
+            legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+
+            for(let iii=data_misto.children.length-1; iii>0; iii--) {
+                const item = {
+                    "id": "misto-"+data_misto.children[iii].name,
+                    "color": d3.color(color("misto")).darker( 0.5*(+data_misto.children[iii].name-1) ),
+                    "label": data_misto.children[iii].name + " volte",
+                    "percentage": (data_misto.children[iii].value/d.data.length) * 100
+                }
+                const index = legendData.map(d=>d.id).indexOf("misto")+1
+                legendData.splice( index, 0, item );
+            }
+            showPercentage = true;
+            updateLegend();
         } else {
             data_misto = []
         }
 
-        console.log(data_misto);
-
         const root_misto = treemap(data_misto, width_treemap, height_misto);
-        console.log(root_misto.leaves());
         leaf_misto = leaf_misto.data(root_misto.leaves(), l=>d.data.id + '-' + l.data.name);
         leaf_misto.exit().remove();
         leaf_misto = leaf_misto.enter().append("g")
@@ -251,9 +326,7 @@ V.update = (data, stackMode) => {
             .merge(leaf_misto)
             .style("opacity",0)
             .attr("transform", d => `translate(${d.x0},${d.y0})`);
-        
-        console.log(leaf_misto);
-        
+                
         let leaf_misto_rect = leaf_misto.selectAll("rect").data(d=>[d])
         leaf_misto_rect.exit().remove()
         leaf_misto_rect = leaf_misto_rect.enter().append("rect")
@@ -282,8 +355,23 @@ V.update = (data, stackMode) => {
 
             d3.select(".treemap-soggetto").attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
 
-            // d3.selectAll(".circle-test").remove();
-            // g.append("circle").classed("circle-test", true).attr("r",3).attr("cx",x_soggetto).attr("cy",y_soggetto);
+            legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
+            legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
+            legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+
+            for(let iii=data_soggetto.children.length-1; iii>0; iii--) {
+                const item = {
+                    "id": "soggetto-"+data_soggetto.children[iii].name,
+                    "color": d3.color(color("soggetto")).darker( 0.5*(+data_soggetto.children[iii].name-1) ),
+                    "label": data_soggetto.children[iii].name + " volte",
+                    "percentage": (data_soggetto.children[iii].value/d.data.length) * 100
+                }
+                const index = legendData.map(d=>d.id).indexOf("soggetto")+1
+                legendData.splice( index, 0, item );
+            }
+            showPercentage = true;
+            updateLegend();
         } else {
             data_soggetto = []
         }

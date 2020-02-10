@@ -24,12 +24,13 @@ class ProcessDoubting extends Component {
     super(props);
     this.loadData = this.loadData.bind(this);
     this.changeLunghezzaTesti = this.changeLunghezzaTesti.bind(this);
+    this.legendHighlight = this.legendHighlight.bind(this);
 
     this.state = {
       data: 'data still not loaded',
       isLoading: true,
-      stackMode: "absolute",
-      // stackMode: "normalized",
+      // stackMode: "absolute",
+      stackMode: "normalized",
       lunghezzaTesti: {
 				multiple: false,
 				options: [{
@@ -72,8 +73,16 @@ class ProcessDoubting extends Component {
   }
 
   componentDidMount() {
-		this.loadData();
-	}
+    this.loadData();
+    
+    d3.selectAll("#doubting-stacked-bars-legend .item").on("click", function(){
+      console.log(this)
+    })
+  }
+  
+  legendHighlight(category) {
+    console.log(category)
+  }
 
   render() {
     return (
@@ -112,11 +121,12 @@ class ProcessDoubting extends Component {
         <div className="the-body-viz">
           {	this.state.isLoading && <Loading style = {{width: '100%'}}/>}
           {	!this.state.isLoading &&
-						<DoubtingStackedBars
+            <DoubtingStackedBars
               id="doubting-stacked-bars"
               data={this.state.data}
               stackMode = {this.state.stackMode}
-            /> }
+            />
+          }
         </div>
 
         <div className="bottom-nav navigations">
