@@ -64,11 +64,6 @@ export default function MarimekkoTopAxis({
             rect: styles.topAxisRect
           };
         } else {
-          console.log(454, sequencesSelected, book.sequencesMatchesForBook)
-          // const isCurrentSeq = some(
-          //   // sequencesSelected.map(s => book.sequencesMatchesForBook[s])
-          //   []
-          // );
           const isCurrentSeq = !!book.sequencesMatchesForBook[sequencesSelected]
           return isCurrentSeq
             ? {
