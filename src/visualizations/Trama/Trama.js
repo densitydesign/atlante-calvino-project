@@ -3,7 +3,7 @@ import MainMenu from "../../general/MainMenu";
 import PageTitle from "../../general/PageTitle";
 import MoreInfo from "../../general/MoreInfo";
 import CompassButton from "../../general/CompassButton/CompassButton";
-import Search from "../../general/Search";
+import SearchDropDown from "../../general/Search/SearchDropDown";
 import Loading from "../../general/Loading";
 import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
 
@@ -122,7 +122,7 @@ class Trama extends Component {
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 8" }} />}
           {!this.state.isLoading && (
-            <Search
+            <SearchDropDown
               style={{
                 gridColumn: "span 8",
                 pointerEvents: currentTextID ? "none" : undefined
