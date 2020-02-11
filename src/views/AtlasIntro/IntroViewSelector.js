@@ -18,7 +18,7 @@ export default class IntroViewSelector extends React.Component
       backgroundRepeat: "no-repeat",
       width : "100%",
       height : "100%",
-      border:"transparent"
+      border:"transparent",
     } :
     {
       width : "100%",
@@ -31,7 +31,7 @@ export default class IntroViewSelector extends React.Component
       <div className={this.props.className}>
         <div className={this.props.className} style={style} >
           {
-            children.map((d, i) => <d.type key={i} style={this.props.keepLabelVisible ? {opacity : 1} : {}}>{d.props.children}</d.type>)
+            children.map((d, i) => <d.type key={i}>{d.props.children}</d.type>)
           }
         </div>
       </div>

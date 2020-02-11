@@ -19,7 +19,8 @@
   grid-template-columns : 1fr;
   border-bottom:var(--app-border);
   border-right: var(--app-border-bold);
-}
+  background-color: #FFA500;
+  transition: background-color 0.5s ease;}
 
 .compass-selector-cell {
   display:flex;
@@ -67,13 +68,81 @@ a:hover .compass-selector-cell  {
   color:var(--dark-blue);
   transition: color 0.5s ease;
 }
+ /* Color menu grid */
 
-@keyframes tint { /* flame pulses */
-  0%   { background-color:var(--bg);}
-  100% { background-color:var(--cool-bg-bg);}
+.itineraries-intro{
+  background-color: black;
+  color:white;
 }
-.tint {
+
+.itineraries-intro a{
+  color:white;
+}
+
+.viz-intro{
+  background-color: var(--dark-blue);
+}
+
+.viz-intro a{
+color: var(--bg);
+}
+
+.viz-intro a:hover{
+color: turquoise;
+}
+
+
+.step-intro{
+  background-color: turquoise;
+}
+
+.blank-intro{
+  background-color:black;
+}
+
+
+/* transition menu colors */
+
+@keyframes tint-sidebar { /* flame pulses */
+  0%   { background-color:var(--bg);}
+  100% { background-color:#FFA500;}
+}
+
+.tint-sidebar {
+    background-color: #FFA500;
+    opacity:1;
+    animation: tint-sidebar 2s;
+}
+
+@keyframes tint-itineraries-intro { /* flame pulses */
+  0%   { background-color:var(--bg);}
+  100% { background-color:black;}
+}
+
+.tint-itineraries-intro {
+    background-color: black;
+    opacity:1;
+    animation: tint-itineraries-intro 2s;
+}
+
+@keyframes tint-viz-intro { /* flame pulses */
+  0%   { background-color:var(--bg);}
+  100% { background-color:var(--dark-blue);}
+}
+
+.tint-viz-intro {
     background-color: var(--dark-blue);
     opacity:1;
-    animation: tint 2s;
+    animation: tint-viz-intro 2s;
+}
+
+@keyframes tint-step-intro { /* flame pulses */
+  0%   { background-color:var(--bg);}
+  100% { background-color:turquoise;}
+}
+
+.tint-step-intro {
+    background-color: turquoise;
+    opacity:1;
+    animation: tint-step-intro 2s;
 }

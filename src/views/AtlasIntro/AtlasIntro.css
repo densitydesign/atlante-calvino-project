@@ -110,6 +110,10 @@ image .atlas-intro-cell2 {
   height:20%;
 }
 
+h5 .atlas-intro-cell2 {
+  opacity:1 !important;
+}
+
 .atlas-intro-cell3 {
   border-right : 1px solid black;
   justify-content: center;
@@ -118,16 +122,16 @@ image .atlas-intro-cell2 {
   display:flex;
 }
 
- @keyframes pop { /* flame pulses */
-    0%   { background-color:var(--bg);}
+ /* @keyframes pop { /* flame pulses */
+    /* 0%   { background-color:var(--bg);}
     50%  { background-color: var(--dark-blue);}
     100% { background-color:var(--bg);}
-  }
-  .pop {
+  }  */
+  /* .pop {
       background-color: var(--dark-blue);
       opacity:1;
       animation: pop 3s infinite;
-  }
+  } */
 
 
 .fade-in {
@@ -136,7 +140,9 @@ image .atlas-intro-cell2 {
   -moz-animation: fadeIn ease 10s;
   -o-animation: fadeIn ease 10s;
   -ms-animation: fadeIn ease 10s;
-}@keyframes fadeIn {
+}
+
+@keyframes fadeIn {
   0% {
     opacity:0;
   }
