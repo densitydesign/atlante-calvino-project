@@ -6,7 +6,6 @@
   border: 1px solid;
   text-align: center !important;
   cursor : pointer;
-  border-bottom:1px solid black;
 }
 
 .radio-button-down {
@@ -16,10 +15,11 @@
   padding:0.6em;
   width:100%;
   cursor : pointer;
+  border: 1px solid;
 }
 
 .radio-button-drop-up {
-  background-color : white;
+  background-color : var(--bg);
   padding:0.6em;
   width:100%;
   border-top: 1px solid;
@@ -35,4 +35,5 @@
 .radio-button-drop-up:hover {
 color:var(--bg);
 background-color: var(--dark-blue);
+border: 1px solid;
 }
