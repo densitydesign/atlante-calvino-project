@@ -12,7 +12,7 @@ class VClass {
 
 
     var margin = ({
-      top: 10,
+      top: 40,
       right: 30,
       bottom: 30,
       left: 40
@@ -81,16 +81,34 @@ class VClass {
     var xAxis = svg.append('g')
       .classed('x axis', true)
       .attr("transform", `translate(0,${height - margin.bottom})`)
-      .call(d3.axisBottom(x).ticks(width / 100).tickSizeOuter(1))
-
+      .call(d3
+        .axisBottom(x)
+        .ticks(width / 100)
+        .tickFormat(d3.format("0000"))
+        .tickSizeOuter(1));
 
     var yAxis = svg.append('g')
       .classed('y axis', true)
       .attr("transform", `translate(${margin.left},0)`)
       .call(d3.axisLeft(y))
 
-      svg.append("text")
-        .attr("y", height - margin.bottom / 2)
+    svg
+      .append("text")
+      .attr("y", height + 10)
+      .attr("x", 0)
+      .text("anni di pubblicazione");
+
+    svg
+      .append("text")
+      .attr("y", 10)
+      .attr("x", 0)
+      .text("numero di");
+
+    svg
+      .append("text")
+      .attr("y", 25)
+      .attr("x", 0)
+      .text("occorrenze");      
 
     let stream = svg.append("g");
 
