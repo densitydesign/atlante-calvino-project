@@ -18,12 +18,12 @@ export default class IntroViewSelector extends React.Component
       backgroundRepeat: "no-repeat",
       width : "100%",
       height : "100%",
-      border : "transparent"
+      border:"transparent"
     } :
     {
       width : "100%",
       height : "100%",
-      border : "transparent"
+      border:"transparent"
     };
 
     return (

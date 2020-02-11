@@ -35,5 +35,4 @@
 .radio-button-drop-up:hover {
 color:var(--bg);
 background-color: var(--dark-blue);
-border: 1px solid;
 }
