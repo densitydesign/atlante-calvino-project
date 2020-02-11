@@ -22,15 +22,12 @@ export default class TransformMainHelp extends React.Component
       <p>Per leggere correttamente la visualizzazione è necessario prestare attenzione a tre parametri: <em>la disposizione degli elementi, la loro dimensione, l’uso del colore</em>.</p>
 
 <h4>Disposizione degli elementi</h4>
-<img src={process.env.PUBLIC_URL + '/territory-legend-chronology-positioning.svg'} className="img-fluid" alt="information complement" />
 <p>Gli elementi sono posizionati sulla base di due criteri: l’appartenenza a uno stesso volume e la data di prima pubblicazione.
 Questo significa che un principio di attrazione agisce sia sui testi pubblicati in uno stesso volume sia sui testi cronologicamente coevi.
 Di conseguenza, osservando il trasformare, è possibile riconoscere un anello esterno e alcuni gruppi di testi interni. Questi ultimi sono i testi che confluiscono in raccolte.</p>
 <h4>Dimensione</h4>
-<img src={process.env.PUBLIC_URL + '/territory-legend-noAnalysis-dimensione.svg'} className="img-fluid small" alt="information complement" />
 <p>La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>
 <h4>Uso del colore</h4>
-<img src={process.env.PUBLIC_URL + '/territory-legend-chronology-modalita.svg'} className="img-fluid" alt="information complement" />
 <p>L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al glicine, attiva nella modalità <em>Cronologia</em>, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>
 <p >Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi.
 Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcuni contorni (metaballs).</p>
