@@ -337,15 +337,15 @@ class AtlasIntro extends React.Component
         </div>
         const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
 
-            <div className="atlas-intro-cell2 pop" style={{ 
+            <div className="atlas-intro-cell2 pop" style={{
               backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_tappa_1.svg" + "')",
               opacity : transitionData.percent,
               backgroundSize : "cover",
               backgroundRepeat: "no-repeat"
             }}><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2" style={{ 
-              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_nebbia.svg" + "')", 
-              opacity : transitionData.percent, 
+            <div className="atlas-intro-cell2" style={{
+              backgroundImage : "url('" + process.env.PUBLIC_URL + "/menu_nebbia.svg" + "')",
+              opacity : transitionData.percent,
               backgroundSize : "cover",
               backgroundRepeat: "no-repeat"
             }}><h5>Nebbia</h5></div>
@@ -369,11 +369,11 @@ class AtlasIntro extends React.Component
             <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 2</h4></IntroViewSelector>
             <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_dubitare.svg"><h5>Dubitare</h5></IntroViewSelector>
             <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_trasformare.svg"><h5>Trasformare</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Combinare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_blank.svg"><h5>Combinare</h5></IntroViewSelector>
 
             <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 3</h4></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Cancellazione</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Realismo</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_blank.svg"><h5>Cancellazione</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_blank.svg"><h5>Realismo</h5></IntroViewSelector>
             <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menu_trama.svg"><h5>Trama</h5></IntroViewSelector>
 
           </div>

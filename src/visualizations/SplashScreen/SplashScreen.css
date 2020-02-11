@@ -21,7 +21,7 @@
 
 /* NAVBAR */
 
-body>.navbar {
+/* body>.navbar {
     border-bottom: .75rem solid tomato;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, .0);
@@ -33,7 +33,7 @@ body>.navbar {
 body.navbar-displayed>.navbar {
     top: 0;
     background-color: rgba(255, 255, 255, .85);
-}
+} */
 
 /*body.navbar {
     top: 0;
@@ -100,7 +100,7 @@ svg{
 }
 
 #calogo .node.is-inside {
-    fill: tomato;
+    fill: var(--dark-blue) !important;
     /*fill: DODGERBLUE;*/
 }
 
@@ -108,6 +108,10 @@ svg{
 #calogo .root-node.is-inside {
     fill: darkslategrey;
 
+}
+
+.root-node {
+  fill: var(--dark-blue) !important;
 }
 
 #scroll-down {
@@ -177,7 +181,7 @@ body.navbar-displayed #scroll-down {
     color : var(--bg);
   }
   100% {
-    color : black;
+    color : var(--dark-blue);
   }
 }
 
@@ -193,6 +197,14 @@ body.navbar-displayed #scroll-down {
   }
 }
 
+@keyframes splash-screen-icon-animation {
+  0% {
+    color : var(--bg);
+  }
+  100% {
+    color : var(--dark-blue);
+  }
+}
 .splash-screen-caption {
   top : 60%;
   width : 30%;
@@ -200,6 +212,7 @@ body.navbar-displayed #scroll-down {
   position : absolute;
   text-align : center;
   animation : 3s ease-in 0s 1 splash-caption-animation;
+  color : var(--dark-blue);
 }
 
 .splash-screen-description {
@@ -212,8 +225,12 @@ body.navbar-displayed #scroll-down {
   animation : 5s ease-in 0s 1 splash-description-animation;
 }
 
-.splash-screen-hand-icon {
-  top : 80%;
-  left : 50%;
-  position : absolute;
+.splash-screen-icon-animation {
+    top : 80%;
+    left : 50%;
+    position : absolute;
+    color: red;
+    background-color : transparent;
+    opacity:1;
+    animation: 3s infinite pop;
 }
