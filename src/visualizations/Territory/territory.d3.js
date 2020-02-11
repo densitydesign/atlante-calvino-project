@@ -36,6 +36,8 @@ const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitativ
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
 const step_increment = -23;
+const one_rem = Number.parseInt(d3.select('html').style('font-size'));
+const half_rem = one_rem / 2;
 
 const showHillModes = {
   all : "all",
@@ -1018,8 +1020,7 @@ class VClass
 
     this.label = this.text_nodes
       .selectAll('.label')
-      .data(function(d) {
-        let one_rem = parseInt(d3.select('html').style('font-size'));
+      .data(function(d) {     
 
         if(d.attributes.collections && d.attributes.collections.length) 
         {
@@ -1028,8 +1029,7 @@ class VClass
             let obj = {
               'id': e,
               'index': i,
-              'length': d.attributes.collections.length,
-              'rem': one_rem
+              'length': d.attributes.collections.length
             }
             return obj;
           });
@@ -1039,8 +1039,7 @@ class VClass
         {
           // console.log('handleNoCollections')
           let obj = {
-            'first_publication': d.attributes.first_publication,
-            'rem': one_rem
+            'first_publication': d.attributes.first_publication
           }
           d.attributes.collectionsTooltip = [obj];
         }
@@ -1076,7 +1075,7 @@ class VClass
       .data(d => d.attributes.collectionsTooltip)
       .enter()
       .append('tspan')
-      .attr('dx', (d, i) => i !== 0 ? d.rem / 2 : 0)
+      .attr('dx', (d, i) => i !== 0 ? half_rem : 0)
       .html((d, i) => {        
         if(d.first_publication) {
           return;
