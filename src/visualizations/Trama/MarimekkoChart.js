@@ -19,12 +19,12 @@ function MarimekkoBookIcycle({
   height,
   width,
   iceCycleData,
+  icycleWidth,
   currentPosition,
   currentSequencesSelected
 }) {
   
   // utility measures
-  const icycleWidth = (width / 10) * 8;
   const columnWidth = icycleWidth / 5;
 
   const sequenceScale = scaleLinear()
@@ -283,6 +283,7 @@ export default function MarimekkoChart({
   currentTextID,
   setCurrentTextID,
   iceCycleData,
+  icycleWidth,
   currentBook,
   currentPosition,
   currentSequencesSelected
@@ -352,6 +353,7 @@ export default function MarimekkoChart({
             height={height}
             width={width}
             iceCycleData={iceCycleData}
+            icycleWidth={icycleWidth}
             currentPosition={currentPosition}
             currentSequencesSelected={currentSequencesSelected}
           ></MarimekkoBookIcycle>

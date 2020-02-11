@@ -240,7 +240,9 @@ function MarimekkoViz({
     return () => {
       window.removeEventListener("resize", measure, true);
     };
-  }, []);
+  }, [measure]);
+
+  
 
   //resetting aggregazione
   useEffect(() => {
@@ -258,9 +260,15 @@ function MarimekkoViz({
     });
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
+  const availableWidth = useMemo(() => {
+    return booksData.length > 2 ? dimensions.vizWidth: dimensions.vizWidth / 2
+
+  }, [booksData.length, dimensions.vizWidth])
+  
+
   const booksDataWithPositions = useMemo(() => {
-    return computeHorizontalPositions(booksData, dimensions.vizWidth);
-  }, [booksData, dimensions.vizWidth]);
+    return computeHorizontalPositions(booksData, availableWidth);
+  }, [booksData, availableWidth]);
 
   //getting al data for current text for displaying icecycle
   const iceCycleData = useMemo(() => {
@@ -389,10 +397,11 @@ function MarimekkoViz({
         <div className="col-sm-9 d-flex flex-column">
           <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
-              {dimensions.vizWidth && (
+              {availableWidth && (
                 <MarimekkoTopAxis
                   height={dimensions.topAxisHeight}
-                  width={dimensions.vizWidth}
+                  width={availableWidth}
+                  fullWidth={dimensions.vizWidth}
                   booksData={booksData}
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
@@ -405,17 +414,18 @@ function MarimekkoViz({
 
           <div className="row no-gutters w-100" style={{ flex: 8 }}>
             <div className="col-sm-12" ref={vizContainerRef}>
-              {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
+              {availableWidth > 0 && dimensions.vizHeight > 0 && (
                 <MarimekkoChart
                   booksDataWithPositions={booksDataWithPositions}
                   chartBooks={chartBooks}
                   height={dimensions.vizHeight}
-                  width={dimensions.vizWidth}
+                  width={availableWidth}
                   selectedLegendEntries={selectedLegendEntries}
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                   currentBook={currentBook}
                   iceCycleData={iceCycleData}
+                  icycleWidth={icycleWidth}
                   currentPosition={currentPosition}
                   currentSequencesSelected={currentSequencesSelected}
                 ></MarimekkoChart>

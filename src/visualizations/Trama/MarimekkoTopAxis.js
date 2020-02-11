@@ -7,6 +7,7 @@ import some from "lodash/some";
 
 export default function MarimekkoTopAxis({
   width,
+  fullWidth,
   height,
   booksData,
   setCurrentTextID,
@@ -33,7 +34,7 @@ export default function MarimekkoTopAxis({
 
     to: {
       width: isBookDetail ? width / 2 : width,
-      left: isBookDetail ? width / 2 : 0,
+      left: isBookDetail ? (fullWidth - width) +  width / 2 : 0,
       opacity: isBookDetail ? 1 : 0
     },
     onFrame({ left }) {
