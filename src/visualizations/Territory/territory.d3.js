@@ -2078,12 +2078,12 @@ console.log("change_none_to_hills");
     else t1 = t0.transition().duration(700);
 
     // hide old custom drawings
-/*    t1
+    t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);    
-*/  }
+  }
 
   onFirstElementClicked = d => {
 console.log("first_elem clicked for " + d.id);
@@ -2537,7 +2537,7 @@ function placesArcFix(d)
 //    case "S008" : return Math.PI * /;
 //    case "V003" : return Math.PI * /;
     case "S081" : return Math.PI * 25 / 32;
-//    case "S076" : return Math.PI * /;
+    case "S076" : return Math.PI * 1 / 2;
     case "S089" : return Math.PI * 1 / 2;
     case "V008" : return Math.PI * 3 / 4;
     case "S149" : return Math.PI * 6 / 10;
