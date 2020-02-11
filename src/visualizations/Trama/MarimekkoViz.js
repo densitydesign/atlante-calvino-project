@@ -199,11 +199,6 @@ function MarimekkoViz({
 
   const [selectedLegendEntries, setSelectedLegendEntries] = useState({});
 
-  //resetting legend entries when dettaglio changes
-  useEffect(() => {
-    setSelectedLegendEntries({});
-  }, [dettaglio]);
-
   const [dimensions, setDimensions] = useState({
     vizWidth: 0,
     vizHeight: 0,
@@ -353,6 +348,26 @@ function MarimekkoViz({
       nextPosition
     };
   }, [currentBook, currentIndex, currentPosition, sequences]);
+
+
+  //resetting legend entries when dettaglio changes
+  useEffect(() => {
+    setSelectedLegendEntries({});
+  }, [dettaglio]);
+
+  useEffect(() => {
+    if(currentSequencesSelected.length){
+      setSelectedLegendEntries({});
+    }
+  }, [currentSequencesSelected]);
+
+  //resetting current sequences selcted when setting legend entries
+  useEffect(() => {
+    if(Object.keys(selectedLegendEntries).length){
+      setCurrentSequencesSelected([]);
+    }
+  }, [selectedLegendEntries]);
+
 
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">

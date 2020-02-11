@@ -16,6 +16,7 @@ function MarimekkoBookIcycle({
   book,
   currentTextID,
   selectedLegendEntries,
+  anyLegendEntrySelected,
   height,
   width,
   iceCycleData,
@@ -146,10 +147,17 @@ function MarimekkoBookIcycle({
                 opacity: props.levelsOpen
               }}
             >
-              {iCycleDataAnnotated[levelName].map(block => (
+              {iCycleDataAnnotated[levelName].map(block => {
+                let opacity = 1
+                if(currentSequencesSelected.length){
+                  opacity = sequencesSelected[block['ID SEQ']] ? 1 : 0.2
+                } else if(anyLegendEntrySelected) {
+                  opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
+                }
+                return (
                 <rect
                   title={block['ID SEQ']}
-                  style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block['ID SEQ']] ? 1 : 0.2 : 1}}
+                  style={{ fill: block.color, opacity}}
                   className={`${styles.marimekkoUnit}  ${
                     styles.marimekkoUnitIceCycle
                   } ${
@@ -160,7 +168,7 @@ function MarimekkoBookIcycle({
                   y={block.y1}
                   height={block.h}
                 ></rect>
-              ))}
+              )})}
             </animated.g>
           );
         })}
@@ -172,10 +180,17 @@ function MarimekkoBookIcycle({
           opacity: props.opacity
         }}
       >
-        {iCycleDataAnnotated["uno"].map(block => (
+        {iCycleDataAnnotated["uno"].map(block => { 
+          let opacity = 1
+          if(currentSequencesSelected.length){
+            opacity = sequencesSelected[block['ID SEQ']] ? 1 : 0.2
+          } else if(anyLegendEntrySelected) {
+            opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
+          }
+          return (
           <rect
           title={block['ID SEQ']}
-          style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block['ID SEQ']] ? 1 : 0.2 : 1}}
+          style={{ fill: block.color, opacity}}
             className={`${styles.marimekkoUnit}  ${
               styles.marimekkoUnitIceCycle
             } ${selectedLegendEntries[block.label] ? styles.selected : ""}`}
@@ -184,7 +199,7 @@ function MarimekkoBookIcycle({
             y={block.y1}
             height={block.h}
           ></rect>
-        ))}
+        )})}
       </animated.g>
 
       <line
@@ -350,6 +365,7 @@ export default function MarimekkoChart({
             currentTextID={currentTextID}
             bookData={chartBooks[currentBook.textID]}
             selectedLegendEntries={selectedLegendEntries}
+            anyLegendEntrySelected={anyLegendEntrySelected}
             height={height}
             width={width}
             iceCycleData={iceCycleData}
