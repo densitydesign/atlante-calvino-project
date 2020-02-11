@@ -79,8 +79,16 @@ function MarimekkoBookIcycle({
     if(!currentSequencesSelected){
       return null
     }
+
+    const out = currentSequencesSelected.map(x => x['cluster tipologie']).join("-")
+    // console.log("x", book)
+    // return out
+    return book.sequencesMatchesForBook[out] || {}
+    
     return keyBy(uniq(currentSequencesSelected.map(x => x.seq)))
   }, [currentSequencesSelected]) 
+
+  // console.log(1234, sequencesSelected, currentSequencesSelected, book.sequencesMatchesForBook, book)
 
   const props = useSpring({
     config: { precision: 0.1 },
@@ -123,12 +131,16 @@ function MarimekkoBookIcycle({
     return Object.keys(iCycleDataAnnotated).length;
   }, [iCycleDataAnnotated]);
 
+
   return (
     <>
       {iCycleDataAnnotated &&
         Object.keys(omit(iCycleDataAnnotated, "uno")).map(levelName => {
           const levelValue = levelMaps[levelName];
           const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
+
+          
+
           return (
             <animated.g
               key={levelName}
@@ -139,8 +151,8 @@ function MarimekkoBookIcycle({
             >
               {iCycleDataAnnotated[levelName].map(block => (
                 <rect
-                  title={levelName}
-                  style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block.seq] ? 1 : 0.2 : 1}}
+                  title={block['ID SEQ']}
+                  style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block['ID SEQ']] ? 1 : 0.2 : 1}}
                   className={`${styles.marimekkoUnit}  ${
                     styles.marimekkoUnitIceCycle
                   } ${
@@ -165,8 +177,8 @@ function MarimekkoBookIcycle({
       >
         {iCycleDataAnnotated["uno"].map(block => (
           <rect
-            title={"uno"}
-            style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block.seq] ? 1 : 0.2 : 1} }
+          title={block['ID SEQ']}
+          style={{ fill: block.color, opacity: currentSequencesSelected.length ? sequencesSelected[block['ID SEQ']] ? 1 : 0.2 : 1}}
             className={`${styles.marimekkoUnit}  ${
               styles.marimekkoUnitIceCycle
             } ${selectedLegendEntries[block.label] ? styles.selected : ""}`}

@@ -155,6 +155,19 @@ const preprocessData = (data, options = {}) => {
 
       //
       const sequencesMapForBook = computeSequences(data, item.textID);
+      const sequencesMatchesForBook = sequencesMapForBook.map(x => ({...x, sequenceStr: x.sequence.join("-")})).reduce((acc, item) => {
+
+        
+        
+        if(!acc[item.sequenceStr]){
+          acc[item.sequenceStr] = item.ids
+        } else {
+          acc[item.sequenceStr] = {...acc[item.sequenceStr], ...item.ids}
+        }
+        return acc
+      }, {})
+
+      // console.log(item.textID, sequencesMatchesForBook)
 
       // //mapping seq occurrences
       // const sequencesMapForBook = keyBy(
@@ -169,7 +182,8 @@ const preprocessData = (data, options = {}) => {
       return {
         ...out,
         titolo: dataVolume.titolo,
-        sequencesMapForBook
+        sequencesMapForBook,
+        sequencesMatchesForBook,
       };
     });
 
