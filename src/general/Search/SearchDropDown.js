@@ -1,7 +1,13 @@
 import React, { Component, createRef } from "react";
 import "../../App.css";
-import "./Search.css";
-import { Typeahead, Token, Highlighter, Menu, MenuItem } from "react-bootstrap-typeahead";
+import "./SearchDropDown.css";
+import {
+  Typeahead,
+  Token,
+  Highlighter,
+  Menu,
+  MenuItem
+} from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import "react-bootstrap-typeahead/css/Typeahead-bs4.css";
 import groupBy from "lodash/groupBy";
@@ -18,7 +24,7 @@ const renderToken = (option, props, idx) => (
 );
 
 const renderMenuItemChildren = (option, props, idx, selectedValues) => {
-  const isSelected = selectedValues.map(x => x.value).indexOf(option.value) !== -1
+  
   return (
     <Highlighter search={props.text} key={idx}>
       {option.label}
@@ -67,17 +73,25 @@ class Search extends Component {
             if (!props.text) {
               return option;
             }
-            return option.label.indexOf(props.text) !== -1 ? option : null;
+            return option.label.toLowerCase().indexOf(props.text.toLowerCase()) !== -1 ? option : null;
           }}
-          // renderMenu={(results, menuProps) => (
-          //   <Menu {...menuProps}>
-          //     {results.map((result, index) => (
-          //       <MenuItem option={result} position={index} className={`bg-primary text-white`}>
-          //         {result.label}
-          //       </MenuItem>
-          //     ))}
-          //   </Menu>
-          // )}
+          renderMenu={(results, menuProps) => (
+            <Menu {...menuProps} className="rbt-menu-container">
+              {results.map((result, index) => {
+                const isSelected =
+                this.state.selected.map(x => x.value).indexOf(result.value) !== -1;
+                return (
+                  <MenuItem
+                    option={result}
+                    position={index}
+                    className={`dropdown-item-selectable ${isSelected ? 'selected' : ''}`}
+                  >
+                    {result.label}
+                  </MenuItem>
+                );
+              })}
+            </Menu>
+          )}
           renderMenuItemChildren={(option, props, idx) =>
             renderMenuItemChildren(option, props, idx, this.state.selected)
           }
@@ -85,16 +99,7 @@ class Search extends Component {
             return index < maxTokens ? (
               renderToken(option, props, index)
             ) : index === maxTokens ? (
-              <Token
-                disabled={props.disabled}
-                key={index}
-                onRemove={() => {
-                  this.typeahead.focus();
-                }}
-                tabIndex={props.tabIndex}
-              >
-                +{this.state.selected.length - maxTokens}
-              </Token>
+              <span className="rbt-token" onClick={() => this.typeahead.focus()}>+{this.state.selected.length - maxTokens}</span>
             ) : null;
           }}
         />
