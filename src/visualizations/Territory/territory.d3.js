@@ -28,6 +28,7 @@ let currentAnalysisMode;
 let colors;
 
 const PI = Math.PI;
+const _2PI = Math.PI * 2;
 const arcMin = 75; // inner radius of the first arc
 const arcWidth = 38;
 const arcPad = 1; // padding between arcs
@@ -549,10 +550,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) { 
-      return 0 * 2 * PI + placesArcFix(d);
+      return 0 + placesArcFix(d);
     })
 		.endAngle(function(d, i) {
-			return d.generico_cosmico * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc2 = d3
@@ -564,10 +565,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_cosmico * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_terrestre * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc3 = d3
@@ -579,10 +580,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_terrestre * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.inventato * 2 * PI + placesArcFix(d);
+			return d.inventato * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc4 = d3
@@ -594,10 +595,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.inventato * 2 * PI + placesArcFix(d);
+			return d.inventato * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI + placesArcFix(d);
+			return d.no_ambientazione * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc5 = d3
@@ -609,10 +610,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI + placesArcFix(d);
+			return d.no_ambientazione * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc6 = d3
@@ -624,10 +625,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_terrestre * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc7 = d3
@@ -639,10 +640,10 @@ class VClass
 			return d.r - i * arcWidth;
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_terrestre * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return 2 * PI + placesArcFix(d);
+			return _2PI + placesArcFix(d);
 		});
 
 ///////////////////////////////////////////
@@ -724,10 +725,10 @@ class VClass
     .outerRadius(function(d, i) {
       return d.r - i * arcWidth;
     })
-    .startAngle(0 * 2 * PI)
+    .startAngle(0)
     .endAngle(function(d, i) {
 //					return d.generico_cosmico * 2 * PI;
-      return 2 * PI;
+      return _2PI;
     });
 
 ///////////////////////////////////////////
@@ -753,9 +754,9 @@ class VClass
       .outerRadius(function(d, i) {
         return d.r - i * arcWidth;
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0)
       .endAngle(function(d, i) {
-        return d.nebbia * 2 * PI;
+        return d.nebbia * _2PI;
       });
 
     let drawDubitativePhenomenaArc2 = d3
@@ -767,10 +768,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.nebbia * 2 * PI;
+        return d.nebbia * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.cancellazione * 2 * PI;
+        return d.cancellazione * _2PI;
       });
 
     let drawDubitativePhenomenaArc3 = d3
@@ -782,10 +783,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.cancellazione * 2 * PI;
+        return d.cancellazione * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
@@ -824,9 +825,9 @@ class VClass
       .outerRadius(function(d, i) {
         return d.r - i * arcWidth;
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0)
       .endAngle(function(d, i) {
-        return d.lists_f_ratio * 2 * PI;
+        return d.lists_f_ratio * _2PI;
       });
 
     let drawListsArc2 = d3
@@ -838,10 +839,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.lists_f_ratio * 2 * PI;
+        return d.lists_f_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_m_ratio * 2 * PI;
+        return d.lists_m_ratio * _2PI;
       });
 
     let drawListsArc3 = d3
@@ -853,10 +854,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.lists_m_ratio * 2 * PI;
+        return d.lists_m_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_p_ratio * 2 * PI;
+        return d.lists_p_ratio * _2PI;
       });
 
     let drawListsArc4 = d3
@@ -868,10 +869,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.lists_p_ratio * 2 * PI;
+        return d.lists_p_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_s_ratio * 2 * PI;
+        return d.lists_s_ratio * _2PI;
       });
 
     let drawListsArc5 = d3
@@ -883,10 +884,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.lists_s_ratio * 2 * PI;
+        return d.lists_s_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
@@ -956,9 +957,9 @@ class VClass
       .outerRadius(function(d, i) {
         return d.r - i * arcWidth;
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0 * _2PI)
       .endAngle(function(d, i) {
-        return d.lists_ratio_with_threshold * 2 * PI;
+        return d.lists_ratio_with_threshold * _2PI;
       });
 
     let drawListsOverallArc2 = d3
@@ -970,10 +971,10 @@ class VClass
         return d.r - i * arcWidth;
       })
       .startAngle(function(d, i) {
-        return d.lists_ratio_with_threshold * 2 * PI;
+        return d.lists_ratio_with_threshold * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
