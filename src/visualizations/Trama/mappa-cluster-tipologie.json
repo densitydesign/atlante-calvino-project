@@ -39,11 +39,19 @@
 ,
 {"valore":"digressione","gruppo":"Contenuto/Forma","colore":"#D9FD12"}
 ,
-{"valore":"#N/A","gruppo":"","colore":"#F2CA22"}
+{"valore":"#N/A","gruppo":"","colore":""}
 ,
-{"valore":"cornice","gruppo":"Interiore","colore":"#DAE6FD"}
+{"valore":"cornice","gruppo":"Interiore","colore":"#F2CA22"}
 ,
-{"valore":"ipotesi","gruppo":"","colore":""}
+{"valore":"ipotesi","gruppo":"interiore","colore":"#DAE6FD"}
 ,
 {"valore":"x","gruppo":"","colore":""}
+,
+{"valore":"","gruppo":"","colore":""}
+,
+{"valore":"","gruppo":"","colore":""}
+,
+{"valore":"","gruppo":"","colore":""}
+,
+{"valore":"","gruppo":"   ","colore":""}
 ]
