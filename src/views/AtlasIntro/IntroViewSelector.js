@@ -10,18 +10,20 @@ export default class IntroViewSelector extends React.Component
   {
     const children = React.Children.toArray(this.props.children)
 
-    const style = this.props.image ? 
-    { 
+    const style = this.props.image ?
+    {
       backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')",
       opacity : this.props.transitionData.percent,
       backgroundSize : "cover",
       backgroundRepeat: "no-repeat",
       width : "100%",
-      height : "100%"
-    } : 
+      height : "100%",
+      border:"transparent"
+    } :
     {
       width : "100%",
-      height : "100%"
+      height : "100%",
+      border:"transparent"
     };
 
     return (
