@@ -2078,12 +2078,12 @@ console.log("change_none_to_hills");
     else t1 = t0.transition().duration(700);
 
     // hide old custom drawings
-    t1
+/*    t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
 			.style('fill-opacity', 0)
 			.style('stroke-opacity', 0);    
-  }
+*/  }
 
   onFirstElementClicked = d => {
 console.log("first_elem clicked for " + d.id);
@@ -2532,7 +2532,6 @@ function placesArcFix(d)
 
   switch(d.id)
   {
-    case "V005" : return Math.PI * 1 / 2;
     case "S012" : return Math.PI * 1 / 2;
     case "S032" : return Math.PI * 2 / 3;
 //    case "S008" : return Math.PI * /;
@@ -2544,7 +2543,7 @@ function placesArcFix(d)
     case "S149" : return Math.PI * 6 / 10;
     case "S151" : return Math.PI * 69 / 128;
     case "S156" : return Math.PI * 5 / 12;
-//    case "V021" : return Math.PI * /;
+    case "V021" : return Math.PI * 1 / 2;
     case "S179" : return Math.PI * 1 / 2;
     case "S181" : return Math.PI * 1 / 2;
     case "S203" : return Math.PI * 1 / 2;
@@ -2567,6 +2566,9 @@ function placesArcFix(d)
     case "S022" : return Math.PI * 7 / 16;
     case "S041" : return Math.PI * 1 / 2;
     case "S014" : return Math.PI * 9 / 24;
+    case "S165" : return Math.PI * 2 / 3;
+    case "S011" : return Math.PI * 1 / 2;
+    case "V005" : return Math.PI * 21 / 40;
 
     default : return 0;
   }
