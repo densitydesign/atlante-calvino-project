@@ -155,35 +155,22 @@ const preprocessData = (data, options = {}) => {
 
       //
       const sequencesMapForBook = computeSequences(data, item.textID);
-      const sequencesMatchesForBook = sequencesMapForBook.map(x => ({...x, sequenceStr: x.sequence.join("-")})).reduce((acc, item) => {
-
-        
-        
-        if(!acc[item.sequenceStr]){
-          acc[item.sequenceStr] = item.ids
-        } else {
-          acc[item.sequenceStr] = {...acc[item.sequenceStr], ...item.ids}
-        }
-        return acc
-      }, {})
-
-      // console.log(item.textID, sequencesMatchesForBook)
-
-      // //mapping seq occurrences
-      // const sequencesMapForBook = keyBy(
-      //   uniq(
-      //     firstLevelRecords
-      //       .filter(x => x.textID === item.textID)
-      //       .map(x => x.seq)
-      //   )
-      // );
+      const sequencesMatchesForBook = sequencesMapForBook
+        .reduce((acc, item) => {
+          if (!acc[item.sequenceStr]) {
+            acc[item.sequenceStr] = item.ids || {};
+          } else {
+            acc[item.sequenceStr] = { ...acc[item.sequenceStr], ...item.ids };
+          }
+          return acc;
+        }, {});
 
       const dataVolume = get(volumiByID, item.textID);
       return {
         ...out,
         titolo: dataVolume.titolo,
         sequencesMapForBook,
-        sequencesMatchesForBook,
+        sequencesMatchesForBook
       };
     });
 
@@ -306,7 +293,7 @@ function MarimekkoViz({
     if (!currentSequencesSelected) {
       return null;
     }
-    return uniq(currentSequencesSelected.map(x => x.seq));
+    return currentSequencesSelected.map(x => x['tipologia']).join("-")
   }, [currentSequencesSelected]);
 
   useEffect(() => {
@@ -321,23 +308,19 @@ function MarimekkoViz({
 
   //current sequence stuff
   const sequences = useMemo(() => {
-    if(!currentBook){
-      return []
+    if (!currentBook) {
+      return [];
     }
     return sortBy(currentBook.sequencesMapForBook, x => x.starts_at);
-  }, [currentBook])
+  }, [currentBook]);
 
   const currentIndex = useMemo(() => {
-    if(!currentBook){
-      return -1
+    if (!currentBook) {
+      return -1;
     }
-    return findLastIndex(sequences, item =>
-      findAtChar(item, currentPosition)
-    );
+    return findLastIndex(sequences, item => findAtChar(item, currentPosition));
+  }, [currentBook, currentPosition, sequences]);
 
-  }, [currentBook, currentPosition, sequences])
-
-  
   const sequencesIndexing = useMemo(() => {
     if (!currentBook) {
       return {
@@ -346,7 +329,7 @@ function MarimekkoViz({
         nextPosition: null
       };
     }
-     
+
     const prevIndex = findLastIndex(
       sequences,
       x => x.starts_at < currentPosition

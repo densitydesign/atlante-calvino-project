@@ -1,3 +1,4 @@
+
 import sumBy from "lodash/sumBy";
 import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy"
@@ -73,25 +74,24 @@ export const computeHorizontalPositions = (booksData, width, sameWidth) => {
 
 
 export const findAtChar = (item, char) => {
-  return item.starts_at <= char && item.ends_at >= char
+  return +item.starts_at <= char && +item.ends_at >= char
 }
 
 
-const SEQ_FIELD = "cluster tipologie"
+// const SEQ_FIELD = "cluster tipologie"
+const SEQ_FIELD = 'tipologia'
 
 export const computeSequences = (data, textID) => {
   
 
-  const sortedData = sortBy(data.filter(x => x.textID === textID), x => x['starts_at'])
+  const sortedData = sortBy(data.filter(x => x.textID === textID), x => +x['starts_at'])
   const byLevel = groupBy(sortedData, x => x.livello)
 
   
   const levels = sortBy(Object.keys(byLevel), x => levelMaps[x])
-  // console.log("byLevel", byLevel, levels)
-
+  
   const computedSequences = sortedData.map(x => {
-
-    const char = x['starts_at']
+    const char = +x['starts_at']
     const seqItems = levels.map(level => find(byLevel[level], x => findAtChar(x, char)))
     let sequence = []
     let ids = {}
@@ -110,15 +110,13 @@ export const computeSequences = (data, textID) => {
 
     return {
       sequence,
+      sequenceStr: sequence.join("-"),
       ids,
       ends_at,
       starts_at: +x.starts_at,
 
     }
   })
-
   return computedSequences
-
-
 
 }

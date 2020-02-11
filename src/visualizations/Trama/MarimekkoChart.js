@@ -22,6 +22,7 @@ function MarimekkoBookIcycle({
   currentPosition,
   currentSequencesSelected
 }) {
+  
   // utility measures
   const icycleWidth = (width / 10) * 8;
   const columnWidth = icycleWidth / 5;
@@ -80,15 +81,11 @@ function MarimekkoBookIcycle({
       return null
     }
 
-    const out = currentSequencesSelected.map(x => x['cluster tipologie']).join("-")
-    // console.log("x", book)
-    // return out
+    const out = currentSequencesSelected.map(x => x['tipologia']).join("-")
     return book.sequencesMatchesForBook[out] || {}
     
-    return keyBy(uniq(currentSequencesSelected.map(x => x.seq)))
-  }, [currentSequencesSelected]) 
+  }, [book.sequencesMatchesForBook, currentSequencesSelected]) 
 
-  // console.log(1234, sequencesSelected, currentSequencesSelected, book.sequencesMatchesForBook, book)
 
   const props = useSpring({
     config: { precision: 0.1 },

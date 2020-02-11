@@ -10,9 +10,13 @@ import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
 import AltOptions from "../../general/Options/AltOptions";
 import MarimekkoViz from "./MarimekkoViz";
 import marimekkoData from "./marimekko.json";
-import volumi from "./volumi.json";
 
+import volumi from "./volumi.json";
 import GlobalData from "../../utilities/GlobalData";
+
+// const marimekkoData = MD.filter(x => x.textID === "V005")
+
+
 
 const searchOptions = volumi.map(item => ({
   label: item.titolo,
