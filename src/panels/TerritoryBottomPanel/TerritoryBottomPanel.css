@@ -22,3 +22,7 @@ h4{
   margin-bottom:0.8em;
   display: block;
 }
+
+.radio-button-down{
+  border:none;
+}
