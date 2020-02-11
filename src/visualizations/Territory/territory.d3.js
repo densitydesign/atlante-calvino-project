@@ -30,8 +30,8 @@ let colors;
 const PI = Math.PI;
 const _2PI = Math.PI * 2;
 const arcMin = 75; // inner radius of the first arc
-const arcWidth = 38;
-const arcPad = 1; // padding between arcs
+//const arcWidth = 38;
+//const arcPad = 1; // padding between arcs
 const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
@@ -175,8 +175,15 @@ class VClass
       .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
       .range(['➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒', '➓']);
 
+    
     const arcWidth = 38;
     const arcPad = 1; // padding between arcs
+
+    const i_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const minus_i_plus_1_times_arcWidth_plus_arcPad = i_range.map(i => -(i+1) * arcWidth + arcPad);
+
+    const minus_i_times_arcWidth = i_range.map(i => -i * arcWidth);
+
     const metaballsVisible = new Map();
 
     collections
@@ -546,10 +553,12 @@ class VClass
 	let drawPlacesArc1 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) { 
       return 0 + placesArcFix(d);
@@ -561,10 +570,12 @@ class VClass
 	let drawPlacesArc2 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.generico_cosmico * _2PI + placesArcFix(d);
@@ -576,10 +587,12 @@ class VClass
 	let drawPlacesArc3 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.generico_terrestre * _2PI + placesArcFix(d);
@@ -591,10 +604,12 @@ class VClass
 	let drawPlacesArc4 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];      
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.inventato * _2PI + placesArcFix(d);
@@ -606,10 +621,12 @@ class VClass
 	let drawPlacesArc5 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.no_ambientazione * _2PI + placesArcFix(d);
@@ -621,10 +638,12 @@ class VClass
 	let drawPlacesArc6 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.nominato_cosmico * _2PI + placesArcFix(d);
@@ -636,10 +655,12 @@ class VClass
 	let drawPlacesArc7 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
 			return d.nominato_terrestre * _2PI + placesArcFix(d);
@@ -722,10 +743,12 @@ class VClass
   let drawPlaceHierarchiesArc1 = d3
     .arc()
     .innerRadius(function(d, i) {
-      return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
     })
     .outerRadius(function(d, i) {
-      return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
     })
     .startAngle(0)
     .endAngle(function(d, i) {
@@ -751,10 +774,12 @@ class VClass
     let drawDubitativePhenomenaArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(0)
       .endAngle(function(d, i) {
@@ -764,10 +789,12 @@ class VClass
     let drawDubitativePhenomenaArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.nebbia * _2PI;
@@ -779,10 +806,12 @@ class VClass
     let drawDubitativePhenomenaArc3 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.cancellazione * _2PI;
@@ -822,10 +851,12 @@ class VClass
     let drawListsArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(0)
       .endAngle(function(d, i) {
@@ -835,10 +866,12 @@ class VClass
     let drawListsArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.lists_f_ratio * _2PI;
@@ -850,10 +883,12 @@ class VClass
     let drawListsArc3 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.lists_m_ratio * _2PI;
@@ -865,10 +900,12 @@ class VClass
     let drawListsArc4 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.lists_p_ratio * _2PI;
@@ -880,10 +917,12 @@ class VClass
     let drawListsArc5 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.lists_s_ratio * _2PI;
@@ -954,10 +993,12 @@ class VClass
     let drawListsOverallArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i+1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(0 * _2PI)
       .endAngle(function(d, i) {
@@ -967,10 +1008,12 @@ class VClass
     let drawListsOverallArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i+1) * arcWidth + arcPad;
+//			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+//			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
         return d.lists_ratio_with_threshold * _2PI;
