@@ -567,7 +567,6 @@ class VClass
 			return d.generico_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-if(d.id === "S151") console.log("d.generico_terrestre", d.generico_terrestre);      
 			return d.generico_terrestre * 2 * PI + placesArcFix(d);
 		});
 
@@ -628,7 +627,6 @@ if(d.id === "S151") console.log("d.generico_terrestre", d.generico_terrestre);
 			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
 			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
 		});
 
@@ -1124,8 +1122,8 @@ if(d.id === "S151") console.log("d.nominato_terrestre", d.nominato_terrestre);
     }
 
     this.textsData = input_data.textsData;
-console.log("reached point for chronological animation");
-console.log("analysisMode", analysisMode);
+
+    // reached point for chronological animation
 
     if([
       GlobalData.analysisModes.noAnalysis.chronology,
@@ -1199,7 +1197,6 @@ console.log("analysisMode", analysisMode);
 */
   set_yRatio = yRatio => 
   {
-console.log("set_yRatio");
     tilt = yRatio === 1;
 
     if(tilt)
@@ -1246,7 +1243,6 @@ console.log("set_yRatio");
 
   set_yRatio_withoutTransition = yRatio => 
   {
-console.log("set_yRatio_withoutTransition");
     tilt = yRatio === 1;
 
     if(tilt)
@@ -1424,11 +1420,10 @@ console.log("set_yRatio_withoutTransition");
 
   setHighlightMode = newAnalysisMode => 
   {
-console.log("setHighlightMode");
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
-console.log("newAnalysisMode", newAnalysisMode);    
+
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
-console.log("newHighlightParameters", newHighlightParameters);
+
     const analysisModeChangeType = getAnalysisModeChangeType(currentHighlightParameters.analysisModeGroup, newHighlightParameters.analysisModeGroup);
 /*
     switch(analysisModeChangeType)
@@ -1610,7 +1605,7 @@ console.log("case proportion...");
         break;
 
       case analysisModeChangeTypes.change_none_to_flat :
-console.log("newHighlightParameters", newHighlightParameters);
+
         this.change_none_to_flat(
           currentAnalysisMode, currentHighlightParameters,
               newAnalysisMode,     newHighlightParameters);
@@ -1707,7 +1702,6 @@ console.log("newHighlightParameters", newHighlightParameters);
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
-console.log("change_none_to_hills");
 //    this.set_yRatio(newHighlightParameters.tilt_factor);
     this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
 //    this.applyShowHillMode(newHighlightParameters.showHillMode);
@@ -2085,10 +2079,8 @@ console.log("change_none_to_hills");
 			.style('stroke-opacity', 0);    
   }
 
-  onFirstElementClicked = d => {
-console.log("first_elem clicked for " + d.id);
-console.log("currentAnalysisMode", currentAnalysisMode);
-
+  onFirstElementClicked = d => 
+  {
     switch(true)
     {
       case currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.highlightPlaceHierarchy(d); break;
