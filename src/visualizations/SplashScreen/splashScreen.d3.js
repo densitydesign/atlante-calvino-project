@@ -53,7 +53,7 @@ class VClass
         let config = [{
           collisionMargin: .25,
           amountNodes: 4000,
-          radiusRootNode: 6,
+          radius: 6,
           rootPosition: [201.0764923095703 + 3 + 0.002, 88.30018615722656 + 3 - 0.002],
           margin: {
             top: 0,
