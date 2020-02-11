@@ -97,8 +97,10 @@ class VClass
 
     colors = input_colors;
 
-    let w = window.innerWidth;
-    let h = window.innerHeight - 6;
+    const w = window.innerWidth;
+    const half_w = w / 2;
+    const h = window.innerHeight - 6;
+    const half_h = h / 2;
     svg = d3.select(el).style("touch-action", "manipulation");
 
     svg.on("click", this.onSvgClicked);
@@ -1118,7 +1120,7 @@ class VClass
           zoom_handler.transform, 
           d3
             .zoomIdentity
-            .translate((w / 2) + x, (h / 2) + y)
+            .translate(half_w + x, half_h + y)
             .scale(scale));
     }
 
