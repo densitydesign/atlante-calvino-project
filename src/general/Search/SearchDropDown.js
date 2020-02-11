@@ -82,6 +82,7 @@ class Search extends Component {
                 this.state.selected.map(x => x.value).indexOf(result.value) !== -1;
                 return (
                   <MenuItem
+                    key={index}
                     option={result}
                     position={index}
                     className={`dropdown-item-selectable ${isSelected ? 'selected' : ''}`}

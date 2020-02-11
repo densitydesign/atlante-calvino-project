@@ -29,6 +29,7 @@ export function MarimekkoSlider({
 }) {
   const [ref, { x, y, width, height }] = useDimensions();
 
+   
   
   const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width]);
 
