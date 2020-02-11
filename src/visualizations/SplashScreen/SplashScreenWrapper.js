@@ -14,8 +14,6 @@ export default class SplashScreenWrapper extends React.Component
 {
   render()
   {
-
-
     return (
       <Link to="/AtlasIntro">
         <div className="splash-screen-container">
