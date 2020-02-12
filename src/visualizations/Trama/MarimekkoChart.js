@@ -150,7 +150,7 @@ function MarimekkoBookIcycle({
               {iCycleDataAnnotated[levelName].map(block => {
                 let opacity = 1
                 if(currentSequencesSelected.length){
-                  opacity = sequencesSelected[block['ID SEQ']] ? 1 : 0.2
+                  opacity = sequencesSelected[`${block['ID SEQ']}-${block.livello}`] ? 1 : 0.2
                 } else if(anyLegendEntrySelected) {
                   opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
                 }
@@ -183,7 +183,7 @@ function MarimekkoBookIcycle({
         {iCycleDataAnnotated["uno"].map(block => { 
           let opacity = 1
           if(currentSequencesSelected.length){
-            opacity = sequencesSelected[block['ID SEQ']] ? 1 : 0.2
+            opacity = sequencesSelected[`${block['ID SEQ']}-${block.livello}`] ? 1 : 0.2
           } else if(anyLegendEntrySelected) {
             opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
           }

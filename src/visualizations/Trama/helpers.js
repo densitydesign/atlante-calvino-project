@@ -101,7 +101,7 @@ export const computeSequences = (data, textID) => {
       
       if(s){
         sequence.push(s[SEQ_FIELD])
-        const key = `${s["ID SEQ"]}`
+        const key = `${s["ID SEQ"]}-${s['livello']}`
         ids[key] = true
         ends_at = Math.min(ends_at, +s['ends_at'])
       }
