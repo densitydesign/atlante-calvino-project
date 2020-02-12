@@ -10,6 +10,7 @@
 .nav-menu-cell h2{
   color:black;
   transition: color 0.5s ease;
+  margin:0px;
 
 }
 
