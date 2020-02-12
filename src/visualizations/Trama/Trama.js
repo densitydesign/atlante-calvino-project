@@ -119,6 +119,7 @@ class Trama extends Component {
               style={{ gridColumn: "span 8", pointerEvents: currentTextID ? 'none' : undefined }}
               data={{options:searchOptions}}
               changeOptions={this.changeRicerca}
+              selectedOptions={this.state.ricerca}
             />
           )}
           <MoreInfo
