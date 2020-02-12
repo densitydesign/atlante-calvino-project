@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 
 import GlobalData from '../../utilities/GlobalData.js';
+import { curveSankey } from '../../utilities/graphic_utilities.js';
 
 import './ListTypesPerText.css';
 
@@ -75,7 +76,7 @@ class VClass {
       .x(d => x(d.data.date))
       .y0(d => y(d[0]))
       .y1(d => y(d[1]))
-      .curve(d3.curveBasis);
+      .curve(curveSankey);
 
 
     var xAxis = svg
