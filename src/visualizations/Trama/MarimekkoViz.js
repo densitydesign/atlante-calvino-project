@@ -307,7 +307,7 @@ function MarimekkoViz({
   useEffect(() => {
     setCurrentPosition(0);
     setCurrentSequences([]);
-    setCurrentSequencesSelected([]);
+    // setCurrentSequencesSelected([]);
   }, [currentTextID]);
 
   const currentBook = useMemo(() => {
@@ -372,6 +372,13 @@ function MarimekkoViz({
       setCurrentSequencesSelected([]);
     }
   }, [selectedLegendEntries]);
+
+  const currentSequencesDisplay = useMemo(() => {
+    if(currentSequencesSelected && currentSequencesSelected.length){
+      return currentSequencesSelected
+    }
+    return currentSequences
+  }, [currentSequences, currentSequencesSelected])
 
 
   return (
@@ -454,7 +461,7 @@ function MarimekkoViz({
           </div>
           <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}>
             <div className="position-absolute w-100">
-              {currentSequences.map((seq, i) => (
+              {currentSequencesDisplay.map((seq, i) => (
                 <div
                   className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i }}

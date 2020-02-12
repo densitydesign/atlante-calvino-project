@@ -52,7 +52,7 @@ export function MarimekkoSlider({
         Math.max(Math.min(newPosition, +currentBook.caratteri), 0)
       );
       if (safePosition !== currentPosition) {
-        setCurrentSequencesSelected([]);
+        //setCurrentSequencesSelected([]);
         setCurrentPosition(safePosition);
       }
     },
@@ -73,7 +73,7 @@ export function MarimekkoSlider({
         Math.max(Math.min(newPosition, +currentBook.caratteri), 0)
       );
       if (safePosition !== currentPosition) {
-        setCurrentSequencesSelected([]);
+        //setCurrentSequencesSelected([]);
         setCurrentPosition(safePosition);
       }
     },
