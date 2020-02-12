@@ -242,7 +242,6 @@ body.navbar-displayed #scroll-down {
     animation: 3s infinite pop;
 }
 
-
 @keyframes pop {
     0%   { color:var(--bg);}
     50%  { color: var(--dark-blue);}
