@@ -237,6 +237,11 @@ function MarimekkoViz({
     };
   }, [measure]);
 
+
+  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [
+    dimensions.vizWidth
+  ]);
+  const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
   
 
   //resetting aggregazione
@@ -256,9 +261,12 @@ function MarimekkoViz({
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
   const availableWidth = useMemo(() => {
-    return booksData.length > 2 ? dimensions.vizWidth: dimensions.vizWidth / 2
+    if(booksData.length === 1){
+      return columnWidth
+    }
+    return booksData.length > 4 ? dimensions.vizWidth: columnWidth * 4
 
-  }, [booksData.length, dimensions.vizWidth])
+  }, [booksData.length, columnWidth, dimensions.vizWidth])
   
 
   const booksDataWithPositions = useMemo(() => {
@@ -284,10 +292,7 @@ function MarimekkoViz({
       });
   }, [currentTextID, data]);
 
-  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [
-    dimensions.vizWidth
-  ]);
-  const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
+  
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
   const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);
