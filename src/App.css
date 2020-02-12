@@ -319,7 +319,6 @@ footer {
 .dropdown-menu a:hover {
   cursor: pointer;
   text-decoration: none;
-  background-color: var(--dark-blue);
   transition: color 0.3s ease;
 }
 
