@@ -9,7 +9,7 @@ import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
 import uniqBy from "lodash/uniqBy";
-import uniq from "lodash/uniq";
+import styles from "./Trama.module.css";
 import sortBy from "lodash/sortBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
@@ -471,7 +471,12 @@ function MarimekkoViz({
                   key={i}
                 >
                   <div
-                    className="text-center w-100"
+                    className={`w-100 text-center ${styles.currentSequenceLevel}`}
+                  >
+                    LIVELLO {seq["livello"]}
+                  </div>
+                  <div
+                    className={`text-center w-100 ${styles.currentSequenceLabel}`}
                     style={{
                       borderBottom: `solid 3px ${
                         coloriClusterTipologie[seq["cluster tipologie"]]
@@ -488,6 +493,9 @@ function MarimekkoViz({
                   </div>
                 </div>
               ))}
+              {!currentTextID && <div className={styles.marimekkoXaxisText}>
+                Lunghezza in caratteri dei testi, disposti in ordine cronologico.
+              </div>}
             </div>
           </div>
         </div>
