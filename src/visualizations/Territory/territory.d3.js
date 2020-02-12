@@ -21,7 +21,7 @@ let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
-let tilt = false;
+let tilt;
 let scale;
 let d3_event_transform_k;
 let currentAnalysisMode;
@@ -1174,40 +1174,7 @@ class VClass
   setColor = color => d3
     .selectAll("circle")
     .attr("fill", color);
-/*
-  set_yRatio = yRatio => {
-    d3
-      .selectAll(".node")
-      .transition()
-      .duration(2000)
-      .attr("transform", d => {
-        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-      });
 
-    tilt = yRatio === 1;
-
-    const label = this.text_nodes.selectAll('.label');   
-
-    label.attr('transform', function(d) {
-
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
-    });
-
-    const metaball_nodes = d3
-      .selectAll(".metaball_node")
-      .transition()
-      .duration(2000)
-      .attr("transform", d => {
-        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-      });
-  };
-*/
   set_yRatio = yRatio => 
   {
     tilt = yRatio === 1;
@@ -1438,174 +1405,6 @@ class VClass
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
 
     const analysisModeChangeType = getAnalysisModeChangeType(currentHighlightParameters.analysisModeGroup, newHighlightParameters.analysisModeGroup);
-/*
-    switch(analysisModeChangeType)
-    {
-      case GlobalData.analysisModes.noAnalysis.chronology :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.noAnalysis.volumes :
-
-//        this.set_yRatio(highlightParameters.tilt_factor);
-//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-//        this.applyShowHillMode(highlightParameters.showHillMode);
-//        this.highlightCustomElements(highlightParameters.customElementsClasses);
-//        this.showMetaballs(highlightParameters.show_metaballs);
-
-        this.change_flat_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.fog :
-
-
-//        this.set_yRatio(highlightParameters.tilt_factor);        
-//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
-
-//        this.applyShowHillMode(highlightParameters.showHillMode);
-//        this.highlightCustomElements(highlightParameters.customElementsClasses);        
-//        this.showMetaballs(highlightParameters.show_metaballs);
-
-        this.change_hills_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.cancellation :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.all :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.percentage :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.shape.proportion :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.shape.types :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;    
-
-      case GlobalData.analysisModes.space.genericCosmic :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.namedCosmic :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);        
-
-        break;
-
-      case GlobalData.analysisModes.space.genericTerrestrial :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.namedTerrestrial :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.invented :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.noSetting :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.proportion :
-console.log("case proportion...");
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.placeHierarchies :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      default : break;
-    }
-*/
 
     switch(analysisModeChangeType)
     {
@@ -1715,6 +1514,7 @@ console.log("case proportion...");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    tilt = false;
 //    this.set_yRatio(newHighlightParameters.tilt_factor);
     this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
 //    this.applyShowHillMode(newHighlightParameters.showHillMode);
