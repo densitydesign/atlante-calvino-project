@@ -87,6 +87,11 @@ a:hover .compass-selector-cell  {
 color: var(--bg);
 }
 
+.viz-intro h5{
+color: var(--bg);
+}
+
+
 .viz-intro a:hover{
 color: turquoise;
 }

@@ -19,7 +19,7 @@ export default class AboutAndContacts extends React.Component
         <div className="grid-with-scrollable-left-column">
           <div className="scrollable-column-2 col-md-8 col-lg-8">
             <h1>ÉQUIPE</h1>
-          <h5>  <strong>
+          <h5 className="about-text">  <strong>
             Équipe letteraria, Unité d'italien<br/>
             Département de langues et littératures romanes,<br/>
             Université de Genève
@@ -40,7 +40,7 @@ export default class AboutAndContacts extends React.Component
 
             <br/>
             <br/>
-            <h5><strong>DensityDesign Research Lab,<br/>
+            <h5 className="about-text"><strong>DensityDesign Research Lab,<br/>
             Dipartimento di Design, Politecnico di Milano</strong><br/></h5>  <br/>
                 <br/>
             <p>Il laboratorio di ricerca DensityDesign è parte del Dipartimento di Design del Politecnico di Milano.
