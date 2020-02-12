@@ -39,20 +39,16 @@ class AtlasIntro extends React.Component
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div id="sidebar" className="atlas-intro-sidebar">
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() }}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
               <h1>Itinerari</h1>
-              <br />
-              <br />
               <p className="intro">Per entrare e muoversi dentro l’opera narrativa di Calvino abbiamo scelto tre itinerari.
               Il primo riguarda il <strong>dubbio</strong>, il secondo lo <strong>spazio</strong> e il terzo la <strong>forma</strong> del racconto.
               Sono tre scelte arbitrarie, ma che vanno a toccare alcuni fondamenti della scrittura calviniana,
               invitandoci alla sua esplorazione.</p>
             </div>
 
-            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()+3}}>
+            <div className="atlas-intro-sidebar-monoblock" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
               <h1>Tappe</h1>
-              <br />
-              <br />
             <p className="intro">Ognuno dei tre itinerari si sviluppa in tre tappe. La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
             La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno. La terza tappa l’ombra del <strong>problema</strong> che sta dietro a tutto. </p>
             </div>
@@ -71,19 +67,19 @@ class AtlasIntro extends React.Component
 */}
 
 
-          <div id="rows" className="atlas-intro-scrolling-cell-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() +20}}>
+          <div id="rows" className="atlas-intro-scrolling-cell-grid" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
 
             <div /><div /><div /><div /> {/* the empty page, before scrolling */}
             <div /><div /><div /><div /> {/* the first, empty row (it's the row of column headers) */}
-            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 1</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" /> {/* the first table row, and below the others */}
-            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 2</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
-            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
             <div className="atlas-intro-cell2" />
@@ -95,25 +91,25 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div />
           <div className="atlas-intro-cell-grid">
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
 
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
 
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
+            <div className="atlas-intro-cell3 tint-itineraries-intro"></div>
 
           </div>
         </div>
@@ -129,12 +125,10 @@ class AtlasIntro extends React.Component
         <AtlasIntroHeader />
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
-          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY() + 100 }}>
+          <div className="atlas-intro-sidebar2" style={{ top: this.getVisibleItemInitialY() - transitionData.percent * this.getDeltaY()}}>
 
             <div className="atlas-intro-sidebar-monoblock" >
               <h1>Tappe</h1>
-              <br />
-              <br />
               <p className="intro">Ognuno dei tre itinerari si sviluppa in tre tappe.
             <br />La prima tappa cerca di individuare il <strong>fenomeno</strong> di cui stiamo parlando.
               La seconda tappa il <strong>processo</strong> che viene innescato da questo fenomeno.
@@ -169,22 +163,22 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-
-            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
+            <div className="atlas-intro-cell2 step-intro tint-step-intro"><h4>TAPPA 1</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
+            <div className="atlas-intro-cell2 step-intro tint-step-intro"><h4>TAPPA 2</h4></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2"></div>
+
+            <div className="atlas-intro-cell2 step-intro tint-step-intro"><h4>TAPPA 3</h4></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
             <div className="atlas-intro-cell2"></div>
@@ -250,11 +244,11 @@ class AtlasIntro extends React.Component
             </div>
 
             <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
-            <h2>Équipe</h2><br />
-            <h2>Progetto</h2><br />
-              <h2>Strumenti</h2><br />
-              <h2>Rassegna</h2><br />
-              <h2>Articoli</h2><br />
+            <h2>Équipe</h2>
+            <h2>Progetto</h2>
+              <h2>Strumenti</h2>
+              <h2>Rassegna</h2>
+              <h2>Articoli</h2>
             </div>
 
           </div>
@@ -275,25 +269,25 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Forma</h3></div>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 1</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 1</h4></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 2</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 2</h4></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
 
-            <div className="atlas-intro-cell2"><h4>TAPPA 3</h4></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
-            <div className="atlas-intro-cell2"></div>
+            <div className="atlas-intro-cell2 step-intro"><h4>TAPPA 3</h4></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
+            <div className="atlas-intro-cell2 tint-viz-intro"></div>
 
           </div>
         </div>
@@ -356,25 +350,25 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3"></div>
-            <div className="atlas-intro-cell3"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Spazio</h3></div>
-            <div className="atlas-intro-cell3"><h3>Forma</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Dubbio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Spazio</h3></div>
+            <div className="atlas-intro-cell3 itineraries-intro"><h3>Forma</h3></div>
 
-            <IntroViewSelector className="atlas-intro-cell2 pop" image="/menuImages/menu_tappa_1.svg" transitionData={transitionData} keepLabelVisible><h4>TAPPA 1</h4></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_nebbia.svg"><h5>Nebbia</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_luoghi.svg"><h5>Luoghi</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_elenchi.svg"><h5>Elenchi</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 step-intro" image="/menuImages/menu_tappa_1.svg" transitionData={transitionData} keepLabelVisible><h4>TAPPA 1</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} image="/menuImages/menu_nebbia.svg" keepLabelVisible><h5>Nebbia</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} image="/menuImages/menu_luoghi.svg" keepLabelVisible><h5>Luoghi</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} image="/menuImages/menu_elenchi.svg" keepLabelVisible><h5>Elenchi</h5></IntroViewSelector>
 
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 2</h4></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_dubitare.svg"><h5>Dubitare</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_trasformare.svg"><h5>Trasformare</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} image="/menuImages/menu_trama.svg"><h5>Combinare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 step-intro" transitionData={transitionData} keepLabelVisible><h4>TAPPA 2</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} keepLabelVisible image="/menuImages/menu_dubitare.svg" ><h5>Dubitare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} image="/menuImages/menu_trasformare.svg" keepLabelVisible><h5>Trasformare</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} image="/menuImages/menu_trama.svg" keepLabelVisible><h5>Combinare</h5></IntroViewSelector>
 
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData} keepLabelVisible><h4>TAPPA 3</h4></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Cancellazione</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Realismo</h5></IntroViewSelector>
-            <IntroViewSelector className="atlas-intro-cell2" transitionData={transitionData}><h5>Trama</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 step-intro" transitionData={transitionData} keepLabelVisible><h4>TAPPA 3</h4></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} keepLabelVisible><h5>Cancellazione</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} keepLabelVisible><h5>Realismo</h5></IntroViewSelector>
+            <IntroViewSelector className="atlas-intro-cell2 viz-intro" transitionData={transitionData} keepLabelVisible><h5>Trama</h5></IntroViewSelector>
 
           </div>
         </div>

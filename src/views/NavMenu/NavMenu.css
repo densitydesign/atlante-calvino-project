@@ -1,16 +1,19 @@
 
 .nav-menu-cell-grid {
-  background-color:var(--cool-bg-bg);
+  background-color:#FFA500;
   display : grid;
-  padding : 100px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  padding:100px;
   border-top:var(--app-border);
-  transition: background-color 0.5s ease;
 }
 
-.nav-menu-cell h2:hover {
-  margin: 0;
-  white-space: nowrap;
-  font-size: 1.8em;
+.nav-menu-cell h2{
+  color:black;
   transition: color 0.5s ease;
-  color: var(--dark-blue);
+  margin:0px;
+
+}
+
+.nav-menu-cell h2:hover{
+  color:var(--dark-blue);
 }

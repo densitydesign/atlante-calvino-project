@@ -1,13 +1,22 @@
 
 .territory-button-grid {
-  display : grid;
   grid-column: 1 / span 3;
   border-right:1px solid black;
-  font-size:1.3em;
-  text-align: center;
+  font-size:1em;
+  display:grid;
 }
+
 
 .territory-itineraries-panel{
   display: grid;
   grid-template-columns : repeat(24,1fr);
+  justify-content: center;
+}
+
+.territory-itineraries-panel .radio-button-with-close-down{
+padding:1.2em 0.6em 0.6em 0.6em;;
+}
+
+.territory-itineraries-panel .radio-button-with-close-up{
+padding:1.2em 0.6em 0.6em 0.6em;;
 }

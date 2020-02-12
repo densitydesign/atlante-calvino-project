@@ -236,8 +236,19 @@ body.navbar-displayed #scroll-down {
     top : 90%;
     left : 50%;
     position : absolute;
-    color: red;
+    color: var(--dark-blue);
     background-color : transparent;
     opacity:1;
     animation: 3s infinite pop;
 }
+
+@keyframes pop {
+    0%   { color:var(--bg);}
+    50%  { color: var(--dark-blue);}
+    100% { color:var(--bg);}
+  }
+.pop {
+      background-color: var(--dark-blue);
+      opacity:1;
+      animation: pop 3s infinite;
+  }
