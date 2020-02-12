@@ -174,7 +174,7 @@ class Trama extends Component {
 
         <div className="bottom-nav navigations">
           <AltOptions
-            title="Tipologia"
+            title="Numero di livelli nel testo"
             multiple
             disabled={!controlsEnabled}
             options={tipologiaOptions}
