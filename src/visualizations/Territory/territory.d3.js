@@ -1138,10 +1138,14 @@ class VClass
       GlobalData.analysisModes.noAnalysis.chronology,
       GlobalData.analysisModes.noAnalysis.volumes
     ].includes(analysisMode))
-    {      
+    {
       containerSetAllowDropMenus(false);
 
       this.showHillsProgressively(containerSetAllowDropMenus);
+    }
+    else
+    {
+      containerSetAllowDropMenus(true);
     }
   };
 
@@ -1158,7 +1162,7 @@ class VClass
       .style("stroke-opacity", .5)
       .end();
 
-    containerSetAllowDropMenus(true);    
+    containerSetAllowDropMenus(true);
   }
 
 

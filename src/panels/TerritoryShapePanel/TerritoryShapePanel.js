@@ -50,9 +50,6 @@ export default class TerritoryShapePanel extends React.Component
 
   render()
   {
-const pressed = this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed;
-console.log("pressed", pressed);
-
     return (
       <>
 
