@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import V from './stackedBars.d3'
 
+import './DoubtingStackedBars.css';
+
 class DoubtingStackedBars extends Component {
 
 
