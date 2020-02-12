@@ -16,14 +16,14 @@ export const levelMaps = {
 const RIGHT_PADDING = 40
 const RIGHT_PADDING_SAME_WIDTH = 100
 
-export const computeHorizontalPositions = (booksData, width, sameWidth) => {
+export const computeHorizontalPositions = (booksData, width, sameWidth, usePadding=true) => {
   
   if (sameWidth) {
-    const bookWidth = (width - RIGHT_PADDING_SAME_WIDTH) / booksData.length;
+    const bookWidth = (width - (usePadding ? RIGHT_PADDING_SAME_WIDTH : 0)) / booksData.length;
 
     const scaleSameWith = scaleLinear()
       .domain([0, booksData.length])
-      .range([0, width - RIGHT_PADDING_SAME_WIDTH]);
+      .range([0, width - (usePadding ? RIGHT_PADDING_SAME_WIDTH : 0)]);
 
     return booksData.reduce((out, item, i) => {
       if (i === 0) {
@@ -48,7 +48,7 @@ export const computeHorizontalPositions = (booksData, width, sameWidth) => {
     const totalChars = sumBy(booksData, "caratteri");
     const scaleChars = scaleLinear()
       .domain([0, totalChars])
-      .range([0, width - RIGHT_PADDING]);
+      .range([0, width - (usePadding ? RIGHT_PADDING: 0)]);
 
     return booksData.reduce((out, item, i) => {
       if (i === 0) {

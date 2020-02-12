@@ -270,7 +270,7 @@ function MarimekkoViz({
   
 
   const booksDataWithPositions = useMemo(() => {
-    return computeHorizontalPositions(booksData, availableWidth);
+    return computeHorizontalPositions(booksData, availableWidth, false, booksData.length >= 4);
   }, [booksData, availableWidth]);
 
   //getting al data for current text for displaying icecycle

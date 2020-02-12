@@ -47,8 +47,8 @@ export default function MarimekkoTopAxis({
     // const widthForLong = booksData.length < 5 ? width / 2 : width
 
     return !short
-      ? computeHorizontalPositions(booksData, width, false)
-      : computeHorizontalPositions(booksData, width / 2, true);
+      ? computeHorizontalPositions(booksData, width, false, booksData.length >= 4)
+      : computeHorizontalPositions(booksData, width / 2, booksData.length >= 4);
   }, [booksData, width, short]);
 
   const getCurrenBookClasses = useCallback(
