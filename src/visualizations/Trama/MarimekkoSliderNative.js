@@ -113,7 +113,7 @@ export function MarimekkoSlider({
       <Slider   reverse vertical min={0} max={height-CURSOR_HEIGHT} style={{height:height-CURSOR_HEIGHT}} 
         step={1} defaultValue={0} value={cursorY} onChange={handleDragNative}/>
       {/* <div style={{position: 'absolute', top: cursorY+CURSOR_HEIGHT/2 - 1.5, left: width /2, width: 100,  height:1, borderTop: 'solid #222 1px'}}></div> */}
-      {currentSequences && currentSequences.length > 0 && <div  onClick={() => {
+      {((currentSequences && currentSequences.length > 0) || (currentSequencesSelected && currentSequencesSelected.length > 0)) > 0 && <div  onClick={() => {
         if (selected) {
           setCurrentSequencesSelected([]);
         } else if (currentSequences && currentSequences.length) {
@@ -123,60 +123,7 @@ export function MarimekkoSlider({
     </div>
   )
 
-  return (
-    <svg className={styles.slider} ref={ref}>
-      {width && (
-        <>
-          <rect
-            className={styles.slide}
-            y={CURSOR_HEIGHT / 2}
-            height={height - CURSOR_HEIGHT}
-            width={SLIDER_WIDTH}
-            x={sliderX}
-          ></rect>
-          <line
-            x1={width / 2}
-            x2={width}
-            y1={cursorY}
-            y2={cursorY}
-            className={styles.cursorLine}
-          ></line>
-          <Draggable
-            // allowAnyClick
-            onDrag={handleDrag}
-            onStart={e => {
-              dragging.current = e.timeStamp;
-            }}
-            onStop={e => {
-              if (e.timeStamp - dragging.current < 200) {
-                if (selected) {
-                  setCurrentSequencesSelected([]);
-                } else if (currentSequences && currentSequences.length) {
-                  setCurrentSequencesSelected(currentSequences);
-                }
-              }
-            }}
-            axis={"y"}
-            position={{ x: 0, y: cursorY }}
-            bounds={{
-              top: CURSOR_HEIGHT / 2,
-              bottom: height - CURSOR_HEIGHT / 2
-            }}
-          >
-            <rect
-              className={`${styles.cursor} ${
-                selected ? styles.cursorSelected : ""
-              }`}
-              width={SLIDER_WIDTH}
-              y={-CURSOR_HEIGHT / 2}
-              x={sliderX}
-              height={CURSOR_HEIGHT}
-            ></rect>
-          </Draggable>
-        </>
-      )}
-    </svg>
-  );
+  
 }
 
 export function MarimekkoSliderArrow({

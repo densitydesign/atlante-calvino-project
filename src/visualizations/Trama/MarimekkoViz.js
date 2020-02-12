@@ -307,7 +307,10 @@ function MarimekkoViz({
   useEffect(() => {
     setCurrentPosition(0);
     setCurrentSequences([]);
-    // setCurrentSequencesSelected([]);
+    if(!currentTextID){
+      setCurrentSequencesSelected([]);
+    }
+    
   }, [currentTextID]);
 
   const currentBook = useMemo(() => {
@@ -461,7 +464,7 @@ function MarimekkoViz({
           </div>
           <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}>
             <div className="position-absolute w-100">
-              {currentSequencesDisplay.map((seq, i) => (
+              {currentTextID && currentSequencesDisplay.map((seq, i) => (
                 <div
                   className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i }}
