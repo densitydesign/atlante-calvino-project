@@ -258,7 +258,7 @@ class VClass
       [ GlobalData.analysisModes.doubt.all,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.base,                                                          tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericCosmic,         { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.namedCosmic,           { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',        showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
@@ -1340,7 +1340,7 @@ class VClass
     .selectAll(".circle_node")
     .filter(d => d.first_elem)
     .style("fill-opacity", opacity)
-    .style("stroke-opacity", opacity);  
+    .style("stroke-opacity", opacity);
 
   showHills_withoutTransition = opacity => d3
     .selectAll(".circle_node")
@@ -1856,7 +1856,7 @@ console.log("case proportion...");
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
-    // make hill bases transparent
+    // make hill bases transparent, but keep stroke visible
     const t3 = t2.transition().duration(600);
     t3
       .selectAll(".hill")
