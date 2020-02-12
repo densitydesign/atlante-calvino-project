@@ -393,12 +393,12 @@ position: absolute;
 @keyframes floatLeft{
  0% {
         left:100px;
-        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-timing-function: ease-out;
 
    }
 
    50% {
-          left:200px;
+          left:300px;
           -webkit-animation-timing-function: ease-in;
 
      }

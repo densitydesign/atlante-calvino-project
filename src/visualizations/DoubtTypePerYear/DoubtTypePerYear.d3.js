@@ -91,7 +91,9 @@ class VClass {
     var yAxis = svg.append('g')
       .classed('y axis', true)
       .attr("transform", `translate(${margin.left},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(y)
+      .ticks(5));
+
 
     svg
       .append("text")
