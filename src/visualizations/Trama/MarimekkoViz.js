@@ -522,6 +522,7 @@ function MarimekkoViz({
               legendMap={
                 dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
               }
+              dettaglio={dettaglio}
               setSelectedLegendEntries={setSelectedLegendEntries}
               selectedLegendEntries={selectedLegendEntries}
             ></MarimekkoLegend>

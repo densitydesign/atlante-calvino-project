@@ -5,7 +5,8 @@ import styles from "./Trama.module.css";
 export default function MarimekkoLegend({
   selectedLegendEntries,
   setSelectedLegendEntries,
-  legendMap
+  legendMap,
+  dettaglio
 }) {
   const byGruppo = groupBy(
     legendMap.filter(x => x.gruppo),
@@ -37,10 +38,10 @@ export default function MarimekkoLegend({
         </div>
       </div> */}
       <div className="">
-        <h4>LEGENDA</h4>
+        <h4>{dettaglio === 'ambito' ? 'TIPOLOGIA DI AMBITO': 'CATEGORIE DI ELENCO'}</h4>
       </div>
       {Object.keys(byGruppo).map(gruppo => (
-        <div key={gruppo}>
+        <div key={gruppo} className="mt-1">
           <div className={styles.legendGroupText}>{gruppo}</div>
           <div>
             {byGruppo[gruppo].map((item, i) => (
