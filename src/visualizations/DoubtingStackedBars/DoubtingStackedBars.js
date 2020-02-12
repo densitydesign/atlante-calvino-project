@@ -3,6 +3,7 @@ import V from './stackedBars.d3'
 
 class DoubtingStackedBars extends Component {
 
+
   componentDidMount() {
     const data_for_update = {
       data: this.props.data,
@@ -27,11 +28,11 @@ class DoubtingStackedBars extends Component {
   }
 
   render() {
-    const style={
+    const styleSvg={
       width: '100%',
       height: '100%'
     }
-    return <svg id={this.props.id} style={style} ref={this._setRef.bind(this)}></svg>
+    return <svg id={this.props.id} style={styleSvg} ref={this._setRef.bind(this)}></svg>;
   }
 }
 
