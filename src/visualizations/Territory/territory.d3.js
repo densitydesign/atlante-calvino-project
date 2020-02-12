@@ -453,7 +453,9 @@ class VClass
 				item.x = d.x;
 				item.y = d.y;
 			}
-		});    
+		});
+
+    place_hierarchies_group.remove();
 
     const place_hierarchies_group_2 = svg_main_group
       .append("g")
