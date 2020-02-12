@@ -23,7 +23,7 @@ import findIndex from "lodash/findIndex";
 import MarimekkoLegend from "./MarimekkoLegend";
 import MarimekkoTopAxis from "./MarimekkoTopAxis";
 import MarimekkoChart from "./MarimekkoChart";
-import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSlider";
+import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSliderNative";
 import {
   levelMaps,
   computeHorizontalPositions,

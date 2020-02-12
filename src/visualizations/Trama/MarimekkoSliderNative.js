@@ -13,9 +13,12 @@ import findLastIndex from "lodash/findLastIndex";
 import findIndex from "lodash/findIndex";
 import { findAtChar } from "./helpers";
 import sortBy from "lodash/sortBy";
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import './Slider.css'
 
 const SLIDER_WIDTH = 30;
-const CURSOR_HEIGHT = 10;
+const CURSOR_HEIGHT = 12;
 
 
 export function MarimekkoSlider({
@@ -29,8 +32,6 @@ export function MarimekkoSlider({
 }) {
   const [ref, { x, y, width, height }] = useDimensions();
 
-   
-  
   const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width]);
 
   const yScale = useMemo(() => {
@@ -64,8 +65,29 @@ export function MarimekkoSlider({
     ]
   );
 
+  const handleDragNative = useCallback(
+    h => {
+      const deltaPosition = yScale.invert(h);
+      const newPosition = deltaPosition;
+      const safePosition = parseInt(
+        Math.max(Math.min(newPosition, +currentBook.caratteri), 0)
+      );
+      if (safePosition !== currentPosition) {
+        setCurrentSequencesSelected([]);
+        setCurrentPosition(safePosition);
+      }
+    },
+    [
+      currentBook.caratteri,
+      currentPosition,
+      setCurrentPosition,
+      setCurrentSequencesSelected,
+      yScale
+    ]
+  );
+
   const cursorY = useMemo(() => {
-    return Math.max(yScale(currentPosition) + CURSOR_HEIGHT / 2, 0);
+    return Math.max(yScale(currentPosition), 0);
   }, [yScale, currentPosition]);
 
   const currentSequences = useMemo(() => {
@@ -87,12 +109,20 @@ export function MarimekkoSlider({
   const dragging = useRef(0);
 
   return (
+    <div className={styles.slider} ref={ref} className="text-center position-relative">
+      <Slider   reverse vertical min={0} max={height-CURSOR_HEIGHT} style={{height:height-CURSOR_HEIGHT}} 
+        step={1} defaultValue={0} value={cursorY} onChange={handleDragNative}/>
+      {/* <div style={{position: 'absolute', top: cursorY+CURSOR_HEIGHT/2 - 1.5, left: width /2, width: 100,  height:1, borderTop: 'solid #222 1px'}}></div> */}
+    </div>
+  )
+
+  return (
     <svg className={styles.slider} ref={ref}>
       {width && (
         <>
           <rect
             className={styles.slide}
-            y={CURSOR_HEIGHT/2}
+            y={CURSOR_HEIGHT / 2}
             height={height - CURSOR_HEIGHT}
             width={SLIDER_WIDTH}
             x={sliderX}
@@ -110,17 +140,15 @@ export function MarimekkoSlider({
             onStart={e => {
               dragging.current = e.timeStamp;
             }}
-            onStop={e =>
-              {
-                if (e.timeStamp - dragging.current < 200) {
-                  if (selected) {
-                    setCurrentSequencesSelected([]);
-                  } else if (currentSequences && currentSequences.length) {
-                    setCurrentSequencesSelected(currentSequences);
-                  }
+            onStop={e => {
+              if (e.timeStamp - dragging.current < 200) {
+                if (selected) {
+                  setCurrentSequencesSelected([]);
+                } else if (currentSequences && currentSequences.length) {
+                  setCurrentSequencesSelected(currentSequences);
                 }
               }
-            }
+            }}
             axis={"y"}
             position={{ x: 0, y: cursorY }}
             bounds={{
@@ -149,10 +177,9 @@ export function MarimekkoSliderArrow({
   prevPosition,
   nextPosition,
   setCurrentPosition,
-  up=false,
-  down=false
+  up = false,
+  down = false
 }) {
-
   const [ref, { x, y, width, height }] = useDimensions();
   const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width]);
 
@@ -162,27 +189,30 @@ export function MarimekkoSliderArrow({
 
   return (
     <div ref={ref} className="position-relative w-100">
-      
-      {width && up && <button
-        disabled={prevPosition === null}
-        style={{left: sliderX, bottom: 0, width: SLIDER_WIDTH}}
-        className="btn btn-outline-dark position-absolute text-center p-1"
-        onClick={() =>
-          prevPosition !== null && setCurrentPosition(prevPosition)
-        }
-      >
-        ↑
-      </button>}
-      {width &&  down && <button
-        disabled={nextPosition === null}
-        className="btn btn-outline-dark position-absolute text-center p-1"
-        style={{left: sliderX, width: SLIDER_WIDTH}}
-        onClick={() =>
-          nextPosition !== null && setCurrentPosition(nextPosition)
-        }
-      >
-        ↓
-      </button>}
+      {width && up && (
+        <button
+          disabled={prevPosition === null}
+          style={{ left: sliderX, bottom: 0, width: SLIDER_WIDTH }}
+          className="btn btn-outline-dark position-absolute text-center p-1"
+          onClick={() =>
+            prevPosition !== null && setCurrentPosition(prevPosition)
+          }
+        >
+          ↑
+        </button>
+      )}
+      {width && down && (
+        <button
+          disabled={nextPosition === null}
+          className="btn btn-outline-dark position-absolute text-center p-1"
+          style={{ left: sliderX, width: SLIDER_WIDTH }}
+          onClick={() =>
+            nextPosition !== null && setCurrentPosition(nextPosition)
+          }
+        >
+          ↓
+        </button>
+      )}
     </div>
   );
 }
