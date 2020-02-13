@@ -4798,6 +4798,15 @@
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
           "children": []
+        },
+        {
+          "text_id": "S076",
+          "node_id": "S078@Brema",
+          "caption": "Brema",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
         }
       ]
     },
@@ -12253,6 +12262,15 @@
       "basal_type": "",
       "local_type": "",
       "children": [
+        {
+          "text_id": "V005",
+          "node_id": "V005@Parigi",
+          "caption": "Parigi",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
+        },
         {
           "text_id": "V005",
           "node_id": "V005@mare",
