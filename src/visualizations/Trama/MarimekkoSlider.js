@@ -29,6 +29,7 @@ export function MarimekkoSlider({
 }) {
   const [ref, { x, y, width, height }] = useDimensions();
 
+   
   
   const sliderX = useMemo(() => width / 2 - SLIDER_WIDTH / 2, [width]);
 
@@ -50,7 +51,7 @@ export function MarimekkoSlider({
         Math.max(Math.min(newPosition, +currentBook.caratteri), 0)
       );
       if (safePosition !== currentPosition) {
-        setCurrentSequencesSelected([]);
+        // setCurrentSequencesSelected([]);
         setCurrentPosition(safePosition);
       }
     },
@@ -110,7 +111,6 @@ export function MarimekkoSlider({
               dragging.current = e.timeStamp;
             }}
             onStop={e =>
-              //
               {
                 if (e.timeStamp - dragging.current < 200) {
                   if (selected) {

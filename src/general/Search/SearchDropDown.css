@@ -1,5 +1,5 @@
 .rbt {
-    height: 94%;
+    height: 94%; 
     width: 100%;
     max-height: calc(var(--navigation-height) - 2px);
     background-color: transparent !important;
@@ -40,14 +40,19 @@
   position: relative;
 }
 
-
-.rbt .dropdown-item *{
-    font-size: 1em;
-    text-transform: none;
-    text-align: left;
+.rbt-token-removeable{
+  padding-right:30px !important;
 }
 
+.rbt .dropdown-item-selectable *{
+    font-size: 1em;
+    text-transform: capitalize;
+    text-align: left;
+    padding-left: 1em;
+    magin-left: 0;
+}
 
-.rbt-menu-container {
-    border-bottom: solid #222 2px;
+.rbt .dropdown-item-selectable.selected *{
+    color: #fff !important;
+    background-color:var(--dark-blue)!important; 
 }

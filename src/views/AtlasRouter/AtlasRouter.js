@@ -85,7 +85,7 @@ export default function AtlasRouter()
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
       <Route exact path="/Process/doubting"><ProcessDoubting /></Route>
       <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
-      <Route exact path="/Process/combining">processi / combinare</Route>
+      <Route exact path="/Process/combining"><Trama title="LA STRUTTURA DEI VOLUMI" /></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation">problema / cancellazione</Route>

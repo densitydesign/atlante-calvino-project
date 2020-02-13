@@ -1,8 +1,10 @@
+
 import sumBy from "lodash/sumBy";
 import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy"
 import groupBy from "lodash/groupBy"
 import find from "lodash/find"
+import invert from "lodash/invert"
 
 export const levelMaps = {
   uno: 1,
@@ -12,17 +14,20 @@ export const levelMaps = {
   cinque: 5
 };
 
+export const levelMapsInverted = invert(levelMaps)
+
+
 const RIGHT_PADDING = 40
 const RIGHT_PADDING_SAME_WIDTH = 100
 
-export const computeHorizontalPositions = (booksData, width, sameWidth) => {
+export const computeHorizontalPositions = (booksData, width, sameWidth, usePadding=true) => {
   
   if (sameWidth) {
-    const bookWidth = (width - RIGHT_PADDING_SAME_WIDTH) / booksData.length;
+    const bookWidth = (width - (usePadding ? RIGHT_PADDING_SAME_WIDTH : 0)) / booksData.length;
 
     const scaleSameWith = scaleLinear()
       .domain([0, booksData.length])
-      .range([0, width - RIGHT_PADDING_SAME_WIDTH]);
+      .range([0, width - (usePadding ? RIGHT_PADDING_SAME_WIDTH : 0)]);
 
     return booksData.reduce((out, item, i) => {
       if (i === 0) {
@@ -47,7 +52,7 @@ export const computeHorizontalPositions = (booksData, width, sameWidth) => {
     const totalChars = sumBy(booksData, "caratteri");
     const scaleChars = scaleLinear()
       .domain([0, totalChars])
-      .range([0, width - RIGHT_PADDING]);
+      .range([0, width - (usePadding ? RIGHT_PADDING: 0)]);
 
     return booksData.reduce((out, item, i) => {
       if (i === 0) {
@@ -73,25 +78,24 @@ export const computeHorizontalPositions = (booksData, width, sameWidth) => {
 
 
 export const findAtChar = (item, char) => {
-  return item.starts_at <= char && item.ends_at >= char
+  return +item.starts_at <= char && +item.ends_at >= char
 }
 
 
-const SEQ_FIELD = "cluster tipologie"
+// const SEQ_FIELD = "cluster tipologie"
+const SEQ_FIELD = 'tipologia'
 
 export const computeSequences = (data, textID) => {
   
 
-  const sortedData = sortBy(data.filter(x => x.textID === textID), x => x['starts_at'])
+  const sortedData = sortBy(data.filter(x => x.textID === textID), x => +x['starts_at'])
   const byLevel = groupBy(sortedData, x => x.livello)
 
   
   const levels = sortBy(Object.keys(byLevel), x => levelMaps[x])
-  // console.log("byLevel", byLevel, levels)
-
+  
   const computedSequences = sortedData.map(x => {
-
-    const char = x['starts_at']
+    const char = +x['starts_at']
     const seqItems = levels.map(level => find(byLevel[level], x => findAtChar(x, char)))
     let sequence = []
     let ids = {}
@@ -101,7 +105,7 @@ export const computeSequences = (data, textID) => {
       
       if(s){
         sequence.push(s[SEQ_FIELD])
-        const key = `${s["ID SEQ"]}`
+        const key = `${s["ID SEQ"]}-${s['livello']}`
         ids[key] = true
         ends_at = Math.min(ends_at, +s['ends_at'])
       }
@@ -110,15 +114,13 @@ export const computeSequences = (data, textID) => {
 
     return {
       sequence,
+      sequenceStr: sequence.join("-"),
       ids,
       ends_at,
       starts_at: +x.starts_at,
 
     }
   })
-
   return computedSequences
-
-
 
 }

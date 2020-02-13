@@ -9,23 +9,26 @@ import { scaleLinear } from "d3";
 import sumBy from "lodash/sumBy";
 import sum from "lodash/sum";
 import uniqBy from "lodash/uniqBy";
-import uniq from "lodash/uniq";
+import styles from "./Trama.module.css";
 import sortBy from "lodash/sortBy";
 import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import find from "lodash/find";
 import get from "lodash/get";
+import max from "lodash/max";
 import maxBy from "lodash/maxBy";
 import keyBy from "lodash/keyBy";
 import findLastIndex from "lodash/findLastIndex";
 import findIndex from "lodash/findIndex";
+import range from "lodash/range"
 
 import MarimekkoLegend from "./MarimekkoLegend";
 import MarimekkoTopAxis from "./MarimekkoTopAxis";
 import MarimekkoChart from "./MarimekkoChart";
-import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSlider";
+import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSliderNative";
 import {
   levelMaps,
+  levelMapsInverted,
   computeHorizontalPositions,
   computeSequences,
   findAtChar
@@ -155,21 +158,29 @@ const preprocessData = (data, options = {}) => {
 
       //
       const sequencesMapForBook = computeSequences(data, item.textID);
-
-      // //mapping seq occurrences
-      // const sequencesMapForBook = keyBy(
-      //   uniq(
-      //     firstLevelRecords
-      //       .filter(x => x.textID === item.textID)
-      //       .map(x => x.seq)
-      //   )
-      // );
-
+      const sequencesMatchesForBook = sequencesMapForBook
+        .reduce((acc, item) => {
+          if (!acc[item.sequenceStr]) {
+            acc[item.sequenceStr] = item.ids || {};
+          } else {
+            acc[item.sequenceStr] = { ...acc[item.sequenceStr], ...item.ids };
+          }
+          return acc;
+        }, {});
+      
+      const filteredData = data.filter(x => x.textID === item.textID)
+      const categoriesMatchesForBook = keyBy(filteredData.map(x => x['cluster tipologie']))
+      
+      const numLevels = max(filteredData.map(x => x.livello).map(x => levelMaps[x]))
+      
       const dataVolume = get(volumiByID, item.textID);
       return {
         ...out,
         titolo: dataVolume.titolo,
-        sequencesMapForBook
+        sequencesMapForBook,
+        sequencesMatchesForBook,
+        categoriesMatchesForBook,
+        numLevels
       };
     });
 
@@ -197,11 +208,6 @@ function MarimekkoViz({
   const topAxisContainerRef = useRef();
 
   const [selectedLegendEntries, setSelectedLegendEntries] = useState({});
-
-  //resetting legend entries when dettaglio changes
-  useEffect(() => {
-    setSelectedLegendEntries({});
-  }, [dettaglio]);
 
   const [dimensions, setDimensions] = useState({
     vizWidth: 0,
@@ -239,7 +245,14 @@ function MarimekkoViz({
     return () => {
       window.removeEventListener("resize", measure, true);
     };
-  }, []);
+  }, [measure]);
+
+
+  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [
+    dimensions.vizWidth
+  ]);
+  const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
+  
 
   //resetting aggregazione
   useEffect(() => {
@@ -257,9 +270,18 @@ function MarimekkoViz({
     });
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
+  const availableWidth = useMemo(() => {
+    if(booksData.length === 1){
+      return columnWidth
+    }
+    return booksData.length > 4 ? dimensions.vizWidth: columnWidth * 4
+
+  }, [booksData.length, columnWidth, dimensions.vizWidth])
+  
+
   const booksDataWithPositions = useMemo(() => {
-    return computeHorizontalPositions(booksData, dimensions.vizWidth);
-  }, [booksData, dimensions.vizWidth]);
+    return computeHorizontalPositions(booksData, availableWidth, false, booksData.length >= 4);
+  }, [booksData, availableWidth]);
 
   //getting al data for current text for displaying icecycle
   const iceCycleData = useMemo(() => {
@@ -280,10 +302,7 @@ function MarimekkoViz({
       });
   }, [currentTextID, data]);
 
-  const icycleWidth = useMemo(() => (dimensions.vizWidth / 10) * 8, [
-    dimensions.vizWidth
-  ]);
-  const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
+  
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
   const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);
@@ -292,13 +311,16 @@ function MarimekkoViz({
     if (!currentSequencesSelected) {
       return null;
     }
-    return uniq(currentSequencesSelected.map(x => x.seq));
+    return currentSequencesSelected.map(x => x['tipologia']).join("-")
   }, [currentSequencesSelected]);
 
   useEffect(() => {
     setCurrentPosition(0);
     setCurrentSequences([]);
-    setCurrentSequencesSelected([]);
+    if(!currentTextID){
+      setCurrentSequencesSelected([]);
+    }
+    
   }, [currentTextID]);
 
   const currentBook = useMemo(() => {
@@ -307,23 +329,19 @@ function MarimekkoViz({
 
   //current sequence stuff
   const sequences = useMemo(() => {
-    if(!currentBook){
-      return []
+    if (!currentBook) {
+      return [];
     }
     return sortBy(currentBook.sequencesMapForBook, x => x.starts_at);
-  }, [currentBook])
+  }, [currentBook]);
 
   const currentIndex = useMemo(() => {
-    if(!currentBook){
-      return -1
+    if (!currentBook) {
+      return -1;
     }
-    return findLastIndex(sequences, item =>
-      findAtChar(item, currentPosition)
-    );
+    return findLastIndex(sequences, item => findAtChar(item, currentPosition));
+  }, [currentBook, currentPosition, sequences]);
 
-  }, [currentBook, currentPosition, sequences])
-
-  
   const sequencesIndexing = useMemo(() => {
     if (!currentBook) {
       return {
@@ -332,7 +350,7 @@ function MarimekkoViz({
         nextPosition: null
       };
     }
-     
+
     const prevIndex = findLastIndex(
       sequences,
       x => x.starts_at < currentPosition
@@ -348,6 +366,32 @@ function MarimekkoViz({
       nextPosition
     };
   }, [currentBook, currentIndex, currentPosition, sequences]);
+
+
+  //resetting legend entries when dettaglio changes
+  useEffect(() => {
+    setSelectedLegendEntries({});
+  }, [dettaglio]);
+
+  useEffect(() => {
+    if(currentSequencesSelected.length){
+      setSelectedLegendEntries({});
+    }
+  }, [currentSequencesSelected]);
+
+  //resetting current sequences selcted when setting legend entries
+  useEffect(() => {
+    if(Object.keys(selectedLegendEntries).length){
+      setCurrentSequencesSelected([]);
+    }
+  }, [selectedLegendEntries]);
+
+  const currentSequencesDisplay = useMemo(() => {
+    if(currentSequencesSelected && currentSequencesSelected.length){
+      return currentSequencesSelected
+    }
+    return currentSequences
+  }, [currentSequences, currentSequencesSelected])
 
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
@@ -392,10 +436,11 @@ function MarimekkoViz({
         <div className="col-sm-9 d-flex flex-column">
           <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
-              {dimensions.vizWidth && (
+              {availableWidth && (
                 <MarimekkoTopAxis
                   height={dimensions.topAxisHeight}
-                  width={dimensions.vizWidth}
+                  width={availableWidth}
+                  fullWidth={dimensions.vizWidth}
                   booksData={booksData}
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
@@ -408,17 +453,18 @@ function MarimekkoViz({
 
           <div className="row no-gutters w-100" style={{ flex: 8 }}>
             <div className="col-sm-12" ref={vizContainerRef}>
-              {dimensions.vizWidth > 0 && dimensions.vizHeight > 0 && (
+              {availableWidth > 0 && dimensions.vizHeight > 0 && (
                 <MarimekkoChart
                   booksDataWithPositions={booksDataWithPositions}
                   chartBooks={chartBooks}
                   height={dimensions.vizHeight}
-                  width={dimensions.vizWidth}
+                  width={availableWidth}
                   selectedLegendEntries={selectedLegendEntries}
                   setCurrentTextID={setCurrentTextID}
                   currentTextID={currentTextID}
                   currentBook={currentBook}
                   iceCycleData={iceCycleData}
+                  icycleWidth={icycleWidth}
                   currentPosition={currentPosition}
                   currentSequencesSelected={currentSequencesSelected}
                 ></MarimekkoChart>
@@ -427,14 +473,28 @@ function MarimekkoViz({
           </div>
           <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}>
             <div className="position-absolute w-100">
-              {currentSequences.map((seq, i) => (
+            {currentTextID && range(currentBook.numLevels).map((r, i) => (
                 <div
                   className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i }}
                   key={i}
                 >
                   <div
-                    className="text-center w-100"
+                    className={`w-100 text-center ${styles.currentSequenceLevel}`}
+                  >
+                    LIVELLO {levelMapsInverted[r+1]}
+                  </div>
+                  
+                </div>
+              ))}
+              {currentTextID && currentSequencesDisplay.map((seq, i) => (
+                <div
+                  className="position-absolute text-center px-2"
+                  style={{ width: columnWidth, left: columnWidth * i, top: 14 }}
+                  key={i}
+                >
+                  <div
+                    className={`text-center w-100 ${styles.currentSequenceLabel}`}
                     style={{
                       borderBottom: `solid 3px ${
                         coloriClusterTipologie[seq["cluster tipologie"]]
@@ -451,6 +511,9 @@ function MarimekkoViz({
                   </div>
                 </div>
               ))}
+              {!currentTextID && <div className={styles.marimekkoXaxisText}>
+                Lunghezza in caratteri dei testi, disposti in ordine cronologico.
+              </div>}
             </div>
           </div>
         </div>
@@ -477,6 +540,8 @@ function MarimekkoViz({
               legendMap={
                 dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
               }
+              dettaglio={dettaglio}
+              currentBook={currentBook}
               setSelectedLegendEntries={setSelectedLegendEntries}
               selectedLegendEntries={selectedLegendEntries}
             ></MarimekkoLegend>
