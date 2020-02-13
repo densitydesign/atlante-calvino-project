@@ -165,12 +165,15 @@ const preprocessData = (data, options = {}) => {
           return acc;
         }, {});
 
+      const categoriesMatchesForBook = keyBy(data.filter(x => x.textID === item.textID).map(x => x['cluster tipologie']))
+      
       const dataVolume = get(volumiByID, item.textID);
       return {
         ...out,
         titolo: dataVolume.titolo,
         sequencesMapForBook,
-        sequencesMatchesForBook
+        sequencesMatchesForBook,
+        categoriesMatchesForBook,
       };
     });
 
@@ -523,6 +526,7 @@ function MarimekkoViz({
                 dettaglio === "ambito" ? mappaCategorie : mappaClusterTipologie
               }
               dettaglio={dettaglio}
+              currentBook={currentBook}
               setSelectedLegendEntries={setSelectedLegendEntries}
               selectedLegendEntries={selectedLegendEntries}
             ></MarimekkoLegend>
