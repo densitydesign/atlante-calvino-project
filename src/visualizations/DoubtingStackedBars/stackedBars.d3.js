@@ -14,7 +14,7 @@ let width,
         {
           "id": "definitivo",
           "color": "#F3F3F3",
-          "label": "Testo definitivo",
+          "label": "Definitivo",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -28,7 +28,7 @@ let width,
         {
           "id": "soggetto",
           "color": "#FFD337",
-          "label": "Testo soggetto",
+          "label": "Soggetto",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -42,7 +42,7 @@ let width,
         {
           "id": "misto",
           "color": "#33CDAF",
-          "label": "Testo misto",
+          "label": "Misto",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -56,12 +56,12 @@ let width,
         {
           "id": "dubitativo",
           "color": "#CFCFFF",
-          "label": "Testo dubitativo",
+          "label": "Dubitativo",
           "percentage": undefined,
           "baseCategory": true
         },
     ],
-    
+
     svg,
     g,
     legend,
@@ -91,12 +91,29 @@ V.initialize = (el, data_for_update) => {
 
     svg = d3.select(el);
     g = svg.append("g");
-    legend = svg.append("g").classed("legend", true).attr("transform", `translate(${width},0)`);
+
+
+    legend = svg.append("text")
+    .attr("y", 10)
+    .attr("x", 0)
+    .text("TIPO DI TESTO")
+    .attr("transform", `translate(${width},20)`);
+
+    legend = svg.append("g")
+    .classed("legend", true)
+    .attr("transform", `translate(${width},60)`)
+
     legendItem = legend.selectAll(".legend-item");
+
     serie = g.selectAll(".serie");
-    treemap_misto = svg.append("g").classed("treemap-misto", true);
+
+    treemap_misto = svg.append("g")
+    .classed("treemap-misto", true);
+
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
+
     treemap_soggetto = svg.append("g").classed("treemap-soggetto", true);
+
     leaf_soggetto = treemap_soggetto.selectAll(".leaf-soggetto");
 
     x.range([margin.left, width - margin.right]);
@@ -139,15 +156,15 @@ V.update = (data, stackMode) => {
             .html(d=> {
                 let this_percentage = ""
                 if (showPercentage && d.percentage) this_percentage = " ("+d.percentage.toFixed(2)+"%)";
-                let html = `<rect width="2rem" height="1rem" fill="${d.color}"></rect><text x="2.2rem" y="12">${d.label + '' + this_percentage}</text>`;
+                let html = `<rect width="2rem" height="1rem" fill="${d.color}"></rect><text x="3rem" y="12">${d.label + '' + this_percentage}</text>`;
                 return html;
-            });  
-            
+            });
+
         legendItem.transition()
             .duration(0)
             .attr("transform", (d,i)=>`translate(0,${i*20})`);
     }
-    
+
     const removeSelectionAll = () => {
         const allBars = d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
@@ -156,7 +173,7 @@ V.update = (data, stackMode) => {
                 .attr("transform", `translate(0,0)`)
                 .attr("width", x.bandwidth())
                 .style("opacity", .8);
-        
+
         const allTicks = xAxis.selectAll(".tick")
         allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
 
@@ -177,9 +194,9 @@ V.update = (data, stackMode) => {
 
         updateLegend();
     }
-    
+
     removeSelectionAll();  // also calls updateLegend() inside
-    
+
 
     serie = serie.data(series)
     serie.exit().remove()
@@ -187,7 +204,7 @@ V.update = (data, stackMode) => {
         .attr("class", (d,i)=>"serie serie-" + stackModeProperties[stackMode][i].replace("_perc","") )
         .merge(serie)
         .attr("fill", d => color(d.key.replace("_perc","")))
-    
+
     let serie_rect = serie.selectAll("rect")
     serie_rect = serie_rect.data(d=>d);
     serie_rect.exit().remove();
@@ -211,7 +228,7 @@ V.update = (data, stackMode) => {
                 removeSelectionAll();
             }
         });
-    
+
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.style("opacity", 1);
@@ -240,7 +257,7 @@ V.update = (data, stackMode) => {
             .style("opacity", 1)
             .attr("transform", `translate(${ -width_treemap/2 + x.bandwidth()/2 },0)`)
             .attr("width", x.bandwidth()*width_factor);
-        
+
         const tick = xAxis.selectAll(".tick").filter((tick)=>tick===d.data.id)
         tick.transition()
             .duration(500)
@@ -255,7 +272,7 @@ V.update = (data, stackMode) => {
             .style("opacity", .7)
             .attr("width", x.bandwidth())
             .attr("transform", `translate(${ -width_treemap/2 }, 0)`);
-        
+
         const ticks_on_left = xAxis.selectAll(".tick").filter((tick)=>{
             const this_index = x.domain().indexOf(tick);
             return this_index < bar_index;
@@ -272,7 +289,7 @@ V.update = (data, stackMode) => {
             .duration(500)
             .attr("width", x.bandwidth())
             .attr("transform", `translate(${ width_treemap/2 },0)`);
-        
+
         const ticks_on_right = xAxis.selectAll(".tick").filter((tick)=>{
             const this_index = x.domain().indexOf(tick);
             return this_index > bar_index;
@@ -280,7 +297,7 @@ V.update = (data, stackMode) => {
         ticks_on_right.transition()
             .duration(500)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 + width_treemap/2 }, 0)`);
-        
+
         // draw treemap here
         // ref: https://observablehq.com/@d3/treemap
 
@@ -290,7 +307,7 @@ V.update = (data, stackMode) => {
         let height_misto = 0;
 
         if (data_misto) {
-            const rect_misto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-misto")} );            
+            const rect_misto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-misto")} );
             height_misto = rect_misto.attr("height");
             const x_misto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
             const y_misto = rect_misto.attr("y");
@@ -326,11 +343,11 @@ V.update = (data, stackMode) => {
             .merge(leaf_misto)
             .style("opacity",0)
             .attr("transform", d => `translate(${d.x0},${d.y0})`);
-                
+
         let leaf_misto_rect = leaf_misto.selectAll("rect").data(d=>[d])
         leaf_misto_rect.exit().remove()
         leaf_misto_rect = leaf_misto_rect.enter().append("rect")
-            .merge(leaf_misto_rect)    
+            .merge(leaf_misto_rect)
             .attr("darkness", d=>d.data.name-1)
             .attr("fill",d=> d3.color(color("misto")).darker( 0.5*(+d.data.name-1) ) )
             .attr("width", d => d.x1 - d.x0)
@@ -348,7 +365,7 @@ V.update = (data, stackMode) => {
         let height_soggetto = 0;
 
         if (data_soggetto) {
-            const rect_soggetto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-soggetto")} );            
+            const rect_soggetto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-soggetto")} );
             height_soggetto = rect_soggetto.attr("height");
             const x_soggetto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
             const y_soggetto = rect_soggetto.attr("y");
@@ -385,11 +402,11 @@ V.update = (data, stackMode) => {
             .merge(leaf_soggetto)
             .style("opacity",0)
             .attr("transform", d => `translate(${d.x0},${d.y0})`);
-        
+
         let leaf_soggetto_rect = leaf_soggetto.selectAll("rect").data(d=>[d])
         leaf_soggetto_rect.exit().remove()
         leaf_soggetto_rect = leaf_soggetto_rect.enter().append("rect")
-            .merge(leaf_soggetto_rect)    
+            .merge(leaf_soggetto_rect)
             .attr("darkness", d=>d.data.name-1)
             .attr("fill",d=> d3.color(color("soggetto")).darker( 0.5*(+d.data.name-1) ) )
             .attr("width", d => d.x1 - d.x0)
