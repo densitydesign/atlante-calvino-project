@@ -43,7 +43,7 @@ export default function MarimekkoLegend({
               >
                 <div
                   className={styles.legendEntryColor}
-                  style={{ backgroundColor: item.colore, cursor:'pointer' }}
+                  style={{ backgroundColor: item.colore, cursor: notFound ? undefined: 'pointer' }}
                   onClick={() => {
                     if(notFound){
                       return
