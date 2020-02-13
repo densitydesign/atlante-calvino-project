@@ -15,10 +15,12 @@ import groupBy from "lodash/groupBy";
 import pick from "lodash/pick";
 import find from "lodash/find";
 import get from "lodash/get";
+import max from "lodash/max";
 import maxBy from "lodash/maxBy";
 import keyBy from "lodash/keyBy";
 import findLastIndex from "lodash/findLastIndex";
 import findIndex from "lodash/findIndex";
+import range from "lodash/range"
 
 import MarimekkoLegend from "./MarimekkoLegend";
 import MarimekkoTopAxis from "./MarimekkoTopAxis";
@@ -26,6 +28,7 @@ import MarimekkoChart from "./MarimekkoChart";
 import { MarimekkoSlider, MarimekkoSliderArrow } from "./MarimekkoSliderNative";
 import {
   levelMaps,
+  levelMapsInverted,
   computeHorizontalPositions,
   computeSequences,
   findAtChar
@@ -164,8 +167,11 @@ const preprocessData = (data, options = {}) => {
           }
           return acc;
         }, {});
-
-      const categoriesMatchesForBook = keyBy(data.filter(x => x.textID === item.textID).map(x => x['cluster tipologie']))
+      
+      const filteredData = data.filter(x => x.textID === item.textID)
+      const categoriesMatchesForBook = keyBy(filteredData.map(x => x['cluster tipologie']))
+      
+      const numLevels = max(filteredData.map(x => x.livello).map(x => levelMaps[x]))
       
       const dataVolume = get(volumiByID, item.textID);
       return {
@@ -174,6 +180,7 @@ const preprocessData = (data, options = {}) => {
         sequencesMapForBook,
         sequencesMatchesForBook,
         categoriesMatchesForBook,
+        numLevels
       };
     });
 
@@ -386,7 +393,6 @@ function MarimekkoViz({
     return currentSequences
   }, [currentSequences, currentSequencesSelected])
 
-
   return (
     <div className="container-fluid h-100 bg-light d-flex flex-column">
       <div className="row no-gutters h-100">
@@ -467,7 +473,7 @@ function MarimekkoViz({
           </div>
           <div className="row no-gutters" style={{ flex: 1, minHeight: 80 }}>
             <div className="position-absolute w-100">
-              {currentTextID && currentSequencesDisplay.map((seq, i) => (
+            {currentTextID && range(currentBook.numLevels).map((r, i) => (
                 <div
                   className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i }}
@@ -476,8 +482,17 @@ function MarimekkoViz({
                   <div
                     className={`w-100 text-center ${styles.currentSequenceLevel}`}
                   >
-                    LIVELLO {seq["livello"]}
+                    LIVELLO {levelMapsInverted[r+1]}
                   </div>
+                  
+                </div>
+              ))}
+              {currentTextID && currentSequencesDisplay.map((seq, i) => (
+                <div
+                  className="position-absolute text-center px-2"
+                  style={{ width: columnWidth, left: columnWidth * i, top: 14 }}
+                  key={i}
+                >
                   <div
                     className={`text-center w-100 ${styles.currentSequenceLabel}`}
                     style={{

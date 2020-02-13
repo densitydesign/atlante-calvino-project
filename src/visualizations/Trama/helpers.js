@@ -4,6 +4,7 @@ import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy"
 import groupBy from "lodash/groupBy"
 import find from "lodash/find"
+import invert from "lodash/invert"
 
 export const levelMaps = {
   uno: 1,
@@ -12,6 +13,9 @@ export const levelMaps = {
   quattro: 4,
   cinque: 5
 };
+
+export const levelMapsInverted = invert(levelMaps)
+
 
 const RIGHT_PADDING = 40
 const RIGHT_PADDING_SAME_WIDTH = 100

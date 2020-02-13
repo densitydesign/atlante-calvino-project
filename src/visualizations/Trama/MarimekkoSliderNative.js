@@ -13,13 +13,12 @@ import findLastIndex from "lodash/findLastIndex";
 import findIndex from "lodash/findIndex";
 import { findAtChar } from "./helpers";
 import sortBy from "lodash/sortBy";
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import './Slider.css'
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import "./Slider.css";
 
 const SLIDER_WIDTH = 30;
 const CURSOR_HEIGHT = 12;
-
 
 export function MarimekkoSlider({
   currentPosition,
@@ -109,21 +108,50 @@ export function MarimekkoSlider({
   const dragging = useRef(0);
 
   return (
-    <div className={styles.slider} ref={ref} className="text-center position-relative">
-      <Slider   reverse vertical min={0} max={height-CURSOR_HEIGHT} style={{height:height-CURSOR_HEIGHT}} 
-        step={1} defaultValue={0} value={cursorY} onChange={handleDragNative}/>
-      {/* <div style={{position: 'absolute', top: cursorY+CURSOR_HEIGHT/2 - 1.5, left: width /2, width: 100,  height:1, borderTop: 'solid #222 1px'}}></div> */}
-      {((currentSequences && currentSequences.length > 0) || (currentSequencesSelected && currentSequencesSelected.length > 0)) > 0 && <div  onClick={() => {
-        if (selected) {
-          setCurrentSequencesSelected([]);
-        } else if (currentSequences && currentSequences.length) {
-          setCurrentSequencesSelected(currentSequences);
-        }
-      }} style={{position: 'absolute', top: cursorY, left: -30, cursor:'pointer', width: CURSOR_HEIGHT,  height:CURSOR_HEIGHT, border: 'solid #222 1px', borderRadius: 20, background: selected ? '#222' : undefined}}></div>}
+    <div
+      className={styles.slider}
+      ref={ref}
+      className="text-center position-relative"
+    >
+      {height > 0 && <>
+      <Slider
+        reverse
+        vertical
+        min={0}
+        max={Math.floor(height - CURSOR_HEIGHT)}
+        style={{ height: height - CURSOR_HEIGHT }}
+        step={1}
+        defaultValue={0}
+        value={cursorY}
+        onChange={handleDragNative}
+      />
+      {((currentSequences && currentSequences.length > 0) ||
+        (currentSequencesSelected && currentSequencesSelected.length > 0)) >
+        0 && (
+        <div
+          onClick={() => {
+            if (selected) {
+              setCurrentSequencesSelected([]);
+            } else if (currentSequences && currentSequences.length) {
+              setCurrentSequencesSelected(currentSequences);
+            }
+          }}
+          style={{
+            position: "absolute",
+            top: cursorY,
+            left: -30,
+            cursor: "pointer",
+            width: CURSOR_HEIGHT,
+            height: CURSOR_HEIGHT,
+            border: "solid #222 1px",
+            borderRadius: 20,
+            background: selected ? "#222" : undefined
+          }}
+        ></div>
+      )}
+      </>}
     </div>
-  )
-
-  
+  );
 }
 
 export function MarimekkoSliderArrow({
