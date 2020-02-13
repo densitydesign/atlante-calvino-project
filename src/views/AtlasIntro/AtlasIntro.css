@@ -2,7 +2,6 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
-  border-left: 1px solid black;
   height: calc(100vh - var(--navigation-height));
 }
 
@@ -11,7 +10,6 @@
   position: absolute;
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 4fr;
-  border-left: 1px solid black;
   width: 100%;
   height: calc(2 * (100vh - var(--navigation-height)));
 }
@@ -20,23 +18,21 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
-  border-right: var(--app-border-bold);
 }
 
 .atlas-intro-sidebar2 {
   display: grid;
   grid-template-rows: 1fr 0.375fr 0.625fr;
   grid-template-columns: 1fr;
-  border-bottom: 2px solid black;
   height: calc(2 * (100vh - var(--navigation-height)));
   position: relative;
+  background-color:yellow;
 }
 
 .atlas-intro-sidebar3 {
   display: grid;
   grid-template-rows: 0.375fr 0.625fr 0.625fr;
   grid-template-columns: 1fr;
-  border-bottom: 1px solid blue;
   height: calc(1.5 * (100vh - var(--navigation-height)));
   position: relative;
 }
@@ -65,21 +61,26 @@
 
 
 .atlas-intro-sidebar-monoblock {
-  background: white;
-  border-right:var(---app-border-bold);
+  background: #FFA500;
   position:relative;
   width: 100%;
-  display: grid;
-  padding:100px;
+  display:grid;
+  padding: 100px;
+}
+
+h2 {
+margin-bottom:0px !important;
 }
 
 .atlas-intro-sidebar-monoblock-2 {
-  background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%);
-  border-right:var(---app-border-bold);
+  background: #FFA500;
+/* background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255,193,7,1) 100%); */
   position:relative;
   width: 100%;
-  padding:100px;
+  padding-left:100px;
+  padding-top:100px;
+  padding-right:50px;
+  padding-bottom:50px;
 }
 
 .atlas-intro-cell-grid {
@@ -94,7 +95,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0)
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  border-left:var(--app-border-bold);
+  border-left : 2px solid black;
 }
 
 .atlas-intro-cell2 {
@@ -106,21 +107,106 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(255,255,255,0)
   display:flex;
 }
 
+image .atlas-intro-cell2 {
+  height:20%;
+}
+
+h5{
+  opacity:1;
+  color:white  !important;
+}
+
 .atlas-intro-cell3 {
-  border-right : 1px solid black;
+  border-right:2px solid black;
   justify-content: center;
   text-align : center;
   align-items: center;
   display:flex;
 }
 
-  @keyframes pop { /* flame pulses */
-    0%   { background-color:white;}
+h2{
+  margin-bottom:2em;
+}
+h3{
+  color:white !important;
+}
+
+
+
+
+ /* @keyframes pop { /* flame pulses */
+    /* 0%   { background-color:var(--bg);}
     50%  { background-color: var(--dark-blue);}
-    100% { background-color:white;}
-  }
-  .pop {
+    100% { background-color:var(--bg);}
+  }  */
+  /* .pop {
       background-color: var(--dark-blue);
       opacity:1;
       animation: pop 3s infinite;
+  } */
+
+/*
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
   }
+  50% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:1;
+  }
+} */

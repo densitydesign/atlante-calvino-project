@@ -1,0 +1,41 @@
+
+.territory-timeline {
+/*  
+  float : left;
+  position : absolute;
+  width : 100%;
+*/
+/*
+  display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+*/
+  display: inline-block;
+    position: absolute;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+    display : flex;
+}
+
+.territory-timeline > svg {
+/*
+  float : left;
+  position : absolute;
+  width : 100%;
+*/
+/*
+   display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+*/
+/*
+   display: inline-block;
+    top: 0;
+    left: 0;
+*
+}

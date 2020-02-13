@@ -8,6 +8,7 @@ import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 class Search extends Component {
   render() {
     let isSelection = false;
+
     return <div className="search-component" style={this.props.style}>
       { !isSelection && <span style={
           {fontSize: '1rem',
@@ -19,7 +20,9 @@ class Search extends Component {
         onChange={(selected) => {
           this.props.changeOptions(selected)
         }}
+        onInputChange={this.props.onInputChange}
         options={this.props.data.options}
+        filterBy={this.props.filterBy}
         id="main-search"
       />
 

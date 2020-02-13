@@ -1,0 +1,33 @@
+
+.radio-button-with-close-up {
+  background-color : var(--bg);
+  outline: 1px solid black;
+  padding:0.6em 0.6em 0.6em 0.6em;
+  width:100%;
+  display: flex;
+  text-align: center;
+  cursor : pointer;
+    transition:1s ease;
+}
+
+.radio-button-with-close-down {
+  background-color : black;
+  outline: 1px solid black;
+  color:var(--bg);
+  padding:0.6em 0.6em 0.6em 0.6em;
+  width:100%;
+  display: flex;
+  text-align: center;
+  cursor : pointer;
+  transition:1s ease;
+}
+
+.radio-button-with-close-down:hover {
+color:var(--bg);
+background-color: var(--dark-blue);
+}
+
+
+.close-button-wrapper {
+  padding-left : 20px;
+}

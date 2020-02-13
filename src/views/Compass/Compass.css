@@ -15,9 +15,10 @@
 .compass-main-description {
   padding:7em 8em 4em 4em;
   position: absolute;
-  background-color: white;
+  background-color: var(--bg);
   height: calc(100% - var(--navigation-height));
   width: 40%;
+  overflow-x: hidden;
 }
 
 .panel1-open {

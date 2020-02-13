@@ -16,6 +16,7 @@
     padding: 7em 4em 4em 8em;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    overflow-y: hidden;
 }
 
 .itineraries-block {
@@ -26,10 +27,16 @@
   overflow: none;
 }
 
-h1#space{
-  margin-top: 3em;
+#doubt {
 }
 
-h1#shape {
-  margin-top: 3em;
+
+#space{
+margin-top:6em;
+margin-bottom:6em;
+}
+
+#shape{
+margin-top:6em;
+margin-bottom:20em;
 }

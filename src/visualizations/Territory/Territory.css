@@ -1,0 +1,23 @@
+
+.node .label {
+  opacity: 1e-16; /* comment his row to keep labels always visible */
+  transition: opacity .5s;
+  pointer-events: none;
+  font-family: "HK Grotesk";
+  letter-spacing: 0.02rem;
+}
+
+.node:hover .label, .node .label.visible {
+  opacity: 1;
+}
+
+.label .white-shadow {
+  stroke: var(--bg);
+  stroke-width: 0.4rem;
+  fill: var(--bg);
+  stroke-linejoin: round;
+}
+
+.node circle {
+  shape-rendering: geometricprecision;
+}

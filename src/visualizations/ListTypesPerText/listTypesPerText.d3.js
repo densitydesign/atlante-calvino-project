@@ -1,0 +1,175 @@
+import * as d3 from 'd3';
+
+import GlobalData from '../../utilities/GlobalData.js';
+import { curveSankey } from '../../utilities/graphic_utilities.js';
+
+import './ListTypesPerText.css';
+
+class VClass {
+  initialize = (el, input_data) => {
+
+    const typeLabels = ['Frasi', 'Misto', 'Parole', 'Sintagmi'];
+    const values = ['n_lists_f', 'n_lists_m', 'n_lists_p', 'n_lists_s'];
+
+
+    var margin = ({
+      top: 50,
+      right: 30,
+      bottom: 30,
+      left: 40
+    });
+
+    var width = document.body.clientWidth - margin.left - margin.right;
+    var height = 300 - margin.top - margin.bottom;
+
+
+    var x, y;
+
+    var svg = d3.select(el)
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom);
+
+    let data = input_data
+
+    let lists = [];
+
+    let parseDate = d3.timeParse("%Y-%m-%d");
+    let formatDate = d3.timeFormat("%Y");
+
+    input_data.forEach(function(d) {
+
+      values.forEach(function(value, index) {
+        if (d[value] * 1 > 0) {
+          lists.push({
+            'date': parseDate(d.date),
+          })
+        }
+      })
+
+    })
+
+    data = data.sort(function(a, b) {
+      return a.date - b.date;
+    })
+
+
+    var series = d3.stack().keys(data.columns.slice(1))(data)
+
+    let color = d3.scaleOrdinal()
+      .range([
+        GlobalData.visualizationColors.territory.frasi,
+        GlobalData.visualizationColors.territory.misto,
+        GlobalData.visualizationColors.territory.parole,
+        GlobalData.visualizationColors.territory.sintagmi
+      ])
+      .domain(typeLabels);
+
+    x = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.date))
+      .range([margin.left, width - margin.right])
+
+    y = d3.scaleLinear()
+      .domain([0, d3.max(series, d => d3.max(d, d => d[1]))]).nice()
+      .range([height - margin.bottom, margin.top])
+
+    var area = d3.area()
+      .x(d => x(d.data.date))
+      .y0(d => y(d[0]))
+      .y1(d => y(d[1]))
+      .curve(curveSankey);
+
+
+    var xAxis = svg
+      .append('g')
+      .classed('x axis', true)
+      .attr("transform", `translate(0,${height - margin.bottom})`)
+      .call(d3
+        .axisBottom(x)
+        .ticks(width / 100)
+        .tickFormat(d3.format("0000"))
+        .tickSizeOuter(1));
+
+
+    var yAxis = svg.append('g')
+      .classed('y axis', true)
+      .attr("transform", `translate(${margin.left},0)`)
+      .call(d3.axisLeft(y));
+
+    svg
+      .append("text")
+      .attr("y", 10)
+      .attr("x", 0)
+      .text("% tipo di");
+
+    svg
+      .append("text")
+      .attr("y", 25)
+      .attr("x", 0)
+      .text("elenchi");
+
+    svg
+      .append("text")
+      .attr("y", height + 20)
+      .attr("x", 0)
+      .text("anni di pubblicazione");
+
+    let stream = svg.append("g");
+
+      stream.selectAll("path")
+      .data(series)
+      .join("path")
+      .attr("fill", ({
+        key
+      }) => color(key))
+      .attr("d", function(d) {
+        return area(d);
+      })
+      .style("stroke", "rgba(0,0,0,0.7)")
+      .style("stroke-width", 0.5);
+
+
+      // stream.on("mousemove", tooltip)
+      // stream.on("touchmove", tooltip);
+
+    d3.select('.x.axis .domain').style('stroke-dasharray', function() {
+      var strokeDashArray = '';
+      for (var c = 1; c < ((x(1945) - margin.left) - (x(1943) - margin.left)); c += 3) {
+        strokeDashArray += '1 2 '
+      }
+      strokeDashArray += ((x(1960) - margin.left) - (x(1945) - margin.left));
+
+      for (var c = 1; c < ((x(1962) - margin.left) - (x(1960) - margin.left)); c += 3) {
+        strokeDashArray += '1 2 '
+      }
+      strokeDashArray += ((x(1969) - margin.left) - (x(1962) - margin.left));
+
+      for (var c = 1; c < ((x(1971) - margin.left) - (x(1969) - margin.left)); c += 3) {
+        strokeDashArray += '1 2 '
+      }
+      strokeDashArray += ((x(1986) - margin.left) - (x(1971) - margin.left));
+      return strokeDashArray
+    })
+
+    // let tooltipLine = stream.append("line")
+    // .attr("x0", 0)
+    // .attr("y0", 0)
+    // .attr("x1", 0)
+    // .attr("y1", height)
+    // .style("fill", "none")
+    // .style("stroke-width", 2)
+    // .style("stroke", "rgba(0,0,0,.3)");
+    //
+    // function tooltip(){
+    //   console.log(y.invert(d3.mouse(this)[1]));
+    //   tooltipLine.attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
+    // }
+
+
+  };
+
+  destroy = () => {};
+}
+
+const V = new VClass();
+
+export default V;

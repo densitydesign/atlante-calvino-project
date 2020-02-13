@@ -5,4 +5,11 @@
   align-items: center;
   justify-content: center;
   cursor: not-allowed;
+  transition:0.3 ease;
+}
+
+.back-from-main-menu:hover{
+  background-color: var(--dark-blue);
+  color:var(--bg);
+  
 }

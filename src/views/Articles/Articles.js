@@ -3,10 +3,6 @@ import React from 'react';
 
 import * as d3 from 'd3';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-// <FontAwesomeIcon icon={faExternalLinkAlt} />
-
 import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import Footer from '../../headers/Footer/Footer';
 
@@ -38,20 +34,21 @@ export default class Articles extends React.Component
         <HamburgerIntroHeader />
         <div className="grid-with-scrollable-column">
           <div className="scrollable-column-3 col-md-12 col-lg-8">
-            <h1>ARTICOLI</h1><br />
+            <h1>ARTICOLI</h1>
+            <span id="overlay"><img src={process.env.PUBLIC_URL + '/imagesPop/visconte-orange.jpg'} className="sizein" alt="information complement" style={{"margin-left":"2em"}} /></span>
             {
               this.state.data.filter(d=>d.section==="Articoli").map((d,i)=>{
                 let externalLinkLink;
                 if (d.link!=='') {
-                  externalLinkLink = (<><a href={d.link} target="_blank">Link esterno</a></>);
+                  externalLinkLink = (<><a className="link" href={d.link} target="_blank" rel="noopener noreferrer">Link esterno</a></>);
                 }
                 let archiveLink;
                 if (d.archive!=='') {
-                  archiveLink = (<>, <a href={d.archive} target="_blank">Versione archiviata</a></>);
+                  archiveLink = (<>, <a className="link" href={d.archive} target="_blank" rel="noopener noreferrer">Versione archiviata</a></>);
                 }
                 let download;
                 if (d.download!=='') {
-                  download = (<>, <a href={d.download} target="_blank">PDF</a></>);
+                  download = (<>, <a a className="link" href={d.download} target="_blank" rel="noopener noreferrer">PDF</a></>);
                 }
 
                 let pages;

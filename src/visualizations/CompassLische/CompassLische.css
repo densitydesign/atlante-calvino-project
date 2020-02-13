@@ -1,0 +1,18 @@
+svg#lische {
+  background: var(--bg);
+}
+
+#lische g.stories > g {
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+#lische-header {
+  background: var(--bg);
+  position: sticky;
+  top: var(--navigation-height);
+}
+
+#lische .reset {
+  fill: var(--bg);
+}

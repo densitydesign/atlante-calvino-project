@@ -1,0 +1,35 @@
+#listTypes circle:hover {
+  cursor: pointer;
+}
+
+ #listTypes circle {
+  transition: opacity 0.3s ease;
+}
+
+#listTypes .circle--selected {
+  transition: .3s ease;
+  opacity: 1;
+  stroke: 1px solid var(--text-color);
+}
+
+#listTypes .axis {
+  transition: opacity 0.3s ease;
+}
+
+#listTypes .tick text {
+  font-size: 1.3em;
+  font-family: 'HKGrotesk', sans-serif;
+}
+
+#listTypes .domain {
+  display: none;
+}
+
+#listTypes .tick line {
+  stroke-dasharray: 2;
+  stroke: #CCC;
+}
+
+#listTypes .y line {
+  display: none;
+}

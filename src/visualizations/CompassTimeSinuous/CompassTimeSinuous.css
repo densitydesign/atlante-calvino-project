@@ -1,0 +1,547 @@
+html {
+  font-size: 16px;
+  --c-bg: #fffefa;
+  --c-romanzo: #0490ca;
+  --c-racconti: #bd504c;
+  --c-ibrido: #f2d371;
+  --c-riscritture: #707e84;
+  --c-racconti-protagonista: #eb9d69;
+  --c-racconti-cornice: #00b79e;
+  --c-saggi: #9d80bb;
+  --c-postumi: #566573;
+  --c-unita: #c1c0b1;
+  --c-cds: #806060;
+  --c-repubblica: #9fbfc6;
+  --c-text: #212529;
+}
+
+#visualisation-container svg {
+  position: sticky;
+  top: var(--navigation-height);
+}
+
+#main--sinuous h2 {
+  margin-bottom: 1rem;
+}
+
+#main--sinuous .label {
+  font-size: .7rem;
+  text-anchor: middle;
+  letter-spacing: 0.3px;
+  fill: var(--text-color);
+}
+
+#main--sinuous .label.year {
+  font-family: 'HK Grotesk';
+  font-size: .7rem;
+}
+
+#main--sinuous .decade.in-focus>.label.year.the-first {
+  animation-name: in-focus-label;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+#main--sinuous .label.small {
+  font-size: .7rem;
+}
+
+#main--sinuous .label.character {
+  font-size: .7rem;
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  text-anchor: middle;
+}
+
+#main--sinuous .label.white-shadow {
+  stroke: var(--bg);
+  stroke-width: 0.125rem;
+  fill: var(--bg);
+  stroke-linejoin: round;
+}
+
+#main--sinuous .info {
+  font-family: 'HK Grotesk';
+  font-size: .7rem;
+  font-weight: 400;
+}
+
+#main--sinuous .year {
+  font-size: .5rem;
+}
+
+#main--sinuous .guide-line, .thread {
+  fill: none;
+  stroke: #2E4053;
+  stroke-width: 1px;
+}
+
+#main--sinuous .decade-arc {
+  stroke-dasharray: 1 4;
+  stroke-linecap: round;
+  stroke-dashoffset: 0
+}
+
+#main--sinuous .decade.in-focus .decade-arc {
+  -webkit-animation-name: arcs-direction;
+  animation-name: arcs-direction;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+#main--sinuous .decade-arc.start {
+  marker-end: url(#arrow-head-big);
+}
+
+#main--sinuous .anni90 .decade-arc.start {
+  marker-end: none;
+}
+
+#main--sinuous .previous-publication {
+  fill: none;
+  stroke: #5D6D7E;
+  stroke-width: 1px;
+  stroke-dasharray: 5 4;
+  marker-end: url(#arrow-head);
+}
+
+#main--sinuous .article.ghost-node {
+  display: none;
+  fill: red;
+}
+
+#main--sinuous .work-title {
+  cursor: pointer;
+  font-style: italic;
+  display: inline;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0px 3.5px;
+  white-space: nowrap;
+  transition: all .3s ease;
+}
+
+#main--sinuous .scrollytelling-container h5 {
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+#main--sinuous .scrollytelling-container .racconti {
+  color: var(--c-racconti);
+  border-color: var(--c-racconti);
+}
+
+#main--sinuous .scrollytelling-container .romanzo {
+  color: var(--c-romanzo);
+  border-color: var(--c-romanzo);
+}
+
+#main--sinuous .scrollytelling-container .ibrido {
+  color: var(--c-ibrido);
+  border-color: var(--c-ibrido);
+}
+
+#main--sinuous .scrollytelling-container .riscritture {
+  color: var(--c-riscritture);
+  border-color: var(--c-riscritture);
+}
+
+#main--sinuous .scrollytelling-container .racconti-protagonista {
+  color: var(--c-racconti-protagonista);
+  border-color: var(--c-racconti-protagonista);
+}
+
+#main--sinuous .scrollytelling-container .racconti-cornice {
+  color: var(--c-racconti-cornice);
+  border-color: var(--c-racconti-cornice);
+}
+
+#main--sinuous .scrollytelling-container .saggi {
+  color: var(--c-saggi);
+  border-color: var(--c-saggi);
+}
+
+#main--sinuous .scrollytelling-container .postumi {
+  color: var(--c-postumi);
+  border-color: var(--c-postumi);
+}
+
+#main--sinuous .work circle {
+  cursor: pointer;
+}
+
+#main--sinuous .work circle.in-focus {
+  animation-name: in-focus;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+#main--sinuous .work circle.unfinished {
+  stroke-dasharray: 2 2;
+}
+
+#main--sinuous .work .volume-cover {
+  opacity: 1e-6;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+
+#main--sinuous .work:hover .volume-cover, .work.work-in-focus .volume-cover {
+  opacity: 1;
+}
+
+/* Other */
+#main--sinuous .hidden {
+  display: none;
+}
+
+#main--sinuous .scrollytelling-container {
+  /* padding-top: 50vh;
+  padding-bottom: 50vh; */
+  z-index: 1050;
+}
+
+#main--sinuous .scrollytelling-container p {
+  font-size: 1.2rem;
+}
+
+#main--sinuous .how-to {
+  font-size: 1.2rem;
+  font-family: 'HK Grotesk', sans-serif !important;
+}
+
+#main--sinuous .how-to * {
+  font-family: 'HK Grotesk', sans-serif !important;
+}
+
+#main--sinuous .how-to>div {
+  background-color: var(--bg);
+  padding: .8rem;
+  border: 1px solid var(--c-text);
+  border-radius: 3px;
+}
+
+#main--sinuous .how-to p {
+  font-size: inherit;
+}
+
+#main--sinuous .decade-txt {}
+
+#main--sinuous .intro {
+  margin-bottom: 2em;
+}
+
+#main--sinuous .item {
+  padding-bottom: 50vh;
+}
+
+#main--sinuous .item p:last-child {
+  margin-bottom: 0;
+}
+
+#main--sinuous .item-focus {
+  margin-bottom: 25vh;
+}
+
+/* LEGEND */
+
+#main--sinuous .legend {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 2rem;
+  position: sticky;
+  top: calc(var(--navigation-height) + (var(--navigation-height)) * 0.5);
+  background: var(--bg);
+  box-sizing: border-box;
+  margin-top: 2em;
+  margin-bottom: 2rem;
+  z-index: 10000;
+  justify-content: flex-end;
+}
+
+#main--sinuous .legend .legend-content {
+  padding-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  grid-column-gap: 15%;
+  grid-template-rows: 2rem 2rem 8rem 8rem 8rem 2rem 6rem 2rem;
+  /* grid-template-rows: repeat(8, 1fr); */
+  grid-row-gap: 0.1rem;
+  height: 2rem;
+  width: 100%;
+  transition: height .35s ease;
+  overflow: hidden;
+  border: 1px solid var(--navigation-borders);
+  background-color: var(--bg);
+}
+
+#main--sinuous .legend.open .legend-content {
+  background: var(--bg);
+  height: 50vh;
+  overflow: visible;
+}
+
+#main--sinuous #legend-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 3px;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  margin-top: 0.3rem;
+  position: absolute;
+  right: 1rem;
+}
+
+#main--sinuous #legend-button::before {
+  content: '';
+  display: block;
+  background-color: var(--c-text);
+  height: 2px;
+  position: relative;
+  left: 1px;
+  width: 32%;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+#main--sinuous #legend-button::after {
+  content: '';
+  display: block;
+  background-color: var(--c-text);
+  height: 2px;
+  position: relative;
+  right: 1px;
+  width: 32%;
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+#main--sinuous .legend.open #legend-button::before {
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+#main--sinuous .legend.open #legend-button::after {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+#main--sinuous .legend h2 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  grid-column: span 3;
+  text-align: center;
+}
+
+#main--sinuous .legend h4 {
+  font-family: 'HKGrotesk';
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: center;
+  grid-column: span 3;
+  margin: 0;
+}
+
+#main--sinuous .legend h5 {
+  font-family: 'HKGrotesk';
+  font-size: .6rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  grid-column: span 3;
+  margin: 0;
+}
+
+#main--sinuous .legend h6 {
+  font-family: 'HKGrotesk';
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+  text-align: center;
+  width: 300%;
+  margin-left: -100%;
+  margin-top: 0.3rem;
+}
+
+#main--sinuous .legend-item {
+  /* width: 20%; */
+  /* height: 20%; */
+  /* background-color: #f7f7f7; */
+}
+
+#main--sinuous .legend-circle {
+  background: var(--bg);
+  border: 1px solid transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  display: block;
+  border-radius: 50%;
+  padding-bottom: calc(100% - 2px);
+  background-size: cover;
+  box-shadow: none !important;
+}
+
+#main--sinuous .legend-article-circle {
+  background: var(--bg);
+  border: 2px solid transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 30%;
+  height: 0;
+  display: block;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 2px;
+  padding-bottom: calc(30% - 4px);
+}
+
+#main--sinuous .legend-article-circle.lgnd::after {
+  content: 'Altro';
+  position: relative;
+  font-family: 'HK Grotesk';
+  font-size: 0.5rem;
+  left: 15px;
+  top: -15px;
+}
+
+#main--sinuous .legend-article-circle.lgnd.narrative::after {
+  content: 'Narrativa';
+  position: relative;
+  font-family: 'HK Grotesk';
+  font-size: 0.5rem;
+  left: 15px;
+  top: -15px;
+}
+
+@-webkit-keyframes arcs-direction {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+
+@keyframes arcs-direction {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+
+@-webkit-keyframes fade-in-radius {
+  from {
+    r: 0;
+  }
+
+  to {
+    r: 4;
+  }
+}
+
+@keyframes fade-in-radius {
+  from {
+    r: 0;
+  }
+
+  to {
+    r: auto;
+  }
+}
+
+@keyframes in-focus {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.125);
+  }
+}
+
+@keyframes in-focus-label {
+  0% {
+    font-size: .45rem;
+  }
+
+  100% {
+    font-size: .55rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main--sinuous .legend.open .legend-content {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #main--sinuous .label {
+    font-size: .6rem;
+  }
+
+  #main--sinuous .label.small {
+    font-size: .55rem;
+  }
+
+  #main--sinuous .article {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  #main--sinuous .legend, .legend .legend-content {
+    border: none;
+    padding: 0;
+    border: none;
+  }
+
+  #main--sinuous .legend.open .legend-content {
+    height: 70vh;
+  }
+
+  #main--sinuous .how-to>div {
+    background-color: none;
+  }
+
+  #main--sinuous .item {
+    padding-bottom: 35vh;
+  }
+
+  #main--sinuous .item>p {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 3px;
+  }
+
+  #main--sinuous .item p:last-child {
+    margin-bottom: 1rem;
+  }
+}

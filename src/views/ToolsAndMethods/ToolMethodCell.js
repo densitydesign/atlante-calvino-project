@@ -4,10 +4,6 @@ import React from 'react';
 import '../../App.css';
 import './ToolsAndMethods.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-
-
 export default class ToolMethodCell extends React.Component
 {
   constructor(props)

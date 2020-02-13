@@ -15,10 +15,8 @@
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-.itineraries-subgrid a {
+.itineraries-subgrid h1 {
   white-space: nowrap;
-  line-height: 1.7em;
-  font-weight: 500;
   color: var(--dark-blue);
 }
 

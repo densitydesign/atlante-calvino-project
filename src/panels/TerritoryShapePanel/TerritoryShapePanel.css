@@ -1,0 +1,6 @@
+
+.territory-shape-panel {
+  background-color : var(--bg);
+  grid-column: 11 / span 7;
+  margin-left:2em;
+}

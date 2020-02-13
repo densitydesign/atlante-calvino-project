@@ -1,0 +1,15 @@
+.rc-slider-handle {
+    position: absolute;
+    left:-3px;
+    width: 30px;
+    height: 12px;
+    cursor: pointer;
+    cursor: -webkit-grab;
+    margin-top: -7px;
+    margin-bottom: 7px;
+    cursor: grab;
+    border-radius: 0;
+    border: solid 1px#222;
+    background-color: #fff;
+    touch-action: pan-y;
+}
