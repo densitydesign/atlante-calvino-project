@@ -4,7 +4,7 @@ const V = {}
 
 let width,
     height,
-    margin = {top: 20, right: 10, bottom: 40, left: 40},
+    margin = {top: 30, right: 0, bottom: 30, left: 40},
     showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
@@ -81,7 +81,7 @@ let width,
 
     x = d3.scaleBand().padding(0.2).paddingOuter(10),
     xAxis,
-    xAxisCall = d3.axisBottom(x),
+    xAxisCall = d3.axisTop(x),
     y = d3.scaleLinear(),
     yAxis,
     yAxisCall = d3.axisLeft(y),
@@ -98,30 +98,29 @@ V.initialize = (el, data_for_update) => {
 
     svg = d3.select(el);
     g = svg.append("g");
-
-
-    legend = svg.append("text")
-    .attr("y", 10)
-    .attr("x", 0)
-    .attr("transform", `translate(${width},20)`)
-    .text("TIPO DI TESTO")
-    .append("tspan")
-        .attr("font-size", "0.9rem")
-        .text("(clicca per riordinare)")
-        .attr("dy", "1.3rem")
-        .attr("x", 0);
     
 
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${width},70)`)
+        .attr("transform", `translate(${width},70)`);
+
+    svg.append("text")
+        .attr("y", 10)
+        .attr("x", 0)
+        .attr("transform", `translate(${width},${margin.top})`)
+        .text("TIPO DI TESTO")
+        .append("tspan")
+            .attr("font-size", "0.9rem")
+            .text("(clicca per riordinare)")
+            .attr("dy", "1.3rem")
+            .attr("x", 0);
 
     legendItem = legend.selectAll(".legend-item");
 
     serie = g.selectAll(".serie");
 
     treemap_misto = svg.append("g")
-    .classed("treemap-misto", true);
+        .classed("treemap-misto", true);
 
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
 
@@ -131,7 +130,8 @@ V.initialize = (el, data_for_update) => {
 
     x.range([margin.left, width - margin.right]);
     xAxis = svg.append("g").classed("axis x-axis", true)
-        .attr("transform", `translate(0,${height - margin.bottom})`);
+        // .attr("transform", `translate(0,${height - margin.bottom})`);
+        .attr("transform", `translate(0,${margin.top})`);
 
     y.range([height - margin.bottom, margin.top]);
     yAxis = svg.append("g").classed("axis y-axis", true)
