@@ -18,6 +18,9 @@ class DoubtingStackedBars extends Component {
     if (prevProps.data !== this.props.data || prevProps.stackMode !== this.props.stackMode) {
       V.update(this.props.data, this.props.stackMode);
     }
+    if (prevProps.surviveFilters !== this.props.surviveFilters) {
+      V.filter(this.props.surviveFilters);
+    }
   }
 
   componentWillUnmount() {

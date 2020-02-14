@@ -487,6 +487,16 @@ V.update = (data, stackMode, baseLayer) => {
         .sort((a, b) => b.name - a.name))
 }
 
+V.filter = (survive_filters) => {
+    // console.log("filter visualization - survivers:", survive_filters);
+    svg.classed('there-is-filter', true)
+    serie.selectAll("rect")
+        .classed('filtered', true)
+        .filter(n => {
+            return survive_filters.indexOf(n.data.id) > -1
+        } ).classed('filtered', false);
+}
+
 V.destroy = () => {
     console.log("destroy stacked bars dubbio fase 2")
 }

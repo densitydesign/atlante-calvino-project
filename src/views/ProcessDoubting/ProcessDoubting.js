@@ -30,6 +30,8 @@ class ProcessDoubting extends Component {
     this.changeRicerca = this.changeRicerca.bind(this);
     this.changeTimeSpan = this.changeTimeSpan.bind(this);
 
+    this.applyFilters = this.applyFilters.bind(this);
+
     this.state = {
       data: 'data still not loaded',
       isLoading: true,
@@ -65,9 +67,10 @@ class ProcessDoubting extends Component {
     // data comes from this notebook on ObservableHQ
     // https://observablehq.com/@iosonosempreio/experiment-on-the-use-observablehq-for-easying-task-of-data
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
-      // console.log(json);
       return json;
     }).then(data=>{
+
+      data = data.sort( (a,b)=> +a.year - b.year )
 
       let publicationTitle = d3.nest().key(d => d.destination).entries(GlobalData.publications).map(d => {
         return {
@@ -90,11 +93,14 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
       
-      // need to convert date to milliseconds for the filter to work
+      // need to convert date to milliseconds for the timespan filter to work
       const timeExtent = d3.extent(data, d => +new Date(d.year));
 
       this.setState({
         data: data,
+        filters: {
+          'all': data.map(d=>d.id)
+        },
         isLoading: false,
         data_research: data_research,
         ricerca: {
@@ -124,6 +130,12 @@ class ProcessDoubting extends Component {
     d3.selectAll("#doubting-stacked-bars-legend .item").on("click", function(){
       console.log(this)
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.filters !== this.state.filters) {
+      this.applyFilters();
+    }
   }
   
   legendHighlight(category) {
@@ -156,36 +168,56 @@ class ProcessDoubting extends Component {
   changeRicerca(newOptions) {
 
     console.log("survive search:", newOptions);
+    
+    let toPreserve = newOptions.map(d => d.id);
+    toPreserve = _.flattenDeep(toPreserve);
 
-		// let toPreserve = newOptions.map(d => d.id)
-		// toPreserve = _.flattenDeep(toPreserve)
-
-		// // In case it is empty, to prevent bugs, make it equal to any other filter
-		// if(toPreserve.length === 0) {
-		// 	toPreserve = this.state.toPreserveVolumi
-		// }
-
-		this.setState(prevState => ({
-			ricerca: {
-				...prevState.ricerca,
-			},
-			// ricercaOptionsSearched: newOptions,
-			// toPreserveRicerca: toPreserve,
-			// filter: _.intersection(prevState.noFilter,
-			// 	toPreserve,
-			// 	prevState.toPreservePubblicazioni,
-			// 	prevState.toPreserveVolumi,
-			// 	prevState.toPreserveAmbienti,
-			// 	prevState.toPreserveCategorie)
-		}))
-
+    console.log(toPreserve)
+    
+    if (!toPreserve.length) {
+      console.warn("Can't filter against an empty array");
+      return;
+    } else {
+      this.setState(prevState => ({
+        filters: {
+          ...prevState.filters,
+          ricerca: toPreserve
+        }
+      }));
+    }  
   }
   
   changeTimeSpan(newOptions) {
-    console.log("changeTimeSpan", newOptions);
+    let toPreserve = this.state.data.filter(d=>{
+      let year = +new Date(d.year)
+      return year>=newOptions[0] && year<=newOptions[1];
+    }).map(d=>d.id);
+
+		if (!toPreserve.length) {
+      console.warn("Can't filter against an empty array");
+      return;
+    } else {
+      this.setState(prevState => ({
+        filters: {
+          ...prevState.filters,
+          timeSpan: toPreserve
+        }
+      }));
+    }   
+  }
+
+  applyFilters() {
+    console.log("apply filters");
+    let survive_filters = this.state.data.map(d=>d.id);
+    let id_arrays = [];
+    for (var f in this.state.filters) {
+      survive_filters = _.intersection(survive_filters, this.state.filters[f])
+    }
+    this.setState({survive_filters:survive_filters})
   }
 
   render() {
+    // console.log(this.state)
     return (
       <div className="process-doubting main">
 
@@ -233,6 +265,7 @@ class ProcessDoubting extends Component {
               id="doubting-stacked-bars"
               data={this.state.data}
               stackMode = {this.state.stackMode}
+              surviveFilters = {this.state.survive_filters}
             />
           }
         </div>
