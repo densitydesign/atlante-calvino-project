@@ -148,17 +148,13 @@ const sortData = (data, property) => {
     } else {
         data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
     }  
-    console.log(data, property);
     return data;
 }
 
 V.update = (data, stackMode, baseLayer) => {
     console.log("update dubbio fase 2")
 
-    console.log(baseLayer);
     let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]));
-    console.log(keys);
-
     if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
         for (var i=0; i < keys.length; i++) {
             if (keys[i].replace("_perc", "") === baseLayer) {
@@ -168,7 +164,6 @@ V.update = (data, stackMode, baseLayer) => {
             }
         }
     }
-    console.log(keys);
 
     let series = d3.stack().keys(keys)(data);
 
@@ -192,13 +187,11 @@ V.update = (data, stackMode, baseLayer) => {
             .attr("id", d=>d.id)
             .merge(legendItem)
             .on("click", (d)=>{
-                // console.log(d);
-                // console.log(stackMode);
                 if (d.baseCategory) {
                     if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
                         let obj = {
                             "id": "id",
-                            "color": "#FFFFFF",
+                            "color": "transparent",
                             "label": "Reset",
                             "percentage": undefined,
                             "baseCategory": true
