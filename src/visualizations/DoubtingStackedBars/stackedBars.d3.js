@@ -152,10 +152,25 @@ const sortData = (data, property) => {
     return data;
 }
 
-V.update = (data, stackMode) => {
+V.update = (data, stackMode, baseLayer) => {
     console.log("update dubbio fase 2")
 
-    let series = d3.stack().keys(stackModeProperties[stackMode])(data);
+    console.log(baseLayer);
+    let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]));
+    console.log(keys);
+
+    if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
+        for (var i=0; i < keys.length; i++) {
+            if (keys[i].replace("_perc", "") === baseLayer) {
+                var a = keys.splice(i,1);   // removes the item
+                keys.unshift(a[0]);         // adds it back to the beginning
+                break;
+            }
+        }
+    }
+    console.log(keys);
+
+    let series = d3.stack().keys(keys)(data);
 
     x.domain(data.map(d => d.id));
     xAxis.call(xAxisCall.tickFormat(d=>{
@@ -194,7 +209,9 @@ V.update = (data, stackMode) => {
                     }
 
                     let sortedData = sortData(data, d.id);
-                    V.update(sortedData, stackMode);
+                    // d.id is the baselayer ordering setting
+                    // In the Update cycle it is skipped if equal to "id" or "definitivo"
+                    V.update(sortedData, stackMode, d.id);
                 }
                 
             })

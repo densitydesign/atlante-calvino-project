@@ -56,7 +56,6 @@ class ProcessDoubting extends Component {
         isLoading: false
       })
     })
-
   }
 
   changeLunghezzaTesti(newOptions) {
