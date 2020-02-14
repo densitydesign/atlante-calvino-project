@@ -54,12 +54,19 @@ let width,
             "baseCategory": true
         },
         {
-          "id": "dubitativo",
+          "id": "dubbio",
           "color": "#CFCFFF",
           "label": "Dubitativo",
           "percentage": undefined,
           "baseCategory": true
         },
+        {
+            "id": "space-4",
+            "color": "transparent",
+            "label": " ",
+            "percentage": undefined,
+            "baseCategory": true
+        }
     ],
 
     svg,
@@ -96,12 +103,18 @@ V.initialize = (el, data_for_update) => {
     legend = svg.append("text")
     .attr("y", 10)
     .attr("x", 0)
+    .attr("transform", `translate(${width},20)`)
     .text("TIPO DI TESTO")
-    .attr("transform", `translate(${width},20)`);
+    .append("tspan")
+        .attr("font-size", "0.9rem")
+        .text("(clicca per riordinare)")
+        .attr("dy", "1.3rem")
+        .attr("x", 0);
+    
 
     legend = svg.append("g")
-    .classed("legend", true)
-    .attr("transform", `translate(${width},60)`)
+        .classed("legend", true)
+        .attr("transform", `translate(${width},70)`)
 
     legendItem = legend.selectAll(".legend-item");
 
@@ -128,6 +141,17 @@ V.initialize = (el, data_for_update) => {
     V.update(data_for_update.data, data_for_update.stackMode)
 }
 
+const sortData = (data, property) => {
+    if (property !== "id") {
+        property += "_perc";
+        data = data.sort((a,b)=>Number(b[property])-Number(a[property]));
+    } else {
+        data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
+    }  
+    console.log(data, property);
+    return data;
+}
+
 V.update = (data, stackMode) => {
     console.log("update dubbio fase 2")
 
@@ -148,10 +172,29 @@ V.update = (data, stackMode) => {
         legendItem = legendItem.enter().append("g")
             .classed("legend-item", true)
             .attr("id", d=>d.id)
-            .on("click", (d)=>{
-                console.log(d);
-            })
             .merge(legendItem)
+            .on("click", (d)=>{
+                // console.log(d);
+                // console.log(stackMode);
+                if (d.baseCategory) {
+                    if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
+                        let obj = {
+                            "id": "id",
+                            "color": "#FFFFFF",
+                            "label": "Reset",
+                            "percentage": undefined,
+                            "baseCategory": true
+                        }
+                        legendData.push(obj);
+                    } else if (d.id === "id") {
+                        legendData.pop();
+                    }
+
+                    let sortedData = sortData(data, d.id);
+                    V.update(sortedData, stackMode);
+                }
+                
+            })
             // .attr("transform", (d,i)=>`translate(0,${i*20})`)
             .html(d=> {
                 let this_percentage = ""
@@ -317,7 +360,7 @@ V.update = (data, stackMode) => {
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
             legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
-            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubbio").percentage = (d.data.dubbio/d.data.length) * 100;
 
             for(let iii=data_misto.children.length-1; iii>0; iii--) {
                 const item = {
@@ -375,7 +418,7 @@ V.update = (data, stackMode) => {
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
             legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
-            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubbio").percentage = (d.data.dubbio/d.data.length) * 100;
 
             for(let iii=data_soggetto.children.length-1; iii>0; iii--) {
                 const item = {

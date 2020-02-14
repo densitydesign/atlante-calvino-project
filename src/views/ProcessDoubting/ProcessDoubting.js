@@ -35,10 +35,10 @@ class ProcessDoubting extends Component {
 				multiple: false,
 				options: [{
 					'label': 'assoluti',
-					'status': true
+					'status': false
 				}, {
 					'label': 'normalizzati',
-					'status': false
+					'status': true
 				}]
 			}
     }
