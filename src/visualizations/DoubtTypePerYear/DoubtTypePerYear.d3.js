@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 import GlobalData from '../../utilities/GlobalData.js';
-import { curveSankey } from '../../utilities/graphic_utilities.js';
+import { curveSankey, append_tooltip_entry } from '../../utilities/graphic_utilities.js';
 
 import './DoubtTypePerYear.css';
 
@@ -118,11 +118,12 @@ console.log("data", data);
       .text("anni di pubblicazione");
 
 
-    let stream = svg.append("g");
+    const stream = svg.append("g");
 
 console.log("series", series);
 
-    stream.selectAll("path")
+    stream
+      .selectAll("path")
       .data(series)
       .join("path")
       .attr("fill", ({
@@ -131,8 +132,8 @@ console.log("series", series);
       .attr("d", function(d) {
         return area(d);
       })
-        .style("stroke", "rgba(0,0,0,0.7)")
-        .style("stroke-width", 0.5);
+      .style("stroke", "rgba(0,0,0,0.7)")
+      .style("stroke-width", 0.5);
 
     svg.on("mousemove", displayTooltip)
     svg.on("touchmove", displayTooltip);
@@ -158,7 +159,7 @@ console.log("series", series);
       return strokeDashArray
     });
 
-    let tooltipLine = stream
+    const tooltipLine = stream
       .append("line")
       .attr("x0", 0)
       .attr("y0", 0)
@@ -169,7 +170,7 @@ console.log("series", series);
       .style("stroke-width", 2)
       .style("stroke", "rgba(0,0,0,.3)");
 
-    let tooltip = svg
+    const tooltip = svg
       .append("g")
       .attr("display", "none");
 
@@ -183,7 +184,7 @@ console.log("series", series);
       .attr("width", 110)
       .attr("height", 80);
 
-    let yearLabel = tooltip
+    const yearLabel = tooltip
       .append("text")
       .attr("x", 55)
       .attr("y", 70);
@@ -216,10 +217,10 @@ console.log("series", series);
       .attr("y", 70)
       .attr("fill", "black");
 */
-    let ca_text = append_tooltip_entry(tooltip, 0, color("ca"));
-    let cc_text = append_tooltip_entry(tooltip, 1, color("cc"));
-    let na_text = append_tooltip_entry(tooltip, 2, color("na"));
-    let nc_text = append_tooltip_entry(tooltip, 3, color("nc"));    
+    const ca_text = append_tooltip_entry(tooltip, 0, color("ca"));
+    const cc_text = append_tooltip_entry(tooltip, 1, color("cc"));
+    const na_text = append_tooltip_entry(tooltip, 2, color("na"));
+    const nc_text = append_tooltip_entry(tooltip, 3, color("nc"));    
 
     function displayTooltip()
     {
@@ -260,37 +261,7 @@ console.log("series", series);
   destroy = () => {};
 }
 
-function append_tooltip_entry(tooltip, index, color)
-{
-  const margin = { top : 25, left : 5, right : 5, bottom : 5 };
-  const entry_icon_x = margin.left + 50;
 
-  const entry_row_height = 13;
-  const entry_icon_y_base = 53;
-  const entry_icon_y = margin.top + entry_icon_y_base + entry_row_height * index;
-
-  tooltip
-    .append("rect")
-    .attr("fill", color)
-    .attr("x", entry_icon_x)
-    .attr("y", entry_icon_y)
-    .attr("width", 8)
-    .attr("height", 8);
-
-  const text_start_delta_x = 15;
-  const entry_text_x = entry_icon_x + text_start_delta_x;
-
-  const text_start_delta_y = 7;
-  const entry_text_y = entry_icon_y + text_start_delta_y;
-
-  let text_item = tooltip
-    .append("text")
-    .attr("x", entry_text_x)
-    .attr("y", entry_text_y)
-    .attr("fill", "black");
-
-  return text_item;
-}
 
 const V = new VClass();
 
