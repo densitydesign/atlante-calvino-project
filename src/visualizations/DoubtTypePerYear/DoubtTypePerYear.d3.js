@@ -50,9 +50,12 @@ class VClass {
     data = data.sort(function(a, b) {
       return a.date - b.date;
     })
+console.log("data", data);    
+
     var series = d3.stack().keys(data.columns.slice(1))(data)
 
-    let color = d3.scaleOrdinal()
+    let color = d3
+      .scaleOrdinal()
       .range([
         GlobalData.visualizationColors.territory.nebbia_dim,
         GlobalData.visualizationColors.territory.nebbia_bright,
@@ -60,7 +63,6 @@ class VClass {
         GlobalData.visualizationColors.territory.cancellazione_bright,
       ])
       .domain(doubtLabels);
-
 
     x = d3.scaleLinear()
       .domain(d3.extent(data, d => d.date))
@@ -118,7 +120,9 @@ class VClass {
 
     let stream = svg.append("g");
 
-      stream.selectAll("path")
+console.log("series", series);
+
+    stream.selectAll("path")
       .data(series)
       .join("path")
       .attr("fill", ({
@@ -130,8 +134,10 @@ class VClass {
         .style("stroke", "rgba(0,0,0,0.7)")
         .style("stroke-width", 0.5);
 
-      // stream.on("mousemove", tooltip)
-      // stream.on("touchmove", tooltip);
+    svg.on("mousemove", displayTooltip)
+    svg.on("touchmove", displayTooltip);
+    svg.on("mouseleave", hideTooltip);
+    svg.on("touchleave", hideTooltip);
 
     d3.select('.x.axis .domain').style('stroke-dasharray', function() {
       var strokeDashArray = '';
@@ -150,29 +156,141 @@ class VClass {
       }
       strokeDashArray += ((x(1986) - margin.left) - (x(1971) - margin.left));
       return strokeDashArray
-    })
+    });
 
-    // let tooltipLine = stream.append("line")
-    // .attr("x0", 0)
-    // .attr("y0", 0)
-    // .attr("x1", 0)
-    // .attr("y1", height)
-    // .style("fill", "none")
-    // .style("stroke-width", 2)
-    // .style("stroke", "rgba(0,0,0,.3)");
-    //
-    // function tooltip(){
-    //   console.log(y.invert(d3.mouse(this)[1]));
-    //   tooltipLine.attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
-    // }
+    let tooltipLine = stream
+      .append("line")
+      .attr("x0", 0)
+      .attr("y0", 0)
+      .attr("x1", 0)
+      .attr("y1", height)
+      .attr("display", "none")
+      .style("fill", "none")
+      .style("stroke-width", 2)
+      .style("stroke", "rgba(0,0,0,.3)");
 
+    let tooltip = svg
+      .append("g")
+      .attr("display", "none");
 
+    tooltip
+      .append("rect")
+      .attr("stroke", "lightgray")
+      .attr("fill", "white")
+      .attr("opacity", 0.7)
+      .attr("x", 50)
+      .attr("y", 50)
+      .attr("width", 110)
+      .attr("height", 80);
+
+    let yearLabel = tooltip
+      .append("text")
+      .attr("x", 55)
+      .attr("y", 70);
+/*
+    tooltip
+      .append("rect")
+      .attr("fill", "green")
+      .attr("x", 50)
+      .attr("y", 53)
+      .attr("width", 8)
+      .attr("height", 8);
+
+    let nc_text = tooltip
+      .append("text")
+      .attr("x", 65)
+      .attr("y", 60)
+      .attr("fill", "black");
+
+    tooltip
+      .append("rect")
+      .attr("fill", "cyan")
+      .attr("x", 50)
+      .attr("y", 63)
+      .attr("width", 8)
+      .attr("height", 8);      
+
+    let na_text = tooltip
+      .append("text")
+      .attr("x", 65)
+      .attr("y", 70)
+      .attr("fill", "black");
+*/
+    let ca_text = append_tooltip_entry(tooltip, 0, color("ca"));
+    let cc_text = append_tooltip_entry(tooltip, 1, color("cc"));
+    let na_text = append_tooltip_entry(tooltip, 2, color("na"));
+    let nc_text = append_tooltip_entry(tooltip, 3, color("nc"));    
+
+    function displayTooltip()
+    {
+      console.log("d3.mouse(this)", d3.mouse(this));
+//      console.log(y.invert(d3.mouse(this)[1]));
+      console.log("x.invert(d3.mouse(this)[0]", x.invert(d3.mouse(this)[0]));
+
+      const year = Math.floor(x.invert(d3.mouse(this)[0])).toString();
+
+      yearLabel.text(year);
+    
+      const item = data.find(d => d.date === year);
+
+      if(item)
+      {
+        nc_text.text(item.nc);
+        na_text.text(item.na);
+        cc_text.text(item.cc);
+        ca_text.text(item.ca);
+      }
+
+      tooltipLine
+        .attr("display", "block")
+        .attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
+
+      tooltip
+        .attr("display", "block")
+        .attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
+    }
+
+    function hideTooltip()
+    {
+      tooltipLine.attr("display", "none");
+      tooltip.attr("display", "none");
+    }
   };
 
   destroy = () => {};
 }
 
+function append_tooltip_entry(tooltip, index, color)
+{
+  const margin = { top : 25, left : 5, right : 5, bottom : 5 };
+  const entry_icon_x = margin.left + 50;
 
+  const entry_row_height = 13;
+  const entry_icon_y_base = 53;
+  const entry_icon_y = margin.top + entry_icon_y_base + entry_row_height * index;
+
+  tooltip
+    .append("rect")
+    .attr("fill", color)
+    .attr("x", entry_icon_x)
+    .attr("y", entry_icon_y)
+    .attr("width", 8)
+    .attr("height", 8);
+
+  const text_start_delta_x = 15;
+  const entry_text_x = entry_icon_x + text_start_delta_x;
+
+  const text_start_delta_y = 7;
+  const entry_text_y = entry_icon_y + text_start_delta_y;
+
+  let text_item = tooltip
+    .append("text")
+    .attr("x", entry_text_x)
+    .attr("y", entry_text_y)
+    .attr("fill", "black");
+
+  return text_item;
+}
 
 const V = new VClass();
 
