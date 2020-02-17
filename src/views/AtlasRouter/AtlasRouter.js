@@ -32,7 +32,7 @@ import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 export default function AtlasRouter()
 {
   return (
-    <BrowserRouter basename="/atlante-calvino-project">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
       <Route exact path="/"><SplashScreenWrapper /></Route>
