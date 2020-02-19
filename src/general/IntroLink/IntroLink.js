@@ -8,7 +8,7 @@ export default class IntroLink extends React.Component
 {
   render()
   {
-    const route = "/";
+    const route = "/AtlasIntro";
     return (
       <div className="intro-link" style={this.props.style} >
         <Link to={route}><h4>INTRO</h4></Link>
