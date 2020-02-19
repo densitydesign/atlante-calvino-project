@@ -675,8 +675,8 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 
     adjust_angle_ranges(jellyfish, [
       { 
-        start : { id : "V008@greto",  angle : getNodeAngle("V008@accampamento") }, 
-        end   : { id : "V008@radura", angle : getNodeAngle("V008@radura") },
+        start : { id : "V008@greto",  angle : getNodeAngle("V008@accampamento") * 0.94 }, 
+        end   : { id : "V008@radura", angle : getNodeAngle("V008@radura") * 0.94 },
       },
       {
         start : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") }, 
@@ -951,12 +951,12 @@ console.log("range", range);
       start_angle_2 : range.start.angle,
       delta_angle_1 : angleDifference(endNode.angle, startNode.angle),
       delta_angle_2 : angleDifference(range.end.angle, range.start.angle),
-      delta_angle_start : angleDifference(range.start.angle, startNode.angle),
+      delta_start_angle : angleDifference(range.start.angle, startNode.angle),
 range_start_angle : range.start.angle,      
 range_end_angle : range.end.angle,
 range_length : angleDifference(range.end.angle, range.start.angle),
 endNode_angle : endNode.angle,
-      delta_angle_end : angleDifference(range.end.angle, endNode.angle),
+      delta_end_angle : angleDifference(range.end.angle, endNode.angle),
     };
   });
 
@@ -972,20 +972,25 @@ console.log("rangeInfo.start_angle_1", rangeInfo.start_angle_1);
 const angleDiff = angleDifference(subJellyfish.angle, rangeInfo.start_angle_1);
 console.log("angleDiff", angleDiff);
 
-    const delta_angle = 
-      rangeInfo.start_i !== rangeInfo.end_i ?
-      (rangeInfo.delta_angle_start +
-      rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1)) / 2 :
-      0;
+    let delta_angle;
+
+    switch(true)
+    {
+      case rangeInfo.start_i === i : delta_angle = rangeInfo.delta_start_angle; break;
+      case rangeInfo.end_i   === i : delta_angle = rangeInfo.delta_end_angle;   break;
+
+      default : 
+console.log("subJellyfish.node_id", subJellyfish.node_id);
+console.log("angleDifference(subJellyfish.angle, rangeInfo.start_angle_1)", angleDifference(subJellyfish.angle, rangeInfo.start_angle_1));
+
+//        delta_angle = rangeInfo.delta_start_angle + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
+        delta_angle = angleDifference(rangeInfo.start_angle_2, subJellyfish.angle) + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
+        break;
+    }
 
 //if(Number.isNaN(delta_angle))
 //{
-console.log("==========================================");  
-console.log("rangeInfo.start_angle_2", rangeInfo.start_angle_2);
-console.log("rangeInfo.delta_angle_2", rangeInfo.delta_angle_2);
-console.log("rangeInfo.delta_angle_1", rangeInfo.delta_angle_1);
 console.log("subJellyfish.angle", subJellyfish.angle);
-console.log("rangeInfo.start_angle_1", rangeInfo.start_angle_1);
 console.log("delta_angle", delta_angle);
 //}
 
