@@ -1,6 +1,6 @@
 
 import { draw_arc, draw_line, draw_point, draw_text, split_text } from './jellyfish_graphical_functions.js';
-import { normalizeAngle } from './support_functions';
+import { normalizeAngle, angleDifference } from './support_functions';
 
 /*
 function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
@@ -378,6 +378,11 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, col
 if(d.text_id === "S008") d.angle -= Math.PI / 8;
     });
 
+if(jellyfish.text_id === "V008")
+{
+console.log("jellyfish", jellyfish);
+}
+
   visit(
     jellyfish,
     {},
@@ -395,7 +400,15 @@ if(d.text_id === "S008") d.angle -= Math.PI / 8;
         let modifiedAngleDeltas = angleDeltas.map(d => d * scaling);
 
         let modifiedChildrenAngles = modifiedAngleDeltas.map(d => averageChildrenAngle + d);
-
+/*        
+if(d.text_id === "V008")
+{
+  console.log("----------------------------------------------");
+  console.log("modifiedChildrenAngles", modifiedChildrenAngles);
+//  modifiedChildrenAngles = modifiedChildrenAngles.map(v => v + Math.PI / 2);
+  console.log("modifiedChildrenAngles", modifiedChildrenAngles);
+}
+*/
         for(let i = 0; i < d.children.length; ++i)
         {
           d.children[i].angle = modifiedChildrenAngles[i];
@@ -656,6 +669,26 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 {
   var level_maxTextLen_map = new Map();
 
+  if(jellyfish.text_id === "V008")
+  {
+    const getNodeAngle = id => jellyfish.children.find(d => d.node_id === id).angle;
+
+    adjust_angle_ranges(jellyfish, [
+      { 
+        start : { id : "V008@greto",  angle : getNodeAngle("V008@accampamento") * 0.94 }, 
+        end   : { id : "V008@radura", angle : getNodeAngle("V008@radura") * 0.94 },
+      },
+      {
+        start : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") }, 
+        end   : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") },
+      },
+      {
+        start : { id : "V008@Marocco", angle : getNodeAngle("V008@Marocco") }, 
+        end   : { id : "V008@Francia", angle : getNodeAngle("V008@sentieri") },
+      }
+    ]);
+  }
+
   visit(
     jellyfish,
     {},
@@ -890,4 +923,82 @@ function deltaAngle(angle1, angle2)
 function mod(x, n)
 {
   return (x % n + n) % n;
+}
+
+function adjust_angle_ranges(jellyfish, baseNodeRanges)
+{
+console.log("adjust_angle_ranges()");  
+
+const b = 0.560998;
+const a = 5.94;
+const ddd = angleDifference(b, a);
+console.log("ddd", ddd);
+
+  const nodeInfoMap = new Map(jellyfish.children.map((d, i) => [d.node_id, { i : i }]));
+
+  const rangeInfos = baseNodeRanges.map(range => {
+console.log("range", range);
+    const start_i = nodeInfoMap.get(range.start.id).i;
+    const startNode = jellyfish.children[start_i];
+
+    const end_i = nodeInfoMap.get(range.end.id).i;
+    const endNode = jellyfish.children[end_i];
+
+    return {
+      start_i : start_i,
+      end_i : end_i,
+      start_angle_1 : startNode.angle,
+      start_angle_2 : range.start.angle,
+      delta_angle_1 : angleDifference(endNode.angle, startNode.angle),
+      delta_angle_2 : angleDifference(range.end.angle, range.start.angle),
+      delta_start_angle : angleDifference(range.start.angle, startNode.angle),
+range_start_angle : range.start.angle,      
+range_end_angle : range.end.angle,
+range_length : angleDifference(range.end.angle, range.start.angle),
+endNode_angle : endNode.angle,
+      delta_end_angle : angleDifference(range.end.angle, endNode.angle),
+    };
+  });
+
+  jellyfish.children.forEach((subJellyfish, i) => {
+
+    const rangeInfo = rangeInfos.find(r => r.start_i <= i && i <= r.end_i);
+
+console.log("****************************************");
+console.log("rangeInfo", rangeInfo);
+
+console.log("subJellyfish.angle", subJellyfish.angle);
+console.log("rangeInfo.start_angle_1", rangeInfo.start_angle_1);
+const angleDiff = angleDifference(subJellyfish.angle, rangeInfo.start_angle_1);
+console.log("angleDiff", angleDiff);
+
+    let delta_angle;
+
+    switch(true)
+    {
+      case rangeInfo.start_i === i : delta_angle = rangeInfo.delta_start_angle; break;
+      case rangeInfo.end_i   === i : delta_angle = rangeInfo.delta_end_angle;   break;
+
+      default : 
+console.log("subJellyfish.node_id", subJellyfish.node_id);
+console.log("angleDifference(subJellyfish.angle, rangeInfo.start_angle_1)", angleDifference(subJellyfish.angle, rangeInfo.start_angle_1));
+
+//        delta_angle = rangeInfo.delta_start_angle + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
+        delta_angle = angleDifference(rangeInfo.start_angle_2, subJellyfish.angle) + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
+        break;
+    }
+
+//if(Number.isNaN(delta_angle))
+//{
+console.log("subJellyfish.angle", subJellyfish.angle);
+console.log("delta_angle", delta_angle);
+//}
+
+
+console.log("subJellyfish.node_id", subJellyfish.node_id);
+console.log("delta_angle", delta_angle);
+      
+    visit(subJellyfish, {}, d => d.angle = normalizeAngle(d.angle + delta_angle));
+console.log("subJellyfish.angle", subJellyfish.angle);    
+  });
 }
