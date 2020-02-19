@@ -1,6 +1,6 @@
 
 .nav-menu-cell-grid {
-  background-color:#FFA500;
+  background-color:var(--bg);
   display : grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   padding:100px;

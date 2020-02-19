@@ -8,6 +8,15 @@ export default class ViewSelector extends React.Component
   {
     let children = React.Children.toArray(this.props.children)
     let the_link = this.props.route.includes("#") ? <HashLink to={this.props.route}>{this.props.text}</HashLink> : <Link to={this.props.route}>{this.props.text}</Link>
+    let content;
+    if (this.props.subtitle) content =
+    (
+      <>
+        {the_link}
+        <h2>{this.props.subtitle}</h2>
+      </>
+    )
+    else content = the_link;
 
     if (children.length < 1) {
       let obj = { type: 'span'}
@@ -26,7 +35,11 @@ export default class ViewSelector extends React.Component
             if (d.props && d.props.dataClass) {
               this_class = d.props.dataClass
             }
-            return <d.type key={i} className={this_class}>{the_link}</d.type>
+            if (this.props.subtitle)
+            return content
+
+            else
+            return <d.type key={i} className={this_class}>{content}</d.type>
           })
         }
       </div>
