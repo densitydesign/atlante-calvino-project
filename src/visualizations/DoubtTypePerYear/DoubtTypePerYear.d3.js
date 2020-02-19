@@ -182,7 +182,7 @@ console.log("series", series);
       .attr("x", 50)
       .attr("y", 50)
       .attr("width", 110)
-      .attr("height", 80);
+      .attr("height", 107);
 
     const yearLabel = tooltip
       .append("text")
