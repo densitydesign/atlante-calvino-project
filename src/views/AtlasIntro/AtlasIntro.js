@@ -148,17 +148,6 @@ class AtlasIntro extends React.Component
 
           </div>
         </div>
-{/*
-        <div id="staticGrid" className="atlas-intro">
-          <div/>
-          <div className="atlas-intro-cell-grid">
-            <div className="atlas-intro-cell"></div>
-            <div className="atlas-intro-cell"><h3>Forma</h3></div>
-            <div className="atlas-intro-cell"><h3>Dubbio</h3></div>
-            <div className="atlas-intro-cell"><h3>Spazio</h3></div>
-          </div>
-        </div>
-*/}
 
         <div id="staticGrid" className="atlas-intro">
           <div/>
@@ -186,34 +175,6 @@ class AtlasIntro extends React.Component
           </div>
         </div>
 
-{/*
-        <div className="hamburger-menu-cell-grid">
-
-          <div className="hamburger-menu-cell"></div>
-          <div className="hamburger-menu-cell">Dubbio</div>
-          <div className="hamburger-menu-cell">Spazi</div>
-          <div className="hamburger-menu-cell">Forma</div>
-          <div className="hamburger-menu-cell">Fenomeno</div>
-          <div className="hamburger-menu-cell">Dubbio</div>
-          <div className="hamburger-menu-cell">Spazio</div>
-          <div className="hamburger-menu-cell">Forma</div>
-          <div className="hamburger-menu-cell">Processo</div>
-          <div className="hamburger-menu-cell">Dubitare</div>
-          <div className="hamburger-menu-cell">Trasformare</div>
-          <div className="hamburger-menu-cell">Combinare</div>
-          <div className="hamburger-menu-cell">Problema</div>
-          <div className="hamburger-menu-cell">Trama</div>
-          <div className="hamburger-menu-cell">Realismo</div>
-          <div className="hamburger-menu-cell">Cancellazione</div>
-
-        </div>
-*/}
-
-
-
-
-
-
 
 
 
@@ -230,18 +191,14 @@ class AtlasIntro extends React.Component
 
         <div id="scrollableGrid" className="atlas-intro-scrollable">
           <div className="atlas-intro-sidebar3">
-
-            <div className="atlas-intro-sidebar-monoblock-2 compass-selector-cell" style={{ top: this.getVisibleItemInitialY(), zIndex: 10 }}>
-            <h1>BUSSOLA</h1>
-            </div>
-
-{/*            <div className="atlas-intro-sidebar-monoblock" style={{background:"orange", top: this.getVisibleItemInitialY() - 0.5 * transitionData.percent * this.getDeltaY(), zIndex: 1 }}> */}
             <div className="atlas-intro-sidebar-monoblock" style={{ top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
             <p className="intro">Prima di iniziare il viaggio, ci vuole una <strong>bussola</strong>.
             Per quello abbiamo creato tre visualizzazioni orientative,
             che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano.
             Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore. </p>
             </div>
+
+
 
             <div className="atlas-intro-sidebar-monoblock" style={{top: 0 - transitionData.percent * 0.5 * this.getDeltaY(), zIndex: 1 }}>
             <h2>Équipe</h2>
@@ -269,7 +226,7 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3 itineraries-intro"></div>
+            <div className="atlas-intro-cell3 blank-intro"><h3>BUSSOLA</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Dubbio</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Forma</h3></div>
@@ -306,7 +263,9 @@ class AtlasIntro extends React.Component
           <div className="atlas-intro-sidebar4" style={{ top: this.getVisibleItemInitialY() }}>
 
             <div className="atlas-intro-sidebar-monoblock compass-selector-cell" >
-              <h1>BUSSOLA</h1>
+              <h1>Atlante Calvino.</h1>
+              <p> Letteratura e Visualizzazione</p>
+
             </div>
 
             <div className="atlas-intro-sidebar-monoblock">
@@ -350,7 +309,7 @@ class AtlasIntro extends React.Component
         <div id="staticGrid" className="atlas-intro">
           <div/>
           <div className="atlas-intro-cell-grid2">
-            <div className="atlas-intro-cell3 itineraries-intro"></div>
+            <div className="atlas-intro-cell3 blank-intro"><h3>BUSSOLA</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Dubbio</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Spazio</h3></div>
             <div className="atlas-intro-cell3 itineraries-intro"><h3>Forma</h3></div>
