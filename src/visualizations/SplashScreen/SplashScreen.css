@@ -22,7 +22,7 @@
 
 
 .splash-screen-caption {
-  top: 70%;
+  top: 74%;
   width: 30%;
   left: 35%;
   position: absolute;
@@ -38,7 +38,7 @@
   position: absolute;
   text-align: center;
   color: var(--bg);
-  animation: 5s ease-in 0s 1 splash-description-animation;
+  animation: 4s ease-in 0s 1 splash-description-animation;
 }
 
 .splash-screen-icon-animation {
@@ -54,8 +54,12 @@
 
 @keyframes splash-caption-animation {
   0% {
-    color: var(--bg);
+    color: var(--dark-blue);
   }
+
+  70% {
+    color: turquoise;
+  }  
 
   100% {
     color: turquoise;
@@ -64,15 +68,15 @@
 
 @keyframes splash-description-animation {
   0% {
-    color: var(--bg);
+    color: var(--dark-blue);
   }
 
-  20% {
-    color: var(--bg)
+  30% {
+    color: var(--dark-blue)
   }
 
   100% {
-    color: #FFA500;
+    color: var(--bg);
   }
 }
 

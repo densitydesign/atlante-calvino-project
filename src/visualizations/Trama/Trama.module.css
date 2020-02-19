@@ -35,6 +35,12 @@
     opacity: 0.3;
 }
 
+.marimekkoXaxisText{
+    font-size: 12px;
+    font-style: italic;
+    padding-top: 10px;
+}
+
 .marimekkoRect {
   fill: transparent;
   stroke: #444;
@@ -116,4 +122,15 @@
 .cursorLine {
     stroke: #222;
     stroke-width: 1;
+}
+
+
+.currentSequenceLevel{
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.currentSequenceLabel{
+    font-size: 11px;
 }

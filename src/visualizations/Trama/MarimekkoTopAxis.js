@@ -7,6 +7,7 @@ import some from "lodash/some";
 
 export default function MarimekkoTopAxis({
   width,
+  fullWidth,
   height,
   booksData,
   setCurrentTextID,
@@ -33,7 +34,7 @@ export default function MarimekkoTopAxis({
 
     to: {
       width: isBookDetail ? width / 2 : width,
-      left: isBookDetail ? width / 2 : 0,
+      left: isBookDetail ? (fullWidth - width) +  width / 2 : 0,
       opacity: isBookDetail ? 1 : 0
     },
     onFrame({ left }) {
@@ -46,8 +47,8 @@ export default function MarimekkoTopAxis({
     // const widthForLong = booksData.length < 5 ? width / 2 : width
 
     return !short
-      ? computeHorizontalPositions(booksData, width, false)
-      : computeHorizontalPositions(booksData, width / 2, true);
+      ? computeHorizontalPositions(booksData, width, false, booksData.length >= 4)
+      : computeHorizontalPositions(booksData, width / 2, booksData.length >= 4);
   }, [booksData, width, short]);
 
   const getCurrenBookClasses = useCallback(
@@ -64,9 +65,7 @@ export default function MarimekkoTopAxis({
             rect: styles.topAxisRect
           };
         } else {
-          const isCurrentSeq = some(
-            sequencesSelected.map(s => book.sequencesMapForBook[s])
-          );
+          const isCurrentSeq = !!book.sequencesMatchesForBook[sequencesSelected]
           return isCurrentSeq
             ? {
                 text: styles.topAxisText,

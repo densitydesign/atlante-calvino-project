@@ -46,3 +46,8 @@
     text-transform: none;
     text-align: left;
 }
+
+
+.rbt-menu-container {
+    border-bottom: solid #222 2px;
+}

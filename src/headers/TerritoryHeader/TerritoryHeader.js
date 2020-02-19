@@ -84,7 +84,7 @@ export default class TerritoryHeader extends React.Component
       <div className="top-nav navigations">
 
         <MainMenu style={{ gridColumn : "span 1" }} />
-        <PageTitle title={"IL TERRITORIO DELLE OPERE PER"} style={{ gridColumn: "span 7" }} />
+        <PageTitle title={"L'arcipelago delle opere di Italo Calvino"} style={{ gridColumn: "span 7" }} />
 
         <ToggleButton
           id={this.analysisModeToggleButtonId}

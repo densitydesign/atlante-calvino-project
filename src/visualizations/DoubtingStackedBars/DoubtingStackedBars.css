@@ -2,3 +2,7 @@
   padding-left:1em;
   padding-right:1em;
 }
+
+#doubting-stacked-bars.there-is-filter .serie rect.filtered {
+  opacity: 0.15 !important;
+}

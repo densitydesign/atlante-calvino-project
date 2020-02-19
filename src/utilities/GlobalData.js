@@ -192,6 +192,3313 @@ const territoryColorPalette = {
   paleTurquoise  : "#97DADD"
 };
 
+const publications = [
+  {
+      "id": "S001",
+      "destination": "«Roma fascista»",
+      "year": "1943",
+      "month": "04",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S002",
+      "destination": "«Roma fascista»",
+      "year": "1943",
+      "month": "04",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S003",
+      "destination": "«Roma fascista»",
+      "year": "1943",
+      "month": "04",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S004",
+      "destination": "«Aretusa»",
+      "year": "1945",
+      "month": "12",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S005",
+      "destination": "«Politecnico»",
+      "year": "1946",
+      "month": "01",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S006",
+      "destination": "«L'Unità» (Milano)",
+      "year": "1946",
+      "month": "04",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S007",
+      "destination": "«Darsena nuova»",
+      "year": "1946",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S008",
+      "destination": "«Unità» (Torino)",
+      "year": "1946",
+      "month": "06",
+      "day": "09",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S009",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1946",
+      "month": "06",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S010",
+      "destination": "«L'Unità» (Genova)",
+      "year": "1946",
+      "month": "08",
+      "day": "18",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S011",
+      "destination": "«L'Unità» (Milano)",
+      "year": "1946",
+      "month": "09",
+      "day": "22",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S012",
+      "destination": "«Unità» (Torino)",
+      "year": "1946",
+      "month": "09",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S013",
+      "destination": "«Unità» (Torino)",
+      "year": "1946",
+      "month": "11",
+      "day": "07",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S014",
+      "destination": "«Agorà»",
+      "year": "1947",
+      "month": "01",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S016",
+      "destination": "«L'Unità» (Milano)",
+      "year": "1947",
+      "month": "01",
+      "day": "05",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S017",
+      "destination": "«L'Unità» (Milano)",
+      "year": "1947",
+      "month": "01",
+      "day": "08",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S018",
+      "destination": "«L'Unità» (Genova)",
+      "year": "1947",
+      "month": "03",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S019",
+      "destination": "«Il Settimanale»",
+      "year": "1947",
+      "month": "05",
+      "day": "03",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S020",
+      "destination": "«L'Unità» (Genova)",
+      "year": "1947",
+      "month": "05",
+      "day": "18",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S021",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1947",
+      "month": "06",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S015",
+      "destination": "«Graal. Rivista d’arte e pensiero»",
+      "year": "1947",
+      "month": "07",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S022",
+      "destination": "«L'Unità» (Genova)",
+      "year": "1947",
+      "month": "07",
+      "day": "06",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V001",
+      "destination": "V001",
+      "year": "1947",
+      "month": "10",
+      "day": "10",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S023",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "01",
+      "day": "08",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S024",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "02",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S025",
+      "destination": "«Rinascita»",
+      "year": "1948",
+      "month": "02",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S026",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "04",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S027",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "06",
+      "day": "11",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S028",
+      "destination": "«Milano-sera»",
+      "year": "1948",
+      "month": "06",
+      "day": "22",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S029",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "08",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S030",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "09",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S031",
+      "destination": "«Unità» (Torino)",
+      "year": "1948",
+      "month": "10",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S032",
+      "destination": "«Unità» (Torino)",
+      "year": "1948",
+      "month": "10",
+      "day": "31",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S033",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1948",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S034",
+      "destination": "Antologia Einaudi 1948",
+      "year": "1948",
+      "month": "12",
+      "day": "22",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S035",
+      "destination": "«Unità» (Torino)",
+      "year": "1949",
+      "month": "01",
+      "day": "08",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S036",
+      "destination": "«Unità» (Torino)",
+      "year": "1949",
+      "month": "04",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S004",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S005",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S006",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S007",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S009",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S010",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S011",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S014",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S016",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S017",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S018",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S020",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S021",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S022",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S023",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S024",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S025",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S026",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S027",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S029",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S030",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S033",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S034",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S067",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S037",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S038",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S039",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S040",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S041",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S042",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S043",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V002",
+      "destination": "V002",
+      "year": "1949",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S044",
+      "destination": "«Unità» (Torino)",
+      "year": "1950",
+      "month": "04",
+      "day": "07",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S045",
+      "destination": "«Unità» (Torino)",
+      "year": "1950",
+      "month": "08",
+      "day": "17",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S046",
+      "destination": "«Inventario»",
+      "year": "1950",
+      "month": "09",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S047",
+      "destination": "«Rinascita»",
+      "year": "1950",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S048",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1950",
+      "month": "11",
+      "day": "09",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S049",
+      "destination": "«Unità» (Torino)",
+      "year": "1951",
+      "month": "07",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S050",
+      "destination": "«Paragone-letteratura»",
+      "year": "1951",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V003",
+      "destination": "V003",
+      "year": "1952",
+      "month": "02",
+      "day": "12",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S051",
+      "destination": "«Unità» (Torino)",
+      "year": "1952",
+      "month": "06",
+      "day": "08",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S052",
+      "destination": "«L'Unità»",
+      "year": "1952",
+      "month": "06",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S053",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1952",
+      "month": "09",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S054",
+      "destination": "«Botteghe Oscure»",
+      "year": "1952",
+      "month": "10",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S055",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1952",
+      "month": "10",
+      "day": "12",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S056",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1952",
+      "month": "10",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S057",
+      "destination": "«Unità» (Torino)",
+      "year": "1952",
+      "month": "11",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S058",
+      "destination": "«Unità» (Torino)",
+      "year": "1952",
+      "month": "12",
+      "day": "09",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S059",
+      "destination": "«Unità» (Torino)",
+      "year": "1952",
+      "month": "12",
+      "day": "14",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S060",
+      "destination": "«Unità» (Torino)",
+      "year": "1953",
+      "month": "01",
+      "day": "14",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S061",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1953",
+      "month": "02",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S062",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1953",
+      "month": "02",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S063",
+      "destination": "«Unità» (Torino)",
+      "year": "1953",
+      "month": "04",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S064",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1953",
+      "month": "04",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S065",
+      "destination": "«Nuovi Argomenti»",
+      "year": "1953",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S066",
+      "destination": "«L'Unità» (Torino)",
+      "year": "1953",
+      "month": "07",
+      "day": "05",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S067",
+      "destination": "«Il Ponte»",
+      "year": "1953",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S068",
+      "destination": "«Paragone-letteratura»",
+      "year": "1953",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S069",
+      "destination": "«Unità» (Torino)",
+      "year": "1953",
+      "month": "10",
+      "day": "14",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S070",
+      "destination": "«Unità» (Torino)",
+      "year": "1953",
+      "month": "10",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S071",
+      "destination": "«Unità» (Torino)",
+      "year": "1954",
+      "month": "02",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S072",
+      "destination": "V004",
+      "year": "1954",
+      "month": "05",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V004",
+      "destination": "V004",
+      "year": "1954",
+      "month": "05",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S065",
+      "destination": "V004",
+      "year": "1954",
+      "month": "05",
+      "day": "25",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S067",
+      "destination": "V004",
+      "year": "1954",
+      "month": "05",
+      "day": "25",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S073",
+      "destination": "«Incontri oggi»",
+      "year": "1954",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S074",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "08",
+      "day": "07",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S075",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "08",
+      "day": "21",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S076",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "08",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S077",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "09",
+      "day": "04",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S078",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "09",
+      "day": "11",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S079",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "09",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S080",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "10",
+      "day": "09",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S081",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "10",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S082",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "12",
+      "day": "11",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S083",
+      "destination": "«Il contemporaneo»",
+      "year": "1954",
+      "month": "12",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S084",
+      "destination": "«Il contemporaneo»",
+      "year": "1955",
+      "month": "04",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S085",
+      "destination": "«Il Caffè»",
+      "year": "1956",
+      "month": "01",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S086",
+      "destination": "«Corriere d'informazione»",
+      "year": "1957",
+      "month": "05",
+      "day": "04",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V005",
+      "destination": "V005",
+      "year": "1957",
+      "month": "06",
+      "day": "04",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S087",
+      "destination": "«Città aperta»",
+      "year": "1957",
+      "month": "07",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S088",
+      "destination": "«Botteghe Oscure»",
+      "year": "1957",
+      "month": "09",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S089",
+      "destination": "«Città aperta»",
+      "year": "1958",
+      "month": "03",
+      "day": "06",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S090",
+      "destination": "«L'Espresso»",
+      "year": "1958",
+      "month": "05",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S091",
+      "destination": "«Città aperta»",
+      "year": "1958",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S092",
+      "destination": "«Nuova Corrente»",
+      "year": "1958",
+      "month": "07",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S093",
+      "destination": "«Il Mondo»",
+      "year": "1958",
+      "month": "07",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S094",
+      "destination": "«Tempo presente»",
+      "year": "1958",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S095",
+      "destination": "«Nuovi Argomenti»",
+      "year": "1958",
+      "month": "09",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S096",
+      "destination": "«Il Caffè»",
+      "year": "1958",
+      "month": "09",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S097",
+      "destination": "«Il Verri»",
+      "year": "1958",
+      "month": "10",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S005",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S007",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S009",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S010",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S011",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S016",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S018",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S021",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S022",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S023",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S024",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S026",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S027",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S029",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S030",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S034",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S037",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S041",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S042",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S046",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S048",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S050",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S052",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S053",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S054",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S055",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S056",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S061",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S062",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S064",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S065",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S066",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S068",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S072",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S083",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S085",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S086",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S088",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S092",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S093",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S094",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S095",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S096",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S097",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S098",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S099",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S100",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S101",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S102",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S103",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S104",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V006",
+      "destination": "V006",
+      "year": "1958",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S054",
+      "destination": "V007",
+      "year": "1958",
+      "month": "",
+      "day": "",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V007",
+      "destination": "V007",
+      "year": "1958",
+      "month": "",
+      "day": "",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S105",
+      "destination": "«Successo»",
+      "year": "1959",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V008",
+      "destination": "V008",
+      "year": "1959",
+      "month": "11",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S106",
+      "destination": "«Questo e altro», n.1",
+      "year": "1962",
+      "month": "01",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V009",
+      "destination": "V009",
+      "year": "1963",
+      "month": "02",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S107",
+      "destination": "«L'Europa letteraria»",
+      "year": "1963",
+      "month": "04",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S088",
+      "destination": "V010",
+      "year": "1963",
+      "month": "06",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V010",
+      "destination": "V010",
+      "year": "1963",
+      "month": "06",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S108",
+      "destination": "«Il Corriere dei Piccoli»",
+      "year": "1963",
+      "month": "10",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S109",
+      "destination": "«Il Corriere dei Piccoli»",
+      "year": "1963",
+      "month": "10",
+      "day": "27",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S110",
+      "destination": "«Il Corriere dei Piccoli»",
+      "year": "1963",
+      "month": "11",
+      "day": "03",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S111",
+      "destination": "«Il Corriere dei Piccoli»",
+      "year": "1963",
+      "month": "11",
+      "day": "10",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S053",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S055",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S056",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S061",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S062",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S066",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S083",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S085",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S086",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S098",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S108",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S109",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S110",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S111",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S112",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S113",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S114",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S115",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S116",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S117",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V011",
+      "destination": "V011",
+      "year": "1963",
+      "month": "11",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S118",
+      "destination": "«Il Caffè politico e letterario»",
+      "year": "1964",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S119",
+      "destination": "«Il Caffè politico e letterario»",
+      "year": "1964",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S120",
+      "destination": "«Il Caffè politico e letterario»",
+      "year": "1964",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S121",
+      "destination": "«Il Caffè politico e letterario»",
+      "year": "1964",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S122",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "04",
+      "day": "11",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S123",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "04",
+      "day": "18",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S124",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S125",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "05",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S054",
+      "destination": "V012",
+      "year": "1965",
+      "month": "10",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S095",
+      "destination": "V012",
+      "year": "1965",
+      "month": "10",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V012",
+      "destination": "V012",
+      "year": "1965",
+      "month": "10",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S126",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "10",
+      "day": "24",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S127",
+      "destination": "«Il Giorno»",
+      "year": "1965",
+      "month": "10",
+      "day": "31",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S128",
+      "destination": "«L'Espresso»",
+      "year": "1965",
+      "month": "11",
+      "day": "14",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S046",
+      "destination": "V012",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S129",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S130",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S131",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S132",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S118",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S119",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S120",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S121",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V013",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S122",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S124",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S126",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S128",
+      "destination": "V013",
+      "year": "1965",
+      "month": "11",
+      "day": "15",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S133",
+      "destination": "Almanacco Letterario Bompiani 1967",
+      "year": "1966",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S134",
+      "destination": "«Nuova Corrente»",
+      "year": "1967",
+      "month": "01",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S135",
+      "destination": "«Il Giorno»",
+      "year": "1967",
+      "month": "05",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S136",
+      "destination": "«Il Giorno»",
+      "year": "1967",
+      "month": "06",
+      "day": "11",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S137",
+      "destination": "«Linus»",
+      "year": "1967",
+      "month": "07",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S138",
+      "destination": "«Il Giorno»",
+      "year": "1967",
+      "month": "07",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S139",
+      "destination": "«Rendiconti»",
+      "year": "1967",
+      "month": "07",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S140",
+      "destination": "«Il Giorno»",
+      "year": "1967",
+      "month": "07",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S133",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S134",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S135",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S136",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S137",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S139",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S140",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S141",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S142",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S143",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S144",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V014",
+      "destination": "V014",
+      "year": "1967",
+      "month": "10",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S145",
+      "destination": "«Playmen»",
+      "year": "1968",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S146",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S147",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S148",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V015",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S118",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S119",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S122",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S123",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S124",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S125",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S126",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S127",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S130",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S135",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S136",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S137",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S138",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S140",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S141",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S144",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S145",
+      "destination": "V015",
+      "year": "1968",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S149",
+      "destination": "«Il caffè letterario e satirico»",
+      "year": "1969",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V016",
+      "destination": "V016",
+      "year": "1969",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S042",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S050",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S054",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S068",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S084",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S094",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S095",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S097",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S100",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S101",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S102",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S103",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S104",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S105",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S140",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V017",
+      "destination": "V017",
+      "year": "1970",
+      "month": "06",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S150",
+      "destination": "Adelphiana 1971",
+      "year": "1971",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S151",
+      "destination": "«Playboy»",
+      "year": "1972",
+      "month": "11",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V018",
+      "destination": "V018",
+      "year": "1972",
+      "month": "11",
+      "day": "03",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S152",
+      "destination": "V019",
+      "year": "1973",
+      "month": "10",
+      "day": "27",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V019",
+      "destination": "V019",
+      "year": "1973",
+      "month": "10",
+      "day": "27",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S153",
+      "destination": "«Corriere della sera»",
+      "year": "1974",
+      "month": "04",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S154",
+      "destination": "F. Fellini, Quattro film",
+      "year": "1974",
+      "month": "09",
+      "day": "28",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V020",
+      "destination": "V020",
+      "year": "1974",
+      "month": "12",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S155",
+      "destination": "«Corriere della sera»",
+      "year": "1974",
+      "month": "12",
+      "day": "21",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S156",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "04",
+      "day": "27",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S157",
+      "destination": "Aa. Vv., Le interviste imposibili",
+      "year": "1975",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S158",
+      "destination": "Aa. Vv., Le interviste imposibili",
+      "year": "1975",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S159",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "07",
+      "day": "27",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S160",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S161",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "08",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S162",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "08",
+      "day": "10",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S163",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "08",
+      "day": "10",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S164",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "08",
+      "day": "24",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S165",
+      "destination": "«Corriere della sera»",
+      "year": "1975",
+      "month": "09",
+      "day": "18",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S166",
+      "destination": "«Corriere della sera»",
+      "year": "1976",
+      "month": "01",
+      "day": "23",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S167",
+      "destination": "L'atelier de l'artiste",
+      "year": "1976",
+      "month": "04",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S168",
+      "destination": "«Corriere della sera»",
+      "year": "1976",
+      "month": "07",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S169",
+      "destination": "-V. Gobbi/S. Toresella, Acquedotti ieri e oggi",
+      "year": "1976",
+      "month": "12",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S170",
+      "destination": "«Corriere della sera»",
+      "year": "1977",
+      "month": "01",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S171",
+      "destination": "«Paragone»",
+      "year": "1977",
+      "month": "02",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S172",
+      "destination": "«Corriere della sera»",
+      "year": "1977",
+      "month": "08",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S173",
+      "destination": "«Il Caffè»",
+      "year": "1977",
+      "month": "10",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S174",
+      "destination": "Paraphrases",
+      "year": "1978",
+      "month": "04",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S175",
+      "destination": "«Corriere della sera»",
+      "year": "1978",
+      "month": "12",
+      "day": "24",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V021",
+      "destination": "V021",
+      "year": "1979",
+      "month": "06",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S176",
+      "destination": "«la Repubblica»",
+      "year": "1980",
+      "month": "03",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S177",
+      "destination": "«Derrière le miroir»",
+      "year": "1980",
+      "month": "05",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S178",
+      "destination": "«la Repubblica»",
+      "year": "1980",
+      "month": "05",
+      "day": "16",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S179",
+      "destination": "«Gran Bazaar»",
+      "year": "1980",
+      "month": "09",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S180",
+      "destination": "Magnelli. Les pierres: 1931-1935",
+      "year": "1981",
+      "month": "07",
+      "day": "14",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S181",
+      "destination": "I. Calvino/M. Campigli, Le memorie di Casanova",
+      "year": "1981",
+      "month": "11",
+      "day": "30",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S182",
+      "destination": "«la Repubblica»",
+      "year": "1981",
+      "month": "12",
+      "day": "03",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S183",
+      "destination": "Firenze perduta",
+      "year": "1982",
+      "month": "01",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S184",
+      "destination": "«la Repubblica»",
+      "year": "1982",
+      "month": "04",
+      "day": "15",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S185",
+      "destination": "«FMR»",
+      "year": "1982",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S186",
+      "destination": "«Cnac Magazine»",
+      "year": "1982",
+      "month": "07",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S187",
+      "destination": "«la Repubblica»",
+      "year": "1982",
+      "month": "08",
+      "day": "12",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S188",
+      "destination": "Gnoli",
+      "year": "1983",
+      "month": "03",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S189",
+      "destination": "«FMR»",
+      "year": "1983",
+      "month": "07",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S190",
+      "destination": "«la Repubblica»",
+      "year": "1983",
+      "month": "07",
+      "day": "29",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S191",
+      "destination": "«la Repubblica»",
+      "year": "1983",
+      "month": "08",
+      "day": "25",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S192",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S193",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S194",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S195",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S196",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S197",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S198",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S199",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S200",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S201",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "V022",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S160",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S161",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S162",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S163",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S164",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S165",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S166",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S168",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S170",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S172",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S178",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S182",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S184",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S186",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S187",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S190",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S191",
+      "destination": "V022",
+      "year": "1983",
+      "month": "11",
+      "day": "19",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S202",
+      "destination": "«la Repubblica»",
+      "year": "1984",
+      "month": "01",
+      "day": "03",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S203",
+      "destination": "Cremonini. Opere dal 1960 al 1984",
+      "year": "1984",
+      "month": "06",
+      "day": "01",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S204",
+      "destination": "«la Repubblica»",
+      "year": "1984",
+      "month": "08",
+      "day": "12",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S205",
+      "destination": "«la Repubblica»",
+      "year": "1984",
+      "month": "09",
+      "day": "02",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S206",
+      "destination": "«la Repubblica»",
+      "year": "1984",
+      "month": "09",
+      "day": "13",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S118",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S119",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S120",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S121",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S122",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S123",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S124",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S125",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S126",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S127",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S128",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S129",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S130",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S131",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S132",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S133",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S134",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S135",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S136",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S137",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S139",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S140",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S141",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S142",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S143",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S144",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S145",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S146",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S147",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "V023",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "TRUE"
+  },
+  {
+      "id": "S205",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  },
+  {
+      "id": "S206",
+      "destination": "V023",
+      "year": "1984",
+      "month": "11",
+      "day": "20",
+      "firstPublication": "FALSO"
+  }
+]
+
 const GlobalData = {
   allVolumes : [
     {"id":"V001","label":"Il sentiero dei nidi di ragno"},
@@ -344,18 +3651,18 @@ const GlobalData = {
                          cancellazione_dim : territoryColorPalette.dimCyan,
                       allDubitative_bright : territoryColorPalette.brightOrange,
                          allDubitative_dim : territoryColorPalette.dimOrange,
-                      generico_cosmico_dim : territoryColorPalette.dimViolet,
-                   generico_cosmico_bright : territoryColorPalette.brightViolet,
-                    generico_terrestre_dim : territoryColorPalette.dimGold,
-                 generico_terrestre_bright : territoryColorPalette.brightGold,
-                             inventato_dim : territoryColorPalette.dimOrange,
-                          inventato_bright : territoryColorPalette.brightOrange,
+                      generico_cosmico_dim : territoryColorPalette.dimBlue,
+                   generico_cosmico_bright : territoryColorPalette.brightBlue,
+                    generico_terrestre_dim : territoryColorPalette.dimOrange,
+                 generico_terrestre_bright : territoryColorPalette.brightOrange,
+                             inventato_dim : territoryColorPalette.dimCyan,
+                          inventato_bright : territoryColorPalette.brightCyan,
                       no_ambientazione_dim : territoryColorPalette.lightComfit,
                    no_ambientazione_bright : territoryColorPalette.grey,
-                      nominato_cosmico_dim : territoryColorPalette.dimBlue,
-                   nominato_cosmico_bright : territoryColorPalette.brightBlue,
-                    nominato_terrestre_dim : territoryColorPalette.dimCyan,
-                 nominato_terrestre_bright : territoryColorPalette.brightCyan,
+                      nominato_cosmico_dim : territoryColorPalette.dimViolet,
+                   nominato_cosmico_bright : territoryColorPalette.brightViolet,
+                    nominato_terrestre_dim : territoryColorPalette.dimGold,
+                 nominato_terrestre_bright : territoryColorPalette.brightGold,
                                     parole : territoryColorPalette.brightCyan,
                                   sintagmi : territoryColorPalette.brightGold,
                                      frasi : territoryColorPalette.brightBlue,
@@ -369,6 +3676,7 @@ const GlobalData = {
   },
   defaultTerritoryDataExtent : [1942, 1985],
   collections : collections,
+  publications : publications,
   allowedCollections : allowedCollections,
   allowedCollectionsSplit : allowedCollections.split(","),
   col_collections : d3

@@ -4,7 +4,7 @@ const V = {}
 
 let width,
     height,
-    margin = {top: 20, right: 10, bottom: 40, left: 40},
+    margin = {top: 30, right: 0, bottom: 30, left: 40},
     showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
@@ -54,12 +54,19 @@ let width,
             "baseCategory": true
         },
         {
-          "id": "dubitativo",
+          "id": "dubbio",
           "color": "#CFCFFF",
           "label": "Dubitativo",
           "percentage": undefined,
           "baseCategory": true
         },
+        {
+            "id": "space-4",
+            "color": "transparent",
+            "label": " ",
+            "percentage": undefined,
+            "baseCategory": true
+        }
     ],
 
     svg,
@@ -74,7 +81,7 @@ let width,
 
     x = d3.scaleBand().padding(0.2).paddingOuter(10),
     xAxis,
-    xAxisCall = d3.axisBottom(x),
+    xAxisCall = d3.axisTop(x),
     y = d3.scaleLinear(),
     yAxis,
     yAxisCall = d3.axisLeft(y),
@@ -91,24 +98,29 @@ V.initialize = (el, data_for_update) => {
 
     svg = d3.select(el);
     g = svg.append("g");
-
-
-    legend = svg.append("text")
-    .attr("y", 10)
-    .attr("x", 0)
-    .text("TIPO DI TESTO")
-    .attr("transform", `translate(${width},20)`);
+    
 
     legend = svg.append("g")
-    .classed("legend", true)
-    .attr("transform", `translate(${width},60)`)
+        .classed("legend", true)
+        .attr("transform", `translate(${width},70)`);
+
+    svg.append("text")
+        .attr("y", 10)
+        .attr("x", 0)
+        .attr("transform", `translate(${width},${margin.top})`)
+        .text("TIPO DI TESTO")
+        .append("tspan")
+            .attr("font-size", "0.9rem")
+            .text("(clicca per riordinare)")
+            .attr("dy", "1.3rem")
+            .attr("x", 0);
 
     legendItem = legend.selectAll(".legend-item");
 
     serie = g.selectAll(".serie");
 
     treemap_misto = svg.append("g")
-    .classed("treemap-misto", true);
+        .classed("treemap-misto", true);
 
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
 
@@ -118,7 +130,8 @@ V.initialize = (el, data_for_update) => {
 
     x.range([margin.left, width - margin.right]);
     xAxis = svg.append("g").classed("axis x-axis", true)
-        .attr("transform", `translate(0,${height - margin.bottom})`);
+        // .attr("transform", `translate(0,${height - margin.bottom})`);
+        .attr("transform", `translate(0,${margin.top})`);
 
     y.range([height - margin.bottom, margin.top]);
     yAxis = svg.append("g").classed("axis y-axis", true)
@@ -128,13 +141,37 @@ V.initialize = (el, data_for_update) => {
     V.update(data_for_update.data, data_for_update.stackMode)
 }
 
-V.update = (data, stackMode) => {
+const sortData = (data, property) => {
+    if (property !== "id") {
+        property += "_perc";
+        data = data.sort((a,b)=>Number(b[property])-Number(a[property]));
+    } else {
+        data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
+    }  
+    return data;
+}
+
+V.update = (data, stackMode, baseLayer) => {
     console.log("update dubbio fase 2")
 
-    let series = d3.stack().keys(stackModeProperties[stackMode])(data);
+    let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]));
+    if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
+        for (var i=0; i < keys.length; i++) {
+            if (keys[i].replace("_perc", "") === baseLayer) {
+                var a = keys.splice(i,1);   // removes the item
+                keys.unshift(a[0]);         // adds it back to the beginning
+                break;
+            }
+        }
+    }
+
+    let series = d3.stack().keys(keys)(data);
 
     x.domain(data.map(d => d.id));
-    xAxis.call(xAxisCall.tickFormat(d=>data.find(datum=>datum.id===d).title))
+    xAxis.call(xAxisCall.tickFormat(d=>{
+            const item = data.find(datum=>datum.id===d)
+            return item.year + " - " + item.title;
+        }))
         .call(g => xAxis.selectAll(".domain").remove())
         .call(g => xAxis.selectAll(".tick").style("display", "none"));
 
@@ -148,10 +185,29 @@ V.update = (data, stackMode) => {
         legendItem = legendItem.enter().append("g")
             .classed("legend-item", true)
             .attr("id", d=>d.id)
-            .on("click", (d)=>{
-                console.log(d);
-            })
             .merge(legendItem)
+            .on("click", (d)=>{
+                if (d.baseCategory) {
+                    if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
+                        let obj = {
+                            "id": "id",
+                            "color": "transparent",
+                            "label": "Reset",
+                            "percentage": undefined,
+                            "baseCategory": true
+                        }
+                        legendData.push(obj);
+                    } else if (d.id === "id") {
+                        legendData.pop();
+                    }
+
+                    let sortedData = sortData(data, d.id);
+                    // d.id is the baselayer ordering setting
+                    // In the Update cycle it is skipped if equal to "id" or "definitivo"
+                    V.update(sortedData, stackMode, d.id);
+                }
+                
+            })
             // .attr("transform", (d,i)=>`translate(0,${i*20})`)
             .html(d=> {
                 let this_percentage = ""
@@ -317,7 +373,7 @@ V.update = (data, stackMode) => {
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
             legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
-            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubbio").percentage = (d.data.dubbio/d.data.length) * 100;
 
             for(let iii=data_misto.children.length-1; iii>0; iii--) {
                 const item = {
@@ -375,7 +431,7 @@ V.update = (data, stackMode) => {
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
             legendData.find(d=>d.id==="misto").percentage = (d.data.misto/d.data.length) * 100;
-            legendData.find(d=>d.id==="dubitativo").percentage = (d.data.dubbio/d.data.length) * 100;
+            legendData.find(d=>d.id==="dubbio").percentage = (d.data.dubbio/d.data.length) * 100;
 
             for(let iii=data_soggetto.children.length-1; iii>0; iii--) {
                 const item = {
@@ -429,6 +485,16 @@ V.update = (data, stackMode) => {
         .sum(d => d.value)
         // .sort((a, b) => b.value - a.value))
         .sort((a, b) => b.name - a.name))
+}
+
+V.filter = (survive_filters) => {
+    // console.log("filter visualization - survivers:", survive_filters);
+    svg.classed('there-is-filter', true)
+    serie.selectAll("rect")
+        .classed('filtered', true)
+        .filter(n => {
+            return survive_filters.indexOf(n.data.id) > -1
+        } ).classed('filtered', false);
 }
 
 V.destroy = () => {
