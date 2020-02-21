@@ -148,7 +148,8 @@ const sortData = (data, property, stackMode) => {
         }
         data = data.sort((a,b)=>Number(b[property])-Number(a[property]));
     } else {
-        data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
+        data = data.sort((a, b) => a.id_index.localeCompare(b.id_index))
+        // data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
     }  
     return data;
 }
@@ -172,7 +173,7 @@ V.update = (data, stackMode, baseLayer) => {
     x.domain(data.map(d => d.id));
     xAxis.call(xAxisCall.tickFormat(d=>{
             const item = data.find(datum=>datum.id===d)
-            return item.year + " - " + item.title;
+            return item.id + " - " + item.year + " - " + item.title;
         }))
         .call(g => xAxis.selectAll(".domain").remove())
         .call(g => xAxis.selectAll(".tick").style("display", "none"));
@@ -279,7 +280,7 @@ V.update = (data, stackMode, baseLayer) => {
             // console.log(this);
             // console.log(d.data);
             if (!d3.select(this).classed("selected") && !d3.select(this).classed("filtered")) {
-                selection(d, d3.select(this).classed("selected"))
+                selection(d, d3.select(this).classed("selected"));
             }
             else {
                 removeSelectionAll();
