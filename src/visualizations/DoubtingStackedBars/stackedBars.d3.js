@@ -271,13 +271,12 @@ V.update = (data, stackMode, baseLayer) => {
         .attr("height", d => y(d[0]) - y(d[1]))
         .attr("width", x.bandwidth())
         .style("opacity", .7)
-        .style("cursor", "pointer")
         .on("mouseenter", d=>preSelection(d))
         .on("mouseleave", d=>removePreSelection(d))
         .on("click", function(d){
             // console.log(this);
             // console.log(d.data);
-            if (!d3.select(this).classed("selected")) {
+            if (!d3.select(this).classed("selected") && !d3.select(this).classed("filtered")) {
                 selection(d, d3.select(this).classed("selected"))
             }
             else {

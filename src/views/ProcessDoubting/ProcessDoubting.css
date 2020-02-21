@@ -5,3 +5,17 @@
 #doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
     pointer-events: none;
 }
+
+#doubting-stacked-bars{
+    padding-left:1em;
+    padding-right:1em;
+  }
+
+#doubting-stacked-bars .serie > rect {
+    cursor: pointer;
+}
+  
+  #doubting-stacked-bars.there-is-filter .serie rect.filtered {
+    opacity: 0.15 !important;
+    cursor: not-allowed;
+  }
