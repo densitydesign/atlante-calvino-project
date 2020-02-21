@@ -177,10 +177,16 @@ class ProcessDoubting extends Component {
     let toPreserve = newOptions.map(d => d.id);
     toPreserve = _.flattenDeep(toPreserve);
 
-    console.log(toPreserve)
+    // console.log(toPreserve)
     
     if (!toPreserve.length) {
       console.warn("Can't filter against an empty array");
+      this.setState(prevState => ({
+        filters: {
+          ...prevState.filters,
+          ricerca: prevState.filters.all
+        }
+      }));
       return;
     } else {
       this.setState(prevState => ({
