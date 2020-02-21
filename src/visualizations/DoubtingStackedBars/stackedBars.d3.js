@@ -141,9 +141,11 @@ V.initialize = (el, data_for_update) => {
     V.update(data_for_update.data, data_for_update.stackMode)
 }
 
-const sortData = (data, property) => {
+const sortData = (data, property, stackMode) => {
     if (property !== "id") {
-        property += "_perc";
+        if (stackMode==="normalized") {
+            property += "_perc";
+        }
         data = data.sort((a,b)=>Number(b[property])-Number(a[property]));
     } else {
         data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
@@ -201,7 +203,7 @@ V.update = (data, stackMode, baseLayer) => {
                         legendData.pop();
                     }
 
-                    let sortedData = sortData(data, d.id);
+                    let sortedData = sortData(data, d.id, stackMode);
                     // d.id is the baselayer ordering setting
                     // In the Update cycle it is skipped if equal to "id" or "definitivo"
                     V.update(sortedData, stackMode, d.id);
@@ -482,7 +484,6 @@ V.update = (data, stackMode, baseLayer) => {
         .round(true)
     (d3.hierarchy(data)
         .sum(d => d.value)
-        // .sort((a, b) => b.value - a.value))
         .sort((a, b) => b.name - a.name))
 }
 
