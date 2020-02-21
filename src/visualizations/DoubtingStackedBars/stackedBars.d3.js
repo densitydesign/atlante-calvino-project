@@ -87,7 +87,7 @@ let width,
     yAxisCall = d3.axisLeft(y),
     color = d3.scaleOrdinal()
         .domain(stackModeProperties.absolute)
-        .range(["#bbbbff","#00c19c","#ffc806","#f0f0f0"])
+        .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
         .unknown("#ccc")
 
 V.initialize = (el, data_for_update) => {
