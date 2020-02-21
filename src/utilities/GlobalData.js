@@ -2977,7 +2977,7 @@ const publications = [
     {
       "id": "V020",
       "destination": "V020",
-      "type": "racconto",
+      "type": "ibrido",
       "year": "1974",
       "month": "12",
       "day": "01",

@@ -29,6 +29,7 @@ class ProcessDoubting extends Component {
     this.changeCercaPer = this.changeCercaPer.bind(this);
     this.changeRicerca = this.changeRicerca.bind(this);
     this.changeTimeSpan = this.changeTimeSpan.bind(this);
+    this.changePubblicazioni = this.changePubblicazioni.bind(this);
 
     this.applyFilters = this.applyFilters.bind(this);
 
@@ -59,7 +60,28 @@ class ProcessDoubting extends Component {
             'status': false
           }
         ]
-			},
+      },
+      pubblicazioni: {
+        multiple: true,
+        options: [
+          {
+					'label': 'altro',
+					'status': true
+          },
+          {
+            'label': 'raccolta',
+            'status': true
+          },
+          {
+            'label': 'ibrido',
+            'status': true
+          },
+          {
+            'label': 'romanzo',
+            'status': true
+          }
+        ]
+      },
     }
   }
 
@@ -217,6 +239,31 @@ class ProcessDoubting extends Component {
     }   
   }
 
+  changePubblicazioni(newOptions) {
+    const types = newOptions.filter(d=>d.status).map(d=>d.label);
+    let ids = GlobalData.publications.filter(d=>types.indexOf(d.type)>-1).map(d=>d.id);
+    ids = d3.nest().key(d=>d).entries(ids).map(d=>d.key);
+    const toPreserve = ids;
+    this.setState(prevState => ({
+      filters: {
+        ...prevState.filters,
+        pubblicazioni: toPreserve
+      }
+    }));
+
+    // if (!toPreserve.length) {
+    //   console.warn("Can't filter against an empty array");
+    //   return;
+    // } else {
+    //   this.setState(prevState => ({
+    //     filters: {
+    //       ...prevState.filters,
+    //       pubblicazioni: toPreserve
+    //     }
+    //   }));
+    // }
+  }
+
   applyFilters() {
     // console.log("apply filters");
     let survive_filters = this.state.data.map(d=>d.id);
@@ -282,12 +329,19 @@ class ProcessDoubting extends Component {
         </div>
 
         <div className="bottom-nav navigations">
-        {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
 					{	!this.state.isLoading &&
 						<Options title = "Valori"
 							data = {this.state.lunghezzaTesti}
 							style = {{gridColumn: 'span 5',textAlign: 'center'}}
 							changeOptions = {this.changeLunghezzaTesti}
+						/> }
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+					{	!this.state.isLoading &&
+						<Options title = "Pubblicazioni"
+							data = {this.state.pubblicazioni}
+							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							changeOptions = {this.changePubblicazioni}
 						/> }
           { this.state.isLoading && <Loading style = {{gridColumn: 'span 9'}}/>}
 					{	!this.state.isLoading &&
