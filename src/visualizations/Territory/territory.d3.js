@@ -17,7 +17,7 @@ let data = {
 	mode: 'default'
 };
 
-let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
+//let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
@@ -27,12 +27,10 @@ let d3_event_transform_k;
 let currentAnalysisMode;
 let colors;
 
-const PI = Math.PI;
+//const PI = Math.PI;
 const _2PI = Math.PI * 2;
-const arcMin = 75; // inner radius of the first arc
-//const arcWidth = 38;
-//const arcPad = 1; // padding between arcs
-const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+//const arcMin = 75; // inner radius of the first arc
+//const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
 const step_increment = -23;
@@ -389,12 +387,12 @@ class VClass
 				jellyfish_node_info.bbox = bbox;
 			});
 
-		for(let [k, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
+		for(let [, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
 		{
 			visit(
 				jellyfish,
 				{},
-				(jn, status) => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
+				jn => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
 
 			let j = input_data.json_node_map.get(jellyfish.caption);
 			let radiusScaleFactor = j.steps[0].r / 30;
@@ -1017,7 +1015,7 @@ class VClass
       .attr('class', 'label');
 
     // Append title
-    let labelTitle = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('font-family', "'HKGrotesk', sans-serif")
@@ -1032,7 +1030,7 @@ class VClass
       });
 
     // Append collections years
-    let labelCollectionsYears = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('x', function(d) { return 0; })
@@ -2101,7 +2099,8 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
-	for(let [text_id, place_hierarchy] of place_hierarchies)
+  // [text_id, place_hierarchy]
+	for(let [, place_hierarchy] of place_hierarchies)
 	{
 			let text_group = {
 				caption : place_hierarchy.caption,
@@ -2182,15 +2181,6 @@ function placesArcFix(d)
     case "V005" : return Math.PI * 21 / 40;
 
     default : return 0;
-  }
-}
-
-function wait(ms)
-{
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
   }
 }
 
