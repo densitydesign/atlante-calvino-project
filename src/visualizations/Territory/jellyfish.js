@@ -2,30 +2,6 @@
 import { draw_arc, draw_line, draw_point, draw_text, split_text } from './jellyfish_graphical_functions.js';
 import { normalizeAngle, angleDifference } from './support_functions';
 
-/*
-function calculate_jellyfishes_offset(jellyfish1, jellyfish2)
-{
-  if(jellyfish1.children.length == 0 || jellyfish2.children.length == 0) return 0;
-
-  let border_map1 = calculate_jellyfish_border_map(jellyfish1);
-  let border_map2 = calculate_jellyfish_border_map(jellyfish2);
-
-  let shared_levels = Math.min(border_map1.length, border_map2.length);
-
-  let min_offset_found = 0;
-
-  for(let i = 0; i < shared_levels; ++i)
-  {
-    let border1 = border_map1[i];
-    let border2 = border_map2[i];
-
-    min_offset_found = Math.max(min_offset_found, border1.right + Math.abs(border2.left));
-  }
-
-  return min_offset_found;
-}
-*/
-
 function calculate_width(hierarchy)
 {
   if(hierarchy.children.length === 0) return 1;
@@ -72,17 +48,7 @@ function process_hierarchy(hierarchy, x, y, colors)
     position : { x : x, y : y },
     children : []
   };
-/*
-  switch(hierarchy.type)
-  {
-      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
-      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
-      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
-      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
-      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
-      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
-  }
-*/
+
   jellyfish.color = map_color(hierarchy.type, colors);
 
   let progressive_x = x;
@@ -109,17 +75,7 @@ function process_hierarchy_continuously(hierarchy, x, y, colors)
     circle_position : { x : 0, y : 0 },
     children : []
   };
-/*
-  switch(hierarchy.basal_type)
-  {
-      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
-      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
-      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
-      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
-      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
-      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
-  }
-*/
+
   jellyfish.color = map_color(hierarchy.basal_type, colors);
 
   let hierarchy_gap = 1;
@@ -204,17 +160,6 @@ function map_color(text, colors)
 
 function prepare_for_graphics(jellyfish, colors)
 {
-/*  
-  switch(jellyfish.basal_type)
-  {
-      case "generico_terrestre"     : jellyfish.color = colors.generico_terrestre_bright;   break;
-      case "generico_non_terrestre" : jellyfish.color = colors.generico_cosmico_bright;  break;
-      case "nominato_terrestre"     : jellyfish.color = colors.nominato_terrestre_bright; break;
-      case "nominato_non_terrestre" : jellyfish.color = colors.nominato_cosmico_bright;  break;
-      case "inventato"              : jellyfish.color = colors.inventato_bright; break;
-      case "no_ambientazione"       : jellyfish.color = colors.no_ambientazione_bright;  break;
-  }
-*/
   jellyfish.color = map_color(jellyfish.basal_type, colors);
 
   jellyfish.stripe_position.x = jellyfish.logical_position.x * 20 + 10;
@@ -374,14 +319,9 @@ export function prepare_jellyfish_data(hierarchy, center, radiusScaleFactor, col
     (d, status) => {
       d.angle = d.stripe_position.x / scalingCoefficient * 2 * Math.PI;
 
-// MP20200204 - rotational fix for specific jellyfishes which give problems in default angle setting
-if(d.text_id === "S008") d.angle -= Math.PI / 8;
+      // MP20200204 - rotational fix for specific jellyfishes which give problems in default angle setting
+      if(d.text_id === "S008") d.angle -= Math.PI / 8;
     });
-
-if(jellyfish.text_id === "V008")
-{
-console.log("jellyfish", jellyfish);
-}
 
   visit(
     jellyfish,
@@ -400,15 +340,7 @@ console.log("jellyfish", jellyfish);
         let modifiedAngleDeltas = angleDeltas.map(d => d * scaling);
 
         let modifiedChildrenAngles = modifiedAngleDeltas.map(d => averageChildrenAngle + d);
-/*        
-if(d.text_id === "V008")
-{
-  console.log("----------------------------------------------");
-  console.log("modifiedChildrenAngles", modifiedChildrenAngles);
-//  modifiedChildrenAngles = modifiedChildrenAngles.map(v => v + Math.PI / 2);
-  console.log("modifiedChildrenAngles", modifiedChildrenAngles);
-}
-*/
+
         for(let i = 0; i < d.children.length; ++i)
         {
           d.children[i].angle = modifiedChildrenAngles[i];
@@ -428,14 +360,6 @@ if(d.text_id === "V008")
 
   // set level 0 at length 0
   level_maxTextLen_map.set(0, 0);
-/*
-  // force first item to the hill radius, scaled
-  level_maxTextLen_map.set(1, jellyfish.children[0].stripe_position.y * radiusScaleFactor);
-
-  let level_deltaRadius_map = MapToMap(
-    level_maxTextLen_map,
-    d => 1 * d);
-*/
 
   let textLenScaleFactor = 15;
 
@@ -459,27 +383,10 @@ if(d.text_id === "V008")
         d.radius = 0;
         d.angle = 0;
       }
-/*
-      if(+d.level == 1)
-      {
-        d.angle = d.angle;
-        d.radius = d.stripe_position.y * radiusScaleFactor;
-//        d.radius = level_progressiveRadius_map.get(+d.level - 1) * radiusScaleFactor / 5;
-console.log("d.stripe_position.y * radiusScaleFactor : " + d.stripe_position.y * radiusScaleFactor);
-console.log("d.radius : " + d.radius);
 
-        let x = Math.cos(d.angle) * d.radius + center.x;
-        let y = Math.sin(d.angle) * d.radius + center.y;
-
-        d.circle_position.x = x;
-        d.circle_position.y = y;
-      }
-*/
       if(+d.level > 0)
       {
         d.angle = d.angle;
-//        d.radius = d.stripe_position.y * radiusScaleFactor;
-//        d.radius = level_progressiveRadius_map.get(+d.level - 1) * radiusScaleFactor / 5;
         d.radius = level_progressiveRadius_map.get(+d.level - 1);
 
         let x = Math.cos(d.angle) * d.radius + center.x;
@@ -502,7 +409,6 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
 {
   let inLeftEmicircle = angleIsInLeftEmicircle(d.angle);
 
-//if(d.text_id === "V021") console.log("setting inLeftEmicircle(text_id : " + d.text_id + ")");
   d.inLeftEmicircle = inLeftEmicircle;
 
   let textDistanceFactor = 1; //1.5;
@@ -512,20 +418,6 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
 
   let textColor;
 
-//if(d.hill_size) console.log("d.hill_size : " + d.hill_size);
-//console.log("d :");
-//console.log(d);
-/*
-  switch(d.local_type)
-  {
-      case "generico_terrestre"     : textColor = colors.generico_terrestre_bright;   break;
-      case "generico_non_terrestre" : textColor = colors.generico_cosmico_bright;  break;
-      case "nominato_terrestre"     : textColor = colors.nominato_terrestre_bright; break;
-      case "nominato_non_terrestre" : textColor = colors.nominato_cosmico_bright;  break;
-      case "inventato"              : textColor = colors.inventato_bright; break;
-      case "no_ambientazione"       : textColor = colors.no_ambientazione_bright;  break;
-  }
-*/
   textColor = map_color(d.local_type, colors);
 
   let angle, textDistance;
@@ -631,8 +523,6 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
             startAngle : startAngle,
             endAngle : endAngle
           };
-
-//          draw_arc(graphicsContainer, arc, d.children[i].color, text_id);
         }
       }
       else
@@ -697,9 +587,6 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
       {
         if(!d.children[i].hasPoint)
         {
-//console.log("i : " + d.children[i].node_id + " - " + d.children[i].caption + " - emicircle : " + (d.children[i].inLeftEmicircle ? "left" : "right") + " - radius : " + d.children[i].radius);
-//console.log("i-1 : " + d.children[i - 1].node_id + " - " + d.children[i - 1].caption + " - emicircle : " + (d.children[i - 1].inLeftEmicircle ? "left" : "right") + " - radius : " + d.children[i - 1].radius);
-
           if(d.children[i - 1].inLeftEmicircle)
           {
             // L -> L
@@ -730,22 +617,6 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 
               // NOTE : this fix works if the pair (first line, second line) is the last one in the arc. if there are further nodes, they will have to be moved too
               d.children[i].angle = d.children[i - 1].angle - (wantedDeltaDegrees / 360 * 2 * Math.PI); // move on the first line of the double line text
-
-//              d.children[i].angle += deltaAngle * 0.4;
-
-/*
-              // and now fix what is the second line of the double line text
-              if(d.children[i - 1].inLeftEmicircle)
-              {
-//console.log("i : in right, i - 1 : in left");
-                d.children[i - 1].angle = d.children[i].angle + (wantedDeltaDegrees / 360 * 2 * Math.PI);
-              }
-              else
-              {
-//console.log("i : in right, i - 1 : in right");
-                d.children[i - 1].angle = d.children[i].angle + (wantedDeltaDegrees / 360 * 2 * Math.PI);
-              }
-*/
             }
           }
           else
@@ -810,8 +681,6 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
         let diagonal = Math.sqrt(d.bbox.width * d.bbox.width + d.bbox.height * d.bbox.height);
         level_maxTextLen_map.set(level, Math.max(maxTextLen, diagonal));
       }
-
-//      level_maxTextLen_map.set(level, Math.max(maxTextLen, d.caption.length));
     });
 
   // set level 0 at length 0
@@ -819,22 +688,14 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
 
   let bboxSizeScaleFactor = 2; //1.25;
 
-  // force first item to the hill radius, scaled
-//  level_maxTextLen_map.set(0, jellyfish.children[0].stripe_position.y * radiusScaleFactor / textLenScaleFactor);
-
   let level_deltaRadius_map = MapToMap(
     level_maxTextLen_map,
     d => d * bboxSizeScaleFactor);
-//    d => d * textLenScaleFactor);
 
 //   // force first item to the hill radius, scaled
   level_deltaRadius_map.set(0, jellyfish.children[0].stripe_position.y * radiusScaleFactor /* / textLenScaleFactor*/);
 
   let level_progressiveRadius_map = getProgressiveSumMap(level_deltaRadius_map);
-
-//console.log(jellyfish.text_id);
-//console.log(jellyfish.children[0].stripe_position.y * radiusScaleFactor);
-//console.log(level_progressiveRadius_map);
 
   visit(
     jellyfish,
@@ -927,17 +788,10 @@ function mod(x, n)
 
 function adjust_angle_ranges(jellyfish, baseNodeRanges)
 {
-console.log("adjust_angle_ranges()");  
-
-const b = 0.560998;
-const a = 5.94;
-const ddd = angleDifference(b, a);
-console.log("ddd", ddd);
-
   const nodeInfoMap = new Map(jellyfish.children.map((d, i) => [d.node_id, { i : i }]));
 
   const rangeInfos = baseNodeRanges.map(range => {
-console.log("range", range);
+
     const start_i = nodeInfoMap.get(range.start.id).i;
     const startNode = jellyfish.children[start_i];
 
@@ -952,10 +806,6 @@ console.log("range", range);
       delta_angle_1 : angleDifference(endNode.angle, startNode.angle),
       delta_angle_2 : angleDifference(range.end.angle, range.start.angle),
       delta_start_angle : angleDifference(range.start.angle, startNode.angle),
-range_start_angle : range.start.angle,      
-range_end_angle : range.end.angle,
-range_length : angleDifference(range.end.angle, range.start.angle),
-endNode_angle : endNode.angle,
       delta_end_angle : angleDifference(range.end.angle, endNode.angle),
     };
   });
@@ -963,14 +813,6 @@ endNode_angle : endNode.angle,
   jellyfish.children.forEach((subJellyfish, i) => {
 
     const rangeInfo = rangeInfos.find(r => r.start_i <= i && i <= r.end_i);
-
-console.log("****************************************");
-console.log("rangeInfo", rangeInfo);
-
-console.log("subJellyfish.angle", subJellyfish.angle);
-console.log("rangeInfo.start_angle_1", rangeInfo.start_angle_1);
-const angleDiff = angleDifference(subJellyfish.angle, rangeInfo.start_angle_1);
-console.log("angleDiff", angleDiff);
 
     let delta_angle;
 
@@ -980,25 +822,11 @@ console.log("angleDiff", angleDiff);
       case rangeInfo.end_i   === i : delta_angle = rangeInfo.delta_end_angle;   break;
 
       default : 
-console.log("subJellyfish.node_id", subJellyfish.node_id);
-console.log("angleDifference(subJellyfish.angle, rangeInfo.start_angle_1)", angleDifference(subJellyfish.angle, rangeInfo.start_angle_1));
 
-//        delta_angle = rangeInfo.delta_start_angle + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
         delta_angle = angleDifference(rangeInfo.start_angle_2, subJellyfish.angle) + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
         break;
     }
-
-//if(Number.isNaN(delta_angle))
-//{
-console.log("subJellyfish.angle", subJellyfish.angle);
-console.log("delta_angle", delta_angle);
-//}
-
-
-console.log("subJellyfish.node_id", subJellyfish.node_id);
-console.log("delta_angle", delta_angle);
       
     visit(subJellyfish, {}, d => d.angle = normalizeAngle(d.angle + delta_angle));
-console.log("subJellyfish.angle", subJellyfish.angle);    
   });
 }
