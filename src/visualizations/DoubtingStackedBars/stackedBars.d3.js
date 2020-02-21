@@ -84,7 +84,7 @@ let width,
     xAxisCall = d3.axisTop(x),
     y = d3.scaleLinear(),
     yAxis,
-    yAxisCall = d3.axisLeft(y),
+    yAxisCall = d3.axisLeft(y).ticks(10, "s"),
     color = d3.scaleOrdinal()
         .domain(stackModeProperties.absolute)
         .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
