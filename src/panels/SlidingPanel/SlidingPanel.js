@@ -49,7 +49,7 @@ export default class SlidingPanel extends React.Component
 
   render()
   {
-    const interactiveViewLink = this.props.interactiveViewUrl ? <a className="button-text" href={this.props.interactiveViewUrl} target="blank">Esplora</a> : <></>;
+    const interactiveViewLink = this.props.interactiveViewUrl ? <a className="button-text" href={process.env.PUBLIC_URL + this.props.interactiveViewUrl} target="blank">Esplora</a> : <></>;
 
     return (
       <div
@@ -60,7 +60,7 @@ export default class SlidingPanel extends React.Component
         }}>
           <div className="rotated-title"><h1>{this.props.title}</h1></div>
         <div className="sliding-panel-main-text">
-        <p><a className="link" href={this.props.pdfUrl} target="_blank" rel="noopener noreferrer">PDF <FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
+        <p><a className="link" href={process.env.PUBLIC_URL + this.props.pdfUrl} target="_blank" rel="noopener noreferrer">PDF <FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a>
         </p>
         <br />
         <div><p>{this.props.text}</p>

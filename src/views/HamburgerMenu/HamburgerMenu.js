@@ -17,21 +17,22 @@ export default class HamburgerMenu extends React.Component
         <HamburgerMenuHeader backRoute={this.props.backRoute} />
         <div className="hamburger-menu hamburger-menu-open">
           <div className="hamburger-menu-sidebar">
-            <ViewSelector className="compass-selector-cell" route="Compass" text="BUSSOLA"><h1 dataClass=""/></ViewSelector>
+            <ViewSelector className="compass-selector-cell" route="/" text="Atlante Calvino"><h1 dataClass=""/></ViewSelector>
 
             <div className="nav-menu-cell-grid" >
               <div className="nav-menu-cell"><Link to="/About"><h2>Équipe</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Project"><h2>Progetto</h2></Link></div>
-              <div className="nav-menu-cell"><Link to="/Tools"><h2>Strumenti</h2></Link></div>
-              <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna</h2></Link></div>
-              <div className="nav-menu-cell"><Link to="/Papers"><h2>Articoli</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/Tools"><h2>Metodologia</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/Papers"><h2>Pubblicazioni</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna Stampa</h2></Link></div>
             </div>
 
             </div>
 
-          <div className="hamburger-menu-cell-grid blank-intro">
+          <div className="hamburger-menu-cell-grid">
 
-            <div className="hamburger-menu-cell" />
+
+            <ViewSelector className="hamburger-menu-cell blank-intro" route="Compass" text="BUSSOLA"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell itineraries-intro" route="Itineraries" text="Dubbio"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell itineraries-intro" route="Itineraries/#space" text="Spazio"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell itineraries-intro" route="Itineraries/#shape" text="Forma"><h3 dataClass=""/></ViewSelector>

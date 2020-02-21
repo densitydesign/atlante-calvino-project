@@ -179,7 +179,7 @@ console.log("data", data);
       .attr("x", 50)
       .attr("y", 50)
       .attr("width", 110)
-      .attr("height", 80);
+      .attr("height", 107);
 
     const yearLabel = tooltip
       .append("text")
@@ -236,7 +236,7 @@ console.log("data", data);
 function prepare_tooltip_value(s)
 {
   const value = Number.parseFloat(s);
-  return value.toFixed(6) + "%";
+  return value.toFixed(2) + "%";
 }
 
 const V = new VClass();
