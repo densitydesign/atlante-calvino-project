@@ -257,8 +257,8 @@ V.update = (data, stackMode, baseLayer) => {
     serie = serie.data(series)
     serie.exit().remove()
     serie = serie.enter().append("g")
-        .attr("class", (d,i)=>"serie serie-" + stackModeProperties[stackMode][i].replace("_perc","") )
         .merge(serie)
+        .attr("class", (d,i)=>"serie serie-" + keys[i].replace("_perc","") )
         .attr("fill", d => color(d.key.replace("_perc","")))
 
     let serie_rect = serie.selectAll("rect")
