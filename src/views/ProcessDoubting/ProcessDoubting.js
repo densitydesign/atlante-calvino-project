@@ -212,7 +212,7 @@ class ProcessDoubting extends Component {
   }
 
   applyFilters() {
-    console.log("apply filters");
+    // console.log("apply filters");
     let survive_filters = this.state.data.map(d=>d.id);
     let id_arrays = [];
     for (var f in this.state.filters) {

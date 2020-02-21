@@ -208,6 +208,7 @@ V.update = (data, stackMode, baseLayer) => {
                     // d.id is the baselayer ordering setting
                     // In the Update cycle it is skipped if equal to "id" or "definitivo"
                     V.update(sortedData, stackMode, d.id);
+                    // V.filter()
                 }
                 
             })
@@ -256,8 +257,7 @@ V.update = (data, stackMode, baseLayer) => {
 
     removeSelectionAll();  // also calls updateLegend() inside
 
-
-    serie = serie.data(series)
+    serie = serie.data(series, d=>d.key)
     serie.exit().remove()
     serie = serie.enter().append("g")
         .merge(serie)
@@ -265,10 +265,14 @@ V.update = (data, stackMode, baseLayer) => {
         .attr("fill", d => color(d.key.replace("_perc","")))
 
     let serie_rect = serie.selectAll("rect")
-    serie_rect = serie_rect.data(d=>d);
+    serie_rect = serie_rect.data(d=>{
+        d.forEach(dd=>dd.key=d.key)
+        return d
+    }, d=>d.key+'-'+d.data.id);
     serie_rect.exit().remove();
     serie_rect = serie_rect.enter().append("rect")
         .merge(serie_rect)
+        .attr("id", d=>d.key+'-'+d.data.id)
         .attr("x", d => x(d.data.id))
         .attr("y", d => y(d[1]))
         .attr("height", d => y(d[0]) - y(d[1]))
@@ -489,8 +493,8 @@ V.update = (data, stackMode, baseLayer) => {
 }
 
 V.filter = (survive_filters) => {
-    // console.log("filter visualization - survivers:", survive_filters);
-    svg.classed('there-is-filter', true)
+    // console.log("filter visualization - survivers:", survive_filters.length);
+    svg.classed('there-is-filter', true);
     serie.selectAll("rect")
         .classed('filtered', true)
         .filter(n => {
