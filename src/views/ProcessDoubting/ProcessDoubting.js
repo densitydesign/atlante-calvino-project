@@ -19,6 +19,125 @@ import RangeFilter from '../../general/RangeFilter';
 
 import DoubtingStackedBars from '../../visualizations/DoubtingStackedBars/DoubtingStackedBars';
 
+const structureData = (arr) => {
+  arr = arr.map((d,i)=>{
+    const obj = {
+      'id': 'pair-'+i,
+      'subj_start': +d.soggetto_starts_at,
+      'subj_end': +d.soggetto_ends_at,
+      'doubt_start': +d.starts_at,
+      'doubt_end': +d.ends_at,
+      'is_alternative': (d['Alternative']!=='')?true:false,
+      'alternatives': [],
+      'has_children': false,
+      'open': false,
+      'level':0,
+      'depth':0
+    }
+    return obj;
+  })
+
+  for (var i=arr.length-1; i>-1; i--) {
+    const d = arr[i];
+    if (d.is_alternative) {
+
+      const alternative_data = {
+        'start': +d.doubt_start,
+        'end': +d.doubt_end,
+      }
+
+      d.alternatives.push(alternative_data)
+      d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
+
+      if (i > 1 && arr[i-1].is_alternative) {
+        // console.log('preserve', arr[i-1].id, 'remove', d.id)
+        arr[i-1].alternatives = d.alternatives
+        // arr[i-1].doubt_end = +d.doubt_end
+        // do not return the current element
+        // its information are inside "arr[i-1]"
+        arr.splice(i,1)
+      } else {
+        d.doubt_end = d.alternatives[d.alternatives.length-1].end
+      }
+    }
+  }
+  // console.log(arr);
+
+  let counter = 0;
+
+  const identifyParent = (d,list) => {
+    counter++;
+    const listToSearchForParent = list.filter( dd => +d.id.replace('pair-','') < +dd.id.replace('pair-','') )
+
+    const parent = listToSearchForParent.find(dd=>{
+
+      const subj_start_is_inside = d.subj_start >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_start >= dd.doubt_start && d.subj_start <= dd.doubt_end
+
+      const subj_end_is_inside = d.subj_end >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_end >= dd.doubt_start && d.subj_start <= dd.doubt_end
+
+      const doubt_start_is_inside = d.doubt_start >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_start >= dd.subj_start && d.doubt_start <= dd.subj_end
+
+      const doubt_end_is_inside = d.doubt_end >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_end >= dd.subj_start && d.doubt_start <= dd.subj_end
+
+      return subj_start_is_inside || subj_start_is_inside || doubt_start_is_inside || doubt_end_is_inside
+    })
+
+    if (parent) { //  && list.indexOf(parent)>list.indexOf(d)
+      // console.log('parent for', d.id, 'is', parent.id)
+
+      if(counter<1000) {
+        if (!parent.parent) {
+          const listToSearch = list.filter((dd,ii)=>+parent.id.replace('pair-','')<+dd.id.replace('pair-',''))
+          // console.log('📏 list to search length', listToSearch.length)
+          identifyParent(parent, listToSearch)
+          // console.log(d.id, 'is level', d.level)
+        } else {
+          // console.log('🚨', parent.id, 'already has a parent')
+        }
+        parent.has_children = true;
+        d.parent = parent;
+        d.level = parent.level+1
+      }
+
+    } else {
+      // console.log(d.id, 'has no parent')
+      // console.log(d.id, 'is level', d.level)
+    }
+    return parent;
+  }
+
+  // check if a pair is inside another
+  arr.forEach((d,i)=>{
+    const child = d;
+    // console.log(' ')
+    // console.log('👉', child.id)
+    identifyParent(child, arr)
+  })
+
+  // // set level of depth
+  arr.forEach((element, i) => {
+    // console.log('👉', element.id)
+    let depth = 0
+    retrieveDepth(element);
+
+    element.depth=depth;
+    function retrieveDepth(item) {
+      if (item.has_children) {
+        let children = arr.filter(d=>d.parent).filter(d=>d.parent===item)
+        // console.log(children)
+        if (children.length>0) {
+          children.forEach((child, i) => {
+            depth = Math.max(depth, child.level)
+            retrieveDepth(child);
+          });
+        }
+      }
+    }
+  });
+
+  return arr;
+}
+
 class ProcessDoubting extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +149,7 @@ class ProcessDoubting extends Component {
     this.changeRicerca = this.changeRicerca.bind(this);
     this.changeTimeSpan = this.changeTimeSpan.bind(this);
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
+    this.changeAnnidamenti = this.changeAnnidamenti.bind(this);
 
     this.applyFilters = this.applyFilters.bind(this);
 
@@ -90,6 +210,11 @@ class ProcessDoubting extends Component {
     // https://observablehq.com/@iosonosempreio/experiment-on-the-use-observablehq-for-easying-task-of-data
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
+      // json = json.filter(d=>d.id==="S153");
+      json.forEach(d=>{
+        d.details = structureData(d.details);
+        d.maxDepth = d3.max(d.details, d=>d.depth)||0;
+      });
       return json;
     }).then(data=>{
       data = data.sort( (a,b)=> +a.year - b.year );
@@ -119,7 +244,9 @@ class ProcessDoubting extends Component {
         titolo: searchByCompositionTitle,
         "titolo pubblicazione": publicationTitle
       };
-      
+
+      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxDepth)).map(d=>{return {'label':d.key,'status':true}}).sort((a,b)=>+a.label-b.label);
+
       // need to convert date to milliseconds for the timespan filter to work
       const timeExtent = d3.extent(data, d => +new Date(d.year));
 
@@ -133,7 +260,11 @@ class ProcessDoubting extends Component {
         ricerca: {
           options: data_research.titolo
         },
-        timeExtent: timeExtent
+        timeExtent: timeExtent,
+        annidamenti: {
+          multiple: true,
+          options: annidamenti_options
+        }
       })
     })
   }
@@ -250,18 +381,17 @@ class ProcessDoubting extends Component {
         pubblicazioni: toPreserve
       }
     }));
+  }
 
-    // if (!toPreserve.length) {
-    //   console.warn("Can't filter against an empty array");
-    //   return;
-    // } else {
-    //   this.setState(prevState => ({
-    //     filters: {
-    //       ...prevState.filters,
-    //       pubblicazioni: toPreserve
-    //     }
-    //   }));
-    // }
+  changeAnnidamenti(newOptions) {
+    const levels = newOptions.filter(d=>d.status).map(d=>d.label)
+    const toPreserve = this.state.data.filter(d=>levels.indexOf(d.maxDepth.toString())>-1).map(d=>d.id)
+    this.setState(prevState => ({
+      filters: {
+        ...prevState.filters,
+        pubblicazioni: toPreserve
+      }
+    }));
   }
 
   applyFilters() {
@@ -342,6 +472,13 @@ class ProcessDoubting extends Component {
 							data = {this.state.pubblicazioni}
 							style = {{gridColumn: 'span 5',textAlign: 'center'}}
 							changeOptions = {this.changePubblicazioni}
+						/> }
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+					{	!this.state.isLoading &&
+						<Options title = "Annidamenti"
+							data = {this.state.annidamenti}
+							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							changeOptions = {this.changeAnnidamenti}
 						/> }
           { this.state.isLoading && <Loading style = {{gridColumn: 'span 9'}}/>}
 					{	!this.state.isLoading &&
