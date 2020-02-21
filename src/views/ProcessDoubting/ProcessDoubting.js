@@ -67,7 +67,7 @@ class ProcessDoubting extends Component {
     // data comes from this notebook on ObservableHQ
     // https://observablehq.com/@iosonosempreio/experiment-on-the-use-observablehq-for-easying-task-of-data
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
-      return json;
+      return json.filter(d=>d.id!=='V002'||d.id!=='V004'||d.id!=='V006'||d.id!=='V007'||d.id!=='V011'||d.id!=='V012'||d.id!=='V013'||d.id!=='V014'||d.id!=='V015'||d.id!=='V017'||d.id!=='V019'||d.id!=='V022'||d.id!=='V023'||d.id!=='S088');
     }).then(data=>{
 
       data = data.sort( (a,b)=> +a.year - b.year )
