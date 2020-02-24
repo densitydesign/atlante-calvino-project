@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import ParseMatrixData from '../../utilities/parse-matrix-data';
 // import _ from 'lodash';
 
-const categories = ['generico_cosmico', 'nominato_cosmico', 'nominato_terrestre', 'generico_terrestre', 'inventato', 'no_ambientazione'];
+const categories = ['Cosmici generici', 'Cosmici Specifici', 'Terrestri localizzabili', 'Terrestri generici', 'Terrestri Inventati', 'no_ambientazione'];
 const categoriesColors = ['#3131ff', '#bbbbff', '#ffce00', '#ff6c39', '#00c19c', '#cecece']
 
 const collisionPadding = 0.25;
