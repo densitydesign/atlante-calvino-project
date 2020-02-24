@@ -27,6 +27,7 @@ CurveSankey.prototype = {
                 break;
             case 1:
                 this._point = 2; // proceed
+                break;
             default:
                 var mx = (x - this._x) / 2 + this._x;
                 this._context.bezierCurveTo(mx, this._y, mx, y, x, y);

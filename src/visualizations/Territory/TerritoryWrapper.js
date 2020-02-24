@@ -784,27 +784,21 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'step_y': step_y,
 
       'generico_cosmico': csv_item === undefined ? 0 : csv_item.generico_cosmico,
-      'generico_cosmico_abs': csv_item === undefined ? 0 : csv_item.generico_cosmico_abs,
       'n_generico_cosmico': csv_item === undefined ? 0 : csv_item.n_generico_cosmico,
 
       'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
-      'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
       'n_generico_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_terrestre,
 
       'inventato': csv_item === undefined ? 0 : csv_item.inventato,
-      'inventato_abs': csv_item === undefined ? 0 : csv_item.inventato_abs,
       'n_inventato': csv_item === undefined ? 0 : csv_item.n_inventato,
 
       'no_ambientazione': csv_item === undefined ? 0 : csv_item.no_ambientazione,
-      'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
       'nominato_cosmico': csv_item === undefined ? 0 : csv_item.nominato_cosmico,
-      'nominato_cosmico_abs': csv_item === undefined ? 0 : csv_item.nominato_cosmico_abs,
       'n_nominato_cosmico': csv_item === undefined ? 0 : csv_item.n_nominato_cosmico,
 
       'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
-      'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
       'n_nominato_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_terrestre,
 
       'nebbia_normalizzata': csv_item === undefined ? 0 : csv_item.nebbia_normalizzata,
@@ -850,27 +844,21 @@ function calculate_item_data(obj)
 
   let item_data = {
     generico_cosmico: (+obj.generico_cosmico),
-    generico_cosmico_abs: +obj.generico_cosmico,
     n_generico_cosmico: +obj.n_generico_cosmico,
 
     generico_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre),
-    generico_terrestre_abs: +obj.generico_terrestre,
     n_generico_terrestre: +obj.n_generico_terrestre,
 
     inventato: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato),
-    inventato_abs: +obj.inventato,
     n_inventato: +obj.n_inventato,
 
     no_ambientazione: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
-    no_ambientazione_abs: +obj.no_ambientazione,
     n_no_ambientazione: +obj.n_no_ambientazione,
 
     nominato_cosmico: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico),
-    nominato_cosmico_abs: +obj.nominato_cosmico,
     n_nominato_cosmico: +obj.n_nominato_cosmico,
 
     nominato_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico) + (+obj.nominato_terrestre),
-    nominato_terrestre_abs: +obj.nominato_terrestre,
     n_nominato_terrestre: +obj.n_nominato_terrestre,
 
     nebbia_normalizzata: (+obj.pct_nebbia_normalizzata),
@@ -893,19 +881,7 @@ function calculate_item_data(obj)
     lists_are_present: lists_sum > 0,
     lists_ratio_with_threshold: Math.max(lists_ratio_threshold, lists_ratio),
     lists_ratio_is_below_threshold: lists_ratio < lists_ratio_threshold,
-
-//		places_hierarchy: data.place_hierarchies.get(obj.id),
-//		place_hierarchy: data.place_hierarchies.get(obj.id)
   };
-
-//	if(item_data.place_hierarchy)
-//	{
-//		item_data.place_hierarchy.n_steps = obj.n_steps;
-//	}
-//let s = item_data.places_hierarchy ? item_data.places_hierarchy.children.length : "";
-//console.log(obj.id + " : " + s);
-//let s = item_data.place_hierarchy ? item_data.place_hierarchy.children.length : "";
-  // console.log("lists_sum : " + lists_sum + ", item_data.lists_f_ratio : " + item_data.lists_f_ratio);
 
   return item_data;
 }
