@@ -2144,8 +2144,6 @@ function placesArcFix(d)
   {
     case "S012" : return Math.PI * 1 / 2;
     case "S032" : return Math.PI * 2 / 3;
-//    case "S008" : return Math.PI * /;
-//    case "V003" : return Math.PI * /;
     case "S081" : return Math.PI * 25 / 32;
     case "S076" : return Math.PI * 1 / 2;
     case "S089" : return Math.PI * 1 / 2;
