@@ -64,8 +64,10 @@ class Trasformare extends Component {
 					'status': true
 				}]
 			},
-			helpSidePanelOpen : false
-		};
+      helpSidePanelOpen : false      
+    };
+    
+    this.typingInSearch = false;
 	}
 
 	loadData() {
@@ -345,7 +347,7 @@ class Trasformare extends Component {
 	}
 
 	downloadData(event) {
-		if(event.key !== 'd') return;
+		if(event.key !== 'd' || this.typingInSearch) return;    
 
     const selected = d3.selectAll('.node:not(.filtered)')
   	let selectedData = selected.data()
@@ -442,7 +444,9 @@ class Trasformare extends Component {
 					<Search
 						style = {{gridColumn: 'span 7'}}
 						data = {this.state.ricerca}
-						changeOptions = {this.changeRicerca}
+            changeOptions = {this.changeRicerca}
+            onFocus = {() => this.typingInSearch = true }
+            onBlur = {() => this.typingInSearch = false }
 					/> }
 					<MoreInfo
 						style={{ gridColumn: "span 1" }}
