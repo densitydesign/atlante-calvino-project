@@ -784,27 +784,21 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'step_y': step_y,
 
       'generico_cosmico': csv_item === undefined ? 0 : csv_item.generico_cosmico,
-      'generico_cosmico_abs': csv_item === undefined ? 0 : csv_item.generico_cosmico_abs,
       'n_generico_cosmico': csv_item === undefined ? 0 : csv_item.n_generico_cosmico,
 
       'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
-      'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
       'n_generico_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_terrestre,
 
       'inventato': csv_item === undefined ? 0 : csv_item.inventato,
-      'inventato_abs': csv_item === undefined ? 0 : csv_item.inventato_abs,
       'n_inventato': csv_item === undefined ? 0 : csv_item.n_inventato,
 
       'no_ambientazione': csv_item === undefined ? 0 : csv_item.no_ambientazione,
-      'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
       'nominato_cosmico': csv_item === undefined ? 0 : csv_item.nominato_cosmico,
-      'nominato_cosmico_abs': csv_item === undefined ? 0 : csv_item.nominato_cosmico_abs,
       'n_nominato_cosmico': csv_item === undefined ? 0 : csv_item.n_nominato_cosmico,
 
       'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
-      'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
       'n_nominato_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_terrestre,
 
       'nebbia_normalizzata': csv_item === undefined ? 0 : csv_item.nebbia_normalizzata,
