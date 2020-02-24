@@ -427,7 +427,7 @@ class Trasformare extends Component {
 
 				<div className = "top-nav navigations">
 					<MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"LA MATRICE DEI LUOGHI"} style = {{gridColumn: 'span 10'}}/>
+					<PageTitle title = {"Tutti i luoghi di ambientazione all’interno dell’opera"} style = {{gridColumn: 'span 10'}}/>
 
 					{ this.state.isLoading && < Loading style = {{gridColumn: 'span 3'}}/> }
 					{	!this.state.isLoading &&
