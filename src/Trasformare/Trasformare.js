@@ -283,22 +283,25 @@ class Trasformare extends Component {
 		}))
 	}
 
-	changeCategorie(selectedCategory) {
+	changeCategorie(selectedCategories) {
+
 		let toPreserve = this.state.originalData.map(d => d.id);
-		if (selectedCategory) {
-			toPreserve = toPreserve.filter( d=>this.state.originalData.find(dd=>dd.id===d).category===selectedCategory );
+		if (selectedCategories.length) {
+      toPreserve = toPreserve.filter(d => 
+        selectedCategories.includes(
+          this.state.originalData.find(dd=>dd.id===d).category));
 		}
 
 		this.setState(prevState => ({
-			toPreserveCategorie: toPreserve,
+      toPreserveCategorie: toPreserve,     
 			filter: _.intersection(prevState.noFilter,
 				prevState.toPreserveRicerca,
 				prevState.toPreservePubblicazioni,
 				prevState.toPreserveVolumi,
 				prevState.toPreserveAmbienti,
 				toPreserve
-			)
-		}))
+      )
+    }))
 	}
 
 	resetFilter() {
