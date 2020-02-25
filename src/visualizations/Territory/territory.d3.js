@@ -624,56 +624,51 @@ class VClass
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  const base_steps = steps.filter(d => d.first_elem);
+
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.inventato_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.no_ambientazione_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.places_full)
@@ -709,8 +704,7 @@ class VClass
 
 ///////////////////////////////////////////
 
-  steps
-    .filter(function(d) { return d.first_elem })
+  base_steps
     .append("svg:path")
     .attr("fill", "purple")
     .attr("class", "place_hierarchies")
@@ -767,24 +761,21 @@ class VClass
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", "transparent")
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
@@ -868,8 +859,7 @@ class VClass
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.frasi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -879,8 +869,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.misto)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -890,8 +879,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.parole)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -901,8 +889,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.sintagmi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -912,8 +899,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -955,8 +941,8 @@ class VClass
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", d => d.lists_ratio_is_below_threshold ? colors.lists_ratio_below_threshold : colors.lists_ratio_above_threshold)
       .attr("class", customElementsClasses.lists_level_2_full)
@@ -966,8 +952,8 @@ class VClass
       })
 */      .style('fill-opacity',0);
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", "lightgrey")
       .attr("class", customElementsClasses.lists_level_2_full)
