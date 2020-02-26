@@ -24,6 +24,9 @@ let center;
 let tilt;
 let scale;
 let d3_event_transform_k;
+let label_x_scale_factor;
+let label_y_scale_factor_tilt;
+let label_y_scale_factor_no_tilt;
 let currentAnalysisMode;
 let colors;
 
@@ -36,6 +39,7 @@ const without_tilt_factor = 1;
 const step_increment = -23;
 const one_rem = Number.parseInt(d3.select('html').style('font-size'));
 const half_rem = one_rem / 2;
+let one_rem_times_scale;
 
 const showHillModes = {
   all : "all",
@@ -1053,6 +1057,7 @@ class VClass
 
     let usedSpace = 0.65;
     scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+    one_rem_times_scale = one_rem * scale;
 
     centerTerritory(scale, 0, 0, 0);
 
@@ -1065,6 +1070,9 @@ class VClass
   		place_hierarchies_group.attr("transform", d3.event.transform);
   		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
+      label_x_scale_factor = one_rem_times_scale / d3_event_transform_k;
+      label_y_scale_factor_no_tilt = label_x_scale_factor;
+      label_y_scale_factor_tilt = label_x_scale_factor / with_tilt_factor;
       tilt_labels(V.text_nodes);
     }
 
@@ -1161,14 +1169,11 @@ class VClass
 
     label.attr('transform', function(d) {
 
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
     });
   }
 
@@ -1201,14 +1206,11 @@ class VClass
 
     label.attr('transform', function(d) {
 
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
     });
   }  
 
@@ -2181,16 +2183,13 @@ function tilt_labels(text_nodes)
 {
   const label = text_nodes.selectAll('.label');   
 
-  let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-  let k = one_rem * (1 / (d3_event_transform_k / scale));
-
   label.attr('transform', function(d) {
 
     let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
     let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-    if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-    else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+    else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
   });
 }
 
