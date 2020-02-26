@@ -82,6 +82,42 @@ Object.keys(customElementsClasses).forEach(key =>
 
 customElementsClasses["customElements"] = "customElements";
 
+const S012_placesArcFix = Math.PI * 1 / 2;
+const S032_placesArcFix = Math.PI * 2 / 3;
+const S081_placesArcFix = Math.PI * 25 / 32;
+const S076_placesArcFix = Math.PI * 1 / 2;
+const S089_placesArcFix = Math.PI * 1 / 2;
+const V008_placesArcFix = Math.PI * 3 / 4;
+const S149_placesArcFix = Math.PI * 6 / 10;
+const S151_placesArcFix = Math.PI * 69 / 128;
+const S156_placesArcFix = Math.PI * 5 / 12;
+const V021_placesArcFix = Math.PI * 1 / 2;
+const S179_placesArcFix = Math.PI * 1 / 2;
+const S181_placesArcFix = Math.PI * 1 / 2;
+const S203_placesArcFix = Math.PI * 1 / 2;
+const S119_placesArcFix = Math.PI * 1 / 2;
+const S123_placesArcFix = Math.PI * 21 / 32;
+const S142_placesArcFix = Math.PI * 9 / 16;
+const S139_placesArcFix = Math.PI * 30 / 48;
+const S140_placesArcFix = Math.PI * 1 / 2;
+const S095_placesArcFix = Math.PI * 1 / 2;
+const S097_placesArcFix = Math.PI * 37 / 64;
+const S104_placesArcFix = Math.PI * 37 / 48;
+const S050_placesArcFix = Math.PI * 1 / 2;
+const S101_placesArcFix = Math.PI * 21 / 32;
+const S048_placesArcFix = Math.PI * 31 / 64;
+const S088_placesArcFix = Math.PI * 133 / 256;
+const S065_placesArcFix = Math.PI * 1 / 2;
+const S072_placesArcFix = Math.PI * 1 / 2;
+const S067_placesArcFix = Math.PI * 17 / 32;
+const S007_placesArcFix = Math.PI * 17 / 32;
+const S022_placesArcFix = Math.PI * 7 / 16;
+const S041_placesArcFix = Math.PI * 1 / 2;
+const S014_placesArcFix = Math.PI * 9 / 24;
+const S165_placesArcFix = Math.PI * 2 / 3;
+const S011_placesArcFix = Math.PI * 1 / 2;
+const V005_placesArcFix = Math.PI * 21 / 40;
+
 class VClass
 {
   initialize = (
@@ -2130,41 +2166,41 @@ function placesArcFix(d)
 
   switch(d.id)
   {
-    case "S012" : return Math.PI * 1 / 2;
-    case "S032" : return Math.PI * 2 / 3;
-    case "S081" : return Math.PI * 25 / 32;
-    case "S076" : return Math.PI * 1 / 2;
-    case "S089" : return Math.PI * 1 / 2;
-    case "V008" : return Math.PI * 3 / 4;
-    case "S149" : return Math.PI * 6 / 10;
-    case "S151" : return Math.PI * 69 / 128;
-    case "S156" : return Math.PI * 5 / 12;
-    case "V021" : return Math.PI * 1 / 2;
-    case "S179" : return Math.PI * 1 / 2;
-    case "S181" : return Math.PI * 1 / 2;
-    case "S203" : return Math.PI * 1 / 2;
-    case "S119" : return Math.PI * 1 / 2;
-    case "S123" : return Math.PI * 21 / 32;
-    case "S142" : return Math.PI * 9 / 16;
-    case "S139" : return Math.PI * 30 / 48;
-    case "S140" : return Math.PI * 1 / 2;
-    case "S095" : return Math.PI * 1 / 2;
-    case "S097" : return Math.PI * 37 / 64;
-    case "S104" : return Math.PI * 37 / 48;
-    case "S050" : return Math.PI * 1 / 2;
-    case "S101" : return Math.PI * 21 / 32;
-    case "S048" : return Math.PI * 31 / 64;
-    case "S088" : return Math.PI * 133 / 256;
-    case "S065" : return Math.PI * 1 / 2;
-    case "S072" : return Math.PI * 1 / 2;
-    case "S067" : return Math.PI * 17 / 32;
-    case "S007" : return Math.PI * 17 / 32;
-    case "S022" : return Math.PI * 7 / 16;
-    case "S041" : return Math.PI * 1 / 2;
-    case "S014" : return Math.PI * 9 / 24;
-    case "S165" : return Math.PI * 2 / 3;
-    case "S011" : return Math.PI * 1 / 2;
-    case "V005" : return Math.PI * 21 / 40;
+    case "S012" : return S012_placesArcFix;
+    case "S032" : return S032_placesArcFix;
+    case "S081" : return S081_placesArcFix;
+    case "S076" : return S076_placesArcFix;
+    case "S089" : return S089_placesArcFix;
+    case "V008" : return V008_placesArcFix;
+    case "S149" : return S149_placesArcFix;
+    case "S151" : return S151_placesArcFix;
+    case "S156" : return S156_placesArcFix;
+    case "V021" : return V021_placesArcFix;
+    case "S179" : return S179_placesArcFix;
+    case "S181" : return S181_placesArcFix;
+    case "S203" : return S203_placesArcFix;
+    case "S119" : return S119_placesArcFix;
+    case "S123" : return S123_placesArcFix;
+    case "S142" : return S142_placesArcFix;
+    case "S139" : return S139_placesArcFix;
+    case "S140" : return S140_placesArcFix;
+    case "S095" : return S095_placesArcFix;
+    case "S097" : return S097_placesArcFix;
+    case "S104" : return S104_placesArcFix;
+    case "S050" : return S050_placesArcFix;
+    case "S101" : return S101_placesArcFix;
+    case "S048" : return S048_placesArcFix;
+    case "S088" : return S088_placesArcFix;
+    case "S065" : return S065_placesArcFix;
+    case "S072" : return S072_placesArcFix;
+    case "S067" : return S067_placesArcFix;
+    case "S007" : return S007_placesArcFix;
+    case "S022" : return S022_placesArcFix;
+    case "S041" : return S041_placesArcFix;
+    case "S014" : return S014_placesArcFix;
+    case "S165" : return S165_placesArcFix;
+    case "S011" : return S011_placesArcFix;
+    case "V005" : return V005_placesArcFix;
 
     default : return 0;
   }
