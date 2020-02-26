@@ -41,27 +41,6 @@ export default class TerritoryLegendPanel extends React.Component
       default : break;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
       <div className="territory-legend-panel">
         { legendPage }
