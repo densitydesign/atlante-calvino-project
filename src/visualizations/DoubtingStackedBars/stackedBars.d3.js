@@ -98,7 +98,6 @@ V.initialize = (el, data_for_update) => {
 
     svg = d3.select(el);
     g = svg.append("g");
-    
 
     legend = svg.append("g")
         .classed("legend", true)
@@ -155,7 +154,7 @@ const sortData = (data, property, stackMode) => {
 }
 
 V.update = (data, stackMode, baseLayer) => {
-    console.log("update dubbio fase 2")
+    console.log("update dubbio fase 2", data)
 
     let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]));
     if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
