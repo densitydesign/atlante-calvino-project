@@ -437,8 +437,9 @@ class VClass
 
   openOnSearch = arr => {
     let parents2open = [];
+    const self = this;
     arr.forEach(s => {
-      this.search4Parent(s);
+      search4Parent(s);
     });
 
     // console.log(parents2open);
@@ -452,25 +453,27 @@ class VClass
     }
 
     if(parents2open.length > 0) {
+      
       parents2open.reverse().forEach((parentId, i) => {
         const parent_id = originalData.filter(od => od.id === parentId)[0].id;
         // surviveFilters[2].push(parent_id);
         const parent = nodes.filter(d => d.id === parent_id)[0]
-        this.openSubnodes(parent, 'do not restart the force');
+        self.openSubnodes(parent, 'do not restart the force');
       })
 
-      this.update()
+      self.update()
     }
 
   }
 
   openAll = () => {
-    runAll(nodes);
+    const self = this;
+    runAll(nodes);    
 
     function runAll(nodesList) {
       nodesList.forEach(n => {
         if(n.totalSubNodes > 0) {
-          this.openSubnodes(n, 'do not restart simulation');
+          self.openSubnodes(n, 'do not restart simulation');
           runAll(n.subNodes);
         }
       });
@@ -478,8 +481,9 @@ class VClass
   }
 
   closeAll = () => {
+    const self = this;
     nodes.filter(d => d.part_of === '').forEach(function(d) {
-      this.closeSubnodes(d, 'do not restart simulation');
+      self.closeSubnodes(d, 'do not restart simulation');
     })
   }
 
