@@ -100,13 +100,11 @@ class VClass
       
     this.selectedCategories = [];
     const selCats = this.selectedCategories;
-    const thisUpdate = this.update;
-    const thisOpenSubnodes = this.openSubnodes;
-    const thisCloseSubnodes = this.closeSubnodes;
+
+    const self = this;
 
     yAxis.selectAll('.tick')
       .on('click', function(d) {
-console.log("this", this);
 //			let selectedCategory;
 
         if(d3.select(this).classed('cat-selected') === false) {
@@ -150,7 +148,7 @@ console.log("this", this);
 						})
 					}
 				})
-				toOpen.forEach(n => { thisOpenSubnodes(n, false) });
+				toOpen.forEach(n => { self.openSubnodes(n, false) });
 
   				d3.select(this).select('rect').attr('fill', d => color(d))
   			} else {
@@ -187,11 +185,11 @@ console.log("this", this);
               })
             }
           })
-          toClose.forEach(n => { thisCloseSubnodes(n, false) });
+          toClose.forEach(n => { self.closeSubnodes(n, false) });
           d3.select(this).select('rect').attr('fill', 'transparent')
         }
 
-  			thisUpdate();
+  			self.update();
 
         // if(d3.select(this).classed('cat-selected') === false) {
         // 	node.filter(nn => { return nn.category === d }).each(nn => selectNode(nn))
@@ -336,6 +334,9 @@ console.log("this", this);
 
     node = node.data(nodes, d => { return d.id })
     node.exit().remove();
+
+    const self = this;
+
     node = node.enter().append('circle')
       .attr('class', d => `node`)
       .classed('sub-node', d => d.part_of !== '')
@@ -344,30 +345,30 @@ console.log("this", this);
       .on('mouseenter', d => {
         label.filter(l => l.id === d.id).style('display', 'block')
         node.style('opacity', .25).filter(n => n.source === d.source).style('opacity', 1)
-        this.displayTitle(d);
+        self.displayTitle(d);
       })
       .on('mouseleave', d => {
         label.filter(l => l.id === d.id).style('display', 'none')
         node.style('opacity', '')
-        this.displayTitle(d);
+        self.displayTitle(d);
       })
       .on('click', function(d) {
         // console.log('clicked on', d)
         // if double click/tap
         if((d3.event.timeStamp - last) < 500) {
-          this.toggleSubnodes(d, 'restart the force');
+          self.toggleSubnodes(d, 'restart the force');
         }
         last = d3.event.timeStamp;
 
         const isSelected = d3.select(this).classed('selected')
         // do this after the nodes have been opened
         if (!isSelected) {
-          this.selectLabel(d);
-          this.selectSameComposition(d);
-          this.displayTitle([d]);
+          self.selectLabel(d);
+          self.selectSameComposition(d);
+          self.displayTitle([d]);
         } else {
-          this.unselectNode(d)
-          this.unselectLabel(d);
+          self.unselectNode(d)
+          self.unselectLabel(d);
         }
       })
       .merge(node)
