@@ -267,13 +267,13 @@ class VClass
       // display all labels of selected compositions
       if(d3.event.transform.k > 3) {
 
-        // // make visible the lables of nodes selected
-        // d3.selectAll('.node.selected').each(d => {
-        // 	label.filter(l => l.id === d.id).classed('zoom-selected', true)
-        // })
+        // make the labels of selected nodes visible
+        d3.selectAll('.node.selected').each(d => {
+         	label.filter(l => l.id === d.id).classed('zoom-selected', true)
+        })
 
         // all labels visible
-        label.classed('zoom-selected', true)
+        //label.classed('zoom-selected', true)
 
       } else {
         label.classed('zoom-selected', false)
@@ -427,7 +427,7 @@ class VClass
     // console.log('viz', filter)
     this.applyFilter(filter, 'do reset');
 
-    if (selectLabelsArr && selectLabelsArr.length <= 5) {
+    if (selectLabelsArr && selectLabelsArr.length < originalData.length) {
       selectLabelsArr.forEach(an_id => {
         const obj = { id: an_id }
         this.selectLabel(obj)
