@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import TerritoryMainLegend from '../../legendPages/transform/TransformMainLegend/TerritoryMainLegend';
+import TransformMainLegend from '../../legendPages/transform/TransformMainLegend/TransformMainLegend';
 
 import './TransformLegendPanel.css';
 import GlobalData from '../../utilities/GlobalData';
@@ -10,6 +10,7 @@ export default class TerritoryLegendPanel extends React.Component
 {
   render()
   {
+console.log("transform legend panel");    
     let legendPage;
 
     switch(this.props.page)
