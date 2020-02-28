@@ -4463,6 +4463,13 @@ const publications_simple = [
     ]
   },
   {
+    "id": "V010",
+    "types": [
+      "raccolta",
+      "romanzo"
+    ]
+  },
+  {
     "id": "S089",
     "types": [
       "altro"
