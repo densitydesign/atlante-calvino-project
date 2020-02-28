@@ -207,7 +207,7 @@ class ProcessDoubting extends Component {
 
   loadData() {
     // data comes from this notebook on ObservableHQ
-    // https://observablehq.com/@iosonosempreio/experiment-on-the-use-observablehq-for-easying-task-of-data
+    // https://observablehq.com/@iosonosempreio/data-dubbio-fase-due
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
       // json = json.filter(d=>d.id==="S153");
@@ -245,7 +245,7 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
 
-      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxDepth)).map(d=>{return {'label':d.key,'status':true}}).sort((a,b)=>+a.label-b.label);
+      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxDepth)).map(d=>{return {'label':d.key,'status':false}}).sort((a,b)=>+a.label-b.label);
 
       // need to convert date to milliseconds for the timespan filter to work
       const timeExtent = d3.extent(data, d => +new Date(d.year));
@@ -384,8 +384,22 @@ class ProcessDoubting extends Component {
   }
 
   changeAnnidamenti(newOptions) {
-    const levels = newOptions.filter(d=>d.status).map(d=>d.label)
-    const toPreserve = this.state.data.filter(d=>levels.indexOf(d.maxDepth.toString())>-1).map(d=>d.id)
+    const levels_in_filter = newOptions.filter(d=>d.status).map(d=>+d.label)
+
+    let toPreserve = this.state.data.map(d=>d.id);
+
+    if (levels_in_filter.length>0) {
+      toPreserve = this.state.data.filter(d=>{
+        const levels_in_text = _.uniq(d.details.map(d=>+d.depth)).sort();
+        if (levels_in_filter.length !== levels_in_text.length) {
+          return false;
+        } else {
+          // console.log(d.id, '\n', levels_in_filter, levels_in_text, '\n', _.difference(levels_in_filter, levels_in_text), '\n', _.difference(levels_in_filter, levels_in_text).length===0);
+          return _.difference(levels_in_filter, levels_in_text).length===0;
+        } 
+      }).map(d=>d.id)
+    }
+
     this.setState(prevState => ({
       filters: {
         ...prevState.filters,
@@ -488,11 +502,11 @@ class ProcessDoubting extends Component {
 							changeOptions = {this.changeTimeSpan}
 						/> }
 
-          {	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
+          {/* {	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
 					{	!this.state.isLoading &&
 						<span style = {{gridColumn: 'span 24'}}>
               data is loaded, questo spazio può essere utilizzato per dei filtri.
-            </span> }
+            </span> } */}
           
         </div>
         
