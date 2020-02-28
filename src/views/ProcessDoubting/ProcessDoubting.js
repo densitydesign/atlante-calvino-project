@@ -193,10 +193,6 @@ class ProcessDoubting extends Component {
             'status': true
           },
           {
-            'label': 'ibrido',
-            'status': true
-          },
-          {
             'label': 'romanzo',
             'status': true
           }
@@ -372,8 +368,10 @@ class ProcessDoubting extends Component {
 
   changePubblicazioni(newOptions) {
     const types = newOptions.filter(d=>d.status).map(d=>d.label);
-    let ids = GlobalData.publications.filter(d=>types.indexOf(d.type)>-1).map(d=>d.id);
-    ids = d3.nest().key(d=>d).entries(ids).map(d=>d.key);
+    let ids = GlobalData.publications_simple.filter(d=>_.intersection(d.types, types).length > 0).map(d=>d.id);
+
+    // ids = d3.nest().key(d=>d).entries(ids).map(d=>d.key);
+
     const toPreserve = ids;
     this.setState(prevState => ({
       filters: {
