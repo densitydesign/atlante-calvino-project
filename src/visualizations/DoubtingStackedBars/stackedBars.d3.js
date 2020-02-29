@@ -4,7 +4,7 @@ const V = {}
 
 let width,
     height,
-    margin = {top: 30, right: 0, bottom: 30, left: 40},
+    margin = {top: 30, right: 0, bottom: 50, left: 40},
     showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
@@ -73,6 +73,7 @@ let width,
     g,
     legend,
     legendItem,
+    selector,
     serie,
     treemap_misto,
     leaf_misto,
@@ -88,31 +89,35 @@ let width,
     color = d3.scaleOrdinal()
         .domain(stackModeProperties.absolute)
         .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
-        .unknown("#ccc")
+        .unknown("#ccc"),
+    performed_selection_data;
 
 V.initialize = (el, data_for_update) => {
     console.log("initialize dubbio fase 2")
 
-    width = d3.select(el).node().getBoundingClientRect().width * 0.85;
-    height = d3.select(el).node().getBoundingClientRect().height;
+    width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
+    height = d3.select(el).node().getBoundingClientRect().height - margin.top - margin.bottom;
 
     svg = d3.select(el);
-    g = svg.append("g");
+    g = svg.append("g")
+        .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${width},70)`);
+        .attr("transform", `translate(${width + margin.left},${80})`);
 
-    svg.append("text")
-        .attr("y", 10)
+        legend.append("text")
+        .attr("y", -40)
         .attr("x", 0)
-        .attr("transform", `translate(${width},${margin.top})`)
+        // .attr("transform", `translate(${width},${margin.top})`)
         .text("TIPO DI TESTO")
         .append("tspan")
             .attr("font-size", "0.9rem")
             .text("(clicca per riordinare)")
             .attr("dy", "1.3rem")
             .attr("x", 0);
+    
+    selector = svg.append("g").classed("selector", true);
 
     legendItem = legend.selectAll(".legend-item");
 
@@ -127,14 +132,14 @@ V.initialize = (el, data_for_update) => {
 
     leaf_soggetto = treemap_soggetto.selectAll(".leaf-soggetto");
 
-    x.range([margin.left, width - margin.right]);
+    x.range([0, width]);
     xAxis = svg.append("g").classed("axis x-axis", true)
-        // .attr("transform", `translate(0,${height - margin.bottom})`);
-        .attr("transform", `translate(0,${margin.top})`);
+        .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    y.range([height - margin.bottom, margin.top]);
+    y.range([height, 0]);
     yAxis = svg.append("g").classed("axis y-axis", true)
-        .attr("transform", `translate(${margin.left},0)`);
+        // .attr("transform", `translate(${margin.left},0)`)
+        .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     // Run update to populate viz
     V.update(data_for_update.data, data_for_update.stackMode)
@@ -154,7 +159,7 @@ const sortData = (data, property, stackMode) => {
 }
 
 V.update = (data, stackMode, baseLayer) => {
-    console.log("update dubbio fase 2", data)
+    console.log("update dubbio fase 2");
 
     let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]));
     if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
@@ -170,12 +175,13 @@ V.update = (data, stackMode, baseLayer) => {
     let series = d3.stack().keys(keys)(data);
 
     x.domain(data.map(d => d.id));
-    xAxis.call(xAxisCall.tickFormat(d=>{
-            const item = data.find(datum=>datum.id===d)
+    xAxis
+        .call(xAxisCall.tickFormat(d=>{
+            const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;
         }))
         .call(g => xAxis.selectAll(".domain").remove())
-        .call(g => xAxis.selectAll(".tick").style("display", "none"));
+        .call(g => xAxis.selectAll(".tick").style("display", "none"));        
 
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
@@ -207,11 +213,9 @@ V.update = (data, stackMode, baseLayer) => {
                     // d.id is the baselayer ordering setting
                     // In the Update cycle it is skipped if equal to "id" or "definitivo"
                     V.update(sortedData, stackMode, d.id);
-                    // V.filter()
                 }
                 
             })
-            // .attr("transform", (d,i)=>`translate(0,${i*20})`)
             .html(d=> {
                 let this_percentage = ""
                 if (showPercentage && d.percentage) this_percentage = " ("+d.percentage.toFixed(2)+"%)";
@@ -281,7 +285,7 @@ V.update = (data, stackMode, baseLayer) => {
         .on("mouseleave", d=>removePreSelection(d))
         .on("click", function(d){
             // console.log(this);
-            // console.log(d.data);
+            // console.log(d);
             if (!d3.select(this).classed("selected") && !d3.select(this).classed("filtered")) {
                 selection(d, d3.select(this).classed("selected"));
             }
@@ -303,6 +307,11 @@ V.update = (data, stackMode, baseLayer) => {
     }
 
     const selection = (d, isSelected) => {
+        // remove any 'preSelection'
+        if (performed_selection_data) {
+            removePreSelection(performed_selection_data);
+        }
+        performed_selection_data = d;
         legendData = legendData.filter(d=>d.baseCategory);
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
 
@@ -371,9 +380,9 @@ V.update = (data, stackMode, baseLayer) => {
             const rect_misto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-misto")} );
             height_misto = rect_misto.attr("height");
             const x_misto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
-            const y_misto = rect_misto.attr("y");
+            const y_misto = +rect_misto.attr("y");
 
-            d3.select(".treemap-misto").attr("transform", `translate(${x_misto}, ${y_misto})`);
+            d3.select(".treemap-misto").attr("transform", `translate(${x_misto+margin.left}, ${y_misto+margin.top})`);
 
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
@@ -410,9 +419,9 @@ V.update = (data, stackMode, baseLayer) => {
         leaf_misto_rect = leaf_misto_rect.enter().append("rect")
             .merge(leaf_misto_rect)
             .attr("darkness", d=>d.data.name-1)
-            .attr("fill",d=> d3.color(color("misto")).darker( 0.5*(+d.data.name-1) ) )
             .attr("width", d => d.x1 - d.x0)
-            .attr("height", d => d.y1 - d.y0);
+            .attr("height", d => d.y1 - d.y0)
+            .attr("fill",d=> d3.color(color("misto")).darker( 0.5*(+d.data.name-1) ) );
 
         leaf_misto.transition()
             .delay(500)
@@ -429,9 +438,9 @@ V.update = (data, stackMode, baseLayer) => {
             const rect_soggetto = bar.filter( function(rect){ return d3.select(this.parentNode).classed("serie-soggetto")} );
             height_soggetto = rect_soggetto.attr("height");
             const x_soggetto = x(d.data.id) - width_treemap/2 + x.bandwidth()/2;
-            const y_soggetto = rect_soggetto.attr("y");
+            const y_soggetto = +rect_soggetto.attr("y");
 
-            d3.select(".treemap-soggetto").attr("transform", `translate(${x_soggetto}, ${y_soggetto})`);
+            d3.select(".treemap-soggetto").attr("transform", `translate(${x_soggetto+margin.left}, ${y_soggetto+margin.top})`);
 
             legendData.find(d=>d.id==="definitivo").percentage = (d.data.definitivo/d.data.length) * 100;
             legendData.find(d=>d.id==="soggetto").percentage = (d.data.soggetto/d.data.length) * 100;
@@ -468,10 +477,10 @@ V.update = (data, stackMode, baseLayer) => {
         leaf_soggetto_rect.exit().remove()
         leaf_soggetto_rect = leaf_soggetto_rect.enter().append("rect")
             .merge(leaf_soggetto_rect)
-            .attr("darkness", d=>d.data.name-1)
-            .attr("fill",d=> d3.color(color("soggetto")).darker( 0.5*(+d.data.name-1) ) )
+            .attr("darkness", d=>d.data.name-1 )
             .attr("width", d => d.x1 - d.x0)
-            .attr("height", d => d.y1 - d.y0);
+            .attr("height", d => d.y1 - d.y0)
+            .attr("fill",d=> d3.color(color("soggetto")).darker( 0.5*(+d.data.name-1) ) );
 
         leaf_soggetto.transition()
             .delay(500)
@@ -479,6 +488,129 @@ V.update = (data, stackMode, baseLayer) => {
             .style("opacity",1);
 
     }
+
+    selector.attr('transform', `translate(${margin.left + x.step()*10}, ${height + margin.top + 5})`);
+
+    let selector_prev = selector.append("g")
+        .attr("transform", `translate(${-36},0)`)
+        .on("click", ()=>{
+            let index = x.domain().length-1;
+            if (performed_selection_data){
+                removePreSelection(performed_selection_data);
+                let current_index = x.domain().indexOf( performed_selection_data.data.id );
+                if (current_index > 0) {
+                    index = current_index-1
+                }
+            }
+            let the_value = x.domain()[index];
+            let to_be_selected = d3.selectAll(".serie-dubbio rect").filter(d=>d.data.id===the_value).data()[0];
+            preSelection(to_be_selected);
+            selection(to_be_selected, false);
+        })
+        .append("image")
+            .attr("width", 36)
+            .attr("height", 36)
+            .attr("href", "/arrow-left.svg")
+
+    let selector_next = selector.append("g")
+        .attr("transform", `translate(${width - x.step()*20},0)`)
+        .on("click", ()=>{
+            let index = 0;
+            if (performed_selection_data){
+                removePreSelection(performed_selection_data);
+                let current_index = x.domain().indexOf( performed_selection_data.data.id );
+                if (current_index < x.domain().length-1) {
+                    index = current_index+1
+                }
+            }
+            let the_value = x.domain()[index];
+            let to_be_selected = d3.selectAll(".serie-dubbio rect").filter(d=>d.data.id===the_value).data()[0];
+            preSelection(to_be_selected);
+            selection(to_be_selected, false);
+        })
+        .append("image")
+            .attr("width", 36)
+            .attr("height", 36)
+            .attr("href", "/arrow-right.svg")
+
+    let selector_background = selector.append("rect")
+        .attr("width", `${width-x.step()*20}`)
+        .attr("height", 36)
+        .attr("fill","WHITESMOKE")
+    
+    let selector_handle = selector.append("g")
+        .style("cursor", "grab")
+        .call(d3.drag()
+            .on("start", function(){
+                selector_handle_line.style("opacity", 1);
+                if (performed_selection_data) {
+                    removePreSelection(performed_selection_data);
+                    removeSelectionAll();
+                } 
+            })
+            .on("drag", function(){
+                // console.log(d3.event.x)
+                let event_x = d3.event.x;
+                if (d3.event.x<0)
+                    { event_x = 0 };
+                if (d3.event.x > (width-x.step()*20) )
+                    { event_x = (width-x.step()*20) };
+                selector_handle.attr("transform",`translate(${event_x}, 0)`);
+
+                let the_index = Math.round(d3.event.x / x.step());
+                
+                if (the_index<0)
+                    { the_index = 0 };
+                if (the_index > (x.domain().length - 1) )
+                    { the_index = (x.domain().length - 1) };
+
+                let the_value = x.domain()[the_index];
+                xAxis.selectAll(".tick").style("display", "none").filter(tick=>tick===the_value).style("display", "block")
+
+            })
+            .on("end", function(){
+                // console.log(d3.event.x)
+                selector_handle_line.style("opacity", 0)
+                let the_index = Math.round(d3.event.x / x.step());
+                
+                if (the_index<0)
+                    { the_index = 0 };
+                if (the_index > (x.domain().length - 1) )
+                    { the_index = (x.domain().length - 1) };
+
+                let the_value = x.domain()[the_index];
+                let the_selection = d3.selectAll(".serie-dubbio rect").filter(d=>d.data.id===the_value);
+                
+                if (!the_selection.classed("selected") && !the_selection.classed("filtered")) {
+                    preSelection(the_selection.data()[0])
+                    selection(the_selection.data()[0], the_selection.classed("selected"));
+                }
+                    
+            })
+        )
+
+    let selector_handle_area = selector_handle.append("rect")
+        .attr("width", 36)
+        .attr("x",-36/2)
+        .attr("height", 36)
+        .attr("fill","transparent");
+    
+    let selector_handle_cursor = selector_handle.append("rect")
+        .attr("width", x.step()*2)
+        .attr("x",-x.step()*2/2)
+        .attr("height", 36)
+        .attr("fill", "white")
+        .attr("stroke", "black")
+        .attr("rx", x.step()*2/2);
+    
+    let selector_handle_line = selector_handle.append("line")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", 0)
+        .attr("y2", -height)
+        .attr("stroke-width", 1) 
+        .attr("stroke", "var(--navigation-borders)")
+        .style("opacity", 0);
 
     const treemap = (data, width, height) => d3.treemap()
         .tile(d3.treemapBinary)
