@@ -510,7 +510,7 @@ V.update = (data, stackMode, baseLayer) => {
         .append("image")
             .attr("width", 36)
             .attr("height", 36)
-            .attr("href", "/arrow-left.svg")
+            .attr("href", process.env.PUBLIC_URL + "/arrow-left.svg")
 
     let selector_next = selector.append("g")
         .attr("transform", `translate(${width - x.step()*20},0)`)
@@ -531,7 +531,7 @@ V.update = (data, stackMode, baseLayer) => {
         .append("image")
             .attr("width", 36)
             .attr("height", 36)
-            .attr("href", "/arrow-right.svg")
+            .attr("href", process.env.PUBLIC_URL + "/arrow-right.svg")
 
     let selector_background = selector.append("rect")
         .attr("width", `${width-x.step()*20}`)
