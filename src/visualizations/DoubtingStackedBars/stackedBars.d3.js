@@ -489,7 +489,7 @@ V.update = (data, stackMode, baseLayer) => {
 
     }
 
-    selector.attr('transform', `translate(${margin.left + x.step()*10}, ${height + margin.top + 5})`);
+    selector.attr('transform', `translate(${margin.left + x.step()*10}, ${height + margin.top + 5})`).selectAll('*').remove();
 
     let selector_prev = selector.append("g")
         .attr("transform", `translate(${-36},0)`)
