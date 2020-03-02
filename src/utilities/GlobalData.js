@@ -5358,6 +5358,9 @@ const GlobalData = {
       spaceOccurrences : "spaceOccurrences",
       spaceProportion  : "spaceProportion",
       spaceHierarchies : "spaceHierarchies"
+    },
+    transform : {
+      mainLegend : "mainLegend"
     }
   },
   visualizationColors : {
