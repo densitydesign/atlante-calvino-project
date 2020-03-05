@@ -416,15 +416,22 @@ class ProcessDoubting extends Component {
     this.setState({survive_filters:survive_filters})
   }
 
+  toggleHelpSidePanel = () => this.setState({
+    helpSidePanelOpen : !this.state.helpSidePanelOpen
+  });  
+
   render() {
+
+    const helpPage = GlobalData.helpPages.processDoubting.main;
+
     // console.log(this.state)
     return (
       <div className="process-doubting main">
 
-        {/* <HelpSidePanel
+        <HelpSidePanel
 					open={this.state.helpSidePanelOpen}
 					page={helpPage}
-					closeButtonClicked={this.toggleHelpSidePanel} /> */}
+					closeButtonClicked={this.toggleHelpSidePanel} />
 
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>

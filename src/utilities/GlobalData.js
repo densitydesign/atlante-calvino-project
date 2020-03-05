@@ -5339,6 +5339,9 @@ const GlobalData = {
     compass : {
       time : "compassTime",
       bones : "compassBones"
+    },
+    processDoubting : {
+      main : "processDoubtingMain"
     }
   },
   legendPages : {
