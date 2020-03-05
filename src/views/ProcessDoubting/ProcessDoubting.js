@@ -15,6 +15,7 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import Loading from '../../general/Loading';
 import Options from '../../general/Options';
 import Search from '../../general/Search';
+import SearchDropDown from "../../general/Search/SearchDropDown";
 import RangeFilter from '../../general/RangeFilter';
 
 import DoubtingStackedBars from '../../visualizations/DoubtingStackedBars/DoubtingStackedBars';
@@ -232,6 +233,7 @@ class ProcessDoubting extends Component {
 				return {
 					'label': d.title,
 					'id': [d.id],
+          'value': d.id, // to be used by SearchDropDown
 					'status': true
 				}        
       });
@@ -446,11 +448,23 @@ class ProcessDoubting extends Component {
 					/> }
           {	this.state.isLoading && <Loading style = {{gridColumn: 'span 7'}}/>}
 					{	!this.state.isLoading &&
-					<Search
+/*					<Search
 						style = {{gridColumn: 'span 7'}}
 						data = {this.state.ricerca}
 						changeOptions = {this.changeRicerca}
-					/> }
+					/> 
+*/
+
+          <SearchDropDown
+            style={{
+              gridColumn: "span 7"
+            }}
+            data={{ options: this.state.data_research.titolo }}
+            changeOptions={this.changeRicerca}
+            selectedOptions={this.state.ricerca}
+          />
+
+          }
 
           <MoreInfo
 						style={{ gridColumn: "span 1" }}
