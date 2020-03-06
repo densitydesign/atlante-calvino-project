@@ -35,7 +35,8 @@ const structureData = (arr) => {
       'children': [],
       'parent':null,
       'open': false,
-      'level':0
+      'level':0,
+      'depth':0
     }
     return obj;
   })

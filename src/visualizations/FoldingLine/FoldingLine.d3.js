@@ -14,7 +14,7 @@ let width, legendWidth, height, margin = {top: 10, right: 0, bottom: 10, left: 4
         .range(["url(#subj-gradient)","url(#doubt-gradient)"])
 
 V.initialize = (init_options) => {
-    console.log(init_options);
+    // console.log(init_options);
 
     svg = d3.select(init_options.element);
 
@@ -104,7 +104,7 @@ V.initialize = (init_options) => {
 }
 
 V.update = (options) => {
-    console.log('V.update');
+    // console.log('V.update');
 
     x.domain([0,options.data.length]);
     y.domain([d3.max(options.data.details, d=>d.depth), 0]);
@@ -113,7 +113,28 @@ V.update = (options) => {
     const doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
     const subjects = doubts.filter(d=>d.open||d.depth===0);
 
-    // console.log(text,data);
+    console.log('data doubts',doubts);
+    console.log('data subjects',subjects);
+
+    doubt = doubt.data(doubts, d=>'doubt-'+d.id);
+    doubt.exit().remove();
+    doubt = doubt.enter().append('rect')
+        .classed('doubt', true)
+        .attr('stroke-width',1)
+        .attr('stroke', color('dubitativo'))
+        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
+        // .attr('stroke-linejoin','miter')
+        .attr('fill', gradient('dubitativo'))
+        .attr('x',d=>x(d.doubt_start))
+        .attr('y',d=>y(d.depth?d.depth:0))
+        .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
+        .attr('height',d=>Math.abs(y(d.depth||0)))
+        .merge(doubt)
+        .on('click', d=>{
+            d.open=!d.open;
+            V.update(options);
+        });
+
     subject = subject.data(subjects, d=>'subject-'+d.id);
     subject.exit().remove();
     subject = subject.enter().append('rect')
@@ -128,25 +149,7 @@ V.update = (options) => {
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .merge(subject);
-    
-    doubt = doubt.data(doubts, d=>'doubt-'+d.id);
-    doubt.exit().remove();
-    doubt = doubt.enter().append('rect')
-        .classed('doubt', true)
-        .attr('stroke-width',1)
-        .attr('stroke', color('dubitativo'))
-        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
-        // .attr('stroke-linejoin','miter')
-        .attr('fill', gradient('dubitativo'))
-        .attr('x',d=>x(d.doubt_start))
-        .attr('y',d=>y(d.depth||0))
-        .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
-        .attr('height',d=>Math.abs(y(d.depth||0)))
-        .merge(doubt)
-        .on('click', d=>{
-            d.open=!d.open;
-            V.update(options);
-        });
+
 }
 
 V.destroy = () => {

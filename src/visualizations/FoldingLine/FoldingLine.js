@@ -12,7 +12,7 @@ class FoldingLine extends Component {
     this._rootNode = componentNode;
   }
   componentDidMount(){
-    console.log('folding line mount');
+    // console.log('folding line mount');
     const options = {
       element: this._rootNode,
       data: this.props.data
@@ -21,7 +21,7 @@ class FoldingLine extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log('folding line update');
+    // console.log('folding line update');
     if (this.props.data && this.props.data !== prevProps.data){
       const options = {
         data: this.props.data
@@ -31,7 +31,7 @@ class FoldingLine extends Component {
   }
 
   componentWillUnmount() {
-    console.log('folding line unmount');
+    // console.log('folding line unmount');
   }
 
   render() {
