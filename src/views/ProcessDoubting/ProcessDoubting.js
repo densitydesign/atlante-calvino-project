@@ -448,13 +448,6 @@ class ProcessDoubting extends Component {
 					/> }
           {	this.state.isLoading && <Loading style = {{gridColumn: 'span 7'}}/>}
 					{	!this.state.isLoading &&
-/*					<Search
-						style = {{gridColumn: 'span 7'}}
-						data = {this.state.ricerca}
-						changeOptions = {this.changeRicerca}
-					/> 
-*/
-
           <SearchDropDown
             style={{
               gridColumn: "span 7"
@@ -463,7 +456,6 @@ class ProcessDoubting extends Component {
             changeOptions={this.changeRicerca}
             selectedOptions={this.state.ricerca}
           />
-
           }
 
           <MoreInfo
@@ -520,12 +512,6 @@ class ProcessDoubting extends Component {
 							data = {this.state.timeExtent}
 							changeOptions = {this.changeTimeSpan}
 						/> }
-
-          {/* {	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
-					{	!this.state.isLoading &&
-						<span style = {{gridColumn: 'span 24'}}>
-              data is loaded, questo spazio può essere utilizzato per dei filtri.
-            </span> } */}
           
         </div>
         
