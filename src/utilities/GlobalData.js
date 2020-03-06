@@ -5339,6 +5339,9 @@ const GlobalData = {
     compass : {
       time : "compassTime",
       bones : "compassBones"
+    },
+    processDoubting : {
+      main : "processDoubtingMain"
     }
   },
   legendPages : {
@@ -5358,6 +5361,9 @@ const GlobalData = {
       spaceOccurrences : "spaceOccurrences",
       spaceProportion  : "spaceProportion",
       spaceHierarchies : "spaceHierarchies"
+    },
+    transform : {
+      mainLegend : "mainLegend"
     }
   },
   visualizationColors : {
