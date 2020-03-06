@@ -116,7 +116,8 @@ const structureData = (arr) => {
     identifyParent(child, arr)
   })
 
-  // // set level of depth
+  // set level of depth
+  // 🚨 array must be reversed
   arr.reverse().forEach((element, i) => {
     console.log('👉', element);
 
