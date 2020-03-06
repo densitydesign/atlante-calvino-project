@@ -5,13 +5,12 @@ import './DoubtingStackedBars.css';
 
 class DoubtingStackedBars extends Component {
 
-
   componentDidMount() {
     const data_for_update = {
       data: this.props.data,
       stackMode: this.props.stackMode
     }
-    V.initialize(this._rootNode, data_for_update);
+    V.initialize(this._rootNode, data_for_update, this.props.onSelectedElement);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -37,7 +36,7 @@ class DoubtingStackedBars extends Component {
   render() {
     const styleSvg={
       width: '100%',
-      height: '100%'
+      height: '50%'
     }
     return <svg id={this.props.id} style={styleSvg} ref={this._setRef.bind(this)}></svg>;
   }

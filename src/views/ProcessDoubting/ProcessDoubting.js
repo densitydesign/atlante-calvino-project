@@ -19,6 +19,7 @@ import SearchDropDown from "../../general/Search/SearchDropDown";
 import RangeFilter from '../../general/RangeFilter';
 
 import DoubtingStackedBars from '../../visualizations/DoubtingStackedBars/DoubtingStackedBars';
+import FoldingLine from '../../visualizations/FoldingLine/FoldingLine';
 
 const structureData = (arr) => {
   arr = arr.map((d,i)=>{
@@ -31,6 +32,8 @@ const structureData = (arr) => {
       'is_alternative': (d['Alternative']!=='')?true:false,
       'alternatives': [],
       'has_children': false,
+      'children': [],
+      'parent':null,
       'open': false,
       'level':0,
       'depth':0
@@ -80,7 +83,7 @@ const structureData = (arr) => {
 
       const doubt_end_is_inside = d.doubt_end >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_end >= dd.subj_start && d.doubt_start <= dd.subj_end
 
-      return subj_start_is_inside || subj_start_is_inside || doubt_start_is_inside || doubt_end_is_inside
+      return subj_start_is_inside || subj_end_is_inside || doubt_start_is_inside || doubt_end_is_inside
     })
 
     if (parent) { //  && list.indexOf(parent)>list.indexOf(d)
@@ -96,6 +99,9 @@ const structureData = (arr) => {
           // console.log('🚨', parent.id, 'already has a parent')
         }
         parent.has_children = true;
+        if (parent.children.indexOf(d)===-1) {
+          parent.children.push(d);
+        }
         d.parent = parent;
         d.level = parent.level+1
       }
@@ -114,6 +120,8 @@ const structureData = (arr) => {
     // console.log('👉', child.id)
     identifyParent(child, arr)
   })
+
+
 
   // // set level of depth
   arr.forEach((element, i) => {
@@ -151,11 +159,13 @@ class ProcessDoubting extends Component {
     this.changeTimeSpan = this.changeTimeSpan.bind(this);
     this.changePubblicazioni = this.changePubblicazioni.bind(this);
     this.changeAnnidamenti = this.changeAnnidamenti.bind(this);
+    this.onSelectedElement = this.onSelectedElement.bind(this);
 
     this.applyFilters = this.applyFilters.bind(this);
 
     this.state = {
-      data: 'data still not loaded',
+      // data: 'data still not loaded',
+      data: [],
       isLoading: true,
       stackMode: "normalized",
       lunghezzaTesti: {
@@ -394,7 +404,6 @@ class ProcessDoubting extends Component {
         if (levels_in_filter.length !== levels_in_text.length) {
           return false;
         } else {
-          // console.log(d.id, '\n', levels_in_filter, levels_in_text, '\n', _.difference(levels_in_filter, levels_in_text), '\n', _.difference(levels_in_filter, levels_in_text).length===0);
           return _.difference(levels_in_filter, levels_in_text).length===0;
         } 
       }).map(d=>d.id)
@@ -418,6 +427,10 @@ class ProcessDoubting extends Component {
     this.setState({survive_filters:survive_filters})
   }
 
+  onSelectedElement(element) {
+    this.setState({selectedElement:element})
+  }
+
   toggleHelpSidePanel = () => this.setState({
     helpSidePanelOpen : !this.state.helpSidePanelOpen
   });  
@@ -426,7 +439,6 @@ class ProcessDoubting extends Component {
 
     const helpPage = GlobalData.helpPages.processDoubting.main;
 
-    // console.log(this.state)
     return (
       <div className="process-doubting main">
 
@@ -474,12 +486,18 @@ class ProcessDoubting extends Component {
         <div className="the-body-viz">
           {	this.state.isLoading && <Loading style = {{width: '100%'}}/>}
           {	!this.state.isLoading &&
-            <DoubtingStackedBars
-              id="doubting-stacked-bars"
-              data={this.state.data}
-              stackMode = {this.state.stackMode}
-              surviveFilters = {this.state.survive_filters}
-            />
+            <div style={{width:'100%'}}>
+              <DoubtingStackedBars
+                id="doubting-stacked-bars"
+                data={this.state.data}
+                stackMode = {this.state.stackMode}
+                surviveFilters = {this.state.survive_filters}
+                onSelectedElement = {this.onSelectedElement}
+              />
+              {this.state.selectedElement && 
+                <FoldingLine data={this.state.selectedElement}/>
+              }
+            </div>
           }
         </div>
 

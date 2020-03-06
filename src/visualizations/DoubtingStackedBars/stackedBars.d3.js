@@ -2,6 +2,8 @@ import * as d3 from 'd3';
 
 const V = {}
 
+let onSelectedElement;
+
 let width,
     height,
     margin = {top: 30, right: 0, bottom: 50, left: 40},
@@ -92,8 +94,10 @@ let width,
         .unknown("#ccc"),
     performed_selection_data;
 
-V.initialize = (el, data_for_update) => {
+V.initialize = (el, data_for_update, _onSelectedElement) => {
     console.log("initialize dubbio fase 2")
+
+    onSelectedElement = _onSelectedElement
 
     width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
     height = d3.select(el).node().getBoundingClientRect().height - margin.top - margin.bottom;
@@ -229,6 +233,7 @@ V.update = (data, stackMode, baseLayer) => {
     }
 
     const removeSelectionAll = () => {
+        onSelectedElement(null);
         const allBars = d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
             .transition()
@@ -311,6 +316,7 @@ V.update = (data, stackMode, baseLayer) => {
         if (performed_selection_data) {
             removePreSelection(performed_selection_data);
         }
+        onSelectedElement(d.data);
         performed_selection_data = d;
         legendData = legendData.filter(d=>d.baseCategory);
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
