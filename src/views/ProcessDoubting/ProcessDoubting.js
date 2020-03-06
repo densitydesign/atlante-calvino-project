@@ -23,6 +23,7 @@ import FoldingLine from '../../visualizations/FoldingLine/FoldingLine';
 
 const structureData = (arr) => {
   arr = arr.map((d,i)=>{
+
     const obj = {
       'id': 'pair-'+i,
       'subj_start': +d.soggetto_starts_at,
@@ -44,10 +45,9 @@ const structureData = (arr) => {
   for (var i=arr.length-1; i>-1; i--) {
     const d = arr[i];
     if (d.is_alternative) {
-
       const alternative_data = {
         'start': +d.doubt_start,
-        'end': +d.doubt_end,
+        'end': +d.doubt_end
       }
 
       d.alternatives.push(alternative_data)
@@ -146,7 +146,11 @@ const structureData = (arr) => {
     }
   });
 
-  return arr;
+  arr.forEach(d=>{
+    d.open=true;
+  })
+
+  return arr.reverse();
 }
 
 class ProcessDoubting extends Component {

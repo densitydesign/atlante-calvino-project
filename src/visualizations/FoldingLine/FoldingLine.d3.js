@@ -1,14 +1,17 @@
 import * as d3 from 'd3';
+import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 
 const V = {}
 
 let width, legendWidth, height, margin = {top: 10, right: 0, bottom: 10, left: 40},
-    svg, g, baseLine, doubt, subject,
+    svg, title, g, baseLine, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
         .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
         .unknown("#ff3333"),
+    
+    xAxis, xAxisCall, yAxis, yAxisCall,   
     gradient = d3.scaleOrdinal()
         .domain(["soggetto","dubitativo"])
         .range(["url(#subj-gradient)","url(#doubt-gradient)"])
@@ -17,6 +20,10 @@ V.initialize = (init_options) => {
     // console.log(init_options);
 
     svg = d3.select(init_options.element);
+
+    title = svg.append('text')
+        .attr('x', margin.left)
+        .attr('y', margin.top);
 
     const defs = svg.append('defs');
     const gradientData = [
@@ -60,7 +67,8 @@ V.initialize = (init_options) => {
         }
     ]
 
-    let gradient = defs.selectAll('linearGradient').data(gradientData, d=>d.id)
+    let gradient = defs.selectAll('linearGradient');
+    gradient = gradient.data(gradientData, d=>d.id)
         .enter()
         .append('linearGradient')
             .attr('id', d=>d.id)
@@ -88,6 +96,19 @@ V.initialize = (init_options) => {
 
     g = svg.append('g')
         .attr('transform', 'translate('+margin.left+','+(margin.top + height/2)+')');
+
+    xAxis = g.append("g")
+        .attr("class", "x-axis noselect")
+        .attr("transform", `translate(${0},${margin.top})`);
+        
+    yAxis = g.append("g")
+        .attr("class", "y-axis noselect")
+        .attr("transform", `translate(${0},${0})`);
+
+    subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
+    doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
+    label = g.append('g').classed('group-labels', true).selectAll('.label');
+
     baseLine = g.append('line');
     baseLine.attr('x1',x(0))
         .attr('x2',x(init_options.data.length))
@@ -97,59 +118,83 @@ V.initialize = (init_options) => {
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '2 2');
 
-    subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
-    doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
 
     V.update({data:init_options.data});
 }
 
 V.update = (options) => {
-    // console.log('V.update');
+    console.log('V.update', options.data);
+
+    title.text(options.data.id + ' ' + options.data.title)
 
     x.domain([0,options.data.length]);
+    xAxisCall = d3.axisBottom(x);
+    xAxis.call(xAxisCall);
+
     y.domain([d3.max(options.data.details, d=>d.depth), 0]);
+    yAxisCall = d3.axisLeft(y).ticks(y.domain()[0]);
+    yAxis.call(yAxisCall);
 
     // const text = options.data;
-    const doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
-    const subjects = doubts.filter(d=>d.open||d.depth===0);
+    let doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
+    doubts.forEach((d,i)=>{
+        console.log(d.id)
+        d.doubt_x = d.doubt_start;
+        d.subj_x = d.subj_start;
+        options.data.details
+            .filter((dd,ii)=>!dd.open && ii<=i)
+            .forEach((dd,ii)=>{
+                const sbj_length = dd.subj_end - dd.subj_start;
+                d.doubt_x-= sbj_length;
+                d.subj_x-= sbj_length;
+            });
+    })
+    const subjects = doubts.filter(d=>d.open);
 
-    console.log('data doubts',doubts);
-    console.log('data subjects',subjects);
+    // console.log(doubts);
 
-    doubt = doubt.data(doubts, d=>'doubt-'+d.id);
+    doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
     doubt.exit().remove();
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
         .attr('stroke-width',1)
         .attr('stroke', color('dubitativo'))
-        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
-        // .attr('stroke-linejoin','miter')
         .attr('fill', gradient('dubitativo'))
-        .attr('x',d=>x(d.doubt_start))
+        .merge(doubt)
+        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
+        .attr('x',d=>x(d.doubt_x))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
-        .merge(doubt)
-        .on('click', d=>{
+        .on('click', (d,i)=>{
+            console.log('clicked',d)
             d.open=!d.open;
             V.update(options);
         });
 
-    subject = subject.data(subjects, d=>'subject-'+d.id);
+    subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
     subject = subject.enter().append('rect')
         .classed('subject', true)
         .attr('stroke-width', 1)
         .attr('stroke', d=>color('soggetto'))
-        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*Math.abs(y(d.depth||0))) )
-        // .attr('stroke-linejoin','miter')
         .attr('fill', gradient('soggetto'))
-        .attr('x',d=>x(d.subj_start))
+        .merge(subject)
+        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*Math.abs(y(d.depth||0))) )
+        .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
-        .attr('height',d=>Math.abs(y(d.depth||0)))
-        .merge(subject);
-
+        .attr('height',d=>Math.abs(y(d.depth||0)));
+    
+    label = label.data(doubts, d=>{return options.data.id+'-label-doubt-'+d.id});
+    label.exit().remove();
+    label = label.enter().append('text')
+        .classed('label noselect', true)
+        .attr('font-size','0.75rem')
+        .merge(label)
+        .attr('x',d=>x(d.doubt_x))
+        .attr('y',d=>y(d.depth?d.depth:0))
+        .text(d=>d.id.replace('pair-', 'td '));
 }
 
 V.destroy = () => {
