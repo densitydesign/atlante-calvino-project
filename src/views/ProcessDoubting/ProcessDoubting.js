@@ -119,21 +119,19 @@ const structureData = (arr) => {
   // set level of depth
   // 🚨 array must be reversed
   arr.reverse().forEach((element, i) => {
-    console.log('👉', element);
-
+    // console.log('👉', element);
     let maxChildrenLevel = 0;
     retrieveMaxChildrenLevel(element);
     function retrieveMaxChildrenLevel(item) {
       if (item.children.length>0) {
         const this_max_level = d3.max(item.children, d=>d.level);
         maxChildrenLevel = d3.max([maxChildrenLevel, this_max_level]);
-        console.log('increased maxChildrenLevel to', maxChildrenLevel);
+        // console.log('increased maxChildrenLevel to', maxChildrenLevel);
         item.children.forEach((child) => {
           retrieveMaxChildrenLevel(child);
         });
       }
     }
-
     if (maxChildrenLevel > 0) {
       setDepth(element);
       function setDepth(item) {
@@ -145,20 +143,6 @@ const structureData = (arr) => {
         }
       }
     }
-
-    // let depth = 0
-    // retrieveDepth(element);
-    // element.depth=depth;
-
-    // function retrieveDepth(item) {
-    //   if (item.children.length>0) {
-    //     depth++;
-    //     item.children.forEach((child, i) => {
-    //       retrieveDepth(child);
-    //     });
-    //   }
-    // }
-
   });
 
   return arr;
@@ -234,7 +218,7 @@ class ProcessDoubting extends Component {
     // https://observablehq.com/@iosonosempreio/data-dubbio-fase-due
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
-      json = json.filter(d=>d.id==="S153");
+      // json = json.filter(d=>d.id==="S153");
       json.forEach(d=>{
         d.details = structureData(d.details);
         d.maxNesting = d3.max(d.details, d=>d.level)||0;

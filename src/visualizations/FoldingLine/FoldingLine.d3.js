@@ -76,7 +76,7 @@ V.update = (options) => {
         .attr('stroke-width', 1)
         .attr('transform',d=>`translate(0,${y(d.depth)})`)
         .merge(subject)
-        .attr('stroke', d=>d.open?'red':color('soggetto'))
+        .attr('stroke', d=>color('soggetto'))
         .attr('d',d=>`M${x(d.subj_start)},0 H${x(d.subj_end)}`)
 
 }
