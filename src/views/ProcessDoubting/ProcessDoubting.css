@@ -2,9 +2,9 @@
     opacity: 1 !important;
 }
 
-/* #doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
+#doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
     pointer-events: none;
-} */
+}
 
 #doubting-stacked-bars{
     padding-left:1em;
