@@ -36,7 +36,7 @@ class DoubtingStackedBars extends Component {
   render() {
     const styleSvg={
       width: '100%',
-      height: '50%'
+      height: '100%'
     }
     return <svg id={this.props.id} style={styleSvg} ref={this._setRef.bind(this)}></svg>;
   }

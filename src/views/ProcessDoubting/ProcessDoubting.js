@@ -35,8 +35,7 @@ const structureData = (arr) => {
       'children': [],
       'parent':null,
       'open': false,
-      'level':0,
-      'depth':0
+      'level':0
     }
     return obj;
   })
@@ -65,10 +64,8 @@ const structureData = (arr) => {
       }
     }
   }
-  // console.log(arr);
 
   let counter = 0;
-
   const identifyParent = (d,list) => {
     counter++;
     const listToSearchForParent = list.filter( dd => +d.id.replace('pair-','') < +dd.id.replace('pair-','') )
@@ -112,36 +109,55 @@ const structureData = (arr) => {
     }
     return parent;
   }
-
   // check if a pair is inside another
   arr.forEach((d,i)=>{
     const child = d;
-    // console.log(' ')
     // console.log('👉', child.id)
     identifyParent(child, arr)
   })
 
-
-
   // // set level of depth
-  arr.forEach((element, i) => {
-    // console.log('👉', element.id)
-    let depth = 0
-    retrieveDepth(element);
+  arr.reverse().forEach((element, i) => {
+    console.log('👉', element);
 
-    element.depth=depth;
-    function retrieveDepth(item) {
-      if (item.has_children) {
-        let children = arr.filter(d=>d.parent).filter(d=>d.parent===item)
-        // console.log(children)
-        if (children.length>0) {
-          children.forEach((child, i) => {
-            depth = Math.max(depth, child.level)
-            retrieveDepth(child);
+    let maxChildrenLevel = 0;
+    retrieveMaxChildrenLevel(element);
+    function retrieveMaxChildrenLevel(item) {
+      if (item.children.length>0) {
+        const this_max_level = d3.max(item.children, d=>d.level);
+        maxChildrenLevel = d3.max([maxChildrenLevel, this_max_level]);
+        console.log('increased maxChildrenLevel to', maxChildrenLevel);
+        item.children.forEach((child) => {
+          retrieveMaxChildrenLevel(child);
+        });
+      }
+    }
+
+    if (maxChildrenLevel > 0) {
+      setDepth(element);
+      function setDepth(item) {
+        item.depth = Math.abs(item.level - maxChildrenLevel);
+        if (item.children.length>0) {
+          item.children.forEach((child) =>{
+            setDepth(child);
           });
         }
       }
     }
+
+    // let depth = 0
+    // retrieveDepth(element);
+    // element.depth=depth;
+
+    // function retrieveDepth(item) {
+    //   if (item.children.length>0) {
+    //     depth++;
+    //     item.children.forEach((child, i) => {
+    //       retrieveDepth(child);
+    //     });
+    //   }
+    // }
+
   });
 
   return arr;
@@ -217,10 +233,10 @@ class ProcessDoubting extends Component {
     // https://observablehq.com/@iosonosempreio/data-dubbio-fase-due
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
-      // json = json.filter(d=>d.id==="S153");
+      json = json.filter(d=>d.id==="S153");
       json.forEach(d=>{
         d.details = structureData(d.details);
-        d.maxDepth = d3.max(d.details, d=>d.depth)||0;
+        d.maxNesting = d3.max(d.details, d=>d.level)||0;
       });
       return json;
     }).then(data=>{
@@ -253,7 +269,7 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
 
-      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxDepth)).map(d=>{return {'label':d.key,'status':false}}).sort((a,b)=>+a.label-b.label);
+      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxNesting)).map(d=>{return {'label':d.key,'status':false}}).sort((a,b)=>+a.label-b.label);
 
       // need to convert date to milliseconds for the timespan filter to work
       const timeExtent = d3.extent(data, d => +new Date(d.year));
@@ -400,7 +416,7 @@ class ProcessDoubting extends Component {
 
     if (levels_in_filter.length>0) {
       toPreserve = this.state.data.filter(d=>{
-        const levels_in_text = _.uniq(d.details.map(d=>+d.depth)).sort();
+        const levels_in_text = _.uniq(d.details.map(d=>+d.level)).sort();
         if (levels_in_filter.length !== levels_in_text.length) {
           return false;
         } else {
