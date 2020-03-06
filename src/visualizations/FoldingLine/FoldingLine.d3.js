@@ -29,13 +29,13 @@ V.initialize = (init_options) => {
             'stops':[
             {
                 'offset': '0%',
-                'color': '#bbbbff',
-                'opacity':0
+                'color': '#ffffff',
+                'opacity':1
             },
             {
                 'offset': '75%',
-                'color': '#bbbbff',
-                'opacity': .4
+                'color': '#dfdfff',
+                'opacity': 1
             }
             ]
         },
@@ -48,13 +48,13 @@ V.initialize = (init_options) => {
             'stops':[
             {
                 'offset': '0%',
-                'color': '#ffc806',
-                'opacity':0
+                'color': '#ffffff',
+                'opacity':1
             },
             {
                 'offset': '75%',
-                'color': '#ffc806',
-                'opacity': .3
+                'color': '#fff0ba',
+                'opacity': 1
             }
             ]
         }
@@ -99,7 +99,6 @@ V.initialize = (init_options) => {
 
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
-    
 
     V.update({data:init_options.data});
 }
@@ -122,6 +121,7 @@ V.update = (options) => {
         .attr('stroke-width', 1)
         .attr('stroke', d=>color('soggetto'))
         .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*Math.abs(y(d.depth||0))) )
+        // .attr('stroke-linejoin','miter')
         .attr('fill', gradient('soggetto'))
         .attr('x',d=>x(d.subj_start))
         .attr('y',d=>y(d.depth||0))
@@ -136,6 +136,7 @@ V.update = (options) => {
         .attr('stroke-width',1)
         .attr('stroke', color('dubitativo'))
         .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
+        // .attr('stroke-linejoin','miter')
         .attr('fill', gradient('dubitativo'))
         .attr('x',d=>x(d.doubt_start))
         .attr('y',d=>y(d.depth||0))
