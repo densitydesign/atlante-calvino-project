@@ -492,7 +492,7 @@ class ProcessDoubting extends Component {
         <div className="the-body-viz">
           {	this.state.isLoading && <Loading style = {{width: '100%'}}/>}
           {	!this.state.isLoading &&
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%', overflowX: 'scroll'}}>
               <DoubtingStackedBars
                 id="doubting-stacked-bars"
                 data={this.state.data}

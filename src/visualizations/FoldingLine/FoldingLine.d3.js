@@ -3,7 +3,7 @@ import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 
 const V = {}
 
-let width, legendWidth, height, margin = {top: 10, right: 0, bottom: 10, left: 40},
+let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 0, left: 40},
     svg, title, g, baseLine, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
@@ -13,8 +13,8 @@ let width, legendWidth, height, margin = {top: 10, right: 0, bottom: 10, left: 4
     
     xAxis, xAxisCall, yAxis, yAxisCall,   
     gradient = d3.scaleOrdinal()
-        .domain(["soggetto","dubitativo"])
-        .range(["url(#subj-gradient)","url(#doubt-gradient)"])
+        .domain(["soggetto","misto","dubitativo"])
+        .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)"])
 
 V.initialize = (init_options) => {
     // console.log(init_options);
@@ -23,7 +23,7 @@ V.initialize = (init_options) => {
 
     title = svg.append('text')
         .attr('x', margin.left)
-        .attr('y', margin.top);
+        .attr('y', margin.top/2);
 
     const defs = svg.append('defs');
     const gradientData = [
@@ -42,6 +42,25 @@ V.initialize = (init_options) => {
             {
                 'offset': '75%',
                 'color': '#dfdfff',
+                'opacity': 1
+            }
+            ]
+        },
+        {
+            'id':'mixed-gradient',
+            'x1': '50%',
+            'y1': '100%',
+            'x2': '50%',
+            'y2': '0%',
+            'stops':[
+            {
+                'offset': '0%',
+                'color': '#ffffff',
+                'opacity':1
+            },
+            {
+                'offset': '75%',
+                'color': '#9defdf',
                 'opacity': 1
             }
             ]
@@ -92,10 +111,14 @@ V.initialize = (init_options) => {
         x.domain([0,init_options.data.length]);
     
     y = d3.scaleLinear()
-        .range([-height/2 + margin.top, -margin.bottom]);
+        .range([-height/2, 0]);
 
     g = svg.append('g')
         .attr('transform', 'translate('+margin.left+','+(margin.top + height/2)+')');
+
+    subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
+    doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
+    label = g.append('g').classed('group-labels', true).selectAll('.label');
 
     xAxis = g.append("g")
         .attr("class", "x-axis noselect")
@@ -104,10 +127,6 @@ V.initialize = (init_options) => {
     yAxis = g.append("g")
         .attr("class", "y-axis noselect")
         .attr("transform", `translate(${0},${0})`);
-
-    subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
-    doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
-    label = g.append('g').classed('group-labels', true).selectAll('.label');
 
     baseLine = g.append('line');
     baseLine.attr('x1',x(0))
@@ -123,7 +142,12 @@ V.initialize = (init_options) => {
 }
 
 V.update = (options) => {
-    console.log('V.update', options.data);
+    // console.log('V.update', options.data);
+
+    // delete this, is created later when calculating offset of x positioning
+    options.data.details.forEach(d=>{
+        delete d.skip_now
+    })
 
     title.text(options.data.id + ' ' + options.data.title)
 
@@ -137,29 +161,39 @@ V.update = (options) => {
 
     // const text = options.data;
     let doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
-    doubts.forEach((d,i)=>{
-        console.log(d.id)
-        d.doubt_x = d.doubt_start;
-        d.subj_x = d.subj_start;
+
+    doubts.forEach((d)=>{
+        d.doubt_x = JSON.parse(JSON.stringify(d.doubt_start));
+        d.subj_x = JSON.parse(JSON.stringify(d.subj_start));
         options.data.details
-            .filter((dd,ii)=>!dd.open && ii<=i)
+            .filter((dd,ii)=>!dd.open && ii<=options.data.details.indexOf(d))
             .forEach((dd,ii)=>{
-                const sbj_length = dd.subj_end - dd.subj_start;
-                d.doubt_x-= sbj_length;
-                d.subj_x-= sbj_length;
+                if (!d.skip_now) {
+                    let offset = dd.subj_end - dd.subj_start;
+                    // // do not calculate overlap for the element with itself
+                    // if (dd.id!==d.id){
+                    //     const overlap = getOverlap(dd.subj_start, dd.subj_end, d.subj_start, d.subj_end);
+                    //     offset -= overlap;
+                    //     if (offset<1) {
+                    //         d.skip_now=true;
+                    //     }
+                    // }
+                    d.doubt_x-= offset;
+                    d.subj_x-= offset;
+                }   
             });
     })
     const subjects = doubts.filter(d=>d.open);
 
-    // console.log(doubts);
+    console.log('visualized doubts', doubts);
 
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
     doubt.exit().remove();
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
         .attr('stroke-width',1)
-        .attr('stroke', color('dubitativo'))
-        .attr('fill', gradient('dubitativo'))
+        .attr('stroke', d=>d.parent?color('misto'):color('dubitativo'))
+        .attr('fill', d=>d.parent?gradient('misto'):gradient('dubitativo'))
         .merge(doubt)
         .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
         .attr('x',d=>x(d.doubt_x))
@@ -169,8 +203,20 @@ V.update = (options) => {
         .on('click', (d,i)=>{
             console.log('clicked',d)
             d.open=!d.open;
+            if (d.open===false){
+                close_recursive(d);
+            }
             V.update(options);
         });
+
+    function close_recursive(d){
+        d.open = false;
+        if (d.has_children){
+            d.children.forEach(dd=>{
+                close_recursive(dd);
+            })
+        }
+    }
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
@@ -190,10 +236,11 @@ V.update = (options) => {
     label.exit().remove();
     label = label.enter().append('text')
         .classed('label noselect', true)
-        .attr('font-size','0.75rem')
+        .attr('font-size','0.65rem')
         .merge(label)
-        .attr('x',d=>x(d.doubt_x))
-        .attr('y',d=>y(d.depth?d.depth:0))
+        .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
+        .attr('y',d=>y(d.depth))
+        .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.depth)})`)
         .text(d=>d.id.replace('pair-', 'td '));
 }
 
@@ -202,3 +249,7 @@ V.destroy = () => {
 }
 
 export default V;
+
+function getOverlap(a_start, a_end, b_start, b_end){
+    return Math.max(0, Math.min(a_end, b_end) - Math.max(a_start, b_start));
+}
