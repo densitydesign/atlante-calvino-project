@@ -118,7 +118,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .append("tspan")
             .attr("font-size", "0.9rem")
             .text("(clicca per riordinare)")
-            .attr("dy", "1.3rem")
+            .attr("dy", convertRemToPixels(1.3))
             .attr("x", 0);
     
     selector = svg.append("g").classed("selector", true);
@@ -223,7 +223,7 @@ V.update = (data, stackMode, baseLayer) => {
             .html(d=> {
                 let this_percentage = ""
                 if (showPercentage && d.percentage) this_percentage = " ("+d.percentage.toFixed(2)+"%)";
-                let html = `<rect width="2rem" height="1rem" fill="${d.color}"></rect><text x="3rem" y="12">${d.label + '' + this_percentage}</text>`;
+                let html = `<rect width="${convertRemToPixels(2)}" height="${convertRemToPixels(1)}" fill="${d.color}"></rect><text x="${convertRemToPixels(3)}" y="12">${d.label + '' + this_percentage}</text>`;
                 return html;
             });
 
@@ -644,3 +644,7 @@ V.destroy = () => {
 }
 
 export default V
+
+function convertRemToPixels(rem) {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
