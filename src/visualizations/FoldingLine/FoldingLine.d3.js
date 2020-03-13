@@ -4,8 +4,8 @@ import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
-let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 20, left: 40},
-    svg, title, g, baseLine, g_chapter, chapter, labelChapter, doubt, subject, label,
+let width, legendWidth, height, margin = {top: 25, right: 40, bottom: 20, left: 40},
+    svg, title, master_g, g, baseLine, chapter, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -15,7 +15,9 @@ let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 20, left: 4
     xAxis, xAxisCall, yAxis, yAxisCall,   
     gradient = d3.scaleOrdinal()
         .domain(["soggetto","misto","dubitativo","capitolo"])
-        .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)","url(#chapter-gradient)"])
+        .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)","url(#chapter-gradient)"]),
+
+    globalUpdateOptions;
 
 V.initialize = (init_options) => {
     // console.log(init_options);
@@ -122,32 +124,33 @@ V.initialize = (init_options) => {
                 .style('stop-color', d=>d.color)
                 .style('stop-opacity', d=>d.opacity);
 
-    width = svg.node().getBoundingClientRect().width*0.85 - margin.left - margin.right;
+    width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
     legendWidth = svg.node().getBoundingClientRect().width * 0.15;
     height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
     x = d3.scaleLinear()
         .range([0,width])
-        .domain([0,init_options.data.length]);
+        .domain([0,init_options.data.length])
+        .interpolate(d3.interpolateNumber);
     
     y = d3.scaleLinear()
         .range([-height, 0])
         .domain([10,-1]);
 
-    g = svg.append('g')
-        .attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
+    master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
 
-    chapter = g.append('g').classed('group-chapters', true).selectAll('.chapter');
+    g = master_g.append('g');
+    chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
     
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
     label = g.append('g').classed('group-labels', true).selectAll('.label');
 
-    xAxis = g.append("g")
+    xAxis = master_g.append("g")
         .attr("class", "x-axis noselect")
         .attr("transform", `translate(${0},${0})`);
         
-    yAxis = g.append("g")
+    yAxis = master_g.append("g")
         .attr("class", "y-axis noselect")
         .attr("transform", `translate(${0},${0})`);
 
@@ -160,33 +163,51 @@ V.initialize = (init_options) => {
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '2 2');
 
+    const zoomed = () => {
+        // console.log(d3.event.transform);
+        x.range( [margin.left, width - margin.right].map(d => d3.event.transform.applyX(d)) );
+        xAxis.call(xAxisCall.scale(x));
+        globalUpdateOptions.transformed = true;
+        V.update(globalUpdateOptions);
+    }
+
+    const zoom = d3.zoom()
+        // .scaleExtent([1, 10])
+        // .translateExtent([[0, 0], [width, height]])
+        .on("zoom", zoomed);
+    svg.call(zoom);
+
     V.update({data:init_options.data});
 }
 
 V.update = (options) => {
-    // console.log('V.update', options.data);
+    console.log('V.update');
+    if (options) {
+        globalUpdateOptions = options;
+    }
     // delete this, is created later when calculating offset of x positioning
     options.data.details.forEach(d=>{
-        delete d.skip_now
+        delete d.skip_now;
     })
 
     title.text(options.data.id + ' ' + options.data.title)
 
-    x.domain([0,options.data.length]);
-    xAxisCall = d3.axisBottom(x)
-        .tickValues([0,options.data.length/2,options.data.length])
-        .tickFormat(d=>{
-            const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
-            return Math.floor(d) + percentage;
-        });
-    xAxis.call(xAxisCall);
+    if (!options.transformed) {
+        x.domain([0,options.data.length]);
+        xAxisCall = d3.axisBottom(x)
+            .tickValues([0,options.data.length/2,options.data.length])
+            .tickFormat(d=>{
+                const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
+                return Math.floor(d) + percentage;
+            });
+        xAxis.call(xAxisCall);
 
-    yAxisCall = d3.axisLeft(y);
-    yAxis.call(yAxisCall);
+        yAxisCall = d3.axisLeft(y);
+        yAxis.call(yAxisCall);
+    }
 
     // const text = options.data;
     let doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
-
     doubts.forEach((d)=>{
         d.doubt_x = JSON.parse(JSON.stringify(d.doubt_start));
         d.subj_x = JSON.parse(JSON.stringify(d.subj_start));
@@ -195,14 +216,6 @@ V.update = (options) => {
             .forEach((dd,ii)=>{
                 if (!d.skip_now) {
                     let offset = dd.subj_end - dd.subj_start;
-                    // // do not calculate overlap for the element with itself
-                    // if (dd.id!==d.id){
-                    //     const overlap = getOverlap(dd.subj_start, dd.subj_end, d.subj_start, d.subj_end);
-                    //     offset -= overlap;
-                    //     if (offset<1) {
-                    //         d.skip_now=true;
-                    //     }
-                    // }
                     d.doubt_x-= offset;
                     d.subj_x-= offset;
                 }   
@@ -213,7 +226,7 @@ V.update = (options) => {
     const chapters = GlobalData.chapters_subdivision.filter(d=>{
         d.id = d['id opera'] + '-' + d['numero sezione'];
         return d['id opera']===options.data.id;
-    }); console.log(chapters);
+    });
 
     chapter = chapter.data( chapters, d=>d.id );
     chapter.exit().remove();
@@ -225,6 +238,7 @@ V.update = (options) => {
             .data(d=>{return [d]})
         .enter().append('rect')
             .attr('fill', gradient('capitolo'))
+            .merge(chapter.selectAll('rect'))
             .attr('width', d=>x(d.end)-x(d.start))
             .attr('height', height)
             .attr('x', d=>x(d.start))
@@ -234,18 +248,10 @@ V.update = (options) => {
             .data(d=>{return [d]})
         .enter().append('text')
             .attr('font-size','0.65rem')
+            .merge(chapter.selectAll('text'))
             .attr('x', d=>x(d.start)+5)
             .attr('y', -height+10)
             .text(d=>d.titolo);
-
-    // labelChapter = labelChapter.data(chapters, d=>'label-chapter'+d.id);
-    // labelChapter.exit().remove();
-    // labelChapter = labelChapter.enter().append('text')
-    //     .attr('font-size','0.65rem')
-    //     .merge(labelChapter)
-    //     .attr('x', d=>x(d.start)+5)
-    //     .attr('y', -height+10)
-    //     .text(d=>d.titolo);
 
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
     doubt.exit().remove();
@@ -264,14 +270,6 @@ V.update = (options) => {
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt'],d)
-            // subject.style('opacity', 0.6)
-            //     .filter(dd=>dd.id===d.id)
-            //     .style('opacity', 1);
-            // d.open=!d.open;
-            // if (d.open===false){
-            //     close_recursive(d);
-            // }
-            // V.update(options);
         });
 
     function close_recursive(d){
@@ -305,12 +303,11 @@ V.update = (options) => {
     label = label.enter().append('text')
         .classed('label noselect', true)
         .attr('font-size','0.65rem')
+        .attr('transform','rotate(-30)')
         .merge(label)
         .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
         .attr('y',d=>y(d.depth)-4)
         .attr('transform-origin',d=> `${x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2}px ${y(d.depth)-4}px`)
-        .attr('transform','rotate(-30)')
-        // .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.level)})`)
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
 
 }
@@ -330,6 +327,5 @@ function selectSiblings(arrSelectors, data) {
     d3.selectAll(_selector)
         .filter(element=>element.id===data.id)
         .classed('selected', function(){return !d3.select(this).classed('selected')});
-    
     d3.select('#folding-line').classed('there-is-selection', d3.selectAll('#folding-line .selected').size()>0);
 }
