@@ -1,3 +1,11 @@
-#folding-line .doubt {
+#folding-line .doubt, #folding-line .subject {
     cursor: pointer;
+}
+
+.there-is-selection .doubt, .there-is-selection .subject {
+    opacity:0.2;
+}
+
+.selected, .doubt.selected, .subject.selected {
+    opacity:1;
 }

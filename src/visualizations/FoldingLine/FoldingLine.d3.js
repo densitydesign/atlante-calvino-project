@@ -138,13 +138,11 @@ V.initialize = (init_options) => {
         .attr('stroke-width', 1)
         .attr('stroke-dasharray', '2 2');
 
-
     V.update({data:init_options.data});
 }
 
 V.update = (options) => {
     // console.log('V.update', options.data);
-
     // delete this, is created later when calculating offset of x positioning
     options.data.details.forEach(d=>{
         delete d.skip_now
@@ -206,7 +204,11 @@ V.update = (options) => {
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
-            console.log('clicked',d)
+            console.log('clicked doubt',d)
+            selectSiblings(['subject','doubt'],d)
+            // subject.style('opacity', 0.6)
+            //     .filter(dd=>dd.id===d.id)
+            //     .style('opacity', 1);
             // d.open=!d.open;
             // if (d.open===false){
             //     close_recursive(d);
@@ -235,7 +237,11 @@ V.update = (options) => {
         .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
-        .attr('height',d=>Math.abs(y(d.depth||0)));
+        .attr('height',d=>Math.abs(y(d.depth||0)))
+        .on('click', (d,i)=>{
+            console.log('clicked subj',d)
+            selectSiblings(['subject','doubt'],d)
+        });
     
     label = label.data(doubts, d=>{return options.data.id+'-label-doubt-'+d.id});
     label.exit().remove();
@@ -259,4 +265,15 @@ export default V;
 
 function getOverlap(a_start, a_end, b_start, b_end){
     return Math.max(0, Math.min(a_end, b_end) - Math.max(a_start, b_start));
+}
+
+function selectSiblings(arrSelectors, data) {
+    const _selector = '.'+arrSelectors.join(', .')
+    d3.selectAll(_selector)
+        .filter(element=>element.id===data.id)
+        .classed('selected', function(){return !d3.select(this).classed('selected')});
+    
+    d3.select('#folding-line').classed('there-is-selection', d3.selectAll('#folding-line .selected').size()>0);
+        
+    
 }
