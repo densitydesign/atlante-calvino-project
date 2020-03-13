@@ -3,7 +3,7 @@ import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 
 const V = {}
 
-let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 10, left: 40},
+let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 20, left: 40},
     svg, title, g, baseLine, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
@@ -108,7 +108,7 @@ V.initialize = (init_options) => {
 
     x = d3.scaleLinear()
         .range([0,width])
-        x.domain([0,init_options.data.length]);
+        .domain([0,init_options.data.length]);
     
     y = d3.scaleLinear()
         .range([-height, 0])
@@ -123,7 +123,7 @@ V.initialize = (init_options) => {
 
     xAxis = g.append("g")
         .attr("class", "x-axis noselect")
-        .attr("transform", `translate(${0},${margin.top})`);
+        .attr("transform", `translate(${0},${0})`);
         
     yAxis = g.append("g")
         .attr("class", "y-axis noselect")
@@ -153,11 +153,15 @@ V.update = (options) => {
     title.text(options.data.id + ' ' + options.data.title)
 
     x.domain([0,options.data.length]);
-    xAxisCall = d3.axisBottom(x);
+    xAxisCall = d3.axisBottom(x)
+        .tickValues([0,options.data.length/2,options.data.length])
+        .tickFormat(d=>{
+            const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
+            return Math.floor(d) + percentage;
+        });
     xAxis.call(xAxisCall);
 
-    // y.domain([d3.max(options.data.details, d=>d.depth), 0]);
-    yAxisCall = d3.axisLeft(y).ticks(y.domain()[0]);
+    yAxisCall = d3.axisLeft(y);
     yAxis.call(yAxisCall);
 
     // const text = options.data;
@@ -186,8 +190,6 @@ V.update = (options) => {
     })
     const subjects = doubts.filter(d=>d.open);
 
-    console.log('visualized doubts', doubts);
-
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
     doubt.exit().remove();
     doubt = doubt.enter().append('rect')
@@ -205,11 +207,11 @@ V.update = (options) => {
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
             console.log('clicked',d)
-            d.open=!d.open;
-            if (d.open===false){
-                close_recursive(d);
-            }
-            V.update(options);
+            // d.open=!d.open;
+            // if (d.open===false){
+            //     close_recursive(d);
+            // }
+            // V.update(options);
         });
 
     function close_recursive(d){
@@ -246,7 +248,7 @@ V.update = (options) => {
         .attr('transform-origin',d=> `${x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2}px ${y(d.depth)-4}px`)
         .attr('transform','rotate(-30)')
         // .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.level)})`)
-        .text(d=>d.id.replace('pair-', 'td '));
+        .text(d=>'td '+ (+d.id.replace('pair-','')+1));
 }
 
 V.destroy = () => {
