@@ -4314,1309 +4314,1305 @@ const publications = [
     }
   ]
 
-const publications_simple = [
-  {
-    "id": "S001",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S002",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S003",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S004",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S005",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S006",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S007",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S008",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S009",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S010",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S011",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S012",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S013",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S014",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S015",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S016",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S017",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S018",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S019",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S020",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S021",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S022",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "V001",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S023",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S024",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S025",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S026",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S027",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S028",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S029",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S030",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S031",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S032",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S033",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S034",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S035",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S036",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S037",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S038",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S039",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S040",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S041",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S042",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S043",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S044",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S045",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S046",
-    "types": [
-      "raccolta",
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S047",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S048",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S049",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S050",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "V003",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S051",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S052",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S053",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S054",
-    "types": [
-      "raccolta",
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S055",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S056",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S057",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S058",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S059",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S060",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S061",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S062",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S063",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S064",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S065",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S066",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S067",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S068",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S069",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S070",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S071",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S072",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S073",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S074",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S075",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S076",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S077",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S078",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S079",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S080",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S081",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S082",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S083",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S084",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S085",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S086",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "V005",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S087",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S088",
-    "types": [
-      "raccolta",
-      "romanzo"
-    ]
-  },
-  {
-    "id": "V010",
-    "types": [
-      "raccolta",
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S089",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S090",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S091",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S092",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S093",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S094",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S095",
-    "types": [
-      "raccolta",
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S096",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S097",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S098",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S099",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S100",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S101",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S102",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S103",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S104",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S105",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "V008",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S106",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "V009",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S107",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S108",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S109",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S110",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S111",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S112",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S113",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S114",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S115",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S116",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S117",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S118",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S119",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S120",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S121",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S122",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S123",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S124",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S125",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S126",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S127",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S128",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S129",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S130",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S131",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S132",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S133",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S134",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S135",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S136",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S137",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S138",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S139",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S140",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S141",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S142",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S143",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S144",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S145",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S146",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S147",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S148",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S149",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "V016",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S150",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S151",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "V018",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S152",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S153",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S154",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "V020",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S155",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S156",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S157",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S158",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S159",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S160",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S161",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S162",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S163",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S164",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S165",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S166",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S167",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S168",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S169",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S170",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S171",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S172",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S173",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S174",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S175",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "V021",
-    "types": [
-      "romanzo"
-    ]
-  },
-  {
-    "id": "S176",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S177",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S178",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S179",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S180",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S181",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S182",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S183",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S184",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S185",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S186",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S187",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S188",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S189",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S190",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S191",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S192",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S193",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S194",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S195",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S196",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S197",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S198",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S199",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S200",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S201",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S202",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S203",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S204",
-    "types": [
-      "altro"
-    ]
-  },
-  {
-    "id": "S205",
-    "types": [
-      "raccolta"
-    ]
-  },
-  {
-    "id": "S206",
-    "types": [
-      "raccolta"
-    ]
-  }
-]
+  const publications_simple = [
+    {
+      "id": "S001",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S002",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S003",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S004",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S005",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S006",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S007",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S008",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S009",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S010",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S011",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S012",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S013",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S014",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S015",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S016",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S017",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S018",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S019",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S020",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S021",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S022",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V001",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S023",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S024",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S025",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S026",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S027",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S028",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S029",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S030",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S031",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S032",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S033",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S034",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S035",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S036",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S037",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S038",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S039",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S040",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S041",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S042",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S043",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S044",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S045",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S046",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S047",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S048",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S049",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S050",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V003",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S051",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S052",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S053",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S054",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S055",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S056",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S057",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S058",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S059",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S060",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S061",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S062",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S063",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S064",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S065",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S066",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S067",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S068",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S069",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S070",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S071",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S072",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S073",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S074",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S075",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S076",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S077",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S078",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S079",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S080",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S081",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S082",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S083",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S084",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S085",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S086",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V005",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S087",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S088",
+      "types": [
+        "raccolta",
+        "romanzo"
+      ]
+    },
+    {
+      "id": "V010",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S089",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S090",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S091",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S092",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S093",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S094",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S095",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S096",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S097",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S098",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S099",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S100",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S101",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S102",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S103",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S104",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S105",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V008",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S106",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V009",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S107",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S108",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S109",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S110",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S111",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S112",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S113",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S114",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S115",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S116",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S117",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S118",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S119",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S120",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S121",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S122",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S123",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S124",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S125",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S126",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S127",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S128",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S129",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S130",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S131",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S132",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S133",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S134",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S135",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S136",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S137",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S138",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S139",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S140",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S141",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S142",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S143",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S144",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S145",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S146",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S147",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S148",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S149",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V016",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S150",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S151",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V018",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S152",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S153",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S154",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V020",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S155",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S156",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S157",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S158",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S159",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S160",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S161",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S162",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S163",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S164",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S165",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S166",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S167",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S168",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S169",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S170",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S171",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S172",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S173",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S174",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S175",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V021",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S176",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S177",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S178",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S179",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S180",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S181",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S182",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S183",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S184",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S185",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S186",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S187",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S188",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S189",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S190",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S191",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S192",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S193",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S194",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S195",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S196",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S197",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S198",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S199",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S200",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S201",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S202",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S203",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S204",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S205",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S206",
+      "types": [
+        "raccolta"
+      ]
+    }
+  ]
 
 const GlobalData = {
   allVolumes : [
