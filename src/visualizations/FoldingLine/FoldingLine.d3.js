@@ -5,7 +5,7 @@ import GlobalData from '../../utilities/GlobalData';
 const V = {}
 
 let width, legendWidth, height, margin = {top: 25, right: 40, bottom: 20, left: 40},
-    svg, title, master_g, g, baseLine, chapter, doubt, subject, label,
+    svg, title, master_g, g, baseLine, chapter,  subject, mixed, doubt,label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -143,7 +143,9 @@ V.initialize = (init_options) => {
     chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
     
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
+    mixed = g.append('g').classed('group-mixeds', true).selectAll('.mixed');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
+
     label = g.append('g').classed('group-labels', true).selectAll('.label');
 
     xAxis = master_g.append("g")
@@ -258,8 +260,6 @@ V.update = (options) => {
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
         .attr('stroke-width',1)
-        // .attr('stroke', d=>d.parent?color('misto'):color('dubitativo'))
-        // .attr('fill', d=>d.parent?gradient('misto'):gradient('dubitativo'))
         .attr('stroke', color('dubitativo'))
         .attr('fill', gradient('dubitativo'))
         .merge(doubt)
@@ -271,6 +271,35 @@ V.update = (options) => {
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt'],d)
         });
+
+    const mixed_data = []
+    options.data.chunks
+        .filter(d=>d.category==='misto')
+        .forEach(d=>{
+            subjects.filter(dd=>dd.subj_start<=d.start&&dd.subj_end>=d.end)
+                    .forEach(dd=>{
+                        let obj = {
+                            start: d.start,
+                            end: d.end,
+                            depth: dd.depth
+                        }
+                        mixed_data.push(obj)
+                    })
+        })
+    
+    mixed = mixed.data(mixed_data, (d,i)=>options.data.id+'-mixed-'+i);
+    mixed.exit().remove();
+    mixed = mixed.enter().append('rect')
+        .classed('mixed', true)
+        .attr('stroke-width',1)
+        .attr('stroke', color('misto'))
+        .attr('fill', gradient('misto'))
+        .merge(mixed)
+        .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + (x(d.end)-x(d.start)+2*Math.abs(y(d.depth||0))) )
+        .attr('x',d=>x(d.start))
+        .attr('width',d=> x(d.end)-x(d.start))
+        .attr('y',d=>y(d.depth?d.depth:0))
+        .attr('height',d=>Math.abs(y(d.depth||0)));
 
     function close_recursive(d){
         d.open = false;

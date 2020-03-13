@@ -12,7 +12,7 @@ class FoldingLine extends Component {
     this._rootNode = componentNode;
   }
   componentDidMount(){
-    // console.log('folding line mount');
+    console.log('folding line mount');
 
     const options = {
       element: this._rootNode,
