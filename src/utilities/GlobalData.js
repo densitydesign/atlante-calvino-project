@@ -175,6 +175,408 @@ const collections = [
   }
 ];
 
+const chapters_subdivision = [
+  {
+    "id opera": "V018",
+    "numero sezione": "1",
+    "titolo": "cornice",
+    "start": "244",
+    "end": "1833"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "2",
+    "titolo": "descrizioni città",
+    "start": "1835",
+    "end": "15976"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "3",
+    "titolo": "cornice",
+    "start": "15978",
+    "end": "22980"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "4",
+    "titolo": "descrizioni città",
+    "start": "22983",
+    "end": "30878"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "5",
+    "titolo": "cornice",
+    "start": "30881",
+    "end": "35819"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "6",
+    "titolo": "descrizioni città",
+    "start": "35821",
+    "end": "45334"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "7",
+    "titolo": "cornice",
+    "start": "45337",
+    "end": "48960"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "8",
+    "titolo": "descrizioni città",
+    "start": "48962",
+    "end": "56743"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "9",
+    "titolo": "cornice",
+    "start": "56746",
+    "end": "60021"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "10",
+    "titolo": "descrizioni città",
+    "start": "60023",
+    "end": "67755"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "11",
+    "titolo": "cornice",
+    "start": "67759",
+    "end": "70981"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "12",
+    "titolo": "descrizioni città",
+    "start": "70983",
+    "end": "81651"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "13",
+    "titolo": "cornice",
+    "start": "81654",
+    "end": "85550"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "14",
+    "titolo": "descrizioni città",
+    "start": "85552",
+    "end": "99381"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "15",
+    "titolo": "cornice",
+    "start": "99383",
+    "end": "104520"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "16",
+    "titolo": "descrizioni città",
+    "start": "104523",
+    "end": "111102"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "17",
+    "titolo": "cornice",
+    "start": "111106",
+    "end": "119197"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "18",
+    "titolo": "descrizioni città",
+    "start": "119199",
+    "end": "144789"
+  },
+  {
+    "id opera": "V018",
+    "numero sezione": "19",
+    "titolo": "cornice",
+    "start": "144793",
+    "end": "146738"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "1",
+    "titolo": "La taverna",
+    "start": "35",
+    "end": "3266"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "2",
+    "titolo": "Storia dell'indeciso",
+    "start": "3268",
+    "end": "17399"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "3",
+    "titolo": "Storia della foresta che si vendica",
+    "start": "17401",
+    "end": "25054"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "4",
+    "titolo": "Storia del guerriero sopravvissuto",
+    "start": "25056",
+    "end": "35910"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "5",
+    "titolo": "Storia del regno dei vampiri",
+    "start": "35912",
+    "end": "51538"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "6",
+    "titolo": "Due storie in cui si cerca e ci si perde",
+    "start": "51540",
+    "end": "65327"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "7",
+    "titolo": "Anch'io cerco di dire la mia",
+    "start": "65329",
+    "end": "86272"
+  },
+  {
+    "id opera": "S152",
+    "numero sezione": "8",
+    "titolo": "Tre storie di follia e distruzione",
+    "start": "86274",
+    "end": "98778"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "1",
+    "titolo": "Il castello",
+    "start": "36",
+    "end": "5691"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "2",
+    "titolo": "Storia dell'ingrato punito",
+    "start": "5693",
+    "end": "16848"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "3",
+    "titolo": "Storia dell'alchimista che vendette l'anima",
+    "start": "16850",
+    "end": "25273"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "4",
+    "titolo": "Storia della sposa dannata",
+    "start": "25275",
+    "end": "30351"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "5",
+    "titolo": "Storia d'un ladro di sepolcri",
+    "start": "30353",
+    "end": "34495"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "6",
+    "titolo": "Storia del'Orlando pazzo per amore",
+    "start": "34498",
+    "end": "43172"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "7",
+    "titolo": "Storia di Astolfo sulla Luna",
+    "start": "43174",
+    "end": "49992"
+  },
+  {
+    "id opera": "V016",
+    "numero sezione": "8",
+    "titolo": "Tutte le altre storie",
+    "start": "49994",
+    "end": "62895"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "1",
+    "titolo": "Capitolo 1",
+    "start": "61",
+    "end": "12670"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "2",
+    "titolo": "Se una notte d'inverno un viaggiatore",
+    "start": "12671",
+    "end": "38811"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "3",
+    "titolo": "Capitolo 2",
+    "start": "38813",
+    "end": "53532"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "4",
+    "titolo": "Fuori dell’abitato di Malbork",
+    "start": "53534",
+    "end": "67182"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "5",
+    "titolo": "Capitolo 3",
+    "start": "67184",
+    "end": "87717"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "6",
+    "titolo": "Sporgendosi dalla costa scoscesa",
+    "start": "87719",
+    "end": "113488"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "7",
+    "titolo": "Capitolo 4",
+    "start": "113490",
+    "end": "129030"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "8",
+    "titolo": "Senza temere il vento e la vertigine",
+    "start": "129032",
+    "end": "153401"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "9",
+    "titolo": "Capitolo 5",
+    "start": "153402",
+    "end": "174436"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "10",
+    "titolo": "Guarda in basso dove l’ombra s’addensa",
+    "start": "174438",
+    "end": "197460"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "11",
+    "titolo": "Capitolo 6",
+    "start": "197462",
+    "end": "229994"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "12",
+    "titolo": "In una rete di linee che s’allacciano",
+    "start": "229996",
+    "end": "243593"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "13",
+    "titolo": "Capitolo 7",
+    "start": "243595",
+    "end": "280423"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "14",
+    "titolo": "In una rete di linee che s’intersecano",
+    "start": "280425",
+    "end": "295346"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "15",
+    "titolo": "Capitolo 8 - Diario di Silas Flannery",
+    "start": "295348",
+    "end": "349087"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "16",
+    "titolo": "Sul tappeto di foglie illuminate dalla luna",
+    "start": "349089",
+    "end": "370639"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "17",
+    "titolo": "Capitolo 9",
+    "start": "370641",
+    "end": "390057"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "18",
+    "titolo": "Intorno a una fossa vuota",
+    "start": "390059",
+    "end": "412011"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "19",
+    "titolo": "Capitolo 10",
+    "start": "412013",
+    "end": "430366"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "20",
+    "titolo": "Quale storia laggiù attende la fine?",
+    "start": "430368",
+    "end": "445839"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "21",
+    "titolo": "Capitolo 11",
+    "start": "445841",
+    "end": "457982"
+  },
+  {
+    "id opera": "V021",
+    "numero sezione": "22",
+    "titolo": "Capitolo 12",
+    "start": "457984",
+    "end": "458334"
+  }
+]
+
 const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 
 const territoryColorPalette = {
@@ -5402,6 +5804,7 @@ const GlobalData = {
   publications : publications,
   publications_simple: publications_simple,
   allowedCollections : allowedCollections,
+  chapters_subdivision : chapters_subdivision,
   allowedCollectionsSplit : allowedCollections.split(","),
   col_collections : d3
     .scaleOrdinal()

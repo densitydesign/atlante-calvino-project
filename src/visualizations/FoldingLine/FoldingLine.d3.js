@@ -1,10 +1,11 @@
 import * as d3 from 'd3';
-import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
+// import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
+import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
 let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 20, left: 40},
-    svg, title, g, baseLine, doubt, subject, label,
+    svg, title, g, baseLine, g_chapter, chapter, labelChapter, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -13,8 +14,8 @@ let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 20, left: 4
     
     xAxis, xAxisCall, yAxis, yAxisCall,   
     gradient = d3.scaleOrdinal()
-        .domain(["soggetto","misto","dubitativo"])
-        .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)"])
+        .domain(["soggetto","misto","dubitativo","capitolo"])
+        .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)","url(#chapter-gradient)"])
 
 V.initialize = (init_options) => {
     // console.log(init_options);
@@ -83,6 +84,25 @@ V.initialize = (init_options) => {
                 'opacity': 1
             }
             ]
+        },
+        {
+            'id':'chapter-gradient',
+            'x1': '0%',
+            'y1': '50%',
+            'x2': '100%',
+            'y2': '50%',
+            'stops':[
+            {
+                'offset': '0%',
+                'color': '#f6f6f6',
+                'opacity':1
+            },
+            {
+                'offset': '50%',
+                'color': '#ffffff',
+                'opacity': 1
+            }
+            ]
         }
     ]
 
@@ -117,6 +137,8 @@ V.initialize = (init_options) => {
     g = svg.append('g')
         .attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
 
+    chapter = g.append('g').classed('group-chapters', true).selectAll('.chapter');
+    
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
     label = g.append('g').classed('group-labels', true).selectAll('.label');
@@ -188,6 +210,43 @@ V.update = (options) => {
     })
     const subjects = doubts.filter(d=>d.open);
 
+    const chapters = GlobalData.chapters_subdivision.filter(d=>{
+        d.id = d['id opera'] + '-' + d['numero sezione'];
+        return d['id opera']===options.data.id;
+    }); console.log(chapters);
+
+    chapter = chapter.data( chapters, d=>d.id );
+    chapter.exit().remove();
+    chapter = chapter.enter().append('g')
+        .classed('chapter', true)
+        .merge(chapter);
+
+    chapter.selectAll('rect')
+            .data(d=>{return [d]})
+        .enter().append('rect')
+            .attr('fill', gradient('capitolo'))
+            .attr('width', d=>x(d.end)-x(d.start))
+            .attr('height', height)
+            .attr('x', d=>x(d.start))
+            .attr('y', -height);
+
+    chapter.selectAll('text')
+            .data(d=>{return [d]})
+        .enter().append('text')
+            .attr('font-size','0.65rem')
+            .attr('x', d=>x(d.start)+5)
+            .attr('y', -height+10)
+            .text(d=>d.titolo);
+
+    // labelChapter = labelChapter.data(chapters, d=>'label-chapter'+d.id);
+    // labelChapter.exit().remove();
+    // labelChapter = labelChapter.enter().append('text')
+    //     .attr('font-size','0.65rem')
+    //     .merge(labelChapter)
+    //     .attr('x', d=>x(d.start)+5)
+    //     .attr('y', -height+10)
+    //     .text(d=>d.titolo);
+
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
     doubt.exit().remove();
     doubt = doubt.enter().append('rect')
@@ -204,7 +263,6 @@ V.update = (options) => {
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
-            console.log('clicked doubt',d)
             selectSiblings(['subject','doubt'],d)
             // subject.style('opacity', 0.6)
             //     .filter(dd=>dd.id===d.id)
@@ -239,7 +297,6 @@ V.update = (options) => {
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
-            console.log('clicked subj',d)
             selectSiblings(['subject','doubt'],d)
         });
     
@@ -255,6 +312,7 @@ V.update = (options) => {
         .attr('transform','rotate(-30)')
         // .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.level)})`)
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
+
 }
 
 V.destroy = () => {
@@ -268,12 +326,10 @@ function getOverlap(a_start, a_end, b_start, b_end){
 }
 
 function selectSiblings(arrSelectors, data) {
-    const _selector = '.'+arrSelectors.join(', .')
+    const _selector = '.'+arrSelectors.join(', .');
     d3.selectAll(_selector)
         .filter(element=>element.id===data.id)
         .classed('selected', function(){return !d3.select(this).classed('selected')});
     
     d3.select('#folding-line').classed('there-is-selection', d3.selectAll('#folding-line .selected').size()>0);
-        
-    
 }
