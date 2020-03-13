@@ -2,10 +2,10 @@
     cursor: pointer;
 }
 
-.there-is-selection .doubt, .there-is-selection .subject {
+.there-is-selection .doubt, .there-is-selection .subject, .there-is-selection .mixed {
     opacity:0.2;
 }
 
-.selected, .doubt.selected, .subject.selected {
+.selected, .doubt.selected, .subject.selected, .mixed.selected {
     opacity:1;
 }

@@ -269,16 +269,17 @@ V.update = (options) => {
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
-            selectSiblings(['subject','doubt'],d)
+            selectSiblings(['subject','doubt','mixed'],d)
         });
 
-    const mixed_data = []
+    let mixed_data = []
     options.data.chunks
         .filter(d=>d.category==='misto')
         .forEach(d=>{
             subjects.filter(dd=>dd.subj_start<=d.start&&dd.subj_end>=d.end)
                     .forEach(dd=>{
                         let obj = {
+                            id: dd.id,
                             start: d.start,
                             end: d.end,
                             depth: dd.depth
@@ -286,7 +287,7 @@ V.update = (options) => {
                         mixed_data.push(obj)
                     })
         })
-    
+    mixed_data = mixed_data.sort((a,b)=>(a.end > b.end) ? 1 : -1);
     mixed = mixed.data(mixed_data, (d,i)=>options.data.id+'-mixed-'+i);
     mixed.exit().remove();
     mixed = mixed.enter().append('rect')
@@ -324,7 +325,7 @@ V.update = (options) => {
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
         .attr('height',d=>Math.abs(y(d.depth||0)))
         .on('click', (d,i)=>{
-            selectSiblings(['subject','doubt'],d)
+            selectSiblings(['subject','doubt','mixed'],d)
         });
     
     label = label.data(doubts, d=>{return options.data.id+'-label-doubt-'+d.id});
@@ -354,6 +355,7 @@ function getOverlap(a_start, a_end, b_start, b_end){
 
 function selectSiblings(arrSelectors, data) {
     const _selector = '.'+arrSelectors.join(', .');
+    console.log(_selector)
     d3.selectAll(_selector)
         .filter(element=>element.id===data.id)
         .classed('selected', function(){return !d3.select(this).classed('selected')});
