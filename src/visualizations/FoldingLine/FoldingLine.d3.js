@@ -3,7 +3,7 @@ import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 
 const V = {}
 
-let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 0, left: 40},
+let width, legendWidth, height, margin = {top: 25, right: 0, bottom: 10, left: 40},
     svg, title, g, baseLine, doubt, subject, label,
 
     x, y, color = d3.scaleOrdinal()
@@ -111,10 +111,11 @@ V.initialize = (init_options) => {
         x.domain([0,init_options.data.length]);
     
     y = d3.scaleLinear()
-        .range([-height/2, 0]);
+        .range([-height, 0])
+        .domain([10,-1]);
 
     g = svg.append('g')
-        .attr('transform', 'translate('+margin.left+','+(margin.top + height/2)+')');
+        .attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
 
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
@@ -155,7 +156,7 @@ V.update = (options) => {
     xAxisCall = d3.axisBottom(x);
     xAxis.call(xAxisCall);
 
-    y.domain([d3.max(options.data.details, d=>d.depth), 0]);
+    // y.domain([d3.max(options.data.details, d=>d.depth), 0]);
     yAxisCall = d3.axisLeft(y).ticks(y.domain()[0]);
     yAxis.call(yAxisCall);
 
@@ -192,8 +193,10 @@ V.update = (options) => {
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
         .attr('stroke-width',1)
-        .attr('stroke', d=>d.parent?color('misto'):color('dubitativo'))
-        .attr('fill', d=>d.parent?gradient('misto'):gradient('dubitativo'))
+        // .attr('stroke', d=>d.parent?color('misto'):color('dubitativo'))
+        // .attr('fill', d=>d.parent?gradient('misto'):gradient('dubitativo'))
+        .attr('stroke', color('dubitativo'))
+        .attr('fill', gradient('dubitativo'))
         .merge(doubt)
         .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
         .attr('x',d=>x(d.doubt_x))
@@ -239,8 +242,10 @@ V.update = (options) => {
         .attr('font-size','0.65rem')
         .merge(label)
         .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
-        .attr('y',d=>y(d.depth))
-        .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.depth)})`)
+        .attr('y',d=>y(d.depth)-4)
+        .attr('transform-origin',d=> `${x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2}px ${y(d.depth)-4}px`)
+        .attr('transform','rotate(-30)')
+        // .attr("transform", d=>`rotate(-30 ${x(d.doubt_x)} ${y(d.level)})`)
         .text(d=>d.id.replace('pair-', 'td '));
 }
 

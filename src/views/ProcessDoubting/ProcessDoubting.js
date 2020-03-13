@@ -74,11 +74,8 @@ const structureData = (arr) => {
     const parent = listToSearchForParent.find(dd=>{
 
       const subj_start_is_inside = d.subj_start >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_start >= dd.doubt_start && d.subj_start <= dd.doubt_end
-
       const subj_end_is_inside = d.subj_end >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_end >= dd.doubt_start && d.subj_start <= dd.doubt_end
-
       const doubt_start_is_inside = d.doubt_start >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_start >= dd.subj_start && d.doubt_start <= dd.subj_end
-
       const doubt_end_is_inside = d.doubt_end >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_end >= dd.subj_start && d.doubt_start <= dd.subj_end
 
       return subj_start_is_inside || subj_end_is_inside || doubt_start_is_inside || doubt_end_is_inside
@@ -226,7 +223,6 @@ class ProcessDoubting extends Component {
       // json = json.filter(d=>d.id==="S153");
       json.forEach(d=>{
         d.details = structureData(d.details);
-        d.maxNesting = d3.max(d.details, d=>d.level)||0;
       });
       return json;
     }).then(data=>{
@@ -259,7 +255,27 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
 
-      const annidamenti_options = d3.nest().key(d=>d).entries(data.map(d=>d.maxNesting)).map(d=>{return {'label':d.key,'status':false}}).sort((a,b)=>+a.label-b.label);
+      // 🚨 Obsoleto 🚨
+      // const annidamenti_options = d3.nest()
+      //     .key(d=>d)
+      //     .entries(data.map(d=>d.maxNesting))
+      //     .map(d=>{return {'label':d.key,'status':false}})
+      //     .sort((a,b)=>+a.label-b.label);
+
+      // 🚨 not best solution (PEZZA) 🚨
+      const annidamenti_options = [
+        {'label':'0','status':false},
+        {'label':'1','status':false},
+        {'label':'2','status':false},
+        {'label':'3','status':false},
+        {'label':'4','status':false},
+        {'label':'5','status':false},
+        {'label':'6','status':false},
+        {'label':'7','status':false},
+        {'label':'8','status':false},
+        {'label':'9','status':false},
+        {'label':'10','status':false}
+      ]
 
       // need to convert date to milliseconds for the timespan filter to work
       const timeExtent = d3.extent(data, d => +new Date(d.year));
@@ -401,12 +417,16 @@ class ProcessDoubting extends Component {
 
   changeAnnidamenti(newOptions) {
     const levels_in_filter = newOptions.filter(d=>d.status).map(d=>+d.label)
+    // console.log(levels_in_filter)
 
     let toPreserve = this.state.data.map(d=>d.id);
 
     if (levels_in_filter.length>0) {
       toPreserve = this.state.data.filter(d=>{
         const levels_in_text = _.uniq(d.details.map(d=>+d.level)).sort();
+
+        if (d.id === 'ZV021') console.log(levels_in_text);
+
         if (levels_in_filter.length !== levels_in_text.length) {
           return false;
         } else {
@@ -414,6 +434,8 @@ class ProcessDoubting extends Component {
         } 
       }).map(d=>d.id)
     }
+
+    console.log('annidamenti selezionati:', levels_in_filter.join(', '), '('+toPreserve.length+')', '👉', toPreserve.join(', '));
 
     this.setState(prevState => ({
       filters: {
@@ -444,7 +466,7 @@ class ProcessDoubting extends Component {
   render() {
 
     const helpPage = GlobalData.helpPages.processDoubting.main;
-
+    // console.log(this.state);
     return (
       <div className="process-doubting main">
 
