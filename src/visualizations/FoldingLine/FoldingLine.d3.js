@@ -165,15 +165,15 @@ V.initialize = (init_options) => {
 
     const zoomed = () => {
         // console.log(d3.event.transform);
-        x.range( [margin.left, width - margin.right].map(d => d3.event.transform.applyX(d)) );
+        x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
         xAxis.call(xAxisCall.scale(x));
         globalUpdateOptions.transformed = true;
         V.update(globalUpdateOptions);
     }
 
     const zoom = d3.zoom()
-        // .scaleExtent([1, 10])
-        // .translateExtent([[0, 0], [width, height]])
+        .scaleExtent([1, 25])
+        .translateExtent([[0, 0], [width + margin.left + margin.right, height]])
         .on("zoom", zoomed);
     svg.call(zoom);
 
@@ -304,6 +304,7 @@ V.update = (options) => {
         .classed('label noselect', true)
         .attr('font-size','0.65rem')
         .attr('transform','rotate(-30)')
+        .style('pointer-event','none')
         .merge(label)
         .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
         .attr('y',d=>y(d.depth)-4)

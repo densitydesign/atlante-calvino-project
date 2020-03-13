@@ -38,7 +38,7 @@ class FoldingLine extends Component {
   render() {
     const style = {
       height: '50%',
-      width: '100%',
+      width: '85%',
       display: this.props.data?'block':'none',
       marginBottom: 'var(--navigation-height)'
     }
