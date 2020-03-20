@@ -4,7 +4,7 @@ import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
-let width, legendWidth, height, margin = {top: 25, right: 40, bottom: 20, left: 40},
+let width, legendWidth, height, lvl0 = 10, margin = {top: 25, right: 40, bottom: 20+lvl0, left: 40},
     svg, title, master_g, g, baseLine, chapter,  subject, mixed, doubt,label,
 
     x, y, color = d3.scaleOrdinal()
@@ -135,7 +135,7 @@ V.initialize = (init_options) => {
     
     y = d3.scaleLinear()
         .range([-height, 0])
-        .domain([10,-1]);
+        .domain([10,0]);
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
 
@@ -150,20 +150,20 @@ V.initialize = (init_options) => {
 
     xAxis = master_g.append("g")
         .attr("class", "x-axis noselect")
-        .attr("transform", `translate(${0},${0})`);
+        .attr("transform", `translate(${0},${lvl0})`);
         
     yAxis = master_g.append("g")
         .attr("class", "y-axis noselect")
         .attr("transform", `translate(${0},${0})`);
 
-    baseLine = g.append('line');
-    baseLine.attr('x1',x(0))
-        .attr('x2',x(init_options.data.length))
-        .attr('y1', 0)
-        .attr('y2', 0)
-        .attr('stroke', 'grey')
-        .attr('stroke-width', 1)
-        .attr('stroke-dasharray', '2 2');
+    // baseLine = g.append('line');
+    // baseLine.attr('x1',x(0))
+    //     .attr('x2',x(init_options.data.length))
+    //     .attr('y1', 0)
+    //     .attr('y2', 0)
+    //     .attr('stroke', 'grey')
+    //     .attr('stroke-width', 1)
+    //     .attr('stroke-dasharray', '2 2');
 
     const zoomed = () => {
         // console.log(d3.event.transform);
@@ -263,11 +263,11 @@ V.update = (options) => {
         .attr('stroke', color('dubitativo'))
         .attr('fill', gradient('dubitativo'))
         .merge(doubt)
-        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2*Math.abs(y(d.depth||0))) )
+        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2* (d.depth?Math.abs(y(d.depth)):lvl0) ) )
         .attr('x',d=>x(d.doubt_x))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
-        .attr('height',d=>Math.abs(y(d.depth||0)))
+        .attr('height',d=> (d.depth?Math.abs(y(d.depth)):lvl0) )
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt','mixed'],d)
         });
@@ -300,7 +300,7 @@ V.update = (options) => {
         .attr('x',d=>x(d.start))
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
-        .attr('height',d=>Math.abs(y(d.depth||0)));
+        .attr('height',d=>Math.abs(y(d.depth)));
 
     function close_recursive(d){
         d.open = false;
@@ -319,11 +319,11 @@ V.update = (options) => {
         .attr('stroke', d=>color('soggetto'))
         .attr('fill', gradient('soggetto'))
         .merge(subject)
-        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*Math.abs(y(d.depth||0))) )
+        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*(d.depth?Math.abs(y(d.depth)):lvl0) ))
         .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
-        .attr('height',d=>Math.abs(y(d.depth||0)))
+        .attr('height',d=> (d.depth?Math.abs(y(d.depth)):lvl0) )
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt','mixed'],d)
         });
