@@ -31,6 +31,7 @@ const structureData = (arr) => {
       'doubt_start': +d.starts_at,
       'doubt_end': +d.ends_at,
       'is_alternative': (d['Alternative']!=='')?true:false,
+      'formula': d.parole_formule,
       'alternatives': [],
       'has_children': false,
       'children': [],

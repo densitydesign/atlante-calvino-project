@@ -5,7 +5,7 @@ import GlobalData from '../../utilities/GlobalData';
 const V = {}
 
 let width, legendWidth, height, lvl0 = 10, margin = {top: 25, right: 40, bottom: 20+lvl0, left: 40},
-    svg, title, master_g, g, baseLine, chapter,  subject, mixed, doubt,label,
+    svg, svg_style, title, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -17,18 +17,16 @@ let width, legendWidth, height, lvl0 = 10, margin = {top: 25, right: 40, bottom:
         .domain(["soggetto","misto","dubitativo","capitolo"])
         .range(["url(#subj-gradient)","url(#mixed-gradient)","url(#doubt-gradient)","url(#chapter-gradient)"]),
 
-    globalUpdateOptions;
+    globalUpdateOptions, id_opera, selected_pairs = [];
 
 V.initialize = (init_options) => {
     // console.log(init_options);
+    id_opera = init_options.data.id;
 
     svg = d3.select(init_options.element);
 
-    title = svg.append('text')
-        .attr('x', margin.left)
-        .attr('y', margin.top/2);
-
     const defs = svg.append('defs');
+    svg_style = defs.append('style');
     const gradientData = [
         {
             'id':'doubt-gradient',
@@ -134,10 +132,14 @@ V.initialize = (init_options) => {
         .interpolate(d3.interpolateNumber);
     
     y = d3.scaleLinear()
-        .range([-height, 0])
+        .range([-height/3*2, 0])
         .domain([10,0]);
 
-    master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height)+')');
+    title = svg.append('text')
+        .attr('x', margin.left)
+        .attr('y', margin.top/2);
+
+    master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
     g = master_g.append('g');
     chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
@@ -145,8 +147,9 @@ V.initialize = (init_options) => {
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     mixed = g.append('g').classed('group-mixeds', true).selectAll('.mixed');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
-
     label = g.append('g').classed('group-labels', true).selectAll('.label');
+    arrow = g.append('g').classed('group-arrows', true).selectAll('.arrow');
+    arrow_label = g.append('g').classed('group-arrows-labels', true).selectAll('.arrow-label');
 
     xAxis = master_g.append("g")
         .attr("class", "x-axis noselect")
@@ -168,13 +171,21 @@ V.initialize = (init_options) => {
     const zoomed = () => {
         // console.log(d3.event.transform);
         x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
-        xAxis.call(xAxisCall.scale(x));
+        const tickValues = [];
+        tickValues.push(x.invert(0))
+        // tickValues.push(x.invert(width/2))
+        tickValues.push(x.invert(width))
+        xAxis.call(
+            xAxisCall
+                .tickValues(tickValues)
+                .scale(x)
+        );
         globalUpdateOptions.transformed = true;
         V.update(globalUpdateOptions);
     }
 
     const zoom = d3.zoom()
-        .scaleExtent([1, 25])
+        .scaleExtent([1, 35])
         .translateExtent([[0, 0], [width + margin.left + margin.right, height]])
         .on("zoom", zoomed);
     svg.call(zoom);
@@ -183,7 +194,7 @@ V.initialize = (init_options) => {
 }
 
 V.update = (options) => {
-    console.log('V.update');
+    // console.log('V.update');
     if (options) {
         globalUpdateOptions = options;
     }
@@ -197,7 +208,7 @@ V.update = (options) => {
     if (!options.transformed) {
         x.domain([0,options.data.length]);
         xAxisCall = d3.axisBottom(x)
-            .tickValues([0,options.data.length/2,options.data.length])
+            .tickValues([0,options.data.length])
             .tickFormat(d=>{
                 const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
                 return Math.floor(d) + percentage;
@@ -293,7 +304,7 @@ V.update = (options) => {
     mixed = mixed.enter().append('rect')
         .classed('mixed', true)
         .attr('stroke-width',1)
-        .attr('stroke', color('misto'))
+        .attr('stroke', color('soggetto'))
         .attr('fill', gradient('misto'))
         .merge(mixed)
         .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + (x(d.end)-x(d.start)+2*Math.abs(y(d.depth||0))) )
@@ -301,15 +312,6 @@ V.update = (options) => {
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth)));
-
-    function close_recursive(d){
-        d.open = false;
-        if (d.has_children){
-            d.children.forEach(dd=>{
-                close_recursive(dd);
-            })
-        }
-    }
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
@@ -333,14 +335,15 @@ V.update = (options) => {
     label = label.enter().append('text')
         .classed('label noselect', true)
         .attr('font-size','0.65rem')
-        .attr('transform','rotate(-30)')
         .style('pointer-event','none')
         .merge(label)
         .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
         .attr('y',d=>y(d.depth)-4)
         .attr('transform-origin',d=> `${x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2}px ${y(d.depth)-4}px`)
+        .attr('transform','rotate(-30)')
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
-
+    
+    drawArrows();
 }
 
 V.destroy = () => {
@@ -349,15 +352,83 @@ V.destroy = () => {
 
 export default V;
 
-function getOverlap(a_start, a_end, b_start, b_end){
-    return Math.max(0, Math.min(a_end, b_end) - Math.max(a_start, b_start));
-}
-
 function selectSiblings(arrSelectors, data) {
     const _selector = '.'+arrSelectors.join(', .');
-    console.log(_selector)
+
+    let _selected;
     d3.selectAll(_selector)
         .filter(element=>element.id===data.id)
-        .classed('selected', function(){return !d3.select(this).classed('selected')});
+        .classed('selected', function(){
+            _selected = !d3.select(this).classed('selected');
+            return !d3.select(this).classed('selected')
+        });
+
+    const index = selected_pairs.indexOf(data);
+    if (_selected){
+        if (index===-1){
+            selected_pairs.push(data);
+        }
+    } else {
+        if (index!==-1) {
+            selected_pairs.splice(index,1);
+        }
+    }
+
+    drawArrows();
+
     d3.select('#folding-line').classed('there-is-selection', d3.selectAll('#folding-line .selected').size()>0);
+}
+
+function drawArrows(){
+    arrow = arrow.data(selected_pairs, d=>{return id_opera+'-arrow-'+d.id});
+    arrow.exit().remove();
+    arrow = arrow.enter().append('path')
+        .classed('arrow', true)
+        .attr('fill','transparent')
+        .attr('stroke',color('dubitativo'))
+        .merge(arrow)
+        .attr('d', d=>{
+            let y0 = lvl0;
+            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0);
+            let x0 = x(Math.max(d.doubt_end-5, d.doubt_start));
+            let x1 = x(Math.min(d.subj_start+5, d.subj_end));
+
+            let path='';
+            path+='M'+x0+','+y0;
+            path+='V'+y1;
+            path+='L'+x1+','+y1;
+            path+='V'+y0;
+            return path;
+        })
+        .each(function(d){
+            if (d3.select(this).style('animation-name')!=='none') return;
+            const length = this.getTotalLength();
+            if (!svg_style.node().innerHTML.includes('arcs-direction-'+d.id)) {
+                const keyframes = '@keyframes arcs-direction-'+d.id+
+                    ' {\nfrom {stroke-dashoffset:'+length+';}\nto {stroke-dashoffset:0;} }';
+                svg_style.node().innerHTML += keyframes; 
+            };
+            d3.select(this)
+                .style('stroke-dasharray','5')
+                .style('animation-name','arcs-direction-'+d.id)
+                .style('animation-timing-function','linear')
+                .style('animation-iteration-count','infinite')
+                .style('animation-duration',length/10+'s');
+        });
+
+    arrow_label = arrow_label.data(selected_pairs, d=>{return id_opera+'-arrow-label-'+d.id})
+    arrow_label.exit().remove();
+    arrow_label = arrow_label.enter().append('text')
+        .classed('arrow-label', true)
+        .attr('text-anchor','middle')
+        .attr('font-size','0.65rem')
+        .style('text-transform','uppercase')
+        .merge(arrow_label)
+        .attr('x',d=>x(d.subj_start+(d.doubt_end-d.subj_start)/2))
+        .attr('y',d=>{
+            let y0 = lvl0;
+            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0) + lvl0;
+            return y1;
+        })
+        .text(d=>d.formula)
 }
