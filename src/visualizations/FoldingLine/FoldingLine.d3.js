@@ -337,10 +337,7 @@ V.update = (options) => {
         .attr('font-size','0.65rem')
         .style('pointer-event','none')
         .merge(label)
-        .attr('x',d=>x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )
-        .attr('y',d=>y(d.depth)-4)
-        .attr('transform-origin',d=> `${x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2}px ${y(d.depth)-4}px`)
-        .attr('transform','rotate(-30)')
+        .attr('transform',d=>'translate('+( x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )+','+(y(d.depth)-4)+') rotate(-21)')
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
     
     drawArrows();
@@ -422,7 +419,6 @@ function drawArrows(){
         .classed('arrow-label', true)
         .attr('text-anchor','middle')
         .attr('font-size','0.65rem')
-        .style('text-transform','uppercase')
         .merge(arrow_label)
         .attr('x',d=>x(d.subj_start+(d.doubt_end-d.subj_start)/2))
         .attr('y',d=>{
