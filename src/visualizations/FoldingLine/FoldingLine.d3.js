@@ -105,7 +105,6 @@ V.initialize = (init_options) => {
             ]
         }
     ]
-
     let gradient = defs.selectAll('linearGradient');
     gradient = gradient.data(gradientData, d=>d.id)
         .enter()
@@ -138,12 +137,17 @@ V.initialize = (init_options) => {
     title = svg.append('text')
         .attr('x', margin.left)
         .attr('y', margin.top/2);
+    
+    defs.append('clipPath').attr('id','clipping-mask').append('rect')
+        .attr('x',margin.left)
+        .attr('y',margin.top)
+        .attr('width',width)
+        .attr('height',height/2);
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
-    g = master_g.append('g');
+    // g = master_g.append('g').attr('clip-path','url(#clipping-mask)');
     chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
-    
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     mixed = g.append('g').classed('group-mixeds', true).selectAll('.mixed');
     doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
@@ -253,9 +257,9 @@ V.update = (options) => {
             .attr('fill', gradient('capitolo'))
             .merge(chapter.selectAll('rect'))
             .attr('width', d=>x(d.end)-x(d.start))
-            .attr('height', height)
+            .attr('height', y(0)-y(10)+lvl0)
             .attr('x', d=>x(d.start))
-            .attr('y', -height);
+            .attr('y', y(10));
 
     chapter.selectAll('text')
             .data(d=>{return [d]})
@@ -263,7 +267,7 @@ V.update = (options) => {
             .attr('font-size','0.65rem')
             .merge(chapter.selectAll('text'))
             .attr('x', d=>x(d.start)+5)
-            .attr('y', -height+10)
+            .attr('y', y(10)+10)
             .text(d=>d.titolo);
 
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
@@ -335,7 +339,7 @@ V.update = (options) => {
     label = label.enter().append('text')
         .classed('label noselect', true)
         .attr('font-size','0.65rem')
-        .style('pointer-event','none')
+        .style('pointer-events ','none')
         .merge(label)
         .attr('transform',d=>'translate('+( x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )+','+(y(d.depth)-4)+') rotate(-21)')
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
