@@ -138,15 +138,16 @@ V.initialize = (init_options) => {
         .attr('x', margin.left)
         .attr('y', margin.top/2);
     
-    defs.append('clipPath').attr('id','clipping-mask').append('rect')
-        .attr('x',margin.left)
-        .attr('y',margin.top)
+    defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
+        .attr('x',0)
+        .attr('y',y(10))
         .attr('width',width)
-        .attr('height',height/2);
+        .attr('height',height)
+        .attr('clipPathUnits', "objectBoundingBox");
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
-    // g = master_g.append('g').attr('clip-path','url(#clipping-mask)');
+    g = master_g.append('g').style('clip-path','url(#cut-off-bottom)');
     chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
     subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
     mixed = g.append('g').classed('group-mixeds', true).selectAll('.mixed');
@@ -173,11 +174,9 @@ V.initialize = (init_options) => {
     //     .attr('stroke-dasharray', '2 2');
 
     const zoomed = () => {
-        // console.log(d3.event.transform);
         x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
         const tickValues = [];
         tickValues.push(x.invert(0))
-        // tickValues.push(x.invert(width/2))
         tickValues.push(x.invert(width))
         xAxis.call(
             xAxisCall
