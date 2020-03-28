@@ -142,7 +142,7 @@ V.initialize = (init_options) => {
         .attr('x',0)
         .attr('y',y(10))
         .attr('width',width)
-        .attr('height',height)
+        .attr('height',height+margin.top+margin.bottom)
         .attr('clipPathUnits', "objectBoundingBox");
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
@@ -389,7 +389,7 @@ function drawArrows(){
         .merge(arrow)
         .attr('d', d=>{
             let y0 = lvl0;
-            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0);
+            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0)/2;
             let x0 = x(Math.max(d.doubt_end-5, d.doubt_start));
             let x1 = x(Math.min(d.subj_start+5, d.subj_end));
 
@@ -426,7 +426,7 @@ function drawArrows(){
         .attr('x',d=>x(d.subj_start+(d.doubt_end-d.subj_start)/2))
         .attr('y',d=>{
             let y0 = lvl0;
-            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0) + lvl0;
+            let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0)/2 + lvl0;
             return y1;
         })
         .text(d=>d.formula)
