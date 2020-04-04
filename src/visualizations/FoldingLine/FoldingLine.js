@@ -37,12 +37,29 @@ class FoldingLine extends Component {
 
   render() {
     const style = {
-      height: '50%',
+      height: '100%',
       width: '85%',
+      display: this.props.data?'block':'none',
+      marginBottom: 'var(--navigation-height)',
+      float:'left'
+    }
+    const style2 = {
+      height: '100%',
+      width: '15%',
       display: this.props.data?'block':'none',
       marginBottom: 'var(--navigation-height)'
     }
-    return <svg id="folding-line" style={style} ref={this._setRef.bind(this)}></svg>;
+    return <div style={{height: '50%'}}>
+      <svg id="folding-line" style={style} ref={this._setRef.bind(this)}></svg>
+      <svg id="folding-line-legend" style={style2}>
+        <rect width="calc(100% - 15px)" height="287" x="7.5" fill="white" stroke="black" />
+        <text font-weight="600" y="22" x="15">
+          DETTAGLIO
+          <tspan font-weight="400" font-size="0.75rem" dy="18.2" x="15">Clicca una o più coppie</tspan>
+          <tspan font-weight="400" font-size="0.75rem" dy="14" x="15">per evidenziare</tspan>
+        </text>
+      </svg>
+    </div>;
   }
 }
 

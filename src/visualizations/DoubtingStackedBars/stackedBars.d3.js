@@ -1,12 +1,15 @@
 import * as d3 from 'd3';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const V = {}
 
 let onSelectedElement;
 
 let width,
+    legentWidth,
     height,
     margin = {top: 30, right: 0, bottom: 50, left: 40},
+    marginLegend = {top:7.5, right:7.5, bottom:7.5, left:7.5},
     showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
@@ -75,6 +78,7 @@ let width,
     g,
     legend,
     legendItem,
+    legendMessage,
     selector,
     serie,
     treemap_misto,
@@ -92,7 +96,7 @@ let width,
         .domain(stackModeProperties.absolute)
         .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
         .unknown("#ccc"),
-    performed_selection_data;
+    performed_selection_data=null;
 
 V.initialize = (el, data_for_update, _onSelectedElement) => {
     console.log("initialize dubbio fase 2")
@@ -100,6 +104,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
     onSelectedElement = _onSelectedElement
 
     width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
+    legentWidth = d3.select(el).node().getBoundingClientRect().width * 0.15;
     height = d3.select(el).node().getBoundingClientRect().height - margin.top - margin.bottom;
 
     svg = d3.select(el);
@@ -108,45 +113,65 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${width + margin.left},${80})`);
-
-        legend.append("text")
-        .attr("y", -40)
-        .attr("x", 0)
-        // .attr("transform", `translate(${width},${margin.top})`)
-        .text("TIPO DI TESTO")
-        .append("tspan")
-            .attr("font-size", "0.9rem")
-            .text("(clicca per riordinare)")
-            .attr("dy", convertRemToPixels(1.3))
-            .attr("x", 0);
+        .attr("transform", `translate(${width + margin.left + marginLegend.left*2},${margin.top})`);
+    legend.append("rect")
+        .classed("box",true)
+        .attr("width", legentWidth-marginLegend.left-marginLegend.right)
+        .attr("height", 199 + marginLegend.bottom)
+        .attr("y",0)
+        .attr("x",-marginLegend.left)
+        .attr("fill","white")
+        .attr("stroke","black");
+    let title = legend.append("text")
+        .attr("font-weight",600)
+        .attr("y",10+marginLegend.top)
+        .attr("x",0)
+        .text("TIPO DI TESTO");
+    title.append("tspan")
+        .attr("font-weight",400)
+        .attr("font-size","0.75rem")
+        .text("Clicca una categoria")
+        .attr("dy",convertRemToPixels(1.3))
+        .attr("x",0);
+    title.append("tspan")
+        .attr("font-weight",400)
+        .attr("font-size","0.75rem")
+        .text("per riordinare")
+        .attr("dy",convertRemToPixels(1))
+        .attr("x",0);
+    legendMessage=legend.append('g').attr("transform",`translate(${legentWidth/2-marginLegend.left*2},${height})`).append('text').attr('text-anchor','middle');
+    legendMessage.append('tspan').text('Scorri verso il basso');
+    legendMessage.append('tspan').attr('x',0).attr('y',convertRemToPixels(1.3)).html('per vedere in dettaglio');
+    legendMessage.append('path').attr('fill','black').attr('stroke','red').attr('d',faBars.icon[4]);
     
-    selector = svg.append("g").classed("selector", true);
-
-    legendItem = legend.selectAll(".legend-item");
-
+    selector = svg.append("g").classed("selector",true);
+    legendItem = legend.append("g").classed("legend-items",true).attr("transform","translate(0,65)").selectAll(".legend-item");
     serie = g.selectAll(".serie");
-
-    treemap_misto = svg.append("g")
-        .classed("treemap-misto", true);
-
+    treemap_misto = svg.append("g").classed("treemap-misto", true);
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
-
     treemap_soggetto = svg.append("g").classed("treemap-soggetto", true);
-
     leaf_soggetto = treemap_soggetto.selectAll(".leaf-soggetto");
-
     x.range([0, width]);
-    xAxis = svg.append("g").classed("axis x-axis", true)
+    xAxis = svg.append("g").classed("axis x-axis stacked-bars-dubbio", true)
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     y.range([height, 0]);
     yAxis = svg.append("g").classed("axis y-axis", true)
-        // .attr("transform", `translate(${margin.left},0)`)
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     // Run update to populate viz
-    V.update(data_for_update.data, data_for_update.stackMode)
+    V.update(data_for_update.data, data_for_update.stackMode);
+    let ticking = false;
+    el.parentElement.onscroll = (e)=>{
+        const y = margin.top + el.parentElement.scrollTop;
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+              xAxis.attr('transform', `translate(${margin.left}, ${y})`);
+              ticking = false;
+            });
+            ticking = true;
+          }
+    }
 }
 
 const sortData = (data, property, stackMode) => {
@@ -185,7 +210,41 @@ V.update = (data, stackMode, baseLayer) => {
             return item.id + " - " + item.year + " - " + item.title;
         }))
         .call(g => xAxis.selectAll(".domain").remove())
-        .call(g => xAxis.selectAll(".tick").style("display", "none"));        
+        .call(g => {
+            xAxis.selectAll(".tick")
+                .style("display", "none")
+                .each(function(d){
+                    const tick = d3.select(this);
+                    const width = tick.node().getBoundingClientRect().width + 20 + 20;
+                    tick.append('rect')
+                        .attr('width',width)
+                        .attr('height','20')
+                        .attr('fill','white')
+                        .attr('stroke','black')
+                        .attr('x',-width/2)
+                        .attr('y',-26)
+                        .attr('rx',2);
+                    const close = tick.append('g')
+                        .attr('transform','translate('+(width/2-20)+',-26)')
+                        .on('click',()=>{
+                            if (performed_selection_data) {
+                                performed_selection_data=null;
+                                tick.style("display", "none");
+                                removeSelectionAll();
+                            }
+                        });
+                    close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
+                    close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
+                    close.append('line').attr('stroke','black')
+                        .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                        .attr('transform','translate(10,10) rotate(45) ');
+                    close.append('line').attr('stroke','black')
+                        .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                        .attr('transform','translate(10,10) rotate(-45) ');
+                    const title = tick.select('text').attr('y',-11.5).attr('x',-10).node();
+                    tick.node().appendChild(title);
+                });
+        });        
 
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
@@ -195,9 +254,10 @@ V.update = (data, stackMode, baseLayer) => {
         legendItem = legendItem.data(legendData, d=>d.id)
         legendItem.exit().remove();
         legendItem = legendItem.enter().append("g")
-            .classed("legend-item", true)
+            .attr("class",d=>"legend-item "+d.label)
             .attr("id", d=>d.id)
             .merge(legendItem)
+            .attr("transform", (d,i)=>`translate(0,${i*20})`)
             .on("click", (d)=>{
                 if (d.baseCategory) {
                     if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
@@ -222,19 +282,23 @@ V.update = (data, stackMode, baseLayer) => {
             })
             .html(d=> {
                 let this_percentage = ""
-                if (showPercentage && d.percentage) this_percentage = " ("+d.percentage.toFixed(2)+"%)";
-                let html = `<rect width="${convertRemToPixels(2)}" height="${convertRemToPixels(1)}" fill="${d.color}"></rect><text x="${convertRemToPixels(3)}" y="12">${d.label + '' + this_percentage}</text>`;
+                if (showPercentage && d.percentage) this_percentage = " ["+(d.percentage<1?d.percentage.toFixed(3):d.percentage.toFixed(2))+"%]";
+                let html = `<rect width="${convertRemToPixels(1)}" height="${convertRemToPixels(1)}" fill="${d.color}" rx="2"></rect>
+                <text x="${convertRemToPixels(1.25)}" y="12" font-size="0.8571428571rem" font-weight="600">${d.label + '' + this_percentage}</text>`;
                 return html;
             });
 
-        legendItem.transition()
-            .duration(0)
-            .attr("transform", (d,i)=>`translate(0,${i*20})`);
+            const newBoxHeight = 79 + Number(legend.select(".legend-item.Dubitativo").attr("transform").replace("translate(","").replace(")","").split(",")[1]) + marginLegend.bottom;
+            legend.select('.box').attr('height',newBoxHeight)
+
+            if(legendData.length>8){
+
+            }
     }
 
-    const removeSelectionAll = () => {
+    const removeSelectionAll=() => {
         onSelectedElement(null);
-        const allBars = d3.selectAll(".serie > rect");
+        const allBars=d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
             .transition()
                 .duration(500)
@@ -242,27 +306,25 @@ V.update = (data, stackMode, baseLayer) => {
                 .attr("width", x.bandwidth())
                 .style("opacity", .8);
 
-        const allTicks = xAxis.selectAll(".tick")
+        const allTicks=xAxis.selectAll(".tick")
         allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
 
-        leaf_misto = leaf_misto.data([]);
+        leaf_misto=leaf_misto.data([]);
         leaf_misto.exit().transition()
             .duration(500)
             .style("opacity",0)
             .remove();
-        leaf_soggetto = leaf_soggetto.data([]);
+        leaf_soggetto=leaf_soggetto.data([]);
         leaf_soggetto.exit().transition()
             .duration(500)
             .style("opacity",0)
             .remove();
 
-        legendData = legendData.filter(d=>d.baseCategory);
+        legendData=legendData.filter(d=>d.baseCategory);
 
-        showPercentage = false;
-
+        showPercentage=false;
         updateLegend();
     }
-
     removeSelectionAll();  // also calls updateLegend() inside
 
     serie = serie.data(series, d=>d.key)
@@ -274,9 +336,9 @@ V.update = (data, stackMode, baseLayer) => {
 
     let serie_rect = serie.selectAll("rect")
     serie_rect = serie_rect.data(d=>{
-        d.forEach(dd=>dd.key=d.key)
-        return d
-    }, d=>d.key+'-'+d.data.id);
+            d.forEach(dd=>dd.key=d.key)
+            return d
+        }, d=>d.key+'-'+d.data.id);
     serie_rect.exit().remove();
     serie_rect = serie_rect.enter().append("rect")
         .merge(serie_rect)
@@ -302,10 +364,12 @@ V.update = (data, stackMode, baseLayer) => {
     const preSelection = (d) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.style("opacity", 1);
-        xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "block")
+        let selected_id = performed_selection_data?performed_selection_data.data.id:'nessuno';
+        xAxis.selectAll(".tick").filter(tick=>tick===d.data.id||tick===selected_id).style("display", "block");
     }
 
     const removePreSelection = (d) => {
+        if (d===performed_selection_data) return;
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id)
         bar.style("opacity", .7)
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none")
@@ -313,7 +377,7 @@ V.update = (data, stackMode, baseLayer) => {
 
     const selection = (d, isSelected) => {
         // remove any 'preSelection'
-        if (performed_selection_data) {
+        if (performed_selection_data!==null) {
             removePreSelection(performed_selection_data);
         }
         onSelectedElement(d.data);
@@ -639,8 +703,9 @@ V.filter = (survive_filters) => {
         } ).classed('filtered', false);
 }
 
-V.destroy = () => {
-    console.log("destroy stacked bars dubbio fase 2")
+V.destroy = (el) => {
+    console.log("destroy stacked bars dubbio fase 2");
+    el.parentElement.onscroll = null;
 }
 
 export default V
