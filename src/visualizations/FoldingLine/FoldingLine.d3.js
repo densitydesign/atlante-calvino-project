@@ -5,7 +5,7 @@ import GlobalData from '../../utilities/GlobalData';
 const V = {}
 
 let width, legendWidth, height, lvl0 = 10, margin = {top: 25, right: 40, bottom: 20+lvl0, left: 40},
-    svg, svg_style, title, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
+    svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -133,10 +133,6 @@ V.initialize = (init_options) => {
     y = d3.scaleLinear()
         .range([-height/3*2, 0])
         .domain([10,0]);
-
-    title = svg.append('text')
-        .attr('x', margin.left)
-        .attr('y', margin.top/2);
     
     defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
         .attr('x',0)
@@ -205,8 +201,6 @@ V.update = (options) => {
     options.data.details.forEach(d=>{
         delete d.skip_now;
     })
-
-    title.text(options.data.id + ' ' + options.data.title)
 
     if (!options.transformed) {
         x.domain([0,options.data.length]);
@@ -315,6 +309,8 @@ V.update = (options) => {
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth)));
+    
+    mixed.style("display", "none");
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
@@ -342,8 +338,32 @@ V.update = (options) => {
         .merge(label)
         .attr('transform',d=>'translate('+( x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )+','+(y(d.depth)-4)+') rotate(-21)')
         .text(d=>'td '+ (+d.id.replace('pair-','')+1));
+
+    label.style("display", "none");
     
     drawArrows();
+}
+
+V.toggleMisto = (show)=>{
+    if (show)
+    {
+        mixed.style("display", "block");
+    }
+    else
+    {
+        mixed.style("display", "none");
+    }
+}
+
+V.toggleLabels = (show)=>{
+    if (show)
+    {
+        label.style("display", "block");
+    }
+    else
+    {
+        label.style("display", "none");
+    }
 }
 
 V.destroy = () => {
