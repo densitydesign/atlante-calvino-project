@@ -1,5 +1,4 @@
 import * as d3 from 'd3';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const V = {}
 
@@ -8,7 +7,7 @@ let onSelectedElement;
 let width,
     legentWidth,
     height,
-    margin = {top: 30, right: 0, bottom: 50, left: 40},
+    margin = {top: 87, right: window.innerWidth/24, bottom: 87, left: window.innerWidth/24},
     marginLegend = {top:7.5, right:7.5, bottom:7.5, left:7.5},
     showPercentage,
     stackModeProperties = {
@@ -23,13 +22,13 @@ let width,
           "percentage": undefined,
           "baseCategory": true
         },
-        {
-            "id": "space-1",
-            "color": "transparent",
-            "label": " ",
-            "percentage": undefined,
-            "baseCategory": true
-        },
+        // {
+        //     "id": "space-1",
+        //     "color": "transparent",
+        //     "label": " ",
+        //     "percentage": undefined,
+        //     "baseCategory": true
+        // },
         {
           "id": "soggetto",
           "color": "#FFD337",
@@ -37,13 +36,27 @@ let width,
           "percentage": undefined,
           "baseCategory": true
         },
+        // {
+        //     "id": "space-2",
+        //     "color": "transparent",
+        //     "label": " ",
+        //     "percentage": undefined,
+        //     "baseCategory": true
+        // },
         {
-            "id": "space-2",
-            "color": "transparent",
-            "label": " ",
+            "id": "dubbio",
+            "color": "#CFCFFF",
+            "label": "Dubitativo",
             "percentage": undefined,
             "baseCategory": true
-        },
+          },
+          // {
+          //     "id": "space-4",
+          //     "color": "transparent",
+          //     "label": " ",
+          //     "percentage": undefined,
+          //     "baseCategory": true
+          // }
         {
           "id": "misto",
           "color": "#33CDAF",
@@ -51,27 +64,13 @@ let width,
           "percentage": undefined,
           "baseCategory": true
         },
-        {
-            "id": "space-3",
-            "color": "transparent",
-            "label": " ",
-            "percentage": undefined,
-            "baseCategory": true
-        },
-        {
-          "id": "dubbio",
-          "color": "#CFCFFF",
-          "label": "Dubitativo",
-          "percentage": undefined,
-          "baseCategory": true
-        },
-        {
-            "id": "space-4",
-            "color": "transparent",
-            "label": " ",
-            "percentage": undefined,
-            "baseCategory": true
-        }
+        // {
+        //     "id": "space-3",
+        //     "color": "transparent",
+        //     "label": " ",
+        //     "percentage": undefined,
+        //     "baseCategory": true
+        // },
     ],
 
     svg,
@@ -79,6 +78,7 @@ let width,
     legend,
     legendItem,
     legendMessage,
+    orderMessage,
     selector,
     serie,
     treemap_misto,
@@ -86,9 +86,10 @@ let width,
     treemap_soggetto,
     leaf_soggetto,
 
-    x = d3.scaleBand().padding(0.2).paddingOuter(10),
+    xPadding=0.15,
+    x = d3.scaleBand().padding(xPadding).paddingOuter(10),
     xAxis,
-    xAxisCall = d3.axisTop(x),
+    xAxisCall = d3.axisBottom(x),
     y = d3.scaleLinear(),
     yAxis,
     yAxisCall = d3.axisLeft(y).ticks(10, "s"),
@@ -103,57 +104,79 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     onSelectedElement = _onSelectedElement
 
-    width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
-    legentWidth = d3.select(el).node().getBoundingClientRect().width * 0.15;
+    // width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
+
     height = d3.select(el).node().getBoundingClientRect().height - margin.top - margin.bottom;
+    width = d3.select(el).node().getBoundingClientRect().width - margin.left - margin.right;
+    legentWidth = d3.select(el).node().getBoundingClientRect().width * 0.15;
 
     svg = d3.select(el);
+
     g = svg.append("g")
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
+    g.append('rect').attr('fill','#ffffff').attr('width',width).attr('height',height)
+
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${width + margin.left + marginLegend.left*2},${margin.top})`);
+        .attr("transform", `translate(${margin.left},${5})`);
+
     legend.append("rect")
-        .classed("box",true)
-        .attr("width", legentWidth-marginLegend.left-marginLegend.right)
-        .attr("height", 199 + marginLegend.bottom)
-        .attr("y",0)
-        .attr("x",-marginLegend.left)
-        .attr("fill","white")
-        .attr("stroke","black");
-    let title = legend.append("text")
+        .classed("legend-message-box",true)
+        .attr("fill",'white')
+        .attr("stroke","#666666")
+        .attr("rx",3)
+        .attr("width",225)
+        .attr("height",21)
+        .attr("x",150)
+        .attr("y",7)
+        .style("display","none")
+        .style("cursor","pointer")
+        .on("click",()=>{
+            let sortedData = sortData(data_for_update.data, "id", data_for_update.stackMode);
+            // d.id is the baselayer ordering setting
+            // In the Update cycle it is skipped if equal to "id" or "definitivo"
+            V.update(sortedData, data_for_update.stackMode, "id");
+        });
+
+    legend.append("text")
+        .classed("legend-title",true)
         .attr("font-weight",600)
-        .attr("y",10+marginLegend.top)
-        .attr("x",0)
-        .text("TIPO DI TESTO");
-    title.append("tspan")
+        .attr("y",21)
+        .attr("x",21)
+        .text("TIPI DI TESTO")
+        .append("tspan")
+        .style("pointer-events","none")
+        .classed("legend-message",true)
         .attr("font-weight",400)
-        .attr("font-size","0.75rem")
-        .text("Clicca una categoria")
-        .attr("dy",convertRemToPixels(1.3))
-        .attr("x",0);
-    title.append("tspan")
-        .attr("font-weight",400)
-        .attr("font-size","0.75rem")
-        .text("per riordinare")
-        .attr("dy",convertRemToPixels(1))
-        .attr("x",0);
-    legendMessage=legend.append('g').attr("transform",`translate(${legentWidth/2-marginLegend.left*2},${height})`).append('text').attr('text-anchor','middle');
-    legendMessage.append('tspan').text('Scorri verso il basso');
-    legendMessage.append('tspan').attr('x',0).attr('y',convertRemToPixels(1.3)).html('per vedere in dettaglio');
-    legendMessage.append('path').attr('fill','black').attr('stroke','red').attr('d',faBars.icon[4]);
-    
-    selector = svg.append("g").classed("selector",true);
-    legendItem = legend.append("g").classed("legend-items",true).attr("transform","translate(0,65)").selectAll(".legend-item");
+        .attr("font-style","italic")
+        .attr("font-size","0.8571428571rem")
+        .attr("dx",45)
+        .attr("fill","#666666")
+        .text("Clicca su una categoria per riordinare");
+        // "Ripristina ordine di prima pubblicazione"
+
+    orderMessage = svg.append('text')
+        .classed(".order-message",true)
+        .attr('x',64)
+        .attr('y',height + margin.top + 24)
+        .attr("font-style","italic")
+        .attr("font-size","0.8571428571rem")
+        .attr('fill','#666')
+        .text('Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.');
+
+    legendItem = legend.append("g").classed("legend-items",true).attr("transform","translate(-1,36)").selectAll(".legend-item");
     serie = g.selectAll(".serie");
     treemap_misto = svg.append("g").classed("treemap-misto", true);
     leaf_misto = treemap_misto.selectAll(".leaf-misto");
     treemap_soggetto = svg.append("g").classed("treemap-soggetto", true);
     leaf_soggetto = treemap_soggetto.selectAll(".leaf-soggetto");
+
+    selector = g.append("g").classed("selector",true);
+
     x.range([0, width]);
     xAxis = svg.append("g").classed("axis x-axis stacked-bars-dubbio", true)
-        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+        .attr('transform', `translate(${margin.left}, ${height + margin.top})`);
 
     y.range([height, 0]);
     yAxis = svg.append("g").classed("axis y-axis", true)
@@ -161,17 +184,6 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     // Run update to populate viz
     V.update(data_for_update.data, data_for_update.stackMode);
-    let ticking = false;
-    el.parentElement.onscroll = (e)=>{
-        const y = margin.top + el.parentElement.scrollTop;
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-              xAxis.attr('transform', `translate(${margin.left}, ${y})`);
-              ticking = false;
-            });
-            ticking = true;
-          }
-    }
 }
 
 const sortData = (data, property, stackMode) => {
@@ -204,8 +216,7 @@ V.update = (data, stackMode, baseLayer) => {
     let series = d3.stack().keys(keys)(data);
 
     x.domain(data.map(d => d.id));
-    xAxis
-        .call(xAxisCall.tickFormat(d=>{
+    xAxis.call(xAxisCall.tickFormat(d=>{
             const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;
         }))
@@ -215,17 +226,20 @@ V.update = (data, stackMode, baseLayer) => {
                 .style("display", "none")
                 .each(function(d){
                     const tick = d3.select(this);
+                    tick.select("text").attr("font-weight","600")
                     const width = tick.node().getBoundingClientRect().width + 20 + 20;
+                    const dy = 10;
                     tick.append('rect')
                         .attr('width',width)
                         .attr('height','20')
                         .attr('fill','white')
                         .attr('stroke','black')
                         .attr('x',-width/2)
-                        .attr('y',-26)
+                        .attr('y',dy)
                         .attr('rx',2);
                     const close = tick.append('g')
-                        .attr('transform','translate('+(width/2-20)+',-26)')
+                        .attr('transform','translate('+(width/2-20)+','+dy+')')
+                        .style('cursor','pointer')
                         .on('click',()=>{
                             if (performed_selection_data) {
                                 performed_selection_data=null;
@@ -241,14 +255,14 @@ V.update = (data, stackMode, baseLayer) => {
                     close.append('line').attr('stroke','black')
                         .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
                         .attr('transform','translate(10,10) rotate(-45) ');
-                    const title = tick.select('text').attr('y',-11.5).attr('x',-10).node();
+                    const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
                     tick.node().appendChild(title);
                 });
         });        
 
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
-        .call(g => yAxis.selectAll(".domain").remove());
+        .call(g => yAxis.selectAll(".domain, line").remove());
 
     const updateLegend = () => {
         legendItem = legendItem.data(legendData, d=>d.id)
@@ -257,21 +271,36 @@ V.update = (data, stackMode, baseLayer) => {
             .attr("class",d=>"legend-item "+d.label)
             .attr("id", d=>d.id)
             .merge(legendItem)
-            .attr("transform", (d,i)=>`translate(0,${i*20})`)
+            .attr("transform", (d,i)=>{
+                if (d.id.includes('definitivo')) {
+                    return 'translate(0,0)';
+                } else if (d.id.includes('dubbio')) {
+                    return 'translate(0,19)';
+                } else if (d.id.includes('soggetto')) {
+                    let sss = d.id.includes('-')?Number(d.id.split('-')[1]):1;
+                    sss = sss===7?6:sss;
+                    return 'translate('+135*sss+',0)';
+                } else if (d.id.includes('misto')) {
+                    let mmm = d.id.includes('-')?Number(d.id.split('-')[1]):1;
+                    return 'translate('+135*mmm+',19)';
+                }
+            })
             .on("click", (d)=>{
                 if (d.baseCategory) {
-                    if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
-                        let obj = {
-                            "id": "id",
-                            "color": "transparent",
-                            "label": "Reset",
-                            "percentage": undefined,
-                            "baseCategory": true
-                        }
-                        legendData.push(obj);
-                    } else if (d.id === "id") {
-                        legendData.pop();
-                    }
+                    // if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
+                    //     let obj = {
+                    //         "id": "id",
+                    //         "color": "transparent",
+                    //         "label": "Reset",
+                    //         "percentage": undefined,
+                    //         "baseCategory": true
+                    //     }
+                    //     legendData.push(obj);
+                    // } else if (d.id === "id") {
+                    //     legendData.pop();
+                    // }
+                    d3.select(".legend-message").text("Ripristina ordine di prima pubblicazione");
+                    d3.select(".legend-message-box").style("display","block");
 
                     let sortedData = sortData(data, d.id, stackMode);
                     // d.id is the baselayer ordering setting
@@ -282,18 +311,12 @@ V.update = (data, stackMode, baseLayer) => {
             })
             .html(d=> {
                 let this_percentage = ""
-                if (showPercentage && d.percentage) this_percentage = " ["+(d.percentage<1?d.percentage.toFixed(3):d.percentage.toFixed(2))+"%]";
-                let html = `<rect width="${convertRemToPixels(1)}" height="${convertRemToPixels(1)}" fill="${d.color}" rx="2"></rect>
-                <text x="${convertRemToPixels(1.25)}" y="12" font-size="0.8571428571rem" font-weight="600">${d.label + '' + this_percentage}</text>`;
+                if (showPercentage && d.percentage) this_percentage = " "+(d.percentage<1?d.percentage.toFixed(3):d.percentage.toFixed(2))+"%";
+                let html = `<rect width="16" height="8" fill="${d.color}" rx="5"></rect>
+                <text x="22" y="8" font-size="0.8571428571rem">${d.label + '' + this_percentage}</text>`;
                 return html;
             });
 
-            const newBoxHeight = 79 + Number(legend.select(".legend-item.Dubitativo").attr("transform").replace("translate(","").replace(")","").split(",")[1]) + marginLegend.bottom;
-            legend.select('.box').attr('height',newBoxHeight)
-
-            if(legendData.length>8){
-
-            }
     }
 
     const removeSelectionAll=() => {
@@ -307,7 +330,8 @@ V.update = (data, stackMode, baseLayer) => {
                 .style("opacity", .8);
 
         const allTicks=xAxis.selectAll(".tick")
-        allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
+        allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`)
+                .style("display","none");
 
         leaf_misto=leaf_misto.data([]);
         leaf_misto.exit().transition()
@@ -369,10 +393,14 @@ V.update = (data, stackMode, baseLayer) => {
     }
 
     const removePreSelection = (d) => {
-        if (d===performed_selection_data) return;
-        const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id)
-        bar.style("opacity", .7)
-        xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none")
+        if (performed_selection_data) {
+            if (d.data.id===performed_selection_data.data.id) {
+                return;
+            }
+        }
+        const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
+        bar.style("opacity", .7);
+        xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none");
     }
 
     const selection = (d, isSelected) => {
@@ -384,8 +412,7 @@ V.update = (data, stackMode, baseLayer) => {
         performed_selection_data = d;
         legendData = legendData.filter(d=>d.baseCategory);
         const allBars = d3.selectAll(".serie > rect").classed("selected", false);
-
-        const width_factor = x.paddingOuter() * 2;
+        const width_factor = x.paddingOuter() * 2 * (1+xPadding);
         const bar_index = data.map(d=>d.id).indexOf(d.data.id);
         const width_treemap = x.bandwidth()*width_factor;
         // const direction = bar_index*2>data.length?-1:1;
@@ -398,10 +425,14 @@ V.update = (data, stackMode, baseLayer) => {
             .attr("transform", `translate(${ -width_treemap/2 + x.bandwidth()/2 },0)`)
             .attr("width", x.bandwidth()*width_factor);
 
-        const tick = xAxis.selectAll(".tick").filter((tick)=>tick===d.data.id)
-        tick.transition()
-            .duration(500)
-            .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
+        const tick = xAxis.selectAll(".tick")
+            .style('display','none')
+            .filter((tick)=>tick===d.data.id);
+
+        tick.style('display','block')
+            .transition()
+                .duration(500)
+                .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
 
         const bars_on_left = d3.selectAll(".serie > rect").filter((rect)=>{
             const this_index = data.map(d=>d.id).indexOf(rect.data.id)
@@ -462,7 +493,7 @@ V.update = (data, stackMode, baseLayer) => {
             for(let iii=data_misto.children.length-1; iii>0; iii--) {
                 const item = {
                     "id": "misto-"+data_misto.children[iii].name,
-                    "color": d3.color(color("misto")).darker( 0.5*(+data_misto.children[iii].name-1) ),
+                    "color": d3.color(color("misto")).darker( 0.3*(+data_misto.children[iii].name-1) ),
                     "label": data_misto.children[iii].name + " volte",
                     "percentage": (data_misto.children[iii].value/d.data.length) * 100
                 }
@@ -491,7 +522,7 @@ V.update = (data, stackMode, baseLayer) => {
             .attr("darkness", d=>d.data.name-1)
             .attr("width", d => d.x1 - d.x0)
             .attr("height", d => d.y1 - d.y0)
-            .attr("fill",d=> d3.color(color("misto")).darker( 0.5*(+d.data.name-1) ) );
+            .attr("fill",d=> d3.color(color("misto")).darker( 0.3*(+d.data.name-1) ) );
 
         leaf_misto.transition()
             .delay(500)
@@ -520,7 +551,7 @@ V.update = (data, stackMode, baseLayer) => {
             for(let iii=data_soggetto.children.length-1; iii>0; iii--) {
                 const item = {
                     "id": "soggetto-"+data_soggetto.children[iii].name,
-                    "color": d3.color(color("soggetto")).darker( 0.5*(+data_soggetto.children[iii].name-1) ),
+                    "color": d3.color(color("soggetto")).darker( 0.3*(+data_soggetto.children[iii].name-1) ),
                     "label": data_soggetto.children[iii].name + " volte",
                     "percentage": (data_soggetto.children[iii].value/d.data.length) * 100
                 }
@@ -550,7 +581,7 @@ V.update = (data, stackMode, baseLayer) => {
             .attr("darkness", d=>d.data.name-1 )
             .attr("width", d => d.x1 - d.x0)
             .attr("height", d => d.y1 - d.y0)
-            .attr("fill",d=> d3.color(color("soggetto")).darker( 0.5*(+d.data.name-1) ) );
+            .attr("fill",d=> d3.color(color("soggetto")).darker( 0.3*(+d.data.name-1) ) );
 
         leaf_soggetto.transition()
             .delay(500)
@@ -558,8 +589,8 @@ V.update = (data, stackMode, baseLayer) => {
             .style("opacity",1);
 
     }
-
-    selector.attr('transform', `translate(${margin.left + x.step()*10}, ${height + margin.top + 5})`).selectAll('*').remove();
+    selector.attr('transform', `translate(${x.bandwidth() * x.paddingOuter() * (1+xPadding) + x.bandwidth()/2}, ${height + 41})`);
+    selector.selectAll('*').remove();
 
     let selector_prev = selector.append("g")
         .attr("transform", `translate(${-36},0)`)
@@ -677,7 +708,7 @@ V.update = (data, stackMode, baseLayer) => {
         .attr("x1", 0)
         .attr("y1", 0)
         .attr("x2", 0)
-        .attr("y2", -height)
+        .attr("y2", -height-41)
         .attr("stroke-width", 1) 
         .attr("stroke", "var(--navigation-borders)")
         .style("opacity", 0);
@@ -705,7 +736,6 @@ V.filter = (survive_filters) => {
 
 V.destroy = (el) => {
     console.log("destroy stacked bars dubbio fase 2");
-    el.parentElement.onscroll = null;
 }
 
 export default V

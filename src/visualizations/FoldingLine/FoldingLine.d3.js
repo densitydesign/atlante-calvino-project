@@ -42,7 +42,8 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                'color': '#dfdfff',
+                'color': '#bbbbff',
+                'color': '#deddff',
                 'opacity': 1
             }
             ]
@@ -61,7 +62,7 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                'color': '#9defdf',
+                'color': '#00c19c',
                 'opacity': 1
             }
             ]
@@ -80,7 +81,8 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                'color': '#fff0ba',
+                // 'color': '#ffc806',
+                'color': '#ffe37d',
                 'opacity': 1
             }
             ]

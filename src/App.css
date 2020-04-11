@@ -191,6 +191,7 @@ li {
   background-color: var(--bg);
   bottom: 0;
   border-top: 2px solid var(--navigation-borders);
+  transition: bottom 0.5s ease;
 }
 
 .viz-title {

@@ -469,7 +469,7 @@ class ProcessDoubting extends Component {
     const helpPage = GlobalData.helpPages.processDoubting.main;
     // console.log(this.state);
     return (
-      <div className="process-doubting main">
+      <div className="process-doubting main" xxxstyle={{backgroundImage:'url('+process.env.PUBLIC_URL + '/___inizio.svg)'}}>
 
         <HelpSidePanel
 					open={this.state.helpSidePanelOpen}
