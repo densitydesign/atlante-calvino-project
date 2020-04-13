@@ -9,3 +9,11 @@
 .selected, .doubt.selected, .subject.selected, .mixed.selected {
     opacity:1;
 }
+
+.zoom-sensible-area {
+    display: block !important;
+    cursor: grab;
+}
+.zoom-sensible-area:active {
+    cursor: grabbing;
+}

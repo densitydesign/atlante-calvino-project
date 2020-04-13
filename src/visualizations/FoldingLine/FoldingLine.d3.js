@@ -142,6 +142,35 @@ V.initialize = (init_options) => {
         .attr('width',width)
         .attr('height',height+margin.top+margin.bottom)
         .attr('clipPathUnits', "objectBoundingBox");
+        
+    const zoomed = () => {
+        x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
+        const tickValues = [];
+        tickValues.push(x.invert(0))
+        tickValues.push(x.invert(width))
+        xAxis.call(
+            xAxisCall
+                .tickValues(tickValues)
+                .scale(x)
+        );
+        globalUpdateOptions.transformed = true;
+        V.update(globalUpdateOptions);
+    }
+
+    const zoom = d3.zoom()
+        .scaleExtent([1, 35])
+        .translateExtent([[0, 0], [width + margin.left + margin.right, height]])
+        .on("zoom", zoomed);
+
+    svg.insert('rect')
+        .classed('zoom-sensible-area',true)
+        .attr('y',margin.top)
+        .attr('x',margin.left)
+        .attr('width',width)
+        .attr('height',height)
+        .attr('fill','transparent')
+        .style('display','none')
+        .call(zoom);
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
@@ -164,8 +193,6 @@ V.initialize = (init_options) => {
     arrow = g.append('g').classed('group-arrows', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow');
     arrow_label = g.append('g').classed('group-arrows-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow-label');
 
-    
-
     g.append('text')
         .attr('y',height/3 + margin.top/2)
         .attr('x',5)
@@ -173,26 +200,6 @@ V.initialize = (init_options) => {
         .attr('font-size','0.8571428571rem')
         .attr('font-style','italic')
         .text('Clicca su un elemento per evidenziarne l’occorrenza di testo dubitativo.')
-
-    const zoomed = () => {
-        x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
-        const tickValues = [];
-        tickValues.push(x.invert(0))
-        tickValues.push(x.invert(width))
-        xAxis.call(
-            xAxisCall
-                .tickValues(tickValues)
-                .scale(x)
-        );
-        globalUpdateOptions.transformed = true;
-        V.update(globalUpdateOptions);
-    }
-
-    const zoom = d3.zoom()
-        .scaleExtent([1, 35])
-        .translateExtent([[0, 0], [width + margin.left + margin.right, height]])
-        .on("zoom", zoomed);
-    svg.call(zoom);
 
     V.update({data:init_options.data,showLabels:init_options.showLabels,showMisto:init_options.showMisto});
 }
