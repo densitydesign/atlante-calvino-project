@@ -21,7 +21,9 @@ class FoldingLine extends Component {
 
     const options = {
       element: this._rootNode,
-      data: this.props.data
+      data: this.props.data,
+      showLabels:this.state.showLabels,
+      showMisto:this.state.showMisto
     }
     V.initialize(options);
   }
@@ -30,7 +32,9 @@ class FoldingLine extends Component {
     // console.log('folding line update');
     if (this.props.data && this.props.data !== prevProps.data){
       const options = {
-        data: this.props.data
+        data: this.props.data,
+        showLabels:this.state.showLabels,
+        showMisto:this.state.showMisto
       }
       V.update(options)
     }

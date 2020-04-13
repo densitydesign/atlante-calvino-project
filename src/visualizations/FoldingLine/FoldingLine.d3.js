@@ -194,7 +194,7 @@ V.initialize = (init_options) => {
         .on("zoom", zoomed);
     svg.call(zoom);
 
-    V.update({data:init_options.data});
+    V.update({data:init_options.data,showLabels:init_options.showLabels,showMisto:init_options.showMisto});
 }
 
 V.update = (options) => {
@@ -351,7 +351,7 @@ V.update = (options) => {
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth)))
-        .style("display", "none");
+        .style("display", globalUpdateOptions.showMisto?'block':'none');
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
@@ -379,12 +379,13 @@ V.update = (options) => {
         .merge(label)
         .attr('transform',d=>'translate('+( x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )+','+(y(d.depth)-4)+') rotate(-21)')
         .text(d=>'td '+ (+d.id.replace('pair-','')+1))
-        .style("display", "none");
+        .style("display", globalUpdateOptions.showLabels?'block':'none');
     
     drawArrows();
 }
 
 V.toggleMisto = (show)=>{
+    globalUpdateOptions.showMisto = show;
     if (show)
     {
         mixed.style("display", "block");
@@ -396,6 +397,7 @@ V.toggleMisto = (show)=>{
 }
 
 V.toggleLabels = (show)=>{
+    globalUpdateOptions.showLabels = show;
     if (show)
     {
         label.style("display", "block");
