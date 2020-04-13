@@ -223,7 +223,6 @@ V.update = (data, stackMode, baseLayer) => {
     let series = d3.stack().keys(keys)(data);
     
     x.domain(data.map(d => d.id));
-    console.log('xaxis call')
     xAxis.call(xAxisCall.tickFormat(d=>{
             const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;

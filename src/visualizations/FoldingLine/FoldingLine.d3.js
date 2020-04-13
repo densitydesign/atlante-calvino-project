@@ -4,7 +4,7 @@ import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
-let width, legendWidth, height, lvl0 = 10, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24},
+let width, legendWidth, height, lvl0 = 5, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24},
     svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
@@ -145,14 +145,26 @@ V.initialize = (init_options) => {
 
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
-    g = master_g.append('g').style('clip-path','url(#cut-off-bottom)');
-    chapter = g.append('g').classed('group-chapters', true).style('pointer-events','none').selectAll('.chapter');
-    subject = g.append('g').classed('group-subjects', true).selectAll('.subject');
-    mixed = g.append('g').classed('group-mixeds', true).selectAll('.mixed');
-    doubt = g.append('g').classed('group-doubts', true).selectAll('.doubt');
-    label = g.append('g').classed('group-labels', true).selectAll('.label');
-    arrow = g.append('g').classed('group-arrows', true).selectAll('.arrow');
-    arrow_label = g.append('g').classed('group-arrows-labels', true).selectAll('.arrow-label');
+    g = master_g.append('g');
+
+    chapter = g.append('g').classed('group-chapters', true).style('clip-path','url(#cut-off-bottom)').style('pointer-events','none').selectAll('.chapter');
+
+    xAxis = g.append("g")
+        .style('clip-path','url(#cut-off-bottom)')
+        .attr("class", "x-axis noselect")
+        .attr("transform", `translate(${0},${lvl0})`);
+    yAxis = g.append("g")
+        .attr("class", "y-axis noselect")
+        .attr("transform", `translate(${0},${0})`);
+
+    subject = g.append('g').classed('group-subjects', true).style('clip-path','url(#cut-off-bottom)').selectAll('.subject');
+    mixed = g.append('g').classed('group-mixeds', true).style('clip-path','url(#cut-off-bottom)').selectAll('.mixed');
+    doubt = g.append('g').classed('group-doubts', true).style('clip-path','url(#cut-off-bottom)').selectAll('.doubt');
+    label = g.append('g').classed('group-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.label');
+    arrow = g.append('g').classed('group-arrows', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow');
+    arrow_label = g.append('g').classed('group-arrows-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow-label');
+
+    
 
     g.append('text')
         .attr('y',height/3 + margin.top/2)
@@ -161,14 +173,6 @@ V.initialize = (init_options) => {
         .attr('font-size','0.8571428571rem')
         .attr('font-style','italic')
         .text('Clicca su un elemento per evidenziarne l’occorrenza di testo dubitativo.')
-
-    xAxis = master_g.append("g")
-        .attr("class", "x-axis noselect")
-        .attr("transform", `translate(${0},${lvl0})`);
-        
-    yAxis = master_g.append("g")
-        .attr("class", "y-axis noselect")
-        .attr("transform", `translate(${0},${0})`);
 
     const zoomed = () => {
         x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
@@ -219,12 +223,12 @@ V.update = (options) => {
         yAxis.selectAll('.tick').each(function(d){
             const line = d3.select(this).select('line');
             line.attr('x2',width)
+                .attr('stroke','#999999')
                 .attr('stroke-dasharray',"0 4")
                 .attr('stroke-linecap',"round");
         });
     }
 
-    // xAxis.select('.domain').attr('d',`M0,6 V0 h${width} V6`);
     xAxis.selectAll('.tick').each(function(d,i){
         const tick = d3.select(this);
         tick.select('line').remove();
@@ -307,7 +311,7 @@ V.update = (options) => {
         .classed('doubt', true)
         .attr('stroke-width',1)
         .attr('stroke', color('dubitativo'))
-        .attr('fill', gradient('dubitativo'))
+        .attr('fill', d=> d.depth===0?color('dubitativo'):gradient('dubitativo'))
         .merge(doubt)
         .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2* (d.depth?Math.abs(y(d.depth)):lvl0) ) )
         .attr('x',d=>x(d.doubt_x))
@@ -339,8 +343,8 @@ V.update = (options) => {
     mixed = mixed.enter().append('rect')
         .classed('mixed', true)
         .attr('stroke-width',1)
-        .attr('stroke', color('soggetto'))
-        .attr('fill', gradient('misto'))
+        .attr('stroke', color('misto'))
+        .attr('fill', d=> d.depth===0?color('misto'):gradient('misto'))
         .merge(mixed)
         .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + (x(d.end)-x(d.start)+2*Math.abs(y(d.depth||0))) )
         .attr('x',d=>x(d.start))
@@ -355,7 +359,7 @@ V.update = (options) => {
         .classed('subject', true)
         .attr('stroke-width', 1)
         .attr('stroke', d=>color('soggetto'))
-        .attr('fill', gradient('soggetto'))
+        .attr('fill', d=> d.depth===0?color('soggetto'):gradient('soggetto'))
         .merge(subject)
         .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*(d.depth?Math.abs(y(d.depth)):lvl0) ))
         .attr('x',d=>x(d.subj_x))
