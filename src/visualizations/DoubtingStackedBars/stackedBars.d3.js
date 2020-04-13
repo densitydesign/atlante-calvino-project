@@ -79,6 +79,13 @@ let width,
     legendItem,
     legendMessage,
     orderMessage,
+    orderMessages = {
+        'id':'Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.',
+        'definitivo':'Opere ordinate per quantità di testo definitivo, usa il selettore per espanderne una.',
+        'dubbio':'Opere ordinate per quantità di testo dubitativo, usa il selettore per espanderne una.',
+        'soggetto':'Opere ordinate per quantità di testo soggetto, usa il selettore per espanderne una.',
+        'misto':'Opere ordinate per quantità di testo misto, usa il selettore per espanderne una.'
+    },
     selector,
     serie,
     treemap_misto,
@@ -103,8 +110,6 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
     console.log("initialize dubbio fase 2")
 
     onSelectedElement = _onSelectedElement
-
-    // width = d3.select(el).node().getBoundingClientRect().width * 0.85 - margin.left - margin.right;
 
     height = d3.select(el).node().getBoundingClientRect().height - margin.top - margin.bottom;
     width = d3.select(el).node().getBoundingClientRect().width - margin.left - margin.right;
@@ -194,8 +199,10 @@ const sortData = (data, property, stackMode) => {
         data = data.sort((a,b)=>Number(b[property])-Number(a[property]));
     } else {
         data = data.sort((a, b) => a.id_index.localeCompare(b.id_index))
-        // data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0)); 
-    }  
+        // data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0));
+    }
+    console.log('sort by',property.replace('_perc',''))
+    orderMessage.text(orderMessages[property.replace('_perc','')]);
     return data;
 }
 
@@ -214,55 +221,57 @@ V.update = (data, stackMode, baseLayer) => {
     }
 
     let series = d3.stack().keys(keys)(data);
-
+    
     x.domain(data.map(d => d.id));
+    console.log('xaxis call')
     xAxis.call(xAxisCall.tickFormat(d=>{
             const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;
-        }))
-        .call(g => xAxis.selectAll(".domain").remove())
-        .call(g => {
-            xAxis.selectAll(".tick")
-                .style("display", "none")
-                .each(function(d){
-                    const tick = d3.select(this);
-                    tick.select("text").attr("font-weight","600")
-                    const width = tick.node().getBoundingClientRect().width + 20 + 20;
-                    const dy = 10;
-                    tick.append('rect')
-                        .attr('width',width)
-                        .attr('height','20')
-                        .attr('fill','white')
-                        .attr('stroke','black')
-                        .attr('x',-width/2)
-                        .attr('y',dy)
-                        .attr('rx',2);
-                    const close = tick.append('g')
-                        .attr('transform','translate('+(width/2-20)+','+dy+')')
-                        .style('cursor','pointer')
-                        .on('click',()=>{
-                            if (performed_selection_data) {
-                                performed_selection_data=null;
-                                tick.style("display", "none");
-                                removeSelectionAll();
-                            }
-                        });
-                    close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
-                    close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
-                    close.append('line').attr('stroke','black')
-                        .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-                        .attr('transform','translate(10,10) rotate(45) ');
-                    close.append('line').attr('stroke','black')
-                        .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-                        .attr('transform','translate(10,10) rotate(-45) ');
-                    const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
-                    tick.node().appendChild(title);
-                });
-        });        
+        }));
+    xAxis.selectAll(".tick")
+        .each(function(d){
+            const tick = d3.select(this);
+            tick.select("text").attr("font-weight","600");
+            const width = Number(tick.node().getBoundingClientRect().width + 40);
+            const dy = 10;
 
+            tick.append('rect')
+                .attr('width',width)
+                .attr('height',20)
+                .attr('fill','white')
+                .attr('stroke','black')
+                .attr('x',-width/2)
+                .attr('y',dy)
+                .attr('rx',2);
+
+            const close = tick.append('g')
+                .attr('transform','translate('+(width/2-20)+','+dy+')')
+                .style('cursor','pointer')
+                .on('click',()=>{
+                    if (performed_selection_data) {
+                        performed_selection_data=null;
+                        tick.style("display", "none");
+                        removeSelectionAll();
+                    }
+                });
+            close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
+            close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
+            close.append('line').attr('stroke','black')
+                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                .attr('transform','translate(10,10) rotate(45) ');
+            close.append('line').attr('stroke','black')
+                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                .attr('transform','translate(10,10) rotate(-45) ');
+            const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
+            tick.node().appendChild(title);
+        });
+    xAxis.select(".domain").remove();
+    
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
         .call(g => yAxis.selectAll(".domain, line").remove());
+    
+    console.log("declare functions");
 
     const updateLegend = () => {
         legendItem = legendItem.data(legendData, d=>d.id)
@@ -287,21 +296,8 @@ V.update = (data, stackMode, baseLayer) => {
             })
             .on("click", (d)=>{
                 if (d.baseCategory) {
-                    // if (d.id !== "id" && !legendData.find(d=>d.id==="id")) {
-                    //     let obj = {
-                    //         "id": "id",
-                    //         "color": "transparent",
-                    //         "label": "Reset",
-                    //         "percentage": undefined,
-                    //         "baseCategory": true
-                    //     }
-                    //     legendData.push(obj);
-                    // } else if (d.id === "id") {
-                    //     legendData.pop();
-                    // }
                     d3.select(".legend-message").text("Ripristina ordine di prima pubblicazione");
                     d3.select(".legend-message-box").style("display","block");
-
                     let sortedData = sortData(data, d.id, stackMode);
                     // d.id is the baselayer ordering setting
                     // In the Update cycle it is skipped if equal to "id" or "definitivo"
@@ -317,7 +313,7 @@ V.update = (data, stackMode, baseLayer) => {
                 return html;
             });
 
-    }
+    };
 
     const removeSelectionAll=() => {
         onSelectedElement(null);
@@ -348,17 +344,18 @@ V.update = (data, stackMode, baseLayer) => {
 
         showPercentage=false;
         updateLegend();
-    }
+    };
     removeSelectionAll();  // also calls updateLegend() inside
 
-    serie = serie.data(series, d=>d.key)
-    serie.exit().remove()
+    console.log("draw bars");
+    serie = serie.data(series, d=>d.key);
+    serie.exit().remove();
     serie = serie.enter().append("g")
         .merge(serie)
         .attr("class", (d,i)=>"serie serie-" + keys[i].replace("_perc","") )
-        .attr("fill", d => color(d.key.replace("_perc","")))
+        .attr("fill", d => color(d.key.replace("_perc","")));
 
-    let serie_rect = serie.selectAll("rect")
+    let serie_rect = serie.selectAll("rect");
     serie_rect = serie_rect.data(d=>{
             d.forEach(dd=>dd.key=d.key)
             return d
@@ -375,8 +372,6 @@ V.update = (data, stackMode, baseLayer) => {
         .on("mouseenter", d=>preSelection(d))
         .on("mouseleave", d=>removePreSelection(d))
         .on("click", function(d){
-            // console.log(this);
-            // console.log(d);
             if (!d3.select(this).classed("selected") && !d3.select(this).classed("filtered")) {
                 selection(d, d3.select(this).classed("selected"));
             }
@@ -397,7 +392,7 @@ V.update = (data, stackMode, baseLayer) => {
             if (d.data.id===performed_selection_data.data.id) {
                 return;
             }
-        }
+        };
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.style("opacity", .7);
         xAxis.selectAll(".tick").filter(tick=>tick===d.data.id).style("display", "none");
@@ -407,7 +402,7 @@ V.update = (data, stackMode, baseLayer) => {
         // remove any 'preSelection'
         if (performed_selection_data!==null) {
             removePreSelection(performed_selection_data);
-        }
+        };
         onSelectedElement(d.data);
         performed_selection_data = d;
         legendData = legendData.filter(d=>d.baseCategory);
@@ -415,8 +410,6 @@ V.update = (data, stackMode, baseLayer) => {
         const width_factor = x.paddingOuter() * 2 * (1+xPadding);
         const bar_index = data.map(d=>d.id).indexOf(d.data.id);
         const width_treemap = x.bandwidth()*width_factor;
-        // const direction = bar_index*2>data.length?-1:1;
-
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.classed("selected", true)
             .transition()
@@ -435,8 +428,8 @@ V.update = (data, stackMode, baseLayer) => {
                 .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
 
         const bars_on_left = d3.selectAll(".serie > rect").filter((rect)=>{
-            const this_index = data.map(d=>d.id).indexOf(rect.data.id)
-            return this_index < bar_index
+            const this_index = data.map(d=>d.id).indexOf(rect.data.id);
+            return this_index < bar_index;
         })
         bars_on_left.transition()
             .duration(500)
@@ -447,15 +440,15 @@ V.update = (data, stackMode, baseLayer) => {
         const ticks_on_left = xAxis.selectAll(".tick").filter((tick)=>{
             const this_index = x.domain().indexOf(tick);
             return this_index < bar_index;
-        })
+        });
         ticks_on_left.transition()
             .duration(500)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 - width_treemap/2 }, 0)`);
 
         const bars_on_right = d3.selectAll(".serie > rect").filter((rect)=>{
-            const this_index = data.map(d=>d.id).indexOf(rect.data.id)
-            return this_index > bar_index
-        })
+            const this_index = data.map(d=>d.id).indexOf(rect.data.id);
+            return this_index > bar_index;
+        });
         bars_on_right.transition()
             .duration(500)
             .attr("width", x.bandwidth())
@@ -464,7 +457,7 @@ V.update = (data, stackMode, baseLayer) => {
         const ticks_on_right = xAxis.selectAll(".tick").filter((tick)=>{
             const this_index = x.domain().indexOf(tick);
             return this_index > bar_index;
-        })
+        });
         ticks_on_right.transition()
             .duration(500)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 + width_treemap/2 }, 0)`);
@@ -473,7 +466,6 @@ V.update = (data, stackMode, baseLayer) => {
         // ref: https://observablehq.com/@d3/treemap
 
         let data_misto = d.data.levels_doubt.find(k=>k.name=="misto");
-        // console.log(d.data);
 
         let height_misto = 0;
 

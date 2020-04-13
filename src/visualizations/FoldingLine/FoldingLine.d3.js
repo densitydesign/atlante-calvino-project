@@ -4,7 +4,7 @@ import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
-let width, legendWidth, height, lvl0 = 10, margin = {top: 25, right: 40, bottom: 20+lvl0, left: 40},
+let width, legendWidth, height, lvl0 = 10, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24},
     svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
@@ -43,7 +43,7 @@ V.initialize = (init_options) => {
             {
                 'offset': '75%',
                 'color': '#bbbbff',
-                'color': '#deddff',
+                'color': '#D1D1F8',
                 'opacity': 1
             }
             ]
@@ -62,7 +62,7 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                'color': '#00c19c',
+                'color': '#6CD3BF',
                 'opacity': 1
             }
             ]
@@ -138,7 +138,7 @@ V.initialize = (init_options) => {
     
     defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
         .attr('x',0)
-        .attr('y',y(10))
+        .attr('y',y(10)-margin.top)
         .attr('width',width)
         .attr('height',height+margin.top+margin.bottom)
         .attr('clipPathUnits', "objectBoundingBox");
@@ -154,6 +154,14 @@ V.initialize = (init_options) => {
     arrow = g.append('g').classed('group-arrows', true).selectAll('.arrow');
     arrow_label = g.append('g').classed('group-arrows-labels', true).selectAll('.arrow-label');
 
+    g.append('text')
+        .attr('y',height/3 + margin.top/2)
+        .attr('x',5)
+        .attr('fill','#666666')
+        .attr('font-size','0.8571428571rem')
+        .attr('font-style','italic')
+        .text('Clicca su un elemento per evidenziarne l’occorrenza di testo dubitativo.')
+
     xAxis = master_g.append("g")
         .attr("class", "x-axis noselect")
         .attr("transform", `translate(${0},${lvl0})`);
@@ -161,15 +169,6 @@ V.initialize = (init_options) => {
     yAxis = master_g.append("g")
         .attr("class", "y-axis noselect")
         .attr("transform", `translate(${0},${0})`);
-
-    // baseLine = g.append('line');
-    // baseLine.attr('x1',x(0))
-    //     .attr('x2',x(init_options.data.length))
-    //     .attr('y1', 0)
-    //     .attr('y2', 0)
-    //     .attr('stroke', 'grey')
-    //     .attr('stroke-width', 1)
-    //     .attr('stroke-dasharray', '2 2');
 
     const zoomed = () => {
         x.range( [0, width].map(d => d3.event.transform.applyX(d)) );
@@ -207,16 +206,53 @@ V.update = (options) => {
     if (!options.transformed) {
         x.domain([0,options.data.length]);
         xAxisCall = d3.axisBottom(x)
-            .tickValues([0,options.data.length])
-            .tickFormat(d=>{
-                const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
-                return Math.floor(d) + percentage;
-            });
+            .tickValues([0,options.data.length]);
+            // .tickFormat(d=>{
+            //     const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
+            //     return Math.floor(d) + percentage;
+            // });
         xAxis.call(xAxisCall);
-
         yAxisCall = d3.axisLeft(y);
         yAxis.call(yAxisCall);
+        yAxis.append('text').classed('.y-axis-title',true).text('Livelli di annidamento')
+        yAxis.select('.domain').remove();
+        yAxis.selectAll('.tick').each(function(d){
+            const line = d3.select(this).select('line');
+            line.attr('x2',width)
+                .attr('stroke-dasharray',"0 4")
+                .attr('stroke-linecap',"round");
+        });
     }
+
+    // xAxis.select('.domain').attr('d',`M0,6 V0 h${width} V6`);
+    xAxis.selectAll('.tick').each(function(d,i){
+        const tick = d3.select(this);
+        tick.select('line').remove();
+        let percentage;
+        if (d<1) {
+            percentage = 'Inizio del testo';
+        } else if (d===options.data.length) {
+            percentage = 'Fine del testo';
+        } else {
+            percentage = `${Math.floor(d/options.data.length*100)}%`;
+        }
+        let character = 'CARATTERE ' + Math.round(d);
+        
+        const text = tick.select('text');
+        text.attr('text-anchor', i===0?'start':'end')
+            .html('');
+
+        text.append('tspan')
+            .attr('font-size', '0.8571428571rem')
+            .text(percentage);
+
+        text.append('tspan')
+            .attr('font-size', '0.6428571429rem')
+            .attr('fill','#666666')
+            .attr('x',0)
+            .attr('dy','1rem')
+            .text(character);
+    });
 
     // const text = options.data;
     let doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
@@ -252,9 +288,9 @@ V.update = (options) => {
             .attr('fill', gradient('capitolo'))
             .merge(chapter.selectAll('rect'))
             .attr('width', d=>x(d.end)-x(d.start))
-            .attr('height', y(0)-y(10)+lvl0)
+            .attr('height', (y(0)-y(10)+lvl0)/2*3 + margin.top)
             .attr('x', d=>x(d.start))
-            .attr('y', y(10));
+            .attr('y', y(10) - margin.top);
 
     chapter.selectAll('text')
             .data(d=>{return [d]})
@@ -262,7 +298,7 @@ V.update = (options) => {
             .attr('font-size','0.65rem')
             .merge(chapter.selectAll('text'))
             .attr('x', d=>x(d.start)+5)
-            .attr('y', y(10)+10)
+            .attr('y', y(10)-6)
             .text(d=>d.titolo);
 
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
@@ -310,9 +346,8 @@ V.update = (options) => {
         .attr('x',d=>x(d.start))
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
-        .attr('height',d=>Math.abs(y(d.depth)));
-    
-    mixed.style("display", "none");
+        .attr('height',d=>Math.abs(y(d.depth)))
+        .style("display", "none");
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
@@ -339,9 +374,8 @@ V.update = (options) => {
         .style('pointer-events ','none')
         .merge(label)
         .attr('transform',d=>'translate('+( x(d.doubt_x) + (x(d.doubt_end) - x(d.doubt_start))/2 )+','+(y(d.depth)-4)+') rotate(-21)')
-        .text(d=>'td '+ (+d.id.replace('pair-','')+1));
-
-    label.style("display", "none");
+        .text(d=>'td '+ (+d.id.replace('pair-','')+1))
+        .style("display", "none");
     
     drawArrows();
 }
