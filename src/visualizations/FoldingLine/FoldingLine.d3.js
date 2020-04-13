@@ -42,7 +42,6 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                'color': '#bbbbff',
                 'color': '#D1D1F8',
                 'opacity': 1
             }
@@ -81,7 +80,6 @@ V.initialize = (init_options) => {
             },
             {
                 'offset': '75%',
-                // 'color': '#ffc806',
                 'color': '#ffe37d',
                 'opacity': 1
             }
@@ -96,11 +94,11 @@ V.initialize = (init_options) => {
             'stops':[
             {
                 'offset': '0%',
-                'color': '#f6f6f6',
+                'color': '#f3f3f3',
                 'opacity':1
             },
             {
-                'offset': '50%',
+                'offset': '75%',
                 'color': '#ffffff',
                 'opacity': 1
             }
@@ -216,12 +214,7 @@ V.update = (options) => {
 
     if (!options.transformed) {
         x.domain([0,options.data.length]);
-        xAxisCall = d3.axisBottom(x)
-            .tickValues([0,options.data.length]);
-            // .tickFormat(d=>{
-            //     const percentage = ` (${Math.floor(d/options.data.length*100)}%)`;
-            //     return Math.floor(d) + percentage;
-            // });
+        xAxisCall = d3.axisBottom(x).tickValues([0,options.data.length]);
         xAxis.call(xAxisCall);
         yAxisCall = d3.axisLeft(y);
         yAxis.call(yAxisCall);
@@ -230,8 +223,9 @@ V.update = (options) => {
         yAxis.selectAll('.tick').each(function(d){
             const line = d3.select(this).select('line');
             line.attr('x2',width)
+                .style('stroke','#999999')
                 .attr('stroke','#999999')
-                .attr('stroke-dasharray',"0 4")
+                .attr('stroke-dasharray',"0 5")
                 .attr('stroke-linecap',"round");
         });
     }
