@@ -4,7 +4,86 @@ import GlobalData from '../../utilities/GlobalData';
 
 const V = {}
 
-let width, legendWidth, height, lvl0 = 5, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24},
+const gradientData = [
+    {
+        'id':'doubt-gradient',
+        'x1': '50%',
+        'y1': '100%',
+        'x2': '50%',
+        'y2': '0%',
+        'stops':[
+        {
+            'offset': '0%',
+            'color': '#F5F5FD',
+            'opacity':1
+        },
+        {
+            'offset': '75%',
+            'color': '#D1D1F8',
+            'opacity': 1
+        }
+        ]
+    },
+    {
+        'id':'mixed-gradient',
+        'x1': '50%',
+        'y1': '100%',
+        'x2': '50%',
+        'y2': '0%',
+        'stops':[
+        {
+            'offset': '0%',
+            'color': '#E7FCF8',
+            'opacity':1
+        },
+        {
+            'offset': '75%',
+            'color': '#6CD3BF',
+            'opacity': 1
+        }
+        ]
+    },
+    {
+        'id':'subj-gradient',
+        'x1': '50%',
+        'y1': '100%',
+        'x2': '50%',
+        'y2': '0%',
+        'stops':[
+        {
+            'offset': '0%',
+            'color': '#FFFCF0',
+            'opacity':1
+        },
+        {
+            'offset': '75%',
+            'color': '#ffe37d',
+            'opacity': 1
+        }
+        ]
+    },
+    {
+        'id':'chapter-gradient',
+        'x1': '0%',
+        'y1': '50%',
+        'x2': '100%',
+        'y2': '50%',
+        'stops':[
+        {
+            'offset': '0%',
+            'color': '#f3f3f3',
+            'opacity':1
+        },
+        {
+            'offset': '75%',
+            'color': '#ffffff',
+            'opacity': 1
+        }
+        ]
+    }
+]
+
+let width, legendWidth, height, lvl0 = 5, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24*1.5},
     svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
@@ -27,84 +106,6 @@ V.initialize = (init_options) => {
 
     const defs = svg.append('defs');
     svg_style = defs.append('style');
-    const gradientData = [
-        {
-            'id':'doubt-gradient',
-            'x1': '50%',
-            'y1': '100%',
-            'x2': '50%',
-            'y2': '0%',
-            'stops':[
-            {
-                'offset': '0%',
-                'color': '#ffffff',
-                'opacity':1
-            },
-            {
-                'offset': '75%',
-                'color': '#D1D1F8',
-                'opacity': 1
-            }
-            ]
-        },
-        {
-            'id':'mixed-gradient',
-            'x1': '50%',
-            'y1': '100%',
-            'x2': '50%',
-            'y2': '0%',
-            'stops':[
-            {
-                'offset': '0%',
-                'color': '#ffffff',
-                'opacity':1
-            },
-            {
-                'offset': '75%',
-                'color': '#6CD3BF',
-                'opacity': 1
-            }
-            ]
-        },
-        {
-            'id':'subj-gradient',
-            'x1': '50%',
-            'y1': '100%',
-            'x2': '50%',
-            'y2': '0%',
-            'stops':[
-            {
-                'offset': '0%',
-                'color': '#ffffff',
-                'opacity':1
-            },
-            {
-                'offset': '75%',
-                'color': '#ffe37d',
-                'opacity': 1
-            }
-            ]
-        },
-        {
-            'id':'chapter-gradient',
-            'x1': '0%',
-            'y1': '50%',
-            'x2': '100%',
-            'y2': '50%',
-            'stops':[
-            {
-                'offset': '0%',
-                'color': '#f3f3f3',
-                'opacity':1
-            },
-            {
-                'offset': '75%',
-                'color': '#ffffff',
-                'opacity': 1
-            }
-            ]
-        }
-    ]
     let gradient = defs.selectAll('linearGradient');
     gradient = gradient.data(gradientData, d=>d.id)
         .enter()
@@ -218,8 +219,22 @@ V.update = (options) => {
         xAxis.call(xAxisCall);
         yAxisCall = d3.axisLeft(y);
         yAxis.call(yAxisCall);
-        yAxis.append('text').classed('.y-axis-title',true).text('Livelli di annidamento')
+        
+        yAxis.append('text')
+            .classed('axis-label',true)
+            .attr('x',0)
+            .attr('y',0)
+            .attr('transform','translate('+(-margin.left/2-3)+', '+y(5)+') rotate(-90)')
+            .attr('text-anchor','middle')
+            .attr('font-size','0.6428571429rem')
+            .attr('font-family','HKGrotesk')
+            .attr('fill','#999999')
+            .text('LIVELLI DI ANNIDAMENTO');
+
         yAxis.select('.domain').remove();
+            // .attr('d', `M${-6},${y(10)} m-5,5 l5,-5 l5,5 m-5,-5 V${y(8.75)} M${-6},${y(1.25)} V${y(0)}`)
+            // .attr('stroke','#999999');
+
         yAxis.selectAll('.tick').each(function(d){
             const line = d3.select(this).select('line');
             line.attr('x2',width)
@@ -293,7 +308,8 @@ V.update = (options) => {
             .attr('fill', gradient('capitolo'))
             .merge(chapter.selectAll('rect'))
             .attr('width', d=>x(d.end)-x(d.start))
-            .attr('height', (y(0)-y(10)+lvl0)/2*3 + margin.top)
+            // .attr('height', (y(0)-y(10)+lvl0)/2*3 + margin.top)
+            .attr('height', (y(0)-y(10)+lvl0) + margin.top)
             .attr('x', d=>x(d.start))
             .attr('y', y(10) - margin.top);
 
@@ -311,14 +327,14 @@ V.update = (options) => {
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
         .attr('stroke-width',1)
-        .attr('stroke', color('dubitativo'))
-        .attr('fill', d=> d.depth===0?color('dubitativo'):gradient('dubitativo'))
         .merge(doubt)
-        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2* (d.depth?Math.abs(y(d.depth)):lvl0) ) )
+        .attr('stroke', color('dubitativo'))
+        .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="doubt-gradient").stops[1].color:gradient('dubitativo'))
+        .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2* (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ) )
         .attr('x',d=>x(d.doubt_x))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
-        .attr('height',d=> (d.depth?Math.abs(y(d.depth)):lvl0) )
+        .attr('height',d=> (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) )
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt','mixed'],d)
         });
@@ -344,14 +360,14 @@ V.update = (options) => {
     mixed = mixed.enter().append('rect')
         .classed('mixed', true)
         .attr('stroke-width',1)
+        .merge(mixed)
         .attr('stroke', color('misto'))
         .attr('fill', d=> d.depth===0?color('misto'):gradient('misto'))
-        .merge(mixed)
         .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + (x(d.end)-x(d.start)+2*Math.abs(y(d.depth||0))) )
         .attr('x',d=>x(d.start))
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
-        .attr('height',d=>Math.abs(y(d.depth)))
+        .attr('height',d=>Math.abs(y(d.depth))+lvl0)
         .style("display", globalUpdateOptions.showMisto?'block':'none');
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
@@ -359,14 +375,14 @@ V.update = (options) => {
     subject = subject.enter().append('rect')
         .classed('subject', true)
         .attr('stroke-width', 1)
-        .attr('stroke', d=>color('soggetto'))
-        .attr('fill', d=> d.depth===0?color('soggetto'):gradient('soggetto'))
         .merge(subject)
-        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*(d.depth?Math.abs(y(d.depth)):lvl0) ))
+        .attr('stroke', d=>color('soggetto'))
+        .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="subj-gradient").stops[1].color:gradient('soggetto'))
+        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*(d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ))
         .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))
-        .attr('height',d=> (d.depth?Math.abs(y(d.depth)):lvl0) )
+        .attr('height',d=> (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) )
         .on('click', (d,i)=>{
             selectSiblings(['subject','doubt','mixed'],d)
         });
@@ -423,7 +439,7 @@ function selectSiblings(arrSelectors, data) {
         .filter(element=>element.id===data.id)
         .classed('selected', function(){
             _selected = !d3.select(this).classed('selected');
-            return !d3.select(this).classed('selected')
+            return !d3.select(this).classed('selected');
         });
 
     const index = selected_pairs.indexOf(data);
@@ -451,6 +467,7 @@ function drawArrows(){
         .attr('stroke',color('dubitativo'))
         .merge(arrow)
         .attr('d', d=>{
+
             let y0 = lvl0;
             let y1 = y0+(d.depth?Math.abs(y(d.depth)):y0)/2;
             let x0 = x(Math.max(d.doubt_end-5, d.doubt_start));

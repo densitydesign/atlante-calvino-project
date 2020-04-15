@@ -58,17 +58,29 @@ class FoldingLine extends Component {
       display: this.props.data?'block':'none',
     }
     return <div style={{height: 'calc(50% + 174px)'}}>
-      <div className="title-comportamento" style={{height:58, fontWeight:600, textTransform:"uppercase", display:"flex", alignItems:"center", padding:"0 "+window.innerWidth/24+"px"}}>Comportamento del fenomeno dubitativo in {this.props.data.title}, {this.props.data.year} ({this.props.data.id})</div>
+      <div className="title-comportamento"
+          style={{
+            height:58,
+            fontWeight:600,
+            textTransform:"uppercase",
+            display:"flex",
+            alignItems:"center",
+            padding:"0 "+window.innerWidth/24+"px"
+          }}>
+          Comportamento del fenomeno dubitativo nel testo selezionato
+      </div>
       <svg id="folding-line" style={style} ref={this._setRef.bind(this)}></svg>
-      <div className="legend-comportamento" style={{
-        height: '170px',
-        paddingBottom:4,
-        backgroundColor:"#f3f3f3",
-        display:'grid',
-        gridTemplateColumns: '[margin-left] 2fr [col-1] 11fr [col-2] 11fr [col-3] 11fr [col-4] 11fr [margin-right] 2fr',
-        gridTemplateRows: '[headers] 26px [switches] 26px [descriptions] auto',
-        alignItems:'end'
-        }}>
+      <div className="legend-comportamento"
+          style={{
+            height: '170px',
+            paddingBottom:4,
+            backgroundColor:"#f3f3f3",
+            display:'grid',
+            gridTemplateColumns: '[margin-left] 2fr [col-1] 11fr [col-2] 11fr [col-3] 11fr [col-4] 11fr [margin-right] 2fr',
+            gridTemplateRows: '[headers] 26px [switches] 26px [descriptions] auto',
+            alignItems:'end'
+          }}>
+            
           <h4 style={{gridColumnStart:'col-1',gridRowStart:'headers',paddingLeft:24}}>Tipi di testo</h4>
           <h4 style={{gridColumnStart:'col-2',gridRowStart:'headers',paddingLeft:24}}>Fenomeno dubitativo</h4>
           <h4 style={{gridColumnStart:'col-3',gridRowStart:'headers',paddingLeft:24}}>Annidamenti</h4>
@@ -82,21 +94,22 @@ class FoldingLine extends Component {
           </div>
           
           <div style={{gridColumnStart:'col-1',gridRowStart:'descriptions',alignSelf:'start'}}>
-            { [['Soggetto',"#ffc806"],['Misto',"#00c19c"],['Dubitativo',"#bbbbff"]].map((c,i)=>{
+            {[['Soggetto',"#ffc806"],['Misto',"#00c19c"],['Dubitativo',"#bbbbff"]].map((c,i)=>{
               return <div key={'color'+i}>
                 <span style={{backgroundColor:c[1],display:'inline-block',width:16,height:8,borderRadius:4,marginRight:8}}></span>{c[0]}
               </div>
-            }) }
+            })}
           </div>
           <div style={{gridColumnStart:'col-2',gridRowStart:'descriptions'}}>
-            <img width="224" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-fenomenodubitativo.svg'} />
+            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-fenomenodubitativo.svg'} />
           </div>
           <div style={{gridColumnStart:'col-3',gridRowStart:'switches',gridRowEnd:'span 2'}}>
-            <img width="216" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-annidamenti.svg'} />
+            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-annidamenti.svg'} />
           </div>
           <div style={{gridColumnStart:'col-4',gridRowStart:'descriptions'}}>
-            <img width="216" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-testomisto.svg'} />
+            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-testomisto.svg'} />
           </div>
+
       </div>
     </div>;
   }

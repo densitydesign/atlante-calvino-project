@@ -7,8 +7,8 @@ let onSelectedElement;
 let width,
     legentWidth,
     height,
-    margin = {top: 87, right: window.innerWidth/24, bottom: 87, left: window.innerWidth/24},
-    marginLegend = {top:7.5, right:7.5, bottom:7.5, left:7.5},
+    margin = {top: 87, right: window.innerWidth/24, bottom: 87, left: window.innerWidth/24*1.5},
+    // marginLegend = {top:7.5, right:7.5, bottom:7.5, left:7.5},
     showPercentage,
     stackModeProperties = {
         "normalized": ["dubbio_perc", "misto_perc", "soggetto_perc", "definitivo_perc"],
@@ -159,7 +159,6 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("dx",45)
         .attr("fill","#666666")
         .text("Clicca su una categoria per riordinare");
-        // "Ripristina ordine di prima pubblicazione"
 
     orderMessage = svg.append('text')
         .classed(".order-message",true)
@@ -186,6 +185,16 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
     y.range([height, 0]);
     yAxis = svg.append("g").classed("axis y-axis", true)
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+    yAxis.append('text')
+        .classed('y-axis-label',true)
+        .attr('x',0)
+        .attr('y',0)
+        .attr('font-size','0.6428571429rem')
+        .attr('font-family','HKGrotesk')
+        .attr('transform','translate('+(-margin.left/2-3)+', '+(height/2)+') rotate(-90)')
+        .attr('text-anchor','middle')
+        .attr('fill','#999999');
 
     // Run update to populate viz
     V.update(data_for_update.data, data_for_update.stackMode);
@@ -227,50 +236,55 @@ V.update = (data, stackMode, baseLayer) => {
             const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;
         }));
-    xAxis.selectAll(".tick")
-        .each(function(d){
-            const tick = d3.select(this);
-            tick.select("text").attr("font-weight","600");
-            const width = Number(tick.node().getBoundingClientRect().width + 40);
-            const dy = 10;
+    // xAxis.selectAll(".tick")
+    //     .each(function(d){
+    //         const tick = d3.select(this);
+    //         tick.select("text").attr("font-weight","600");
+    //         const width = Number(tick.node().getBoundingClientRect().width + 40);
+    //         const dy = 10;
 
-            tick.append('rect')
-                .attr('width',width)
-                .attr('height',20)
-                .attr('fill','white')
-                .attr('stroke','black')
-                .attr('x',-width/2)
-                .attr('y',dy)
-                .attr('rx',2);
+    //         tick.append('rect')
+    //             .attr('width',width)
+    //             .attr('height',20)
+    //             .attr('fill','white')
+    //             .attr('stroke','black')
+    //             .attr('x',-width/2)
+    //             .attr('y',dy)
+    //             .attr('rx',2);
 
-            const close = tick.append('g')
-                .attr('transform','translate('+(width/2-20)+','+dy+')')
-                .style('cursor','pointer')
-                .on('click',()=>{
-                    if (performed_selection_data) {
-                        performed_selection_data=null;
-                        tick.style("display", "none");
-                        removeSelectionAll();
-                    }
-                });
-            close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
-            close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
-            close.append('line').attr('stroke','black')
-                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-                .attr('transform','translate(10,10) rotate(45) ');
-            close.append('line').attr('stroke','black')
-                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-                .attr('transform','translate(10,10) rotate(-45) ');
-            const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
-            tick.node().appendChild(title);
-        });
+    //         const close = tick.append('g')
+    //             .attr('transform','translate('+(width/2-20)+','+dy+')')
+    //             .style('cursor','pointer')
+    //             .on('click',()=>{
+    //                 if (performed_selection_data) {
+    //                     performed_selection_data=null;
+    //                     tick.style("display", "none");
+    //                     removeSelectionAll();
+    //                 }
+    //             });
+    //         close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
+    //         close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
+    //         close.append('line').attr('stroke','black')
+    //             .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+    //             .attr('transform','translate(10,10) rotate(45) ');
+    //         close.append('line').attr('stroke','black')
+    //             .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+    //             .attr('transform','translate(10,10) rotate(-45) ');
+    //         const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
+    //         tick.node().appendChild(title);
+    //     });
     xAxis.select(".domain").remove();
     
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
     yAxis.call(yAxisCall)
-        .call(g => yAxis.selectAll(".domain, line").remove());
+        .call(g => yAxis.selectAll("line").remove());
     
-    console.log("declare functions");
+    let domain_x = -margin.left/2
+    yAxis.select('.domain').remove();
+        // .attr('d', `M${domain_x},5 m-5,5 l5,-5 l5,5 m-5,-5 v${height/4} m0,${height/2} v${height/4-10}`)
+        // .attr('stroke','#999999');
+    
+    yAxis.select('.y-axis-label').text('LUNGHEZZA DEL TESTO '+(stackMode==="normalized"?'NORMALIZZATA':'IN CARATTERI'));
 
     const updateLegend = () => {
         legendItem = legendItem.data(legendData, d=>d.id)
@@ -324,7 +338,7 @@ V.update = (data, stackMode, baseLayer) => {
                 .attr("width", x.bandwidth())
                 .style("opacity", .8);
 
-        const allTicks=xAxis.selectAll(".tick")
+        const allTicks=xAxis.selectAll(".tick");
         allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`)
                 .style("display","none");
 
@@ -333,6 +347,7 @@ V.update = (data, stackMode, baseLayer) => {
             .duration(500)
             .style("opacity",0)
             .remove();
+
         leaf_soggetto=leaf_soggetto.data([]);
         leaf_soggetto.exit().transition()
             .duration(500)
@@ -346,7 +361,6 @@ V.update = (data, stackMode, baseLayer) => {
     };
     removeSelectionAll();  // also calls updateLegend() inside
 
-    console.log("draw bars");
     serie = serie.data(series, d=>d.key);
     serie.exit().remove();
     serie = serie.enter().append("g")
@@ -375,7 +389,11 @@ V.update = (data, stackMode, baseLayer) => {
                 selection(d, d3.select(this).classed("selected"));
             }
             else {
-                removeSelectionAll();
+                if (performed_selection_data) {
+                    performed_selection_data=null;
+                    d3.selectAll(".x-axis.stacked-bars-dubbio .tick").style("display", "none");
+                    removeSelectionAll();
+                };
             }
         });
 
