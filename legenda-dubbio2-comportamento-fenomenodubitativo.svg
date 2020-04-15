@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235" height="100.379" viewBox="0 0 235 100.379">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#deddff"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="0.958" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe37d"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_700" data-name="Group 700" transform="translate(-277 -600.621)">
+    <rect id="Rectangle_7340" data-name="Rectangle 7340" width="235" height="100" transform="translate(277 601)" fill="#f3f3f3"/>
+    <text id="Formula" transform="translate(317.03 676)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-21.624" y="0">Formula</tspan></text>
+    <rect id="Rectangle_6969" data-name="Rectangle 6969" width="22" height="14" transform="translate(333 625) rotate(90)" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_7335" data-name="Rectangle 7335" width="22" height="14" transform="translate(319 625) rotate(90)" fill="url(#linear-gradient-2)"/>
+    <path id="Path_1361" data-name="Path 1361" d="M24.56,0H69.306" transform="translate(269.542 646.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <text id="_è_il_numero_identificativo_dell_occorrenza_di_testo_dubitativo" data-name="# è il numero identificativo
+dell’occorrenza di testo dubitativo" transform="translate(352 610)" fill="#666" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0"># è il numero identificativo</tspan><tspan x="0" y="12">dell’occorrenza di testo dubitativo</tspan></text>
+    <text id="Parola_formula_che_precede_il_testo_dubitativo_se_presente_collega_l_occorrenza_di_testo_dubitativo_al_suo_testo_soggetto." data-name="Parola “formula” che precede
+il testo dubitativo; se presente, collega l’occorrenza di testo dubitativo al suo testo soggetto." transform="translate(352 653)" fill="#666" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="9">Parola “formula” che precede</tspan><tspan x="0" y="21">il testo dubitativo; se presente, </tspan><tspan x="0" y="33">collega l’occorrenza di testo </tspan><tspan x="0" y="45">dubitativo al suo testo soggetto.</tspan></text>
+    <text id="Td_" data-name="Td #" transform="translate(324.791 622.147) rotate(-30)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Td #</tspan></text>
+    <path id="Path_1362" data-name="Path 1362" d="M1714.029,4018.777v11.151h-19.073v-11.151" transform="translate(-1387 -3371)" fill="none" stroke="#5151fc" stroke-width="1" stroke-dasharray="2 2"/>
+    <line id="Line_372" data-name="Line 372" x2="14" transform="translate(305 625)" fill="none" stroke="#ffc806" stroke-width="1"/>
+    <line id="Line_373" data-name="Line 373" x2="14" transform="translate(319 625)" fill="none" stroke="#bbf" stroke-width="1"/>
+  </g>
+</svg>
