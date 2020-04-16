@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+#folding-line .mixed {
+    pointer-events: none;
+}
+
 .there-is-selection .doubt, .there-is-selection .subject, .there-is-selection .mixed {
     opacity:0.2;
 }

@@ -43,29 +43,30 @@ const structureData = (arr) => {
     return obj;
   })
 
-  for (var i=arr.length-1; i>-1; i--) {
-    const d = arr[i];
-    if (d.is_alternative) {
-      const alternative_data = {
-        'start': +d.doubt_start,
-        'end': +d.doubt_end
-      }
+  // Handle alternatives
+  // for (var i=arr.length-1; i>-1; i--) {
+  //   const d = arr[i];
+  //   if (d.is_alternative) {
+  //     const alternative_data = {
+  //       'start': +d.doubt_start,
+  //       'end': +d.doubt_end
+  //     }
 
-      d.alternatives.push(alternative_data)
-      d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
+  //     d.alternatives.push(alternative_data)
+  //     d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
 
-      if (i > 1 && arr[i-1].is_alternative) {
-        // console.log('preserve', arr[i-1].id, 'remove', d.id)
-        arr[i-1].alternatives = d.alternatives
-        // arr[i-1].doubt_end = +d.doubt_end
-        // do not return the current element
-        // its information are inside "arr[i-1]"
-        arr.splice(i,1)
-      } else {
-        d.doubt_end = d.alternatives[d.alternatives.length-1].end
-      }
-    }
-  }
+  //     if (i > 1 && arr[i-1].is_alternative) {
+  //       // console.log('preserve', arr[i-1].id, 'remove', d.id)
+  //       arr[i-1].alternatives = d.alternatives
+  //       // arr[i-1].doubt_end = +d.doubt_end
+  //       // do not return the current element
+  //       // its information are inside "arr[i-1]"
+  //       arr.splice(i,1)
+  //     } else {
+  //       d.doubt_end = d.alternatives[d.alternatives.length-1].end
+  //     }
+  //   }
+  // }
 
   let counter = 0;
   const identifyParent = (d,list) => {
@@ -223,7 +224,99 @@ class ProcessDoubting extends Component {
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
       // json = json.filter(d=>d.id==="S153");
       json.forEach(d=>{
+        // console.log(d)
         d.details = structureData(d.details);
+        const _level_doubts = [
+          {
+            name:'definitivo',
+            children: [
+              {
+                name: "0",
+                value:0
+              }
+            ]
+          },
+          {
+            name:'dubbio',
+            children: [
+              {
+                name: "0",
+                value:0
+              }
+            ]
+          }
+        ]
+
+        // console.log(d.details)
+
+        // Temptative new calculation of levels_doubts
+        // d.chunks.forEach(chunk=>{
+        //   if (chunk.category === "definitivo") {
+        //     _level_doubts[0].children[0].value += chunk.end-chunk.start;
+        //   } else if (chunk.category === "dubbio") {
+        //     _level_doubts[1].children[0].value += chunk.end-chunk.start;
+        //   } else if (chunk.category === "soggetto") {
+        //     if (!_level_doubts.find(l=>l.name==="soggetto")) {
+        //       const obj = {
+        //         name:"soggetto",
+        //         children: []
+        //       };
+        //       _level_doubts.push(obj);
+        //     };
+        //     const _det = d.details.filter(dd=>chunk.start>=dd.subj_start && chunk.end<=dd.subj_end);
+        //     const last_det = _det[_det.length-1];
+        //     if (last_det) {
+        //       const depth = last_det.depth.toString();
+
+        //       const soggetto = _level_doubts.find(l=>l.name==="soggetto");
+        //       if (!soggetto.children.find(l=>l.name===depth)) {
+        //         soggetto.children.push({
+        //           name: depth,
+        //           value:0
+        //         })
+        //       }
+        //       const annidamento = soggetto.children.find(l=>l.name===depth);
+        //       annidamento.value += chunk.end-chunk.start;
+        //     }
+            
+            
+        //   } else if (chunk.category === "misto") {
+        //     if (!_level_doubts.find(l=>l.name==="misto")) {
+        //       const obj = {
+        //         name:"misto",
+        //         children: []
+        //       };
+        //       _level_doubts.push(obj);
+        //     };
+        //     const _det = d.details.filter(dd=>chunk.start>=dd.subj_start && chunk.end<=dd.subj_end);
+        //     const last_det = _det[_det.length-1];
+        //     if (last_det) {
+        //       const depth = last_det.depth.toString();
+
+        //       const misto = _level_doubts.find(l=>l.name==="misto");
+        //       if (!misto.children.find(l=>l.name===depth)) {
+        //         misto.children.push({
+        //           name: depth,
+        //           value:0
+        //         })
+        //       }
+        //       const annidamento = misto.children.find(l=>l.name===depth);
+        //       annidamento.value += chunk.end-chunk.start;
+        //     }
+        //   }
+        // });
+
+        // let total_length = 0;
+        // _level_doubts.forEach(l=>{
+        //   l.children.forEach(d=>{
+        //     total_length+=d.value;
+        //   })
+        // });
+        // if (d.length!==total_length) {
+        //   console.warn('there is a mismatch in the calculated length of:'+d.id+'-'+d.title+'\ntext lenght='+d.length+'\ncalculated length='+total_length);
+        // }
+        // d.levels_doubt = _level_doubts;
+        
       });
       return json;
     }).then(data=>{

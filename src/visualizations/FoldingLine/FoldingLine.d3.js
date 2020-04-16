@@ -133,11 +133,11 @@ V.initialize = (init_options) => {
     
     y = d3.scaleLinear()
         .range([-height/3*2, 0])
-        .domain([10,0]);
+        .domain([14,0]);
     
     defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
         .attr('x',0)
-        .attr('y',y(10)-margin.top)
+        .attr('y',y(y.domain()[0])-margin.top)
         .attr('width',width)
         .attr('height',height+margin.top+margin.bottom)
         .attr('clipPathUnits', "objectBoundingBox");
@@ -238,7 +238,7 @@ V.update = (options) => {
             .text('LIVELLI DI ANNIDAMENTO');
 
         yAxis.select('.domain').remove();
-            // .attr('d', `M${-6},${y(10)} m-5,5 l5,-5 l5,5 m-5,-5 V${y(8.75)} M${-6},${y(1.25)} V${y(0)}`)
+            // .attr('d', `M${-6},${y(y.domain()[0])} m-5,5 l5,-5 l5,5 m-5,-5 V${y(8.75)} M${-6},${y(1.25)} V${y(0)}`)
             // .attr('stroke','#999999');
 
         yAxis.selectAll('.tick').each(function(d){
@@ -314,10 +314,10 @@ V.update = (options) => {
             .attr('fill', gradient('capitolo'))
             .merge(chapter.selectAll('rect'))
             .attr('width', d=>x(d.end)-x(d.start))
-            // .attr('height', (y(0)-y(10)+lvl0)/2*3 + margin.top)
-            .attr('height', (y(0)-y(10)+lvl0) + margin.top)
+            // .attr('height', (y(0)-y(y.domain()[0])+lvl0)/2*3 + margin.top)
+            .attr('height', (y(0)-y(y.domain()[0])+lvl0) + margin.top)
             .attr('x', d=>x(d.start))
-            .attr('y', y(10) - margin.top);
+            .attr('y', y(y.domain()[0]) - margin.top);
 
     chapter.selectAll('text')
             .data(d=>{return [d]})
@@ -325,7 +325,7 @@ V.update = (options) => {
             .attr('font-size','0.65rem')
             .merge(chapter.selectAll('text'))
             .attr('x', d=>x(d.start)+5)
-            .attr('y', y(10)-6)
+            .attr('y', y(y.domain()[0])-6)
             .text(d=>d.titolo);
 
     doubt = doubt.data(doubts.reverse(), d=>options.data.id+'-doubt-'+d.id);
@@ -375,9 +375,7 @@ V.update = (options) => {
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth))+lvl0)
         .style("display", globalUpdateOptions.showMisto?'block':'none')
-        .on('click', (d,i)=>{
-            selectSiblings(['subject','doubt','mixed'],d)
-        });
+        
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();

@@ -9,8 +9,8 @@ class FoldingLine extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showLabels:true,
-      showMisto:true
+      showLabels:false,
+      showMisto:false
     }
   }
   _setRef(componentNode) {

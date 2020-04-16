@@ -307,8 +307,10 @@ V.update = (data, stackMode, baseLayer) => {
                 } else if (d.id.includes('dubbio')) {
                     return 'translate(0,19)';
                 } else if (d.id.includes('soggetto')) {
-                    let sss = d.id.includes('-')?Number(d.id.split('-')[1]):1;
-                    sss = sss===7?6:sss;
+                    let sss = legendData.filter(item=>item.id.includes('soggetto')).map(item=>item.id).indexOf(d.id)
+                    sss++;
+                    // let sss = d.id.includes('-')?Number(d.id.split('-')[1]):1;
+                    // sss = sss===7?6:sss;
                     return 'translate('+135*sss+',0)';
                 } else if (d.id.includes('misto')) {
                     let mmm = d.id.includes('-')?Number(d.id.split('-')[1]):1;
@@ -489,8 +491,6 @@ V.update = (data, stackMode, baseLayer) => {
 
         // draw treemap here
         // ref: https://observablehq.com/@d3/treemap
-
-        console.log(d)
 
         let data_misto = d.data.levels_doubt.find(k=>k.name=="misto");
 
