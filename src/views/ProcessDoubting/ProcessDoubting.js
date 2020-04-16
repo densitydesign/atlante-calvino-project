@@ -44,29 +44,29 @@ const structureData = (arr) => {
   })
 
   // Handle alternatives
-  // for (var i=arr.length-1; i>-1; i--) {
-  //   const d = arr[i];
-  //   if (d.is_alternative) {
-  //     const alternative_data = {
-  //       'start': +d.doubt_start,
-  //       'end': +d.doubt_end
-  //     }
+  for (var i=arr.length-1; i>-1; i--) {
+    const d = arr[i];
+    if (d.is_alternative) {
+      const alternative_data = {
+        'start': +d.doubt_start,
+        'end': +d.doubt_end
+      }
 
-  //     d.alternatives.push(alternative_data)
-  //     d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
+      d.alternatives.push(alternative_data)
+      d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
 
-  //     if (i > 1 && arr[i-1].is_alternative) {
-  //       // console.log('preserve', arr[i-1].id, 'remove', d.id)
-  //       arr[i-1].alternatives = d.alternatives
-  //       // arr[i-1].doubt_end = +d.doubt_end
-  //       // do not return the current element
-  //       // its information are inside "arr[i-1]"
-  //       arr.splice(i,1)
-  //     } else {
-  //       d.doubt_end = d.alternatives[d.alternatives.length-1].end
-  //     }
-  //   }
-  // }
+      if (i > 1 && arr[i-1].is_alternative) {
+        // console.log('preserve', arr[i-1].id, 'remove', d.id)
+        arr[i-1].alternatives = d.alternatives
+        // arr[i-1].doubt_end = +d.doubt_end
+        // do not return the current element
+        // its information are inside "arr[i-1]"
+        arr.splice(i,1)
+      } else {
+        d.doubt_end = d.alternatives[d.alternatives.length-1].end
+      }
+    }
+  }
 
   let counter = 0;
   const identifyParent = (d,list) => {

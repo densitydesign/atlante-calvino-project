@@ -133,7 +133,7 @@ V.initialize = (init_options) => {
     
     y = d3.scaleLinear()
         .range([-height/3*2, 0])
-        .domain([14,0]);
+        .domain([10,0]);
     
     defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
         .attr('x',0)
