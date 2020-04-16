@@ -174,7 +174,7 @@ V.initialize = (init_options) => {
     master_g = svg.append('g').attr('transform', 'translate('+margin.left+','+(margin.top + height/3*2)+')');
 
     g = master_g.append('g');
-
+           
     chapter = g.append('g').classed('group-chapters', true).style('clip-path','url(#cut-off-bottom)').style('pointer-events','none').selectAll('.chapter');
 
     xAxis = g.append("g")
@@ -191,6 +191,12 @@ V.initialize = (init_options) => {
     label = g.append('g').classed('group-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.label');
     arrow = g.append('g').classed('group-arrows', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow');
     arrow_label = g.append('g').classed('group-arrows-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow-label');
+
+    baseLine = g.append('path')
+        .classed('baseline',true)
+        .attr('fill','none')
+        .attr('stroke','black')
+        .attr('d',`M0,${lvl0+6} v${-6} h${width} v${6}`);
 
     g.append('text')
         .attr('y',height/3 + margin.top/2)
@@ -244,7 +250,7 @@ V.update = (options) => {
                 .attr('stroke-linecap',"round");
         });
     }
-
+    xAxis.select('.domain').remove();
     xAxis.selectAll('.tick').each(function(d,i){
         const tick = d3.select(this);
         tick.select('line').remove();
@@ -288,7 +294,7 @@ V.update = (options) => {
                     d.subj_x-= offset;
                 }   
             });
-    })
+    });
     const subjects = doubts.filter(d=>d.open);
 
     const chapters = GlobalData.chapters_subdivision.filter(d=>{
@@ -326,7 +332,7 @@ V.update = (options) => {
     doubt.exit().remove();
     doubt = doubt.enter().append('rect')
         .classed('doubt', true)
-        .attr('stroke-width',1)
+        .attr('stroke-width',1.5)
         .merge(doubt)
         .attr('stroke', color('dubitativo'))
         .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="doubt-gradient").stops[1].color:gradient('dubitativo'))
@@ -336,49 +342,52 @@ V.update = (options) => {
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=> (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) )
         .on('click', (d,i)=>{
-            selectSiblings(['subject','doubt','mixed'],d)
+            selectSiblings(['subject','doubt','mixed'],d);
         });
 
-    let mixed_data = []
+    let mixed_data = [];
     options.data.chunks
         .filter(d=>d.category==='misto')
         .forEach(d=>{
             subjects.filter(dd=>dd.subj_start<=d.start&&dd.subj_end>=d.end)
-                    .forEach(dd=>{
-                        let obj = {
-                            id: dd.id,
-                            start: d.start,
-                            end: d.end,
-                            depth: dd.depth
-                        }
-                        mixed_data.push(obj)
-                    })
-        })
+                .forEach(dd=>{
+                    let obj = {
+                        id: dd.id,
+                        start: d.start,
+                        end: d.end,
+                        depth: dd.depth
+                    };
+                    mixed_data.push(obj);
+                });
+        });
     mixed_data = mixed_data.sort((a,b)=>(a.end > b.end) ? 1 : -1);
     mixed = mixed.data(mixed_data, (d,i)=>options.data.id+'-mixed-'+i);
     mixed.exit().remove();
     mixed = mixed.enter().append('rect')
         .classed('mixed', true)
-        .attr('stroke-width',1)
+        .attr('stroke-width',1.5)
         .merge(mixed)
         .attr('stroke', color('misto'))
         .attr('fill', d=> d.depth===0?color('misto'):gradient('misto'))
-        .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + (x(d.end)-x(d.start)+2*Math.abs(y(d.depth||0))) )
+        .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + ( x(d.end)-x(d.start)+ (Math.abs(y(d.depth))+lvl0)*2 ) )
         .attr('x',d=>x(d.start))
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth))+lvl0)
-        .style("display", globalUpdateOptions.showMisto?'block':'none');
+        .style("display", globalUpdateOptions.showMisto?'block':'none')
+        .on('click', (d,i)=>{
+            selectSiblings(['subject','doubt','mixed'],d)
+        });
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
     subject = subject.enter().append('rect')
         .classed('subject', true)
-        .attr('stroke-width', 1)
+        .attr('stroke-width',1.5)
         .merge(subject)
         .attr('stroke', d=>color('soggetto'))
         .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="subj-gradient").stops[1].color:gradient('soggetto'))
-        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*(d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ))
+        .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*  (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ))
         .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
         .attr('width',d=>x(d.subj_end)-x(d.subj_start))

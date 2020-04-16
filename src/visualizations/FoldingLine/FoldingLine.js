@@ -9,8 +9,8 @@ class FoldingLine extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showLabels:false,
-      showMisto:false
+      showLabels:true,
+      showMisto:true
     }
   }
   _setRef(componentNode) {
@@ -62,12 +62,14 @@ class FoldingLine extends Component {
           style={{
             height:58,
             fontWeight:600,
-            textTransform:"uppercase",
             display:"flex",
             alignItems:"center",
             padding:"0 "+window.innerWidth/24+"px"
           }}>
-          Comportamento del fenomeno dubitativo nel testo selezionato
+          COMPORTAMENTO DEL FENOMENO DUBITATIVO NEL TESTO SELEZIONATO
+          <span style={{color:"#666666",marginLeft:"0.5rem",fontSize:"0.8571428571rem",fontStyle:"italic",fontWeight:"400"}}>
+            Usa la rotellina del mouse per fare zoom
+          </span>
       </div>
       <svg id="folding-line" style={style} ref={this._setRef.bind(this)}></svg>
       <div className="legend-comportamento"

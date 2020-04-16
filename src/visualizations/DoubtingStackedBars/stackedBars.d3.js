@@ -17,7 +17,7 @@ let width,
     legendData = [
         {
           "id": "definitivo",
-          "color": "#F3F3F3",
+          "color": "#e6e6e6",
           "label": "Definitivo",
           "percentage": undefined,
           "baseCategory": true
@@ -102,7 +102,7 @@ let width,
     yAxisCall = d3.axisLeft(y).ticks(10, "s"),
     color = d3.scaleOrdinal()
         .domain(stackModeProperties.absolute)
-        .range(["#bbbbff","#00c19c","#ffc806","#eaeaea"])
+        .range(["#bbbbff","#00c19c","#ffc806","#e6e6e6"])
         .unknown("#ccc"),
     performed_selection_data=null;
 
@@ -117,10 +117,10 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     svg = d3.select(el);
 
-    g = svg.append("g")
-        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+    g = svg.append("g").attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    g.append('rect').attr('fill','#ffffff').attr('width',width).attr('height',height)
+    // white background behing bars
+    // g.append('rect').attr('fill','#ffffff').attr('width',width).attr('height',height)
 
     legend = svg.append("g")
         .classed("legend", true)
@@ -139,6 +139,8 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .style("cursor","pointer")
         .on("click",()=>{
             let sortedData = sortData(data_for_update.data, "id", data_for_update.stackMode);
+            d3.select(".legend-message").text("Clicca su una categoria per riordinare");
+            legend.select(".legend-message-box").style("display","none");
             // d.id is the baselayer ordering setting
             // In the Update cycle it is skipped if equal to "id" or "definitivo"
             V.update(sortedData, data_for_update.stackMode, "id");
@@ -236,43 +238,48 @@ V.update = (data, stackMode, baseLayer) => {
             const item = data.find(datum=>datum.id===d);
             return item.id + " - " + item.year + " - " + item.title;
         }));
-    // xAxis.selectAll(".tick")
-    //     .each(function(d){
-    //         const tick = d3.select(this);
-    //         tick.select("text").attr("font-weight","600");
-    //         const width = Number(tick.node().getBoundingClientRect().width + 40);
-    //         const dy = 10;
+    xAxis.selectAll(".tick")
+        .each(function(d){
+            const tick = d3.select(this);
+            const dy = 10;
+            if (tick.selectAll('rect').size() > 0) {
+                tick.select('text').attr('y',dy+5.5).attr('x',-10);
+                return;
+            }
 
-    //         tick.append('rect')
-    //             .attr('width',width)
-    //             .attr('height',20)
-    //             .attr('fill','white')
-    //             .attr('stroke','black')
-    //             .attr('x',-width/2)
-    //             .attr('y',dy)
-    //             .attr('rx',2);
+            tick.select("text").attr("font-weight","600");
+            const width = Number(tick.node().getBoundingClientRect().width + 40);
+            
+            tick.append('rect')
+                .attr('width',width)
+                .attr('height',20)
+                .attr('fill','white')
+                .attr('stroke','black')
+                .attr('x',-width/2)
+                .attr('y',dy)
+                .attr('rx',2);
 
-    //         const close = tick.append('g')
-    //             .attr('transform','translate('+(width/2-20)+','+dy+')')
-    //             .style('cursor','pointer')
-    //             .on('click',()=>{
-    //                 if (performed_selection_data) {
-    //                     performed_selection_data=null;
-    //                     tick.style("display", "none");
-    //                     removeSelectionAll();
-    //                 }
-    //             });
-    //         close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
-    //         close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
-    //         close.append('line').attr('stroke','black')
-    //             .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-    //             .attr('transform','translate(10,10) rotate(45) ');
-    //         close.append('line').attr('stroke','black')
-    //             .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
-    //             .attr('transform','translate(10,10) rotate(-45) ');
-    //         const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
-    //         tick.node().appendChild(title);
-    //     });
+            const close = tick.append('g')
+                .attr('transform','translate('+(width/2-20)+','+dy+')')
+                .style('cursor','pointer')
+                .on('click',()=>{
+                    if (performed_selection_data) {
+                        performed_selection_data=null;
+                        tick.style("display", "none");
+                        removeSelectionAll();
+                    }
+                });
+            close.append('rect').attr('width',20).attr('height',20).attr('fill','transparent')
+            close.append('line').attr('stroke','black').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',20);
+            close.append('line').attr('stroke','black')
+                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                .attr('transform','translate(10,10) rotate(45) ');
+            close.append('line').attr('stroke','black')
+                .attr('x1',-6).attr('y1',0).attr('x2',6).attr('y2',0)
+                .attr('transform','translate(10,10) rotate(-45) ');
+            const title = tick.select('text').attr('y',dy+5.5).attr('x',-10).node();
+            tick.node().appendChild(title);
+        });
     xAxis.select(".domain").remove();
     
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
@@ -292,6 +299,7 @@ V.update = (data, stackMode, baseLayer) => {
         legendItem = legendItem.enter().append("g")
             .attr("class",d=>"legend-item "+d.label)
             .attr("id", d=>d.id)
+            .style("cursor","pointer")
             .merge(legendItem)
             .attr("transform", (d,i)=>{
                 if (d.id.includes('definitivo')) {
@@ -336,7 +344,7 @@ V.update = (data, stackMode, baseLayer) => {
                 .duration(500)
                 .attr("transform", `translate(0,0)`)
                 .attr("width", x.bandwidth())
-                .style("opacity", .8);
+                .style("opacity", .7);
 
         const allTicks=xAxis.selectAll(".tick");
         allTicks.attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`)
@@ -481,6 +489,8 @@ V.update = (data, stackMode, baseLayer) => {
 
         // draw treemap here
         // ref: https://observablehq.com/@d3/treemap
+
+        console.log(d)
 
         let data_misto = d.data.levels_doubt.find(k=>k.name=="misto");
 

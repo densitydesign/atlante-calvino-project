@@ -256,13 +256,6 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
 
-      // 🚨 Obsoleto 🚨
-      // const annidamenti_options = d3.nest()
-      //     .key(d=>d)
-      //     .entries(data.map(d=>d.maxNesting))
-      //     .map(d=>{return {'label':d.key,'status':false}})
-      //     .sort((a,b)=>+a.label-b.label);
-
       // 🚨 not best solution (PEZZA) 🚨
       const annidamenti_options = [
         {'label':'0','status':false},
