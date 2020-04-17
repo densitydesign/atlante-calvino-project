@@ -291,7 +291,7 @@ V.update = (data, stackMode, baseLayer) => {
         // .attr('d', `M${domain_x},5 m-5,5 l5,-5 l5,5 m-5,-5 v${height/4} m0,${height/2} v${height/4-10}`)
         // .attr('stroke','#999999');
     
-    yAxis.select('.y-axis-label').text('LUNGHEZZA DEL TESTO '+(stackMode==="normalized"?'NORMALIZZATA':'IN CARATTERI'));
+    yAxis.select('.y-axis-label').text('LUNGHEZZA DEL TESTO '+(stackMode==="normalized"?'NORMALIZZATA (PERCENTUALI)':'IN CARATTERI'));
 
     const updateLegend = () => {
         legendItem = legendItem.data(legendData, d=>d.id)
