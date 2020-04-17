@@ -18,7 +18,7 @@ let width,
         {
           "id": "definitivo",
           "color": "#e6e6e6",
-          "label": "Definitivo",
+          "label": "Non dubitativo",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -32,7 +32,7 @@ let width,
         {
           "id": "soggetto",
           "color": "#FFD337",
-          "label": "Soggetto",
+          "label": "Oggetto di dubbio",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -60,7 +60,7 @@ let width,
         {
           "id": "misto",
           "color": "#33CDAF",
-          "label": "Misto",
+          "label": "Dubitativo e oggetto di dubbio",
           "percentage": undefined,
           "baseCategory": true
         },
@@ -124,7 +124,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${margin.left},${5})`);
+        .attr("transform", `translate(${margin.left/2},${5})`);
 
     legend.append("rect")
         .classed("legend-message-box",true)
@@ -133,13 +133,13 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("rx",3)
         .attr("width",225)
         .attr("height",21)
-        .attr("x",150)
+        .attr("x",156)
         .attr("y",7)
         .style("display","none")
         .style("cursor","pointer")
         .on("click",()=>{
             let sortedData = sortData(data_for_update.data, "id", data_for_update.stackMode);
-            d3.select(".legend-message").text("Clicca su una categoria per riordinare");
+            d3.select(".legend-message").text("Clicca per riordinare");
             legend.select(".legend-message-box").style("display","none");
             // d.id is the baselayer ordering setting
             // In the Update cycle it is skipped if equal to "id" or "definitivo"
@@ -151,7 +151,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("font-weight",600)
         .attr("y",21)
         .attr("x",21)
-        .text("TIPI DI TESTO")
+        .text("TIPO DI TESTO")
         .append("tspan")
         .style("pointer-events","none")
         .classed("legend-message",true)
@@ -291,7 +291,7 @@ V.update = (data, stackMode, baseLayer) => {
         // .attr('d', `M${domain_x},5 m-5,5 l5,-5 l5,5 m-5,-5 v${height/4} m0,${height/2} v${height/4-10}`)
         // .attr('stroke','#999999');
     
-    yAxis.select('.y-axis-label').text('LUNGHEZZA DEL TESTO '+(stackMode==="normalized"?'NORMALIZZATA (PERCENTUALI)':'IN CARATTERI'));
+    yAxis.select('.y-axis-label').text('LUNGHEZZA '+(stackMode==="normalized"?'NORMALIZZATA (PERCENTUALI)':'IN CARATTERI (MIGLIAIA)'));
 
     const updateLegend = () => {
         legendItem = legendItem.data(legendData, d=>d.id)

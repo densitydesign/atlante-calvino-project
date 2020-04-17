@@ -619,21 +619,21 @@ class ProcessDoubting extends Component {
         <div className="bottom-nav navigations">
           {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Valori"
+						<Options title = "Lunghezza"
 							data = {this.state.lunghezzaTesti}
 							style = {{gridColumn: 'span 5',textAlign: 'center'}}
 							changeOptions = {this.changeLunghezzaTesti}
 						/> }
           {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Pubblicazioni"
+						<Options title = "Tipo di pubblicazione"
 							data = {this.state.pubblicazioni}
 							style = {{gridColumn: 'span 5',textAlign: 'center'}}
 							changeOptions = {this.changePubblicazioni}
 						/> }
           {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Annidamenti"
+						<Options title = "Numero di livelli"
 							data = {this.state.annidamenti}
 							style = {{gridColumn: 'span 5',textAlign: 'center'}}
 							changeOptions = {this.changeAnnidamenti}

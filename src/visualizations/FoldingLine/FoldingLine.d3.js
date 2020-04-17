@@ -184,6 +184,16 @@ V.initialize = (init_options) => {
     yAxis = g.append("g")
         .attr("class", "y-axis noselect")
         .attr("transform", `translate(${0},${0})`);
+    
+    yAxis.append('text')
+        .classed('axis-label',true)
+        .attr('x',0)
+        .attr('y',0)
+        .attr('transform','translate('+(-margin.left/2-3)+', '+y(5)+') rotate(-90)')
+        .attr('text-anchor','middle')
+        .attr('font-size','0.6428571429rem')
+        .attr('font-family','HKGrotesk')
+        .attr('fill','#999999');
 
     subject = g.append('g').classed('group-subjects', true).style('clip-path','url(#cut-off-bottom)').selectAll('.subject');
     mixed = g.append('g').classed('group-mixeds', true).style('clip-path','url(#cut-off-bottom)').selectAll('.mixed');
@@ -226,16 +236,7 @@ V.update = (options) => {
         yAxisCall = d3.axisLeft(y);
         yAxis.call(yAxisCall);
         
-        yAxis.append('text')
-            .classed('axis-label',true)
-            .attr('x',0)
-            .attr('y',0)
-            .attr('transform','translate('+(-margin.left/2-3)+', '+y(5)+') rotate(-90)')
-            .attr('text-anchor','middle')
-            .attr('font-size','0.6428571429rem')
-            .attr('font-family','HKGrotesk')
-            .attr('fill','#999999')
-            .text('LIVELLI DI ANNIDAMENTO');
+        yAxis.select('.axis-label').text('NUMERO DI LIVELLI');
 
         yAxis.select('.domain').remove();
             // .attr('d', `M${-6},${y(y.domain()[0])} m-5,5 l5,-5 l5,5 m-5,-5 V${y(8.75)} M${-6},${y(1.25)} V${y(0)}`)
@@ -276,7 +277,7 @@ V.update = (options) => {
             .attr('font-size', '0.6428571429rem')
             .attr('fill','#666666')
             .attr('x',0)
-            .attr('dy','1rem')
+            .attr('dy',14)
             .text(character);
     });
 

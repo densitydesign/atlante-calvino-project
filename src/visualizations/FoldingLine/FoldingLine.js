@@ -66,7 +66,7 @@ class FoldingLine extends Component {
             alignItems:"center",
             padding:"0 "+window.innerWidth/24+"px"
           }}>
-          COMPORTAMENTO DEL FENOMENO DUBITATIVO NEL TESTO SELEZIONATO
+          ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO
           <span style={{color:"#666666",marginLeft:"0.5rem",fontSize:"0.8571428571rem",fontStyle:"italic",fontWeight:"400"}}>
             Usa la rotellina del mouse per fare zoom
           </span>
@@ -80,35 +80,38 @@ class FoldingLine extends Component {
             display:'grid',
             gridTemplateColumns: '[margin-left] 2fr [col-1] 11fr [col-2] 11fr [col-3] 11fr [col-4] 11fr [margin-right] 2fr',
             gridTemplateRows: '[headers] 26px [switches] 26px [descriptions] auto',
-            alignItems:'end'
+            alignItems:'start'
           }}>
             
-          <h4 style={{gridColumnStart:'col-1',gridRowStart:'headers',paddingLeft:24}}>Tipi di testo</h4>
+          {/* <h4 style={{gridColumnStart:'col-1',gridRowStart:'headers',paddingLeft:24}}>Tipi di testo</h4>
           <h4 style={{gridColumnStart:'col-2',gridRowStart:'headers',paddingLeft:24}}>Fenomeno dubitativo</h4>
           <h4 style={{gridColumnStart:'col-3',gridRowStart:'headers',paddingLeft:24}}>Annidamenti</h4>
-          <h4 style={{gridColumnStart:'col-4',gridRowStart:'headers',paddingLeft:24}}>Testo misto</h4>
+          <h4 style={{gridColumnStart:'col-4',gridRowStart:'headers',paddingLeft:24}}>Testo misto</h4> */}
 
-          <div style={{gridColumnStart:'col-2',gridRowStart:'switches'}}>
-            <ToggleSwitch label="Mostra etichette" background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
+          {/* <div style={{gridColumnStart:'col-2',gridRowStart:'switches'}}>
+            
           </div>
           <div style={{gridColumnStart:'col-4',gridRowStart:'switches'}}>
-            <ToggleSwitch label="Mostra testo misto" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
-          </div>
+            
+          </div> */}
           
-          <div style={{gridColumnStart:'col-1',gridRowStart:'descriptions',alignSelf:'start'}}>
-            {[['Soggetto',"#ffc806"],['Misto',"#00c19c"],['Dubitativo',"#bbbbff"]].map((c,i)=>{
+          <div style={{gridColumnStart:'col-1',gridRowStart:'switches',alignSelf:'start'}}>
+            {[['Oggetto di dubbio',"#FFD850"],['Dubitativo',"#CFCFFF"],['Dubitativo e oggetto di dubbio',"#4CD3B9"]].map((c,i)=>{
               return <div key={'color'+i}>
                 <span style={{backgroundColor:c[1],display:'inline-block',width:16,height:8,borderRadius:4,marginRight:8}}></span>{c[0]}
               </div>
             })}
+            <span style={{display:'block',height:14}}/>
+            <ToggleSwitch label="Mostra etichette" background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
+            <ToggleSwitch label="Mostra testo misto" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
           </div>
-          <div style={{gridColumnStart:'col-2',gridRowStart:'descriptions'}}>
+          <div style={{gridColumnStart:'col-2',gridRowStart:'headers',gridRowEnd:'span 3'}}>
             <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-fenomenodubitativo.svg'} />
           </div>
-          <div style={{gridColumnStart:'col-3',gridRowStart:'switches',gridRowEnd:'span 2'}}>
+          <div style={{gridColumnStart:'col-3',gridRowStart:'headers',gridRowEnd:'span 3'}}>
             <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-annidamenti.svg'} />
           </div>
-          <div style={{gridColumnStart:'col-4',gridRowStart:'descriptions'}}>
+          <div style={{gridColumnStart:'col-4',gridRowStart:'headers',gridRowEnd:'span 3'}}>
             <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-testomisto.svg'} />
           </div>
 
