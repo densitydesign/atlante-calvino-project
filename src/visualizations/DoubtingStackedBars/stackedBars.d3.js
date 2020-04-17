@@ -20,57 +20,33 @@ let width,
           "color": "#e6e6e6",
           "label": "Non dubitativo",
           "percentage": undefined,
+          "translation": "translate(0,0)",
           "baseCategory": true
         },
-        // {
-        //     "id": "space-1",
-        //     "color": "transparent",
-        //     "label": " ",
-        //     "percentage": undefined,
-        //     "baseCategory": true
-        // },
         {
           "id": "soggetto",
           "color": "#FFD337",
           "label": "Oggetto di dubbio",
           "percentage": undefined,
+          "translation": "translate(155,0)",
           "baseCategory": true
         },
-        // {
-        //     "id": "space-2",
-        //     "color": "transparent",
-        //     "label": " ",
-        //     "percentage": undefined,
-        //     "baseCategory": true
-        // },
         {
             "id": "dubbio",
             "color": "#CFCFFF",
             "label": "Dubitativo",
             "percentage": undefined,
+            "translation": "translate(0,19)",
             "baseCategory": true
           },
-          // {
-          //     "id": "space-4",
-          //     "color": "transparent",
-          //     "label": " ",
-          //     "percentage": undefined,
-          //     "baseCategory": true
-          // }
         {
           "id": "misto",
           "color": "#33CDAF",
           "label": "Dubitativo e oggetto di dubbio",
           "percentage": undefined,
+          "translation": "translate(155,19)",
           "baseCategory": true
         },
-        // {
-        //     "id": "space-3",
-        //     "color": "transparent",
-        //     "label": " ",
-        //     "percentage": undefined,
-        //     "baseCategory": true
-        // },
     ],
 
     svg,
@@ -124,7 +100,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
 
     legend = svg.append("g")
         .classed("legend", true)
-        .attr("transform", `translate(${margin.left/2},${5})`);
+        .attr("transform", `translate(${margin.left/2+12},${5})`);
 
     legend.append("rect")
         .classed("legend-message-box",true)
@@ -294,6 +270,11 @@ V.update = (data, stackMode, baseLayer) => {
     yAxis.select('.y-axis-label').text('LUNGHEZZA '+(stackMode==="normalized"?'NORMALIZZATA (PERCENTUALI)':'IN CARATTERI (MIGLIAIA)'));
 
     const updateLegend = () => {
+        if (svg.selectAll(".selected").size() === 0) {
+            legend.transition().duration(350).attr("transform", `translate(${margin.left+20},${5})`);
+        } else {
+            legend.transition().duration(350).attr("transform", `translate(${margin.left/2+12},${5})`);
+        }
         legendItem = legendItem.data(legendData, d=>d.id)
         legendItem.exit().remove();
         legendItem = legendItem.enter().append("g")
@@ -302,6 +283,7 @@ V.update = (data, stackMode, baseLayer) => {
             .style("cursor","pointer")
             .merge(legendItem)
             .attr("transform", (d,i)=>{
+                return d.translation;
                 if (d.id.includes('definitivo')) {
                     return 'translate(0,0)';
                 } else if (d.id.includes('dubbio')) {
@@ -332,7 +314,7 @@ V.update = (data, stackMode, baseLayer) => {
                 let this_percentage = ""
                 if (showPercentage && d.percentage) this_percentage = " "+(d.percentage<1?d.percentage.toFixed(3):d.percentage.toFixed(2))+"%";
                 let html = `<rect width="16" height="8" fill="${d.color}" rx="5"></rect>
-                <text x="22" y="8" font-size="0.8571428571rem">${d.label + '' + this_percentage}</text>`;
+                <text x="20" y="8" font-size="0.8571428571rem">${d.label + '' + this_percentage}</text>`;
                 return html;
             });
 
@@ -343,7 +325,7 @@ V.update = (data, stackMode, baseLayer) => {
         const allBars=d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
             .transition()
-                .duration(500)
+                .duration(350)
                 .attr("transform", `translate(0,0)`)
                 .attr("width", x.bandwidth())
                 .style("opacity", .7);
@@ -354,13 +336,13 @@ V.update = (data, stackMode, baseLayer) => {
 
         leaf_misto=leaf_misto.data([]);
         leaf_misto.exit().transition()
-            .duration(500)
+            .duration(350)
             .style("opacity",0)
             .remove();
 
         leaf_soggetto=leaf_soggetto.data([]);
         leaf_soggetto.exit().transition()
-            .duration(500)
+            .duration(350)
             .style("opacity",0)
             .remove();
 
@@ -440,7 +422,7 @@ V.update = (data, stackMode, baseLayer) => {
         const bar = d3.selectAll(".serie > rect").filter(rect=>rect.data.id===d.data.id);
         bar.classed("selected", true)
             .transition()
-            .duration(500)
+            .duration(350)
             .style("opacity", 1)
             .attr("transform", `translate(${ -width_treemap/2 + x.bandwidth()/2 },0)`)
             .attr("width", x.bandwidth()*width_factor);
@@ -451,7 +433,7 @@ V.update = (data, stackMode, baseLayer) => {
 
         tick.style('display','block')
             .transition()
-                .duration(500)
+                .duration(350)
                 .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 }, 0)`);
 
         const bars_on_left = d3.selectAll(".serie > rect").filter((rect)=>{
@@ -459,7 +441,7 @@ V.update = (data, stackMode, baseLayer) => {
             return this_index < bar_index;
         })
         bars_on_left.transition()
-            .duration(500)
+            .duration(350)
             .style("opacity", .7)
             .attr("width", x.bandwidth())
             .attr("transform", `translate(${ -width_treemap/2 }, 0)`);
@@ -469,7 +451,7 @@ V.update = (data, stackMode, baseLayer) => {
             return this_index < bar_index;
         });
         ticks_on_left.transition()
-            .duration(500)
+            .duration(350)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 - width_treemap/2 }, 0)`);
 
         const bars_on_right = d3.selectAll(".serie > rect").filter((rect)=>{
@@ -477,7 +459,7 @@ V.update = (data, stackMode, baseLayer) => {
             return this_index > bar_index;
         });
         bars_on_right.transition()
-            .duration(500)
+            .duration(350)
             .attr("width", x.bandwidth())
             .attr("transform", `translate(${ width_treemap/2 },0)`);
 
@@ -486,7 +468,7 @@ V.update = (data, stackMode, baseLayer) => {
             return this_index > bar_index;
         });
         ticks_on_right.transition()
-            .duration(500)
+            .duration(350)
             .attr("transform", d=>`translate(${ x(d) + x.bandwidth()/2 + width_treemap/2 }, 0)`);
 
         // draw treemap here
@@ -510,11 +492,13 @@ V.update = (data, stackMode, baseLayer) => {
             legendData.find(d=>d.id==="dubbio").percentage = (d.data.dubbio/d.data.length) * 100;
 
             for(let iii=data_misto.children.length-1; iii>0; iii--) {
+                const pos = data_misto.children.length-iii;
                 const item = {
                     "id": "misto-"+data_misto.children[iii].name,
                     "color": d3.color(color("misto")).darker( 0.3*(+data_misto.children[iii].name-1) ),
                     "label": data_misto.children[iii].name + " volte",
-                    "percentage": (data_misto.children[iii].value/d.data.length) * 100
+                    "percentage": (data_misto.children[iii].value/d.data.length) * 100,
+                    "translation": "translate("+(290+109*iii)+",19)"
                 }
                 const index = legendData.map(d=>d.id).indexOf("misto")+1
                 legendData.splice( index, 0, item );
@@ -572,7 +556,8 @@ V.update = (data, stackMode, baseLayer) => {
                     "id": "soggetto-"+data_soggetto.children[iii].name,
                     "color": d3.color(color("soggetto")).darker( 0.3*(+data_soggetto.children[iii].name-1) ),
                     "label": data_soggetto.children[iii].name + " volte",
-                    "percentage": (data_soggetto.children[iii].value/d.data.length) * 100
+                    "percentage": (data_soggetto.children[iii].value/d.data.length) * 100,
+                    "translation": "translate("+(290+109*iii)+",0)"
                 }
                 const index = legendData.map(d=>d.id).indexOf("soggetto")+1
                 legendData.splice( index, 0, item );

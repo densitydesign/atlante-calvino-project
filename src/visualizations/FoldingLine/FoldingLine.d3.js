@@ -375,8 +375,7 @@ V.update = (options) => {
         .attr('width',d=> x(d.end)-x(d.start))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('height',d=>Math.abs(y(d.depth))+lvl0)
-        .style("display", globalUpdateOptions.showMisto?'block':'none')
-        
+        .style("display", globalUpdateOptions.showMisto?'block':'none')  
 
     subject = subject.data(subjects.reverse(), d=>options.data.id+'-subject-'+d.id);
     subject.exit().remove();
