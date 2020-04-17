@@ -136,7 +136,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("font-size","0.8571428571rem")
         .attr("dx",45)
         .attr("fill","#666666")
-        .text("Clicca su una categoria per riordinare");
+        .text("Clicca per riordinare");
 
     orderMessage = svg.append('text')
         .classed(".order-message",true)
@@ -316,6 +316,7 @@ V.update = (data, stackMode, baseLayer) => {
     };
 
     const removeSelectionAll=() => {
+        d3.select('.bottom-nav.navigations').style('opacity',1).style('pointer-events','all');
         onSelectedElement(null);
         const allBars=d3.selectAll(".serie > rect");
         allBars.classed("selected", false)
@@ -403,6 +404,7 @@ V.update = (data, stackMode, baseLayer) => {
     }
 
     const selection = (d, isSelected) => {
+        d3.select('.bottom-nav.navigations').style('opacity',0.5).style('pointer-events','none');
         // remove any 'preSelection'
         if (performed_selection_data!==null) {
             removePreSelection(performed_selection_data);

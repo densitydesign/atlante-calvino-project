@@ -101,9 +101,9 @@ class FoldingLine extends Component {
                 <span style={{backgroundColor:c[1],display:'inline-block',width:16,height:8,borderRadius:4,marginRight:8}}></span>{c[0]}
               </div>
             })}
-            <span style={{display:'block',height:14}}/>
-            <ToggleSwitch label="Mostra etichette" background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
-            <ToggleSwitch label="Mostra testo misto" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
+            <span style={{display:'block',marginTop:5}}>Mostra</span>
+            <ToggleSwitch label="Etichette" background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
+            <ToggleSwitch label="Dubitativo e oggetto di dubbio" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
           </div>
           <div style={{gridColumnStart:'col-2',gridRowStart:'headers',gridRowEnd:'span 3'}}>
             <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-fenomenodubitativo.svg'} />

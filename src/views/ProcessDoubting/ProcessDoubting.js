@@ -44,29 +44,29 @@ const structureData = (arr) => {
   })
 
   // Handle alternatives
-  for (var i=arr.length-1; i>-1; i--) {
-    const d = arr[i];
-    if (d.is_alternative) {
-      const alternative_data = {
-        'start': +d.doubt_start,
-        'end': +d.doubt_end
-      }
+  // for (var i=arr.length-1; i>-1; i--) {
+  //   const d = arr[i];
+  //   if (d.is_alternative) {
+  //     const alternative_data = {
+  //       'start': +d.doubt_start,
+  //       'end': +d.doubt_end
+  //     }
 
-      d.alternatives.push(alternative_data)
-      d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
+  //     d.alternatives.push(alternative_data)
+  //     d.alternatives = d.alternatives.sort((a,b)=>a.start-b.start)
 
-      if (i > 1 && arr[i-1].is_alternative) {
-        // console.log('preserve', arr[i-1].id, 'remove', d.id)
-        arr[i-1].alternatives = d.alternatives
-        // arr[i-1].doubt_end = +d.doubt_end
-        // do not return the current element
-        // its information are inside "arr[i-1]"
-        arr.splice(i,1)
-      } else {
-        d.doubt_end = d.alternatives[d.alternatives.length-1].end
-      }
-    }
-  }
+  //     if (i > 1 && arr[i-1].is_alternative) {
+  //       // console.log('preserve', arr[i-1].id, 'remove', d.id)
+  //       arr[i-1].alternatives = d.alternatives
+  //       // arr[i-1].doubt_end = +d.doubt_end
+  //       // do not return the current element
+  //       // its information are inside "arr[i-1]"
+  //       arr.splice(i,1)
+  //     } else {
+  //       d.doubt_end = d.alternatives[d.alternatives.length-1].end
+  //     }
+  //   }
+  // }
 
   let counter = 0;
   const identifyParent = (d,list) => {
@@ -349,7 +349,7 @@ class ProcessDoubting extends Component {
         "titolo pubblicazione": publicationTitle
       };
 
-      // 🚨 not best solution (PEZZA) 🚨
+      // 🚨 Not best solution (PEZZA) 🚨
       const annidamenti_options = [
         {'label':'0','status':false},
         {'label':'1','status':false},
@@ -361,7 +361,11 @@ class ProcessDoubting extends Component {
         {'label':'7','status':false},
         {'label':'8','status':false},
         {'label':'9','status':false},
-        {'label':'10','status':false}
+        {'label':'10','status':false},
+        {'label':'11','status':false},
+        {'label':'12','status':false},
+        {'label':'13','status':false},
+        {'label':'14','status':false}
       ]
 
       // need to convert date to milliseconds for the timespan filter to work
@@ -564,7 +568,7 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Dubbi fase 2"} style = {{gridColumn: 'span 10'}}/>
+					<PageTitle title = {"Il dubbio nell'opera"} style = {{gridColumn: 'span 10'}}/>
 
           {	this.state.isLoading && <Loading style = {{gridColumn: 'span 4'}}/>}
           {	!this.state.isLoading &&

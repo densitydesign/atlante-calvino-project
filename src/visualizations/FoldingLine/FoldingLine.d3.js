@@ -83,8 +83,8 @@ const gradientData = [
     }
 ]
 
-let width, legendWidth, height, lvl0 = 5, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24*1.5},
-    svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, label, arrow, arrow_label,
+let width, legendWidth, height, lvl0 = 10, margin = {top: 16, right: window.innerWidth/24, bottom: 20+lvl0, left: window.innerWidth/24*1.5},
+    svg, svg_style, master_g, g, baseLine, chapter, subject, mixed, doubt, alternative, label, arrow, arrow_label,
 
     x, y, color = d3.scaleOrdinal()
         .domain(["dubitativo","misto","soggetto","definitivo"])
@@ -132,8 +132,8 @@ V.initialize = (init_options) => {
         .interpolate(d3.interpolateNumber);
     
     y = d3.scaleLinear()
-        .range([-height/3*2, 0])
-        .domain([10,0]);
+        .range([-height/3*2, 0]);
+        // .domain([14,0]);
     
     defs.append('clipPath').attr('id','cut-off-bottom').append('rect')
         .attr('x',0)
@@ -198,6 +198,7 @@ V.initialize = (init_options) => {
     subject = g.append('g').classed('group-subjects', true).style('clip-path','url(#cut-off-bottom)').selectAll('.subject');
     mixed = g.append('g').classed('group-mixeds', true).style('clip-path','url(#cut-off-bottom)').selectAll('.mixed');
     doubt = g.append('g').classed('group-doubts', true).style('clip-path','url(#cut-off-bottom)').selectAll('.doubt');
+    alternative = g.append('g').classed('group-alternatives', true).style('clip-path','url(#cut-off-bottom)').selectAll('.alternative');
     label = g.append('g').classed('group-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.label');
     arrow = g.append('g').classed('group-arrows', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow');
     arrow_label = g.append('g').classed('group-arrows-labels', true).style('clip-path','url(#cut-off-bottom)').selectAll('.arrow-label');
@@ -233,7 +234,11 @@ V.update = (options) => {
         x.domain([0,options.data.length]);
         xAxisCall = d3.axisBottom(x).tickValues([0,options.data.length]);
         xAxis.call(xAxisCall);
-        yAxisCall = d3.axisLeft(y);
+        const max_y = d3.max([2, d3.max(options.data.details,d=>d.depth)]);
+        y.domain([ max_y, 0 ]);
+        const ticks = [];
+        for (let i=0; i<=max_y; i++) { ticks.push(i); }
+        yAxisCall = d3.axisLeft(y).tickValues( ticks ).tickFormat(d3.format("d"));
         yAxis.call(yAxisCall);
         
         yAxis.select('.axis-label').text('NUMERO DI LIVELLI');
@@ -346,6 +351,31 @@ V.update = (options) => {
             selectSiblings(['subject','doubt','mixed'],d);
         });
 
+    // const alternative_padding= 3
+    // alternative = alternative.data(doubts.filter(d=>d.is_alternative), d=>options.data.id+'-alternative-'+d.id)
+    // alternative.exit().remove();
+    // alternative = alternative.enter().append('g')
+    //     .merge(alternative)
+    //     .attr('transform',(d,i)=>'translate(0,'+(y(d.depth?d.depth:0)-alternative_padding)+')');
+    
+    // alternative.selectAll('path')
+    //     .data(d=>{
+    //         d.alternatives.forEach(a=>{
+    //             a.subj_start=d.subj_start;
+    //             a.subj_end=d.subj_end;
+    //         });
+    //         return d.alternatives
+    //     })
+    //     .enter()
+    //     .append('path')
+    //         .attr('stroke-width',1.5)
+    //         .attr('stroke',color('soggetto'))
+    //         .attr('fill','none')
+    //     .merge(alternative.selectAll('path'))
+    //         .attr('d',(d,i)=>{
+    //             return `M${x(d.subj_start)},${i*-alternative_padding} H${x(d.subj_end)} M${x(d.start)},${i*-alternative_padding} H${x(d.end)} v${alternative_padding}`;
+    //         })
+
     let mixed_data = [];
     options.data.chunks
         .filter(d=>d.category==='misto')
@@ -383,7 +413,8 @@ V.update = (options) => {
         .classed('subject', true)
         .attr('stroke-width',1.5)
         .merge(subject)
-        .attr('stroke', d=>color('soggetto'))
+        // .attr('stroke', d=>d.is_alternative?'none':color('soggetto'))
+        .attr('stroke', color('soggetto'))
         .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="subj-gradient").stops[1].color:gradient('soggetto'))
         .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*  (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ))
         .attr('x',d=>x(d.subj_x))
