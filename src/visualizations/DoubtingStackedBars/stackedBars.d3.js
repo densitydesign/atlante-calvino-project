@@ -188,7 +188,6 @@ const sortData = (data, property, stackMode) => {
         data = data.sort((a, b) => a.id_index.localeCompare(b.id_index))
         // data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0));
     }
-    console.log('sort by',property.replace('_perc',''))
     orderMessage.text(orderMessages[property.replace('_perc','')]);
     return data;
 }
@@ -259,21 +258,17 @@ V.update = (data, stackMode, baseLayer) => {
     xAxis.select(".domain").remove();
     
     y.domain([0, d3.max(series, d => d3.max(d, d => d[1]))]);
-    yAxis.call(yAxisCall)
-        .call(g => yAxis.selectAll("line").remove());
+    yAxis.call(yAxisCall).call(g => yAxis.selectAll("line").remove());
     
     let domain_x = -margin.left/2
     yAxis.select('.domain').remove();
-        // .attr('d', `M${domain_x},5 m-5,5 l5,-5 l5,5 m-5,-5 v${height/4} m0,${height/2} v${height/4-10}`)
-        // .attr('stroke','#999999');
-    
     yAxis.select('.y-axis-label').text('LUNGHEZZA '+(stackMode==="normalized"?'NORMALIZZATA (PERCENTUALI)':'IN CARATTERI (MIGLIAIA)'));
 
     const updateLegend = () => {
         if (svg.selectAll(".selected").size() === 0) {
-            legend.transition().duration(350).attr("transform", `translate(${margin.left+20},${5})`);
+            legend.transition().duration(350).attr("transform", `translate(${margin.left+21},${5})`);
         } else {
-            legend.transition().duration(350).attr("transform", `translate(${margin.left/2+12},${5})`);
+            legend.transition().duration(350).attr("transform", `translate(${margin.left/2+13},${5})`);
         }
         legendItem = legendItem.data(legendData, d=>d.id)
         legendItem.exit().remove();
@@ -498,7 +493,7 @@ V.update = (data, stackMode, baseLayer) => {
                     "color": d3.color(color("misto")).darker( 0.3*(+data_misto.children[iii].name-1) ),
                     "label": data_misto.children[iii].name + " volte",
                     "percentage": (data_misto.children[iii].value/d.data.length) * 100,
-                    "translation": "translate("+(290+109*iii)+",19)"
+                    "translation": "translate("+(280+109*iii)+",19)"
                 }
                 const index = legendData.map(d=>d.id).indexOf("misto")+1
                 legendData.splice( index, 0, item );
@@ -557,7 +552,7 @@ V.update = (data, stackMode, baseLayer) => {
                     "color": d3.color(color("soggetto")).darker( 0.3*(+data_soggetto.children[iii].name-1) ),
                     "label": data_soggetto.children[iii].name + " volte",
                     "percentage": (data_soggetto.children[iii].value/d.data.length) * 100,
-                    "translation": "translate("+(290+109*iii)+",0)"
+                    "translation": "translate("+(280+109*iii)+",0)"
                 }
                 const index = legendData.map(d=>d.id).indexOf("soggetto")+1
                 legendData.splice( index, 0, item );
@@ -663,11 +658,8 @@ V.update = (data, stackMode, baseLayer) => {
                 selector_handle.attr("transform",`translate(${event_x}, 0)`);
 
                 let the_index = Math.round(d3.event.x / x.step());
-                
-                if (the_index<0)
-                    { the_index = 0 };
-                if (the_index > (x.domain().length - 1) )
-                    { the_index = (x.domain().length - 1) };
+                if (the_index<0) { the_index = 0 };
+                if (the_index > (x.domain().length-1) ) { the_index = (x.domain().length-1) };
 
                 let the_value = x.domain()[the_index];
                 xAxis.selectAll(".tick").style("display", "none").filter(tick=>tick===the_value).style("display", "block")
