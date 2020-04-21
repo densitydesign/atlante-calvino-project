@@ -252,28 +252,32 @@ class VClass
       // the x axis has to be resscaled according to the zoom
       // taken from: https://bl.ocks.org/rutgerhofste/5bd5b06f7817f0ff3ba1daa64dee629d
       let new_x = d3.event.transform.rescaleX(x);
-      xAxis.call(xAxisCall.scale(new_x))
+      xAxis.call(xAxisCall.scale(new_x));
 
       // rescale labels
       if(!originalLabelsSize) {
         originalLabelsSize = d3.select('.label').style('font-size');
         originalLabelsSize = parseFloat(originalLabelsSize);
       }
-      const newSize = originalLabelsSize / d3.event.transform.k
+      const newSize = originalLabelsSize / d3.event.transform.k;
       // change style on the parent
       // this will propagate the new size to all children (label)
-      d3.select('g.labels').style('font-size', newSize + 'px')
+      d3.select('g.labels').style('font-size', newSize + 'px');
 
       // display all labels of selected compositions
       if(d3.event.transform.k > 3) {
 
-        // // make visible the lables of nodes selected
-        // d3.selectAll('.node.selected').each(d => {
-        // 	label.filter(l => l.id === d.id).classed('zoom-selected', true)
-        // })
+        // make the labels of selected nodes visible
+        d3.selectAll('.node.selected').each(d => {
+         	label.filter(l => l.id === d.id).classed('zoom-selected', true);
+        });
 
-        // all labels visible
-        label.classed('zoom-selected', true)
+        if (d3.selectAll('.there-is-selection').size()<1) {
+          // all labels visible
+          console.log('make all labels visible')
+          label.classed('zoom-selected', true)
+        }
+        
 
       } else {
         label.classed('zoom-selected', false)
