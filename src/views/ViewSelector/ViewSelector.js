@@ -20,9 +20,10 @@ export default class ViewSelector extends React.Component
             const this_class = d.props && d.props.dataClass ? d.props.dataClass : "";
 
             return (
-              <d.type key={i} className={this_class}>
+              <d.type key={'elmx-'+i} className={this_class}>
                 {this.props.text}
-                <h2>{this.props.subtitle}</h2>
+                {/* Subtitle is never present, we may get rid of this H2 which triggers annoying warnings in the console */}
+                {/* <h2>{this.props.subtitle}</h2> */}
               </d.type>
             );
           })

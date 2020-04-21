@@ -1,0 +1,74 @@
+.toggle-switch {
+ display: flex;
+ align-items: center;
+ position: relative;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    margin-bottom: 0;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: calc(100%);
+    width: calc(50%);
+    border: var(--switch-circle-padding) solid var(--background);
+    background-color: var(--circle);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--background-active);
+}
+
+input:checked + .slider:before {
+    background-color: var(--circle-active);
+    border: 1px solid var(--border-active);
+}
+
+/* input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+} */
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+/* Rounded sliders */
+.slider.round {
+    /* Border radius is set in he component render function */
+    /* border-radius: 50% 10%; */
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
