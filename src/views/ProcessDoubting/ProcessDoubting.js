@@ -35,6 +35,7 @@ const structureData = (arr) => {
       'alternatives': [],
       'has_children': false,
       'children': [],
+      'parents':[],
       'parent':null,
       'open': false,
       'level':0,
@@ -68,52 +69,66 @@ const structureData = (arr) => {
   //   }
   // }
 
-  let counter = 0;
-  const identifyParent = (d,list) => {
-    counter++;
+  // let counter = 0;
+  const identifyParents = (d,list) => {
+    // counter++;
     const listToSearchForParent = list.filter( dd => +d.id.replace('pair-','') < +dd.id.replace('pair-','') )
 
-    const parent = listToSearchForParent.find(dd=>{
-
-      const subj_start_is_inside = d.subj_start >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_start >= dd.doubt_start && d.subj_start <= dd.doubt_end
-      const subj_end_is_inside = d.subj_end >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_end >= dd.doubt_start && d.subj_start <= dd.doubt_end
-      const doubt_start_is_inside = d.doubt_start >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_start >= dd.subj_start && d.doubt_start <= dd.subj_end
-      const doubt_end_is_inside = d.doubt_end >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_end >= dd.subj_start && d.doubt_start <= dd.subj_end
-
-      return subj_start_is_inside || subj_end_is_inside || doubt_start_is_inside || doubt_end_is_inside
+    let parents = listToSearchForParent.filter(dd=>{
+      const subj_start_is_inside = d.subj_start >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_start >= dd.doubt_start && d.subj_start <= dd.doubt_end;
+      const subj_end_is_inside = d.subj_end >= dd.subj_start && d.subj_start <= dd.subj_end || d.subj_end >= dd.doubt_start && d.subj_start <= dd.doubt_end;
+      const doubt_start_is_inside = d.doubt_start >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_start >= dd.subj_start && d.doubt_start <= dd.subj_end;
+      const doubt_end_is_inside = d.doubt_end >= dd.doubt_start && d.doubt_start <= dd.doubt_end || d.doubt_end >= dd.subj_start && d.doubt_start <= dd.subj_end;
+      return subj_start_is_inside || subj_end_is_inside || doubt_start_is_inside || doubt_end_is_inside;
     })
 
-    if (parent) { //  && list.indexOf(parent)>list.indexOf(d)
-      // console.log('parent for', d.id, 'is', parent.id)
-
-      if(counter<1000) {
-        if (!parent.parent) {
-          const listToSearch = list.filter((dd,ii)=>+parent.id.replace('pair-','')<+dd.id.replace('pair-',''))
-          // console.log('📏 list to search length', listToSearch.length)
-          identifyParent(parent, listToSearch)
-          // console.log(d.id, 'is level', d.level)
-        } else {
-          // console.log('🚨', parent.id, 'already has a parent')
-        }
-        parent.has_children = true;
-        if (parent.children.indexOf(d)===-1) {
-          parent.children.push(d);
-        }
-        d.parent = parent;
-        d.level = parent.level+1
+    parents.forEach(parent=>{
+      if (!parent.parent) {
+        const listToSearch = list.filter((dd,ii)=>+parent.id.replace('pair-','')<+dd.id.replace('pair-',''))
+        identifyParents(parent, listToSearch);
       }
+      parent.has_children = true;
+      if (parent.children.indexOf(d)===-1) {
+        parent.children.push(d);
+      }
+      d.parents.push(parent);
+      d.level = d3.max(d.parents, dd=>dd.level)+1
+    })
 
-    } else {
-      // console.log(d.id, 'has no parent')
-      // console.log(d.id, 'is level', d.level)
-    }
-    return parent;
+    // if (parent) {
+    //   // if(counter<1000) {
+    //   if (!parent.parent) {
+    //     const listToSearch = list.filter((dd,ii)=>+parent.id.replace('pair-','')<+dd.id.replace('pair-',''))
+    //     // console.log('📏 list to search length', listToSearch.length);
+    //     identifyParent(parent, listToSearch);
+    //     // console.log(d.id, 'is level', d.level);
+    //   }
+
+    //   parent.has_children = true;
+    //   if (parent.children.indexOf(d)===-1) {
+    //     parent.children.push(d);
+    //   }
+    //   d.parent = parent;
+    //   d.level = parent.level+1;
+    //   // }
+
+    // } else {
+    //   // console.log(d.id, 'has no parent')
+    //   // console.log(d.id, 'is level', d.level)
+    // }
+
+
+
+
+
+
+    return parents;
   }
   // check if a pair is inside another
   arr.forEach((d,i)=>{
     const child = d;
     // console.log('👉', child.id)
-    identifyParent(child, arr)
+    identifyParents(child, arr)
   })
 
   // set level of depth
@@ -222,7 +237,7 @@ class ProcessDoubting extends Component {
     // https://observablehq.com/@iosonosempreio/data-dubbio-fase-due
     d3.json(process.env.PUBLIC_URL + '/data-process-doubting.json').then(json=>{
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
-      // json = json.filter(d=>d.id==="S153");
+      // json = json.filter(d=>d.id==="S133");
       json.forEach(d=>{
         // console.log(d)
         d.details = structureData(d.details);

@@ -287,7 +287,7 @@ V.update = (options) => {
     });
 
     // const text = options.data;
-    let doubts = options.data.details.filter(d=>d.level===0||d.parent.open);
+    let doubts = options.data.details;
     doubts.forEach((d)=>{
         d.doubt_x = JSON.parse(JSON.stringify(d.doubt_start));
         d.subj_x = JSON.parse(JSON.stringify(d.subj_start));
@@ -343,38 +343,12 @@ V.update = (options) => {
         .attr('stroke', color('dubitativo'))
         .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="doubt-gradient").stops[1].color:gradient('dubitativo'))
         .attr('stroke-dasharray',d=>x(d.doubt_end)-x(d.doubt_start) + ' ' + (x(d.doubt_end)-x(d.doubt_start)+2* (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ) )
+        // .attr('opacity', d=>d.is_alternative?0.3:1)
         .attr('x',d=>x(d.doubt_x))
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=> (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) )
-        .on('click', (d,i)=>{
-            selectSiblings(['subject','doubt','mixed'],d);
-        });
-
-    // const alternative_padding= 3
-    // alternative = alternative.data(doubts.filter(d=>d.is_alternative), d=>options.data.id+'-alternative-'+d.id)
-    // alternative.exit().remove();
-    // alternative = alternative.enter().append('g')
-    //     .merge(alternative)
-    //     .attr('transform',(d,i)=>'translate(0,'+(y(d.depth?d.depth:0)-alternative_padding)+')');
-    
-    // alternative.selectAll('path')
-    //     .data(d=>{
-    //         d.alternatives.forEach(a=>{
-    //             a.subj_start=d.subj_start;
-    //             a.subj_end=d.subj_end;
-    //         });
-    //         return d.alternatives
-    //     })
-    //     .enter()
-    //     .append('path')
-    //         .attr('stroke-width',1.5)
-    //         .attr('stroke',color('soggetto'))
-    //         .attr('fill','none')
-    //     .merge(alternative.selectAll('path'))
-    //         .attr('d',(d,i)=>{
-    //             return `M${x(d.subj_start)},${i*-alternative_padding} H${x(d.subj_end)} M${x(d.start)},${i*-alternative_padding} H${x(d.end)} v${alternative_padding}`;
-    //         })
+        .on('click', (d,i)=>{ console.log(d); selectSiblings(['subject','doubt','mixed'],d); });
 
     let mixed_data = [];
     options.data.chunks
@@ -400,6 +374,7 @@ V.update = (options) => {
         .merge(mixed)
         .attr('stroke', color('misto'))
         .attr('fill', d=> d.depth===0?color('misto'):gradient('misto'))
+        // .attr('opacity', d=>d.is_alternative?0.3:1)
         .attr('stroke-dasharray',d=>x(d.end)-x(d.start) + ' ' + ( x(d.end)-x(d.start)+ (Math.abs(y(d.depth))+lvl0)*2 ) )
         .attr('x',d=>x(d.start))
         .attr('width',d=> x(d.end)-x(d.start))
@@ -416,6 +391,7 @@ V.update = (options) => {
         // .attr('stroke', d=>d.is_alternative?'none':color('soggetto'))
         .attr('stroke', color('soggetto'))
         .attr('fill', d=> d.depth===0?gradientData.find(g=>g.id==="subj-gradient").stops[1].color:gradient('soggetto'))
+        // .attr('opacity', d=>d.is_alternative?0.3:1)
         .attr('stroke-dasharray',d=>x(d.subj_end)-x(d.subj_start) + ' ' + (x(d.subj_end)-x(d.subj_start)+2*  (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) ))
         .attr('x',d=>x(d.subj_x))
         .attr('y',d=>y(d.depth||0))
