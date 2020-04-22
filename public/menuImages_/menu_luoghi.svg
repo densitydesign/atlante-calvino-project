@@ -4,11 +4,11 @@
 	 viewBox="0 0 227.5 241.5" style="enable-background:new 0 0 227.5 241.5;" xml:space="preserve">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);}
-	.st1{fill:none;stroke:turquoise;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:turquoise;stroke-width:0.5;stroke-miterlimit:10;}
-	.st3{fill:none;stroke:turquoise;}
-	.st4{fill:turquoise;stroke:#5151FC;stroke-width:1.4575;}
-	.st5{fill:turquoise;}
+	.st1{fill:none;stroke:black;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:black;stroke-width:0.5;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:black;}
+	.st4{fill:black;stroke:black;stroke-width:1.4575;}
+	.st5{fill:black;}
 	.st6{font-family:'HKGrotesk-Regular';}
 	.st7{font-size:5.9988px;}
 	.st8{font-size:6px;}
