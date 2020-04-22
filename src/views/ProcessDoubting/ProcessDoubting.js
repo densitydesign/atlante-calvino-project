@@ -128,13 +128,17 @@ const structureData = (arr) => {
   arr.forEach((d,i)=>{
     const child = d;
     // console.log('👉', child.id)
-    identifyParents(child, arr)
+    identifyParents(child, arr);
   })
 
   // set level of depth
   // 🚨 array must be reversed
   arr.reverse().forEach((element, i) => {
     // console.log('👉', element);
+    if (element.children.length === 0) {
+      element.depth = 0;
+      return;
+    }
     let maxChildrenLevel = 0;
     retrieveMaxChildrenLevel(element);
     function retrieveMaxChildrenLevel(item) {
@@ -239,7 +243,6 @@ class ProcessDoubting extends Component {
       json = json.filter(d=>d.id!=='V002'&&d.id!=='V004'&&d.id!=='V006'&&d.id!=='V007'&&d.id!=='V011'&&d.id!=='V012'&&d.id!=='V013'&&d.id!=='V014'&&d.id!=='V015'&&d.id!=='V017'&&d.id!=='V019'&&d.id!=='V022'&&d.id!=='V023'&&d.id!=='S088');
       // json = json.filter(d=>d.id==="S133");
       json.forEach(d=>{
-        // console.log(d)
         d.details = structureData(d.details);
         const _level_doubts = [
           {

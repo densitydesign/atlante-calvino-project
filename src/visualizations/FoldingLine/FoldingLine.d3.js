@@ -348,7 +348,7 @@ V.update = (options) => {
         .attr('y',d=>y(d.depth?d.depth:0))
         .attr('width',d=>x(d.doubt_end)-x(d.doubt_start))
         .attr('height',d=> (d.depth?Math.abs(y(d.depth))+lvl0:lvl0) )
-        .on('click', (d,i)=>{ console.log(d); selectSiblings(['subject','doubt','mixed'],d); });
+        .on('click', (d,i)=>{ selectSiblings(['subject','doubt','mixed'],d); });
 
     let mixed_data = [];
     options.data.chunks
@@ -478,7 +478,7 @@ function drawArrows(){
     arrow = arrow.enter().append('path')
         .classed('arrow', true)
         .attr('fill','transparent')
-        .attr('stroke',color('dubitativo'))
+        .attr('stroke',d=>d.is_alternative?'#aaaaaa':color('dubitativo'))
         .merge(arrow)
         .attr('d', d=>{
 
