@@ -175,6 +175,2916 @@ const collections = [
   }
 ];
 
+const chapters_subdivision = [
+  {
+      "id opera": "V001",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "58",
+      "end": "17217",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "2",
+      "titolo": "Capitolo 2",
+      "start": "17219",
+      "end": "39839",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "3",
+      "titolo": "Capitolo 3",
+      "start": "39839",
+      "end": "59419",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "4",
+      "titolo": "Capitolo 4",
+      "start": "59420",
+      "end": "88126",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "5",
+      "titolo": "Capitolo 5",
+      "start": "88127",
+      "end": "109237",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "6",
+      "titolo": "Capitolo 6",
+      "start": "109238",
+      "end": "126676",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "7",
+      "titolo": "Capitolo 7",
+      "start": "126677",
+      "end": "143168",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "8",
+      "titolo": "Capitolo 8",
+      "start": "143169",
+      "end": "163539",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "9",
+      "titolo": "Capitolo 9",
+      "start": "163541",
+      "end": "189243",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "10",
+      "titolo": "Capitolo 10",
+      "start": "189244",
+      "end": "209838",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "11",
+      "titolo": "Capitolo 11",
+      "start": "209839",
+      "end": "234202",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V001",
+      "numero sezione": "12",
+      "titolo": "Capitolo 12",
+      "start": "234203",
+      "end": "249888",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "22",
+      "end": "8683",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "2",
+      "titolo": "Capitolo 2",
+      "start": "8684",
+      "end": "15511",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "3",
+      "titolo": "Capitolo 3",
+      "start": "15512",
+      "end": "23588",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "4",
+      "titolo": "Capitolo 4",
+      "start": "23589",
+      "end": "30129",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "5",
+      "titolo": "Capitolo 5",
+      "start": "30130",
+      "end": "66570",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "6",
+      "titolo": "Capitolo 6",
+      "start": "66571",
+      "end": "78574",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "7",
+      "titolo": "Capitolo 7",
+      "start": "78575",
+      "end": "100828",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "8",
+      "titolo": "Capitolo 8",
+      "start": "100829",
+      "end": "114011",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "9",
+      "titolo": "Capitolo 9",
+      "start": "114012",
+      "end": "123243",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V003",
+      "numero sezione": "10",
+      "titolo": "Capitolo 10",
+      "start": "123244",
+      "end": "138096",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "19",
+      "end": "22161",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "2",
+      "titolo": "Capitolo 2",
+      "start": "22162",
+      "end": "42001",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "3",
+      "titolo": "Capitolo 3",
+      "start": "42002",
+      "end": "51583",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "4",
+      "titolo": "Capitolo 4",
+      "start": "51587",
+      "end": "67504",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "5",
+      "titolo": "Capitolo 5",
+      "start": "67505",
+      "end": "85377",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "6",
+      "titolo": "Capitolo 6",
+      "start": "85378",
+      "end": "102333",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "7",
+      "titolo": "Capitolo 7",
+      "start": "102334",
+      "end": "112095",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "8",
+      "titolo": "Capitolo 8",
+      "start": "112096",
+      "end": "122561",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "9",
+      "titolo": "Capitolo 9",
+      "start": "122563",
+      "end": "131256",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "10",
+      "titolo": "Capitolo 10",
+      "start": "131257",
+      "end": "147956",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "11",
+      "titolo": "Capitolo 11",
+      "start": "147957",
+      "end": "164799",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "12",
+      "titolo": "Capitolo 12",
+      "start": "164800",
+      "end": "188373",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "13",
+      "titolo": "Capitolo 13",
+      "start": "188374",
+      "end": "199324",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "14",
+      "titolo": "Capitolo 14",
+      "start": "199325",
+      "end": "210530",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "15",
+      "titolo": "Capitolo 15",
+      "start": "210531",
+      "end": "230740",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "16",
+      "titolo": "Capitolo 16",
+      "start": "230741",
+      "end": "242435",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "17",
+      "titolo": "Capitolo 17",
+      "start": "242436",
+      "end": "254890",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "18",
+      "titolo": "Capitolo 18",
+      "start": "254892",
+      "end": "265553",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "19",
+      "titolo": "Capitolo 19",
+      "start": "265554",
+      "end": "275321",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "20",
+      "titolo": "Capitolo 20",
+      "start": "275322",
+      "end": "290408",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "21",
+      "titolo": "Capitolo 21",
+      "start": "290409",
+      "end": "306573",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "22",
+      "titolo": "Capitolo 22",
+      "start": "306574",
+      "end": "318279",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "23",
+      "titolo": "Capitolo 23",
+      "start": "318280",
+      "end": "343118",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "24",
+      "titolo": "Capitolo 24",
+      "start": "343119",
+      "end": "355118",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "25",
+      "titolo": "Capitolo 25",
+      "start": "355119",
+      "end": "367839",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "26",
+      "titolo": "Capitolo 26",
+      "start": "367840",
+      "end": "379739",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "27",
+      "titolo": "Capitolo 27",
+      "start": "379740",
+      "end": "392064",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "28",
+      "titolo": "Capitolo 28",
+      "start": "392065",
+      "end": "400026",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "29",
+      "titolo": "Capitolo 29",
+      "start": "400027",
+      "end": "408312",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V005",
+      "numero sezione": "30",
+      "titolo": "Capitolo 30",
+      "start": "408313",
+      "end": "416806",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "25",
+      "end": "8392",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "2",
+      "titolo": "Capitolo 2",
+      "start": "8395",
+      "end": "29522",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "3",
+      "titolo": "Capitolo 3",
+      "start": "29525",
+      "end": "43386",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "4",
+      "titolo": "Capitolo 4",
+      "start": "43387",
+      "end": "67286",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "5",
+      "titolo": "Capitolo 5",
+      "start": "67287",
+      "end": "84387",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "6",
+      "titolo": "Capitolo 6",
+      "start": "84390",
+      "end": "98339",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "7",
+      "titolo": "Capitolo 7",
+      "start": "98341",
+      "end": "122379",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "8",
+      "titolo": "Capitolo 8",
+      "start": "122380",
+      "end": "146152",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "9",
+      "titolo": "Capitolo 9",
+      "start": "146154",
+      "end": "160661",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "10",
+      "titolo": "Capitolo 10",
+      "start": "160662",
+      "end": "178369",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "11",
+      "titolo": "Capitolo 11",
+      "start": "178370",
+      "end": "194101",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V008",
+      "numero sezione": "12",
+      "titolo": "Capitolo 12",
+      "start": "194102",
+      "end": "197261",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "1",
+      "titolo": "Nota dell'autore",
+      "start": "30",
+      "end": "577",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "2",
+      "titolo": "Capitolo 1",
+      "start": "579",
+      "end": "3628",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "3",
+      "titolo": "Capitolo 2",
+      "start": "3630",
+      "end": "11495",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "4",
+      "titolo": "Capitolo 3",
+      "start": "11497",
+      "end": "25189",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "5",
+      "titolo": "Capitolo 4",
+      "start": "25191",
+      "end": "29541",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "6",
+      "titolo": "Capitolo 5",
+      "start": "29543",
+      "end": "38437",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "7",
+      "titolo": "Capitolo 6",
+      "start": "38440",
+      "end": "46631",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "8",
+      "titolo": "Capitolo 7",
+      "start": "46633",
+      "end": "50902",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "9",
+      "titolo": "Capitolo 8",
+      "start": "50904",
+      "end": "57217",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "10",
+      "titolo": "Capitolo 9",
+      "start": "57219",
+      "end": "63540",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "11",
+      "titolo": "Capitolo 10",
+      "start": "63542",
+      "end": "70115",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "12",
+      "titolo": "Capitolo 11",
+      "start": "70117",
+      "end": "90519",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "13",
+      "titolo": "Capitolo 12",
+      "start": "90520",
+      "end": "107194",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "14",
+      "titolo": "Capitolo 13",
+      "start": "107195",
+      "end": "114084",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "15",
+      "titolo": "Capitolo 14",
+      "start": "114085",
+      "end": "116522",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V009",
+      "numero sezione": "16",
+      "titolo": "Capitolo 15",
+      "start": "116523",
+      "end": "121316",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "187",
+      "end": "6594",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "2",
+      "titolo": "Capitolo 2",
+      "start": "6595",
+      "end": "13894",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "3",
+      "titolo": "Capitolo 3",
+      "start": "13894",
+      "end": "24515",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "4",
+      "titolo": "Capitolo 4",
+      "start": "24516",
+      "end": "29487",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "5",
+      "titolo": "Capitolo 5",
+      "start": "29488",
+      "end": "36490",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "6",
+      "titolo": "Capitolo 6",
+      "start": "36491",
+      "end": "42232",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "7",
+      "titolo": "Capitolo 7",
+      "start": "42233",
+      "end": "52372",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "8",
+      "titolo": "Capitolo 8",
+      "start": "52373",
+      "end": "59164",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "9",
+      "titolo": "Capitolo 9",
+      "start": "59165",
+      "end": "67243",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "10",
+      "titolo": "Capitolo 10",
+      "start": "67244",
+      "end": "73508",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "11",
+      "titolo": "Capitolo 11",
+      "start": "73509",
+      "end": "89970",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "12",
+      "titolo": "Capitolo 12",
+      "start": "89971",
+      "end": "99446",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "13",
+      "titolo": "Capitolo 13",
+      "start": "99448",
+      "end": "105127",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "14",
+      "titolo": "Capitolo 14",
+      "start": "105128",
+      "end": "114153",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "15",
+      "titolo": "Capitolo 15",
+      "start": "114154",
+      "end": "117921",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "16",
+      "titolo": "Capitolo 16",
+      "start": "117922",
+      "end": "122973",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "17",
+      "titolo": "Capitolo 17",
+      "start": "122974",
+      "end": "133771",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "18",
+      "titolo": "Capitolo 18",
+      "start": "133772",
+      "end": "145476",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "19",
+      "titolo": "Capitolo 19",
+      "start": "145477",
+      "end": "152612",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "20",
+      "titolo": "Capitolo 20",
+      "start": "152613",
+      "end": "159591",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "21",
+      "titolo": "Capitolo 21",
+      "start": "159592",
+      "end": "165953",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "22",
+      "titolo": "Capitolo 22",
+      "start": "165954",
+      "end": "171897",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "23",
+      "titolo": "Capitolo 23",
+      "start": "171897",
+      "end": "180178",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V010",
+      "numero sezione": "24",
+      "titolo": "Capitolo 24",
+      "start": "180179",
+      "end": "191036",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "1",
+      "titolo": ".....",
+      "start": "244",
+      "end": "1833",
+      "dettaglio_1": "1",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "2",
+      "titolo": "Le città e la memoria. 1.",
+      "start": "1835",
+      "end": "2566",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Diomira"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "3",
+      "titolo": "Le città e la memoria. 2.",
+      "start": "2568",
+      "end": "3333",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Isidora"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "4",
+      "titolo": "Le città e il desiderio. 1",
+      "start": "3335",
+      "end": "4771",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Dorotea"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "5",
+      "titolo": "Le città e la memoria. 3.",
+      "start": "4772",
+      "end": "6419",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Zaira"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "6",
+      "titolo": "Le città e il desiderio. 2.",
+      "start": "6421",
+      "end": "7819",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Anastasia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "7",
+      "titolo": "Le città e i segni. 1.",
+      "start": "7820",
+      "end": "10217",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Tamara"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "8",
+      "titolo": "Le città e la memoria. 4.",
+      "start": "10219",
+      "end": "11951",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Zora"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "9",
+      "titolo": "Le città e il desiderio. 3.",
+      "start": "11953",
+      "end": "13543",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Despina"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "10",
+      "titolo": "Le città e i segni. 2.",
+      "start": "13545",
+      "end": "14706",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Zirma"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "11",
+      "titolo": "Le città sottili. 1.",
+      "start": "14708",
+      "end": "15976",
+      "dettaglio_1": "1",
+      "dettaglio_2": "Isaura"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "12",
+      "titolo": ".....",
+      "start": "15978",
+      "end": "19092",
+      "dettaglio_1": "1",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "13",
+      "titolo": ".....",
+      "start": "19093",
+      "end": "22980",
+      "dettaglio_1": "2",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "14",
+      "titolo": "Le città e la memoria. 5.",
+      "start": "22983",
+      "end": "24827",
+      "dettaglio_1": "2",
+      "dettaglio_2": "Maurilia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "15",
+      "titolo": "Le città e il desiderio. 4.",
+      "start": "24829",
+      "end": "26328",
+      "dettaglio_1": "2",
+      "dettaglio_2": "Fedora"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "16",
+      "titolo": "Le città e i segni. 3",
+      "start": "26330",
+      "end": "27796",
+      "dettaglio_1": "2",
+      "dettaglio_2": "Zoe"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "17",
+      "titolo": "Le città sottili. 2.",
+      "start": "27797",
+      "end": "29277",
+      "dettaglio_1": "2",
+      "dettaglio_2": "Zenobia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "18",
+      "titolo": "Le città e gli scambi. 1.",
+      "start": "29279",
+      "end": "30878",
+      "dettaglio_1": "2",
+      "dettaglio_2": "Eufemia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "19",
+      "titolo": ".....",
+      "start": "30881",
+      "end": "33617",
+      "dettaglio_1": "2",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "20",
+      "titolo": ".....",
+      "start": "33619",
+      "end": "35819",
+      "dettaglio_1": "3",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "21",
+      "titolo": "Le città e il desiderio. 5.",
+      "start": "35821",
+      "end": "37408",
+      "dettaglio_1": "3",
+      "dettaglio_2": "Zobeide"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "22",
+      "titolo": "Le città e i segni. 4.",
+      "start": "37410",
+      "end": "39881",
+      "dettaglio_1": "3",
+      "dettaglio_2": "Ipazia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "23",
+      "titolo": "Le città sottili. 3.",
+      "start": "39883",
+      "end": "41854",
+      "dettaglio_1": "3",
+      "dettaglio_2": "Armilla"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "24",
+      "titolo": "Le città e gli scambi. 2.",
+      "start": "41856",
+      "end": "43546",
+      "dettaglio_1": "3",
+      "dettaglio_2": "Cloe"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "25",
+      "titolo": "Le città e gli occhi. 1.",
+      "start": "43548",
+      "end": "45334",
+      "dettaglio_1": "3",
+      "dettaglio_2": "Valdrada"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "26",
+      "titolo": ".....",
+      "start": "45337",
+      "end": "46651",
+      "dettaglio_1": "3",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "27",
+      "titolo": ".....",
+      "start": "46654",
+      "end": "48960",
+      "dettaglio_1": "4",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "28",
+      "titolo": "Le città e i segni. 5.",
+      "start": "48962",
+      "end": "50896",
+      "dettaglio_1": "4",
+      "dettaglio_2": "Olivia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "29",
+      "titolo": "Le città sottili. 4.",
+      "start": "50897",
+      "end": "52090",
+      "dettaglio_1": "4",
+      "dettaglio_2": "Sofronia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "30",
+      "titolo": "Le città e gli scambi. 3.",
+      "start": "52091",
+      "end": "53831",
+      "dettaglio_1": "4",
+      "dettaglio_2": "Eutropia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "31",
+      "titolo": "Le città e gli occhi. 2.",
+      "start": "53833",
+      "end": "54867",
+      "dettaglio_1": "4",
+      "dettaglio_2": "Zemrude"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "32",
+      "titolo": "Le città e il nome. 1.",
+      "start": "54869",
+      "end": "56743",
+      "dettaglio_1": "4",
+      "dettaglio_2": "Aglaura"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "33",
+      "titolo": ".....",
+      "start": "56746",
+      "end": "57918",
+      "dettaglio_1": "4",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "34",
+      "titolo": ".....",
+      "start": "57921",
+      "end": "60021",
+      "dettaglio_1": "5",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "35",
+      "titolo": "Le città sottili. 5.",
+      "start": "60023",
+      "end": "61033",
+      "dettaglio_1": "5",
+      "dettaglio_2": "Ottavia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "36",
+      "titolo": "Le città e gli scambi. 4.",
+      "start": "61035",
+      "end": "62085",
+      "dettaglio_1": "5",
+      "dettaglio_2": "Ersilia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "37",
+      "titolo": "Le città e gli occhi. 3.",
+      "start": "62087",
+      "end": "62993",
+      "dettaglio_1": "5",
+      "dettaglio_2": "Bauci"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "38",
+      "titolo": "Le città e il nome. 2.",
+      "start": "62995",
+      "end": "65608",
+      "dettaglio_1": "5",
+      "dettaglio_2": "Leandra"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "39",
+      "titolo": "Le città e i morti. 1.",
+      "start": "65610",
+      "end": "67755",
+      "dettaglio_1": "5",
+      "dettaglio_2": "Melania"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "40",
+      "titolo": ".....",
+      "start": "67759",
+      "end": "68156",
+      "dettaglio_1": "5",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "41",
+      "titolo": ".....",
+      "start": "68160",
+      "end": "70981",
+      "dettaglio_1": "6",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "42",
+      "titolo": "Le città e gli scambi. 5.",
+      "start": "70983",
+      "end": "73146",
+      "dettaglio_1": "6",
+      "dettaglio_2": "Smeraldina"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "43",
+      "titolo": "Le città e gli occhi. 4.",
+      "start": "73148",
+      "end": "75191",
+      "dettaglio_1": "6",
+      "dettaglio_2": "Fillide"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "44",
+      "titolo": "Le città e il nome. 3.",
+      "start": "75194",
+      "end": "76803",
+      "dettaglio_1": "6",
+      "dettaglio_2": "Pirra"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "45",
+      "titolo": "Le città e i morti. 2.",
+      "start": "76804",
+      "end": "79348",
+      "dettaglio_1": "6",
+      "dettaglio_2": "Adelma"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "46",
+      "titolo": "Le città e il cielo. 1.",
+      "start": "79350",
+      "end": "81651",
+      "dettaglio_1": "6",
+      "dettaglio_2": "Eudossia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "47",
+      "titolo": ".....",
+      "start": "81654",
+      "end": "83620",
+      "dettaglio_1": "6",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "48",
+      "titolo": ".....",
+      "start": "83622",
+      "end": "85551",
+      "dettaglio_1": "7",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "49",
+      "titolo": "Le città e gli occhi. 5.",
+      "start": "85552",
+      "end": "86621",
+      "dettaglio_1": "7",
+      "dettaglio_2": "Moriana"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "50",
+      "titolo": "Le città e il nome. 4.",
+      "start": "86622",
+      "end": "90319",
+      "dettaglio_1": "7",
+      "dettaglio_2": "Clarice"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "51",
+      "titolo": "Le città e i morti. 3.",
+      "start": "90321",
+      "end": "92952",
+      "dettaglio_1": "7",
+      "dettaglio_2": "Eusapia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "52",
+      "titolo": "Le città e il cielo. 2.",
+      "start": "92954",
+      "end": "95895",
+      "dettaglio_1": "7",
+      "dettaglio_2": "Bersabea"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "53",
+      "titolo": "Le città continue. 1.",
+      "start": "95896",
+      "end": "99381",
+      "dettaglio_1": "7",
+      "dettaglio_2": "Leonia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "54",
+      "titolo": ".....",
+      "start": "99383",
+      "end": "100654",
+      "dettaglio_1": "7",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "55",
+      "titolo": ".....",
+      "start": "100656",
+      "end": "104520",
+      "dettaglio_1": "8",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "56",
+      "titolo": "Le città e il nome. 5.",
+      "start": "104523",
+      "end": "106349",
+      "dettaglio_1": "8",
+      "dettaglio_2": "Irene"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "57",
+      "titolo": "Le città e i morti. 4.",
+      "start": "106351",
+      "end": "107114",
+      "dettaglio_1": "8",
+      "dettaglio_2": "Argia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "58",
+      "titolo": "Le città e il cielo. 3.",
+      "start": "107116",
+      "end": "108338",
+      "dettaglio_1": "8",
+      "dettaglio_2": "Tecla"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "59",
+      "titolo": "Le città continue. 2.",
+      "start": "108340",
+      "end": "109392",
+      "dettaglio_1": "8",
+      "dettaglio_2": "Trude"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "60",
+      "titolo": "Le città nascoste. 1.",
+      "start": "109394",
+      "end": "111103",
+      "dettaglio_1": "8",
+      "dettaglio_2": "Olinda"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "61",
+      "titolo": ".....",
+      "start": "111106",
+      "end": "112798",
+      "dettaglio_1": "8",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "62",
+      "titolo": ".....",
+      "start": "112800",
+      "end": "119197",
+      "dettaglio_1": "9",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "63",
+      "titolo": "Le città e i morti. 5.",
+      "start": "119199",
+      "end": "123404",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Laudomia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "64",
+      "titolo": "Le città e il cielo. 4.",
+      "start": "123406",
+      "end": "124937",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Perinzia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "65",
+      "titolo": "Le città continue. 3.",
+      "start": "124938",
+      "end": "127570",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Procopia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "66",
+      "titolo": "Le città nascoste. 2.",
+      "start": "127571",
+      "end": "129408",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Raissa"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "67",
+      "titolo": "Le città e il cielo. 5.",
+      "start": "129410",
+      "end": "131796",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Andria"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "68",
+      "titolo": "Le città continue. 4.",
+      "start": "131798",
+      "end": "134100",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Cecilia"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "69",
+      "titolo": "Le città nascoste. 3.",
+      "start": "134102",
+      "end": "136572",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Sibilla"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "70",
+      "titolo": "Le città continue. 5.",
+      "start": "136574",
+      "end": "139346",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Pentesilea"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "71",
+      "titolo": "Le città nascoste. 4.",
+      "start": "139347",
+      "end": "141609",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Teodora"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "72",
+      "titolo": "Le città nascoste. 5.",
+      "start": "141611",
+      "end": "144789",
+      "dettaglio_1": "9",
+      "dettaglio_2": "Berenice"
+  },
+  {
+      "id opera": "V018",
+      "numero sezione": "73",
+      "titolo": ".....",
+      "start": "144793",
+      "end": "146738",
+      "dettaglio_1": "9",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "1",
+      "titolo": "La taverna",
+      "start": "35",
+      "end": "3266",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "2",
+      "titolo": "Storia dell'indeciso",
+      "start": "3268",
+      "end": "17399",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "3",
+      "titolo": "Storia della foresta che si vendica",
+      "start": "17401",
+      "end": "25054",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "4",
+      "titolo": "Storia del guerriero sopravvissuto",
+      "start": "25056",
+      "end": "35910",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "5",
+      "titolo": "Storia del regno dei vampiri",
+      "start": "35912",
+      "end": "51538",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "6",
+      "titolo": "Due storie in cui si cerca e ci si perde",
+      "start": "51540",
+      "end": "65327",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "7",
+      "titolo": "Anch'io cerco di dire la mia",
+      "start": "65329",
+      "end": "86272",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S152",
+      "numero sezione": "8",
+      "titolo": "Tre storie di follia e distruzione",
+      "start": "86274",
+      "end": "98778",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "1",
+      "titolo": "Il castello",
+      "start": "36",
+      "end": "5691",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "2",
+      "titolo": "Storia dell'ingrato punito",
+      "start": "5693",
+      "end": "16848",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "3",
+      "titolo": "Storia dell'alchimista che vendette l'anima",
+      "start": "16850",
+      "end": "25273",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "4",
+      "titolo": "Storia della sposa dannata",
+      "start": "25275",
+      "end": "30351",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "5",
+      "titolo": "Storia d'un ladro di sepolcri",
+      "start": "30353",
+      "end": "34495",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "6",
+      "titolo": "Storia del'Orlando pazzo per amore",
+      "start": "34498",
+      "end": "43172",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "7",
+      "titolo": "Storia di Astolfo sulla Luna",
+      "start": "43174",
+      "end": "49992",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V016",
+      "numero sezione": "8",
+      "titolo": "Tutte le altre storie",
+      "start": "49994",
+      "end": "62895",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "1",
+      "titolo": "Capitolo 1",
+      "start": "61",
+      "end": "12670",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "2",
+      "titolo": "Se una notte d'inverno un viaggiatore",
+      "start": "12671",
+      "end": "38811",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "3",
+      "titolo": "Capitolo 2",
+      "start": "38813",
+      "end": "53532",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "4",
+      "titolo": "Fuori dell’abitato di Malbork",
+      "start": "53534",
+      "end": "67182",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "5",
+      "titolo": "Capitolo 3",
+      "start": "67184",
+      "end": "87717",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "6",
+      "titolo": "Sporgendosi dalla costa scoscesa",
+      "start": "87719",
+      "end": "113488",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "7",
+      "titolo": "Capitolo 4",
+      "start": "113490",
+      "end": "129030",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "8",
+      "titolo": "Senza temere il vento e la vertigine",
+      "start": "129032",
+      "end": "153401",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "9",
+      "titolo": "Capitolo 5",
+      "start": "153402",
+      "end": "174436",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "10",
+      "titolo": "Guarda in basso dove l’ombra s’addensa",
+      "start": "174438",
+      "end": "197460",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "11",
+      "titolo": "Capitolo 6",
+      "start": "197462",
+      "end": "229994",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "12",
+      "titolo": "In una rete di linee che s’allacciano",
+      "start": "229996",
+      "end": "243593",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "13",
+      "titolo": "Capitolo 7",
+      "start": "243595",
+      "end": "280423",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "14",
+      "titolo": "In una rete di linee che s’intersecano",
+      "start": "280425",
+      "end": "295346",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "15",
+      "titolo": "Capitolo 8 - Diario di Silas Flannery",
+      "start": "295348",
+      "end": "349087",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "16",
+      "titolo": "Sul tappeto di foglie illuminate dalla luna",
+      "start": "349089",
+      "end": "370639",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "17",
+      "titolo": "Capitolo 9",
+      "start": "370641",
+      "end": "390057",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "18",
+      "titolo": "Intorno a una fossa vuota",
+      "start": "390059",
+      "end": "412011",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "19",
+      "titolo": "Capitolo 10",
+      "start": "412013",
+      "end": "430366",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "20",
+      "titolo": "Quale storia laggiù attende la fine?",
+      "start": "430368",
+      "end": "445839",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "21",
+      "titolo": "Capitolo 11",
+      "start": "445841",
+      "end": "457982",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "V021",
+      "numero sezione": "22",
+      "titolo": "Capitolo 12",
+      "start": "457984",
+      "end": "458334",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "1",
+      "titolo": "",
+      "start": "19",
+      "end": "10134",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "2",
+      "titolo": "",
+      "start": "10137",
+      "end": "17505",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "3",
+      "titolo": "",
+      "start": "17507",
+      "end": "21398",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "4",
+      "titolo": "",
+      "start": "21399",
+      "end": "24071",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "5",
+      "titolo": "",
+      "start": "24072",
+      "end": "34137",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "6",
+      "titolo": "",
+      "start": "34139",
+      "end": "38795",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "7",
+      "titolo": "",
+      "start": "38797",
+      "end": "44355",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "8",
+      "titolo": "",
+      "start": "44356",
+      "end": "49954",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "9",
+      "titolo": "",
+      "start": "49955",
+      "end": "53411",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "10",
+      "titolo": "",
+      "start": "53412",
+      "end": "59107",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "11",
+      "titolo": "",
+      "start": "59108",
+      "end": "62894",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "12",
+      "titolo": "",
+      "start": "62895",
+      "end": "67401",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "13",
+      "titolo": "",
+      "start": "67402",
+      "end": "71336",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "14",
+      "titolo": "",
+      "start": "71338",
+      "end": "78539",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "15",
+      "titolo": "",
+      "start": "78540",
+      "end": "81013",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "16",
+      "titolo": "",
+      "start": "81015",
+      "end": "84586",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "17",
+      "titolo": "",
+      "start": "84587",
+      "end": "89233",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "18",
+      "titolo": "",
+      "start": "89234",
+      "end": "94833",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S095",
+      "numero sezione": "19",
+      "titolo": "",
+      "start": "94835",
+      "end": "101390",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S132",
+      "numero sezione": "1",
+      "titolo": "prologo scientifico",
+      "start": "11",
+      "end": "451",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S132",
+      "numero sezione": "2",
+      "titolo": "1",
+      "start": "452",
+      "end": "14779",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S132",
+      "numero sezione": "3",
+      "titolo": "2",
+      "start": "14782",
+      "end": "19629",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S132",
+      "numero sezione": "4",
+      "titolo": "3",
+      "start": "19630",
+      "end": "27755",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "1",
+      "titolo": "1",
+      "start": "24",
+      "end": "3078",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "2",
+      "titolo": "2",
+      "start": "3080",
+      "end": "5947",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "3",
+      "titolo": "3",
+      "start": "5948",
+      "end": "8208",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "4",
+      "titolo": "4",
+      "start": "8211",
+      "end": "11084",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "5",
+      "titolo": "5",
+      "start": "11085",
+      "end": "13046",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "6",
+      "titolo": "6",
+      "start": "13047",
+      "end": "14870",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "7",
+      "titolo": "7",
+      "start": "14871",
+      "end": "17042",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "8",
+      "titolo": "8",
+      "start": "17043",
+      "end": "21575",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S144",
+      "numero sezione": "9",
+      "titolo": "9",
+      "start": "21576",
+      "end": "22375",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "1",
+      "titolo": "",
+      "start": "17",
+      "end": "526",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "2",
+      "titolo": "",
+      "start": "528",
+      "end": "1312",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "3",
+      "titolo": "",
+      "start": "1313",
+      "end": "1643",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "4",
+      "titolo": "",
+      "start": "1645",
+      "end": "2236",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "5",
+      "titolo": "",
+      "start": "2238",
+      "end": "2998",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "6",
+      "titolo": "",
+      "start": "3000",
+      "end": "4031",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "7",
+      "titolo": "",
+      "start": "4033",
+      "end": "4976",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "8",
+      "titolo": "",
+      "start": "4978",
+      "end": "5397",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "9",
+      "titolo": "",
+      "start": "5399",
+      "end": "5915",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "10",
+      "titolo": "",
+      "start": "5917",
+      "end": "6359",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "11",
+      "titolo": "",
+      "start": "6361",
+      "end": "6585",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "12",
+      "titolo": "",
+      "start": "6587",
+      "end": "6877",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "13",
+      "titolo": "",
+      "start": "6879",
+      "end": "7468",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "14",
+      "titolo": "",
+      "start": "7470",
+      "end": "8027",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "15",
+      "titolo": "",
+      "start": "8029",
+      "end": "8515",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "16",
+      "titolo": "",
+      "start": "8517",
+      "end": "8854",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "17",
+      "titolo": "",
+      "start": "8856",
+      "end": "9263",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "18",
+      "titolo": "",
+      "start": "9265",
+      "end": "9639",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "19",
+      "titolo": "",
+      "start": "9641",
+      "end": "10026",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "20",
+      "titolo": "",
+      "start": "10028",
+      "end": "10676",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "21",
+      "titolo": "",
+      "start": "10678",
+      "end": "10960",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "22",
+      "titolo": "",
+      "start": "10962",
+      "end": "11579",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "23",
+      "titolo": "",
+      "start": "11581",
+      "end": "12132",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "24",
+      "titolo": "",
+      "start": "12134",
+      "end": "12685",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "25",
+      "titolo": "",
+      "start": "12687",
+      "end": "13151",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "26",
+      "titolo": "",
+      "start": "13153",
+      "end": "14356",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "27",
+      "titolo": "",
+      "start": "14358",
+      "end": "15729",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "28",
+      "titolo": "",
+      "start": "15731",
+      "end": "16437",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "29",
+      "titolo": "",
+      "start": "16439",
+      "end": "16961",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "30",
+      "titolo": "",
+      "start": "16963",
+      "end": "17367",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "31",
+      "titolo": "",
+      "start": "17369",
+      "end": "17699",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "32",
+      "titolo": "",
+      "start": "17701",
+      "end": "18315",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "33",
+      "titolo": "",
+      "start": "18317",
+      "end": "19007",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "34",
+      "titolo": "",
+      "start": "19009",
+      "end": "19485",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "35",
+      "titolo": "",
+      "start": "19487",
+      "end": "19707",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "36",
+      "titolo": "",
+      "start": "19709",
+      "end": "20325",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "37",
+      "titolo": "",
+      "start": "20327",
+      "end": "20751",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "38",
+      "titolo": "",
+      "start": "20753",
+      "end": "21134",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "39",
+      "titolo": "",
+      "start": "21136",
+      "end": "21692",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S150",
+      "numero sezione": "40",
+      "titolo": "",
+      "start": "21997",
+      "end": "22004",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "1",
+      "titolo": "",
+      "start": "23",
+      "end": "1232",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "2",
+      "titolo": "",
+      "start": "1234",
+      "end": "6629",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "3",
+      "titolo": "",
+      "start": "6630",
+      "end": "8764",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "4",
+      "titolo": "",
+      "start": "8766",
+      "end": "15109",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "5",
+      "titolo": "",
+      "start": "15110",
+      "end": "18321",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "6",
+      "titolo": "",
+      "start": "18322",
+      "end": "20702",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "7",
+      "titolo": "",
+      "start": "20704",
+      "end": "21262",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "8",
+      "titolo": "",
+      "start": "21264",
+      "end": "23155",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "9",
+      "titolo": "",
+      "start": "23156",
+      "end": "23820",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S151",
+      "numero sezione": "10",
+      "titolo": "",
+      "start": "23822",
+      "end": "25010",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S181",
+      "numero sezione": "1",
+      "titolo": "1",
+      "start": "25",
+      "end": "5138",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S181",
+      "numero sezione": "2",
+      "titolo": "2",
+      "start": "5139",
+      "end": "7820",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S181",
+      "numero sezione": "3",
+      "titolo": "3",
+      "start": "7821",
+      "end": "10502",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S181",
+      "numero sezione": "4",
+      "titolo": "4",
+      "start": "10503",
+      "end": "13456",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S181",
+      "numero sezione": "5",
+      "titolo": "5",
+      "start": "13457",
+      "end": "18849",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "1",
+      "titolo": "",
+      "start": "23",
+      "end": "5039",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "2",
+      "titolo": "",
+      "start": "5041",
+      "end": "8066",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "3",
+      "titolo": "",
+      "start": "8067",
+      "end": "10658",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "4",
+      "titolo": "",
+      "start": "10659",
+      "end": "13555",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "5",
+      "titolo": "",
+      "start": "13556",
+      "end": "15204",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "6",
+      "titolo": "",
+      "start": "15206",
+      "end": "18241",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "7",
+      "titolo": "",
+      "start": "18243",
+      "end": "19410",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "8",
+      "titolo": "",
+      "start": "19412",
+      "end": "23154",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "9",
+      "titolo": "",
+      "start": "23156",
+      "end": "25234",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "10",
+      "titolo": "",
+      "start": "25236",
+      "end": "29066",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "11",
+      "titolo": "",
+      "start": "29068",
+      "end": "30695",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "12",
+      "titolo": "",
+      "start": "30697",
+      "end": "32425",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "13",
+      "titolo": "",
+      "start": "32427",
+      "end": "35217",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "14",
+      "titolo": "",
+      "start": "35217",
+      "end": "38624",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "15",
+      "titolo": "",
+      "start": "38626",
+      "end": "41668",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "16",
+      "titolo": "",
+      "start": "41669",
+      "end": "45752",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S204",
+      "numero sezione": "17",
+      "titolo": "",
+      "start": "45754",
+      "end": "46528",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S149",
+      "numero sezione": "1",
+      "titolo": "1",
+      "start": "29",
+      "end": "7947",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S149",
+      "numero sezione": "2",
+      "titolo": "2",
+      "start": "7949",
+      "end": "11304",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S149",
+      "numero sezione": "3",
+      "titolo": "3",
+      "start": "11305",
+      "end": "22359",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  },
+  {
+      "id opera": "S149",
+      "numero sezione": "4",
+      "titolo": "4",
+      "start": "22360",
+      "end": "25519",
+      "dettaglio_1": "",
+      "dettaglio_2": ""
+  }
+]
+
 const allowedCollections = "all"; // all : all collections; undefined for texts with undefined collection; V002,V014 (no spaces) for setting some collection ids for filtering (you can also put undefined in this list)
 
 const territoryColorPalette = {
@@ -3912,6 +6822,1306 @@ const publications = [
     }
   ]
 
+  const publications_simple = [
+    {
+      "id": "S001",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S002",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S003",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S004",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S005",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S006",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S007",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S008",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S009",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S010",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S011",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S012",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S013",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S014",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S015",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S016",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S017",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S018",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S019",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S020",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S021",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S022",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V001",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S023",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S024",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S025",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S026",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S027",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S028",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S029",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S030",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S031",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S032",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S033",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S034",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S035",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S036",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S037",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S038",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S039",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S040",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S041",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S042",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S043",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S044",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S045",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S046",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S047",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S048",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S049",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S050",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V003",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S051",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S052",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S053",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S054",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S055",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S056",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S057",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S058",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S059",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S060",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S061",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S062",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S063",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S064",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S065",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S066",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S067",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S068",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S069",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S070",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S071",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S072",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S073",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S074",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S075",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S076",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S077",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S078",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S079",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S080",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S081",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S082",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S083",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S084",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S085",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S086",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V005",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S087",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S088",
+      "types": [
+        "raccolta",
+        "romanzo"
+      ]
+    },
+    {
+      "id": "V010",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S089",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S090",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S091",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S092",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S093",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S094",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S095",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S096",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S097",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S098",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S099",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S100",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S101",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S102",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S103",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S104",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S105",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "V008",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S106",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V009",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S107",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S108",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S109",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S110",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S111",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S112",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S113",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S114",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S115",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S116",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S117",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S118",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S119",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S120",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S121",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S122",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S123",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S124",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S125",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S126",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S127",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S128",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S129",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S130",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S131",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S132",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S133",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S134",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S135",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S136",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S137",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S138",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S139",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S140",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S141",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S142",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S143",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S144",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S145",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S146",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S147",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S148",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S149",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V016",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S150",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S151",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V018",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S152",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S153",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S154",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V020",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S155",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S156",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S157",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S158",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S159",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S160",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S161",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S162",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S163",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S164",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S165",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S166",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S167",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S168",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S169",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S170",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S171",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S172",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S173",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S174",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S175",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "V021",
+      "types": [
+        "romanzo"
+      ]
+    },
+    {
+      "id": "S176",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S177",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S178",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S179",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S180",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S181",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S182",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S183",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S184",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S185",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S186",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S187",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S188",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S189",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S190",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S191",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S192",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S193",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S194",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S195",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S196",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S197",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S198",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S199",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S200",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S201",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S202",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S203",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S204",
+      "types": [
+        "altro"
+      ]
+    },
+    {
+      "id": "S205",
+      "types": [
+        "raccolta"
+      ]
+    },
+    {
+      "id": "S206",
+      "types": [
+        "raccolta"
+      ]
+    }
+  ]
+
 const GlobalData = {
   allVolumes : [
     {"id":"V001","label":"Il sentiero dei nidi di ragno", "type":"romanzo"},
@@ -4035,6 +8245,9 @@ const GlobalData = {
     compass : {
       time : "compassTime",
       bones : "compassBones"
+    },
+    processDoubting : {
+      main : "processDoubtingMain"
     }
   },
   legendPages : {
@@ -4054,6 +8267,9 @@ const GlobalData = {
       spaceOccurrences : "spaceOccurrences",
       spaceProportion  : "spaceProportion",
       spaceHierarchies : "spaceHierarchies"
+    },
+    transform : {
+      mainLegend : "mainLegend"
     }
   },
   visualizationColors : {
@@ -4090,7 +8306,9 @@ const GlobalData = {
   defaultTerritoryDataExtent : [1942, 1985],
   collections : collections,
   publications : publications,
+  publications_simple: publications_simple,
   allowedCollections : allowedCollections,
+  chapters_subdivision : chapters_subdivision,
   allowedCollectionsSplit : allowedCollections.split(","),
   col_collections : d3
     .scaleOrdinal()
