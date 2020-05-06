@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 
 const   simulation = d3.forceSimulation([]),
-        p = d3.scaleLinear().range([-400, 400]).domain([-1,1]);
+        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]);
 
 class Df3 extends Component {
     constructor(props) {
@@ -15,9 +15,11 @@ class Df3 extends Component {
     this._rootNode = componentNode;
   }
   async componentDidMount() {
-    const _data = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset flags - mds.csv')).filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'});
-    const _occurrences = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset flags - mds.csv'))//.filter(d=>d.id==='V021');
+    const _data = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv')).filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'});
+    const _occurrences = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv'))//.filter(d=>d.id==='V021');
 
+
+    console.log(_data)
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
@@ -30,8 +32,8 @@ class Df3 extends Component {
         master_g, g, node;
 
     simulation
-        .force('x',d3.forceX(d=>p(+d.V1)))
-        .force('y',d3.forceY(d=>p(-d.V2)))
+        .force('x',d3.forceX(d=>p(+d.prop_occ_x)))
+        .force('y',d3.forceY(d=>p(-d.prop_occ_y)))
         // .force('collision',d3.forceCollide( d=>d3.max([2,length(+d.length)])+1 ))
         .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .on('tick',()=>{node.attr('transform',d=>`translate(${d.x}, ${d.y})`)})
@@ -117,13 +119,31 @@ class Df3 extends Component {
   componentDidUpdate(prevProps,prevState) {
       if (prevState.positioning !== this.state.positioning) {
           console.log('reposition according to', this.state.positioning)
-          if (this.state.positioning === 'mds_one') {
-            simulation.force('x').x(d=>p(+d.V1))
-            simulation.force('y').y(d=>p(-d.V2))
+          if (this.state.positioning === 'prop_occ') {
+            simulation.force('x',d3.forceX(d=>p(+d.prop_occ_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.prop_occ_y)))
             simulation.alpha(1).restart();
-          } else if (this.state.positioning === 'random') {
-            simulation.force('x').x((d,i)=>i)
-            simulation.force('y').y((d,i)=>i)
+          } else if (this.state.positioning === 'cont_occ') {
+            simulation.force('x',d3.forceX(d=>p(+d.cont_occ_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.cont_occ_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'cont_e_prop_occ') {
+            simulation.force('x',d3.forceX(d=>p(+d.cont_e_prop_occ_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.cont_e_prop_occ_y)))
+            simulation.alpha(1).restart();
+          }
+
+          else if (this.state.positioning === 'prop_car') {
+            simulation.force('x',d3.forceX(d=>p(+d.prop_car_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.prop_car_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'cont_car') {
+            simulation.force('x',d3.forceX(d=>p(+d.cont_car_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.cont_car_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'cont_e_prop_car') {
+            simulation.force('x',d3.forceX(d=>p(+d.cont_e_prop_car_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.cont_e_prop_car_y)))
             simulation.alpha(1).restart();
           }
       }
@@ -131,8 +151,13 @@ class Df3 extends Component {
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
         <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
-            <option value="mds_one">Posizionamento uno</option>
-            <option value="random">Posizionamento random</option>
+            <option value="prop_occ">Proporzione fra tipi di occorrenze</option>
+            <option value="cont_occ">Conteggio tipi di occorrenze</option>
+            <option value="cont_e_prop_occ">Proporzione e conteggio tipi di occorrenze</option>
+
+            <option value="prop_car">Proporzione fra tipi di occorrenze in caratteri</option>
+            <option value="cont_car">Conteggio tipi di occorrenze in caratteri</option>
+            <option value="cont_e_prop_car">Proporzione e conteggio tipi di occorrenze in caratteri</option>
         </select>
         <svg />
     </div>;
