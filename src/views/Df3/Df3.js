@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
+const   simulation = d3.forceSimulation([]),
+        p = d3.scaleLinear().range([-400, 400]).domain([-1,1]);
+
 class Df3 extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            positioning: 'just the default one'
+        }
+    }
   _setRef(componentNode) {
     this._rootNode = componentNode;
   }
   async componentDidMount() {
-    const _data = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset flags - mds.csv'))//.filter(d=>d.id==='V021');
+    const _data = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset flags - mds.csv')).filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'});
+    const _occurrences = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset flags - mds.csv'))//.filter(d=>d.id==='V021');
 
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
-        p = d3.scaleLinear().range([-1000, 1000]).domain([-1,1]),
         // size = d3.scaleLinear().range([0,10]).domain([0,1]),
         length = d3.scaleLinear().range([0,30]).domain([0,d3.max(_data,d=>+d.length)]),
         lengthClumped = (l)=>d3.max([2,length(Number(l))]),
         // side = (d)=>lengthClumped(d)/3*Number(d),
         // r_x = (d,i)=>i%3*lengthClumped(d)/3 + side(1)/2 - side(d)/2,
-        // r_y = (d,i)=> Math.floor(i/3)*lengthClumped(d)/3 + side(1)/2 - side(d)/2,
-        simulation = d3.forceSimulation([])
-                        .force('x',d3.forceX(d=>p(+d.V1)))
-                        .force('y',d3.forceY(d=>p(-d.V2)))
-                        .force('collision',d3.forceCollide( d=>d3.max([2,length(+d.length)])+1 ))
-                        .on('tick',()=>{node.attr('transform',d=>`translate(${d.x}, ${d.y})`)})
-                        .on('end',()=>console.log(JSON.stringify(_data.map(d=>{return{'id':d.id,'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2))
-                        .stop(), 
-        
+        // r_y = (d,i)=> Math.floor(i/3)*lengthClumped(d)/3 + side(1)/2 - side(d)/2, 
         master_g, g, node;
+
+    simulation
+        .force('x',d3.forceX(d=>p(+d.V1)))
+        .force('y',d3.forceY(d=>p(-d.V2)))
+        // .force('collision',d3.forceCollide( d=>d3.max([2,length(+d.length)])+1 ))
+        .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
+        .on('tick',()=>{node.attr('transform',d=>`translate(${d.x}, ${d.y})`)})
+        // .on('end',()=>console.log(JSON.stringify(_data.map(d=>{return{'id':d.id,'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2))
+        .stop();
 
     const svg = d3.select(this._rootNode).select('svg');
 
@@ -35,12 +45,44 @@ class Df3 extends Component {
     master_g = svg.append('g');
     g = master_g.append('g').attr('transform',`translate(${width/2},${height/2})`);
 
-    node = g.selectAll('.node').data(_data).enter().append('g').attr('data-id',d=>d.id);
+    node = g.selectAll('.node').data(_data)
+        .enter().append('g')
+            .attr('data-id',d=>d.id)
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended)
+            );
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alpha(1).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+        }
+        
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
     
-    node.append('circle')
-        .attr('fill','#FEF9E7')
-        .attr('stroke','#FBEEE6')
-        .attr('r',d=>lengthClumped(d.length));
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
+    
+    // node.append('circle')
+    //     .attr('fill','none')
+    //     .attr('stroke','grey')
+    //     .attr('r',d=>lengthClumped(d.length));
+
+    node.append('rect')
+        .attr('fill','black')
+        .style('opacity',.5)
+        // .attr('x',d=>-lengthClumped(d.length)/2)
+        // .attr('y',d=>-lengthClumped(d.length)/2)
+        .attr('width',d=>lengthClumped(d.length))
+        .attr('height',d=>lengthClumped(d.length))
 
     // node.append('g').selectAll('rect').data(d=>{
     //   let arr = [
@@ -56,25 +98,43 @@ class Df3 extends Component {
     //   .attr('y',(d,i)=>r_y(d,i))
     //   .attr('transform',`translate(${-length.range()[1]},${-length.range()[1]})`)
       
-
+    const font_size = 5;
     node.append('text')
         .classed('label-title',true)
         .attr('text-anchor','middle')
-        .attr('font-size','9px')
-        .attr('y',d=>-lengthClumped(d.length))
-        .style('opacity',0.75)
+        .attr('font-size',font_size)
+        .attr('x',d=>0.5*lengthClumped(d.length))
+        // .style('opacity',0.25)
         .text(d=>d.title)
 
     simulation.nodes(_data).alpha(1).restart();    
     let zoom = d3.zoom().on("zoom", ()=>{
       master_g.attr("transform", d3.event.transform);
-      node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',9/d3.event.transform.k)
+      node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
     });
     svg.call(zoom)
   }
+  componentDidUpdate(prevProps,prevState) {
+      if (prevState.positioning !== this.state.positioning) {
+          console.log('reposition according to', this.state.positioning)
+          if (this.state.positioning === 'mds_one') {
+            simulation.force('x').x(d=>p(+d.V1))
+            simulation.force('y').y(d=>p(-d.V2))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'random') {
+            simulation.force('x').x((d,i)=>i)
+            simulation.force('y').y((d,i)=>i)
+            simulation.alpha(1).restart();
+          }
+      }
+  }
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
-      <svg />
+        <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
+            <option value="mds_one">Posizionamento uno</option>
+            <option value="random">Posizionamento random</option>
+        </select>
+        <svg />
     </div>;
   }
 }
