@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/atlante-calvino-project/static/css/main.3bbf94f2.chunk.css",
-    "main.js": "/atlante-calvino-project/static/js/main.0ee22881.chunk.js",
-    "main.js.map": "/atlante-calvino-project/static/js/main.0ee22881.chunk.js.map",
+    "main.css": "/atlante-calvino-project/static/css/main.ebedfcb6.chunk.css",
+    "main.js": "/atlante-calvino-project/static/js/main.45af048a.chunk.js",
+    "main.js.map": "/atlante-calvino-project/static/js/main.45af048a.chunk.js.map",
     "runtime-main.js": "/atlante-calvino-project/static/js/runtime-main.401f0e3f.js",
     "runtime-main.js.map": "/atlante-calvino-project/static/js/runtime-main.401f0e3f.js.map",
     "static/css/2.fb4a9bca.chunk.css": "/atlante-calvino-project/static/css/2.fb4a9bca.chunk.css",
-    "static/js/2.6286849b.chunk.js": "/atlante-calvino-project/static/js/2.6286849b.chunk.js",
-    "static/js/2.6286849b.chunk.js.map": "/atlante-calvino-project/static/js/2.6286849b.chunk.js.map",
+    "static/js/2.5320e667.chunk.js": "/atlante-calvino-project/static/js/2.5320e667.chunk.js",
+    "static/js/2.5320e667.chunk.js.map": "/atlante-calvino-project/static/js/2.5320e667.chunk.js.map",
     "index.html": "/atlante-calvino-project/index.html",
-    "precache-manifest.943824d30e88d51860bc27c7c7b22a7f.js": "/atlante-calvino-project/precache-manifest.943824d30e88d51860bc27c7c7b22a7f.js",
+    "precache-manifest.db081e4b11dadc722944362fcade5404.js": "/atlante-calvino-project/precache-manifest.db081e4b11dadc722944362fcade5404.js",
     "service-worker.js": "/atlante-calvino-project/service-worker.js",
     "static/css/2.fb4a9bca.chunk.css.map": "/atlante-calvino-project/static/css/2.fb4a9bca.chunk.css.map",
-    "static/css/main.3bbf94f2.chunk.css.map": "/atlante-calvino-project/static/css/main.3bbf94f2.chunk.css.map",
-    "static/js/2.6286849b.chunk.js.LICENSE": "/atlante-calvino-project/static/js/2.6286849b.chunk.js.LICENSE",
+    "static/css/main.ebedfcb6.chunk.css.map": "/atlante-calvino-project/static/css/main.ebedfcb6.chunk.css.map",
+    "static/js/2.5320e667.chunk.js.LICENSE": "/atlante-calvino-project/static/js/2.5320e667.chunk.js.LICENSE",
     "static/media/stylesheet.css": "/atlante-calvino-project/static/media/hkgrotesk-semibolditalic.bef7d8c3.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.401f0e3f.js",
     "static/css/2.fb4a9bca.chunk.css",
-    "static/js/2.6286849b.chunk.js",
-    "static/css/main.3bbf94f2.chunk.css",
-    "static/js/main.0ee22881.chunk.js"
+    "static/js/2.5320e667.chunk.js",
+    "static/css/main.ebedfcb6.chunk.css",
+    "static/js/main.45af048a.chunk.js"
   ]
 }
