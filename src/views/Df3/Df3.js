@@ -4,7 +4,12 @@ import * as d3 from 'd3';
 import './Df3.css'
 
 const   simulation = d3.forceSimulation([]),
-        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]);
+        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]),
+        matrix_grid = {
+            x: d3.scaleBand().range([0,1]).domain(['negazione','dubbio','riformulazione']),
+            y: d3.scaleBand().range([0,1]).domain(['cosa','come','senso'])
+        },
+        matrix_color = d3.scaleLinear().range(['#FADBD8','#34495E']);
 
 class Df3 extends Component {
     constructor(props) {
@@ -18,22 +23,31 @@ class Df3 extends Component {
   }
   async componentDidMount() {
     const _data = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv')).filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'});
-    const _occurrences = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv'))//.filter(d=>d.id==='V021');
-
-
-    console.log(_data)
-
+    // const _occurrences = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv'));
 
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
-        // size = d3.scaleLinear().range([0,10]).domain([0,1]),
         length = d3.scaleLinear().range([0,30]).domain([0,d3.max(_data,d=>+d.length)]),
-        lengthClumped = (l)=>d3.max([2,length(Number(l))]),
-        // side = (d)=>lengthClumped(d)/3*Number(d),
-        // r_x = (d,i)=>i%3*lengthClumped(d)/3 + side(1)/2 - side(d)/2,
-        // r_y = (d,i)=> Math.floor(i/3)*lengthClumped(d)/3 + side(1)/2 - side(d)/2, 
+        lengthClumped = (l)=>d3.max([5,length(Number(l))]),
         master_g, g, node;
+
+    matrix_color.domain([
+        0,
+        d3.max([
+            d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
+            d3.max(_data,d=>Number(d['cont_occ_come-negazione'])),
+            d3.max(_data,d=>Number(d['cont_occ_come-riformulazione'])),
+            d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
+            d3.max(_data,d=>Number(d['cont_occ_cosa-negazione'])),
+            d3.max(_data,d=>Number(d['cont_occ_cosa-riformulazione'])),
+            d3.max(_data,d=>Number(d['cont_occ_senso-dubbio'])),
+            d3.max(_data,d=>Number(d['cont_occ_senso-negazione'])),
+            d3.max(_data,d=>Number(d['cont_occ_senso-riformulazione']))
+        ])
+    ]);
+
+    console.log(matrix_color.domain())
 
     simulation
         .force('x',d3.forceX(d=>p(+d.prop_occ_x)))
@@ -59,7 +73,17 @@ class Df3 extends Component {
                 .on("start", dragstarted)
                 .on("drag", dragged)
                 .on("end", dragended)
-            );
+            )
+            .on('click',function(){
+                d3.select(this).classed('selected', !d3.select(this).classed('selected'));
+                const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
+                if (selectedNodes.size()>0){
+                    selectedNodes.style('opacity',1);
+                    node.filter(function(){return !d3.select(this).classed('selected')}).style('opacity',0.1);
+                } else {
+                    node.style('opacity',1);
+                }
+            });
 
     function dragstarted(d) {
         if (!d3.event.active) simulation.alpha(1).restart();
@@ -77,48 +101,63 @@ class Df3 extends Component {
         d.fx = null;
         d.fy = null;
     }
-    
+
     // node.append('circle')
-    //     .attr('fill','none')
-    //     .attr('stroke','grey')
-    //     .attr('r',d=>lengthClumped(d.length));
+    //     .attr('r',10)
+    //     .attr('fill','transparent')
+    //     .attr('stroke','pink')
 
     node.append('rect')
-        .attr('fill','black')
-        .style('opacity',.5)
+        .attr('fill','transparent')
+        .attr('stroke', matrix_color.range()[0])
         // .attr('x',d=>-lengthClumped(d.length)/2)
         // .attr('y',d=>-lengthClumped(d.length)/2)
         .attr('width',d=>lengthClumped(d.length))
         .attr('height',d=>lengthClumped(d.length))
 
-    // node.append('g').selectAll('rect').data(d=>{
-    //   let arr = [
-    //     "come-dubbio", "come-negazione", "come-riformulazione",
-    //     "cosa-dubbio", "cosa-negazione", "cosa-riformulazione",
-    //     "senso-dubbio", "senso-negazione", "senso-riformulazione"
-    //   ].map(p=>+d[p]);
-    //   return arr;
-    // }).enter().append('rect')
-    //   .attr('width',d=>side(d))
-    //   .attr('height',d=>side(d))
-    //   .attr('x',(d,i)=>r_x(d,i))
-    //   .attr('y',(d,i)=>r_y(d,i))
-    //   .attr('transform',`translate(${-length.range()[1]},${-length.range()[1]})`)
+    node.append('g').selectAll('rect').data(d=>{
+      let arr = [
+        "come-dubbio", "come-negazione", "come-riformulazione",
+        "cosa-dubbio", "cosa-negazione", "cosa-riformulazione",
+        "senso-dubbio", "senso-negazione", "senso-riformulazione"
+      ].map(p=>{
+          let obj={};
+          obj['id']=d['ID opera'];
+          obj.type=p;
+          obj.valueColor=Number(d['cont_occ_'+p]);
+          obj.size=Number(d['prop_occ_'+p])*lengthClumped(d.length)/3;
+
+          obj.x =   matrix_grid.x(p.split('-')[1]) * lengthClumped(d.length)
+                    + lengthClumped(d.length)/6
+                    - obj.size/2;
+          obj.y =   matrix_grid.y(p.split('-')[0]) * lengthClumped(d.length) 
+                    + lengthClumped(d.length)/6
+                    - obj.size/2;
+
+          return obj;
+        });
+      return arr;
+    }).enter().append('rect')
+      .attr('width',d=>d.size)
+      .attr('height',d=>d.size)
+      .attr('x',d=>d.x)
+      .attr('y',d=>d.y)
+      .attr('fill',d=>matrix_color(d.valueColor));
       
     const font_size = 8;
     node.append('text')
         .classed('label-title',true)
-        .attr('text-anchor','middle')
+        .attr('text-anchor','start')
         .attr('font-size',font_size)
-        .attr('x',d=>0.5*lengthClumped(d.length))
-        .attr('y', -1)
+        // .attr('x',d=>0.5*lengthClumped(d.length))
+        // .attr('y', d=>-lengthClumped(d.length)/2 -1)
         .text(d=>d.title.slice(0,10));
     node.append('text')
         .classed('label-title-complete',true)
-        .attr('text-anchor','middle')
+        .attr('text-anchor','start')
         .attr('font-size',font_size*1.5)
-        .attr('x',d=>0.5*lengthClumped(d.length))
-        .attr('y', -1)
+        // .attr('x',d=>0.5*lengthClumped(d.length))
+        // .attr('y', d=>-lengthClumped(d.length)/2 -1)
         .text(d=>d.title)
 
     simulation.nodes(_data).alpha(1).restart();
@@ -166,16 +205,18 @@ class Df3 extends Component {
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
         <svg />
-        <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})} style={{position:'absolute',top:0,left:0}}>
-            <option value="prop_occ">Proporzione fra tipi di occorrenze</option>
-            <option value="cont_occ">Conteggio tipi di occorrenze</option>
-            <option value="cont_e_prop_occ">Proporzione e conteggio tipi di occorrenze</option>
+        <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
+            <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
+                <option value="prop_occ">Proporzione fra tipi di occorrenze</option>
+                <option value="cont_occ">Conteggio tipi di occorrenze</option>
+                <option value="cont_e_prop_occ">Proporzione e conteggio tipi di occorrenze</option>
 
-            <option value="prop_car">Proporzione fra occorrenze in caratteri</option>
-            <option value="cont_car">Conteggio occorrenze in caratteri</option>
-            <option value="cont_e_prop_car">Proporzione e conteggio occorrenze in caratteri</option>
-        </select>
-        
+                <option value="prop_car">Proporzione fra occorrenze in caratteri</option>
+                <option value="cont_car">Conteggio occorrenze in caratteri</option>
+                <option value="cont_e_prop_car">Proporzione e conteggio occorrenze in caratteri</option>
+            </select>
+            Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (rosa = 0 👉 blu scuro = 239).
+        </p>  
     </div>;
   }
 }

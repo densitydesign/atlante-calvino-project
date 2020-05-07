@@ -1,3 +1,7 @@
+.node {
+    cursor: pointer;
+}
+
 .node .label-title-complete {
     display: none;
 }
