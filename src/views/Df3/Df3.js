@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
+import './Df3.css'
+
 const   simulation = d3.forceSimulation([]),
         p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]);
 
@@ -20,6 +22,8 @@ class Df3 extends Component {
 
 
     console.log(_data)
+
+
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
@@ -49,6 +53,7 @@ class Df3 extends Component {
 
     node = g.selectAll('.node').data(_data)
         .enter().append('g')
+            .classed('node',true)
             .attr('data-id',d=>d.id)
             .call(d3.drag()
                 .on("start", dragstarted)
@@ -100,20 +105,30 @@ class Df3 extends Component {
     //   .attr('y',(d,i)=>r_y(d,i))
     //   .attr('transform',`translate(${-length.range()[1]},${-length.range()[1]})`)
       
-    const font_size = 5;
+    const font_size = 8;
     node.append('text')
         .classed('label-title',true)
         .attr('text-anchor','middle')
         .attr('font-size',font_size)
         .attr('x',d=>0.5*lengthClumped(d.length))
-        // .style('opacity',0.25)
+        .attr('y', -1)
+        .text(d=>d.title.slice(0,10));
+    node.append('text')
+        .classed('label-title-complete',true)
+        .attr('text-anchor','middle')
+        .attr('font-size',font_size*1.5)
+        .attr('x',d=>0.5*lengthClumped(d.length))
+        .attr('y', -1)
         .text(d=>d.title)
 
-    simulation.nodes(_data).alpha(1).restart();    
+    simulation.nodes(_data).alpha(1).restart();
+
     let zoom = d3.zoom().on("zoom", ()=>{
       master_g.attr("transform", d3.event.transform);
       node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
+      node.selectAll('.label-title-complete').attr('font-size',(font_size*1.5)/d3.event.transform.k)
     });
+
     svg.call(zoom)
   }
   componentDidUpdate(prevProps,prevState) {
@@ -150,16 +165,17 @@ class Df3 extends Component {
   }
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
-        <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
+        <svg />
+        <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})} style={{position:'absolute',top:0,left:0}}>
             <option value="prop_occ">Proporzione fra tipi di occorrenze</option>
             <option value="cont_occ">Conteggio tipi di occorrenze</option>
             <option value="cont_e_prop_occ">Proporzione e conteggio tipi di occorrenze</option>
 
-            <option value="prop_car">Proporzione fra tipi di occorrenze in caratteri</option>
-            <option value="cont_car">Conteggio tipi di occorrenze in caratteri</option>
-            <option value="cont_e_prop_car">Proporzione e conteggio tipi di occorrenze in caratteri</option>
+            <option value="prop_car">Proporzione fra occorrenze in caratteri</option>
+            <option value="cont_car">Conteggio occorrenze in caratteri</option>
+            <option value="cont_e_prop_car">Proporzione e conteggio occorrenze in caratteri</option>
         </select>
-        <svg />
+        
     </div>;
   }
 }

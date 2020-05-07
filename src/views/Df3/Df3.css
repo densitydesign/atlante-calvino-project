@@ -1,0 +1,15 @@
+.node .label-title-complete {
+    display: none;
+}
+
+.node:hover .label-title-complete {
+    display: block;
+}
+
+.node .label-title {
+    display: block;
+}
+
+.node:hover .label-title {
+    display: none;
+}
