@@ -9,7 +9,7 @@ const   simulation = d3.forceSimulation([]),
             x: d3.scaleBand().range([0,1]).domain(['negazione','dubbio','riformulazione']),
             y: d3.scaleBand().range([0,1]).domain(['cosa','come','senso'])
         },
-        matrix_color = d3.scaleLinear().range(['#FADBD8','#34495E']);
+        matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true);
 
 class Df3 extends Component {
     constructor(props) {
@@ -32,22 +32,20 @@ class Df3 extends Component {
         lengthClumped = (l)=>d3.max([5,length(Number(l))]),
         master_g, g, node;
 
-    matrix_color.domain([
-        0,
-        d3.max([
-            d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
-            d3.max(_data,d=>Number(d['cont_occ_come-negazione'])),
-            d3.max(_data,d=>Number(d['cont_occ_come-riformulazione'])),
-            d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
-            d3.max(_data,d=>Number(d['cont_occ_cosa-negazione'])),
-            d3.max(_data,d=>Number(d['cont_occ_cosa-riformulazione'])),
-            d3.max(_data,d=>Number(d['cont_occ_senso-dubbio'])),
-            d3.max(_data,d=>Number(d['cont_occ_senso-negazione'])),
-            d3.max(_data,d=>Number(d['cont_occ_senso-riformulazione']))
-        ])
-    ]);
-
-    console.log(matrix_color.domain())
+    // matrix_color.domain([
+    //     0,
+    //     d3.max([
+    //         d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_come-negazione'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_come-riformulazione'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_cosa-dubbio'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_cosa-negazione'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_cosa-riformulazione'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_senso-dubbio'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_senso-negazione'])),
+    //         d3.max(_data,d=>Number(d['cont_occ_senso-riformulazione']))
+    //     ])
+    // ]);
 
     simulation
         .force('x',d3.forceX(d=>p(+d.prop_occ_x)))
@@ -69,17 +67,29 @@ class Df3 extends Component {
         .enter().append('g')
             .classed('node',true)
             .attr('data-id',d=>d.id)
-            .call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended)
-            )
+            // .call(d3.drag()
+            //     .on("start", dragstarted)
+            //     .on("drag", dragged)
+            //     .on("end", dragended)
+            // )
+            .on('mouseenter',function(){
+                const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
+                if (selectedNodes.size()>0){
+                    d3.select(this).style('opacity', 1 );
+                }
+            })
+            .on('mouseleave',function(){
+                const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
+                if (selectedNodes.size()>0){
+                    d3.select(this).style('opacity', d3.select(this).classed('selected')?1:0.3 );
+                }  
+            })
             .on('click',function(){
                 d3.select(this).classed('selected', !d3.select(this).classed('selected'));
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
                     selectedNodes.style('opacity',1);
-                    node.filter(function(){return !d3.select(this).classed('selected')}).style('opacity',0.1);
+                    node.filter(function(){return !d3.select(this).classed('selected')}).style('opacity',0.3);
                 } else {
                     node.style('opacity',1);
                 }
@@ -109,7 +119,7 @@ class Df3 extends Component {
 
     node.append('rect')
         .attr('fill','transparent')
-        .attr('stroke', matrix_color.range()[0])
+        .attr('stroke', '#aaa')
         // .attr('x',d=>-lengthClumped(d.length)/2)
         // .attr('y',d=>-lengthClumped(d.length)/2)
         .attr('width',d=>lengthClumped(d.length))
@@ -215,7 +225,7 @@ class Df3 extends Component {
                 <option value="cont_car">Conteggio occorrenze in caratteri</option>
                 <option value="cont_e_prop_car">Proporzione e conteggio occorrenze in caratteri</option>
             </select>
-            Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (rosa = 0 👉 blu scuro = 239).
+            Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (nero = 0 👉 rosso >= 75).
         </p>  
     </div>;
   }
