@@ -11,6 +11,8 @@ const   simulation = d3.forceSimulation([]),
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true);
 
+let     trail;
+
 class Df3 extends Component {
     constructor(props) {
         super(props);
@@ -52,8 +54,26 @@ class Df3 extends Component {
         .force('y',d3.forceY(d=>p(-d.prop_occ_y)))
         // .force('collision',d3.forceCollide( d=>d3.max([2,length(+d.length)])+1 ))
         .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
-        .on('tick',()=>{node.attr('transform',d=>`translate(${d.x}, ${d.y})`)})
-        // .on('end',()=>console.log(JSON.stringify(_data.map(d=>{return{'id':d.id,'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2))
+        .alphaMin(0.1)
+        .on('tick',()=>{
+            node.attr('transform',d=>`translate(${d.x}, ${d.y})`)
+                .filter(d=>d.selected===true)
+                .each(d=>d.trail.push([d.x,d.y]));
+            
+            const dataTrails = _data.filter(d=>d.trail).map(d=>{return{id:d['ID opera'],trail:d.trail}})
+
+            trail = trail.data(dataTrails, d=>d.id);
+            trail.exit().remove();
+            trail = trail.enter().append('path')
+                        .attr('fill','none')
+                        .attr('stroke','#aaa')
+                        .classed('trail',true)
+                        .merge(trail)
+                        .attr('d',d=>d3.line()(d.trail));
+        })
+        // .on('end',()=>{
+        //     // console.log(JSON.stringify(_data.map(d=>{return{'id':d.id,'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2)
+        // })
         .stop();
 
     const svg = d3.select(this._rootNode).select('svg');
@@ -62,7 +82,7 @@ class Df3 extends Component {
     svg.attr('width',width).attr('height',height);
     master_g = svg.append('g');
     g = master_g.append('g').attr('transform',`translate(${width/2},${height/2})`);
-
+    trail = g.append('g').classed('trails-group',true).selectAll('.trail');
     node = g.selectAll('.node').data(_data)
         .enter().append('g')
             .classed('node',true)
@@ -84,8 +104,15 @@ class Df3 extends Component {
                     d3.select(this).style('opacity', d3.select(this).classed('selected')?1:0.3 );
                 }  
             })
-            .on('click',function(){
+            .on('click',function(d){
                 d3.select(this).classed('selected', !d3.select(this).classed('selected'));
+                if (d3.select(this).classed('selected')) {
+                    d.selected=true;
+                    d.trail=[];
+                } else {
+                    d.selected=false;
+                    delete d.trail;
+                }
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
                     selectedNodes.style('opacity',1);
@@ -112,16 +139,9 @@ class Df3 extends Component {
         d.fy = null;
     }
 
-    // node.append('circle')
-    //     .attr('r',10)
-    //     .attr('fill','transparent')
-    //     .attr('stroke','pink')
-
     node.append('rect')
         .attr('fill','transparent')
         .attr('stroke', '#aaa')
-        // .attr('x',d=>-lengthClumped(d.length)/2)
-        // .attr('y',d=>-lengthClumped(d.length)/2)
         .attr('width',d=>lengthClumped(d.length))
         .attr('height',d=>lengthClumped(d.length))
 
