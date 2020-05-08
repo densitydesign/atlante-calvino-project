@@ -32,6 +32,7 @@ class Df3 extends Component {
         margin= {},
         length = d3.scaleLinear().range([0,30]).domain([0,d3.max(_data,d=>+d.length)]),
         lengthClumped = (l)=>d3.max([5,length(Number(l))]),
+        percentage = d3.scaleLinear().range([0.05,1]).domain([0.1,51]),
         master_g, g, node;
 
     // matrix_color.domain([
@@ -71,9 +72,10 @@ class Df3 extends Component {
                         .merge(trail)
                         .attr('d',d=>d3.line()(d.trail));
         })
-        // .on('end',()=>{
-        //     // console.log(JSON.stringify(_data.map(d=>{return{'id':d.id,'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2)
-        // })
+        .on('end',()=>{
+            console.log(_data)
+            console.log(JSON.stringify(_data.map(d=>{return{'id':d['ID opera'],'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2)
+        })
         .stop();
 
     const svg = d3.select(this._rootNode).select('svg');
@@ -140,8 +142,9 @@ class Df3 extends Component {
     }
 
     node.append('rect')
-        .attr('fill','transparent')
-        .attr('stroke', '#aaa')
+        .attr('fill','#000')
+        // .attr('stroke', '#aaa')
+        .attr('opacity',d=>percentage(d.percentuale_dubbio))
         .attr('width',d=>lengthClumped(d.length))
         .attr('height',d=>lengthClumped(d.length))
 
@@ -230,6 +233,20 @@ class Df3 extends Component {
             simulation.force('y',d3.forceY(d=>p(-d.cont_e_prop_car_y)))
             simulation.alpha(1).restart();
           }
+
+          else if (this.state.positioning === 'prop_occ_perc') {
+            simulation.force('x',d3.forceX(d=>p(+d.prop_occ_perc_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.prop_occ_perc_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'prop_car_perc') {
+            simulation.force('x',d3.forceX(d=>p(+d.prop_car_perc_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.prop_car_perc_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'prop_occ_car_perc') {
+            simulation.force('x',d3.forceX(d=>p(+d.prop_occ_car_perc_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.prop_occ_car_perc_y)))
+            simulation.alpha(1).restart();
+          }
       }
   }
   render() {
@@ -237,13 +254,17 @@ class Df3 extends Component {
         <svg />
         <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
             <select id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
-                <option value="prop_occ">Proporzione fra tipi di occorrenze</option>
-                <option value="cont_occ">Conteggio tipi di occorrenze</option>
-                <option value="cont_e_prop_occ">Proporzione e conteggio tipi di occorrenze</option>
+                <option value="prop_occ">MDS 003 - Proporzione fra tipi di occorrenze</option>
+                <option value="cont_occ">MDS 003 - Conteggio tipi di occorrenze</option>
+                <option value="cont_e_prop_occ">MDS 003 - Proporzione e conteggio tipi di occorrenze</option>
 
-                <option value="prop_car">Proporzione fra occorrenze in caratteri</option>
-                <option value="cont_car">Conteggio occorrenze in caratteri</option>
-                <option value="cont_e_prop_car">Proporzione e conteggio occorrenze in caratteri</option>
+                <option value="prop_car">MDS 003 - Proporzione fra occorrenze in caratteri</option>
+                <option value="cont_car">MDS 003 - Conteggio occorrenze in caratteri</option>
+                <option value="cont_e_prop_car">MDS 003 - Proporzione e conteggio occorrenze in caratteri</option>
+
+                <option value="prop_occ_perc">MDS 004 - Proporzione fra tipi di occorrenze + percentuale dubbio</option>
+                <option value="prop_car_perc">MDS 004 - Proporzione fra tipi occorrenze in caratteri + percentuale dubbio</option>
+                <option value="prop_occ_car_perc">MDS 004 - Proporzione occorrenze + proporzione in caratteri + percentuale dubbio</option>
             </select>
             Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (nero = 0 👉 rosso >= 75).
         </p>  
