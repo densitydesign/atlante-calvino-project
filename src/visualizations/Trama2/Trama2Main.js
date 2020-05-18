@@ -4,6 +4,7 @@ import React, { useState, useCallback } from "react";
 import groupBy from "lodash/groupBy";
 import keyBy from "lodash/keyBy";
 import sortBy from "lodash/sortBy";
+import uniqBy from "lodash/uniqBy";
 import mapValues from "lodash/mapValues";
 import get from "lodash/get";
 import { extent } from 'd3-array'
@@ -30,30 +31,6 @@ const clusterByMotivo = mapValues(keyBy(mappaMotivoTipologia, "motivo_type"), it
 const ordineByCluster = keyBy(coloriPosizioni, "valore");
 const ordineMotivoByMotivo = mapValues(keyBy(ordineColore, 'tipologia'), item => +item['ordine tipologia'])
 
-const datasetLinesNormalized = datasetLines.map((item) => {
-  const tot = +item["tot caratteri"]
-  const motivo = item['motivo_type']
-  const cluster = get(clusterByMotivo, motivo)
-  const coloreCluster = get(ordineByCluster, `[${cluster}].colori`)
-  const ordineCluster = get(ordineByCluster, `[${cluster}].ordine`)
-  const ordineMotivo = get(ordineMotivoByMotivo, motivo)
-
-  return {
-    ...item,
-    startMotivoNorm: +item.start_motivo / tot,
-    endMotivoNorm: +item.end_motivo / tot,
-    cluster,
-    coloreCluster,
-    ordineCluster: ordineCluster ? +ordineCluster : undefined,
-    ordineMotivo,
-  };
-});
-const byRacconto = groupBy(datasetLinesNormalized, "titolo racconto");
-console.log("byRacconto", byRacconto);
-const racconti = Object.keys(byRacconto);
-
-console.log("racconti", racconti)
-
 
 //scales
 const motivoExtent = extent(ordineColore, item => +item['ordine tipologia'])
@@ -62,6 +39,44 @@ const colorsOrdered = sortBy(coloriPosizioni, item => +item.ordine)
 // const colorsExtent = extent(coloriPosizioni, item => +item.ordine)
 const scalaColore = scaleLinear().domain(colorsOrdered.map(item => item.ordine)).range(colorsOrdered.map(item => item.colori))
 
+const racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).map(item => ({
+  titolo: item["titolo racconto"],
+  anno: item["anno"],
+  mese: item["mese"]
+})), item => {
+  const anno = +item.anno
+  const mese = +item.mese
+  
+  return `${anno.toFixed(4)}${mese.toFixed(2)}`
+})
+
+
+const datasetLinesNormalized = datasetLines.map((item) => {
+  const tot = +item["tot caratteri"]
+  const motivo = item['motivo_type']
+  const cluster = get(clusterByMotivo, motivo)
+  const coloreCluster = get(ordineByCluster, `[${cluster}].colori`)
+  const ordineCluster = get(ordineByCluster, `[${cluster}].ordine`)
+  const ordineMotivo = get(ordineMotivoByMotivo, motivo)
+
+  const startMotivoNorm =  +item.start_motivo / tot
+  const endMotivoNorm =  +item.end_motivo / tot
+  const y = ordineMotivo !== undefined ? scalaMotivoY(ordineMotivo)  : undefined
+  const x = (startMotivoNorm + endMotivoNorm) / 2
+
+  return {
+    ...item,
+    startMotivoNorm,
+    endMotivoNorm,
+    cluster,
+    coloreCluster,
+    ordineCluster: ordineCluster ? +ordineCluster : undefined,
+    ordineMotivo,
+    y, 
+    x, 
+  };
+});
+const byRacconto = groupBy(datasetLinesNormalized, "titolo racconto");
 
 
 // main component
@@ -82,7 +97,12 @@ export default function Trama2Main() {
         ></div>
       </div>
       <div className="trama2-content">
-        <LineeTrama racconti={racconti} MOTIVO_LINE_HEIGHT={MOTIVO_LINE_HEIGHT}></LineeTrama>
+        <LineeTrama 
+        racconti={racconti} data={byRacconto} MOTIVO_LINE_HEIGHT={MOTIVO_LINE_HEIGHT}
+        scalaColore={scalaColore}
+        scalaMotivoY={scalaMotivoY}
+
+        ></LineeTrama>
 
       </div>
     </div>

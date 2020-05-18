@@ -48,6 +48,12 @@
 }
 
 .trama2-line {
-    stroke: red;
+    stroke: #ddd;
     stroke-width: 1px;
+    fill: none;
+}
+
+
+.trama2-circle {
+    fill: #ddd;
 }
