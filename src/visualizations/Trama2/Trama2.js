@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import MainMenu from "../../general/MainMenu";
 import PageTitle from "../../general/PageTitle";
 import MoreInfo from "../../general/MoreInfo";
@@ -10,38 +10,41 @@ import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
 import AltOptions from "../../general/Options/AltOptions";
 import GlobalData from "../../utilities/GlobalData";
 
+import "./Trama2.css";
 
-const searchOptions = []
+
+// we leverage react lazy+suspense to load core component at first render (it will load all json by importing it)
+const Trama2Main = lazy(() => import('./Trama2Main'));
+
+const searchOptions = [];
 
 const tipologiaOptions = [
   { label: "uno" },
   { label: "due" },
   { label: "tre" },
   { label: "quattro" },
-  { label: "cinque" }
+  { label: "cinque" },
 ];
-
 
 const cercaOptions = [{ label: "volume" }];
 
 class Trama extends Component {
   state = {
     isLoading: false,
-    booksData: null,
 
     cercaPer: "volume",
-    dettaglio: "ambito",
-    aggregazione: "aggregato",
-    tipologia: tipologiaOptions.map(x => x.label),
     ricerca: [],
 
     controlsEnabled: true,
-    currentTextID: null,
 
-    helpSidePanelOpen: false
+    helpSidePanelOpen: false,
+
+    //viz type.
+    //linee-trama, dettaglio-trama, boxplot-trama
+    //#TODO: move to routing?
   };
 
-  setCurrentTextID = currentTextID => {
+  setCurrentTextID = (currentTextID) => {
     const oldValue = this.state.currentTextID;
     if (currentTextID === oldValue) {
       return;
@@ -50,30 +53,29 @@ class Trama extends Component {
     this.setState(newState);
   };
 
-  changeRicerca = newOptions => {
-    this.setState({ ricerca: newOptions.map(x => x.value) });
+  changeRicerca = (newOptions) => {
+    this.setState({ ricerca: newOptions.map((x) => x.value) });
   };
 
   toggleHelpSidePanel = () =>
     this.setState({
-      helpSidePanelOpen: !this.state.helpSidePanelOpen
+      helpSidePanelOpen: !this.state.helpSidePanelOpen,
     });
 
-  componentDidMount() {}
+  // componentDidMount() {
+
+  // }
 
   render() {
     const {
       cercaPer,
-      dettaglio,
-      aggregazione,
-      tipologia,
       ricerca,
-      controlsEnabled,
       currentTextID,
-      helpSidePanelOpen
+      controlsEnabled,
+      helpSidePanelOpen,
     } = this.state;
 
-    const { title } = this.props
+    const { title } = this.props;
 
     const helpPage = GlobalData.helpPages.plot.main;
 
@@ -87,10 +89,7 @@ class Trama extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle
-            title={title}
-            style={{ gridColumn: "span 10" }}
-          />
+          <PageTitle title={title} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
@@ -99,13 +98,13 @@ class Trama extends Component {
               options={cercaOptions}
               disabled={true}
               value={cercaPer}
-              onChange={x => {
+              onChange={(x) => {
                 this.setState({ cercaPer: x.label });
               }}
               style={{
                 gridColumn: "span 3",
                 pointerEvents: !controlsEnabled ? "none" : undefined,
-                opacity: !controlsEnabled ? 0.4 : undefined
+                opacity: !controlsEnabled ? 0.4 : undefined,
               }}
             />
           )}
@@ -115,7 +114,7 @@ class Trama extends Component {
             <SearchDropDown
               style={{
                 gridColumn: "span 8",
-                pointerEvents: currentTextID ? "none" : undefined
+                pointerEvents: currentTextID ? "none" : undefined,
               }}
               data={{ options: searchOptions }}
               changeOptions={this.changeRicerca}
@@ -130,18 +129,15 @@ class Trama extends Component {
             style={{
               gridColumn: "span 1",
               color: "white",
-              backgroundColor: "black"
+              backgroundColor: "black",
             }}
           />
         </div>
+        <Suspense fallback={<div></div>}>
+            <Trama2Main></Trama2Main>
+        </Suspense>
 
-        <div className="the-body-viz">
-          
-        </div>
-
-        <div className="bottom-nav navigations">
-          
-        </div>
+        
       </div>
     );
   }
