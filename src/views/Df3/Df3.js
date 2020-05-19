@@ -10,7 +10,12 @@ const   simulation = d3.forceSimulation([]),
             y: d3.scalePoint().range([-3/5,3/5]).domain(['cosa','come','senso'])
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true),
-        col_macrocategorie = d3.scaleOrdinal().range(['#FF3366', '#FFD93B', '#10BED2']).domain(['cosa','come','senso']);
+        col_macrocategorie = d3.scaleOrdinal()
+            .range(['#FF3366', '#FFD93B', '#10BED2'])
+            .range(['#FFD93B', '#10BED2', '#FF3366'])
+            // .range(['#FF3366', '#ffa500', '#5151fc'])
+            // .range(['#ffa500', '#FF3366', '#5151fc'])
+            .domain(['cosa','come','senso']);
 
 let     trail;
 
@@ -31,7 +36,7 @@ class Df3 extends Component {
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
-        radius = d3.scalePow().exponent(0.5).range([0,30]).domain([0,d3.max(_data,d=>+d.length)]),
+        radius = d3.scalePow().exponent(0.5).range([0,40]).domain([0,d3.max(_data,d=>+d.length)]),
         master_g, g, node;
 
     _data = _data
@@ -43,7 +48,7 @@ class Df3 extends Component {
             d.x = p(+d.prop_occ_perc_x);
             d.y = p(-d.prop_occ_perc_y);
 
-            d.length = d3.max([Number(d.length), 20000])
+            d.length = d3.max([Number(d.length), 30000])
             d.color_macrocategorie=color_macrocategorie(d);
             d.color_manifestazioni_stilistiche=color_manifestazioni_stilistiche(d);
             d.percentage_combinations=0;
@@ -131,7 +136,7 @@ class Df3 extends Component {
             .on('mouseenter',function(){
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
-                    d3.select(this).style('opacity', 1 );
+                    d3.select(this).style('opacity', 1);
                 }
                 d3.select(this).selectAll('.combination')
                     .transition()
@@ -205,7 +210,7 @@ class Df3 extends Component {
         .attr('stroke-width',d=>d.percentage_combinations>0.01?0.5:2)
         .attr('stroke-dasharray',d=>d.percentage_combinations>0.01?'1 2':'1 0')
         .attr('stroke','#666')
-        .attr('fill','white');
+        .style('fill','transparent');
 
     node.each(function(d){
         const node_data = d;
@@ -251,7 +256,7 @@ class Df3 extends Component {
         master_g.attr("transform", d3.event.transform);
         node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
         node.selectAll('.label-title-complete').attr('font-size',(font_size*1.5)/d3.event.transform.k)
-        node.select('.circle-length').attr('stroke-width',d=>d.percentage_combinations>0.01?0.5/d3.event.transform.k:2/d3.event.transform.k)
+        // node.select('.circle-length').attr('stroke-width',d=>d.percentage_combinations>0.01?0.5/d3.event.transform.k:2/d3.event.transform.k)
     });
 
     svg.call(zoom)
