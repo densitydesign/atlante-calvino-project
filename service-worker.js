@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/atlante-calvino-project/precache-manifest.30597991a5275a0f0bd15bd5ca36c45e.js"
+  "/atlante-calvino-project/precache-manifest.4216534eab440723b8c799205a428423.js"
 );
 
 self.addEventListener('message', (event) => {
