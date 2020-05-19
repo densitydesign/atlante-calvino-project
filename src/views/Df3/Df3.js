@@ -4,10 +4,10 @@ import * as d3 from 'd3';
 import './Df3.css'
 
 const   simulation = d3.forceSimulation([]),
-        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]),
+        p = d3.scaleLinear().range([-3500, 3500]).domain([-1,1]),
         matrix_grid = {
-            x: d3.scaleBand().range([0,1]).domain(['negazione','dubbio','riformulazione']),
-            y: d3.scaleBand().range([0,1]).domain(['cosa','come','senso'])
+            x: d3.scalePoint().range([-3/5,3/5]).domain(['negazione','dubbio','riformulazione']),
+            y: d3.scalePoint().range([-3/5,3/5]).domain(['cosa','come','senso'])
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true),
         col_macrocategorie = d3.scaleOrdinal().range(['#FF3366', '#FFD93B', '#10BED2']).domain(['cosa','come','senso']);
@@ -31,46 +31,51 @@ class Df3 extends Component {
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
-        radius = d3.scalePow().exponent(0.5).range([0,25]).domain([0,d3.max(_data,d=>+d.length)]),
-        radiusClumped = (l)=>d3.max([,radius(Number(l))]),
-        // percentage = d3.scaleLinear().range([0.05,1]).domain([0.1,51]),
+        radius = d3.scalePow().exponent(0.5).range([0,30]).domain([0,d3.max(_data,d=>+d.length)]),
         master_g, g, node;
 
-    // radiusClumped = radius;
+    _data = _data
+        .filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'})
+        // .filter(d=>{return d.length<15000})
+        .map(d=>{
+            d.originalLength = JSON.parse(JSON.stringify(d.length));
 
-    _data = _data.filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'}).map(d=>{
-        d.color_macrocategorie=color_macrocategorie(d);
-        d.color_manifestazioni_stilistiche=color_manifestazioni_stilistiche(d);
+            d.x = p(+d.prop_occ_perc_x);
+            d.y = p(-d.prop_occ_perc_y);
 
-        d.combinations  =   [   "come-dubbio", "come-negazione", "come-riformulazione",
-                                "cosa-dubbio", "cosa-negazione", "cosa-riformulazione",
-                                "senso-dubbio", "senso-negazione", "senso-riformulazione"
-                            ].map(p=>{
+            d.length = d3.max([Number(d.length), 20000])
+            d.color_macrocategorie=color_macrocategorie(d);
+            d.color_manifestazioni_stilistiche=color_manifestazioni_stilistiche(d);
+            d.percentage_combinations=0;
+            d.combinations  =   [   "come-dubbio", "come-negazione", "come-riformulazione",
+                                    "cosa-dubbio", "cosa-negazione", "cosa-riformulazione",
+                                    "senso-dubbio", "senso-negazione", "senso-riformulazione"
+                                ].map(p=>{
+                                    let obj={};
+                                    obj['id']=d['ID opera'];
+                                    obj.type=p;
+                                    obj.percentage_combination = Number(d['cont_car_'+p])/d.originalLength;
+                                    obj.size=radius(obj.percentage_combination*d.length);
+                                    obj.mrx = matrix_grid.x(p.split('-')[1]) * radius(d.length)
+                                            + radius(d.length)/6
+                                            - obj.size/2;
+                                    obj.mry = matrix_grid.y(p.split('-')[0]) * radius(d.length) 
+                                            + radius(d.length)/6
+                                            - obj.size/2;
+                                    
+                                    obj.mx = obj.x = matrix_grid.x(p.split('-')[1]) * radius(d.length);
+                                    obj.my = obj.y = matrix_grid.y(p.split('-')[0]) * radius(d.length);
 
-                                let obj={};
-                                obj['id']=d['ID opera'];
-                                obj.type=p;
-
-                                obj.size=radiusClumped(Number(d['cont_car_'+p]));
-
-                                obj.mx  = matrix_grid.x(p.split('-')[1]) * radiusClumped(d.length)
-                                        + radiusClumped(d.length)/6
-                                        - obj.size/2;
-
-                                obj.my  = matrix_grid.y(p.split('-')[0]) * radiusClumped(d.length) 
-                                        + radiusClumped(d.length)/6
-                                        - obj.size/2;
-
-                                return obj;
-                            });
-
-        return d;
-    });
+                                    d.percentage_combinations+=obj.percentage_combination;
+                                    return obj;
+                                });
+            return d;
+        })
 
     simulation
         .force('x',d3.forceX(d=>p(+d.prop_occ_perc_x)))
         .force('y',d3.forceY(d=>p(-d.prop_occ_perc_y)))
-        .force('collision',d3.forceCollide( d=>radiusClumped(d.length) ))
+        .force('collision',d3.forceCollide( d=>radius(d.length) ))
         // .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .alphaMin(0.1)
         .on('tick',()=>{
@@ -118,31 +123,55 @@ class Df3 extends Component {
         .enter().append('g')
             .classed('node',true)
             .attr('data-id',d=>d.id)
-            .call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended)
-            )
+            // .call(d3.drag()
+            //     .on("start", dragstarted)
+            //     .on("drag", dragged)
+            //     .on("end", dragended)
+            // )
             .on('mouseenter',function(){
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
                     d3.select(this).style('opacity', 1 );
                 }
+                d3.select(this).selectAll('.combination')
+                    .transition()
+                        .duration(350)
+                        .attr('fill',d=>col_macrocategorie(d.type.split('-')[0]));
             })
-            .on('mouseleave',function(){
+            .on('mouseleave',function(d){
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
                     d3.select(this).style('opacity', d3.select(this).classed('selected')?1:0.3 );
-                }  
+                } else {
+                   d3.select(this).selectAll('.combination')
+                    .transition()
+                        .duration(350)
+                        .attr('fill',d.color_macrocategorie); 
+                }
+                
             })
             .on('click',function(d){
                 d3.select(this).classed('selected', !d3.select(this).classed('selected'));
                 if (d3.select(this).classed('selected')) {
                     d.selected=true;
                     d.trail=[];
+                    d3.select(this).select('.metaball-g')
+                        .attr('filter','');
+                    d3.select(this).selectAll('.combination')
+                        .transition()
+                            .duration(350)
+                            .attr('cx',d=>d.mx)
+                            .attr('cy',d=>d.my);
                 } else {
                     d.selected=false;
                     delete d.trail;
+                    d3.select(this).select('.metaball-g')
+                        .attr('filter', d.combinations.filter(c=>c.size>0).length>1?'url(#gooey-effect-cluster)':'');
+                    d3.select(this).selectAll('.combination')
+                        .transition()
+                            .duration(350)
+                            .attr('cx',d=>d.x)
+                            .attr('cy',d=>d.y);
                 }
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
                 if (selectedNodes.size()>0){
@@ -157,7 +186,7 @@ class Df3 extends Component {
         if (!d3.event.active) simulation.alpha(1).restart();
         d.fx = d.x;
         d.fy = d.y;
-        }
+    }
         
     function dragged(d) {
         d.fx = d3.event.x;
@@ -171,60 +200,27 @@ class Df3 extends Component {
     }
 
     node.append('circle')
-        .attr('r',d=>radiusClumped(d.length))
-        .attr('fill','white')
-        .attr('stroke-width',0.5)
-        .attr('stroke-dasharray','1 2')
-        .attr('stroke','#666');
-
-    // node.append('rect')
-    //     .attr('fill','#000')
-    //     // .attr('stroke', '#aaa')
-    //     .attr('opacity',d=>percentage(d.percentuale_dubbio))
-    //     .attr('width',d=>lengthClumped(d.length))
-    //     .attr('height',d=>lengthClumped(d.length))
-
-    // node.append('g').selectAll('rect').data(d=>{
-    //   let arr = [
-    //     "come-dubbio", "come-negazione", "come-riformulazione",
-    //     "cosa-dubbio", "cosa-negazione", "cosa-riformulazione",
-    //     "senso-dubbio", "senso-negazione", "senso-riformulazione"
-    //   ].map(p=>{
-    //       let obj={};
-    //       obj['id']=d['ID opera'];
-    //       obj.type=p;
-    //       obj.valueColor=Number(d['cont_occ_'+p]);
-    //       obj.size=Number(d['prop_occ_'+p])*lengthClumped(d.length)/3;
-
-    //       obj.x =   matrix_grid.x(p.split('-')[1]) * lengthClumped(d.length)
-    //                 + lengthClumped(d.length)/6
-    //                 - obj.size/2;
-    //       obj.y =   matrix_grid.y(p.split('-')[0]) * lengthClumped(d.length) 
-    //                 + lengthClumped(d.length)/6
-    //                 - obj.size/2;
-
-    //       return obj;
-    //     });
-    //   return arr;
-    // }).enter().append('rect')
-    //   .attr('width',d=>d.size)
-    //   .attr('height',d=>d.size)
-    //   .attr('x',d=>d.x)
-    //   .attr('y',d=>d.y)
-    //   .attr('fill',d=>matrix_color(d.valueColor));
+        .attr('class','circle-length')
+        .attr('r',d=>radius(d.length))
+        .attr('stroke-width',d=>d.percentage_combinations>0.01?0.5:2)
+        .attr('stroke-dasharray',d=>d.percentage_combinations>0.01?'1 2':'1 0')
+        .attr('stroke','#666')
+        .attr('fill','white');
 
     node.each(function(d){
-        //console.log(d)
-        const combination = d3.select(this).append('g')
-            .attr('filter','url(#gooey-effect-cluster)')
+        const node_data = d;
+        const combination = d3.select(this).append('g').classed('metaball-g',true)
+            .attr('filter', node_data.combinations.filter(c=>c.size>0).length>1?'url(#gooey-effect-cluster)':'' )
             .selectAll('.combination')
-            .data(d=>d.combinations)
+            .data(node_data.combinations)
             .enter()
             .append('circle')
+            .classed('combination',true)
             .attr('r',d=>d.size)
-            .attr('fill',d=>color_macrocategorie(d));
+            .attr('fill',node_data.color_macrocategorie)
+            // .attr('fill',d=>col_macrocategorie(d.type.split('-')[0]));
         
-        const this_simulation = d3.forceSimulation(combination.data())
+        d3.forceSimulation(combination.data())
             .force('x',d3.forceX(0))
             .force('y',d3.forceY(0))
             .force('collision', d3.forceCollide(d=>d.size))
@@ -242,23 +238,20 @@ class Df3 extends Component {
         .classed('label-title',true)
         .attr('text-anchor','start')
         .attr('font-size',font_size)
-        // .attr('x',d=>0.5*lengthClumped(d.length))
-        // .attr('y', d=>-lengthClumped(d.length)/2 -1)
         .text(d=>d.title.slice(0,10));
     node.append('text')
         .classed('label-title-complete',true)
         .attr('text-anchor','start')
         .attr('font-size',font_size*1.5)
-        // .attr('x',d=>0.5*lengthClumped(d.length))
-        // .attr('y', d=>-lengthClumped(d.length)/2 -1)
         .text(d=>d.title + '-' +d.year)
 
     simulation.nodes(_data).alpha(1).restart();
 
     let zoom = d3.zoom().on("zoom", ()=>{
-      master_g.attr("transform", d3.event.transform);
-      node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
-      node.selectAll('.label-title-complete').attr('font-size',(font_size*1.5)/d3.event.transform.k)
+        master_g.attr("transform", d3.event.transform);
+        node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
+        node.selectAll('.label-title-complete').attr('font-size',(font_size*1.5)/d3.event.transform.k)
+        node.select('.circle-length').attr('stroke-width',d=>d.percentage_combinations>0.01?0.5/d3.event.transform.k:2/d3.event.transform.k)
     });
 
     svg.call(zoom)
@@ -312,7 +305,7 @@ class Df3 extends Component {
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
         <svg />
-        <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
+        {/* <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
             <select defaultValue={'prop_occ_perc'} id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
                 <option value="prop_occ">MDS 003 - Proporzione fra tipi di occorrenze</option>
                 <option value="cont_occ">MDS 003 - Conteggio tipi di occorrenze</option>
@@ -327,7 +320,7 @@ class Df3 extends Component {
                 <option value="prop_occ_car_perc">MDS 004 - Proporzione occorrenze + proporzione in caratteri + percentuale dubbio</option>
             </select>
             Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (nero = 0 👉 rosso >= 75).
-        </p>  
+        </p>   */}
     </div>;
   }
 }
@@ -458,7 +451,7 @@ function color_macrocategorie(d) {
 
     // d.color_macrocategorie = d3.rgb(col_r, col_g, col_b);
 
-    return color_macrocategorie;
+    return d3.rgb(col_r, col_g, col_b);
 }
 
 function color_manifestazioni_stilistiche(d) {
@@ -486,7 +479,7 @@ function color_manifestazioni_stilistiche(d) {
             +   tot_negazione * d3.color('#FFA500').b
             +   tot_riformulazione * d3.color('#BBBBFF').b;
 
-    d.color_manifestazioni_stilistiche = d3.rgb(col_r, col_g, col_b);
+    //d.color_manifestazioni_stilistiche = d3.rgb(col_r, col_g, col_b);
 
-    return d.color_manifestazioni_stilistiche   
+    return d3.rgb(col_r, col_g, col_b);   
 }
