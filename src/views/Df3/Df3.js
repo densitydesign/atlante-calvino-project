@@ -4,10 +4,10 @@ import * as d3 from 'd3';
 import './Df3.css'
 
 const   simulation = d3.forceSimulation([]),
-        p = d3.scaleLinear().range([-3500, 3500]).domain([-1,1]),
+        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]),
         matrix_grid = {
-            x: d3.scalePoint().range([-3/5,3/5]).domain(['negazione','dubbio','riformulazione']),
-            y: d3.scalePoint().range([-3/5,3/5]).domain(['cosa','come','senso'])
+            x: d3.scalePoint().range([-2/5,2/5]).domain(['negazione','dubbio','riformulazione']),
+            y: d3.scalePoint().range([-2/5,2/5]).domain(['cosa','come','senso'])
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true),
         col_macrocategorie = d3.scaleOrdinal()
@@ -80,7 +80,7 @@ class Df3 extends Component {
     simulation
         .force('x',d3.forceX(d=>p(+d.prop_occ_perc_x)))
         .force('y',d3.forceY(d=>p(-d.prop_occ_perc_y)))
-        .force('collision',d3.forceCollide( d=>radius(d.length) ))
+        .force('collision',d3.forceCollide( d=>radius(d.length)*0.65 ))
         // .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .alphaMin(0.1)
         .on('tick',()=>{
@@ -209,13 +209,15 @@ class Df3 extends Component {
         .attr('r',d=>radius(d.length))
         .attr('stroke-width',d=>d.percentage_combinations>0.01?0.5:2)
         .attr('stroke-dasharray',d=>d.percentage_combinations>0.01?'1 2':'1 0')
-        .attr('stroke','#666')
-        .style('fill','transparent');
+        .attr('stroke','#aaa')
+        .style('fill','transparent')
+        .style('mix-blend-mode','multiply')
+        .style('pointer-events','none');
 
     node.each(function(d){
         const node_data = d;
         const combination = d3.select(this).append('g').classed('metaball-g',true)
-            .attr('filter', node_data.combinations.filter(c=>c.size>0).length>1?'url(#gooey-effect-cluster)':'' )
+            .attr('filter',node_data.combinations.filter(c=>c.size>0).length>1?'url(#gooey-effect-cluster)':'')
             .selectAll('.combination')
             .data(node_data.combinations)
             .enter()
@@ -229,9 +231,7 @@ class Df3 extends Component {
             .force('x',d3.forceX(0))
             .force('y',d3.forceY(0))
             .force('collision', d3.forceCollide(d=>d.size))
-            .on('tick', ()=>{
-                combination.attr('cx',d=>d.x).attr('cy',d=>d.y);
-            })
+            .on('tick', ()=>combination.attr('cx',d=>d.x).attr('cy',d=>d.y))
             .alpha(1)
             .alphaMin(0.1)
             .restart();
