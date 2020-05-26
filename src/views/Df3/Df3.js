@@ -31,7 +31,7 @@ class Df3 extends Component {
   }
   async componentDidMount() {
     
-    let _data = await (await d3.csv(process.env.PUBLIC_URL + '/✅ Dataset Fase 3 - flagged - mds.csv'))
+    let _data = await (await d3.csv(process.env.PUBLIC_URL + '/Dataset Fase 3 - flagged - mds.csv'))
 
     let width = this._rootNode.getBoundingClientRect().width,
         height = this._rootNode.getBoundingClientRect().height,
@@ -78,9 +78,9 @@ class Df3 extends Component {
         })
 
     simulation
-        .force('x',d3.forceX(d=>p(+d.prop_occ_perc_x)))
-        .force('y',d3.forceY(d=>p(-d.prop_occ_perc_y)))
-        .force('collision',d3.forceCollide( d=>radius(d.length)*0.65 ))
+        .force('x',d3.forceX(d=>p(+d._4c_x)))
+        .force('y',d3.forceY(d=>p(-d._4c_y)))
+        .force('collision',d3.forceCollide( d=>radius(d.length)*0.75 ))
         // .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .alphaMin(0.1)
         .on('tick',()=>{
@@ -207,14 +207,18 @@ class Df3 extends Component {
     node.append('circle')
         .attr('class','circle-length')
         .attr('r',d=>radius(d.length))
-        .attr('stroke-width',d=>d.percentage_combinations>0.01?0.5:2)
-        .attr('stroke-dasharray',d=>d.percentage_combinations>0.01?'1 2':'1 0')
+        // .attr('stroke-width',d=>d.percentage_combinations>0.025?0.5:2)
+        // .attr('stroke-dasharray',d=>d.percentage_combinations>0.025?'1 2':'1 0')
+        .attr('stroke-width',0.5)
+        .attr('stroke-dasharray','1 2')
         .attr('stroke','#aaa')
         .style('fill','transparent')
         .style('mix-blend-mode','multiply')
-        .style('pointer-events','none');
+        .style('pointer-events','none')
+        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
 
     node.each(function(d){
+        if (d.percentage_combinations<=0.025) return;
         const node_data = d;
         const combination = d3.select(this).append('g').classed('metaball-g',true)
             .attr('filter',node_data.combinations.filter(c=>c.size>0).length>1?'url(#gooey-effect-cluster)':'')
@@ -243,12 +247,14 @@ class Df3 extends Component {
         .classed('label-title',true)
         .attr('text-anchor','start')
         .attr('font-size',font_size)
-        .text(d=>d.title.slice(0,10));
+        .text(d=>d.year+''+d.title.slice(0,10))
+        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
     node.append('text')
         .classed('label-title-complete',true)
         .attr('text-anchor','start')
         .attr('font-size',font_size*1.5)
         .text(d=>d.title + '-' +d.year)
+        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
 
     simulation.nodes(_data).alpha(1).restart();
 
@@ -305,13 +311,29 @@ class Df3 extends Component {
             simulation.force('y',d3.forceY(d=>p(-d.prop_occ_car_perc_y)))
             simulation.alpha(1).restart();
           }
+
+          else if (this.state.positioning === 'def_mds') {
+            simulation.force('x',d3.forceX(d=>p(+d.def_mds_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.def_mds_y)))
+            simulation.alpha(1).restart();
+          } else if (this.state.positioning === 'def_mds_all') {
+            simulation.force('x',d3.forceX(d=>p(+d.def_mds_all_x)))
+            simulation.force('y',d3.forceY(d=>p(-d.def_mds_all_y)))
+            simulation.alpha(1).restart();
+          }
+
+          else if (this.state.positioning === '_4c') {
+            simulation.force('x',d3.forceX(d=>p(+d._4c_x)))
+            simulation.force('y',d3.forceY(d=>p(-d._4c_y)))
+            simulation.alpha(1).restart();
+          }
       }
   }
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
         <svg />
-        {/* <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
-            <select defaultValue={'prop_occ_perc'} id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
+        <p style={{position:'absolute',top:0,left:0, fontSize:12}}>
+            <select defaultValue={'_4c'} id="mds-positioning" onChange={(event)=>this.setState({'positioning':event.target.value})}>
                 <option value="prop_occ">MDS 003 - Proporzione fra tipi di occorrenze</option>
                 <option value="cont_occ">MDS 003 - Conteggio tipi di occorrenze</option>
                 <option value="cont_e_prop_occ">MDS 003 - Proporzione e conteggio tipi di occorrenze</option>
@@ -323,9 +345,14 @@ class Df3 extends Component {
                 <option value="prop_occ_perc">MDS 004 - Proporzione fra tipi di occorrenze + percentuale dubbio</option>
                 <option value="prop_car_perc">MDS 004 - Proporzione fra tipi occorrenze in caratteri + percentuale dubbio</option>
                 <option value="prop_occ_car_perc">MDS 004 - Proporzione occorrenze + proporzione in caratteri + percentuale dubbio</option>
+
+                <option value="def_mds">MDS 004b - > 2.5%</option>
+                <option value="def_mds_all">MDS 004b - All</option>
+
+                <option value="_4c">MDS 004c</option>
             </select>
             Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (nero = 0 👉 rosso >= 75).
-        </p>   */}
+        </p>  
     </div>;
   }
 }
