@@ -4,12 +4,14 @@ import * as d3 from 'd3';
 import './Df3.css'
 
 const   simulation = d3.forceSimulation([]),
-        p = d3.scaleLinear().range([-3000, 3000]).domain([-1,1]),
+        p = d3.scaleLinear().range([-3500, 3500]).domain([-1,1]),
         matrix_grid = {
             x: d3.scalePoint().range([-2/5,2/5]).domain(['negazione','dubbio','riformulazione']),
             y: d3.scalePoint().range([-2/5,2/5]).domain(['cosa','come','senso'])
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true),
+        filter_color = d3.scaleLinear().range(['#fff','#000']).domain([0,1]),
+        labels_tspan_opacity = d3.scaleLinear().range(['1','0']).domain([5,10]).clamp(true),
         col_macrocategorie = d3.scaleOrdinal()
             .range(['#FF3366', '#FFD93B', '#10BED2'])
             .range(['#FFD93B', '#10BED2', '#FF3366'])
@@ -17,7 +19,7 @@ const   simulation = d3.forceSimulation([]),
             // .range(['#ffa500', '#FF3366', '#5151fc'])
             .domain(['cosa','come','senso']);
 
-let     trail;
+let     trail, node;
 
 class Df3 extends Component {
     constructor(props) {
@@ -37,9 +39,10 @@ class Df3 extends Component {
         height = this._rootNode.getBoundingClientRect().height,
         margin= {},
         radius = d3.scalePow().exponent(0.5).range([0,40]).domain([0,d3.max(_data,d=>+d.length)]),
-        master_g, g, node;
+        master_g, g;
 
     _data = _data
+        // .slice(50,75)
         .filter(d=>{return d.id!=='V000a'&&d.id!=='V000b'})
         // .filter(d=>{return d.length<15000})
         .map(d=>{
@@ -60,6 +63,7 @@ class Df3 extends Component {
                                     obj['id']=d['ID opera'];
                                     obj.type=p;
                                     obj.percentage_combination = Number(d['cont_car_'+p])/d.originalLength;
+                                    obj.proportion_combination = Number(d['prop_occ_'+p]);
                                     obj.size=radius(obj.percentage_combination*d.length);
                                     obj.mrx = matrix_grid.x(p.split('-')[1]) * radius(d.length)
                                             + radius(d.length)/6
@@ -80,7 +84,7 @@ class Df3 extends Component {
     simulation
         .force('x',d3.forceX(d=>p(+d._4c_x)))
         .force('y',d3.forceY(d=>p(-d._4c_y)))
-        .force('collision',d3.forceCollide( d=>radius(d.length)*0.75 ))
+        .force('collision',d3.forceCollide( d=>radius(d.length)*0.80 ))
         // .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .alphaMin(0.1)
         .on('tick',()=>{
@@ -142,6 +146,10 @@ class Df3 extends Component {
                     .transition()
                         .duration(350)
                         .attr('fill',d=>col_macrocategorie(d.type.split('-')[0]));
+
+                d3.select(this).selectAll('tspan')
+                    .style('opacity',1)
+                    .attr('display','block');
             })
             .on('mouseleave',function(d){
                 const selectedNodes = node.filter(function(){return d3.select(this).classed('selected')});
@@ -153,7 +161,9 @@ class Df3 extends Component {
                         .duration(350)
                         .attr('fill',d.color_macrocategorie); 
                 }
-                
+                d3.select(this).selectAll('tspan')
+                    .style('opacity',(d,i)=>labels_tspan_opacity(i))
+                    .attr('display',(d,i)=>i<labels_tspan_opacity.domain()[1]?'block':'none');
             })
             .on('click',function(d){
                 d3.select(this).classed('selected', !d3.select(this).classed('selected'));
@@ -207,15 +217,13 @@ class Df3 extends Component {
     node.append('circle')
         .attr('class','circle-length')
         .attr('r',d=>radius(d.length))
-        // .attr('stroke-width',d=>d.percentage_combinations>0.025?0.5:2)
-        // .attr('stroke-dasharray',d=>d.percentage_combinations>0.025?'1 2':'1 0')
         .attr('stroke-width',0.5)
         .attr('stroke-dasharray','1 2')
         .attr('stroke','#aaa')
         .style('fill','transparent')
         .style('mix-blend-mode','multiply')
         .style('pointer-events','none')
-        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
+        .attr('display',d=>d.percentage_combinations>0.025?'block':'none');
 
     node.each(function(d){
         if (d.percentage_combinations<=0.025) return;
@@ -242,27 +250,24 @@ class Df3 extends Component {
 
     }) // node each
       
-    const font_size = 8;
+    const font_size = 10;
     node.append('text')
         .classed('label-title',true)
         .attr('text-anchor','start')
         .attr('font-size',font_size)
-        .text(d=>d.year+''+d.title.slice(0,10))
-        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
-    node.append('text')
-        .classed('label-title-complete',true)
-        .attr('text-anchor','start')
-        .attr('font-size',font_size*1.5)
-        .text(d=>d.title + '-' +d.year)
-        .attr('opacity',d=>d.percentage_combinations>0.025?1:0.2);
+        .selectAll('tspan')
+            .data(d=>d.title.split(''))
+            .enter()
+            .append('tspan')
+                .style('opacity',(d,i)=>labels_tspan_opacity(i))
+                .attr('display',(d,i)=>i<labels_tspan_opacity.domain()[1]?'block':'none')
+                .text(d=>d);
 
     simulation.nodes(_data).alpha(1).restart();
 
     let zoom = d3.zoom().on("zoom", ()=>{
         master_g.attr("transform", d3.event.transform);
         node.attr('stroke-width',1/d3.event.transform.k).selectAll('.label-title').attr('font-size',font_size/d3.event.transform.k)
-        node.selectAll('.label-title-complete').attr('font-size',(font_size*1.5)/d3.event.transform.k)
-        // node.select('.circle-length').attr('stroke-width',d=>d.percentage_combinations>0.01?0.5/d3.event.transform.k:2/d3.event.transform.k)
     });
 
     svg.call(zoom)
@@ -328,6 +333,21 @@ class Df3 extends Component {
             simulation.alpha(1).restart();
           }
       }
+      if (prevState.manifestazione !== this.state.manifestazione) {
+        console.log(this.state.manifestazione)
+        if (this.state.manifestazione==='none') {
+            node.each(function(d){
+                d3.select(this).selectAll('.combination').attr('fill',d.color_macrocategorie);
+            })
+        } else {
+            const manifestazione = this.state.manifestazione;
+            node.each(function(d){
+                let value = 0;
+                d.combinations.filter(dd=>dd.type.includes(manifestazione)).forEach(dd=>value+=dd.proportion_combination);
+                d3.select(this).selectAll('.combination').attr('fill',filter_color(value));
+            })
+        }
+      }
   }
   render() {
     return <div style={{width:'100vw',height:'100vh'}} ref={this._setRef.bind(this)}>
@@ -351,7 +371,14 @@ class Df3 extends Component {
 
                 <option value="_4c">MDS 004c</option>
             </select>
-            Dimensione quadratini = percentuale tipo di occorrenza (0% 👉 100%), colore = conteggio tipo di occorrenza (nero = 0 👉 rosso >= 75).
+
+            <select defaultValue={'none'} id="manifestazioni-filter" onChange={(event)=>this.setState({'manifestazione':event.target.value})}>
+                {
+                    ['none','negazione','dubbio','riformulazione'].map((d,i)=>{
+                        return <option key={'manif-'+i} value={d}>{d}</option>
+                    })
+                }
+            </select>
         </p>  
     </div>;
   }
