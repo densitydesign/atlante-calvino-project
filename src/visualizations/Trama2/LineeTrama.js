@@ -37,7 +37,7 @@ export default function LineeTrama({racconti=[], data={}, MOTIVO_LINE_HEIGHT, sc
     return scaleLinear().domain([0, 1]).range([0, measures.width])
   }, [measures])
 
-  return <svg className="w-100 h-100 bg-dark" ref={svgRef}>
+  return <svg className="w-100 h-100" ref={svgRef}>
     {measures && racconti.map((racconto, i) => {
       const datum = data[racconto.titolo].map(d => {
         return {

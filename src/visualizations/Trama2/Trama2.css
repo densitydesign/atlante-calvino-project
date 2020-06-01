@@ -23,9 +23,10 @@
     height: 35px;
     width: 35px;
     background-color: black;
-    border-radius: 4px;
+    border-radius: 0 4px 4px 0;
     position: absolute;
     right: 0px;
+    top: 17.5px;
     pointer-events: all;
 }
 
@@ -39,12 +40,19 @@
     background-color: #fff;
 }
 
-.trama2-content {
+.trama2-content-wrapper {
     position: absolute;
     z-index:1;
+    min-height: 600px;
+    min-width: 960px;
     height: 100%;
     width: 100%;
     
+}
+
+.trama2-content {
+    padding: 70px 30px;
+    height: 100%;
 }
 
 .trama2-line {

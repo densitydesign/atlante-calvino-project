@@ -96,13 +96,17 @@ export default function Trama2Main() {
           onClick={toggleSidePanel}
         ></div>
       </div>
+      <div className="trama2-content-wrapper">
       <div className="trama2-content">
+
         <LineeTrama 
         racconti={racconti} data={byRacconto} MOTIVO_LINE_HEIGHT={MOTIVO_LINE_HEIGHT}
         scalaColore={scalaColore}
         scalaMotivoY={scalaMotivoY}
 
         ></LineeTrama>
+
+      </div>
 
       </div>
     </div>
