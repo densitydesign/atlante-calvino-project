@@ -40,6 +40,11 @@ const colorsOrdered = sortBy(coloriPosizioni, item => +item.ordine)
 // const colorsExtent = extent(coloriPosizioni, item => +item.ordine)
 const scalaColore = scaleLinear().domain(colorsOrdered.map(item => item.ordine)).range(colorsOrdered.map(item => item.colori))
 
+console.log("ordineColore", ordineByCluster, ordineColore)
+const colors = 
+  sortBy(ordineColore.map(item => get(ordineByCluster, item["cluster tipologia"])), item => item.ordine).map(x => x.colori)
+
+
 let racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).map(item => ({
   titolo: item["titolo racconto"],
   anno: item["anno"],
@@ -52,7 +57,7 @@ let racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).map(
 })
 
 //#TODO: remove this (limiting for debug)
-racconti = take(racconti,20)
+racconti = take(racconti,100)
 
 
 const datasetLinesNormalized = datasetLines.map((item) => {
@@ -90,6 +95,14 @@ export default function Trama2Main() {
     setSidePanelOpen(!sidePanelOpen);
   }, [sidePanelOpen]);
 
+
+  const [selected, setSelected] = useState({})
+  const toggleSelect= useCallback((index) => () => {
+    const newSelected = {...selected, [index]: !!!selected[index]}
+    setSelected(newSelected)
+  }, [selected])
+
+
   return (
     <div className="trama2-container">
       <div className={`trama2-side-panel ${sidePanelOpen ? "open" : "closed"}`}>
@@ -104,9 +117,13 @@ export default function Trama2Main() {
       <div className="trama2-content">
 
         <LineeTrama 
+        selected={selected}
+        toggleSelect={toggleSelect}
         racconti={racconti} data={byRacconto} height={MOTIVO_LINE_HEIGHT}
         scalaColore={scalaColore}
         scalaMotivoY={scalaMotivoY}
+        
+        colors={colors}
 
         ></LineeTrama>
 

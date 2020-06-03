@@ -58,13 +58,32 @@
     
 }
 
-.trama2-line {
-    stroke: #ddd;
-    stroke-width: 1px;
+.trama2-pointer {
+    /* stroke: #ddd; */
     fill: none;
+    stroke: transparent;
+    stroke-width: 3px;
+    cursor: pointer;
+    /* fill: none; */
+}
+
+.trama2-pointer:hover + .trama2-line:not(.selected){
+    /* stroke: #ddd; */
+    stroke: #000 !important;
+    /* fill: none; */
+}
+
+.trama2-line {
+    /* stroke: #ddd; */
+    fill: none;
+    stroke-width: 1px;
+    pointer-events: none;
+    /* fill: none; */
 }
 
 
+
 .trama2-circle {
-    fill: #ddd;
+    stroke: #ddd;
+    fill: #000;
 }
