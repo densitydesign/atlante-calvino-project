@@ -2,6 +2,7 @@
 .trama2-container {
     position: relative;
     height: calc(100vh - var(--navigation-height));
+    background-color: #ccc;
 }
 
 
@@ -45,14 +46,16 @@
     z-index:1;
     min-height: 600px;
     min-width: 960px;
-    height: 100%;
+    height: calc(100% - 15px);
     width: 100%;
+    
     
 }
 
 .trama2-content {
     padding: 70px 30px;
     height: 100%;
+    
 }
 
 .trama2-line {

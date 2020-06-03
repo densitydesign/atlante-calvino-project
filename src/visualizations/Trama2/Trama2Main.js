@@ -7,6 +7,7 @@ import sortBy from "lodash/sortBy";
 import uniqBy from "lodash/uniqBy";
 import mapValues from "lodash/mapValues";
 import get from "lodash/get";
+import take from "lodash/take"
 import { extent } from 'd3-array'
 
 //visual helpers
@@ -34,12 +35,12 @@ const ordineMotivoByMotivo = mapValues(keyBy(ordineColore, 'tipologia'), item =>
 
 //scales
 const motivoExtent = extent(ordineColore, item => +item['ordine tipologia'])
-const scalaMotivoY = scaleLinear().domain(motivoExtent).range([0, MOTIVO_LINE_HEIGHT])
+const scalaMotivoY = scaleLinear().domain(motivoExtent).range([MOTIVO_LINE_HEIGHT, 0])
 const colorsOrdered = sortBy(coloriPosizioni, item => +item.ordine)
 // const colorsExtent = extent(coloriPosizioni, item => +item.ordine)
 const scalaColore = scaleLinear().domain(colorsOrdered.map(item => item.ordine)).range(colorsOrdered.map(item => item.colori))
 
-const racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).map(item => ({
+let racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).map(item => ({
   titolo: item["titolo racconto"],
   anno: item["anno"],
   mese: item["mese"]
@@ -49,6 +50,9 @@ const racconti = sortBy(uniqBy(datasetLines, item => item["titolo racconto"]).ma
   
   return `${anno.toFixed(4)}${mese.toFixed(2)}`
 })
+
+//#TODO: remove this (limiting for debug)
+racconti = take(racconti,20)
 
 
 const datasetLinesNormalized = datasetLines.map((item) => {
@@ -100,7 +104,7 @@ export default function Trama2Main() {
       <div className="trama2-content">
 
         <LineeTrama 
-        racconti={racconti} data={byRacconto} MOTIVO_LINE_HEIGHT={MOTIVO_LINE_HEIGHT}
+        racconti={racconti} data={byRacconto} height={MOTIVO_LINE_HEIGHT}
         scalaColore={scalaColore}
         scalaMotivoY={scalaMotivoY}
 
