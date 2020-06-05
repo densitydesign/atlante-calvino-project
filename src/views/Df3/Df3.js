@@ -10,7 +10,7 @@ const   simulation = d3.forceSimulation([]),
             y: d3.scalePoint().range([-2/5,2/5]).domain(['cosa','come','senso'])
         },
         matrix_color = d3.scaleLinear().range(['#000','#f00']).domain([0,75]).clamp(true),
-        filter_color = d3.scaleLinear().range(['#fff','#000']).domain([0,1]),
+        filter_color = d3.scaleLinear().range(['#fff','#5151FC']).domain([0,1]),
         labels_tspan_opacity = d3.scaleLinear().range(['1','0']).domain([5,10]).clamp(true),
         col_macrocategorie = d3.scaleOrdinal()
             .range(['#FF3366', '#FFD93B', '#10BED2'])
