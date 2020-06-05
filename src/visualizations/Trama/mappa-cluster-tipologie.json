@@ -1,8 +1,17 @@
-[
+[{
+    "valore": "eventi liminali",
+    "gruppo": "Esteriore",
+    "colore": "#8131F4"
+  },
   {
     "valore": "interazione",
     "gruppo": "Esteriore",
     "colore": "#0000ff"
+  },
+  {
+    "valore": "stato euforico",
+    "gruppo": "Interiore",
+    "colore": "#009959"
   },
   {
     "valore": "stato disforico",
@@ -20,34 +29,19 @@
     "colore": "#6E94F4"
   },
   {
-    "valore": "stato euforico",
-    "gruppo": "Interiore",
-    "colore": "#009959"
-  },
-  {
-    "valore": "stato sospeso",
-    "gruppo": "Interiore",
-    "colore": "#00FFB6"
-  },
-  {
-    "valore": "eventi liminali",
-    "gruppo": "Esteriore",
-    "colore": "#8131F4"
-  },
-  {
     "valore": "racconto incastonato",
     "gruppo": "Forma",
     "colore": "#FFF800"
   },
   {
-    "valore": "struttura",
-    "gruppo": "Forma",
-    "colore": "#ff6c39"
-  },
-  {
     "valore": "stato riflessivo",
     "gruppo": "Interiore",
     "colore": "#8ae297"
+  },
+  {
+    "valore": "stato sospeso",
+    "gruppo": "Interiore",
+    "colore": "#00FFB6"
   },
   {
     "valore": "metanarrazione",
@@ -58,6 +52,11 @@
     "valore": "cornice",
     "gruppo": "Forma",
     "colore": "#FFA500"
+  },
+  {
+    "valore": "struttura",
+    "gruppo": "Forma",
+    "colore": "#ff6c39"
   },
   {
     "valore": "situazione",
