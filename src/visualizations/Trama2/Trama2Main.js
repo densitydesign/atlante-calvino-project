@@ -131,7 +131,7 @@ export default function Trama2Main() {
   //lines selection
   const [selected, setSelected] = useState({});
   const toggleSelect = useCallback(
-    (titolo) => () => {
+    (titolo) => {
       const newSelected = { ...selected, [titolo]: !!!selected[titolo] };
       setSelected(newSelected);
     },
@@ -223,6 +223,7 @@ export default function Trama2Main() {
       <div className="trama2-content-wrapper">
         <div className="trama2-content">
           <LineeTrama
+            tipologie={tipologie}
             selected={selected}
             toggleSelect={toggleSelect}
             racconti={racconti}
