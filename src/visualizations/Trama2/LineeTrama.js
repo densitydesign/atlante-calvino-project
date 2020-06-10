@@ -5,6 +5,8 @@ import React, {
   useMemo,
   useEffect,
   useLayoutEffect,
+  useImperativeHandle,
+  forwardRef,
 } from 'react'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
@@ -190,7 +192,7 @@ const SelectedContainers = React.memo(({ n, translations }) => {
   )
 })
 
-export default function LineeTrama({
+function LineeTrama({
   racconti = [],
   data = {},
   height,
@@ -200,7 +202,7 @@ export default function LineeTrama({
   selected,
   toggleSelect,
   tipologie,
-}) {
+}, ref) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const [measures, setMeasures] = useState(null)
@@ -284,7 +286,35 @@ export default function LineeTrama({
     })
     return [finalDataRacconti, Array.from(grandientsSet)]
   }, [data, racconti, xScale, byTipologia])
-  console.log('X', measures)
+  
+
+  useImperativeHandle(ref, () => ({
+    rotateView: (cb) => {
+      const scaleY = scaleLinear()
+        .domain([0, racconti.length])
+        .range([0 + height, measures.height - height])
+      
+        
+        const mainTransition = selectAll('.linea-container')
+        .transition()
+        .duration(1000)
+        .attr(
+          'transform',
+          (d, i) => 'translate(0, ' + scaleY(i) + ')'
+        ).end()
+
+        const selectedTransition = selectAll('.linea-container-selected')
+        .transition()
+        .duration(1000)
+        .attr(
+          'transform',
+          (d, i) => 'translate(0, ' + scaleY(i) + ')'
+        ).end()
+
+        Promise.all([mainTransition, selectedTransition]).then(cb) 
+      
+    }
+  }))
 
   return (
     <div
@@ -304,6 +334,7 @@ export default function LineeTrama({
             byTipologia={byTipologia}
             gradientsType={gradientsType}
           />
+          <g className="wrapper">
           {measures &&
             dataRacconti.map((datum, i) => {
               return (
@@ -333,8 +364,11 @@ export default function LineeTrama({
             n={dataRacconti.length}
             translations={translations}
           />
+          </g>
         </svg>
       )}
     </div>
   )
 }
+
+export default forwardRef(LineeTrama)

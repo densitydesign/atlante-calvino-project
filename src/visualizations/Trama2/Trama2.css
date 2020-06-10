@@ -29,6 +29,17 @@
   pointer-events: all;
 }
 
+.trama2-side-panel-rotate {
+    height: 100px;
+    width: 35px;
+    background-color: red;
+    border-radius: 0 4px 4px 0;
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 100px);
+    pointer-events: all;
+  }
+
 .trama2-side-panel-content {
   height: 100%;
   width: calc(300px - 35px);

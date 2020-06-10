@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, useRef, useImperativeHandle } from 'react'
 
 //data management
 import groupBy from 'lodash/groupBy'
@@ -189,6 +189,11 @@ export default function Trama2Main() {
     }
   }, [bounds])
 
+  const listRef = useRef()
+  const [currentView, setCurrentView] = useState('list')
+
+  
+
   console.log('tipologie', tipologie)
   console.log('racconti', racconti)
   console.log('raccontiFiltered', raccontiFiltered)
@@ -210,10 +215,19 @@ export default function Trama2Main() {
           className="trama2-side-panel-toggle "
           onClick={toggleSidePanel}
         ></div>
+
+      <div
+          className="trama2-side-panel-rotate"
+          onClick={() => {
+            console.log("c")
+            listRef.current.rotateView(() => { setCurrentView('rotated')})
+          }}
+        ></div>
       </div>
       <div className="trama2-content-wrapper">
-        <div className="trama2-content">
+        <div className="trama2-content" style={{display: currentView !== 'list' ? 'none' : undefined}}>
           <LineeTrama
+            ref={listRef}
             tipologie={tipologie}
             selected={selected}
             toggleSelect={toggleSelect}
@@ -224,6 +238,13 @@ export default function Trama2Main() {
             colors={colors}
           ></LineeTrama>
         </div>
+
+        {currentView === 'rotated' &&  <div className="trama2-content">
+          
+        </div>}
+        {currentView === 'detail' &&  <div className="trama2-content">
+          
+        </div>}
       </div>
     </div>
   )
