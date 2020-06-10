@@ -14,7 +14,7 @@ const lineGenerator = line()
 
 export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
   // Re-Scale Y for fullscreen
-  const [subPaths, gradientsType] = useMemo(() => {
+  const [fullData, subPaths, gradientsType] = useMemo(() => {
     const gradientsSet = new Set()
     const newData = data.reduce((acc, item, i) => {
       if (i > 0) {
@@ -28,7 +28,7 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
     }, [])
     const d = lineGenerator(newData)
     const subPaths = splitPath(d)
-    return [subPaths, Array.from(gradientsSet)]
+    return [newData, subPaths, Array.from(gradientsSet)]
   }, [data])
 
   const containerRef = useRef(null)
@@ -41,8 +41,16 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
 
   return (
     <div className="trama2-content">
-      <button onClick={onBack}>BACK</button>
-
+      <div className='pb-4 d-flex justify-content-center align-items-center'>
+        <div className='trama2-detail-label' onClick={onBack}>
+          <div className='trama2-label-inner-start'>
+            {data.racconto.titolo}, {data.racconto.anno}
+          </div>
+          <div className='trama2-label-inner-end'>
+            &times;
+          </div>
+        </div>
+      </div>
       <div
         ref={containerRef}
         className="w-100 h-100"
@@ -51,12 +59,12 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
         {measures && (
           <svg
             style={{
-              height: measures.height,
+              height: MOTIVO_LINE_HEIGHT_FULL_SCREEN + 50,
               width: measures.width,
             }}
           >
             <GradientsDefinitions
-              prefix='detail__'
+              prefix="detail__"
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
             />
@@ -64,7 +72,9 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
               const isFill = data[i + 1].motivo_type === data[i].motivo_type
               const stroke = isFill
                 ? data[i].colori
-                : `url('#detail__${data[i + 1].motivo_type}-${data[i].motivo_type}')`
+                : `url('#detail__${data[i + 1].motivo_type}-${
+                    data[i].motivo_type
+                  }')`
               return (
                 <path
                   key={i}
@@ -77,6 +87,16 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
                 ></path>
               )
             })}
+            <g>
+              {fullData.map((d, i) => (
+                <g key={i} transform={`translate(${d.x}, ${d.y})`}>
+                  <circle className="trama2-circle" r={2} />
+                  <text x={5} y={-5} style={{ transform: 'rotate(-30deg)' }}>
+                    {d.motivo_type}
+                  </text>
+                </g>
+              ))}
+            </g>
           </svg>
         )}
       </div>
