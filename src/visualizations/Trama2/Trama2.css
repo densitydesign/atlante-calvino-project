@@ -71,7 +71,7 @@
 .trama2-line {
   /* stroke: #ddd; */
   fill: none;
-  stroke-width: 1px;
+  stroke-width: 2px;
   pointer-events: none;
   /* fill: none; */
 }

@@ -1,6 +1,8 @@
+import ReactDOM from 'react-dom'
 import React, { useRef, useState, useMemo, useEffect } from 'react'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
+import range from 'lodash/range'
 
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
@@ -52,7 +54,7 @@ const LineaTrama = React.memo(
       return [d, subPaths]
     }, [data])
 
-    return (
+    const element = (
       <g>
         {subPaths.map((subPath, i) => {
           const isFill = data[i + 1].motivo_type === data[i].motivo_type
@@ -63,6 +65,7 @@ const LineaTrama = React.memo(
             <path
               key={i}
               d={subPath}
+              className="trama2-line"
               style={{
                 stroke: itemSelected ? strokeSelected : '#fff',
                 fill: 'none',
@@ -94,6 +97,13 @@ const LineaTrama = React.memo(
         )}
       </g>
     )
+    if (itemSelected) {
+      return ReactDOM.createPortal(
+        element,
+        document.getElementsByClassName('linea-container-selected')[index]
+      )
+    }
+    return element
   }
 )
 
@@ -132,6 +142,21 @@ const GrandientsDefinitions = React.memo(({ gradientsType, byTipologia }) => {
   )
 })
 
+const SelectedContainers = React.memo(({ n, translations }) => {
+  return (
+    <g>
+      {range(n).map((i) => (
+        <g
+          className="linea-container-selected"
+          style={{
+            transform: translations[i],
+          }}
+        />
+      ))}
+    </g>
+  )
+})
+
 export default function LineeTrama({
   racconti = [],
   data = {},
@@ -163,6 +188,10 @@ export default function LineeTrama({
 
     function imperativeTranslate(currentScaleY) {
       selectAll('.linea-container').attr(
+        'transform',
+        (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+      )
+      selectAll('.linea-container-selected').attr(
         'transform',
         (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
       )
@@ -267,6 +296,10 @@ export default function LineeTrama({
                 </g>
               )
             })}
+          <SelectedContainers
+            n={dataRacconti.length}
+            translations={translations}
+          />
         </svg>
       )}
     </div>
