@@ -3,6 +3,7 @@ import React, {
   useRef,
   useState,
   useMemo,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useImperativeHandle,
@@ -42,7 +43,7 @@ const lineGenerator = line()
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
-const TramaTitoloBox = ({ titolo, x, onClick }) => {
+const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
   const containerRef = useRef(null)
   const [measures, setMeasures] = useState(null)
   useLayoutEffect(() => {
@@ -50,27 +51,40 @@ const TramaTitoloBox = ({ titolo, x, onClick }) => {
     setMeasures(m)
   }, [titolo])
 
-  console.log('M.M', measures)
-
   return (
-    <g>
-      <text ref={containerRef} x={x} y={0} style={{ textAnchor: 'end' }}>
+    <g
+      onClick={onClick}
+      transform={`translate(${x}, ${y})`}
+      style={{ cursor: 'pointer' }}
+    >
+      {measures && (
+        <g transform={`translate(${-measures.width - 40}, -15)`}>
+          <rect
+            height={22}
+            width={measures.width + 35}
+            rx={5}
+            className="trama2-info-box"
+          />
+          <line
+            x1={measures.width + 18}
+            x2={measures.width + 18}
+            y1={0}
+            y2={22}
+            className="trama2-info-box"
+          />
+          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
+            o
+          </text>
+        </g>
+      )}
+      <text
+        ref={containerRef}
+        x={-30}
+        y={0}
+        style={{ textAnchor: 'end', userSelect: 'none' }}
+      >
         {titolo}
       </text>
-      {measures && (
-        <rect
-          style={{
-            stroke: 'var(--dark-blue)',
-            strokeWidth: 2,
-          }}
-          fill='transparent'
-          x={x - measures.width}
-          y={-15}
-          rx={5}
-          height={20}
-          width={measures.width}
-        />
-      )}
     </g>
   )
 }
@@ -86,12 +100,20 @@ const LineaTrama = React.memo(
     gradient,
     itemSelected,
     toggleItem,
+    onRaccontoClick,
   }) => {
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
       const subPaths = splitPath(d)
       return [d, subPaths]
     }, [data])
+
+    const handleClickRacconto = useCallback(
+      (e) => {
+        onRaccontoClick(racconto, e)
+      },
+      [onRaccontoClick, racconto]
+    )
 
     const element = (
       <g>
@@ -106,7 +128,7 @@ const LineaTrama = React.memo(
               d={subPath}
               className="trama2-line"
               style={{
-                stroke: itemSelected ? strokeSelected : '#fff',
+                stroke: itemSelected ? strokeSelected : '#ddd',
                 fill: 'none',
               }}
             ></path>
@@ -121,12 +143,17 @@ const LineaTrama = React.memo(
 
         {itemSelected && (
           <g>
-            <TramaTitoloBox x={width} titolo={data.racconto.titolo} />
             {data.map((d, i) => (
               <circle key={i} className="trama2-circle" cx={d.x} cy={d.y} r={2}>
                 <title>{d.motivo_type}</title>
               </circle>
             ))}
+            <RaccontoInfoBox
+              onClick={handleClickRacconto}
+              y={-10}
+              x={width}
+              titolo={data.racconto.titolo}
+            />
           </g>
         )}
       </g>
@@ -192,17 +219,21 @@ const SelectedContainers = React.memo(({ n, translations }) => {
   )
 })
 
-function LineeTrama({
-  racconti = [],
-  data = {},
-  height,
-  scalaColore,
-  scalaMotivoY,
-  colors,
-  selected,
-  toggleSelect,
-  tipologie,
-}, ref) {
+function LineeTrama(
+  {
+    racconti = [],
+    data = {},
+    height,
+    scalaColore,
+    scalaMotivoY,
+    colors,
+    selected,
+    toggleSelect,
+    tipologie,
+    onRaccontoClick,
+  },
+  ref
+) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const [measures, setMeasures] = useState(null)
@@ -286,34 +317,27 @@ function LineeTrama({
     })
     return [finalDataRacconti, Array.from(grandientsSet)]
   }, [data, racconti, xScale, byTipologia])
-  
 
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
       const scaleY = scaleLinear()
         .domain([0, racconti.length])
         .range([0 + height, measures.height - height])
-      
-        
-        const mainTransition = selectAll('.linea-container')
+
+      const mainTransition = selectAll('.linea-container')
         .transition()
         .duration(1000)
-        .attr(
-          'transform',
-          (d, i) => 'translate(0, ' + scaleY(i) + ')'
-        ).end()
+        .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+        .end()
 
-        const selectedTransition = selectAll('.linea-container-selected')
+      const selectedTransition = selectAll('.linea-container-selected')
         .transition()
         .duration(1000)
-        .attr(
-          'transform',
-          (d, i) => 'translate(0, ' + scaleY(i) + ')'
-        ).end()
+        .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+        .end()
 
-        Promise.all([mainTransition, selectedTransition]).then(cb) 
-      
-    }
+      Promise.all([mainTransition, selectedTransition]).then(cb)
+    },
   }))
 
   return (
@@ -335,35 +359,36 @@ function LineeTrama({
             gradientsType={gradientsType}
           />
           <g className="wrapper">
-          {measures &&
-            dataRacconti.map((datum, i) => {
-              return (
-                <g
-                  key={i}
-                  className="linea-container"
-                  style={{
-                    transform: translations[i],
-                  }}
-                >
-                  <LineaTrama
-                    scalaColore={scalaColore}
-                    scalaMotivoY={scalaMotivoY}
-                    index={i}
-                    width={measures.width}
-                    height={height}
-                    itemSelected={selected[racconti[i].titolo]}
-                    toggleItem={toggleSelect}
-                    xScale={xScale}
-                    racconto={racconti[i]}
-                    data={datum}
-                  ></LineaTrama>
-                </g>
-              )
-            })}
-          <SelectedContainers
-            n={dataRacconti.length}
-            translations={translations}
-          />
+            {measures &&
+              dataRacconti.map((datum, i) => {
+                return (
+                  <g
+                    key={i}
+                    className="linea-container"
+                    style={{
+                      transform: translations[i],
+                    }}
+                  >
+                    <LineaTrama
+                      onRaccontoClick={onRaccontoClick}
+                      scalaColore={scalaColore}
+                      scalaMotivoY={scalaMotivoY}
+                      index={i}
+                      width={measures.width}
+                      height={height}
+                      itemSelected={selected[racconti[i].titolo]}
+                      toggleItem={toggleSelect}
+                      xScale={xScale}
+                      racconto={racconti[i]}
+                      data={datum}
+                    ></LineaTrama>
+                  </g>
+                )
+              })}
+            <SelectedContainers
+              n={dataRacconti.length}
+              translations={translations}
+            />
           </g>
         </svg>
       )}

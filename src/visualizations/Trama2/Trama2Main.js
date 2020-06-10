@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect, useRef, useImperativeHandle } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 
 //data management
 import groupBy from 'lodash/groupBy'
@@ -192,7 +192,9 @@ export default function Trama2Main() {
   const listRef = useRef()
   const [currentView, setCurrentView] = useState('list')
 
-  
+  const handleClickRacconto = useCallback(racconto => {
+    console.log('CLICK!', racconto)
+  }, [])
 
   console.log('tipologie', tipologie)
   console.log('racconti', racconti)
@@ -227,6 +229,7 @@ export default function Trama2Main() {
       <div className="trama2-content-wrapper">
         <div className="trama2-content" style={{display: currentView !== 'list' ? 'none' : undefined}}>
           <LineeTrama
+            onRaccontoClick={handleClickRacconto}
             ref={listRef}
             tipologie={tipologie}
             selected={selected}
@@ -240,10 +243,10 @@ export default function Trama2Main() {
         </div>
 
         {currentView === 'rotated' &&  <div className="trama2-content">
-          
+
         </div>}
         {currentView === 'detail' &&  <div className="trama2-content">
-          
+
         </div>}
       </div>
     </div>

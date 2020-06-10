@@ -1,7 +1,7 @@
 .trama2-container {
   position: relative;
   height: calc(100vh - var(--navigation-height));
-  background-color: #ccc;
+  background-color: #fff
 }
 
 .trama2-side-panel {
@@ -80,7 +80,6 @@
 }
 
 .trama2-line {
-  /* stroke: #ddd; */
   fill: none;
   stroke-width: 2px;
   pointer-events: none;
@@ -112,4 +111,10 @@
 }
 .trama2-sidebar-item:hover {
   background-color: #ccc;
+}
+
+.trama2-info-box {
+  fill: white;
+  stroke-width: 1px;
+  stroke: var(--dark-blue);
 }
