@@ -1,0 +1,104 @@
+.trama2-container {
+  position: relative;
+  height: calc(100vh - var(--navigation-height));
+  background-color: #ccc;
+}
+
+.trama2-side-panel {
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 300px;
+  transform: translateX(-265px);
+  transition: all 400ms ease-in;
+  pointer-events: none;
+}
+
+.trama2-side-panel.open {
+  transform: translateX(0);
+}
+
+.trama2-side-panel-toggle {
+  height: 35px;
+  width: 35px;
+  background-color: black;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  right: 0px;
+  top: 17.5px;
+  pointer-events: all;
+}
+
+.trama2-side-panel-content {
+  height: 100%;
+  width: calc(300px - 35px);
+  border-radius: 4px;
+  position: absolute;
+  pointer-events: all;
+  border-right: solid black 1px;
+  background-color: #fff;
+}
+
+.trama2-content-wrapper {
+  position: absolute;
+  z-index: 1;
+  min-height: 600px;
+  min-width: 960px;
+  height: calc(100% - 15px);
+  width: 100%;
+}
+
+.trama2-content {
+  padding: 70px 30px;
+  height: 100%;
+}
+
+.trama2-pointer {
+  /* stroke: #ddd; */
+  fill: none;
+  stroke: transparent;
+  stroke-width: 3px;
+  cursor: pointer;
+  /* fill: none; */
+}
+
+.trama2-pointer:hover + .trama2-line:not(.selected) {
+  /* stroke: #ddd; */
+  stroke: #000 !important;
+  /* fill: none; */
+}
+
+.trama2-line {
+  /* stroke: #ddd; */
+  fill: none;
+  stroke-width: 1px;
+  pointer-events: none;
+  /* fill: none; */
+}
+
+.trama2-circle {
+  stroke: #ddd;
+  fill: #000;
+}
+
+/* sidebar */
+.trama2-sidebar-header {
+  height: 80px;
+}
+.trama2-sidebar-item {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 14px;
+  padding-left: 30px;
+  line-height: 10px;
+  color: #222;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.trama2-sidebar-item.selected {
+  color: #fff;
+}
+.trama2-sidebar-item:hover {
+  background-color: #ccc;
+}

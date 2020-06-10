@@ -1,0 +1,83 @@
+[
+{"motivo_type":"titolo","cluster tipologie":"-"}
+,
+{"motivo_type":"incontro di gruppo","cluster tipologie":"interazione"}
+,
+{"motivo_type":"morte","cluster tipologie":"eventi liminali"}
+,
+{"motivo_type":"scommessa","cluster tipologie":"interazione"}
+,
+{"motivo_type":"arrivo/ritorno","cluster tipologie":"spostamento"}
+,
+{"motivo_type":"successo","cluster tipologie":"intenzione"}
+,
+{"motivo_type":"situazione","cluster tipologie":"situazione"}
+,
+{"motivo_type":"cambiamento","cluster tipologie":"situazione"}
+,
+{"motivo_type":"iniziativa/piano","cluster tipologie":"intenzione"}
+,
+{"motivo_type":"smarrimento/dubbio","cluster tipologie":"stato disforico"}
+,
+{"motivo_type":"illusione/speranza","cluster tipologie":"stato euforico"}
+,
+{"motivo_type":"angoscia/delusione","cluster tipologie":"stato disforico"}
+,
+{"motivo_type":"aggressione/scontro","cluster tipologie":"interazione"}
+,
+{"motivo_type":"visione","cluster tipologie":"stato riflessivo"}
+,
+{"motivo_type":"riflessione","cluster tipologie":"stato riflessivo"}
+,
+{"motivo_type":"attesa","cluster tipologie":"stato sospeso"}
+,
+{"motivo_type":"rivelazione","cluster tipologie":"eventi liminali"}
+,
+{"motivo_type":"fuga","cluster tipologie":"spostamento"}
+,
+{"motivo_type":"viaggio","cluster tipologie":"spostamento"}
+,
+{"motivo_type":"compito/missione","cluster tipologie":"interazione"}
+,
+{"motivo_type":"incontro maschile","cluster tipologie":"interazione"}
+,
+{"motivo_type":"partenza/sparizione","cluster tipologie":"spostamento"}
+,
+{"motivo_type":"pausa/sospensione","cluster tipologie":"stato sospeso"}
+,
+{"motivo_type":"incontro femminile","cluster tipologie":"interazione"}
+,
+{"motivo_type":"offerta","cluster tipologie":"interazione"}
+,
+{"motivo_type":"mistero/assurdità","cluster tipologie":"stato riflessivo"}
+,
+{"motivo_type":"inseguimento/ricerca","cluster tipologie":"spostamento"}
+,
+{"motivo_type":"aiuto/salvataggio","cluster tipologie":"interazione"}
+,
+{"motivo_type":"scena erotica","cluster tipologie":"interazione"}
+,
+{"motivo_type":"ostacolo","cluster tipologie":"intenzione"}
+,
+{"motivo_type":"incontro animale","cluster tipologie":"interazione"}
+,
+{"motivo_type":"città magica","cluster tipologie":"situazione"}
+,
+{"motivo_type":"innamoramento","cluster tipologie":"stato euforico"}
+,
+{"motivo_type":"rifiuto","cluster tipologie":"interazione"}
+,
+{"motivo_type":"metanarrazione","cluster tipologie":"metanarrazione"}
+,
+{"motivo_type":"guerra","cluster tipologie":"interazione"}
+,
+{"motivo_type":"telefonata","cluster tipologie":"interazione"}
+,
+{"motivo_type":"cornice","cluster tipologie":"cornice"}
+,
+{"motivo_type":"ipotesi","cluster tipologie":"stato riflessivo"}
+,
+{"motivo_type":"racconto incastonato","cluster tipologie":"racconto incastonato"}
+,
+{"motivo_type":"matrimonio","cluster tipologie":"interazione"}
+]
