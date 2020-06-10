@@ -11,32 +11,14 @@ import React, {
 } from 'react'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
-import range from 'lodash/range'
-
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
+
+import range from 'lodash/range'
 import keyBy from 'lodash/keyBy'
 
-const splitPath = (d) => {
-  const pieces = d.split('C')
-  const paths = pieces.reduce((acc, item, i) => {
-    if (i === 0) {
-      return acc
-    }
-    if (i === 1) {
-      const path = pieces[0] + 'C' + pieces[i]
-      acc.push(path)
-    } else {
-      const [a, b] = pieces[i - 1].split(',').reverse()
-      const path = `M${b},${a}C${pieces[i]}`
-      acc.push(path)
-    }
-
-    return acc
-  }, [])
-
-  return paths
-}
+import { splitPath } from './utils'
+import GradientsDefinitions from './GradientsDefinitions'
 
 const lineGenerator = line()
   .x((d) => d.x)
@@ -110,9 +92,9 @@ const LineaTrama = React.memo(
 
     const handleClickRacconto = useCallback(
       (e) => {
-        onRaccontoClick(racconto, e)
+        onRaccontoClick(data, e)
       },
-      [onRaccontoClick, racconto]
+      [onRaccontoClick, data]
     )
 
     const element = (
@@ -168,41 +150,6 @@ const LineaTrama = React.memo(
   }
 )
 
-const GrandientsDefinitions = React.memo(({ gradientsType, byTipologia }) => {
-  return (
-    <defs>
-      {gradientsType.map((gradientType) => {
-        const [tipoFromName, tipoToName] = gradientType.split('-')
-        const tipoFrom = byTipologia[tipoFromName]
-        const tipoTo = byTipologia[tipoToName]
-        return (
-          <linearGradient
-            x1="0"
-            x2="0"
-            y1="0"
-            y2="1"
-            key={gradientType}
-            id={gradientType}
-          >
-            {+tipoFrom['ordine tipologia'] > +tipoTo['ordine tipologia'] && (
-              <>
-                <stop offset="0%" stopColor={tipoFrom.colore.colori}></stop>
-                <stop offset="100%" stopColor={tipoTo.colore.colori}></stop>
-              </>
-            )}
-            {+tipoFrom['ordine tipologia'] < +tipoTo['ordine tipologia'] && (
-              <>
-                <stop offset="0%" stopColor={tipoTo.colore.colori}></stop>
-                <stop offset="100%" stopColor={tipoFrom.colore.colori}></stop>
-              </>
-            )}
-          </linearGradient>
-        )
-      })}
-    </defs>
-  )
-})
-
 const SelectedContainers = React.memo(({ n, translations }) => {
   return (
     <g>
@@ -229,8 +176,9 @@ function LineeTrama(
     colors,
     selected,
     toggleSelect,
-    tipologie,
     onRaccontoClick,
+    tipologie,
+    tipologieByTipologia,
   },
   ref
 ) {
@@ -239,7 +187,7 @@ function LineeTrama(
   const [measures, setMeasures] = useState(null)
   const [translations, setTranslations] = useState([])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
   }, [])
@@ -293,21 +241,20 @@ function LineeTrama(
     return scaleLinear().domain([0, 1]).range([0, measures.width])
   }, [measures])
 
-  const byTipologia = useMemo(() => keyBy(tipologie, 'tipologia'), [tipologie])
   const [dataRacconti, gradientsType] = useMemo(() => {
     if (!xScale) {
       return [[], []]
     }
-    const grandientsSet = new Set()
+    const gradientsSet = new Set()
     const finalDataRacconti = racconti.map((racconto) => {
       let out = data[racconto.titolo].filter((d) => d.y !== undefined)
       out = out.map((d, i) => {
         if (i > 0) {
-          grandientsSet.add(d.motivo_type + '-' + out[i - 1].motivo_type)
+          gradientsSet.add(d.motivo_type + '-' + out[i - 1].motivo_type)
         }
         return {
           ...d,
-          colori: byTipologia[d.motivo_type].colore.colori,
+          colori: tipologieByTipologia[d.motivo_type].colore.colori,
           x: xScale(d.x),
           y: d.y,
         }
@@ -315,8 +262,8 @@ function LineeTrama(
       out.racconto = racconto
       return out
     })
-    return [finalDataRacconti, Array.from(grandientsSet)]
-  }, [data, racconti, xScale, byTipologia])
+    return [finalDataRacconti, Array.from(gradientsSet)]
+  }, [data, racconti, xScale, tipologieByTipologia])
 
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
@@ -354,8 +301,8 @@ function LineeTrama(
           }}
           ref={svgRef}
         >
-          <GrandientsDefinitions
-            byTipologia={byTipologia}
+          <GradientsDefinitions
+            byTipologia={tipologieByTipologia}
             gradientsType={gradientsType}
           />
           <g className="wrapper">
