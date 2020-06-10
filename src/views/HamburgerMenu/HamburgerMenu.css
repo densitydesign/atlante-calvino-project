@@ -19,15 +19,16 @@
   grid-template-columns : 1fr;
   border-bottom:var(--app-border);
   border-right: var(--app-border-bold);
-  background-color: #FFA500;
+  background-color:var(--bg);
   transition: background-color 0.5s ease;}
 
 .compass-selector-cell {
-  display:flex;
+  display:block;
   align-items: center;
   justify-content: left;
   padding:100px;
-  border-left:2px solid #FFA500;
+  border-left:2px solid var(--bg);
+  background-color: var(--bg);
 }
 
 a .compass-selector-cell  {
@@ -35,12 +36,13 @@ a .compass-selector-cell  {
   white-space: nowrap;
   transition: color 0.5s ease;
   color: black;
+  font-size:2em;
 }
 
 a:hover .compass-selector-cell  {
   margin: 0;
   white-space: nowrap;
-  font-size: 1.8em;
+  font-size:2em;
   transition: color 0.5s ease;
   color: var(--dark-blue);
 }
@@ -102,7 +104,7 @@ color: turquoise;
 }
 
 .blank-intro{
-  background-color:black;
+  background-color:#FFA500;
 }
 
 
