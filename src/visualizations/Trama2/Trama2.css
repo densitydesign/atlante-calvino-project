@@ -63,6 +63,13 @@
   padding: 70px 30px;
   height: 100%;
 }
+.trama2-detail-content {
+  padding: 20px 30px;
+  height: 100%;
+}
+.trama2-detail-header {
+  padding-bottom: 50px;
+}
 
 .trama2-pointer {
   /* stroke: #ddd; */
@@ -117,4 +124,28 @@
   fill: white;
   stroke-width: 1px;
   stroke: var(--dark-blue);
+}
+
+.trama2-detail-label {
+  height: 20px;
+}
+.trama2-detail-label > .trama2-label-inner-start {
+  display: inline-block;
+  border: 2px solid var(--dark-blue);
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.trama2-detail-label > .trama2-label-inner-end {
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid var(--dark-blue);
+  color: var(--dark-blue);
+  font-weight: bold;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

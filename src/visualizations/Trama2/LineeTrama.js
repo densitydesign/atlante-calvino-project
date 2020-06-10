@@ -134,7 +134,7 @@ const LineaTrama = React.memo(
               onClick={handleClickRacconto}
               y={-10}
               x={width}
-              titolo={data.racconto.titolo}
+              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
             />
           </g>
         )}
@@ -255,6 +255,7 @@ function LineeTrama(
         return {
           ...d,
           colori: tipologieByTipologia[d.motivo_type].colore.colori,
+          originalX: d.x,
           x: xScale(d.x),
           y: d.y,
         }
