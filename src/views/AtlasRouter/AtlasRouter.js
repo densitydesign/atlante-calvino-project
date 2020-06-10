@@ -90,7 +90,7 @@ export default function AtlasRouter()
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation">problema / cancellazione</Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>
-      <Route exact path="/Problem/plot"><Trama title="LA STRUTTURA DEI VOLUMI" /></Route>
+      <Route exact path="/Problem/plot">problema / trama</Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>

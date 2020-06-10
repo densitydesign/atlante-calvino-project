@@ -17,6 +17,8 @@ import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
 import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
 import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
 
+import ProcessDoubtingMainHelp from '../../helpPages/processDoubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
+
 import './HelpSidePanel.css';
 
 export default class HelpSidePanel extends React.Component
@@ -38,6 +40,8 @@ export default class HelpSidePanel extends React.Component
 
       case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
       case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;
+
+      case GlobalData.helpPages.processDoubting.main : helpPage = <ProcessDoubtingMainHelp />; break;
 
       default : break;
     }

@@ -27,6 +27,7 @@ CurveSankey.prototype = {
                 break;
             case 1:
                 this._point = 2; // proceed
+                break;
             default:
                 var mx = (x - this._x) / 2 + this._x;
                 this._context.bezierCurveTo(mx, this._y, mx, y, x, y);
@@ -45,8 +46,8 @@ export function append_tooltip_entry(tooltip, index, color)
   const margin = { top : 25, left : 5, right : 5, bottom : 5 };
   const entry_icon_x = margin.left + 50;
 
-  const entry_row_height = 13;
-  const entry_icon_y_base = 53;
+  const entry_row_height = 17;
+  const entry_icon_y_base = 60;
   const entry_icon_y = margin.top + entry_icon_y_base + entry_row_height * index;
 
   tooltip
@@ -54,10 +55,11 @@ export function append_tooltip_entry(tooltip, index, color)
     .attr("fill", color)
     .attr("x", entry_icon_x)
     .attr("y", entry_icon_y)
-    .attr("width", 8)
+    .attr("rx", 4)
+    .attr("width", 12)
     .attr("height", 8);
 
-  const text_start_delta_x = 15;
+  const text_start_delta_x = 19;
   const entry_text_x = entry_icon_x + text_start_delta_x;
 
   const text_start_delta_y = 9;

@@ -10,7 +10,7 @@
   display: none;
 }
 
-.y-axis .tick {
+#matrice-dei-luoghi .y-axis .tick {
   cursor: pointer;
 }
 

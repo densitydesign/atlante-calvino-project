@@ -26,7 +26,7 @@
   grid-template-columns: 1fr;
   height: calc(2 * (100vh - var(--navigation-height)));
   position: relative;
-  background-color:yellow;
+  background: var(--cool-bg);
 }
 
 .atlas-intro-sidebar3 {
@@ -61,7 +61,7 @@
 
 
 .atlas-intro-sidebar-monoblock {
-  background: var(--bg);
+  background: var(--cool-bg);
   position:relative;
   width: 100%;
   display:grid;
@@ -73,7 +73,7 @@ margin-bottom:0px !important;
 }
 
 .atlas-intro-sidebar-monoblock-2 {
-  background: var(--bg);
+  background: var(--cool-bg);
 /* background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255,193,7,1) 100%); */
   position:relative;
   width: 100%;
@@ -113,7 +113,6 @@ image .atlas-intro-cell2 {
 
 h5{
   opacity:1;
-  color:white  !important;
 }
 
 .atlas-intro-cell3 {
@@ -126,9 +125,6 @@ h5{
 
 h2{
   margin-bottom:2em;
-}
-h3{
-  color:white !important;
 }
 
 

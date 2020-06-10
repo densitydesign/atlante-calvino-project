@@ -34,7 +34,7 @@ export default class Articles extends React.Component
         <HamburgerIntroHeader />
         <div className="grid-with-scrollable-column">
           <div className="scrollable-column-3 col-md-12 col-lg-8">
-            <h1>ARTICOLI</h1>
+            <h1>PUBBLICAZIONI</h1>
             <span id="overlay"><img src={process.env.PUBLIC_URL + '/imagesPop/visconte-orange.jpg'} className="sizein" alt="information complement" style={{"margin-left":"2em"}} /></span>
             {
               this.state.data.filter(d=>d.section==="Articoli").map((d,i)=>{

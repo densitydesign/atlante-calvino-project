@@ -17,27 +17,29 @@ let data = {
 	mode: 'default'
 };
 
-let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
+//let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
 let tilt;
 let scale;
 let d3_event_transform_k;
+let label_x_scale_factor;
+let label_y_scale_factor_tilt;
+let label_y_scale_factor_no_tilt;
 let currentAnalysisMode;
 let colors;
 
-const PI = Math.PI;
+//const PI = Math.PI;
 const _2PI = Math.PI * 2;
-const arcMin = 75; // inner radius of the first arc
-//const arcWidth = 38;
-//const arcPad = 1; // padding between arcs
-const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+//const arcMin = 75; // inner radius of the first arc
+//const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
 const step_increment = -23;
 const one_rem = Number.parseInt(d3.select('html').style('font-size'));
 const half_rem = one_rem / 2;
+let one_rem_times_scale;
 
 const showHillModes = {
   all : "all",
@@ -79,6 +81,42 @@ Object.keys(customElementsClasses).forEach(key =>
   customElementsClasses[key + "_full"] = ["customElements", customElementsClasses[key]].join(" "));
 
 customElementsClasses["customElements"] = "customElements";
+
+const S012_placesArcFix = Math.PI * 1 / 2;
+const S032_placesArcFix = Math.PI * 2 / 3;
+const S081_placesArcFix = Math.PI * 25 / 32;
+const S076_placesArcFix = Math.PI * 1 / 2;
+const S089_placesArcFix = Math.PI * 1 / 2;
+const V008_placesArcFix = Math.PI * 3 / 4;
+const S149_placesArcFix = Math.PI * 6 / 10;
+const S151_placesArcFix = Math.PI * 69 / 128;
+const S156_placesArcFix = Math.PI * 5 / 12;
+const V021_placesArcFix = Math.PI * 1 / 2;
+const S179_placesArcFix = Math.PI * 1 / 2;
+const S181_placesArcFix = Math.PI * 1 / 2;
+const S203_placesArcFix = Math.PI * 1 / 2;
+const S119_placesArcFix = Math.PI * 1 / 2;
+const S123_placesArcFix = Math.PI * 21 / 32;
+const S142_placesArcFix = Math.PI * 9 / 16;
+const S139_placesArcFix = Math.PI * 30 / 48;
+const S140_placesArcFix = Math.PI * 1 / 2;
+const S095_placesArcFix = Math.PI * 1 / 2;
+const S097_placesArcFix = Math.PI * 37 / 64;
+const S104_placesArcFix = Math.PI * 37 / 48;
+const S050_placesArcFix = Math.PI * 1 / 2;
+const S101_placesArcFix = Math.PI * 21 / 32;
+const S048_placesArcFix = Math.PI * 31 / 64;
+const S088_placesArcFix = Math.PI * 133 / 256;
+const S065_placesArcFix = Math.PI * 1 / 2;
+const S072_placesArcFix = Math.PI * 1 / 2;
+const S067_placesArcFix = Math.PI * 17 / 32;
+const S007_placesArcFix = Math.PI * 17 / 32;
+const S022_placesArcFix = Math.PI * 7 / 16;
+const S041_placesArcFix = Math.PI * 1 / 2;
+const S014_placesArcFix = Math.PI * 9 / 24;
+const S165_placesArcFix = Math.PI * 2 / 3;
+const S011_placesArcFix = Math.PI * 1 / 2;
+const V005_placesArcFix = Math.PI * 21 / 40;
 
 class VClass
 {
@@ -340,42 +378,7 @@ class VClass
 			.outerRadius(d => d.outerRadius)
 			.startAngle(d => d.startAngle)
 			.endAngle(d => d.endAngle);
-/*
-		place_hierarchies
-			.filter(d => d.type === "arc")
-			.append("svg:path")
-			.attr("fill", d => d.fill)
-			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id)
-			.attr("d", drawplace_hierarchyArc)
-			.style("display", "none")
-			.attr("transform", d => "translate(" + d.center.x + ", " + d.center.y + ")");      
 
-		place_hierarchies
- 			.filter(d => d.type === "line")
- 			.append("line")
-			.attr("x1", d => d.x1)
-			.attr("y1", d => d.y1)
-			.attr("x2", d => d.x2)
-			.attr("y2", d => d.y2)
- 			.attr("stroke", d => d.stroke)
-			.attr("stroke-width", d => d.stroke_width)
-			.style("display", "none")
- 			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);      
-
-		place_hierarchies
-			.filter(d => d.type === "circle")
-			.append('circle')
-			.attr('fill', d => d.fill)
-			.attr('stroke', 'white')
-			.attr('stroke-width', 2)
-			.attr('r', d => d.r)
-			.attr("class", "place_hierarchy_node")
-			.style("display", "none")
-			.attr("transform", d => {
-				return "translate(" + d.cx + ", " + d.cy + ")"
-			})
-			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);       
-*/
 		const fontSizeScale = d3
 			.scaleLinear()
 //			.domain(d3.extent(Object.values(place_hierarchies), d => d.hill_size))
@@ -424,12 +427,12 @@ class VClass
 				jellyfish_node_info.bbox = bbox;
 			});
 
-		for(let [k, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
+		for(let [, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
 		{
 			visit(
 				jellyfish,
 				{},
-				(jn, status) => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
+				jn => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
 
 			let j = input_data.json_node_map.get(jellyfish.caption);
 			let radiusScaleFactor = j.steps[0].r / 30;
@@ -661,56 +664,51 @@ class VClass
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  const base_steps = steps.filter(d => d.first_elem);
+
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.inventato_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.no_ambientazione_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.places_full)
@@ -746,8 +744,7 @@ class VClass
 
 ///////////////////////////////////////////
 
-  steps
-    .filter(function(d) { return d.first_elem })
+  base_steps
     .append("svg:path")
     .attr("fill", "purple")
     .attr("class", "place_hierarchies")
@@ -804,24 +801,21 @@ class VClass
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", "transparent")
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
@@ -905,8 +899,7 @@ class VClass
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.frasi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -916,8 +909,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.misto)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -927,8 +919,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.parole)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -938,8 +929,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.sintagmi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -949,8 +939,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -992,8 +981,8 @@ class VClass
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", d => d.lists_ratio_is_below_threshold ? colors.lists_ratio_below_threshold : colors.lists_ratio_above_threshold)
       .attr("class", customElementsClasses.lists_level_2_full)
@@ -1003,8 +992,8 @@ class VClass
       })
 */      .style('fill-opacity',0);
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", "lightgrey")
       .attr("class", customElementsClasses.lists_level_2_full)
@@ -1052,7 +1041,7 @@ class VClass
       .attr('class', 'label');
 
     // Append title
-    let labelTitle = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('font-family', "'HKGrotesk', sans-serif")
@@ -1067,7 +1056,7 @@ class VClass
       });
 
     // Append collections years
-    let labelCollectionsYears = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('x', function(d) { return 0; })
@@ -1104,6 +1093,7 @@ class VClass
 
     let usedSpace = 0.65;
     scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+    one_rem_times_scale = one_rem * scale;
 
     centerTerritory(scale, 0, 0, 0);
 
@@ -1116,6 +1106,9 @@ class VClass
   		place_hierarchies_group.attr("transform", d3.event.transform);
   		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
+      label_x_scale_factor = one_rem_times_scale / d3_event_transform_k;
+      label_y_scale_factor_no_tilt = label_x_scale_factor;
+      label_y_scale_factor_tilt = label_x_scale_factor / with_tilt_factor;
       tilt_labels(V.text_nodes);
     }
 
@@ -1212,14 +1205,11 @@ class VClass
 
     label.attr('transform', function(d) {
 
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
     });
   }
 
@@ -1252,14 +1242,11 @@ class VClass
 
     label.attr('transform', function(d) {
 
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
     });
   }  
 
@@ -2106,167 +2093,6 @@ class VClass
   }
 }
 
-
-/*
-function create_item_steps(d)
-{
-	// reverse the order of collections, so to have the older ones at the bottom of the hills
-	d.attributes.collections = d.attributes.collections.reverse()
-
-	d.steps = [];
-	// get different radii
-	for(var jj = (data.min_size); jj <= d.size; jj += data.min_size) {
-		let new_step_size = jj;
-		let ratio = new_step_size / d.size;
-		new_step_size = d.size * interpolateSpline(ratio);
-		d.steps.push(new_step_size);
-	}
-
-	// get colors
-	d.steps = d.steps.map((s, i) => {
-
-		// assign to each step a collection
-		let pos_1 = i / d.steps.length;
-		let pos_2 = pos_1 * d.attributes.collections.length;
-		let collection_here = d.attributes.collections[Math.floor(pos_2)];
-		let first_elem = (i == (d.steps.length - 1));
-		let last_elem = (i == 0);
-		let n_steps = d.steps.length;
-		let csv_item = data.x_csv2[d.id];
-
-		return {
-			'r': s,
-			'collection': collection_here,
-			'first_publication': d.attributes.first_publication,
-			'id': d.id,
-			'first_elem': first_elem,
-			'last_elem': last_elem,
-			'n_steps': n_steps,
-
-			'generico_cosmico': csv_item == undefined ? 0 : csv_item.generico_cosmico,
-			'generico_cosmico_abs': csv_item == undefined ? 0 : csv_item.generico_cosmico_abs,
-      'n_generico_cosmico': csv_item == undefined ? 0 : csv_item.n_generico_cosmico,
-
-			'generico_terrestre': csv_item == undefined ? 0 : csv_item.generico_terrestre,
-			'generico_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_terrestre_abs,
-      'n_generico_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_terrestre,
-
-			'inventato': csv_item == undefined ? 0 : csv_item.inventato,
-			'inventato_abs': csv_item == undefined ? 0 : csv_item.inventato_abs,
-      'n_inventato': csv_item == undefined ? 0 : csv_item.n_inventato,
-
-			'no_ambientazione': csv_item == undefined ? 0 : csv_item.no_ambientazione,
-			'no_ambientazione_abs': csv_item == undefined ? 0 : csv_item.no_ambientazione_abs,
-      'n_no_ambientazione': csv_item == undefined ? 0 : csv_item.n_no_ambientazione,
-
-			'nominato_cosmico': csv_item == undefined ? 0 : csv_item.nominato_cosmico,
-			'nominato_cosmico_abs': csv_item == undefined ? 0 : csv_item.nominato_cosmico_abs,
-      'n_nominato_cosmico': csv_item == undefined ? 0 : csv_item.n_nominato_cosmico,
-
-			'nominato_terrestre': csv_item == undefined ? 0 : csv_item.nominato_terrestre,
-			'nominato_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_terrestre_abs,
-      'n_nominato_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_terrestre,
-
-			'nebbia_normalizzata': csv_item == undefined ? 0 : csv_item.nebbia_normalizzata,
-			'cancellazione_normalizzata': csv_item == undefined ? 0 : csv_item.cancellazione_normalizzata,
-			'nebbia': csv_item == undefined ? 0 : csv_item.nebbia,
-			'cancellazione': csv_item == undefined ? 0 : csv_item.cancellazione,
-			'norma_pct_caratteri_nebbia_cancellazione': csv_item == undefined ? 0 : csv_item.norma_pct_caratteri_nebbia_cancellazione,
-
-			'nebbia_words_ratio': csv_item == undefined ? 0 : csv_item.nebbia_words_ratio,
-			'cancellazione_words_ratio': csv_item == undefined ? 0 : csv_item.cancellazione_words_ratio,
-			'dubitative_ratio': csv_item == undefined ? 0 : csv_item.dubitative_ratio,
-
-			'lists_f_ratio': csv_item == undefined ? 0 : csv_item.lists_f_ratio,
-			'lists_m_ratio': csv_item == undefined ? 0 : csv_item.lists_m_ratio,
-			'lists_p_ratio': csv_item == undefined ? 0 : csv_item.lists_p_ratio,
-			'lists_s_ratio': csv_item == undefined ? 0 : csv_item.lists_s_ratio,
-
-			'lists_are_present': csv_item == undefined ? 0 : csv_item.lists_are_present,
-			'lists_ratio_with_threshold': csv_item == undefined ? 0 : csv_item.lists_ratio_with_threshold,
-			'lists_ratio_is_below_threshold': csv_item == undefined ? false : csv_item.lists_ratio_is_below_threshold
-		};
-	});
-
-	// sort array so to have little circles on top, big at bottom
-	d.steps = d.steps.reverse();
-
-	return d.steps;
-}
-*/
-/*
-function prepareMetaballData(json_nodes, collection, lineColor) 
-{
-	let flattened_steps = flatten_items_steps(json_nodes);
-}
-
-function flatten_items_steps(nodes) 
-{
-	let flattened_steps = [];
-
-	for(let i = 0; i < nodes.length; ++i) {
-		let node = nodes[i];
-
-		for(let j = 0; j < node.steps.length; ++j) {
-			let step = node.steps[j];
-
-			let item = {
-				id: step.id,
-				x: node.x,
-				y: node.y,
-
-				r: step.r,
-				steps_length: node.steps.length,
-				step: step,
-
-				collections: node.attributes.collections,
-				first_elem: step.first_elem,
-				last_elem: step.last_elem,
-				n_steps: step.n_steps,
-				first_publication: step.first_publication,
-				generico_cosmico: step.generico_cosmico,
-				generico_terrestre: step.generico_terrestre,
-				inventato: step.inventato,
-				no_ambientazione: step.no_ambientazione,
-				nominato_cosmico: step.nominato_cosmico,
-				nominato_terrestre: step.nominato_terrestre,
-
-				nebbia_normalizzata: step.nebbia_normalizzata,
-				cancellazione_normalizzata: step.cancellazione_normalizzata,
-
-				nebbia: step.nebbia,
-				cancellazione: step.cancellazione,
-
-				norma_pct_caratteri_nebbia_cancellazione: step.norma_pct_caratteri_nebbia_cancellazione,
-
-				nebbia_words_ratio: step.nebbia_words_ratio,
-				cancellazione_words_ratio: step.cancellazione_words_ratio,
-				dubitative_ratio: step.dubitative_ratio
-			};
-
-			flattened_steps.push(item);
-		}
-	}
-
-	return flattened_steps;
-}
-
-function array_intersection(a1, a2) 
-{
-	let result = [];
-
-	if(a1 === undefined || a1.length === 0 || a2 === undefined || a2.length === 0) return result;
-
-	for(let i = 0; i < a1.length; ++i) {
-		let item = a1[i];
-
-		if(a2.includes(item))
-			result.push(item);
-	}
-
-	return result;
-}
-*/
 function clone_d3_selection(selection, i) 
 {
 	// Assume the selection contains only one object, or just work
@@ -2297,7 +2123,8 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
-	for(let [text_id, place_hierarchy] of place_hierarchies)
+  // [text_id, place_hierarchy]
+	for(let [, place_hierarchy] of place_hierarchies)
 	{
 			let text_group = {
 				caption : place_hierarchy.caption,
@@ -2339,54 +2166,43 @@ function placesArcFix(d)
 
   switch(d.id)
   {
-    case "S012" : return Math.PI * 1 / 2;
-    case "S032" : return Math.PI * 2 / 3;
-//    case "S008" : return Math.PI * /;
-//    case "V003" : return Math.PI * /;
-    case "S081" : return Math.PI * 25 / 32;
-    case "S076" : return Math.PI * 1 / 2;
-    case "S089" : return Math.PI * 1 / 2;
-    case "V008" : return Math.PI * 3 / 4;
-    case "S149" : return Math.PI * 6 / 10;
-    case "S151" : return Math.PI * 69 / 128;
-    case "S156" : return Math.PI * 5 / 12;
-    case "V021" : return Math.PI * 1 / 2;
-    case "S179" : return Math.PI * 1 / 2;
-    case "S181" : return Math.PI * 1 / 2;
-    case "S203" : return Math.PI * 1 / 2;
-    case "S119" : return Math.PI * 1 / 2;
-    case "S123" : return Math.PI * 21 / 32;
-    case "S142" : return Math.PI * 9 / 16;
-    case "S139" : return Math.PI * 30 / 48;
-    case "S140" : return Math.PI * 1 / 2;
-    case "S095" : return Math.PI * 1 / 2;
-    case "S097" : return Math.PI * 37 / 64;
-    case "S104" : return Math.PI * 37 / 48;
-    case "S050" : return Math.PI * 1 / 2;
-    case "S101" : return Math.PI * 21 / 32;
-    case "S048" : return Math.PI * 31 / 64;
-    case "S088" : return Math.PI * 133 / 256;
-    case "S065" : return Math.PI * 1 / 2;
-    case "S072" : return Math.PI * 1 / 2;
-    case "S067" : return Math.PI * 17 / 32;
-    case "S007" : return Math.PI * 17 / 32;
-    case "S022" : return Math.PI * 7 / 16;
-    case "S041" : return Math.PI * 1 / 2;
-    case "S014" : return Math.PI * 9 / 24;
-    case "S165" : return Math.PI * 2 / 3;
-    case "S011" : return Math.PI * 1 / 2;
-    case "V005" : return Math.PI * 21 / 40;
+    case "S012" : return S012_placesArcFix;
+    case "S032" : return S032_placesArcFix;
+    case "S081" : return S081_placesArcFix;
+    case "S076" : return S076_placesArcFix;
+    case "S089" : return S089_placesArcFix;
+    case "V008" : return V008_placesArcFix;
+    case "S149" : return S149_placesArcFix;
+    case "S151" : return S151_placesArcFix;
+    case "S156" : return S156_placesArcFix;
+    case "V021" : return V021_placesArcFix;
+    case "S179" : return S179_placesArcFix;
+    case "S181" : return S181_placesArcFix;
+    case "S203" : return S203_placesArcFix;
+    case "S119" : return S119_placesArcFix;
+    case "S123" : return S123_placesArcFix;
+    case "S142" : return S142_placesArcFix;
+    case "S139" : return S139_placesArcFix;
+    case "S140" : return S140_placesArcFix;
+    case "S095" : return S095_placesArcFix;
+    case "S097" : return S097_placesArcFix;
+    case "S104" : return S104_placesArcFix;
+    case "S050" : return S050_placesArcFix;
+    case "S101" : return S101_placesArcFix;
+    case "S048" : return S048_placesArcFix;
+    case "S088" : return S088_placesArcFix;
+    case "S065" : return S065_placesArcFix;
+    case "S072" : return S072_placesArcFix;
+    case "S067" : return S067_placesArcFix;
+    case "S007" : return S007_placesArcFix;
+    case "S022" : return S022_placesArcFix;
+    case "S041" : return S041_placesArcFix;
+    case "S014" : return S014_placesArcFix;
+    case "S165" : return S165_placesArcFix;
+    case "S011" : return S011_placesArcFix;
+    case "V005" : return V005_placesArcFix;
 
     default : return 0;
-  }
-}
-
-function wait(ms)
-{
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
   }
 }
 
@@ -2403,16 +2219,13 @@ function tilt_labels(text_nodes)
 {
   const label = text_nodes.selectAll('.label');   
 
-  let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-  let k = one_rem * (1 / (d3_event_transform_k / scale));
-
   label.attr('transform', function(d) {
 
     let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
     let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-    if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-    else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+    else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
   });
 }
 

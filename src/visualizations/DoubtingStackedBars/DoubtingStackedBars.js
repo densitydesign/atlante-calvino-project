@@ -5,20 +5,21 @@ import './DoubtingStackedBars.css';
 
 class DoubtingStackedBars extends Component {
 
-
   componentDidMount() {
     const data_for_update = {
       data: this.props.data,
       stackMode: this.props.stackMode
     }
-    V.initialize(this._rootNode, data_for_update);
+    V.initialize(this._rootNode, data_for_update, this.props.onSelectedElement);
   }
 
   componentDidUpdate(prevProps, prevState) {
+    // console.log("component updated")
     if (prevProps.data !== this.props.data || prevProps.stackMode !== this.props.stackMode) {
       V.update(this.props.data, this.props.stackMode);
+      // V.filter(this.props.surviveFilters);
     }
-    if (prevProps.surviveFilters !== this.props.surviveFilters) {
+    if (prevProps.surviveFilters !== this.props.surviveFilters || prevProps.stackMode !== this.props.stackMode) {
       V.filter(this.props.surviveFilters);
     }
   }

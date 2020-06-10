@@ -9,6 +9,7 @@ import PageTitle from '../general/PageTitle';
 import MoreInfo from '../general/MoreInfo';
 import CompassButton from '../general/CompassButton/CompassButton';
 import HelpSidePanel from '../panels/HelpSidePanel/HelpSidePanel';
+import ToggleButton from '../general/ToggleButton/ToggleButton';
 
 import Loading from '../general/Loading';
 
@@ -18,6 +19,7 @@ import RangeFilter from '../general/RangeFilter';
 
 import PlacesMatrix from '../visualizations/PlacesMatrix';
 import ParseMatrixData from '../utilities/parse-matrix-data';
+import TransformLegendPanel from '../panels/TransformLegendPanel/TransformLegendPanel';
 
 class Trasformare extends Component {
 	constructor(props) {
@@ -35,7 +37,7 @@ class Trasformare extends Component {
 
 		this.changeTimeSpan = this.changeTimeSpan.bind(this);
 
-    	this.downloadData = this.downloadData.bind(this);
+    this.downloadData = this.downloadData.bind(this);
 
 		this.state = {
 			data: 'data still not loaded',
@@ -64,9 +66,15 @@ class Trasformare extends Component {
 					'status': true
 				}]
 			},
-			helpSidePanelOpen : false
-		};
-	}
+      helpSidePanelOpen : false,
+      legendOpen : false
+    };
+    
+    this.typingInSearch = false;
+  }
+  
+  legendToggleButtonId = "legendToggleButton";
+  legendToggleButtonCaption = "LEGENDA";
 
 	loadData() {
     d3.tsv(process.env.PUBLIC_URL + '/places-matrix-data.tsv').then(data => {
@@ -281,22 +289,25 @@ class Trasformare extends Component {
 		}))
 	}
 
-	changeCategorie(selectedCategory) {
+	changeCategorie(selectedCategories) {
+
 		let toPreserve = this.state.originalData.map(d => d.id);
-		if (selectedCategory) {
-			toPreserve = toPreserve.filter( d=>this.state.originalData.find(dd=>dd.id===d).category===selectedCategory );
+		if (selectedCategories.length) {
+      toPreserve = toPreserve.filter(d => 
+        selectedCategories.includes(
+          this.state.originalData.find(dd=>dd.id===d).category));
 		}
 
 		this.setState(prevState => ({
-			toPreserveCategorie: toPreserve,
+      toPreserveCategorie: toPreserve,     
 			filter: _.intersection(prevState.noFilter,
 				prevState.toPreserveRicerca,
 				prevState.toPreservePubblicazioni,
 				prevState.toPreserveVolumi,
 				prevState.toPreserveAmbienti,
 				toPreserve
-			)
-		}))
+      )
+    }))
 	}
 
 	resetFilter() {
@@ -345,7 +356,7 @@ class Trasformare extends Component {
 	}
 
 	downloadData(event) {
-		if(event.key !== 'd') return;
+		if(event.key !== 'd' || this.typingInSearch) return;    
 
     const selected = d3.selectAll('.node:not(.filtered)')
   	let selectedData = selected.data()
@@ -403,6 +414,20 @@ class Trasformare extends Component {
     helpSidePanelOpen : !this.state.helpSidePanelOpen
   });
 
+  toggleButtonPressed = buttonId => {    
+
+    switch(buttonId)
+    {
+      case this.legendToggleButtonId :
+
+        this.setState({ legendOpen : !this.state.legendOpen });
+
+        break;
+
+      default : console.log("buttonId", buttonId); break;
+    }
+  };  
+
 	componentDidMount() {
 		this.loadData();
 		document.addEventListener("keypress", this.downloadData);
@@ -427,7 +452,7 @@ class Trasformare extends Component {
 
 				<div className = "top-nav navigations">
 					<MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"LA MATRICE DEI LUOGHI"} style = {{gridColumn: 'span 10'}}/>
+					<PageTitle title = {"Tutti i luoghi di ambientazione all’interno dell’opera"} style = {{gridColumn: 'span 10'}}/>
 
 					{ this.state.isLoading && < Loading style = {{gridColumn: 'span 3'}}/> }
 					{	!this.state.isLoading &&
@@ -442,7 +467,9 @@ class Trasformare extends Component {
 					<Search
 						style = {{gridColumn: 'span 7'}}
 						data = {this.state.ricerca}
-						changeOptions = {this.changeRicerca}
+            changeOptions = {this.changeRicerca}
+            onFocus = {() => this.typingInSearch = true }
+            onBlur = {() => this.typingInSearch = false }
 					/> }
 					<MoreInfo
 						style={{ gridColumn: "span 1" }}
@@ -473,15 +500,21 @@ class Trasformare extends Component {
 						/> }
 				</div>
 
+        { this.state.legendOpen &&
+          <TransformLegendPanel page={GlobalData.legendPages.transform.mainLegend} />
+        }
+
 				<div className = "bottom-nav navigations">
 
 					{this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Gruppi"
-							data = {this.state.gruppi}
-							style = {{gridColumn: 'span 5',textAlign: 'center'}}
-							changeOptions = {this.changeGruppi}
-						/> }
+            <ToggleButton
+              id={this.legendToggleButtonId}
+              style={{ gridColumn : "span 5" }}
+              caption={this.legendToggleButtonCaption}
+              pressed={this.state.legendOpen}
+              callStateContainerToggleButtonPressed={this.toggleButtonPressed}
+            /> }
 
 					{	this.state.isLoading && <Loading style = {{gridColumn: 'span 5'}}/>}
 					{	!this.state.isLoading &&

@@ -9,7 +9,6 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 2fr 4fr;
-  border-left: 1px solid black;
   height: calc(100vh - var(--navigation-height));
 }
 
@@ -19,16 +18,14 @@
   grid-template-columns : 1fr;
   border-bottom:var(--app-border);
   border-right: var(--app-border-bold);
-  background-color:var(--bg);
+  background: var(--cool-bg);
   transition: background-color 0.5s ease;}
 
 .compass-selector-cell {
-  display:block;
+  display:flex;
   align-items: center;
   justify-content: left;
   padding:100px;
-  border-left:2px solid var(--bg);
-  background-color: var(--bg);
 }
 
 a .compass-selector-cell  {
@@ -36,13 +33,12 @@ a .compass-selector-cell  {
   white-space: nowrap;
   transition: color 0.5s ease;
   color: black;
-  font-size:2em;
 }
 
 a:hover .compass-selector-cell  {
   margin: 0;
   white-space: nowrap;
-  font-size:2em;
+  font-size: 1.8em;
   transition: color 0.5s ease;
   color: var(--dark-blue);
 }
@@ -73,8 +69,7 @@ a:hover .compass-selector-cell  {
  /* Color menu grid */
 
 .itineraries-intro{
-  background-color: black;
-  color:white;
+  color:black;
 }
 
 .itineraries-intro a{
@@ -82,15 +77,15 @@ a:hover .compass-selector-cell  {
 }
 
 .viz-intro{
-  background-color: var(--dark-blue);
+  background-color: var(--cool-bg);
 }
 
 .viz-intro a{
-color: var(--bg);
+color: var(--text-color);
 }
 
 .viz-intro h5{
-color: var(--bg);
+color: var(--text-color);
 }
 
 
@@ -100,11 +95,11 @@ color: turquoise;
 
 
 .step-intro{
-  background-color: turquoise;
+  background-color: var(--cool-bg);
 }
 
 .blank-intro{
-  background-color:#FFA500;
+  background-color:var(--cool-bg);
 }
 
 
@@ -116,7 +111,7 @@ color: turquoise;
 }
 
 .tint-sidebar {
-    background-color: #FFA500;
+    background-color: var(--cool-bg);
     opacity:1;
     animation: tint-sidebar 2s;
     border-bottom:1px solid black;

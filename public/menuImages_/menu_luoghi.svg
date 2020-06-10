@@ -7,7 +7,7 @@
 	.st1{fill:none;stroke:black;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:black;stroke-width:0.5;stroke-miterlimit:10;}
 	.st3{fill:none;stroke:black;}
-	.st4{fill:none;stroke:black;stroke-width:1.4575;}
+	.st4{fill:black;stroke:black;stroke-width:1.4575;}
 	.st5{fill:black;}
 	.st6{font-family:'HKGrotesk-Regular';}
 	.st7{font-size:5.9988px;}
