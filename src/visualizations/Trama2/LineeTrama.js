@@ -255,6 +255,7 @@ function LineeTrama(
         return {
           ...d,
           colori: tipologieByTipologia[d.motivo_type].colore.colori,
+          originalX: d.x,
           x: xScale(d.x),
           y: d.y,
         }

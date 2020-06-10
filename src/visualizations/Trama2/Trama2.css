@@ -63,6 +63,13 @@
   padding: 70px 30px;
   height: 100%;
 }
+.trama2-detail-content {
+  padding: 20px 30px;
+  height: 100%;
+}
+.trama2-detail-header {
+  padding-bottom: 50px;
+}
 
 .trama2-pointer {
   /* stroke: #ddd; */
