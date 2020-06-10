@@ -127,7 +127,6 @@
 }
 
 .trama2-detail-label {
-  cursor: pointer;
   height: 20px;
 }
 .trama2-detail-label > .trama2-label-inner-start {
@@ -140,8 +139,9 @@
   padding-right: 5px;
 }
 .trama2-detail-label > .trama2-label-inner-end {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
   display: inline-block;
   border: 2px solid var(--dark-blue);
   color: var(--dark-blue);

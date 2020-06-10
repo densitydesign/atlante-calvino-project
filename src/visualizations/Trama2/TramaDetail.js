@@ -60,11 +60,13 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
   return (
     <div className="trama2-detail-content">
       <div className="trama2-detail-header d-flex justify-content-center align-items-center">
-        <div className="trama2-detail-label" onClick={onBack}>
+        <div className="trama2-detail-label">
           <div className="trama2-label-inner-start">
             {data.racconto.titolo}, {data.racconto.anno}
           </div>
-          <div className="trama2-label-inner-end">&times;</div>
+          <div className="trama2-label-inner-end" onClick={onBack}>
+            &times;
+          </div>
         </div>
       </div>
 
@@ -109,7 +111,7 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
                 {fullData.map((d, i) => (
                   <g key={i} transform={`translate(${d.x}, ${d.y})`}>
                     <circle className="trama2-circle" r={2} />
-                    <text x={5} y={-5} style={{ transform: 'rotate(-40deg)' }}>
+                    <text x={5} y={-5} style={{ transform: 'rotate(-30deg)' }}>
                       {d.motivo_type}
                     </text>
                   </g>

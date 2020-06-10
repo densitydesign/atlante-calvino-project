@@ -134,7 +134,7 @@ const LineaTrama = React.memo(
               onClick={handleClickRacconto}
               y={-10}
               x={width}
-              titolo={data.racconto.titolo}
+              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
             />
           </g>
         )}
