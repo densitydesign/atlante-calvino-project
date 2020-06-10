@@ -227,7 +227,7 @@ function LineeTrama(
       }
 
       const selection = select(svg)
-      selection.call(zoom().on('zoom', handleZoom))
+      selection.call(zoom().scaleExtent([1, 10]).on('zoom', handleZoom))
       return () => {
         selection.on('.zoom', null)
       }
