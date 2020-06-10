@@ -18,8 +18,11 @@ import mappaMotivoTipologia from './dati/mappa_motivo_tipologia.json'
 import coloriPosizioni from './dati/colori_posizioni.json'
 import ordineColore from './dati/ordine_colore_y.json'
 
+
+export const motivoExtent = extent(ordineColore, (item) => +item['ordine tipologia'])
+
 export function makeScalaMotivoY(lineHeight) {
-  const motivoExtent = extent(ordineColore, (item) => +item['ordine tipologia'])
+  
   return scaleLinear().domain(motivoExtent).range([lineHeight, 0])
 }
 

@@ -9,6 +9,7 @@ import { makeScalaMotivoY, makeVizData } from './utils'
 
 //local components
 import LineeTrama from './LineeTrama'
+import BoxPlot from './BoxPlot'
 import TramaDetail from './TramaDetail'
 import SideBar from './SideBar'
 
@@ -96,7 +97,7 @@ export default function Trama2Main() {
   }, [bounds])
 
   const listRef = useRef()
-  const [currentView, setCurrentView] = useState('list')
+  const [currentView, setCurrentView] = useState('boxplot')
   const [currentTramaDetail, setCurrentTramaDetail] = useState(null)
 
   const handleClickRacconto = useCallback((data) => {
@@ -130,7 +131,7 @@ export default function Trama2Main() {
           className="trama2-side-panel-rotate"
           onClick={() => {
             listRef.current.rotateView(() => {
-              setCurrentView('rotated')
+              setCurrentView('boxplot')
             })
           }}
         ></div>
@@ -155,7 +156,22 @@ export default function Trama2Main() {
           ></LineeTrama>
         </div>
 
-        {currentView === 'rotated' && <div className="trama2-content"></div>}
+        {currentView === 'boxplot' && <div className="trama2-content">
+          <BoxPlot
+            onRaccontoClick={handleClickRacconto}
+            ref={listRef}
+            selected={selected}
+            toggleSelect={toggleSelect}
+            racconti={racconti}
+            tipologie={tipologie}
+            tipologieByTipologia={tipologieByTipologia}
+            data={byRacconto}
+            height={MOTIVO_LINE_HEIGHT}
+            scalaMotivoY={scalaMotivoY}
+            colors={colors}
+          ></BoxPlot>
+        
+        </div>}
         {currentView === 'detail' && (
           <TramaDetail
             tipologieByTipologia={tipologieByTipologia}
