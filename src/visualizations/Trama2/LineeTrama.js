@@ -1,5 +1,11 @@
 import ReactDOM from 'react-dom'
-import React, { useRef, useState, useMemo, useEffect } from 'react'
+import React, {
+  useRef,
+  useState,
+  useMemo,
+  useEffect,
+  useLayoutEffect,
+} from 'react'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import range from 'lodash/range'
@@ -34,6 +40,39 @@ const lineGenerator = line()
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
+const TramaTitoloBox = ({ titolo, x, onClick }) => {
+  const containerRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [titolo])
+
+  console.log('M.M', measures)
+
+  return (
+    <g>
+      <text ref={containerRef} x={x} y={0} style={{ textAnchor: 'end' }}>
+        {titolo}
+      </text>
+      {measures && (
+        <rect
+          style={{
+            stroke: 'var(--dark-blue)',
+            strokeWidth: 2,
+          }}
+          fill='transparent'
+          x={x - measures.width}
+          y={-15}
+          rx={5}
+          height={20}
+          width={measures.width}
+        />
+      )}
+    </g>
+  )
+}
+
 const LineaTrama = React.memo(
   ({
     racconto,
@@ -46,8 +85,6 @@ const LineaTrama = React.memo(
     itemSelected,
     toggleItem,
   }) => {
-    console.log('Render LineaTrama', index)
-
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
       const subPaths = splitPath(d)
@@ -82,12 +119,7 @@ const LineaTrama = React.memo(
 
         {itemSelected && (
           <g>
-            <g>
-              <text x={width} y={0} style={{ textAnchor: 'end' }}>
-                {data.racconto.titolo}
-              </text>
-            </g>
-
+            <TramaTitoloBox x={width} titolo={data.racconto.titolo} />
             {data.map((d, i) => (
               <circle key={i} className="trama2-circle" cx={d.x} cy={d.y} r={2}>
                 <title>{d.motivo_type}</title>
@@ -147,6 +179,7 @@ const SelectedContainers = React.memo(({ n, translations }) => {
     <g>
       {range(n).map((i) => (
         <g
+          key={i}
           className="linea-container-selected"
           style={{
             transform: translations[i],
@@ -251,7 +284,7 @@ export default function LineeTrama({
     })
     return [finalDataRacconti, Array.from(grandientsSet)]
   }, [data, racconti, xScale, byTipologia])
-  console.log('X', dataRacconti, byTipologia)
+  console.log('X', measures)
 
   return (
     <div
