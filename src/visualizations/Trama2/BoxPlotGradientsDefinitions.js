@@ -1,29 +1,41 @@
 import React from 'react'
 
-function BoxPlotGrandientsDefinitions({ prefix = '', gradientsType, byTipologia, scalaMotivo }) {
+function BoxPlotGrandientsDefinitions({ prefix = '', gradientsType, byTipologia, scalaMotivo, height }) {
+  
+  const colorsItems = Object.values(byTipologia).sort(item => +item.ordineMotivo)
+  const delta = 100 / (colorsItems.length - 1)
+
   return (
     <defs>
       {gradientsType.map(({racconto, uniqueItems}) => {
         
-        console.log(123, uniqueItems)
         
         
-        // const [tipoFromName, tipoToName] = gradientType.split('-')
-        // const tipoFrom = byTipologia[tipoFromName]
-        // const tipoTo = byTipologia[tipoToName]
+        
+        const motivi = uniqueItems.map(item => item.motivo_type)
+
+      
         return (
           <linearGradient
             x1="0"
             x2="0"
             y1="0"
-            y2="1"
+            y2={height}
             key={racconto.titolo}
             id={prefix + racconto.titolo}
+            gradientUnits={'userSpaceOnUse'}
           >
-            {uniqueItems.map(item => (<stop key={item.ordineMotivo} offset={`${scalaMotivo(item.ordineMotivo)}%`} stopColor={item.colori}>
+            {colorsItems.map((item, i) => {
+              if(motivi.indexOf(item.tipologia) === -1){
+                return null
+              }
+              return <stop key={i} offset={`${delta*i}%`} stopColor={item.colore.colori}>
 
 
-            </stop>))}
+              </stop>
+            })}
+            {/* <stop offset="0%" stopColor="#000"></stop>
+            <stop offset="100%" stopColor="#fff"></stop> */}
             {/* {+tipoFrom['ordine tipologia'] > +tipoTo['ordine tipologia'] && (
               <>
                 <stop offset="0%" stopColor={tipoFrom.colore.colori}></stop>

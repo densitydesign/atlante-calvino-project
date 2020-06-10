@@ -104,10 +104,11 @@ const BoxPlotElement = React.memo(
     const bottom = yScale(data.max.ordineMotivo)
     const h = bottom - top    
 
-    const fill = `url("#${data.racconto.titolo}")`
+    const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
 
     return <g>
-      <rect width="10" height={h} y={top} style={{fill}}>
+      <rect width="10" height={h} y={top} style={{fill}} onClick={() => toggleItem(data.racconto.titolo)}>
+        <title>{data.racconto.titolo}</title>
 
       </rect>
 
@@ -174,7 +175,7 @@ function BoxPlot(
       }
 
       const selection = select(svg)
-      selection.call(zoom().on('zoom', handleZoom))
+      selection.call(zoom().scaleExtent([1, 5]).on('zoom', handleZoom))
       return () => {
         selection.on('.zoom', null)
       }
@@ -206,7 +207,7 @@ function BoxPlot(
       let dataForRacconto = data[racconto.titolo].filter((d) => d.y !== undefined).map(d => ({...d, colori: tipologieByTipologia[d.motivo_type].colore.colori}))
       let first = head(dataForRacconto)
       let last = tail(dataForRacconto)
-      let uniqueItems = uniqBy(dataForRacconto, item => item.motivo_type).sort(item => item.y)
+      let uniqueItems = uniqBy(dataForRacconto, item => item.motivo_type).sort(item => item.ordineMotivo)
       let min = minBy(dataForRacconto, item => item.ordineMotivo)
       let max = maxBy(dataForRacconto, item => item.ordineMotivo)
       
@@ -265,7 +266,6 @@ function BoxPlot(
           style={{
             height: measures.height,
             width: measures.width,
-            background:'red'
           }}
           ref={svgRef}
         >
@@ -273,6 +273,7 @@ function BoxPlot(
             byTipologia={tipologieByTipologia}
             gradientsType={gradientsType}
             scalaMotivo={scalaMotivo}
+            height={measures.height}
           />
           <g className="wrapper">
             {measures &&
