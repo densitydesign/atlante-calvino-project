@@ -4,9 +4,7 @@ import { scaleLinear } from 'd3-scale'
 import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 
-const MOTIVO_LINE_HEIGHT_FULL_SCREEN = 600
 const CHART_X_PADDING = 50
-const CHART_Y_PADDING = 80
 
 const lineGenerator = line()
   .x((d) => d.x)
@@ -27,7 +25,7 @@ export default function TramaDetail({
   }, [])
 
   const scalaMotivoY = useMemo(() => {
-    return makeScalaMotivoY(detailHeight - 80)
+    return makeScalaMotivoY(detailHeight)
   }, [detailHeight])
 
   const xScale = useMemo(() => {
@@ -83,7 +81,7 @@ export default function TramaDetail({
         {measures && (
           <svg
             style={{
-              height: detailHeight,
+              height: detailHeight + 70,
               width: measures.width,
             }}
           >
@@ -92,7 +90,7 @@ export default function TramaDetail({
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
             />
-            <g transform={`translate(0, 80)`}>
+            <g transform={`translate(0, 70)`}>
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
                 const stroke = isFill

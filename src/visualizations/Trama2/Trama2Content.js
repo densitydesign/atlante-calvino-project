@@ -1,4 +1,5 @@
 import React, {
+  useLayoutEffect,
   useState,
   useCallback,
   useMemo,
@@ -35,6 +36,14 @@ export default function Trama2Content({
   const toggleSidePanel = useCallback(() => {
     setSidePanelOpen(!sidePanelOpen);
   }, [sidePanelOpen]);
+
+  const containerRef = useRef()
+  const [measures, setMeasures] = useState(null)
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [])
+  console.log('X', measures)
 
   //lines selection
   // const [selected, setSelected] = useState({})
@@ -117,18 +126,17 @@ export default function Trama2Content({
     racconti[racconti.length - 1].anno,
   ]);
 
-  const detailHeight = 14 * tipologie.length + 80;
-
   return (
-    <div className="trama2-container">
+    <div className="trama2-container" ref={containerRef}>
       <div className={`trama2-side-panel ${sidePanelOpen ? "open" : "closed"}`}>
         <div className="trama2-side-panel-content">
-          <SideBar
+          {measures && <SideBar
+            height={measures.height - 140}
             tipologie={tipologie}
             bounds={bounds}
             addBound={addBound}
             setBounds={setBounds}
-          ></SideBar>
+          ></SideBar>}
         </div>
 
         <div
@@ -178,6 +186,7 @@ export default function Trama2Content({
         )}
 
         <div
+
           className="trama2-content"
           style={{ display: currentView !== "list" ? "none" : undefined }}
         >
@@ -197,27 +206,25 @@ export default function Trama2Content({
           ></LineeTrama>
         </div>
 
-        {currentView === "boxplot" && (
-          <div className="trama2-content">
-            <BoxPlot
-              onRaccontoClick={handleClickRacconto}
-              ref={listRef}
-              selected={selected}
-              toggleSelect={toggleSelect}
-              racconti={racconti}
-              tipologie={tipologie}
-              tipologieByTipologia={tipologieByTipologia}
-              data={byRacconto}
-              height={MOTIVO_LINE_HEIGHT}
-              scalaMotivoY={scalaMotivoY}
-              colors={colors}
-            ></BoxPlot>
-          </div>
+        {currentView === "boxplot" && measures && (
+          <BoxPlot
+            onRaccontoClick={handleClickRacconto}
+            ref={listRef}
+            selected={selected}
+            toggleSelect={toggleSelect}
+            racconti={racconti}
+            tipologie={tipologie}
+            tipologieByTipologia={tipologieByTipologia}
+            data={byRacconto}
+            height={measures.height - 140}
+            scalaMotivoY={scalaMotivoY}
+            colors={colors}
+          ></BoxPlot>
         )}
-        {currentView === "detail" && (
+        {currentView === "detail" && measures && (
           <TramaDetail
             tipologieByTipologia={tipologieByTipologia}
-            detailHeight={detailHeight}
+            detailHeight={measures.height - 140}
             data={currentTramaDetail}
             onBack={() => {
               setCurrentTramaDetail(null);

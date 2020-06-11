@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom'
 import React, {
   useRef,
   useState,
@@ -8,36 +8,36 @@ import React, {
   useLayoutEffect,
   useImperativeHandle,
   forwardRef,
-} from "react";
-import { line, curveMonotoneX } from "d3-shape";
-import { scaleLinear } from "d3-scale";
-import { zoom } from "d3-zoom";
-import { select, selectAll, event as currentEvent } from "d3-selection";
+} from 'react'
+import { line, curveMonotoneX } from 'd3-shape'
+import { scaleLinear } from 'd3-scale'
+import { zoom } from 'd3-zoom'
+import { select, selectAll, event as currentEvent } from 'd3-selection'
 
-import range from "lodash/range";
-import keyBy from "lodash/keyBy";
-import head from "lodash/head";
-import _last from "lodash/last";
-import uniqBy from "lodash/uniqBy";
-import minBy from "lodash/minBy";
-import maxBy from "lodash/maxBy";
+import range from 'lodash/range'
+import keyBy from 'lodash/keyBy'
+import head from 'lodash/head'
+import _last from 'lodash/last'
+import uniqBy from 'lodash/uniqBy'
+import minBy from 'lodash/minBy'
+import maxBy from 'lodash/maxBy'
 
-import { splitPath, motivoExtent, makeScalaMotivoY } from "./utils";
-import BoxPlotGradientsDefinitions from "./BoxPlotGradientsDefinitions";
+import { splitPath, motivoExtent, makeScalaMotivoY } from './utils'
+import BoxPlotGradientsDefinitions from './BoxPlotGradientsDefinitions'
 
 const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
-  const containerRef = useRef(null);
-  const [measures, setMeasures] = useState(null);
+  const containerRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
   useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect();
-    setMeasures(m);
-  }, [titolo]);
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [titolo])
 
   return (
     <g
       onClick={onClick}
       transform={`translate(${x}, ${y})`}
-      style={{ cursor: "pointer" }}
+      style={{ cursor: 'pointer' }}
     >
       {measures && (
         <g transform={`translate(${-measures.width - 40}, -15)`}>
@@ -54,7 +54,7 @@ const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
             y2={22}
             className="trama2-info-box"
           />
-          <text stroke={"var(--dark-blue)"} x={measures.width + 22} y={15}>
+          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
             o
           </text>
         </g>
@@ -63,13 +63,13 @@ const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
         ref={containerRef}
         x={-30}
         y={0}
-        style={{ textAnchor: "end", userSelect: "none" }}
+        style={{ textAnchor: 'end', userSelect: 'none' }}
       >
         {titolo}
       </text>
     </g>
-  );
-};
+  )
+}
 
 const BoxPlotElement = React.memo(
   ({
@@ -87,16 +87,16 @@ const BoxPlotElement = React.memo(
   }) => {
     const handleClickRacconto = useCallback(
       (e) => {
-        onRaccontoClick(data, e);
+        onRaccontoClick(data, e)
       },
       [onRaccontoClick, data]
-    );
+    )
 
-    const top = yScale(data.min.ordineMotivo);
-    const bottom = yScale(data.max.ordineMotivo);
-    const h = bottom - top;
+    const top = yScale(data.min.ordineMotivo)
+    const bottom = yScale(data.max.ordineMotivo)
+    const h = bottom - top
 
-    const fill = itemSelected ? `url("#${data.racconto.titolo}")` : "#ddd";
+    const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
 
     return (
       <g>
@@ -112,12 +112,22 @@ const BoxPlotElement = React.memo(
           <title>{data.racconto.titolo}</title>
         </rect>
 
-        <rect width="10" height="10" style={{fill: '#fff', stroke: '#000'}} y={yScale(data.first.ordineMotivo)}></rect>
-        <rect width="10" height="10"  style={{fill: '#ddd', stroke: '#000'}} y={yScale(data.last.ordineMotivo)}></rect>
+        <rect
+          width="10"
+          height="10"
+          style={{ fill: '#fff', stroke: '#000' }}
+          y={yScale(data.first.ordineMotivo)}
+        ></rect>
+        <rect
+          width="10"
+          height="10"
+          style={{ fill: '#ddd', stroke: '#000' }}
+          y={yScale(data.last.ordineMotivo)}
+        ></rect>
       </g>
-    );
+    )
   }
-);
+)
 
 function BoxPlot(
   {
@@ -135,85 +145,82 @@ function BoxPlot(
   },
   ref
 ) {
-  const containerRef = useRef(null);
-  const svgRef = useRef(null);
-  const [measures, setMeasures] = useState(null);
-  const [translations, setTranslations] = useState([]);
+  const containerRef = useRef(null)
+  const svgRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+  const [translations, setTranslations] = useState([])
 
   useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect();
-    setMeasures(m);
-  }, []);
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [])
 
   useEffect(() => {
     function declarativeTranslate(currentScaleX) {
       const newTranslates = racconti.map((r, i) => {
-        return "translate(" + currentScaleX(i) + ", 0)";
-      });
-      setTranslations(newTranslates);
+        return 'translate(' + currentScaleX(i) + ', 0)'
+      })
+      setTranslations(newTranslates)
     }
 
     function imperativeTranslate(currentScaleX) {
-      selectAll(".box-racconto-container").attr(
-        "transform",
-        (d, i) => "translate(" + currentScaleX(i) + ", 0)"
-      );
+      selectAll('.box-racconto-container').attr(
+        'transform',
+        (d, i) => 'translate(' + currentScaleX(i) + ', 0)'
+      )
     }
 
     if (measures) {
-      const svg = svgRef.current;
+      const svg = svgRef.current
       const scaleX = scaleLinear()
         .domain([0, racconti.length])
-        .range([0, measures.width]);
+        .range([10, measures.width - 10])
 
-      imperativeTranslate(scaleX);
+      imperativeTranslate(scaleX)
       // declarativeTranslate(scaleY)
 
       function handleZoom() {
-        const newScaleX = currentEvent.transform.rescaleX(scaleX);
-        imperativeTranslate(newScaleX);
+        const newScaleX = currentEvent.transform.rescaleX(scaleX)
+        imperativeTranslate(newScaleX)
         // declarativeTranslate(newScaleX)
       }
 
-      const selection = select(svg);
-      selection.call(zoom().scaleExtent([1, 5]).on("zoom", handleZoom));
+      const selection = select(svg)
+      selection.call(zoom().scaleExtent([1, 5]).on('zoom', handleZoom))
       return () => {
-        selection.on(".zoom", null);
-      };
+        selection.on('.zoom', null)
+      }
     }
-  }, [height, measures, racconti]);
+  }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    if (!measures) {
-      return null;
-    }
-    return scaleLinear().domain(motivoExtent).range([0, measures.height]);
-  }, [measures]);
+    return scaleLinear().domain(motivoExtent).range([0, height])
+  }, [height])
 
   const scalaMotivo = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([0, 1]);
-  }, []);
+    return scaleLinear().domain(motivoExtent).range([0, 1])
+  }, [])
 
   const [dataRacconti, gradientsType] = useMemo(() => {
     if (!yScale) {
-      return [[], []];
+      return [[], []]
     }
-    const gradientsSet = new Set();
+    const gradientsSet = new Set()
     const finalDataRacconti = racconti.map((racconto, i) => {
       let dataForRacconto = data[racconto.titolo]
         .filter((d) => d.y !== undefined)
         .map((d) => ({
           ...d,
           colori: tipologieByTipologia[d.motivo_type].colore.colori,
-        }));
-      let first = head(dataForRacconto);
-      let last = _last(dataForRacconto);
+        }))
+      let first = head(dataForRacconto)
+      let last = _last(dataForRacconto)
       let uniqueItems = uniqBy(
         dataForRacconto,
         (item) => item.motivo_type
-      ).sort((item) => item.ordineMotivo);
-      let min = minBy(dataForRacconto, (item) => item.ordineMotivo);
-      let max = maxBy(dataForRacconto, (item) => item.ordineMotivo);
+      ).sort((item) => item.ordineMotivo)
+      let min = minBy(dataForRacconto, (item) => item.ordineMotivo)
+      let max = maxBy(dataForRacconto, (item) => item.ordineMotivo)
 
       let out = {
         racconto,
@@ -223,16 +230,16 @@ function BoxPlot(
         max,
         uniqueItems,
         index: i,
-      };
+      }
 
-      gradientsSet.add(out);
+      gradientsSet.add(out)
 
-      out.racconto = racconto;
+      out.racconto = racconto
 
-      return out;
-    });
-    return [finalDataRacconti, Array.from(gradientsSet)];
-  }, [data, racconti, yScale]);
+      return out
+    })
+    return [finalDataRacconti, Array.from(gradientsSet)]
+  }, [data, racconti, yScale])
 
   // useImperativeHandle(ref, () => ({
   //   rotateView: (cb) => {
@@ -257,57 +264,59 @@ function BoxPlot(
   // }))
 
   return (
-    <div
-      ref={containerRef}
-      className="w-100 h-100"
-      style={{ overflow: "hidden" }}
-    >
-      {measures && (
-        <svg
-          style={{
-            height: measures.height,
-            width: measures.width,
-          }}
-          ref={svgRef}
-        >
-          <BoxPlotGradientsDefinitions
-            byTipologia={tipologieByTipologia}
-            gradientsType={gradientsType}
-            scalaMotivo={scalaMotivo}
-            height={measures.height}
-          />
-          <g className="wrapper">
-            {measures &&
-              dataRacconti.map((datum, i) => {
-                return (
-                  <g
-                    key={i}
-                    className="box-racconto-container"
-                    style={{
-                      transform: translations[i],
-                    }}
-                  >
-                    <BoxPlotElement
-                      onRaccontoClick={onRaccontoClick}
-                      scalaColore={scalaColore}
-                      scalaMotivoY={scalaMotivoY}
-                      index={i}
-                      width={measures.width}
-                      height={measures.height}
-                      itemSelected={selected[racconti[i].titolo]}
-                      toggleItem={toggleSelect}
-                      racconto={racconti[i]}
-                      yScale={yScale}
-                      data={datum}
-                    ></BoxPlotElement>
-                  </g>
-                );
-              })}
-          </g>
-        </svg>
-      )}
+    <div className='trama2-boxplot-content'>
+      <div
+        ref={containerRef}
+        className="w-100 h-100"
+        style={{ overflow: 'hidden' }}
+      >
+        {measures && (
+          <svg
+            style={{
+              height: height + 140,
+              width: measures.width,
+            }}
+            ref={svgRef}
+          >
+            <BoxPlotGradientsDefinitions
+              byTipologia={tipologieByTipologia}
+              gradientsType={gradientsType}
+              scalaMotivo={scalaMotivo}
+              height={measures.height}
+            />
+            <g className="wrapper" style={{ transform: 'translate(0, 70px)' }}>
+              {measures &&
+                dataRacconti.map((datum, i) => {
+                  return (
+                    <g
+                      key={i}
+                      className="box-racconto-container"
+                      style={{
+                        transform: translations[i],
+                      }}
+                    >
+                      <BoxPlotElement
+                        onRaccontoClick={onRaccontoClick}
+                        scalaColore={scalaColore}
+                        scalaMotivoY={scalaMotivoY}
+                        index={i}
+                        width={measures.width}
+                        height={measures.height}
+                        itemSelected={selected[racconti[i].titolo]}
+                        toggleItem={toggleSelect}
+                        racconto={racconti[i]}
+                        yScale={yScale}
+                        data={datum}
+                      ></BoxPlotElement>
+                    </g>
+                  )
+                })}
+            </g>
+          </svg>
+        )}
+      </div>
     </div>
-  );
+  )
 }
 
-export default forwardRef(BoxPlot);
+export default forwardRef(BoxPlot)

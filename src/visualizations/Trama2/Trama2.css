@@ -44,8 +44,8 @@
     line-height: 35px;
 
     writing-mode: vertical-rl;
-    
-    
+
+
 
   }
 
@@ -66,7 +66,7 @@
   z-index: 1;
   min-height: 600px;
   min-width: 960px;
-  height: calc(100% - 15px);
+  height: 100%;
   width: 100%;
 }
 
@@ -135,11 +135,9 @@
   height: 80px;
 }
 .trama2-sidebar-item {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  height: 14px;
+  display: flex;
+  align-items: center;
   padding-left: 30px;
-  line-height: 10px;
   color: #222;
   font-size: 10px;
   cursor: pointer;
@@ -160,10 +158,12 @@
 
 .trama2-detail-label {
   height: 20px;
-
-
-
 }
+
+.trama2-boxplot-content {
+  padding: 0 30px;
+}
+
 .trama2-detail-label > .trama2-label-inner-start {
   display: inline-block;
   border: 2px solid var(--dark-blue);
