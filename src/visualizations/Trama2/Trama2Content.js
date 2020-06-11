@@ -113,7 +113,7 @@ export default function Trama2Content({
   }, [selected])
 
   const listRef = useRef();
-  const [currentView, setCurrentView] = useState("boxplot");
+  const [currentView, setCurrentView] = useState("list");
   const [currentTramaDetail, setCurrentTramaDetail] = useState(null);
 
   const handleClickRacconto = useCallback((data) => {

@@ -13,6 +13,7 @@ import mapValues from 'lodash/mapValues'
 import get from 'lodash/get'
 import take from 'lodash/take'
 import sum from 'lodash/sum'
+import flatten from 'lodash/flatten'
 
 import datasetLines from './dati/dataset_lines.json'
 import mappaMotivoTipologia from './dati/mappa_motivo_tipologia.json'
@@ -27,7 +28,7 @@ export const MOTIVO_LINE_HEIGHT = 50;
 export const motivoExtent = extent(ordineColore, (item) => +item['ordine tipologia'])
 
 export function makeScalaMotivoY(lineHeight) {
-  
+
   return scaleLinear().domain(motivoExtent).range([lineHeight, 0])
 }
 
@@ -52,7 +53,7 @@ export function makeVizData(scaleY) {
   )
 
 
-// we must filter items with no scale associated and renormalize data
+// // we must filter items with no scale associated and renormalize data
 // const datasetTmp = datasetLines.filter(item => {
 //   const motivo = item['motivo_type']
 //   return !!get(ordineMotivoByMotivo, motivo)
@@ -61,11 +62,42 @@ export function makeVizData(scaleY) {
 //   return {...item, numCaratteri}
 // })
 
+// function normalizeCharters(data) {
+//   let shift = []
+//   let lenHoles = data.reduce((acc, item, i) => {
+//     const motivo = item['motivo_type']
+//     const ordineMotivo = !!get(ordineMotivoByMotivo, motivo)
+//     if (ordineMotivo) {
+//       shift.push({
+//         ...item,
+//         start_motivo: item.start_motivo - acc,
+//         end_motivo: item.end_motivo - acc,
+//       })
+//       return acc
+//     } else {
+//       acc += item.end_motivo - item.start_motivo + 1
+//       return acc
+//     }
+//   }, 0)
+//   // console.log('BEFORE', lenHoles, shift)
+//   lenHoles += ((+shift[0].end_motivo) - shift[0].start_motivo) / 2
+//   lenHoles += ((+shift[shift.length - 1].end_motivo) - shift[shift.length - 1].start_motivo) / 2
+//   console.log('After', lenHoles)
 
-// const datasetTmpByRacconto = groupBy(datasetTmp, 'titolo racconto')
 
+//   return shift.map(item => ({
+//     ...item,
+//     'tot caratteri': (+item['tot caratteri']) - lenHoles
+//   }))
+// }
+
+// let datasetTmpByRacconto = groupBy(datasetLines, 'titolo racconto')
+// datasetTmpByRacconto = mapValues(datasetTmpByRacconto, normalizeCharters)
+// const finalDataSet = flatten(Object.values(datasetTmpByRacconto))
+
+// console.log(finalDataSet)
 // const titoli = Object.keys(datasetTmpByRacconto)
-// const lunghezze = titoli.reduce((acc, item) => {
+// datasetTmpByRacconto = titoli.reduce((acc, item) => {
 
 //   const data = datasetTmpByRacconto[item]
 //   const len = sum(data.map(item => item.numCaratteri))
