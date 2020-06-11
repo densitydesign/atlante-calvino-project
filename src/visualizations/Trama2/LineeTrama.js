@@ -179,6 +179,7 @@ function LineeTrama(
     onRaccontoClick,
     tipologie,
     tipologieByTipologia,
+    setYears,
   },
   ref
 ) {
@@ -224,15 +225,21 @@ function LineeTrama(
         const newScaleY = currentEvent.transform.rescaleY(scaleY)
         imperativeTranslate(newScaleY)
         // declarativeTranslate(newScaleY)
+
+        const domain = newScaleY.domain()
+        const lowIndex = Math.max(0, Math.floor(domain[0]))
+        const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
+        
+        setYears([racconti[lowIndex].anno, racconti[hiIndex].anno])
       }
 
       const selection = select(svg)
-      selection.call(zoom().scaleExtent([1, 10]).on('zoom', handleZoom))
+      selection.call(zoom().scaleExtent([1, 10]).translateExtent([[0,0], [measures.width, measures.height]]).on('zoom', handleZoom))
       return () => {
         selection.on('.zoom', null)
       }
     }
-  }, [height, measures, racconti])
+  }, [height, measures, racconti, setYears])
 
   const xScale = useMemo(() => {
     if (!measures) {
@@ -287,6 +294,7 @@ function LineeTrama(
       Promise.all([mainTransition, selectedTransition]).then(cb)
     },
   }))
+
 
   return (
     <div
@@ -344,4 +352,4 @@ function LineeTrama(
   )
 }
 
-export default forwardRef(LineeTrama)
+export default React.memo(forwardRef(LineeTrama))

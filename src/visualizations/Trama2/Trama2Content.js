@@ -99,7 +99,9 @@ export default function Trama2Content({
     setCurrentView('detail')
   }, [])
 
-  
+
+  const [years, setYears] = useState([racconti[0].anno, racconti[racconti.length-1].anno])
+
 
   const detailHeight = 14 * tipologie.length + 80
 
@@ -130,6 +132,11 @@ export default function Trama2Content({
         ></div>
       </div>
       <div className="trama2-content-wrapper">
+
+        <div style={{position:'absolute', top: 80 + MOTIVO_LINE_HEIGHT}}>{years[0]}</div>
+        <div style={{position:'absolute', bottom: MOTIVO_LINE_HEIGHT}}>{years[1]}</div>
+        
+        
         <div
           className="trama2-content"
           style={{ display: currentView !== 'list' ? 'none' : undefined }}
@@ -146,6 +153,7 @@ export default function Trama2Content({
             height={MOTIVO_LINE_HEIGHT}
             scalaMotivoY={scalaMotivoY}
             colors={colors}
+            setYears={setYears}
           ></LineeTrama>
         </div>
 
