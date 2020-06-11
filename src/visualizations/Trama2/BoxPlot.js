@@ -107,7 +107,7 @@ const BoxPlotElement = React.memo(
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
 
     return <g>
-      <rect width="10" height={h} y={top} style={{fill}} onClick={() => toggleItem(data.racconto.titolo)}>
+      <rect width="10" height={h} y={top} style={{fill}} onClick={() => toggleItem(data.racconto.titolo)} stroke="#ccc" fillOpacity={0.6}>
         <title>{data.racconto.titolo}</title>
 
       </rect>
