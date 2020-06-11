@@ -30,15 +30,26 @@
 }
 
 .trama2-side-panel-rotate {
-    height: 100px;
+    height: 200px;
     width: 35px;
-    background-color: red;
+    background-color: #fff;
     border-radius: 0 4px 4px 0;
+    border: 1px solid var(--dark-blue);
+    color: var(--dark-blue);
     position: absolute;
     right: 0px;
-    top: calc(50% - 100px);
+    top: calc(50% - 200px);
     pointer-events: all;
+    text-align: center;
+    line-height: 35px;
+
+    writing-mode: vertical-rl;
+    
+    
+
   }
+
+
 
 .trama2-side-panel-content {
   height: 100%;

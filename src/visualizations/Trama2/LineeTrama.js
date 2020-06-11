@@ -318,23 +318,24 @@ function LineeTrama(
 
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
-      const scaleY = scaleLinear()
-        .domain([0, racconti.length])
-        .range([0 + height, measures.height - height])
+      cb()
+      // const scaleY = scaleLinear()
+      //   .domain([0, racconti.length])
+      //   .range([0 + height, measures.height - height])
 
-      const mainTransition = selectAll('.linea-container')
-        .transition()
-        .duration(1000)
-        .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
-        .end()
+      // const mainTransition = selectAll('.linea-container')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
 
-      const selectedTransition = selectAll('.linea-container-selected')
-        .transition()
-        .duration(1000)
-        .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
-        .end()
+      // const selectedTransition = selectAll('.linea-container-selected')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
 
-      Promise.all([mainTransition, selectedTransition]).then(cb)
+      // Promise.all([mainTransition, selectedTransition]).then(cb)
     },
   }))
 
