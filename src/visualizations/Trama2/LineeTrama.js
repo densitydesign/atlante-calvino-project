@@ -125,11 +125,46 @@ const LineaTrama = React.memo(
 
         {itemSelected && (
           <g>
-            {data.map((d, i) => (
-              <circle key={i} className="trama2-circle" cx={d.x} cy={d.y} r={2}>
-                <title>{d.motivo_type}</title>
-              </circle>
-            ))}
+            {data.map((d, i) => {
+              if (i === 0) {
+                return (
+                  <rect
+                    x={d.x}
+                    y={d.y}
+                    key={i}
+                    className="trama2-start-symbol"
+                  >
+                    <title>{d.motivo_type}</title>
+                  </rect>
+                )
+              }
+              if (i === data.length - 1) {
+                return (
+                  <rect
+                    x={d.x}
+                    y={d.y}
+                    key={i}
+                    style={{
+                      transformOrigin: `${d.x - 2}px ${d.y - 2}px`
+                    }}
+                    className="trama2-end-symbol"
+                  >
+                    <title>{d.motivo_type}</title>
+                  </rect>
+                )
+              }
+              return (
+                <circle
+                  key={i}
+                  className="trama2-circle"
+                  cx={d.x}
+                  cy={d.y}
+                  r={2}
+                >
+                  <title>{d.motivo_type}</title>
+                </circle>
+              )
+            })}
             <RaccontoInfoBox
               onClick={handleClickRacconto}
               y={-10}
@@ -229,12 +264,20 @@ function LineeTrama(
         const domain = newScaleY.domain()
         const lowIndex = Math.max(0, Math.floor(domain[0]))
         const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
-        
+
         setYears([racconti[lowIndex].anno, racconti[hiIndex].anno])
       }
 
       const selection = select(svg)
-      selection.call(zoom().scaleExtent([1, 10]).translateExtent([[0,0], [measures.width, measures.height]]).on('zoom', handleZoom))
+      selection.call(
+        zoom()
+          .scaleExtent([1, 10])
+          .translateExtent([
+            [0, 0],
+            [measures.width, measures.height],
+          ])
+          .on('zoom', handleZoom)
+      )
       return () => {
         selection.on('.zoom', null)
       }
@@ -294,7 +337,6 @@ function LineeTrama(
       Promise.all([mainTransition, selectedTransition]).then(cb)
     },
   }))
-
 
   return (
     <div

@@ -99,6 +99,21 @@
   /* fill: none; */
 }
 
+.trama2-start-symbol {
+  transform: translate(-2px, -2px);
+  height: 4px;
+  width: 4px;
+  stroke: black;
+  fill: white;
+}
+.trama2-end-symbol {
+  transform: rotate(45deg) translate(-3px, -3px);
+  height: 4px;
+  width: 4px;
+  stroke: black;
+  fill: white;
+}
+
 .trama2-circle {
   stroke: #ddd;
   fill: #000;
@@ -134,9 +149,9 @@
 
 .trama2-detail-label {
   height: 20px;
-  
 
-  
+
+
 }
 .trama2-detail-label > .trama2-label-inner-start {
   display: inline-block;
@@ -147,7 +162,7 @@
   padding-left: 5px;
   padding-right: 5px;
   background: #FFF;
-  
+
 }
 .trama2-detail-label > .trama2-label-inner-end {
   padding-left: 6px;
