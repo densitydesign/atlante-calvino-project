@@ -60,21 +60,21 @@ export default function Trama2Content({
   );
 
   //actual dataset
-  const raccontiFiltered = useMemo(() => {
-    if (bounds.length === 2) {
-      const orderedBounds = sortBy(
-        bounds,
-        (bound) => tipologieByTipologia[bound]["ordine tipologia"]
-      );
-      return racconti.filter(
-        (racconto) =>
-          racconto.minDatum.motivo_type === orderedBounds[0] &&
-          racconto.maxDatum.motivo_type === orderedBounds[1]
-      );
-    }
+  // const raccontiFiltered = useMemo(() => {
+  //   if (bounds.length === 2) {
+  //     const orderedBounds = sortBy(
+  //       bounds,
+  //       (bound) => tipologieByTipologia[bound]["ordine tipologia"]
+  //     );
+  //     return racconti.filter(
+  //       (racconto) =>
+  //         racconto.minDatum.motivo_type === orderedBounds[0] &&
+  //         racconto.maxDatum.motivo_type === orderedBounds[1]
+  //     );
+  //   }
 
-    return racconti;
-  }, [bounds]);
+  //   return racconti;
+  // }, [bounds, racconti, tipologieByTipologia]);
 
   useEffect(() => {
     if (bounds.length === 2) {
@@ -93,9 +93,15 @@ export default function Trama2Content({
         .map((x) => x[0]);
 
       const sel = keyBy(indexes);
-      setSelected(sel);
+      setSelected(sel, true);
     }
-  }, [bounds]);
+  }, [bounds, racconti, setSelected, tipologieByTipologia]);
+
+  useEffect(() => {
+    if (Object.keys(selected).some(key => selected[key].fromBounds === false)) {
+      setBounds([])
+    }
+  }, [selected])
 
   const listRef = useRef();
   const [currentView, setCurrentView] = useState("list");

@@ -59,7 +59,7 @@ export default function TramaDetail({
     const d = lineGenerator(newData)
     const subPaths = splitPath(d)
     return [newData, subPaths, Array.from(gradientsSet)]
-  }, [data, xScale])
+  }, [data, scalaMotivoY, xScale])
   const containerRef = useRef(null)
 
   return (
