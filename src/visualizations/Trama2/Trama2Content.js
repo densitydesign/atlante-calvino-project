@@ -133,8 +133,8 @@ export default function Trama2Content({
       </div>
       <div className="trama2-content-wrapper">
 
-        <div style={{position:'absolute', top: 80 + MOTIVO_LINE_HEIGHT}}>{years[0]}</div>
-        <div style={{position:'absolute', bottom: MOTIVO_LINE_HEIGHT}}>{years[1]}</div>
+        <div style={{position:'absolute', top: 80 + MOTIVO_LINE_HEIGHT, borderTop: 'solid #bbb 1px'}}>{years[0]}</div>
+        <div style={{position:'absolute', bottom: MOTIVO_LINE_HEIGHT, borderBottom: 'solid #bbb 1px'}}>{years[1]}</div>
         
         
         <div
