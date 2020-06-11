@@ -8,14 +8,17 @@ const MOTIVO_LINE_HEIGHT_FULL_SCREEN = 600
 const CHART_X_PADDING = 50
 const CHART_Y_PADDING = 80
 
-
-
 const lineGenerator = line()
   .x((d) => d.x)
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
-export default function TramaDetail({ data, tipologieByTipologia, onBack, detailHeight }) {
+export default function TramaDetail({
+  data,
+  tipologieByTipologia,
+  onBack,
+  detailHeight,
+}) {
   const [measures, setMeasures] = useState(null)
 
   useLayoutEffect(() => {
@@ -24,9 +27,7 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack, detail
   }, [])
 
   const scalaMotivoY = useMemo(() => {
-    return makeScalaMotivoY(
-      detailHeight - 80
-    )
+    return makeScalaMotivoY(detailHeight - 80)
   }, [detailHeight])
 
   const xScale = useMemo(() => {
@@ -112,14 +113,40 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack, detail
                 )
               })}
               <g>
-                {fullData.map((d, i) => (
-                  <g key={i} transform={`translate(${d.x}, ${d.y})`}>
-                    <circle className="trama2-circle" r={2} />
-                    <text x={5} y={-5} style={{ transform: 'rotate(-30deg)' }}>
-                      {d.motivo_type}
-                    </text>
-                  </g>
-                ))}
+                {fullData.map((d, i) => {
+                  let element
+                  if (i === 0) {
+                    element = (
+                      <rect
+                        x={0}
+                        y={0}
+                        className="trama2-start-symbol"
+                      />
+                    )
+                  } else if (i === data.length - 1) {
+                    element = (
+                      <rect
+                        x={0}
+                        y={1}
+                        className="trama2-end-symbol"
+                      />
+                    )
+                  } else {
+                    element = <circle className="trama2-circle" r={2} />
+                  }
+                  return (
+                    <g key={i} transform={`translate(${d.x}, ${d.y})`}>
+                      {element}
+                      <text
+                        x={5}
+                        y={-5}
+                        style={{ transform: 'rotate(-30deg)' }}
+                      >
+                        {d.motivo_type}
+                      </text>
+                    </g>
+                  )
+                })}
               </g>
             </g>
           </svg>
