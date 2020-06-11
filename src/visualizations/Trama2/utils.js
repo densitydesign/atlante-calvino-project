@@ -12,6 +12,7 @@ import maxBy from 'lodash/maxBy'
 import mapValues from 'lodash/mapValues'
 import get from 'lodash/get'
 import take from 'lodash/take'
+import sum from 'lodash/sum'
 
 import datasetLines from './dati/dataset_lines.json'
 import mappaMotivoTipologia from './dati/mappa_motivo_tipologia.json'
@@ -52,16 +53,29 @@ export function makeVizData(scaleY) {
 
 
 // we must filter items with no scale associated and renormalize data
-const datasetTmp = datasetLines.filter(item => {
-  const motivo = item['motivo_type']
-  return !!get(ordineMotivoByMotivo, motivo)
-}).map(item => {
-  const numCaratteri = +item['end_motivo'] -item['start_motivo'] + 1
-  return {...item, numCaratteri}
-})
+// const datasetTmp = datasetLines.filter(item => {
+//   const motivo = item['motivo_type']
+//   return !!get(ordineMotivoByMotivo, motivo)
+// }).map(item => {
+//   const numCaratteri = +item['end_motivo'] -item['start_motivo'] + 1
+//   return {...item, numCaratteri}
+// })
 
 
-const datasetTmpByRacconto = groupBy(datasetTmp, 'titolo racconto')
+// const datasetTmpByRacconto = groupBy(datasetTmp, 'titolo racconto')
+
+// const titoli = Object.keys(datasetTmpByRacconto)
+// const lunghezze = titoli.reduce((acc, item) => {
+
+//   const data = datasetTmpByRacconto[item]
+//   const len = sum(data.map(item => item.numCaratteri))
+//   acc[item] = len
+//   return acc
+
+// }, {})
+
+
+// const finalDataset = datasetTmp.map(item => ({...item, len:lunghezze[item['titolo racconto']]  }))
 
 
 
