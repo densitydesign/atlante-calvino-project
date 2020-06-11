@@ -22,6 +22,7 @@ import uniqBy from 'lodash/uniqBy'
 import minBy from 'lodash/minBy'
 import maxBy from 'lodash/maxBy'
 
+
 import { splitPath, motivoExtent, makeScalaMotivoY } from './utils'
 import BoxPlotGradientsDefinitions from './BoxPlotGradientsDefinitions'
 
@@ -73,6 +74,7 @@ const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
 
 const BoxPlotElement = React.memo(
   ({
+    zoomFactor,
     racconto,
     data,
     xScale,
@@ -97,11 +99,12 @@ const BoxPlotElement = React.memo(
     const h = bottom - top
 
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
+    const widthBar = 10 * zoomFactor
 
     return (
       <g>
         <rect
-          width="10"
+          width={widthBar}
           height={h}
           y={top}
           style={{ fill }}
@@ -113,14 +116,14 @@ const BoxPlotElement = React.memo(
         </rect>
 
         <rect
-          width="10"
-          height="10"
+          width={widthBar}
+          height={widthBar}
           style={{ fill: '#fff', stroke: '#000' }}
           y={yScale(data.first.ordineMotivo)}
         ></rect>
         <rect
-          width="10"
-          height="10"
+          width={widthBar}
+          height={widthBar}
           style={{ fill: '#ddd', stroke: '#000' }}
           y={yScale(data.last.ordineMotivo)}
         ></rect>
@@ -149,6 +152,7 @@ function BoxPlot(
   const svgRef = useRef(null)
   const [measures, setMeasures] = useState(null)
   const [translations, setTranslations] = useState([])
+  const [zoomFactor, setZoomFactor] = useState(1)
 
   useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
@@ -182,6 +186,8 @@ function BoxPlot(
       function handleZoom() {
         const newScaleX = currentEvent.transform.rescaleX(scaleX)
         imperativeTranslate(newScaleX)
+        const zoomFactor = Math.round(currentEvent.transform.k / 2)
+        setZoomFactor(zoomFactor)
         // declarativeTranslate(newScaleX)
       }
 
@@ -296,6 +302,7 @@ function BoxPlot(
                       }}
                     >
                       <BoxPlotElement
+                        zoomFactor={zoomFactor}
                         onRaccontoClick={onRaccontoClick}
                         scalaColore={scalaColore}
                         scalaMotivoY={scalaMotivoY}
