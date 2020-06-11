@@ -1,23 +1,28 @@
-import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+import React, {
+  Component,
+  lazy,
+  Suspense,
+  useCallback,
+  useState,
+  useMemo,
+} from "react";
+import MainMenu from "../../general/MainMenu";
+import PageTitle from "../../general/PageTitle";
+import MoreInfo from "../../general/MoreInfo";
+import CompassButton from "../../general/CompassButton/CompassButton";
+import SearchDropDown from "../../general/Search/SearchDropDown";
+import Loading from "../../general/Loading";
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
 
-//data management
-import keyBy from 'lodash/keyBy'
-import sortBy from 'lodash/sortBy'
-
-//data helpers
-import { makeScalaMotivoY, makeVizData } from './utils'
-
-//local components
-import LineeTrama from './LineeTrama'
-import BoxPlot from './BoxPlot'
-import TramaDetail from './TramaDetail'
-import SideBar from './SideBar'
-
-//VISUAL CONSTANTS
-const MOTIVO_LINE_HEIGHT = 50
+import AltOptions from "../../general/Options/AltOptions";
+import GlobalData from "../../utilities/GlobalData";
+import Trama2Content from "./Trama2Content";
+import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from "./utils";
+import keyBy from "lodash/keyBy";
+import "./Trama2.css";
 
 // SCALES
-const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
+const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT);
 
 // GLOBAL DATA
 const {
@@ -26,166 +31,109 @@ const {
   colors,
   racconti,
   byRacconto,
-} = makeVizData(scalaMotivoY)
+} = makeVizData(scalaMotivoY);
 
-// main component
-export default function Trama2Main() {
-  const [sidePanelOpen, setSidePanelOpen] = useState(false)
-  const toggleSidePanel = useCallback(() => {
-    setSidePanelOpen(!sidePanelOpen)
-  }, [sidePanelOpen])
+// we leverage react lazy+suspense to load core component at first render (it will load all json by importing it)
 
-  //lines selection
-  const [selected, setSelected] = useState({})
+const searchOptions = racconti.map((racconto) => ({
+  label: racconto.titolo,
+  value: racconto.titolo,
+}));
+
+const cercaOptions = [{ label: "Volume" }];
+
+function Trama2Main({ title }) {
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false);
+  const [ricerca, setRicerca] = useState([]);
+
+  const toggleHelpSidePanel = useCallback(() => {
+    setHelpSidePanelOpen((a) => !a);
+  }, []);
+
+  const helpPage = GlobalData.helpPages.plot.main;
+
+  const setSelected = useCallback((selection) => {
+    const newRicerca = Object.keys(selection).map((titolo) => ({
+      label: titolo,
+      value: titolo,
+    }));
+    setRicerca(newRicerca);
+  }, []);
+
   const toggleSelect = useCallback((titolo) => {
-    setSelected((selected) => ({ ...selected, [titolo]: !!!selected[titolo] }))
-  }, [])
-
-  //bounds selection
-  const [bounds, setBounds] = useState([])
-  const addBound = useCallback(
-    (item) => () => {
-      if (bounds.length === 1 && bounds[0] === item) {
-        setBounds([])
-        return
-      }
-      if (bounds.length < 2) {
-        setBounds(bounds.concat([item]))
+    setRicerca((ricerca) => {
+      const newRicerca = ricerca.filter((item) => item.label !== titolo);
+      if (newRicerca.length < ricerca.length) {
+        return newRicerca;
       } else {
-        setBounds([item])
+        return newRicerca.concat({ label: titolo, value: titolo });
       }
-    },
-    [bounds]
-  )
-
-  //actual dataset
-  const raccontiFiltered = useMemo(() => {
-    if (bounds.length === 2) {
-      const orderedBounds = sortBy(
-        bounds,
-        (bound) => tipologieByTipologia[bound]['ordine tipologia']
-      )
-      return racconti.filter(
-        (racconto) =>
-          racconto.minDatum.motivo_type === orderedBounds[0] &&
-          racconto.maxDatum.motivo_type === orderedBounds[1]
-      )
-    }
-
-    return racconti
-  }, [bounds])
-
-  useEffect(() => {
-    if (bounds.length === 2) {
-      const orderedBounds = sortBy(
-        bounds,
-        (bound) => tipologieByTipologia[bound]['ordine tipologia']
-      )
-
-      const indexes = racconti
-        .map((racconto, index) => [
-          racconto.titolo,
-          racconto.minDatum.motivo_type,
-          racconto.maxDatum.motivo_type,
-        ])
-        .filter((x) => x[1] === orderedBounds[0] && x[2] === orderedBounds[1])
-        .map((x) => x[0])
-
-      const sel = keyBy(indexes)
-      setSelected(sel)
-    }
-  }, [bounds])
-
-  const listRef = useRef()
-  const [currentView, setCurrentView] = useState('list')
-  const [currentTramaDetail, setCurrentTramaDetail] = useState(null)
-
-  const handleClickRacconto = useCallback((data) => {
-    setCurrentTramaDetail(data)
-    setCurrentView('detail')
-  }, [])
-
-  console.log('tipologie', tipologie)
-  console.log('racconti', racconti)
-  console.log('raccontiFiltered', raccontiFiltered)
-  console.log('bounds', bounds)
-
-  const detailHeight = 14 * tipologie.length + 80
+    });
+  }, []);
+  const selected = useMemo(() => {
+    return keyBy(ricerca.map((item) => item.value));
+  }, [ricerca]);
 
   return (
-    <div className="trama2-container">
-      <div className={`trama2-side-panel ${sidePanelOpen ? 'open' : 'closed'}`}>
-        <div className="trama2-side-panel-content">
-          <SideBar
-            tipologie={tipologie}
-            bounds={bounds}
-            addBound={addBound}
-            setBounds={setBounds}
-          ></SideBar>
-        </div>
+    <div className="trasformare main">
+      <HelpSidePanel
+        open={helpSidePanelOpen}
+        page={helpPage}
+        closeButtonClicked={toggleHelpSidePanel}
+      />
 
-        <div
-          className="trama2-side-panel-toggle "
-          onClick={toggleSidePanel}
-        ></div>
+      <div className="top-nav navigations">
+        <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
+        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
 
-        <div
-          className="trama2-side-panel-rotate"
-          onClick={() => {
-            listRef.current.rotateView(() => {
-              setCurrentView('boxplot')
-            })
+        <AltOptions
+          title="Cerca per"
+          options={cercaOptions}
+          disabled={true}
+          value={"Volume"}
+          onChange={(x) => {}}
+          style={{
+            gridColumn: "span 3",
           }}
-        ></div>
-      </div>
-      <div className="trama2-content-wrapper">
-        <div
-          className="trama2-content"
-          style={{ display: currentView !== 'list' ? 'none' : undefined }}
-        >
-          <LineeTrama
-            onRaccontoClick={handleClickRacconto}
-            ref={listRef}
-            selected={selected}
-            toggleSelect={toggleSelect}
-            racconti={racconti}
-            tipologie={tipologie}
-            tipologieByTipologia={tipologieByTipologia}
-            data={byRacconto}
-            height={MOTIVO_LINE_HEIGHT}
-            scalaMotivoY={scalaMotivoY}
-            colors={colors}
-          ></LineeTrama>
-        </div>
+        />
 
-        {currentView === 'boxplot' && <div className="trama2-content">
-          <BoxPlot
-            onRaccontoClick={handleClickRacconto}
-            ref={listRef}
-            selected={selected}
-            toggleSelect={toggleSelect}
-            racconti={racconti}
-            tipologie={tipologie}
-            tipologieByTipologia={tipologieByTipologia}
-            data={byRacconto}
-            height={MOTIVO_LINE_HEIGHT}
-            scalaMotivoY={scalaMotivoY}
-            colors={colors}
-          ></BoxPlot>
-        
-        </div>}
-        {currentView === 'detail' && (
-          <TramaDetail
-            tipologieByTipologia={tipologieByTipologia}
-            detailHeight={detailHeight}
-            data={currentTramaDetail}
-            onBack={() => {
-              setCurrentTramaDetail(null)
-              setCurrentView('list')
-            }}
-          />
-        )}
+        <SearchDropDown
+          style={{
+            gridColumn: "span 8",
+          }}
+          data={{ options: searchOptions }}
+          changeOptions={(newOptions) => {
+            setRicerca(newOptions);
+          }}
+          selectedOptions={ricerca}
+        />
+
+        <MoreInfo
+          style={{ gridColumn: "span 1" }}
+          onClicked={toggleHelpSidePanel}
+        />
+        <CompassButton
+          style={{
+            gridColumn: "span 1",
+            color: "white",
+            backgroundColor: "black",
+          }}
+        />
       </div>
+
+      <Trama2Content
+        scalaMotivoY={scalaMotivoY}
+        tipologie={tipologie}
+        tipologieByTipologia={tipologieByTipologia}
+        colors={colors}
+        racconti={racconti}
+        byRacconto={byRacconto}
+        selected={selected}
+        setSelected={setSelected}
+        toggleSelect={toggleSelect}
+      ></Trama2Content>
     </div>
-  )
+  );
 }
+
+export default Trama2Main;

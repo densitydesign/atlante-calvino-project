@@ -19,6 +19,10 @@ import coloriPosizioni from './dati/colori_posizioni.json'
 import ordineColore from './dati/ordine_colore_y.json'
 
 
+export const MOTIVO_LINE_HEIGHT = 50;
+
+
+
 export const motivoExtent = extent(ordineColore, (item) => +item['ordine tipologia'])
 
 export function makeScalaMotivoY(lineHeight) {
