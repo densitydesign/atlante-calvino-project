@@ -110,6 +110,8 @@ export default function Trama2Main() {
   console.log('raccontiFiltered', raccontiFiltered)
   console.log('bounds', bounds)
 
+  const detailHeight = 14 * tipologie.length + 80
+
   return (
     <div className="trama2-container">
       <div className={`trama2-side-panel ${sidePanelOpen ? 'open' : 'closed'}`}>
@@ -175,6 +177,7 @@ export default function Trama2Main() {
         {currentView === 'detail' && (
           <TramaDetail
             tipologieByTipologia={tipologieByTipologia}
+            detailHeight={detailHeight}
             data={currentTramaDetail}
             onBack={() => {
               setCurrentTramaDetail(null)

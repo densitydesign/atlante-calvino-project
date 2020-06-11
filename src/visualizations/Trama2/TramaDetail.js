@@ -8,22 +8,26 @@ const MOTIVO_LINE_HEIGHT_FULL_SCREEN = 600
 const CHART_X_PADDING = 50
 const CHART_Y_PADDING = 80
 
-const scalaMotivoY = makeScalaMotivoY(
-  MOTIVO_LINE_HEIGHT_FULL_SCREEN - CHART_Y_PADDING
-)
+
 
 const lineGenerator = line()
   .x((d) => d.x)
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
-export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
+export default function TramaDetail({ data, tipologieByTipologia, onBack, detailHeight }) {
   const [measures, setMeasures] = useState(null)
 
   useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
   }, [])
+
+  const scalaMotivoY = useMemo(() => {
+    return makeScalaMotivoY(
+      detailHeight - 80
+    )
+  }, [detailHeight])
 
   const xScale = useMemo(() => {
     if (!measures) {
@@ -78,7 +82,7 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
         {measures && (
           <svg
             style={{
-              height: MOTIVO_LINE_HEIGHT_FULL_SCREEN + 50,
+              height: detailHeight,
               width: measures.width,
             }}
           >
@@ -87,7 +91,7 @@ export default function TramaDetail({ data, tipologieByTipologia, onBack }) {
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
             />
-            <g transform={`translate(0, ${CHART_Y_PADDING})`}>
+            <g transform={`translate(0, 80)`}>
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
                 const stroke = isFill

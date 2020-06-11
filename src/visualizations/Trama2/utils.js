@@ -46,6 +46,22 @@ export function makeVizData(scaleY) {
     (item) => +item['ordine tipologia']
   )
 
+
+// we must filter items with no scale associated and renormalize data
+const datasetTmp = datasetLines.filter(item => {
+  const motivo = item['motivo_type']
+  return !!get(ordineMotivoByMotivo, motivo)
+}).map(item => {
+  const numCaratteri = +item['end_motivo'] -item['start_motivo'] + 1
+  return {...item, numCaratteri}
+})
+
+
+const datasetTmpByRacconto = groupBy(datasetTmp, 'titolo racconto')
+
+
+
+
   const datasetLinesNormalized = datasetLines.map((item) => {
     const tot = +item['tot caratteri']
     const motivo = item['motivo_type']
