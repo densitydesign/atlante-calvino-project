@@ -84,7 +84,10 @@ class Df3 extends Component {
     simulation
         .force('x',d3.forceX(d=>p(+d._4c_x)))
         .force('y',d3.forceY(d=>p(-d._4c_y)))
-        .force('collision',d3.forceCollide( d=>radius(d.length)*0.80 ))
+        .force('collision',d3.forceCollide( d=>{
+            const k = d.length>200000 ? 0.60 : 0.80;
+            return radius(d.length)*k;
+        } ))
         // .force('collision-rect', rectCollide().size(function (d) { return [lengthClumped(d.length)+4, lengthClumped(d.length)+4] }))
         .alphaMin(0.1)
         .on('tick',()=>{
@@ -103,10 +106,11 @@ class Df3 extends Component {
                         .merge(trail)
                         .attr('d',d=>d3.line()(d.trail));
         })
-        // .on('end',()=>{
-        //     console.log(_data)
-        //     console.log(JSON.stringify(_data.map(d=>{return{'id':d['ID opera'],'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2)
-        // })
+        .on('end',()=>{
+            console.log('end general')
+            console.log(_data)
+            // console.log(JSON.stringify(_data.map(d=>{return{'id':d['ID opera'],'x':d.x,'y':d.y,'r':lengthClumped(d.length)}})),null,2)
+        })
         .stop();
     
     const svg = d3.select(this._rootNode).select('svg');
@@ -225,7 +229,7 @@ class Df3 extends Component {
         .style('pointer-events','none')
         .attr('display',d=>d.percentage_combinations>0.025?'block':'none');
 
-    node.each(function(d){
+    node.each(function(d,i){
         if (d.percentage_combinations<=0.025) return;
         const node_data = d;
         const combination = d3.select(this).append('g').classed('metaball-g',true)
@@ -244,6 +248,7 @@ class Df3 extends Component {
             .force('y',d3.forceY(0))
             .force('collision', d3.forceCollide(d=>d.size))
             .on('tick', ()=>combination.attr('cx',d=>d.x).attr('cy',d=>d.y))
+            .on('end', ()=>console.log('end ',i))
             .alpha(1)
             .alphaMin(0.1)
             .restart();
