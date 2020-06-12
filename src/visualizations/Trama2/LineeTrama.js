@@ -265,7 +265,13 @@ function LineeTrama(
         const lowIndex = Math.max(0, Math.floor(domain[0]))
         const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
 
-        setYears([racconti[lowIndex].anno, racconti[hiIndex].anno])
+        setYears(prevYears => {
+          const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
+          if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
+            return newYears
+          }
+          return prevYears
+        })
       }
 
       const selection = select(svg)

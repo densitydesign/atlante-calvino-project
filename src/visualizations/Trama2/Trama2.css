@@ -152,6 +152,15 @@
 .trama2-sidebar-item:hover {
   background-color: #ccc;
 }
+.trama2-box-plot-year {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
 
 .trama2-info-box {
   fill: white;

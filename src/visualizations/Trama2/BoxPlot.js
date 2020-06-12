@@ -187,7 +187,21 @@ function BoxPlot(
         const newScaleX = currentEvent.transform.rescaleX(scaleX)
         imperativeTranslate(newScaleX)
         const zoomFactor = Math.round(currentEvent.transform.k / 2)
-        setZoomFactor(zoomFactor)
+
+        const domain = newScaleX.domain()
+        const lowIndex = Math.max(0, Math.floor(domain[0]))
+        const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
+        const batchUpdates = ReactDOM.unstable_batchedUpdates || ((cb) => cb())
+        batchUpdates(() => {
+          setZoomFactor(zoomFactor)
+          setYears(prevYears => {
+            const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
+            if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
+              return newYears
+            }
+            return prevYears
+          })
+        })
         // declarativeTranslate(newScaleX)
       }
 
@@ -245,7 +259,7 @@ function BoxPlot(
       return out
     })
     return [finalDataRacconti, Array.from(gradientsSet)]
-  }, [data, racconti, yScale])
+  }, [data, racconti, tipologieByTipologia, yScale])
 
   // useImperativeHandle(ref, () => ({
   //   rotateView: (cb) => {
@@ -268,6 +282,10 @@ function BoxPlot(
   //     Promise.all([mainTransition, selectedTransition]).then(cb)
   //   },
   // }))
+  const [years, setYears] = useState([
+    racconti[0].anno,
+    racconti[racconti.length - 1].anno,
+  ])
 
   return (
     <div className='trama2-boxplot-content'>
@@ -321,6 +339,10 @@ function BoxPlot(
             </g>
           </svg>
         )}
+      </div>
+      <div className='trama2-box-plot-year'>
+        <div>{years[0]}</div>
+        <div>{years[1]}</div>
       </div>
     </div>
   )
