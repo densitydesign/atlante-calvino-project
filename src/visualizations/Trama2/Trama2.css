@@ -146,6 +146,9 @@
 .trama2-sidebar-item.selected {
   color: #fff;
 }
+.trama2-sidebar-item.disabled {
+  color: #ccc;
+}
 .trama2-sidebar-item:hover {
   background-color: #ccc;
 }

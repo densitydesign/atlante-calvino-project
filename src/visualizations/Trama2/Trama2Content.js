@@ -5,20 +5,20 @@ import React, {
   useMemo,
   useEffect,
   useRef,
-} from "react";
+} from 'react'
 
 //data management
-import keyBy from "lodash/keyBy";
-import sortBy from "lodash/sortBy";
+import keyBy from 'lodash/keyBy'
+import sortBy from 'lodash/sortBy'
 
 //data helpers
-import { MOTIVO_LINE_HEIGHT } from "./utils";
+import { MOTIVO_LINE_HEIGHT } from './utils'
 
 //local components
-import LineeTrama from "./LineeTrama";
-import BoxPlot from "./BoxPlot";
-import TramaDetail from "./TramaDetail";
-import SideBar from "./SideBar";
+import LineeTrama from './LineeTrama'
+import BoxPlot from './BoxPlot'
+import TramaDetail from './TramaDetail'
+import SideBar from './SideBar'
 
 // main component
 export default function Trama2Content({
@@ -32,10 +32,10 @@ export default function Trama2Content({
   toggleSelect,
   setSelected,
 }) {
-  const [sidePanelOpen, setSidePanelOpen] = useState(false);
+  const [sidePanelOpen, setSidePanelOpen] = useState(false)
   const toggleSidePanel = useCallback(() => {
-    setSidePanelOpen(!sidePanelOpen);
-  }, [sidePanelOpen]);
+    setSidePanelOpen(!sidePanelOpen)
+  }, [sidePanelOpen])
 
   const containerRef = useRef()
   const [measures, setMeasures] = useState(null)
@@ -43,7 +43,6 @@ export default function Trama2Content({
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
   }, [])
-  console.log('X', measures)
 
   //lines selection
   // const [selected, setSelected] = useState({})
@@ -52,21 +51,21 @@ export default function Trama2Content({
   // }, [])
 
   //bounds selection
-  const [bounds, setBounds] = useState([]);
+  const [bounds, setBounds] = useState([])
   const addBound = useCallback(
     (item) => () => {
       if (bounds.length === 1 && bounds[0] === item) {
-        setBounds([]);
-        return;
+        setBounds([])
+        return
       }
       if (bounds.length < 2) {
-        setBounds(bounds.concat([item]));
+        setBounds(bounds.concat([item]))
       } else {
-        setBounds([item]);
+        setBounds([item])
       }
     },
     [bounds]
-  );
+  )
 
   //actual dataset
   // const raccontiFiltered = useMemo(() => {
@@ -89,54 +88,59 @@ export default function Trama2Content({
     if (bounds.length === 2) {
       const orderedBounds = sortBy(
         bounds,
-        (bound) => tipologieByTipologia[bound]["ordine tipologia"]
-      );
+        (bound) => +tipologieByTipologia[bound]['ordine tipologia']
+      )
+      const indexes = racconti.reduce((acc, racconto, indenx) => {
+        if (
+          racconto.minDatum.motivo_type === orderedBounds[0] &&
+          racconto.maxDatum.motivo_type === orderedBounds[1]
+        ) {
+          acc.push(racconto.titolo)
+        }
+        return acc
+      }, [])
 
-      const indexes = racconti
-        .map((racconto, index) => [
-          racconto.titolo,
-          racconto.minDatum.motivo_type,
-          racconto.maxDatum.motivo_type,
-        ])
-        .filter((x) => x[1] === orderedBounds[0] && x[2] === orderedBounds[1])
-        .map((x) => x[0]);
-
-      const sel = keyBy(indexes);
-      setSelected(sel, true);
+      const sel = keyBy(indexes)
+      setSelected(sel, true)
     }
-  }, [bounds, racconti, setSelected, tipologieByTipologia]);
+  }, [bounds, racconti, setSelected, tipologieByTipologia])
 
   useEffect(() => {
-    if (Object.keys(selected).some(key => selected[key].fromBounds === false)) {
+    if (
+      Object.keys(selected).some((key) => selected[key].fromBounds === false)
+    ) {
       setBounds([])
     }
   }, [selected])
 
-  const listRef = useRef();
-  const [currentView, setCurrentView] = useState("list");
-  const [currentTramaDetail, setCurrentTramaDetail] = useState(null);
+  const listRef = useRef()
+  const [currentView, setCurrentView] = useState('list')
+  const [currentTramaDetail, setCurrentTramaDetail] = useState(null)
 
   const handleClickRacconto = useCallback((data) => {
-    setCurrentTramaDetail(data);
-    setCurrentView("detail");
-  }, []);
+    setCurrentTramaDetail(data)
+    setCurrentView('detail')
+  }, [])
 
   const [years, setYears] = useState([
     racconti[0].anno,
     racconti[racconti.length - 1].anno,
-  ]);
+  ])
 
   return (
     <div className="trama2-container" ref={containerRef}>
-      <div className={`trama2-side-panel ${sidePanelOpen ? "open" : "closed"}`}>
+      <div className={`trama2-side-panel ${sidePanelOpen ? 'open' : 'closed'}`}>
         <div className="trama2-side-panel-content">
-          {measures && <SideBar
-            height={measures.height - 140}
-            tipologie={tipologie}
-            bounds={bounds}
-            addBound={addBound}
-            setBounds={setBounds}
-          ></SideBar>}
+          {measures && (
+            <SideBar
+              racconti={racconti}
+              height={measures.height - 140}
+              tipologie={tipologie}
+              bounds={bounds}
+              addBound={addBound}
+              setBounds={setBounds}
+            ></SideBar>
+          )}
         </div>
 
         <div
@@ -144,40 +148,40 @@ export default function Trama2Content({
           onClick={toggleSidePanel}
         ></div>
 
-        {currentView !== "detail" && (
+        {currentView !== 'detail' && (
           <div
             className="trama2-side-panel-rotate"
             onClick={() => {
-              if (currentView === "list") {
+              if (currentView === 'list') {
                 listRef.current.rotateView(() => {
-                  setCurrentView("boxplot");
-                });
+                  setCurrentView('boxplot')
+                })
               } else {
-                setCurrentView("list");
+                setCurrentView('list')
               }
             }}
           >
-          Routa la vista
+            Routa la vista
           </div>
         )}
       </div>
       <div className="trama2-content-wrapper">
-        {currentView === "list" && (
+        {currentView === 'list' && (
           <>
             <div
               style={{
-                position: "absolute",
+                position: 'absolute',
                 top: 80 + MOTIVO_LINE_HEIGHT,
-                borderTop: "solid #bbb 1px",
+                borderTop: 'solid #bbb 1px',
               }}
             >
               {years[0]}
             </div>
             <div
               style={{
-                position: "absolute",
+                position: 'absolute',
                 bottom: MOTIVO_LINE_HEIGHT,
-                borderBottom: "solid #bbb 1px",
+                borderBottom: 'solid #bbb 1px',
               }}
             >
               {years[1]}
@@ -186,9 +190,8 @@ export default function Trama2Content({
         )}
 
         <div
-
           className="trama2-content"
-          style={{ display: currentView !== "list" ? "none" : undefined }}
+          style={{ display: currentView !== 'list' ? 'none' : undefined }}
         >
           <LineeTrama
             onRaccontoClick={handleClickRacconto}
@@ -206,7 +209,7 @@ export default function Trama2Content({
           ></LineeTrama>
         </div>
 
-        {currentView === "boxplot" && measures && (
+        {currentView === 'boxplot' && measures && (
           <BoxPlot
             onRaccontoClick={handleClickRacconto}
             ref={listRef}
@@ -221,18 +224,18 @@ export default function Trama2Content({
             colors={colors}
           ></BoxPlot>
         )}
-        {currentView === "detail" && measures && (
+        {currentView === 'detail' && measures && (
           <TramaDetail
             tipologieByTipologia={tipologieByTipologia}
             detailHeight={measures.height - 140}
             data={currentTramaDetail}
             onBack={() => {
-              setCurrentTramaDetail(null);
-              setCurrentView("list");
+              setCurrentTramaDetail(null)
+              setCurrentView('list')
             }}
           />
         )}
       </div>
     </div>
-  );
+  )
 }
