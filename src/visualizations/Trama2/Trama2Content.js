@@ -6,6 +6,8 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
 //data management
 import keyBy from 'lodash/keyBy'
@@ -144,9 +146,13 @@ export default function Trama2Content({
         </div>
 
         <div
-          className="trama2-side-panel-toggle "
+          className={`trama2-side-panel-toggle ${
+            sidePanelOpen ? 'open-panel' : ''
+          }`}
           onClick={toggleSidePanel}
-        ></div>
+        >
+          <FontAwesomeIcon icon={faAngleDoubleRight} />
+        </div>
 
         {currentView !== 'detail' && (
           <div

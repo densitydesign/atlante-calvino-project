@@ -9,10 +9,13 @@ import React, {
   useImperativeHandle,
   forwardRef,
 } from 'react'
+import Draggable from 'react-draggable'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import range from 'lodash/range'
 import keyBy from 'lodash/keyBy'
@@ -128,12 +131,7 @@ const LineaTrama = React.memo(
             {data.map((d, i) => {
               if (i === 0) {
                 return (
-                  <rect
-                    x={d.x}
-                    y={d.y}
-                    key={i}
-                    className="trama2-start-symbol"
-                  >
+                  <rect x={d.x} y={d.y} key={i} className="trama2-start-symbol">
                     <title>{d.motivo_type}</title>
                   </rect>
                 )
@@ -145,7 +143,7 @@ const LineaTrama = React.memo(
                     y={d.y}
                     key={i}
                     style={{
-                      transformOrigin: `${d.x - 2}px ${d.y - 2}px`
+                      transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
                     }}
                     className="trama2-end-symbol"
                   >
@@ -198,6 +196,64 @@ const SelectedContainers = React.memo(({ n, translations }) => {
         />
       ))}
     </g>
+  )
+})
+
+const HANDLE_WIDTH = 12
+const Brush = React.memo(({ width, onNextClick, onPrevClick }) => {
+  const [x, setX] = useState(width - HANDLE_WIDTH / 2)
+  return (
+    <>
+      <div
+        style={{
+          transform: `translateX(${x + HANDLE_WIDTH / 2}px)`,
+        }}
+        className="trama2-index-line"
+      />
+      <div className="trama2-brush-container">
+        <button
+          className="trama2-brush-button trama2-prev-brush-button"
+          onClick={() => {
+            onPrevClick(x + HANDLE_WIDTH / 2, (rawNextX) => {
+              const nextX = rawNextX - HANDLE_WIDTH / 2
+              if (nextX >= 0 && x <= width - HANDLE_WIDTH / 2) {
+                setX(nextX)
+              }
+            })
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+        <div className="trama2-list-brush">
+          <Draggable
+            axis="x"
+            position={{ x, y: 0 }}
+            bounds={{
+              left: 0,
+              right: width - HANDLE_WIDTH / 2,
+            }}
+            onDrag={(e, position) => {
+              setX(position.x)
+            }}
+          >
+            <div className="trama2-drag-handle" />
+          </Draggable>
+        </div>
+        <button
+          className="trama2-brush-button trama2-next-brush-button"
+          onClick={() => {
+            onNextClick(x + HANDLE_WIDTH / 2, (rawNextX) => {
+              const nextX = rawNextX - HANDLE_WIDTH / 2
+              if (nextX >= 0 && x <= width - HANDLE_WIDTH / 2) {
+                setX(nextX)
+              }
+            })
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
+      </div>
+    </>
   )
 })
 
@@ -265,7 +321,7 @@ function LineeTrama(
         const lowIndex = Math.max(0, Math.floor(domain[0]))
         const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
 
-        setYears(prevYears => {
+        setYears((prevYears) => {
           const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
           if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
             return newYears
@@ -297,10 +353,11 @@ function LineeTrama(
     return scaleLinear().domain([0, 1]).range([0, measures.width])
   }, [measures])
 
-  const [dataRacconti, gradientsType] = useMemo(() => {
+  const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
     if (!xScale) {
       return [[], []]
     }
+    const dataByRaccontiFinal = {}
     const gradientsSet = new Set()
     const finalDataRacconti = racconti.map((racconto) => {
       let out = data[racconto.titolo].filter((d) => d.y !== undefined)
@@ -317,9 +374,10 @@ function LineeTrama(
         }
       })
       out.racconto = racconto
+      dataByRaccontiFinal[racconto.titolo] = out
       return out
     })
-    return [finalDataRacconti, Array.from(gradientsSet)]
+    return [finalDataRacconti, dataByRaccontiFinal, Array.from(gradientsSet)]
   }, [data, racconti, xScale, tipologieByTipologia])
 
   useImperativeHandle(ref, () => ({
@@ -344,6 +402,37 @@ function LineeTrama(
       // Promise.all([mainTransition, selectedTransition]).then(cb)
     },
   }))
+  console.log('MES', measures)
+
+  const handleNexPoint = useCallback((x, setX) => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x > x) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints) {
+      setX(Math.min(...nextPoints))
+    }
+  }, [dataByRacconti, selected])
+
+  const handlePrevPoint = useCallback((x, setX) => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x < x) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints) {
+      setX(Math.max(...nextPoints))
+    }
+  }, [dataByRacconti, selected])
 
   return (
     <div
@@ -352,50 +441,57 @@ function LineeTrama(
       style={{ overflow: 'hidden' }}
     >
       {measures && (
-        <svg
-          style={{
-            height: measures.height,
-            width: measures.width,
-          }}
-          ref={svgRef}
-        >
-          <GradientsDefinitions
-            byTipologia={tipologieByTipologia}
-            gradientsType={gradientsType}
-          />
-          <g className="wrapper">
-            {measures &&
-              dataRacconti.map((datum, i) => {
-                return (
-                  <g
-                    key={i}
-                    className="linea-container"
-                    style={{
-                      transform: translations[i],
-                    }}
-                  >
-                    <LineaTrama
-                      onRaccontoClick={onRaccontoClick}
-                      scalaColore={scalaColore}
-                      scalaMotivoY={scalaMotivoY}
-                      index={i}
-                      width={measures.width}
-                      height={height}
-                      itemSelected={selected[racconti[i].titolo]}
-                      toggleItem={toggleSelect}
-                      xScale={xScale}
-                      racconto={racconti[i]}
-                      data={datum}
-                    ></LineaTrama>
-                  </g>
-                )
-              })}
-            <SelectedContainers
-              n={dataRacconti.length}
-              translations={translations}
+        <>
+          <svg
+            style={{
+              height: measures.height,
+              width: measures.width,
+            }}
+            ref={svgRef}
+          >
+            <GradientsDefinitions
+              byTipologia={tipologieByTipologia}
+              gradientsType={gradientsType}
             />
-          </g>
-        </svg>
+            <g className="wrapper">
+              {measures &&
+                dataRacconti.map((datum, i) => {
+                  return (
+                    <g
+                      key={i}
+                      className="linea-container"
+                      style={{
+                        transform: translations[i],
+                      }}
+                    >
+                      <LineaTrama
+                        onRaccontoClick={onRaccontoClick}
+                        scalaColore={scalaColore}
+                        scalaMotivoY={scalaMotivoY}
+                        index={i}
+                        width={measures.width}
+                        height={height}
+                        itemSelected={selected[racconti[i].titolo]}
+                        toggleItem={toggleSelect}
+                        xScale={xScale}
+                        racconto={racconti[i]}
+                        data={datum}
+                      ></LineaTrama>
+                    </g>
+                  )
+                })}
+              <SelectedContainers
+                n={dataRacconti.length}
+                translations={translations}
+              />
+            </g>
+          </svg>
+          <Brush
+            onPrevClick={handlePrevPoint}
+            onNextClick={handleNexPoint}
+            width={measures.width}
+          />
+        </>
       )}
     </div>
   )
