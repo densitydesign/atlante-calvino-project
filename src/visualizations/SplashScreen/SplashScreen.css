@@ -104,10 +104,6 @@ svg{
 
 }
 
-.root-node {
-  fill: var(--dark-blue) !important;
-}
-
 #scroll-down {
     cursor: pointer;
     position: absolute;
