@@ -30,6 +30,7 @@ import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
 import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 import Df3 from '../Df3';
+import Cancellazione from '../Cancellazione';
 
 export default function AtlasRouter()
 {
@@ -91,7 +92,7 @@ export default function AtlasRouter()
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
-      <Route exact path="/Problem/cancellation">cancellazione</Route>
+      <Route exact path="/Problem/cancellation"><Cancellazione /></Route>
       <Route exact path="/Problem/realism">problema / realismo</Route>
       <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
 
