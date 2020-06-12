@@ -1,286 +1,404 @@
+import ReactDOM from 'react-dom'
 import React, {
   useRef,
   useState,
   useMemo,
-  useEffect,
   useCallback,
-} from "react";
-import { line, curveMonotoneX } from "d3-shape";
-import { scaleLinear } from "d3-scale";
-import { zoom } from "d3";
+  useEffect,
+  useLayoutEffect,
+  useImperativeHandle,
+  forwardRef,
+} from 'react'
+import { line, curveMonotoneX } from 'd3-shape'
+import { scaleLinear } from 'd3-scale'
+import { zoom } from 'd3-zoom'
+import { select, selectAll, event as currentEvent } from 'd3-selection'
 
-const MAX_ZOOM_LEVEL = 10;
-const TOP_SVG_PADDING = 20;
+import range from 'lodash/range'
+import keyBy from 'lodash/keyBy'
 
-function LineaTrama({
-  racconto,
-  data,
-  xScale,
-  width,
-  height,
-  zoomLevel,
-  index,
-  gradient,
-  itemSelected,
-  toggleItem,
-}) {
-  const lineGenerator = line()
-    .x((d) => d.x)
-    .y((d) => d.y * zoomLevel)
-    .curve(curveMonotoneX);
-  const d = lineGenerator(data);
+import { splitPath } from './utils'
+import GradientsDefinitions from './GradientsDefinitions'
 
-  const stroke = itemSelected ? `url('#trama-gradient-${zoomLevel}')` : "#ddd";
+const lineGenerator = line()
+  .x((d) => d.x)
+  .y((d) => d.y)
+  .curve(curveMonotoneX)
+
+const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
+  const containerRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [titolo])
+
   return (
-    <g>
-      {/* <rect
-        width={width}
-        height={height}
-        style={{fill:`teal`, fillOpacity: 0.2}}
-      ></rect> */}
-      <path
-        d={d}
-        className={`trama2-pointer ${itemSelected ? "selected" : ""}`}
-        onClick={toggleItem}
-      ></path>
-      <path
-        d={d}
-        className="trama2-line"
-        style={{ stroke, strokeWidth: zoomLevel }}
-      ></path>
-
-      {/* <line x1={0} x2={width} y1={height} y2={height} style={{stroke: '#000'}}></line> */}
-      {itemSelected && (
-        <g>
-          <g>
-            {/* <rect ></rect> */}
-            <text x={width} y={0} style={{ textAnchor: "end" }}>
-              {data.racconto.titolo}
-            </text>
-          </g>
-
-          {data.map((d, i) => (
-            <circle
-              key={i}
-              className="trama2-circle"
-              cx={d.x}
-              cy={d.y * zoomLevel}
-              r={2}
-            >
-              <title>{d.motivo_type}</title>
-            </circle>
-          ))}
+    <g
+      onClick={onClick}
+      transform={`translate(${x}, ${y})`}
+      style={{ cursor: 'pointer' }}
+    >
+      {measures && (
+        <g transform={`translate(${-measures.width - 40}, -15)`}>
+          <rect
+            height={22}
+            width={measures.width + 35}
+            rx={5}
+            className="trama2-info-box"
+          />
+          <line
+            x1={measures.width + 18}
+            x2={measures.width + 18}
+            y1={0}
+            y2={22}
+            className="trama2-info-box"
+          />
+          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
+            o
+          </text>
         </g>
       )}
+      <text
+        ref={containerRef}
+        x={-30}
+        y={0}
+        style={{ textAnchor: 'end', userSelect: 'none' }}
+      >
+        {titolo}
+      </text>
     </g>
-  );
+  )
 }
 
-export default function LineeTrama({
-  racconti = [],
-  data = {},
-  height,
-  scalaColore,
-  scalaMotivoY,
-  colors,
-  selected,
-  toggleSelect,
-}) {
-  const containerRef = useRef(null);
-  const [measures, setMeasures] = useState(null);
-  const [zoomLevel, setZoomLevel] = useState(1.0);
-  const [zoomY, setZoomY] = useState(0);
+const LineaTrama = React.memo(
+  ({
+    racconto,
+    data,
+    xScale,
+    width,
+    height,
+    index,
+    gradient,
+    itemSelected,
+    toggleItem,
+    onRaccontoClick,
+  }) => {
+    const [d, subPaths] = useMemo(() => {
+      const d = lineGenerator(data)
+      const subPaths = splitPath(d)
+      return [d, subPaths]
+    }, [data])
 
-  useEffect(() => {
-    const m = containerRef.current.getBoundingClientRect();
-    setMeasures(m);
-  }, []);
+    const handleClickRacconto = useCallback(
+      (e) => {
+        onRaccontoClick(data, e)
+      },
+      [onRaccontoClick, data]
+    )
 
-  const scrollHandler = useCallback(
-    (e, n) => {
-      const sign = e.deltaY > 0 ? 1.0 : -1.0;
+    const element = (
+      <g>
+        {subPaths.map((subPath, i) => {
+          const isFill = data[i + 1].motivo_type === data[i].motivo_type
+          const strokeSelected = isFill
+            ? data[i].colori
+            : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
+          return (
+            <path
+              key={i}
+              d={subPath}
+              className="trama2-line"
+              style={{
+                stroke: itemSelected ? strokeSelected : '#ddd',
+                fill: 'none',
+              }}
+            ></path>
+          )
+        })}
 
-      const newLevel = zoomLevel + 0.1 * sign;
+        <path
+          d={d}
+          onClick={() => toggleItem(racconto.titolo)}
+          className={`trama2-pointer ${itemSelected ? 'selected' : ''}`}
+        ></path>
 
-      if (newLevel > MAX_ZOOM_LEVEL) {
-        return;
-      }
-      if (newLevel <= 1) {
-        setZoomY(0);
-        setZoomLevel(1)
-        return;
-      }
-      setZoomLevel(Math.max(1, Math.min(newLevel, MAX_ZOOM_LEVEL)));
-      if (!zoomY) {
-        setZoomY(e.layerY);
-      }
-
-      return false;
-    },
-    [zoomLevel, zoomY]
-  );
-
-  useEffect(() => {
-    const n = containerRef.current;
-
-    const sh = (e) => {
-      scrollHandler(e, n);
-    };
-
-    n.addEventListener("wheel", sh, { passive: true });
-    return () => {
-      n.removeEventListener("wheel", sh, { passive: true });
-    };
-  }, [scrollHandler]);
-
-  const delta = useMemo(() => {
-    if (!measures) {
-      return 0;
+        {itemSelected && (
+          <g>
+            {data.map((d, i) => {
+              if (i === 0) {
+                return (
+                  <rect
+                    x={d.x}
+                    y={d.y}
+                    key={i}
+                    className="trama2-start-symbol"
+                  >
+                    <title>{d.motivo_type}</title>
+                  </rect>
+                )
+              }
+              if (i === data.length - 1) {
+                return (
+                  <rect
+                    x={d.x}
+                    y={d.y}
+                    key={i}
+                    style={{
+                      transformOrigin: `${d.x - 2}px ${d.y - 2}px`
+                    }}
+                    className="trama2-end-symbol"
+                  >
+                    <title>{d.motivo_type}</title>
+                  </rect>
+                )
+              }
+              return (
+                <circle
+                  key={i}
+                  className="trama2-circle"
+                  cx={d.x}
+                  cy={d.y}
+                  r={2}
+                >
+                  <title>{d.motivo_type}</title>
+                </circle>
+              )
+            })}
+            <RaccontoInfoBox
+              onClick={handleClickRacconto}
+              y={-10}
+              x={width}
+              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
+            />
+          </g>
+        )}
+      </g>
+    )
+    if (itemSelected) {
+      return ReactDOM.createPortal(
+        element,
+        document.getElementsByClassName('linea-container-selected')[index]
+      )
     }
-    return (measures.height - height) / racconti.length;
-  }, [height, measures, racconti.length]);
+    return element
+  }
+)
+
+const SelectedContainers = React.memo(({ n, translations }) => {
+  return (
+    <g>
+      {range(n).map((i) => (
+        <g
+          key={i}
+          className="linea-container-selected"
+          style={{
+            transform: translations[i],
+          }}
+        />
+      ))}
+    </g>
+  )
+})
+
+function LineeTrama(
+  {
+    racconti = [],
+    data = {},
+    height,
+    scalaColore,
+    scalaMotivoY,
+    colors,
+    selected,
+    toggleSelect,
+    onRaccontoClick,
+    tipologie,
+    tipologieByTipologia,
+    setYears,
+  },
+  ref
+) {
+  const containerRef = useRef(null)
+  const svgRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+  const [translations, setTranslations] = useState([])
+
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [])
+
+  useEffect(() => {
+    function declarativeTranslate(currentScaleY) {
+      const newTranslates = racconti.map((r, i) => {
+        return 'translate(0, ' + currentScaleY(i) + 'px)'
+      })
+      setTranslations(newTranslates)
+    }
+
+    function imperativeTranslate(currentScaleY) {
+      selectAll('.linea-container').attr(
+        'transform',
+        (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+      )
+      selectAll('.linea-container-selected').attr(
+        'transform',
+        (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+      )
+    }
+
+    if (measures) {
+      const svg = svgRef.current
+      const scaleY = scaleLinear()
+        .domain([0, racconti.length])
+        .range([0 + height, measures.height - height])
+
+      imperativeTranslate(scaleY)
+      // declarativeTranslate(scaleY)
+
+      function handleZoom() {
+        const newScaleY = currentEvent.transform.rescaleY(scaleY)
+        imperativeTranslate(newScaleY)
+        // declarativeTranslate(newScaleY)
+
+        const domain = newScaleY.domain()
+        const lowIndex = Math.max(0, Math.floor(domain[0]))
+        const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
+
+        setYears(prevYears => {
+          const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
+          if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
+            return newYears
+          }
+          return prevYears
+        })
+      }
+
+      const selection = select(svg)
+      selection.call(
+        zoom()
+          .scaleExtent([1, 10])
+          .translateExtent([
+            [0, 0],
+            [measures.width, measures.height],
+          ])
+          .on('zoom', handleZoom)
+      )
+      return () => {
+        selection.on('.zoom', null)
+      }
+    }
+  }, [height, measures, racconti, setYears])
 
   const xScale = useMemo(() => {
     if (!measures) {
-      return null;
+      return null
     }
-    return scaleLinear().domain([0, 1]).range([0, measures.width]);
-  }, [measures]);
+    return scaleLinear().domain([0, 1]).range([0, measures.width])
+  }, [measures])
 
-  const dataRacconti = useMemo(() => {
+  const [dataRacconti, gradientsType] = useMemo(() => {
     if (!xScale) {
-      return [];
+      return [[], []]
     }
-    return racconti.map((racconto) => {
-      const out = data[racconto.titolo]
-        .filter((d) => d.y !== undefined)
-        .map((d) => {
-          return {
-            ...d,
-            x: xScale(d.x),
-            y: d.y,
-          };
-        });
-      out.racconto = racconto;
-      return out;
-    });
-  }, [data, racconti, xScale]);
+    const gradientsSet = new Set()
+    const finalDataRacconti = racconti.map((racconto) => {
+      let out = data[racconto.titolo].filter((d) => d.y !== undefined)
+      out = out.map((d, i) => {
+        if (i > 0) {
+          gradientsSet.add(d.motivo_type + '-' + out[i - 1].motivo_type)
+        }
+        return {
+          ...d,
+          colori: tipologieByTipologia[d.motivo_type].colore.colori,
+          originalX: d.x,
+          x: xScale(d.x),
+          y: d.y,
+        }
+      })
+      out.racconto = racconto
+      return out
+    })
+    return [finalDataRacconti, Array.from(gradientsSet)]
+  }, [data, racconti, xScale, tipologieByTipologia])
 
-  const baseDisplacements = useMemo(() => {
-    return dataRacconti.map((d, i) => {
-      let dy = delta * i //+ TOP_SVG_PADDING;
-      return dy;
-    });
-  }, [dataRacconti, delta]);
+  useImperativeHandle(ref, () => ({
+    rotateView: (cb) => {
+      cb()
+      // const scaleY = scaleLinear()
+      //   .domain([0, racconti.length])
+      //   .range([0 + height, measures.height - height])
 
-  const displacements = useMemo(() => {
-    if(!measures){
-      return []
-    }
-    return dataRacconti.map((d, i) => {
-      let dy = baseDisplacements[i];
-      //return dy * zoomLevel
+      // const mainTransition = selectAll('.linea-container')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
 
-      const j = Math.floor(zoomY / delta);
+      // const selectedTransition = selectAll('.linea-container-selected')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
 
-      
-      //const translation = zoomLevel === 1 ? 0 : (measures.height / (2 * delta * zoomLevel) - 1) * (delta * zoomLevel)
-      //const translation = 
-      const factor = (zoomLevel-1) / (MAX_ZOOM_LEVEL-1);
-      const diff = zoomLevel === 1 ? 0 : delta * j * zoomLevel - (measures.height / 2)// / zoomLevel
-
-      // const diff1 =  delta * j * 1
-      // const diffMax =  delta * j * MAX_ZOOM_LEVEL - (measures.height / 2)
-      // const diff = diff1 + (diffMax - diff1) / (MAX_ZOOM_LEVEL - 1) * (zoomLevel - 1)
-
-
-      return dy * zoomLevel - diff 
-      // return diff - (j - i) * delta * zoomLevel
-    });
-  }, [baseDisplacements, dataRacconti, delta, measures, zoomLevel, zoomY]);
-
-  const deltaColors = useMemo(() => {
-    return 100 / (colors.length - 1);
-  }, [colors.length]);
+      // Promise.all([mainTransition, selectedTransition]).then(cb)
+    },
+  }))
 
   return (
     <div
       ref={containerRef}
       className="w-100 h-100"
-      style={{ overflow: "auto" }}
+      style={{ overflow: 'hidden' }}
     >
-      {/* <div>
-        {colors.map(color => <div key={color} style={{background:color, height: 10}}></div>)}
-      </div> */}
       {measures && (
         <svg
           style={{
             height: measures.height,
             width: measures.width,
-            // transform: `perspective(${zoomLevel})`,
-            // transformOrigin: `50% 50%`,
           }}
-          ref={containerRef}
+          ref={svgRef}
         >
-          <linearGradient
-            id={`trama-gradient-${zoomLevel}`}
-            gradientUnits="userSpaceOnUse"
-            y2={0}
-            y1={height * zoomLevel}
-            x1={0}
-            x2={0}
-          >
-            {colors.map((color, i) => (
-              <stop
-                key={i}
-                offset={`${deltaColors * i}%`}
-                stopColor={color}
-              ></stop>
-            ))}
-          </linearGradient>
-          {/* <linearGradient id={`trama-gradient-${zoomLevel}`} gradientUnits="userSpaceOnUse" y1={0} y2={height* zoomLevel} x1={0} x2={0}>
-            
-              <stop offset={`0%`} stopColor={'#000'}></stop>
-              <stop offset={`100%`} stopColor={'#fff'}></stop>
-            
-          </linearGradient> */}
-
-          {dataRacconti.map((datum, i) => {
-            const dy = displacements[i];
-
-            if (dy < -height * zoomLevel) {
-              return null;
-            }
-            if (dy > measures.height) {
-              return null;
-            }
-
-            // const datum = data[racconto]
-            return (
-              <g
-                key={i}
-                style={{
-                  transform: `translateY(${dy}px)`,
-                }}
-              >
-                <LineaTrama
-                  scalaColore={scalaColore}
-                  scalaMotivoY={scalaMotivoY}
-                  index={i}
-                  width={measures.width}
-                  height={height * zoomLevel}
-                  zoomLevel={zoomLevel}
-                  itemSelected={selected[racconti[i].titolo]}
-                  toggleItem={toggleSelect(racconti[i].titolo)}
-                  xScale={xScale}
-                  racconto={racconti[i]}
-                  data={datum}
-                ></LineaTrama>
-              </g>
-            );
-          })}
+          <GradientsDefinitions
+            byTipologia={tipologieByTipologia}
+            gradientsType={gradientsType}
+          />
+          <g className="wrapper">
+            {measures &&
+              dataRacconti.map((datum, i) => {
+                return (
+                  <g
+                    key={i}
+                    className="linea-container"
+                    style={{
+                      transform: translations[i],
+                    }}
+                  >
+                    <LineaTrama
+                      onRaccontoClick={onRaccontoClick}
+                      scalaColore={scalaColore}
+                      scalaMotivoY={scalaMotivoY}
+                      index={i}
+                      width={measures.width}
+                      height={height}
+                      itemSelected={selected[racconti[i].titolo]}
+                      toggleItem={toggleSelect}
+                      xScale={xScale}
+                      racconto={racconti[i]}
+                      data={datum}
+                    ></LineaTrama>
+                  </g>
+                )
+              })}
+            <SelectedContainers
+              n={dataRacconti.length}
+              translations={translations}
+            />
+          </g>
         </svg>
       )}
     </div>
-  );
+  )
 }
+
+export default React.memo(forwardRef(LineeTrama))
