@@ -346,7 +346,6 @@ function LineeTrama(
       // Promise.all([mainTransition, selectedTransition]).then(cb)
     },
   }))
-  console.log('MES', measures)
 
   const handleNexPoint = useCallback((x, setX) => {
     const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
@@ -358,7 +357,7 @@ function LineeTrama(
       })
       return acc
     }, [])
-    if (nextPoints) {
+    if (nextPoints.length) {
       setX(Math.min(...nextPoints))
     }
   }, [dataByRacconti, selected])
@@ -373,7 +372,7 @@ function LineeTrama(
       })
       return acc
     }, [])
-    if (nextPoints) {
+    if (nextPoints.length) {
       setX(Math.max(...nextPoints))
     }
   }, [dataByRacconti, selected])

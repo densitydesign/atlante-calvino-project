@@ -227,12 +227,13 @@ function BoxPlot(
       const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
         const dataTrama = dataByRacconti[titolo]
         const realX = scaleX(dataTrama.index)
-        if (realX > x) {
+        if (realX > x - widthBar / 2) {
           acc.push(realX)
         }
         return acc
       }, [])
-      if (nextPoints) {
+      if (nextPoints.length) {
+        console.log('NEXT', nextPoints, x)
         setX(Math.min(...nextPoints) + widthBar / 2)
       }
     },
@@ -246,12 +247,13 @@ function BoxPlot(
       const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
         const dataTrama = dataByRacconti[titolo]
         const realX = scaleX(dataTrama.index)
-        if (realX < x) {
+        if (realX < x - widthBar / 2) {
           acc.push(realX)
         }
         return acc
       }, [])
-      if (nextPoints) {
+      if (nextPoints.length) {
+        console.log('PREV', nextPoints, x)
         setX(Math.max(...nextPoints) + widthBar / 2)
       }
     },
