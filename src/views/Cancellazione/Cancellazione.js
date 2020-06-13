@@ -13,7 +13,7 @@ class Cancellazione extends Component {
     }
   }
   async componentDidMount() {
-    const data = await d3.tsv(process.env.PUBLIC_URL + '/Dataset Fase 3 - flagged - MDS_def.tsv');
+    const data = await (await d3.tsv(process.env.PUBLIC_URL + '/Dataset Fase 3 - flagged - MDS_def.tsv'));
     this.setState({
       loading:false,
       data:data
