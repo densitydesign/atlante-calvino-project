@@ -4,21 +4,33 @@ import {ShapeInfo, Intersection} from "kld-intersections";
 const V = {};
 export default V;
 
-// const combinations_arr =    [   "come_negazione", "come_esitazione", "come_riformulazione",
-//                                 "cosa_negazione", "cosa_esitazione", "cosa_riformulazione",
-//                                 "senso_negazione", "senso_esitazione", "senso_riformulazione"
-//                             ]
+const combinations_arr= [   "come_negazione", "come_esitazione", "come_riformulazione",
+                            "cosa_negazione", "cosa_esitazione", "cosa_riformulazione",
+                            "senso_negazione", "senso_esitazione", "senso_riformulazione"
+                        ]
 
-let width, height, fontSize=11, strokeWidth=0.5,
-    svg, g1, g2, length, combinations, label,
-    // k=d3.scaleLinear().range([-3500,3500]).domain([-1,1]),
-    // r=d3.scalePow().exponent(0.5).range([0,40]).domain([0,458335]),
-    col_macrocategorie = d3.scaleOrdinal() .range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
+let width, height,
+    svg, g1, g2, length, combinations,
+    k=d3.scaleLinear().range([-3500,3500]).domain([-1,1]),
+    r=d3.scalePow().exponent(0.5).range([0,40]).domain([0,458335]),
     matrix_grid = {
         x: d3.scalePoint().range([-2/5,2/5]).domain(['negazione','esitazione','riformulazione']),
         y: d3.scalePoint().range([-2/5,2/5]).domain(['cosa','come','senso'])
     },
-    minPerc=2.5;
+    simulation=d3.forceSimulation()
+        .force('x',d3.forceX(d=>k(d.mds_x)))
+        .force('y',d3.forceY(d=>-k(d.mds_y)))
+        .force('collide',d3.forceCollide(d=>{
+            const k=d.length>200000?0.60:0.7;
+            return (r(d.length2use)+1)*k
+        }))
+        .on('tick',()=>{
+            length.attr('cx',d=>d.x).attr('cy',d=>d.y);
+            combinations.attr('transform',d=>'translate('+d.x+','+d.y+')')
+        })
+        .alphaMin(0.1)
+        .alpha(1)
+        .stop();
 /**
  * 
  * @param {Obkect}          options             initialization options
@@ -30,6 +42,7 @@ let width, height, fontSize=11, strokeWidth=0.5,
 V.init = (options)=>{
     width = options.width;
     height = options.height;
+
     svg = d3.select(options.container).append('svg')
             .attr('width',width)
             .attr('height',height)
@@ -38,19 +51,33 @@ V.init = (options)=>{
                 .scaleExtent([0.5, 8])
                 .on("zoom", ()=>{
                     g1.attr("transform", d3.event.transform);
-                    length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
-                    if (d3.event.transform.k>2){
-                        label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
-                    } else {
-                        label.attr('display','none')
-                    }
                 }));
     
     g1 = svg.append('g');
     g2 = g1.append ('g').attr('transform','translate('+width/2+','+height/2+')');
     length = g2.selectAll('.length');
     combinations = g2.selectAll('.combinations');
-    label = g2.selectAll('.label');
+
+    for(let i=0; i<options.data.length; i++){
+        const d = options.data[i];
+        d.length2use=d3.max([Number(d.length), 10000]);
+        d.perc_dubbio=Number(d.perc_dubbio);
+        d.combinations=new Array();
+        for(let ii=0; ii<combinations_arr.length; ii++) {
+            const p = combinations_arr[ii];
+            d[p]=Number(d[p])
+            if (d[p]===0) continue; // skip this combinationi n case it is zero, we don't want any circle
+            let obj={};
+            obj['id']=d.id;
+            obj.type=p;
+            obj.percentage_combination = d[p];
+            obj.r=r(obj.percentage_combination*(d.length2use/100*d.perc_dubbio));
+            obj.mx = obj.x = matrix_grid.x(p.split('_')[1]) * r(d.length2use);
+            obj.my = obj.y = matrix_grid.y(p.split('_')[0]) * r(d.length2use);
+            d.combinations.push(obj);
+        }
+    }
+
     V.update({data:options.data});
 }
 /**
@@ -59,119 +86,76 @@ V.init = (options)=>{
  * @param {Array}   options.data 
  */
 V.update = (options)=>{
-    const reducedData = options.data.filter(d=>{
-        d.color=interpolateColor(d);
-        return d.perc_dubbio>=minPerc;
-    });
-
-    length=length.data(options.data, d=>d.id);
+    const reducedData = options.data//.filter(d=>d.perc_dubbio>=2.5);
+    length=length.data(reducedData);
     length.exit().remove();
     length=length.enter().append('circle')
-            .classed('length',true)
-            .attr('id',d=>'length-'+d.id)
-            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.6)':'none')
-            .attr('stroke',d=>d.perc_dubbio>=minPerc?'none':'#999')
-            .attr('stroke-width',strokeWidth)
-            .attr('r',d=>d.r)
-            .attr('cx',d=>d.x)
-            .attr('cy',d=>d.y)
+            .attr('fill','rgba(255,255,255,0.6)')
+            .attr('r',d=>{d.r=r(d.length2use);return d.r;})
             .merge(length);
 
-    combinations=combinations.data(reducedData, d=>d.id);
+    combinations=combinations.data(reducedData);
     combinations.exit().remove();
     combinations=combinations.enter().append('g')
         .classed('combinations',true)
-        .attr('id',d=>'combinations-'+d.id)
-        .merge(combinations)
-        .attr('fill',d=>d.color)
-        .attr('transform',d=>'translate('+d.x+','+d.y+')');
-
-    combinations.selectAll('path').data(d=>[d.combinations])
-        .enter().append('path')
-            .attr('d',d=>drawMetaball(d));
+        .attr('id',d=>d.id)
+        .merge(combinations);
 
     combinations.selectAll('circle').data(d=>d.combinations).enter().append('circle')
-        .classed('combination',true)
-        .attr('stroke','blue')
-        .attr('fill','none')
-        .attr('r',d=>d.r)
-        .attr('cx',d=>d.x)
-        .attr('cy',d=>d.y)
-        .attr('display','none');
-    
-    label = label.data(options.data, d=>d.id);
-    label.exit().remove();
-    label = label.enter().append('text')
-            .classed('label',true)
-            .merge(label)
-            .attr('x',d=>d.x)
-            .attr('y',d=>d.y)
-            // .attr('text-anchor','middle')
-            .attr('font-size',fontSize)
-            .attr('display','none')
-            .each(function(d){truncateLabel(this,d.title,8)})
-            .on('mouseenter',function(d){truncateLabel(this,d.title)})
-            .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
-}
+            .classed('combination',true)
+            .attr('fill','#dedede')
+            .attr('r',d=>d.r)
+            .attr('cx',d=>d.x)
+            .attr('cy',d=>d.y);
+            
+    simulation.nodes(options.data)
+        .alpha(1)
+        .restart()
+        .on('end',()=>{
+            console.log('get combinations circles positions')
+            for(let i=0; i<reducedData.length; i++){
+                const innerSimulation=d3.forceSimulation(reducedData[i].combinations)
+                    .force('x',d3.forceX())
+                    .force('y',d3.forceY())
+                    .force('collision',d3.forceCollide(d=>d.r))
+                    .alpha(1)
+                    // .alphaMin(0.1)
+                    .restart()
+                    .on('end',()=>{
+                        console.log('end',reducedData[i].id)
+                        console.log(options.data)
+                        combinations
+                            .selectAll('circle')
+                                .attr('cx',d=>d.x)
+                                .attr('cy',d=>d.y);
 
-function interpolateColor(d) {
-    let col_r = 0;
-    let col_g = 0;
-    let col_b = 0;
-
-    const tot_cosa = Number(d["cosa_negazione"] + Number(d["cosa_esitazione"]) + Number(d["cosa_riformulazione"]));
-    const tot_come = Number(d["come_negazione"] + Number(d["come_esitazione"]) + Number(d["come_riformulazione"]));
-    const tot_senso = Number(d["senso_negazione"] + Number(d["senso_esitazione"]) + Number(d["senso_riformulazione"]));
-
-    col_r   =   tot_cosa * d3.color(col_macrocategorie('cosa')).r
-            +   tot_come * d3.color(col_macrocategorie('come')).r
-            +   tot_senso * d3.color(col_macrocategorie('senso')).r;
-
-    col_g   =   tot_cosa * d3.color(col_macrocategorie('cosa')).g
-            +   tot_come * d3.color(col_macrocategorie('come')).g
-            +   tot_senso * d3.color(col_macrocategorie('senso')).g;
-
-    col_b   =   tot_cosa * d3.color(col_macrocategorie('cosa')).b
-            +   tot_come * d3.color(col_macrocategorie('come')).b
-            +   tot_senso * d3.color(col_macrocategorie('senso')).b;
-
-    return d3.rgb(col_r, col_g, col_b).toString();
-}
-
-/**
- * 
- * @param {SVGTextElement} el the text node where to append tspans
- * @param {string} text the text you wanna truncate
- * @param {number} length must be an integer
- */
-function truncateLabel(el, text, length=undefined, fade=3) {
-    const opacity = d3.scaleLinear().range([1,0]);
-    if (length) {
-        text=text.split('').splice(0,length);
-        opacity.domain([length-fade,length]);
-    }
-    let tspan = d3.select(el).selectAll('tspan');
-    tspan = tspan.data(text,(d,i)=>d+''+i);
-    tspan.exit().remove();
-    tspan=tspan.enter().append('tspan')
-        .text(d=>d)
-        .merge(tspan)
-        .style('opacity',(d,i)=>length?opacity(i):1);
+                        // combinations.selectAll('path').data(d=>[d.combinations])
+                        //     .enter().append('path')
+                        //         .attr('fill','none')
+                        //         .attr('stroke','blue')
+                        //         .attr('d',d=>{
+                        //             const segments = drawMetaball(d);
+                        //             if (!segments) {
+                        //                 console.log(d[0].id, segments);
+                        //                 console.log(d)
+                        //             }
+                        //             return segments;
+                        //         });
+                        
+                    });
+            }
+        });
 }
 
 function drawMetaball(data, subset_data=undefined) {
-    // console.log('metaball',data, subset_data);
+    // console.log('all data',data);
 
     //  add "c" property to all data elements
     data.forEach(d=>d.c=[d.x,d.y]);
 
     //  only in first iteration
     if (!subset_data) {
-        if (data.length===1) {
-            return 'M0,0 Z'
-        } else if (data.length===2) {
-            return 'M0,0 Z'
-        }
+
         if (data.length>2){
            // calculate convex hull
             const convex_hull = d3.polygonHull(data.map(d=>([d.x,d.y])))
@@ -189,7 +173,11 @@ function drawMetaball(data, subset_data=undefined) {
                 const elm=data.find(dd=>dd.x===d[0]&&dd.y===d[1]);
                 return elm;
             } ) 
-        }  
+        } else {
+            console.log(data[0].id,data);
+            return 'M0,0 Z'
+        }
+        
     }
 
     // console.log('subset data',subset_data);
@@ -213,9 +201,7 @@ function drawMetaball(data, subset_data=undefined) {
         metaball_path+=`A ${next.r1}, ${next.r1}, 1, 0, 1, ${next.p[1][0]}, ${next.p[1][1]}`
     }
     //  close the path
-    metaball_path+='Z';
-
-    // console.log(metaball_path)
+    metaball_path+='Z'
 
     // visual feedback
     // metaballs.selectAll('path').remove()
@@ -280,11 +266,9 @@ function drawMetaball(data, subset_data=undefined) {
         
     }
     if (redo_metaball) {
-        // console.log('do again',metaball_path)
         //  calcualte the metaball segments with the new circles array
-        return drawMetaball(data, subset_data);
+        drawMetaball(data, subset_data);
     } else {
-        // console.log('export',metaball_path)
         return metaball_path;
     }
 }
