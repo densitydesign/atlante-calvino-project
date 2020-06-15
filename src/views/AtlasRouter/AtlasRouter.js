@@ -28,6 +28,7 @@ import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet
 import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet/SpaceInformationSheet';
 import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
+import Realismo from '../../visualizations/Realismo';
 import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 import Df3 from '../Df3';
 
@@ -91,7 +92,9 @@ export default function AtlasRouter()
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation"><Df3 /></Route>
-      <Route exact path="/Problem/realism">problema / realismo</Route>
+      <Route exact path="/Problem/realism">
+        <Realismo title={'Realismo'}></Realismo>
+      </Route>
       <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
