@@ -26,6 +26,66 @@ const lineGenerator = line()
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
+const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
+  return (
+    <g>
+      {subPaths.map((subPath, i) => {
+        const isFill = data[i + 1].motivo_type === data[i].motivo_type
+        const strokeSelected = isFill
+          ? data[i].colori
+          : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
+        return (
+          <path
+            key={i}
+            d={subPath}
+            className="trama2-line"
+            style={{
+              stroke: itemSelected ? strokeSelected : '#ddd',
+              fill: 'none',
+            }}
+          ></path>
+        )
+      })}
+    </g>
+  )
+})
+
+const TramaPoints = React.memo(({ data }) => {
+  return (
+    <g>
+      {data.map((d, i) => {
+        if (i === 0) {
+          return (
+            <rect key={i} x={d.x} y={d.y} className="trama2-start-symbol">
+              <title>{d.motivo_type}</title>
+            </rect>
+          )
+        }
+        if (i === data.length - 1) {
+          return (
+            <rect
+              key={i}
+              x={d.x}
+              y={d.y}
+              style={{
+                transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
+              }}
+              className="trama2-end-symbol"
+            >
+              <title>{d.motivo_type}</title>
+            </rect>
+          )
+        }
+        return (
+          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
+            <title>{d.motivo_type}</title>
+          </circle>
+        )
+      })}
+    </g>
+  )
+})
+
 const LineaTrama = React.memo(
   ({
     racconto,
@@ -55,24 +115,11 @@ const LineaTrama = React.memo(
 
     const element = (
       <g>
-        {subPaths.map((subPath, i) => {
-          const isFill = data[i + 1].motivo_type === data[i].motivo_type
-          const strokeSelected = isFill
-            ? data[i].colori
-            : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
-          return (
-            <path
-              key={i}
-              d={subPath}
-              className="trama2-line"
-              style={{
-                stroke: itemSelected ? strokeSelected : '#ddd',
-                fill: 'none',
-              }}
-            ></path>
-          )
-        })}
-
+        <SubPathsWithColors
+          subPaths={subPaths}
+          data={data}
+          itemSelected={itemSelected}
+        />
         <path
           d={d}
           onClick={() => toggleItem(racconto.titolo)}
@@ -81,72 +128,28 @@ const LineaTrama = React.memo(
 
         {itemSelected && (
           <g>
-            {data.map((d, i) => {
-              const isSelctedPoint = String(selectedPoint) === d.x.toFixed(0)
-              let selectedText = null
-              if (isSelctedPoint) {
-                selectedText = (
-                  <text
-                    style={{
-                      transformOrigin: `${d.x}px ${d.y}px`,
-                      transform: `rotate(-30deg) translateX(-10px)`
-                    }}
-                    x={d.x} y={d.y} textAnchor={'end'}>
-                    {d.motivo_type}
-                  </text>
-                )
-              }
-              if (i === 0) {
-                return (
-                  <g key={i}>
-                    {selectedText}
-                    <rect
-                      x={d.x}
-                      y={d.y}
-                      className="trama2-start-symbol"
-                    >
-                      <title>{d.motivo_type}</title>
-                    </rect>
-                  </g>
-                )
-              }
-              if (i === data.length - 1) {
-                return (
-                  <g key={i}>
-                    {selectedText}
-                    <rect
-                      x={d.x}
-                      y={d.y}
-                      style={{
-                        transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
-                      }}
-                      className="trama2-end-symbol"
-                    >
-                      <title>{d.motivo_type}</title>
-                    </rect>
-                  </g>
-                )
-              }
-              return (
-                <g key={i}>
-                  {selectedText}
-                  <circle
-                    className="trama2-circle"
-                    cx={d.x}
-                    cy={d.y}
-                    r={2}
-                  >
-                    <title>{d.motivo_type}</title>
-                  </circle>
-                </g>
-              )
-            })}
+            <TramaPoints data={data} />
             <RaccontoInfoBoxSvg
               onClick={handleClickRacconto}
               y={-10}
               x={width}
               titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
             />
+          </g>
+        )}
+        {selectedPoint && (
+          <g>
+            <text
+              style={{
+                transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
+                transform: `rotate(-30deg) translateX(-10px)`,
+              }}
+              x={selectedPoint.x}
+              y={selectedPoint.y}
+              textAnchor={'end'}
+            >
+              {selectedPoint.motivo_type}
+            </text>
           </g>
         )}
       </g>
@@ -319,7 +322,11 @@ function LineeTramaWithMeasures({
       racconto.forEach((datum) => {
         const xKey = datum.x.toFixed(0)
         acc[xKey] = acc[xKey] || {}
-        acc[xKey][titolo] = true
+        acc[xKey][titolo] = {
+          motivo_type: datum.motivo_type,
+          x: datum.x,
+          y: datum.y,
+        }
       })
       return acc
     }, {})
@@ -349,7 +356,7 @@ function LineeTramaWithMeasures({
                   selectedPoint={
                     currentXHoverRacconti &&
                     currentXHoverRacconti[racconti[i].titolo]
-                      ? xPoint
+                      ? currentXHoverRacconti[racconti[i].titolo]
                       : null
                   }
                   onRaccontoClick={onRaccontoClick}
