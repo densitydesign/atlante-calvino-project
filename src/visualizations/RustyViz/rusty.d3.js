@@ -64,7 +64,7 @@ V.init = async (options)=>{
     label = g2.selectAll('.label');
     
     const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
-    const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-width)+','+(-height)+')');
+    const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-2740/2)+','+(-1568/2)+')');
     g3.node().appendChild(annotations.node());
     
     // options.data = options.data.filter(d=>d.id==='V021'||d.id==='V010'||d.id==='V018')
