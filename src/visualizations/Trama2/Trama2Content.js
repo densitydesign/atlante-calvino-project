@@ -157,7 +157,7 @@ export default function Trama2Content({
               style={{
                 position: 'absolute',
                 top: 80 + MOTIVO_LINE_HEIGHT,
-                borderTop: 'solid #bbb 1px',
+                borderBottom: 'solid #bbb 1px',
               }}
             >
               {years[0]}
@@ -165,7 +165,7 @@ export default function Trama2Content({
             <div
               style={{
                 position: 'absolute',
-                bottom: MOTIVO_LINE_HEIGHT,
+                bottom: MOTIVO_LINE_HEIGHT + 30,
                 borderBottom: 'solid #bbb 1px',
               }}
             >

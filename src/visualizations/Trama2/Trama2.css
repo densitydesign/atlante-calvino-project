@@ -43,19 +43,21 @@
 }
 
 .trama2-side-panel-rotate {
-    height: 200px;
+    height: 120px;
     width: 35px;
     background-color: #fff;
-    border-radius: 0 4px 4px 0;
+    /* border-radius: 0 4px 4px 0; */
+    border-radius: 4px 0 0 4px;
     border: 1px solid var(--dark-blue);
     color: var(--dark-blue);
     position: absolute;
     right: 0px;
-    top: calc(50% - 200px);
+    top: calc(50% - 100px);
     pointer-events: all;
     text-align: center;
     line-height: 35px;
 
+    transform: rotate(180deg);
     writing-mode: vertical-rl;
 
 
@@ -85,6 +87,7 @@
 
 .trama2-content {
   padding: 70px 30px;
+  padding-bottom: 90px;
   height: 100%;
 }
 .trama2-detail-content {
@@ -156,6 +159,14 @@
   cursor: pointer;
 }
 
+.trama2-brush-for-list {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
 .trama2-brush-container {
   position: absolute;
   bottom: 10px;
@@ -163,9 +174,22 @@
   right: 0;
   width: 100%;
   height: 30px;
+}
+.trama2-brush-legend-list {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  color: darkgray;
+  justify-content: space-between;
+  font-style: italic;
+}
+.trama2-brush-container-flex {
   display: flex;
   justify-content: space-between;
 }
+
 .trama2-brush-button {
   width: 30px;
   background: white;
@@ -186,10 +210,9 @@
 }
 .trama2-index-line {
   top: 0;
-  bottom: 0;
+  bottom: 40px;
   position: absolute;
   background: black;
-  bottom: 20px;
   width: 1px;
 }
 

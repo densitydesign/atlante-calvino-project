@@ -383,7 +383,13 @@ function LineeTramaWithMeasures({
         onPrevClick={handlePrevPoint}
         onNextClick={handleNexPoint}
         width={measures.width}
+        className='trama2-brush-for-list'
       />
+      <div className='trama2-brush-legend-list'>
+        <div>Inizio del testo</div>
+        <div>Lunghezza del testo in caratteri</div>
+        <div>Fine del testo</div>
+      </div>
     </>
   )
 }

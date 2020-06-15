@@ -10,6 +10,7 @@ const Brush = React.memo(({
   onPrevClick,
   x: controlledX,
   onXChange,
+  className = 'trama2-brush-container',
 }) => {
   const [uncontrolledX, setX] = useState(width - BRUSH_HANDLE_WIDTH / 2)
   const x = controlledX === undefined ? uncontrolledX : controlledX
@@ -22,7 +23,7 @@ const Brush = React.memo(({
         }}
         className="trama2-index-line"
       />
-      <div className="trama2-brush-container">
+      <div className={`${className} trama2-brush-container-flex`}>
         <button
           className="trama2-brush-button trama2-prev-brush-button"
           onClick={() => {
