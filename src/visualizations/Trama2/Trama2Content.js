@@ -205,7 +205,7 @@ export default function Trama2Content({
               tipologie={tipologie}
               tipologieByTipologia={tipologieByTipologia}
               data={byRacconto}
-              height={measures.height - 140}
+              height={measures.height}
               scalaMotivoY={scalaMotivoY}
               colors={colors}
             ></BoxPlot>

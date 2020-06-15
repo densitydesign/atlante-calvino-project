@@ -168,7 +168,7 @@ function BoxPlot(
   }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([0, height])
+    return scaleLinear().domain(motivoExtent).range([0, height - 160])
   }, [height])
 
   const scalaMotivo = useMemo(() => {
@@ -271,7 +271,7 @@ function BoxPlot(
         {measures && (
           <svg
             style={{
-              height: height + 140,
+              height: height,
               width: measures.width,
             }}
             ref={svgRef}
@@ -316,6 +316,7 @@ function BoxPlot(
       </div>
       {measures && (
         <Brush
+          className='trama2-brush-for-detail'
           width={measures.width}
           onNextClick={handleNexPoint}
           onPrevClick={handlePrevPoint}
@@ -323,6 +324,7 @@ function BoxPlot(
       )}
       <div className="trama2-box-plot-year">
         <div>{years[0]}</div>
+        <div>Testi per ordine cronologico</div>
         <div>{years[1]}</div>
       </div>
     </div>

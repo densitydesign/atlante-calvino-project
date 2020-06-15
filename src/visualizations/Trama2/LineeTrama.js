@@ -174,6 +174,50 @@ const SelectedContainers = React.memo(({ n }) => {
   )
 })
 
+const LineeTramaList = React.memo(({
+  measures,
+  dataRacconti,
+  currentXHoverRacconti,
+  racconti,
+  onRaccontoClick,
+  height,
+  scalaColore,
+  scalaMotivoY,
+  selected,
+  toggleSelect,
+  xScale,
+}) => {
+  return (
+    <g>
+      {dataRacconti.map((datum, i) => {
+        return (
+          <g key={i} className="linea-container">
+            <LineaTrama
+              selectedPoint={
+                currentXHoverRacconti &&
+                currentXHoverRacconti[racconti[i].titolo]
+                  ? currentXHoverRacconti[racconti[i].titolo]
+                  : null
+              }
+              onRaccontoClick={onRaccontoClick}
+              scalaColore={scalaColore}
+              scalaMotivoY={scalaMotivoY}
+              index={i}
+              width={measures.width}
+              height={height}
+              itemSelected={selected[racconti[i].titolo]}
+              toggleItem={toggleSelect}
+              xScale={xScale}
+              racconto={racconti[i]}
+              data={datum}
+            ></LineaTrama>
+          </g>
+        )
+      })}
+    </g>
+  )
+})
+
 function LineeTramaWithMeasures({
   racconti = [],
   data = {},
@@ -349,31 +393,19 @@ function LineeTramaWithMeasures({
           gradientsType={gradientsType}
         />
         <g className="wrapper">
-          {dataRacconti.map((datum, i) => {
-            return (
-              <g key={i} className="linea-container">
-                <LineaTrama
-                  selectedPoint={
-                    currentXHoverRacconti &&
-                    currentXHoverRacconti[racconti[i].titolo]
-                      ? currentXHoverRacconti[racconti[i].titolo]
-                      : null
-                  }
-                  onRaccontoClick={onRaccontoClick}
-                  scalaColore={scalaColore}
-                  scalaMotivoY={scalaMotivoY}
-                  index={i}
-                  width={measures.width}
-                  height={height}
-                  itemSelected={selected[racconti[i].titolo]}
-                  toggleItem={toggleSelect}
-                  xScale={xScale}
-                  racconto={racconti[i]}
-                  data={datum}
-                ></LineaTrama>
-              </g>
-            )
-          })}
+          <LineeTramaList
+            measures={measures}
+            dataRacconti={dataRacconti}
+            currentXHoverRacconti={currentXHoverRacconti}
+            racconti={racconti}
+            onRaccontoClick={onRaccontoClick}
+            height={height}
+            scalaColore={scalaColore}
+            scalaMotivoY={scalaMotivoY}
+            selected={selected}
+            toggleSelect={toggleSelect}
+            xScale={xScale}
+          />
           <SelectedContainers n={dataRacconti.length} />
         </g>
       </svg>
@@ -383,9 +415,9 @@ function LineeTramaWithMeasures({
         onPrevClick={handlePrevPoint}
         onNextClick={handleNexPoint}
         width={measures.width}
-        className='trama2-brush-for-list'
+        className="trama2-brush-for-list"
       />
-      <div className='trama2-brush-legend-list'>
+      <div className="trama2-brush-legend-list">
         <div>Inizio del testo</div>
         <div>Lunghezza del testo in caratteri</div>
         <div>Fine del testo</div>
