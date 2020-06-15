@@ -9,8 +9,8 @@ export default V;
 //                                 "senso_negazione", "senso_esitazione", "senso_riformulazione"
 //                             ]
 
-let width, height, fontSize=11, strokeWidth=0.5,
-    svg, g1, g2, length, combinations, label,
+let width, height, fontSize=6, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1,
+    svg, g1, g2, g3, length, combinations, label,
     // k=d3.scaleLinear().range([-3500,3500]).domain([-1,1]),
     // r=d3.scalePow().exponent(0.5).range([0,40]).domain([0,458335]),
     col_macrocategorie = d3.scaleOrdinal() .range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
@@ -21,13 +21,13 @@ let width, height, fontSize=11, strokeWidth=0.5,
     minPerc=2.5;
 /**
  * 
- * @param {Obkect}          options             initialization options
- * @param {HTMLElement}     options.container   the container of the SVG element
- * @param {number}          options.width       the max width of the visualization
- * @param {number}          options.height      the max height of the visualization
- * @param {Array}           options.data        the array of data
+ * @param {Obkect}      options             initialization options
+ * @param {HTML Node}   options.container   the container of the SVG element
+ * @param {number}      options.width       the max width of the visualization
+ * @param {number}      options.height      the max height of the visualization
+ * @param {Array}       options.data        the array of data
  */
-V.init = (options)=>{
+V.init = async (options)=>{
     width = options.width;
     height = options.height;
     svg = d3.select(options.container).append('svg')
@@ -35,22 +35,36 @@ V.init = (options)=>{
             .attr('height',height)
             .call(d3.zoom()
                 .extent([[0, 0], [width, height]])
-                .scaleExtent([0.5, 8])
+                .scaleExtent([0.5, 4])
                 .on("zoom", ()=>{
                     g1.attr("transform", d3.event.transform);
                     length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
-                    if (d3.event.transform.k>2){
+                    g3.selectAll('text').attr("font-size",annotationsFontSize/d3.event.transform.k);
+                    g3.selectAll('path').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
+                    if (d3.event.transform.k>=2){
                         label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
                     } else {
                         label.attr('display','none')
                     }
                 }));
-    
     g1 = svg.append('g');
     g2 = g1.append ('g').attr('transform','translate('+width/2+','+height/2+')');
+    g3 = g1.append ('g').attr('transform','translate('+width/2+','+height/2+')');
+    g2.append('rect')
+        .attr('stroke','blue')
+        .attr('fill','none')
+        .attr('width',width*2)
+        .attr('height',height*2)
+        .attr('x',-width)
+        .attr('y',-height);
     length = g2.selectAll('.length');
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
+    
+    const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
+    const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-width)+','+(-height)+')');
+    g3.node().appendChild(annotations.node());
+
     V.update({data:options.data});
 }
 /**
@@ -60,7 +74,9 @@ V.init = (options)=>{
  */
 V.update = (options)=>{
     const reducedData = options.data.filter(d=>{
+        d.state='metaball';
         d.color=interpolateColor(d);
+        d.x*=-1
         return d.perc_dubbio>=minPerc;
     });
 
@@ -84,20 +100,29 @@ V.update = (options)=>{
         .attr('id',d=>'combinations-'+d.id)
         .merge(combinations)
         .attr('fill',d=>d.color)
-        .attr('transform',d=>'translate('+d.x+','+d.y+')');
+        .attr('transform',d=>'translate('+d.x+','+d.y+')')
+        .on('click',d=>{
+            console.log(d.state)
+        });
 
     combinations.selectAll('path').data(d=>[d.combinations])
         .enter().append('path')
-            .attr('d',d=>drawMetaball(d));
+            .attr('d',d=>drawMetaball(d))
 
-    combinations.selectAll('circle').data(d=>d.combinations).enter().append('circle')
-        .classed('combination',true)
-        .attr('stroke','blue')
-        .attr('fill','none')
-        .attr('r',d=>d.r)
-        .attr('cx',d=>d.x)
-        .attr('cy',d=>d.y)
-        .attr('display','none');
+    // combinations.selectAll('path')
+    //     .transition()
+    //         .duration(1000)
+    //         .attr('d',d=>drawMatrix(d))
+
+    // combinations.selectAll('circle').data(d=>d.combinations)
+    //     .enter().append('circle')
+    //         .classed('combination',true)
+    //         .attr('stroke','blue')
+    //         .attr('fill','none')
+    //         // .attr('display','none')
+    //         .attr('r',d=>d.r)
+    //         .attr('cx',d=>d.x)
+    //         .attr('cy',d=>d.y);
     
     label = label.data(options.data, d=>d.id);
     label.exit().remove();
@@ -157,6 +182,31 @@ function truncateLabel(el, text, length=undefined, fade=3) {
         .text(d=>d)
         .merge(tspan)
         .style('opacity',(d,i)=>length?opacity(i):1);
+}
+
+function drawPacked(d) {
+    let segments='';
+    for (let j=0; j<d.length; j++) {
+        segments+=`
+            M ${d[j]['x']-d[j]['r']},${d[j]['y']} 
+            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${d[j]['r']*2},0 
+            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${-d[j]['r']*2},0 
+            Z 
+        `
+    }
+    return segments.replace(/\n/g,'').replace(/\s\s/g,'');
+}
+function drawMatrix(d) {
+    let segments='';
+    for (let j=0; j<d.length; j++) {
+        segments+=`
+            M ${d[j]['mx']-d[j]['r']},${d[j]['my']}
+            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${d[j]['r']*2},0
+            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${-d[j]['r']*2},0
+            Z
+        `
+    }
+    return segments;
 }
 
 function drawMetaball(data, subset_data=undefined) {
