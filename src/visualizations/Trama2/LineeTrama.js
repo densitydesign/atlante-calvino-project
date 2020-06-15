@@ -20,7 +20,6 @@ import { splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import RaccontoInfoBoxSvg from './RaccontoInfoBoxSvg'
 import Brush, { BRUSH_HANDLE_WIDTH } from './Brush'
-import { transform } from 'lodash'
 
 const lineGenerator = line()
   .x((d) => d.x)
@@ -41,7 +40,6 @@ const LineaTrama = React.memo(
     toggleItem,
     onRaccontoClick,
   }) => {
-    console.log('RENDER LINEA TRAMA', racconto.titolo)
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
       const subPaths = splitPath(d)

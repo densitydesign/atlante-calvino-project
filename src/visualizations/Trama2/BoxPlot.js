@@ -6,23 +6,19 @@ import React, {
   useCallback,
   useEffect,
   useLayoutEffect,
-  useImperativeHandle,
   forwardRef,
 } from 'react'
-import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 
-import range from 'lodash/range'
-import keyBy from 'lodash/keyBy'
 import head from 'lodash/head'
 import _last from 'lodash/last'
 import uniqBy from 'lodash/uniqBy'
 import minBy from 'lodash/minBy'
 import maxBy from 'lodash/maxBy'
 
-import { splitPath, motivoExtent, makeScalaMotivoY } from './utils'
+import { motivoExtent } from './utils'
 import BoxPlotGradientsDefinitions from './BoxPlotGradientsDefinitions'
 import Brush from './Brush'
 

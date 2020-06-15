@@ -2,9 +2,9 @@ import React, {
   useLayoutEffect,
   useState,
   useCallback,
-  useMemo,
   useEffect,
   useRef,
+  createContext,
 } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
@@ -21,6 +21,8 @@ import LineeTrama from './LineeTrama'
 import BoxPlot from './BoxPlot'
 import TramaDetail from './TramaDetail'
 import SideBar from './SideBar'
+
+export const CurretTramaViewContext = createContext('list')
 
 // main component
 export default function Trama2Content({
@@ -46,12 +48,6 @@ export default function Trama2Content({
     setMeasures(m)
   }, [])
 
-  //lines selection
-  // const [selected, setSelected] = useState({})
-  // const toggleSelect = useCallback((titolo) => {
-  //   setSelected((selected) => ({ ...selected, [titolo]: !!!selected[titolo] }))
-  // }, [])
-
   //bounds selection
   const [bounds, setBounds] = useState([])
   const addBound = useCallback(
@@ -68,23 +64,6 @@ export default function Trama2Content({
     },
     [bounds]
   )
-
-  //actual dataset
-  // const raccontiFiltered = useMemo(() => {
-  //   if (bounds.length === 2) {
-  //     const orderedBounds = sortBy(
-  //       bounds,
-  //       (bound) => tipologieByTipologia[bound]["ordine tipologia"]
-  //     );
-  //     return racconti.filter(
-  //       (racconto) =>
-  //         racconto.minDatum.motivo_type === orderedBounds[0] &&
-  //         racconto.maxDatum.motivo_type === orderedBounds[1]
-  //     );
-  //   }
-
-  //   return racconti;
-  // }, [bounds, racconti, tipologieByTipologia]);
 
   useEffect(() => {
     if (bounds.length === 2) {
@@ -195,52 +174,54 @@ export default function Trama2Content({
           </>
         )}
 
-        <div
-          className="trama2-content"
-          style={{ display: currentView !== 'list' ? 'none' : undefined }}
-        >
-          <LineeTrama
-            onRaccontoClick={handleClickRacconto}
-            ref={listRef}
-            selected={selected}
-            toggleSelect={toggleSelect}
-            racconti={racconti}
-            tipologie={tipologie}
-            tipologieByTipologia={tipologieByTipologia}
-            data={byRacconto}
-            height={MOTIVO_LINE_HEIGHT}
-            scalaMotivoY={scalaMotivoY}
-            colors={colors}
-            setYears={setYears}
-          ></LineeTrama>
-        </div>
+        <CurretTramaViewContext.Provider value={currentView}>
+          <div
+            className="trama2-content"
+            style={{ display: currentView !== 'list' ? 'none' : undefined }}
+          >
+            <LineeTrama
+              onRaccontoClick={handleClickRacconto}
+              ref={listRef}
+              selected={selected}
+              toggleSelect={toggleSelect}
+              racconti={racconti}
+              tipologie={tipologie}
+              tipologieByTipologia={tipologieByTipologia}
+              data={byRacconto}
+              height={MOTIVO_LINE_HEIGHT}
+              scalaMotivoY={scalaMotivoY}
+              colors={colors}
+              setYears={setYears}
+            ></LineeTrama>
+          </div>
 
-        {currentView === 'boxplot' && measures && (
-          <BoxPlot
-            onRaccontoClick={handleClickRacconto}
-            ref={listRef}
-            selected={selected}
-            toggleSelect={toggleSelect}
-            racconti={racconti}
-            tipologie={tipologie}
-            tipologieByTipologia={tipologieByTipologia}
-            data={byRacconto}
-            height={measures.height - 140}
-            scalaMotivoY={scalaMotivoY}
-            colors={colors}
-          ></BoxPlot>
-        )}
-        {currentView === 'detail' && measures && (
-          <TramaDetail
-            tipologieByTipologia={tipologieByTipologia}
-            detailHeight={measures.height - 140}
-            data={currentTramaDetail}
-            onBack={() => {
-              setCurrentTramaDetail(null)
-              setCurrentView('list')
-            }}
-          />
-        )}
+          {currentView === 'boxplot' && measures && (
+            <BoxPlot
+              onRaccontoClick={handleClickRacconto}
+              ref={listRef}
+              selected={selected}
+              toggleSelect={toggleSelect}
+              racconti={racconti}
+              tipologie={tipologie}
+              tipologieByTipologia={tipologieByTipologia}
+              data={byRacconto}
+              height={measures.height - 140}
+              scalaMotivoY={scalaMotivoY}
+              colors={colors}
+            ></BoxPlot>
+          )}
+          {currentView === 'detail' && measures && (
+            <TramaDetail
+              tipologieByTipologia={tipologieByTipologia}
+              detailHeight={measures.height - 140}
+              data={currentTramaDetail}
+              onBack={() => {
+                setCurrentTramaDetail(null)
+                setCurrentView('list')
+              }}
+            />
+          )}
+        </CurretTramaViewContext.Provider>
       </div>
     </div>
   )

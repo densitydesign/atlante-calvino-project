@@ -1,19 +1,9 @@
-import React, {
-  useRef,
-  useLayoutEffect,
-  Component,
-  lazy,
-  Suspense,
-  useCallback,
-  useState,
-  useMemo,
-} from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
 import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
 import SearchDropDown from '../../general/Search/SearchDropDown'
-import Loading from '../../general/Loading'
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
 
 import AltOptions from '../../general/Options/AltOptions'

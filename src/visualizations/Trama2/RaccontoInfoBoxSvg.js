@@ -1,12 +1,15 @@
-import React, { useRef, useState, useLayoutEffect } from 'react'
+import React, { useRef, useState, useLayoutEffect, useContext } from 'react'
+import { CurretTramaViewContext } from './Trama2Content'
 
 const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
   const containerRef = useRef(null)
   const [measures, setMeasures] = useState(null)
+  const view = useContext(CurretTramaViewContext)
+
   useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
-  }, [titolo])
+  }, [titolo, view])
 
   return (
     <g
