@@ -381,6 +381,9 @@ function LineeTramaWithMeasures({
 
   return (
     <>
+      <div className="trama2-top-legend-list">
+        Scrolla per zoomare
+      </div>
       <svg
         style={{
           height: measures.height,
