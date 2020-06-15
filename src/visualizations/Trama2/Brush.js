@@ -3,14 +3,22 @@ import Draggable from 'react-draggable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-const HANDLE_WIDTH = 12
-const Brush = React.memo(({ width, onNextClick, onPrevClick }) => {
-  const [x, setX] = useState(width - HANDLE_WIDTH / 2)
+export const BRUSH_HANDLE_WIDTH = 12
+const Brush = React.memo(({
+  width,
+  onNextClick,
+  onPrevClick,
+  x: controlledX,
+  onXChange,
+}) => {
+  const [uncontrolledX, setX] = useState(width - BRUSH_HANDLE_WIDTH / 2)
+  const x = controlledX === undefined ? uncontrolledX : controlledX
+
   return (
     <>
       <div
         style={{
-          transform: `translateX(${x + HANDLE_WIDTH / 2}px)`,
+          transform: `translateX(${x + BRUSH_HANDLE_WIDTH / 2}px)`,
         }}
         className="trama2-index-line"
       />
@@ -18,9 +26,13 @@ const Brush = React.memo(({ width, onNextClick, onPrevClick }) => {
         <button
           className="trama2-brush-button trama2-prev-brush-button"
           onClick={() => {
-            onPrevClick(x + HANDLE_WIDTH / 2, (rawNextX) => {
-              const nextX = rawNextX - HANDLE_WIDTH / 2
-              if (nextX >= 0 && x <= width - HANDLE_WIDTH / 2) {
+            if (controlledX !== undefined) {
+              onPrevClick()
+              return
+            }
+            onPrevClick(x + BRUSH_HANDLE_WIDTH / 2, (rawNextX) => {
+              const nextX = rawNextX - BRUSH_HANDLE_WIDTH / 2
+              if (nextX >= 0 && x <= width - BRUSH_HANDLE_WIDTH / 2) {
                 setX(nextX)
               }
             })
@@ -34,10 +46,14 @@ const Brush = React.memo(({ width, onNextClick, onPrevClick }) => {
             position={{ x, y: 0 }}
             bounds={{
               left: 0,
-              right: width - HANDLE_WIDTH / 2,
+              right: width - BRUSH_HANDLE_WIDTH / 2,
             }}
             onDrag={(e, position) => {
-              setX(position.x)
+              if (controlledX === undefined) {
+                setX(position.x)
+              } else {
+                onXChange(position.x)
+              }
             }}
           >
             <div className="trama2-drag-handle" />
@@ -46,9 +62,13 @@ const Brush = React.memo(({ width, onNextClick, onPrevClick }) => {
         <button
           className="trama2-brush-button trama2-next-brush-button"
           onClick={() => {
-            onNextClick(x + HANDLE_WIDTH / 2, (rawNextX) => {
-              const nextX = rawNextX - HANDLE_WIDTH / 2
-              if (nextX >= 0 && x <= width - HANDLE_WIDTH / 2) {
+            if (controlledX !== undefined) {
+              onNextClick()
+              return
+            }
+            onNextClick(x + BRUSH_HANDLE_WIDTH / 2, (rawNextX) => {
+              const nextX = rawNextX - BRUSH_HANDLE_WIDTH / 2
+              if (nextX >= 0 && x <= width - BRUSH_HANDLE_WIDTH / 2) {
                 setX(nextX)
               }
             })
