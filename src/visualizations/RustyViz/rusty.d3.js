@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import {ShapeInfo, Intersection} from "kld-intersections";
+// import {ShapeInfo, Intersection} from "../../../node_modules/kld-intersections/dist/index-esm.js";
 
 const V = {};
 export default V;
@@ -9,8 +10,8 @@ export default V;
 //                                 "senso_negazione", "senso_esitazione", "senso_riformulazione"
 //                             ]
 
-let width, height, fontSize=6, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1,
-    svg, g1, g2, g3, length, combinations, label,
+let width, height, fontSize=10, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1,
+    svg, g1, g2, g3, g4, length, combinations, label,
     // k=d3.scaleLinear().range([-3500,3500]).domain([-1,1]),
     // r=d3.scalePow().exponent(0.5).range([0,40]).domain([0,458335]),
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
@@ -35,7 +36,7 @@ V.init = async (options)=>{
             .attr('height',height)
             .call(d3.zoom()
                 .extent([[0, 0], [width, height]])
-                .scaleExtent([0.5, 4])
+                .scaleExtent([0.5, 100])
                 .on("zoom", ()=>{
                     g1.attr("transform", d3.event.transform);
                     length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
@@ -48,8 +49,9 @@ V.init = async (options)=>{
                     }
                 }));
     g1 = svg.append('g');
-    g2 = g1.append ('g').attr('transform','translate('+width/2+','+height/2+')');
-    g3 = g1.append ('g').attr('transform','translate('+width/2+','+height/2+')');
+    g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
+    g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
+    g4 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g2.append('rect')
         .attr('stroke','blue')
         .attr('fill','none')
@@ -64,7 +66,8 @@ V.init = async (options)=>{
     const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
     const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-width)+','+(-height)+')');
     g3.node().appendChild(annotations.node());
-
+    
+    // options.data = options.data.filter(d=>d.id==='V021'||d.id==='V010'||d.id==='V018')
     V.update({data:options.data});
 }
 /**
@@ -131,14 +134,15 @@ V.update = (options)=>{
 
     combinations.selectAll('path').data(d=>[d.combinations])
         .enter().append('path')
-            .attr('d',d=>drawMetaball(d));
+            .attr('d',function(d){return drawMetaball(d, this.parentNode)});
 
-    combinations.selectAll('circle').data(d=>d.combinations)
+    combinations.selectAll('.circle-combination').data(d=>d.combinations)
         .enter().append('circle')
-            .classed('combination',true)
+            .classed('circle-combination',true)
             // .attr('stroke','blue')
-            .attr('fill','none')
+            // .attr('fill','none')
             .attr('display','none')
+            .attr('stroke-width',0.1)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y);
@@ -153,9 +157,9 @@ V.update = (options)=>{
             // .attr('text-anchor','middle')
             .attr('font-size',fontSize)
             .attr('display','none')
-            .each(function(d){truncateLabel(this,d.title,8)})
-            .on('mouseenter',function(d){truncateLabel(this,d.title)})
-            .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
+            .each(function(d){truncateLabel(this,d.title,10)})
+            // .on('mouseenter',function(d){truncateLabel(this,d.title)})
+            // .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
 }
 
 function interpolateColor(d) {
@@ -187,15 +191,20 @@ function interpolateColor(d) {
  * @param {SVGTextElement} el the text node where to append tspans
  * @param {string} text the text you wanna truncate
  * @param {number} length must be an integer
+ * @param {number} fade amount of characters to fade out
  */
 function truncateLabel(el, text, length=undefined, fade=3) {
     const opacity = d3.scaleLinear().range([1,0]);
+    let tspans;
     if (length) {
-        text=text.split('').splice(0,length);
-        opacity.domain([length-fade,length]);
+        tspans=text.substring(length-fade,length).split('');
+        text=text.substring(0,length-fade);
+        opacity.domain([0,fade]);
     }
-    let tspan = d3.select(el).selectAll('tspan');
-    tspan = tspan.data(text,(d,i)=>d+''+i);
+    const txt_el = d3.select(el).text(text);
+    if (!tspans) return;
+    let tspan = txt_el.selectAll('tspan');
+    tspan = tspan.data(tspans,(d,i)=>d+''+i);
     tspan.exit().remove();
     tspan=tspan.enter().append('tspan')
         .text(d=>d)
@@ -228,136 +237,179 @@ function drawMatrix(d) {
     return segments;
 }
 
-function drawMetaball(data, subset_data=undefined) {
-    // console.log('metaball',data, subset_data);
+function drawMetaball(data, parent){
+    // console.log('draw metaball', data[0].id, data)
 
-    //  add "c" property to all data elements
-    data.forEach(d=>d.c=[d.x,d.y]);
+    // d3.select(parent).selectAll('.number').data(data).enter().append('text').classed('number',true)
+    //     .attr('font-size',1)
+    //     .attr('stroke','none')
+    //     .attr('fill','grey')
+    //     .attr('x',d=>d.x)
+    //     .attr('y',d=>d.y)
+    //     .text(d=>d.index)
 
-    //  only in first iteration
-    if (!subset_data) {
-        if (data.length===1) {
-            return 'M0,0 Z'
-        } else if (data.length===2) {
-            return 'M0,0 Z'
-        }
-        if (data.length>2){
-           // calculate convex hull
-            const convex_hull = d3.polygonHull(data.map(d=>([d.x,d.y])))
-
-            // visual feedbacks
-            // convex_hulls.selectAll('polygon').remove()
-            // convex_hulls.append('polygon')
-            //     .attr('points',convex_hull)
-            //     .attr('fill','none')
-            //     .attr('stroke','red');
-            // console.log('convex hull points',convex_hull);
-
-            // generate first metaball with circles whose center are used in the hull
-            subset_data = convex_hull.reverse().map(d=>{
+    //  Init the path
+    let metaball='';
+    //  Return a circle in case we only have one circle
+    if (data.length===1)
+    {
+        metaball+=`
+        M ${data[0]['x']-data[0]['r']},${data[0]['y']} 
+        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${data[0]['r']*2},0 
+        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${-data[0]['r']*2},0 
+        Z`;
+        metaball=metaball.replace(/\n/g,'').replace(/\s\s/g,'');
+        return metaball;
+    }
+    else if (data.length===2) 
+    {
+        metaball+=`
+        M ${data[0]['x']-data[0]['r']},${data[0]['y']} 
+        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${data[0]['r']*2},0 
+        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${-data[0]['r']*2},0 
+        Z 
+        M ${data[1]['x']-data[1]['r']},${data[1]['y']} 
+        a ${data[1]['r']},${data[1]['r']} 0 1, 0 ${data[1]['r']*2},0 
+        a ${data[1]['r']},${data[1]['r']} 0 1, 0 ${-data[1]['r']*2},0 
+        Z`;
+        metaball=metaball.replace(/\n/g,'').replace(/\s\s/g,'');
+        return metaball;
+    }
+    else
+    {
+        //  Add "c" property (center) to all data elements
+        data.forEach(d=>d.c=[d.x,d.y]);
+        //  Init subsetData
+        let subsetData = data;
+        //  Can't do convex hull with less than 3 points
+        if (data.length>2)
+        { 
+            //  Calculate convex hull
+            const convex_hull = d3.polygonHull(data.map(d=>([d.x,d.y])));
+            //  Subset the data according to convex hull
+            subsetData = convex_hull.reverse().map(d=>{
                 const elm=data.find(dd=>dd.x===d[0]&&dd.y===d[1]);
                 return elm;
-            } ) 
-        }  
+            });
+
+            // d3.select(parent).selectAll('.convex-hull').data([1])
+            //     .enter()
+            //         .append('polygon')
+            //         .attr('stroke-width',0.1)
+            //         .attr('stroke','blue')
+            //         .classed('convex-hull',true)
+            //         .attr('points',convex_hull)
+        }
+        //  Save segments
+        metaball=metaballSegments(subsetData);
+
+        //  Do a second iteration:
+        //  check for intersections with circles not part of subsetData
+        const check_intersections = data.filter(d=>subsetData.indexOf(d)<0);
+
+        for (let i=0; i<check_intersections.length; i++){
+            //  Look for intersections
+            const this_circle = check_intersections[i];
+
+            var pathToSample = document.createElementNS('http://www.w3.org/2000/svg','path');
+            pathToSample.setAttribute('d',metaball);
+
+            const length = pathToSample.getTotalLength();
+            const rate = 50;
+            const unit = length/rate;
+            const sampledPoints = [];
+            for (let j=0; j<rate; j++) {
+                sampledPoints.push(pathToSample.getPointAtLength(unit*j))
+            }
+
+            const polygon = ShapeInfo.polygon(sampledPoints);
+            // const path = ShapeInfo.path(metaball);   //  looks like it has a bug
+            const circle = ShapeInfo.circle({center: {x:this_circle.x, y:this_circle.y}, radius:this_circle.r});
+            
+            const intersections_data = Intersection.intersect(polygon, circle);
+            
+            //  If true
+            if (intersections_data.status==="Intersection") {
+                // d3.select(parent).selectAll('.intersection').data(intersections_data.points)
+                //         .enter()
+                //     .append('circle')
+                //         .classed('intersection',true)
+                //         .attr('stroke','red')
+                //         .attr('stroke-width',0.05)
+                //         .attr('fill','none')
+                //         .attr('cx',d=>d.x)
+                //         .attr('cy',d=>d.y)
+                //         .attr('r',0.215);
+
+                //  Identify the two adjacent circles
+                const adjacent_circles = intersections_data.points.map(d=>{
+                    const subset_with_distances = subsetData.map( (dd,i)=>{
+                        const a = d.x - dd.x;
+                        const b = d.y - dd.y;
+                        dd.distance =  Math.sqrt( a*a + b*b );
+                        dd.position=i;
+                        return dd;
+                    }).sort((a,b)=>a.distance-b.distance);
+
+                    return subset_with_distances[0];
+                })
+                
+                //  Insert the new circle between its two adjacent mates
+                if ( (adjacent_circles[0].position===0&&adjacent_circles[1].position===subsetData.length-1) || (adjacent_circles[1].position===0&&adjacent_circles[0].position===subsetData.length-1) ) {
+                    subsetData.push(this_circle);
+                }
+                else
+                {
+                    const append_after = adjacent_circles.sort((a,b)=>a.position-b.position)[0].position;
+                    subsetData.splice(append_after+1, 0, this_circle);
+                }
+                metaball=metaballSegments(subsetData);
+            }                   
+        }
+    }
+    return metaball;
     }
 
-    // console.log('subset data',subset_data);
-
-    //  init the path
-    let metaball_path='';
-    for (let i=0; i<subset_data.length; i++) {
-        const circles = subset_data.slice(0,3);
-        subset_data.push(subset_data.shift());
-
+function metaballSegments(incomingData){
+    let pathSegments='';
+    const subsetData = Array.from(incomingData);
+    //  calculate metaball segments
+    for (let i=0; i<subsetData.length; i++) {
+        const circles = subsetData.slice(0,3);
+        subsetData.push(subsetData.shift());
         //  calculate points and handles for metaball path
         const pointsAndHandles=curvesBetweenCircles(circles[0].r, circles[1].r, circles[0].c, circles[1].c);
+        
         //  calculate for the next one, to draw arch (this could be optimized)
         const next=curvesBetweenCircles(circles[1].r, circles[2].r, circles[1].c, circles[2].c);
 
         //  set the starting point of the path ONLY in case it is the first circle
-        if (i===0) metaball_path+=`M ${pointsAndHandles.p[1][0]},${pointsAndHandles.p[1][1]} `;
+        if (i===0) pathSegments+=`M ${pointsAndHandles.p[1][0]},${pointsAndHandles.p[1][1]} `;
 
-        //  draw bezier curve and arc
-        metaball_path+=`C ${pointsAndHandles.h[1][0]},${pointsAndHandles.h[1][1]} ${pointsAndHandles.h[3][0]},${pointsAndHandles.h[3][1]} ${pointsAndHandles.p[3][0]},${pointsAndHandles.p[3][1]}`
-        metaball_path+=`A ${next.r1}, ${next.r1}, 1, 0, 1, ${next.p[1][0]}, ${next.p[1][1]}`
+        //  Bezier Curve
+        pathSegments+=`
+        C ${pointsAndHandles.h[1][0]},${pointsAndHandles.h[1][1]} 
+        ${pointsAndHandles.h[3][0]},${pointsAndHandles.h[3][1]} 
+        ${pointsAndHandles.p[3][0]},${pointsAndHandles.p[3][1]}`;
+        
+        const p1 = {x:pointsAndHandles.p[3][0],y:pointsAndHandles.p[3][1]};
+        const p2 = { x:next.p[1][0], y:next.p[1][1] };
+        const c = { x:circles[1].x, y:circles[1].y };
+            
+        let ang = Math.atan2(p2.y-c.y, p2.x-c.x) - Math.atan2(p1.y-c.y, p1.x-c.x)
+        ang=ang<0?ang+2*Math.PI:ang;
+            
+        const largeArchFlag = ang>=Math.PI?1:0;
+        const sweepFlag=1;
+        
+        // Arc
+        pathSegments+=`A ${next.r1},${next.r1}, 0 ${largeArchFlag},${sweepFlag}, ${next.p[1][0]}, ${next.p[1][1]}`
     }
     //  close the path
-    metaball_path+='Z';
-
-    // console.log(metaball_path)
-
-    // visual feedback
-    // metaballs.selectAll('path').remove()
-    // const metaball = metaballs.append('path')
-    //     .attr('d',metaball_path)
-    //     .attr('fill','none')
-    //     .attr('stroke-width',2)
-    //     .attr('stroke','blue');
-
-    // circles not used to check for intersections
-    const check_intersections = data.filter(d=>subset_data.indexOf(d)<0);
-    // console.log('circles to check for intersections',check_intersections);
-
-    let redo_metaball=false;
-
-    for (let i=0; i<check_intersections.length; i++){
-        const this_circle = check_intersections[i];
-        // console.log('circle id', this_circle.id,' - ',this_circle);
-        const path = ShapeInfo.path(metaball_path);
-        const circle = ShapeInfo.circle([this_circle.x, this_circle.y], this_circle.r);
-        const intersections_data = Intersection.intersect(path, circle);
-        
-        // console.log('intersection data',intersections_data);
-
-        if (intersections_data.status==="Intersection") {
-            redo_metaball=true;
-            // intersections.append('g').selectAll('circle').data(intersections_data.points).enter().append('circle')
-            //     .attr('r',2)
-            //     .attr('cx',d=>d.x)
-            //     .attr('cy',d=>d.y);
-
-            //  add the circle to the array of elements that are used to generate the metaball, in the corrent position
-            //  find the two adjacent circles
-
-            const adjacent_circles = intersections_data.points.map(d=>{
-                const subset_with_distances = subset_data.map( (dd,i)=>{
-                    const a = d.x - dd.x;
-                    const b = d.y - dd.y;
-                    dd.distance =  Math.sqrt( a*a + b*b );
-                    dd.index = i;
-                    return dd;
-                }).sort((a,b)=>a.distance-b.distance);
-                
-                return subset_with_distances[0];
-            })
-
-            // console.log(adjacent_circles);
-            // console.log(subset_data.map(d=>d.id).join(', '));
-
-
-
-            if ( (adjacent_circles[0].index===0&&adjacent_circles[1].index===subset_data.length-1) || (adjacent_circles[1].index===0&&adjacent_circles[0].index===subset_data.length-1) ) {
-                subset_data.push(this_circle);
-            } else {
-                const append_after = adjacent_circles.sort((a,b)=>a.index-b.index)[0].index;
-                subset_data.splice(append_after+1, 0, this_circle);
-            }
-
-            // console.log(subset_data.map(d=>d.id).join(', '));
-            
-        }                   
-        
-    }
-    if (redo_metaball) {
-        // console.log('do again',metaball_path)
-        //  calcualte the metaball segments with the new circles array
-        return drawMetaball(data, subset_data);
-    } else {
-        // console.log('export',metaball_path)
-        return metaball_path;
-    }
+    pathSegments+=' Z';
+    pathSegments=pathSegments.replace(/\n/g,'').replace(/\s\s/g,'');
+    return pathSegments;
 }
-
 
 
 /**
@@ -448,3 +500,18 @@ return Math.atan2(y1 - y2, x1 - x2);
 function getVector([cx, cy], a, r) {
 return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
 }
+
+/**
+ * Other functions
+ */
+
+/**
+ * 
+ * @param {Object} p1 is the first point {x: number, y: number}
+ * @param {*} p2 is the second point {x: number, y: number}
+ */
+function distance(p1,p2){
+    const a = p1.x - p2.x;
+    const b = p1.y - p2.y;
+    return Math.sqrt( a*a + b*b );
+  }
