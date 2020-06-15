@@ -13,7 +13,7 @@ let width, height, fontSize=6, strokeWidth=0.5, annotationsFontSize=12, annotati
     svg, g1, g2, g3, length, combinations, label,
     // k=d3.scaleLinear().range([-3500,3500]).domain([-1,1]),
     // r=d3.scalePow().exponent(0.5).range([0,40]).domain([0,458335]),
-    col_macrocategorie = d3.scaleOrdinal() .range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
+    col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     matrix_grid = {
         x: d3.scalePoint().range([-2/5,2/5]).domain(['negazione','esitazione','riformulazione']),
         y: d3.scalePoint().range([-2/5,2/5]).domain(['cosa','come','senso'])
@@ -101,28 +101,47 @@ V.update = (options)=>{
         .merge(combinations)
         .attr('fill',d=>d.color)
         .attr('transform',d=>'translate('+d.x+','+d.y+')')
-        .on('click',d=>{
-            console.log(d.state)
+        .on('click',function(d){
+            const color=d.color;
+            d.state=d.state==='metaball'?'matrix':'metaball';
+            if (d.state==='matrix') {
+                d3.select(this).select('path').attr('display','none');
+                d3.select(this).selectAll('circle')
+                    .attr('display','block')
+                    .transition()
+                        .duration(350)
+                            .attr('cx',d=>d.mx)
+                            .attr('cy',d=>d.my)
+                            .attr('fill',d=>col_macrocategorie(d.type.split('_')[0]));    
+            } else {
+                d3.select(this).selectAll('circle')
+                    .transition()
+                        .duration(350)
+                            .attr('cx',d=>d.x)
+                            .attr('cy',d=>d.y)
+                            .attr('fill',color);
+                    
+                    setTimeout( ()=>{
+                        d3.select(this).select('path').attr('display','block');
+                        d3.select(this).selectAll('circle').attr('display','none');
+                    }, 350);
+            }
+            
         });
 
     combinations.selectAll('path').data(d=>[d.combinations])
         .enter().append('path')
-            .attr('d',d=>drawMetaball(d))
+            .attr('d',d=>drawMetaball(d));
 
-    // combinations.selectAll('path')
-    //     .transition()
-    //         .duration(1000)
-    //         .attr('d',d=>drawMatrix(d))
-
-    // combinations.selectAll('circle').data(d=>d.combinations)
-    //     .enter().append('circle')
-    //         .classed('combination',true)
-    //         .attr('stroke','blue')
-    //         .attr('fill','none')
-    //         // .attr('display','none')
-    //         .attr('r',d=>d.r)
-    //         .attr('cx',d=>d.x)
-    //         .attr('cy',d=>d.y);
+    combinations.selectAll('circle').data(d=>d.combinations)
+        .enter().append('circle')
+            .classed('combination',true)
+            // .attr('stroke','blue')
+            .attr('fill','none')
+            .attr('display','none')
+            .attr('r',d=>d.r)
+            .attr('cx',d=>d.x)
+            .attr('cy',d=>d.y);
     
     label = label.data(options.data, d=>d.id);
     label.exit().remove();
