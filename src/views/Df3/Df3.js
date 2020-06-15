@@ -384,6 +384,13 @@ class Df3 extends Component {
                     })
                 }
             </select>
+            <select defaultValue={'none'} id="manifestazioni-filter" onChange={(event)=>this.setState({'manifestazione':event.target.value})}>
+                {
+                    ['none','cosa','come','senso'].map((d,i)=>{
+                        return <option key={'manif-'+i} value={d}>{d}</option>
+                    })
+                }
+            </select>
         </p>  
     </div>;
   }
