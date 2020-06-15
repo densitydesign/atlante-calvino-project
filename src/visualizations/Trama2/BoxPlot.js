@@ -49,7 +49,7 @@ const BoxPlotElement = React.memo(
     const h = bottom - top
 
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
-    const widthBar = 10 * zoomFactor
+    const widthBar = 5 * zoomFactor
 
     return (
       <g>
@@ -218,7 +218,7 @@ function BoxPlot(
 
   const handleNexPoint = useCallback(
     (x, setX) => {
-      const widthBar = 10 * zoomFactor
+      const widthBar = 5 * zoomFactor
       const scaleX = actualScaleX.current
       const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
         const dataTrama = dataByRacconti[titolo]
