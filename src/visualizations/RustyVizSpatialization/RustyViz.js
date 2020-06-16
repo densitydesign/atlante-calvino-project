@@ -11,7 +11,7 @@ class RustyVizSpatialization extends Component {
       container: this._rootNode,
       width: bbox.width,
       height: bbox.height,
-      data: this.props.data
+      data: this.props.data.sort((a,b)=>b.length-a.length)
     };
     V.init(options);
   }

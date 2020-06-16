@@ -88,7 +88,7 @@ V.update = (options)=>{
     length=length.enter().append('circle')
             .classed('length',true)
             .attr('id',d=>'length-'+d.id)
-            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.6)':'none')
+            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.5)':'none')
             .attr('stroke',d=>d.perc_dubbio>=minPerc?'none':'#999')
             .attr('stroke-width',strokeWidth)
             .attr('r',d=>d.r)
@@ -163,26 +163,18 @@ V.update = (options)=>{
 }
 
 function interpolateColor(d) {
-    let col_r = 0;
-    let col_g = 0;
-    let col_b = 0;
-
-    const tot_cosa = Number(d["cosa_negazione"] + Number(d["cosa_esitazione"]) + Number(d["cosa_riformulazione"]));
-    const tot_come = Number(d["come_negazione"] + Number(d["come_esitazione"]) + Number(d["come_riformulazione"]));
+    const tot_cosa  = Number(d["cosa_negazione"] + Number(d["cosa_esitazione"]) + Number(d["cosa_riformulazione"]));
+    const tot_come  = Number(d["come_negazione"] + Number(d["come_esitazione"]) + Number(d["come_riformulazione"]));
     const tot_senso = Number(d["senso_negazione"] + Number(d["senso_esitazione"]) + Number(d["senso_riformulazione"]));
-
-    col_r   =   tot_cosa * d3.color(col_macrocategorie('cosa')).r
-            +   tot_come * d3.color(col_macrocategorie('come')).r
-            +   tot_senso * d3.color(col_macrocategorie('senso')).r;
-
-    col_g   =   tot_cosa * d3.color(col_macrocategorie('cosa')).g
-            +   tot_come * d3.color(col_macrocategorie('come')).g
-            +   tot_senso * d3.color(col_macrocategorie('senso')).g;
-
-    col_b   =   tot_cosa * d3.color(col_macrocategorie('cosa')).b
-            +   tot_come * d3.color(col_macrocategorie('come')).b
-            +   tot_senso * d3.color(col_macrocategorie('senso')).b;
-
+    const col_r =   tot_cosa * d3.color(col_macrocategorie('cosa')).r
+                +   tot_come * d3.color(col_macrocategorie('come')).r
+                +   tot_senso * d3.color(col_macrocategorie('senso')).r;
+    const col_g =   tot_cosa * d3.color(col_macrocategorie('cosa')).g
+                +   tot_come * d3.color(col_macrocategorie('come')).g
+                +   tot_senso * d3.color(col_macrocategorie('senso')).g;
+    const col_b =   tot_cosa * d3.color(col_macrocategorie('cosa')).b
+                +   tot_come * d3.color(col_macrocategorie('come')).b
+                +   tot_senso * d3.color(col_macrocategorie('senso')).b;
     return d3.rgb(col_r, col_g, col_b).toString();
 }
 
@@ -212,45 +204,10 @@ function truncateLabel(el, text, length=undefined, fade=3) {
         .style('opacity',(d,i)=>length?opacity(i):1);
 }
 
-function drawPacked(d) {
-    let segments='';
-    for (let j=0; j<d.length; j++) {
-        segments+=`
-            M ${d[j]['x']-d[j]['r']},${d[j]['y']} 
-            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${d[j]['r']*2},0 
-            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${-d[j]['r']*2},0 
-            Z 
-        `
-    }
-    return segments.replace(/\n/g,'').replace(/\s\s/g,'');
-}
-function drawMatrix(d) {
-    let segments='';
-    for (let j=0; j<d.length; j++) {
-        segments+=`
-            M ${d[j]['mx']-d[j]['r']},${d[j]['my']}
-            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${d[j]['r']*2},0
-            a ${d[j]['r']},${d[j]['r']} 0 1, 0 ${-d[j]['r']*2},0
-            Z
-        `
-    }
-    return segments;
-}
-
 function drawMetaball(data, parent){
-    // console.log('draw metaball', data[0].id, data)
-
-    // d3.select(parent).selectAll('.number').data(data).enter().append('text').classed('number',true)
-    //     .attr('font-size',1)
-    //     .attr('stroke','none')
-    //     .attr('fill','grey')
-    //     .attr('x',d=>d.x)
-    //     .attr('y',d=>d.y)
-    //     .text(d=>d.index)
-
     //  Init the path
     let metaball='';
-    //  Return a circle in case we only have one circle
+    //  Return a simple circle in case we only have one circle
     if (data.length===1)
     {
         metaball+=`
@@ -263,15 +220,38 @@ function drawMetaball(data, parent){
     }
     else if (data.length===2) 
     {
+        //  Add "c" property (center) to all data elements
+        data.forEach(d=>d.c=[d.x,d.y]);
+        const pointsAndHandles1=curvesBetweenCircles(data[0].r, data[1].r, data[0].c, data[1].c);
+        const pointsAndHandles2=curvesBetweenCircles(data[1].r, data[0].r, data[1].c, data[0].c);
+        
+        //  set the starting point of the path
+        metaball+=`M ${pointsAndHandles1.p[1][0]},${pointsAndHandles1.p[1][1]} `;
+
+        //  1st Bezier Curve
         metaball+=`
-        M ${data[0]['x']-data[0]['r']},${data[0]['y']} 
-        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${data[0]['r']*2},0 
-        a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${-data[0]['r']*2},0 
-        Z 
-        M ${data[1]['x']-data[1]['r']},${data[1]['y']} 
-        a ${data[1]['r']},${data[1]['r']} 0 1, 0 ${data[1]['r']*2},0 
-        a ${data[1]['r']},${data[1]['r']} 0 1, 0 ${-data[1]['r']*2},0 
-        Z`;
+        C ${pointsAndHandles1.h[1][0]},${pointsAndHandles1.h[1][1]} 
+        ${pointsAndHandles1.h[3][0]},${pointsAndHandles1.h[3][1]} 
+        ${pointsAndHandles1.p[3][0]},${pointsAndHandles1.p[3][1]} `;
+        
+        //  1st arc
+        metaball+=`
+        A ${pointsAndHandles1.r},${pointsAndHandles1.r} 
+        0 1,1 
+        ${pointsAndHandles2.p[1][0]},${pointsAndHandles2.p[1][1]} `;
+        
+        //  2ndt Bezier Curve
+        metaball+=`
+        C ${pointsAndHandles2.h[1][0]},${pointsAndHandles2.h[1][1]} 
+        ${pointsAndHandles2.h[3][0]},${pointsAndHandles2.h[3][1]} 
+        ${pointsAndHandles2.p[3][0]},${pointsAndHandles2.p[3][1]} `;
+        
+        //  2nd arc
+        metaball+=`
+        A ${pointsAndHandles2.r},${pointsAndHandles2.r} 
+        0 1,1 
+        ${pointsAndHandles1.p[1][0]},${pointsAndHandles1.p[1][1]} `;
+        
         metaball=metaball.replace(/\n/g,'').replace(/\s\s/g,'');
         return metaball;
     }
@@ -291,14 +271,6 @@ function drawMetaball(data, parent){
                 const elm=data.find(dd=>dd.x===d[0]&&dd.y===d[1]);
                 return elm;
             });
-
-            // d3.select(parent).selectAll('.convex-hull').data([1])
-            //     .enter()
-            //         .append('polygon')
-            //         .attr('stroke-width',0.1)
-            //         .attr('stroke','blue')
-            //         .classed('convex-hull',true)
-            //         .attr('points',convex_hull)
         }
         //  Save segments
         metaball=metaballSegments(subsetData);
@@ -330,17 +302,6 @@ function drawMetaball(data, parent){
             
             //  If true
             if (intersections_data.status==="Intersection") {
-                // d3.select(parent).selectAll('.intersection').data(intersections_data.points)
-                //         .enter()
-                //     .append('circle')
-                //         .classed('intersection',true)
-                //         .attr('stroke','red')
-                //         .attr('stroke-width',0.05)
-                //         .attr('fill','none')
-                //         .attr('cx',d=>d.x)
-                //         .attr('cy',d=>d.y)
-                //         .attr('r',0.215);
-
                 //  Identify the two adjacent circles
                 const adjacent_circles = intersections_data.points.map(d=>{
                     const subset_with_distances = subsetData.map( (dd,i)=>{
