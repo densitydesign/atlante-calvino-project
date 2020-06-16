@@ -93,7 +93,7 @@ class Search extends Component {
             return index < maxTokens ? (
               renderToken(option, props, index)
             ) : index === maxTokens ? (
-              <span className="rbt-token" onClick={() => this.typeahead.focus()}>+{selectedOptions.length - maxTokens}</span>
+              <span key={index} className="rbt-token" onClick={() => this.typeahead.focus()}>+{selectedOptions.length - maxTokens}</span>
             ) : null;
           }}
         />
