@@ -1,19 +1,24 @@
 import React from 'react'
 
-import { datasetToCircles , dataset} from './utils'
+import { datasetToCircles , dataset, racconti} from './utils'
+import CircleWorms from './CircleWorms'
 
-const circles = datasetToCircles(40)
+const circlesMap = datasetToCircles(30)
 
 
 
 console.log("dataset", dataset)
-console.log("circles", circles)
+console.log("circlesMap", circlesMap)
 
 
 
 export default function RealismoMain(){
 
   return <div>
-    ciao
+    <CircleWorms circlesMap={circlesMap} racconti={racconti} size={800}></CircleWorms>
+
+
+
+    
   </div>
 }
