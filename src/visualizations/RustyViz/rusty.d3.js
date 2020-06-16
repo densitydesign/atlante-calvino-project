@@ -88,13 +88,18 @@ V.update = (options)=>{
     length=length.enter().append('circle')
             .classed('length',true)
             .attr('id',d=>'length-'+d.id)
-            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.5)':'none')
-            .attr('stroke',d=>d.perc_dubbio>=minPerc?'none':'#999')
+            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.5)':'rgba(255,255,255,0.25)')
+            .attr('stroke',d=>d.perc_dubbio>=minPerc?'none':'#fff')
             .attr('stroke-width',strokeWidth)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y)
-            .merge(length);
+            .merge(length)
+            .on('click',function(d){
+                if (d.perc_dubbio>=minPerc) {
+                   toggleMetaball(d); 
+                }
+            });
 
     combinations=combinations.data(reducedData, d=>d.id);
     combinations.exit().remove();
@@ -105,31 +110,7 @@ V.update = (options)=>{
         .attr('fill',d=>d.color)
         .attr('transform',d=>'translate('+d.x+','+d.y+')')
         .on('click',function(d){
-            const color=d.color;
-            d.state=d.state==='metaball'?'matrix':'metaball';
-            if (d.state==='matrix') {
-                d3.select(this).select('path').attr('display','none');
-                d3.select(this).selectAll('circle')
-                    .attr('display','block')
-                    .transition()
-                        .duration(350)
-                            .attr('cx',d=>d.mx)
-                            .attr('cy',d=>d.my)
-                            .attr('fill',d=>col_macrocategorie(d.type.split('_')[0]));    
-            } else {
-                d3.select(this).selectAll('circle')
-                    .transition()
-                        .duration(350)
-                            .attr('cx',d=>d.x)
-                            .attr('cy',d=>d.y)
-                            .attr('fill',color);
-                    
-                    setTimeout( ()=>{
-                        d3.select(this).select('path').attr('display','block');
-                        d3.select(this).selectAll('circle').attr('display','none');
-                    }, 350);
-            }
-            
+            toggleMetaball(d);
         });
 
     combinations.selectAll('path').data(d=>[d.combinations])
@@ -157,9 +138,37 @@ V.update = (options)=>{
             // .attr('text-anchor','middle')
             .attr('font-size',fontSize)
             .attr('display','none')
-            .each(function(d){truncateLabel(this,d.title,10)})
-            // .on('mouseenter',function(d){truncateLabel(this,d.title)})
-            // .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
+            .each(function(d){truncateLabel(this,d.title,8)})
+            .on('mouseenter',function(d){truncateLabel(this,d.title)})
+            .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
+}
+
+function toggleMetaball(data){
+    const color=data.color;
+    data.state=data.state==='metaball'?'matrix':'metaball';
+    const this_combination = combinations.filter(d=>d.id===data.id);
+    if (data.state==='matrix') {
+        this_combination.select('path').attr('display','none');
+        this_combination.selectAll('circle')
+            .attr('display','block')
+            .transition()
+                .duration(350)
+                    .attr('cx',d=>d.mx)
+                    .attr('cy',d=>d.my)
+                    .attr('fill',d=>col_macrocategorie(d.type.split('_')[0]));    
+    } else {
+        this_combination.selectAll('circle')
+            .transition()
+                .duration(350)
+                    .attr('cx',d=>d.x)
+                    .attr('cy',d=>d.y)
+                    .attr('fill',color);
+            
+            setTimeout( ()=>{
+                this_combination.select('path').attr('display','block');
+                this_combination.selectAll('circle').attr('display','none');
+            }, 350);
+    }
 }
 
 function interpolateColor(d) {
