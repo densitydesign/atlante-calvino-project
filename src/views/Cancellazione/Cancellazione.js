@@ -21,7 +21,7 @@ class Cancellazione extends Component {
       data = await d3.tsv(process.env.PUBLIC_URL + '/Dataset Fase 3 - flagged - MDS_def.tsv');
     } else {
       data = await d3.json(process.env.PUBLIC_URL + '/cancellazione-dataset-spazializzato.json')
-    }    
+    }
     this.setState({
       loading:false,
       data:data
