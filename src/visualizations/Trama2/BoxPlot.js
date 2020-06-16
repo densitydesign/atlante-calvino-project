@@ -53,6 +53,11 @@ const BoxPlotElement = React.memo(
 
     return (
       <g>
+        {itemSelected && (
+          <text
+            style={{ transform: 'rotate(-30deg)', fontSize: 12 }}
+            x={0} y={0}>{data.racconto.titolo}</text>
+        )}
         <rect
           width={widthBar}
           height={h}
