@@ -1,4 +1,10 @@
-import React, { useState, useCallback, useRef, useLayoutEffect } from 'react'
+import React, {
+  useState,
+  useCallback,
+  useRef,
+  useLayoutEffect,
+  useMemo,
+} from 'react'
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
 import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
@@ -15,8 +21,8 @@ import CircleWorms from './CircleWorms'
 const circlesMap = datasetToCircles(30)
 
 const searchOptions = racconti.map((racconto) => ({
-  label: racconto.titolo,
-  value: racconto.titolo,
+  label: racconto.title,
+  value: racconto.title,
 }))
 
 console.log('dataset', dataset)
@@ -41,7 +47,24 @@ export default function RealismoMain({ title }) {
   }, [])
   const size =
     measures === null ? null : Math.min(measures.width, measures.height)
-  console.log('MES', size)
+
+  const selcted = useMemo(() => {
+    const mapSelected = {}
+    ricerca.forEach((item) => {
+      mapSelected[item.value] = true
+    })
+    return mapSelected
+  },[ricerca])
+
+  const toggleSelect = useCallback((title) => {
+    setRicerca(ricerca => {
+      const newRicerca = ricerca.filter(item => item.title !== title)
+      if (ricerca.length === newRicerca.length) {
+        return ricerca.concat({ label: title, value: title })
+      }
+      return newRicerca
+    })
+  }, [])
 
   return (
     <div>
@@ -69,12 +92,7 @@ export default function RealismoMain({ title }) {
           }}
           data={{ options: searchOptions }}
           changeOptions={(newOptions) => {
-            setRicerca(
-              newOptions.map((o) => ({
-                ...o,
-                fromBounds: false,
-              }))
-            )
+            setRicerca(newOptions)
           }}
           selectedOptions={ricerca}
         />
@@ -93,6 +111,8 @@ export default function RealismoMain({ title }) {
       <div className="realismo-content " ref={containerRef}>
         <div className="h-100 w-100 d-flex justify-content-center align-items-center">
           <CircleWorms
+            toggleSelect={toggleSelect}
+            selected={selcted}
             circlesMap={circlesMap}
             racconti={racconti}
             size={size}
