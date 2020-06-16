@@ -94,24 +94,25 @@ V.update = (options)=>{
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y)
-            .merge(length)
+            .style('cursor',d=>d.perc_dubbio>=minPerc?'pointer':'unset')
             .on('click',function(d){
                 if (d.perc_dubbio>=minPerc) {
                    toggleMetaball(d); 
                 }
-            });
+            })
+            .merge(length);
+            
 
     combinations=combinations.data(reducedData, d=>d.id);
     combinations.exit().remove();
     combinations=combinations.enter().append('g')
         .classed('combinations',true)
         .attr('id',d=>'combinations-'+d.id)
-        .merge(combinations)
+        .style('cursor',d=>d.perc_dubbio>=minPerc?'pointer':'unset')
         .attr('fill',d=>d.color)
         .attr('transform',d=>'translate('+d.x+','+d.y+')')
-        .on('click',function(d){
-            toggleMetaball(d);
-        });
+        .on('click',toggleMetaball)
+        .merge(combinations);
 
     combinations.selectAll('path').data(d=>[d.combinations])
         .enter().append('path')
@@ -120,10 +121,7 @@ V.update = (options)=>{
     combinations.selectAll('.circle-combination').data(d=>d.combinations)
         .enter().append('circle')
             .classed('circle-combination',true)
-            // .attr('stroke','blue')
-            // .attr('fill','none')
             .attr('display','none')
-            .attr('stroke-width',0.1)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y);
@@ -132,12 +130,12 @@ V.update = (options)=>{
     label.exit().remove();
     label = label.enter().append('text')
             .classed('label',true)
-            .merge(label)
             .attr('x',d=>d.x)
             .attr('y',d=>d.y)
-            // .attr('text-anchor','middle')
             .attr('font-size',fontSize)
             .attr('display','none')
+            // .attr('text-anchor','middle')
+            .merge(label)
             .each(function(d){truncateLabel(this,d.title,8)})
             .on('mouseenter',function(d){truncateLabel(this,d.title)})
             .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
