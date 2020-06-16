@@ -52,13 +52,13 @@ V.init = async (options)=>{
     g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g4 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
-    g2.append('rect')
-        .attr('stroke','blue')
-        .attr('fill','none')
-        .attr('width',width*2)
-        .attr('height',height*2)
-        .attr('x',-width)
-        .attr('y',-height);
+    // g2.append('rect')
+    //     .attr('stroke','blue')
+    //     .attr('fill','none')
+    //     .attr('width',width*2)
+    //     .attr('height',height*2)
+    //     .attr('x',-width)
+    //     .attr('y',-height);
     length = g2.selectAll('.length');
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
@@ -79,7 +79,6 @@ V.update = (options)=>{
     const reducedData = options.data.filter(d=>{
         d.state='metaball';
         d.color=interpolateColor(d);
-        d.x*=-1
         return d.perc_dubbio>=minPerc;
     });
 
@@ -114,9 +113,9 @@ V.update = (options)=>{
         .on('click',toggleMetaball)
         .merge(combinations);
 
-    combinations.selectAll('path').data(d=>[d.combinations])
-        .enter().append('path')
-            .attr('d',function(d){return drawMetaball(d, this.parentNode)});
+    combinations.append('path')
+            .classed('metaball',true)
+            .attr('d',d=>d.metaballSegments);
 
     combinations.selectAll('.circle-combination').data(d=>d.combinations)
         .enter().append('circle')
@@ -336,7 +335,7 @@ function drawMetaball(data, parent){
         }
     }
     return metaball;
-    }
+}
 
 function metaballSegments(incomingData){
     let pathSegments='';
