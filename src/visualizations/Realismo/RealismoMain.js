@@ -17,6 +17,7 @@ import GlobalData from '../../utilities/GlobalData'
 
 import { datasetToCircles, dataset, racconti } from './utils'
 import CircleWorms from './CircleWorms'
+import WormDetail from './WormDetail'
 
 const circlesMap = datasetToCircles(30)
 
@@ -119,6 +120,13 @@ export default function RealismoMain({ title }) {
           ></CircleWorms>
         </div>
       </div>
+      {ricerca.map(item => (
+        <WormDetail
+          key={item.value}
+          title={item.value}
+          circles={circlesMap[item.value]}
+        />
+      ))}
     </div>
   )
 }
