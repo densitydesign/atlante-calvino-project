@@ -3,7 +3,7 @@ import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
 import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
-import SearchDropDown from '../../general/Search/SearchDropDown'
+import SearchDropDown from '../../general/Search/SearchDropDownControlled'
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
 
 import AltOptions from '../../general/Options/AltOptions'
@@ -48,7 +48,7 @@ function Trama2Main({ title }) {
     const newRicerca = Object.keys(selection).map((titolo) => ({
       label: titolo,
       value: titolo,
-      fromBounds: true,
+      fromBounds,
     }))
     setRicerca(newRicerca)
   }, [])
@@ -110,7 +110,10 @@ function Trama2Main({ title }) {
           }}
           data={{ options: searchOptions }}
           changeOptions={(newOptions) => {
-            setRicerca(newOptions)
+            setRicerca(newOptions.map(o => ({
+              ...o,
+              fromBounds: false
+            })))
           }}
           selectedOptions={ricerca}
         />
