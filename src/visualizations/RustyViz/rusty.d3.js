@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import styles from './RustyViz.module.css';
 
 const V = {};
 export default V;
@@ -6,6 +7,7 @@ export default V;
 let width, height, fontSize=10, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1,
     svg, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
+    col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
     minPerc=2.5;
 /**
  * 
@@ -32,7 +34,7 @@ V.init = async (options)=>{
                     if (d3.event.transform.k>=2){
                         label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
                     } else {
-                        label.attr('display','none')
+                        label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none')
                     }
                 }));
     g1 = svg.append('g');
@@ -94,13 +96,13 @@ V.update = (options)=>{
         .classed('combinations',true)
         .attr('id',d=>'combinations-'+d.id)
         .style('cursor',d=>d.perc_dubbio>=minPerc?'pointer':'unset')
-        .attr('fill',d=>d.color)
         .attr('transform',d=>'translate('+d.x+','+d.y+')')
         .on('click',toggleMetaball)
         .merge(combinations);
 
     combinations.append('path')
             .classed('metaball',true)
+            .attr('fill',d=>d.color)
             .attr('d',d=>d.metaballSegments);
 
     combinations.selectAll('.circle-combination').data(d=>d.combinations)
@@ -126,14 +128,43 @@ V.update = (options)=>{
             .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
 }
 
+V.changeColor = (value)=>{
+    if (value==='negazione'||value==='esitazione'||value==='riformulazione') {
+        combinations.select('path')
+            .attr('fill',d=>{
+                const amount=d.combinations
+                    .filter(dd=>dd.type.includes(value))
+                    .map(dd=>dd.percentage_combination)
+                    .reduce((a,b)=>a+b,0);
+                return col_manifestazioni(amount);
+            })
+    } else {
+        combinations.select('path')
+            .attr('fill',d=>d.color)
+    }
+
+}
+
+V.filter = (ids)=>{
+    length.style('opacity',1).filter(d=>ids.indexOf(d.id)<0).style('opacity',0.3);
+    combinations.style('opacity',1).filter(d=>ids.indexOf(d.id)<0).style('opacity',0.3);
+    label.style('opacity',0.3)
+            .classed('keepVisible',false)
+            .filter(d=>ids.indexOf(d.id)>-1)
+                .style('opacity',1)
+                .attr('display','block')
+                .classed('keepVisible',label.size()!==ids.length?'true':false);
+}
+
 function toggleMetaball(data){
-    const color=data.color;
     data.state=data.state==='metaball'?'matrix':'metaball';
     const this_combination = combinations.filter(d=>d.id===data.id);
+    const color = this_combination.select('path').attr('fill')
     if (data.state==='matrix') {
         this_combination.select('path').attr('display','none');
         this_combination.selectAll('circle')
             .attr('display','block')
+            .attr('fill',color)
             .transition()
                 .duration(350)
                     .attr('cx',d=>d.mx)

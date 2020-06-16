@@ -15,6 +15,13 @@ class RustyViz extends Component {
     };
     V.init(options);
   }
+  componentDidUpdate(prevProps){
+    if(prevProps.color!==this.props.color){
+      V.changeColor(this.props.color);
+    } else if (prevProps.filter!==this.props.filter){
+      V.filter(this.props.filter);
+    }
+  }
   render() {
     const style={
       width: '100%',
