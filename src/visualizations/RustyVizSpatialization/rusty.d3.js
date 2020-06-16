@@ -21,14 +21,14 @@ let width, height,
         .force('x',d3.forceX(d=>k(d.mds_x)))
         .force('y',d3.forceY(d=>-k(d.mds_y)))
         .force('collide',d3.forceCollide(d=>{
-            const k=d.length>200000?0.60:0.7;
+            const k=d.length>200000?0.65:0.8;
             return (r(d.length2use)+1)*k
         }))
         .on('tick',()=>{
             length.attr('cx',d=>d.x).attr('cy',d=>d.y);
             combinations.attr('transform',d=>'translate('+d.x+','+d.y+')')
         })
-        .alphaMin(0.1)
+        // .alphaMin(0.1)
         .alpha(1)
         .stop();
 /**
