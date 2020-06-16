@@ -2,3 +2,15 @@
     height: calc(100vh - var(--navigation-height));
     width: 100%;
 }
+
+.realimso-reset {
+    position: absolute;
+    top: 20px;
+    font-style: italic;
+    left: 60px;
+}
+
+.realimso-reset > button {
+    background: white;
+    border-radius: 5px;
+}

@@ -55,11 +55,11 @@ export default function RealismoMain({ title }) {
       mapSelected[item.value] = true
     })
     return mapSelected
-  },[ricerca])
+  }, [ricerca])
 
   const toggleSelect = useCallback((title) => {
-    setRicerca(ricerca => {
-      const newRicerca = ricerca.filter(item => item.title !== title)
+    setRicerca((ricerca) => {
+      const newRicerca = ricerca.filter((item) => item.title !== title)
       if (ricerca.length === newRicerca.length) {
         return ricerca.concat({ label: title, value: title })
       }
@@ -110,7 +110,16 @@ export default function RealismoMain({ title }) {
         />
       </div>
       <div className="realismo-content " ref={containerRef}>
-        <div className="h-100 w-100 d-flex justify-content-center align-items-center">
+        <div
+          className="h-100 w-100 d-flex justify-content-center align-items-center"
+          style={{
+            position: 'relative',
+          }}
+        >
+          <div className="realimso-reset">
+            <div>Seleziona i test e poi scorri in basso</div>
+            <button onClick={() => setRicerca([])}>reset</button>
+          </div>
           <CircleWorms
             toggleSelect={toggleSelect}
             selected={selcted}
@@ -120,7 +129,7 @@ export default function RealismoMain({ title }) {
           ></CircleWorms>
         </div>
       </div>
-      {ricerca.map(item => (
+      {ricerca.map((item) => (
         <WormDetail
           key={item.value}
           title={item.value}
