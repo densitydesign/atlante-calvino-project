@@ -4,11 +4,12 @@ import styles from './RustyViz.module.css';
 const V = {};
 export default V;
 
-let width, height, fontSize=10, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1,
+let width, height, fontSize=10, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
     svg, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
     minPerc=2.5;
+    
 /**
  * 
  * @param {Obkect}      options             initialization options
@@ -22,32 +23,36 @@ V.init = async (options)=>{
     height = options.height;
     svg = d3.select(options.container).append('svg')
             .attr('width',width)
-            .attr('height',height)
-            .call(d3.zoom()
-                .extent([[0, 0], [width, height]])
-                .scaleExtent([0.5, 100])
-                .on("zoom", ()=>{
-                    g1.attr("transform", d3.event.transform);
-                    length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
-                    g3.selectAll('text').attr("font-size",annotationsFontSize/d3.event.transform.k);
-                    g3.selectAll('path').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
-                    if (d3.event.transform.k>=2){
-                        label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
-                    } else {
-                        label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none')
-                    }
-                }));
+            .attr('height',height);            
+    zoom=d3.zoom()
+        .extent([[0, 0], [width, height]])
+        .scaleExtent([0.5, 100])
+        .on("zoom", ()=>{
+            g1.attr("transform", d3.event.transform);
+            length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
+            g3.selectAll('text').attr("font-size",annotationsFontSize/d3.event.transform.k);
+            g3.selectAll('path').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
+            if (d3.event.transform.k>=2){
+                label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
+            } else {
+                label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none')
+            }
+        });
+    svg.call(zoom);
     g1 = svg.append('g');
     g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g4 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
+    
     // g2.append('rect')
     //     .attr('stroke','blue')
     //     .attr('fill','none')
-    //     .attr('width',width*2)
-    //     .attr('height',height*2)
-    //     .attr('x',-width)
-    //     .attr('y',-height);
+    //     .attr('width',width)
+    //     .attr('height',height)
+    //     .attr('x',-width/2)
+    //     .attr('y',-height/2);
+    // g2.append('circle').attr('fill','none').attr('stroke','blue').attr('r',10);
+
     length = g2.selectAll('.length');
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
@@ -126,6 +131,16 @@ V.update = (options)=>{
             .each(function(d){truncateLabel(this,d.title,8)})
             .on('mouseenter',function(d){truncateLabel(this,d.title)})
             .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
+
+    const bbox=g1.node().getBBox();
+    const x0=bbox.x, y0=bbox.y, x1=x0+bbox.width, y1=y0+bbox.height;
+    svg.call(
+        zoom.transform,
+        d3.zoomIdentity
+          .translate(width/2, height/2)
+          .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
+          .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+      );
 }
 
 V.changeColor = (value)=>{
