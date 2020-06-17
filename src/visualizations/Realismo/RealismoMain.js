@@ -59,7 +59,7 @@ export default function RealismoMain({ title }) {
 
   const toggleSelect = useCallback((title) => {
     setRicerca((ricerca) => {
-      const newRicerca = ricerca.filter((item) => item.title !== title)
+      const newRicerca = ricerca.filter((item) => item.value !== title)
       if (ricerca.length === newRicerca.length) {
         return ricerca.concat({ label: title, value: title })
       }

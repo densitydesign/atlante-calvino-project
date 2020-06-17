@@ -47,7 +47,7 @@ const Worm = React.memo(
             )
           })}
         </g>
-        <text x={wormEnd}>{racconto.title}</text>
+        <text x={wormEnd}>&nbsp;&nbsp;{racconto.title}</text>
       </g>
     )
   }
