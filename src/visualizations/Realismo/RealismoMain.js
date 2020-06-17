@@ -46,8 +46,6 @@ export default function RealismoMain({ title }) {
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
   }, [])
-  const size =
-    measures === null ? null : Math.min(measures.width, measures.height)
 
   const selcted = useMemo(() => {
     const mapSelected = {}
@@ -122,13 +120,14 @@ export default function RealismoMain({ title }) {
             <div>Seleziona i test e poi scorri in basso</div>
             <button onClick={() => setRicerca([])}>reset</button>
           </div>
-          <CircleWorms
+          {measures && <CircleWorms
             toggleSelect={toggleSelect}
             selected={selcted}
             circlesMap={circlesMap}
             racconti={racconti}
-            size={size}
-          ></CircleWorms>
+            width={measures.width}
+            height={measures.height}
+          ></CircleWorms>}
         </div>
       </div>
       {ricerca.length > 0 && <div className="realismo-details-container" ref={ref}>

@@ -54,13 +54,15 @@ const Worm = React.memo(
 )
 
 export default function CircleWorms({
-  size,
+  width,
+  height,
   circlesMap,
   selected,
   racconti,
   toggleSelect,
 }) {
   const deltaAngle = 360 / racconti.length
+  const size = Math.min(width, height)
 
   const handleClick = useCallback((racconto) => {
     toggleSelect(racconto.title)
@@ -69,8 +71,8 @@ export default function CircleWorms({
   const allSelected = Object.keys(selected).length === 0
 
   return (
-    <svg width={size} height={size}>
-      <g transform={`translate(${size / 2}, ${size / 2})`}>
+    <svg width={width} height={size}>
+      <g transform={`translate(${width / 2} , ${size / 2})`}>
         {racconti.map((racconto, i) => (
           <g key={i} style={{ transform: `rotate(${i * deltaAngle}deg)` }}>
             <Worm
