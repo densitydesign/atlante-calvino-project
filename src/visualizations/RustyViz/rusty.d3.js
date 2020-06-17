@@ -4,7 +4,7 @@ import styles from './RustyViz.module.css';
 const V = {};
 export default V;
 
-let width, height, fontSize=10, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
+let width, height, fontSize=12, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
     svg, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
@@ -26,7 +26,7 @@ V.init = async (options)=>{
             .attr('height',height);            
     zoom=d3.zoom()
         .extent([[0, 0], [width, height]])
-        .scaleExtent([0.5, 100])
+        .scaleExtent([0.75, 100])
         .on("zoom", ()=>{
             g1.attr("transform", d3.event.transform);
             length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
@@ -36,6 +36,11 @@ V.init = async (options)=>{
                 label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
             } else {
                 label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none')
+            }
+            if (d3.event.transform.k>=2.5) {
+                g3.attr('display','none')
+            } else {
+                g3.attr('display','block')
             }
         });
     svg.call(zoom);
