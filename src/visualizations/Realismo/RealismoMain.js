@@ -67,9 +67,9 @@ export default function RealismoMain({ title }) {
     })
   }, [])
 
-  // const selctedTitoliSorted = useMemo(() => {
-  //   sortBy(ricerca, titolo => dataset[titolo].?[0]?.)
-  // }, [ricerca])
+  const selctedTitoliSorted = useMemo(() => {
+    return sortBy(ricerca, item => dataset[item.value]?.[0]?.year)
+  }, [ricerca])
 
   const [ref, { x, y, width, height }] = useDimensions();
 
@@ -137,7 +137,7 @@ export default function RealismoMain({ title }) {
         </div>
       </div>
       {ricerca.length > 0 && <div className="realismo-details-container" ref={ref}>
-      {width && ricerca.map((item) => (
+      {width && selctedTitoliSorted.map((item) => (
         <WormDetail
           width={width}
           key={item.value}
