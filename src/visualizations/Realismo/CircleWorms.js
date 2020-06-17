@@ -5,7 +5,7 @@ import { transform } from 'lodash'
 
 const LEGEND_DEG = 10
 const LABEL_SIZE_PERCENT = 0.2
-const WORM_SIZE_PERCENT = 0.4
+const WORM_SIZE_PERCENT = 0.45
 const LABEL_PADDING = 10
 const INNER_CIRCLE_PADDING = 10
 const INNER_CIRCLE_STROKE_WIDTH = 5

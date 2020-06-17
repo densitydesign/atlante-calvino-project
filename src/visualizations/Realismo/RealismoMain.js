@@ -12,7 +12,7 @@ import AltOptions from '../../general/Options/AltOptions'
 import SearchDropDown from '../../general/Search/SearchDropDownControlled'
 import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
-import useDimensions from "react-use-dimensions";
+import useDimensions from 'react-use-dimensions'
 import GlobalData from '../../utilities/GlobalData'
 
 import sortBy from 'lodash/sortBy'
@@ -21,12 +21,24 @@ import { datasetToCircles, dataset, racconti } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 
-const circlesMap = datasetToCircles(30)
+const circlesMap = datasetToCircles(40)
 
 const searchOptions = racconti.map((racconto) => ({
   label: racconto.title,
   value: racconto.title,
 }))
+
+const optionsMovimento = [
+  {
+    label: 'SI MOVIMENTO',
+  },
+  {
+    label: 'NO MOVIMENTO',
+  },
+  {
+    label: 'MOVIMENTO'
+  }
+]
 
 // console.log('dataset', dataset)
 // console.log('circlesMap', circlesMap)
@@ -49,6 +61,31 @@ export default function RealismoMain({ title }) {
     setMeasures(m)
   }, [])
 
+  const [movimento, setMovimento] = useState('MOVIMENTO')
+
+  const omitted = useMemo(() => {
+    if (movimento === 'MOVIMENTO') {
+      return null
+    }
+    const omittedStuff = {}
+    Object.keys(dataset).forEach(titolo => {
+      const hasMove = dataset[titolo].some(datum => {
+        if (movimento === 'SI MOVIMENTO') {
+          return datum.movement === 'VERO'
+        }
+        if (movimento === 'NO MOVIMENTO') {
+          return datum.movement === 'FALSO'
+        }
+        return false
+      })
+      if (!hasMove) {
+        omittedStuff[titolo] = true
+      }
+    })
+    return omittedStuff
+  }, [movimento])
+  console.log('O.o', omitted)
+
   const selcted = useMemo(() => {
     const mapSelected = {}
     ricerca.forEach((item) => {
@@ -68,10 +105,10 @@ export default function RealismoMain({ title }) {
   }, [])
 
   const selctedTitoliSorted = useMemo(() => {
-    return sortBy(ricerca, item => dataset[item.value]?.[0]?.year)
+    return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
-  const [ref, { x, y, width, height }] = useDimensions();
+  const [ref, { x, y, width, height }] = useDimensions()
 
   return (
     <div>
@@ -126,28 +163,49 @@ export default function RealismoMain({ title }) {
             <div>Seleziona i test e poi scorri in basso</div>
             <button onClick={() => setRicerca([])}>reset</button>
           </div>
-          {measures && <CircleWorms
-            toggleSelect={toggleSelect}
-            selected={selcted}
-            circlesMap={circlesMap}
-            racconti={racconti}
-            width={measures.width}
-            height={measures.height}
-          ></CircleWorms>}
+          {measures && (
+            <CircleWorms
+              toggleSelect={toggleSelect}
+              selected={selcted}
+              circlesMap={circlesMap}
+              racconti={racconti}
+              width={measures.width}
+              height={measures.height}
+            ></CircleWorms>
+          )}
+        </div>
+        <div className="bottom-nav navigations">
+          <AltOptions
+            title=''
+            // multiple
+            options={optionsMovimento}
+            value={movimento}
+            allowEmpty={true}
+            onChange={m => {
+              setMovimento(m.label)
+            }}
+            style={{
+              gridColumn: 'span 8',
+              textAlign: "center",
+            }}
+          />
         </div>
       </div>
-      {ricerca.length > 0 && <div className="realismo-details-container" ref={ref}>
-      {width && selctedTitoliSorted.map((item) => (
-        <WormDetail
-          width={width}
-          key={item.value}
-          title={item.value}
-          year={dataset[item.value]?.[0]?.year}
-          circles={circlesMap[item.value]}
-          toggleSelect={toggleSelect}
-        />
-      ))}
-      </div>}
+      {ricerca.length > 0 && (
+        <div className="realismo-details-container" ref={ref}>
+          {width &&
+            selctedTitoliSorted.map((item) => (
+              <WormDetail
+                width={width}
+                key={item.value}
+                title={item.value}
+                year={dataset[item.value]?.[0]?.year}
+                circles={circlesMap[item.value]}
+                toggleSelect={toggleSelect}
+              />
+            ))}
+        </div>
+      )}
     </div>
   )
 }
