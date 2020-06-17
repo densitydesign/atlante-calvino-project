@@ -34,7 +34,10 @@ export default function SideBar({
 
   return (
     <div className="trama2-sidebar">
-      <div className="trama2-sidebar-header"></div>
+      <div className="trama2-sidebar-header">
+        Ordine <br />
+        di turbamento
+      </div>
       {tipologie.map((tipologia) => (
         <div
           key={tipologia.tipologia}
@@ -58,7 +61,12 @@ export default function SideBar({
           {tipologia.tipologia}
         </div>
       ))}
-      <div>
+      <div className='trama2-sidebar-footer'>
+        Clicca per scegliere il <br/>
+        punto più alto e più basso<br />
+        delle curve
+      </div>
+      {/* <div>
         {bounds.length > 0 && (
           <span
             onClick={() => {
@@ -68,7 +76,7 @@ export default function SideBar({
             Clear
           </span>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }

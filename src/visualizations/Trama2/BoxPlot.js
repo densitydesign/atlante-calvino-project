@@ -6,71 +6,21 @@ import React, {
   useCallback,
   useEffect,
   useLayoutEffect,
-  useImperativeHandle,
   forwardRef,
 } from 'react'
-import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 
-import range from 'lodash/range'
-import keyBy from 'lodash/keyBy'
 import head from 'lodash/head'
 import _last from 'lodash/last'
 import uniqBy from 'lodash/uniqBy'
 import minBy from 'lodash/minBy'
 import maxBy from 'lodash/maxBy'
 
-
-import { splitPath, motivoExtent, makeScalaMotivoY } from './utils'
+import { motivoExtent } from './utils'
 import BoxPlotGradientsDefinitions from './BoxPlotGradientsDefinitions'
-
-const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
-  const containerRef = useRef(null)
-  const [measures, setMeasures] = useState(null)
-  useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect()
-    setMeasures(m)
-  }, [titolo])
-
-  return (
-    <g
-      onClick={onClick}
-      transform={`translate(${x}, ${y})`}
-      style={{ cursor: 'pointer' }}
-    >
-      {measures && (
-        <g transform={`translate(${-measures.width - 40}, -15)`}>
-          <rect
-            height={22}
-            width={measures.width + 35}
-            rx={5}
-            className="trama2-info-box"
-          />
-          <line
-            x1={measures.width + 18}
-            x2={measures.width + 18}
-            y1={0}
-            y2={22}
-            className="trama2-info-box"
-          />
-          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
-            o
-          </text>
-        </g>
-      )}
-      <text
-        ref={containerRef}
-        x={-30}
-        y={0}
-        style={{ textAnchor: 'end', userSelect: 'none' }}
-      >
-        {titolo}
-      </text>
-    </g>
-  )
-}
+import Brush from './Brush'
 
 const BoxPlotElement = React.memo(
   ({
@@ -99,10 +49,15 @@ const BoxPlotElement = React.memo(
     const h = bottom - top
 
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
-    const widthBar = 10 * zoomFactor
+    const widthBar = 5 * zoomFactor
 
     return (
       <g>
+        {itemSelected && (
+          <text
+            style={{ transform: 'rotate(-30deg)', fontSize: 12 }}
+            x={0} y={0}>{data.racconto.titolo}</text>
+        )}
         <rect
           width={widthBar}
           height={h}
@@ -154,6 +109,8 @@ function BoxPlot(
   const [translations, setTranslations] = useState([])
   const [zoomFactor, setZoomFactor] = useState(1)
 
+  const actualScaleX = useRef(null)
+
   useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
     setMeasures(m)
@@ -180,6 +137,7 @@ function BoxPlot(
         .domain([0, racconti.length])
         .range([10, measures.width - 10])
 
+      actualScaleX.current = scaleX
       imperativeTranslate(scaleX)
       // declarativeTranslate(scaleY)
 
@@ -194,7 +152,7 @@ function BoxPlot(
         const batchUpdates = ReactDOM.unstable_batchedUpdates || ((cb) => cb())
         batchUpdates(() => {
           setZoomFactor(zoomFactor)
-          setYears(prevYears => {
+          setYears((prevYears) => {
             const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
             if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
               return newYears
@@ -202,6 +160,7 @@ function BoxPlot(
             return prevYears
           })
         })
+        actualScaleX.current = newScaleX
         // declarativeTranslate(newScaleX)
       }
 
@@ -214,17 +173,18 @@ function BoxPlot(
   }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([0, height])
+    return scaleLinear().domain(motivoExtent).range([0, height - 160])
   }, [height])
 
   const scalaMotivo = useMemo(() => {
     return scaleLinear().domain(motivoExtent).range([0, 1])
   }, [])
 
-  const [dataRacconti, gradientsType] = useMemo(() => {
+  const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
     if (!yScale) {
       return [[], []]
     }
+    const finalDataByRacconti = {}
     const gradientsSet = new Set()
     const finalDataRacconti = racconti.map((racconto, i) => {
       let dataForRacconto = data[racconto.titolo]
@@ -251,44 +211,63 @@ function BoxPlot(
         uniqueItems,
         index: i,
       }
-
+      finalDataByRacconti[racconto.titolo] = out
       gradientsSet.add(out)
 
       out.racconto = racconto
 
       return out
     })
-    return [finalDataRacconti, Array.from(gradientsSet)]
+    return [finalDataRacconti, finalDataByRacconti, Array.from(gradientsSet)]
   }, [data, racconti, tipologieByTipologia, yScale])
 
-  // useImperativeHandle(ref, () => ({
-  //   rotateView: (cb) => {
-  //     const scaleY = scaleLinear()
-  //       .domain([0, racconti.length])
-  //       .range([0 + height, measures.height - height])
+  const handleNexPoint = useCallback(
+    (x, setX) => {
+      const widthBar = 5 * zoomFactor
+      const scaleX = actualScaleX.current
+      const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+        const dataTrama = dataByRacconti[titolo]
+        const realX = scaleX(dataTrama.index)
+        if (realX > x - widthBar / 2) {
+          acc.push(realX)
+        }
+        return acc
+      }, [])
+      if (nextPoints.length) {
+        console.log('NEXT', nextPoints, x)
+        setX(Math.min(...nextPoints) + widthBar / 2)
+      }
+    },
+    [dataByRacconti, selected, zoomFactor]
+  )
 
-  //     const mainTransition = selectAll('.box-racconto-container')
-  //       .transition()
-  //       .duration(1000)
-  //       .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
-  //       .end()
+  const handlePrevPoint = useCallback(
+    (x, setX) => {
+      const widthBar = 10 * zoomFactor
+      const scaleX = actualScaleX.current
+      const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+        const dataTrama = dataByRacconti[titolo]
+        const realX = scaleX(dataTrama.index)
+        if (realX < x - widthBar / 2) {
+          acc.push(realX)
+        }
+        return acc
+      }, [])
+      if (nextPoints.length) {
+        console.log('PREV', nextPoints, x)
+        setX(Math.max(...nextPoints) + widthBar / 2)
+      }
+    },
+    [dataByRacconti, selected, zoomFactor]
+  )
 
-  //     const selectedTransition = selectAll('.box-racconto-container-selected')
-  //       .transition()
-  //       .duration(1000)
-  //       .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
-  //       .end()
-
-  //     Promise.all([mainTransition, selectedTransition]).then(cb)
-  //   },
-  // }))
   const [years, setYears] = useState([
     racconti[0].anno,
     racconti[racconti.length - 1].anno,
   ])
 
   return (
-    <div className='trama2-boxplot-content'>
+    <div className="trama2-boxplot-content">
       <div
         ref={containerRef}
         className="w-100 h-100"
@@ -297,7 +276,7 @@ function BoxPlot(
         {measures && (
           <svg
             style={{
-              height: height + 140,
+              height: height,
               width: measures.width,
             }}
             ref={svgRef}
@@ -340,8 +319,17 @@ function BoxPlot(
           </svg>
         )}
       </div>
-      <div className='trama2-box-plot-year'>
+      {measures && (
+        <Brush
+          className='trama2-brush-for-detail'
+          width={measures.width}
+          onNextClick={handleNexPoint}
+          onPrevClick={handlePrevPoint}
+        />
+      )}
+      <div className="trama2-box-plot-year">
         <div>{years[0]}</div>
+        <div>Testi per ordine cronologico</div>
         <div>{years[1]}</div>
       </div>
     </div>
