@@ -40,7 +40,7 @@ export function datasetToCircles(n){
         // const dataOrdered = sortBy(data, item => Math.abs(+item.locationNorm - pos))
         const out = find(data, item => item.startNorm <= startNorm && item.endNorm >= endNorm) || {}
         let place = false
-        if(i === 0 || acc[i-1].occurrence !== out.occurrence){
+        if (out.occurrence && (i === 0 || acc[i-1].occurrence !== out.occurrence )){
           place = true
         } 
         acc.push({...out, place})

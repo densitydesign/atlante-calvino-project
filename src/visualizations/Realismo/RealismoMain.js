@@ -12,7 +12,7 @@ import AltOptions from '../../general/Options/AltOptions'
 import SearchDropDown from '../../general/Search/SearchDropDownControlled'
 import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
-
+import useDimensions from "react-use-dimensions";
 import GlobalData from '../../utilities/GlobalData'
 
 import { datasetToCircles, dataset, racconti } from './utils'
@@ -26,8 +26,8 @@ const searchOptions = racconti.map((racconto) => ({
   value: racconto.title,
 }))
 
-console.log('dataset', dataset)
-console.log('circlesMap', circlesMap)
+// console.log('dataset', dataset)
+// console.log('circlesMap', circlesMap)
 
 const cercaOptions = [{ label: 'Volume' }]
 
@@ -66,6 +66,8 @@ export default function RealismoMain({ title }) {
       return newRicerca
     })
   }, [])
+
+  const [ref, { x, y, width, height }] = useDimensions();
 
   return (
     <div>
@@ -116,7 +118,7 @@ export default function RealismoMain({ title }) {
             position: 'relative',
           }}
         >
-          <div className="realimso-reset">
+          <div className="realismo-reset">
             <div>Seleziona i test e poi scorri in basso</div>
             <button onClick={() => setRicerca([])}>reset</button>
           </div>
@@ -129,13 +131,16 @@ export default function RealismoMain({ title }) {
           ></CircleWorms>
         </div>
       </div>
-      {ricerca.map((item) => (
+      {ricerca.length > 0 && <div className="realismo-details-container" ref={ref}>
+      {width && ricerca.map((item) => (
         <WormDetail
+          width={width}
           key={item.value}
           title={item.value}
           circles={circlesMap[item.value]}
         />
       ))}
+      </div>}
     </div>
   )
 }
