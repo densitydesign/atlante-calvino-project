@@ -136,7 +136,9 @@ export default function RealismoMain({ title }) {
           width={width}
           key={item.value}
           title={item.value}
+          year={dataset[item.value]?.[0]?.year}
           circles={circlesMap[item.value]}
+          toggleSelect={toggleSelect}
         />
       ))}
       </div>}

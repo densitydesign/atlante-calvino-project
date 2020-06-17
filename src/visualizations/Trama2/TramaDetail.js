@@ -3,6 +3,7 @@ import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
+import MiniInfoBox from '../../general/MiniInfoBox'
 
 const CHART_X_PADDING = 50
 
@@ -63,14 +64,9 @@ export default function TramaDetail({
   return (
     <div className="trama2-detail-content">
       <div className="trama2-detail-header d-flex justify-content-center align-items-center">
-        <div className="trama2-detail-label">
-          <div className="trama2-label-inner-start">
-            {data.racconto.titolo}, {data.racconto.anno}
-          </div>
-          <div className="trama2-label-inner-end" onClick={onBack}>
-            &times;
-          </div>
-        </div>
+        <MiniInfoBox onClose={onBack}>
+          {data.racconto.titolo}, {data.racconto.anno}
+        </MiniInfoBox>
       </div>
 
       <div
