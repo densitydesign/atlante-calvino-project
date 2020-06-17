@@ -4,7 +4,7 @@ import styles from './RustyViz.module.css';
 const V = {};
 export default V;
 
-let width, height, fontSize=12, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
+let width, height, fontSize=12, strokeWidth=1.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
     svg, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
@@ -29,17 +29,14 @@ V.init = async (options)=>{
         .scaleExtent([0.75, 100])
         .on("zoom", ()=>{
             g1.attr("transform", d3.event.transform);
-            length.filter(d=>d.perc_dubbio<minPerc).attr('stroke-width',strokeWidth/d3.event.transform.k);
+            length.attr('stroke-width',strokeWidth/d3.event.transform.k);
             g3.selectAll('text').attr("font-size",annotationsFontSize/d3.event.transform.k);
             g3.selectAll('path').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
-            if (d3.event.transform.k>=2){
+            if (d3.event.transform.k>=1.75){
                 label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
-            } else {
-                label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none')
-            }
-            if (d3.event.transform.k>=2.5) {
                 g3.attr('display','none')
             } else {
+                label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none');
                 g3.attr('display','block')
             }
         });
@@ -85,8 +82,9 @@ V.update = (options)=>{
     length=length.enter().append('circle')
             .classed('length',true)
             .attr('id',d=>'length-'+d.id)
-            .attr('fill',d=>d.perc_dubbio>=minPerc?'rgba(255,255,255,0.5)':'rgba(255,255,255,0.25)')
-            .attr('stroke',d=>d.perc_dubbio>=minPerc?'none':'#fff')
+            .attr('fill',d=>d.perc_dubbio>=minPerc?'white':'transparent')
+            .attr('fill-opacity','0.5')
+            .attr('stroke',d=>d.perc_dubbio>=minPerc?'#fff':'#fff')
             .attr('stroke-width',strokeWidth)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
