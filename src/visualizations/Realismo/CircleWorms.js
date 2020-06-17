@@ -12,11 +12,26 @@ const INNER_CIRCLE_STROKE_WIDTH = 5
 const LEGEND_TEXT_MARGIN = 3
 
 const Worm = React.memo(
-  ({ racconto, circles, radius, labelSize, wormSize, onClick, isSelected }) => {
+  ({
+    racconto,
+    circles,
+    radius,
+    labelSize,
+    wormSize,
+    onClick,
+    isSelected,
+    flipText = false,
+  }) => {
     const wormStart = radius - labelSize - wormSize - LABEL_PADDING
     const wormEnd = radius - labelSize
 
     const circleRadius = wormSize / circles.length / 2
+    const flipTextStyle = flipText
+      ? {
+          transform: 'rotate(180deg)',
+          transformOrigin: `${wormEnd}px 0px`,
+        }
+      : undefined
 
     const yScale = scaleLinear()
       .domain([0, 2])
@@ -56,7 +71,11 @@ const Worm = React.memo(
             )
           })}
         </g>
-        <text x={wormEnd}>{racconto.title}</text>
+        <g style={flipTextStyle}>
+          <text x={wormEnd} textAnchor={flipText ? 'end' : undefined}>
+            {racconto.title}
+          </text>
+        </g>
       </g>
     )
   }
@@ -170,15 +189,12 @@ export default function CircleWorms({
       <g
         className="babu"
         style={{
-          transform: `translate(${width / 2 - 14}px, ${endLineEnd}px) rotate(270deg)`,
+          transform: `translate(${
+            width / 2 - 14
+          }px, ${endLineEnd}px) rotate(270deg)`,
         }}
       >
-        <text
-          x={0}
-          y={0}
-          className="realismo-legend-text"
-          textAnchor={'start'}
-        >
+        <text x={0} y={0} className="realismo-legend-text" textAnchor={'start'}>
           ANNO PRIMA
         </text>
         <text
@@ -204,6 +220,7 @@ export default function CircleWorms({
               style={{ transform: `rotate(${angle}deg)` }}
             >
               <Worm
+                flipText={angle >= 90 && angle <= 270}
                 isSelected={allSelected || !!selected[racconto.title]}
                 onClick={handleClick}
                 radius={size / 2}

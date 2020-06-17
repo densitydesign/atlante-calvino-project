@@ -15,6 +15,8 @@ import CompassButton from '../../general/CompassButton/CompassButton'
 import useDimensions from "react-use-dimensions";
 import GlobalData from '../../utilities/GlobalData'
 
+import sortBy from 'lodash/sortBy'
+
 import { datasetToCircles, dataset, racconti } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
@@ -64,6 +66,10 @@ export default function RealismoMain({ title }) {
       return newRicerca
     })
   }, [])
+
+  // const selctedTitoliSorted = useMemo(() => {
+  //   sortBy(ricerca, titolo => dataset[titolo].?[0]?.)
+  // }, [ricerca])
 
   const [ref, { x, y, width, height }] = useDimensions();
 
