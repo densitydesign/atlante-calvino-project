@@ -104,7 +104,6 @@ class Cancellazione extends Component {
       helpSidePanelOpen: !this.state.helpSidePanelOpen
     });
   }
-  
 
   changeTimeSpan = (newOptions) => {
     newOptions=newOptions.map(d=>d.getFullYear())
@@ -117,16 +116,12 @@ class Cancellazione extends Component {
 
   applyFilters = ()=>{
     let ids=this.state.data.map(d=>d.id);
-    // console.log('all ids',ids)
     if (filters.search.length>0) {
-      // console.log('search filter',filters.search)
       ids=ids.filter(d=>filters.search.indexOf(d)>-1);
     }
     if (filters.time.length>0) {
-      // console.log('time filter',filters.time)
       ids=ids.filter(d=>filters.time.indexOf(d)>-1);
     }
-    // console.log('survived ids',ids);
     this.setState({filter:ids});
   }
 
@@ -137,18 +132,6 @@ class Cancellazione extends Component {
   }
 
   changeCercaPer=(newOptions)=>{
-    // let option = newOptions.find(d => d.status).label;
-    // let searchItems;
-    // switch(option){
-    //   case 'titolo':
-    //     searchItems = this.state.searchItems['titolo'];
-    //     break;
-    //   case 'pubblicazione':
-    //     searchItems = this.state.searchItems['pubblicazione'];
-    //     break;
-    //   default:
-    //     console.error('No correspondence found, check options for research.')
-    // };
 		this.setState(prevState => ({
 			cerca_per: {
 				...prevState.cerca_per,
