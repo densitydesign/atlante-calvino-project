@@ -82,9 +82,9 @@ V.update = (options)=>{
     length=length.enter().append('circle')
             .classed('length',true)
             .attr('id',d=>'length-'+d.id)
-            .attr('fill',d=>d.perc_dubbio>=minPerc?'white':'transparent')
+            .attr('fill',d=>d.perc_dubbio>=minPerc?'#fff':'transparent')
             .attr('fill-opacity','0.5')
-            .attr('stroke',d=>d.perc_dubbio>=minPerc?'#fff':'#fff')
+            .attr('stroke','#fff')
             .attr('stroke-width',strokeWidth)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
@@ -171,7 +171,8 @@ V.filter = (ids)=>{
             .filter(d=>ids.indexOf(d.id)>-1)
                 .style('opacity',1)
                 .attr('display','block')
-                .classed('keepVisible',label.size()!==ids.length?'true':false);
+                .classed('keepVisible',label.size()!==ids.length?'true':false)
+                .each(function(d){truncateLabel(this,d.title)})
 }
 
 function toggleMetaball(data){
