@@ -35,9 +35,25 @@ const optionsMovimento = [
   {
     label: 'NO MOVIMENTO',
   },
+]
+
+const optionsSpace = [
   {
-    label: 'MOVIMENTO'
-  }
+    label: 'INTERNO',
+    value: 'indoor',
+  },
+  {
+    label: 'ESTERNO',
+    value: 'outdoor',
+  },
+  {
+    label: 'MEZZO DI TRANSPORTO',
+    value: 'transportation',
+  },
+  {
+    label: 'ASSENZA DI AMBIENTAZIONE',
+    value: 'no_setting',
+  },
 ]
 
 // console.log('dataset', dataset)
@@ -61,30 +77,45 @@ export default function RealismoMain({ title }) {
     setMeasures(m)
   }, [])
 
-  const [movimento, setMovimento] = useState('MOVIMENTO')
+  const [movimento, setMovimento] = useState(null)
+  const [spazio, setSpazio] = useState([])
+  const spazioLabels = useMemo(() => spazio.map((s) => s.label), [spazio])
 
   const omitted = useMemo(() => {
-    if (movimento === 'MOVIMENTO') {
-      return null
+    // Skip filters
+    if (movimento === null && spazio.length === 0) {
+      return {}
     }
     const omittedStuff = {}
-    Object.keys(dataset).forEach(titolo => {
-      const hasMove = dataset[titolo].some(datum => {
-        if (movimento === 'SI MOVIMENTO') {
-          return datum.movement === 'VERO'
-        }
-        if (movimento === 'NO MOVIMENTO') {
-          return datum.movement === 'FALSO'
-        }
-        return false
-      })
-      if (!hasMove) {
+    const spazioValues = spazio.map((s) => s.value)
+    Object.keys(dataset).forEach((titolo) => {
+      let keep = true
+
+      if (keep && movimento !== null) {
+        keep = dataset[titolo].some((datum) => {
+          if (movimento === 'SI MOVIMENTO') {
+            return datum.movement === 'TRUE'
+          }
+          if (movimento === 'NO MOVIMENTO') {
+            return datum.movement === 'FALSE'
+          }
+          return false
+        })
+      }
+
+      if (keep && spazioValues.length > 0) {
+        const categories = dataset[titolo].map((i) => i.category)
+        keep = spazioValues.some((category) => {
+          return categories.indexOf(category) !== -1
+        })
+      }
+
+      if (!keep) {
         omittedStuff[titolo] = true
       }
     })
-    return omittedStuff
-  }, [movimento])
-  console.log('O.o', omitted)
+    return omittedStuff || {}
+  }, [movimento, spazio])
 
   const selcted = useMemo(() => {
     const mapSelected = {}
@@ -167,6 +198,7 @@ export default function RealismoMain({ title }) {
             <CircleWorms
               toggleSelect={toggleSelect}
               selected={selcted}
+              omitted={omitted}
               circlesMap={circlesMap}
               racconti={racconti}
               width={measures.width}
@@ -176,17 +208,34 @@ export default function RealismoMain({ title }) {
         </div>
         <div className="bottom-nav navigations">
           <AltOptions
-            title=''
-            // multiple
+            title="Movimento"
             options={optionsMovimento}
             value={movimento}
             allowEmpty={true}
-            onChange={m => {
-              setMovimento(m.label)
+            onChange={(m) => {
+              if (m) {
+                setMovimento(m.label)
+              } else {
+                setMovimento(null)
+              }
             }}
             style={{
               gridColumn: 'span 8',
-              textAlign: "center",
+              textAlign: 'center',
+            }}
+          />
+          <AltOptions
+            title="Spazio"
+            multiple
+            options={optionsSpace}
+            value={spazioLabels}
+            allowEmpty={true}
+            onChange={(s) => {
+              setSpazio(s)
+            }}
+            style={{
+              gridColumn: 'span 8',
+              textAlign: 'center',
             }}
           />
         </div>

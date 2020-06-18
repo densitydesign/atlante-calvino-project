@@ -20,6 +20,7 @@ const Worm = React.memo(
     wormSize,
     onClick,
     isSelected,
+    isOmitted,
     flipText = false,
   }) => {
     const wormStart = radius - labelSize - wormSize - LABEL_PADDING
@@ -44,9 +45,13 @@ const Worm = React.memo(
         }}
       >
         <g
-          onClick={() => onClick(racconto)}
+          onClick={() => {
+            if (!isOmitted) {
+              onClick(racconto)
+            }
+          }}
           style={{
-            cursor: 'pointer',
+            cursor: isOmitted ? undefined : 'pointer',
           }}
         >
           {circles.map((circle, i) => {
@@ -55,7 +60,7 @@ const Worm = React.memo(
                 <circle
                   className="movement"
                   style={{ fill: colorScale(circle.category) }}
-                  r={circleRadius * 1.5}
+                  r={isOmitted ? circleRadius * 0.5 : circleRadius * 1.5}
                   cy={yScale(circle.level)}
                   cx={wormStart + i * circleRadius * 2 + circleRadius}
                 ></circle>
@@ -86,6 +91,7 @@ export default function CircleWorms({
   height,
   circlesMap,
   selected,
+  omitted,
   racconti,
   toggleSelect,
 }) {
@@ -222,6 +228,7 @@ export default function CircleWorms({
               <Worm
                 flipText={angle >= 90 && angle <= 270}
                 isSelected={allSelected || !!selected[racconto.title]}
+                isOmitted={!!omitted[racconto.title]}
                 onClick={handleClick}
                 radius={size / 2}
                 labelSize={(size / 2) * LABEL_SIZE_PERCENT}
