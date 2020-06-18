@@ -5,7 +5,7 @@ import { scaleOrdinal } from 'd3-scale'
 import range from 'lodash/range'
 import find from 'lodash/find'
 import mapValues from 'lodash/mapValues'
-import sortBy from 'lodash/sortBy'
+import { extent } from 'd3-array'
 
 const realismoDataNormalized = realismoData.map((item) => ({
   ...item,
@@ -13,6 +13,9 @@ const realismoDataNormalized = realismoData.map((item) => ({
   endNorm: +item.end / item.length,
   locationNorm: +item['occurrence_location'] / +item.length,
 }))
+
+export const yearsExtent = extent(realismoData, d => +d.year)
+  .map(y => new Date(y, 0))
 
 export const racconti = uniqBy(realismoData, 'title').map((item) => ({
   title: item.title,

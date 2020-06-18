@@ -14,10 +14,11 @@ import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
 import useDimensions from 'react-use-dimensions'
 import GlobalData from '../../utilities/GlobalData'
+import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
 
-import { datasetToCircles, dataset, racconti } from './utils'
+import { datasetToCircles, dataset, racconti, yearsExtent } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 
@@ -79,13 +80,10 @@ export default function RealismoMain({ title }) {
 
   const [movimento, setMovimento] = useState(null)
   const [spazio, setSpazio] = useState([])
+  const [timeFilter, setTimeFilter] = useState(yearsExtent)
   const spazioLabels = useMemo(() => spazio.map((s) => s.label), [spazio])
 
   const omitted = useMemo(() => {
-    // Skip filters
-    if (movimento === null && spazio.length === 0) {
-      return {}
-    }
     const omittedStuff = {}
     const spazioValues = spazio.map((s) => s.value)
     Object.keys(dataset).forEach((titolo) => {
@@ -110,12 +108,21 @@ export default function RealismoMain({ title }) {
         })
       }
 
+      if (keep) {
+        keep = dataset[titolo].every((d) => {
+          return (
+            d.year >= timeFilter[0].getFullYear() &&
+            d.year <= timeFilter[1].getFullYear()
+          )
+        })
+      }
+
       if (!keep) {
         omittedStuff[titolo] = true
       }
     })
-    return omittedStuff || {}
-  }, [movimento, spazio])
+    return omittedStuff
+  }, [movimento, spazio, timeFilter])
 
   const selcted = useMemo(() => {
     const mapSelected = {}
@@ -236,6 +243,13 @@ export default function RealismoMain({ title }) {
             style={{
               gridColumn: 'span 8',
               textAlign: 'center',
+            }}
+          />
+          <RangeFilter
+            style={{ gridColumn: 'span 8' }}
+            data={yearsExtent}
+            changeOptions={(timeSpan) => {
+              setTimeFilter(timeSpan)
             }}
           />
         </div>
