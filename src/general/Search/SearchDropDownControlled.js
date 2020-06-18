@@ -90,11 +90,17 @@ class Search extends Component {
             renderMenuItemChildren(option, props, idx, selectedOptions)
           }
           renderToken={(option, props, index) => {
-            return index < maxTokens ? (
-              renderToken(option, props, index)
-            ) : index === maxTokens ? (
-              <span key={index} className="rbt-token" onClick={() => this.typeahead.focus()}>+{selectedOptions.length - maxTokens}</span>
-            ) : null;
+            if (selectedOptions.length - index - 1 < maxTokens) {
+              return renderToken(option, props, index)
+            } else if (selectedOptions.length - index - 1 === maxTokens) {
+              return (
+                <span key={index} className="rbt-token" onClick={() => this.typeahead.focus()}>
+                  +{selectedOptions.length - maxTokens}
+                </span>
+              )
+            } else {
+              return null
+            }
           }}
         />
       </div>

@@ -199,7 +199,14 @@ export default function RealismoMain({ title }) {
         >
           <div className="realismo-reset">
             <div>Seleziona i test e poi scorri in basso</div>
-            <button onClick={() => setRicerca([])}>reset</button>
+            <button onClick={() => {
+              // Reset Selection
+              setRicerca([])
+              // Reset Filters
+              // setSpazio([])
+              // setMovimento(null)
+              // setTimeFilter(yearsExtent)
+            }}>reset</button>
           </div>
           {measures && (
             <CircleWorms
@@ -247,7 +254,7 @@ export default function RealismoMain({ title }) {
           />
           <RangeFilter
             style={{ gridColumn: 'span 8' }}
-            data={yearsExtent}
+            data={timeFilter}
             changeOptions={(timeSpan) => {
               setTimeFilter(timeSpan)
             }}
