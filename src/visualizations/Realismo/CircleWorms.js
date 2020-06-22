@@ -38,6 +38,20 @@ const Worm = React.memo(
       .domain([0, 2])
       .range([0, circleRadius * 2])
 
+
+    //var for animations delays
+    const animationDelays = circles.reduce((acc, item) => {
+      if(!acc[item.occurrence_location]){
+        acc[item.occurrence_location] = 1
+      }
+        acc[item.occurrence_location] += 1
+      return acc
+    }, {})
+
+    const animationGroups = {}
+
+
+    
     return (
       <g
         style={{
@@ -55,21 +69,33 @@ const Worm = React.memo(
           }}
         >
           {circles.map((circle, i) => {
+
+            const cx = wormStart + i * circleRadius * 2 + circleRadius
+            const cy = yScale(circle.level || 0)
+            
+            if(circle.movement === 'TRUE'){
+              animationGroups[circle.occurrence_location] = animationGroups[circle.occurrence_location] === undefined  ?  0  : animationGroups[circle.occurrence_location] + 1
+
+            }
+
+            const delay =  circle.direction === 'forward' ? animationGroups[circle.occurrence_location] * 0.2 : (animationDelays[circle.occurrence_location] -  animationGroups[circle.occurrence_location]) * 0.2
+          
+
             return (
               <g key={i}>
                 <circle
-                  className="movement"
-                  style={{ fill: colorScale(circle.category) }}
+                  className={`${circle.movement === 'TRUE' && !isOmitted ? 'movement' : ''}`}
+                  style={{ fill: colorScale(circle.category), transformOrigin: `${cx}px ${cy}px`, animationDelay:`${delay}s` }}
                   r={isOmitted ? circleRadius * 0.5 : circleRadius * 1.5}
-                  cy={yScale(circle.level)}
-                  cx={wormStart + i * circleRadius * 2 + circleRadius}
+                  cy={cy}
+                  cx={cx}
                 ></circle>
                 {circle.place && (
                   <circle
                     style={{ fill: '#fff' }}
                     r={circleRadius / 3}
-                    cy={yScale(circle.level)}
-                    cx={wormStart + i * circleRadius * 2 + circleRadius}
+                    cy={cy}
+                    cx={cx}
                   ></circle>
                 )}
               </g>

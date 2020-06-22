@@ -50,3 +50,24 @@ text.realismo-legend-text {
     /* text-anchor: end; */
     /* transform: rotate(-45deg); */
 }
+
+.movement {
+    animation: movement 5s infinite linear;
+}
+
+@keyframes movement {
+    0% {
+      transform: scale(1);
+      stroke: transparent;
+    }
+    
+    50% {
+        transform: scale(2);
+        stroke: white;
+      
+    }
+    100% {
+        transform: scale(1);
+        stroke: transparent;
+    }
+  }
