@@ -18,7 +18,12 @@ import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
 
-import { datasetToCircles, dataset, raccontiDegs as racconti, yearsExtent } from './utils'
+import {
+  datasetToCircles,
+  dataset,
+  raccontiDegs as racconti,
+  yearsExtent,
+} from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 
@@ -146,7 +151,7 @@ export default function RealismoMain({ title }) {
     return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
-  const [ref, { x, y, width, height }] = useDimensions()
+  const [ref, { width }] = useDimensions()
 
   return (
     <div>
@@ -199,14 +204,18 @@ export default function RealismoMain({ title }) {
         >
           <div className="realismo-reset">
             <div>Seleziona i test e poi scorri in basso</div>
-            <button onClick={() => {
-              // Reset Selection
-              setRicerca([])
-              // Reset Filters
-              // setSpazio([])
-              // setMovimento(null)
-              // setTimeFilter(yearsExtent)
-            }}>reset</button>
+            <button
+              onClick={() => {
+                // Reset Selection
+                setRicerca([])
+                // Reset Filters
+                // setSpazio([])
+                // setMovimento(null)
+                // setTimeFilter(yearsExtent)
+              }}
+            >
+              reset
+            </button>
           </div>
           {measures && (
             <CircleWorms
