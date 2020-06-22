@@ -30,3 +30,11 @@
     height: 100px;
     left: 0;
 }
+
+.switchView {
+    cursor: pointer;
+}
+
+.switchView:hover {
+    text-decoration: underline;
+}
