@@ -360,6 +360,17 @@ footer {
   height: auto;
 }
 
+.help-side-panel .legend {
+  padding: 0;
+  border: none;
+}
+
+.help-side-panel .legend p, .help-side-panel .legend li {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
 @keyframes floatLeft {
   0% {
     left: 50px;

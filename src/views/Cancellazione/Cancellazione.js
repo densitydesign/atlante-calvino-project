@@ -4,7 +4,6 @@ import styles from './Cancellazione.module.css';
 import * as d3 from 'd3';
 import Loading from '../../general/Loading';
 import RustyViz from '../../visualizations/RustyViz';
-import RustyVizSpatialization from '../../visualizations/RustyVizSpatialization';
 
 import MainMenu from '../../general/MainMenu';
 import PageTitle from '../../general/PageTitle';
@@ -14,6 +13,7 @@ import PageTitle from '../../general/PageTitle';
 import MoreInfo from '../../general/MoreInfo';
 import CompassButton from '../../general/CompassButton/CompassButton';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
+import CancellazioneHelp from '../../helpPages/doubting/CancellazioneHelp';
 
 import Options from '../../general/Options';
 import SearchDropDown from '../../general/Search/SearchDropDownControlled';
@@ -61,7 +61,6 @@ class Cancellazione extends Component {
       loading:true,
 
       booksData: null,
-
   
       controlsEnabled: true,
       currentTextID: null,
@@ -141,7 +140,7 @@ class Cancellazione extends Component {
 	}
 
   render() {
-    const helpPage = GlobalData.helpPages.plot.main;
+    // const helpPage = GlobalData.helpPages.plot.main;
     const {
       cercaPer,
       dettaglio,
@@ -154,11 +153,9 @@ class Cancellazione extends Component {
     } = this.state;
     return <>
       <div className={styles.main}>
-        <HelpSidePanel
-          open={helpSidePanelOpen}
-          page={helpPage}
-          closeButtonClicked={this.toggleHelpSidePanel}
-        />
+        <HelpSidePanel open={helpSidePanelOpen} closeButtonClicked={this.toggleHelpSidePanel} >
+          <CancellazioneHelp />
+        </HelpSidePanel>
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
 					<PageTitle title = {"Tappa 3 – Cancellare"} style = {{gridColumn: 'span 9'}}/>
