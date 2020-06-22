@@ -18,7 +18,7 @@ import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
 
-import { datasetToCircles, dataset, racconti, yearsExtent } from './utils'
+import { datasetToCircles, dataset, raccontiDegs as racconti, yearsExtent } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 

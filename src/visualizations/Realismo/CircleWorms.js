@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react'
-import { colorScale } from './utils'
+import { colorScale, yearsArcs } from './utils'
 import { scaleLinear } from 'd3-scale'
 import { transform } from 'lodash'
+import { arc } from 'd3'
 
 const LEGEND_DEG = 10
 const LABEL_SIZE_PERCENT = 0.2
@@ -10,6 +11,8 @@ const LABEL_PADDING = 10
 const INNER_CIRCLE_PADDING = 10
 const INNER_CIRCLE_STROKE_WIDTH = 5
 const LEGEND_TEXT_MARGIN = 3
+
+const arcGenerator = arc()
 
 const Worm = React.memo(
   ({
@@ -104,7 +107,7 @@ const Worm = React.memo(
         </g>
         <g style={flipTextStyle}>
           <text x={wormEnd} textAnchor={flipText ? 'end' : undefined}>
-            {racconto.title}
+          {racconto.year} {racconto.title}
           </text>
         </g>
       </g>
@@ -210,6 +213,18 @@ export default function CircleWorms({
         strokeWidth={INNER_CIRCLE_STROKE_WIDTH}
         r={innerRadius}
       />
+
+      <g transform={`translate(${width/2}, ${size/2})`}>
+      {yearsArcs.map(yearArc => <path 
+        style={{stroke: '#222', fill: 'transparent'}}
+        d={arcGenerator({...yearArc, outerRadius:100, innerRadius: 90})}>
+          <title>{yearArc.year} {yearArc.s} {yearArc.e}</title>
+        </path>)}
+      </g>
+
+
+
+
       <line
         y1={endLineStart}
         y2={endLineEnd}
@@ -241,10 +256,12 @@ export default function CircleWorms({
 
       <g transform={`translate(${width / 2} , ${size / 2})`}>
         {racconti.map((racconto, i) => {
-          let angle = i * deltaAngle + deltaAngle / 2 + 270 + LEGEND_DEG / 2
-          if (angle > 360) {
-            angle -= 360
-          }
+          // let angle = i * deltaAngle + deltaAngle / 2 + 270 + LEGEND_DEG / 2
+          // if (angle > 360) {
+          //   angle -= 360
+          // }
+          let angle = racconto.rotation
+
           return (
             <g
               key={i}
