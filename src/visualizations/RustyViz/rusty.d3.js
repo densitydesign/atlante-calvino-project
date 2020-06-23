@@ -17,6 +17,7 @@ let width, height, fontSize=12, strokeWidth=1.5, annotationsFontSize=12, annotat
  * @param {number}      options.width       the max width of the visualization
  * @param {number}      options.height      the max height of the visualization
  * @param {Array}       options.data        the array of data
+ * @param {Function}    options.onSelection    function that adds the selected element to the searchedItems
  */
 V.init = async (options)=>{
     width = options.width;
@@ -34,10 +35,10 @@ V.init = async (options)=>{
             g3.selectAll('path').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
             if (d3.event.transform.k>=1.75){
                 label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
-                g3.attr('display','none')
+                g3.selectAll('text').attr('display','none')
             } else {
-                label.filter(function(d){return !d3.select(this).classed('keepVisible')}).attr('display','none');
-                g3.attr('display','block')
+                label.attr('display','none');
+                g3.selectAll('text').attr('display','block')
             }
         });
     svg.call(zoom);
@@ -63,7 +64,7 @@ V.init = async (options)=>{
     const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-2740/2)+','+(-1568/2)+')');
     g3.node().appendChild(annotations.node());
     //  Ended init, run the update to paint first time
-    V.update({data:options.data});
+    V.update(options);
 }
 /**
  * 
@@ -94,6 +95,9 @@ V.update = (options)=>{
                 if (d.perc_dubbio>=minPerc) {
                    toggleMetaball(d); 
                 }
+                if (options.onSelection) {
+                   options.onSelection(d.id); 
+                }
             })
             .merge(length);
             
@@ -105,7 +109,12 @@ V.update = (options)=>{
         .attr('id',d=>'combinations-'+d.id)
         .style('cursor',d=>d.perc_dubbio>=minPerc?'pointer':'unset')
         .attr('transform',d=>'translate('+d.x+','+d.y+')')
-        .on('click',toggleMetaball)
+        .on('click',(d)=>{
+            toggleMetaball(d);
+            if (options.onSelection) {
+                options.onSelection(d.id); 
+            }
+        })
         .merge(combinations);
 
     combinations.append('path')
@@ -163,16 +172,37 @@ V.changeColor = (value)=>{
 
 }
 
-V.filter = (ids)=>{
-    length.style('opacity',1).filter(d=>ids.indexOf(d.id)<0).style('opacity',0.3);
-    combinations.style('opacity',1).filter(d=>ids.indexOf(d.id)<0).style('opacity',0.3);
-    label.style('opacity',0.3)
-            .classed('keepVisible',false)
-            .filter(d=>ids.indexOf(d.id)>-1)
-                .style('opacity',1)
-                .attr('display','block')
-                .classed('keepVisible',label.size()!==ids.length?'true':false)
-                .each(function(d){truncateLabel(this,d.title)})
+V.filter = (filter)=>{
+    if (filter==='no filters') {
+        length.style('opacity',1).attr('fill-opacity','0.5');
+        combinations.style('opacity',1);
+        label.style('opacity',1);
+    } else {
+        length
+            .style('opacity',1).attr('fill-opacity','1')
+            .filter(d=>filter.indexOf(d.id)<0)
+                .style('opacity',0.2).attr('fill-opacity','0.5');
+
+        combinations
+            .style('opacity',1)
+            .filter(d=>filter.indexOf(d.id)<0)
+                .style('opacity',0.2);
+
+        label
+            .style('opacity',1)
+            .filter(d=>filter.indexOf(d.id)<0)
+                .style('opacity',0.2);
+    }
+
+    
+
+    // label.style('opacity',0.3)
+    //         .classed('keepVisible',false)
+    //         .filter(d=>ids.indexOf(d.id)>-1)
+    //             .style('opacity',1)
+    //             .attr('display','block')
+    //             .classed('keepVisible',label.size()!==ids.length?'true':false)
+    //             .each(function(d){truncateLabel(this,d.title)})
 }
 
 function toggleMetaball(data){
