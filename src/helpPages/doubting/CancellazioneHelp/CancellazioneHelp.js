@@ -170,12 +170,9 @@ const datum = {
     "color": "rgb(215, 164, 97)"
 };
 
-console.log(datum.combinations)
-
 export default function CancellazioneHelp(){
     const [view, setView] = useState('legend');
     const pack = (arr)=>{
-        console.log('pack')
         d3.selectAll('.animated-group circle')
             .transition()
                 .duration(1000)
@@ -191,7 +188,6 @@ export default function CancellazioneHelp(){
                     }})
     }
     const matrix = (arr)=>{
-        console.log('matrix')
         d3.selectAll('.animated-group path')
             .transition()
                 .duration(1000)
@@ -233,7 +229,7 @@ export default function CancellazioneHelp(){
         <small>TAPPA 3</small>
         <h1 className={styles.h1}>Cancellazione</h1>
         <small>
-            <a href="#" onClick={()=>setView('legend')}>LEGENDA</a> | <a href="#" onClick={()=>setView('help')}>COME SI LEGGE</a>
+            <a className={styles.switchView} onClick={()=>setView('legend')}>LEGENDA</a> | <a className={styles.switchView} onClick={()=>setView('help')}>COME SI LEGGE</a>
         </small>
         { tabs[view] }
         {
@@ -267,7 +263,6 @@ const tabs = {
                 <img className={styles.legendImg} src={legend03} />
                 <svg className={styles.colorAnimation}>
                     <g transform="translate(150,50)">
-                        {/* <circle r="22.5" /> */}
                         <g transform="scale(4)" className="animated-group">
                             <path className="metaball" fill="rgb(215, 164, 97)" d="M -0.5013909475524496,3.52841759976371 C -0.7614528555331622,2.5219549332227365 -1.2441904447652543,2.4954801556932176 -1.6942942328215682,2.6117833766696767A 0.7374741613310637,0.7374741613310637, 0 0,1, -2.552005586182954, 1.596676334883019C -2.4684351839167005,1.4098158587117724 -2.528387491286892,1.233709940107677 -3.0569087303948006,0.9973371476182225A 2.0858919207695767,2.0858919207695767, 0 1,1, -1.3043576101663796, -2.788080413221046C -0.7599296360909821,-2.5273508020727915 -0.536815937568705,-2.610452516927014 -0.403712292535915,-2.8813378375388865A 1.0429459602283466,1.0429459602283466, 0 0,1, 1.2900635140340466, -3.1380457111883713C 1.4995825300597245,-2.916517847996281 1.6964617929168881,-2.9109711069260573 1.9677771816750322,-3.1675781571975445A 1.2773427161837123,1.2773427161837123, 0 1,1, 3.105581799256722, -0.9889736866124286C 2.7341042777323614,-0.9117150641853359 2.603500618954613,-0.7166216981007869 2.6872267920513044,-0.2865722595165797A 1.4749483222196427,1.4749483222196427, 0 0,1, 2.267224579522031, 1.0532035170287424C 1.9548396313582272,1.3566863289241218 1.9496207667590535,1.6237434953865573 2.2863623682353835,1.9754718137571903A 1.6490423555943647,1.6490423555943647, 0 1,1, -0.5013909475524496, 3.52841759976371 Z" display="block">
                             </path>

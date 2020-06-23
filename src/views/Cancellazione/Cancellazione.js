@@ -69,7 +69,7 @@ class Cancellazione extends Component {
       manifestazioniStilistiche: manifestazioniStilistiche,
       cerca_per: cerca_per,
       searchedItems:[],
-      timeExtent: [+new Date('1943'),+new Date('1985')],
+      timeExtent: [+new Date('1945'),+new Date('1985')],
       color: manifestazioniStilistiche.options.find(d=>d.status).label
     };
   }
@@ -121,6 +121,9 @@ class Cancellazione extends Component {
     if (filters.time.length>0) {
       ids=ids.filter(d=>filters.time.indexOf(d)>-1);
     }
+    if (ids.length===this.state.data.length) {
+      ids='no filters'
+    }
     this.setState({filter:ids});
   }
 
@@ -137,7 +140,50 @@ class Cancellazione extends Component {
 				options: newOptions
       }
     }));
-	}
+  }
+  
+  /**
+   * 
+   * @param {Array} newOptions array of objects. Each object is { label:"title of composition, collection or publication venue", value:["S001", [and other ids] ] }
+   */
+  changeResearch=(newOptions) => {
+    const ids = d3.nest()
+      .key(d=>d)
+      .entries(newOptions.map(d=>d.value).flat())
+      .map(d=>d.key);
+
+    filters.search=ids;
+    this.applyFilters();
+    this.setState({searchedItems: newOptions});
+  }
+
+  onSelection=(id) => {
+    console.log(id)
+    // console.log(this.state.searchedItems)
+    // const index=this.state.searchedItems.map(d=>d.value).flat().indexOf(id);
+    // console.log(index)
+    // const newSearchedItems = [...this.state.searchedItems];
+    // if (index===-1){
+    //   console.log('add to searched items')
+    //   const obj = {
+    //     'label': this.state.data.find(d=>d.id===id).title,
+    //     'value': [id]
+    //   }
+    //   console.log(obj)
+    //   console.log(this.state.searchedItems)
+      
+    //   newSearchedItems.push(obj)
+    //   console.log(newSearchedItems)
+    //   filters.search.push(id);
+    //   this.applyFilters();
+    //   this.setState({searchedItems: newSearchedItems});
+    // } else {
+    //   console.log('remove from searched items')
+    //   newSearchedItems.splice(index,1)
+    //   console.log(newSearchedItems)
+    //   this.setState({searchedItems: newSearchedItems});
+    // }
+  }
 
   render() {
     // const helpPage = GlobalData.helpPages.plot.main;
@@ -172,22 +218,9 @@ class Cancellazione extends Component {
           {this.state.loading && <Loading style={{ gridColumn: 'span 9' }}/>}
           {!this.state.loading &&
             <SearchDropDown
-              style={{
-                gridColumn: 'span 9',
-              }}
+              style={{ gridColumn:'span 9'}}
               data={{ options: this.state.searchItems[ this.state.cerca_per.options.find(d=>d.status).label ] }}
-              changeOptions={(newOptions) => {
-                console.log(newOptions)
-                const ids = d3.nest()
-                  .key(d=>d)
-                  .entries(newOptions.map(d=>d.value).flat())
-                  .map(d=>d.key);
-
-                filters.search=ids;
-                this.applyFilters();
-
-                this.setState({searchedItems: newOptions})
-              }}
+              changeOptions={this.changeResearch}
               selectedOptions={this.state.searchedItems}
             />
           } 
