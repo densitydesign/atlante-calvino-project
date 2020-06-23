@@ -11,6 +11,7 @@ import PageTitle from '../../general/PageTitle';
 import MoreInfo from '../../general/MoreInfo';
 import CompassButton from '../../general/CompassButton/CompassButton';
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
+import ProcessDoubtingMainHelp from '../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp.js';
 
 import Loading from '../../general/Loading';
 import Options from '../../general/Options';
@@ -581,8 +582,12 @@ class ProcessDoubting extends Component {
 
         <HelpSidePanel
 					open={this.state.helpSidePanelOpen}
-					page={helpPage}
-					closeButtonClicked={this.toggleHelpSidePanel} />
+					// page={helpPage}
+					closeButtonClicked={this.toggleHelpSidePanel}>
+        
+            <ProcessDoubtingMainHelp />
+
+        </HelpSidePanel>
 
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>

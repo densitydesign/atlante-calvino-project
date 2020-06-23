@@ -1,0 +1,52 @@
+.realismo-content {
+    height: calc(100vh - var(--navigation-height));
+    width: 100%;
+}
+
+.realismo-reset {
+    position: absolute;
+    top: 20px;
+    font-style: italic;
+    left: 60px;
+}
+
+.realismo-reset > button {
+    background: white;
+    border-radius: 5px;
+}
+
+text.realismo-legend-text {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.realismo-detail {
+
+}
+
+.realismo-details-container{
+
+    margin: 100px 100px;
+}
+.worm-detail-svg {
+    height: 250px;
+    width: 100%;
+}
+
+
+.worm-detail-y-grid{
+    stroke: #666;
+    stroke-dasharray: 4 2;
+    stroke-width: 1px;
+}
+
+.worm-detail-x-place{
+    stroke: #666;
+    stroke-width: 1px;
+}
+
+.worm-detail-place-label{
+    /* text-anchor: end; */
+    /* transform: rotate(-45deg); */
+}

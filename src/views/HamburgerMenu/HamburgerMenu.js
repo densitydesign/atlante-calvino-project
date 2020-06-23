@@ -31,7 +31,6 @@ export default class HamburgerMenu extends React.Component
 
           <div className="hamburger-menu-cell-grid">
 
-
             <ViewSelector className="hamburger-menu-cell blank-intro" route="Compass" text="BUSSOLA"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell itineraries-intro" route="Itineraries" text="Dubbio"><h3 dataClass=""/></ViewSelector>
             <ViewSelector className="hamburger-menu-cell itineraries-intro" route="Itineraries/#space" text="Spazio"><h3 dataClass=""/></ViewSelector>
