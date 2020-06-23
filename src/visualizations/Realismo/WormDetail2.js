@@ -93,7 +93,11 @@ function WormDetail2({ data, width, title, year, toggleSelect }) {
     })
   }, [data, width])
 
-  console.log('RENDER WORM DETAIL 2', dataWorms)
+  const maxLevel = useMemo(() => {
+    return Math.max(...dataWorms.map((d) => d.level))
+  }, [dataWorms])
+
+  console.log('RENDER WORM DETAIL 2', dataWorms, maxLevel)
 
   return (
     <div className="realismo-detail border-dark">
@@ -108,23 +112,25 @@ function WormDetail2({ data, width, title, year, toggleSelect }) {
               x1={item.xLocation + LOCATION_RADIUS}
               x2={item.xLocation + LOCATION_RADIUS}
               y1={yScale(item.level)}
-              y2={yScale(3) + 20}
+              y2={yScale(maxLevel + 1) + 20}
               stroke="black"
             />
             <text
               style={{
-                transformOrigin: `${item.xLocation}px ${yScale(3) + 20}px`,
+                transformOrigin: `${item.xLocation + LOCATION_RADIUS + 5}px ${
+                  yScale(maxLevel + 1) + 30
+                }px`,
                 transform: `rotate(-45deg)`,
               }}
               textAnchor="end"
-              x={item.xLocation + LOCATION_RADIUS}
-              y={yScale(3) + 20}
+              x={item.xLocation + LOCATION_RADIUS + 5}
+              y={yScale(maxLevel + 1) + 30}
             >
               {item.occurrence}
             </text>
           </g>
         ))}
-        {range(3).map((level) => (
+        {range(maxLevel + 1).map((level) => (
           <line
             key={level}
             x1={0}
