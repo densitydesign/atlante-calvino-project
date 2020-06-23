@@ -4,6 +4,9 @@ import range from 'lodash/range'
 import find from 'lodash/find'
 import MiniInfoBox from '../../general/MiniInfoBox'
 
+const CHART_PADDING_X = 100
+const LEGEND_TEXT_HEIGHT = 150
+
 const MINI_RADIUS = 10
 const LOCATION_RADIUS = 3
 const OVERLAP_RADIUS = 0.4
@@ -59,12 +62,13 @@ function CirclesLine({
   )
 }
 
-function WormDetail2({ data, width, title, year, toggleSelect }) {
+function WormDetail2({ data, width: allWidth, title, year, toggleSelect }) {
+  const width = allWidth - CHART_PADDING_X * 2
   const dataWorms = useMemo(() => {
     return data.map((item) => {
-      const x1 = item.startTotalNorm * width
-      const x2 = item.endTotalNorm * width
-      const xLocation = item.locationTotalNorm * width
+      const x1 = item.startTotalNorm * width + CHART_PADDING_X
+      const x2 = item.endTotalNorm * width + CHART_PADDING_X
+      const xLocation = item.locationTotalNorm * width + CHART_PADDING_X
 
       const widthWorm = x2 - x1
       const circlesCount = Math.ceil(widthWorm / (MINI_RADIUS * 2))
@@ -97,14 +101,16 @@ function WormDetail2({ data, width, title, year, toggleSelect }) {
     return Math.max(...dataWorms.map((d) => d.level))
   }, [dataWorms])
 
-  console.log('RENDER WORM DETAIL 2', dataWorms, maxLevel)
+  const height = yScale(maxLevel + 1) + LEGEND_TEXT_HEIGHT
 
   return (
-    <div className="realismo-detail border-dark">
-      <MiniInfoBox onClose={() => toggleSelect(title)}>
-        {title}, {year}
-      </MiniInfoBox>
-      <svg className="worm-detail-svg">
+    <div className="realismo-detail">
+      <div style={{ margin: `0px ${CHART_PADDING_X}px` }}>
+        <MiniInfoBox onClose={() => toggleSelect(title)}>
+          {title}, {year}
+        </MiniInfoBox>
+      </div>
+      <svg className="worm-detail-svg" style={{ height }}>
         {dataWorms.map((item) => (
           <g key={item.occurrence_location}>
             <line
@@ -133,8 +139,8 @@ function WormDetail2({ data, width, title, year, toggleSelect }) {
         {range(maxLevel + 1).map((level) => (
           <line
             key={level}
-            x1={0}
-            x2={width}
+            x1={CHART_PADDING_X}
+            x2={width + CHART_PADDING_X}
             y1={yScale(level)}
             y2={yScale(level)}
             className="worm-detail-y-grid"

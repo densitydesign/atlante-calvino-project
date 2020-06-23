@@ -21,17 +21,15 @@ text.realismo-legend-text {
 }
 
 
+.realismo-details-container {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
 .realismo-detail {
 
 }
-
-.realismo-details-container{
-
-    margin: 100px 100px;
-}
 .worm-detail-svg {
-    margin-top: 50px;
-    height: 400px;
+    margin-top: 30px;
     width: 100%;
 }
 
