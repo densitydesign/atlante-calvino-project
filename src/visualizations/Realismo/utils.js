@@ -92,14 +92,16 @@ function calculateDegs() {
   const byYear = groupBy(raccontiDegs, 'year')
   const yearsArcs = uniqueYears.map((year) => {
     const data = byYear[year]
-    const startAngle =
-      ((data[0].rotation + 90 - unitDeg / 2) / 360) * (2 * Math.PI)
+    const startAngleDeg = (data[0].rotation + 90 - unitDeg / 2)
+    const startAngle = (startAngleDeg / 360) * (2 * Math.PI)
+
     const endAngle =
       ((data[data.length - 1].rotation + 90 + unitDeg / 2) / 360) *
       (2 * Math.PI)
 
     return {
       startAngle,
+      angleLabel: startAngleDeg + unitDeg - 90 + unitDeg / 2,
       endAngle,
       year,
     }

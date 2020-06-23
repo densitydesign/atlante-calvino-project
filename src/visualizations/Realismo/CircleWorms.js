@@ -113,7 +113,136 @@ const Worm = React.memo(
         </g>
         <g style={flipTextStyle}>
           <text x={wormEnd} textAnchor={flipText ? 'end' : undefined}>
-            {racconto.year} {racconto.title}
+            {racconto.title}
+          </text>
+        </g>
+      </g>
+    )
+  }
+)
+
+const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
+  return (
+    <g transform={`translate(${x}, ${y})`}>
+      {yearsArcs.map((yearArc) => {
+        const flipText = yearArc.angleLabel >= 90 && yearArc.angleLabel <= 270
+        const textX = radius - radiusStrokeSize
+        return (
+          <g key={yearArc.year}>
+            <g style={{ transform: `rotate(${yearArc.angleLabel}deg)` }}>
+              <text
+                textAnchor={flipText ? 'start' : 'end'}
+                x={textX}
+                y={0}
+                style={{
+                  transformOrigin: `${textX}px -3px`,
+                  transform: flipText ? 'rotate(180deg)' : undefined,
+                  fontSize: 10,
+                }}
+              >
+                {yearArc.year}
+              </text>
+            </g>
+            <path
+              style={{ fill: '#ddd' }}
+              d={arcGenerator({
+                ...yearArc,
+                outerRadius: radius - radiusStrokeSize / 2,
+                innerRadius: radius + radiusStrokeSize / 2,
+              })}
+            />
+          </g>
+        )
+      })}
+    </g>
+  )
+})
+
+const Legend = React.memo(
+  ({ labelSize, x, wormSize, endLineStart, endLineEnd }) => {
+    return (
+      <g>
+        <line
+          y1={0}
+          y2={labelSize}
+          x1={x}
+          x2={x}
+          stroke="black"
+          strokeWidth={2}
+        />
+        <text
+          x={x}
+          y={labelSize - LEGEND_TEXT_MARGIN}
+          className="realismo-legend-text"
+          style={{
+            transformOrigin: `${x}px ${labelSize}px`,
+            transform: 'rotate(270deg)',
+          }}
+        >
+          TITOLO
+        </text>
+        <line
+          y1={labelSize + LABEL_PADDING}
+          y2={labelSize + LABEL_PADDING + wormSize}
+          x1={x}
+          x2={x}
+          stroke="black"
+          strokeWidth={2}
+        />
+        <text
+          x={x}
+          y={labelSize + LABEL_PADDING - LEGEND_TEXT_MARGIN}
+          className="realismo-legend-text"
+          textAnchor={'end'}
+          style={{
+            transformOrigin: `${x}px ${labelSize + LABEL_PADDING}px`,
+            transform: 'rotate(270deg)',
+          }}
+        >
+          FINE
+        </text>
+        <text
+          x={x}
+          y={labelSize + LABEL_PADDING + wormSize - LEGEND_TEXT_MARGIN}
+          className="realismo-legend-text"
+          textAnchor={'start'}
+          style={{
+            transformOrigin: `${x}px ${labelSize + LABEL_PADDING + wormSize}px`,
+            transform: 'rotate(270deg)',
+          }}
+        >
+          INIZIO DEL TESTO
+        </text>
+
+        <line
+          y1={endLineStart}
+          y2={endLineEnd}
+          x1={x}
+          x2={x}
+          stroke="black"
+          strokeWidth={2}
+        />
+        <g
+          className="babu"
+          style={{
+            transform: `translate(${x - 14}px, ${endLineEnd}px) rotate(270deg)`,
+          }}
+        >
+          <text
+            x={0}
+            y={0}
+            className="realismo-legend-text"
+            textAnchor={'start'}
+          >
+            ANNO PRIMA
+          </text>
+          <text
+            x={0}
+            y={10}
+            className="realismo-legend-text"
+            textAnchor={'start'}
+          >
+            PUBBLICAZIONE
           </text>
         </g>
       </g>
@@ -157,102 +286,20 @@ export default function CircleWorms({
   // 0 - 90
   return (
     <svg width={width} height={size}>
-      <line
-        y1={0}
-        y2={labelSize}
-        x1={width / 2}
-        x2={width / 2}
-        stroke="black"
-        strokeWidth={2}
+      <Legend
+        x={width / 2}
+        wormSize={wormSize}
+        labelSize={labelSize}
+        endLineStart={endLineStart}
+        endLineEnd={endLineEnd}
       />
-      <text
-        x={width / 2}
-        y={labelSize - LEGEND_TEXT_MARGIN}
-        className="realismo-legend-text"
-        style={{
-          transformOrigin: `${width / 2}px ${labelSize}px`,
-          transform: 'rotate(270deg)',
-        }}
-      >
-        TITOLO
-      </text>
-      <line
-        y1={labelSize + LABEL_PADDING}
-        y2={labelSize + LABEL_PADDING + wormSize}
-        x1={width / 2}
-        x2={width / 2}
-        stroke="black"
-        strokeWidth={2}
-      />
-      <text
-        x={width / 2}
-        y={labelSize + LABEL_PADDING - LEGEND_TEXT_MARGIN}
-        className="realismo-legend-text"
-        textAnchor={'end'}
-        style={{
-          transformOrigin: `${width / 2}px ${labelSize + LABEL_PADDING}px`,
-          transform: 'rotate(270deg)',
-        }}
-      >
-        FINE
-      </text>
-      <text
-        x={width / 2}
-        y={labelSize + LABEL_PADDING + wormSize - LEGEND_TEXT_MARGIN}
-        className="realismo-legend-text"
-        textAnchor={'start'}
-        style={{
-          transformOrigin: `${width / 2}px ${
-            labelSize + LABEL_PADDING + wormSize
-          }px`,
-          transform: 'rotate(270deg)',
-        }}
-      >
-        INIZIO DEL TESTO
-      </text>
 
-      <g transform={`translate(${width / 2}, ${size / 2})`}>
-        {yearsArcs.map((yearArc) => (
-          <path
-            key={yearArc.year}
-            style={{ fill: '#ddd' }}
-            d={arcGenerator({
-              ...yearArc,
-              outerRadius: innerRadius - INNER_CIRCLE_STROKE_WIDTH / 2,
-              innerRadius: innerRadius + INNER_CIRCLE_STROKE_WIDTH / 2,
-            })}
-          />
-        ))}
-      </g>
-
-      <line
-        y1={endLineStart}
-        y2={endLineEnd}
-        x1={width / 2}
-        x2={width / 2}
-        stroke="black"
-        strokeWidth={2}
+      <CicrleYears
+        x={width / 2}
+        y={size / 2}
+        radius={innerRadius}
+        radiusStrokeSize={INNER_CIRCLE_STROKE_WIDTH}
       />
-      <g
-        className="babu"
-        style={{
-          transform: `translate(${
-            width / 2 - 14
-          }px, ${endLineEnd}px) rotate(270deg)`,
-        }}
-      >
-        <text x={0} y={0} className="realismo-legend-text" textAnchor={'start'}>
-          ANNO PRIMA
-        </text>
-        <text
-          x={0}
-          y={10}
-          className="realismo-legend-text"
-          textAnchor={'start'}
-        >
-          PUBBLICAZIONE
-        </text>
-      </g>
 
       <g transform={`translate(${width / 2}, ${size / 2})`}>
         {racconti.map((racconto, i) => {
