@@ -30,7 +30,8 @@ text.realismo-legend-text {
     margin: 100px 100px;
 }
 .worm-detail-svg {
-    height: 250px;
+    margin-top: 50px;
+    height: 400px;
     width: 100%;
 }
 
@@ -60,11 +61,11 @@ text.realismo-legend-text {
       transform: scale(1);
       stroke: transparent;
     }
-    
+
     50% {
         transform: scale(2);
         stroke: white;
-      
+
     }
     100% {
         transform: scale(1);

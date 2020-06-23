@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { colorScale, yearsArcs, LEGEND_SIZE } from './utils'
+import { colorScale, yearsArcs } from './utils'
 import { scaleLinear } from 'd3-scale'
 import { arc } from 'd3'
 

@@ -26,6 +26,17 @@ export const racconti = uniqBy(realismoData, 'title').map((item) => ({
 
 export const dataset = groupBy(realismoDataNormalized, 'title')
 
+const maxLength = Math.max(...realismoData.map(d => +d.length).filter(Boolean))
+export const detailWormsCircles = mapValues(dataset, (data) => {
+  return data.map(item => ({
+    ...item,
+    startTotalNorm: +item.start / maxLength,
+    endTotalNorm: +item.end / maxLength,
+    locationTotalNorm: +item['occurrence_location'] / maxLength,
+    lengthTotalNorm: +item.length / maxLength,
+  }))
+})
+
 export function datasetToCircles(n) {
   return mapValues(dataset, (data) => {
     const circleWidth = 1 / n
