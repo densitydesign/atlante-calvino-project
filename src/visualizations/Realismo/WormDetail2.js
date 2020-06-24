@@ -4,7 +4,7 @@ import range from 'lodash/range'
 import find from 'lodash/find'
 import MiniInfoBox from '../../general/MiniInfoBox'
 
-const CHART_PADDING_X = 100
+const CHART_PADDING_X = 80
 const LEGEND_TEXT_HEIGHT = 150
 
 const MINI_RADIUS = 10

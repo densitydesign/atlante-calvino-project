@@ -3,6 +3,7 @@ import { colorScale, yearsArcs } from './utils'
 import { scaleLinear } from 'd3-scale'
 import { arc } from 'd3'
 
+const LABEL_VISIBLE_SIZE = 80
 const LABEL_SIZE_PERCENT = 0.2
 const WORM_SIZE_PERCENT = 0.45
 const LABEL_PADDING = 10
@@ -22,18 +23,13 @@ const Worm = React.memo(
     onClick,
     isSelected,
     isOmitted,
+    size,
     flipText = false,
   }) => {
     const wormStart = radius - labelSize - wormSize - LABEL_PADDING
     const wormEnd = radius - labelSize
 
     const circleRadius = wormSize / circles.length / 2
-    const flipTextStyle = flipText
-      ? {
-          transform: 'rotate(180deg)',
-          transformOrigin: `${wormEnd}px 0px`,
-        }
-      : undefined
 
     const yScale = scaleLinear()
       .domain([0, 2])
@@ -111,11 +107,67 @@ const Worm = React.memo(
             )
           })}
         </g>
+      </g>
+    )
+  }
+)
+
+const WormLabel = React.memo(
+  ({
+    racconto,
+    circles,
+    radius,
+    labelSize,
+    wormSize,
+    onClick,
+    isSelected,
+    isOmitted,
+    size,
+    flipText = false,
+  }) => {
+    const wormStart = radius - labelSize - wormSize - LABEL_PADDING
+    const wormEnd = radius - labelSize
+
+    const circleRadius = wormSize / circles.length / 2
+    const flipTextStyle = flipText
+      ? {
+          transform: 'rotate(180deg)',
+          transformOrigin: `${wormEnd}px 0px`,
+        }
+      : undefined
+
+
+    return (
+      <g
+        style={{
+          opacity: isSelected ? 1 : 0.3,
+        }}
+      >
         <g style={flipTextStyle}>
-          <text x={wormEnd} textAnchor={flipText ? 'end' : undefined}>
-            {racconto.title}
-          </text>
+          <text
+            style={{ alignmentBaseline: 'middle' }}
+            x={wormEnd - (flipText ? LABEL_VISIBLE_SIZE : 0)}>{racconto.title}</text>
         </g>
+        <g>
+          {!flipText && (
+            <rect
+              x={wormEnd + LABEL_VISIBLE_SIZE}
+              y={-7}
+              width={size / 2 - wormSize}
+              height={14}
+              fill="url(#label-gradient)"
+            />
+          )}
+          {flipText && (
+            <rect
+              x={30}
+              y={-7}
+              width={wormEnd}
+              height={14}
+              fill="url(#label-gradient-flip)"
+            />
+          )}
+          </g>
       </g>
     )
   }
@@ -286,22 +338,41 @@ export default function CircleWorms({
   // 0 - 90
   return (
     <svg width={width} height={size}>
-      <Legend
-        x={width / 2}
-        wormSize={wormSize}
-        labelSize={labelSize}
-        endLineStart={endLineStart}
-        endLineEnd={endLineEnd}
-      />
-
-      <CicrleYears
-        x={width / 2}
-        y={size / 2}
-        radius={innerRadius}
-        radiusStrokeSize={INNER_CIRCLE_STROKE_WIDTH}
-      />
+      <defs>
+        <linearGradient id="label-gradient">
+          <stop offset="0%" stopColor="rgba(255, 255, 255, 0)"></stop>
+          <stop offset="10%" stopColor="var(--bg)"></stop>
+        </linearGradient>
+        <linearGradient id="label-gradient-flip">
+          <stop offset="90%" stopColor="var(--bg)"></stop>
+          <stop offset="100%" stopColor="rgba(255, 255, 255, 0)"></stop>
+        </linearGradient>
+      </defs>
 
       <g transform={`translate(${width / 2}, ${size / 2})`}>
+        {racconti.map((racconto, i) => {
+          const angle = racconto.rotation
+          return (
+            <g
+              key={i}
+              className={`worm-label-${i}`}
+              style={{ transform: `rotate(${angle}deg)` }}
+            >
+              <WormLabel
+                size={size}
+                flipText={angle >= 90 && angle <= 270}
+                isSelected={allSelected || !!selected[racconto.title]}
+                isOmitted={!!omitted[racconto.title]}
+                onClick={handleClick}
+                radius={size / 2}
+                labelSize={(size / 2) * LABEL_SIZE_PERCENT}
+                wormSize={(size / 2) * WORM_SIZE_PERCENT}
+                racconto={racconto}
+                circles={circlesMap[racconto.title]}
+              ></WormLabel>
+            </g>
+          )
+        })}
         {racconti.map((racconto, i) => {
           const angle = racconto.rotation
           return (
@@ -311,6 +382,7 @@ export default function CircleWorms({
               style={{ transform: `rotate(${angle}deg)` }}
             >
               <Worm
+                size={size}
                 flipText={angle >= 90 && angle <= 270}
                 isSelected={allSelected || !!selected[racconto.title]}
                 isOmitted={!!omitted[racconto.title]}
@@ -325,6 +397,20 @@ export default function CircleWorms({
           )
         })}
       </g>
+      <Legend
+        x={width / 2}
+        wormSize={wormSize}
+        labelSize={labelSize}
+        endLineStart={endLineStart}
+        endLineEnd={endLineEnd}
+      />
+
+      <CicrleYears
+        x={width / 2}
+        y={size / 2}
+        radius={innerRadius}
+        radiusStrokeSize={INNER_CIRCLE_STROKE_WIDTH}
+      />
     </svg>
   )
 }
