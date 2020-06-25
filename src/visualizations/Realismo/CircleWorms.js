@@ -139,6 +139,7 @@ const WormLabel = React.memo(
 
     return (
       <g
+        className={`worm-label-container${flipText ? '-flipped' : ''}`}
         style={{
           opacity: isSelected ? 1 : 0.3,
         }}
@@ -151,6 +152,7 @@ const WormLabel = React.memo(
         <g>
           {!flipText && (
             <rect
+              className='worm-label-gradient-rect'
               x={wormEnd + LABEL_VISIBLE_SIZE}
               y={-7}
               width={size / 2 - wormSize}
@@ -160,6 +162,7 @@ const WormLabel = React.memo(
           )}
           {flipText && (
             <rect
+              className='worm-label-gradient-rect'
               x={30}
               y={-7}
               width={wormEnd}
@@ -355,7 +358,7 @@ export default function CircleWorms({
           return (
             <g
               key={i}
-              className={`worm-label-${i}`}
+              className={`worm-label worm-label-${i}`}
               style={{ transform: `rotate(${angle}deg)` }}
             >
               <WormLabel
@@ -373,6 +376,7 @@ export default function CircleWorms({
             </g>
           )
         })}
+        {/* <circle cx={0} cy={0} r={size / 2 - labelSize} fill='transparent' /> */}
         {racconti.map((racconto, i) => {
           const angle = racconto.rotation
           return (
