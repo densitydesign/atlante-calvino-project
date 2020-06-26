@@ -20,6 +20,12 @@
 
 .trama2-side-panel-toggle {
   height: 35px;
+  color: #eee;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   width: 35px;
   background-color: black;
   border-radius: 0 4px 4px 0;
@@ -27,22 +33,31 @@
   right: 0px;
   top: 17.5px;
   pointer-events: all;
+  transition: all 2s;
+}
+.trama2-side-panel-toggle > svg {
+  transition: all 600ms ease-in;
+}
+.trama2-side-panel-toggle.open-panel > svg {
+  transform: scaleX(-1);
 }
 
 .trama2-side-panel-rotate {
-    height: 200px;
+    height: 120px;
     width: 35px;
     background-color: #fff;
-    border-radius: 0 4px 4px 0;
+    /* border-radius: 0 4px 4px 0; */
+    border-radius: 4px 0 0 4px;
     border: 1px solid var(--dark-blue);
     color: var(--dark-blue);
     position: absolute;
     right: 0px;
-    top: calc(50% - 200px);
+    top: calc(50% - 100px);
     pointer-events: all;
     text-align: center;
     line-height: 35px;
 
+    transform: rotate(180deg);
     writing-mode: vertical-rl;
 
 
@@ -72,6 +87,7 @@
 
 .trama2-content {
   padding: 70px 30px;
+  padding-bottom: 90px;
   height: 100%;
 }
 .trama2-detail-content {
@@ -131,8 +147,26 @@
 }
 
 /* sidebar */
+.trama2-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .trama2-sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   height: 80px;
+}
+.trama2-sidebar-footer {
+  display: flex;
+  flex: 1;
+  /* height: 100%; */
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
 }
 .trama2-sidebar-item {
   display: flex;
@@ -141,6 +175,80 @@
   color: #222;
   font-size: 10px;
   cursor: pointer;
+}
+
+.trama2-brush-for-list {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-brush-for-detail {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-brush-container {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-top-legend-list {
+  color: darkgray;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  font-style: italic;
+  right: 0;
+}
+.trama2-brush-legend-list {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  color: darkgray;
+  justify-content: space-between;
+  font-style: italic;
+}
+.trama2-brush-container-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trama2-brush-button {
+  width: 30px;
+  background: white;
+  border: 1px solid var(--dark-blue);
+  color: black;
+  border-radius: 5px;
+}
+.trama2-list-brush {
+  background: #eee;
+  flex: 1;
+}
+.trama2-list-brush > .trama2-drag-handle {
+  width: 12px;
+  height: 100%;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  background: white;
+}
+.trama2-index-line {
+  top: 0;
+  bottom: 40px;
+  position: absolute;
+  background: black;
+  width: 1px;
 }
 
 .trama2-sidebar-item.selected {
@@ -154,12 +262,14 @@
 }
 .trama2-box-plot-year {
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
+  color: darkgray;
+  font-style: italic;
 }
 
 .trama2-info-box {
@@ -168,34 +278,6 @@
   stroke: var(--dark-blue);
 }
 
-.trama2-detail-label {
-  height: 20px;
-}
-
 .trama2-boxplot-content {
   padding: 0 30px;
-}
-
-.trama2-detail-label > .trama2-label-inner-start {
-  display: inline-block;
-  border: 2px solid var(--dark-blue);
-  border-right: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  background: #FFF;
-
-}
-.trama2-detail-label > .trama2-label-inner-end {
-  padding-left: 6px;
-  padding-right: 6px;
-  cursor: pointer;
-  display: inline-block;
-  border: 2px solid var(--dark-blue);
-  color: var(--dark-blue);
-  font-weight: bold;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background: #FFF;
 }

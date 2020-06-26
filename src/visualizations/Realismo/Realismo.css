@@ -1,0 +1,72 @@
+.realismo-content {
+    height: calc(100vh - var(--navigation-height));
+    width: 100%;
+}
+
+.realismo-reset {
+    position: absolute;
+    top: 20px;
+    font-style: italic;
+    left: 60px;
+}
+
+.realismo-reset > button {
+    background: white;
+    border-radius: 5px;
+}
+
+text.realismo-legend-text {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.realismo-details-container {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.realismo-detail {
+
+}
+.worm-detail-svg {
+    margin-top: 30px;
+    width: 100%;
+}
+
+
+.worm-detail-y-grid{
+    stroke: #666;
+    stroke-dasharray: 4 2;
+    stroke-width: 1px;
+}
+
+.worm-detail-x-place{
+    stroke: #666;
+    stroke-width: 1px;
+}
+
+.worm-detail-place-label{
+    /* text-anchor: end; */
+    /* transform: rotate(-45deg); */
+}
+
+.movement {
+    animation: movement 5s infinite linear;
+}
+
+@keyframes movement {
+    0% {
+      transform: scale(1);
+      stroke: transparent;
+    }
+
+    50% {
+        transform: scale(2);
+        stroke: white;
+
+    }
+    100% {
+        transform: scale(1);
+        stroke: transparent;
+    }
+  }

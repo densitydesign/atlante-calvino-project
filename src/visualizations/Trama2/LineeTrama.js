@@ -15,67 +15,83 @@ import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 
 import range from 'lodash/range'
-import keyBy from 'lodash/keyBy'
 
 import { splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
+import RaccontoInfoBoxSvg from './RaccontoInfoBoxSvg'
+import Brush, { BRUSH_HANDLE_WIDTH } from './Brush'
 
 const lineGenerator = line()
   .x((d) => d.x)
   .y((d) => d.y)
   .curve(curveMonotoneX)
 
-const RaccontoInfoBox = ({ titolo, x, y = 0, onClick }) => {
-  const containerRef = useRef(null)
-  const [measures, setMeasures] = useState(null)
-  useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect()
-    setMeasures(m)
-  }, [titolo])
-
+const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
   return (
-    <g
-      onClick={onClick}
-      transform={`translate(${x}, ${y})`}
-      style={{ cursor: 'pointer' }}
-    >
-      {measures && (
-        <g transform={`translate(${-measures.width - 40}, -15)`}>
-          <rect
-            height={22}
-            width={measures.width + 35}
-            rx={5}
-            className="trama2-info-box"
-          />
-          <line
-            x1={measures.width + 18}
-            x2={measures.width + 18}
-            y1={0}
-            y2={22}
-            className="trama2-info-box"
-          />
-          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
-            o
-          </text>
-        </g>
-      )}
-      <text
-        ref={containerRef}
-        x={-30}
-        y={0}
-        style={{ textAnchor: 'end', userSelect: 'none' }}
-      >
-        {titolo}
-      </text>
+    <g>
+      {subPaths.map((subPath, i) => {
+        const isFill = data[i + 1].motivo_type === data[i].motivo_type
+        const strokeSelected = isFill
+          ? data[i].colori
+          : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
+        return (
+          <path
+            key={i}
+            d={subPath}
+            className="trama2-line"
+            style={{
+              stroke: itemSelected ? strokeSelected : '#ddd',
+              fill: 'none',
+            }}
+          ></path>
+        )
+      })}
     </g>
   )
-}
+})
+
+const TramaPoints = React.memo(({ data }) => {
+  return (
+    <g>
+      {data.map((d, i) => {
+        if (i === 0) {
+          return (
+            <rect key={i} x={d.x} y={d.y} className="trama2-start-symbol">
+              <title>{d.motivo_type}</title>
+            </rect>
+          )
+        }
+        if (i === data.length - 1) {
+          return (
+            <rect
+              key={i}
+              x={d.x}
+              y={d.y}
+              style={{
+                transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
+              }}
+              className="trama2-end-symbol"
+            >
+              <title>{d.motivo_type}</title>
+            </rect>
+          )
+        }
+        return (
+          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
+            <title>{d.motivo_type}</title>
+          </circle>
+        )
+      })}
+    </g>
+  )
+})
 
 const LineaTrama = React.memo(
   ({
     racconto,
     data,
     xScale,
+    selectedPoint,
     width,
     height,
     index,
@@ -99,24 +115,11 @@ const LineaTrama = React.memo(
 
     const element = (
       <g>
-        {subPaths.map((subPath, i) => {
-          const isFill = data[i + 1].motivo_type === data[i].motivo_type
-          const strokeSelected = isFill
-            ? data[i].colori
-            : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
-          return (
-            <path
-              key={i}
-              d={subPath}
-              className="trama2-line"
-              style={{
-                stroke: itemSelected ? strokeSelected : '#ddd',
-                fill: 'none',
-              }}
-            ></path>
-          )
-        })}
-
+        <SubPathsWithColors
+          subPaths={subPaths}
+          data={data}
+          itemSelected={itemSelected}
+        />
         <path
           d={d}
           onClick={() => toggleItem(racconto.titolo)}
@@ -125,52 +128,28 @@ const LineaTrama = React.memo(
 
         {itemSelected && (
           <g>
-            {data.map((d, i) => {
-              if (i === 0) {
-                return (
-                  <rect
-                    x={d.x}
-                    y={d.y}
-                    key={i}
-                    className="trama2-start-symbol"
-                  >
-                    <title>{d.motivo_type}</title>
-                  </rect>
-                )
-              }
-              if (i === data.length - 1) {
-                return (
-                  <rect
-                    x={d.x}
-                    y={d.y}
-                    key={i}
-                    style={{
-                      transformOrigin: `${d.x - 2}px ${d.y - 2}px`
-                    }}
-                    className="trama2-end-symbol"
-                  >
-                    <title>{d.motivo_type}</title>
-                  </rect>
-                )
-              }
-              return (
-                <circle
-                  key={i}
-                  className="trama2-circle"
-                  cx={d.x}
-                  cy={d.y}
-                  r={2}
-                >
-                  <title>{d.motivo_type}</title>
-                </circle>
-              )
-            })}
-            <RaccontoInfoBox
+            <TramaPoints data={data} />
+            <RaccontoInfoBoxSvg
               onClick={handleClickRacconto}
               y={-10}
               x={width}
               titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
             />
+          </g>
+        )}
+        {selectedPoint && (
+          <g>
+            <text
+              style={{
+                transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
+                transform: `rotate(-30deg) translateX(-10px)`,
+              }}
+              x={selectedPoint.x}
+              y={selectedPoint.y}
+              textAnchor={'end'}
+            >
+              {selectedPoint.motivo_type}
+            </text>
           </g>
         )}
       </g>
@@ -185,57 +164,78 @@ const LineaTrama = React.memo(
   }
 )
 
-const SelectedContainers = React.memo(({ n, translations }) => {
+const SelectedContainers = React.memo(({ n }) => {
   return (
     <g>
       {range(n).map((i) => (
-        <g
-          key={i}
-          className="linea-container-selected"
-          style={{
-            transform: translations[i],
-          }}
-        />
+        <g key={i} className="linea-container-selected" />
       ))}
     </g>
   )
 })
 
-function LineeTrama(
-  {
-    racconti = [],
-    data = {},
-    height,
-    scalaColore,
-    scalaMotivoY,
-    colors,
-    selected,
-    toggleSelect,
-    onRaccontoClick,
-    tipologie,
-    tipologieByTipologia,
-    setYears,
-  },
-  ref
-) {
-  const containerRef = useRef(null)
-  const svgRef = useRef(null)
-  const [measures, setMeasures] = useState(null)
-  const [translations, setTranslations] = useState([])
+const LineeTramaList = React.memo(({
+  measures,
+  dataRacconti,
+  currentXHoverRacconti,
+  racconti,
+  onRaccontoClick,
+  height,
+  scalaColore,
+  scalaMotivoY,
+  selected,
+  toggleSelect,
+  xScale,
+}) => {
+  return (
+    <g>
+      {dataRacconti.map((datum, i) => {
+        return (
+          <g key={i} className="linea-container">
+            <LineaTrama
+              selectedPoint={
+                currentXHoverRacconti &&
+                currentXHoverRacconti[racconti[i].titolo]
+                  ? currentXHoverRacconti[racconti[i].titolo]
+                  : null
+              }
+              onRaccontoClick={onRaccontoClick}
+              scalaColore={scalaColore}
+              scalaMotivoY={scalaMotivoY}
+              index={i}
+              width={measures.width}
+              height={height}
+              itemSelected={selected[racconti[i].titolo]}
+              toggleItem={toggleSelect}
+              xScale={xScale}
+              racconto={racconti[i]}
+              data={datum}
+            ></LineaTrama>
+          </g>
+        )
+      })}
+    </g>
+  )
+})
 
-  useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect()
-    setMeasures(m)
-  }, [])
+function LineeTramaWithMeasures({
+  racconti = [],
+  data = {},
+  height,
+  scalaColore,
+  scalaMotivoY,
+  colors,
+  selected,
+  toggleSelect,
+  onRaccontoClick,
+  tipologie,
+  tipologieByTipologia,
+  setYears,
+  measures,
+}) {
+  const svgRef = useRef(null)
 
   useEffect(() => {
-    function declarativeTranslate(currentScaleY) {
-      const newTranslates = racconti.map((r, i) => {
-        return 'translate(0, ' + currentScaleY(i) + 'px)'
-      })
-      setTranslations(newTranslates)
-    }
-
     function imperativeTranslate(currentScaleY) {
       selectAll('.linea-container').attr(
         'transform',
@@ -254,18 +254,16 @@ function LineeTrama(
         .range([0 + height, measures.height - height])
 
       imperativeTranslate(scaleY)
-      // declarativeTranslate(scaleY)
 
       function handleZoom() {
         const newScaleY = currentEvent.transform.rescaleY(scaleY)
         imperativeTranslate(newScaleY)
-        // declarativeTranslate(newScaleY)
 
         const domain = newScaleY.domain()
         const lowIndex = Math.max(0, Math.floor(domain[0]))
         const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
 
-        setYears(prevYears => {
+        setYears((prevYears) => {
           const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
           if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
             return newYears
@@ -297,10 +295,11 @@ function LineeTrama(
     return scaleLinear().domain([0, 1]).range([0, measures.width])
   }, [measures])
 
-  const [dataRacconti, gradientsType] = useMemo(() => {
+  const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
     if (!xScale) {
       return [[], []]
     }
+    const dataByRaccontiFinal = {}
     const gradientsSet = new Set()
     const finalDataRacconti = racconti.map((racconto) => {
       let out = data[racconto.titolo].filter((d) => d.y !== undefined)
@@ -317,10 +316,127 @@ function LineeTrama(
         }
       })
       out.racconto = racconto
+      dataByRaccontiFinal[racconto.titolo] = out
       return out
     })
-    return [finalDataRacconti, Array.from(gradientsSet)]
+    return [finalDataRacconti, dataByRaccontiFinal, Array.from(gradientsSet)]
   }, [data, racconti, xScale, tipologieByTipologia])
+
+  const [x, setX] = useState(measures.width - BRUSH_HANDLE_WIDTH / 2)
+
+  const handleNexPoint = useCallback(() => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x > x + BRUSH_HANDLE_WIDTH / 2) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints.length) {
+      const nextX = Math.min(...nextPoints) - BRUSH_HANDLE_WIDTH / 2
+      if (nextX >= 0 && x <= measures.width - BRUSH_HANDLE_WIDTH / 2) {
+        setX(nextX)
+      }
+    }
+  }, [dataByRacconti, measures, selected, x])
+
+  const handlePrevPoint = useCallback(() => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x < x + BRUSH_HANDLE_WIDTH / 2) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints.length) {
+      const nextX = Math.max(...nextPoints) - BRUSH_HANDLE_WIDTH / 2
+      if (nextX >= 0 && x <= measures.width - BRUSH_HANDLE_WIDTH / 2) {
+        setX(nextX)
+      }
+    }
+  }, [dataByRacconti, selected, measures, x])
+
+  const trameByPoints = useMemo(() => {
+    return Object.keys(selected).reduce((acc, titolo) => {
+      const racconto = dataByRacconti[titolo]
+      racconto.forEach((datum) => {
+        const xKey = datum.x.toFixed(0)
+        acc[xKey] = acc[xKey] || {}
+        acc[xKey][titolo] = {
+          motivo_type: datum.motivo_type,
+          x: datum.x,
+          y: datum.y,
+        }
+      })
+      return acc
+    }, {})
+  }, [selected, dataByRacconti])
+
+  const xPoint = +x.toFixed(0) + BRUSH_HANDLE_WIDTH / 2
+  const currentXHoverRacconti = trameByPoints[xPoint]
+
+  return (
+    <>
+      <div className="trama2-top-legend-list">
+        Scrolla per zoomare
+      </div>
+      <svg
+        style={{
+          height: measures.height,
+          width: measures.width,
+        }}
+        ref={svgRef}
+      >
+        <GradientsDefinitions
+          byTipologia={tipologieByTipologia}
+          gradientsType={gradientsType}
+        />
+        <g className="wrapper">
+          <LineeTramaList
+            measures={measures}
+            dataRacconti={dataRacconti}
+            currentXHoverRacconti={currentXHoverRacconti}
+            racconti={racconti}
+            onRaccontoClick={onRaccontoClick}
+            height={height}
+            scalaColore={scalaColore}
+            scalaMotivoY={scalaMotivoY}
+            selected={selected}
+            toggleSelect={toggleSelect}
+            xScale={xScale}
+          />
+          <SelectedContainers n={dataRacconti.length} />
+        </g>
+      </svg>
+      <Brush
+        x={x}
+        onXChange={setX}
+        onPrevClick={handlePrevPoint}
+        onNextClick={handleNexPoint}
+        width={measures.width}
+        className="trama2-brush-for-list"
+      />
+      <div className="trama2-brush-legend-list">
+        <div>Inizio del testo</div>
+        <div>Lunghezza del testo in caratteri</div>
+        <div>Fine del testo</div>
+      </div>
+    </>
+  )
+}
+
+function LineeTrama(props, ref) {
+  const containerRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [])
 
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
@@ -351,52 +467,7 @@ function LineeTrama(
       className="w-100 h-100"
       style={{ overflow: 'hidden' }}
     >
-      {measures && (
-        <svg
-          style={{
-            height: measures.height,
-            width: measures.width,
-          }}
-          ref={svgRef}
-        >
-          <GradientsDefinitions
-            byTipologia={tipologieByTipologia}
-            gradientsType={gradientsType}
-          />
-          <g className="wrapper">
-            {measures &&
-              dataRacconti.map((datum, i) => {
-                return (
-                  <g
-                    key={i}
-                    className="linea-container"
-                    style={{
-                      transform: translations[i],
-                    }}
-                  >
-                    <LineaTrama
-                      onRaccontoClick={onRaccontoClick}
-                      scalaColore={scalaColore}
-                      scalaMotivoY={scalaMotivoY}
-                      index={i}
-                      width={measures.width}
-                      height={height}
-                      itemSelected={selected[racconti[i].titolo]}
-                      toggleItem={toggleSelect}
-                      xScale={xScale}
-                      racconto={racconti[i]}
-                      data={datum}
-                    ></LineaTrama>
-                  </g>
-                )
-              })}
-            <SelectedContainers
-              n={dataRacconti.length}
-              translations={translations}
-            />
-          </g>
-        </svg>
-      )}
+      {measures && <LineeTramaWithMeasures {...props} measures={measures} />}
     </div>
   )
 }
