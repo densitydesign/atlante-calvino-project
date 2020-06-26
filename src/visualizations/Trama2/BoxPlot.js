@@ -44,8 +44,8 @@ const BoxPlotElement = React.memo(
       [onRaccontoClick, data]
     )
 
-    const top = yScale(data.min.ordineMotivo)
-    const bottom = yScale(data.max.ordineMotivo)
+    const bottom = yScale(data.min.ordineMotivo)
+    const top = yScale(data.max.ordineMotivo)
     const h = bottom - top
 
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
@@ -173,7 +173,7 @@ function BoxPlot(
   }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([0, height - 160])
+    return scaleLinear().domain(motivoExtent).range([height - 160, 0])
   }, [height])
 
   const scalaMotivo = useMemo(() => {
@@ -265,7 +265,7 @@ function BoxPlot(
     racconti[0].anno,
     racconti[racconti.length - 1].anno,
   ])
-
+  console.log('M', measures)
   return (
     <div className="trama2-boxplot-content">
       <div
@@ -285,7 +285,7 @@ function BoxPlot(
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
               scalaMotivo={scalaMotivo}
-              height={measures.height}
+              height={height}
             />
             <g className="wrapper" style={{ transform: 'translate(0, 70px)' }}>
               {measures &&
