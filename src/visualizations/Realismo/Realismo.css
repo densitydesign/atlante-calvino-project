@@ -20,6 +20,42 @@ text.realismo-legend-text {
     font-weight: bold;
 }
 
+/* LABEL ANIMATION DRAFT */
+/* rect.worm-label-gradient-rect {
+    transition: opacity 0.3s linear;
+}
+g.worm-label-container-flipped text {
+}
+
+g.worm-label:hover g.worm-label-container-flipped text {
+    text-anchor: end;
+}
+g.worm-label:hover g.worm-label-container-flipped rect.worm-label-gradient-rect {
+    opacity: 0;
+}
+
+g.worm-label-container:hover rect.worm-label-gradient-rect{
+    opacity: 0;
+}
+
+g.worm-label-container-flipped {
+    transition: transform 0.3s linear;
+}
+
+g.worm-label-container-flipped {
+    fill: red !important;
+}
+g.worm-label-container-flipped:hover {
+}
+
+g.worm-label-container-flipped:hover text {
+    text-anchor: end;
+    transform: translateX(-80px);
+}
+
+g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
+    opacity: 0;
+} */
 
 .realismo-details-container {
     margin-top: 50px;
