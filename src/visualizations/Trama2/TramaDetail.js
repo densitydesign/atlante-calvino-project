@@ -80,6 +80,8 @@ export default function TramaDetail({
       )
       return {
         key,
+        startY: racconti[0].y,
+        endY: racconti[racconti.length - 1].y,
         x1: minX,
         x2: maxX,
         y: inkY,
@@ -116,14 +118,29 @@ export default function TramaDetail({
             <g transform={`translate(0, 80)`}>
               {raccontiIncastonati &&
                 raccontiIncastonati.map((racconto) => (
-                  <line
-                    className="trama2-racconto-incastonato-line"
-                    key={racconto.key}
-                    x1={racconto.x1}
-                    x2={racconto.x2}
-                    y1={racconto.y}
-                    y2={racconto.y}
-                  />
+                <g key={racconto.key}>
+                    <line
+                      className="trama2-racconto-incastonato-line"
+                      x1={racconto.x1}
+                      x2={racconto.x2}
+                      y1={racconto.y}
+                      y2={racconto.y}
+                    />
+                    <line
+                      className="trama2-racconto-incastonato-step-line"
+                      x1={racconto.x1}
+                      x2={racconto.x1}
+                      y1={racconto.startY}
+                      y2={racconto.y}
+                    />
+                    <line
+                      className="trama2-racconto-incastonato-step-line"
+                      x1={racconto.x2}
+                      x2={racconto.x2}
+                      y1={racconto.endY}
+                      y2={racconto.y}
+                    />
+                  </g>
                 ))}
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
