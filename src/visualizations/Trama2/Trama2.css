@@ -281,3 +281,9 @@
 .trama2-boxplot-content {
   padding: 0 30px;
 }
+
+.trama2-racconto-incastonato-line {
+  fill: #F49831;
+  stroke: #F49831;
+  stroke-width: 2px;
+}

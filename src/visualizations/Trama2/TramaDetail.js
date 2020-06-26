@@ -4,6 +4,7 @@ import { scaleLinear } from 'd3-scale'
 import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import MiniInfoBox from '../../general/MiniInfoBox'
+import { groupBy } from 'lodash'
 
 const CHART_X_PADDING = 50
 
@@ -60,11 +61,32 @@ export default function TramaDetail({
     return [newData, subPaths, Array.from(gradientsSet)]
   }, [data, scalaMotivoY, xScale])
   const containerRef = useRef(null)
-  // if (fullData) {
 
-  //   console.log('X', fullData, fullData.filter(x => x['racconto incastonato']))
-  // }
+  const raccontiIncastonati = useMemo(() => {
+    if (!fullData) {
+      return null
+    }
 
+    const inkMap = groupBy(
+      fullData.filter((x) => x['racconto incastonato']),
+      'racconto incastonato'
+    )
+    return Object.keys(inkMap).map((key) => {
+      const racconti = inkMap[key]
+      const minX = Math.min(...racconti.map((d) => d.x))
+      const maxX = Math.max(...racconti.map((d) => d.x))
+      const inkY = scalaMotivoY(
+        +tipologieByTipologia['racconto incastonato']['ordine tipologia']
+      )
+      return {
+        key,
+        x1: minX,
+        x2: maxX,
+        y: inkY,
+      }
+    })
+  }, [fullData, scalaMotivoY, tipologieByTipologia])
+  console.log('X', raccontiIncastonati)
 
   return (
     <div className="trama2-detail-content">
@@ -92,6 +114,17 @@ export default function TramaDetail({
               gradientsType={gradientsType}
             />
             <g transform={`translate(0, 80)`}>
+              {raccontiIncastonati &&
+                raccontiIncastonati.map((racconto) => (
+                  <line
+                    className="trama2-racconto-incastonato-line"
+                    key={racconto.key}
+                    x1={racconto.x1}
+                    x2={racconto.x2}
+                    y1={racconto.y}
+                    y2={racconto.y}
+                  />
+                ))}
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
                 const stroke = isFill
@@ -116,20 +149,10 @@ export default function TramaDetail({
                   let element
                   if (i === 0) {
                     element = (
-                      <rect
-                        x={0}
-                        y={0}
-                        className="trama2-start-symbol"
-                      />
+                      <rect x={0} y={0} className="trama2-start-symbol" />
                     )
                   } else if (i === data.length - 1) {
-                    element = (
-                      <rect
-                        x={0}
-                        y={1}
-                        className="trama2-end-symbol"
-                      />
-                    )
+                    element = <rect x={0} y={1} className="trama2-end-symbol" />
                   } else {
                     element = <circle className="trama2-circle" r={2} />
                   }
