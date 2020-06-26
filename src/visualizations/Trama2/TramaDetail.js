@@ -103,10 +103,13 @@ export default function TramaDetail({
                     key={i}
                     d={subPath}
                     className="trama2-line"
-                    style={{
-                      stroke: stroke,
-                      fill: 'none',
-                    }}
+                    stroke={stroke}
+                    fill="transparent"
+
+                    // style={{
+                    //   // stroke: stroke,
+                    //   // fill: 'none',
+                    // }}
                   ></path>
                 )
               })}
@@ -138,7 +141,8 @@ export default function TramaDetail({
                       <text
                         x={5}
                         y={-5}
-                        style={{ transform: 'rotate(-30deg)' }}
+                        transform="rotate(-30)"
+                        // style={{ transform: 'rotate(-30deg)' }}
                       >
                         {d.motivo_type}
                       </text>
