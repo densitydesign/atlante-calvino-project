@@ -255,7 +255,11 @@
   color: #fff;
 }
 .trama2-sidebar-item.disabled {
-  color: #ccc;
+  color: #a6a6a6;
+}
+.trama2-sidebar-content {
+  background: rgb(204,204,204);
+  background: linear-gradient(180deg, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 100%);
 }
 .trama2-sidebar-item:hover {
   background-color: #ccc;

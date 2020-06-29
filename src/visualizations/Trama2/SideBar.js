@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import keyBy from 'lodash/keyBy'
+import groupBy from 'lodash/groupBy'
 
 export default function SideBar({
   tipologie,
@@ -32,38 +33,50 @@ export default function SideBar({
     lookup = lookupMap[bounds[0]]
   }
 
+  const tipologieGrouped = useMemo(() => {
+    return groupBy(tipologie, 'cluster tipologia')
+  }, [tipologie])
+
   return (
     <div className="trama2-sidebar">
       <div className="trama2-sidebar-header">
         Ordine <br />
         di turbamento
       </div>
-      {tipologie.map((tipologia) => (
-        <div
-          key={tipologia.tipologia}
-          onClick={addBound(tipologia.tipologia)}
-          className={`trama2-sidebar-item
-          ${
-            lookup !== null &&
-            tipologia.tipologia !== bounds[0] &&
-            (!lookup || !lookup[tipologia.tipologia])
-              ? 'disabled'
-              : ''
-          }
-          ${boundsByKey[tipologia.tipologia] ? 'selected' : ''}`}
-          style={{
-            height: itemHeight,
-            background: boundsByKey[tipologia.tipologia]
-              ? tipologia.colore.colori
-              : undefined,
-          }}
-        >
-          {tipologia.tipologia}
-        </div>
-      ))}
-      <div className='trama2-sidebar-footer'>
-        Clicca per scegliere il <br/>
-        punto più alto e più basso<br />
+      {Object.keys(tipologieGrouped).map((k) => {
+        const tipologie = tipologieGrouped[k]
+        return (
+          <div className="trama2-sidebar-content" key={k}>
+            {tipologie.map((tipologia) => (
+              <div
+                key={tipologia.tipologia}
+                onClick={addBound(tipologia.tipologia)}
+                className={`trama2-sidebar-item
+            ${
+              lookup !== null &&
+              tipologia.tipologia !== bounds[0] &&
+              (!lookup || !lookup[tipologia.tipologia])
+                ? 'disabled'
+                : ''
+            }
+            ${boundsByKey[tipologia.tipologia] ? 'selected' : ''}`}
+                style={{
+                  height: itemHeight,
+                  background: boundsByKey[tipologia.tipologia]
+                    ? tipologia.colore.colori
+                    : undefined,
+                }}
+              >
+                {tipologia.tipologia}
+              </div>
+            ))}
+          </div>
+        )
+      })}
+      <div className="trama2-sidebar-footer">
+        Clicca per scegliere il <br />
+        punto più alto e più basso
+        <br />
         delle curve
       </div>
       {/* <div>
