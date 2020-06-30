@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "528f5247065ef85e033ac028514626a1",
+    "revision": "22f52601a283e144dc61403e683bc453",
     "url": "/atlante-calvino-project/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/css/2.f1f1c50d.chunk.css"
   },
   {
-    "revision": "b74c1bd073849b42255c",
+    "revision": "d31dc2368fa99a20c5ed",
     "url": "/atlante-calvino-project/static/css/3.669295d1.chunk.css"
   },
   {
-    "revision": "31be5e4e5ed6cee96441",
+    "revision": "fcfe0993be1ffe97ffb9",
     "url": "/atlante-calvino-project/static/css/4.669295d1.chunk.css"
   },
   {
-    "revision": "05acbc8d502507fb060c",
-    "url": "/atlante-calvino-project/static/css/main.0350b560.chunk.css"
+    "revision": "e967d9570a6bef7f919f",
+    "url": "/atlante-calvino-project/static/css/main.8f427330.chunk.css"
   },
   {
     "revision": "4ff70368454a9d68d773",
@@ -28,20 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/js/2.166c238c.chunk.js.LICENSE"
   },
   {
-    "revision": "b74c1bd073849b42255c",
-    "url": "/atlante-calvino-project/static/js/3.b20623d6.chunk.js"
+    "revision": "d31dc2368fa99a20c5ed",
+    "url": "/atlante-calvino-project/static/js/3.443f6f06.chunk.js"
   },
   {
-    "revision": "31be5e4e5ed6cee96441",
-    "url": "/atlante-calvino-project/static/js/4.0313b52e.chunk.js"
+    "revision": "fcfe0993be1ffe97ffb9",
+    "url": "/atlante-calvino-project/static/js/4.c7486b17.chunk.js"
   },
   {
-    "revision": "05acbc8d502507fb060c",
-    "url": "/atlante-calvino-project/static/js/main.1771b494.chunk.js"
+    "revision": "e967d9570a6bef7f919f",
+    "url": "/atlante-calvino-project/static/js/main.f41bf282.chunk.js"
   },
   {
-    "revision": "60fcead10e10e5c6ee45",
-    "url": "/atlante-calvino-project/static/js/runtime-main.05bffb71.js"
+    "revision": "e447821a974df57853b9",
+    "url": "/atlante-calvino-project/static/js/runtime-main.22e666ef.js"
   },
   {
     "revision": "1e3f889935d7adb2ec5515487622acc8",
