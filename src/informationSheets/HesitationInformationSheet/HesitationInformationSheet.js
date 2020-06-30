@@ -15,8 +15,7 @@ class HesitationInformationSheet extends Component {
           <main>
             <div className="viz--meta">
               <h1>LA GIORNATA DI UNO SCRUTATORE</h1>
-              {/* <img src={process.env.PUBLIC_URL + "/informationSheets/Scheda_Spazio_Header.svg"} alt="information complement" /> */}
-              [Immagine qui]
+              <img src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-01.png"} alt="information complement" style={{width:'100%',marginBottom:'50px'}}/>
             </div>
             <div className="viz--info">
             </div>
@@ -34,11 +33,11 @@ class HesitationInformationSheet extends Component {
             </article>
             <div style={{gridColumn:'2 / span 22'}}>
               <h4 style={{textTransform:'none'}}>Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></h4>
-              [Immagine qui]
+              <img src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-02.png"} alt="information complement" style={{width:'100%',marginBottom:'50px'}}/>
+              <h1>Parole: istruzioni per l'uso</h1>
             </div>
             <article className="focus">
               <div>
-                <h1>Parole: istruzioni per l'uso</h1>
                 <p><span style={{color:'#0E08F9'}}>Scegliere le parole</span><br/>
                 La riflessione che inaugura il capitolo è immediatamente coinvolta dal processo dubitativo. Con la promessa di una maggiore esattezza, <span style={{textDecoration:'underline'}}>td7</span> e <span style={{textDecoration:'underline'}}>td8</span> cercano di giustificare la scelta di impiegare solo «termini generici», evitando i nomi propri. Subito però il testo infrange questa regola di comportamento: viene infatti svelata l’identità del «partito di sinistra» a cui appartiene il protagonista (ovvero «partito comunista») e l’«istituto religioso» anonimo diventa «il Cottolengo di Torino».</p>
                 <p>Ci troviamo di fronte a una figura retorica, la <span style={{textDecoration:'underline'}}>preterizione</span>, che spesso collabora (non a caso) con il processo dubitativo: informare negando infatti è in linea con il funzionamento del testo dubitativo, che alimenta la narrazione tramite un’operazione tutta volta alla sottrazione, ossia mettendo in discussione quanto detto in precedenza.</p>
@@ -57,25 +56,28 @@ class HesitationInformationSheet extends Component {
             </article>
             <div style={{gridColumn:'17 / span 7'}}>
               {/* Parole: instruzioni per l'uso immagine sticky */}
-              <div className="sticky-element">Immagine sticky</div>
+              <img className="sticky-element" src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-03.png"} alt="information complement" style={{width:'100%', top: '75px'}}/>
             </div>
             <div style={{gridColumn:'2 / span 22'}}>
               <h1>Gli strati del testo</h1>
-              <div className="sticky-element">Immagine sticky</div>
+              
               <article className="focus" style={{display:'grid', gridTemplateColumns: 'repeat(24, 1fr)'}}>
                 <div style={{gridColumn:'1 / span 15'}}>
+                  <img className="sticky-element" src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-04.png"} alt="information complement" style={{width:'100%', paddingBottom: '50px'}}/>
+
                   <p>Il paragrafo finale nella versione cartacea si svolge per oltre due pagine senza punti fermi: è composto da una serie di riflessioni, incastrate l’una dentro l’altra, sovrapposte l’una sopra l’altra. L’argomento è la fede politica del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde (producendo un testo denso, ricco di informazioni ma di difficile lettura), improvvisamente il filo argomentativo si ritorce su se stesso.</p>
 
                   <p><span style={{color:'#0E08F9'}}>Il processo: i livelli del testo dubitativo</span><br/>
                   Questo paragrafo è un ottimo esempio di come il processo dubitativo “torna sui suoi passi”. Il testo oggetto di dubbio associato a <span style={{textDecoration:'underline'}}>td28</span> coincide con l’inizio del paragrafo e racchiude in sé dodici td (dal <span style={{textDecoration:'underline'}}>td16</span> al <span style={{textDecoration:'underline'}}>td27</span>, più della metà del numero totale di occorrenze del capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in parallelo assistiamo a un innalzamento di livello; il numero di livello equivale alla quantità di volte in cui il processo dubitativo insiste sulla stessa identica porzione di testo: accavallandosi fra loro le occorrenze “dubitano” della loro capacità di ristabilire il senso del discorso. Un altro esempio: il passaggio dal 6° al 7° livello avviene a causa del <span style={{textDecoration:'underline'}}>td29</span>; poteva sembrare che il <span style={{textDecoration:'underline'}}>td28</span> fosse riuscito una volta per tutte a bloccare la catena dubitativa, eppure ancora una volta c’è qualcosa da dire, da aggiungere, da precisare. E la precisazione non può che avvenire fra parentesi.</p>
-
+                </div>
+                <div style={{gridColumn:'1 / span 15'}}>
                   <p><span style={{color:'#0E08F9'}}>La forma: le parentesi</span><br/>
                   Cinque delle occorrenze “intrappolate” dentro il testo oggetto di dubbio di td28 sono a loro volta contenute fra parentesi: <span style={{textDecoration:'underline'}}>td18</span>, <span style={{textDecoration:'underline'}}>td20</span>, <span style={{textDecoration:'underline'}}>td21</span>, <span style={{textDecoration:'underline'}}>td23</span>, <span style={{textDecoration:'underline'}}>td27</span>. Ma la quantità di segni grafici nel paragrafo è molto più alta: infatti circa il <a href="https://docs.google.com/spreadsheets/d/11gwVrrpqawYyHTUrlWQZ_ptM0O-vZmKZinNyW3ReYbM/edit#gid=1461625927&range=C2:C17">30%</a> del capitolo viene dislocata tra parentesi o dentro inciso, anche quando da un punto di vista narrativo potrebbe non trovarcisi. In alcuni casi le parentesi contengono a loro volta degli incisi, elaborando così una sorta di racconto a “matrioska”. La massiccia concentrazione di processo dubitativo proprio in quell’area è speculare alla presenza dei segni grafici che “stratificano” il testo.</p>
                 </div>
               </article>
             </div>
             <div style={{gridColumn:'2 / span 22'}}>
-              [Immagine qui]
+              <img src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-05.png"} alt="information complement" style={{width:'100%', paddingBottom: '50px'}}/>
             </div>
             <article className="focus">
               <div>
