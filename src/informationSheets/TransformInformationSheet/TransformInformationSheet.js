@@ -16,16 +16,33 @@ class TransformInformationSheet extends Component {
         <div>
         <main>
         <div className="viz--meta">
-        <h1>Mappe</h1>
-          <h2>La giornata di uno scruttatore</h2>
-                <img className="d-block w-100 mainImage" src={process.env.PUBLIC_URL + "/informationSheets/s3_Inquadramento-01.png"} alt="information complement" />
-                </div>
+        <h1>Trasformare</h1>
+          <h2>Ci vuole un sottotitolo</h2>
+          </div>
+        <div className="viz--meta--full">
+                <img className="d-block w-100 mainImage" src={process.env.PUBLIC_URL + "/informationSheets/inquadramento.png"} alt="information complement" />
+                  </div>
+
                   <article className="focus">
                             <div>
                             <p>
                             Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
                   </p>
-                            </div>
+                  <div className="carouselVizFocus">
+
+                  <img
+                    className="carouselLeg"
+                    src={process.env.PUBLIC_URL + "/informationSheets/viz_ball.png"}
+                    alt="Second slide"
+                  />
+                  <p className="notes">
+                  Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
+        </p>
+                  </div>
+
+                  </div>
+
+
                                             </article>
   <div className="CarouselSlide">
                             <Carousel>
@@ -36,7 +53,7 @@ class TransformInformationSheet extends Component {
   <div className="carouselVizFocus">
       <img
         className="carouselLeg"
-        src={process.env.PUBLIC_URL + "/informationSheets/leg-1.png"}
+        src={process.env.PUBLIC_URL + "/informationSheets/leg_1.png"}
         alt="Second slide"
       />
 
@@ -61,7 +78,7 @@ class TransformInformationSheet extends Component {
       <div className="carouselVizFocus">
       <img
         className="carouselLeg"
-        src={process.env.PUBLIC_URL + "/informationSheets/leg-1.png"}
+        src={process.env.PUBLIC_URL + "/informationSheets/leg_2.png"}
         alt="Second slide"
       />
         <img
@@ -78,6 +95,7 @@ class TransformInformationSheet extends Component {
       alt="Second slide"
     />
   </Carousel.Item>
+
   <Carousel.Item>
 
       <Carousel.Caption>
@@ -85,7 +103,7 @@ class TransformInformationSheet extends Component {
       <div className="carouselVizFocus">
       <img
         className="carouselLeg"
-        src={process.env.PUBLIC_URL + "/informationSheets/leg-1.png"}
+        src={process.env.PUBLIC_URL + "/informationSheets/leg_3.png"}
         alt="Second slide"
       />
           <img
@@ -111,7 +129,7 @@ class TransformInformationSheet extends Component {
 
     <img
       className="carouselLeg"
-      src={process.env.PUBLIC_URL + "/informationSheets/leg-1.png"}
+      src={process.env.PUBLIC_URL + "/informationSheets/leg_4.png"}
       alt="Second slide"
     />
     <img
@@ -130,7 +148,6 @@ class TransformInformationSheet extends Component {
   </Carousel.Item>
 </Carousel>
 </div>
-
 
                   <div className="sheet--info">
                     <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/territory/spaceAnalysis" />

@@ -1,6 +1,7 @@
 .realismo-content {
     height: calc(100vh - var(--navigation-height));
     width: 100%;
+    padding-top:3em;
 }
 
 .realismo-reset {
