@@ -4,10 +4,10 @@ import Carousel from 'react-bootstrap/Carousel'
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
-
 import './TransformInformationSheet.css';
 
 class TransformInformationSheet extends Component {
+
   render()
   {
     return (
@@ -19,33 +19,26 @@ class TransformInformationSheet extends Component {
         <h1>Trasformare</h1>
           <h2>Ci vuole un sottotitolo</h2>
           </div>
-        <div className="viz--meta--full">
+          <div className="viz--meta--full">
                 <img className="d-block w-100 mainImage" src={process.env.PUBLIC_URL + "/informationSheets/inquadramento.png"} alt="information complement" />
-
                   </div>
 
-                  <article className="focus">
-                            <div>
-                            <p>
-                            Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.</p>
+                  <article className="focus" style={{display:'grid', gridTemplateColumns: 'repeat(24, 1fr)'}} style={{gridColumn:'2 / span 14'}}>
 
-                  <div className="carouselVizFocus">
-                  <p className="notes">
+                            <p>
+                            Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
+
                   Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
         </p>
-        <img
-          className="carouselLeg"
-          src={process.env.PUBLIC_URL + "/informationSheets/viz_ball.png"}
-          alt="Second slide"
-        />
-                  </div>
 
-                  </div>
-
-
-                                            </article>
+        </article>
+                                            <div style={{gridColumn:'17 / span 7'}}>
+                                        <img className = "carouselLeg"
+                                          src={process.env.PUBLIC_URL + "/informationSheets/viz_ball.png"}
+                                        />
+                                  </div>
   <div className="CarouselSlide">
-                            <Carousel>
+<Carousel>
 
   <Carousel.Item>
   <Carousel.Caption>
