@@ -60,11 +60,6 @@ export default function TramaDetail({
     return [newData, subPaths, Array.from(gradientsSet)]
   }, [data, scalaMotivoY, xScale])
   const containerRef = useRef(null)
-  // if (fullData) {
-
-  //   console.log('X', fullData, fullData.filter(x => x['racconto incastonato']))
-  // }
-
 
   return (
     <div className="trama2-detail-content">
@@ -82,7 +77,7 @@ export default function TramaDetail({
         {measures && (
           <svg
             style={{
-              height: detailHeight + 80,
+              height: detailHeight + 70,
               width: measures.width,
             }}
           >
@@ -91,7 +86,7 @@ export default function TramaDetail({
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
             />
-            <g transform={`translate(0, 80)`}>
+            <g transform={`translate(0, 70)`}>
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
                 const stroke = isFill

@@ -69,7 +69,7 @@ function WormDetail({ title, year, circles, width, toggleSelect }) {
               )}
 
               <circle
-                // className="movement"
+                className="movement"
                 style={{ fill: colorScale(circle.category) }}
                 r={circleRadius}
                 cy={yScale(circle.level || 0)}

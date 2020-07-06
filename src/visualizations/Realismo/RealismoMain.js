@@ -18,16 +18,9 @@ import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
 
-import {
-  datasetToCircles,
-  dataset,
-  raccontiDegs as racconti,
-  yearsExtent,
-  detailWormsCircles,
-} from './utils'
+import { datasetToCircles, dataset, racconti, yearsExtent } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
-import WormDetail2 from './WormDetail2'
 
 const circlesMap = datasetToCircles(40)
 
@@ -153,7 +146,7 @@ export default function RealismoMain({ title }) {
     return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
-  const [ref, { width }] = useDimensions({ liveMeasure: false })
+  const [ref, { x, y, width, height }] = useDimensions()
 
   return (
     <div>
@@ -206,18 +199,14 @@ export default function RealismoMain({ title }) {
         >
           <div className="realismo-reset">
             <div>Seleziona i test e poi scorri in basso</div>
-            <button
-              onClick={() => {
-                // Reset Selection
-                setRicerca([])
-                // Reset Filters
-                // setSpazio([])
-                // setMovimento(null)
-                // setTimeFilter(yearsExtent)
-              }}
-            >
-              reset
-            </button>
+            <button onClick={() => {
+              // Reset Selection
+              setRicerca([])
+              // Reset Filters
+              // setSpazio([])
+              // setMovimento(null)
+              // setTimeFilter(yearsExtent)
+            }}>reset</button>
           </div>
           {measures && (
             <CircleWorms
@@ -276,22 +265,14 @@ export default function RealismoMain({ title }) {
         <div className="realismo-details-container" ref={ref}>
           {width &&
             selctedTitoliSorted.map((item) => (
-              <WormDetail2
-                data={detailWormsCircles[item.value]}
-                year={detailWormsCircles[item.value]?.[0]?.year}
-                title={item.value}
+              <WormDetail
                 width={width}
                 key={item.value}
+                title={item.value}
+                year={dataset[item.value]?.[0]?.year}
+                circles={circlesMap[item.value]}
                 toggleSelect={toggleSelect}
               />
-              // <WormDetail
-              //   width={width}
-              //   key={item.value}
-              //   title={item.value}
-              //   year={dataset[item.value]?.[0]?.year}
-              //   circles={circlesMap[item.value]}
-              //   toggleSelect={toggleSelect}
-              // />
             ))}
         </div>
       )}

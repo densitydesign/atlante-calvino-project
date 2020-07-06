@@ -21,52 +21,17 @@ text.realismo-legend-text {
     font-weight: bold;
 }
 
-/* LABEL ANIMATION DRAFT */
-/* rect.worm-label-gradient-rect {
-    transition: opacity 0.3s linear;
-}
-g.worm-label-container-flipped text {
-}
 
-g.worm-label:hover g.worm-label-container-flipped text {
-    text-anchor: end;
-}
-g.worm-label:hover g.worm-label-container-flipped rect.worm-label-gradient-rect {
-    opacity: 0;
-}
-
-g.worm-label-container:hover rect.worm-label-gradient-rect{
-    opacity: 0;
-}
-
-g.worm-label-container-flipped {
-    transition: transform 0.3s linear;
-}
-
-g.worm-label-container-flipped {
-    fill: red !important;
-}
-g.worm-label-container-flipped:hover {
-}
-
-g.worm-label-container-flipped:hover text {
-    text-anchor: end;
-    transform: translateX(-80px);
-}
-
-g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
-    opacity: 0;
-} */
-
-.realismo-details-container {
-    margin-top: 50px;
-    margin-bottom: 60px;
-}
 .realismo-detail {
 
 }
+
+.realismo-details-container{
+
+    margin: 100px 100px;
+}
 .worm-detail-svg {
-    margin-top: 30px;
+    height: 250px;
     width: 100%;
 }
 
@@ -86,24 +51,3 @@ g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
     /* text-anchor: end; */
     /* transform: rotate(-45deg); */
 }
-
-.movement {
-    animation: movement 5s infinite linear;
-}
-
-@keyframes movement {
-    0% {
-      transform: scale(1);
-      stroke: transparent;
-    }
-
-    50% {
-        transform: scale(2);
-        stroke: white;
-
-    }
-    100% {
-        transform: scale(1);
-        stroke: transparent;
-    }
-  }
