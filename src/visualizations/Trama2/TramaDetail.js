@@ -4,7 +4,30 @@ import { scaleLinear } from 'd3-scale'
 import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import MiniInfoBox from '../../general/MiniInfoBox'
-import { groupBy } from 'lodash'
+import { groupBy, countBy, sortBy, orderBy, mapValues } from 'lodash'
+
+const TRESHOLD_LABEL = 100
+function calculateLabelScore(data, i) {
+  let score = 0
+  const datum = data[i]
+  for (let j = i + 1; j < data.length; j++) {
+    const len = Math.abs(data[j].x - datum.x)
+    if (len < TRESHOLD_LABEL) {
+      score += parseInt(TRESHOLD_LABEL - len)
+    } else {
+      break
+    }
+  }
+  for (let j = i - 1; j >= 0; j--) {
+    const len = Math.abs(data[j].x - datum.x)
+    if (len < TRESHOLD_LABEL) {
+      score += parseInt(TRESHOLD_LABEL - len)
+    } else {
+      break
+    }
+  }
+  return score
+}
 
 const CHART_X_PADDING = 50
 
@@ -88,7 +111,54 @@ export default function TramaDetail({
       }
     })
   }, [fullData, scalaMotivoY, tipologieByTipologia])
-  console.log('X', raccontiIncastonati)
+
+  const labelsData = useMemo(() => {
+    if (fullData === null) {
+      return null
+    }
+    const countData = countBy(fullData, (x) => x.motivo_type)
+    const maxCount = Math.max(...Object.values(countData))
+
+    const dataWithScore = fullData.map((labelData, i) => ({
+      ...labelData,
+      score:
+        parseInt((calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) / maxCount),
+    }))
+
+    const byTypeWithScore = dataWithScore.reduce(
+      (acc, datum, i) => ({
+        ...acc,
+        [datum.motivo_type]: orderBy([{ datum, score: datum.score, i }].concat(
+          acc[datum.motivo_type] ?? []
+        ), 'score', 'desc'),
+      }),
+      []
+    )
+
+    const keepByType = mapValues(byTypeWithScore, (dataWithScore) => {
+      const keep = [...dataWithScore]
+      dataWithScore.forEach((datum, i) => {
+        if (datum.score > 90 && keep.length > 1) {
+          keep.splice(keep.indexOf(datum), 1)
+        }
+      })
+      return keep
+    })
+
+    const finalLabels = [...dataWithScore]
+    Object.keys(keepByType).forEach(key => {
+      const keep = keepByType[key]
+      keep.forEach(datum => {
+        finalLabels[datum.i] = {
+          ...finalLabels[datum.i],
+          keepLabel: true,
+        }
+      })
+    })
+
+    return finalLabels
+
+  }, [fullData])
 
   return (
     <div className="trama2-detail-content">
@@ -118,7 +188,7 @@ export default function TramaDetail({
             <g transform={`translate(0, 80)`}>
               {raccontiIncastonati &&
                 raccontiIncastonati.map((racconto) => (
-                <g key={racconto.key}>
+                  <g key={racconto.key}>
                     <line
                       className="trama2-racconto-incastonato-line"
                       x1={racconto.x1}
@@ -162,7 +232,7 @@ export default function TramaDetail({
                 )
               })}
               <g>
-                {fullData.map((d, i) => {
+                {labelsData.map((d, i) => {
                   let element
                   if (i === 0) {
                     element = (
@@ -176,13 +246,15 @@ export default function TramaDetail({
                   return (
                     <g key={i} transform={`translate(${d.x}, ${d.y})`}>
                       {element}
-                      <text
-                        x={5}
-                        y={-5}
-                        style={{ transform: 'rotate(-30deg)' }}
-                      >
-                        {d.motivo_type}
-                      </text>
+                      {d.keepLabel === true && (
+                        <text
+                          x={5}
+                          y={-5}
+                          style={{ transform: 'rotate(-30deg)' }}
+                        >
+                          {d.motivo_type} {d.score}
+                        </text>
+                      )}
                     </g>
                   )
                 })}
