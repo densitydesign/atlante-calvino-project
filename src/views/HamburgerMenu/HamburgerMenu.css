@@ -94,6 +94,10 @@ color: var(--bg);
 color: turquoise;
 }
 
+.viz-intro h5:hover{
+color: turquoise;
+}
+
 
 .step-intro{
   background-color: turquoise;
