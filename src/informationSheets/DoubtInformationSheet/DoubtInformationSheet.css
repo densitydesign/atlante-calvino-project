@@ -49,10 +49,16 @@ main article h3 {
 
 .viz--pic{
   margin:2em 0em 2em 0em;
-    grid-column: 2 / span 10;
-    width: 100%;
+  grid-column: 2 / span 10;
+  width: 100%;
 }
 
 .viz--info p {
   margin: 0;
+}
+
+.references{
+  margin-top: 4em;
+  padding-top: 2em;
+  border-top:1px solid black;
 }
