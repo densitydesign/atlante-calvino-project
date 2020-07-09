@@ -44,7 +44,7 @@ Il confronto consente di verificare un altro cambiamento: il ribaltamento in ent
 </p>
 </div>
 </article>
-<div style={{gridColumn:'17 / span 7'}}>
+<div style={{gridColumn:'2 / span 10'}}>
 <img src={process.env.PUBLIC_URL + "/informationSheets/infosheet-nebbia-02.png"} alt="information complement" style={{width:'100%', paddingBottom:'50px'}}/>
 </div>
 
@@ -58,19 +58,17 @@ Il confronto consente di verificare un altro cambiamento: il ribaltamento in ent
 <div>
           <p>
           È in questi anni che, prima di cominciare a scrivere le vicende dell’entità interstellare Qwfwq, Calvino conclude il suo percorso con il personaggio Marcovaldo. Nel 1963 vengono pubblicati gli ultimi racconti della serie, fra cui La fermata sbagliata: Marcovaldo va al cinema, uscendo dopo l’ultimo spettacolo scopre che la città è stata invasa dalla nebbia; incapace di trovare dei punti di riferimento per orientarsi, scende alla fermata sbagliata del tram e si perde. L’anno successivo, nel 1964, esce su «il Caffé» un racconto cosmicomico intitolato <em>Un segno nello spazio</em>: Qwfwq si decide dopo un lungo periodo di incertezza a lasciare un segno personale nell’universo, simbolo di se stesso ma anche punto di riferimento nello spazio sconfinato a cui è confrontato; dopo appena una rivoluzione della Galassia, scopre che qualcuno lo ha cancellato e riscritto, imitando maldestramente il suo gesto; ha inizio allora una catena di cancellazioni reciproche destinata a ricoprire di tracce illeggibili l’intero universo.</p>
-          </div>
+
+
+          <p>Entrambi questi testi raccontano un ostacolo visivo, ma se nel primo caso ci troviamo di fronte a una “sottrazione” subita dal personaggio, nel secondo abbiamo a che vedere con una forma di “eliminazione” volontaria che assume il ruolo di motore della creazione. Questi anni coincidono con un momento di transizione ampiamente analizzato dalla critica, in cui Calvino sembra abbandonare la dimensione terrestre per dedicarsi a quella cosmica: la pubblicazione di <em>Marcovaldo</em> ha la funzione di «chiudere definitivamente una fase della sua vita e nell’annunciarne una nuova», lasciando una volta per tutte dietro di sé «l’impegno politico degli anni cinquanta»; il racconto cosmicomico invece «è un genere letterario con il quale egli si reinventa come scrittore» (cfr. Scarpa 2005, 29, 32). Il progressivo alzarsi e abbassarsi delle diverse onde nella visualizzazione rispecchia questo cambio di rotta: si scopre infatti che l’inversione di tendenza accennata in precedenza avviene proprio nell’intervallo visualizzato. Da questo momento in poi la cancellazione avrà la meglio sulla nebbia.
+          </p>
+            </div>
           </article>
 
         <div style={{gridColumn:'17 / span 7'}}>
           <img src={process.env.PUBLIC_URL + "/informationSheets/infosheet-nebbia-01.png"} alt="information complement" style={{width:'100%', paddingBottom:'50px', paddingTop:'30px'}}/>
         </div>
 
-        <article className="focus" style={{display:'grid', gridTemplateColumns: 'repeat(24, 1fr)'}} style={{gridColumn:'2 / span 14'}}>
-
-
-<p>Entrambi questi testi raccontano un ostacolo visivo, ma se nel primo caso ci troviamo di fronte a una “sottrazione” subita dal personaggio, nel secondo abbiamo a che vedere con una forma di “eliminazione” volontaria che assume il ruolo di motore della creazione. Questi anni coincidono con un momento di transizione ampiamente analizzato dalla critica, in cui Calvino sembra abbandonare la dimensione terrestre per dedicarsi a quella cosmica: la pubblicazione di <em>Marcovaldo</em> ha la funzione di «chiudere definitivamente una fase della sua vita e nell’annunciarne una nuova», lasciando una volta per tutte dietro di sé «l’impegno politico degli anni cinquanta»; il racconto cosmicomico invece «è un genere letterario con il quale egli si reinventa come scrittore» (cfr. Scarpa 2005, 29, 32). Il progressivo alzarsi e abbassarsi delle diverse onde nella visualizzazione rispecchia questo cambio di rotta: si scopre infatti che l’inversione di tendenza accennata in precedenza avviene proprio nell’intervallo visualizzato. Da questo momento in poi la cancellazione avrà la meglio sulla nebbia.
-</p>
-</article>
 
 <div className="references" style={{gridColumn:'2 / span 10'}}>
 <h4>Note</h4>
