@@ -173,7 +173,7 @@ function BoxPlot(
   }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([height - 160, 0])
+    return scaleLinear().domain(motivoExtent).range([height - 90, 0])
   }, [height])
 
   const scalaMotivo = useMemo(() => {
@@ -234,7 +234,6 @@ function BoxPlot(
         return acc
       }, [])
       if (nextPoints.length) {
-        console.log('NEXT', nextPoints, x)
         setX(Math.min(...nextPoints) + widthBar / 2)
       }
     },
@@ -265,7 +264,7 @@ function BoxPlot(
     racconti[0].anno,
     racconti[racconti.length - 1].anno,
   ])
-  console.log('M', measures)
+
   return (
     <div className="trama2-boxplot-content">
       <div
@@ -319,19 +318,19 @@ function BoxPlot(
           </svg>
         )}
       </div>
-      {measures && (
+      {/* {measures && (
         <Brush
           className='trama2-brush-for-detail'
           width={measures.width}
           onNextClick={handleNexPoint}
           onPrevClick={handlePrevPoint}
         />
-      )}
-      <div className="trama2-box-plot-year">
+      )} */}
+      {/* <div className="trama2-box-plot-year">
         <div>{years[0]}</div>
         <div>Testi per ordine cronologico</div>
         <div>{years[1]}</div>
-      </div>
+      </div> */}
     </div>
   )
 }
