@@ -1,20 +1,20 @@
 import React from 'react'
 
 function BoxPlotGrandientsDefinitions({ prefix = '', gradientsType, byTipologia, scalaMotivo, height }) {
-  
+
   const colorsItems = Object.values(byTipologia).sort(item => +item.ordineMotivo)
   const delta = 100 / (colorsItems.length - 1)
 
   return (
     <defs>
       {gradientsType.map(({racconto, uniqueItems}) => {
-        
-        
-        
-        
+
+
+
+
         const motivi = uniqueItems.map(item => item.motivo_type)
 
-      
+
         return (
           <linearGradient
             x1="0"

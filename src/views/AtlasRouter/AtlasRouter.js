@@ -29,6 +29,7 @@ import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet
 import HesitationInformationSheet from '../../informationSheets/HesitationInformationSheet/HesitationInformationSheet';
 import TransformInformationSheet from '../../informationSheets/TransformInformationSheet/TransformInformationSheet';
 import CombineInformationSheet from '../../informationSheets/CombineInformationSheet/CombineInformationSheet';
+import CancellationInformationSheet from '../../informationSheets/CancellationInformationSheet';
 import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
 import Realismo from '../../visualizations/Realismo';
@@ -99,7 +100,10 @@ export default function AtlasRouter()
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
+
       <Route exact path="/Problem/cancellation"><Cancellazione /></Route>
+      <Route exact path="/cancellation-sheet"><CancellationInformationSheet /></Route>
+
       <Route exact path="/Problem/realism">
         <Realismo title={'Realismo'}></Realismo>
       </Route>

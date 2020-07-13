@@ -4,6 +4,30 @@ import { scaleLinear } from 'd3-scale'
 import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import MiniInfoBox from '../../general/MiniInfoBox'
+import { groupBy, countBy, sortBy, orderBy, mapValues } from 'lodash'
+
+const TRESHOLD_LABEL = 100
+function calculateLabelScore(data, i) {
+  let score = 0
+  const datum = data[i]
+  for (let j = i + 1; j < data.length; j++) {
+    const len = Math.abs(data[j].x - datum.x)
+    if (len < TRESHOLD_LABEL) {
+      score += parseInt(TRESHOLD_LABEL - len)
+    } else {
+      break
+    }
+  }
+  for (let j = i - 1; j >= 0; j--) {
+    const len = Math.abs(data[j].x - datum.x)
+    if (len < TRESHOLD_LABEL) {
+      score += parseInt(TRESHOLD_LABEL - len)
+    } else {
+      break
+    }
+  }
+  return score
+}
 
 const CHART_X_PADDING = 50
 
@@ -61,6 +85,81 @@ export default function TramaDetail({
   }, [data, scalaMotivoY, xScale])
   const containerRef = useRef(null)
 
+  const raccontiIncastonati = useMemo(() => {
+    if (!fullData) {
+      return null
+    }
+
+    const inkMap = groupBy(
+      fullData.filter((x) => x['racconto incastonato']),
+      'racconto incastonato'
+    )
+    return Object.keys(inkMap).map((key) => {
+      const racconti = inkMap[key]
+      const minX = Math.min(...racconti.map((d) => d.x))
+      const maxX = Math.max(...racconti.map((d) => d.x))
+      const inkY = scalaMotivoY(
+        +tipologieByTipologia['racconto incastonato']['ordine tipologia']
+      )
+      return {
+        key,
+        startY: racconti[0].y,
+        endY: racconti[racconti.length - 1].y,
+        x1: minX,
+        x2: maxX,
+        y: inkY,
+      }
+    })
+  }, [fullData, scalaMotivoY, tipologieByTipologia])
+
+  const labelsData = useMemo(() => {
+    if (fullData === null) {
+      return null
+    }
+    const countData = countBy(fullData, (x) => x.motivo_type)
+    const maxCount = Math.max(...Object.values(countData))
+
+    const dataWithScore = fullData.map((labelData, i) => ({
+      ...labelData,
+      score:
+        parseInt((calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) / maxCount),
+    }))
+
+    const byTypeWithScore = dataWithScore.reduce(
+      (acc, datum, i) => ({
+        ...acc,
+        [datum.motivo_type]: orderBy([{ datum, score: datum.score, i }].concat(
+          acc[datum.motivo_type] ?? []
+        ), 'score', 'desc'),
+      }),
+      []
+    )
+
+    const keepByType = mapValues(byTypeWithScore, (dataWithScore) => {
+      const keep = [...dataWithScore]
+      dataWithScore.forEach((datum, i) => {
+        if (datum.score > 90 && keep.length > 1) {
+          keep.splice(keep.indexOf(datum), 1)
+        }
+      })
+      return keep
+    })
+
+    const finalLabels = [...dataWithScore]
+    Object.keys(keepByType).forEach(key => {
+      const keep = keepByType[key]
+      keep.forEach(datum => {
+        finalLabels[datum.i] = {
+          ...finalLabels[datum.i],
+          keepLabel: true,
+        }
+      })
+    })
+
+    return finalLabels
+
+  }, [fullData])
+
   return (
     <div className="trama2-detail-content">
       <div className="trama2-detail-header d-flex justify-content-center align-items-center">
@@ -77,7 +176,7 @@ export default function TramaDetail({
         {measures && (
           <svg
             style={{
-              height: detailHeight + 70,
+              height: detailHeight + 80,
               width: measures.width,
             }}
           >
@@ -86,7 +185,33 @@ export default function TramaDetail({
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
             />
-            <g transform={`translate(0, 70)`}>
+            <g transform={`translate(0, 80)`}>
+              {raccontiIncastonati &&
+                raccontiIncastonati.map((racconto) => (
+                  <g key={racconto.key}>
+                    <line
+                      className="trama2-racconto-incastonato-line"
+                      x1={racconto.x1}
+                      x2={racconto.x2}
+                      y1={racconto.y}
+                      y2={racconto.y}
+                    />
+                    <line
+                      className="trama2-racconto-incastonato-step-line"
+                      x1={racconto.x1}
+                      x2={racconto.x1}
+                      y1={racconto.startY}
+                      y2={racconto.y}
+                    />
+                    <line
+                      className="trama2-racconto-incastonato-step-line"
+                      x1={racconto.x2}
+                      x2={racconto.x2}
+                      y1={racconto.endY}
+                      y2={racconto.y}
+                    />
+                  </g>
+                ))}
               {subPaths.map((subPath, i) => {
                 const isFill = data[i + 1].motivo_type === data[i].motivo_type
                 const stroke = isFill
@@ -107,43 +232,33 @@ export default function TramaDetail({
                 )
               })}
               <g>
-                {fullData.map((d, i) => {
+                {labelsData.map((d, i) => {
                   let element
                   if (i === 0) {
                     element = (
-                      <rect
-                        x={0}
-                        y={0}
-                        className="trama2-start-symbol"
-                      />
+                      <rect x={0} y={0} className="trama2-start-symbol" />
                     )
                   } else if (i === data.length - 1) {
-                    element = (
-                      <rect
-                        x={0}
-                        y={1}
-                        className="trama2-end-symbol"
-                      />
-                    )
+                    element = <rect x={0} y={1} className="trama2-end-symbol" />
                   } else {
                     element = <circle className="trama2-circle" r={2} />
                   }
                   return (
                     <g key={i} transform={`translate(${d.x}, ${d.y})`}>
                       {element}
-                      <text
-                        x={5}
-                        y={-5}
-                        style={{ transform: 'rotate(-30deg)' }}
-                      >
-                        {d.motivo_type}
-                      </text>
+                      {d.keepLabel === true && (
+                        <text
+                          x={5}
+                          y={-5}
+                          style={{ transform: 'rotate(-30deg)' }}
+                        >
+                          {d.motivo_type} {d.score}
+                        </text>
+                      )}
                     </g>
                   )
                 })}
               </g>
-
-
             </g>
           </svg>
         )}
