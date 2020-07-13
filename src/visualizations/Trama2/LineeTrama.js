@@ -143,11 +143,14 @@ const LineaTrama = React.memo(
             <text
               style={{
                 transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
-                transform: `rotate(-30deg) translateX(-10px)`,
+                transform:
+                  selectedPoint.originalX < 0.2
+                    ? 'rotate(30deg) translate(5px, 5px)'
+                    : `rotate(-30deg) translateX(-10px)`,
               }}
               x={selectedPoint.x}
               y={selectedPoint.y}
-              textAnchor={'end'}
+              textAnchor={selectedPoint.originalX < 0.2 ? 'start' : 'end'}
             >
               {selectedPoint.motivo_type}
             </text>
@@ -389,6 +392,7 @@ function LineeTramaWithMeasures({
         acc[xKey] = acc[xKey] || {}
         acc[xKey][titolo] = {
           motivo_type: datum.motivo_type,
+          originalX: datum.originalX,
           x: datum.x,
           y: datum.y,
         }
