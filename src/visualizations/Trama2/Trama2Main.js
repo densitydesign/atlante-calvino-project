@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react'
+import React, { useCallback, useState, useMemo, useEffect } from 'react'
 import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
 import MoreInfo from '../../general/MoreInfo'
@@ -110,10 +110,12 @@ function Trama2Main({ title }) {
           }}
           data={{ options: searchOptions }}
           changeOptions={(newOptions) => {
-            setRicerca(newOptions.map(o => ({
-              ...o,
-              fromBounds: false
-            })))
+            setRicerca(
+              newOptions.map((o) => ({
+                ...o,
+                fromBounds: false,
+              }))
+            )
           }}
           selectedOptions={ricerca}
         />
