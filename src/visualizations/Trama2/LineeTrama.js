@@ -15,6 +15,7 @@ import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 
 import range from 'lodash/range'
+import find from 'lodash/find'
 
 import { splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
@@ -174,49 +175,51 @@ const SelectedContainers = React.memo(({ n }) => {
   )
 })
 
-const LineeTramaList = React.memo(({
-  measures,
-  dataRacconti,
-  currentXHoverRacconti,
-  racconti,
-  onRaccontoClick,
-  height,
-  scalaColore,
-  scalaMotivoY,
-  selected,
-  toggleSelect,
-  xScale,
-}) => {
-  return (
-    <g>
-      {dataRacconti.map((datum, i) => {
-        return (
-          <g key={i} className="linea-container">
-            <LineaTrama
-              selectedPoint={
-                currentXHoverRacconti &&
-                currentXHoverRacconti[racconti[i].titolo]
-                  ? currentXHoverRacconti[racconti[i].titolo]
-                  : null
-              }
-              onRaccontoClick={onRaccontoClick}
-              scalaColore={scalaColore}
-              scalaMotivoY={scalaMotivoY}
-              index={i}
-              width={measures.width}
-              height={height}
-              itemSelected={selected[racconti[i].titolo]}
-              toggleItem={toggleSelect}
-              xScale={xScale}
-              racconto={racconti[i]}
-              data={datum}
-            ></LineaTrama>
-          </g>
-        )
-      })}
-    </g>
-  )
-})
+const LineeTramaList = React.memo(
+  ({
+    measures,
+    dataRacconti,
+    currentXHoverRacconti,
+    racconti,
+    onRaccontoClick,
+    height,
+    scalaColore,
+    scalaMotivoY,
+    selected,
+    toggleSelect,
+    xScale,
+  }) => {
+    return (
+      <g>
+        {dataRacconti.map((datum, i) => {
+          return (
+            <g key={i} className="linea-container">
+              <LineaTrama
+                selectedPoint={
+                  currentXHoverRacconti &&
+                  currentXHoverRacconti[racconti[i].titolo]
+                    ? currentXHoverRacconti[racconti[i].titolo]
+                    : null
+                }
+                onRaccontoClick={onRaccontoClick}
+                scalaColore={scalaColore}
+                scalaMotivoY={scalaMotivoY}
+                index={i}
+                width={measures.width}
+                height={height}
+                itemSelected={selected[racconti[i].titolo]}
+                toggleItem={toggleSelect}
+                xScale={xScale}
+                racconto={racconti[i]}
+                data={datum}
+              ></LineaTrama>
+            </g>
+          )
+        })}
+      </g>
+    )
+  }
+)
 
 function LineeTramaWithMeasures({
   racconti = [],
@@ -324,6 +327,24 @@ function LineeTramaWithMeasures({
 
   const [x, setX] = useState(measures.width - BRUSH_HANDLE_WIDTH / 2)
 
+  useEffect(() => {
+    const initialTitle = 'Il cavaliere inesistente'
+    const raccontoData = dataByRacconti[initialTitle]
+    const raccontoDatum = find(raccontoData, (datum) => {
+      if (
+        datum.originalX.toFixed(2) === '0.77' &&
+        datum.motivo_type === 'viaggio'
+      ) {
+        return true
+      }
+      return false
+    })
+    if (raccontoDatum) {
+      setX(+raccontoDatum.x - BRUSH_HANDLE_WIDTH / 2)
+    }
+    toggleSelect(initialTitle)
+  }, [toggleSelect, dataByRacconti])
+
   const handleNexPoint = useCallback(() => {
     const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
       const dataTrama = dataByRacconti[titolo]
@@ -381,9 +402,7 @@ function LineeTramaWithMeasures({
 
   return (
     <>
-      <div className="trama2-top-legend-list">
-        Scrolla per zoomare
-      </div>
+      <div className="trama2-top-legend-list">Scrolla per zoomare</div>
       <svg
         style={{
           height: measures.height,
