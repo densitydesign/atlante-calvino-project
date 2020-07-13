@@ -43,6 +43,7 @@
 }
 
 .trama2-side-panel-rotate {
+    cursor: pointer;
     height: 120px;
     width: 35px;
     background-color: #fff;
