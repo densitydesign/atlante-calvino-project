@@ -32,7 +32,7 @@ const searchOptions = racconti.map((racconto) => ({
   value: racconto.titolo,
 }))
 
-const cercaOptions = [{ label: 'Volume' }]
+const cercaOptions = [{ label: 'Titolo' }]
 
 function Trama2Main({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
@@ -97,7 +97,7 @@ function Trama2Main({ title }) {
           title="Cerca per"
           options={cercaOptions}
           disabled={true}
-          value={'Volume'}
+          value={'Titolo'}
           onChange={(x) => {}}
           style={{
             gridColumn: 'span 3',
