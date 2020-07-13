@@ -91,9 +91,9 @@
 
 
 .slider {
-    width: 100%;
-    height: 100%;
-    
+    /* width: 100%;
+    height: 100%; */
+    background-color: #eee;
     
 }
 
@@ -107,7 +107,7 @@
 }
 
 .cursor {
-    stroke: #222;
+    stroke:#222;
     stroke-width: 1;
     fill: #fff;
     rx: 4px;
@@ -133,4 +133,8 @@
 
 .currentSequenceLabel{
     font-size: 11px;
+}
+
+.border-dark-blue {
+    border-color: var(--dark-blue) !important;
 }

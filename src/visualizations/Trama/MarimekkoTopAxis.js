@@ -83,14 +83,14 @@ export default function MarimekkoTopAxis({
 
   return (
     <animated.div style={{ height, width: props.width, overflow: "hidden" }}>
-      {currentTextID && (
+      {/* {currentTextID && (
         <div className="position-absolute">
           <small>Slider position: {currentPosition}</small>
         </div>
-      )}
+      )} */}
       {isBookDetail && (
         <animated.div
-          className="pl-2 position-absolute border rounded border-dark d-flex align-items-center"
+          className={`pl-2 position-absolute border rounded d-flex align-items-center ${styles['border-dark-blue']}`}
           style={{
             top: height - margins.bottom - 50,
             opacity: props.opacity,
@@ -102,7 +102,7 @@ export default function MarimekkoTopAxis({
             onClick={() => {
               setCurrentTextID(null);
             }}
-            className="btn border-left-dark border-right-0 border-top-0 border-bottom-0 m-0 rounded-0 btn-outline-dark"
+            className={`btn ${styles['border-dark-blue']} border-right-0 border-top-0 border-bottom-0 m-0 rounded-0`}
             // style={{ top: height - margins.bottom - 50 }}
           >
             X
