@@ -121,16 +121,22 @@ export default function TramaDetail({
 
     const dataWithScore = fullData.map((labelData, i) => ({
       ...labelData,
-      score:
-        parseInt((calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) / maxCount),
+      score: parseInt(
+        (calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) /
+          maxCount
+      ),
     }))
 
     const byTypeWithScore = dataWithScore.reduce(
       (acc, datum, i) => ({
         ...acc,
-        [datum.motivo_type]: orderBy([{ datum, score: datum.score, i }].concat(
-          acc[datum.motivo_type] ?? []
-        ), 'score', 'desc'),
+        [datum.motivo_type]: orderBy(
+          [{ datum, score: datum.score, i }].concat(
+            acc[datum.motivo_type] ?? []
+          ),
+          'score',
+          'desc'
+        ),
       }),
       []
     )
@@ -146,9 +152,9 @@ export default function TramaDetail({
     })
 
     const finalLabels = [...dataWithScore]
-    Object.keys(keepByType).forEach(key => {
+    Object.keys(keepByType).forEach((key) => {
       const keep = keepByType[key]
-      keep.forEach(datum => {
+      keep.forEach((datum) => {
         finalLabels[datum.i] = {
           ...finalLabels[datum.i],
           keepLabel: true,
@@ -157,7 +163,6 @@ export default function TramaDetail({
     })
 
     return finalLabels
-
   }, [fullData])
 
   return (
@@ -186,10 +191,30 @@ export default function TramaDetail({
               gradientsType={gradientsType}
             />
             <g transform={`translate(0, 80)`}>
+              {/* <defs>
+                <linearGradient
+                  id="racconto-incastonato-gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#F3F3F3" />
+                  <stop offset="50%" stop-color="#dadada" />
+                  <stop offset="100%" stop-color="#F3F3F3" />
+                </linearGradient>
+              </defs> */}
               {raccontiIncastonati &&
                 raccontiIncastonati.map((racconto) => (
                   <g key={racconto.key}>
-                    <line
+                    <rect
+                      y={0}
+                      height={racconto.y}
+                      className="trama2-racconto-incastonato-rect"
+                      x={racconto.x1}
+                      width={racconto.x2 - racconto.x1}
+                    />
+                    {/* <line
                       className="trama2-racconto-incastonato-line"
                       x1={racconto.x1}
                       x2={racconto.x2}
@@ -209,7 +234,7 @@ export default function TramaDetail({
                       x2={racconto.x2}
                       y1={racconto.endY}
                       y2={racconto.y}
-                    />
+                    /> */}
                   </g>
                 ))}
               {subPaths.map((subPath, i) => {
@@ -252,7 +277,7 @@ export default function TramaDetail({
                           y={-5}
                           style={{ transform: 'rotate(-30deg)' }}
                         >
-                          {d.motivo_type} {d.score}
+                          {d.motivo_type}
                         </text>
                       )}
                     </g>

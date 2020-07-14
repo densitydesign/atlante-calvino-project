@@ -287,6 +287,12 @@
   padding: 0 30px;
 }
 
+.trama2-racconto-incastonato-rect {
+  fill: #F3F3F3;
+  /* fill: url(#racconto-incastonato-gradient); */
+  stroke-width: 2px;
+}
+
 .trama2-racconto-incastonato-line {
   fill: #F49831;
   stroke: #F49831;
