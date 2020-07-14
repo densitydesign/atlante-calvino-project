@@ -1,15 +1,50 @@
 import React, { useMemo } from 'react'
 import keyBy from 'lodash/keyBy'
 import groupBy from 'lodash/groupBy'
-import { find } from 'lodash'
+import find from 'lodash/find'
+import orderBy from 'lodash/orderBy'
+import uniq from 'lodash/uniq'
 
-export default function SideBar({
+const SideBarItem = React.memo(
+  ({
+    tipologia,
+    addBound,
+    disabled,
+    selected,
+    fromDarkItem,
+    itemHeight,
+    disableEvents = false,
+  }) => (
+    <div
+      key={tipologia.tipologia}
+      onClick={() => addBound(tipologia.tipologia)}
+      className={`trama2-sidebar-item
+        ${disabled ? 'disabled' : ''}
+        ${
+          fromDarkItem >= Number(tipologia['ordine tipologia'])
+            ? 'item-dark'
+            : 'item-light'
+        }
+        ${disableEvents ? 'no-pointer-events' : ''}
+        ${selected ? 'selected' : ''}`}
+      style={{
+        height: itemHeight,
+        background: selected ? tipologia.colore.colori : undefined,
+      }}
+    >
+      {tipologia.tipologia}
+    </div>
+  )
+)
+
+function SideBar({
   tipologie,
   racconti,
   height,
   bounds,
   addBound,
   setBounds,
+  tramaDetail,
 }) {
   const boundsByKey = keyBy(bounds)
 
@@ -37,7 +72,6 @@ export default function SideBar({
   const tipologieGrouped = useMemo(() => {
     return groupBy(tipologie, 'cluster tipologia')
   }, [tipologie])
-  console.log('U.u', tipologieGrouped)
 
   const fromDarkItem = useMemo(() => {
     return (
@@ -45,6 +79,15 @@ export default function SideBar({
       -Infinity
     )
   }, [tipologie])
+
+  const motiviDetail = useMemo(() => {
+    if (tramaDetail) {
+      return uniq(
+        orderBy(tramaDetail, 'ordineMotivo', 'desc').map((x) => x.motivo_type)
+      )
+    }
+    return null
+  }, [tramaDetail])
 
   return (
     <div className="trama2-sidebar">
@@ -56,34 +99,34 @@ export default function SideBar({
         const tipologie = tipologieGrouped[k]
         return (
           <div className="trama2-sidebar-content" key={k}>
-            {tipologie.map((tipologia) => (
-              <div
-                key={tipologia.tipologia}
-                onClick={addBound(tipologia.tipologia)}
-                className={`trama2-sidebar-item
-            ${
-              lookup !== null &&
-              tipologia.tipologia !== bounds[0] &&
-              (!lookup || !lookup[tipologia.tipologia])
-                ? 'disabled'
-                : ''
-            }
-            ${
-              fromDarkItem >= Number(tipologia['ordine tipologia'])
-                ? 'item-dark'
-                : 'item-light'
-            }
-            ${boundsByKey[tipologia.tipologia] ? 'selected' : ''}`}
-                style={{
-                  height: itemHeight,
-                  background: boundsByKey[tipologia.tipologia]
-                    ? tipologia.colore.colori
-                    : undefined,
-                }}
-              >
-                {tipologia.tipologia}
-              </div>
-            ))}
+            {tipologie.map((tipologia) => {
+              let disabled
+              let selected
+              if (motiviDetail) {
+                disabled = motiviDetail.indexOf(tipologia.tipologia) === -1
+                selected =
+                  motiviDetail[0] === tipologia.tipologia ||
+                  motiviDetail[motiviDetail.length - 1] === tipologia.tipologia
+              } else {
+                disabled =
+                  lookup !== null &&
+                  tipologia.tipologia !== bounds[0] &&
+                  (!lookup || !lookup[tipologia.tipologia])
+                selected = !!boundsByKey[tipologia.tipologia]
+              }
+              return (
+                <SideBarItem
+                  key={tipologia.tipologia}
+                  disableEvents={!!motiviDetail}
+                  tipologia={tipologia}
+                  addBound={addBound}
+                  disabled={disabled}
+                  selected={selected}
+                  itemHeight={itemHeight}
+                  fromDarkItem={fromDarkItem}
+                />
+              )
+            })}
           </div>
         )
       })}
@@ -107,3 +150,5 @@ export default function SideBar({
     </div>
   )
 }
+
+export default React.memo(SideBar)
