@@ -8,21 +8,37 @@ import { groupBy, countBy, sortBy, orderBy, mapValues } from 'lodash'
 
 const TRESHOLD_LABEL = 100
 function calculateLabelScore(data, i) {
-  let score = 0
+  let score = null
   const datum = data[i]
   for (let j = i + 1; j < data.length; j++) {
-    const len = Math.abs(data[j].x - datum.x)
+    const lenX = Math.abs(data[j].x - datum.x)
+    const lenY = Math.abs(data[j].y - datum.y)
+    const len = Math.sqrt(lenX * lenX + lenY * lenY)
+
     if (len < TRESHOLD_LABEL) {
-      score += parseInt(TRESHOLD_LABEL - len)
-    } else {
+      if (score === null) {
+        score = parseInt(len)
+      } else {
+        score = Math.min(score, parseInt(TRESHOLD_LABEL - len))
+      }
+    }
+    if (lenX > TRESHOLD_LABEL) {
       break
     }
   }
   for (let j = i - 1; j >= 0; j--) {
-    const len = Math.abs(data[j].x - datum.x)
+    const lenX = Math.abs(data[j].x - datum.x)
+    const lenY = Math.abs(data[j].y - datum.y)
+    const len = Math.sqrt(lenX * lenX + lenY * lenY)
+
     if (len < TRESHOLD_LABEL) {
-      score += parseInt(TRESHOLD_LABEL - len)
-    } else {
+      if (score === null) {
+        score = parseInt(len)
+      } else {
+        score = Math.min(score, parseInt(TRESHOLD_LABEL - len))
+      }
+    }
+    if (lenX > TRESHOLD_LABEL) {
       break
     }
   }
@@ -116,15 +132,16 @@ export default function TramaDetail({
     if (fullData === null) {
       return null
     }
-    const countData = countBy(fullData, (x) => x.motivo_type)
-    const maxCount = Math.max(...Object.values(countData))
+    // const countData = countBy(fullData, (x) => x.motivo_type)
+    // const maxCount = Math.max(...Object.values(countData))
 
     const dataWithScore = fullData.map((labelData, i) => ({
       ...labelData,
-      score: parseInt(
-        (calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) /
-          maxCount
-      ),
+      // score: parseInt(
+      //   (calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) /
+      //     maxCount
+      // ),
+      score: calculateLabelScore(fullData, i),
     }))
 
     const byTypeWithScore = dataWithScore.reduce(
@@ -144,7 +161,7 @@ export default function TramaDetail({
     const keepByType = mapValues(byTypeWithScore, (dataWithScore) => {
       const keep = [...dataWithScore]
       dataWithScore.forEach((datum, i) => {
-        if (datum.score > 90 && keep.length > 1) {
+        if (datum.score !== null && datum.score < 50 && keep.length > 1) {
           keep.splice(keep.indexOf(datum), 1)
         }
       })
