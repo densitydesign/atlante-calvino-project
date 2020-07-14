@@ -182,6 +182,8 @@ export default function TramaDetail({
     return finalLabels
   }, [fullData])
 
+  const [hoverMotivo, setHoverMotivo] = useState(null)
+
   return (
     <div className="trama2-detail-content">
       <div className="trama2-detail-header d-flex justify-content-center align-items-center">
@@ -198,7 +200,7 @@ export default function TramaDetail({
         {measures && (
           <svg
             style={{
-              height: detailHeight + 80,
+              height: detailHeight + 100,
               width: measures.width,
             }}
           >
@@ -286,7 +288,19 @@ export default function TramaDetail({
                     element = <circle className="trama2-circle" r={2} />
                   }
                   return (
-                    <g key={i} transform={`translate(${d.x}, ${d.y})`}>
+                    <g
+                      className={`trama2-label-container ${
+                        hoverMotivo === d.motivo_type
+                          ? 'trama2-label-hover'
+                          : hoverMotivo === null
+                          ? ''
+                          : 'trama2-label-not-hover'
+                      }`}
+                      onMouseEnter={() => setHoverMotivo(d.motivo_type)}
+                      onMouseLeave={() => setHoverMotivo(null)}
+                      key={i}
+                      transform={`translate(${d.x}, ${d.y})`}
+                    >
                       {element}
                       {d.keepLabel === true && (
                         <text

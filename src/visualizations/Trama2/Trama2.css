@@ -127,24 +127,33 @@
   /* fill: none; */
 }
 
-.trama2-start-symbol {
+.trama2-label-container {
+  cursor: help;
+}
+.trama2-label-container > .trama2-start-symbol {
   transform: translate(-2px, -2px);
   height: 4px;
   width: 4px;
   stroke: black;
   fill: white;
 }
-.trama2-end-symbol {
+.trama2-label-container > .trama2-end-symbol {
   transform: rotate(45deg) translate(-3px, -3px);
   height: 4px;
   width: 4px;
   stroke: black;
   fill: white;
 }
-
-.trama2-circle {
+.trama2-label-container .trama2-circle {
+  transition: transform 0.2s linear;
   stroke: #ddd;
   fill: #000;
+}
+.trama2-label-container.trama2-label-hover .trama2-circle {
+  transform: scale(1.5);
+}
+.trama2-label-container.trama2-label-not-hover text {
+  opacity: 0.5;
 }
 
 /* sidebar */
