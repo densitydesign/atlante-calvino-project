@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import keyBy from 'lodash/keyBy'
 import groupBy from 'lodash/groupBy'
+import { find } from 'lodash'
 
 export default function SideBar({
   tipologie,
@@ -36,6 +37,14 @@ export default function SideBar({
   const tipologieGrouped = useMemo(() => {
     return groupBy(tipologie, 'cluster tipologia')
   }, [tipologie])
+  console.log('U.u', tipologieGrouped)
+
+  const fromDarkItem = useMemo(() => {
+    return (
+      find(tipologie, { tipologia: 'visione' })?.['ordine tipologia'] ??
+      -Infinity
+    )
+  }, [tipologie])
 
   return (
     <div className="trama2-sidebar">
@@ -58,6 +67,11 @@ export default function SideBar({
               (!lookup || !lookup[tipologia.tipologia])
                 ? 'disabled'
                 : ''
+            }
+            ${
+              fromDarkItem >= Number(tipologia['ordine tipologia'])
+                ? 'item-dark'
+                : 'item-light'
             }
             ${boundsByKey[tipologia.tipologia] ? 'selected' : ''}`}
                 style={{

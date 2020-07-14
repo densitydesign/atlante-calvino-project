@@ -264,6 +264,9 @@
 .trama2-sidebar-item.selected {
   color: #fff;
 }
+.trama2-sidebar-item.item-dark.selected {
+  color: black;
+}
 .trama2-sidebar-item.disabled {
   color: #a6a6a6;
 }
