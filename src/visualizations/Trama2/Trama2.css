@@ -268,11 +268,11 @@
   color: #a6a6a6;
 }
 .trama2-sidebar-content {
-  background: rgb(204,204,204);
-  background: linear-gradient(180deg, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 100%);
+  /* background: rgb(204,204,204); */
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 100%);
 }
 .trama2-sidebar-item:hover {
-  background-color: #ccc;
+  background: rgb(0,0,0,.15);
 }
 .trama2-box-plot-year {
   position: absolute;
