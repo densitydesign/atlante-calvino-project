@@ -121,7 +121,7 @@ export function makeVizData(scaleY) {
   });
 
   const byRacconto = groupBy(datasetLinesNormalized, "titolo racconto");
-  
+
   let racconti = sortBy(
     uniqBy(datasetLines, (item) => item["titolo racconto"]).map((item) => ({
       titolo: item["titolo racconto"],
@@ -153,14 +153,14 @@ export function makeVizData(scaleY) {
     // console.log(123, racconto.titolo, minDatum, maxDatum)
     return { ...racconto, minDatum, maxDatum, minX, maxX, fixScale };
   });
-  
-  
-  // const raccontiByRacconto = keyBy(racconti, 'titolo')
-  // const byRaccontoRemapped = mapValues(byRacconto, (values, k) => values.map(v => ({
-  //   ...v,
-  //   x: raccontiByRacconto[k].fixScale(v.x)
-    
-  // })))
+
+
+  const raccontiByRacconto = keyBy(racconti, 'titolo')
+  const byRaccontoRemapped = mapValues(byRacconto, (values, k) => values.map(v => ({
+    ...v,
+    x: raccontiByRacconto[k].fixScale(v.x)
+
+  })))
 
   // console.log("V", byRacconto, byRaccontoRemapped)
 
@@ -169,8 +169,8 @@ export function makeVizData(scaleY) {
     tipologieByTipologia,
     colors,
     racconti,
-    byRacconto,
-    // byRacconto: byRaccontoRemapped,
+    // byRacconto,
+    byRacconto: byRaccontoRemapped,
   };
 }
 
