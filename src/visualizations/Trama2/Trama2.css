@@ -299,6 +299,11 @@
   stroke: #000;
 }
 
+.trama2-box-plot-partial-hide-bar {
+  fill: transparent;
+  fill: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
 .trama2-info-box {
   fill: white;
   stroke-width: 1px;

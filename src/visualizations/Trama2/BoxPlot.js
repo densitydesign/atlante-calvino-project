@@ -36,6 +36,7 @@ const BoxPlotElement = React.memo(
     toggleItem,
     yScale,
     onRaccontoClick,
+    showBoxInOpacity,
   }) => {
     const handleClickRacconto = useCallback(
       (e) => {
@@ -74,15 +75,48 @@ const BoxPlotElement = React.memo(
           <title>{data.racconto.titolo}</title>
         </rect>
 
+        {itemSelected && showBoxInOpacity && (
+          <g>
+            <rect
+              width={widthBar}
+              className="trama2-box-plot-partial-hide-bar"
+              y={top}
+              height={
+                Math.min(
+                  yScale(data.first.ordineMotivo),
+                  yScale(data.last.ordineMotivo)
+                ) - top
+              }
+            />
+            <rect
+              width={widthBar}
+              className="trama2-box-plot-partial-hide-bar"
+              y={Math.max(
+                yScale(data.first.ordineMotivo),
+                yScale(data.last.ordineMotivo)
+              )}
+              height={
+                bottom -
+                Math.max(
+                  yScale(data.first.ordineMotivo),
+                  yScale(data.last.ordineMotivo)
+                )
+              }
+            />
+          </g>
+        )}
+
         {data.first.ordineMotivo === data.last.ordineMotivo ? (
           <rect
             width={widthBar}
             height={widthBar}
             style={{
-              transformOrigin: `0px ${yScale(data.first.ordineMotivo) + widthBar / 4}px`,
-              transform: `rotate(45deg)`
-             }}
-            className='trama2-box-plot-same-start-end-symbol'
+              transformOrigin: `0px ${
+                yScale(data.first.ordineMotivo) + widthBar / 4
+              }px`,
+              transform: `rotate(45deg)`,
+            }}
+            className="trama2-box-plot-same-start-end-symbol"
             y={yScale(data.first.ordineMotivo) - widthBar / 2}
           ></rect>
         ) : (
@@ -285,6 +319,8 @@ function BoxPlot(
     racconti[racconti.length - 1].anno,
   ])
 
+  const [showBoxInOpacity, setShowBoxInOpacity] = useState(false)
+
   return (
     <div className="trama2-boxplot-content">
       <div
@@ -292,6 +328,16 @@ function BoxPlot(
         className="w-100 h-100"
         style={{ overflow: 'hidden' }}
       >
+        <button
+          onClick={() => setShowBoxInOpacity(!showBoxInOpacity)}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+          }}
+        >
+          Toggle Box Opacity
+        </button>
         {measures && (
           <svg
             style={{
@@ -318,6 +364,7 @@ function BoxPlot(
                       }}
                     >
                       <BoxPlotElement
+                        showBoxInOpacity={showBoxInOpacity}
                         zoomFactor={zoomFactor}
                         onRaccontoClick={onRaccontoClick}
                         scalaColore={scalaColore}
