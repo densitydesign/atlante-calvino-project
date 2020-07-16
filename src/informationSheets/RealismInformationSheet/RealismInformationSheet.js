@@ -3,6 +3,7 @@ import SheetStyles from '../SheetStyles.module.css';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
+import legend01 from './legend01.svg';
 import textWall01 from './textWall01.png';
 import textWall02 from './textWall02.png';
 import treemap from './treemapRatioWordsConcreteAbstract.svg';
@@ -30,7 +31,10 @@ class RealismInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Realtà VS immaginazione</h2>
+          <img className={SheetStyles.image+' '+SheetStyles.translucentBackground} src={legend01} style={{ borderBottom: '1px solid #5151fc', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 0px)',width:'100%'}} />
           <img className={SheetStyles.image} src={textWall01} style={{gridColumn:'1 / span 12',width:'100%'}}/>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraph}>
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
@@ -65,8 +69,13 @@ class RealismInformationSheet extends Component {
           }}>
             <b>Corpo 18%</b> —  passo, corpo, petto, petto, respiro, gambe, volto, faccia, pugno, faccia, labbro, corpo, muscoli, spalle, gola, piedi, gomito, gomito, gomiti, gambe, polmoni, mano, alito, baffi, narici, pelle, piedi, occhi, cuore, palpebre, passi, gola, corpi, teste, capelli, passo, tempie, dita, saliva, nervi, sangue, collo, passi, piedi, occhi, urlo, piedi, petto, sorriso, mani, spalle, mani, dito, fianco, mani, bocche, mani, pelle, mano, testa, gola, petto, passi, man, mano, occhi, sorriso, labbra, faccia, pugno, fiato, palpebre, mani, spalle, passi
           </p>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Trasformazioni, visioni, dubbi</h2>
+          <img className={SheetStyles.image+' '+SheetStyles.translucentBackground} src={legend01} style={{ borderBottom: '1px solid #5151fc', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 0px)',width:'100%'}} />
           <img className={SheetStyles.image} src={textWall02} style={{gridColumn:'1 / span 12',width:'100%'}}/>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraph}>
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit
           </p>
