@@ -124,14 +124,19 @@ const BoxPlotElement = React.memo(
             <rect
               width={widthBar}
               height={widthBar}
-              style={{ fill: '#fff', stroke: '#000' }}
+              className='trama2-box-plot-start-symbol'
               y={yScale(data.first.ordineMotivo) - widthBar / 2}
             ></rect>
             <rect
               width={widthBar}
               height={widthBar}
-              style={{ fill: '#ddd', stroke: '#000' }}
+              className='trama2-box-plot-end-symbol'
               y={yScale(data.last.ordineMotivo) - widthBar / 2}
+              style={{
+                transformOrigin: `0px ${
+                  yScale(data.last.ordineMotivo) + widthBar / 4
+                }px`,
+              }}
             ></rect>
           </g>
         )}

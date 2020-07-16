@@ -294,9 +294,21 @@
 }
 
 .trama2-box-plot-same-start-end-symbol {
-  fill: fuchsia;
+  fill: #E72EFF;
   /* transform: rotate(30deg) translateX(5px); */
   stroke: #000;
+}
+
+.trama2-box-plot-end-symbol {
+  transform: rotate(45deg);
+  fill: white;
+  stroke: black;
+
+}
+
+.trama2-box-plot-start-symbol {
+  fill: white;
+  stroke: black;
 }
 
 .trama2-box-plot-partial-hide-bar {
