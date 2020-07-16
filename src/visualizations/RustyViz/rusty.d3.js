@@ -44,7 +44,9 @@ V.init = async (options)=>{
     svg.call(zoom);
     g1 = svg.append('g');
     g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
-    g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
+    g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')')
+            // animation for the info-sheet    
+            // .style('opacity',0);
     g4 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     
     // g2.append('rect')
@@ -138,7 +140,8 @@ V.update = (options)=>{
             .attr('y',d=>d.y)
             .attr('font-size',fontSize)
             .attr('display','none')
-            // .attr('text-anchor','middle')
+            // animation for the info-sheet
+            // .style('opacity',0)
             .merge(label)
             .each(function(d){truncateLabel(this,d.title,8)})
             .on('mouseenter',function(d){truncateLabel(this,d.title)})
@@ -149,10 +152,43 @@ V.update = (options)=>{
     svg.call(
         zoom.transform,
         d3.zoomIdentity
-          .translate(width/2, height/2)
-          .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
-          .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+            .translate(width/2, height/2)
+            .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
+            .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
       );
+
+    // Animation for the info-sheet
+    // svg.transition()
+    //     .delay(5000)
+    //     .duration(5000)
+    //         .call(
+    //             zoom.transform,
+    //             d3.zoomIdentity
+    //                 .translate( -16045.43691252109, -15029.37721676252)
+    //                 .scale(29.32379662961129)
+    //             )
+    //         .on('end',()=>{
+
+    //             setTimeout(function(){
+    //                 const d = d3.select('#combinations-S042').data()[0];
+    //                 toggleMetaball(d);
+
+    //                 setTimeout(function(){
+    //                     toggleMetaball(d);
+
+    //                     svg.transition().delay(5000).duration(5000).call(
+    //                         zoom.transform,
+    //                         d3.zoomIdentity
+    //                             .translate(width/2, height/2)
+    //                             .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
+    //                             .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+    //                         );
+
+    //                 },2500);
+    //             },500);
+    //         });
+
+    
 }
 
 V.changeColor = (value)=>{
@@ -193,8 +229,6 @@ V.filter = (filter)=>{
             .filter(d=>filter.indexOf(d.id)<0)
                 .style('opacity',0.2);
     }
-
-    
 
     // label.style('opacity',0.3)
     //         .classed('keepVisible',false)

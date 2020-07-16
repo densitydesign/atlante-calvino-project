@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="938" height="111" viewBox="0 0 938 111">
-  <g id="legend" transform="translate(-43 -1574.5)">
+<svg xmlns="http://www.w3.org/2000/svg" width="938" height="110" viewBox="0 0 938 110">
+  <g id="legend" transform="translate(-43 -1575)">
+    <rect id="legend-bg-transparent" width="938" height="110" transform="translate(43 1575)" fill="none"/>
     <g id="Group_31" data-name="Group 31" transform="translate(2 410)">
       <text id="Testo_non_dubitativo" data-name="Testo non dubitativo" transform="translate(515 1188)" fill="#5151fc" font-size="14" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="0" y="0">Testo non dubitativo</tspan></text>
       <g id="Group_25" data-name="Group 25" transform="translate(173.5 -263)">
@@ -55,8 +56,6 @@
         <text id="Senso" transform="translate(684.167 1221)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Senso</tspan></text>
       </g>
     </g>
-    <line id="Line_65" data-name="Line 65" x2="938" transform="translate(43 1575)" fill="none" stroke="#5151fc" stroke-width="1"/>
-    <line id="Line_66" data-name="Line 66" x2="938" transform="translate(43 1685)" fill="none" stroke="#5151fc" stroke-width="1"/>
     <g id="Group_32" data-name="Group 32" transform="translate(-1 410)">
       <rect id="Rectangle_19-2" data-name="Rectangle 19" width="20" height="12" transform="translate(767 1231.43)" fill="#f7f8f8"/>
       <rect id="Rectangle_24" data-name="Rectangle 24" width="28" height="12" transform="translate(791 1231.43)" fill="#f7f8f8"/>
@@ -78,10 +77,10 @@
         <circle cx="7" cy="7" r="7" stroke="none"/>
         <circle cx="7" cy="7" r="7.25" fill="none"/>
       </g>
-      <text id="_12" data-name="12" transform="translate(787 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.605" y="0">12</tspan></text>
-      <text id="_41" data-name="41" transform="translate(811 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.602" y="0">41</tspan></text>
-      <text id="_1" data-name="1" transform="translate(761 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-2.301" y="0">1</tspan></text>
-      <text id="_18" data-name="18" transform="translate(759 1240)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.602" y="0">18</tspan></text>
+      <text id="_12" data-name="12" transform="translate(787 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.736" y="0">12</tspan></text>
+      <text id="_41" data-name="41" transform="translate(811 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.736" y="0">41</tspan></text>
+      <text id="_1" data-name="1" transform="translate(761 1213)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-2.368" y="0">1</tspan></text>
+      <text id="_18" data-name="18" transform="translate(759 1240)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="-4.736" y="0">18</tspan></text>
     </g>
   </g>
 </svg>

@@ -72,6 +72,11 @@
   margin-bottom: 0.3rem; 
 }
 
+.image100w {
+  width:100%;
+  height:auto;
+}
+
 .caption {
   font-size: 0.8571428571rem;
   text-align: center;
@@ -79,6 +84,11 @@
 
 .sideContent {
   grid-column: 8 / span 5;
+}
+
+.translucentBackground {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,0.25);
 }
 
 @media (min-width: 1280px) {
