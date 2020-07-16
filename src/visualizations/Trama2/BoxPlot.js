@@ -350,7 +350,7 @@ function BoxPlot(
               byTipologia={tipologieByTipologia}
               gradientsType={gradientsType}
               scalaMotivo={scalaMotivo}
-              height={height}
+              height={height - 140}
             />
             <g className="wrapper" style={{ transform: 'translate(0, 80px)' }}>
               {measures &&
