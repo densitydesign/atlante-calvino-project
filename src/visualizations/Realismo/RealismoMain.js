@@ -6,6 +6,8 @@ import React, {
   useMemo,
 } from 'react'
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
+import RealismHelp from '../../helpPages/transform/RealismHelp';
+
 import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
 import AltOptions from '../../general/Options/AltOptions'
@@ -150,11 +152,16 @@ export default function RealismoMain({ title }) {
 
   return (
     <div>
-      <HelpSidePanel
+      {/* <HelpSidePanel
         open={helpSidePanelOpen}
         page={helpPage}
         closeButtonClicked={toggleHelpSidePanel}
-      />
+      /> */}
+      <HelpSidePanel
+        open={helpSidePanelOpen}
+        closeButtonClicked={toggleHelpSidePanel} >
+          <RealismHelp />
+      </HelpSidePanel>
       <div className="top-nav navigations">
         <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
         <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
