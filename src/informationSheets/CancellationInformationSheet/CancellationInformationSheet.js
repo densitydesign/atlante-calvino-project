@@ -37,10 +37,6 @@ class CancellationInformationSheet extends Component {
             <p className={SheetStyles.caption}>
               Posizione del racconto in [titolo viz fase 3]
             </p>
-            {/* <img className={SheetStyles.image+' '+SheetStyles.image100w} src={context} style={{border:'0.5px solid #333333'}} />
-            <p className={SheetStyles.caption}>
-              Posizione del racconto in [titolo della visualizzazione]
-            </p> */}
             <img className={SheetStyles.image+' '+SheetStyles.image100w} src={distribution} style={{border:'0.5px solid #333333'}} />
             <p className={SheetStyles.caption}>
               Distribuzione delle categorie nel racconto.
