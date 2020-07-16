@@ -296,7 +296,7 @@
 .trama2-box-plot-same-start-end-symbol {
   fill: #E72EFF;
   /* transform: rotate(30deg) translateX(5px); */
-  stroke: #000;
+  /* stroke: #000; */
 }
 
 .trama2-box-plot-end-symbol {

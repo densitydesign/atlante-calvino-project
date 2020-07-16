@@ -29,6 +29,9 @@ import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 import WormDetail2 from './WormDetail2'
 
+const REALISMO_DIAMETER = 760
+const REALISMO_RADIUS = REALISMO_DIAMETER / 2
+
 const circlesMap = datasetToCircles(40)
 
 const searchOptions = racconti.map((racconto) => ({
@@ -78,12 +81,12 @@ export default function RealismoMain({ title }) {
 
   const helpPage = GlobalData.helpPages.plot.main
 
-  const containerRef = useRef()
-  const [measures, setMeasures] = useState(null)
-  useLayoutEffect(() => {
-    const m = containerRef.current.getBoundingClientRect()
-    setMeasures(m)
-  }, [])
+  // const containerRef = useRef()
+  // const [measures, setMeasures] = useState(null)
+  // useLayoutEffect(() => {
+  //   const m = containerRef.current.getBoundingClientRect()
+  //   setMeasures(m)
+  // }, [])
 
   const [movimento, setMovimento] = useState(null)
   const [spazio, setSpazio] = useState([])
@@ -153,8 +156,6 @@ export default function RealismoMain({ title }) {
     return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
-  const [ref, { width }] = useDimensions({ liveMeasure: false })
-
   return (
     <div>
       <HelpSidePanel
@@ -197,7 +198,7 @@ export default function RealismoMain({ title }) {
           }}
         />
       </div>
-      <div className="realismo-content " ref={containerRef}>
+      <div className="realismo-content">
         <div
           className="h-100 w-100 d-flex justify-content-center align-items-center"
           style={{
@@ -219,17 +220,14 @@ export default function RealismoMain({ title }) {
               reset
             </button>
           </div>
-          {measures && (
-            <CircleWorms
-              toggleSelect={toggleSelect}
-              selected={selcted}
-              omitted={omitted}
-              circlesMap={circlesMap}
-              racconti={racconti}
-              width={measures.width}
-              height={measures.height}
-            ></CircleWorms>
-          )}
+          <CircleWorms
+            toggleSelect={toggleSelect}
+            selected={selcted}
+            omitted={omitted}
+            circlesMap={circlesMap}
+            racconti={racconti}
+            radius={REALISMO_RADIUS}
+          ></CircleWorms>
         </div>
         <div className="bottom-nav navigations">
           <AltOptions
@@ -272,7 +270,7 @@ export default function RealismoMain({ title }) {
           />
         </div>
       </div>
-      {ricerca.length > 0 && (
+      {/*ricerca.length > 0 && (
         <div className="realismo-details-container" ref={ref}>
           {width &&
             selctedTitoliSorted.map((item) => (
@@ -294,7 +292,7 @@ export default function RealismoMain({ title }) {
               // />
             ))}
         </div>
-      )}
+            )*/}
     </div>
   )
 }

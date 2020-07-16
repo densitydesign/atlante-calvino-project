@@ -11,6 +11,7 @@ import React, {
 import { scaleLinear } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
+import Star from './Star'
 
 import head from 'lodash/head'
 import _last from 'lodash/last'
@@ -107,30 +108,28 @@ const BoxPlotElement = React.memo(
         )}
 
         {data.first.ordineMotivo === data.last.ordineMotivo ? (
-          <rect
-            width={widthBar}
-            height={widthBar}
-            style={{
-              transformOrigin: `0px ${
-                yScale(data.first.ordineMotivo) + widthBar / 4
-              }px`,
-              transform: `rotate(45deg)`,
-            }}
-            className="trama2-box-plot-same-start-end-symbol"
-            y={yScale(data.first.ordineMotivo) - widthBar / 2}
-          ></rect>
+          <g
+            transform={`translate(${(widthBar * (1 - Math.sqrt(2))) / 2}, ${
+              yScale(data.first.ordineMotivo) - widthBar / 2
+            })`}
+          >
+            <Star
+              size={widthBar * Math.sqrt(2)}
+              className="trama2-box-plot-same-start-end-symbol"
+            />
+          </g>
         ) : (
           <g>
             <rect
               width={widthBar}
               height={widthBar}
-              className='trama2-box-plot-start-symbol'
+              className="trama2-box-plot-start-symbol"
               y={yScale(data.first.ordineMotivo) - widthBar / 2}
             ></rect>
             <rect
               width={widthBar}
               height={widthBar}
-              className='trama2-box-plot-end-symbol'
+              className="trama2-box-plot-end-symbol"
               y={yScale(data.last.ordineMotivo) - widthBar / 2}
               style={{
                 transformOrigin: `0px ${
