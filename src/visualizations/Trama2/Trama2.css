@@ -1,7 +1,7 @@
 .trama2-container {
   position: relative;
   height: calc(100vh - var(--navigation-height));
-  background-color: #fff
+  background-color: #fff;
 }
 
 .trama2-side-panel {
@@ -43,29 +43,24 @@
 }
 
 .trama2-side-panel-rotate {
-    cursor: pointer;
-    height: 120px;
-    width: 35px;
-    background-color: #fff;
-    /* border-radius: 0 4px 4px 0; */
-    border-radius: 4px 0 0 4px;
-    border: 1px solid var(--dark-blue);
-    color: var(--dark-blue);
-    position: absolute;
-    right: 0px;
-    top: calc(50% - 100px);
-    pointer-events: all;
-    text-align: center;
-    line-height: 35px;
+  cursor: pointer;
+  height: 120px;
+  width: 35px;
+  background-color: #fff;
+  /* border-radius: 0 4px 4px 0; */
+  border-radius: 4px 0 0 4px;
+  border: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 100px);
+  pointer-events: all;
+  text-align: center;
+  line-height: 35px;
 
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
-
-
-
-  }
-
-
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
 
 .trama2-side-panel-content {
   height: 100%;
@@ -100,9 +95,9 @@
   z-index: 100;
   height: 80px;
   position: absolute;
-  left:0;
-  top:0;
-  right:0;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 
 .trama2-pointer {
@@ -130,24 +125,26 @@
 .trama2-label-container {
   cursor: help;
 }
-.trama2-label-container > .trama2-start-symbol {
+.trama2-start-symbol {
   transform: translate(-2px, -2px);
   height: 4px;
   width: 4px;
   stroke: black;
   fill: white;
 }
-.trama2-label-container > .trama2-end-symbol {
+.trama2-end-symbol {
   transform: rotate(45deg) translate(-3px, -3px);
   height: 4px;
   width: 4px;
   stroke: black;
   fill: white;
 }
-.trama2-label-container .trama2-circle {
-  transition: transform 0.2s linear;
+.trama2-circle {
   stroke: #ddd;
   fill: #000;
+}
+.trama2-label-container .trama2-circle {
+  transition: transform 0.2s linear;
 }
 .trama2-label-container.trama2-label-hover .trama2-circle {
   transform: scale(1.5);
@@ -275,10 +272,14 @@
 }
 .trama2-sidebar-content {
   /* background: rgb(204,204,204); */
-  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .trama2-sidebar-item:hover {
-  background: rgb(0,0,0,.15);
+  background: rgb(0, 0, 0, 0.15);
 }
 .trama2-box-plot-year {
   position: absolute;
@@ -303,14 +304,14 @@
 }
 
 .trama2-racconto-incastonato-rect {
-  fill: #F3F3F3;
+  fill: #f3f3f3;
   /* fill: url(#racconto-incastonato-gradient); */
   stroke-width: 2px;
 }
 
 .trama2-racconto-incastonato-line {
-  fill: #F49831;
-  stroke: #F49831;
+  fill: #f49831;
+  stroke: #f49831;
   stroke-width: 2px;
 }
 

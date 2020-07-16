@@ -69,7 +69,7 @@ const TramaPoints = React.memo(({ data }) => {
               x={d.x}
               y={d.y}
               style={{
-                transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
+                transformOrigin: `${d.x}px ${d.y}px`,
               }}
               className="trama2-end-symbol"
             >
@@ -224,6 +224,8 @@ const LineeTramaList = React.memo(
   }
 )
 
+const HORIZ_PADDING = 20
+
 function LineeTramaWithMeasures({
   racconti = [],
   data = {},
@@ -298,7 +300,9 @@ function LineeTramaWithMeasures({
     if (!measures) {
       return null
     }
-    return scaleLinear().domain([0, 1]).range([0, measures.width])
+    return scaleLinear()
+      .domain([0, 1])
+      .range([HORIZ_PADDING, measures.width - HORIZ_PADDING])
   }, [measures])
 
   const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
