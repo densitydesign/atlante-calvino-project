@@ -56,7 +56,11 @@ const BoxPlotElement = React.memo(
         {itemSelected && (
           <text
             style={{ transform: 'rotate(-30deg)', fontSize: 12 }}
-            x={0} y={0}>{data.racconto.titolo}</text>
+            x={0}
+            y={0}
+          >
+            {data.racconto.titolo}
+          </text>
         )}
         <rect
           width={widthBar}
@@ -70,18 +74,33 @@ const BoxPlotElement = React.memo(
           <title>{data.racconto.titolo}</title>
         </rect>
 
-        <rect
-          width={widthBar}
-          height={widthBar}
-          style={{ fill: '#fff', stroke: '#000' }}
-          y={yScale(data.first.ordineMotivo)}
-        ></rect>
-        <rect
-          width={widthBar}
-          height={widthBar}
-          style={{ fill: '#ddd', stroke: '#000' }}
-          y={yScale(data.last.ordineMotivo)}
-        ></rect>
+        {data.first.ordineMotivo === data.last.ordineMotivo ? (
+          <rect
+            width={widthBar}
+            height={widthBar}
+            style={{
+              transformOrigin: `0px ${yScale(data.first.ordineMotivo) + widthBar / 4}px`,
+              transform: `rotate(45deg)`
+             }}
+            className='trama2-box-plot-same-start-end-symbol'
+            y={yScale(data.first.ordineMotivo) - widthBar / 2}
+          ></rect>
+        ) : (
+          <g>
+            <rect
+              width={widthBar}
+              height={widthBar}
+              style={{ fill: '#fff', stroke: '#000' }}
+              y={yScale(data.first.ordineMotivo) - widthBar / 2}
+            ></rect>
+            <rect
+              width={widthBar}
+              height={widthBar}
+              style={{ fill: '#ddd', stroke: '#000' }}
+              y={yScale(data.last.ordineMotivo) - widthBar / 2}
+            ></rect>
+          </g>
+        )}
       </g>
     )
   }
@@ -93,7 +112,6 @@ function BoxPlot(
     data = {},
     height,
     scalaColore,
-    scalaMotivoY,
     colors,
     selected,
     toggleSelect,
@@ -173,7 +191,9 @@ function BoxPlot(
   }, [height, measures, racconti])
 
   const yScale = useMemo(() => {
-    return scaleLinear().domain(motivoExtent).range([height - 90, 0])
+    return scaleLinear()
+      .domain(motivoExtent)
+      .range([height - 140, 0])
   }, [height])
 
   const scalaMotivo = useMemo(() => {
@@ -286,7 +306,7 @@ function BoxPlot(
               scalaMotivo={scalaMotivo}
               height={height}
             />
-            <g className="wrapper" style={{ transform: 'translate(0, 70px)' }}>
+            <g className="wrapper" style={{ transform: 'translate(0, 80px)' }}>
               {measures &&
                 dataRacconti.map((datum, i) => {
                   return (
@@ -301,7 +321,6 @@ function BoxPlot(
                         zoomFactor={zoomFactor}
                         onRaccontoClick={onRaccontoClick}
                         scalaColore={scalaColore}
-                        scalaMotivoY={scalaMotivoY}
                         index={i}
                         width={measures.width}
                         height={measures.height}

@@ -293,6 +293,12 @@
   font-style: italic;
 }
 
+.trama2-box-plot-same-start-end-symbol {
+  fill: fuchsia;
+  /* transform: rotate(30deg) translateX(5px); */
+  stroke: #000;
+}
+
 .trama2-info-box {
   fill: white;
   stroke-width: 1px;
