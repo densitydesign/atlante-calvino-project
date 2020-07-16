@@ -3,6 +3,8 @@ import styles from './CancellazioneHelp.module.css'; // Import css modules style
 
 import * as d3 from 'd3';
 
+import ArrowButton from '../../../general/ArrowButton/ArrowButton';
+
 import legend01 from "./legenda-01.svg";
 import legend02 from "./legenda-02.svg";
 import legend03 from "./legenda-03.svg";
@@ -229,7 +231,11 @@ export default function CancellazioneHelp(){
         <small>TAPPA 3</small>
         <h1 className={styles.h1}>Cancellazione</h1>
         <small>
-            <a className={styles.switchView} onClick={()=>setView('legend')}>LEGENDA</a> | <a className={styles.switchView} onClick={()=>setView('help')}>COME SI LEGGE</a>
+            <a className={styles.switchView} onClick={()=>setView('legend')}>LEGENDA</a>
+            {' '}|{' '}
+            <a className={styles.switchView} onClick={()=>setView('help')}>COME SI LEGGE</a>
+            {' '}|{' '} 
+            <a className={styles.switchView} onClick={()=>setView('sheet')}>SCHEDA</a>
         </small>
         { tabs[view] }
         {
@@ -293,6 +299,12 @@ const tabs = {
     'help': (
         <>
             <h2 className={styles.h2}>Come si legge</h2>
+        </>
+    ),
+    sheet: (
+        <>
+            <h2 className={styles.h2}>Vai alla scheda</h2>
+            <ArrowButton arrowDirection="right" textAlign="right" text="SCHEDA" route="/cancellation-sheet" />
         </>
     )
 }

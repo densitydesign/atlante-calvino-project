@@ -3,15 +3,17 @@ import SheetStyles from '../SheetStyles.module.css';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
-import context from './context.svg';
+import context_webm from './context.webm';
+import context_mp4 from './context.mp4';
+
 import distribution from './distribution.svg';
 import miniviz from './miniviz.svg';
 import legend from './legend.svg';
 
-import section01 from './section01.svg';
-import section02 from './section02.svg';
-import section03 from './section03.svg';
-import section04 from './section04.svg';
+import section01 from './section01.png';
+import section02 from './section02.png';
+import section03 from './section03.png';
+import section04 from './section04.png';
 
 class CancellationInformationSheet extends Component {
   render() {
@@ -27,11 +29,19 @@ class CancellationInformationSheet extends Component {
             Aenean placerat urna in malesuada laoreet. Suspendisse feugiat elit sit amet mattis tristique. Phasellus accumsan interdum turpis vitae ultricies. Mauris id vehicula ante, id fermentum est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nec finibus urna, non tristique libero. Nullam et semper elit. Cras ut neque quis est porttitor laoreet. Phasellus placerat placerat ligula eget egestas. Nullam posuere diam quis lectus bibendum egestas. Praesent suscipit, massa quis porta aliquet, nisi turpis ultricies mi, venenatis blandit justo felis quis turpis. Vivamus velit tortor, ornare vitae massa a, dapibus ultricies odio. Nunc dictum quis metus non interdum.
           </p>
           <div className={SheetStyles.sideContent}>
-            <img className={SheetStyles.image} src={context} style={{border:'0.5px solid #333333'}} />
+            <video className={SheetStyles.image} style={{width:'50%',marginLeft:'25%'}} autoPlay muted loop>
+              <source type="video/webm" src={context_webm} />
+              <source type="video/mp4" src={context_mp4} />
+              Your browser does not support the video tag.
+            </video>
+            <p className={SheetStyles.caption}>
+              Posizione del racconto in [titolo viz fase 3]
+            </p>
+            {/* <img className={SheetStyles.image+' '+SheetStyles.image100w} src={context} style={{border:'0.5px solid #333333'}} />
             <p className={SheetStyles.caption}>
               Posizione del racconto in [titolo della visualizzazione]
-            </p>
-            <img className={SheetStyles.image} src={distribution} style={{border:'0.5px solid #333333'}} />
+            </p> */}
+            <img className={SheetStyles.image+' '+SheetStyles.image100w} src={distribution} style={{border:'0.5px solid #333333'}} />
             <p className={SheetStyles.caption}>
               Distribuzione delle categorie nel racconto.
             </p>
@@ -46,12 +56,14 @@ class CancellationInformationSheet extends Component {
             Pellentesque efficitur, magna ut lobortis placerat, orci nulla blandit risus, vel bibendum arcu ante sed orci. Sed sed nibh sagittis, elementum lorem ac, pretium lacus. Maecenas ultrices ligula ut accumsan venenatis. Proin vitae est pulvinar, pulvinar neque nec, semper metus. Nulla lobortis malesuada tortor vel dapibus. Fusce urna diam, cursus non posuere sit amet, blandit nec nisi. Maecenas in magna id mauris pretium mollis. Proin eget mattis ex. Proin tincidunt facilisis nulla sit amet lacinia. Fusce rutrum viverra metus, at vulputate metus blandit eget. Aliquam pharetra, turpis vitae semper ultricies, lorem augue vulputate leo, faucibus pretium tortor nibh non orci.<br/><br/>
             Ecco come leggere la visualizzazione.
           </p>
-          <div className={SheetStyles.sideContent} style={{paddingLeft:'25%'}}>
+          <div className={SheetStyles.sideContent} style={{ textAlign:'center' }}>
             <img className={SheetStyles.image} src={miniviz} style={{position:'sticky',top:'var(--navigation-height)'}}/>
           </div>
         </div>
         <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.image} src={legend} style={{ backgroundColor:'var(--bg)', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 2px)',width:'100%'}} />
+
+          <img className={SheetStyles.image+' '+SheetStyles.translucentBackground} src={legend} style={{ borderBottom: '1px solid #5151fc', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 0px)',width:'100%'}} />
+
           <img className={SheetStyles.image} src={section01} style={{gridColumn:'1 / span 12',width:'100%'}}/>
           <p className={SheetStyles.paragraphCentered}>
             <b>L’avvenimento</b> è placerat urna in malesuada laoreet. Suspendisse feugiat elit sit amet mattis tristique. Phasellus accumsan interdum turpis vitae ultricies. Mauris id vehicula ante, id fermentum est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nec finibus urna, non tristique libero. Nullam et semper elit. Cras ut neque quis est porttitor laoreet. Phasellus placerat placerat ligula eget egestas. Nullam posuere diam quis lectus bibendum egestas. Praesent suscipit, massa quis porta aliquet, nisi turpis ultricies mi, venenatis blandit justo felis quis turpis. Vivamus velit tortor, ornare vitae massa a, dapibus ultricies odio. Nunc dictum quis metus non interdum.<br/><br/>
