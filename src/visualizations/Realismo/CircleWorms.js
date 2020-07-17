@@ -375,7 +375,7 @@ export default function CircleWorms({
               <circle cx={pointAX} cy={pointAY} r={5} fill={'blue'} />
               <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
               <path
-                stroke-dasharray="2"
+                strokeDasharray="2"
                 className="realismo-label-join"
                 fill="none"
                 stroke="black"
