@@ -219,7 +219,6 @@ export default function CancellazioneHelp(){
                                         }
                                     });
                     })
-                    
 
     };
     const makeCircles = (arr)=>{
@@ -244,8 +243,6 @@ export default function CancellazioneHelp(){
     </>
 }
 
-
-
 const tabs = {
     'legend': (
         <div className="legend">
@@ -253,7 +250,7 @@ const tabs = {
             <div className={styles.legendSection}>
                 <h5 className={styles.legendTitle}>Dimensione</h5>
                 <img className={styles.legendImg} src={legend01} />
-                <p>Le circonferenze rappresentano le lunghezze delle opere, mentre le 'macchie' al loro interno rappresentano la quantità di testo dubitativo.</p>
+                {/* <p>Le circonferenze rappresentano le lunghezze delle opere, mentre le 'macchie' al loro interno rappresentano la quantità di testo dubitativo.</p> */}
             </div>
             <div className={styles.legendSection}>
                 <h5 className={styles.legendTitle}>Disposizione</h5>

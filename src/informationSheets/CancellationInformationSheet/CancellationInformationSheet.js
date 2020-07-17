@@ -3,8 +3,10 @@ import SheetStyles from '../SheetStyles.module.css';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
-import context_webm from './context.webm';
-import context_mp4 from './context.mp4';
+import context_webm_1x from './animation-text-context@1x.webm';
+import context_mp4_1x from './animation-text-context@1x.mp4';
+import context_webm_2x from './animation-text-context@2x.webm';
+import context_mp4_2x from './animation-text-context@2x.mp4';
 
 import distribution from './distribution.svg';
 import miniviz from './miniviz.svg';
@@ -15,8 +17,11 @@ import section02 from './section02.png';
 import section03 from './section03.png';
 import section04 from './section04.png';
 
+import visualizationPDF from './muro-di-testo-avventura-di-un-soldato.pdf';
+
 class CancellationInformationSheet extends Component {
   render() {
+    console.log(window.devicePixelRatio)
     return <>
       <HamburgerCompassHeader />
       <main className={SheetStyles.main}>
@@ -29,9 +34,9 @@ class CancellationInformationSheet extends Component {
             Aenean placerat urna in malesuada laoreet. Suspendisse feugiat elit sit amet mattis tristique. Phasellus accumsan interdum turpis vitae ultricies. Mauris id vehicula ante, id fermentum est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nec finibus urna, non tristique libero. Nullam et semper elit. Cras ut neque quis est porttitor laoreet. Phasellus placerat placerat ligula eget egestas. Nullam posuere diam quis lectus bibendum egestas. Praesent suscipit, massa quis porta aliquet, nisi turpis ultricies mi, venenatis blandit justo felis quis turpis. Vivamus velit tortor, ornare vitae massa a, dapibus ultricies odio. Nunc dictum quis metus non interdum.
           </p>
           <div className={SheetStyles.sideContent}>
-            <video className={SheetStyles.image} style={{width:'50%',marginLeft:'25%'}} autoPlay muted loop>
-              <source type="video/webm" src={context_webm} />
-              <source type="video/mp4" src={context_mp4} />
+            <video className={SheetStyles.image} style={{width:'50%',marginLeft:'25%',borderRadius:3}} autoPlay muted loop>
+              <source type="video/webm" src={window.devicePixelRatio>1?context_webm_2x:context_webm_1x} />
+              <source type="video/mp4" src={window.devicePixelRatio>1?context_mp4_2x:context_mp4_1x} />
               Your browser does not support the video tag.
             </video>
             <p className={SheetStyles.caption}>
@@ -79,9 +84,18 @@ class CancellationInformationSheet extends Component {
           </p>
         </div>
         <div className={SheetStyles.gridRow}>
+          <h2 className={SheetStyles.titleH2}>Conclusioni</h2>
+          <p className={SheetStyles.paragraph}>
+          Suspendisse nisi purus, maximus quis nisl at, dapibus ultrices magna. Duis euismod nibh quis ipsum vehicula, tempus sodales dolor facilisis. Sed sed nulla eget odio porttitor volutpat. Sed et tempor magna, non tempus quam. Fusce vitae efficitur augue. Integer sollicitudin faucibus mi vel gravida. Nulla enim odio, efficitur id dolor non, luctus interdum risus. Sed dictum maximus eleifend. Nulla efficitur tincidunt molestie. Etiam id commodo turpis.<br/>
+          <a href={visualizationPDF} download>Scarica la visualizzazione completa</a> oppure <a href="https://observablehq.com/@iosonosempreio/muro-del-dubbio">scopri il dietro le quinte</a>.
+          </p>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
           <p className={SheetStyles.paragraph}>
-            <ol className={SheetStyles.references}>
+            
+          </p>
+          <ol className={SheetStyles.paragraph+' '+SheetStyles.references}>
               <li className={SheetStyles.referenceItem}>
                 Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
               </li>
@@ -95,7 +109,6 @@ class CancellationInformationSheet extends Component {
                 Linke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys.
               </li>
             </ol>
-          </p>
         </div>
         <div className={SheetStyles.gridRow}>
           <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="RITORNA ALL'ANALISI" route="/Problem/cancellation" /></div>
