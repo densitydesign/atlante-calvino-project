@@ -29,10 +29,23 @@
 } */
 
 .realismo-reset {
-  position: absolute;
-  top: 20px;
-  font-style: italic;
-  left: 60px;
+  /* position: absolute; */
+  /* top: 20px; */
+  font-weight: bold;
+  display: flex;
+  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70px;
+  /* background: pink; */
+  font-size: 14px;
+}
+.realismo-reset button {
+  margin-top: 5px;
+  border-radius: 5px;
+  background: transparent;
+  padding: 5px;
+  font-weight: bold;
 }
 
 .realismo-reset > button {

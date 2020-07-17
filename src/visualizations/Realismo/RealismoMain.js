@@ -189,7 +189,7 @@ export default function RealismoMain({ title }) {
           -(REALISMO_DIAMETER / 2) +
           index * LABEL_HEIGHT +
           LABEL_HEIGHT / 2 -
-          25
+          25 + 70
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
@@ -302,6 +302,23 @@ export default function RealismoMain({ title }) {
           }}
         >
           <div className="realismo-labels-container on-left text-right">
+            <div className="realismo-reset">
+              <div>
+                <div>Seleziona i test e poi scorri in basso</div>
+                <button
+                  onClick={() => {
+                    // Reset Selection
+                    setRicerca([])
+                    // Reset Filters
+                    // setSpazio([])
+                    // setMovimento(null)
+                    // setTimeFilter(yearsExtent)
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
             {leftRacconti.map((racconto, i) => {
               return (
                 <div
@@ -316,21 +333,6 @@ export default function RealismoMain({ title }) {
               )
             })}
           </div>
-          {/* <div className="realismo-reset">
-            <div>Seleziona i test e poi scorri in basso</div>
-            <button
-              onClick={() => {
-                // Reset Selection
-                setRicerca([])
-                // Reset Filters
-                // setSpazio([])
-                // setMovimento(null)
-                // setTimeFilter(yearsExtent)
-              }}
-            >
-              reset
-            </button>
-          </div> */}
           <CircleWorms
             toggleSelect={toggleSelect}
             selected={selected}
