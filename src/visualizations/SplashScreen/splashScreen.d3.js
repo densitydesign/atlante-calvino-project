@@ -161,7 +161,7 @@ console.log("drawGraph");
               .classed('node', true)
               .classed('is-inside', function(d) { return checkIfInside([d.x, d.y]) })
               .classed('root-node', function(d) { if (d.id == 0) { return true } else { return false } })
-              .style("fill", "#FFA500")
+              .style("fill", "var(--cool-bg)")
               .style("stroke", "var(--dark-blue)")
               .style("stroke-width", 0.1)
               .attr('cx', function(d) { return d.x; })

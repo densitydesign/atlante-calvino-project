@@ -33,6 +33,7 @@ import CancellationInformationSheet from '../../informationSheets/CancellationIn
 import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
 import Realismo from '../../visualizations/Realismo';
+import RealismInformationSheet from '../../informationSheets/RealismInformationSheet';
 import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 import Df3 from '../Df3';
 import Cancellazione from '../Cancellazione';
@@ -108,6 +109,7 @@ export default function AtlasRouter()
         <Realismo title={'Realismo'}></Realismo>
       </Route>
       <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
+      <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>

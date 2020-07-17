@@ -1,0 +1,9 @@
+[
+{"categoria":"esteriore","valore":"esteriore","gruppo":"Ambientazione","colore":"#5151fc"}
+,
+{"categoria":"interiore","valore":"interiore","gruppo":"Ambientazione","colore":"#00FFB6"}
+,
+{"categoria":"esteriore/interiore","valore":"misto","gruppo":"Ambientazione","colore":"#9606FF"}
+,
+{"categoria":"forma","valore":"forma","gruppo":"Struttura","colore":"#FFA500"}
+]

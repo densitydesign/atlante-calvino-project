@@ -50,7 +50,7 @@ class VClass {
     data = data.sort(function(a, b) {
       return a.date - b.date;
     })
-console.log("data", data);    
+console.log("data", data);
 
     var series = d3.stack().keys(data.columns.slice(1))(data)
 
@@ -209,7 +209,7 @@ console.log("series", series);
       .attr("x", 50)
       .attr("y", 63)
       .attr("width", 8)
-      .attr("height", 8);      
+      .attr("height", 8);
 
     let na_text = tooltip
       .append("text")
@@ -220,7 +220,7 @@ console.log("series", series);
     const ca_text = append_tooltip_entry(tooltip, 0, color("ca"));
     const cc_text = append_tooltip_entry(tooltip, 1, color("cc"));
     const na_text = append_tooltip_entry(tooltip, 2, color("na"));
-    const nc_text = append_tooltip_entry(tooltip, 3, color("nc"));    
+    const nc_text = append_tooltip_entry(tooltip, 3, color("nc"));
 
     function displayTooltip()
     {
@@ -231,7 +231,7 @@ console.log("series", series);
       const year = Math.floor(x.invert(d3.mouse(this)[0])).toString();
 
       yearLabel.text(year);
-    
+
       const item = data.find(d => d.date === year);
 
       if(item)

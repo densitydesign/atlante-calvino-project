@@ -81,6 +81,12 @@ const TramaPoints = React.memo(({ data }) => {
             <title>{d.motivo_type}</title>
           </circle>
         )
+
+        return (
+          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
+            <title>{d.racconto_incastonato}</title>
+          </circle>
+        )
       })}
     </g>
   )

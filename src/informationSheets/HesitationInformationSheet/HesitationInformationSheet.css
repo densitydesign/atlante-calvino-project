@@ -79,9 +79,3 @@ main article h3 {
 #main--shape .viz--info #type-button button:hover {
   cursor: pointer;
 }
-
-.sticky-element {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 60px;
-}

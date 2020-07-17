@@ -4,7 +4,7 @@
   --calvino-red: tomato;
   --dark-green: black;
   --cool-bg-bg: #F3F1EC;
-  --cool-bg: #F1F1F5;
+  --cool-bg: #F8F8FF;
   --dark-blue: #5151FC;
   --small-text: #3f3e4c;
   --secondary-element: #C6CACF;
@@ -15,8 +15,8 @@
   --navigation-borders: black;
   --text-color: black;
   --app-border: 1px solid black;
-  --app-border-bold: 2px solid black;
-  --button-border: 2px solid var(--dark-blue);
+  --app-border-bold: 1px solid black;
+  --button-border: 1px solid var(--dark-blue);
   --text-size: 14px;
   --main-menu: var(--dimGold);
   font-size: 14px;
@@ -85,7 +85,7 @@ body {
   margin: 0;
   font-family: "HKGrotesk", sans-serif;
   overflow-x: hidden;
-  background-color: var(--bg);
+  background-color: var(--cool-bg);
 }
 
 h1 {
@@ -93,12 +93,14 @@ h1 {
   font-size: 2.4em;
   color: var(--text-color);
   margin-bottom: 1em;
+  font-weight: 400;
 }
 
 h2 {
   margin: 0;
   font-size: 1.8em;
   color: black;
+  font-weight: 300;
 }
 
 h3 {
@@ -149,7 +151,7 @@ li {
 }
 
 .navigations {
-  border-bottom: 2px solid var(--navigation-borders);
+  border-bottom: 1px solid var(--navigation-borders);
   box-sizing: border-box;
   height: var(--navigation-height);
   width: 100vw;
@@ -190,7 +192,7 @@ li {
   position: fixed;
   background-color: var(--bg);
   bottom: 0;
-  border-top: 2px solid var(--navigation-borders);
+  border-top: 1px solid var(--navigation-borders);
   transition: bottom 0.5s ease;
 }
 
@@ -250,8 +252,8 @@ a.button-text, a:visited.button-text {
 
 /* FOOTER */
 footer {
-  background-color: #FFA500;
-  color: black;
+  background-color:var(--dark-blue);
+  color: var(--cool-bg);
   position: fixed;
   bottom: 0;
   width: 100%;
