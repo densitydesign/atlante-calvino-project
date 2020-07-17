@@ -103,15 +103,21 @@ export default function RealismoMain({ title }) {
       let keep = true
 
       if (keep && movimento !== null) {
-        keep = dataset[titolo].some((datum) => {
-          if (movimento === 'SI MOVIMENTO') {
-            return datum.movement === 'TRUE'
-          }
-          if (movimento === 'NO MOVIMENTO') {
-            return datum.movement === 'FALSE'
-          }
-          return false
-        })
+        if (movimento === 'SI MOVIMENTO') {
+          keep = dataset[titolo].some((datum) => {
+            if (movimento === 'SI MOVIMENTO') {
+              return datum.movement === 'TRUE'
+            }
+            return false
+          })
+        } else {
+          keep = dataset[titolo].every((datum) => {
+            if (movimento === 'NO MOVIMENTO') {
+              return datum.movement === 'FALSE'
+            }
+            return false
+          })
+        }
       }
 
       if (keep && spazioValues.length > 0) {

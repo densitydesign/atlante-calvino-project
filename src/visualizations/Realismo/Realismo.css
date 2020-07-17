@@ -103,7 +103,7 @@ g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
 }
 
 .movement {
-  /* animation: movement 5s infinite linear; */
+  animation: movement 5s infinite linear;
 }
 
 @keyframes movement {
