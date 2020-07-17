@@ -94,6 +94,13 @@ g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
   stroke-width: 1px;
 }
 
+.worm-detail-grid-container.level-disabled {
+  opacity: 0.3;
+}
+.worm-detail-level-label {
+  font-size: 12px;
+}
+
 .worm-detail-x-place {
   stroke: #666;
   stroke-width: 1px;

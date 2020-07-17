@@ -27,10 +27,8 @@ import {
 } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
-import WormDetail2 from './WormDetail2'
 
 const LABEL_BEZIER_DELTA_A = 30
-const LABEL_START_SUB_DELTA = 5 // Start line before a delta
 const LABEL_HEIGHT = 14
 const REALISMO_DIAMETER = 760
 const REALISMO_RADIUS = REALISMO_DIAMETER / 2
@@ -90,6 +88,7 @@ export default function RealismoMain({ title }) {
   //   const m = containerRef.current.getBoundingClientRect()
   //   setMeasures(m)
   // }, [])
+  const [ref, { width }] = useDimensions({ liveMeasure: false })
 
   const [movimento, setMovimento] = useState(null)
   const [spazio, setSpazio] = useState([])
@@ -167,7 +166,9 @@ export default function RealismoMain({ title }) {
 
   // TODO: MOOOOVE
   const leftRacconti = useMemo(() => {
-    return racconti.filter((r) => r.rotation >= 90 && r.rotation <= 270).reverse()
+    return racconti
+      .filter((r) => r.rotation >= 90 && r.rotation <= 270)
+      .reverse()
   }, [])
 
   const rightRacconti = useMemo(() => {
@@ -184,7 +185,11 @@ export default function RealismoMain({ title }) {
         const angle = Math.abs(180 - racconto.rotation)
         const index = leftRacconti.indexOf(racconto)
         x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
-        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2 - 25
+        y2 =
+          -(REALISMO_DIAMETER / 2) +
+          index * LABEL_HEIGHT +
+          LABEL_HEIGHT / 2 -
+          25
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
@@ -204,7 +209,11 @@ export default function RealismoMain({ title }) {
       } else {
         const index = rightRacconti.indexOf(racconto)
         x2 = REALISMO_DIAMETER / 2 + 100 - 5
-        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2 - 25
+        y2 =
+          -(REALISMO_DIAMETER / 2) +
+          index * LABEL_HEIGHT +
+          LABEL_HEIGHT / 2 -
+          25
 
         const angle = Math.abs(racconto.rotation)
 
@@ -370,11 +379,11 @@ export default function RealismoMain({ title }) {
           />
         </div>
       </div>
-      {/*ricerca.length > 0 && (
+      {ricerca.length > 0 && (
         <div className="realismo-details-container" ref={ref}>
           {width &&
             selctedTitoliSorted.map((item) => (
-              <WormDetail2
+              <WormDetail
                 data={detailWormsCircles[item.value]}
                 year={detailWormsCircles[item.value]?.[0]?.year}
                 title={item.value}
@@ -382,17 +391,9 @@ export default function RealismoMain({ title }) {
                 key={item.value}
                 toggleSelect={toggleSelect}
               />
-              // <WormDetail
-              //   width={width}
-              //   key={item.value}
-              //   title={item.value}
-              //   year={dataset[item.value]?.[0]?.year}
-              //   circles={circlesMap[item.value]}
-              //   toggleSelect={toggleSelect}
-              // />
             ))}
         </div>
-            )*/}
+      )}
     </div>
   )
 }

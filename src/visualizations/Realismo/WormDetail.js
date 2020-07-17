@@ -1,94 +1,128 @@
-import React from 'react'
-import { scaleLinear } from 'd3-scale'
+import React, { useMemo } from 'react'
 import { colorScale } from './utils'
+import range from 'lodash/range'
 import MiniInfoBox from '../../general/MiniInfoBox'
 
-function WormDetail({ title, year, circles, width, toggleSelect }) {
-  const margins = {
-    h: 50,
-    v: 50,
-  }
-  const circleRadius = width / circles.length / 2
+const CHART_PADDING_X = 80
+const LEGEND_TEXT_HEIGHT = 150
 
-  const yScale = scaleLinear()
-    .domain([0, 2])
-    .range([
-      margins.v + circleRadius * 2,
-      circleRadius * 4 + margins.v * 2 - circleRadius,
-    ])
+const MINI_RADIUS = 20
+const LOCATION_RADIUS = 2
+
+const LEVEL_HEIGHT = 40
+
+const WORM_MARGIN_TOP = 20
+
+function yScale(level) {
+  return WORM_MARGIN_TOP + LEVEL_HEIGHT * level
+}
+
+function WormDetail2({ data, width: allWidth, title, year, toggleSelect }) {
+  const width = allWidth - CHART_PADDING_X * 2
+  const dataWorms = useMemo(() => {
+    return data.map((item) => {
+      const x1 = item.startTotalNorm * width + CHART_PADDING_X
+      const x2 = item.endTotalNorm * width + CHART_PADDING_X
+      const xLocation = item.locationTotalNorm * width + CHART_PADDING_X
+      const color = colorScale(item.category)
+      return {
+        ...item,
+        level: +item.level,
+        color,
+        x1,
+        x2,
+        xLocation,
+      }
+    })
+  }, [data, width])
+
+  const maxLevel = 3
+  const levelsData = useMemo(() => {
+    return range(maxLevel).map((level) => {
+      return dataWorms.some((d) => d.level === level)
+    })
+  }, [dataWorms])
+
+  const height = yScale(maxLevel) + LEGEND_TEXT_HEIGHT
 
   return (
-    <div className="realismo-detail border-dark">
-      <MiniInfoBox onClose={() => toggleSelect(title)}>
-        {title}, {year}
-      </MiniInfoBox>
-      <svg className="worm-detail-svg">
-        <line
-          x1={0}
-          x2={width}
-          y1={yScale(0)}
-          y2={yScale(0)}
-          className="worm-detail-y-grid"
-        ></line>
-        <line
-          x1={0}
-          x2={width}
-          y1={yScale(1)}
-          y2={yScale(1)}
-          className="worm-detail-y-grid"
-        ></line>
-        <line
-          x1={0}
-          x2={width}
-          y1={yScale(2)}
-          y2={yScale(2)}
-          className="worm-detail-y-grid"
-        ></line>
-
-        {circles.map((circle, i) => {
-          return (
-            <g key={i}>
-              {circle.place && (
-                <g>
-                  <line
-                    className="worm-detail-x-place"
-                    x1={i * circleRadius * 2 + circleRadius}
-                    x2={i * circleRadius * 2 + circleRadius}
-                    y1={yScale(circle.level || 0)}
-                    y2={250 - margins.v}
-                  ></line>
-                  <text
-                    // style={{transformOrigin:`${i * circleRadius * 2 + circleRadius}px, ${200}px`}}
-                    className="worm-detail-place-label"
-                    x={i * circleRadius * 2 + circleRadius}
-                    y={200}
-                  >
-                    {circle.occurrence}
-                  </text>
-                </g>
-              )}
-
-              <circle
-                // className="movement"
-                style={{ fill: colorScale(circle.category) }}
-                r={circleRadius}
-                cy={yScale(circle.level || 0)}
-                cx={i * circleRadius * 2 + circleRadius}
-              ></circle>
-              {circle.place && (
-                <circle
-                  style={{ fill: '#fff' }}
-                  r={circleRadius / 3}
-                  cy={yScale(circle.level)}
-                  cx={i * circleRadius * 2 + circleRadius}
-                ></circle>
-              )}
-            </g>
-          )
-        })}
+    <div className="realismo-detail">
+      <div style={{ margin: `0px ${CHART_PADDING_X}px` }}>
+        <MiniInfoBox onClose={() => toggleSelect(title)}>
+          {title}, {year}
+        </MiniInfoBox>
+      </div>
+      <svg className="worm-detail-svg" style={{ height }}>
+        {dataWorms.map((item) => (
+          <g key={item.occurrence_location}>
+            <line
+              className="worm-detail-x-place"
+              x1={item.xLocation + LOCATION_RADIUS}
+              x2={item.xLocation + LOCATION_RADIUS}
+              y1={yScale(item.level)}
+              y2={yScale(maxLevel + 1) + 20}
+              stroke="black"
+            />
+            <text
+              style={{
+                transformOrigin: `${item.xLocation + LOCATION_RADIUS + 5}px ${
+                  yScale(maxLevel + 1) + 30
+                }px`,
+                transform: `rotate(-45deg)`,
+              }}
+              textAnchor="end"
+              x={item.xLocation + LOCATION_RADIUS + 5}
+              y={yScale(maxLevel + 1) + 30}
+            >
+              {item.occurrence}
+            </text>
+          </g>
+        ))}
+        {levelsData.map((enabled, level) => (
+          <g
+            key={level}
+            className={`worm-detail-grid-container ${
+              enabled ? 'level-enabled' : 'level-disabled'
+            }`}
+          >
+            <line
+              x1={CHART_PADDING_X}
+              x2={width + CHART_PADDING_X}
+              y1={yScale(level)}
+              y2={yScale(level)}
+              className={`worm-detail-y-grid`}
+            ></line>
+            <text
+              className={'worm-detail-level-label'}
+              y={yScale(level) + 4}
+              x={CHART_PADDING_X - 10}
+            >
+              {level + 1}
+            </text>
+          </g>
+        ))}
+        {dataWorms.map((item) => (
+          <g key={item.occurrence_location}>
+            <rect
+              rx={2}
+              ry={2}
+              x={item.x1}
+              width={item.x2 - item.x1}
+              fill={item.color}
+              height={MINI_RADIUS}
+              y={yScale(item.level) - MINI_RADIUS / 2}
+            />
+            <circle
+              fill="black"
+              cx={item.xLocation + LOCATION_RADIUS}
+              cy={yScale(item.level)}
+              r={LOCATION_RADIUS}
+            />
+          </g>
+        ))}
       </svg>
     </div>
   )
 }
 
-export default React.memo(WormDetail)
+export default React.memo(WormDetail2)
