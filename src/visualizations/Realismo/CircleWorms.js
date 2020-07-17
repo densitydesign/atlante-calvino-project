@@ -31,10 +31,6 @@ const Worm = React.memo(
 
     const circleRadius = wormSize / circles.length / 2
 
-    const yScale = scaleLinear()
-      .domain([0, 2])
-      .range([0, circleRadius * 2])
-
     //var for animations delays
     const animationDelays = circles.reduce((acc, item) => {
       if (!acc[item.occurrence_location]) {
@@ -65,7 +61,7 @@ const Worm = React.memo(
         >
           {circles.map((circle, i) => {
             const cx = wormStart + i * circleRadius * 2 + circleRadius
-            const cy = yScale(circle.level || 0)
+            const cy = 0
 
             if (circle.movement === 'TRUE') {
               animationGroups[circle.occurrence_location] =
@@ -108,25 +104,6 @@ const Worm = React.memo(
             )
           })}
         </g>
-        {/* {isSelected && (
-          <g>
-            <line
-              x1={wormEnd - circleRadius}
-              y1={0}
-              stroke='red'
-              y2={size / 2}
-              x2={size / 2}
-            />
-            <circle
-              style={{
-                transformOrigin: `${wormEnd - circleRadius}px ${0}px`,
-              }}
-              cx={wormEnd - circleRadius}
-              cy={0}
-              r={5}
-            />
-          </g>
-        )} */}
       </g>
     )
   }
