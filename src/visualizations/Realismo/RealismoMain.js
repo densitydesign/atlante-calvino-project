@@ -29,6 +29,9 @@ import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
 import WormDetail2 from './WormDetail2'
 
+const LABEL_BEZIER_DELTA_A = 30
+const LABEL_START_SUB_DELTA = 5 // Start line before a delta
+const LABEL_HEIGHT = 14
 const REALISMO_DIAMETER = 760
 const REALISMO_RADIUS = REALISMO_DIAMETER / 2
 
@@ -156,6 +159,86 @@ export default function RealismoMain({ title }) {
     return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
+  // TODO: MOOOOVE
+  const leftRacconti = useMemo(() => {
+    return racconti.filter((r) => r.rotation >= 90 && r.rotation <= 270).reverse()
+  }, [])
+
+  const rightRacconti = useMemo(() => {
+    return racconti.filter((r) => !(r.rotation >= 90 && r.rotation <= 270))
+  }, [])
+
+  const raccontiJoinLines = useMemo(() => {
+    return racconti.reduce((acc, racconto) => {
+      const isLeft = racconto.rotation >= 90 && racconto.rotation <= 270
+
+      let x1, x2, y1, y2, pointAX, pointAY, pointBX, pointBY
+
+      if (isLeft) {
+        const angle = Math.abs(180 - racconto.rotation)
+        const index = leftRacconti.indexOf(racconto)
+        x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
+        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2
+
+        y1 =
+          -Math.sin((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS - 5) *
+          (racconto.rotation > 180 ? 1 : -1)
+        x1 = -Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+
+        pointAY =
+          -Math.sin((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (racconto.rotation > 180 ? 1 : -1)
+        pointAX =
+          -Math.cos((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+
+        // console.log('LEFT!', racconto, index, angle)
+      } else {
+        const index = rightRacconti.indexOf(racconto)
+        x2 = REALISMO_DIAMETER / 2 + 100 - 5
+        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2
+
+        const angle = Math.abs(racconto.rotation)
+
+        y1 =
+          -Math.sin((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS - 5) *
+          (racconto.rotation > 0 ? -1 : 1)
+        x1 = Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+
+        pointAY =
+          -Math.sin((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (racconto.rotation > 0 ? -1 : 1)
+        pointAX =
+          Math.cos((Math.PI / 180) * angle) *
+          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+
+        // console.log('Right', racconto, { x1, y1, angle })
+      }
+
+      pointBX = (x1 + x2) / 2
+      pointBY = y2
+
+      acc[racconto.title] = {
+        x1,
+        y1,
+        x2,
+        y2,
+        pointAX,
+        pointAY,
+        pointBX,
+        pointBY,
+      }
+
+      return acc
+    }, {})
+  }, [leftRacconti, rightRacconti])
+
+  console.log(raccontiJoinLines)
+
   return (
     <div>
       <HelpSidePanel
@@ -200,12 +283,17 @@ export default function RealismoMain({ title }) {
       </div>
       <div className="realismo-content">
         <div
-          className="h-100 w-100 d-flex justify-content-center align-items-center"
+          className="h-100 w-100 d-flex justify-content-center realismo-circle-wrapper"
           style={{
             position: 'relative',
           }}
         >
-          <div className="realismo-reset">
+          <div className="realismo-labels-container on-left text-right">
+            {leftRacconti.map((racconto, i) => {
+              return <div key={i}>{racconto.title}</div>
+            })}
+          </div>
+          {/* <div className="realismo-reset">
             <div>Seleziona i test e poi scorri in basso</div>
             <button
               onClick={() => {
@@ -219,15 +307,21 @@ export default function RealismoMain({ title }) {
             >
               reset
             </button>
-          </div>
+          </div> */}
           <CircleWorms
             toggleSelect={toggleSelect}
             selected={selcted}
             omitted={omitted}
             circlesMap={circlesMap}
             racconti={racconti}
+            raccontiJoinLines={raccontiJoinLines}
             radius={REALISMO_RADIUS}
           ></CircleWorms>
+          <div className="realismo-labels-container on-right">
+            {rightRacconti.map((racconto, i) => {
+              return <div key={i}>{racconto.title}</div>
+            })}
+          </div>
         </div>
         <div className="bottom-nav navigations">
           <AltOptions
