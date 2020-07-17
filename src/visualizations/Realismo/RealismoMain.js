@@ -178,7 +178,7 @@ export default function RealismoMain({ title }) {
         const angle = Math.abs(180 - racconto.rotation)
         const index = leftRacconti.indexOf(racconto)
         x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
-        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2
+        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2 - 25
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
@@ -198,7 +198,7 @@ export default function RealismoMain({ title }) {
       } else {
         const index = rightRacconti.indexOf(racconto)
         x2 = REALISMO_DIAMETER / 2 + 100 - 5
-        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2
+        y2 = -(REALISMO_DIAMETER / 2) + index * LABEL_HEIGHT + LABEL_HEIGHT / 2 - 25
 
         const angle = Math.abs(racconto.rotation)
 

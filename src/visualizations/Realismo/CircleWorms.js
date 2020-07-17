@@ -247,7 +247,7 @@ const Legend = React.memo(
           stroke="black"
           strokeWidth={2}
         />
-        <text
+        {/* <text
           x={x}
           y={labelSize - LEGEND_TEXT_MARGIN}
           className="realismo-legend-text"
@@ -257,7 +257,7 @@ const Legend = React.memo(
           }}
         >
           TITOLO
-        </text>
+        </text> */}
         <line
           y1={labelSize + LABEL_PADDING}
           y2={labelSize + LABEL_PADDING + wormSize}
@@ -361,7 +361,7 @@ export default function CircleWorms({
 
   // 0 - 90
   return (
-    <svg width={size + 200} height={size}>
+    <svg width={size + 200} height={size + 50}>
       <defs>
         <linearGradient id="label-gradient">
           <stop offset="0%" stopColor="rgba(255, 255, 255, 0)"></stop>
@@ -373,7 +373,7 @@ export default function CircleWorms({
         </linearGradient>
       </defs>
 
-      <g transform={`translate(${size / 2 + 100}, ${size / 2})`}>
+      <g transform={`translate(${size / 2 + 100}, ${size / 2 + 25})`}>
         {selectedKeys.map((title) => {
           const {
             x1,
@@ -449,7 +449,7 @@ export default function CircleWorms({
           )
         })}
       </g>
-      <g transform={`translate(100, 0)`}>
+      <g transform={`translate(100, 25)`}>
         <Legend
           x={radius}
           wormSize={wormSize}
