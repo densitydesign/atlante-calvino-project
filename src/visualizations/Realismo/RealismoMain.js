@@ -142,7 +142,7 @@ export default function RealismoMain({ title }) {
     return omittedStuff
   }, [movimento, spazio, timeFilter])
 
-  const selcted = useMemo(() => {
+  const selected = useMemo(() => {
     const mapSelected = {}
     ricerca.forEach((item) => {
       mapSelected[item.value] = true
@@ -252,8 +252,6 @@ export default function RealismoMain({ title }) {
     }, {})
   }, [leftRacconti, rightRacconti])
 
-  console.log(raccontiJoinLines)
-
   return (
     <div>
       <HelpSidePanel
@@ -305,7 +303,17 @@ export default function RealismoMain({ title }) {
         >
           <div className="realismo-labels-container on-left text-right">
             {leftRacconti.map((racconto, i) => {
-              return <div key={i}>{racconto.title}</div>
+              return (
+                <div
+                  onClick={() => toggleSelect(racconto.title)}
+                  className={`realismo-label ${
+                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                  }`}
+                  key={i}
+                >
+                  {racconto.title}
+                </div>
+              )
             })}
           </div>
           {/* <div className="realismo-reset">
@@ -325,7 +333,7 @@ export default function RealismoMain({ title }) {
           </div> */}
           <CircleWorms
             toggleSelect={toggleSelect}
-            selected={selcted}
+            selected={selected}
             omitted={omitted}
             circlesMap={circlesMap}
             racconti={racconti}
@@ -334,7 +342,17 @@ export default function RealismoMain({ title }) {
           ></CircleWorms>
           <div className="realismo-labels-container on-right">
             {rightRacconti.map((racconto, i) => {
-              return <div key={i}>{racconto.title}</div>
+              return (
+                <div
+                  onClick={() => toggleSelect(racconto.title)}
+                  className={`realismo-label ${
+                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                  }`}
+                  key={i}
+                >
+                  {racconto.title}
+                </div>
+              )
             })}
           </div>
         </div>
