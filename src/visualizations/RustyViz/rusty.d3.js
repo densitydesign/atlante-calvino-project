@@ -31,7 +31,7 @@ V.init = async (options)=>{
         .on("zoom", ()=>{
             g1.attr("transform", d3.event.transform);
             length.attr('stroke-width',strokeWidth/d3.event.transform.k);
-            g3.selectAll('text').attr("font-size",annotationsFontSize/d3.event.transform.k);
+            // g3.selectAll('text').style("transform",`scale(${1/d3.event.transform.k})`);
             g3.selectAll('path,line').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
             if (d3.event.transform.k>=1.75){
                 label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
