@@ -82,9 +82,9 @@ const Worm = React.memo(
                 <circle
                   className={`${
                     circle.movement === 'TRUE' && !isOmitted ? 'movement' : ''
-                  }`}
+                  } fill-realismo-circle-${circle.category ?? 'unknown'}`}
                   style={{
-                    fill: colorScale(circle.category),
+                    // fill: colorScale(circle.category),
                     transformOrigin: `${cx}px ${cy}px`,
                     animationDelay: `${delay}s`,
                   }}
@@ -348,6 +348,13 @@ export default function CircleWorms({
           <stop offset="90%" stopColor="var(--bg)"></stop>
           <stop offset="100%" stopColor="rgba(255, 255, 255, 0)"></stop>
         </linearGradient>
+        <filter id="brightness">
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="1.2" />
+            <feFuncG type="linear" slope="1.2" />
+            <feFuncB type="linear" slope="1.2" />
+          </feComponentTransfer>
+        </filter>
       </defs>
 
       <g transform={`translate(${size / 2 + 100}, ${size / 2 + 25})`}>
@@ -369,7 +376,7 @@ export default function CircleWorms({
               <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
               <path
                 stroke-dasharray="2"
-                className='realismo-label-join'
+                className="realismo-label-join"
                 fill="none"
                 stroke="black"
                 d={`M ${x1} ${y1} C ${pointAX} ${pointAY}, ${pointBX} ${pointBY}, ${x2} ${y2}`}

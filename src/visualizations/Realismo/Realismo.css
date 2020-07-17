@@ -38,6 +38,8 @@ text.realismo-legend-text {
   font-weight: bold;
 }
 
+
+
 /* LABEL ANIMATION DRAFT */
 /* rect.worm-label-gradient-rect {
     transition: opacity 0.3s linear;
@@ -102,22 +104,78 @@ g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
   /* transform: rotate(-45deg); */
 }
 
-.movement {
-  animation: movement 5s infinite linear;
+.fill-realismo-circle-indoor {
+  fill: #ffc33e;
 }
 
-@keyframes movement {
+.fill-realismo-circle-outdoor {
+  fill: #00c97c;
+}
+
+.fill-realismo-circle-transportation {
+  fill: #4a4aff;
+}
+
+.fill-realismo-circle-unknown {
+  fill: #ccc;
+}
+
+.fill-realismo-circle-indoor.movement {
+  animation: movement-indoor 5s infinite linear;
+}
+
+@keyframes movement-indoor {
   0% {
     transform: scale(1);
-    stroke: transparent;
+    fill: #FFF3D7;
   }
 
   50% {
-    transform: scale(2);
-    stroke: white;
+    transform: scale(1.2);
+    fill: #ffc33e;
   }
   100% {
     transform: scale(1);
-    stroke: transparent;
+    fill: #FFF3D7;
+  }
+}
+
+.fill-realismo-circle-outdoor.movement {
+  animation: movement-outdoor 5s infinite linear;
+}
+
+@keyframes movement-outdoor {
+  0% {
+    transform: scale(1);
+    fill: #63FFC3;
+  }
+
+  50% {
+    transform: scale(1.2);
+    fill: #00c97c;
+  }
+  100% {
+    transform: scale(1);
+    fill: #63FFC3;
+  }
+}
+
+.fill-realismo-circle-transportation.movement {
+  animation: movement-transportation 5s infinite linear;
+}
+
+@keyframes movement-transportation {
+  0% {
+    transform: scale(1);
+    fill: #E3E3FF;
+  }
+
+  50% {
+    transform: scale(1.2);
+    fill: #4a4aff;
+  }
+  100% {
+    transform: scale(1);
+    fill: #E3E3FF;
   }
 }
