@@ -10,6 +10,7 @@ import inquadramento from './inquadramento.svg';
 import table from './table.svg'
 
 
+import legenda_0 from './legenda_0.svg'
 import legenda_01 from './legenda_01.svg'
 import legenda_02 from './legenda_02.svg'
 import legenda_03 from './legenda_03.svg'
@@ -38,6 +39,7 @@ class TransformInformationSheet extends Component {
             <h1 className={SheetStyles.titleH1}>L'orizzonte geografico e letterario in Calvino</h1>
             <h2 className={SheetStyles.titleH2}>L'idea</h2>
                   <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12',width:'100%'}} src={inquadramento}/>
+                    <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 8'}}  src={legenda_0}/>
                   <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                   <h3 className={SheetStyles.titleH3}>Geoletteratura</h3>
             <p className={SheetStyles.paragraph}>
@@ -107,8 +109,8 @@ class TransformInformationSheet extends Component {
   </div>
 
                       <div className={SheetStyles.gridRow}>
-                      <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="RITORNA ALL'ANALISI" route="/Process/transforming" /></div>
-                      <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="left" text="TAPPA 1" route="/Phenomena/territory/spaceAnalysis"/></div>
+                      <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="VISUALIZZAZIONE PRINCIPALE" route="/Process/transforming" /></div>
+                      <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/spaceAnalysis"/></div>
                       <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/realism" /></div>
                     </div>
         </main>

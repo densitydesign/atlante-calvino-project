@@ -91,6 +91,12 @@
   grid-column: 8 / span 5;
 }
 
+.legend{
+    margin-top: 3em;
+    margin-bottom: 4rem;
+
+}
+
 .translucentBackground {
   backdrop-filter: blur(10px);
   background-color: rgba(255,255,255,0.25);
