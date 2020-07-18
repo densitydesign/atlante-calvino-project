@@ -69,7 +69,7 @@
 
 .image {
   max-width: 100%;
-  margin-bottom: 0.3rem; 
+  margin-bottom: 0.3rem;
 }
 
 .image100w {
@@ -80,6 +80,11 @@
 .caption {
   font-size: 0.8571428571rem;
   text-align: center;
+}
+
+.captionLeft {
+  font-size: 0.8571428571rem;
+  text-align: left;
 }
 
 .sideContent {
