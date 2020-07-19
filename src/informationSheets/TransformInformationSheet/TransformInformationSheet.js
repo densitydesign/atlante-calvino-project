@@ -38,14 +38,13 @@ class TransformInformationSheet extends Component {
             <h4 className={SheetStyles.titleH4}>Tappa 2 > trasformare</h4>
             <h1 className={SheetStyles.titleH1}>L'orizzonte geografico e letterario in Calvino</h1>
             <h2 className={SheetStyles.titleH2}>L'idea</h2>
-                  <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12',width:'100%'}} src={inquadramento}/>
+                  <img className = {SheetStyles.image} style={{gridColumn:'1 / span 22',width:'100%'}} src={inquadramento}/>
                     <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 8'}}  src={legenda_0}/>
                   <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                   <h3 className={SheetStyles.titleH3}>Geoletteratura</h3>
             <p className={SheetStyles.paragraph}>
 
             Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
-
   Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
 </p>
 

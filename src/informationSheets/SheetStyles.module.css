@@ -52,6 +52,13 @@
 .paragraph {
   grid-column: 1 / span 7;
 }
+
+.paragraphBig {
+  grid-column: 1 / span 15;
+}
+
+
+
 .paragraphCentered {
   grid-column: 4 / span 7;
 }
@@ -101,6 +108,12 @@
   backdrop-filter: blur(10px);
   background-color: rgba(255,255,255,0.25);
 }
+
+sup{
+  color:var(--dark-blue);
+  font-size: 60%;
+}
+
 
 @media (min-width: 1280px) {
   .gridRow {
