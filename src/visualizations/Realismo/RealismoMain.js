@@ -401,6 +401,7 @@ export default function RealismoMain({ title }) {
       </div>
       {ricerca.length > 0 && (
         <div className="realismo-details-container" ref={ref}>
+          <h4>VEDI IN DETTAGLIO I TESTI SELEZIONATI</h4>
           {width &&
             selctedTitoliSorted.map((item) => (
               <WormDetail

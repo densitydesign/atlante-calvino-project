@@ -98,8 +98,6 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
   const height = yScale(maxLevel) + LEGEND_TEXT_HEIGHT
   const totalLabelX = dataWorms[dataWorms.length - 1]?.x2
 
-  console.log('X', levelsData, dataWorms, totalLength, totalLabelX)
-
   return (
     <div className="realismo-detail">
       <div className="realismo-detail-info-legend">

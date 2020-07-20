@@ -4,7 +4,6 @@
 }
 
 .realismo-circle-wrapper {
-  padding-bottom: 60px;
 }
 
 .realismo-labels-container {
@@ -100,6 +99,11 @@ g.worm-label-container-flipped:hover rect.worm-label-gradient-rect{
 .realismo-details-container {
   margin-top: 20px;
   margin-bottom: 60px;
+}
+.realismo-details-container > h4 {
+  color: black !important;
+  margin-left: 180px;
+  margin-bottom: 25px;
 }
 .realismo-detail {
   position: relative;
