@@ -192,6 +192,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
         >
           {totalLength} caratteri
         </text>
+        <line x1={totalLabelX} x2={totalLabelX} y1={12} y2={18} stroke={'black'} />
         {/* <circle cx={totalLabelX} cy={0} r={5}></circle> */}
 
         {/* {labalesData.map((item) => (
