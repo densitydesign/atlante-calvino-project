@@ -97,7 +97,6 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
 
   const height = yScale(maxLevel) + LEGEND_TEXT_HEIGHT
   const totalLabelX = dataWorms[dataWorms.length - 1]?.x2
-
   return (
     <div className="realismo-detail">
       <div className="realismo-detail-info-legend">
@@ -116,6 +115,42 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
         </MiniInfoBox>
       </div>
       <svg className="worm-detail-svg" style={{ height }}>
+        <linearGradient id="worm-detail-indoor">
+          <stop offset={'0%'} stopColor={'#ffc33e'} />
+          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+            <animate
+              attributeName="offset"
+              values="0;1;0"
+              dur="8s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#ffc33e'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-outdoor">
+          <stop offset={'0%'} stopColor={'#00c97c'} />
+          <stop offset={'50%'} stopColor={'#63FFC3'}>
+            <animate
+              attributeName="offset"
+              values="0;1;0"
+              dur="8s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#00c97c'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-transportation">
+          <stop offset={'0%'} stopColor={'#4a4aff'} />
+          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+            <animate
+              attributeName="offset"
+              values="0;1;0"
+              dur="8s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#4a4aff'} />
+        </linearGradient>
         <g transform={'translate(0, 10)'}>
           {levelsData.map((datum) => (
             <g
@@ -150,8 +185,13 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                     ry={2}
                     x={item.x1}
                     width={item.x2 - item.x1}
-                    fill={item.color}
                     height={MINI_RADIUS}
+                    style={{
+                      fill:
+                        item.movement === 'FALSE'
+                          ? item.color
+                          : `url(#worm-detail-${item.category})`,
+                    }}
                     y={yScale(item.level) - MINI_RADIUS / 2}
                   />
                   <circle
@@ -190,7 +230,13 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
         >
           {totalLength} caratteri
         </text>
-        <line x1={totalLabelX} x2={totalLabelX} y1={12} y2={18} stroke={'black'} />
+        <line
+          x1={totalLabelX}
+          x2={totalLabelX}
+          y1={12}
+          y2={18}
+          stroke={'black'}
+        />
         {/* <circle cx={totalLabelX} cy={0} r={5}></circle> */}
 
         {/* {labalesData.map((item) => (
