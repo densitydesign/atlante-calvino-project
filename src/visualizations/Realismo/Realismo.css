@@ -1,6 +1,7 @@
 .realismo-content {
-  /* height: calc(100vh - var(--navigation-height)); */
+  height: calc(100vh - var(--navigation-height) - var(--navigation-height));
   width: 100%;
+  /* background: pink; */
 }
 
 .realismo-circle-wrapper {
@@ -9,7 +10,13 @@
 .realismo-labels-container {
   flex: 1;
   font-size: 12px;
-  line-height: 14px;
+}
+
+.circle-worms-the-wrapper {
+  /* background: blue; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .realismo-label {

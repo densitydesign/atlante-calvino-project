@@ -304,6 +304,7 @@ const Legend = React.memo(
 )
 
 export default function CircleWorms({
+  heightCircle,
   radius,
   circlesMap,
   selected,
@@ -336,9 +337,11 @@ export default function CircleWorms({
     INNER_CIRCLE_STROKE_WIDTH / 2
   const endLineEnd = endLineStart + 90
 
+  const paddingTop = (heightCircle - size) / 2
+
   // 0 - 90
   return (
-    <svg width={size + 200} height={size + 50}>
+    <svg width={size + 200} height={heightCircle}>
       <defs>
         <linearGradient id="label-gradient">
           <stop offset="0%" stopColor="rgba(255, 255, 255, 0)"></stop>
@@ -357,7 +360,7 @@ export default function CircleWorms({
         </filter>
       </defs>
 
-      <g transform={`translate(${size / 2 + 100}, ${size / 2 + 25})`}>
+      <g transform={`translate(${size / 2 + 100}, ${size / 2 + paddingTop})`}>
         {selectedKeys.map((title) => {
           const {
             x1,
@@ -433,7 +436,7 @@ export default function CircleWorms({
           )
         })}
       </g>
-      <g transform={`translate(100, 25)`}>
+      <g transform={`translate(100, ${paddingTop})`}>
         <Legend
           x={radius}
           wormSize={wormSize}

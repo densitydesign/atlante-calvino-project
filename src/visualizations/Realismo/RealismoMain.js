@@ -31,7 +31,7 @@ import WormDetail from './WormDetail'
 import { groupBy } from 'lodash'
 
 const LABEL_BEZIER_DELTA_A = 30
-const LABEL_HEIGHT = 14
+const RESET_BOX_HEIGHT = 70
 const REALISMO_DIAMETER = 760
 const REALISMO_RADIUS = REALISMO_DIAMETER / 2
 
@@ -112,6 +112,9 @@ export default function RealismoMain({ title }) {
   //   setMeasures(m)
   // }, [])
   const [ref, { width }] = useDimensions({ liveMeasure: false })
+  const [refCirlce, { height: heightCircle }] = useDimensions({
+    liveMeasure: false,
+  })
 
   const [movimento, setMovimento] = useState(null)
   const [spazio, setSpazio] = useState([])
@@ -213,7 +216,6 @@ export default function RealismoMain({ title }) {
     return sortBy(ricercaTitoli, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
-  // TODO: MOOOOVE
   const leftRacconti = useMemo(() => {
     return racconti
       .filter((r) => r.rotation >= 90 && r.rotation <= 270)
@@ -224,7 +226,13 @@ export default function RealismoMain({ title }) {
     return racconti.filter((r) => !(r.rotation >= 90 && r.rotation <= 270))
   }, [])
 
+  const lineHeightRight = heightCircle / rightRacconti.length
+  const lineHeightLeft = (heightCircle - RESET_BOX_HEIGHT) / leftRacconti.length
+  console.log(leftRacconti, lineHeightLeft, heightCircle)
+
   const raccontiJoinLines = useMemo(() => {
+    const paddingTop = (heightCircle - REALISMO_DIAMETER) / 2
+
     return racconti.reduce((acc, racconto) => {
       const isLeft = racconto.rotation >= 90 && racconto.rotation <= 270
 
@@ -236,10 +244,10 @@ export default function RealismoMain({ title }) {
         x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
         y2 =
           -(REALISMO_DIAMETER / 2) +
-          index * LABEL_HEIGHT +
-          LABEL_HEIGHT / 2 -
-          25 +
-          70
+          index * lineHeightLeft +
+          lineHeightLeft / 2 -
+          paddingTop +
+          RESET_BOX_HEIGHT
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
@@ -259,9 +267,9 @@ export default function RealismoMain({ title }) {
         x2 = REALISMO_DIAMETER / 2 + 100 - 5
         y2 =
           -(REALISMO_DIAMETER / 2) +
-          index * LABEL_HEIGHT +
-          LABEL_HEIGHT / 2 -
-          25
+          index * lineHeightRight +
+          lineHeightRight / 2 -
+          paddingTop
 
         const angle = Math.abs(racconto.rotation)
 
@@ -296,7 +304,13 @@ export default function RealismoMain({ title }) {
 
       return acc
     }, {})
-  }, [leftRacconti, rightRacconti])
+  }, [
+    leftRacconti,
+    rightRacconti,
+    heightCircle,
+    lineHeightRight,
+    lineHeightLeft,
+  ])
 
   return (
     <div>
@@ -309,6 +323,7 @@ export default function RealismoMain({ title }) {
         <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
         <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
         <AltOptions
+          multiple={false}
           title="Cerca per"
           options={cercaOptions}
           value={findFor}
@@ -374,6 +389,10 @@ export default function RealismoMain({ title }) {
                   className={`realismo-label ${
                     selected[racconto.title] ? 'realismo-label-selected' : ''
                   }`}
+                  style={{
+                    height: `${lineHeightLeft}px`,
+                    lineHeight: `${lineHeightLeft}px`,
+                  }}
                   key={i}
                 >
                   {racconto.title}
@@ -381,19 +400,28 @@ export default function RealismoMain({ title }) {
               )
             })}
           </div>
-          <CircleWorms
-            toggleSelect={toggleSelect}
-            selected={selected}
-            omitted={omitted}
-            circlesMap={circlesMap}
-            racconti={racconti}
-            raccontiJoinLines={raccontiJoinLines}
-            radius={REALISMO_RADIUS}
-          ></CircleWorms>
+          <div className="circle-worms-the-wrapper" ref={refCirlce}>
+            {heightCircle && (
+              <CircleWorms
+                heightCircle={heightCircle}
+                toggleSelect={toggleSelect}
+                selected={selected}
+                omitted={omitted}
+                circlesMap={circlesMap}
+                racconti={racconti}
+                raccontiJoinLines={raccontiJoinLines}
+                radius={REALISMO_RADIUS}
+              ></CircleWorms>
+            )}
+          </div>
           <div className="realismo-labels-container on-right">
             {rightRacconti.map((racconto, i) => {
               return (
                 <div
+                  style={{
+                    lineHeight: `${lineHeightRight}px`,
+                    height: `${lineHeightRight}px`,
+                  }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
                     selected[racconto.title] ? 'realismo-label-selected' : ''
