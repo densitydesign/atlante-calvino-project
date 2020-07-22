@@ -23,6 +23,8 @@ import { motivoExtent } from './utils'
 import BoxPlotGradientsDefinitions from './BoxPlotGradientsDefinitions'
 import Brush from './Brush'
 
+const BASE_WIDTH_BAR = 5
+
 const BoxPlotElement = React.memo(
   ({
     zoomFactor,
@@ -38,6 +40,7 @@ const BoxPlotElement = React.memo(
     yScale,
     onRaccontoClick,
     showBoxInOpacity,
+    onGlyphoClick,
   }) => {
     const handleClickRacconto = useCallback(
       (e) => {
@@ -51,7 +54,7 @@ const BoxPlotElement = React.memo(
     const h = bottom - top
 
     const fill = itemSelected ? `url("#${data.racconto.titolo}")` : '#ddd'
-    const widthBar = 5 * zoomFactor
+    const widthBar = BASE_WIDTH_BAR * zoomFactor
 
     return (
       <g>
@@ -114,6 +117,8 @@ const BoxPlotElement = React.memo(
             })`}
           >
             <Star
+              svgStyle={{ cursor: 'pointer' }}
+              onClick={onGlyphoClick}
               size={widthBar * Math.sqrt(2)}
               className="trama2-box-plot-same-start-end-symbol"
             />
@@ -121,17 +126,23 @@ const BoxPlotElement = React.memo(
         ) : (
           <g>
             <rect
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={onGlyphoClick}
               width={widthBar}
               height={widthBar}
               className="trama2-box-plot-start-symbol"
               y={yScale(data.first.ordineMotivo) - widthBar / 2}
             ></rect>
             <rect
+              onClick={onGlyphoClick}
               width={widthBar}
               height={widthBar}
               className="trama2-box-plot-end-symbol"
               y={yScale(data.last.ordineMotivo) - widthBar / 2}
               style={{
+                cursor: 'pointer',
                 transformOrigin: `0px ${
                   yScale(data.last.ordineMotivo) + widthBar / 4
                 }px`,
@@ -188,6 +199,7 @@ function BoxPlot(
     }
 
     if (measures) {
+      console.log('U.u', measures.width)
       const svg = svgRef.current
       const scaleX = scaleLinear()
         .domain([0, racconti.length])
@@ -202,19 +214,19 @@ function BoxPlot(
         imperativeTranslate(newScaleX)
         const zoomFactor = Math.round(currentEvent.transform.k / 2)
 
-        const domain = newScaleX.domain()
-        const lowIndex = Math.max(0, Math.floor(domain[0]))
-        const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
+        // const domain = newScaleX.domain()
+        // const lowIndex = Math.max(0, Math.floor(domain[0]))
+        // const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
         const batchUpdates = ReactDOM.unstable_batchedUpdates || ((cb) => cb())
         batchUpdates(() => {
           setZoomFactor(zoomFactor)
-          setYears((prevYears) => {
-            const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
-            if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
-              return newYears
-            }
-            return prevYears
-          })
+          // setYears((prevYears) => {
+          //   const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
+          //   if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
+          //     return newYears
+          //   }
+          //   return prevYears
+          // })
         })
         actualScaleX.current = newScaleX
         // declarativeTranslate(newScaleX)
@@ -279,51 +291,52 @@ function BoxPlot(
     return [finalDataRacconti, finalDataByRacconti, Array.from(gradientsSet)]
   }, [data, racconti, tipologieByTipologia, yScale])
 
-  const handleNexPoint = useCallback(
-    (x, setX) => {
-      const widthBar = 5 * zoomFactor
-      const scaleX = actualScaleX.current
-      const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
-        const dataTrama = dataByRacconti[titolo]
-        const realX = scaleX(dataTrama.index)
-        if (realX > x - widthBar / 2) {
-          acc.push(realX)
-        }
-        return acc
-      }, [])
-      if (nextPoints.length) {
-        setX(Math.min(...nextPoints) + widthBar / 2)
-      }
-    },
-    [dataByRacconti, selected, zoomFactor]
-  )
+  // const handleNexPoint = useCallback(
+  //   (x, setX) => {
+  //     const widthBar = 5 * zoomFactor
+  //     const scaleX = actualScaleX.current
+  //     const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+  //       const dataTrama = dataByRacconti[titolo]
+  //       const realX = scaleX(dataTrama.index)
+  //       if (realX > x - widthBar / 2) {
+  //         acc.push(realX)
+  //       }
+  //       return acc
+  //     }, [])
+  //     if (nextPoints.length) {
+  //       setX(Math.min(...nextPoints) + widthBar / 2)
+  //     }
+  //   },
+  //   [dataByRacconti, selected, zoomFactor]
+  // )
 
-  const handlePrevPoint = useCallback(
-    (x, setX) => {
-      const widthBar = 10 * zoomFactor
-      const scaleX = actualScaleX.current
-      const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
-        const dataTrama = dataByRacconti[titolo]
-        const realX = scaleX(dataTrama.index)
-        if (realX < x - widthBar / 2) {
-          acc.push(realX)
-        }
-        return acc
-      }, [])
-      if (nextPoints.length) {
-        console.log('PREV', nextPoints, x)
-        setX(Math.max(...nextPoints) + widthBar / 2)
-      }
-    },
-    [dataByRacconti, selected, zoomFactor]
-  )
+  // const handlePrevPoint = useCallback(
+  //   (x, setX) => {
+  //     const widthBar = 10 * zoomFactor
+  //     const scaleX = actualScaleX.current
+  //     const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+  //       const dataTrama = dataByRacconti[titolo]
+  //       const realX = scaleX(dataTrama.index)
+  //       if (realX < x - widthBar / 2) {
+  //         acc.push(realX)
+  //       }
+  //       return acc
+  //     }, [])
+  //     if (nextPoints.length) {
+  //       console.log('PREV', nextPoints, x)
+  //       setX(Math.max(...nextPoints) + widthBar / 2)
+  //     }
+  //   },
+  //   [dataByRacconti, selected, zoomFactor]
+  // )
 
-  const [years, setYears] = useState([
-    racconti[0].anno,
-    racconti[racconti.length - 1].anno,
-  ])
+  // const [years, setYears] = useState([
+  //   racconti[0].anno,
+  //   racconti[racconti.length - 1].anno,
+  // ])
 
   const [showBoxInOpacity, setShowBoxInOpacity] = useState(false)
+  const toggleBoxInOpacity = useCallback(() => setShowBoxInOpacity(a => !a), [])
 
   return (
     <div className="trama2-boxplot-content">
@@ -332,16 +345,6 @@ function BoxPlot(
         className="w-100 h-100"
         style={{ overflow: 'hidden' }}
       >
-        <button
-          onClick={() => setShowBoxInOpacity(!showBoxInOpacity)}
-          style={{
-            position: 'absolute',
-            right: 0,
-            top: 0,
-          }}
-        >
-          Toggle Box Opacity
-        </button>
         {measures && (
           <svg
             style={{
@@ -380,6 +383,7 @@ function BoxPlot(
                         racconto={racconti[i]}
                         yScale={yScale}
                         data={datum}
+                        onGlyphoClick={toggleBoxInOpacity}
                       ></BoxPlotElement>
                     </g>
                   )
