@@ -194,12 +194,6 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                     }}
                     y={yScale(item.level) - MINI_RADIUS / 2}
                   />
-                  <circle
-                    fill="black"
-                    cx={item.xLocation}
-                    cy={yScale(item.level)}
-                    r={LOCATION_RADIUS}
-                  />
                 </g>
               ))}
               {datum.dataLabel.map((item) => (
@@ -216,6 +210,16 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                   >
                     {item.occurrence}
                   </text>
+                </g>
+              ))}
+              {datum.dataLevelWorms.map((item) => (
+                <g key={item.occurrence_location}>
+                  <circle
+                    fill="black"
+                    cx={item.xLocation}
+                    cy={yScale(item.level)}
+                    r={LOCATION_RADIUS}
+                  />
                 </g>
               ))}
             </g>
