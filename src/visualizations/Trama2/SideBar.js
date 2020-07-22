@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import keyBy from 'lodash/keyBy'
 import groupBy from 'lodash/groupBy'
 import find from 'lodash/find'
@@ -14,6 +14,7 @@ const SideBarItem = React.memo(
     fromDarkItem,
     itemHeight,
     disableEvents = false,
+    left,
   }) => (
     <div
       key={tipologia.tipologia}
@@ -28,6 +29,7 @@ const SideBarItem = React.memo(
         ${disableEvents ? 'no-pointer-events' : ''}
         ${selected ? 'selected' : ''}`}
       style={{
+        paddingLeft: left,
         height: itemHeight,
         background: selected ? tipologia.colore.colori : undefined,
       }}
@@ -36,6 +38,22 @@ const SideBarItem = React.memo(
     </div>
   )
 )
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.outerWidth)
+
+  useEffect(() => {
+    function setCurrentWidth() {
+      setWidth(window.outerWidth)
+    }
+    window.addEventListener('resize', setCurrentWidth)
+    return () => {
+      window.removeEventListener('resize', setCurrentWidth)
+    }
+  }, [])
+
+  return width
+}
 
 function SideBar({
   tipologie,
@@ -49,6 +67,9 @@ function SideBar({
   const boundsByKey = keyBy(bounds)
 
   const itemHeight = height / tipologie.length
+
+  const windowWidth = useWindowWidth()
+  const leftAsMyNavGridIs = windowWidth / 24
 
   const lookupMap = useMemo(() => {
     return racconti.reduce(
@@ -91,7 +112,9 @@ function SideBar({
 
   return (
     <div className="trama2-sidebar">
-      <div className="trama2-sidebar-header">
+      <div className="trama2-sidebar-header" style={{
+        paddingLeft: leftAsMyNavGridIs,
+      }}>
         Ordine <br />
         di turbamento
       </div>
@@ -124,13 +147,16 @@ function SideBar({
                   selected={selected}
                   itemHeight={itemHeight}
                   fromDarkItem={fromDarkItem}
+                  left={leftAsMyNavGridIs}
                 />
               )
             })}
           </div>
         )
       })}
-      <div className="trama2-sidebar-footer">
+      <div className="trama2-sidebar-footer" style={{
+        paddingLeft: leftAsMyNavGridIs,
+      }}>
         Clicca per scegliere il <br />
         punto più alto e più basso
         <br />
