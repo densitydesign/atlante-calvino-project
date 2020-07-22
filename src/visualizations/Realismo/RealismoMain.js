@@ -17,6 +17,7 @@ import GlobalData from '../../utilities/GlobalData'
 import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
+import uniqBy from 'lodash/uniqBy'
 
 import {
   datasetToCircles,
@@ -27,6 +28,7 @@ import {
 } from './utils'
 import CircleWorms from './CircleWorms'
 import WormDetail from './WormDetail'
+import { groupBy } from 'lodash'
 
 const LABEL_BEZIER_DELTA_A = 30
 const LABEL_HEIGHT = 14
@@ -35,10 +37,30 @@ const REALISMO_RADIUS = REALISMO_DIAMETER / 2
 
 const circlesMap = datasetToCircles(40)
 
-const searchOptions = racconti.map((racconto) => ({
+const searchOptionsTitolo = racconti.map((racconto) => ({
   label: racconto.title,
   value: racconto.title,
 }))
+const searchOptionsVolume = (() => {
+  const keyByTitolo = racconti.reduce((acc, r) => {
+    acc[r.title] = true
+    return acc
+  }, {})
+  return uniqBy(racconti, 'volume').map((racconto) => {
+    const volume = racconto.volume
+    let volumeLabel = volume
+    if (keyByTitolo[volumeLabel]) {
+      volumeLabel += ' (volume)'
+    }
+    return {
+      label: volumeLabel,
+      value: volumeLabel,
+      volume: volume,
+    }
+  })
+})()
+
+const titoliByVolume = groupBy(racconti, 'volume')
 
 const optionsMovimento = [
   {
@@ -68,16 +90,17 @@ const optionsSpace = [
   },
 ]
 
-// console.log('dataset', dataset)
-// console.log('circlesMap', circlesMap)
-
-const cercaOptions = [{ label: 'Volume' }]
+const cercaOptions = [
+  { label: 'Volume', value: 'volume' },
+  { label: 'Titolo', value: 'titolo' },
+]
 
 export default function RealismoMain({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
   }, [])
+  const [findFor, setFindFor] = useState('Titolo')
   const [ricerca, setRicerca] = useState([])
 
   const helpPage = GlobalData.helpPages.plot.main
@@ -144,9 +167,19 @@ export default function RealismoMain({ title }) {
 
   const selected = useMemo(() => {
     const mapSelected = {}
+    const volumeSelected = {}
     ricerca.forEach((item) => {
-      mapSelected[item.value] = true
+      if (!item.volume) {
+        mapSelected[item.value] = true
+      } else {
+        volumeSelected[item.volume] = true
+      }
     })
+    racconti
+      .filter((r) => volumeSelected[r.volume])
+      .forEach((item) => {
+        mapSelected[item.title] = true
+      })
     return mapSelected
   }, [ricerca])
 
@@ -161,7 +194,23 @@ export default function RealismoMain({ title }) {
   }, [])
 
   const selctedTitoliSorted = useMemo(() => {
-    return sortBy(ricerca, (item) => dataset[item.value]?.[0]?.year)
+    const ricercaTitoli = uniqBy(
+      ricerca
+        .filter((r) => r.volume)
+        .reduce(
+          (acc, r) =>
+            acc.concat(
+              titoliByVolume[r.volume].map((r) => ({
+                value: r.title,
+                label: r.title,
+              }))
+            ),
+          []
+        )
+        .concat(ricerca.filter((r) => !r.volume)),
+      'value'
+    )
+    return sortBy(ricercaTitoli, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
 
   // TODO: MOOOOVE
@@ -189,7 +238,8 @@ export default function RealismoMain({ title }) {
           -(REALISMO_DIAMETER / 2) +
           index * LABEL_HEIGHT +
           LABEL_HEIGHT / 2 -
-          25 + 70
+          25 +
+          70
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
@@ -204,8 +254,6 @@ export default function RealismoMain({ title }) {
         pointAX =
           -Math.cos((Math.PI / 180) * angle) *
           (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
-
-        // console.log('LEFT!', racconto, index, angle)
       } else {
         const index = rightRacconti.indexOf(racconto)
         x2 = REALISMO_DIAMETER / 2 + 100 - 5
@@ -230,8 +278,6 @@ export default function RealismoMain({ title }) {
         pointAX =
           Math.cos((Math.PI / 180) * angle) *
           (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
-
-        // console.log('Right', racconto, { x1, y1, angle })
       }
 
       pointBX = (x1 + x2) / 2
@@ -265,9 +311,8 @@ export default function RealismoMain({ title }) {
         <AltOptions
           title="Cerca per"
           options={cercaOptions}
-          disabled={true}
-          value={'Volume'}
-          onChange={(x) => {}}
+          value={findFor}
+          onChange={(x) => setFindFor(x.label)}
           style={{
             gridColumn: 'span 3',
           }}
@@ -276,7 +321,10 @@ export default function RealismoMain({ title }) {
           style={{
             gridColumn: 'span 8',
           }}
-          data={{ options: searchOptions }}
+          data={{
+            options:
+              findFor === 'Titolo' ? searchOptionsTitolo : searchOptionsVolume,
+          }}
           changeOptions={(newOptions) => {
             setRicerca(newOptions)
           }}
