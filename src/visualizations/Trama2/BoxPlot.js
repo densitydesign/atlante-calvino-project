@@ -8,9 +8,10 @@ import React, {
   useLayoutEffect,
   forwardRef,
 } from 'react'
-import { scaleLinear } from 'd3-scale'
+import { scaleLinear, scaleTime } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
+import { axisBottom } from 'd3-axis'
 import Star from './Star'
 
 import head from 'lodash/head'
@@ -127,7 +128,7 @@ const BoxPlotElement = React.memo(
           <g>
             <rect
               style={{
-                cursor: 'pointer'
+                cursor: 'pointer',
               }}
               onClick={onGlyphoClick}
               width={widthBar}
@@ -172,6 +173,7 @@ function BoxPlot(
 ) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
+  const xAxisContainer = useRef()
   const [measures, setMeasures] = useState(null)
   const [translations, setTranslations] = useState([])
   const [zoomFactor, setZoomFactor] = useState(1)
@@ -198,8 +200,16 @@ function BoxPlot(
       )
     }
 
+    function formatAxisTick(i) {
+      return racconti[i].anno
+    }
+
+    // const maTicks = uniqBy(
+    //   racconti.map((r, i) => ({ ...r, index: i })),
+    //   'anno'
+    // ).map((r) => r.index)
+
     if (measures) {
-      console.log('U.u', measures.width)
       const svg = svgRef.current
       const scaleX = scaleLinear()
         .domain([0, racconti.length])
@@ -230,10 +240,30 @@ function BoxPlot(
         })
         actualScaleX.current = newScaleX
         // declarativeTranslate(newScaleX)
+
+        // AXIS Rescale...
+        const axis = axisBottom(newScaleX)
+        axis.tickFormat(formatAxisTick)
+        // axis.tickValues(maTicks)
+        select(xAxisContainer.current).call(axis)
       }
 
+      const axis = axisBottom(scaleX)
+
+      axis.tickFormat(formatAxisTick)
+      // axis.tickValues(maTicks)
+      select(xAxisContainer.current).call(axis)
+
       const selection = select(svg)
-      selection.call(zoom().scaleExtent([1, 5]).on('zoom', handleZoom))
+      selection.call(
+        zoom()
+          .scaleExtent([1, 5])
+          .translateExtent([
+            [0, 0],
+            [measures.width, measures.height],
+          ])
+          .on('zoom', handleZoom)
+      )
       return () => {
         selection.on('.zoom', null)
       }
@@ -336,7 +366,10 @@ function BoxPlot(
   // ])
 
   const [showBoxInOpacity, setShowBoxInOpacity] = useState(false)
-  const toggleBoxInOpacity = useCallback(() => setShowBoxInOpacity(a => !a), [])
+  const toggleBoxInOpacity = useCallback(
+    () => setShowBoxInOpacity((a) => !a),
+    []
+  )
 
   return (
     <div className="trama2-boxplot-content">
@@ -389,6 +422,10 @@ function BoxPlot(
                   )
                 })}
             </g>
+            <g
+              ref={xAxisContainer}
+              style={{ transform: `translateY(${height - 40}px)` }}
+            ></g>
           </svg>
         )}
       </div>
