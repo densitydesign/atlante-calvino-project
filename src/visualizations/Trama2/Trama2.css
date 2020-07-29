@@ -328,6 +328,15 @@
 
 .trama2-boxplot-content {
   padding: 0 30px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.trama2-boxplot-content {
+  padding: 0 30px;
+}
+.trama2-box-plot-enter-in-opacity {
+  opacity: 1;
 }
 
 .trama2-racconto-incastonato-rect {

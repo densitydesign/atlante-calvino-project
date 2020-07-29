@@ -371,8 +371,16 @@ function BoxPlot(
     []
   )
 
+  const [enterInOpacity, setEnterInOpacity] = useState(false)
+
+  useEffect(() => setEnterInOpacity(true), [])
+
   return (
-    <div className="trama2-boxplot-content">
+    <div
+      className={`trama2-boxplot-content ${
+        enterInOpacity ? 'trama2-box-plot-enter-in-opacity' : ''
+      }`}
+    >
       <div
         ref={containerRef}
         className="w-100 h-100"
