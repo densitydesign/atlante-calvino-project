@@ -94,9 +94,25 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
   }, [dataWorms, labalesData])
 
   const totalLength = data[0]?.length ?? 0
-
+  let totalLabelX
   const height = yScale(maxLevel) + LEGEND_TEXT_HEIGHT
-  const totalLabelX = dataWorms[dataWorms.length - 1]?.x2
+
+  let ghostWorm
+
+  // GHOST (no ambientazione)
+  if (dataWorms.length === 1 && dataWorms[0].occurrence_location === '0') {
+    ghostWorm = {
+      x1: 0 + CHART_PADDING_X + CHART_MARGIN_LEFT,
+      x2:
+        dataWorms[0].lengthTotalNorm * width +
+        CHART_PADDING_X +
+        CHART_MARGIN_LEFT,
+    }
+    totalLabelX = ghostWorm.x2
+  } else {
+    totalLabelX = dataWorms[dataWorms.length - 1]?.x2
+  }
+
   return (
     <div className="realismo-detail">
       <div className="realismo-detail-info-legend">
@@ -224,6 +240,19 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               ))}
             </g>
           ))}
+          {ghostWorm && (
+            <rect
+              rx={2}
+              ry={2}
+              x={ghostWorm.x1}
+              width={ghostWorm.x2 - ghostWorm.x1}
+              height={MINI_RADIUS}
+              style={{
+                fill: 'rgba(95, 102, 100, 0.5)',
+              }}
+              y={yScale(0) - MINI_RADIUS / 2}
+            />
+          )}
         </g>
 
         <text
@@ -241,44 +270,6 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
           y2={18}
           stroke={'black'}
         />
-        {/* <circle cx={totalLabelX} cy={0} r={5}></circle> */}
-
-        {/* {labalesData.map((item) => (
-          <g key={item.title}>
-            <path d={item.linePath} fill='none' stroke='#858585' />
-            <text
-              x={item.x}
-              y={item.y}
-              textAnchor="end"
-              style={{
-                transformOrigin: `${item.x}px ${item.y}px`,
-                transform: `rotate(-45deg)`,
-              }}
-            >
-              {item.occurrence}
-            </text>
-          </g>
-        ))}
-
-        {dataWorms.map((item) => (
-          <g key={item.occurrence_location}>
-            <rect
-              rx={2}
-              ry={2}
-              x={item.x1}
-              width={item.x2 - item.x1}
-              fill={item.color}
-              height={MINI_RADIUS}
-              y={yScale(item.level) - MINI_RADIUS / 2}
-            />
-            <circle
-              fill="black"
-              cx={item.xLocation + LOCATION_RADIUS}
-              cy={yScale(item.level)}
-              r={LOCATION_RADIUS}
-            />
-          </g>
-        ))} */}
       </svg>
     </div>
   )
