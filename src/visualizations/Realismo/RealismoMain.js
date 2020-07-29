@@ -228,7 +228,6 @@ export default function RealismoMain({ title }) {
 
   const lineHeightRight = heightCircle / rightRacconti.length
   const lineHeightLeft = (heightCircle - RESET_BOX_HEIGHT) / leftRacconti.length
-  console.log(leftRacconti, lineHeightLeft, heightCircle)
 
   const raccontiJoinLines = useMemo(() => {
     const paddingTop = (heightCircle - REALISMO_DIAMETER) / 2

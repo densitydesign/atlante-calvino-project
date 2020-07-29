@@ -122,6 +122,10 @@
   /* fill: none; */
 }
 
+/* .trama2-line {
+  transition: all 2s linear;
+} */
+
 .trama2-label-container {
   cursor: help;
 }
