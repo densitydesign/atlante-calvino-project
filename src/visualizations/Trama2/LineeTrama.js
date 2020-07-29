@@ -30,7 +30,7 @@ const lineGenerator = line()
 
 const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
   return (
-    <g data-subracconto={data.racconto.titolo}>
+    <g>
       {subPaths.map((subPath, i) => {
         const isFill = data[i + 1].motivo_type === data[i].motivo_type
         const strokeSelected = isFill
@@ -54,7 +54,7 @@ const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
 
 const TramaPoints = React.memo(({ data }) => {
   return (
-    <g>
+    <g className="trama2-pointz">
       {data.map((d, i) => {
         if (i === 0) {
           return (
@@ -116,7 +116,7 @@ const LineaTrama = React.memo(
     )
 
     const element = (
-      <g>
+      <g data-subracconto={data.racconto.titolo}>
         <SubPathsWithColors
           subPaths={subPaths}
           data={data}
@@ -433,8 +433,14 @@ function LineeTramaWithMeasures(
 
       const flyToX = scaleXBoxPlot(raccontoDataIndex)
 
+      // Hide Points
+      document
+        .querySelectorAll(
+          '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+        )
+        .forEach((p) => (p.style.display = 'none'))
       const paths = document.querySelectorAll(
-        '[data-subracconto="Il cavaliere inesistente"] path'
+        '[data-subracconto="Il cavaliere inesistente"] path.trama2-line'
       )
       let scaleMotivo = makeScalaMotivoY(600)
       scaleMotivo.range([-200, 400])
@@ -515,6 +521,12 @@ function LineeTramaWithMeasures(
             path.setAttribute('d', resettedDSubPaths[i])
             path.style.stroke = cachedResetStrokes[i]
           })
+          // Show Points
+          document
+            .querySelectorAll(
+              '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+            )
+            .forEach((p) => (p.style.display = 'initial'))
         }
       }
 
