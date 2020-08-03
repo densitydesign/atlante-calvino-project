@@ -3,6 +3,9 @@ import SheetStyles from '../SheetStyles.module.css';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
+import map1x from './mappa-ver02@1x.png';
+import map2x from './mappa-ver02@2x.png';
+
 import legend01 from './legend01.svg';
 import textWall01 from './textWall01.png';
 import textWall02 from './textWall02.png';
@@ -23,9 +26,9 @@ class RealismInformationSheet extends Component {
             L’idea è dunque quella di mostrare questa duplice natura nel racconto: da un lato l’ossatura realista del testo - i riferimenti geo-spaziali in cui il giovane Calvino ha effettivamente trascorso una parte della Resistenza - che testimonia senza dubbio la volontà dell’autore di raccontare e lasciare traccia di una delle esperienze più fondanti della propria vita; dall’altro una certa propensione al linguaggio fiabesco, d’avventura, e la tendenza dei suoi personaggi a dubitare della realtà che si presenta alla vista, a intravedere dietro la superficie delle cose altre storie e altre possibilità.
           </p>
           <div className={SheetStyles.sideContent}>
-            <img className={SheetStyles.image+' '+SheetStyles.image100w} src="https://via.placeholder.com/150" style={{border:'0.5px solid #333333'}} />
+            <img className={SheetStyles.image+' '+SheetStyles.image100w} src={window.devicePixelRatio>1?map2x:map1x} style={{border:'0px solid #333333', borderRadius: 3}} />
             <p className={SheetStyles.caption}>
-              Mappa
+              Mappa dei luoghi presenti in «Paura sul sentiero»: le tappe del percorso di Binda sono collegate dalle frecce, gli altri sono luoghi nominati ma non visitati.
             </p>
           </div>
         </div>
