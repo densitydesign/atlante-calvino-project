@@ -6,6 +6,10 @@
   margin-top: 3rem;
 }
 
+.main li{
+  font-size: var(--text-size);
+}
+
 .gridRow {
   /* background-color: rgb(234, 255, 248); */
   grid-column: 2 / span 22;
@@ -56,8 +60,6 @@
 .paragraphBig {
   grid-column: 1 / span 15;
 }
-
-
 
 .paragraphCentered {
   grid-column: 4 / span 7;

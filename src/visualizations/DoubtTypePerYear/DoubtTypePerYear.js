@@ -22,8 +22,8 @@ export default class DoubtTypePerYear extends React.Component
     const style = {
       width: '100%',
       height: '300px',
-      marginTop: '2em',
-      marginBottom: '4em'
+      marginTop: '1em',
+      marginBottom: '2em'
     }
     return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
   }

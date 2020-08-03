@@ -19,13 +19,13 @@ class VClass {
       left: 40
     });
 
-    var width = document.body.clientWidth - margin.left - margin.right;
+    var width = document.body.clientWidth;
     var height = 300 - margin.top - margin.bottom;
 
     var x, y;
 
     var svg = d3.select(el)
-      .attr('width', width + margin.left + margin.right)
+      .attr('width', width)
       .attr('height', height + margin.top + margin.bottom);
 
     let data = input_data
@@ -65,7 +65,7 @@ console.log("data", data);
       .domain(doubtLabels);
 
     x = d3.scaleLinear()
-      .domain(d3.extent(data, d => d.date))
+      .domain((d3.extent(data, d => d.date)))
       .range([margin.left, width - margin.right])
 
 
