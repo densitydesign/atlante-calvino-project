@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "851307ffa438279ac4ee5870420ce6ec",
+    "revision": "2f06769e565d1b53fda44fee00c87f8b",
     "url": "/atlante-calvino-project/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/css/4.669295d1.chunk.css"
   },
   {
-    "revision": "dbb3f23d5ba83b5d6401",
+    "revision": "b76b40dd7b89737c4783",
     "url": "/atlante-calvino-project/static/css/main.a293b990.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/js/4.3bf56277.chunk.js"
   },
   {
-    "revision": "dbb3f23d5ba83b5d6401",
-    "url": "/atlante-calvino-project/static/js/main.a918bcea.chunk.js"
+    "revision": "b76b40dd7b89737c4783",
+    "url": "/atlante-calvino-project/static/js/main.9575f8d9.chunk.js"
   },
   {
     "revision": "70257fffe40538b154ae",
@@ -232,12 +232,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/media/legenda_04.19e2eb54.svg"
   },
   {
-    "revision": "0e558c2460c5d5be86ddbbeefc706ee7",
-    "url": "/atlante-calvino-project/static/media/mappa-ver02@1x.0e558c24.png"
+    "revision": "d9e80d041f309ddc24512bbae5793a42",
+    "url": "/atlante-calvino-project/static/media/mappa-ver02@1x.d9e80d04.png"
   },
   {
-    "revision": "8ae2799e9de1de6f5571d0483f1b3db6",
-    "url": "/atlante-calvino-project/static/media/mappa-ver02@2x.8ae2799e.png"
+    "revision": "c9fc929df89d009764dabfbd1896cf95",
+    "url": "/atlante-calvino-project/static/media/mappa-ver02@2x.c9fc929d.png"
   },
   {
     "revision": "a079b5d24fb8cd6f444869bbb893432b",
