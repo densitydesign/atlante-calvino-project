@@ -20,6 +20,16 @@ function yScale(level) {
   return WORM_MARGIN_TOP + LEVEL_HEIGHT * level
 }
 
+function makeItemFill(item) {
+  if (item.ghost) {
+    return 'rgba(95, 102, 100, 0.5)'
+  }
+  if (item.movement === 'FALSE') {
+    return item.color
+  }
+  return `url(${makeItemGradientUrl(item)})`
+}
+
 function makeItemGradientUrl(item) {
   let direction = ''
   if (item.direction === 'forward') {
@@ -50,13 +60,15 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
       }
     })
   }, [data, width])
+  console.log('W', dataWorms)
 
   const maxLevel = 3
 
   const labalesData = useMemo(() => {
     let dataForLabels
-    if (dataWorms.length < 13) {
-      dataForLabels = dataWorms.map((item, i) => {
+    const dataWormsLabeled = dataWorms.filter(d => d.ghost !== true)
+    if (dataWormsLabeled.length < 13) {
+      dataForLabels = dataWormsLabeled.map((item, i) => {
         const x = CHART_PADDING_X + CHART_MARGIN_LEFT + i * 60
         return {
           ...item,
@@ -65,8 +77,8 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
         }
       })
     } else {
-      const mul = width / (dataWorms.length - 1)
-      dataForLabels = dataWorms.map((item, i) => {
+      const mul = width / (dataWormsLabeled.length - 1)
+      dataForLabels = dataWormsLabeled.map((item, i) => {
         const x = CHART_PADDING_X + CHART_MARGIN_LEFT + i * mul
         return {
           ...item,
@@ -285,10 +297,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                     width={item.x2 - item.x1}
                     height={MINI_RADIUS}
                     style={{
-                      fill:
-                        item.movement === 'FALSE'
-                          ? item.color
-                          : `url(${makeItemGradientUrl(item)})`,
+                      fill: makeItemFill(item),
                     }}
                     y={yScale(item.level) - MINI_RADIUS / 2}
                   />
@@ -310,7 +319,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                   </text>
                 </g>
               ))}
-              {datum.dataLevelWorms.map((item) => (
+              {datum.dataLevelWorms.filter(d => d.ghost !== true).map((item) => (
                 <g key={item.occurrence_location}>
                   <circle
                     fill="black"

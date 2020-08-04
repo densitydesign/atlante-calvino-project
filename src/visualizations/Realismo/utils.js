@@ -27,44 +27,59 @@ export const racconti = uniqBy(realismoData, 'title').map((item) => ({
 
 export const dataset = groupBy(realismoDataNormalized, 'title')
 
-const maxLength = Math.max(...realismoData.map(d => +d.length).filter(Boolean))
+const maxLength = Math.max(
+  ...realismoData.map((d) => +d.length).filter(Boolean)
+)
 export const detailWormsCircles = mapValues(dataset, (data) => {
-
-  // // Filled the pie
-  // const dataFilled = data.reduce((filledWithCream, calv0, i) => {
-  //   if (i === 0) {
-  //     // We are about to start
-  //     if (+calv0.start > 0) {
-  //       // The first piece of our story start from n0000where
-  //       // filled the start
-  //       filledWithCream.push({
-  //         ...calv0,
-  //         level: 0,
-  //         occurrence_location: 0,
-  //         start: 0,
-  //         end: calv0.start - 1,
-  //         ghost: true,
-  //       })
-  //     }
-  //   } else {
-  //     // Rewind back 2 prev
-  //     const prevCalvix = data[i - 1]
-  //     if (data.start > prevCalvix.end + 1) {
-  //       filledWithCream.push({
-  //         ...calv0,
-  //         level: 0,
-  //         occurrence_location: prevCalvix.end + 1,
-  //         start: prevCalvix.end + 1,
-  //         end: calv0.start - 1,
-  //         ghost: true,
-  //       })
-  //     }
+  // Fill the pie
+  const dataFilled = data.reduce((filledWithCream, calv0, i) => {
+    if (i === 0) {
+      // We are about to start
+      if (+calv0.start > 0) {
+        // The first piece of our story start from n0000where
+        // filled the start
+        filledWithCream.push({
+          ...calv0,
+          level: 0,
+          occurrence_location: 0,
+          start: 0,
+          end: Number(calv0.start) - 1,
+          ghost: true,
+        })
+      }
+    } else {
+      // Rewind back 2 prev
+      const prevCalvix = data[i - 1]
+      if (calv0.start > Number(prevCalvix.end) + 1) {
+        filledWithCream.push({
+          ...calv0,
+          level: 0,
+          occurrence_location: Number(prevCalvix.end) + 1,
+          start: Number(prevCalvix.end) + 1,
+          end: Number(calv0.start) - 1,
+          ghost: true,
+        })
+      }
+    }
+    // Add item
+    filledWithCream.push(calv0)
+    return filledWithCream
+  }, [])
+  // if (dataFilled.length > 0) {
+  //   const lastData = dataFilled[dataFilled.length - 1]
+  //   if (lastData.end < lastData.length) {
+  //     dataFilled.push({
+  //       ...lastData,
+  //       level: 0,
+  //       occurrence_location: lastData.end + 1,
+  //       start: lastData.end + 1,
+  //       end: lastData.length,
+  //       ghost: true,
+  //     })
   //   }
-  //   // Add item
-  //   filledWithCream.push(calv0)
-  //   return filledWithCream
-  // }, [])
-  return data.map(item => ({
+  // }
+
+  return dataFilled.map((item) => ({
     ...item,
     startTotalNorm: +item.start / maxLength,
     endTotalNorm: +item.end / maxLength,
@@ -139,7 +154,7 @@ function calculateDegs() {
   const byYear = groupBy(raccontiDegs, 'year')
   const yearsArcs = uniqueYears.map((year) => {
     const data = byYear[year]
-    const startAngleDeg = (data[0].rotation + 90 - unitDeg / 2)
+    const startAngleDeg = data[0].rotation + 90 - unitDeg / 2
     const startAngle = (startAngleDeg / 360) * (2 * Math.PI)
 
     const endAngle =
