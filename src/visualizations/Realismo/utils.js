@@ -29,6 +29,41 @@ export const dataset = groupBy(realismoDataNormalized, 'title')
 
 const maxLength = Math.max(...realismoData.map(d => +d.length).filter(Boolean))
 export const detailWormsCircles = mapValues(dataset, (data) => {
+
+  // // Filled the pie
+  // const dataFilled = data.reduce((filledWithCream, calv0, i) => {
+  //   if (i === 0) {
+  //     // We are about to start
+  //     if (+calv0.start > 0) {
+  //       // The first piece of our story start from n0000where
+  //       // filled the start
+  //       filledWithCream.push({
+  //         ...calv0,
+  //         level: 0,
+  //         occurrence_location: 0,
+  //         start: 0,
+  //         end: calv0.start - 1,
+  //         ghost: true,
+  //       })
+  //     }
+  //   } else {
+  //     // Rewind back 2 prev
+  //     const prevCalvix = data[i - 1]
+  //     if (data.start > prevCalvix.end + 1) {
+  //       filledWithCream.push({
+  //         ...calv0,
+  //         level: 0,
+  //         occurrence_location: prevCalvix.end + 1,
+  //         start: prevCalvix.end + 1,
+  //         end: calv0.start - 1,
+  //         ghost: true,
+  //       })
+  //     }
+  //   }
+  //   // Add item
+  //   filledWithCream.push(calv0)
+  //   return filledWithCream
+  // }, [])
   return data.map(item => ({
     ...item,
     startTotalNorm: +item.start / maxLength,

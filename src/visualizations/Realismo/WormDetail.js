@@ -20,6 +20,16 @@ function yScale(level) {
   return WORM_MARGIN_TOP + LEVEL_HEIGHT * level
 }
 
+function makeItemGradientUrl(item) {
+  let direction = ''
+  if (item.direction === 'forward') {
+    direction = '-forward'
+  } else if (item.direction === 'backward') {
+    direction = '-backward'
+  }
+  return `#worm-detail-${item.category}${direction}`
+}
+
 function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
   const width = allWidth - CHART_PADDING_X * 2 - CHART_MARGIN_LEFT
   const dataWorms = useMemo(() => {
@@ -143,6 +153,30 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
           </stop>
           <stop offset={'100%'} stopColor={'#ffc33e'} />
         </linearGradient>
+        <linearGradient id="worm-detail-indoor-backward">
+          <stop offset={'0%'} stopColor={'#ffc33e'} />
+          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+            <animate
+              attributeName="offset"
+              values="1;0"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#ffc33e'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-indoor-forward">
+          <stop offset={'0%'} stopColor={'#ffc33e'} />
+          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+            <animate
+              attributeName="offset"
+              values="0;1"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#ffc33e'} />
+        </linearGradient>
         <linearGradient id="worm-detail-outdoor">
           <stop offset={'0%'} stopColor={'#00c97c'} />
           <stop offset={'50%'} stopColor={'#63FFC3'}>
@@ -155,6 +189,30 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
           </stop>
           <stop offset={'100%'} stopColor={'#00c97c'} />
         </linearGradient>
+        <linearGradient id="worm-detail-outdoor-forward">
+          <stop offset={'0%'} stopColor={'#00c97c'} />
+          <stop offset={'50%'} stopColor={'#63FFC3'}>
+            <animate
+              attributeName="offset"
+              values="0;1"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#00c97c'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-outdoor-backward">
+          <stop offset={'0%'} stopColor={'#00c97c'} />
+          <stop offset={'50%'} stopColor={'#63FFC3'}>
+            <animate
+              attributeName="offset"
+              values="1;0"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#00c97c'} />
+        </linearGradient>
         <linearGradient id="worm-detail-transportation">
           <stop offset={'0%'} stopColor={'#4a4aff'} />
           <stop offset={'50%'} stopColor={'#E3E3FF'}>
@@ -162,6 +220,30 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               attributeName="offset"
               values="0;1;0"
               dur="8s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#4a4aff'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-transportation-forward">
+          <stop offset={'0%'} stopColor={'#4a4aff'} />
+          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+            <animate
+              attributeName="offset"
+              values="0;1"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+          <stop offset={'100%'} stopColor={'#4a4aff'} />
+        </linearGradient>
+        <linearGradient id="worm-detail-transportation-backward">
+          <stop offset={'0%'} stopColor={'#4a4aff'} />
+          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+            <animate
+              attributeName="offset"
+              values="1;0"
+              dur="4s"
               repeatCount="indefinite"
             ></animate>
           </stop>
@@ -206,7 +288,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                       fill:
                         item.movement === 'FALSE'
                           ? item.color
-                          : `url(#worm-detail-${item.category})`,
+                          : `url(${makeItemGradientUrl(item)})`,
                     }}
                     y={yScale(item.level) - MINI_RADIUS / 2}
                   />
