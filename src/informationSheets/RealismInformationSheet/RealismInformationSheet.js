@@ -28,7 +28,10 @@ class RealismInformationSheet extends Component {
           <div className={SheetStyles.sideContent}>
             <img className={SheetStyles.image+' '+SheetStyles.image100w} src={window.devicePixelRatio>1?map2x:map1x} style={{border:'0px solid #333333', borderRadius: 3}} />
             <p className={SheetStyles.caption}>
-              Mappa dei luoghi presenti in «Paura sul sentiero»: le tappe del percorso di Binda sono collegate dalle frecce, gli altri sono luoghi nominati ma non visitati.
+              I luoghi del racconto: le tappe del percorso di Binda sono collegate dalle frecce, gli altri luoghi sono nominati nel racconto ma non attraversati.
+            </p>
+            <p className={SheetStyles.caption}>
+              <a href="https://www.openstreetmap.org/#map=14/43.9894/7.7688" target="_blank" rel="noopener noreferrer" >Vai a una mappa più dettagliata</a>
             </p>
           </div>
         </div>
