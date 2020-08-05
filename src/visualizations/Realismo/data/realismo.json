@@ -581,7 +581,7 @@
 ,
 {"id":"L00534","fonte_id":"S085","title":"Un viaggio con le mucche","volume_primo":"I racconti","pubblicazioni_id":"«Il Caffè»;V006;V011","pubblicazioni_titolo":"«Il Caffè»;I racconti;Marcovaldo","year":"1956","length":"8752","start":"2288","end":"2323","llll":"35","occurrence_location":"2323","occurrence":"via","category":"outdoor","level":"0","movement":"TRUE","direction":"forward","parent_name":"","parent_id":""}
 ,
-{"id":"L00534","fonte_id":"S085","title":"Un viaggio con le mucche","volume_primo":"I racconti","pubblicazioni_id":"«Il Caffè»;V006;V011","pubblicazioni_titolo":"«Il Caffè»;I racconti;Marcovaldo","year":"1956","length":"2324","start":"2324","end":"4413","llll":"2089","occurrence_location":"2323","occurrence":"via","category":"outdoor","level":"0","movement":"TRUE","direction":"backward","parent_name":"","parent_id":""}
+{"id":"L00534","fonte_id":"S085","title":"Un viaggio con le mucche","volume_primo":"I racconti","pubblicazioni_id":"«Il Caffè»;V006;V011","pubblicazioni_titolo":"«Il Caffè»;I racconti;Marcovaldo","year":"1956","length":"8752","start":"2324","end":"4413","llll":"2089","occurrence_location":"2323","occurrence":"via","category":"outdoor","level":"0","movement":"TRUE","direction":"backward","parent_name":"","parent_id":""}
 ,
 {"id":"L00533","fonte_id":"S085","title":"Un viaggio con le mucche","volume_primo":"I racconti","pubblicazioni_id":"«Il Caffè»;V006;V011","pubblicazioni_titolo":"«Il Caffè»;I racconti;Marcovaldo","year":"1956","length":"8752","start":"4414","end":"4721","llll":"307","occurrence_location":"4545","occurrence":"seminterrato","category":"indoor","level":"0","movement":"FALSE","direction":"","parent_name":"","parent_id":""}
 ,

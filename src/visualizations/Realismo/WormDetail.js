@@ -60,7 +60,6 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
       }
     })
   }, [data, width])
-  console.log('W', dataWorms)
 
   const maxLevel = 3
 

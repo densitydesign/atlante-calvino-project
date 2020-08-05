@@ -6,6 +6,7 @@ import range from 'lodash/range'
 import find from 'lodash/find'
 import mapValues from 'lodash/mapValues'
 import { extent } from 'd3-array'
+import { sortBy } from 'lodash'
 
 const realismoDataNormalized = realismoData.map((item) => ({
   ...item,
@@ -65,19 +66,19 @@ export const detailWormsCircles = mapValues(dataset, (data) => {
     filledWithCream.push(calv0)
     return filledWithCream
   }, [])
-  // if (dataFilled.length > 0) {
-  //   const lastData = dataFilled[dataFilled.length - 1]
-  //   if (lastData.end < lastData.length) {
-  //     dataFilled.push({
-  //       ...lastData,
-  //       level: 0,
-  //       occurrence_location: lastData.end + 1,
-  //       start: lastData.end + 1,
-  //       end: lastData.length,
-  //       ghost: true,
-  //     })
-  //   }
-  // }
+  if (dataFilled.length > 0) {
+    const lastData = dataFilled[dataFilled.length - 1]
+    if (lastData.end < lastData.length) {
+      dataFilled.push({
+        ...lastData,
+        level: 0,
+        occurrence_location: lastData.end + 1,
+        start: lastData.end + 1,
+        end: lastData.length,
+        ghost: true,
+      })
+    }
+  }
 
   return dataFilled.map((item) => ({
     ...item,
@@ -88,6 +89,19 @@ export const detailWormsCircles = mapValues(dataset, (data) => {
   }))
 })
 
+function intersectionCircleItem(item, startNorm, endNorm) {
+  if (endNorm < item.startNorm) {
+    return 0
+  }
+  if (startNorm > item.endNorm) {
+    return 0
+  }
+  const diffStart = Math.max(0, item.startNorm - startNorm)
+  const diffEnd = Math.max(0, endNorm - item.endNorm)
+
+  return endNorm - startNorm - diffStart - diffEnd
+}
+
 export function datasetToCircles(n) {
   return mapValues(dataset, (data) => {
     const circleWidth = 1 / n
@@ -95,11 +109,18 @@ export function datasetToCircles(n) {
     const circles = range(n).reduce((acc, item, i) => {
       const startNorm = i * circleWidth
       const endNorm = (i + 1) * circleWidth
-      const out =
-        find(
-          data,
-          (item) => item.startNorm <= startNorm && item.endNorm >= endNorm
-        ) || {}
+      let interectionItems = sortBy(data, (item) =>
+        intersectionCircleItem(item, startNorm, endNorm)
+      ).reverse()
+      let out
+      if (
+        interectionItems.length > 0 &&
+        intersectionCircleItem(interectionItems[0], startNorm, endNorm) > 0
+      ) {
+        out = interectionItems[0]
+      } else {
+        out = {}
+      }
       let place = false
       if (
         out.occurrence &&
