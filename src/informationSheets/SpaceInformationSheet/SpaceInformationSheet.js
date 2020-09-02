@@ -27,7 +27,7 @@ export default class SpaceInformationSheet extends React.Component
           <h4 className={SheetStyles.titleH4}>Tappa 1 > luoghi</h4>
           <h1 className={SheetStyles.titleH1}>Tassonomia dei luoghi inventati</h1>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 6'}}  src={legenda}/>
-                <img className = {SheetStyles.image} style={{gridColumn:'1 / span 22'}} src={inventati}/>
+                <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={inventati}/>
                   <img className={SheetStyles.legend}/>
                 <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                       <p className={SheetStyles.paragraphBig}>
@@ -71,7 +71,7 @@ export default class SpaceInformationSheet extends React.Component
                     Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
 </div>
   <div className={SheetStyles.gridRow}>
-  <img className={SheetStyles.sideContent} style = {{gridColumn:'9 / span 6', position:'sticky', top:'calc(var(--navigation-height)'}} src={zoom_01}/>
+  <img className={SheetStyles.sideContent} style = {{gridColumn:'9 / span 4', position:'sticky', top:'calc(var(--navigation-height)'}} src={zoom_01}/>
                     <p className={SheetStyles.paragraph}>
                       <span style = {{margin:'4em', color:'#5151fc', fontSize:'1.2rem', lineHeight:'1rem'}}>
                       <em>"C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
@@ -88,7 +88,7 @@ export default class SpaceInformationSheet extends React.Component
                     <p className={SheetStyles.paragraph}>
                     Un discorso diverso, ma non così distante, può essere fatto per le Città invisibili, l’opera che raccoglie il maggior numero di ambientazioni fantastiche. Le varie Eufemia, Zora, Despina sembrano così rarefatte che è facile credere di trovarsi infine fuori dal tempo e dallo spazio. Invece, anche in questo caso, Calvino non rinuncia a una cornice storica, poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.
                     </p>
-                    <img className={SheetStyles.image} style = {{gridColumn:'9 / span 6', height:'auto'}} src={zoom_02}/>
+                    <img className={SheetStyles.image} style = {{gridColumn:'9 / span 4', height:'auto'}} src={zoom_02}/>
 
                       </div>
 
@@ -99,7 +99,7 @@ export default class SpaceInformationSheet extends React.Component
                     la diffusione di luoghi inventati è decisamente inferiore.
                     Tuttavia, come mostra la visualizzazione, ci sono alcune interessanti zone di concentrazione,
                     una in particolare più rilevante delle altre.</p>
-                    <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7', height:'auto'}} src={zoom_04}/>
+                    <img className={SheetStyles.image} style = {{gridColumn:'1 / span 4', height:'auto'}} src={zoom_04}/>
                     <p className={SheetStyles.paragraph}>
                     Tra la fine del 1953 e l’inizio del 1954, dopo aver pubblicato sull’«Unità» di Torino il primo blocco di storie che andranno a comporre Marcovaldo, Calvino scrive una serie di testi brevi di natura molto diversa, accomunati dall’incedere favolistico e dalla presenza di ambientazioni fantastiche. Due di questi compaiono ancora sull’edizione torinese dell’«Unità»; gli altri tre, scritti l’anno successivo, sono pubblicati sul settimanale «Il Contemporaneo» in una rubrica intitolata I viaggi di Gulliver all’interno della quale Calvino raccolse alcuni apologhi politici con riferimenti evidenti all’attualità.
                     Come evidenziato da Francesca Serra ciò che accomuna tutti questi testi è la presenza di un’ambientazione unidimensionale – un generico paese senza nome o luoghi d’invenzione come Sant’Alcide, Marzalia, Panduria, Cocinindia o Atrabilia – «dedita a una sola cosa, che sottostà a una sola regola, che conosce un solo modo d’essere». Nella quasi totalità dei casi questa situazione iniziale viene messa a dura prova da un accadimento inatteso, che scombina l’ordine delle cose e da cui si ricava spesso un insegnamento o una morale.

@@ -27,7 +27,7 @@ export default class DoubtInformationSheet extends React.Component
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
                   <img className={SheetStyles.legend}/>
                   </div>
-                  <div className={SheetStyles.gridRow}>
+                  <div id="mainviz" className={SheetStyles.gridRow}>
 
                   <DoubtTypePerYearWrapper  />
 

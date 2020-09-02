@@ -58,7 +58,7 @@
 }
 
 .paragraphBig {
-  grid-column: 1 / span 15;
+  grid-column: 1 / span 12;
 }
 
 .paragraphCentered {

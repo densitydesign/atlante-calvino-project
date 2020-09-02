@@ -19,7 +19,7 @@ class VClass {
       left: 40
     });
 
-    var width = document.body.clientWidth;
+    var width = d3.select("#mainviz").node().getBoundingClientRect().width;
     var height = 300 - margin.top - margin.bottom;
 
     var x, y;
@@ -120,7 +120,7 @@ console.log("data", data);
 
     const stream = svg.append("g");
 
-console.log("series", series);
+//console.log("series", series);
 
     stream
       .selectAll("path")
@@ -179,7 +179,7 @@ console.log("series", series);
       .attr("stroke", "lightgray")
       .attr("fill", "white")
       .attr("opacity", 0.7)
-      .attr("x", 50)
+      .attr("x", 20)
       .attr("y", 50)
       .attr("width", 110)
       .attr("height", 107);
@@ -188,35 +188,7 @@ console.log("series", series);
       .append("text")
       .attr("x", 55)
       .attr("y", 70);
-/*
-    tooltip
-      .append("rect")
-      .attr("fill", "green")
-      .attr("x", 50)
-      .attr("y", 53)
-      .attr("width", 8)
-      .attr("height", 8);
 
-    let nc_text = tooltip
-      .append("text")
-      .attr("x", 65)
-      .attr("y", 60)
-      .attr("fill", "black");
-
-    tooltip
-      .append("rect")
-      .attr("fill", "cyan")
-      .attr("x", 50)
-      .attr("y", 63)
-      .attr("width", 8)
-      .attr("height", 8);
-
-    let na_text = tooltip
-      .append("text")
-      .attr("x", 65)
-      .attr("y", 70)
-      .attr("fill", "black");
-*/
     const ca_text = append_tooltip_entry(tooltip, 0, color("ca"));
     const cc_text = append_tooltip_entry(tooltip, 1, color("cc"));
     const na_text = append_tooltip_entry(tooltip, 2, color("na"));
@@ -224,9 +196,9 @@ console.log("series", series);
 
     function displayTooltip()
     {
-      console.log("d3.mouse(this)", d3.mouse(this));
-//      console.log(y.invert(d3.mouse(this)[1]));
-      console.log("x.invert(d3.mouse(this)[0]", x.invert(d3.mouse(this)[0]));
+      //console.log("d3.mouse(this)", d3.mouse(this));
+      //console.log(y.invert(d3.mouse(this)[1]));
+      //console.log("x.invert(d3.mouse(this)[0]", x.invert(d3.mouse(this)[0]));
 
       const year = Math.floor(x.invert(d3.mouse(this)[0])).toString();
 
@@ -246,9 +218,13 @@ console.log("series", series);
         .attr("display", "block")
         .attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
 
+
+      const xPosition = d3.mouse(this)[0] < width/2 ? d3.mouse(this)[0] : d3.mouse(this)[0] - 150;
+
+
       tooltip
         .attr("display", "block")
-        .attr("transform", "translate(" + d3.mouse(this)[0] + ", 0)");
+        .attr("transform", "translate(" + xPosition + ", 0)");
     }
 
     function hideTooltip()

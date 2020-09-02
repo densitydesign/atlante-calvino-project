@@ -20,7 +20,6 @@ export default class DoubtTypePerYear extends React.Component
   render()
   {
     const style = {
-      width: '100%',
       height: '300px',
       marginTop: '1em',
       marginBottom: '2em'
