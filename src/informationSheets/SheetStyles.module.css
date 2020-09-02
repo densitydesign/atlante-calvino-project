@@ -69,7 +69,7 @@
 
 .image {
   max-width: 100%;
-  margin-bottom: 0.3rem; 
+  margin-bottom: 0.3rem;
 }
 
 .image100w {
@@ -82,8 +82,19 @@
   text-align: center;
 }
 
+.captionLeft {
+  font-size: 0.8571428571rem;
+  text-align: left;
+}
+
 .sideContent {
   grid-column: 8 / span 5;
+}
+
+.legend{
+    margin-top: 3em;
+    margin-bottom: 4rem;
+
 }
 
 .translucentBackground {
