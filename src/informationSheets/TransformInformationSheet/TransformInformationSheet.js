@@ -38,15 +38,20 @@ class TransformInformationSheet extends Component {
             <h4 className={SheetStyles.titleH4}>Tappa 2 > trasformare</h4>
             <h1 className={SheetStyles.titleH1}>L'orizzonte geografico e letterario in Calvino</h1>
             <h2 className={SheetStyles.titleH2}>L'idea</h2>
-                  <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12',width:'100%'}} src={inquadramento}/>
+                  <img className = {SheetStyles.image} style={{gridColumn:'1 / span 22',width:'100%'}} src={inquadramento}/>
                     <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 8'}}  src={legenda_0}/>
                   <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                   <h3 className={SheetStyles.titleH3}>Geoletteratura</h3>
             <p className={SheetStyles.paragraph}>
-
-            Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
-
-  Questa scheda nasce come approfondimento o spin-off del lavoro di rappresentazione di tutti i luoghi del corpus (la matrice). L’idea di partenza è quella di concentrarsi soltanto sulla categoria delle ambientazioni specifiche terrestri, mostrando come queste coincidano abbastanza meticolosamente con la biografia geografica di Calvino. In ragione di ciò la scheda si propone anche di evidenziare come, nel passaggio dagli anni Quaranta del ‘900 agli anni Ottanta, l’orizzonte geografico dello scrittore si amplia progressivamente, arrivando alla fine a comprendere tutto il mondo.
+          La categoria dei luoghi terrestri localizzabili, rielaborata a partire dalla definizione inglese di imported places (Piatti et al. 2009), è l’unica che per caratteristiche intrinseche si presta a una rappresentazione cartografica. Si tratta infatti di ambientazioni localizzabili su una mappa, poiché «the setting corresponds with the geographical reality by realistically portraying the surrounding» (Reuschel-Hurni 2011, 296).
+          Analizzando il tempo della storia (cfr. Genette 1972) dei testi del corpus calviniano che presentano ambientazioni di questo tipo è necessario operare un’ulteriore distinzione in tre tipologie:
+          <ol>
+          <li>ambientazioni di testi in cui il tempo della storia è collocato nella contemporaneità, vale a dire nel Novecento;</li>
+            <li>ambientazioni di testi in cui il tempo della storia è collocato nel passato o in un tempo indefinito (ad es. Il visconte dimezzato è ambientato al tempo di Carlo Magno, Le città invisibili nel 1200);</li>
+            <li>ambientazioni di testi in cui presente e passato si fondono in un tempo della storia misto (ad es. nel racconto I cristalli l’ambientazione pre-cosmica e primordiale presenta riferimenti geografici della New York contemporanea).</li>
+          </ol>
+            Questo approfondimento si propone di mostrare tutte e tre le tipologie di ambientazione, con una particolare predilezione per quelle che intrattengono un rapporto evidente con il Novecento. L’obiettivo primario, infatti, è dimostrare come queste ultime coincidano abbastanza meticolosamente con la geografia biografica di Calvino. Per evidenziare al meglio questo aspetto, si è scelto di far seguire a una prima visione di insieme di tutti i luoghi terrestri localizzabili del corpus quattro differenti mappe che mostrano una selezione degli stessi luoghi sulla base del decennio di pubblicazione delle opere (1945-1955; 1956-1965; 1966-1975; 1976-1984).
+            È allora piuttosto significativo rilevare come, nel passaggio dagli anni Quaranta agli anni Ottanta del Novecento, l’orizzonte geografico dello scrittore si ampli progressivamente, arrivando infine a comprendere tutto il mondo.
 </p>
 
   <img className = {SheetStyles.sideContent} src={table}/>
@@ -107,6 +112,28 @@ class TransformInformationSheet extends Component {
 </Carousel>
 </div>
   </div>
+
+  <div className={SheetStyles.gridRow}>
+
+    <ol className={SheetStyles.paragraph+' '+SheetStyles.references}>
+        <li className={SheetStyles.referenceItem}>
+        Frank Zipfel, Fiktion, Fiktivität, Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der
+        Literaturwissenschaft, Erich Schmidt Verlag, Berlin 2001. Barbara Piatti, Die Geographie der Literatur. Schauplätze,
+        Handlungsräume, Raumphantasien, Wallstein, Göttingen 2008.
+        </li>
+        <li className={SheetStyles.referenceItem}>
+        Cfr. Barbara Patti et al, Mapping Literature: Towards a Geography of Fiction, in William Cartwright, Georg Gartner,
+        Antje Lehn (a cura di), Cartography And art, Springer, Berlin 2009, pp. 177-199. O anche Anne-Kathrin Reuschel, Lorenz
+        Hurni, Mapping Literature: Visualisation of Spatial Uncertainty in Fiction, «The Cartographic Journal», vol. 48, n. 4, 2011,
+        p. 296.</li>
+        <li className={SheetStyles.referenceItem}>
+        Francesca Serra, Calvino, Salerno, Roma 2006, p. 322.</li>
+  <li className={SheetStyles.referenceItem}>
+         «Calvino è sempre stato un narratore che non sente il romanzo, che persino ne diffida. Narratore anti-romanzesco: nel senso che la problematica sociale e morale, la scienza della vita quotidiana come microstoriografia, che caratterizzano il romanzo moderno, sono sempre stati fuori del suo orizzonte».
+         Alfonso Berardinelli, Calvino moralista. Ovvero restare sani dopo la fine del mondo, in «Diario», VII, 9, 1991, p. 39</li>
+    </ol>
+    </div>
+
 
                       <div className={SheetStyles.gridRow}>
                       <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="VISUALIZZAZIONE PRINCIPALE" route="/Process/transforming" /></div>

@@ -6,6 +6,10 @@
   margin-top: 3rem;
 }
 
+.main li{
+  font-size: var(--text-size);
+}
+
 .gridRow {
   /* background-color: rgb(234, 255, 248); */
   grid-column: 2 / span 22;
@@ -52,6 +56,11 @@
 .paragraph {
   grid-column: 1 / span 7;
 }
+
+.paragraphBig {
+  grid-column: 1 / span 12;
+}
+
 .paragraphCentered {
   grid-column: 4 / span 7;
 }
@@ -101,6 +110,12 @@
   backdrop-filter: blur(10px);
   background-color: rgba(255,255,255,0.25);
 }
+
+sup{
+  color:var(--dark-blue);
+  font-size: 60%;
+}
+
 
 @media (min-width: 1280px) {
   .gridRow {
