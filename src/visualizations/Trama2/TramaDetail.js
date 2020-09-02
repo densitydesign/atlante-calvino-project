@@ -8,21 +8,37 @@ import { groupBy, countBy, sortBy, orderBy, mapValues } from 'lodash'
 
 const TRESHOLD_LABEL = 100
 function calculateLabelScore(data, i) {
-  let score = 0
+  let score = null
   const datum = data[i]
   for (let j = i + 1; j < data.length; j++) {
-    const len = Math.abs(data[j].x - datum.x)
+    const lenX = Math.abs(data[j].x - datum.x)
+    const lenY = Math.abs(data[j].y - datum.y)
+    const len = Math.sqrt(lenX * lenX + lenY * lenY)
+
     if (len < TRESHOLD_LABEL) {
-      score += parseInt(TRESHOLD_LABEL - len)
-    } else {
+      if (score === null) {
+        score = parseInt(len)
+      } else {
+        score = Math.min(score, parseInt(TRESHOLD_LABEL - len))
+      }
+    }
+    if (lenX > TRESHOLD_LABEL) {
       break
     }
   }
   for (let j = i - 1; j >= 0; j--) {
-    const len = Math.abs(data[j].x - datum.x)
+    const lenX = Math.abs(data[j].x - datum.x)
+    const lenY = Math.abs(data[j].y - datum.y)
+    const len = Math.sqrt(lenX * lenX + lenY * lenY)
+
     if (len < TRESHOLD_LABEL) {
-      score += parseInt(TRESHOLD_LABEL - len)
-    } else {
+      if (score === null) {
+        score = parseInt(len)
+      } else {
+        score = Math.min(score, parseInt(TRESHOLD_LABEL - len))
+      }
+    }
+    if (lenX > TRESHOLD_LABEL) {
       break
     }
   }
@@ -116,21 +132,28 @@ export default function TramaDetail({
     if (fullData === null) {
       return null
     }
-    const countData = countBy(fullData, (x) => x.motivo_type)
-    const maxCount = Math.max(...Object.values(countData))
+    // const countData = countBy(fullData, (x) => x.motivo_type)
+    // const maxCount = Math.max(...Object.values(countData))
 
     const dataWithScore = fullData.map((labelData, i) => ({
       ...labelData,
-      score:
-        parseInt((calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) / maxCount),
+      // score: parseInt(
+      //   (calculateLabelScore(fullData, i) * countData[labelData.motivo_type]) /
+      //     maxCount
+      // ),
+      score: calculateLabelScore(fullData, i),
     }))
 
     const byTypeWithScore = dataWithScore.reduce(
       (acc, datum, i) => ({
         ...acc,
-        [datum.motivo_type]: orderBy([{ datum, score: datum.score, i }].concat(
-          acc[datum.motivo_type] ?? []
-        ), 'score', 'desc'),
+        [datum.motivo_type]: orderBy(
+          [{ datum, score: datum.score, i }].concat(
+            acc[datum.motivo_type] ?? []
+          ),
+          'score',
+          'desc'
+        ),
       }),
       []
     )
@@ -138,7 +161,7 @@ export default function TramaDetail({
     const keepByType = mapValues(byTypeWithScore, (dataWithScore) => {
       const keep = [...dataWithScore]
       dataWithScore.forEach((datum, i) => {
-        if (datum.score > 90 && keep.length > 1) {
+        if (datum.score !== null && datum.score < 50 && keep.length > 1) {
           keep.splice(keep.indexOf(datum), 1)
         }
       })
@@ -146,9 +169,9 @@ export default function TramaDetail({
     })
 
     const finalLabels = [...dataWithScore]
-    Object.keys(keepByType).forEach(key => {
+    Object.keys(keepByType).forEach((key) => {
       const keep = keepByType[key]
-      keep.forEach(datum => {
+      keep.forEach((datum) => {
         finalLabels[datum.i] = {
           ...finalLabels[datum.i],
           keepLabel: true,
@@ -157,8 +180,9 @@ export default function TramaDetail({
     })
 
     return finalLabels
-
   }, [fullData])
+
+  const [hoverMotivo, setHoverMotivo] = useState(null)
 
   return (
     <div className="trama2-detail-content">
@@ -176,7 +200,7 @@ export default function TramaDetail({
         {measures && (
           <svg
             style={{
-              height: detailHeight + 80,
+              height: detailHeight + 100,
               width: measures.width,
             }}
           >
@@ -186,10 +210,30 @@ export default function TramaDetail({
               gradientsType={gradientsType}
             />
             <g transform={`translate(0, 80)`}>
+              {/* <defs>
+                <linearGradient
+                  id="racconto-incastonato-gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#F3F3F3" />
+                  <stop offset="50%" stop-color="#dadada" />
+                  <stop offset="100%" stop-color="#F3F3F3" />
+                </linearGradient>
+              </defs> */}
               {raccontiIncastonati &&
                 raccontiIncastonati.map((racconto) => (
                   <g key={racconto.key}>
-                    <line
+                    <rect
+                      y={0}
+                      height={racconto.y}
+                      className="trama2-racconto-incastonato-rect"
+                      x={racconto.x1}
+                      width={racconto.x2 - racconto.x1}
+                    />
+                    {/* <line
                       className="trama2-racconto-incastonato-line"
                       x1={racconto.x1}
                       x2={racconto.x2}
@@ -209,7 +253,7 @@ export default function TramaDetail({
                       x2={racconto.x2}
                       y1={racconto.endY}
                       y2={racconto.y}
-                    />
+                    /> */}
                   </g>
                 ))}
               {subPaths.map((subPath, i) => {
@@ -244,7 +288,19 @@ export default function TramaDetail({
                     element = <circle className="trama2-circle" r={2} />
                   }
                   return (
-                    <g key={i} transform={`translate(${d.x}, ${d.y})`}>
+                    <g
+                      className={`trama2-label-container ${
+                        hoverMotivo === d.motivo_type
+                          ? 'trama2-label-hover'
+                          : hoverMotivo === null
+                          ? ''
+                          : 'trama2-label-not-hover'
+                      }`}
+                      onMouseEnter={() => setHoverMotivo(d.motivo_type)}
+                      onMouseLeave={() => setHoverMotivo(null)}
+                      key={i}
+                      transform={`translate(${d.x}, ${d.y})`}
+                    >
                       {element}
                       {d.keepLabel === true && (
                         <text
@@ -252,7 +308,7 @@ export default function TramaDetail({
                           y={-5}
                           style={{ transform: 'rotate(-30deg)' }}
                         >
-                          {d.motivo_type} {d.score}
+                          {d.motivo_type}
                         </text>
                       )}
                     </g>

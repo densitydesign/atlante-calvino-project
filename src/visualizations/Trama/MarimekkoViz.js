@@ -503,12 +503,12 @@ function MarimekkoViz({
                   >
                     {seq["tipologia"]}
                   </div>
-                  <div className="text-center w-100">
+                  {/* <div className="text-center w-100">
                     <small>
                       <b>{seq["ID SEQ"]}</b> s:{seq["starts_at"]} e:
                       {seq["ends_at"]} {seq["livello"]}
                     </small>
-                  </div>
+                  </div> */}
                 </div>
               ))}
               {!currentTextID && <div className={styles.marimekkoXaxisText}>

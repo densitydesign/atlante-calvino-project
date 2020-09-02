@@ -9,14 +9,16 @@ import React, {
   useImperativeHandle,
   forwardRef,
 } from 'react'
-import { line, curveMonotoneX } from 'd3-shape'
+import { line, curveMonotoneX, curveStep } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { zoom } from 'd3-zoom'
 import { select, selectAll, event as currentEvent } from 'd3-selection'
 
 import range from 'lodash/range'
+import find from 'lodash/find'
+import findIndex from 'lodash/findIndex'
 
-import { splitPath } from './utils'
+import { splitPath, makeScalaMotivoY } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import RaccontoInfoBoxSvg from './RaccontoInfoBoxSvg'
 import Brush, { BRUSH_HANDLE_WIDTH } from './Brush'
@@ -52,7 +54,7 @@ const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
 
 const TramaPoints = React.memo(({ data }) => {
   return (
-    <g>
+    <g className="trama2-pointz">
       {data.map((d, i) => {
         if (i === 0) {
           return (
@@ -68,7 +70,7 @@ const TramaPoints = React.memo(({ data }) => {
               x={d.x}
               y={d.y}
               style={{
-                transformOrigin: `${d.x - 2}px ${d.y - 2}px`,
+                transformOrigin: `${d.x}px ${d.y}px`,
               }}
               className="trama2-end-symbol"
             >
@@ -120,7 +122,7 @@ const LineaTrama = React.memo(
     )
 
     const element = (
-      <g>
+      <g data-subracconto={data.racconto.titolo}>
         <SubPathsWithColors
           subPaths={subPaths}
           data={data}
@@ -148,11 +150,14 @@ const LineaTrama = React.memo(
             <text
               style={{
                 transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
-                transform: `rotate(-30deg) translateX(-10px)`,
+                transform:
+                  selectedPoint.originalX < 0.2
+                    ? 'rotate(30deg) translate(5px, 5px)'
+                    : `rotate(-30deg) translateX(-10px)`,
               }}
               x={selectedPoint.x}
               y={selectedPoint.y}
-              textAnchor={'end'}
+              textAnchor={selectedPoint.originalX < 0.2 ? 'start' : 'end'}
             >
               {selectedPoint.motivo_type}
             </text>
@@ -180,79 +185,87 @@ const SelectedContainers = React.memo(({ n }) => {
   )
 })
 
-const LineeTramaList = React.memo(({
-  measures,
-  dataRacconti,
-  currentXHoverRacconti,
-  racconti,
-  onRaccontoClick,
-  height,
-  scalaColore,
-  scalaMotivoY,
-  selected,
-  toggleSelect,
-  xScale,
-}) => {
-  return (
-    <g>
-      {dataRacconti.map((datum, i) => {
-        return (
-          <g key={i} className="linea-container">
-            <LineaTrama
-              selectedPoint={
-                currentXHoverRacconti &&
-                currentXHoverRacconti[racconti[i].titolo]
-                  ? currentXHoverRacconti[racconti[i].titolo]
-                  : null
-              }
-              onRaccontoClick={onRaccontoClick}
-              scalaColore={scalaColore}
-              scalaMotivoY={scalaMotivoY}
-              index={i}
-              width={measures.width}
-              height={height}
-              itemSelected={selected[racconti[i].titolo]}
-              toggleItem={toggleSelect}
-              xScale={xScale}
-              racconto={racconti[i]}
-              data={datum}
-            ></LineaTrama>
-          </g>
-        )
-      })}
-    </g>
-  )
-})
+const LineeTramaList = React.memo(
+  ({
+    measures,
+    dataRacconti,
+    currentXHoverRacconti,
+    racconti,
+    onRaccontoClick,
+    height,
+    scalaColore,
+    scalaMotivoY,
+    selected,
+    toggleSelect,
+    xScale,
+  }) => {
+    return (
+      <g>
+        {dataRacconti.map((datum, i) => {
+          return (
+            <g key={i} className="linea-container">
+              <LineaTrama
+                selectedPoint={
+                  currentXHoverRacconti &&
+                  currentXHoverRacconti[racconti[i].titolo]
+                    ? currentXHoverRacconti[racconti[i].titolo]
+                    : null
+                }
+                onRaccontoClick={onRaccontoClick}
+                scalaColore={scalaColore}
+                scalaMotivoY={scalaMotivoY}
+                index={i}
+                width={measures.width}
+                height={height}
+                itemSelected={selected[racconti[i].titolo]}
+                toggleItem={toggleSelect}
+                xScale={xScale}
+                racconto={racconti[i]}
+                data={datum}
+              ></LineaTrama>
+            </g>
+          )
+        })}
+      </g>
+    )
+  }
+)
 
-function LineeTramaWithMeasures({
-  racconti = [],
-  data = {},
-  height,
-  scalaColore,
-  scalaMotivoY,
-  colors,
-  selected,
-  toggleSelect,
-  onRaccontoClick,
-  tipologie,
-  tipologieByTipologia,
-  setYears,
-  measures,
-}) {
+const HORIZ_PADDING = 20
+
+function imperativeTranslate(currentScaleY) {
+  selectAll('.linea-container').attr(
+    'transform',
+    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  )
+  selectAll('.linea-container-selected').attr(
+    'transform',
+    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  )
+}
+
+function LineeTramaWithMeasures(
+  {
+    racconti = [],
+    data = {},
+    height,
+    scalaColore,
+    scalaMotivoY,
+    colors,
+    selected,
+    toggleSelect,
+    onRaccontoClick,
+    tipologie,
+    tipologieByTipologia,
+    setYears,
+    measures,
+  },
+  ref
+) {
   const svgRef = useRef(null)
+  const lastZoomedScaleYRef = useRef(null)
 
   useEffect(() => {
-    function imperativeTranslate(currentScaleY) {
-      selectAll('.linea-container').attr(
-        'transform',
-        (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
-      )
-      selectAll('.linea-container-selected').attr(
-        'transform',
-        (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
-      )
-    }
-
     if (measures) {
       const svg = svgRef.current
       const scaleY = scaleLinear()
@@ -263,6 +276,7 @@ function LineeTramaWithMeasures({
 
       function handleZoom() {
         const newScaleY = currentEvent.transform.rescaleY(scaleY)
+        lastZoomedScaleYRef.current = newScaleY
         imperativeTranslate(newScaleY)
 
         const domain = newScaleY.domain()
@@ -298,7 +312,9 @@ function LineeTramaWithMeasures({
     if (!measures) {
       return null
     }
-    return scaleLinear().domain([0, 1]).range([0, measures.width])
+    return scaleLinear()
+      .domain([0, 1])
+      .range([HORIZ_PADDING, measures.width - HORIZ_PADDING])
   }, [measures])
 
   const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
@@ -329,6 +345,24 @@ function LineeTramaWithMeasures({
   }, [data, racconti, xScale, tipologieByTipologia])
 
   const [x, setX] = useState(measures.width - BRUSH_HANDLE_WIDTH / 2)
+
+  useEffect(() => {
+    const initialTitle = 'Il cavaliere inesistente'
+    const raccontoData = dataByRacconti[initialTitle]
+    const raccontoDatum = find(raccontoData, (datum) => {
+      if (
+        datum.originalX.toFixed(2) === '0.77' &&
+        datum.motivo_type === 'viaggio'
+      ) {
+        return true
+      }
+      return false
+    })
+    if (raccontoDatum) {
+      setX(+raccontoDatum.x - BRUSH_HANDLE_WIDTH / 2)
+    }
+    toggleSelect(initialTitle)
+  }, [toggleSelect, dataByRacconti])
 
   const handleNexPoint = useCallback(() => {
     const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
@@ -374,6 +408,7 @@ function LineeTramaWithMeasures({
         acc[xKey] = acc[xKey] || {}
         acc[xKey][titolo] = {
           motivo_type: datum.motivo_type,
+          originalX: datum.originalX,
           x: datum.x,
           y: datum.y,
         }
@@ -385,11 +420,129 @@ function LineeTramaWithMeasures({
   const xPoint = +x.toFixed(0) + BRUSH_HANDLE_WIDTH / 2
   const currentXHoverRacconti = trameByPoints[xPoint]
 
+  useImperativeHandle(ref, () => ({
+    rotateView: (cb) => {
+      const scaleYOriginal = scaleLinear()
+        .domain([0, racconti.length])
+        .range([0 + height, measures.height - height])
+      imperativeTranslate(scaleYOriginal)
+
+      const raccontoDataIndex = findIndex(
+        dataRacconti,
+        (r) => r.racconto.titolo === 'Il cavaliere inesistente'
+      )
+      const raccontoData = dataRacconti[raccontoDataIndex]
+
+      const scaleXBoxPlot = scaleLinear()
+        .domain([0, racconti.length])
+        .range([10, measures.width - 10])
+
+      const flyToX = scaleXBoxPlot(raccontoDataIndex)
+
+      // Hide Points
+      document
+        .querySelectorAll(
+          '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+        )
+        .forEach((p) => (p.style.display = 'none'))
+      const paths = document.querySelectorAll(
+        '[data-subracconto="Il cavaliere inesistente"] path.trama2-line'
+      )
+      let scaleMotivo = makeScalaMotivoY(600)
+      scaleMotivo.range([-200, 400])
+
+      let start = null
+      function animate(timestamp) {
+        if (start === null) {
+          start = timestamp
+        }
+        const k = (timestamp - start) / 1500
+
+        const dataFly = []
+        for (let i = 1; i < raccontoData.length; i++) {
+          const prevDatum = raccontoData[i - 1]
+          const datum = raccontoData[i]
+
+          const y1 = prevDatum.y * (1 - k) + k * 25
+          const y2 = datum.y * (1 - k) + k * 25
+
+          const x1 = prevDatum.x * (1 - k) + k * flyToX
+          const x2 = datum.x * (1 - k) + k * flyToX
+
+          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+        }
+        paths.forEach((path, i) => {
+          cachedResetStrokes[i] = path.style.stroke
+          path.setAttribute('d', dataFly[i])
+        })
+
+        if (k < 1) {
+          window.requestAnimationFrame(animate)
+        } else {
+          start = null
+          window.requestAnimationFrame(animate2)
+        }
+      }
+
+      const cachedResetStrokes = []
+
+      function animate2(timestamp) {
+        if (start === null) {
+          start = timestamp
+        }
+        const k = (timestamp - start) / 1000
+
+        const dataFly = []
+        for (let i = 1; i < raccontoData.length; i++) {
+          const prevDatum = raccontoData[i - 1]
+          const datum = raccontoData[i]
+
+          const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
+          const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
+
+          const x1 = flyToX
+          const x2 = flyToX
+
+          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+        }
+        paths.forEach((path, i) => {
+          path.setAttribute('d', dataFly[i])
+          path.style.stroke = 'var(--blue)'
+        })
+        if (k < 1) {
+          window.requestAnimationFrame(animate2)
+        } else {
+          cb()
+          // CLEAN UP ANIMATION
+
+          // RESET ZOOM STATE
+          const lastZoomScaleY = lastZoomedScaleYRef.current
+          if (lastZoomScaleY) {
+            imperativeTranslate(lastZoomScaleY)
+          }
+          // RESET SELECTED LINE
+          const resetDPath = lineGenerator(raccontoData)
+          const resettedDSubPaths = splitPath(resetDPath)
+          paths.forEach((path, i) => {
+            path.setAttribute('d', resettedDSubPaths[i])
+            path.style.stroke = cachedResetStrokes[i]
+          })
+          // Show Points
+          document
+            .querySelectorAll(
+              '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+            )
+            .forEach((p) => (p.style.display = 'initial'))
+        }
+      }
+
+      window.requestAnimationFrame(animate)
+    },
+  }))
+
   return (
     <>
-      <div className="trama2-top-legend-list">
-        Scrolla per zoomare
-      </div>
+      <div className="trama2-top-legend-list">Scrolla per zoomare</div>
       <svg
         style={{
           height: measures.height,
@@ -435,6 +588,8 @@ function LineeTramaWithMeasures({
   )
 }
 
+let LineeTramaWithMeasuresReffed = forwardRef(LineeTramaWithMeasures)
+
 function LineeTrama(props, ref) {
   const containerRef = useRef(null)
   const [measures, setMeasures] = useState(null)
@@ -444,9 +599,11 @@ function LineeTrama(props, ref) {
     setMeasures(m)
   }, [])
 
+  const childRef = useRef(null)
+
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
-      cb()
+      childRef.current.rotateView(cb)
       // const scaleY = scaleLinear()
       //   .domain([0, racconti.length])
       //   .range([0 + height, measures.height - height])
@@ -473,7 +630,13 @@ function LineeTrama(props, ref) {
       className="w-100 h-100"
       style={{ overflow: 'hidden' }}
     >
-      {measures && <LineeTramaWithMeasures {...props} measures={measures} />}
+      {measures && (
+        <LineeTramaWithMeasuresReffed
+          ref={childRef}
+          {...props}
+          measures={measures}
+        />
+      )}
     </div>
   )
 }

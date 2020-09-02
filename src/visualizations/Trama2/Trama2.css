@@ -1,7 +1,7 @@
 .trama2-container {
   position: relative;
   height: calc(100vh - var(--navigation-height));
-  background-color: #fff
+  background-color: #fff;
 }
 
 .trama2-side-panel {
@@ -43,28 +43,24 @@
 }
 
 .trama2-side-panel-rotate {
-    height: 120px;
-    width: 35px;
-    background-color: #fff;
-    /* border-radius: 0 4px 4px 0; */
-    border-radius: 4px 0 0 4px;
-    border: 1px solid var(--dark-blue);
-    color: var(--dark-blue);
-    position: absolute;
-    right: 0px;
-    top: calc(50% - 100px);
-    pointer-events: all;
-    text-align: center;
-    line-height: 35px;
+  cursor: pointer;
+  height: 120px;
+  width: 35px;
+  background-color: #fff;
+  /* border-radius: 0 4px 4px 0; */
+  border-radius: 4px 0 0 4px;
+  border: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 100px);
+  pointer-events: all;
+  text-align: center;
+  line-height: 35px;
 
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
-
-
-
-  }
-
-
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
 
 .trama2-side-panel-content {
   height: 100%;
@@ -99,16 +95,16 @@
   z-index: 100;
   height: 80px;
   position: absolute;
-  left:0;
-  top:0;
-  right:0;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 
 .trama2-pointer {
   /* stroke: #ddd; */
   fill: none;
   stroke: transparent;
-  stroke-width: 3px;
+  stroke-width: 5px;
   cursor: pointer;
   /* fill: none; */
 }
@@ -126,6 +122,13 @@
   /* fill: none; */
 }
 
+/* .trama2-line {
+  transition: all 2s linear;
+} */
+
+.trama2-label-container {
+  cursor: help;
+}
 .trama2-start-symbol {
   transform: translate(-2px, -2px);
   height: 4px;
@@ -140,10 +143,18 @@
   stroke: black;
   fill: white;
 }
-
 .trama2-circle {
   stroke: #ddd;
   fill: #000;
+}
+.trama2-label-container .trama2-circle {
+  transition: transform 0.2s linear;
+}
+.trama2-label-container.trama2-label-hover .trama2-circle {
+  transform: scale(1.5);
+}
+.trama2-label-container.trama2-label-not-hover text {
+  opacity: 0.5;
 }
 
 /* sidebar */
@@ -154,7 +165,7 @@
 }
 .trama2-sidebar-header {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   font-weight: bold;
   height: 80px;
@@ -164,14 +175,14 @@
   flex: 1;
   /* height: 100%; */
   font-size: 10px;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   font-style: italic;
 }
 .trama2-sidebar-item {
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  /* padding-left: 30px; */
   color: #222;
   font-size: 10px;
   cursor: pointer;
@@ -254,15 +265,25 @@
 .trama2-sidebar-item.selected {
   color: #fff;
 }
+.trama2-sidebar-item.no-pointer-events {
+  pointer-events: none;
+}
+.trama2-sidebar-item.item-dark.selected {
+  color: black;
+}
 .trama2-sidebar-item.disabled {
   color: #a6a6a6;
 }
 .trama2-sidebar-content {
-  background: rgb(204,204,204);
-  background: linear-gradient(180deg, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 100%);
+  /* background: rgb(204,204,204); */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .trama2-sidebar-item:hover {
-  background-color: #ccc;
+  background: rgb(0, 0, 0, 0.15);
 }
 .trama2-box-plot-year {
   position: absolute;
@@ -276,6 +297,29 @@
   font-style: italic;
 }
 
+.trama2-box-plot-same-start-end-symbol {
+  fill: #E72EFF;
+  /* transform: rotate(30deg) translateX(5px); */
+  /* stroke: #000; */
+}
+
+.trama2-box-plot-end-symbol {
+  transform: rotate(45deg);
+  fill: white;
+  stroke: black;
+
+}
+
+.trama2-box-plot-start-symbol {
+  fill: white;
+  stroke: black;
+}
+
+.trama2-box-plot-partial-hide-bar {
+  fill: transparent;
+  fill: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
 .trama2-info-box {
   fill: white;
   stroke-width: 1px;
@@ -284,11 +328,26 @@
 
 .trama2-boxplot-content {
   padding: 0 30px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.trama2-boxplot-content {
+  padding: 0 30px;
+}
+.trama2-box-plot-enter-in-opacity {
+  opacity: 1;
+}
+
+.trama2-racconto-incastonato-rect {
+  fill: #f3f3f3;
+  /* fill: url(#racconto-incastonato-gradient); */
+  stroke-width: 2px;
 }
 
 .trama2-racconto-incastonato-line {
-  fill: #F49831;
-  stroke: #F49831;
+  fill: #f49831;
+  stroke: #f49831;
   stroke-width: 2px;
 }
 
