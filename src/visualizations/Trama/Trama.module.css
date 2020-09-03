@@ -2,10 +2,43 @@
   stroke: #fff;
   stroke-width: 1px;
   fill: #000;
+  transition: fill 0.5s linear;
+}
+
+.topAxisRectEmpty{
+  stroke: transparent;
+  stroke-width: 1px;
+  fill: transparent;
+}
+
+.topAxisRectNoSeq{
+    stroke: #fff;
+  stroke-width: 1px;
+  fill:#ccc;
+  opacity: 0.3;
 }
 
 .topAxisText {
   font-size: 10px;
+  fill: #000;
+  transition: fill 0.5s linear;
+}
+
+.topAxisTextEmpty {
+    font-size: 10px;
+    fill: transparent;
+}
+
+.topAxisTextNoSeq{
+    font-size: 10px;
+    fill: #000;
+    opacity: 0.3;
+}
+
+.marimekkoXaxisText{
+    font-size: 12px;
+    font-style: italic;
+    padding-top: 10px;
 }
 
 .marimekkoRect {
@@ -54,4 +87,54 @@
 
 .legendEntryText {
   font-size: 12px;
+}
+
+
+.slider {
+    /* width: 100%;
+    height: 100%; */
+    background-color: #eee;
+    
+}
+
+.slide {
+    fill: #eee;
+}
+
+.slider-btn {
+    width: 50px;
+    height: 50px;
+}
+
+.cursor {
+    stroke:#222;
+    stroke-width: 1;
+    fill: #fff;
+    rx: 4px;
+    cursor: pointer;
+    transition: fill 0.5s linear;
+}
+
+.cursorSelected{
+    fill: #222;
+}
+
+.cursorLine {
+    stroke: #222;
+    stroke-width: 1;
+}
+
+
+.currentSequenceLevel{
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.currentSequenceLabel{
+    font-size: 11px;
+}
+
+.border-dark-blue {
+    border-color: var(--dark-blue) !important;
 }

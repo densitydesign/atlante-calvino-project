@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
 	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
@@ -13,13 +14,22 @@
 <svg version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.9 118"
 	 style="enable-background:new 0 0 113.9 118;" xml:space="preserve">
+=======
+<!-- Generator: Adobe Illustrator 24.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 113.9 118" style="enable-background:new 0 0 113.9 118;" xml:space="preserve">
+>>>>>>> iosonosempreio.dev
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{fill:#D6DBDF;stroke:#444444;stroke-width:0.1776;}
 	.st2{fill:none;stroke:#444444;stroke-width:0.1776;}
 	.st3{fill:#FFD93B;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
 	.st4{fill:#FF3366;stroke:#444444;stroke-width:0.1776;}
+<<<<<<< HEAD
 	.st5{fill:#FFA500;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
+=======
+	.st5{fill:#FF6C39;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
+>>>>>>> iosonosempreio.dev
 	.st6{fill:#00BFD3;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
 	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#444444;stroke-width:0.5327;}
 	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#444444;stroke-width:0.3551;}
@@ -38,7 +48,11 @@
 	.st21{fill:#BBBBFF;}
 	.st22{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
 	.st23{fill:#97DADD;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
+<<<<<<< HEAD
 	.st24{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
+=======
+	.st24{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
+>>>>>>> iosonosempreio.dev
 	.st25{fill:#FFD93B;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
 	.st26{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
 	.st27{fill:#00BFD3;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
@@ -68,6 +82,7 @@
 	.st51{fill:url(#SVGID_1_);}
 	.st52{fill:none;stroke:#5151FC;stroke-width:0.2;}
 	.st53{fill:url(#SVGID_2_);}
+<<<<<<< HEAD
 	.st54{fill:none;stroke:#FF3366;stroke-width:0.2;}
 	.st55{fill:url(#SVGID_3_);}
 	.st56{fill:none;stroke:#00C19C;stroke-width:0.2;}
@@ -90,6 +105,30 @@
 	.st73{fill:url(#SVGID_8_);}
 	.st74{fill:none;stroke:#BBBBFF;stroke-width:0.3;}
 	.st75{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.5;}
+=======
+	.st54{fill:none;stroke:#00C19C;stroke-width:0.2;}
+	.st55{fill:url(#SVGID_3_);}
+	.st56{fill:none;stroke:#FF6C39;stroke-width:0.2;}
+	.st57{fill:none;stroke:#000000;stroke-width:0.65;stroke-miterlimit:10;}
+	.st58{fill:#5151FC;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st59{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
+	.st60{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;}
+	.st61{font-family:'HKGrotesk-Regular';}
+	.st62{font-size:10px;}
+	.st63{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.5;}
+	.st64{fill:none;stroke:#5151FC;stroke-width:2.6845;stroke-linejoin:round;}
+	.st65{fill:none;stroke:#00C19C;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st66{fill:url(#SVGID_4_);}
+	.st67{fill:none;stroke:#5151FC;stroke-width:0.3;}
+	.st68{fill:url(#SVGID_5_);}
+	.st69{fill:none;stroke:#FF6C39;stroke-width:0.3;}
+	.st70{fill:url(#SVGID_6_);}
+	.st71{fill:none;stroke:#FF6C39;stroke-width:0.3;}
+	.st72{fill:url(#SVGID_7_);}
+	.st73{fill:none;stroke:#00C19C;stroke-width:0.3;}
+	.st74{fill:url(#SVGID_8_);}
+	.st75{fill:none;stroke:#BBBBFF;stroke-width:0.3;}
+>>>>>>> iosonosempreio.dev
 	.st76{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.5;}
 	.st77{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.25;}
 	.st78{fill:#BBBBFF;stroke:#FFFFFF;stroke-width:0.25;stroke-linejoin:round;}
@@ -98,7 +137,11 @@
 	.st81{fill:none;stroke:#00C19C;stroke-width:3.4397;stroke-miterlimit:10;}
 	.st82{fill:none;stroke:#FF6C39;stroke-width:3.4397;stroke-miterlimit:10;}
 	.st83{fill:none;stroke:#BBBBFF;stroke-width:3.44;stroke-miterlimit:10;}
+<<<<<<< HEAD
 	.st84{fill:none;stroke:#FFA500;stroke-width:3.4397;stroke-miterlimit:10;}
+=======
+	.st84{fill:none;stroke:#FF6C39;stroke-width:3.4397;stroke-miterlimit:10;}
+>>>>>>> iosonosempreio.dev
 	.st85{fill:none;stroke:#444444;stroke-width:0.3929;stroke-dasharray:2.9859,2.9859;}
 	.st86{fill:none;stroke:#666666;stroke-width:3.44;}
 	.st87{fill:none;stroke:#CCCCCC;stroke-width:3.44;}
@@ -109,6 +152,7 @@
 	.st92{fill:none;stroke:#00C19C;stroke-width:2.76;stroke-miterlimit:10;}
 	.st93{fill:none;stroke:#FF3366;stroke-width:2.76;stroke-miterlimit:10;}
 	.st94{fill:none;stroke:#5151FC;stroke-width:2.76;stroke-miterlimit:10;}
+<<<<<<< HEAD
 	.st95{fill:none;stroke:#FFA500;stroke-width:2.76;stroke-miterlimit:10;}
 	.st96{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
 	.st97{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
@@ -6865,4 +6909,55 @@ jTV81WGCafqgK2EPW+dFe1D0xT+8+u7tP/3w6h2E/tl3P776y9vdq9tbumFv/4y/2X33w9sfweG3
 ux//9OGv/Al+ZQ//4ou/+d3/ePb/AQFsbrw=
 	]]>
 </i:pgf>
+=======
+	.st95{fill:none;stroke:#FF3366;stroke-width:2.7599;stroke-miterlimit:10;}
+	.st96{fill:none;stroke:#FF6C39;stroke-width:2.76;stroke-miterlimit:10;}
+	.st97{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
+	.st98{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
+	.st99{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
+	.st100{fill:none;stroke:#000000;stroke-width:2.76;stroke-miterlimit:10;}
+	.st101{fill:none;stroke:#00CCCC;stroke-width:2.76;stroke-miterlimit:10;}
+</style>
+<g id="Layer_1">
+</g>
+<g id="volumi">
+</g>
+<g id="cronologia">
+</g>
+<g id="disposizione_e_lungheza">
+</g>
+<g id="nebbia_1">
+	<g>
+		<text transform="matrix(1 0 0 1 15.7377 13.0959)" class="st61 st62">nebbia</text>
+		<path id="Oval_4_" class="st58" d="M4.9,5.1c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2-4.7-4.7l0,0C0.2,7.2,2.2,5.2,4.9,5.1z
+			"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 15.7377 33.3859)" class="st61 st62">cancellazione</text>
+		<path id="Oval-2_3_" class="st59" d="M4.9,25.4c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7s-4.7-2.1-4.7-4.7l0,0l0,0
+			C0.2,27.5,2.2,25.5,4.9,25.4z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 15.7377 73.9647)" class="st61 st62">senza occorrenze</text>
+		<circle id="Oval-5_3_" class="st60" cx="4.9" cy="70.7" r="4.7"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 15.7377 53.6755)" class="st61 st62">nebbia + cancellazione</text>
+		<circle id="Oval-6_3_" class="st63" cx="4.9" cy="50.4" r="4.7"/>
+	</g>
+	<rect class="st0" width="113.9" height="118"/>
+</g>
+<g id="nebbia_2">
+</g>
+<g id="spazio_livello_1">
+</g>
+<g id="spazio_livello_2">
+</g>
+<g id="spazio_livello_3">
+</g>
+<g id="elenchi_1">
+</g>
+<g id="elenchi_2">
+</g>
+>>>>>>> iosonosempreio.dev
 </svg>

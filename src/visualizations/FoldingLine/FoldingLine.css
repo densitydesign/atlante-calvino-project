@@ -1,0 +1,23 @@
+#folding-line .doubt, #folding-line .subject {
+    cursor: pointer;
+}
+
+#folding-line .mixed {
+    pointer-events: none;
+}
+
+.there-is-selection .doubt, .there-is-selection .subject, .there-is-selection .mixed {
+    opacity:0.2;
+}
+
+.selected, .doubt.selected, .subject.selected, .mixed.selected {
+    opacity:1;
+}
+
+.zoom-sensible-area {
+    display: block !important;
+    cursor: grab;
+}
+.zoom-sensible-area:active {
+    cursor: grabbing;
+}

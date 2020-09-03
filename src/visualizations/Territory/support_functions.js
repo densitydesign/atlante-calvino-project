@@ -24,3 +24,17 @@ function normalizePositiveAngle(angle)
 
 	return angle;
 }
+
+export function addToAngle(angle, delta)
+{
+  return normalizeAngle(angle + delta);
+}
+
+// returns angle2 - angle1
+export function angleDifference(angle2, angle1)
+{
+  let rawDelta = angle2 - angle1;
+  
+  if(rawDelta < 0) return 2 * Math.PI + rawDelta;
+  else return rawDelta;
+}

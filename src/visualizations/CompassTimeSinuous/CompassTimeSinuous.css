@@ -56,9 +56,9 @@ html {
 }
 
 #main--sinuous .label.white-shadow {
-  stroke: white;
+  stroke: var(--bg);
   stroke-width: 0.125rem;
-  fill: white;
+  fill: var(--bg);
   stroke-linejoin: round;
 }
 
@@ -224,7 +224,7 @@ html {
 }
 
 #main--sinuous .how-to>div {
-  background-color: white;
+  background-color: var(--bg);
   padding: .8rem;
   border: 1px solid var(--c-text);
   border-radius: 3px;
@@ -237,7 +237,7 @@ html {
 #main--sinuous .decade-txt {}
 
 #main--sinuous .intro {
-  margin-bottom: 25vh;
+  margin-bottom: 2em;
 }
 
 #main--sinuous .item {
@@ -263,6 +263,7 @@ html {
   top: calc(var(--navigation-height) + (var(--navigation-height)) * 0.5);
   background: var(--bg);
   box-sizing: border-box;
+  margin-top: 2em;
   margin-bottom: 2rem;
   z-index: 10000;
   justify-content: flex-end;
@@ -281,6 +282,7 @@ html {
   transition: height .35s ease;
   overflow: hidden;
   border: 1px solid var(--navigation-borders);
+  background-color: var(--bg);
 }
 
 #main--sinuous .legend.open .legend-content {
@@ -352,7 +354,7 @@ html {
 }
 
 #main--sinuous .legend h4 {
-  font-family: 'HK Grotesk';
+  font-family: 'HKGrotesk';
   font-size: 1rem;
   line-height: 2rem;
   text-align: center;
@@ -361,7 +363,7 @@ html {
 }
 
 #main--sinuous .legend h5 {
-  font-family: 'HK Grotesk';
+  font-family: 'HKGrotesk';
   font-size: .6rem;
   line-height: 1.6rem;
   text-transform: uppercase;
@@ -371,7 +373,7 @@ html {
 }
 
 #main--sinuous .legend h6 {
-  font-family: 'HK Grotesk';
+  font-family: 'HKGrotesk';
   font-size: 0.8rem;
   margin-bottom: 0.1rem;
   text-align: center;
@@ -387,7 +389,7 @@ html {
 }
 
 #main--sinuous .legend-circle {
-  background: white;
+  background: var(--bg);
   border: 1px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -401,7 +403,7 @@ html {
 }
 
 #main--sinuous .legend-article-circle {
-  background: white;
+  background: var(--bg);
   border: 2px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

@@ -1,6 +1,5 @@
 import React from 'react';
 import MainMenu from '../../general/MainMenu/MainMenu';
-import Options from '../../general/Options/Options';
 import ToggleButton from '../../general/ToggleButton/ToggleButton';
 import Search from '../../general/Search/Search';
 import GlobalData from '../../utilities/GlobalData';
@@ -25,12 +24,12 @@ export default class TerritoryHeader extends React.Component
   analysisButtonVisualizationModeMap = new Map([
     [ TerritoryNoAnalysisDropDown.chronologyButtonId, { analysisMode : GlobalData.analysisModes.noAnalysis.chronology } ],
     [ TerritoryNoAnalysisDropDown.volumesButtonId,    { analysisMode : GlobalData.analysisModes.noAnalysis.volumes } ]
-  ]);  
+  ]);
 
 //  changeHighlightModes = newOptions => this.props.callTerritorySetHighlightMode(this.highlightModeMap.get(this.getActiveOption(newOptions)));
 
-  toggleButtonPressed = buttonId => {    
-    
+  toggleButtonPressed = buttonId => {
+
     switch(buttonId)
     {
       case this.analysisModeToggleButtonId :
@@ -39,7 +38,7 @@ export default class TerritoryHeader extends React.Component
           this.props.toggleNoAnalysisDropDownPosition();
         }
 
-        break;  
+        break;
 
       case TerritoryNoAnalysisDropDown.chronologyButtonId :
       case TerritoryNoAnalysisDropDown.volumesButtonId :
@@ -57,14 +56,14 @@ export default class TerritoryHeader extends React.Component
 
   getActiveOption = options => options.find(item => item.status === true).label;
 
-  changeTextsData = newOptions => 
+  changeTextsData = newOptions =>
   {
     const mustReset = newOptions.length === 0;
 
     this.props.callTerritoryApplySearchFilterBySearchResults(mustReset, newOptions);
   }
 
-  changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);  
+  changeSearchInput = input => this.props.callTerritoryApplySearchFilterByInputText(input);
 
   componentDidMount()
   {
@@ -85,14 +84,14 @@ export default class TerritoryHeader extends React.Component
       <div className="top-nav navigations">
 
         <MainMenu style={{ gridColumn : "span 1" }} />
-        <PageTitle title={"L'ARCIPELAGO DELLE OPERE ORDINATE PER"} style={{ gridColumn: "span 7" }} />
+        <PageTitle title={"L'arcipelago delle opere di Italo Calvino"} style={{ gridColumn: "span 7" }} />
 
-        <ToggleButton 
-          id={this.analysisModeToggleButtonId} 
+        <ToggleButton
+          id={this.analysisModeToggleButtonId}
           style={{ gridColumn : "span 7", textAlign : "center" }}
           caption={analysisModeToggleButtonCaption}
           pressed={this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis}
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed} 
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
 
         {this.props.isLoading &&
@@ -118,7 +117,7 @@ export default class TerritoryHeader extends React.Component
           style={{ gridColumn : "span 1" }}
           onClicked={this.props.helpButtonClicked} />
 
-        <CompassButton style={{ gridColumn : "span 1", color : "white", backgroundColor : "black" }} />
+        <CompassButton style={{ gridColumn : "span 1", color : "white", backgroundColor : "black" }} containerToggleCompassPanel={this.props.containerToggleCompassPanel} />
 
       </div>
     );

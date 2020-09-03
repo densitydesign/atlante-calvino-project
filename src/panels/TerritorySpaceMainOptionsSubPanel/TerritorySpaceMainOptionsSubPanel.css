@@ -1,5 +1,5 @@
 .territory-space-main-options-subpanel {
-  background-color: white;
+  background-color: var(--bg);
   grid-column: 11 / span 7;
   height: 100px;
   display: flex;

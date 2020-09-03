@@ -25,8 +25,6 @@ export default class TerritoryBottomPanel extends React.Component
 
         return <></>;
 
-        break;
-
       case this.props.bottomPanelMode === GlobalData.bottomPanelModes.doubt :
       case this.props.bottomPanelMode === GlobalData.bottomPanelModes.shape :
       case this.props.bottomPanelMode === GlobalData.bottomPanelModes.space :

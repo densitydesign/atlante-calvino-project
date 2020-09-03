@@ -3,7 +3,6 @@ import React from 'react'
 import CategoryEntryBlock from '../CategoryEntryBlock/CategoryEntryBlock';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
-import LinkParagraph from '../PhenomenaIntro/LinkParagraph';
 
 import '../../App.css';
 import './ProblemIntro.css';
@@ -31,23 +30,23 @@ export default class ProblemIntro extends React.Component
           </div>
           <div className="category-subentries-grid">
 
-            <CategoryEntryBlock 
-              smallTitle="Itinerario > DUBBIO" 
-              linkText="Cancellazione" 
+            <CategoryEntryBlock
+              smallTitle="Itinerario ⟶ DUBBIO"
+              linkText="Cancellazione"
               route="/Problem/cancellation"
               description="Scrivere è un modo per opporsi al vuoto della pagina. Ma anche per accogliere quel vuoto dentro la scrittura, che in Calvino combatte sempre ad armi impari contro la tendenza alla cancellazione del testo e alla scomparsa del suo significato. "
             />
 
-            <CategoryEntryBlock 
-              smallTitle="Itinerario >SPAZIO" 
-              linkText="Realismo" 
+            <CategoryEntryBlock
+              smallTitle="Itinerario ⟶ SPAZIO"
+              linkText="Realismo"
               route="/Problem/realism"
               description="Dopo aver attraversato gli spazi dell’opera di Calvino, il problema della rappresentazione della realtà resta intatto: dopo le infinite metamorfosi alle quali abbiamo assistito, come riconoscere il vero dal falso? "
             />
 
-            <CategoryEntryBlock 
-              smallTitle="Itinerario >FORMA" 
-              linkText="Trama" 
+            <CategoryEntryBlock
+              smallTitle="Itinerario ⟶ FORMA" 
+              linkText="Trama"
               route="/Problem/plot"
               description="Senza trame non ci sono narrazioni. Ma le narrazioni possono avere rapporti molto complicati con le trame. Come l’opera di Calvino dimostra in modo esemplare."
             />

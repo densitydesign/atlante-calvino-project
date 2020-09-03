@@ -50,14 +50,11 @@ export default class TerritoryShapePanel extends React.Component
 
   render()
   {
-const pressed = this.state.optionRadioButtonsStates.find(item => item.id === this.proportionRadioButtonId).pressed;
-console.log("pressed", pressed);
-
     return (
       <>
 
       <TerritoryDescriptionSubPanel
-        title="L'ORGANIZZAZIONE DELLE FORME"
+        title="L'ORGANIZZAZIONE DEGLI ELENCHI"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
         informationSheetRoute="/Phenomena/territory/shapeAnalysis/informationSheet"
         informationSheetDescription="SCHEDA"

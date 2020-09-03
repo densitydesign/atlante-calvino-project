@@ -3,22 +3,25 @@ import MainMenu from "../../general/MainMenu";
 import PageTitle from "../../general/PageTitle";
 import MoreInfo from "../../general/MoreInfo";
 import CompassButton from "../../general/CompassButton/CompassButton";
-import Search from "../../general/Search";
+import SearchDropDown from "../../general/Search/SearchDropDown";
 import Loading from "../../general/Loading";
-import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
 
 import AltOptions from "../../general/Options/AltOptions";
 import MarimekkoViz from "./MarimekkoViz";
 import marimekkoData from "./marimekko.json";
+
 import volumi from "./volumi.json";
+import GlobalData from "../../utilities/GlobalData";
 
-import GlobalData from '../../utilities/GlobalData';
-
-const searchOptions = volumi.map(item => ({label: item.titolo, value: item.textID}))
-
-console.log("searchOptions", searchOptions)
+// const marimekkoData = MD.filter(x => x.textID === "V005")
 
 
+
+const searchOptions = volumi.map(item => ({
+  label: item.titolo,
+  value: item.textID
+}));
 
 const tipologiaOptions = [
   { label: "uno" },
@@ -51,26 +54,26 @@ class Trama extends Component {
     controlsEnabled: true,
     currentTextID: null,
 
-    helpSidePanelOpen : false
+    helpSidePanelOpen: false
   };
 
-  setCurrentTextID = (currentTextID) => {
-    const oldValue = this.state.currentTextID
-    if(currentTextID === oldValue){
-      return
+  setCurrentTextID = currentTextID => {
+    const oldValue = this.state.currentTextID;
+    if (currentTextID === oldValue) {
+      return;
     }
-    const newState = {currentTextID, controlsEnabled: !currentTextID}
-    this.setState(newState)
-  }
+    const newState = { currentTextID, controlsEnabled: !currentTextID };
+    this.setState(newState);
+  };
 
-  changeRicerca = (newOptions) => {
-    this.setState({ricerca: newOptions.map(x => x.value)})
+  changeRicerca = newOptions => {
+    this.setState({ ricerca: newOptions.map(x => x.value) });
+  };
 
-  }
-
-  toggleHelpSidePanel = () => this.setState({ 
-    helpSidePanelOpen : !this.state.helpSidePanelOpen 
-  });  
+  toggleHelpSidePanel = () =>
+    this.setState({
+      helpSidePanelOpen: !this.state.helpSidePanelOpen
+    });
 
   componentDidMount() {}
 
@@ -90,11 +93,11 @@ class Trama extends Component {
 
     return (
       <div className="trasformare main">
-
         <HelpSidePanel
           open={helpSidePanelOpen}
           page={helpPage}
-          closeButtonClicked={this.toggleHelpSidePanel} />
+          closeButtonClicked={this.toggleHelpSidePanel}
+        />
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
@@ -113,16 +116,24 @@ class Trama extends Component {
               onChange={x => {
                 this.setState({ cercaPer: x.label });
               }}
-              style={{ gridColumn: "span 3" }}
+              style={{
+                gridColumn: "span 3",
+                pointerEvents: !controlsEnabled ? "none" : undefined,
+                opacity: !controlsEnabled ? 0.4 : undefined
+              }}
             />
           )}
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 8" }} />}
           {!this.state.isLoading && (
-            <Search
-              style={{ gridColumn: "span 8", pointerEvents: currentTextID ? 'none' : undefined }}
-              data={{options:searchOptions}}
+            <SearchDropDown
+              style={{
+                gridColumn: "span 8",
+                pointerEvents: currentTextID ? "none" : undefined
+              }}
+              data={{ options: searchOptions }}
               changeOptions={this.changeRicerca}
+              selectedOptions={this.state.ricerca}
             />
           )}
           <MoreInfo
@@ -145,9 +156,16 @@ class Trama extends Component {
             aggregazione={aggregazione}
             ricerca={ricerca}
             setOptionsForDetail={() => {
-              if(this.state.aggregazione !== "non aggregato" || this.state.dettaglio !== "categorie"){
-                this.setState({aggregazione: "non aggregato", dettaglio: "categorie"})
-            }}}
+              if (
+                this.state.aggregazione !== "non aggregato" ||
+                this.state.dettaglio !== "categorie"
+              ) {
+                this.setState({
+                  aggregazione: "non aggregato",
+                  dettaglio: "categorie"
+                });
+              }
+            }}
             tipologia={tipologia}
             currentTextID={currentTextID}
             setCurrentTextID={this.setCurrentTextID}
@@ -156,11 +174,17 @@ class Trama extends Component {
 
         <div className="bottom-nav navigations">
           <AltOptions
-            title="Tipologia"
+            title="Numero di livelli nel testo"
             multiple
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            allLink="tutti"
+            style={{
+              gridColumn: "span 8",
+              textAlign: "center",
+              pointerEvents: !controlsEnabled ? "none" : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined
+            }}
             allowEmpty={false}
             value={tipologia}
             onChange={tipologia => {
@@ -177,7 +201,12 @@ class Trama extends Component {
               this.setState({ dettaglio: x.label });
             }}
             options={dettaglioOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{
+              gridColumn: "span 8",
+              textAlign: "center",
+              pointerEvents: !controlsEnabled ? "none" : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined
+            }}
           />
 
           <AltOptions
@@ -189,7 +218,12 @@ class Trama extends Component {
               this.setState({ aggregazione: x.label });
             }}
             options={aggregazioneOptions}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{
+              gridColumn: "span 8",
+              textAlign: "center",
+              pointerEvents: !controlsEnabled ? "none" : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined
+            }}
           />
         </div>
       </div>

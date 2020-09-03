@@ -15,13 +15,13 @@ export default class TerritorySpacePanel extends React.Component
   genericCosmicRadioButtonCaption = "GENERICI";
 
   namedCosmicRadioButtonId = "namedCosmicRadioButton";
-  namedCosmicRadioButtonCaption = "NOMINATI";
+  namedCosmicRadioButtonCaption = "SPECIFICI";
 
   genericTerrestrialRadioButtonId = "genericTerrestrialRadioButton";
   genericTerrestrialRadioButtonCaption = "GENERICI";
 
   namedTerrestrialRadioButtonId = "namedTerrestrialRadioButton";
-  namedTerrestrialRadioButtonCaption = "NOMINATI";
+  namedTerrestrialRadioButtonCaption = "LOCALIZZABILI";
 
   inventedRadioButtonId = "inventedRadioButton";
   inventedRadioButtonCaption = "INVENTATI";
@@ -36,26 +36,26 @@ export default class TerritorySpacePanel extends React.Component
   placeHierarchiesRadioButtonCaption = "MEDUSE";
 
   optionRadioButtonsMap = new Map([
-    [ this.genericCosmicRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericCosmic, spacePanelMode : GlobalData.analysisPanelModes.space.genericCosmic } ],
-    [ this.namedCosmicRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedCosmic,   spacePanelMode : GlobalData.analysisPanelModes.space.namedCosmic } ],
-    [ this.genericTerrestrialRadioButtonId,    { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    spacePanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
-    [ this.namedTerrestrialRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      spacePanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
-    [ this.inventedRadioButtonId,              { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],
-    [ this.noSettingRadioButtonId,             { analysisMode : GlobalData.analysisModes.space.noSetting,             spacePanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
-    [ this.proportionRadioButtonId,            { analysisMode : GlobalData.analysisModes.space.proportion,            spacePanelMode : GlobalData.analysisPanelModes.space.proportion } ],
-    [ this.placeHierarchiesRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      spacePanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
+    [ this.genericCosmicRadioButtonId,      { analysisMode : GlobalData.analysisModes.space.genericCosmic, spacePanelMode : GlobalData.analysisPanelModes.space.genericCosmic } ],
+    [ this.namedCosmicRadioButtonId,        { analysisMode : GlobalData.analysisModes.space.namedCosmic,   spacePanelMode : GlobalData.analysisPanelModes.space.namedCosmic } ],
+    [ this.genericTerrestrialRadioButtonId, { analysisMode : GlobalData.analysisModes.space.genericTerrestrial,    spacePanelMode : GlobalData.analysisPanelModes.space.genericTerrestrial } ],
+    [ this.namedTerrestrialRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.namedTerrestrial,      spacePanelMode : GlobalData.analysisPanelModes.space.namedTerrestrial } ],
+    [ this.inventedRadioButtonId,           { analysisMode : GlobalData.analysisModes.space.invented,              spacePanelMode : GlobalData.analysisPanelModes.space.invented } ],
+    [ this.noSettingRadioButtonId,          { analysisMode : GlobalData.analysisModes.space.noSetting,             spacePanelMode : GlobalData.analysisPanelModes.space.noSetting } ],
+    [ this.proportionRadioButtonId,         { analysisMode : GlobalData.analysisModes.space.proportion,            spacePanelMode : GlobalData.analysisPanelModes.space.proportion } ],
+    [ this.placeHierarchiesRadioButtonId,   { analysisMode : GlobalData.analysisModes.space.placeHierarchies,      spacePanelMode : GlobalData.analysisPanelModes.space.placeHierarchies } ]
   ]);
 
   state = {
     optionRadioButtonsStates : [
-      { id : this.genericCosmicRadioButtonId, pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericCosmicRadioButtonId).spacePanelMode },
-      { id : this.namedCosmicRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedCosmicRadioButtonId).spacePanelMode },
-      { id : this.genericTerrestrialRadioButtonId,    pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).spacePanelMode },
-      { id : this.namedTerrestrialRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).spacePanelMode },
-      { id : this.inventedRadioButtonId,              pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).spacePanelMode },
-      { id : this.noSettingRadioButtonId,             pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.noSettingRadioButtonId).spacePanelMode },
-      { id : this.proportionRadioButtonId,            pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).spacePanelMode },
-      { id : this.placeHierarchiesRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.placeHierarchiesRadioButtonId).spacePanelMode }
+      { id : this.genericCosmicRadioButtonId,      pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericCosmicRadioButtonId).spacePanelMode },
+      { id : this.namedCosmicRadioButtonId,        pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedCosmicRadioButtonId).spacePanelMode },
+      { id : this.genericTerrestrialRadioButtonId, pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.genericTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.namedTerrestrialRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.namedTerrestrialRadioButtonId).spacePanelMode },
+      { id : this.inventedRadioButtonId,           pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.inventedRadioButtonId).spacePanelMode },
+      { id : this.noSettingRadioButtonId,          pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.noSettingRadioButtonId).spacePanelMode },
+      { id : this.proportionRadioButtonId,         pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.proportionRadioButtonId).spacePanelMode },
+      { id : this.placeHierarchiesRadioButtonId,   pressed : this.props.spacePanelMode === this.optionRadioButtonsMap.get(this.placeHierarchiesRadioButtonId).spacePanelMode }
     ]
   };
 

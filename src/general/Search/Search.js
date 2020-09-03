@@ -24,6 +24,8 @@ class Search extends Component {
         options={this.props.data.options}
         filterBy={this.props.filterBy}
         id="main-search"
+        onFocus={this.props.onFocus}
+        onBlur={this.props.onBlur}
       />
 
     </div>;

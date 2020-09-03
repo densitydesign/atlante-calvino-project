@@ -10,7 +10,7 @@ import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel';
 import TerritoryItinerariesDropUp from '../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp';
 import TerritoryFooter from '../../footers/TerritoryFooter/TerritoryFooter';
 import GlobalData from '../../utilities/GlobalData';
-import PageTitle from "../../general/PageTitle";
+import CompassPanel from '../../panels/CompassPanel/CompassPanel';
 
 import { draw_jellyfish, prepare_jellyfish_data, visit } from './jellyfish';
 
@@ -20,7 +20,7 @@ export default class TerritoryWrapper extends React.Component
 {
   state = {
     data : "data still not loaded",
-    isLoading : true,
+    isLoading : true,    
 
     noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
     itineraryDropUpPosition    : GlobalData.itineraryDropUpPositions.closed,
@@ -36,7 +36,9 @@ export default class TerritoryWrapper extends React.Component
     spaceAnalysisMode : GlobalData.analysisModes.space.genericTerrestrial,
     shapeAnalysisMode : GlobalData.analysisModes.shape.types,    
 
+    compassPanelOpen  : false,
     helpSidePanelOpen : false,
+    allowDropMenus : false,
 
     dataExtent : [...GlobalData.defaultTerritoryDataExtent]
   };
@@ -131,20 +133,37 @@ export default class TerritoryWrapper extends React.Component
   }
 
   containerSetTerritoryShowHills = callback => this.territoryShowHills = callback;
-  callTerritoryShowHills = opacity => this.territoryShowHills(opacity);
+  callTerritoryShowHills = opacity => this.territoryShowHills(opacity);  
 
   toggleNoAnalysisDropDownPosition = () =>
   {
+    if(!this.state.allowDropMenus) return;
+
     const newValue =
       this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open ?
       GlobalData.noAnalysisDropDownPositions.closed :
       GlobalData.noAnalysisDropDownPositions.open;
 
+    // if we are opening the drop down, kill the bottom panel
+    const bottomPanelPosition = 
+      newValue === GlobalData.noAnalysisDropDownPositions.open ? 
+      GlobalData.bottomPanelPositions.closed :
+      this.state.bottomPanelPosition;
+
+    const bottomPanelMode =
+      newValue === GlobalData.noAnalysisDropDownPositions.open ?
+      GlobalData.bottomPanelModes.noAnalysis :
+      this.state.bottomPanelMode;
+
     this.setState({ 
       noAnalysisDropDownPosition : newValue, 
-      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed
+      itineraryDropUpPosition : GlobalData.itineraryDropUpPositions.closed,
+      bottomPanelPosition : bottomPanelPosition,
+      bottomPanelMode : bottomPanelMode
     });
   }
+
+  containerSetAllowDropMenus = value => this.setState({ allowDropMenus : value });
 
   setNoAnalysisDropDownPosition = value => this.setState({ noAnalysisDropDownPosition : value });
 
@@ -218,14 +237,29 @@ export default class TerritoryWrapper extends React.Component
 
   toggleItineraryDropUpPosition = () =>
   {
+    if(!this.state.allowDropMenus) return;
+
     const newValue =
       this.state.itineraryDropUpPosition === GlobalData.itineraryDropUpPositions.open ?
       GlobalData.itineraryDropUpPositions.closed :
-      GlobalData.itineraryDropUpPositions.open;    
+      GlobalData.itineraryDropUpPositions.open;
+
+    const bottomPanelPosition = 
+      newValue === GlobalData.itineraryDropUpPositions.open ? 
+      GlobalData.bottomPanelPositions.closed :
+      this.state.bottomPanelPosition;
+
+
+    const bottomPanelMode =
+      newValue === GlobalData.itineraryDropUpPositions.open ?
+      GlobalData.bottomPanelModes.noAnalysis :
+      this.state.bottomPanelMode;
 
     this.setState({ 
       itineraryDropUpPosition : newValue, 
-      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed
+      noAnalysisDropDownPosition : GlobalData.noAnalysisDropDownPositions.closed,
+      bottomPanelPosition : bottomPanelPosition,
+      bottomPanelMode : bottomPanelMode
     });
   }
 
@@ -243,8 +277,16 @@ export default class TerritoryWrapper extends React.Component
 
   onBottomPanelCloseButtonClicked = () => this.setState({ bottomPanelMode : GlobalData.bottomPanelModes.noAnalysis });
 
+  containerToggleCompassPanel = () => this.setState({ compassPanelOpen : !this.state.compassPanelOpen });
+
   render()
   {
+/*    
+    if(this.state.compassIsActive)
+    {
+      return <Compass containerToggleCompass={this.containerToggleCompass} />
+    }
+*/
     let helpPage;
 
     switch(this.state.mainAnalysisMode)
@@ -310,6 +352,10 @@ export default class TerritoryWrapper extends React.Component
           page={helpPage}
           closeButtonClicked={this.toggleHelpSidePanel} />
 
+        <CompassPanel
+          open={this.state.compassPanelOpen}
+          containerToggleCompassPanel={this.containerToggleCompassPanel} />
+
         <>
 
         <TerritoryHeader
@@ -323,6 +369,7 @@ export default class TerritoryWrapper extends React.Component
           helpButtonClicked={this.toggleHelpSidePanel}
           toggleNoAnalysisDropDownPosition={this.toggleNoAnalysisDropDownPosition}
           containerSetNoAnalysisDropDownRadioButtonPressed={this.containerSetNoAnalysisDropDownRadioButtonPressed}
+          containerToggleCompassPanel={this.containerToggleCompassPanel}
         />
 
         {this.state.noAnalysisDropDownPosition === GlobalData.noAnalysisDropDownPositions.open &&
@@ -341,6 +388,7 @@ export default class TerritoryWrapper extends React.Component
                 analysisMode = {analysisMode}
                 data={this.state.data}
                 colors={GlobalData.visualizationColors.territory}
+                containerSetAllowDropMenus={this.containerSetAllowDropMenus}
                 containerSetTerritorySetHighlightMode={this.containerSetTerritorySetHighlightMode}
                 containerSetTerritoryShowHills={this.containerSetTerritoryShowHills}
                 containerSetTerritorySetDataExtent={this.containerSetTerritorySetDataExtent}
@@ -736,27 +784,21 @@ function create_item_steps(d, json_nodes_min_size, x_csv2)
       'step_y': step_y,
 
       'generico_cosmico': csv_item === undefined ? 0 : csv_item.generico_cosmico,
-      'generico_cosmico_abs': csv_item === undefined ? 0 : csv_item.generico_cosmico_abs,
       'n_generico_cosmico': csv_item === undefined ? 0 : csv_item.n_generico_cosmico,
 
       'generico_terrestre': csv_item === undefined ? 0 : csv_item.generico_terrestre,
-      'generico_terrestre_abs': csv_item === undefined ? 0 : csv_item.generico_terrestre_abs,
       'n_generico_terrestre': csv_item === undefined ? 0 : csv_item.n_generico_terrestre,
 
       'inventato': csv_item === undefined ? 0 : csv_item.inventato,
-      'inventato_abs': csv_item === undefined ? 0 : csv_item.inventato_abs,
       'n_inventato': csv_item === undefined ? 0 : csv_item.n_inventato,
 
       'no_ambientazione': csv_item === undefined ? 0 : csv_item.no_ambientazione,
-      'no_ambientazione_abs': csv_item === undefined ? 0 : csv_item.no_ambientazione_abs,
       'n_no_ambientazione': csv_item === undefined ? 0 : csv_item.n_no_ambientazione,
 
       'nominato_cosmico': csv_item === undefined ? 0 : csv_item.nominato_cosmico,
-      'nominato_cosmico_abs': csv_item === undefined ? 0 : csv_item.nominato_cosmico_abs,
       'n_nominato_cosmico': csv_item === undefined ? 0 : csv_item.n_nominato_cosmico,
 
       'nominato_terrestre': csv_item === undefined ? 0 : csv_item.nominato_terrestre,
-      'nominato_terrestre_abs': csv_item === undefined ? 0 : csv_item.nominato_terrestre_abs,
       'n_nominato_terrestre': csv_item === undefined ? 0 : csv_item.n_nominato_terrestre,
 
       'nebbia_normalizzata': csv_item === undefined ? 0 : csv_item.nebbia_normalizzata,
@@ -802,27 +844,21 @@ function calculate_item_data(obj)
 
   let item_data = {
     generico_cosmico: (+obj.generico_cosmico),
-    generico_cosmico_abs: +obj.generico_cosmico,
     n_generico_cosmico: +obj.n_generico_cosmico,
 
     generico_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre),
-    generico_terrestre_abs: +obj.generico_terrestre,
     n_generico_terrestre: +obj.n_generico_terrestre,
 
     inventato: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato),
-    inventato_abs: +obj.inventato,
     n_inventato: +obj.n_inventato,
 
     no_ambientazione: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione),
-    no_ambientazione_abs: +obj.no_ambientazione,
     n_no_ambientazione: +obj.n_no_ambientazione,
 
     nominato_cosmico: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico),
-    nominato_cosmico_abs: +obj.nominato_cosmico,
     n_nominato_cosmico: +obj.n_nominato_cosmico,
 
     nominato_terrestre: (+obj.generico_cosmico) + (+obj.generico_terrestre) + (+obj.inventato) + (+obj.no_ambientazione) + (+obj.nominato_cosmico) + (+obj.nominato_terrestre),
-    nominato_terrestre_abs: +obj.nominato_terrestre,
     n_nominato_terrestre: +obj.n_nominato_terrestre,
 
     nebbia_normalizzata: (+obj.pct_nebbia_normalizzata),
@@ -845,19 +881,7 @@ function calculate_item_data(obj)
     lists_are_present: lists_sum > 0,
     lists_ratio_with_threshold: Math.max(lists_ratio_threshold, lists_ratio),
     lists_ratio_is_below_threshold: lists_ratio < lists_ratio_threshold,
-
-//		places_hierarchy: data.place_hierarchies.get(obj.id),
-//		place_hierarchy: data.place_hierarchies.get(obj.id)
   };
-
-//	if(item_data.place_hierarchy)
-//	{
-//		item_data.place_hierarchy.n_steps = obj.n_steps;
-//	}
-//let s = item_data.places_hierarchy ? item_data.places_hierarchy.children.length : "";
-//console.log(obj.id + " : " + s);
-//let s = item_data.place_hierarchy ? item_data.place_hierarchy.children.length : "";
-  // console.log("lists_sum : " + lists_sum + ", item_data.lists_f_ratio : " + item_data.lists_f_ratio);
 
   return item_data;
 }

@@ -1,26 +1,36 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import groupBy from "lodash/groupBy";
+import keyBy from "lodash/keyBy";
+import uniq from "lodash/uniq";
 import styles from "./Trama.module.css";
 import { useTransition, useSpring, animated } from "react-spring";
 import { scaleLinear } from "d3";
 import sortBy from "lodash/sortBy";
 import omit from "lodash/omit";
-import find from "lodash/find";
+import sumBy from "lodash/sumBy";
+
 import { extent } from "d3-array";
 import { levelMaps } from "./helpers";
 
 function MarimekkoBookIcycle({
   book,
   currentTextID,
-  bookDataAnnotated,
   selectedLegendEntries,
+  anyLegendEntrySelected,
   height,
   width,
-  iceCycleData
+  iceCycleData,
+  icycleWidth,
+  currentPosition,
+  currentSequencesSelected
 }) {
+  
   // utility measures
-  const icycleWidth = (width / 10) * 8;
   const columnWidth = icycleWidth / 5;
+
+  const sequenceScale = scaleLinear()
+    .range([0 + 5, height - 5])
+    .domain([0, +book.caratteri]);
 
   //annotating data
   const iCycleDataAnnotated = useMemo(() => {
@@ -28,38 +38,27 @@ function MarimekkoBookIcycle({
       return null;
     }
     const byLevel = groupBy(iceCycleData, x => x.livello);
-
     const byLevelSorted = Object.keys(byLevel).reduce((acc, item) => {
       acc[item] = sortBy(byLevel[item], x => +x.starts_at);
       return acc;
     }, {});
 
-    const bookExtentStart = extent(byLevelSorted["uno"], x => +x.starts_at);
-    const bookExtentEnd = extent(byLevelSorted["uno"], x => +x.ends_at);
-    const sequenceScale = scaleLinear()
-      .range([0, height])
-      // .domain([bookExtentStart[0], bookExtentEnd[1]]);
-      .domain([0, +book.caratteri]);
-
-    //annotation for levels <> "uno"
-    const byLevelAnnotated = Object.keys(omit(byLevelSorted, "uno")).reduce(
-      (acc, item) => {
-        acc[item] = byLevelSorted[item].reduce((listOfBlocks, sequence) => {
-          listOfBlocks.push({
-            ...sequence,
-            y1: sequenceScale(+sequence.starts_at),
-            h:
-              sequenceScale(+sequence.ends_at) -
-              sequenceScale(+sequence.starts_at)
-          });
-          return listOfBlocks;
-        }, []);
-        return acc;
-      },
-      {}
-    );
+    //annotation for levels
+    const byLevelAnnotated = Object.keys(byLevelSorted).reduce((acc, item) => {
+      acc[item] = byLevelSorted[item].reduce((listOfBlocks, sequence) => {
+        listOfBlocks.push({
+          ...sequence,
+          y1: sequenceScale(+sequence.starts_at),
+          h:
+            sequenceScale(+sequence.ends_at) -
+            sequenceScale(+sequence.starts_at)
+        });
+        return listOfBlocks;
+      }, []);
+      return acc;
+    }, {});
     return byLevelAnnotated;
-  }, [book.caratteri, height, iceCycleData]);
+  }, [iceCycleData, sequenceScale]);
 
   const isDetail = !!currentTextID;
   const wasDetailRef = useRef(false);
@@ -77,6 +76,17 @@ function MarimekkoBookIcycle({
   const translateToDetail = `translateX(0px)`;
 
   const [levelsTranslated, setLevelsTranslated] = useState(1);
+
+  const sequencesSelected = useMemo(() => {
+    if(!currentSequencesSelected){
+      return null
+    }
+
+    const out = currentSequencesSelected.map(x => x['tipologia']).join("-")
+    return book.sequencesMatchesForBook[out] || {}
+    
+  }, [book.sequencesMatchesForBook, currentSequencesSelected]) 
+
 
   const props = useSpring({
     config: { precision: 0.1 },
@@ -111,71 +121,95 @@ function MarimekkoBookIcycle({
     }
   });
 
+  const cursorY = useMemo(() => {
+    return sequenceScale(currentPosition);
+  }, [currentPosition, sequenceScale]);
+
+  const numLevels = useMemo(() => {
+    return Object.keys(iCycleDataAnnotated).length;
+  }, [iCycleDataAnnotated]);
+
+
   return (
-    isDetail && (
-      <>
-        {iCycleDataAnnotated &&
-          Object.keys(iCycleDataAnnotated).map(levelName => {
-            const levelValue = levelMaps[levelName];
-            const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
+    <>
+      {iCycleDataAnnotated &&
+        Object.keys(omit(iCycleDataAnnotated, "uno")).map(levelName => {
+          const levelValue = levelMaps[levelName];
+          const translate = `translateX(${(levelValue - 1) * columnWidth}px)`;
 
-            return (
-              <animated.g
-                key={levelName}
-                style={{
-                  transform: translate,
-                  opacity: props.levelsOpen
-                }}
-              >
-                {iCycleDataAnnotated[levelName].map(block => (
-                  <rect
-                    title={levelName}
-                    style={{ fill: block.color }}
-                    className={`${styles.marimekkoUnit}  ${
-                      styles.marimekkoUnitIceCycle
-                    } ${
-                      selectedLegendEntries[block.label] ? styles.selected : ""
-                    }`}
-                    key={block["ID SEQ"]}
-                    width={columnWidth}
-                    y={block.y1}
-                    height={block.h}
-                  ></rect>
-                ))}
-              </animated.g>
-            );
-          })}
+          
 
-        <animated.g
-          key={book.textID}
-          style={{
-            transform: props.transform,
-            opacity: props.opacity
-          }}
-        >
-          {/* <rect
-            className={`${styles.marimekkoRect}`}
-            style={{
-              height,
-              width: props.width
-            }}
-          ></rect> */}
-          {bookDataAnnotated.map((d, i) => (
-            <animated.rect
-              key={i}
-              y={d.top}
-              width={props.width}
-              height={d.height}
-              className={`${styles.marimekkoUnit}  ${
-                selectedLegendEntries[d.label] ? styles.selected : ""
-              }`}
-              fill={d.color}
-              stroke={"none"}
-            ></animated.rect>
-          ))}
-        </animated.g>
-      </>
-    )
+          return (
+            <animated.g
+              key={levelName}
+              style={{
+                transform: translate,
+                opacity: props.levelsOpen
+              }}
+            >
+              {iCycleDataAnnotated[levelName].map(block => {
+                let opacity = 1
+                if(currentSequencesSelected.length){
+                  opacity = sequencesSelected[`${block['ID SEQ']}-${block.livello}`] ? 1 : 0.2
+                } else if(anyLegendEntrySelected) {
+                  opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
+                }
+                return (
+                <rect
+                  title={block['ID SEQ']}
+                  style={{ fill: block.color, opacity}}
+                  className={`${styles.marimekkoUnit}  ${
+                    styles.marimekkoUnitIceCycle
+                  } ${
+                    selectedLegendEntries[block.label] ? styles.selected : ""
+                  }`}
+                  key={block["ID SEQ"]}
+                  width={columnWidth}
+                  y={block.y1}
+                  height={block.h}
+                ></rect>
+              )})}
+            </animated.g>
+          );
+        })}
+
+      <animated.g
+        key={book.textID}
+        style={{
+          transform: props.transform,
+          opacity: props.opacity
+        }}
+      >
+        {iCycleDataAnnotated["uno"].map(block => { 
+          let opacity = 1
+          if(currentSequencesSelected.length){
+            opacity = sequencesSelected[`${block['ID SEQ']}-${block.livello}`] ? 1 : 0.2
+          } else if(anyLegendEntrySelected) {
+            opacity = selectedLegendEntries[block['cluster tipologie']] ? 1 : 0.2  
+          }
+          return (
+          <rect
+          title={block['ID SEQ']}
+          style={{ fill: block.color, opacity}}
+            className={`${styles.marimekkoUnit}  ${
+              styles.marimekkoUnitIceCycle
+            } ${selectedLegendEntries[block.label] ? styles.selected : ""}`}
+            key={block["ID SEQ"]}
+            width={columnWidth}
+            y={block.y1}
+            height={block.h}
+          ></rect>
+        )})}
+      </animated.g>
+
+      <line
+        x1={0}
+        x2={numLevels * columnWidth + 30}
+        y1={cursorY}
+        y2={cursorY}
+        className={styles.cursorLine}
+      ></line>
+    </>
   );
 }
 
@@ -183,16 +217,40 @@ function MarimekkoBook({
   book,
   currentTextID,
   setCurrentTextID,
-  bookDataAnnotated,
+  bookData,
   selectedLegendEntries,
   height,
   width
 }) {
   // target positions for transation
-  const translateToList = `translate(${book.caratteriX}px)`;
+  const translateToList = useMemo(() => `translate(${book.caratteriX}px)`, [book.caratteriX])
+  const heightScale = scaleLinear()
+    .domain([0, 1])
+    .range([0, height]);
 
-  // useChain(isCurrent ? [springRef, rectSpringRef] : [rectSpringRef, springRef])
-  // console.log(props)
+  const bookDataAnnotated = useMemo(() => {
+    return bookData
+      .map(item => ({
+        label: item.label,
+        value: item.value,
+        color: item.color,
+        height: heightScale(item.value)
+      }))
+      .reduce((out, item, i) => {
+        if (i === 0) {
+          out.push({ ...item, top: item.top !== undefined ? item.top : 0 });
+        } else {
+          out.push({
+            ...item,
+            top:
+              item.top !== undefined
+                ? item.top
+                : out[i - 1].top + out[i - 1].height
+          });
+        }
+        return out;
+      }, []);
+  }, [bookData, heightScale]);
 
   return (
     <>
@@ -240,80 +298,60 @@ export default function MarimekkoChart({
   currentTextID,
   setCurrentTextID,
   iceCycleData,
-  coloriClusterTipologie
+  icycleWidth,
+  currentBook,
+  currentPosition,
+  currentSequencesSelected
 }) {
-  const heightScale = scaleLinear()
-    .domain([0, 1])
-    .range([0, height]);
-
-  const anyLegendEntrySelected =
-    Object.keys(selectedLegendEntries || {}).filter(
+  const anyLegendEntrySelected = useMemo(() => {
+    return Object.keys(selectedLegendEntries || {}).filter(
       k => selectedLegendEntries[k]
     ).length > 0;
-
-  const mappedBooks = useMemo(() => {
-    let out = {};
-    booksDataWithPositions.forEach(book => {
-      const bookData = chartBooks[book.textID];
-      //annotating with top and height
-      out[book.textID] = bookData
-        .map(item => ({
-          label: item.label,
-          value: item.value,
-          color: item.color,
-          height: heightScale(item.value)
-        }))
-        .reduce((out, item, i) => {
-          if (i === 0) {
-            out.push({ ...item, top: 0 });
-          } else {
-            out.push({ ...item, top: out[i - 1].top + out[i - 1].height });
-          }
-          return out;
-        }, []);
-    });
-
-    return out;
-  }, [booksDataWithPositions, chartBooks, heightScale]);
-
-  const currentBook = useMemo(() => {
-    return find(booksDataWithPositions, x => x.textID === currentTextID);
-  }, [booksDataWithPositions, currentTextID]);
+  }, [selectedLegendEntries])
+    
 
   const transitions = useTransition(!currentTextID, null, {
     from: { opacity: 1 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-    })
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  });
 
   return (
     <>
-      {transitions.map(({ item, key, props }) =>
-        item && <animated.svg
-        style={{ height, width, position: "absolute", zIndex: 0, opacity:props.opacity }}
-        className={
-          anyLegendEntrySelected ? styles.withLegendItemSelected : ""
-        }
-      >
-        {booksDataWithPositions.map(book => {
-          const bookDataAnnotated = mappedBooks[book.textID];
-          return (
-            <MarimekkoBook
-              key={book.textID}
-              book={book}
-              currentTextID={currentTextID}
-              setCurrentTextID={setCurrentTextID}
-              bookDataAnnotated={bookDataAnnotated}
-              selectedLegendEntries={selectedLegendEntries}
-              height={height}
-              width={width}
-              iceCycleData={iceCycleData}
-            ></MarimekkoBook>
-          );
-        })}
-      </animated.svg>
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.svg
+              key={key}
+              style={{
+                height,
+                width,
+                position: "absolute",
+                zIndex: 0,
+                opacity: props.opacity
+              }}
+              className={
+                anyLegendEntrySelected ? styles.withLegendItemSelected : ""
+              }
+            >
+              {booksDataWithPositions.map(book => {
+                return (
+                  <MarimekkoBook
+                    key={book.textID}
+                    book={book}
+                    currentTextID={currentTextID}
+                    setCurrentTextID={setCurrentTextID}
+                    selectedLegendEntries={selectedLegendEntries}
+                    height={height}
+                    width={width}
+                    iceCycleData={iceCycleData}
+                    bookData={chartBooks[book.textID]}
+                  ></MarimekkoBook>
+                );
+              })}
+            </animated.svg>
+          )
       )}
-       
 
       {currentTextID && (
         <svg
@@ -325,11 +363,15 @@ export default function MarimekkoChart({
           <MarimekkoBookIcycle
             book={currentBook}
             currentTextID={currentTextID}
-            bookDataAnnotated={mappedBooks[currentTextID]}
+            bookData={chartBooks[currentBook.textID]}
             selectedLegendEntries={selectedLegendEntries}
+            anyLegendEntrySelected={anyLegendEntrySelected}
             height={height}
             width={width}
             iceCycleData={iceCycleData}
+            icycleWidth={icycleWidth}
+            currentPosition={currentPosition}
+            currentSequencesSelected={currentSequencesSelected}
           ></MarimekkoBookIcycle>
         </svg>
       )}

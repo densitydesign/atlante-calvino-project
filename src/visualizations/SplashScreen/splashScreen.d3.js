@@ -40,7 +40,7 @@ class VClass
             `);
 */
 
-        let 
+        let
           width = 900,
           height = 900,
           rootNode,
@@ -53,7 +53,7 @@ class VClass
         let config = [{
           collisionMargin: .25,
           amountNodes: 4000,
-          radiusRootNode: 6,
+          radius: 6,
           rootPosition: [201.0764923095703 + 3 + 0.002, 88.30018615722656 + 3 - 0.002],
           margin: {
             top: 0,
@@ -87,7 +87,7 @@ class VClass
           });
 
         // This function checks whether the circle is or not whitin any of the letters polygon
-        function checkIfInside(coordinates) 
+        function checkIfInside(coordinates)
         {
           let flag = 0;
           lettersPolygons.forEach(function(d) {
@@ -103,7 +103,7 @@ class VClass
         function addNodes(n) {
           const fibonacci = [1, 2, 3, 3, 5, 8, 13, 21, 34, 55];
 
-          for(let i = 0; i < n; i++) 
+          for(let i = 0; i < n; i++)
           {
             let myX = d3.randomUniform(configuration.margin.left, configuration.margin.right)();
             let myY = d3.randomUniform(configuration.margin.top, configuration.margin.bottom)();
@@ -119,11 +119,11 @@ class VClass
             rootNode.fy = configuration.rootPosition[1];
             rootNode.r = configuration.radiusRootNode;
           }
-        }        
+        }
 
         let collideForce = d3.forceCollide(function(d) { return d.r + configuration.collisionMargin });
 
-        function ticked() 
+        function ticked()
         {
           node
             .attr("cx", function(d) { return d.x = Math.max(configuration.margin.left + d.r, Math.min(configuration.margin.right - d.r, d.x)); })
@@ -143,11 +143,11 @@ class VClass
           .on("tick", ticked);
 
         // Update function
-        function update() 
+        function update()
         {
-          function drawGraph() 
+          function drawGraph()
           {
-console.log("drawGraph");            
+console.log("drawGraph");
             // Apply the general update pattern to the nodes.
             node = node.data(nodes, function(d) { return d.id; });
 
@@ -161,9 +161,9 @@ console.log("drawGraph");
               .classed('node', true)
               .classed('is-inside', function(d) { return checkIfInside([d.x, d.y]) })
               .classed('root-node', function(d) { if (d.id == 0) { return true } else { return false } })
-              .style("fill", "white")
-              .style("stroke", "black")
-              .style("stroke-width", 0.4)
+              .style("fill", "var(--cool-bg)")
+              .style("stroke", "var(--dark-blue)")
+              .style("stroke-width", 0.1)
               .attr('cx', function(d) { return d.x; })
               .attr('cy', function(d) { return d.y; })
               .attr("r", 0)
@@ -217,7 +217,7 @@ console.log("drawGraph");
               .alpha(1)
               .restart(); //reheat the simulation
           }
-        });        
+        });
 
         calogo.on("mouseleave", function() {
           d3
@@ -228,7 +228,7 @@ console.log("drawGraph");
               rootNode.fx = configuration.rootPosition[0];
               rootNode.fy = configuration.rootPosition[1];
             });
-        });        
+        });
 
         calogo.on("touchend", function() {
           d3
@@ -242,7 +242,7 @@ console.log("drawGraph");
         });
 console.log("loading bubbles.json...");
         d3.json(process.env.PUBLIC_URL + '/bubbles.json').then(data => {
-console.log("inside function");          
+console.log("inside function");
           nodes = data;
 
           let maxRadius = d3.max(nodes, function(d) { return d.r });

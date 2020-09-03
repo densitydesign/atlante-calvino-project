@@ -12,7 +12,7 @@ export default class TerritoryDoubtMainOptionsSubPanel extends React.Component
   {
     return (
       <>
-                   <div className="title-panel"><h4>Tipologie di Elenco</h4></div>
+                   <div className="title-panel"><h4>Presenza dei fenomeni</h4></div>
       <div className="territory-doubt-main-options-subpanel">
         <RadioButton
           id={this.props.fogRadioButtonId}

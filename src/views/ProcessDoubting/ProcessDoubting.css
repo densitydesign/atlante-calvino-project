@@ -1,0 +1,29 @@
+#doubting-stacked-bars .selected {
+    opacity: 1 !important;
+}
+
+#doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
+    pointer-events: none;
+}
+
+/* #doubting-stacked-bars{
+    padding-left:1em;
+    padding-right:1em;
+  } */
+
+#doubting-stacked-bars .serie > rect {
+    cursor: pointer;
+}
+  
+#doubting-stacked-bars.there-is-filter .serie rect.filtered {
+  opacity: 0.15 !important;
+  cursor: not-allowed;
+}
+
+#doubting-stacked-bars .selector image {
+  cursor: pointer;
+}
+
+#doubting-stacked-bars .selector image:active {
+  opacity: 0.75;
+}

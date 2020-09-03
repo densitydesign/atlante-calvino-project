@@ -1,0 +1,54 @@
+.rc-slider-handle {
+    position: absolute;
+    width: 30px;
+    height: 12px;
+    cursor: pointer;
+    cursor: -webkit-grab;
+    margin-top: -7px;
+    margin-bottom: 7px;
+    cursor: grab;
+    border-radius: 5px;
+    border: solid 1px var(--dark-blue);
+    background-color: #fff;
+    touch-action: pan-y;
+}
+
+.rc-slider-handle:active, .rc-slider-handle-click-focused {
+    border: solid 1px var(--dark-blue) !important;
+    box-shadow: none;
+    cursor: grabbing;
+}
+
+.rc-slider-handle:hover {
+    border: solid 1px var(--dark-blue);
+    box-shadow: none;
+    cursor: grabbing;
+}
+
+.rc-slider-vertical {
+    /* width: 12px;
+    height: 100%;
+    padding: 0 5px;
+    background: #eee; */
+    width: 30px;
+}
+
+.rc-slider-track {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    border-radius: 0px;
+    background-color: #ccc;
+    display: none;
+}
+
+.rc-slider-vertical .rc-slider-track {
+    left: 0px;
+    bottom: 0;
+    width: 14px;
+    display: none;
+}
+
+.rc-slider-vertical .rc-slider-rail {
+    display: none;
+}
