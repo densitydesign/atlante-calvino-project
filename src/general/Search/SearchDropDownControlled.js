@@ -33,12 +33,45 @@ const renderMenuItemChildren = (option, props, idx, selectedValues) => {
 };
 
 class Search extends Component {
+  constructor(props) {
+    super(props)
+    this.containerRef = React.createRef()
+    this.state = {
+      maxTokens: 2,
+    }
+  }
+
+  componentDidMount() {
+    this.calculateMaxTokens()
+    window.addEventListener('resize', this.calculateMaxTokens)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.calculateMaxTokens)
+  }
+
+  calculateMaxTokens = () => {
+    const width = this.containerRef.current.clientWidth
+
+    let maxTokens
+    if (width >= 500) {
+      maxTokens = 4
+    } else if (width >= 400) {
+      maxTokens = 3
+    } else {
+      maxTokens = 2
+    }
+
+    this.setState({ maxTokens })
+  }
+
   render() {
     let isSelection = false;
-    const { maxTokens, selectedOptions } = this.props;
+    const { maxTokens } = this.state
+    const { selectedOptions } = this.props;
 
     return (
-      <div className="search-component" style={this.props.style}>
+      <div className="search-component" style={this.props.style} ref={this.containerRef}>
         {!isSelection && (
           <span style={{ fontSize: "1rem", position: "relative", top: "-3px" }}>
             /
@@ -111,7 +144,6 @@ class Search extends Component {
 export default Search;
 
 Search.defaultProps = {
-  maxTokens: 2,
   style: {
     gridColumn: "span 4"
   }
