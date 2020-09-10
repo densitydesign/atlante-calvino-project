@@ -45,8 +45,8 @@ export default function AtlasRouter()
     <BrowserRouter basename="/atlante-calvino-project">
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
-      <Route exact path="/"><SplashScreenWrapper /></Route>
-      <Route exact path="/new-splash"><SplashScreen2 /></Route>
+      {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
+      <Route exact path="/"><SplashScreen2 /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
       <Route exact path="/Home"><HamburgerMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>

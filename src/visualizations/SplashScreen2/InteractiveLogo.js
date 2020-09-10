@@ -23,10 +23,9 @@ const InteractiveLogo = () => {
                     .attr('fill','var(--dark-blue)');
         circle.transition()
             .duration(1000)
-            .delay((d,i)=>Math.floor(i*0.65))
+            .delay((d,i)=>Math.floor(i/50)*50)
             .ease(d3.easeElasticOut)
             .attr('r',d=>d.r);
-        
         simulation.on('tick',()=>{
             circle.attr('cx',d=>d.x).attr('cy',d=>d.y);
         });
