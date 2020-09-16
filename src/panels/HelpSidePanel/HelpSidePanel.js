@@ -14,6 +14,9 @@ import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/Trans
 
 import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
 
+import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
+import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
+
 import './HelpSidePanel.css';
 
 export default class HelpSidePanel extends React.Component
@@ -33,14 +36,21 @@ export default class HelpSidePanel extends React.Component
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
 
+      case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
+      case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;
+
       default : break;
     }
 
     return (
       <>
       <div className={"help-side-panel " + (this.props.open ? "help-side-panel-open" : "help-side-panel-closed")}>
-        <div> <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
-                      { helpPage }</div>
+          <div>
+              <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
+                  {
+                    this.props.children?this.props.children:helpPage
+                  }
+          </div>
       </div>
       </>
     );

@@ -1,0 +1,40 @@
+.h1 {
+    margin-bottom: 0.5rem !important;
+}
+
+.h2 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.legendSection {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.legendTitle {
+    color: black !important;
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.legendImg {
+    margin-bottom: 0.5rem;
+}
+
+.colorAnimation {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: 0;
+}
+
+.switchView {
+    cursor: pointer;
+}
+
+.switchView:hover {
+    text-decoration: underline;
+}

@@ -198,6 +198,15 @@
       "children": [
         {
           "text_id": "S007",
+          "node_id": "S007@vallate",
+          "caption": "vallate",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "S007",
           "node_id": "S007@bosco",
           "caption": "bosco",
           "level": "1",
@@ -207,11 +216,20 @@
         },
         {
           "text_id": "S007",
-          "node_id": "S007@vallate",
-          "caption": "vallate",
+          "node_id": "S007@Creppo",
+          "caption": "Creppo",
           "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "S007",
+          "node_id": "S007@Perallo",
+          "caption": "Perallo",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
           "children": []
         },
         {
@@ -235,6 +253,15 @@
         },
         {
           "text_id": "S007",
+          "node_id": "S007@Tumena_(Val)",
+          "caption": "Tumena (Val)",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "S007",
           "node_id": "S007@Colla_Bracca",
           "caption": "Colla Bracca",
           "level": "1",
@@ -244,35 +271,8 @@
         },
         {
           "text_id": "S007",
-          "node_id": "S007@Creppo",
-          "caption": "Creppo",
-          "level": "1",
-          "basal_type": "nominato_terrestre",
-          "local_type": "nominato_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "S007",
-          "node_id": "S007@Perallo",
-          "caption": "Perallo",
-          "level": "1",
-          "basal_type": "nominato_terrestre",
-          "local_type": "nominato_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "S007",
           "node_id": "S007@San_Faustino",
           "caption": "San Faustino",
-          "level": "1",
-          "basal_type": "nominato_terrestre",
-          "local_type": "nominato_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "S007",
-          "node_id": "S007@Tumena_(Val)",
-          "caption": "Tumena (Val)",
           "level": "1",
           "basal_type": "nominato_terrestre",
           "local_type": "nominato_terrestre",
@@ -1314,20 +1314,30 @@
       "children": [
         {
           "text_id": "S031",
-          "node_id": "S031@Cittadella",
-          "caption": "Cittadella",
+          "node_id": "S031@Torino",
+          "caption": "Torino",
           "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
           "children": [
             {
               "text_id": "S031",
-              "node_id": "S031@Cittadella@piazza",
-              "caption": "piazza",
+              "node_id": "S031@Torino@Cittadella",
+              "caption": "Cittadella",
               "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
+              "basal_type": "nominato_terrestre",
+              "local_type": "nominato_terrestre",
+              "children": [
+                {
+                  "text_id": "S031",
+                  "node_id": "S031@Torino@Cittadella@piazza",
+                  "caption": "piazza",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                }
+              ]
             }
           ]
         }
@@ -1491,17 +1501,8 @@
           "children": [
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@imbarco",
-              "caption": "imbarco",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S034",
-              "node_id": "S034@Sanremo@piazza",
-              "caption": "piazza",
+              "node_id": "S034@Sanremo@via",
+              "caption": "via",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -1518,8 +1519,8 @@
             },
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@via",
-              "caption": "via",
+              "node_id": "S034@Sanremo@piazza",
+              "caption": "piazza",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -1527,17 +1528,17 @@
             },
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@Albergo_Pace",
-              "caption": "Albergo Pace",
+              "node_id": "S034@Sanremo@imbarco",
+              "caption": "imbarco",
               "level": "2",
               "basal_type": "nominato_terrestre",
-              "local_type": "inventato",
+              "local_type": "generico_terrestre",
               "children": []
             },
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@Bar_Parigi",
-              "caption": "Bar Parigi",
+              "node_id": "S034@Sanremo@Caffé_Lamarmora",
+              "caption": "Caffé Lamarmora",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "inventato",
@@ -1554,8 +1555,17 @@
             },
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@Caffé_Lamarmora",
-              "caption": "Caffé Lamarmora",
+              "node_id": "S034@Sanremo@Albergo_Pace",
+              "caption": "Albergo Pace",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "S034",
+              "node_id": "S034@Sanremo@Iris_(locale)",
+              "caption": "Iris (locale)",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "inventato",
@@ -1572,8 +1582,8 @@
             },
             {
               "text_id": "S034",
-              "node_id": "S034@Sanremo@Iris_(locale)",
-              "caption": "Iris (locale)",
+              "node_id": "S034@Sanremo@Bar_Parigi",
+              "caption": "Bar Parigi",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "inventato",
@@ -3846,6 +3856,15 @@
           "children": [
             {
               "text_id": "S065",
+              "node_id": "S065@Mentone@mare",
+              "caption": "mare",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S065",
               "node_id": "S065@Mentone@camerata",
               "caption": "camerata",
               "level": "2",
@@ -3900,8 +3919,8 @@
             },
             {
               "text_id": "S065",
-              "node_id": "S065@Mentone@mare",
-              "caption": "mare",
+              "node_id": "S065@Mentone@villetta",
+              "caption": "villetta",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -3956,15 +3975,6 @@
               "text_id": "S065",
               "node_id": "S065@Mentone@villa",
               "caption": "villa",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S065",
-              "node_id": "S065@Mentone@villetta",
-              "caption": "villetta",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -4788,6 +4798,15 @@
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
           "children": []
+        },
+        {
+          "text_id": "S076",
+          "node_id": "S078@Brema",
+          "caption": "Brema",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
         }
       ]
     },
@@ -5407,24 +5426,6 @@
               "children": [
                 {
                   "text_id": "S088",
-                  "node_id": "S088@Riviera@***_(Sanremo)@affittacamere",
-                  "caption": "affittacamere",
-                  "level": "3",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "generico_terrestre",
-                  "children": []
-                },
-                {
-                  "text_id": "S088",
-                  "node_id": "S088@Riviera@***_(Sanremo)@studio_(avvocato)",
-                  "caption": "studio (avvocato)",
-                  "level": "3",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "generico_terrestre",
-                  "children": []
-                },
-                {
-                  "text_id": "S088",
                   "node_id": "S088@Riviera@***_(Sanremo)@studio_(notaio)",
                   "caption": "studio (notaio)",
                   "level": "3",
@@ -5434,8 +5435,8 @@
                 },
                 {
                   "text_id": "S088",
-                  "node_id": "S088@Riviera@***_(Sanremo)@ufficio",
-                  "caption": "ufficio",
+                  "node_id": "S088@Riviera@***_(Sanremo)@affittacamere",
+                  "caption": "affittacamere",
                   "level": "3",
                   "basal_type": "nominato_terrestre",
                   "local_type": "generico_terrestre",
@@ -5452,6 +5453,15 @@
                 },
                 {
                   "text_id": "S088",
+                  "node_id": "S088@Riviera@***_(Sanremo)@studio_(avvocato)",
+                  "caption": "studio (avvocato)",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "S088",
                   "node_id": "S088@Riviera@***_(Sanremo)@villa",
                   "caption": "villa",
                   "level": "3",
@@ -5461,8 +5471,17 @@
                 },
                 {
                   "text_id": "S088",
-                  "node_id": "S088@Riviera@***_(Sanremo)@Serenella",
-                  "caption": "Serenella",
+                  "node_id": "S088@Riviera@***_(Sanremo)@ufficio",
+                  "caption": "ufficio",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "S088",
+                  "node_id": "S088@Riviera@***_(Sanremo)@caffè_Melina",
+                  "caption": "caffè Melina",
                   "level": "3",
                   "basal_type": "nominato_terrestre",
                   "local_type": "nominato_terrestre",
@@ -5470,8 +5489,8 @@
                 },
                 {
                   "text_id": "S088",
-                  "node_id": "S088@Riviera@***_(Sanremo)@caffè_Melina",
-                  "caption": "caffè Melina",
+                  "node_id": "S088@Riviera@***_(Sanremo)@Serenella",
+                  "caption": "Serenella",
                   "level": "3",
                   "basal_type": "nominato_terrestre",
                   "local_type": "nominato_terrestre",
@@ -5906,96 +5925,6 @@
           "children": [
             {
               "text_id": "S095",
-              "node_id": "S095@Torino_(città)@parco",
-              "caption": "parco",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@viale",
-              "caption": "viale",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@via",
-              "caption": "via",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@trattoria",
-              "caption": "trattoria",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@stazione",
-              "caption": "stazione",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@salone",
-              "caption": "salone",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@sala",
-              "caption": "sala",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@ristorantini",
-              "caption": "ristorantini",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@quartiere",
-              "caption": "quartiere",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@periferia",
-              "caption": "periferia",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
               "node_id": "S095@Torino_(città)@Ente",
               "caption": "Ente",
               "level": "2",
@@ -6015,8 +5944,8 @@
             },
             {
               "text_id": "S095",
-              "node_id": "S095@Torino_(città)@incrocio",
-              "caption": "incrocio",
+              "node_id": "S095@Torino_(città)@viale",
+              "caption": "viale",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -6024,35 +5953,8 @@
             },
             {
               "text_id": "S095",
-              "node_id": "S095@Torino_(città)@controviale",
-              "caption": "controviale",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@collina",
-              "caption": "collina",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@cinema",
-              "caption": "cinema",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S095",
-              "node_id": "S095@Torino_(città)@caffè",
-              "caption": "caffè",
+              "node_id": "S095@Torino_(città)@albergo",
+              "caption": "albergo",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -6088,8 +5990,125 @@
             },
             {
               "text_id": "S095",
-              "node_id": "S095@Torino_(città)@albergo",
-              "caption": "albergo",
+              "node_id": "S095@Torino_(città)@via",
+              "caption": "via",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@caffè",
+              "caption": "caffè",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@cinema",
+              "caption": "cinema",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@collina",
+              "caption": "collina",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@controviale",
+              "caption": "controviale",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@incrocio",
+              "caption": "incrocio",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@parco",
+              "caption": "parco",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@periferia",
+              "caption": "periferia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@quartiere",
+              "caption": "quartiere",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@ristorantini",
+              "caption": "ristorantini",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@sala",
+              "caption": "sala",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@salone",
+              "caption": "salone",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@stazione",
+              "caption": "stazione",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S095",
+              "node_id": "S095@Torino_(città)@trattoria",
+              "caption": "trattoria",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -7253,6 +7272,15 @@
           "children": [
             {
               "text_id": "S111",
+              "node_id": "S111@città@fabbriche",
+              "caption": "fabbriche",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S111",
               "node_id": "S111@città@case",
               "caption": "case",
               "level": "2",
@@ -7271,8 +7299,8 @@
             },
             {
               "text_id": "S111",
-              "node_id": "S111@città@fabbriche",
-              "caption": "fabbriche",
+              "node_id": "S111@città@quartiere",
+              "caption": "quartiere",
               "level": "2",
               "basal_type": "generico_terrestre",
               "local_type": "generico_terrestre",
@@ -7291,15 +7319,6 @@
               "text_id": "S111",
               "node_id": "S111@città@ponte",
               "caption": "ponte",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S111",
-              "node_id": "S111@città@quartiere",
-              "caption": "quartiere",
               "level": "2",
               "basal_type": "generico_terrestre",
               "local_type": "generico_terrestre",
@@ -7430,6 +7449,15 @@
           "children": [
             {
               "text_id": "S114",
+              "node_id": "S114@città@marciapiede",
+              "caption": "marciapiede",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S114",
               "node_id": "S114@città@cantiere",
               "caption": "cantiere",
               "level": "2",
@@ -7441,33 +7469,6 @@
               "text_id": "S114",
               "node_id": "S114@città@ditta",
               "caption": "ditta",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S114",
-              "node_id": "S114@città@marciapiede",
-              "caption": "marciapiede",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S114",
-              "node_id": "S114@città@quartiere",
-              "caption": "quartiere",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S114",
-              "node_id": "S114@città@via",
-              "caption": "via",
               "level": "2",
               "basal_type": "generico_terrestre",
               "local_type": "generico_terrestre",
@@ -7491,6 +7492,24 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "text_id": "S114",
+              "node_id": "S114@città@quartiere",
+              "caption": "quartiere",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S114",
+              "node_id": "S114@città@via",
+              "caption": "via",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
             },
             {
               "text_id": "S114",
@@ -8865,6 +8884,24 @@
           "children": [
             {
               "text_id": "S137",
+              "node_id": "S137@Terra@continente",
+              "caption": "continente",
+              "level": "2",
+              "basal_type": "nominato_non_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S137",
+              "node_id": "S137@Terra@monte",
+              "caption": "monte",
+              "level": "2",
+              "basal_type": "nominato_non_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S137",
               "node_id": "S137@Terra@baratro",
               "caption": "baratro",
               "level": "2",
@@ -8892,8 +8929,8 @@
             },
             {
               "text_id": "S137",
-              "node_id": "S137@Terra@continente",
-              "caption": "continente",
+              "node_id": "S137@Terra@sala",
+              "caption": "sala",
               "level": "2",
               "basal_type": "nominato_non_terrestre",
               "local_type": "generico_terrestre",
@@ -8928,26 +8965,8 @@
             },
             {
               "text_id": "S137",
-              "node_id": "S137@Terra@monte",
-              "caption": "monte",
-              "level": "2",
-              "basal_type": "nominato_non_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S137",
-              "node_id": "S137@Terra@sala",
-              "caption": "sala",
-              "level": "2",
-              "basal_type": "nominato_non_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S137",
-              "node_id": "S137@Terra@Continente_degli_Uccelli",
-              "caption": "Continente degli Uccelli",
+              "node_id": "S137@Terra@Paese_degli_Uccelli",
+              "caption": "Paese degli Uccelli",
               "level": "2",
               "basal_type": "nominato_non_terrestre",
               "local_type": "inventato",
@@ -8955,8 +8974,8 @@
             },
             {
               "text_id": "S137",
-              "node_id": "S137@Terra@Paese_degli_Uccelli",
-              "caption": "Paese degli Uccelli",
+              "node_id": "S137@Terra@Continente_degli_Uccelli",
+              "caption": "Continente degli Uccelli",
               "level": "2",
               "basal_type": "nominato_non_terrestre",
               "local_type": "inventato",
@@ -9430,17 +9449,8 @@
               "children": [
                 {
                   "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@cimitero_d'automobili",
-                  "caption": "cimitero d'automobili",
-                  "level": "3",
-                  "basal_type": "nominato_non_terrestre",
-                  "local_type": "generico_terrestre",
-                  "children": []
-                },
-                {
-                  "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@docks",
-                  "caption": "docks",
+                  "node_id": "S145@Terra@New_York@grattacielo",
+                  "caption": "grattacielo",
                   "level": "3",
                   "basal_type": "nominato_non_terrestre",
                   "local_type": "generico_terrestre",
@@ -9457,11 +9467,29 @@
                 },
                 {
                   "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@grattacielo",
-                  "caption": "grattacielo",
+                  "node_id": "S145@Terra@New_York@docks",
+                  "caption": "docks",
                   "level": "3",
                   "basal_type": "nominato_non_terrestre",
                   "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "S145",
+                  "node_id": "S145@Terra@New_York@cimitero_d'automobili",
+                  "caption": "cimitero d'automobili",
+                  "level": "3",
+                  "basal_type": "nominato_non_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "S145",
+                  "node_id": "S145@Terra@New_York@Madison_Square",
+                  "caption": "Madison Square",
+                  "level": "3",
+                  "basal_type": "nominato_non_terrestre",
+                  "local_type": "nominato_terrestre",
                   "children": []
                 },
                 {
@@ -9475,17 +9503,8 @@
                 },
                 {
                   "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@Brooklyn",
-                  "caption": "Brooklyn",
-                  "level": "3",
-                  "basal_type": "nominato_non_terrestre",
-                  "local_type": "nominato_terrestre",
-                  "children": []
-                },
-                {
-                  "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@Central_Park",
-                  "caption": "Central Park",
+                  "node_id": "S145@Terra@New_York@Uptown",
+                  "caption": "Uptown",
                   "level": "3",
                   "basal_type": "nominato_non_terrestre",
                   "local_type": "nominato_terrestre",
@@ -9502,8 +9521,17 @@
                 },
                 {
                   "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@Madison_Square",
-                  "caption": "Madison Square",
+                  "node_id": "S145@Terra@New_York@Central_Park",
+                  "caption": "Central Park",
+                  "level": "3",
+                  "basal_type": "nominato_non_terrestre",
+                  "local_type": "nominato_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "S145",
+                  "node_id": "S145@Terra@New_York@Brooklyn",
+                  "caption": "Brooklyn",
                   "level": "3",
                   "basal_type": "nominato_non_terrestre",
                   "local_type": "nominato_terrestre",
@@ -9513,15 +9541,6 @@
                   "text_id": "S145",
                   "node_id": "S145@Terra@New_York@Times_Square",
                   "caption": "Times Square",
-                  "level": "3",
-                  "basal_type": "nominato_non_terrestre",
-                  "local_type": "nominato_terrestre",
-                  "children": []
-                },
-                {
-                  "text_id": "S145",
-                  "node_id": "S145@Terra@New_York@Uptown",
-                  "caption": "Uptown",
                   "level": "3",
                   "basal_type": "nominato_non_terrestre",
                   "local_type": "nominato_terrestre",
@@ -9885,8 +9904,8 @@
             },
             {
               "text_id": "S151",
-              "node_id": "S151@Parigi@galleria",
-              "caption": "galleria",
+              "node_id": "S151@Parigi@palazzo",
+              "caption": "palazzo",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -9894,8 +9913,8 @@
             },
             {
               "text_id": "S151",
-              "node_id": "S151@Parigi@palazzo",
-              "caption": "palazzo",
+              "node_id": "S151@Parigi@galleria",
+              "caption": "galleria",
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
@@ -9908,24 +9927,6 @@
               "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S151",
-              "node_id": "S151@Parigi@Bois_de_Boulogne",
-              "caption": "Bois de Boulogne",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "nominato_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "S151",
-              "node_id": "S151@Parigi@Champs_Elysèes",
-              "caption": "Champs Elysèes",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "nominato_terrestre",
               "children": []
             },
             {
@@ -9946,8 +9947,45 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "text_id": "S151",
+              "node_id": "S151@Parigi@Champs_Elysèes",
+              "caption": "Champs Elysèes",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "nominato_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S151",
+              "node_id": "S151@Parigi@Bois_de_Boulogne",
+              "caption": "Bois de Boulogne",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "nominato_terrestre",
+              "children": []
             }
           ]
+        }
+      ]
+    },
+    {
+      "text_id": "S152",
+      "node_id": "S152",
+      "caption": "S152",
+      "level": "0",
+      "basal_type": "",
+      "local_type": "",
+      "children": [
+        {
+          "text_id": "S152",
+          "node_id": "S152@taverna",
+          "caption": "taverna",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
         }
       ]
     },
@@ -10848,6 +10886,15 @@
             },
             {
               "text_id": "S179",
+              "node_id": "S179@Terra@Ercolano",
+              "caption": "Ercolano",
+              "level": "2",
+              "basal_type": "nominato_non_terrestre",
+              "local_type": "nominato_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "S179",
               "node_id": "S179@Terra@Vesuvio",
               "caption": "Vesuvio",
               "level": "2",
@@ -10918,8 +10965,8 @@
           "node_id": "S181@xxx",
           "caption": "xxx",
           "level": "1",
-          "basal_type": "nominato_terrestre",
-          "local_type": "nominato_terrestre",
+          "basal_type": "inventato",
+          "local_type": "inventato",
           "children": []
         }
       ]
@@ -11541,8 +11588,8 @@
       "children": [
         {
           "text_id": "S203",
-          "node_id": "S203@esterno",
-          "caption": "esterno",
+          "node_id": "S203@interno",
+          "caption": "interno",
           "level": "1",
           "basal_type": "generico_non_terrestre",
           "local_type": "generico_non_terrestre",
@@ -11550,8 +11597,8 @@
         },
         {
           "text_id": "S203",
-          "node_id": "S203@interno",
-          "caption": "interno",
+          "node_id": "S203@esterno",
+          "caption": "esterno",
           "level": "1",
           "basal_type": "generico_non_terrestre",
           "local_type": "generico_non_terrestre",
@@ -11705,6 +11752,25 @@
           "level": "1",
           "basal_type": "generico_non_terrestre",
           "local_type": "generico_non_terrestre",
+          "children": []
+        }
+      ]
+    },
+    {
+      "text_id": "Terra",
+      "node_id": "Terra",
+      "caption": "Terra",
+      "level": "0",
+      "basal_type": "",
+      "local_type": "",
+      "children": [
+        {
+          "text_id": "Terra",
+          "node_id": "Terra@nominato_non_terrestre",
+          "caption": "nominato_non_terrestre",
+          "level": "1",
+          "basal_type": "L00977",
+          "local_type": "L00977",
           "children": []
         }
       ]
@@ -11900,6 +11966,15 @@
             },
             {
               "text_id": "V001",
+              "node_id": "V001@vallata@torrente",
+              "caption": "torrente",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V001",
               "node_id": "V001@vallata@prati",
               "caption": "prati",
               "level": "2",
@@ -11911,15 +11986,6 @@
               "text_id": "V001",
               "node_id": "V001@vallata@stradine",
               "caption": "stradine",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V001",
-              "node_id": "V001@vallata@torrente",
-              "caption": "torrente",
               "level": "2",
               "basal_type": "generico_terrestre",
               "local_type": "generico_terrestre",
@@ -11946,199 +12012,6 @@
       "basal_type": "",
       "local_type": "",
       "children": [
-        {
-          "text_id": "V003",
-          "node_id": "V003@Col_Gerbido",
-          "caption": "Col Gerbido",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V003",
-              "node_id": "V003@Col_Gerbido@casolare",
-              "caption": "casolare",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Col_Gerbido@tana",
-              "caption": "tana",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
-        },
-        {
-          "text_id": "V003",
-          "node_id": "V003@Pratofungo",
-          "caption": "Pratofungo",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V003",
-              "node_id": "V003@Pratofungo@capannuccia",
-              "caption": "capannuccia",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
-        },
-        {
-          "text_id": "V003",
-          "node_id": "V003@Terraba",
-          "caption": "Terraba",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terraba@campagna",
-              "caption": "campagna",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
-        },
-        {
-          "text_id": "V003",
-          "node_id": "V003@Terralba",
-          "caption": "Terralba",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@bosco",
-              "caption": "bosco",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@bottega",
-              "caption": "bottega",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@casolare",
-              "caption": "casolare",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@castello",
-              "caption": "castello",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@cimitero",
-              "caption": "cimitero",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@collinetta",
-              "caption": "collinetta",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@fienile",
-              "caption": "fienile",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@grotta",
-              "caption": "grotta",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@marina",
-              "caption": "marina",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@prato",
-              "caption": "prato",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@riva",
-              "caption": "riva",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@Prato_delle_Monache",
-              "caption": "Prato delle Monache",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
-              "children": []
-            },
-            {
-              "text_id": "V003",
-              "node_id": "V003@Terralba@Salto_della_Ghigna",
-              "caption": "Salto della Ghigna",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
-              "children": []
-            }
-          ]
-        },
         {
           "text_id": "V003",
           "node_id": "V003@Boemia",
@@ -12175,6 +12048,209 @@
               "children": []
             }
           ]
+        },
+        {
+          "text_id": "V003",
+          "node_id": "V003@Italia",
+          "caption": "Italia",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": [
+            {
+              "text_id": "V003",
+              "node_id": "V003@Italia@Col_Gerbido",
+              "caption": "Col Gerbido",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": [
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Col_Gerbido@casolare",
+                  "caption": "casolare",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Col_Gerbido@tana",
+                  "caption": "tana",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "text_id": "V003",
+              "node_id": "V003@Italia@Pratofungo",
+              "caption": "Pratofungo",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": [
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Pratofungo@capannuccia",
+                  "caption": "capannuccia",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "text_id": "V003",
+              "node_id": "V003@Italia@Terraba",
+              "caption": "Terraba",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": [
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terraba@campagna",
+                  "caption": "campagna",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "text_id": "V003",
+              "node_id": "V003@Italia@Terralba",
+              "caption": "Terralba",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": [
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@cimitero",
+                  "caption": "cimitero",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@prato",
+                  "caption": "prato",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@bosco",
+                  "caption": "bosco",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@bottega",
+                  "caption": "bottega",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@casolare",
+                  "caption": "casolare",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@castello",
+                  "caption": "castello",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@riva",
+                  "caption": "riva",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@collinetta",
+                  "caption": "collinetta",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@fienile",
+                  "caption": "fienile",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@grotta",
+                  "caption": "grotta",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@marina",
+                  "caption": "marina",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@Salto_della_Ghigna",
+                  "caption": "Salto della Ghigna",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "inventato",
+                  "children": []
+                },
+                {
+                  "text_id": "V003",
+                  "node_id": "V003@Italia@Terralba@Prato_delle_Monache",
+                  "caption": "Prato delle Monache",
+                  "level": "3",
+                  "basal_type": "nominato_terrestre",
+                  "local_type": "inventato",
+                  "children": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -12186,6 +12262,15 @@
       "basal_type": "",
       "local_type": "",
       "children": [
+        {
+          "text_id": "V005",
+          "node_id": "V005@Parigi",
+          "caption": "Parigi",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": []
+        },
         {
           "text_id": "V005",
           "node_id": "V005@mare",
@@ -12270,251 +12355,8 @@
           "children": [
             {
               "text_id": "V005",
-              "node_id": "V005@Ombrosa@porto",
-              "caption": "porto",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@noce",
-              "caption": "noce",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
               "node_id": "V005@Ombrosa@olivo",
               "caption": "olivo",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@olmo",
-              "caption": "olmo",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@orti",
-              "caption": "orti",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@osteria",
-              "caption": "osteria",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@padiglione",
-              "caption": "padiglione",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@palazzo",
-              "caption": "palazzo",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@parchi",
-              "caption": "parchi",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@parco",
-              "caption": "parco",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@pesco",
-              "caption": "pesco",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@piazza",
-              "caption": "piazza",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@pino",
-              "caption": "pino",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@platano",
-              "caption": "platano",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@muro",
-              "caption": "muro",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@prato",
-              "caption": "prato",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@prigione",
-              "caption": "prigione",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@riva",
-              "caption": "riva",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@rovere",
-              "caption": "rovere",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@sagrato",
-              "caption": "sagrato",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@salice",
-              "caption": "salice",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@spiaggia",
-              "caption": "spiaggia",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@stanzetta",
-              "caption": "stanzetta",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@strada",
-              "caption": "strada",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@susino",
-              "caption": "susino",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@tana",
-              "caption": "tana",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@vallata",
-              "caption": "vallata",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@melograno",
-              "caption": "melograno",
               "level": "2",
               "basal_type": "inventato",
               "local_type": "generico_terrestre",
@@ -12533,6 +12375,15 @@
               "text_id": "V005",
               "node_id": "V005@Ombrosa@valle",
               "caption": "valle",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@vallata",
+              "caption": "vallata",
               "level": "2",
               "basal_type": "inventato",
               "local_type": "generico_terrestre",
@@ -12738,6 +12589,240 @@
             },
             {
               "text_id": "V005",
+              "node_id": "V005@Ombrosa@melograno",
+              "caption": "melograno",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@muro",
+              "caption": "muro",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@noce",
+              "caption": "noce",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@tana",
+              "caption": "tana",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@olmo",
+              "caption": "olmo",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@orti",
+              "caption": "orti",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@osteria",
+              "caption": "osteria",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@padiglione",
+              "caption": "padiglione",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@palazzo",
+              "caption": "palazzo",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@parchi",
+              "caption": "parchi",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@parco",
+              "caption": "parco",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@pesco",
+              "caption": "pesco",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@piazza",
+              "caption": "piazza",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@pino",
+              "caption": "pino",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@platano",
+              "caption": "platano",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@porto",
+              "caption": "porto",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@prato",
+              "caption": "prato",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@prigione",
+              "caption": "prigione",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@riva",
+              "caption": "riva",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@rovere",
+              "caption": "rovere",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@sagrato",
+              "caption": "sagrato",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@salice",
+              "caption": "salice",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@spiaggia",
+              "caption": "spiaggia",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@stanzetta",
+              "caption": "stanzetta",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@strada",
+              "caption": "strada",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
+              "node_id": "V005@Ombrosa@susino",
+              "caption": "susino",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V005",
               "node_id": "V005@Ombrosa@villa_d'Ondariva",
               "caption": "villa d'Ondariva",
               "level": "2",
@@ -12748,25 +12833,6 @@
                   "text_id": "V005",
                   "node_id": "V005@Ombrosa@villa_d'Ondariva@giardino_(D'Ondariva)",
                   "caption": "giardino (D'Ondariva)",
-                  "level": "3",
-                  "basal_type": "inventato",
-                  "local_type": "generico_terrestre",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "text_id": "V005",
-              "node_id": "V005@Ombrosa@villa_d'Ombrosa",
-              "caption": "villa d'Ombrosa",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
-              "children": [
-                {
-                  "text_id": "V005",
-                  "node_id": "V005@Ombrosa@villa_d'Ombrosa@giardino_(villa)",
-                  "caption": "giardino (villa)",
                   "level": "3",
                   "basal_type": "inventato",
                   "local_type": "generico_terrestre",
@@ -12803,6 +12869,25 @@
             },
             {
               "text_id": "V005",
+              "node_id": "V005@Ombrosa@villa_d'Ombrosa",
+              "caption": "villa d'Ombrosa",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "inventato",
+              "children": [
+                {
+                  "text_id": "V005",
+                  "node_id": "V005@Ombrosa@villa_d'Ombrosa@giardino_(villa)",
+                  "caption": "giardino (villa)",
+                  "level": "3",
+                  "basal_type": "inventato",
+                  "local_type": "generico_terrestre",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "text_id": "V005",
               "node_id": "V005@Ombrosa@Cammino_dell'Artiglieria",
               "caption": "Cammino dell'Artiglieria",
               "level": "2",
@@ -12826,15 +12911,6 @@
           "text_id": "V008",
           "node_id": "V008@greto",
           "caption": "greto",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@valle",
-          "caption": "valle",
           "level": "1",
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
@@ -12869,116 +12945,8 @@
         },
         {
           "text_id": "V008",
-          "node_id": "V008@radura",
-          "caption": "radura",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@prato",
-          "caption": "prato",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@pianura",
-          "caption": "pianura",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@nazioni",
-          "caption": "nazioni",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@nave",
-          "caption": "nave",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@mare",
-          "caption": "mare",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@grotta",
-          "caption": "grotta",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@feluca",
-          "caption": "feluca",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@declivio",
-          "caption": "declivio",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@convento",
-          "caption": "convento",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@collina",
-          "caption": "collina",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@città",
-          "caption": "città",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V008",
-          "node_id": "V008@castello",
-          "caption": "castello",
+          "node_id": "V008@accampamento",
+          "caption": "accampamento",
           "level": "1",
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
@@ -12995,8 +12963,125 @@
         },
         {
           "text_id": "V008",
-          "node_id": "V008@accampamento",
-          "caption": "accampamento",
+          "node_id": "V008@castello",
+          "caption": "castello",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@città",
+          "caption": "città",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@collina",
+          "caption": "collina",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@convento",
+          "caption": "convento",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@declivio",
+          "caption": "declivio",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@feluca",
+          "caption": "feluca",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@valle",
+          "caption": "valle",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@grotta",
+          "caption": "grotta",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@mare",
+          "caption": "mare",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@nave",
+          "caption": "nave",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@nazioni",
+          "caption": "nazioni",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@pianura",
+          "caption": "pianura",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@prato",
+          "caption": "prato",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V008",
+          "node_id": "V008@radura",
+          "caption": "radura",
           "level": "1",
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
@@ -13200,15 +13285,6 @@
             },
             {
               "text_id": "V009",
-              "node_id": "V009@Torino@Comune",
-              "caption": "Comune",
-              "level": "2",
-              "basal_type": "nominato_terrestre",
-              "local_type": "nominato_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V009",
               "node_id": "V009@Torino@Cottolengo_o_Piccola_Casa_della_Divina_Provvidenza",
               "caption": "Cottolengo o Piccola Casa della Divina Provvidenza",
               "level": "2",
@@ -13319,15 +13395,6 @@
               "children": []
             }
           ]
-        },
-        {
-          "text_id": "V016",
-          "node_id": "V016@taverna",
-          "caption": "taverna",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
         }
       ]
     },
@@ -13340,543 +13407,543 @@
       "local_type": "",
       "children": [
         {
+          "text_id": "V018",
+          "node_id": "V018@Impero_mongolo",
+          "caption": "Impero mongolo",
+          "level": "1",
+          "basal_type": "nominato_terrestre",
+          "local_type": "nominato_terrestre",
+          "children": [
+            {
               "text_id": "V018",
-              "node_id": "V018@Impero_mongolo",
-              "caption": "Impero mongolo",
-              "level": "1",
+              "node_id": "V018@Impero_mongolo@Adelma",
+              "caption": "Adelma",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Aglaura",
+              "caption": "Aglaura",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Anastasia",
+              "caption": "Anastasia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Andria",
+              "caption": "Andria",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Argia",
+              "caption": "Argia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Armilla",
+              "caption": "Armilla",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Bauci",
+              "caption": "Bauci",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Berenice",
+              "caption": "Berenice",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Bersabea",
+              "caption": "Bersabea",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Cecilia",
+              "caption": "Cecilia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Clarice",
+              "caption": "Clarice",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Cloe",
+              "caption": "Cloe",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Despina",
+              "caption": "Despina",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Diomira",
+              "caption": "Diomira",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Dorotea",
+              "caption": "Dorotea",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Ersilia",
+              "caption": "Ersilia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Eudossia",
+              "caption": "Eudossia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Eufemia",
+              "caption": "Eufemia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Eusapia",
+              "caption": "Eusapia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Eutropia",
+              "caption": "Eutropia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Fedora",
+              "caption": "Fedora",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Fillide",
+              "caption": "Fillide",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Ipazia",
+              "caption": "Ipazia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Irene",
+              "caption": "Irene",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Isaura",
+              "caption": "Isaura",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Isidora",
+              "caption": "Isidora",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Lalage",
+              "caption": "Lalage",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Laudomia",
+              "caption": "Laudomia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Leandra",
+              "caption": "Leandra",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Leonia",
+              "caption": "Leonia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Marozia",
+              "caption": "Marozia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Maurilia",
+              "caption": "Maurilia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Melania",
+              "caption": "Melania",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Moriana",
+              "caption": "Moriana",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Olinda",
+              "caption": "Olinda",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Olivia",
+              "caption": "Olivia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Ottavia",
+              "caption": "Ottavia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Pentesilea",
+              "caption": "Pentesilea",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Perinzia",
+              "caption": "Perinzia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Pirra",
+              "caption": "Pirra",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Procopia",
+              "caption": "Procopia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Quinsai",
+              "caption": "Quinsai",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Raissa",
+              "caption": "Raissa",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Smeraldina",
+              "caption": "Smeraldina",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Sofronia",
+              "caption": "Sofronia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Tamara",
+              "caption": "Tamara",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Tecla",
+              "caption": "Tecla",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Teodora",
+              "caption": "Teodora",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Trude",
+              "caption": "Trude",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Valdrada",
+              "caption": "Valdrada",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zaira",
+              "caption": "Zaira",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zemrude",
+              "caption": "Zemrude",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zenobia",
+              "caption": "Zenobia",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zirma",
+              "caption": "Zirma",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zobeide",
+              "caption": "Zobeide",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zoe",
+              "caption": "Zoe",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@Zora",
+              "caption": "Zora",
+              "level": "2",
+              "basal_type": "nominato_terrestre",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V018",
+              "node_id": "V018@Impero_mongolo@reggia_di_Kemenfù",
+              "caption": "reggia di Kemenfù",
+              "level": "2",
               "basal_type": "nominato_terrestre",
               "local_type": "nominato_terrestre",
               "children": [
                 {
                   "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Smeraldina",
-                  "caption": "Smeraldina",
-                  "level": "2",
+                  "node_id": "V018@Impero_mongolo@reggia_di_Kemenfù@giardino",
+                  "caption": "giardino",
+                  "level": "3",
                   "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
+                  "local_type": "generico_terrestre",
                   "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Leonia",
-                  "caption": "Leonia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Marozia",
-                  "caption": "Marozia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Maurilia",
-                  "caption": "Maurilia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Melania",
-                  "caption": "Melania",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Moriana",
-                  "caption": "Moriana",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Olinda",
-                  "caption": "Olinda",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Olivia",
-                  "caption": "Olivia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Ottavia",
-                  "caption": "Ottavia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Pentesilea",
-                  "caption": "Pentesilea",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Perinzia",
-                  "caption": "Perinzia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Pirra",
-                  "caption": "Pirra",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Procopia",
-                  "caption": "Procopia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Quinsai",
-                  "caption": "Quinsai",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Raissa",
-                  "caption": "Raissa",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Aglaura",
-                  "caption": "Aglaura",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Sofronia",
-                  "caption": "Sofronia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Tamara",
-                  "caption": "Tamara",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Tecla",
-                  "caption": "Tecla",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Teodora",
-                  "caption": "Teodora",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Trude",
-                  "caption": "Trude",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Valdrada",
-                  "caption": "Valdrada",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zaira",
-                  "caption": "Zaira",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zemrude",
-                  "caption": "Zemrude",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zenobia",
-                  "caption": "Zenobia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zirma",
-                  "caption": "Zirma",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zobeide",
-                  "caption": "Zobeide",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zoe",
-                  "caption": "Zoe",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Zora",
-                  "caption": "Zora",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Laudomia",
-                  "caption": "Laudomia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Adelma",
-                  "caption": "Adelma",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Anastasia",
-                  "caption": "Anastasia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Andria",
-                  "caption": "Andria",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Argia",
-                  "caption": "Argia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Armilla",
-                  "caption": "Armilla",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Bauci",
-                  "caption": "Bauci",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Berenice",
-                  "caption": "Berenice",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Bersabea",
-                  "caption": "Bersabea",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Cecilia",
-                  "caption": "Cecilia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Clarice",
-                  "caption": "Clarice",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Cloe",
-                  "caption": "Cloe",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Despina",
-                  "caption": "Despina",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Diomira",
-                  "caption": "Diomira",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Dorotea",
-                  "caption": "Dorotea",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Ersilia",
-                  "caption": "Ersilia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Eudossia",
-                  "caption": "Eudossia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Eufemia",
-                  "caption": "Eufemia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Eusapia",
-                  "caption": "Eusapia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Eutropia",
-                  "caption": "Eutropia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Fedora",
-                  "caption": "Fedora",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Fillide",
-                  "caption": "Fillide",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Ipazia",
-                  "caption": "Ipazia",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Irene",
-                  "caption": "Irene",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Isaura",
-                  "caption": "Isaura",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Isidora",
-                  "caption": "Isidora",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Lalage",
-                  "caption": "Lalage",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@Leandra",
-                  "caption": "Leandra",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "inventato",
-                  "children": []
-                },
-                {
-                  "text_id": "V018",
-                  "node_id": "V018@Impero_mongolo@reggia_di_Kemenfù",
-                  "caption": "reggia di Kemenfù",
-                  "level": "2",
-                  "basal_type": "nominato_terrestre",
-                  "local_type": "nominato_terrestre",
-                  "children": [
-                    {
-                      "text_id": "V018",
-                      "node_id": "V018@Impero_mongolo@reggia_di_Kemenfù@giardino",
-                      "caption": "giardino",
-                      "level": "3",
-                      "basal_type": "nominato_terrestre",
-                      "local_type": "generico_terrestre",
-                      "children": []
-                    }
+                }
               ]
             }
           ]
@@ -13928,25 +13995,6 @@
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
           "children": []
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@villa",
-          "caption": "villa",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": [
-            {
-              "text_id": "V021",
-              "node_id": "V021@villa@stanza_catoptrica",
-              "caption": "stanza catoptrica",
-              "level": "2",
-              "basal_type": "generico_terrestre",
-              "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
         },
         {
           "text_id": "V021",
@@ -14079,8 +14127,91 @@
         },
         {
           "text_id": "V021",
-          "node_id": "V021@collina",
-          "caption": "collina",
+          "node_id": "V021@aereo",
+          "caption": "aereo",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@autobus",
+          "caption": "autobus",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@biblioteca",
+          "caption": "biblioteca",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@caffè",
+          "caption": "caffè",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@campus",
+          "caption": "campus",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": []
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@villa",
+          "caption": "villa",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": [
+            {
+              "text_id": "V021",
+              "node_id": "V021@villa@stanza_catoptrica",
+              "caption": "stanza catoptrica",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            }
+          ]
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@casa_(Ludmilla)",
+          "caption": "casa (Ludmilla)",
+          "level": "1",
+          "basal_type": "generico_terrestre",
+          "local_type": "generico_terrestre",
+          "children": [
+            {
+              "text_id": "V021",
+              "node_id": "V021@casa_(Ludmilla)@letto",
+              "caption": "letto",
+              "level": "2",
+              "basal_type": "generico_terrestre",
+              "local_type": "generico_terrestre",
+              "children": []
+            }
+          ]
+        },
+        {
+          "text_id": "V021",
+          "node_id": "V021@casa_editrice",
+          "caption": "casa editrice",
           "level": "1",
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
@@ -14162,8 +14293,8 @@
         },
         {
           "text_id": "V021",
-          "node_id": "V021@casa_editrice",
-          "caption": "casa editrice",
+          "node_id": "V021@collina",
+          "caption": "collina",
           "level": "1",
           "basal_type": "generico_terrestre",
           "local_type": "generico_terrestre",
@@ -14171,18 +14302,18 @@
         },
         {
           "text_id": "V021",
-          "node_id": "V021@casa_(Ludmilla)",
-          "caption": "casa (Ludmilla)",
+          "node_id": "V021@San_Ireneo",
+          "caption": "San Ireneo",
           "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
+          "basal_type": "inventato",
+          "local_type": "inventato",
           "children": [
             {
               "text_id": "V021",
-              "node_id": "V021@casa_(Ludmilla)@letto",
-              "caption": "letto",
+              "node_id": "V021@San_Ireneo@strade",
+              "caption": "strade",
               "level": "2",
-              "basal_type": "generico_terrestre",
+              "basal_type": "inventato",
               "local_type": "generico_terrestre",
               "children": []
             }
@@ -14190,48 +14321,103 @@
         },
         {
           "text_id": "V021",
-          "node_id": "V021@campus",
-          "caption": "campus",
+          "node_id": "V021@Petkwo",
+          "caption": "Petkwo",
           "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@caffè",
-          "caption": "caffè",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@biblioteca",
-          "caption": "biblioteca",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@autobus",
-          "caption": "autobus",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@aereo",
-          "caption": "aereo",
-          "level": "1",
-          "basal_type": "generico_terrestre",
-          "local_type": "generico_terrestre",
-          "children": []
+          "basal_type": "inventato",
+          "local_type": "inventato",
+          "children": [
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@molo",
+              "caption": "molo",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@porto",
+              "caption": "porto",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@piazzale",
+              "caption": "piazzale",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@belvedere",
+              "caption": "belvedere",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@cimitero",
+              "caption": "cimitero",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@promontorio",
+              "caption": "promontorio",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@osservatorio",
+              "caption": "osservatorio",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "generico_terrestre",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@Pensione_Kudgiwa",
+              "caption": "Pensione Kudgiwa",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@La_Stella_della_Svezia",
+              "caption": "La Stella della Svezia",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "inventato",
+              "children": []
+            },
+            {
+              "text_id": "V021",
+              "node_id": "V021@Petkwo@Albergo_(del_Giglio_Marino)",
+              "caption": "Albergo (del Giglio Marino)",
+              "level": "2",
+              "basal_type": "inventato",
+              "local_type": "inventato",
+              "children": []
+            }
+          ]
         },
         {
           "text_id": "V021",
@@ -14285,125 +14471,6 @@
               "level": "2",
               "basal_type": "inventato",
               "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@San_Ireneo",
-          "caption": "San Ireneo",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V021",
-              "node_id": "V021@San_Ireneo@strade",
-              "caption": "strade",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            }
-          ]
-        },
-        {
-          "text_id": "V021",
-          "node_id": "V021@Petkwo",
-          "caption": "Petkwo",
-          "level": "1",
-          "basal_type": "inventato",
-          "local_type": "inventato",
-          "children": [
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@belvedere",
-              "caption": "belvedere",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@cimitero",
-              "caption": "cimitero",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@molo",
-              "caption": "molo",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@osservatorio",
-              "caption": "osservatorio",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@piazzale",
-              "caption": "piazzale",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@porto",
-              "caption": "porto",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@promontorio",
-              "caption": "promontorio",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "generico_terrestre",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@Albergo_(del_Giglio_Marino)",
-              "caption": "Albergo (del Giglio Marino)",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@La_Stella_della_Svezia",
-              "caption": "La Stella della Svezia",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
-              "children": []
-            },
-            {
-              "text_id": "V021",
-              "node_id": "V021@Petkwo@Pensione_Kudgiwa",
-              "caption": "Pensione Kudgiwa",
-              "level": "2",
-              "basal_type": "inventato",
-              "local_type": "inventato",
               "children": []
             }
           ]
@@ -14503,11 +14570,11 @@
             },
             {
               "text_id": "V021",
-              "node_id": "V021@Ircania@Polizia_di_Stato",
-              "caption": "Polizia di Stato",
+              "node_id": "V021@Ircania@commissariato_di_polizia",
+              "caption": "commissariato di polizia",
               "level": "2",
               "basal_type": "inventato",
-              "local_type": "nominato_terrestre",
+              "local_type": "generico_terrestre",
               "children": []
             }
           ]

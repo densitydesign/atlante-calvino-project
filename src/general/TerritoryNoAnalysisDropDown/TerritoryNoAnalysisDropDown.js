@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import RadioButton from '../RadioButton/RadioButton';
 import ToggleButton from '../ToggleButton/ToggleButton';
 
 import './TerritoryNoAnalysisDropDown.css';

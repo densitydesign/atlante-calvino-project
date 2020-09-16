@@ -6,6 +6,7 @@ import CompassLische from '../../visualizations/CompassLische/CompassLische';
 import V from './compassFlux.d3'
 
 import './CompassFlux.css';
+import '../../App.css'
 
 export default class CompassFlux extends React.Component
 {
@@ -17,9 +18,10 @@ export default class CompassFlux extends React.Component
       <>
         <HamburgerCompassHeader />
         <div id="main--bones" className="container-fluid">
-        <div className="row">
+                <h4>Bussola</h4>
+        <div className="row intro">
     <div className="col-12">
-      <h1 className="my-3 font-italic">I racconti di Italo Calvino: <br className="d-block d-sm-none d-md-block d-lg-none"/>dai periodici alle raccolte</h1>
+      <h1>I racconti di Italo Calvino: <br className="d-block d-sm-none d-md-block d-lg-none"/>dai periodici alle raccolte</h1>
     </div>
     <div className="col-8 col-xl-8">
       <p>La visualizzazione ricostruisce le vicende editoriali dei racconti pubblicati da Italo Calvino, che hanno spesso visto la luce su riviste e quotidiani prima di confluire nelle raccolte. La scrittura dei racconti ha occupato Calvino per tutto l&#x2019;arco della sua carriera e costituisce la spina dorsale della sua opera. La maggior parte dei testi &#xE8; uscita in prima battuta su quotidiani e riviste (mostrati sulla sinistra), che nel corso del Novecento hanno largamente contribuito alla fortuna della narrativa breve.</p>
@@ -28,13 +30,15 @@ export default class CompassFlux extends React.Component
     </div>
     <div className="col-3 col-xl-3">
     <h4 style={{ marginBottom: "2rem" }}>Come si legge la visualizzazione: </h4>
-    <img src={ process.env.PUBLIC_URL + "/CompassLische/legenda.png" } style={{ width: "100%" }}/>
+    <div className="legend">
+    <img src={ process.env.PUBLIC_URL + "/CompassLische/legenda.png" } style={{ width: "100%" }} alt="information complement" />
+    </div>
     </div>
 
-    <div className="col-12 mt-3">
-      <p className="caption">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
+    <div className="col-12">
+      <p className="references">&#x201C;I racconti di Italo Calvino: dai periodici alle raccolte&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank" rel="noopener noreferrer">Atlante Calvino: letteratura e visualizzazione</a>.
         </p>
-      <p className="caption">COORDINATORI SCIENTIFICI: Francesca Serra, Paolo Ciuccarelli.<br/>AUTORI: Serena Del Nero, Virginia Giustetto, Valeria Cavalloro, Margherita Parigini, Tommaso Elli.</p>
+      <p className="references"><strong>Coordinatrice e coordinatore scientifici</strong>: Francesca Serra, Paolo Ciuccarelli.<br/><strong>Autor*</strong>: Serena Del Nero, Virginia Giustetto, Valeria Cavalloro, Margherita Parigini, Tommaso Elli.</p>
     </div>
   </div>
 </div>

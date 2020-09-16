@@ -1,0 +1,42 @@
+.CarouselSlide {
+  grid-column: 1 / span 20;
+}
+
+.carousel-indicators li {
+  background-color: transparent;
+  border: 1px solid var(--dark-blue);
+  width:15px;
+  height: 15px;
+  border-radius: 100%;
+  background-clip: inherit;
+  opacity:0.2;
+}
+
+.carousel-indicators li:active {
+  background-color: var(--dark-blue);;
+}
+
+.carousel-indicators li:hover {
+  background-color: var(--dark-blue);;
+}
+
+.carousel-indicators {
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top:0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.carousel-caption {
+  position: relative;
+  text-align: left;
+  left: 0%;
+  align-items: flex-end;
+}

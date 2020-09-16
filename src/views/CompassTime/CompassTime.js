@@ -13,11 +13,11 @@ export default class CompassTime extends React.Component
 
     return (
       <>
-      <HamburgerCompassHeader />
+  <HamburgerCompassHeader />
       <div id="main--sinuous">
-
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+        <h4>Bussola</h4>
+          <div className="row intro">
             <div className="col-12 col-lg-9">
               <h1>Il tempo e le opere</h1>
               <p>La visualizzazione rappresenta gli snodi pi&#xF9; importanti della carriera editoriale di Italo Calvino: le principali opere pubblicate in quarant&#x2019;anni di attivit&#xE0; e le collaborazioni giornalistiche pi&#xF9; durature. Ha una forma sinusoidale che mette in evidenza la scansione temporale in decenni e le differenti direzioni intraprese e sperimentate nel corso del tempo.</p>
@@ -25,9 +25,9 @@ export default class CompassTime extends React.Component
               <p className="item-reset-top" data-attribute="reset">Per dare un&#x2019;idea della importante attivit&#xE0; da intellettuale militante portata avanti parallelamente alla pubblicazione dei libri, il percorso mostra anche le tre principali collaborazioni di Calvino con i quotidiani: i circa trecento articoli scritti per &#xAB;l&#x2019;Unit&#xE0;&#xBB;, i settanta per il &#xAB;Corriere della Sera&#xBB; e i centoquaranta per &#xAB;la Repubblica&#xBB;.</p>
             </div>
             <div className="col-12 col-lg-9 mt-3">
-      				<p className="caption">&#x201C;Il tempo e le opere&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank">Atlante Calvino: letteratura e visualizzazione</a>.
+      				<p className="references">&#x201C;Il tempo e le opere&#x201D; &#xA9; UNIGE/DensityDesign<br/>Visualizzazione realizzata all&#x2019;interno del progetto <a href="http://atlantecalvino.unige.ch/" target="_blank" rel="noopener noreferrer" >Atlante Calvino: letteratura e visualizzazione</a>.
       					</p>
-      				<p className="caption">COORDINATRICE E COORDINATORE SCIENTIFICI: Francesca Serra, Paolo Ciuccarelli.<br/>AUTRICI E AUTORI: Tommaso Elli, Margherita Parigini, Virginia Giustetto, Valeria Cavalloro.</p>
+      				<p className="references"><strong>Coordinatrice e coordinatore scientifici</strong>: Francesca Serra, Paolo Ciuccarelli.<br/><strong>Autor*</strong>: Tommaso Elli, Margherita Parigini, Virginia Giustetto, Valeria Cavalloro.</p>
       			</div>
           </div>
       </div>
@@ -38,7 +38,7 @@ export default class CompassTime extends React.Component
               <CompassTimeSinuousWrapper />
             </div>
             <div className="col-10 offset-lg-0 col-lg-4 col-xl-4 scrollytelling-container">
-              <p>Ecco come leggere la visualizzazione:</p>
+              <h4>Come si legge la visualizzazione:</h4>
               <div className="legend open">
                 <div className="legend-content">
                   <h4>Legenda</h4>
@@ -97,7 +97,7 @@ export default class CompassTime extends React.Component
                   </div>
                   <h2>Prima pubblicazione</h2>
                   <div style={{ gridColumn: "span 3", }}>
-                  <img src={ process.env.PUBLIC_URL + "/CompassTime/prima-pubblicazione-10.svg" } style={{ width: "60%", margin: "0 20%" }}/>
+                  <img src={ process.env.PUBLIC_URL + "/CompassTime/prima-pubblicazione-10.svg" } style={{ width: "60%", margin: "0 20%" }} alt="information complement" />
                   </div>
                 </div>
                 <div id="legend-button"></div>

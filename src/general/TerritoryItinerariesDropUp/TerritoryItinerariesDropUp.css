@@ -1,6 +1,6 @@
 /*
 .territory-itineraries-drop-up {
-  background-color : white;
+  background-color : var(--bg);
   outline: 1px solid black;
   position : fixed;
   bottom: var(--navigation-height);
@@ -21,15 +21,32 @@
 
 .territory-itineraries-drop-up {
   background-color : white;
-  outline: 1px solid black;
+/*  outline: 1px solid black; */
   position : fixed;
   bottom: var(--navigation-height);
   width : 33.33%;
   height: calc(var(--navigation-height)*3);
   z-index : 20;
   display : grid;
-  grid-column : 1 / span 3;
-  border-right : 1px solid black;
-  font-size : 1.3em;
   text-align : center;
+}
+
+
+.territory-itineraries-drop-up *{
+  background-color : var(--bg);
+  padding-top: 1.2em;
+}
+
+
+/* Landscape */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+.territory-itineraries-drop-up {
+    width : 33.33%;
+}
+
 }

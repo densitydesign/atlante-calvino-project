@@ -21,7 +21,7 @@ export default class ListTypesPerTextWrapper extends React.Component
   {
     // MP20200127 : see TerritoryWrapper.js for a more complete text data extraction process.
     d3
-      .csv(process.env.PUBLIC_URL + "/territory_texts_data.csv")
+      .csv(process.env.PUBLIC_URL + "/territory-text-sheet.csv")
       .then(csv => this.setState({ data : csv, isLoading : false }));
   }
 
@@ -30,7 +30,7 @@ export default class ListTypesPerTextWrapper extends React.Component
     return (
       <>
         {!this.state.isLoading &&
-          <ListTypesPerText 
+          <ListTypesPerText
             id="listTypes"
             data={this.state.data}
           />

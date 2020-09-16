@@ -14,7 +14,8 @@ export default class Territory extends React.Component
       this.props.data, 
       this.props.colors, 
       this.props.analysisMode,
-      this.props.containerOnSvgClicked);
+      this.props.containerOnSvgClicked,
+      this.props.containerSetAllowDropMenus);
     
     this.props.containerSetTerritorySetHighlightMode(this.setHighlightMode);
     this.props.containerSetTerritoryShowHills(this.showHills);

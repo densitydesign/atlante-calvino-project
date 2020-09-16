@@ -117,7 +117,7 @@ class VClass
       })
       .attr("cx", d => d.data.x)
       .attr("cy", d => d.data.y - 10)
-      .attr("fill", d => d.data.attributes.collections.length ? GlobalData.col_collections(d.data.attributes.collections[0]) : "#FFFFFF")
+      .attr("fill", d => d.data.attributes.collections.length ? GlobalData.col_collections(d.data.attributes.collections[0]) : "#FBFBFC")
       .attr("stroke", d => {
         if(d.data.attributes.collections.length) {
           if(colls.includes(d.data.attributes.collections[0])) {

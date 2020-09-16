@@ -1,29 +1,18 @@
 
 .territory-legend-panel {
-  background-color : white;
-/*  position : relative; */
-/*  top: 70%; */
-  height: 40%;
-  width : 96%;
+  background-color : var(--bg);
+    bottom: var(--navigation-height);
   z-index : 2;
   display : flex;
   flex-direction : row;
   flex-wrap : nowrap;
     transition: all 0.35s ease;
-  justify-content : space-around;
+  justify-content : space-evenly;
 }
 
-.legend-block {
-  height: 100%;
-  margin-right: 4rem;
-}
 
-.legend-block h4 {
-  margin-top: 0.5em;
-}
 
 .legend-block img {
-  margin-top: 0.8em;
-  height : auto;
-  width : 100%;
+  height : 118px;
+  width : auto;
 }

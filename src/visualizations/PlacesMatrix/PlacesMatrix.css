@@ -6,11 +6,11 @@
   display: none;
 } */
 
-.x-axis .tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
+#matrice-dei-luoghi .x-axis .tick:not(:nth-of-type(5n)):not(:first-of-type) > text {
   display: none;
 }
 
-.y-axis .tick {
+#matrice-dei-luoghi .y-axis .tick {
   cursor: pointer;
 }
 

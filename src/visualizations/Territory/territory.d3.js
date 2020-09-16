@@ -17,24 +17,29 @@ let data = {
 	mode: 'default'
 };
 
-let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
+//let margin = { top : 0, right : 50, bottom : 30, left : 50 }, width, height;
 
 let svg;
 let center;
-let tilt = false;
+let tilt;
 let scale;
 let d3_event_transform_k;
+let label_x_scale_factor;
+let label_y_scale_factor_tilt;
+let label_y_scale_factor_no_tilt;
 let currentAnalysisMode;
 let colors;
 
-const PI = Math.PI;
-const arcMin = 75; // inner radius of the first arc
-const arcWidth = 38;
-const arcPad = 1; // padding between arcs
-const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
+//const PI = Math.PI;
+const _2PI = Math.PI * 2;
+//const arcMin = 75; // inner radius of the first arc
+//const drawMode = 1; // 1 : hills; 2 : hills with halo; 3 : places; 4 : dubitative phenomena;
 const with_tilt_factor = 0.5773;
 const without_tilt_factor = 1;
 const step_increment = -23;
+const one_rem = Number.parseInt(d3.select('html').style('font-size'));
+const half_rem = one_rem / 2;
+let one_rem_times_scale;
 
 const showHillModes = {
   all : "all",
@@ -77,9 +82,51 @@ Object.keys(customElementsClasses).forEach(key =>
 
 customElementsClasses["customElements"] = "customElements";
 
+const S012_placesArcFix = Math.PI * 1 / 2;
+const S032_placesArcFix = Math.PI * 2 / 3;
+const S081_placesArcFix = Math.PI * 25 / 32;
+const S076_placesArcFix = Math.PI * 1 / 2;
+const S089_placesArcFix = Math.PI * 1 / 2;
+const V008_placesArcFix = Math.PI * 3 / 4;
+const S149_placesArcFix = Math.PI * 6 / 10;
+const S151_placesArcFix = Math.PI * 69 / 128;
+const S156_placesArcFix = Math.PI * 5 / 12;
+const V021_placesArcFix = Math.PI * 1 / 2;
+const S179_placesArcFix = Math.PI * 1 / 2;
+const S181_placesArcFix = Math.PI * 1 / 2;
+const S203_placesArcFix = Math.PI * 1 / 2;
+const S119_placesArcFix = Math.PI * 1 / 2;
+const S123_placesArcFix = Math.PI * 21 / 32;
+const S142_placesArcFix = Math.PI * 9 / 16;
+const S139_placesArcFix = Math.PI * 30 / 48;
+const S140_placesArcFix = Math.PI * 1 / 2;
+const S095_placesArcFix = Math.PI * 1 / 2;
+const S097_placesArcFix = Math.PI * 37 / 64;
+const S104_placesArcFix = Math.PI * 37 / 48;
+const S050_placesArcFix = Math.PI * 1 / 2;
+const S101_placesArcFix = Math.PI * 21 / 32;
+const S048_placesArcFix = Math.PI * 31 / 64;
+const S088_placesArcFix = Math.PI * 133 / 256;
+const S065_placesArcFix = Math.PI * 1 / 2;
+const S072_placesArcFix = Math.PI * 1 / 2;
+const S067_placesArcFix = Math.PI * 17 / 32;
+const S007_placesArcFix = Math.PI * 17 / 32;
+const S022_placesArcFix = Math.PI * 7 / 16;
+const S041_placesArcFix = Math.PI * 1 / 2;
+const S014_placesArcFix = Math.PI * 9 / 24;
+const S165_placesArcFix = Math.PI * 2 / 3;
+const S011_placesArcFix = Math.PI * 1 / 2;
+const V005_placesArcFix = Math.PI * 21 / 40;
+
 class VClass
 {
-  initialize = (el, input_data, input_colors, analysisMode, containerOnSvgClicked) => 
+  initialize = (
+    el, 
+    input_data, 
+    input_colors, 
+    analysisMode, 
+    containerOnSvgClicked,
+    containerSetAllowDropMenus) => 
   {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
@@ -90,8 +137,10 @@ class VClass
 
     colors = input_colors;
 
-    let w = window.innerWidth;
-    let h = window.innerHeight - 6;
+    const w = window.innerWidth;
+    const half_w = w / 2;
+    const h = window.innerHeight - 6;
+    const half_h = h / 2;
     svg = d3.select(el).style("touch-action", "manipulation");
 
     svg.on("click", this.onSvgClicked);
@@ -166,8 +215,15 @@ class VClass
       .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
       .range(['➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒', '➓']);
 
+    
     const arcWidth = 38;
     const arcPad = 1; // padding between arcs
+
+    const i_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const minus_i_plus_1_times_arcWidth_plus_arcPad = i_range.map(i => -(i+1) * arcWidth + arcPad);
+
+    const minus_i_times_arcWidth = i_range.map(i => -i * arcWidth);
+
     const metaballsVisible = new Map();
 
     collections
@@ -240,7 +296,7 @@ class VClass
       [ GlobalData.analysisModes.doubt.all,                   { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'dubitative_ratio',          showHillMode : showHillModes.base,    colorScale : this.dubitative_color_scale,             tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.doubt.percentage,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.dubitativePhenomena_level_2,                                 showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.shape.proportion,            { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_2,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
-      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.nothing,                                                       tilt_factor : without_tilt_factor, show_metaballs : true } ],
+      [ GlobalData.analysisModes.shape.types,                 { analysisModeGroup : analysisModeGroups.drawing, customElementsClasses : customElementsClasses.lists_level_3,                                               showHillMode : showHillModes.base,                                                          tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericCosmic,         { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_cosmico',        showHillMode : showHillModes.base,    colorScale : this.generico_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.namedCosmic,           { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_nominato_cosmico',        showHillMode : showHillModes.base,    colorScale : this.nominato_cosmico_color_scale,       tilt_factor : without_tilt_factor, show_metaballs : true } ],
       [ GlobalData.analysisModes.space.genericTerrestrial,    { analysisModeGroup : analysisModeGroups.flat,    customElementsClasses : null,                                    dataMember : 'n_generico_terrestre',      showHillMode : showHillModes.base,    colorScale : this.generico_terrestre_color_scale,     tilt_factor : without_tilt_factor, show_metaballs : true } ],
@@ -273,18 +329,19 @@ class VClass
       .attr("class", "circle_node hill")
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
-//      .attr("fill", "tomato")
       .attr("first_elem", d => d.first_elem)
-      .attr("r", d => d.r)
-/*      
-      .attr("transform", function(d, i) {
-        i = i * step_increment;
-        return "translate(0," + i + ")";
+      .attr("r", d => {
+//console.log("d", d);
+        return d.r;
       })
-*/
-      .attr("transform", this.calculateHillStepTranslation)
-      .style("fill-opacity", 1)
-      .style("stroke-opacity", .5);
+	  	.style('fill-opacity', 1e-16)
+  		.style('stroke-opacity', 1e-16)
+//		.transition()
+//		.duration(1000)
+//		.delay(function(d) { return (d.first_publication - 1940) * 100 })
+//      .attr("transform", this.calculateHillStepTranslation)
+//      .style("fill-opacity", 1)
+//      .style("stroke-opacity", .5);
 
     circles
       .filter(d => d.first_elem)
@@ -321,41 +378,6 @@ class VClass
 			.outerRadius(d => d.outerRadius)
 			.startAngle(d => d.startAngle)
 			.endAngle(d => d.endAngle);
-
-		place_hierarchies
-			.filter(d => d.type === "arc")
-			.append("svg:path")
-			.attr("fill", d => d.fill)
-			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id)
-			.attr("d", drawplace_hierarchyArc)
-			.style("display", "none")
-			.attr("transform", d => "translate(" + d.center.x + ", " + d.center.y + ")");      
-
-		place_hierarchies
- 			.filter(d => d.type === "line")
- 			.append("line")
-			.attr("x1", d => d.x1)
-			.attr("y1", d => d.y1)
-			.attr("x2", d => d.x2)
-			.attr("y2", d => d.y2)
- 			.attr("stroke", d => d.stroke)
-			.attr("stroke-width", d => d.stroke_width)
-			.style("display", "none")
- 			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);      
-
-		place_hierarchies
-			.filter(d => d.type === "circle")
-			.append('circle')
-			.attr('fill', d => d.fill)
-			.attr('stroke', 'white')
-			.attr('stroke-width', 2)
-			.attr('r', d => d.r)
-			.attr("class", "place_hierarchy_node")
-			.style("display", "none")
-			.attr("transform", d => {
-				return "translate(" + d.cx + ", " + d.cy + ")"
-			})
-			.attr("class", d => "customElements place_hierarchy place_hierarchy_" + d.text_id);       
 
 		const fontSizeScale = d3
 			.scaleLinear()
@@ -405,12 +427,12 @@ class VClass
 				jellyfish_node_info.bbox = bbox;
 			});
 
-		for(let [k, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
+		for(let [, jellyfish] of input_data.place_hierarchies_info.place_hierarchies)
 		{
 			visit(
 				jellyfish,
 				{},
-				(jn, status) => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
+				jn => jn.bbox = input_data.place_hierarchies_info.place_hierarchy_node_info_map.get(jn.node_id).bbox);
 
 			let j = input_data.json_node_map.get(jellyfish.caption);
 			let radiusScaleFactor = j.steps[0].r / 30;
@@ -434,7 +456,9 @@ class VClass
 				item.x = d.x;
 				item.y = d.y;
 			}
-		});    
+		});
+
+    place_hierarchies_group.remove();
 
     const place_hierarchies_group_2 = svg_main_group
       .append("g")
@@ -536,160 +560,155 @@ class VClass
 	let drawPlacesArc1 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) { 
-      return 0 * 2 * PI + placesArcFix(d);
+      return 0 + placesArcFix(d);
     })
 		.endAngle(function(d, i) {
-			return d.generico_cosmico * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc2 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.generico_cosmico * 2 * PI + placesArcFix(d);
+			return d.generico_cosmico * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_terrestre * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc3 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.generico_terrestre * 2 * PI + placesArcFix(d);
+			return d.generico_terrestre * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.inventato * 2 * PI + placesArcFix(d);
+			return d.inventato * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc4 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];      
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.inventato * 2 * PI + placesArcFix(d);
+			return d.inventato * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI + placesArcFix(d);
+			return d.no_ambientazione * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc5 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.no_ambientazione * 2 * PI + placesArcFix(d);
+			return d.no_ambientazione * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc6 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_cosmico * 2 * PI + placesArcFix(d);
+			return d.nominato_cosmico * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_terrestre * _2PI + placesArcFix(d);
 		});
 
 	let drawPlacesArc7 = d3
 		.arc()
 		.innerRadius(function(d, i) {
-			return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
 		})
 		.outerRadius(function(d, i) {
-			return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
 		})
 		.startAngle(function(d, i) {
-			return d.nominato_terrestre * 2 * PI + placesArcFix(d);
+			return d.nominato_terrestre * _2PI + placesArcFix(d);
 		})
 		.endAngle(function(d, i) {
-			return 2 * PI + placesArcFix(d);
+			return _2PI + placesArcFix(d);
 		});
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  const base_steps = steps.filter(d => d.first_elem);
+
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc1)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.generico_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc2)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.inventato_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc3)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.no_ambientazione_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc4)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_cosmico_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc5)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", colors.nominato_terrestre_bright)
 		.attr("class", customElementsClasses.places_full)
 		.attr("d", drawPlacesArc6)
 		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+	base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.places_full)
@@ -712,21 +731,20 @@ class VClass
   let drawPlaceHierarchiesArc1 = d3
     .arc()
     .innerRadius(function(d, i) {
-      return d.r - (i + 1) * arcWidth + arcPad;
+      return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
     })
     .outerRadius(function(d, i) {
-      return d.r - i * arcWidth;
+      return d.r + minus_i_times_arcWidth[i];
     })
-    .startAngle(0 * 2 * PI)
+    .startAngle(0)
     .endAngle(function(d, i) {
 //					return d.generico_cosmico * 2 * PI;
-      return 2 * PI;
+      return _2PI;
     });
 
 ///////////////////////////////////////////
 
-  steps
-    .filter(function(d) { return d.first_elem })
+  base_steps
     .append("svg:path")
     .attr("fill", "purple")
     .attr("class", "place_hierarchies")
@@ -741,66 +759,63 @@ class VClass
     let drawDubitativePhenomenaArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0)
       .endAngle(function(d, i) {
-        return d.nebbia * 2 * PI;
+        return d.nebbia * _2PI;
       });
 
     let drawDubitativePhenomenaArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.nebbia * 2 * PI;
+        return d.nebbia * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.cancellazione * 2 * PI;
+        return d.cancellazione * _2PI;
       });
 
     let drawDubitativePhenomenaArc3 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.cancellazione * 2 * PI;
+        return d.cancellazione * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.nebbia_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc1)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", colors.cancellazione_bright)
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
       .attr("d", drawDubitativePhenomenaArc2)
       .style('fill-opacity', 0);
 
-    steps
-      .filter(function(d) { return d.first_elem })
+    base_steps
       .append("svg:path")
       .attr("fill", "transparent")
       .attr("class", customElementsClasses.dubitativePhenomena_level_2_full)
@@ -812,80 +827,79 @@ class VClass
     let drawListsArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0)
       .endAngle(function(d, i) {
-        return d.lists_f_ratio * 2 * PI;
+        return d.lists_f_ratio * _2PI;
       });
 
     let drawListsArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.lists_f_ratio * 2 * PI;
+        return d.lists_f_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_m_ratio * 2 * PI;
+        return d.lists_m_ratio * _2PI;
       });
 
     let drawListsArc3 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.lists_m_ratio * 2 * PI;
+        return d.lists_m_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_p_ratio * 2 * PI;
+        return d.lists_p_ratio * _2PI;
       });
 
     let drawListsArc4 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.lists_p_ratio * 2 * PI;
+        return d.lists_p_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return d.lists_s_ratio * 2 * PI;
+        return d.lists_s_ratio * _2PI;
       });
 
     let drawListsArc5 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i + 1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.lists_s_ratio * 2 * PI;
+        return d.lists_s_ratio * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.frasi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -895,8 +909,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.misto)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -906,8 +919,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.parole)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -917,8 +929,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", colors.sintagmi)
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -928,8 +939,7 @@ class VClass
 		})
 */		.style('fill-opacity', 0);
 
-	steps
-		.filter(function(d) { return d.first_elem })
+  base_steps
 		.append("svg:path")
 		.attr("fill", "transparent")
 		.attr("class", customElementsClasses.lists_level_3_full)
@@ -944,35 +954,35 @@ class VClass
     let drawListsOverallArc1 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i+1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
-      .startAngle(0 * 2 * PI)
+      .startAngle(0 * _2PI)
       .endAngle(function(d, i) {
-        return d.lists_ratio_with_threshold * 2 * PI;
+        return d.lists_ratio_with_threshold * _2PI;
       });
 
     let drawListsOverallArc2 = d3
       .arc()
       .innerRadius(function(d, i) {
-        return d.r - (i+1) * arcWidth + arcPad;
+        return d.r + minus_i_plus_1_times_arcWidth_plus_arcPad[i];
       })
       .outerRadius(function(d, i) {
-        return d.r - i * arcWidth;
+        return d.r + minus_i_times_arcWidth[i];
       })
       .startAngle(function(d, i) {
-        return d.lists_ratio_with_threshold * 2 * PI;
+        return d.lists_ratio_with_threshold * _2PI;
       })
       .endAngle(function(d, i) {
-        return 2 * PI;
+        return _2PI;
       });
 
 ///////////////////////////////////////////
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", d => d.lists_ratio_is_below_threshold ? colors.lists_ratio_below_threshold : colors.lists_ratio_above_threshold)
       .attr("class", customElementsClasses.lists_level_2_full)
@@ -982,8 +992,8 @@ class VClass
       })
 */      .style('fill-opacity',0);
 
-    steps
-      .filter(d => d.first_elem && d.lists_are_present)
+    base_steps
+      .filter(d => d.lists_are_present)
       .append("svg:path")
       .attr("fill", "lightgrey")
       .attr("class", customElementsClasses.lists_level_2_full)
@@ -1001,8 +1011,7 @@ class VClass
 
     this.label = this.text_nodes
       .selectAll('.label')
-      .data(function(d) {
-        let one_rem = parseInt(d3.select('html').style('font-size'));
+      .data(function(d) {     
 
         if(d.attributes.collections && d.attributes.collections.length) 
         {
@@ -1011,8 +1020,7 @@ class VClass
             let obj = {
               'id': e,
               'index': i,
-              'length': d.attributes.collections.length,
-              'rem': one_rem
+              'length': d.attributes.collections.length
             }
             return obj;
           });
@@ -1022,8 +1030,7 @@ class VClass
         {
           // console.log('handleNoCollections')
           let obj = {
-            'first_publication': d.attributes.first_publication,
-            'rem': one_rem
+            'first_publication': d.attributes.first_publication
           }
           d.attributes.collectionsTooltip = [obj];
         }
@@ -1034,7 +1041,7 @@ class VClass
       .attr('class', 'label');
 
     // Append title
-    let labelTitle = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('font-family', "'HKGrotesk', sans-serif")
@@ -1049,7 +1056,7 @@ class VClass
       });
 
     // Append collections years
-    let labelCollectionsYears = this.label
+    this.label
       .append('text')
       .attr('text-anchor', 'middle')
       .attr('x', function(d) { return 0; })
@@ -1059,7 +1066,7 @@ class VClass
       .data(d => d.attributes.collectionsTooltip)
       .enter()
       .append('tspan')
-      .attr('dx', (d, i) => i !== 0 ? d.rem / 2 : 0)
+      .attr('dx', (d, i) => i !== 0 ? half_rem : 0)
       .html((d, i) => {        
         if(d.first_publication) {
           return;
@@ -1086,6 +1093,7 @@ class VClass
 
     let usedSpace = 0.65;
     scale = ((w * usedSpace) / (boundaries.right - boundaries.left)) * 0.9;
+    one_rem_times_scale = one_rem * scale;
 
     centerTerritory(scale, 0, 0, 0);
 
@@ -1098,6 +1106,9 @@ class VClass
   		place_hierarchies_group.attr("transform", d3.event.transform);
   		place_hierarchies_group_2.attr("transform", d3.event.transform);
       d3_event_transform_k = d3.event.transform.k;
+      label_x_scale_factor = one_rem_times_scale / d3_event_transform_k;
+      label_y_scale_factor_no_tilt = label_x_scale_factor;
+      label_y_scale_factor_tilt = label_x_scale_factor / with_tilt_factor;
       tilt_labels(V.text_nodes);
     }
 
@@ -1110,59 +1121,57 @@ class VClass
           zoom_handler.transform, 
           d3
             .zoomIdentity
-            .translate((w / 2) + x, (h / 2) + y)
+            .translate(half_w + x, half_h + y)
             .scale(scale));
     }
 
     this.textsData = input_data.textsData;
+
+    // reached point for chronological animation
+
+    if([
+      GlobalData.analysisModes.noAnalysis.chronology,
+      GlobalData.analysisModes.noAnalysis.volumes
+    ].includes(analysisMode))
+    {
+      containerSetAllowDropMenus(false);
+
+      this.showHillsProgressively(containerSetAllowDropMenus);
+    }
+    else
+    {
+      containerSetAllowDropMenus(true);
+    }
   };
+
+  async showHillsProgressively(containerSetAllowDropMenus)
+  {
+    const delayFactor = 150;
+
+    await svg
+      .transition()
+      .selectAll(".circle_node")
+      .delay(function(d) { return (d.first_publication - 1940) * delayFactor })
+      .attr("transform", this.calculateHillStepTranslation)
+      .style("fill-opacity", 1)
+      .style("stroke-opacity", .5)
+      .end();
+
+    containerSetAllowDropMenus(true);
+  }
+
 
   destroy = () => {};
 
   //calculateHillStepTranslation = d => "translate(0," + (d.step_index * step_increment) + ")";
   calculateHillStepTranslation = d => "translate(0," + d.step_y + ")";
 
-  setColor = color => { 
-    d3
-      .selectAll("circle")
-      .attr("fill", color);
-  };
-/*
-  set_yRatio = yRatio => {
-    d3
-      .selectAll(".node")
-      .transition()
-      .duration(2000)
-      .attr("transform", d => {
-        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-      });
+  setColor = color => d3
+    .selectAll("circle")
+    .attr("fill", color);
 
-    tilt = yRatio === 1;
-
-    const label = this.text_nodes.selectAll('.label');   
-
-    label.attr('transform', function(d) {
-
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
-      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
-      let translate_string = data.mode !== "spaceo-third-lvl" ? 'translate(0,' + dy + ') ' : "";
-
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
-    });
-
-    const metaball_nodes = d3
-      .selectAll(".metaball_node")
-      .transition()
-      .duration(2000)
-      .attr("transform", d => {
-        return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
-      });
-  };
-*/
-  set_yRatio = yRatio => {
-
+  set_yRatio = yRatio => 
+  {
     tilt = yRatio === 1;
 
     if(tilt)
@@ -1196,16 +1205,50 @@ class VClass
 
     label.attr('transform', function(d) {
 
-      let one_rem = parseInt(d3.select('html').style('font-size'));
-      let k = one_rem * (1 / (d3_event_transform_k / scale));
+      let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
+      let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
+
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
+    });
+  }
+
+  set_yRatio_withoutTransition = yRatio => 
+  {
+    tilt = yRatio === 1;
+
+    if(tilt)
+    {    
+      d3.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+
+      d3
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });
+    }
+    else
+    {    
+      d3
+        .selectAll(".node,.metaball_node")
+        .attr("transform", d => {
+          return "scale(1, " + yRatio + ") translate(" + (d.x - center.x) + "," + (d.y - center.y) + ")";
+        });            
+
+      d3.selectAll(".circle_node").attr("transform", tilt ? "" : this.calculateHillStepTranslation);
+    }
+
+    const label = this.text_nodes.selectAll('.label');   
+
+    label.attr('transform', function(d) {
 
       let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
       let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-      if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-      else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+      if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+      else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
     });
-  }
+  }  
 
   showHillsTops = opacity => d3
     .selectAll(".circle_node")
@@ -1242,6 +1285,41 @@ class VClass
         break;
       case showHillModes.nothing :
         this.showHills(0);
+        break;
+      default : break;
+    }
+  };
+
+  showHillsTops_withoutTransition = opacity => d3
+    .selectAll(".circle_node")
+    .filter(d => !d.first_elem)
+    .style("fill-opacity", 0)
+    .style("stroke-opacity", 0);
+
+  showHillsBases_withoutTransition = opacity => d3
+    .selectAll(".circle_node")
+    .filter(d => d.first_elem)
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);
+
+  showHills_withoutTransition = opacity => d3
+    .selectAll(".circle_node")
+    .style("fill-opacity", opacity)
+    .style("stroke-opacity", opacity);
+
+  applyShowHillMode_withoutTransition = showHillMode => 
+  {
+    switch(showHillMode)
+    {
+      case showHillModes.all : 
+        this.showHills_withoutTransition(1);
+        break;
+      case showHillModes.base :
+        this.showHillsTops_withoutTransition(0);
+        this.showHillsBases_withoutTransition(1);
+        break;
+      case showHillModes.nothing :
+        this.showHills_withoutTransition(0);
         break;
       default : break;
     }
@@ -1312,177 +1390,10 @@ class VClass
   setHighlightMode = newAnalysisMode => 
   {
     const currentHighlightParameters = this.analysisModeMap.get(currentAnalysisMode);
+
     const newHighlightParameters = this.analysisModeMap.get(newAnalysisMode);
 
     const analysisModeChangeType = getAnalysisModeChangeType(currentHighlightParameters.analysisModeGroup, newHighlightParameters.analysisModeGroup);
-/*
-    switch(analysisModeChangeType)
-    {
-      case GlobalData.analysisModes.noAnalysis.chronology :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.noAnalysis.volumes :
-
-//        this.set_yRatio(highlightParameters.tilt_factor);
-//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);
-//        this.applyShowHillMode(highlightParameters.showHillMode);
-//        this.highlightCustomElements(highlightParameters.customElementsClasses);
-//        this.showMetaballs(highlightParameters.show_metaballs);
-
-        this.change_flat_to_hills(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.fog :
-
-
-//        this.set_yRatio(highlightParameters.tilt_factor);        
-//        this.highlightHills(highlightParameters.dataMember, highlightParameters.colorScale);        
-
-//        this.applyShowHillMode(highlightParameters.showHillMode);
-//        this.highlightCustomElements(highlightParameters.customElementsClasses);        
-//        this.showMetaballs(highlightParameters.show_metaballs);
-
-        this.change_hills_to_flat(currentAnalysisMode, newAnalysisMode, newHighlightParameters);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.cancellation :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.all :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.doubt.percentage :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.shape.proportion :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.shape.types :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;    
-
-      case GlobalData.analysisModes.space.genericCosmic :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.namedCosmic :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);        
-
-        break;
-
-      case GlobalData.analysisModes.space.genericTerrestrial :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.namedTerrestrial :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.invented :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.noSetting :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.proportion :
-console.log("case proportion...");
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      case GlobalData.analysisModes.space.placeHierarchies :
-
-        this.set_yRatio(newHighlightParameters.tilt_factor);
-        this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-        this.applyShowHillMode(newHighlightParameters.showHillMode);
-        this.highlightCustomElements(newHighlightParameters.customElementsClasses);
-        this.showMetaballs(newHighlightParameters.show_metaballs);
-
-        break;
-
-      default : break;
-    }
-*/
 
     switch(analysisModeChangeType)
     {
@@ -1588,36 +1499,36 @@ console.log("case proportion...");
     currentAnalysisMode = newAnalysisMode;
   };
 
-  change_none_to_hills(
+  change_none_to_hills = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
-    this.set_yRatio(newHighlightParameters.tilt_factor);
-    this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    tilt = false;
+//    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.highlightHills_forAnimation(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
+//    this.applyShowHillMode(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
 
-  change_none_to_flat(
+  change_none_to_flat = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
-console.log("change_none_to_flat");    
-    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.set_yRatio_withoutTransition(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.applyShowHillMode_withoutTransition(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }
 
-  change_none_to_drawing(
+  change_none_to_drawing = (
     oldAnalysisMode, oldHighlightParameters,
-    newAnalysisMode, newHighlightParameters)
+    newAnalysisMode, newHighlightParameters) =>
   {
-    this.set_yRatio(newHighlightParameters.tilt_factor);
+    this.set_yRatio_withoutTransition(newHighlightParameters.tilt_factor);
     this.highlightHills(newHighlightParameters.dataMember, newHighlightParameters.colorScale);
-    this.applyShowHillMode(newHighlightParameters.showHillMode);
+    this.applyShowHillMode_withoutTransition(newHighlightParameters.showHillMode);
     this.highlightCustomElements(newHighlightParameters.customElementsClasses);
     this.showMetaballs(newHighlightParameters.show_metaballs);    
   }    
@@ -1662,11 +1573,19 @@ console.log("change_none_to_flat");
     oldAnalysisMode, oldHighlightParameters,
     newAnalysisMode, newHighlightParameters) =>
   {
+    const t0_0 = svg.transition().duration(1);
+
+    t0_0
+      .selectAll(".hill")
+      .filter(d => !d.first_elem)
+      .style("fill-opacity", 1);
+
     // recolor whole hills
-    const t0 = svg.transition().duration(600);
+    const t0 = t0_0.transition().duration(600);
     t0
       .selectAll(".hill")
-      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));
+//      .style("fill-opacity", 1)
+      .style("fill", d => newHighlightParameters.colorScale(d[newHighlightParameters.dataMember]));    
 
     // tilt
     const t1 = t0.transition().ease(d3.easeCircleOut).duration(900);
@@ -1682,7 +1601,7 @@ console.log("change_none_to_flat");
     t2
       .selectAll(".circle_node")
       .attr("transform", d => "translate(0, " + d.step_y + ")")
-      .style("stroke-opacity", 1);
+      .style("stroke-opacity", 1);     
   }
 
   change_hills_to_drawing = (
@@ -1730,7 +1649,7 @@ console.log("change_none_to_flat");
 			.style('fill-opacity', 1)
 			.style('stroke-opacity', 1);
 
-    // make hill bases transparent
+    // make hill bases transparent, but keep stroke visible
     const t3 = t2.transition().duration(600);
     t3
       .selectAll(".hill")
@@ -1943,7 +1862,7 @@ console.log("change_none_to_flat");
     let t1;
 
     // if necessary, change metaballs visibility
-    if(oldHighlightParameters.show_metaballs != newHighlightParameters.show_metaballs)
+    if(oldHighlightParameters.show_metaballs !== newHighlightParameters.show_metaballs)
     {
       const t0_1 = t0.transition().duration(200);
       t0_1
@@ -1958,14 +1877,12 @@ console.log("change_none_to_flat");
     t1
       .selectAll("." + oldHighlightParameters.customElementsClasses)
       .style('display', "block")
-			.style('fill-opacity', 0)
-			.style('stroke-opacity', 0);    
+		 	.style('fill-opacity', 0)
+		 	.style('stroke-opacity', 0);    
   }
 
-  onFirstElementClicked = d => {
-console.log("first_elem clicked for " + d.id);
-console.log("currentAnalysisMode", currentAnalysisMode);
-
+  onFirstElementClicked = d => 
+  {
     switch(true)
     {
       case currentAnalysisMode === GlobalData.analysisModes.space.placeHierarchies : this.highlightPlaceHierarchy(d); break;
@@ -2068,6 +1985,30 @@ console.log("currentAnalysisMode", currentAnalysisMode);
       .style("fill", d => colorScale(d[dataMember]));
   };
 
+  highlightHills_forAnimation = (dataMember, colorScale) => {
+
+    const allHills = d3.selectAll(".hill");
+
+    if(["first_publication", "collection"].includes(dataMember))
+    {
+      this.text_nodes.style("display", "block");      
+
+//      allHills.style("fill-opacity", 1).style("stroke-opacity", 1);
+
+      allHills.style("fill", d => colorScale(d[dataMember]));
+
+      return;
+    }    
+
+    allHills
+      .filter(d => !d[dataMember])
+      .style("fill", "transparent");
+
+    allHills
+      .filter(d => d[dataMember])
+      .style("fill", d => colorScale(d[dataMember]));
+  };  
+
   highlightHills = (dataMember, colorScale) => {
 
 
@@ -2152,167 +2093,6 @@ console.log("currentAnalysisMode", currentAnalysisMode);
   }
 }
 
-
-/*
-function create_item_steps(d)
-{
-	// reverse the order of collections, so to have the older ones at the bottom of the hills
-	d.attributes.collections = d.attributes.collections.reverse()
-
-	d.steps = [];
-	// get different radii
-	for(var jj = (data.min_size); jj <= d.size; jj += data.min_size) {
-		let new_step_size = jj;
-		let ratio = new_step_size / d.size;
-		new_step_size = d.size * interpolateSpline(ratio);
-		d.steps.push(new_step_size);
-	}
-
-	// get colors
-	d.steps = d.steps.map((s, i) => {
-
-		// assign to each step a collection
-		let pos_1 = i / d.steps.length;
-		let pos_2 = pos_1 * d.attributes.collections.length;
-		let collection_here = d.attributes.collections[Math.floor(pos_2)];
-		let first_elem = (i == (d.steps.length - 1));
-		let last_elem = (i == 0);
-		let n_steps = d.steps.length;
-		let csv_item = data.x_csv2[d.id];
-
-		return {
-			'r': s,
-			'collection': collection_here,
-			'first_publication': d.attributes.first_publication,
-			'id': d.id,
-			'first_elem': first_elem,
-			'last_elem': last_elem,
-			'n_steps': n_steps,
-
-			'generico_cosmico': csv_item == undefined ? 0 : csv_item.generico_cosmico,
-			'generico_cosmico_abs': csv_item == undefined ? 0 : csv_item.generico_cosmico_abs,
-      'n_generico_cosmico': csv_item == undefined ? 0 : csv_item.n_generico_cosmico,
-
-			'generico_terrestre': csv_item == undefined ? 0 : csv_item.generico_terrestre,
-			'generico_terrestre_abs': csv_item == undefined ? 0 : csv_item.generico_terrestre_abs,
-      'n_generico_terrestre': csv_item == undefined ? 0 : csv_item.n_generico_terrestre,
-
-			'inventato': csv_item == undefined ? 0 : csv_item.inventato,
-			'inventato_abs': csv_item == undefined ? 0 : csv_item.inventato_abs,
-      'n_inventato': csv_item == undefined ? 0 : csv_item.n_inventato,
-
-			'no_ambientazione': csv_item == undefined ? 0 : csv_item.no_ambientazione,
-			'no_ambientazione_abs': csv_item == undefined ? 0 : csv_item.no_ambientazione_abs,
-      'n_no_ambientazione': csv_item == undefined ? 0 : csv_item.n_no_ambientazione,
-
-			'nominato_cosmico': csv_item == undefined ? 0 : csv_item.nominato_cosmico,
-			'nominato_cosmico_abs': csv_item == undefined ? 0 : csv_item.nominato_cosmico_abs,
-      'n_nominato_cosmico': csv_item == undefined ? 0 : csv_item.n_nominato_cosmico,
-
-			'nominato_terrestre': csv_item == undefined ? 0 : csv_item.nominato_terrestre,
-			'nominato_terrestre_abs': csv_item == undefined ? 0 : csv_item.nominato_terrestre_abs,
-      'n_nominato_terrestre': csv_item == undefined ? 0 : csv_item.n_nominato_terrestre,
-
-			'nebbia_normalizzata': csv_item == undefined ? 0 : csv_item.nebbia_normalizzata,
-			'cancellazione_normalizzata': csv_item == undefined ? 0 : csv_item.cancellazione_normalizzata,
-			'nebbia': csv_item == undefined ? 0 : csv_item.nebbia,
-			'cancellazione': csv_item == undefined ? 0 : csv_item.cancellazione,
-			'norma_pct_caratteri_nebbia_cancellazione': csv_item == undefined ? 0 : csv_item.norma_pct_caratteri_nebbia_cancellazione,
-
-			'nebbia_words_ratio': csv_item == undefined ? 0 : csv_item.nebbia_words_ratio,
-			'cancellazione_words_ratio': csv_item == undefined ? 0 : csv_item.cancellazione_words_ratio,
-			'dubitative_ratio': csv_item == undefined ? 0 : csv_item.dubitative_ratio,
-
-			'lists_f_ratio': csv_item == undefined ? 0 : csv_item.lists_f_ratio,
-			'lists_m_ratio': csv_item == undefined ? 0 : csv_item.lists_m_ratio,
-			'lists_p_ratio': csv_item == undefined ? 0 : csv_item.lists_p_ratio,
-			'lists_s_ratio': csv_item == undefined ? 0 : csv_item.lists_s_ratio,
-
-			'lists_are_present': csv_item == undefined ? 0 : csv_item.lists_are_present,
-			'lists_ratio_with_threshold': csv_item == undefined ? 0 : csv_item.lists_ratio_with_threshold,
-			'lists_ratio_is_below_threshold': csv_item == undefined ? false : csv_item.lists_ratio_is_below_threshold
-		};
-	});
-
-	// sort array so to have little circles on top, big at bottom
-	d.steps = d.steps.reverse();
-
-	return d.steps;
-}
-*/
-/*
-function prepareMetaballData(json_nodes, collection, lineColor) 
-{
-	let flattened_steps = flatten_items_steps(json_nodes);
-}
-
-function flatten_items_steps(nodes) 
-{
-	let flattened_steps = [];
-
-	for(let i = 0; i < nodes.length; ++i) {
-		let node = nodes[i];
-
-		for(let j = 0; j < node.steps.length; ++j) {
-			let step = node.steps[j];
-
-			let item = {
-				id: step.id,
-				x: node.x,
-				y: node.y,
-
-				r: step.r,
-				steps_length: node.steps.length,
-				step: step,
-
-				collections: node.attributes.collections,
-				first_elem: step.first_elem,
-				last_elem: step.last_elem,
-				n_steps: step.n_steps,
-				first_publication: step.first_publication,
-				generico_cosmico: step.generico_cosmico,
-				generico_terrestre: step.generico_terrestre,
-				inventato: step.inventato,
-				no_ambientazione: step.no_ambientazione,
-				nominato_cosmico: step.nominato_cosmico,
-				nominato_terrestre: step.nominato_terrestre,
-
-				nebbia_normalizzata: step.nebbia_normalizzata,
-				cancellazione_normalizzata: step.cancellazione_normalizzata,
-
-				nebbia: step.nebbia,
-				cancellazione: step.cancellazione,
-
-				norma_pct_caratteri_nebbia_cancellazione: step.norma_pct_caratteri_nebbia_cancellazione,
-
-				nebbia_words_ratio: step.nebbia_words_ratio,
-				cancellazione_words_ratio: step.cancellazione_words_ratio,
-				dubitative_ratio: step.dubitative_ratio
-			};
-
-			flattened_steps.push(item);
-		}
-	}
-
-	return flattened_steps;
-}
-
-function array_intersection(a1, a2) 
-{
-	let result = [];
-
-	if(a1 === undefined || a1.length === 0 || a2 === undefined || a2.length === 0) return result;
-
-	for(let i = 0; i < a1.length; ++i) {
-		let item = a1[i];
-
-		if(a2.includes(item))
-			result.push(item);
-	}
-
-	return result;
-}
-*/
 function clone_d3_selection(selection, i) 
 {
 	// Assume the selection contains only one object, or just work
@@ -2343,7 +2123,8 @@ function prepare_place_hierarchies_2(place_hierarchies, json_node_map, colors)
 {
 	const place_hierarchies_graphics_items_2 = [];
 
-	for(let [text_id, place_hierarchy] of place_hierarchies)
+  // [text_id, place_hierarchy]
+	for(let [, place_hierarchy] of place_hierarchies)
 	{
 			let text_group = {
 				caption : place_hierarchy.caption,
@@ -2385,18 +2166,43 @@ function placesArcFix(d)
 
   switch(d.id)
   {
-    case "V005" : return Math.PI * 1 / 2;
-    case "V008" : return Math.PI * 3 / 4;
-    default : return 0;
-  }
-}
+    case "S012" : return S012_placesArcFix;
+    case "S032" : return S032_placesArcFix;
+    case "S081" : return S081_placesArcFix;
+    case "S076" : return S076_placesArcFix;
+    case "S089" : return S089_placesArcFix;
+    case "V008" : return V008_placesArcFix;
+    case "S149" : return S149_placesArcFix;
+    case "S151" : return S151_placesArcFix;
+    case "S156" : return S156_placesArcFix;
+    case "V021" : return V021_placesArcFix;
+    case "S179" : return S179_placesArcFix;
+    case "S181" : return S181_placesArcFix;
+    case "S203" : return S203_placesArcFix;
+    case "S119" : return S119_placesArcFix;
+    case "S123" : return S123_placesArcFix;
+    case "S142" : return S142_placesArcFix;
+    case "S139" : return S139_placesArcFix;
+    case "S140" : return S140_placesArcFix;
+    case "S095" : return S095_placesArcFix;
+    case "S097" : return S097_placesArcFix;
+    case "S104" : return S104_placesArcFix;
+    case "S050" : return S050_placesArcFix;
+    case "S101" : return S101_placesArcFix;
+    case "S048" : return S048_placesArcFix;
+    case "S088" : return S088_placesArcFix;
+    case "S065" : return S065_placesArcFix;
+    case "S072" : return S072_placesArcFix;
+    case "S067" : return S067_placesArcFix;
+    case "S007" : return S007_placesArcFix;
+    case "S022" : return S022_placesArcFix;
+    case "S041" : return S041_placesArcFix;
+    case "S014" : return S014_placesArcFix;
+    case "S165" : return S165_placesArcFix;
+    case "S011" : return S011_placesArcFix;
+    case "V005" : return V005_placesArcFix;
 
-function wait(ms)
-{
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
+    default : return 0;
   }
 }
 
@@ -2413,16 +2219,13 @@ function tilt_labels(text_nodes)
 {
   const label = text_nodes.selectAll('.label');   
 
-  let one_rem = Number.parseInt(d3.select('html').style('font-size'));
-  let k = one_rem * (1 / (d3_event_transform_k / scale));
-
   label.attr('transform', function(d) {
 
     let dy = tilt ? 0 : (d.steps.length + 5) * step_increment;
     let translate_string = tilt ? "" : 'translate(0,' + dy + ') ';
 
-    if(tilt) return translate_string + 'scale(' + k + ',' + k + ')';
-    else return translate_string + 'scale(' + k + ',' + k * 1 / with_tilt_factor + ')';
+    if(tilt) return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_no_tilt + ')';
+    else return translate_string + 'scale(' + label_x_scale_factor + ',' + label_y_scale_factor_tilt + ')';
   });
 }
 

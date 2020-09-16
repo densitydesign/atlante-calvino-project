@@ -6,31 +6,36 @@ export default class ViewSelector extends React.Component
 {
   render()
   {
-    let children = React.Children.toArray(this.props.children)
-    let the_link = this.props.route.includes("#") ? <HashLink to={this.props.route}>{this.props.text}</HashLink> : <Link to={this.props.route}>{this.props.text}</Link>
+    const children = React.Children.toArray(this.props.children);
 
-    if (children.length < 1) {
-      let obj = { type: 'span'}
-      children.push(obj)
-    }
+    if(children.length < 1) children.push({ type : "span" });
 
     const style = this.props.image ? { backgroundImage : "url('" + process.env.PUBLIC_URL + this.props.image + "')" } : {};
 
-console.log("viewSelector.render()");
-    return (
-
-      <div className={this.props.className} style={style} >
+    const innerPart = (
+      <div>
         {
-          children.map((d,i)=>{
-            // console.log(d);
-            let this_class = ""
-            if (d.props && d.props.dataClass) {
-              this_class = d.props.dataClass
-            }
-            return <d.type key={i} className={this_class}>{the_link}</d.type>
+          children.map((d, i) =>
+          {
+            const this_class = d.props && d.props.dataClass ? d.props.dataClass : "";
+
+            return (
+              <d.type key={'elmx-'+i} className={this_class}>
+                {this.props.text}
+                {/* Subtitle is never present, we may get rid of this H2 which triggers annoying warnings in the console */}
+                {/* <h2>{this.props.subtitle}</h2> */}
+              </d.type>
+            );
           })
         }
       </div>
     );
+
+    const result = 
+      this.props.route.includes("#") ? 
+      <HashLink to={this.props.route} className={this.props.className} style={style} >{innerPart}</HashLink> :
+          <Link to={this.props.route} className={this.props.className} style={style} >{innerPart}</Link>;
+
+    return result;
   }
 }

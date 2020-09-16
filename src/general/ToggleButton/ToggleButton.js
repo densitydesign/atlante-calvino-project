@@ -7,14 +7,15 @@ export default class ToggleButton extends React.Component
 {
   render()
   {
+    const buttonUpClass   = this.props.buttonUpClass   || "toggle-button-up";
+    const buttonDownClass = this.props.buttonDownClass || "toggle-button-down";
+
     return (
       <div
         id={this.props.id}
-        className={"toggle-button " + (this.props.pressed ? "toggle-button-down" : "toggle-button-up")}
+        className={"toggle-button " + (this.props.pressed ? buttonDownClass : buttonUpClass)}
         style={this.props.style}
-        onClick={() => {
-          this.props.callStateContainerToggleButtonPressed(this.props.id);
-        }}>
+        onClick={() => this.props.callStateContainerToggleButtonPressed(this.props.id)} >
         {this.props.caption}
       </div>
     );

@@ -17,8 +17,6 @@ export default class TerritoryDescriptionSubPanel extends React.Component
         <br/>
         <div className="description-link-group">
           <Link to={this.props.informationSheetRoute}><h6 className="step-link">{this.props.informationSheetDescription}</h6></Link>
-          <Link to={this.props.itineraryStop2Route}><h6 className="step-link">{this.props.itineraryStop2Description}</h6></Link>
-          <Link to={this.props.itineraryStop3Route}><h6 className="step-link">{this.props.itineraryStop3Description}</h6></Link>
         </div>
 
       </div>

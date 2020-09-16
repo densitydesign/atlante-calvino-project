@@ -57,11 +57,6 @@ export default class TerritoryFooter extends React.Component
   getActiveOption = options => options.find(item => item.status === true).label;
 
   toggleButtonPressed = buttonId => {    
-console.log("-------------------");
-console.log("toggleButtonPressed");
-console.log("buttonId", buttonId);
-console.log("this.props.mainAnalysisMode", this.props.mainAnalysisMode);        
-console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
 
     switch(buttonId)
     {
@@ -104,6 +99,7 @@ console.log("this.props.bottomPanelMode", this.props.bottomPanelMode);
 
         this.props.toggleItineraryDropUpPosition();
         this.props.setBottomPanelMode(visualizationMode.bottomPanelMode);
+        this.props.setBottomPanelPosition(GlobalData.bottomPanelPositions.open);
         this.props.setMainAnalysisMode(visualizationMode.mainAnalysisMode);
 
         break;

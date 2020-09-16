@@ -1,0 +1,58 @@
+.rbt {
+    height: 94%; 
+    width: 100%;
+    max-height: calc(var(--navigation-height) - 2px);
+    background-color: transparent !important;
+    display: flex;
+}
+
+.rbt .rbt-input-multi {
+    height: 100%;
+    display: flex;
+    padding: 0.3rem 0;
+    border: none;
+    background-color: transparent !important;
+}
+
+.rbt .rbt-input-multi .rbt-input-wrapper {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: transparent !important;
+}
+
+.rbt .form-control:focus, .rbt .rbt-input-multi.focus {
+  box-shadow: none;
+}
+
+.rbt-token {
+  background-color: var(--bg) !important;
+  border-color:var(--dark-blue)!important;
+  border: 1px solid!important;
+  border-radius: 0px !important;
+  color: var(--dark-blue) !important;
+  display: inline-block;
+  line-height: 1em;
+  margin: 0px 3px 3px 3px !important;
+  padding: 4px 7px;
+  position: relative;
+}
+
+.rbt-token-removeable{
+  padding-right:30px !important;
+}
+
+.rbt .dropdown-item-selectable *{
+    font-size: 1em;
+    text-transform: capitalize;
+    text-align: left;
+    padding-left: 1em;
+    magin-left: 0;
+}
+
+.rbt .dropdown-item-selectable.selected *{
+    color: #fff !important;
+    background-color:var(--dark-blue)!important; 
+}

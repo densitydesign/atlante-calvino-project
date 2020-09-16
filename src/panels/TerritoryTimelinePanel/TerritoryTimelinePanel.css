@@ -1,6 +1,6 @@
 
 .territory-timeline-panel {
-  background-color : white;
+  background-color : var(--bg);
   height: 90%;
   width : 100%;
   z-index : 2;
