@@ -1,238 +1,151 @@
-import React, { useState, useCallback, useMemo, useEffect } from "react";
+import React, { useCallback, useState, useMemo, useEffect } from 'react'
+import MainMenu from '../../general/MainMenu'
+import PageTitle from '../../general/PageTitle'
+import MoreInfo from '../../general/MoreInfo'
+import CompassButton from '../../general/CompassButton/CompassButton'
+import SearchDropDown from '../../general/Search/SearchDropDownControlled'
+import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
 
-//data management
-import groupBy from "lodash/groupBy";
-import keyBy from "lodash/keyBy";
-import sortBy from "lodash/sortBy";
-import uniqBy from "lodash/uniqBy";
-import minBy from "lodash/minBy";
-import maxBy from "lodash/maxBy";
-import mapValues from "lodash/mapValues";
-import get from "lodash/get";
-import take from "lodash/take";
-import { extent } from "d3-array";
+import AltOptions from '../../general/Options/AltOptions'
+import GlobalData from '../../utilities/GlobalData'
+import Trama2Content from './Trama2Content'
+import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from './utils'
+import keyBy from 'lodash/keyBy'
+import './Trama2.css'
 
-//visual helpers
-import { scaleLinear } from "d3-scale";
+// SCALES
+const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
 
-//data loading
-//#TODO: move to separate file?
-import datasetLines from "./dati/dataset_lines.json";
-import mappaMotivoTipologia from "./dati/mappa_motivo_tipologia.json";
-import ordineColore from "./dati/ordine_colore_y.json";
-import coloriPosizioni from "./dati/colori_posizioni.json";
+// GLOBAL DATA
+const {
+  tipologie,
+  tipologieByTipologia,
+  colors,
+  racconti,
+  byRacconto,
+} = makeVizData(scalaMotivoY)
 
-//local components
-import LineeTrama from "./LineeTrama";
-import SideBar from "./SideBar";
+// we leverage react lazy+suspense to load core component at first render (it will load all json by importing it)
 
-//VISUAL CONSTANTS
-const MOTIVO_LINE_HEIGHT = 50;
+const searchOptions = racconti.map((racconto) => ({
+  label: racconto.titolo,
+  value: racconto.titolo,
+}))
 
-const clusterByMotivo = mapValues(
-  keyBy(mappaMotivoTipologia, "motivo_type"),
-  (item) => item["cluster tipologie"]
-);
-const ordineByCluster = keyBy(coloriPosizioni, "valore");
-const ordineMotivoByMotivo = mapValues(
-  keyBy(ordineColore, "tipologia"),
-  (item) => +item["ordine tipologia"]
-);
+const cercaOptions = [{ label: 'Titolo' }]
 
-//scales
-const motivoExtent = extent(ordineColore, (item) => +item["ordine tipologia"]);
-const scalaMotivoY = scaleLinear()
-  .domain(motivoExtent)
-  .range([MOTIVO_LINE_HEIGHT, 0]);
+function Trama2Main({ title }) {
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
+  const [ricerca, setRicerca] = useState([])
 
-// const colorsOrdered = sortBy(coloriPosizioni, (item) => +item.ordine);
-// // const colorsExtent = extent(coloriPosizioni, item => +item.ordine)
-// const scalaColore = scaleLinear()
-//   .domain(colorsOrdered.map((item) => item.ordine))
-//   .range(colorsOrdered.map((item) => item.colori));
+  const toggleHelpSidePanel = useCallback(() => {
+    setHelpSidePanelOpen((a) => !a)
+  }, [])
 
-const tipologie = ordineColore.map((item) => ({
-  ...item,
-  colore: get(ordineByCluster, item["cluster tipologia"]),
-}));
+  const helpPage = GlobalData.helpPages.plot.main
 
-const colors = sortBy(tipologie, (item) => item.colore.ordine).map(
-  (x) => x.colore.colori
-);
+  const setSelected = useCallback((selection, fromBounds = false) => {
+    const newRicerca = Object.keys(selection).map((titolo) => ({
+      label: titolo,
+      value: titolo,
+      fromBounds,
+    }))
+    setRicerca(newRicerca)
+  }, [])
 
-let racconti = sortBy(
-  uniqBy(datasetLines, (item) => item["titolo racconto"]).map((item) => ({
-    titolo: item["titolo racconto"],
-    anno: item["anno"],
-    mese: item["mese"],
-  })),
-  (item) => {
-    const anno = +item.anno;
-    const mese = +item.mese;
-
-    return `${anno.toFixed(4)}${mese.toFixed(2)}`;
-  }
-);
-
-//#TODO: remove this (limiting for debug)
-//racconti = take(racconti,10)
-
-const datasetLinesNormalized = datasetLines.map((item) => {
-  const tot = +item["tot caratteri"];
-  const motivo = item["motivo_type"];
-  const cluster = get(clusterByMotivo, motivo);
-  const coloreCluster = get(ordineByCluster, `[${cluster}].colori`);
-  const ordineCluster = get(ordineByCluster, `[${cluster}].ordine`);
-  const ordineMotivo = get(ordineMotivoByMotivo, motivo);
-
-  const startMotivoNorm = +item.start_motivo / tot;
-  const endMotivoNorm = +item.end_motivo / tot;
-  const y = ordineMotivo !== undefined ? scalaMotivoY(ordineMotivo) : undefined;
-  const x = (startMotivoNorm + endMotivoNorm) / 2;
-
-  return {
-    ...item,
-    startMotivoNorm,
-    endMotivoNorm,
-    cluster,
-    coloreCluster,
-    ordineCluster: ordineCluster ? +ordineCluster : undefined,
-    ordineMotivo,
-    y,
-    x,
-  };
-});
-
-const byRacconto = groupBy(datasetLinesNormalized, "titolo racconto");
-
-const tipologieByTipologia = keyBy(tipologie, (item) => item.tipologia);
-
-//pre-computing filters
-racconti = racconti.map((racconto) => {
-  const minDatum = minBy(
-    byRacconto[racconto.titolo],
-    (item) => item.ordineMotivo
-  );
-  const maxDatum = maxBy(
-    byRacconto[racconto.titolo],
-    (item) => item.ordineMotivo
-  );
-  // console.log(123, racconto.titolo, minDatum, maxDatum)
-  return { ...racconto, minDatum, maxDatum };
-});
-
-// main component
-export default function Trama2Main() {
-  const [sidePanelOpen, setSidePanelOpen] = useState(false);
-  const toggleSidePanel = useCallback(() => {
-    setSidePanelOpen(!sidePanelOpen);
-  }, [sidePanelOpen]);
-
-  //lines selection
-  const [selected, setSelected] = useState({});
-  const toggleSelect = useCallback(
-    (titolo) => () => {
-      const newSelected = { ...selected, [titolo]: !!!selected[titolo] };
-      setSelected(newSelected);
-    },
-    [selected]
-  );
-
-  //bounds selection
-  const [bounds, setBounds] = useState([]);
-  const addBound = useCallback(
-    (item) => () => {
-      if (bounds.length === 1 && bounds[0] === item) {
-        setBounds([]);
-        return;
-      }
-      if (bounds.length < 2) {
-        setBounds(bounds.concat([item]));
+  const toggleSelect = useCallback((titolo) => {
+    setRicerca((ricerca) => {
+      let clearedBounds = false
+      const newRicerca = ricerca.filter((item) => {
+        // Remove from bounds items
+        if (item.fromBounds === true) {
+          clearedBounds = true
+          return false
+        }
+        return item.label !== titolo
+      })
+      if (newRicerca.length < ricerca.length && !clearedBounds) {
+        return newRicerca
       } else {
-        setBounds([item]);
+        return newRicerca.concat({ label: titolo, value: titolo })
       }
-    },
-    [bounds]
-  );
-
-  //actual dataset
-  const raccontiFiltered = useMemo(() => {
-    if (bounds.length === 2) {
-      const orderedBounds = sortBy(
-        bounds,
-        (bound) => tipologieByTipologia[bound]["ordine tipologia"]
-      );
-      return racconti.filter(
-        (racconto) =>
-          racconto.minDatum.motivo_type === orderedBounds[0] &&
-          racconto.maxDatum.motivo_type === orderedBounds[1]
-      );
-    }
-
-    return racconti;
-  }, [bounds]);
-
-  useEffect(() => {
-    if (bounds.length === 2) {
-      const orderedBounds = sortBy(
-        bounds,
-        (bound) => tipologieByTipologia[bound]["ordine tipologia"]
-      );
-
-      const indexes = racconti
-        .map((racconto, index) => [
-          racconto.titolo,
-          racconto.minDatum.motivo_type,
-          racconto.maxDatum.motivo_type,
-        ])
-        .filter((x) => x[1] === orderedBounds[0] && x[2] === orderedBounds[1])
-        .map((x) => x[0]);
-
-      const sel = keyBy(indexes);
-      setSelected(sel);
-    }
-  }, [bounds]);
-
-
-  // const raccontiOrdered = useMemo(() => {
-  //   return sortBy(racconti, (racconto, j) => selected[racconto.titolo] ? j + 1000 : j)
-  // }, [selected])
-
-  console.log("tipologie", tipologie);
-  console.log("racconti", racconti);
-  console.log("raccontiFiltered", raccontiFiltered);
-  console.log("bounds", bounds);
+    })
+  }, [])
+  const selected = useMemo(() => {
+    return keyBy(
+      ricerca.map((item) => ({
+        value: item.value,
+        fromBounds: item.fromBounds === undefined ? false : item.fromBounds,
+      })),
+      'value'
+    )
+  }, [ricerca])
 
   return (
-    <div className="trama2-container">
-      <div className={`trama2-side-panel ${sidePanelOpen ? "open" : "closed"}`}>
-        <div className="trama2-side-panel-content">
-          <SideBar
-            tipologie={tipologie}
-            bounds={bounds}
-            addBound={addBound}
-            setBounds={setBounds}
-          ></SideBar>
-        </div>
+    <div className="trasformare main">
+      <HelpSidePanel
+        open={helpSidePanelOpen}
+        page={helpPage}
+        closeButtonClicked={toggleHelpSidePanel}
+      />
 
-        <div
-          className="trama2-side-panel-toggle "
-          onClick={toggleSidePanel}
-        ></div>
+      <div className="top-nav navigations">
+        <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
+        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
+
+        <AltOptions
+          title="Cerca per"
+          options={cercaOptions}
+          disabled={true}
+          value={'Titolo'}
+          onChange={(x) => {}}
+          style={{
+            gridColumn: 'span 3',
+          }}
+        />
+
+        <SearchDropDown
+          style={{
+            gridColumn: 'span 8',
+          }}
+          data={{ options: searchOptions }}
+          changeOptions={(newOptions) => {
+            setRicerca(
+              newOptions.map((o) => ({
+                ...o,
+                fromBounds: false,
+              }))
+            )
+          }}
+          selectedOptions={ricerca}
+        />
+
+        <MoreInfo
+          style={{ gridColumn: 'span 1' }}
+          onClicked={toggleHelpSidePanel}
+        />
+        <CompassButton
+          style={{
+            gridColumn: 'span 1',
+            color: 'white',
+            backgroundColor: 'black',
+          }}
+        />
       </div>
-      <div className="trama2-content-wrapper">
-        <div className="trama2-content">
-          <LineeTrama
-            selected={selected}
-            toggleSelect={toggleSelect}
-            racconti={racconti}
-            data={byRacconto}
-            height={MOTIVO_LINE_HEIGHT}
-            scalaMotivoY={scalaMotivoY}
-            colors={colors}
-          ></LineeTrama>
-        </div>
-      </div>
+
+      <Trama2Content
+        scalaMotivoY={scalaMotivoY}
+        tipologie={tipologie}
+        tipologieByTipologia={tipologieByTipologia}
+        colors={colors}
+        racconti={racconti}
+        byRacconto={byRacconto}
+        selected={selected}
+        setSelected={setSelected}
+        toggleSelect={toggleSelect}
+      ></Trama2Content>
     </div>
-  );
+  )
 }
+
+export default Trama2Main

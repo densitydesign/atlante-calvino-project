@@ -1,7 +1,7 @@
 .trama2-container {
   position: relative;
   height: calc(100vh - var(--navigation-height));
-  background-color: #ccc;
+  background-color: #fff;
 }
 
 .trama2-side-panel {
@@ -20,6 +20,12 @@
 
 .trama2-side-panel-toggle {
   height: 35px;
+  color: #eee;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   width: 35px;
   background-color: black;
   border-radius: 0 4px 4px 0;
@@ -27,6 +33,33 @@
   right: 0px;
   top: 17.5px;
   pointer-events: all;
+  transition: all 2s;
+}
+.trama2-side-panel-toggle > svg {
+  transition: all 600ms ease-in;
+}
+.trama2-side-panel-toggle.open-panel > svg {
+  transform: scaleX(-1);
+}
+
+.trama2-side-panel-rotate {
+  cursor: pointer;
+  height: 120px;
+  width: 35px;
+  background-color: #fff;
+  /* border-radius: 0 4px 4px 0; */
+  border-radius: 4px 0 0 4px;
+  border: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 100px);
+  pointer-events: all;
+  text-align: center;
+  line-height: 35px;
+
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
 }
 
 .trama2-side-panel-content {
@@ -44,20 +77,34 @@
   z-index: 1;
   min-height: 600px;
   min-width: 960px;
-  height: calc(100% - 15px);
+  height: 100%;
   width: 100%;
 }
 
 .trama2-content {
   padding: 70px 30px;
+  padding-bottom: 90px;
   height: 100%;
+}
+.trama2-detail-content {
+  /* padding: 20px 30px; */
+  height: 100%;
+  position: relative;
+}
+.trama2-detail-header {
+  z-index: 100;
+  height: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 
 .trama2-pointer {
   /* stroke: #ddd; */
   fill: none;
   stroke: transparent;
-  stroke-width: 3px;
+  stroke-width: 5px;
   cursor: pointer;
   /* fill: none; */
 }
@@ -69,36 +116,241 @@
 }
 
 .trama2-line {
-  /* stroke: #ddd; */
   fill: none;
-  stroke-width: 1px;
+  stroke-width: 2px;
   pointer-events: none;
   /* fill: none; */
 }
 
+/* .trama2-line {
+  transition: all 2s linear;
+} */
+
+.trama2-label-container {
+  cursor: help;
+}
+.trama2-start-symbol {
+  transform: translate(-2px, -2px);
+  height: 4px;
+  width: 4px;
+  stroke: black;
+  fill: white;
+}
+.trama2-end-symbol {
+  transform: rotate(45deg) translate(-3px, -3px);
+  height: 4px;
+  width: 4px;
+  stroke: black;
+  fill: white;
+}
 .trama2-circle {
   stroke: #ddd;
   fill: #000;
 }
+.trama2-label-container .trama2-circle {
+  transition: transform 0.2s linear;
+}
+.trama2-label-container.trama2-label-hover .trama2-circle {
+  transform: scale(1.5);
+}
+.trama2-label-container.trama2-label-not-hover text {
+  opacity: 0.5;
+}
 
 /* sidebar */
+.trama2-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .trama2-sidebar-header {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-weight: bold;
   height: 80px;
 }
+.trama2-sidebar-footer {
+  display: flex;
+  flex: 1;
+  /* height: 100%; */
+  font-size: 10px;
+  /* justify-content: center; */
+  align-items: center;
+  font-style: italic;
+}
 .trama2-sidebar-item {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  height: 14px;
-  padding-left: 30px;
-  line-height: 10px;
+  display: flex;
+  align-items: center;
+  /* padding-left: 30px; */
   color: #222;
   font-size: 10px;
   cursor: pointer;
 }
 
+.trama2-brush-for-list {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-brush-for-detail {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-brush-container {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+.trama2-top-legend-list {
+  color: darkgray;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  font-style: italic;
+  right: 0;
+}
+.trama2-brush-legend-list {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  color: darkgray;
+  justify-content: space-between;
+  font-style: italic;
+}
+.trama2-brush-container-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trama2-brush-button {
+  width: 30px;
+  background: white;
+  border: 1px solid var(--dark-blue);
+  color: black;
+  border-radius: 5px;
+}
+.trama2-list-brush {
+  background: #eee;
+  flex: 1;
+}
+.trama2-list-brush > .trama2-drag-handle {
+  width: 12px;
+  height: 100%;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  background: white;
+}
+.trama2-index-line {
+  top: 0;
+  bottom: 40px;
+  position: absolute;
+  background: black;
+  width: 1px;
+}
+
 .trama2-sidebar-item.selected {
   color: #fff;
 }
+.trama2-sidebar-item.no-pointer-events {
+  pointer-events: none;
+}
+.trama2-sidebar-item.item-dark.selected {
+  color: black;
+}
+.trama2-sidebar-item.disabled {
+  color: #a6a6a6;
+}
+.trama2-sidebar-content {
+  /* background: rgb(204,204,204); */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
 .trama2-sidebar-item:hover {
-  background-color: #ccc;
+  background: rgb(0, 0, 0, 0.15);
+}
+.trama2-box-plot-year {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: darkgray;
+  font-style: italic;
+}
+
+.trama2-box-plot-same-start-end-symbol {
+  fill: #E72EFF;
+  /* transform: rotate(30deg) translateX(5px); */
+  /* stroke: #000; */
+}
+
+.trama2-box-plot-end-symbol {
+  transform: rotate(45deg);
+  fill: white;
+  stroke: black;
+
+}
+
+.trama2-box-plot-start-symbol {
+  fill: white;
+  stroke: black;
+}
+
+.trama2-box-plot-partial-hide-bar {
+  fill: transparent;
+  fill: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
+.trama2-info-box {
+  fill: white;
+  stroke-width: 1px;
+  stroke: var(--dark-blue);
+}
+
+.trama2-boxplot-content {
+  padding: 0 30px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.trama2-boxplot-content {
+  padding: 0 30px;
+}
+.trama2-box-plot-enter-in-opacity {
+  opacity: 1;
+}
+
+.trama2-racconto-incastonato-rect {
+  fill: #f3f3f3;
+  /* fill: url(#racconto-incastonato-gradient); */
+  stroke-width: 2px;
+}
+
+.trama2-racconto-incastonato-line {
+  fill: #f49831;
+  stroke: #f49831;
+  stroke-width: 2px;
+}
+
+.trama2-racconto-incastonato-step-line {
+  stroke: darkgrey;
 }

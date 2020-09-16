@@ -1,286 +1,644 @@
+import ReactDOM from 'react-dom'
 import React, {
   useRef,
   useState,
   useMemo,
-  useEffect,
   useCallback,
-} from "react";
-import { line, curveMonotoneX } from "d3-shape";
-import { scaleLinear } from "d3-scale";
-import { zoom } from "d3";
+  useEffect,
+  useLayoutEffect,
+  useImperativeHandle,
+  forwardRef,
+} from 'react'
+import { line, curveMonotoneX, curveStep } from 'd3-shape'
+import { scaleLinear } from 'd3-scale'
+import { zoom } from 'd3-zoom'
+import { select, selectAll, event as currentEvent } from 'd3-selection'
 
-const MAX_ZOOM_LEVEL = 10;
-const TOP_SVG_PADDING = 20;
+import range from 'lodash/range'
+import find from 'lodash/find'
+import findIndex from 'lodash/findIndex'
 
-function LineaTrama({
-  racconto,
-  data,
-  xScale,
-  width,
-  height,
-  zoomLevel,
-  index,
-  gradient,
-  itemSelected,
-  toggleItem,
-}) {
-  const lineGenerator = line()
-    .x((d) => d.x)
-    .y((d) => d.y * zoomLevel)
-    .curve(curveMonotoneX);
-  const d = lineGenerator(data);
+import { splitPath, makeScalaMotivoY } from './utils'
+import GradientsDefinitions from './GradientsDefinitions'
+import RaccontoInfoBoxSvg from './RaccontoInfoBoxSvg'
+import Brush, { BRUSH_HANDLE_WIDTH } from './Brush'
 
-  const stroke = itemSelected ? `url('#trama-gradient-${zoomLevel}')` : "#ddd";
+const lineGenerator = line()
+  .x((d) => d.x)
+  .y((d) => d.y)
+  .curve(curveMonotoneX)
+
+const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
   return (
     <g>
-      {/* <rect
-        width={width}
-        height={height}
-        style={{fill:`teal`, fillOpacity: 0.2}}
-      ></rect> */}
-      <path
-        d={d}
-        className={`trama2-pointer ${itemSelected ? "selected" : ""}`}
-        onClick={toggleItem}
-      ></path>
-      <path
-        d={d}
-        className="trama2-line"
-        style={{ stroke, strokeWidth: zoomLevel }}
-      ></path>
+      {subPaths.map((subPath, i) => {
+        const isFill = data[i + 1].motivo_type === data[i].motivo_type
+        const strokeSelected = isFill
+          ? data[i].colori
+          : `url('#${data[i + 1].motivo_type}-${data[i].motivo_type}')`
+        return (
+          <path
+            key={i}
+            d={subPath}
+            className="trama2-line"
+            style={{
+              stroke: itemSelected ? strokeSelected : '#ddd',
+              fill: 'none',
+            }}
+          ></path>
+        )
+      })}
+    </g>
+  )
+})
 
-      {/* <line x1={0} x2={width} y1={height} y2={height} style={{stroke: '#000'}}></line> */}
-      {itemSelected && (
-        <g>
-          <g>
-            {/* <rect ></rect> */}
-            <text x={width} y={0} style={{ textAnchor: "end" }}>
-              {data.racconto.titolo}
-            </text>
-          </g>
-
-          {data.map((d, i) => (
-            <circle
+const TramaPoints = React.memo(({ data }) => {
+  return (
+    <g className="trama2-pointz">
+      {data.map((d, i) => {
+        if (i === 0) {
+          return (
+            <rect key={i} x={d.x} y={d.y} className="trama2-start-symbol">
+              <title>{d.motivo_type}</title>
+            </rect>
+          )
+        }
+        if (i === data.length - 1) {
+          return (
+            <rect
               key={i}
-              className="trama2-circle"
-              cx={d.x}
-              cy={d.y * zoomLevel}
-              r={2}
+              x={d.x}
+              y={d.y}
+              style={{
+                transformOrigin: `${d.x}px ${d.y}px`,
+              }}
+              className="trama2-end-symbol"
             >
               <title>{d.motivo_type}</title>
-            </circle>
-          ))}
-        </g>
-      )}
+            </rect>
+          )
+        }
+        return (
+          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
+            <title>{d.motivo_type}</title>
+          </circle>
+        )
+
+        return (
+          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
+            <title>{d.racconto_incastonato}</title>
+          </circle>
+        )
+      })}
     </g>
-  );
+  )
+})
+
+const LineaTrama = React.memo(
+  ({
+    racconto,
+    data,
+    xScale,
+    selectedPoint,
+    width,
+    height,
+    index,
+    gradient,
+    itemSelected,
+    toggleItem,
+    onRaccontoClick,
+  }) => {
+    const [d, subPaths] = useMemo(() => {
+      const d = lineGenerator(data)
+      const subPaths = splitPath(d)
+      return [d, subPaths]
+    }, [data])
+
+    const handleClickRacconto = useCallback(
+      (e) => {
+        onRaccontoClick(data, e)
+      },
+      [onRaccontoClick, data]
+    )
+
+    const element = (
+      <g data-subracconto={data.racconto.titolo}>
+        <SubPathsWithColors
+          subPaths={subPaths}
+          data={data}
+          itemSelected={itemSelected}
+        />
+        <path
+          d={d}
+          onClick={() => toggleItem(racconto.titolo)}
+          className={`trama2-pointer ${itemSelected ? 'selected' : ''}`}
+        ></path>
+
+        {itemSelected && (
+          <g>
+            <TramaPoints data={data} />
+            <RaccontoInfoBoxSvg
+              onClick={handleClickRacconto}
+              y={-10}
+              x={width}
+              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
+            />
+          </g>
+        )}
+        {selectedPoint && (
+          <g>
+            <text
+              style={{
+                transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
+                transform:
+                  selectedPoint.originalX < 0.2
+                    ? 'rotate(30deg) translate(5px, 5px)'
+                    : `rotate(-30deg) translateX(-10px)`,
+              }}
+              x={selectedPoint.x}
+              y={selectedPoint.y}
+              textAnchor={selectedPoint.originalX < 0.2 ? 'start' : 'end'}
+            >
+              {selectedPoint.motivo_type}
+            </text>
+          </g>
+        )}
+      </g>
+    )
+    if (itemSelected) {
+      return ReactDOM.createPortal(
+        element,
+        document.getElementsByClassName('linea-container-selected')[index]
+      )
+    }
+    return element
+  }
+)
+
+const SelectedContainers = React.memo(({ n }) => {
+  return (
+    <g>
+      {range(n).map((i) => (
+        <g key={i} className="linea-container-selected" />
+      ))}
+    </g>
+  )
+})
+
+const LineeTramaList = React.memo(
+  ({
+    measures,
+    dataRacconti,
+    currentXHoverRacconti,
+    racconti,
+    onRaccontoClick,
+    height,
+    scalaColore,
+    scalaMotivoY,
+    selected,
+    toggleSelect,
+    xScale,
+  }) => {
+    return (
+      <g>
+        {dataRacconti.map((datum, i) => {
+          return (
+            <g key={i} className="linea-container">
+              <LineaTrama
+                selectedPoint={
+                  currentXHoverRacconti &&
+                  currentXHoverRacconti[racconti[i].titolo]
+                    ? currentXHoverRacconti[racconti[i].titolo]
+                    : null
+                }
+                onRaccontoClick={onRaccontoClick}
+                scalaColore={scalaColore}
+                scalaMotivoY={scalaMotivoY}
+                index={i}
+                width={measures.width}
+                height={height}
+                itemSelected={selected[racconti[i].titolo]}
+                toggleItem={toggleSelect}
+                xScale={xScale}
+                racconto={racconti[i]}
+                data={datum}
+              ></LineaTrama>
+            </g>
+          )
+        })}
+      </g>
+    )
+  }
+)
+
+const HORIZ_PADDING = 20
+
+function imperativeTranslate(currentScaleY) {
+  selectAll('.linea-container').attr(
+    'transform',
+    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  )
+  selectAll('.linea-container-selected').attr(
+    'transform',
+    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  )
 }
 
-export default function LineeTrama({
-  racconti = [],
-  data = {},
-  height,
-  scalaColore,
-  scalaMotivoY,
-  colors,
-  selected,
-  toggleSelect,
-}) {
-  const containerRef = useRef(null);
-  const [measures, setMeasures] = useState(null);
-  const [zoomLevel, setZoomLevel] = useState(1.0);
-  const [zoomY, setZoomY] = useState(0);
+function LineeTramaWithMeasures(
+  {
+    racconti = [],
+    data = {},
+    height,
+    scalaColore,
+    scalaMotivoY,
+    colors,
+    selected,
+    toggleSelect,
+    onRaccontoClick,
+    tipologie,
+    tipologieByTipologia,
+    setYears,
+    measures,
+  },
+  ref
+) {
+  const svgRef = useRef(null)
+  const lastZoomedScaleYRef = useRef(null)
 
   useEffect(() => {
-    const m = containerRef.current.getBoundingClientRect();
-    setMeasures(m);
-  }, []);
+    if (measures) {
+      const svg = svgRef.current
+      const scaleY = scaleLinear()
+        .domain([0, racconti.length])
+        .range([0 + height, measures.height - height])
 
-  const scrollHandler = useCallback(
-    (e, n) => {
-      const sign = e.deltaY > 0 ? 1.0 : -1.0;
+      imperativeTranslate(scaleY)
 
-      const newLevel = zoomLevel + 0.1 * sign;
+      function handleZoom() {
+        const newScaleY = currentEvent.transform.rescaleY(scaleY)
+        lastZoomedScaleYRef.current = newScaleY
+        imperativeTranslate(newScaleY)
 
-      if (newLevel > MAX_ZOOM_LEVEL) {
-        return;
+        const domain = newScaleY.domain()
+        const lowIndex = Math.max(0, Math.floor(domain[0]))
+        const hiIndex = Math.min(racconti.length - 1, Math.floor(domain[1]))
+
+        setYears((prevYears) => {
+          const newYears = [racconti[lowIndex].anno, racconti[hiIndex].anno]
+          if (newYears[0] !== prevYears[0] || newYears[1] !== prevYears[1]) {
+            return newYears
+          }
+          return prevYears
+        })
       }
-      if (newLevel <= 1) {
-        setZoomY(0);
-        setZoomLevel(1)
-        return;
+
+      const selection = select(svg)
+      selection.call(
+        zoom()
+          .scaleExtent([1, 10])
+          .translateExtent([
+            [0, 0],
+            [measures.width, measures.height],
+          ])
+          .on('zoom', handleZoom)
+      )
+      return () => {
+        selection.on('.zoom', null)
       }
-      setZoomLevel(Math.max(1, Math.min(newLevel, MAX_ZOOM_LEVEL)));
-      if (!zoomY) {
-        setZoomY(e.layerY);
-      }
-
-      return false;
-    },
-    [zoomLevel, zoomY]
-  );
-
-  useEffect(() => {
-    const n = containerRef.current;
-
-    const sh = (e) => {
-      scrollHandler(e, n);
-    };
-
-    n.addEventListener("wheel", sh, { passive: true });
-    return () => {
-      n.removeEventListener("wheel", sh, { passive: true });
-    };
-  }, [scrollHandler]);
-
-  const delta = useMemo(() => {
-    if (!measures) {
-      return 0;
     }
-    return (measures.height - height) / racconti.length;
-  }, [height, measures, racconti.length]);
+  }, [height, measures, racconti, setYears])
 
   const xScale = useMemo(() => {
     if (!measures) {
-      return null;
+      return null
     }
-    return scaleLinear().domain([0, 1]).range([0, measures.width]);
-  }, [measures]);
+    return scaleLinear()
+      .domain([0, 1])
+      .range([HORIZ_PADDING, measures.width - HORIZ_PADDING])
+  }, [measures])
 
-  const dataRacconti = useMemo(() => {
+  const [dataRacconti, dataByRacconti, gradientsType] = useMemo(() => {
     if (!xScale) {
-      return [];
+      return [[], []]
     }
-    return racconti.map((racconto) => {
-      const out = data[racconto.titolo]
-        .filter((d) => d.y !== undefined)
-        .map((d) => {
-          return {
-            ...d,
-            x: xScale(d.x),
-            y: d.y,
-          };
-        });
-      out.racconto = racconto;
-      return out;
-    });
-  }, [data, racconti, xScale]);
+    const dataByRaccontiFinal = {}
+    const gradientsSet = new Set()
+    const finalDataRacconti = racconti.map((racconto) => {
+      let out = data[racconto.titolo].filter((d) => d.y !== undefined)
+      out = out.map((d, i) => {
+        if (i > 0) {
+          gradientsSet.add(d.motivo_type + '-' + out[i - 1].motivo_type)
+        }
+        return {
+          ...d,
+          colori: tipologieByTipologia[d.motivo_type].colore.colori,
+          originalX: d.x,
+          x: xScale(d.x),
+          y: d.y,
+        }
+      })
+      out.racconto = racconto
+      dataByRaccontiFinal[racconto.titolo] = out
+      return out
+    })
+    return [finalDataRacconti, dataByRaccontiFinal, Array.from(gradientsSet)]
+  }, [data, racconti, xScale, tipologieByTipologia])
 
-  const baseDisplacements = useMemo(() => {
-    return dataRacconti.map((d, i) => {
-      let dy = delta * i //+ TOP_SVG_PADDING;
-      return dy;
-    });
-  }, [dataRacconti, delta]);
+  const [x, setX] = useState(measures.width - BRUSH_HANDLE_WIDTH / 2)
 
-  const displacements = useMemo(() => {
-    if(!measures){
-      return []
+  useEffect(() => {
+    const initialTitle = 'Il cavaliere inesistente'
+    const raccontoData = dataByRacconti[initialTitle]
+    const raccontoDatum = find(raccontoData, (datum) => {
+      if (
+        datum.originalX.toFixed(2) === '0.77' &&
+        datum.motivo_type === 'viaggio'
+      ) {
+        return true
+      }
+      return false
+    })
+    if (raccontoDatum) {
+      setX(+raccontoDatum.x - BRUSH_HANDLE_WIDTH / 2)
     }
-    return dataRacconti.map((d, i) => {
-      let dy = baseDisplacements[i];
-      //return dy * zoomLevel
+    toggleSelect(initialTitle)
+  }, [toggleSelect, dataByRacconti])
 
-      const j = Math.floor(zoomY / delta);
+  const handleNexPoint = useCallback(() => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x > x + BRUSH_HANDLE_WIDTH / 2) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints.length) {
+      const nextX = Math.min(...nextPoints) - BRUSH_HANDLE_WIDTH / 2
+      if (nextX >= 0 && x <= measures.width - BRUSH_HANDLE_WIDTH / 2) {
+        setX(nextX)
+      }
+    }
+  }, [dataByRacconti, measures, selected, x])
 
-      
-      //const translation = zoomLevel === 1 ? 0 : (measures.height / (2 * delta * zoomLevel) - 1) * (delta * zoomLevel)
-      //const translation = 
-      const factor = (zoomLevel-1) / (MAX_ZOOM_LEVEL-1);
-      const diff = zoomLevel === 1 ? 0 : delta * j * zoomLevel - (measures.height / 2)// / zoomLevel
+  const handlePrevPoint = useCallback(() => {
+    const nextPoints = Object.keys(selected).reduce((acc, titolo) => {
+      const dataTrama = dataByRacconti[titolo]
+      dataTrama.forEach((datum) => {
+        if (datum.x < x + BRUSH_HANDLE_WIDTH / 2) {
+          acc.push(datum.x)
+        }
+      })
+      return acc
+    }, [])
+    if (nextPoints.length) {
+      const nextX = Math.max(...nextPoints) - BRUSH_HANDLE_WIDTH / 2
+      if (nextX >= 0 && x <= measures.width - BRUSH_HANDLE_WIDTH / 2) {
+        setX(nextX)
+      }
+    }
+  }, [dataByRacconti, selected, measures, x])
 
-      // const diff1 =  delta * j * 1
-      // const diffMax =  delta * j * MAX_ZOOM_LEVEL - (measures.height / 2)
-      // const diff = diff1 + (diffMax - diff1) / (MAX_ZOOM_LEVEL - 1) * (zoomLevel - 1)
+  const trameByPoints = useMemo(() => {
+    return Object.keys(selected).reduce((acc, titolo) => {
+      const racconto = dataByRacconti[titolo]
+      racconto.forEach((datum) => {
+        const xKey = datum.x.toFixed(0)
+        acc[xKey] = acc[xKey] || {}
+        acc[xKey][titolo] = {
+          motivo_type: datum.motivo_type,
+          originalX: datum.originalX,
+          x: datum.x,
+          y: datum.y,
+        }
+      })
+      return acc
+    }, {})
+  }, [selected, dataByRacconti])
 
+  const xPoint = +x.toFixed(0) + BRUSH_HANDLE_WIDTH / 2
+  const currentXHoverRacconti = trameByPoints[xPoint]
 
-      return dy * zoomLevel - diff 
-      // return diff - (j - i) * delta * zoomLevel
-    });
-  }, [baseDisplacements, dataRacconti, delta, measures, zoomLevel, zoomY]);
+  useImperativeHandle(ref, () => ({
+    rotateView: (cb) => {
+      const scaleYOriginal = scaleLinear()
+        .domain([0, racconti.length])
+        .range([0 + height, measures.height - height])
+      imperativeTranslate(scaleYOriginal)
 
-  const deltaColors = useMemo(() => {
-    return 100 / (colors.length - 1);
-  }, [colors.length]);
+      const raccontoDataIndex = findIndex(
+        dataRacconti,
+        (r) => r.racconto.titolo === 'Il cavaliere inesistente'
+      )
+      const raccontoData = dataRacconti[raccontoDataIndex]
+
+      const scaleXBoxPlot = scaleLinear()
+        .domain([0, racconti.length])
+        .range([10, measures.width - 10])
+
+      const flyToX = scaleXBoxPlot(raccontoDataIndex)
+
+      // Hide Points
+      document
+        .querySelectorAll(
+          '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+        )
+        .forEach((p) => (p.style.display = 'none'))
+      const paths = document.querySelectorAll(
+        '[data-subracconto="Il cavaliere inesistente"] path.trama2-line'
+      )
+      let scaleMotivo = makeScalaMotivoY(600)
+      scaleMotivo.range([-200, 400])
+
+      let start = null
+      function animate(timestamp) {
+        if (start === null) {
+          start = timestamp
+        }
+        const k = (timestamp - start) / 1500
+
+        const dataFly = []
+        for (let i = 1; i < raccontoData.length; i++) {
+          const prevDatum = raccontoData[i - 1]
+          const datum = raccontoData[i]
+
+          const y1 = prevDatum.y * (1 - k) + k * 25
+          const y2 = datum.y * (1 - k) + k * 25
+
+          const x1 = prevDatum.x * (1 - k) + k * flyToX
+          const x2 = datum.x * (1 - k) + k * flyToX
+
+          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+        }
+        paths.forEach((path, i) => {
+          cachedResetStrokes[i] = path.style.stroke
+          path.setAttribute('d', dataFly[i])
+        })
+
+        if (k < 1) {
+          window.requestAnimationFrame(animate)
+        } else {
+          start = null
+          window.requestAnimationFrame(animate2)
+        }
+      }
+
+      const cachedResetStrokes = []
+
+      function animate2(timestamp) {
+        if (start === null) {
+          start = timestamp
+        }
+        const k = (timestamp - start) / 1000
+
+        const dataFly = []
+        for (let i = 1; i < raccontoData.length; i++) {
+          const prevDatum = raccontoData[i - 1]
+          const datum = raccontoData[i]
+
+          const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
+          const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
+
+          const x1 = flyToX
+          const x2 = flyToX
+
+          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+        }
+        paths.forEach((path, i) => {
+          path.setAttribute('d', dataFly[i])
+          path.style.stroke = 'var(--blue)'
+        })
+        if (k < 1) {
+          window.requestAnimationFrame(animate2)
+        } else {
+          cb()
+          // CLEAN UP ANIMATION
+
+          // RESET ZOOM STATE
+          const lastZoomScaleY = lastZoomedScaleYRef.current
+          if (lastZoomScaleY) {
+            imperativeTranslate(lastZoomScaleY)
+          }
+          // RESET SELECTED LINE
+          const resetDPath = lineGenerator(raccontoData)
+          const resettedDSubPaths = splitPath(resetDPath)
+          paths.forEach((path, i) => {
+            path.setAttribute('d', resettedDSubPaths[i])
+            path.style.stroke = cachedResetStrokes[i]
+          })
+          // Show Points
+          document
+            .querySelectorAll(
+              '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+            )
+            .forEach((p) => (p.style.display = 'initial'))
+        }
+      }
+
+      window.requestAnimationFrame(animate)
+    },
+  }))
+
+  return (
+    <>
+      <div className="trama2-top-legend-list">Scrolla per zoomare</div>
+      <svg
+        style={{
+          height: measures.height,
+          width: measures.width,
+        }}
+        ref={svgRef}
+      >
+        <GradientsDefinitions
+          byTipologia={tipologieByTipologia}
+          gradientsType={gradientsType}
+        />
+        <g className="wrapper">
+          <LineeTramaList
+            measures={measures}
+            dataRacconti={dataRacconti}
+            currentXHoverRacconti={currentXHoverRacconti}
+            racconti={racconti}
+            onRaccontoClick={onRaccontoClick}
+            height={height}
+            scalaColore={scalaColore}
+            scalaMotivoY={scalaMotivoY}
+            selected={selected}
+            toggleSelect={toggleSelect}
+            xScale={xScale}
+          />
+          <SelectedContainers n={dataRacconti.length} />
+        </g>
+      </svg>
+      <Brush
+        x={x}
+        onXChange={setX}
+        onPrevClick={handlePrevPoint}
+        onNextClick={handleNexPoint}
+        width={measures.width}
+        className="trama2-brush-for-list"
+      />
+      <div className="trama2-brush-legend-list">
+        <div>Inizio del testo</div>
+        <div>Lunghezza del testo in caratteri</div>
+        <div>Fine del testo</div>
+      </div>
+    </>
+  )
+}
+
+let LineeTramaWithMeasuresReffed = forwardRef(LineeTramaWithMeasures)
+
+function LineeTrama(props, ref) {
+  const containerRef = useRef(null)
+  const [measures, setMeasures] = useState(null)
+
+  useLayoutEffect(() => {
+    const m = containerRef.current.getBoundingClientRect()
+    setMeasures(m)
+  }, [])
+
+  const childRef = useRef(null)
+
+  useImperativeHandle(ref, () => ({
+    rotateView: (cb) => {
+      childRef.current.rotateView(cb)
+      // const scaleY = scaleLinear()
+      //   .domain([0, racconti.length])
+      //   .range([0 + height, measures.height - height])
+
+      // const mainTransition = selectAll('.linea-container')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
+
+      // const selectedTransition = selectAll('.linea-container-selected')
+      //   .transition()
+      //   .duration(1000)
+      //   .attr('transform', (d, i) => 'translate(0, ' + scaleY(i) + ')')
+      //   .end()
+
+      // Promise.all([mainTransition, selectedTransition]).then(cb)
+    },
+  }))
 
   return (
     <div
       ref={containerRef}
       className="w-100 h-100"
-      style={{ overflow: "auto" }}
+      style={{ overflow: 'hidden' }}
     >
-      {/* <div>
-        {colors.map(color => <div key={color} style={{background:color, height: 10}}></div>)}
-      </div> */}
       {measures && (
-        <svg
-          style={{
-            height: measures.height,
-            width: measures.width,
-            // transform: `perspective(${zoomLevel})`,
-            // transformOrigin: `50% 50%`,
-          }}
-          ref={containerRef}
-        >
-          <linearGradient
-            id={`trama-gradient-${zoomLevel}`}
-            gradientUnits="userSpaceOnUse"
-            y2={0}
-            y1={height * zoomLevel}
-            x1={0}
-            x2={0}
-          >
-            {colors.map((color, i) => (
-              <stop
-                key={i}
-                offset={`${deltaColors * i}%`}
-                stopColor={color}
-              ></stop>
-            ))}
-          </linearGradient>
-          {/* <linearGradient id={`trama-gradient-${zoomLevel}`} gradientUnits="userSpaceOnUse" y1={0} y2={height* zoomLevel} x1={0} x2={0}>
-            
-              <stop offset={`0%`} stopColor={'#000'}></stop>
-              <stop offset={`100%`} stopColor={'#fff'}></stop>
-            
-          </linearGradient> */}
-
-          {dataRacconti.map((datum, i) => {
-            const dy = displacements[i];
-
-            if (dy < -height * zoomLevel) {
-              return null;
-            }
-            if (dy > measures.height) {
-              return null;
-            }
-
-            // const datum = data[racconto]
-            return (
-              <g
-                key={i}
-                style={{
-                  transform: `translateY(${dy}px)`,
-                }}
-              >
-                <LineaTrama
-                  scalaColore={scalaColore}
-                  scalaMotivoY={scalaMotivoY}
-                  index={i}
-                  width={measures.width}
-                  height={height * zoomLevel}
-                  zoomLevel={zoomLevel}
-                  itemSelected={selected[racconti[i].titolo]}
-                  toggleItem={toggleSelect(racconti[i].titolo)}
-                  xScale={xScale}
-                  racconto={racconti[i]}
-                  data={datum}
-                ></LineaTrama>
-              </g>
-            );
-          })}
-        </svg>
+        <LineeTramaWithMeasuresReffed
+          ref={childRef}
+          {...props}
+          measures={measures}
+        />
       )}
     </div>
-  );
+  )
 }
+
+export default React.memo(forwardRef(LineeTrama))

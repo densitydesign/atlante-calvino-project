@@ -109,9 +109,9 @@ export function MarimekkoSlider({
 
   return (
     <div
-      className={styles.slider}
+      
       ref={ref}
-      className="text-center position-relative"
+      className={`text-center position-relative ${styles.slider}`}
     >
       {height > 0 && <>
       <Slider
@@ -138,14 +138,15 @@ export function MarimekkoSlider({
           }}
           style={{
             position: "absolute",
-            top: cursorY,
+            top: cursorY - 1,
             left: -30,
             cursor: "pointer",
             width: CURSOR_HEIGHT,
             height: CURSOR_HEIGHT,
             border: "solid #222 1px",
             borderRadius: 20,
-            background: selected ? "#222" : undefined
+            background: selected ? "#222" : undefined,
+            borderColor: `var(--dark-blue)`
           }}
         ></div>
       )}
@@ -175,7 +176,7 @@ export function MarimekkoSliderArrow({
         <button
           disabled={prevPosition === null}
           style={{ left: sliderX, bottom: 0, width: SLIDER_WIDTH }}
-          className="btn btn-outline-dark position-absolute text-center p-1"
+          className={`btn position-absolute text-center p-1 ${styles['border-dark-blue']}`}
           onClick={() =>
             prevPosition !== null && setCurrentPosition(prevPosition)
           }
@@ -186,7 +187,8 @@ export function MarimekkoSliderArrow({
       {width && down && (
         <button
           disabled={nextPosition === null}
-          className="btn btn-outline-dark position-absolute text-center p-1"
+          className={`btn position-absolute text-center p-1 ${styles['border-dark-blue']}`}
+          
           style={{ left: sliderX, width: SLIDER_WIDTH }}
           onClick={() =>
             nextPosition !== null && setCurrentPosition(nextPosition)

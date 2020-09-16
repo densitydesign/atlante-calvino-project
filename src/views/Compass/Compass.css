@@ -16,6 +16,7 @@
   padding:7em 8em 4em 4em;
   position: absolute;
   height: calc(100% - var(--navigation-height));
+  background-color: var(--bg);
   width: 40%;
   overflow-x: hidden;
 }
