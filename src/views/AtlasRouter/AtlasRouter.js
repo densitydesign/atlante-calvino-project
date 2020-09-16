@@ -7,6 +7,7 @@ import {
 
 import GlobalData from '../../utilities/GlobalData';
 import SplashScreenWrapper from '../../visualizations/SplashScreen/SplashScreenWrapper';
+import SplashScreen2 from '../../visualizations/SplashScreen2/';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';
@@ -44,7 +45,8 @@ export default function AtlasRouter()
     <BrowserRouter basename="/atlante-calvino-project">
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
-      <Route exact path="/"><SplashScreenWrapper /></Route>
+      {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
+      <Route exact path="/"><SplashScreen2 /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
       <Route exact path="/Home"><HamburgerMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
