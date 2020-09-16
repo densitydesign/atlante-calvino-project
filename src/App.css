@@ -4,7 +4,7 @@
   --calvino-red: tomato;
   --dark-green: black;
   --cool-bg-bg: #F3F1EC;
-  --cool-bg: #F8F8FF;
+  --cool-bg: #FFFFFA;
   --dark-blue: #5151FC;
   --small-text: #3f3e4c;
   --secondary-element: #C6CACF;
@@ -50,11 +50,11 @@ a.link:hover {
   line-height: 1.4em;
 } */
 
-p.intro {
+/* p.intro {
   font-size: 1.7em;
   line-height: 1.5em;
   margin-bottom: 0 !important;
-}
+} */
 
 strong {
   font-weight: 600;
@@ -158,17 +158,36 @@ p.small {
   line-height: 1.2857142857rem;
  }
 
- .breadcrumb {
+ .ac-breadcrumb {
    color: #666;
    font-size: 0.8571428571rem;
    line-height: 2.1428571429rem;
    letter-spacing: 0.2;
+   text-transform: uppercase;
  }
 
  .legend-text {
    font-size: 0.7142857143rem;
    line-height: 0.9285714286rem;
  }
+
+ .caption {
+   font-size: 0.8571428571rem;
+   text-align: center;
+ }
+
+ .captionLeft {
+   font-size: 0.8571428571rem;
+   text-align: left;
+   color:var(--text-color);
+ }
+ 
+
+ sup{
+   color:var(--dark-blue);
+   font-size: 60%;
+ }
+
 
 /* /end TYPOGRAPHY STYLES */
 
@@ -181,21 +200,38 @@ p.small {
 ol {
   list-style-type: decimal;
   list-style-position: outside;
-  padding-left: 0px;
+  padding-left: 3rem;
   color: var(--small-text);
 }
 
 ul {
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 4rem;
 }
 
 li {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  padding-left: 0px;
   color: var(--list);
 }
+
+.references {
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  padding-left: 0rem;
+}
+
+.references ol, .references ul{
+  padding-left: 0px;
+}
+
+.referenceItem {
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+}
+
 
 .navigations {
   border-bottom: 1px solid var(--navigation-borders);
@@ -376,18 +412,6 @@ footer {
 .dropdown-item.active, .dropdown-item:active {
   color: var(--bg);
   background-color: black;
-}
-
-*/ */ .references {
-  margin-top: 2em;
-  font-style: italic;
-  font-size: 1em;
-}
-
-.references p {
-  margin-top: 1em;
-  font-style: italic;
-  font-size: 1em;
 }
 
 .svg-inline--fa {
