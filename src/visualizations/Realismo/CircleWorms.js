@@ -3,9 +3,9 @@ import { colorScale, yearsArcs } from './utils'
 import { scaleLinear } from 'd3-scale'
 import { arc } from 'd3'
 
-const LABEL_VISIBLE_SIZE = 80
-const LABEL_SIZE_PERCENT = 0.2
-const WORM_SIZE_PERCENT = 0.45
+const LABEL_VISIBLE_SIZE = 0
+const LABEL_SIZE_PERCENT = 0
+const WORM_SIZE_PERCENT = 0.55
 const LABEL_PADDING = 10
 const INNER_CIRCLE_PADDING = 10
 const INNER_CIRCLE_STROKE_WIDTH = 5
@@ -31,10 +31,6 @@ const Worm = React.memo(
 
     const circleRadius = wormSize / circles.length / 2
 
-    const yScale = scaleLinear()
-      .domain([0, 2])
-      .range([0, circleRadius * 2])
-
     //var for animations delays
     const animationDelays = circles.reduce((acc, item) => {
       if (!acc[item.occurrence_location]) {
@@ -52,6 +48,7 @@ const Worm = React.memo(
           opacity: isSelected ? 1 : 0.3,
         }}
       >
+        <title>{racconto.title}</title>
         <g
           onClick={() => {
             if (!isOmitted) {
@@ -64,7 +61,7 @@ const Worm = React.memo(
         >
           {circles.map((circle, i) => {
             const cx = wormStart + i * circleRadius * 2 + circleRadius
-            const cy = yScale(circle.level || 0)
+            const cy = 0
 
             if (circle.movement === 'TRUE') {
               animationGroups[circle.occurrence_location] =
@@ -85,9 +82,9 @@ const Worm = React.memo(
                 <circle
                   className={`${
                     circle.movement === 'TRUE' && !isOmitted ? 'movement' : ''
-                  }`}
+                  } fill-realismo-circle-${circle.category ?? 'unknown'}`}
                   style={{
-                    fill: colorScale(circle.category),
+                    // fill: colorScale(circle.category),
                     transformOrigin: `${cx}px ${cy}px`,
                     animationDelay: `${delay}s`,
                   }}
@@ -136,9 +133,9 @@ const WormLabel = React.memo(
         }
       : undefined
 
-
     return (
       <g
+        className={`worm-label-container${flipText ? '-flipped' : ''}`}
         style={{
           opacity: isSelected ? 1 : 0.3,
         }}
@@ -146,11 +143,15 @@ const WormLabel = React.memo(
         <g style={flipTextStyle}>
           <text
             style={{ alignmentBaseline: 'middle' }}
-            x={wormEnd - (flipText ? LABEL_VISIBLE_SIZE : 0)}>{racconto.title}</text>
+            x={wormEnd - (flipText ? LABEL_VISIBLE_SIZE : 0)}
+          >
+            {racconto.title}
+          </text>
         </g>
         <g>
           {!flipText && (
             <rect
+              className="worm-label-gradient-rect"
               x={wormEnd + LABEL_VISIBLE_SIZE}
               y={-7}
               width={size / 2 - wormSize}
@@ -160,6 +161,7 @@ const WormLabel = React.memo(
           )}
           {flipText && (
             <rect
+              className="worm-label-gradient-rect"
               x={30}
               y={-7}
               width={wormEnd}
@@ -167,7 +169,7 @@ const WormLabel = React.memo(
               fill="url(#label-gradient-flip)"
             />
           )}
-          </g>
+        </g>
       </g>
     )
   }
@@ -222,7 +224,7 @@ const Legend = React.memo(
           stroke="black"
           strokeWidth={2}
         />
-        <text
+        {/* <text
           x={x}
           y={labelSize - LEGEND_TEXT_MARGIN}
           className="realismo-legend-text"
@@ -232,7 +234,7 @@ const Legend = React.memo(
           }}
         >
           TITOLO
-        </text>
+        </text> */}
         <line
           y1={labelSize + LABEL_PADDING}
           y2={labelSize + LABEL_PADDING + wormSize}
@@ -275,7 +277,6 @@ const Legend = React.memo(
           strokeWidth={2}
         />
         <g
-          className="babu"
           style={{
             transform: `translate(${x - 14}px, ${endLineEnd}px) rotate(270deg)`,
           }}
@@ -303,16 +304,16 @@ const Legend = React.memo(
 )
 
 export default function CircleWorms({
-  width,
-  height,
+  heightCircle,
+  radius,
   circlesMap,
   selected,
   omitted,
   racconti,
+  raccontiJoinLines,
   toggleSelect,
 }) {
-  const size = Math.min(width, height)
-
+  const size = radius * 2
   const handleClick = useCallback(
     (racconto) => {
       toggleSelect(racconto.title)
@@ -320,7 +321,8 @@ export default function CircleWorms({
     [toggleSelect]
   )
 
-  const allSelected = Object.keys(selected).length === 0
+  const selectedKeys = Object.keys(selected)
+  const allSelected = selectedKeys.length === 0
 
   const labelSize = (size / 2) * LABEL_SIZE_PERCENT
   const wormSize = (size / 2) * WORM_SIZE_PERCENT
@@ -335,9 +337,11 @@ export default function CircleWorms({
     INNER_CIRCLE_STROKE_WIDTH / 2
   const endLineEnd = endLineStart + 90
 
+  const paddingTop = (heightCircle - size) / 2
+
   // 0 - 90
   return (
-    <svg width={width} height={size}>
+    <svg width={size + 200} height={heightCircle}>
       <defs>
         <linearGradient id="label-gradient">
           <stop offset="0%" stopColor="rgba(255, 255, 255, 0)"></stop>
@@ -347,15 +351,49 @@ export default function CircleWorms({
           <stop offset="90%" stopColor="var(--bg)"></stop>
           <stop offset="100%" stopColor="rgba(255, 255, 255, 0)"></stop>
         </linearGradient>
+        <filter id="brightness">
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="1.2" />
+            <feFuncG type="linear" slope="1.2" />
+            <feFuncB type="linear" slope="1.2" />
+          </feComponentTransfer>
+        </filter>
       </defs>
 
-      <g transform={`translate(${width / 2}, ${size / 2})`}>
-        {racconti.map((racconto, i) => {
+      <g transform={`translate(${size / 2 + 100}, ${size / 2 + paddingTop})`}>
+        {selectedKeys.map((title) => {
+          const {
+            x1,
+            y1,
+            x2,
+            y2,
+            pointAX,
+            pointAY,
+            pointBX,
+            pointBY,
+          } = raccontiJoinLines[title]
+          return (
+            <g key={title}>
+              {/* <line x1={x1} y1={y1} x2={x2} y2={y2} fill="red" stroke="red" />
+              <circle cx={pointAX} cy={pointAY} r={5} fill={'blue'} />
+              <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
+              <path
+                strokeDasharray="2"
+                className="realismo-label-join"
+                fill="none"
+                stroke="black"
+                d={`M ${x1} ${y1} C ${pointAX} ${pointAY}, ${pointBX} ${pointBY}, ${x2} ${y2}`}
+              />
+            </g>
+          )
+        })}
+
+        {/* {racconti.map((racconto, i) => {
           const angle = racconto.rotation
           return (
             <g
               key={i}
-              className={`worm-label-${i}`}
+              className={`worm-label worm-label-${i}`}
               style={{ transform: `rotate(${angle}deg)` }}
             >
               <WormLabel
@@ -372,7 +410,8 @@ export default function CircleWorms({
               ></WormLabel>
             </g>
           )
-        })}
+        })} */}
+        {/* <circle cx={0} cy={0} r={size / 2 - labelSize} fill='transparent' /> */}
         {racconti.map((racconto, i) => {
           const angle = racconto.rotation
           return (
@@ -397,20 +436,22 @@ export default function CircleWorms({
           )
         })}
       </g>
-      <Legend
-        x={width / 2}
-        wormSize={wormSize}
-        labelSize={labelSize}
-        endLineStart={endLineStart}
-        endLineEnd={endLineEnd}
-      />
+      <g transform={`translate(100, ${paddingTop})`}>
+        <Legend
+          x={radius}
+          wormSize={wormSize}
+          labelSize={labelSize}
+          endLineStart={endLineStart}
+          endLineEnd={endLineEnd}
+        />
 
-      <CicrleYears
-        x={width / 2}
-        y={size / 2}
-        radius={innerRadius}
-        radiusStrokeSize={INNER_CIRCLE_STROKE_WIDTH}
-      />
+        <CicrleYears
+          x={radius}
+          y={radius}
+          radius={innerRadius}
+          radiusStrokeSize={INNER_CIRCLE_STROKE_WIDTH}
+        />
+      </g>
     </svg>
   )
 }

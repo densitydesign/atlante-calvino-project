@@ -13,6 +13,10 @@
   stroke: black;
 }
 
+#doubtTypes{
+  grid-column: 1 / span 12;
+}
+
 .x.axis{
   border:1px solid grey;
 }

@@ -186,9 +186,9 @@ console.log("data", data);
       .attr("x", 55)
       .attr("y", 70);
 
-    
-    
-    
+
+
+
     const s_text = append_tooltip_entry(tooltip, 0, color("Sintagmi"));
     const p_text = append_tooltip_entry(tooltip, 1, color("Parole"));
     const m_text = append_tooltip_entry(tooltip, 2, color("Misto"));
@@ -203,7 +203,7 @@ console.log("data", data);
       const year = Math.floor(x.invert(d3.mouse(this)[0])).toString();
 
       yearLabel.text(year);
-    
+
       const item = data.find(d => d.date === year);
 
       if(item)
@@ -226,7 +226,7 @@ console.log("data", data);
     function hideTooltip()
     {
       tooltipLine.attr("display", "none");
-      tooltip.attr("display", "none");      
+      tooltip.attr("display", "none");
     }
   };
 

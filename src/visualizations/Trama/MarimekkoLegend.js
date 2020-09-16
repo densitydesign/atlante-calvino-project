@@ -36,14 +36,14 @@ export default function MarimekkoLegend({
               return (
               <div
                 key={i}
-                style={{opacity: notFound ? 0.3: undefined}}
+                style={{filter: notFound ? 'saturate(0%)': undefined, opacity: notFound ? 0.3: undefined}}
                 className={`w-100 d-flex align-items-center ${
                   styles.legendEntry
                 } ${selectedLegendEntries[item.valore] ? styles.selected : ""}`}
               >
                 <div
                   className={styles.legendEntryColor}
-                  style={{ backgroundColor: item.colore, cursor: notFound ? undefined: 'pointer' }}
+                  style={{ backgroundColor: notFound ? '#ccc' : item.colore, cursor: notFound ? undefined: 'pointer' }}
                   onClick={() => {
                     if(notFound){
                       return

@@ -7,6 +7,7 @@ import {
 
 import GlobalData from '../../utilities/GlobalData';
 import SplashScreenWrapper from '../../visualizations/SplashScreen/SplashScreenWrapper';
+import SplashScreen2 from '../../visualizations/SplashScreen2/';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';
@@ -29,9 +30,11 @@ import SpaceInformationSheet from '../../informationSheets/SpaceInformationSheet
 import HesitationInformationSheet from '../../informationSheets/HesitationInformationSheet/HesitationInformationSheet';
 import TransformInformationSheet from '../../informationSheets/TransformInformationSheet/TransformInformationSheet';
 import CombineInformationSheet from '../../informationSheets/CombineInformationSheet/CombineInformationSheet';
+import CancellationInformationSheet from '../../informationSheets/CancellationInformationSheet';
 import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
 import Realismo from '../../visualizations/Realismo';
+import RealismInformationSheet from '../../informationSheets/RealismInformationSheet';
 import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 import Df3 from '../Df3';
 import Cancellazione from '../Cancellazione';
@@ -42,7 +45,8 @@ export default function AtlasRouter()
     <BrowserRouter basename="/atlante-calvino-project">
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
-      <Route exact path="/"><SplashScreenWrapper /></Route>
+      {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
+      <Route exact path="/"><SplashScreen2 /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
       <Route exact path="/Home"><HamburgerMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
@@ -99,11 +103,15 @@ export default function AtlasRouter()
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
+
       <Route exact path="/Problem/cancellation"><Cancellazione /></Route>
+      <Route exact path="/cancellation-sheet"><CancellationInformationSheet /></Route>
+
       <Route exact path="/Problem/realism">
         <Realismo title={'Realismo'}></Realismo>
       </Route>
       <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
+      <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>

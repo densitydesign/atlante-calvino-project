@@ -51,7 +51,7 @@ export default function Trama2Content({
   //bounds selection
   const [bounds, setBounds] = useState([])
   const addBound = useCallback(
-    (item) => () => {
+    (item) => {
       if (bounds.length === 1 && bounds[0] === item) {
         setBounds([])
         return
@@ -114,6 +114,7 @@ export default function Trama2Content({
         <div className="trama2-side-panel-content">
           {measures && (
             <SideBar
+              tramaDetail={currentTramaDetail}
               racconti={racconti}
               height={measures.height - 140}
               tipologie={tipologie}

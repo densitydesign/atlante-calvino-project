@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from 'react'
+import React, { useCallback, useState, useMemo, useEffect } from 'react'
 import MainMenu from '../../general/MainMenu'
 import PageTitle from '../../general/PageTitle'
 import MoreInfo from '../../general/MoreInfo'
@@ -32,7 +32,7 @@ const searchOptions = racconti.map((racconto) => ({
   value: racconto.titolo,
 }))
 
-const cercaOptions = [{ label: 'Volume' }]
+const cercaOptions = [{ label: 'Titolo' }]
 
 function Trama2Main({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
@@ -97,7 +97,7 @@ function Trama2Main({ title }) {
           title="Cerca per"
           options={cercaOptions}
           disabled={true}
-          value={'Volume'}
+          value={'Titolo'}
           onChange={(x) => {}}
           style={{
             gridColumn: 'span 3',
@@ -110,10 +110,12 @@ function Trama2Main({ title }) {
           }}
           data={{ options: searchOptions }}
           changeOptions={(newOptions) => {
-            setRicerca(newOptions.map(o => ({
-              ...o,
-              fromBounds: false
-            })))
+            setRicerca(
+              newOptions.map((o) => ({
+                ...o,
+                fromBounds: false,
+              }))
+            )
           }}
           selectedOptions={ricerca}
         />

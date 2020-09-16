@@ -1,0 +1,136 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  font-size: var(--text-size);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.main li{
+  font-size: var(--text-size);
+}
+
+.gridRow {
+  /* background-color: rgb(234, 255, 248); */
+  grid-column: 2 / span 22;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 10px;
+  margin-bottom: 1.7857142857rem !important;
+}
+
+.titleH1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  grid-column: 1 / span 12;
+  margin-bottom: 2rem;
+}
+
+.titleH2 {
+  font-size: 1.7857142857rem;
+  font-weight: 800;
+  grid-column: 1 / span 12;
+  margin-bottom: 1.7857142857rem !important;
+}
+
+.titleH3 {
+  font-size: 1.2857142857rem;
+  font-weight: 800;
+  grid-column: 1 / span 12;
+  margin-bottom: 1rem !important;
+  color: black !important;
+}
+
+.titleH4 {
+  font-size: 0.8571428571rem;
+  font-weight: 800;
+  grid-column: 1 / span 6;
+  margin-bottom: 0.5rem;
+}
+
+.allCaps {
+  text-transform: uppercase;
+}
+
+.paragraph {
+  grid-column: 1 / span 7;
+}
+
+.paragraphBig {
+  grid-column: 1 / span 12;
+}
+
+.paragraphCentered {
+  grid-column: 4 / span 7;
+}
+
+.references {
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.referenceItem {
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+}
+
+.image {
+  max-width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.image100w {
+  width:100%;
+  height:auto;
+}
+
+.caption {
+  font-size: 0.8571428571rem;
+  text-align: center;
+}
+
+.captionLeft {
+  font-size: 0.8571428571rem;
+  text-align: left;
+}
+
+.sideContent {
+  grid-column: 8 / span 5;
+}
+
+.legend{
+    margin-top: 3em;
+    margin-bottom: 4rem;
+
+}
+
+.translucentBackground {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,0.25);
+}
+
+sup{
+  color:var(--dark-blue);
+  font-size: 60%;
+}
+
+
+@media (min-width: 1280px) {
+  .gridRow {
+    grid-column: 3 / span 20;
+  }
+}
+
+@media (min-width: 1366px) {
+  .gridRow {
+    grid-column: 4 / span 18;
+  }
+}
+
+@media (min-width: 1560px) {
+  .gridRow {
+    grid-column: 5 / span 16;
+  }
+}

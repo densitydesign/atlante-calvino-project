@@ -33,7 +33,7 @@ const manifestazioniStilistiche={
     'label': 'riformulazione',
     'status': false
   }, {
-    'label': 'nessuna',
+    'label': 'nessuno',
     'status': true
   }]
 };
@@ -157,6 +157,34 @@ class Cancellazione extends Component {
     this.setState({searchedItems: newOptions});
   }
 
+  onSelection=(id) => {
+    console.log(id)
+    // console.log(this.state.searchedItems)
+    // const index=this.state.searchedItems.map(d=>d.value).flat().indexOf(id);
+    // console.log(index)
+    // const newSearchedItems = [...this.state.searchedItems];
+    // if (index===-1){
+    //   console.log('add to searched items')
+    //   const obj = {
+    //     'label': this.state.data.find(d=>d.id===id).title,
+    //     'value': [id]
+    //   }
+    //   console.log(obj)
+    //   console.log(this.state.searchedItems)
+      
+    //   newSearchedItems.push(obj)
+    //   console.log(newSearchedItems)
+    //   filters.search.push(id);
+    //   this.applyFilters();
+    //   this.setState({searchedItems: newSearchedItems});
+    // } else {
+    //   console.log('remove from searched items')
+    //   newSearchedItems.splice(index,1)
+    //   console.log(newSearchedItems)
+    //   this.setState({searchedItems: newSearchedItems});
+    // }
+  }
+
   render() {
     // const helpPage = GlobalData.helpPages.plot.main;
     const {
@@ -224,7 +252,7 @@ class Cancellazione extends Component {
 
           {this.state.loading && <Loading style={{ gridColumn: 'span 12' }}/>}
 					{	!this.state.loading &&
-						<Options title = "Manifestazioni stilistiche"
+						<Options title = "Colora per stile"
 							data = {this.state.manifestazioniStilistiche}
 							style = {{gridColumn: 'span 12',textAlign: 'center'}}
 							changeOptions = {this.changeColor}
