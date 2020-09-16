@@ -45,10 +45,10 @@ a.link:hover {
   color: var(--text-color);
 }
 
-p {
+/* OLD p {
   font-size: 1.4em;
   line-height: 1.4em;
-}
+} */
 
 p.intro {
   font-size: 1.7em;
@@ -88,12 +88,13 @@ body {
   background-color: var(--cool-bg);
 }
 
+/* PREVIUS HEADERS STYLES (delete when possible) */
 h1 {
   margin: 0;
   font-size: 2.4em;
   color: var(--text-color);
   margin-bottom: 1em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2 {
@@ -123,6 +124,53 @@ h5 {
   color: var(--small-text);
   line-height: 1.4em;
 }
+
+/* TYPOGRAPHY STYLES */
+
+h1 {
+  margin: 0.7142857143em 0;
+  font-size: 2.5em;
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+h2 {
+  margin: 0.7142857143em 0;
+  font-size: 1.5em;
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 0.7142857143rem;
+  line-height: 0.9285714286rem;
+  color: #404040;
+}
+
+p {
+ font-size: 1.2857142857rem;
+ line-height: 2.1428571429rem;
+}
+
+p.small {
+  font-size: 1rem;
+  line-height: 1.2857142857rem;
+ }
+
+ .breadcrumb {
+   color: #666;
+   font-size: 0.8571428571rem;
+   line-height: 2.1428571429rem;
+   letter-spacing: 0.2;
+ }
+
+ .legend-text {
+   font-size: 0.7142857143rem;
+   line-height: 0.9285714286rem;
+ }
+
+/* /end TYPOGRAPHY STYLES */
 
 .main {
   width: 100vw;
@@ -414,7 +462,6 @@ footer {
     animation-timing-function: ease-out;
   }
 }
-
 
 #overlay .sizein {
   animation: sizein 2s infinite;
