@@ -89,8 +89,8 @@
 }
 
 .legend{
-    margin-top: 3em;
-    margin-bottom: 4rem;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .translucentBackground {
@@ -101,6 +101,11 @@
 sup{
   color:var(--dark-blue);
   font-size: 60%;
+}
+
+.stickyElement {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }
 
 
