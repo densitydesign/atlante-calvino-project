@@ -69,20 +69,21 @@ export default class SpaceInformationSheet extends React.Component
                     di cui è comune tributario.Pertanto, seppur in modo meno evidente.anche nel caso del Barone rampante lo spazio fantastico si intreccia a quello storico.
                     Il fatto poi che Terralba e Ombrosa siano in qualche modo riconducibili alla Liguria, terra natale di Calvino, è doppiamente significativo.
                     Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
-                    <img className={SheetStyles.sideContent} style = {{gridColumn:'9 / span 4', position:'sticky', top:'calc(var(--navigation-height)'}} src={zoom_01}/>
-                    <p className={SheetStyles.paragraph}>
-                    <span style = {{margin:'4em', color:'#5151fc', fontSize:'1.2rem', lineHeight:'1rem'}}>
-                    <em>"C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
-                    da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].</em></span></p>
-                  </div>
+
+                    <p className={SheetStyles.paragraph + ' cite '}>
+                  "C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
+                    da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].</p>
+                    </div>
+
+                    <img className={SheetStyles.image} style = {{gridColumn:'9 / span 6', position:'sticky', top:'calc(var(--navigation-height))'}} src={zoom_03}/>
+
 
                     <div className={SheetStyles.gridRow}>
                       <p className={SheetStyles.paragraph}>
                       Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
-                      <p className={SheetStyles.paragraph}>
-                        <span style = {{margin:'4em', color:'#5151fc', fontSize:'1.2rem', lineHeight:'1rem'}}>
-                        <em>Ma tutto questo paesaggio geografico e ideale appartiene al passato: sappiamo che la Riviera in questo dopoguerra è diventata irriconoscibile per il modo caotico in cui si è riempita di caseggiati urbani fino a trasformarsi in una distesa di cemento;
-                      sappiamo che le speculazioni economiche e un facile edonismo dominano i rapporti umani di una larga parte della nostra società.Ed è solo da tutti questi elementi sommati insieme che possiamo ricavare la radice lirica del libro, la prima spinta dell’ invenzione poetica.Partendo da un mondo che non esiste più, l’ Autore regredisce a un mondo mai esistito che contenga i nuclei di ciò che è stato e di ciò che avrebbe potuto essere, le allegorie del passato e del presente, le interrogazioni sulla propria esperienza."</em></span></p>
+                      <p className={SheetStyles.paragraph + ' cite '}>
+                      Ma tutto questo paesaggio geografico e ideale appartiene al passato: sappiamo che la Riviera in questo dopoguerra è diventata irriconoscibile per il modo caotico in cui si è riempita di caseggiati urbani fino a trasformarsi in una distesa di cemento;
+                      sappiamo che le speculazioni economiche e un facile edonismo dominano i rapporti umani di una larga parte della nostra società.Ed è solo da tutti questi elementi sommati insieme che possiamo ricavare la radice lirica del libro, la prima spinta dell’ invenzione poetica.Partendo da un mondo che non esiste più, l’ Autore regredisce a un mondo mai esistito che contenga i nuclei di ciò che è stato e di ciò che avrebbe potuto essere, le allegorie del passato e del presente, le interrogazioni sulla propria esperienza."</p>
                     </div>
 
                     <div className={SheetStyles.gridRow}>

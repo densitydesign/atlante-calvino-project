@@ -233,6 +233,13 @@ li {
   margin-bottom: 1.5rem;
 }
 
+.cite{
+  margin-left:3.8571428571em;
+  color:var(--text-color);
+  font-size:1.2857142857em;
+  line-height:2.1428571429em;
+  font-style: italic;
+}
 
 .navigations {
   border-bottom: 1px solid var(--navigation-borders);
