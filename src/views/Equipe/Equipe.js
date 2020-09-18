@@ -6,10 +6,10 @@ import Footer from '../../headers/Footer/Footer';
 
 import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
 import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
-import '../../App.css';
-import './AboutAndContacts.css';
+// import '../../App.css';
+import './Equipe.css';
 
-export default class AboutAndContacts extends React.Component
+export default class Equipe extends React.Component
 {
   render()
   {
@@ -18,16 +18,10 @@ export default class AboutAndContacts extends React.Component
         <HamburgerIntroHeader />
         <div className="grid-with-scrollable-left-column">
           <div className="scrollable-column-2 col-md-8 col-lg-8">
-            <h1>ÉQUIPE</h1>
-          <h5 className="about-text">  <strong>
-            Équipe letteraria, Unité d'italien<br/>
-            Département de langues et littératures romanes,<br/>
-            Université de Genève
-            </strong></h5>
-              <br/>
-                <br/>
+            <h1>Équipe</h1>
+          <h2>Équipe letteraria, Unité d'italien<br/>Département de langues et littératures romanes,<br/>Université de Genève</h2>
             <p>
-            L'équipe letteraria del progetto lavora all'interno dell'Unità d'italiano <span id="overlay"><img src={process.env.PUBLIC_URL + '/imagesPop/fiabeita.jpg'} className="floatLeft" alt="information complement" /></span> del Département de langues et littératures romanes dell'Université de Genève.
+              L'équipe letteraria del progetto lavora all'interno dell'Unità d'italiano <span id="overlay"><img src={process.env.PUBLIC_URL + '/imagesPop/fiabeita.jpg'} className="floatLeft" alt="information complement" /></span> del Département de langues et littératures romanes dell'Université de Genève.
             <br/>Il gruppo riunisce specialiste di critica letteraria e in particolare dell'opera di Italo Calvino, che affronteranno l'analisi dell'intero corpus narrativo calviniano, articolando i risultati della loro ricerca in modalità compatibili con gli strumenti di visualizzazione sviluppati dal DensityDesign Research Lab.</p>
             <br/>
             <br/>

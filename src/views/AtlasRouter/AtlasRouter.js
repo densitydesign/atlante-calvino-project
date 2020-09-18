@@ -19,7 +19,7 @@ import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
-import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
+import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
@@ -42,7 +42,7 @@ import Cancellazione from '../Cancellazione';
 export default function AtlasRouter()
 {
   return (
-    <BrowserRouter basename="/atlante-calvino-project">
+    <BrowserRouter >
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
       {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
@@ -113,7 +113,7 @@ export default function AtlasRouter()
       <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
       <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
 
-      <Route exact path="/About"><AboutAndContacts /></Route>
+      <Route exact path="/equipe"><Equipe /></Route>
       <Route exact path="/Project"><Project/></Route>
       <Route exact path="/Tools"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>
