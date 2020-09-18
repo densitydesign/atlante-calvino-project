@@ -26,7 +26,7 @@ export default class SpaceInformationSheet extends React.Component
         <div className={SheetStyles.gridRow}>
           <h4 className={SheetStyles.titleH4}>Tappa 1 > luoghi</h4>
           <h1 className={SheetStyles.titleH1}>Tassonomia dei luoghi inventati</h1>
-          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 6'}}  src={legenda}/>
+          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 5'}}  src={legenda}/>
                 <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={inventati}/>
                   <img className={SheetStyles.legend}/>
                 <h2 className={SheetStyles.titleH2}>L'analisi</h2>
@@ -42,10 +42,10 @@ export default class SpaceInformationSheet extends React.Component
                       si nota anche come questa distribuzione riguardi tutte le tipologie di opere: i romanzi, i racconti confluiti in raccolta e i testi pubblicati
                       su periodici e poi rimasti inediti. Prendendo singolarmente in esame le tre differenti sezioni si evidenziano tuttavia caratteristiche intrinseche
                       molto diverse. Vediamo quali.
-                      </p>
-        </div>
+                      </p></div>
+
                     <div className={SheetStyles.gridRow}>
-                      <h3 className={SheetStyles.titleH3}>I romanzi</h3>
+                      <h3 className={SheetStyles.subtitleSheet}>I romanzi</h3>
                       <p className={SheetStyles.paragraph}>
                       La prima sezione, quella dei romanzi, è senza dubbio quella in cui si registra la maggior concentrazione di luoghi inventati,
                       con più della metà delle opere (5 su 9) che presentano almeno un’ambientazione di questo tipo.
@@ -59,23 +59,24 @@ export default class SpaceInformationSheet extends React.Component
                       in Boemia, durante la guerra cristiana contro i Turchi, ma la storia principale si sviluppa a Terralba, terra natale del visconte Medardo,
                       il quale, colpito da una palla di cannone ma miracolosamente salvo per metà, fa ritorno a casa. Terralba si trova in Italia e appartiene alla
                       Repubblica di Genova: è dunque all’interno di uno spazio reale e definito che hanno luogo le avventure fantastiche del protagonista.</p>
-                      <img className={SheetStyles.image} style = {{gridColumn:'9 / span 6'}} src={zoom_03}/>
+                      <img className={SheetStyles.image} style = {{gridColumn:'9 / span 6', position:'sticky', top:'calc(var(--navigation-height))'}} src={zoom_03}/>
                     </div>
 
-                    <div className={SheetStyles.gridRow}>
+                  <div className={SheetStyles.gridRow}>
                     <p className={SheetStyles.paragraph}>
                     In apparenza questo non accade nel <em>Barone rampante</em>, ambientato nel libero comune di Ombrosa, territorio - mondo del baronetto Cosimo Piovasco di Rondò.
                     Tuttavia, pur senza essere esplicitamente incorniciata all’ interno di un luogo localizzabile, anche Ombrosa è in qualche modo legata alla Repubblica di Genova,
                     di cui è comune tributario.Pertanto, seppur in modo meno evidente.anche nel caso del Barone rampante lo spazio fantastico si intreccia a quello storico.
                     Il fatto poi che Terralba e Ombrosa siano in qualche modo riconducibili alla Liguria, terra natale di Calvino, è doppiamente significativo.
                     Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
-</div>
-  <div className={SheetStyles.gridRow}>
-  <img className={SheetStyles.sideContent} style = {{gridColumn:'9 / span 4', position:'sticky', top:'calc(var(--navigation-height)'}} src={zoom_01}/>
+                    <img className={SheetStyles.sideContent} style = {{gridColumn:'9 / span 4', position:'sticky', top:'calc(var(--navigation-height)'}} src={zoom_01}/>
                     <p className={SheetStyles.paragraph}>
-                      <span style = {{margin:'4em', color:'#5151fc', fontSize:'1.2rem', lineHeight:'1rem'}}>
-                      <em>"C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
-                      da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].</em></span></p>
+                    <span style = {{margin:'4em', color:'#5151fc', fontSize:'1.2rem', lineHeight:'1rem'}}>
+                    <em>"C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
+                    da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].</em></span></p>
+                  </div>
+
+                    <div className={SheetStyles.gridRow}>
                       <p className={SheetStyles.paragraph}>
                       Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
                       <p className={SheetStyles.paragraph}>
