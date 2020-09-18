@@ -65,7 +65,7 @@ class TransformInformationSheet extends Component {
         È allora piuttosto significativo rilevare come, nel passaggio dagli anni Quaranta agli anni Ottanta del Novecento, l’orizzonte geografico dello scrittore si ampli progressivamente, arrivando infine a comprendere tutto il mondo.
         </p>
 <div className={SheetStyles.sideContent} style={{ textAlign:'center' }}>
-  <img style={{position:'sticky',top:'var(--navigation-height)'}} src={table}/>
+  <img className={SheetStyles.sideContent} style={{position:'sticky',top:'var(--navigation-height)', gridColumn:'9 / span 5'}} src={table}/>
 </div>
     </div>
 
@@ -78,7 +78,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1945 - 1955</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}} src={legenda_01}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'9 / span 5'}} src={zoom_1}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_1}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1945 al 1955 </p>
 
     </div>
@@ -91,7 +91,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1956 - 1965</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_02}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'9 / span 5'}} src={zoom_2}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_2}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1956 al 1965 </p>
     </div>
   </Carousel.Caption>
@@ -103,7 +103,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc', color:'#5151fc'}}>1966 - 1975</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_03}/>
-        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'9 / span 5'}} src={zoom_3}/>
+        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_3}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1966 al 1975 </p>
     </div>
   </Carousel.Caption>
@@ -115,7 +115,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1976 - 1985</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_04}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'9 / span 5'}} src={zoom_4}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_4}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1976 al 1985 </p>
     </div>
   </Carousel.Caption>

@@ -111,7 +111,7 @@ class RealismInformationSheet extends Component {
           <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" /></div>
         </div>
       </main>
-      
+
     </>;
   }
 }
