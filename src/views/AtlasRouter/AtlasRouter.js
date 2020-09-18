@@ -42,7 +42,7 @@ import Cancellazione from '../Cancellazione';
 export default function AtlasRouter()
 {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/atlante-calvino-project">
 
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
       {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}

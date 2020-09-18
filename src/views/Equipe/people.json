@@ -1,0 +1,66 @@
+{
+    "unige": [
+        {
+            "name": "Francesca Serra",
+            "role": "Direttrice del progetto",
+            "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/serra/"
+        },
+        {
+            "name": "Valeria Cavalloro",
+            "role": "Ricercatrice",
+            "url": "https://unige.academia.edu/ValeriaCavalloro"
+        },
+        {
+            "name": "Virginia Giustetto",
+            "role": "Ricercatrice",
+            "url": "https://www.unige.ch/lettres/roman/unites/italien/collaborateurs/virginia-giustetto/"
+        },
+        {
+            "name": "Margherita Parigini",
+            "role": "Ricercatrice",
+            "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/margherita-parigini/"
+        }
+    ],
+    "density": [
+        {
+            "name": "Michele Mauri",
+            "role": "Co-direttore del progetto",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Tommaso Elli",
+            "role": "Ricercatore in design e sviluppatore",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Ángeles Briones",
+            "role": "Ricercatrice in design e gestione del progetto",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Beatrice Gobbo",
+            "role": "Ricercatrice in design e sviluppatrice",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Gabriele Colombo",
+            "role": "ricercatore in design",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Marco Pappalepore",
+            "role": "Sviluppatore",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Serena Del Nero",
+            "role": "Ricercatrice in Design",
+            "url": "http://densitydesign.org/"
+        },
+        {
+            "name": "Paolo Ciuccarelli",
+            "role": "Co-direttore del progetto",
+            "url": "http://densitydesign.org/"
+        }
+    ]
+}
