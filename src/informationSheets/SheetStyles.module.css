@@ -81,7 +81,7 @@
   width:100%;
   height:auto;
   border-radius: 0.3571428571rem;
-  border:1px solid var(--dark-blue);
+  border:1px solid var(--text-color);
 }
 
 .sideContent {

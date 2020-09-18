@@ -164,6 +164,7 @@ p.small {
    line-height: 2.1428571429rem;
    letter-spacing: 0.2;
    text-transform: uppercase;
+   grid-column: 1 / span 22;
  }
 
  .legend-text {
@@ -181,7 +182,7 @@ p.small {
    text-align: left;
    color:var(--text-color);
  }
- 
+
 
  sup{
    color:var(--dark-blue);
