@@ -64,8 +64,8 @@ class TransformInformationSheet extends Component {
         Questo approfondimento si propone di mostrare tutte e tre le tipologie di ambientazione, con una particolare predilezione per quelle che intrattengono un rapporto evidente con il Novecento. L’obiettivo primario, infatti, è dimostrare come queste ultime coincidano abbastanza meticolosamente con la geografia biografica di Calvino. Per evidenziare al meglio questo aspetto, si è scelto di far seguire a una prima visione di insieme di tutti i luoghi terrestri localizzabili del corpus quattro differenti mappe che mostrano una selezione degli stessi luoghi sulla base del decennio di pubblicazione delle opere (1945-1955; 1956-1965; 1966-1975; 1976-1984).
         È allora piuttosto significativo rilevare come, nel passaggio dagli anni Quaranta agli anni Ottanta del Novecento, l’orizzonte geografico dello scrittore si ampli progressivamente, arrivando infine a comprendere tutto il mondo.
         </p>
-<div className={SheetStyles.sideContent} style={{ textAlign:'center' }}>
-  <img className={SheetStyles.sideContent} style={{position:'sticky',top:'var(--navigation-height)', gridColumn:'9 / span 5'}} src={table}/>
+<div className={SheetStyles.sideContent}>
+  <img className={SheetStyles.image+' '+SheetStyles.image100w} style={{position:'sticky',top:'var(--navigation-height)'}} src={table}/>
 </div>
     </div>
 
