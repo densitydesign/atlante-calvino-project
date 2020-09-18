@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
-import './HeaderViz.css';
+// import '../../App.css';
 
 class HeaderViz extends Component {
   render() {
