@@ -17,6 +17,7 @@ import GlobalData from '../../utilities/GlobalData'
 import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
+import difference from 'lodash/difference'
 import uniqBy from 'lodash/uniqBy'
 
 import {
@@ -188,6 +189,18 @@ export default function RealismoMain({ title }) {
       })
     return mapSelected
   }, [ricerca])
+
+  const selectedOnWorms = useMemo(() => {
+    const selected2 = { ...selected }
+    const omittedKeys = Object.keys(omitted)
+    if (omittedKeys.length > 0) {
+      const keeped = difference(Object.keys(dataset), omittedKeys)
+      keeped.forEach(key => {
+        selected2[key] = true
+      })
+    }
+    return selected2
+  }, [selected, omitted])
 
   const toggleSelect = useCallback((title) => {
     setRicerca((ricerca) => {
@@ -389,7 +402,7 @@ export default function RealismoMain({ title }) {
                 <div
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selectedOnWorms[racconto.title] ? 'realismo-label-selected' : ''
                   }`}
                   style={{
                     height: `${lineHeightLeft}px`,
@@ -407,7 +420,7 @@ export default function RealismoMain({ title }) {
               <CircleWorms
                 heightCircle={heightCircle}
                 toggleSelect={toggleSelect}
-                selected={selected}
+                selected={selectedOnWorms}
                 omitted={omitted}
                 circlesMap={circlesMap}
                 racconti={racconti}
@@ -426,7 +439,7 @@ export default function RealismoMain({ title }) {
                   }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selectedOnWorms[racconto.title] ? 'realismo-label-selected' : ''
                   }`}
                   key={i}
                 >
