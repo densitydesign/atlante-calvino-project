@@ -4,36 +4,40 @@ import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/Hamburg
 import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
 import './HesitationInformationSheet.css';
+import SheetStyles from '../SheetStyles.module.css';
+
+
+import giornata from './scheda-dubitare-01.png'
+import zoom_02 from './scheda-dubitare-02.png'
+import zoom_03 from './scheda-dubitare-03.png'
+import zoom_04 from './scheda-dubitare-04.png'
+
+
 
 class HesitationInformationSheet extends Component {
   render()
   {
     return (
       <>
-        <HamburgerCompassHeader />
-        <div>
-          <main>
-            <div className="viz--meta">
-              <h1>LA GIORNATA DI UNO SCRUTATORE</h1>
-              <img src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-01.png"} alt="information complement" style={{width:'100%',marginBottom:'50px'}}/>
-            </div>
-            <div className="viz--info">
-            </div>
-            <article className="focus">
-              <div>
-                <p>
-                  Con più del 35% coinvolto, <i>La giornata di uno scrutatore</i> è il primo volume in cui possiamo constatare una presenza importante di <span style={{color:'#cfcfff'}}>testo dubitativo</span>. Il dato non stupisce, considerando la sua natura profondamente ibrida, «una sorta di romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del vivere associato, autoritratto morale» (Barenghi 2009, 56).<br/>
-                  In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi». Questo segno interpuntivo, per quanto simbolico, non è l’unico a caratterizzare il romanzo; <i>La giornata di uno scrutatore</i> è un libro anche di parentesi e incisi. Entrambi i segni interrompono la continuità lineare del discorso, creando visivamente degli spazi indipendenti che “spezzano” il testo principale, insinuandovi un secondo testo. Lo scopo di questo approfondimento è mostrare dove i segni grafici vengono utilizzati e soprattutto in che modo collaborano con il processo dubitativo, incrementandolo.
-                </p>
-                <p>
-                  <i>La giornata di uno scrutatore</i> racconta l’esperienza di Amerigo Ormea, militante e intellettuale, nel ruolo di scrutatore che si svolge l’8 giugno 1953 presso un istituto per persone con disabilità mentali e fisiche trasformato in seggio elettorale.<br/>
-                  È diviso in 15 capitoli e ha un totale di 214 occorrenze di <span style={{color:'#cfcfff'}}>testo dubitativo</span>, distribuite in maniera diseguale all’interno del volume . Il 2° capitolo con 24 occorrenze possiede una delle concentrazioni maggiori. Verranno analizzati separatamente l’inizio e la fine del capitolo: l’obiettivo è rilevare gli argomenti legati al processo dubitativo e studiarne l’andamento.
-                </p>
+      <HamburgerCompassHeader />
+      <main className={SheetStyles.main}>
+      <div className={SheetStyles.gridRow}>
+        <h4 className="ac-breadcrumb">Tappa 2 - Dubitare</h4>
+        <h1 className={SheetStyles.titleH1}>La giornata di uno scrutatore</h1>
+      <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={giornata}/>
+      </div>
+
+              <div className={SheetStyles.gridRow}>
+              <p className={SheetStyles.paragraphBig}>
+                La giornata d’uno scrutatore è uno dei romanzi di Calvino che presenta la più alta percentuale di quello che abbiamo denominato “testo dubitativo”: il 35%. Il dato non stupisce, considerando la natura profondamente ibrida del libro pubblicato nel 1963, «una sorta di romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del vivere associato, autoritratto morale» (Barenghi 2009, 56).
+                In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il segno interrogativo, per quanto simbolicamente così importante, non è l’unico a caratterizzare il romanzo: La giornata d’uno scrutatore è un libro anche di parentesi e di incisi. Segni che interrompono la continuità lineare del discorso, creando degli spazi di scrittura indipendenti che spezzano il testo principale, annidandovi dentro un secondo testo. Lo scopo di questo approfondimento è mostrare la distribuzione di tali segni grafici e soprattutto in che modo collaborano con il processo dubitativo, amplificando il suo effetto.
+                La giornata d’uno scrutatore racconta l’esperienza di Amerigo Ormea, militante e intellettuale, nel ruolo di scrutatore durante le elezioni dell’8 giugno 1953, presso un istituto per persone con disabilità mentali e fisiche trasformato in seggio elettorale.
+                Il libro è diviso in 15 capitoli e presenta un totale di 214 occorrenze di <span style={{color:'#cfcfff'}}>testo dubitativo</span>, distribuite in maniera diseguale all’interno del volume. Il secondo capitolo possiede una delle concentrazioni maggiori: 23 occorrenze. Abbiamo deciso di concentrarci sulla fine e l’inizio del capitolo, analizzando le due zone del testo separatamente.
+              </p>
               </div>
-            </article>
+
             <div style={{gridColumn:'2 / span 22'}}>
               <h4 style={{textTransform:'none'}}>Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></h4>
-              <img src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-02.png"} alt="information complement" style={{width:'100%',marginBottom:'50px'}}/>
               <h1>Parole: istruzioni per l'uso</h1>
             </div>
             <article className="focus">
@@ -49,7 +53,7 @@ class HesitationInformationSheet extends Component {
                 <p><span style={{color:'#0E08F9'}}>Precisare le parole</span><br/>
                 Il <span style={{textDecoration:'underline'}}>td10</span> fornisce un’informazione che aumenta la consapevolezza di un ipotetico lettore sulle funzioni del Cottolengo.</p>
                 <p>Come conseguenza dell’instabilità semantica dietro le parole, l’unico modo per assicurarsi di essere compreso correttamente è «precisare», ridefinendo ancora e ancora il concetto, sommando le puntualizzazioni (cfr. Mengaldo 1996, 278). Il <span style={{textDecoration:'underline'}}>td10</span> si trova all’interno di un inciso; qui il segno grafico delimita un’informazione, ma crea anche una deviazione nel testo principale.</p>
-              
+
                 <p><b>Conclusione per 'Le parole: istruzioni per l'uso'</b><br/>
                 All’inizio del secondo capitolo della Giornata di uno scrutatore, l’accento è posto sulla difficoltà di comunicare correttamente con il lettore. Il significato delle parole è instabile e di conseguenza è necessario spiegare ogni termine per evitare il fraintendimento; tuttavia questi continui chiarimenti corrono il rischio di confondere ancora di più, soffocando la narrazione. Il testo procede accumulando ragionamenti digressivi, sviluppi laterali a volte racchiusi dentro segni grafici. In particolare il td10 inizia con la parola formula «ammesso che», la stessa del td2 nella Nota dell’autore: sembra che il romanzo stia cercando di sabotarsi, minimizzando fin dal principio l’importanza del suo contenuto o diffidando apertamente del proprio lettore.</p>
               </div>
@@ -60,7 +64,7 @@ class HesitationInformationSheet extends Component {
             </div>
             <div style={{gridColumn:'2 / span 22'}}>
               <h1>Gli strati del testo</h1>
-              
+
               <article className="focus" style={{display:'grid', gridTemplateColumns: 'repeat(24, 1fr)'}}>
                 <div style={{gridColumn:'1 / span 15'}}>
                   <img className="sticky-element" src={process.env.PUBLIC_URL + "/informationSheets/scheda-dubitare-04.png"} alt="information complement" style={{width:'100%', paddingBottom: '50px'}}/>
@@ -93,7 +97,7 @@ class HesitationInformationSheet extends Component {
               </div>
             </article>
           </main>
-        </div>
+
       </>
     );
   }

@@ -69,7 +69,7 @@ export default class DoubtInformationSheet extends React.Component
 
               <div className={SheetStyles.gridRow}>
               <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-              <ol className={SheetStyles.paragraph+' references'}>
+              <ol className={SheetStyles.paragraph+' references '}>
                   <li className='referenceItem'>
                     Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
                   </li>
