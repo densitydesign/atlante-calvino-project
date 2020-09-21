@@ -371,9 +371,33 @@ function BoxPlot(
     []
   )
 
-  const [enterInOpacity, setEnterInOpacity] = useState(false)
+  // const [enterInOpacity, setEnterInOpacity] = useState(true)
+  const enterInOpacity = true
 
-  useEffect(() => setEnterInOpacity(true), [])
+  useEffect(() => {
+    // setEnterInOpacity(true)
+    containerRef.current.style.transform = 'scaleY(0.1)'
+    containerRef.current.style.overflow = 'hidden'
+    const animationId = window.requestAnimationFrame(() => {
+      containerRef.current.style.transition = 'transform 1.5s linear'
+      containerRef.current.style.transform = 'scaleY(1)'
+    })
+    return () => {
+      window.cancelAnimationFrame(animationId)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (measures) {
+      xAxisContainer.current.style.display = 'none'
+      const timeoutId = setTimeout(() => {
+        xAxisContainer.current.style.display = 'initial'
+      }, 1500)
+      return () => {
+        window.clearTimeout(timeoutId)
+      }
+    }
+  }, [measures])
 
   return (
     <div
@@ -384,7 +408,7 @@ function BoxPlot(
       <div
         ref={containerRef}
         className="w-100 h-100"
-        style={{ overflow: 'hidden' }}
+        // style={{ overflow: 'hidden' }}
       >
         {measures && (
           <svg
@@ -432,7 +456,9 @@ function BoxPlot(
             </g>
             <g
               ref={xAxisContainer}
-              style={{ transform: `translateY(${height - 40}px)` }}
+              style={{
+                transform: `translateY(${height - 40}px)`,
+              }}
             ></g>
           </svg>
         )}

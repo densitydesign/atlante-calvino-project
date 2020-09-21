@@ -457,8 +457,10 @@ function LineeTramaWithMeasures(
           const prevDatum = raccontoData[i - 1]
           const datum = raccontoData[i]
 
-          const y1 = prevDatum.y * (1 - k) + k * 25
-          const y2 = datum.y * (1 - k) + k * 25
+          // const y1 = prevDatum.y * (1 - k) + k * 25
+          // const y2 = datum.y * (1 - k) + k * 25
+          const y1 = prevDatum.y
+          const y2 = datum.y
 
           const x1 = prevDatum.x * (1 - k) + k * flyToX
           const x2 = datum.x * (1 - k) + k * flyToX
@@ -474,60 +476,68 @@ function LineeTramaWithMeasures(
           window.requestAnimationFrame(animate)
         } else {
           start = null
-          window.requestAnimationFrame(animate2)
+          setTimeout(() => {
+            cb()
+            cleanUpAnimation()
+          }, 50)
+          // window.requestAnimationFrame(animate2)
         }
       }
 
       const cachedResetStrokes = []
 
-      function animate2(timestamp) {
-        if (start === null) {
-          start = timestamp
+      // function animate2(timestamp) {
+      //   if (start === null) {
+      //     start = timestamp
+      //   }
+      //   const k = (timestamp - start) / 1000
+
+      //   const dataFly = []
+      //   for (let i = 1; i < raccontoData.length; i++) {
+      //     const prevDatum = raccontoData[i - 1]
+      //     const datum = raccontoData[i]
+
+      //     const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
+      //     const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
+
+      //     const x1 = flyToX
+      //     const x2 = flyToX
+
+      //     dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+      //   }
+      //   paths.forEach((path, i) => {
+      //     path.setAttribute('d', dataFly[i])
+      //     path.style.stroke = 'var(--blue)'
+      //   })
+      //   if (k < 1) {
+      //     window.requestAnimationFrame(animate2)
+      //   } else {
+      //     cb()
+      //     cleanUpAnimation()
+      //   }
+      // }
+
+      function cleanUpAnimation() {
+        // CLEAN UP ANIMATION
+
+        // RESET ZOOM STATE
+        const lastZoomScaleY = lastZoomedScaleYRef.current
+        if (lastZoomScaleY) {
+          imperativeTranslate(lastZoomScaleY)
         }
-        const k = (timestamp - start) / 1000
-
-        const dataFly = []
-        for (let i = 1; i < raccontoData.length; i++) {
-          const prevDatum = raccontoData[i - 1]
-          const datum = raccontoData[i]
-
-          const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
-          const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
-
-          const x1 = flyToX
-          const x2 = flyToX
-
-          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
-        }
+        // RESET SELECTED LINE
+        const resetDPath = lineGenerator(raccontoData)
+        const resettedDSubPaths = splitPath(resetDPath)
         paths.forEach((path, i) => {
-          path.setAttribute('d', dataFly[i])
-          path.style.stroke = 'var(--blue)'
+          path.setAttribute('d', resettedDSubPaths[i])
+          path.style.stroke = cachedResetStrokes[i]
         })
-        if (k < 1) {
-          window.requestAnimationFrame(animate2)
-        } else {
-          cb()
-          // CLEAN UP ANIMATION
-
-          // RESET ZOOM STATE
-          const lastZoomScaleY = lastZoomedScaleYRef.current
-          if (lastZoomScaleY) {
-            imperativeTranslate(lastZoomScaleY)
-          }
-          // RESET SELECTED LINE
-          const resetDPath = lineGenerator(raccontoData)
-          const resettedDSubPaths = splitPath(resetDPath)
-          paths.forEach((path, i) => {
-            path.setAttribute('d', resettedDSubPaths[i])
-            path.style.stroke = cachedResetStrokes[i]
-          })
-          // Show Points
-          document
-            .querySelectorAll(
-              '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
-            )
-            .forEach((p) => (p.style.display = 'initial'))
-        }
+        // Show Points
+        document
+          .querySelectorAll(
+            '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+          )
+          .forEach((p) => (p.style.display = 'initial'))
       }
 
       window.requestAnimationFrame(animate)
