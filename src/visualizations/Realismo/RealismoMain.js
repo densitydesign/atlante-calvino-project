@@ -81,7 +81,7 @@ const optionsSpace = [
     value: 'outdoor',
   },
   {
-    label: 'MEZZO DI TRANSPORTO',
+    label: 'MEZZO DI TRASPORTO',
     value: 'transportation',
   },
   {
