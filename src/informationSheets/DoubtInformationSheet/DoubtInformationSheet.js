@@ -25,13 +25,13 @@ export default class DoubtInformationSheet extends React.Component
         <h4 className="ac-breadcrumb">Tappa 1 - Nebbia</h4>
           <h1 className={SheetStyles.titleH1}>Analisi di occorrenze del campo semantico del dubbio</h1>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
-                  <img className={SheetStyles.legend}/>
-                  </div>
+          <img className={SheetStyles.legend}/>
+        </div>
+
                   <div id="mainviz" className={SheetStyles.gridRow}>
-
                   <DoubtTypePerYearWrapper  />
-
                 </div>
+
                     <div className={SheetStyles.gridRow}>
                 <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                       <p className={SheetStyles.paragraphBig}>

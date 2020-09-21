@@ -11,16 +11,15 @@ class VClass {
     const typeLabels = ['Frasi', 'Misto', 'Parole', 'Sintagmi'];
     const values = ['n_lists_f', 'n_lists_m', 'n_lists_p', 'n_lists_s'];
 
+        var margin = ({
+          top: 50,
+          right: 30,
+          bottom: 30,
+          left: 40
+        });
 
-    var margin = ({
-      top: 50,
-      right: 30,
-      bottom: 30,
-      left: 40
-    });
-
-    var width = document.body.clientWidth - margin.left - margin.right;
-    var height = 300 - margin.top - margin.bottom;
+        var width = d3.select("#mainviz").node().getBoundingClientRect().width;
+        var height = 300 - margin.top - margin.bottom;
 
 
     var x, y;

@@ -6,6 +6,11 @@
   margin-top: 3rem;
 }
 
+#mainviz {
+  grid-column: 1 / span 24;
+  display: grid;
+}
+
 .gridRow {
   /* background-color: rgb(234, 255, 248); */
   grid-column: 2 / span 22;
