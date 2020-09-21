@@ -372,8 +372,8 @@ export default function RealismoMain({ title }) {
                     // Reset Selection
                     setRicerca([])
                     // Reset Filters
-                    // setSpazio([])
-                    // setMovimento(null)
+                    setSpazio([])
+                    setMovimento(null)
                     // setTimeFilter(yearsExtent)
                   }}
                 >
