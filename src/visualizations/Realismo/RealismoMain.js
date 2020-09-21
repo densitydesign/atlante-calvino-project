@@ -148,6 +148,9 @@ export default function RealismoMain({ title }) {
       if (keep && spazioValues.length > 0) {
         const categories = dataset[titolo].map((i) => i.category)
         keep = spazioValues.some((category) => {
+          if (category === 'indoor' || category === 'outdoor') {
+            return categories.every(wormCateogry => wormCateogry === category)
+          }
           return categories.indexOf(category) !== -1
         })
       }
