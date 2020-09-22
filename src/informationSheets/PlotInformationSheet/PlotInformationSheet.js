@@ -58,7 +58,7 @@ class PlotInformationSheet extends Component {
         </div>
 
         <div className={SheetStyles.gridRow}>
-        <h2 className={SheetStyles.titleH2}>Gli strati del testo</h2>
+        <h2 className={SheetStyles.titleH2}>Equilibrio e Squilibrio</h2>
             <div className={SheetStyles.paragraph}>
             <p>
             Il paragrafo finale nella versione cartacea si svolge per più di due pagine senza punti fermi: è composto da una serie di riflessioni, che si incastrano e talvolta sovrappongono. L’argomento principale è la fede politica del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde, producendo un testo denso e ricco di informazioni, il filo del discorso si interrompe bruscamente poiché il narratore afferma di «aver capito finalmente quel che non ci voleva poi tanto a capire» (RR, II, 10).</p>
