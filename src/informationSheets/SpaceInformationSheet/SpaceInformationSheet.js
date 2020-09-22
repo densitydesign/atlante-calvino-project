@@ -60,20 +60,24 @@ export default class SpaceInformationSheet extends React.Component
                 <div className={SheetStyles.sideContent}>
                     <img className={SheetStyles.image} style={{position:'sticky',top:'calc(var(--navigation-height)+4em)'}} src={zoom_03}/>
                 </div>
+
                     <p className={SheetStyles.paragraph}>
                       In apparenza questo non accade nel <em>Barone rampante</em>, ambientato nel libero comune di Ombrosa, territorio - mondo del baronetto Cosimo Piovasco di Rondò.
                       Tuttavia, pur senza essere esplicitamente incorniciata all’ interno di un luogo localizzabile, anche Ombrosa è in qualche modo legata alla Repubblica di Genova,
                       di cui è comune tributario.Pertanto, seppur in modo meno evidente.anche nel caso del Barone rampante lo spazio fantastico si intreccia a quello storico.
                       Il fatto poi che Terralba e Ombrosa siano in qualche modo riconducibili alla Liguria, terra natale di Calvino, è doppiamente significativo.
-                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
-                      <span className={SheetStyles.paragraph + ' cite '}>
-                      "C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
-                      da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].
-                      </span>
-                      
-                      <div className={SheetStyles.sideContent}>
-                        <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_01}/>
-                      </div>
+                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:
+                    <p className={SheetStyles.paragraph + ' cite '}>
+                    <br></br>
+                    "C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
+                    da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].
+                    </p>
+                  </p>
+
+              <div className={SheetStyles.sideContent}>
+                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_01}/>
+              </div>
+
                   <p className={SheetStyles.paragraph}>
                     Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
                       <span className={SheetStyles.paragraph + ' cite '}>
