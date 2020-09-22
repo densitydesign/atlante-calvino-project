@@ -97,7 +97,14 @@
 .legend{
     margin-top: 2em;
     margin-bottom: 2em;
+    vertical-align:top;
 }
+
+.sideLegend{
+    vertical-align:top;
+    float:right;
+}
+
 
 .translucentBackground {
   backdrop-filter: blur(6px);

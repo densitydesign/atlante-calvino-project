@@ -76,17 +76,12 @@
       .cls-16 {
         font-size: 10px;
       }
-
-      .cls-17 {
-        fill: #fff;
-      }
     </style>
     <clipPath id="clip-zoom_02">
       <rect width="800" height="240"/>
     </clipPath>
   </defs>
   <g id="zoom_02" class="cls-1">
-    <rect class="cls-17" width="800" height="240"/>
     <text id="Le_cosmicomiche" data-name="Le cosmicomiche" class="cls-2" transform="translate(1)"><tspan x="0" y="13">Le cosmicomiche</tspan></text>
     <path id="Path_100" data-name="Path 100" class="cls-3" d="M0,0H759.952" transform="translate(0.338 44.633)"/>
     <path id="Path_101" data-name="Path 101" class="cls-3" d="M0,0H759.952" transform="translate(0.338 178.971)"/>
