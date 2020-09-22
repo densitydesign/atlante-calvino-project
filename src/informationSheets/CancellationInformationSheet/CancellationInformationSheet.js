@@ -68,11 +68,11 @@ class CancellationInformationSheet extends Component {
           <img className={SheetStyles.image} src={section01} style={{gridColumn:'1 / span 12',width:'100%'}}/>
           <p className={SheetStyles.paragraphCentered}>
             <b>L’avvenimento</b> è placerat urna in malesuada laoreet. Suspendisse feugiat elit sit amet mattis tristique. Phasellus accumsan interdum turpis vitae ultricies. Mauris id vehicula ante, id fermentum est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nec finibus urna, non tristique libero. Nullam et semper elit. Cras ut neque quis est porttitor laoreet. Phasellus placerat placerat ligula eget egestas. Nullam posuere diam quis lectus bibendum egestas. Praesent suscipit, massa quis porta aliquet, nisi turpis ultricies mi, venenatis blandit justo felis quis turpis. Vivamus velit tortor, ornare vitae massa a, dapibus ultricies odio. Nunc dictum quis metus non interdum.<br/><br/>
-            Quisque ornare felis nec sollicitudin tincidunt. Nullam pretium volutpat nunc vitae dignissim. Maecenas vel cursus ex. Fusce posuere lectus ut accumsan laoreet. Cras eget justo blandit, posuere lacus nec, suscipit sem. Suspendisse nisi purus, maximus quis nisl at, dapibus ultrices magna. Duis euismod nibh quis ipsum vehicula, tempus sodales dolor facilisis. Sed sed nulla eget odio porttitor volutpat. 
+            Quisque ornare felis nec sollicitudin tincidunt. Nullam pretium volutpat nunc vitae dignissim. Maecenas vel cursus ex. Fusce posuere lectus ut accumsan laoreet. Cras eget justo blandit, posuere lacus nec, suscipit sem. Suspendisse nisi purus, maximus quis nisl at, dapibus ultrices magna. Duis euismod nibh quis ipsum vehicula, tempus sodales dolor facilisis. Sed sed nulla eget odio porttitor volutpat.
           </p>
           <img className={SheetStyles.image} src={section02} style={{gridColumn:'1 / span 12',marginBottom:'1rem',width:'100%'}}/>
           <p className={SheetStyles.paragraphCentered}>
-            <b>«Ora bisognava ricominciare da capo»</b> è la seconda parte dell’analisi. Forse è un po’ lunga, eventualmente si potrebbe spezzare in due? Quisque ornare felis nec sollicitudin tincidunt. Nullam pretium volutpat nunc vitae dignissim. Maecenas vel cursus ex. Fusce posuere lectus ut accumsan laoreet. Cras eget justo blandit, posuere lacus nec, suscipit sem. Suspendisse nisi purus, maximus quis nisl at, dapibus ultrices magna. Duis euismod nibh quis ipsum vehicula, tempus sodales dolor facilisis. Sed sed nulla eget odio porttitor volutpat. Sed et tempor magna, non tempus quam. Fusce vitae efficitur augue. Integer sollicitudin faucibus mi vel gravida. Nulla enim odio, efficitur id dolor non, luctus interdum risus. Sed dictum maximus eleifend. Nulla efficitur tincidunt molestie. 
+            <b>«Ora bisognava ricominciare da capo»</b> è la seconda parte dell’analisi. Forse è un po’ lunga, eventualmente si potrebbe spezzare in due? Quisque ornare felis nec sollicitudin tincidunt. Nullam pretium volutpat nunc vitae dignissim. Maecenas vel cursus ex. Fusce posuere lectus ut accumsan laoreet. Cras eget justo blandit, posuere lacus nec, suscipit sem. Suspendisse nisi purus, maximus quis nisl at, dapibus ultrices magna. Duis euismod nibh quis ipsum vehicula, tempus sodales dolor facilisis. Sed sed nulla eget odio porttitor volutpat. Sed et tempor magna, non tempus quam. Fusce vitae efficitur augue. Integer sollicitudin faucibus mi vel gravida. Nulla enim odio, efficitur id dolor non, luctus interdum risus. Sed dictum maximus eleifend. Nulla efficitur tincidunt molestie.
           </p>
           <img className={SheetStyles.image} src={section03} style={{gridColumn:'1 / span 12',marginBottom:'1rem',width:'100%'}}/>
           <p className={SheetStyles.paragraphCentered}>
@@ -92,20 +92,17 @@ class CancellationInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-          <p className={SheetStyles.paragraph}>
-            
-          </p>
-          <ol className={SheetStyles.paragraph+' '+SheetStyles.references}>
-              <li className={SheetStyles.referenceItem}>
+          <ol className={SheetStyles.paragraph+' references'}>
+              <li className='referenceItem'>
                 Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
               </li>
-              <li className={SheetStyles.referenceItem}>
+              <li className='referenceItem'>
                 Linke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys.
               </li>
-              <li className={SheetStyles.referenceItem}>
+              <li className='referenceItem'>
                 Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
               </li>
-              <li className={SheetStyles.referenceItem}>
+              <li className='referenceItem'>
                 Linke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys.
               </li>
             </ol>

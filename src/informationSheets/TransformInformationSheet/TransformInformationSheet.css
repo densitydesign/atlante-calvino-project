@@ -35,8 +35,14 @@
 
 
 .carousel-caption {
+  margin-top:0px;
   position: relative;
   text-align: left;
   left: 0%;
   align-items: flex-end;
+}
+
+.stickyElement {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }

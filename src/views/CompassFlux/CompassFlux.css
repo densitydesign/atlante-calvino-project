@@ -12,15 +12,3 @@
   border:1px solid black;
   padding:1em;
 }
-
-
-#main--bones .references{
-  margin-top:2em;
-  font-style: italic;
-  font-size: 1em;
-}
-#main--bones .references p{
-  margin-top:1em;
-  font-style: italic;
-  font-size: 1em;
-}

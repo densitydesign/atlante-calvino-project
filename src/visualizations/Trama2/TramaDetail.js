@@ -268,10 +268,13 @@ export default function TramaDetail({
                     key={i}
                     d={subPath}
                     className="trama2-line"
-                    style={{
-                      stroke: stroke,
-                      fill: 'none',
-                    }}
+                    stroke={stroke}
+                    fill="transparent"
+
+                    // style={{
+                    //   // stroke: stroke,
+                    //   // fill: 'none',
+                    // }}
                   ></path>
                 )
               })}
