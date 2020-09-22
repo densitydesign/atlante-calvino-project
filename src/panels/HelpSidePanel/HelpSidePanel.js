@@ -37,7 +37,7 @@ export default class HelpSidePanel extends React.Component
 
       case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
       case GlobalData.helpPages.combine.main  : helpPage = <ProcessCombiningMainHelp />; break;
-      case GlobalData.helpPages.doubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
+      case GlobalData.helpPages.processDoubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
 
