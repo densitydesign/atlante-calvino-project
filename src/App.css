@@ -164,7 +164,7 @@ p.small {
    line-height: 2.1428571429rem;
    letter-spacing: 0.2;
    text-transform: uppercase;
-   grid-column: 1 / span 22;
+   grid-column: 1 / span 12;
  }
 
  .legend-text {
