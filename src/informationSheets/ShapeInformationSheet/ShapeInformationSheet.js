@@ -25,8 +25,10 @@ export default class ShapeInformationSheet extends React.Component
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 1 - Nebbia</h4>
+          <h4 className="ac-breadcrumb">Tappa 1 - Elenchi</h4>
           <h1 className={SheetStyles.titleH1}>Analisi di occorrenze del campo semantico del dubbio</h1>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
         </div>
 
