@@ -25,10 +25,10 @@ class HesitationInformationSheet extends Component {
         <div className={SheetStyles.gridRow}>
           <h4 className="ac-breadcrumb">Tappa 2 - Dubitare</h4>
           <h1 className={SheetStyles.titleH1}>La giornata di uno scrutatore</h1>
-        <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={giornata}/>
         </div>
         <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraphBig}>
+          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={giornata}/>
             La giornata d’uno scrutatore è uno dei romanzi di Calvino che presenta la più alta percentuale di quello che abbiamo denominato “testo dubitativo”: il 35%. Il dato non stupisce, considerando la natura profondamente ibrida del libro pubblicato nel 1963, «una sorta di romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del vivere associato, autoritratto morale» (Barenghi 2009, 56).
             In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il segno interrogativo, per quanto simbolicamente così importante, non è l’unico a caratterizzare il romanzo: La giornata d’uno scrutatore è un libro anche di parentesi e di incisi. Segni che interrompono la continuità lineare del discorso, creando degli spazi di scrittura indipendenti che spezzano il testo principale, annidandovi dentro un secondo testo. Lo scopo di questo approfondimento è mostrare la distribuzione di tali segni grafici e soprattutto in che modo collaborano con il processo dubitativo, amplificando il suo effetto.
             La giornata d’uno scrutatore racconta l’esperienza di Amerigo Ormea, militante e intellettuale, nel ruolo di scrutatore durante le elezioni dell’8 giugno 1953, presso un istituto per persone con disabilità mentali e fisiche trasformato in seggio elettorale.
