@@ -23,7 +23,7 @@
 	.st5{fill:#FFA500;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
 =======
 	.st5{fill:#FF6C39;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 	.st6{fill:#00BFD3;stroke:#444444;stroke-width:0.1776;stroke-linejoin:round;}
 	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#444444;stroke-width:0.5327;}
 	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#444444;stroke-width:0.3551;}
@@ -60,7 +60,7 @@
 	.st26{fill:#C6CACF;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
 	.st27{fill:#00BFD3;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
 	.st28{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.1887;stroke-linejoin:round;}
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 	.st29{fill:none;stroke:#1A1A1A;stroke-width:0.1887;stroke-linejoin:round;}
 	.st30{fill:#566973;}
 	.st31{fill:#0094C1;}
@@ -81,7 +81,7 @@
 	.st37{fill-rule:evenodd;clip-rule:evenodd;fill:#FFA500;stroke:#444444;stroke-width:0.1774;}
 	.st38{fill-rule:evenodd;clip-rule:evenodd;fill:#00BAC1;stroke:#444444;stroke-width:0.1774;}
 	.st39{fill-rule:evenodd;clip-rule:evenodd;fill:#BBBBFF;stroke:#444444;stroke-width:0.1774;}
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 	.st40{fill:none;stroke:#444444;stroke-width:0.5;}
 	.st41{fill:none;stroke:#444444;stroke-width:0.25;}
 	.st42{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
@@ -162,7 +162,7 @@
 	.st82{fill:none;stroke:#00C19C;stroke-width:3.4397;stroke-miterlimit:10;}
 	.st83{fill:none;stroke:#5151FC;stroke-width:3.44;stroke-miterlimit:10;}
 	.st84{fill:none;stroke:#FF6C39;stroke-width:3.4397;stroke-miterlimit:10;}
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 	.st85{fill:none;stroke:#444444;stroke-width:0.3929;stroke-dasharray:2.9859,2.9859;}
 	.st86{fill:none;stroke:#666666;stroke-width:3.44;}
 	.st87{fill:none;stroke:#CCCCCC;stroke-width:3.44;}
@@ -180,7 +180,7 @@
 	.st93{fill:none;stroke:#FF3366;stroke-width:2.76;stroke-miterlimit:10;}
 	.st94{fill:none;stroke:#BBBBFF;stroke-width:2.76;stroke-miterlimit:10;}
 	.st95{fill:none;stroke:#FF6C39;stroke-width:2.76;stroke-miterlimit:10;}
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 	.st96{fill:#FF3366;stroke:#FFFFFF;stroke-width:0.5;}
 	.st97{fill:#FFFFFF;stroke:#C6CACF;stroke-width:0.5;stroke-linejoin:round;}
 	.st98{fill:none;stroke:#CCCCCC;stroke-width:2.76;stroke-miterlimit:10;}
@@ -221,7 +221,7 @@
 					<stop  offset="0" style="stop-color:#BBBBFF;stop-opacity:0.2"/>
 					<stop  offset="1" style="stop-color:#BBBBFF"/>
 					<stop  offset="1" style="stop-color:#BBBBFF"/>
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 				</linearGradient>
 				<rect y="-7.2" class="st51" width="80.9" height="5.7"/>
 				<rect y="-7.2" class="st64" width="80.9" height="5.7"/>
@@ -237,7 +237,7 @@
 					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-1058.573" y1="-469.8241" x2="-1059.4137" y2="-469.846" gradientTransform="matrix(97 0 0 6 102763.1562 2814.9563)">
 					<stop  offset="0" style="stop-color:#00C19C;stop-opacity:0.2"/>
 					<stop  offset="1" style="stop-color:#00C19C"/>
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 				</linearGradient>
 				<rect x="-0.1" y="-7.1" class="st53" width="81.2" height="6"/>
 				<rect y="-7" class="st66" width="80.9" height="5.7"/>
@@ -253,7 +253,7 @@
 					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1058.573" y1="-470.346" x2="-1059.4137" y2="-470.3678" gradientTransform="matrix(97 0 0 6 102763.1562 2814.9563)">
 					<stop  offset="0" style="stop-color:#FF6C39;stop-opacity:0.2"/>
 					<stop  offset="1" style="stop-color:#FF6C39"/>
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 					<stop  offset="1" style="stop-color:#000000"/>
 				</linearGradient>
 				<rect x="-0.1" y="-10.2" class="st55" width="81.2" height="6"/>
@@ -270,7 +270,7 @@
 					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-1058.573" y1="-470.1683" x2="-1059.4137" y2="-470.1902" gradientTransform="matrix(97 0 0 6 102763.1562 2814.9563)">
 					<stop  offset="0" style="stop-color:#FFA500;stop-opacity:0.2"/>
 					<stop  offset="1" style="stop-color:#FFA500"/>
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 					<stop  offset="1" style="stop-color:#000000"/>
 				</linearGradient>
 				<rect x="-0.1" y="-9.1" class="st63" width="81.2" height="6"/>
@@ -287,7 +287,7 @@
 					<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="-1058.573" y1="-469.9139" x2="-1059.4137" y2="-469.9358" gradientTransform="matrix(97 0 0 6 102763.1562 2814.9563)">
 					<stop  offset="0" style="stop-color:#5151FC;stop-opacity:0.25"/>
 					<stop  offset="1" style="stop-color:#5151FC"/>
->>>>>>> dev
+>>>>>>> iosonosempreio.dev
 					<stop  offset="1" style="stop-color:#000000"/>
 				</linearGradient>
 				<rect x="-0.1" y="-7.6" class="st65" width="81.2" height="6"/>
