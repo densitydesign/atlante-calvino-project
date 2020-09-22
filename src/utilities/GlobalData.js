@@ -8245,15 +8245,22 @@ const GlobalData = {
     transform : {
       main : "transformMain"
     },
+
+    combine : {
+      main : "ProcessCombiningMainHelp"
+    },
+
+    doubting : {
+      main : "processDoubtingMain"
+    },
+
     plot : {
       main : "plotMain"
     },
+
     compass : {
       time : "compassTime",
       bones : "compassBones"
-    },
-    processDoubting : {
-      main : "processDoubtingMain"
     }
   },
   legendPages : {

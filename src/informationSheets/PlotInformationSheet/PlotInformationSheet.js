@@ -6,7 +6,11 @@ import ArrowButton from '../../general/ArrowButton/ArrowButton';
 import './PlotInformationSheet.css';
 import SheetStyles from '../SheetStyles.module.css';
 
-
+import legenda from './legenda_01.svg'
+import incastonati from './incastonati.svg'
+import zoom_01 from './zoom_01.svg'
+import zoom_02 from './zoom_02.svg'
+import info_01 from './info_01.svg'
 
 class PlotInformationSheet extends Component {
   render()
@@ -16,8 +20,10 @@ class PlotInformationSheet extends Component {
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 2 - Dubitare</h4>
-          <h1 className={SheetStyles.titleH1}>La giornata di uno scrutatore</h1>
+          <h4 className="ac-breadcrumb">Tappa 3 - Trama</h4>
+          <h1 className={SheetStyles.titleH1}>Se una notte d'inverno un viaggiatore</h1>
+          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
+            <img className={SheetStyles.image100w} style = {{gridColumn:'1 / span 12'}}  src={incastonati}/>
         </div>
         <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraphBig}>
@@ -115,7 +121,6 @@ class PlotInformationSheet extends Component {
           </div>
             </div>
 
-
           <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
             <ol className={SheetStyles.paragraph+' references '}>
@@ -129,9 +134,9 @@ class PlotInformationSheet extends Component {
           </div>
 
         <div className={SheetStyles.gridRow}>
-          <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Process/" /></div>
-          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/doubtAnalysis"/></div>
-          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/cancellation" /></div>
+          <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Problem/plot" /></div>
+          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis"/></div>
+          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 2" route="/Process/combining" /></div>
         </div>
 
       </main>

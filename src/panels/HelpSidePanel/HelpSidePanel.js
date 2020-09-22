@@ -11,8 +11,11 @@ import TerritoryShapeHelp from '../../helpPages/territory/TerritoryShapeHelp/Ter
 import TerritorySpaceHelp from '../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp';
 
 import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/TransformMainHelp';
+import ProcessCombiningMainHelp from '../../helpPages/plot/ProcessCombiningMainHelp/ProcessCombiningMainHelp';
+import ProcessDoubtingMainHelp from '../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
 
 import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
+
 
 import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
 import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
@@ -33,6 +36,8 @@ export default class HelpSidePanel extends React.Component
       case GlobalData.helpPages.territory.shape : helpPage = <TerritoryShapeHelp />; break;
 
       case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
+      case GlobalData.helpPages.combine.main  : helpPage = <ProcessCombiningMainHelp />; break;
+      case GlobalData.helpPages.doubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
 

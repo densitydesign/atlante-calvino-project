@@ -95,28 +95,24 @@ export default function AtlasRouter()
       <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/Process/intro"><ProcessIntro /></Route>
-      <Route exact path="/Process/doubting"><ProcessDoubting /></Route>
+      <Route exact path="/Process/doubting"><ProcessDoubting title= {'Dubitare'}/></Route>
       <Route exact path="/Process/doubting/Hesitation/informationSheet"><HesitationInformationSheet /></Route>
-      <Route exact path="/Process/transforming"><Trasformare title="LA MATRICE DEI LUOGHI" /></Route>
+      <Route exact path="/Process/transforming"><Trasformare title= {'Trasformare'} /></Route>
       <Route exact path="/Process/transforming/Transform/informationSheet"><TransformInformationSheet /></Route>
-      <Route exact path="/Process/combining"><Trama title="LA STRUTTURA DEI VOLUMI" /></Route>
+      <Route exact path="/Process/combining"><Trama title={'Combinare'}/></Route>
       <Route exact path="/Process/combining/Combine/informationSheet"><CombineInformationSheet /></Route>
 
       <Route exact path="/Problem/intro"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
 
-      <Route exact path="/Problem/cancellation"><Cancellazione /></Route>
+      <Route exact path="/Problem/cancellation"><Cancellazione title={'Cancellazione'} /></Route>
       <Route exact path="/cancellation-sheet"><CancellationInformationSheet /></Route>
 
-      <Route exact path="/Problem/realism">
-      <Realismo title={'Realismo'}></Realismo>
-      </Route>
+      <Route exact path="/Problem/realism"> <Realismo title={'Realismo'}></Realismo></Route>
       <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
 
-      <Route exact path="/Problem/plot"><Trama2 title="TRAMA"></Trama2></Route>
-      <Route exact path="/Problem/plotting/plot/informationSheet"><PlotInformationSheet /></Route>
-
-
+      <Route exact path="/Problem/plot"><Trama2 title="Trama"></Trama2></Route>
+      <Route exact path="/plot-sheet"><PlotInformationSheet /></Route>
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>

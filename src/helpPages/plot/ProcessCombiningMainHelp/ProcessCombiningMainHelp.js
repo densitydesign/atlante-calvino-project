@@ -1,17 +1,16 @@
-
 import React from 'react';
 import ArrowButton from '../../../general/ArrowButton/ArrowButton';
 
-import './PlotMainHelp.css';
+import './ProcessCombiningMainHelp.css';
 
-export default class PlotMainHelp extends React.Component
+export default class ProcessCombiningMainHelp extends React.Component
 {
   render()
   {
     return (
       <>
-        <small>tappa 3 </small>
-        <h1>La trama</h1>
+        <small>tappa 2 - combinare</small>
+        <h1>Il combinare</h1>
         <h2>L'opera di Italo Calvino come una trama</h2>
         <h3>Di cosa si tratta</h3>
         <p>Questa visualizzazione rappresenta il corpus delle opere narrative di Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il 1984.<br />A ogni elemento grafico corrisponde un testo, per cui l’unità minima della
@@ -44,9 +43,9 @@ export default class PlotMainHelp extends React.Component
         <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
 
         <div className="sheet--info">
-          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/plot-sheet" />
-          <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis" />
-          <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
+          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/Process/combining/Combine/informationSheet" />
+          <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 2" route="/Phenomena/territory/shapeAnalysis" />
+          <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/plot" />
         </div>
 
       </>
