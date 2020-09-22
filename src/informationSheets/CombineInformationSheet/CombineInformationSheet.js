@@ -22,9 +22,11 @@ class CombineInformationSheet extends Component {
     <HamburgerCompassHeader />
     <main className={SheetStyles.main}>
     <div className={SheetStyles.gridRow}>
-      <h4 className="ac-breadcrumb">Tappa 2 - Dubitare</h4>
+      <h4 className="ac-breadcrumb">Tappa 2 - Combinare</h4>
       <h1 className={SheetStyles.titleH1}>La giornata di uno scrutatore</h1>
-      <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
+      </div>
+          <div className={SheetStyles.gridRow}>
+      <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 22'}}  src={legenda}/>
         <img className={SheetStyles.image100w} style = {{gridColumn:'1 / span 12'}}  src={marimekko}/>
     </div>
     <div className={SheetStyles.gridRow}>
