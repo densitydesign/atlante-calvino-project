@@ -235,7 +235,8 @@ li {
 
 .cite{
   margin-left:3.8571428571rem;
-  color:var(--text-color);
+  margin-right:3.8571428571rem;
+  color:var(--dark-blue);
   font-size:1.2857142857rem;
   line-height:2.1428571429rem;
   font-style: italic;
