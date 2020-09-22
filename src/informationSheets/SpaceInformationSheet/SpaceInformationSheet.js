@@ -111,7 +111,7 @@ export default class SpaceInformationSheet extends React.Component
 
             <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-              <ol className={SheetStyles.paragraph+' '+SheetStyles.references}>
+              <ol className={SheetStyles.paragraph+' references '}>
                   <li className={SheetStyles.referenceItem}>
                   Frank Zipfel, Fiktion, Fiktivität, Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der
                   Literaturwissenschaft, Erich Schmidt Verlag, Berlin 2001. Barbara Piatti, Die Geographie der Literatur. Schauplätze,
