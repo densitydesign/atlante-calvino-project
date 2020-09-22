@@ -27,7 +27,7 @@ export default class SpaceInformationSheet extends React.Component
           <h4 className="ac-breadcrumb">Tappa 1 - Nebbia</h4>
           <h1 className={SheetStyles.titleH1}>Tassonomia dei luoghi inventati</h1>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 5'}}  src={legenda}/>
-          <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={inventati}/>
+          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={inventati}/>
               <h2 className={SheetStyles.titleH2}>L'analisi</h2>
                 <div className={SheetStyles.paragraphBig}>
                     <p>La categoria dei <span style={{color:'#00C19C'}}>luoghi inventati</span> riprende una delle quattro categorie ideate da
