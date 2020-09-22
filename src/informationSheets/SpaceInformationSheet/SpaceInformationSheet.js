@@ -24,8 +24,10 @@ export default class SpaceInformationSheet extends React.Component
       <HamburgerCompassHeader />
       <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 1 - Nebbia</h4>
+          <h4 className="ac-breadcrumb">Tappa 1 - Luoghi</h4>
           <h1 className={SheetStyles.titleH1}>Tassonomia dei luoghi inventati</h1>
+        </div>
+        <div className={SheetStyles.gridRow}>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 5'}}  src={legenda}/>
           <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={inventati}/>
               <h2 className={SheetStyles.titleH2}>L'analisi</h2>
