@@ -65,21 +65,21 @@ export default class SpaceInformationSheet extends React.Component
                       Tuttavia, pur senza essere esplicitamente incorniciata all’ interno di un luogo localizzabile, anche Ombrosa è in qualche modo legata alla Repubblica di Genova,
                       di cui è comune tributario.Pertanto, seppur in modo meno evidente.anche nel caso del Barone rampante lo spazio fantastico si intreccia a quello storico.
                       Il fatto poi che Terralba e Ombrosa siano in qualche modo riconducibili alla Liguria, terra natale di Calvino, è doppiamente significativo.
-                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:
-                      <span className={SheetStyles.paragraph + 'cite'}>
+                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
+                      <span className={SheetStyles.paragraph + ' cite '}>
                       "C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
                       da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].
                       </span>
-                      </p>
+                      
                       <div className={SheetStyles.sideContent}>
                         <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_01}/>
                       </div>
                   <p className={SheetStyles.paragraph}>
-                    Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:
-                      <p><span className={SheetStyles.paragraph + 'cite'}>
+                    Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
+                      <span className={SheetStyles.paragraph + ' cite '}>
                       "Ma tutto questo paesaggio geografico e ideale appartiene al passato: sappiamo che la Riviera in questo dopoguerra è diventata irriconoscibile per il modo caotico in cui si è riempita di caseggiati urbani fino a trasformarsi in una distesa di cemento;
                       sappiamo che le speculazioni economiche e un facile edonismo dominano i rapporti umani di una larga parte della nostra società.Ed è solo da tutti questi elementi sommati insieme che possiamo ricavare la radice lirica del libro, la prima spinta dell’ invenzione poetica.Partendo da un mondo che non esiste più, l’ Autore regredisce a un mondo mai esistito che contenga i nuclei di ciò che è stato e di ciò che avrebbe potuto essere, le allegorie del passato e del presente, le interrogazioni sulla propria esperienza."
-                      </span></p>
+                      </span>
                       <p className={SheetStyles.paragraph}>
                       Un discorso diverso, ma non così distante, può essere fatto per le Città invisibili,
                       l’opera che raccoglie il maggior numero di ambientazioni fantastiche.
@@ -87,7 +87,7 @@ export default class SpaceInformationSheet extends React.Component
                       dal tempo e dallo spazio. Invece, anche in questo caso, Calvino non rinuncia a una cornice storica,
                       poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.
                       </p>
-                  </p>
+
                       <div className={SheetStyles.sideContent}>
                         <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_02}/>
                       </div>
