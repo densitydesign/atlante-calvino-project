@@ -8250,10 +8250,6 @@ const GlobalData = {
       main : "ProcessCombiningMainHelp"
     },
 
-    doubting : {
-      main : "processDoubtingMain"
-    },
-
     plot : {
       main : "plotMain"
     },
@@ -8261,6 +8257,10 @@ const GlobalData = {
     compass : {
       time : "compassTime",
       bones : "compassBones"
+    },
+
+    processDoubting : {
+      main : "ProcessDoubtingMainHelp"
     }
   },
   legendPages : {
