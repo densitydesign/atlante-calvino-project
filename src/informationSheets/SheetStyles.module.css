@@ -46,7 +46,8 @@
 .subtitleSheet{
   grid-column: 1 / span 12;
   font-size: 1.2857142857rem;
-  margin-bottom: 1.2857142857rem;
+  line-height: 3rem;
+  color:var(--text-color);
 }
 
 .titleH4 {
@@ -96,7 +97,14 @@
 .legend{
     margin-top: 2em;
     margin-bottom: 2em;
+    vertical-align:top;
 }
+
+.sideLegend{
+    vertical-align:top;
+    float:right;
+}
+
 
 .translucentBackground {
   backdrop-filter: blur(6px);
