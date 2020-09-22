@@ -44,7 +44,7 @@ export default class PlotMainHelp extends React.Component
         <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
 
         <div className="sheet--info">
-          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/Process/combining/Combine/informationSheet" />
+          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/Problem/plotting/Plot/informationSheet" />
           <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis" />
           <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
         </div>

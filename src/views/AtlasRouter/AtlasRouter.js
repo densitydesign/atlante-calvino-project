@@ -31,6 +31,7 @@ import HesitationInformationSheet from '../../informationSheets/HesitationInform
 import TransformInformationSheet from '../../informationSheets/TransformInformationSheet/TransformInformationSheet';
 import CombineInformationSheet from '../../informationSheets/CombineInformationSheet/CombineInformationSheet';
 import CancellationInformationSheet from '../../informationSheets/CancellationInformationSheet';
+import PlotInformationSheet from '../../informationSheets/PlotInformationSheet';
 import Trama from '../../visualizations/Trama';
 import Trama2 from '../../visualizations/Trama2';
 import Realismo from '../../visualizations/Realismo';
@@ -108,10 +109,14 @@ export default function AtlasRouter()
       <Route exact path="/cancellation-sheet"><CancellationInformationSheet /></Route>
 
       <Route exact path="/Problem/realism">
-        <Realismo title={'Realismo'}></Realismo>
+      <Realismo title={'Realismo'}></Realismo>
       </Route>
-      <Route exact path="/Problem/plot"><Trama2 title="COMBINARE"></Trama2></Route>
       <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
+
+      <Route exact path="/Problem/plot"><Trama2 title="TRAMA"></Trama2></Route>
+      <Route exact path="/Problem/plotting/plot/informationSheet"><PlotInformationSheet /></Route>
+
+
 
       <Route exact path="/About"><AboutAndContacts /></Route>
       <Route exact path="/Project"><Project/></Route>
