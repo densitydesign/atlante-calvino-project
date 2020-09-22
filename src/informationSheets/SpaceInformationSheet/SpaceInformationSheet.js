@@ -29,8 +29,8 @@ export default class SpaceInformationSheet extends React.Component
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 5'}}  src={legenda}/>
           <img className = {SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={inventati}/>
               <h2 className={SheetStyles.titleH2}>L'analisi</h2>
-                <p className={SheetStyles.paragraphBig}>
-                    La categoria dei <span style={{color:'#00C19C'}}>luoghi inventati</span> riprende una delle quattro categorie ideate da
+                <div className={SheetStyles.paragraphBig}>
+                    <p>La categoria dei <span style={{color:'#00C19C'}}>luoghi inventati</span> riprende una delle quattro categorie ideate da
                     Frank Zipfel nel 2001 e poi concettualizzate da Barbara Piatti nel 2008, sulla base del grado di dipendenza
                     dei luoghi finzionali da quelli geospaziali<sup> 1</sup>. Per Barbara Piatti gli <em>invented places</em> sono tutti i luoghi inventati
                     creati all’interno di realtà geograficamente familiari<sup> 2</sup>.
@@ -42,9 +42,10 @@ export default class SpaceInformationSheet extends React.Component
                     su periodici e poi rimasti inediti. Prendendo singolarmente in esame le tre differenti sezioni si evidenziano tuttavia caratteristiche intrinseche
                     molto diverse. Vediamo quali.
                 </p>
+                </div>
+                <div className={SheetStyles.paragraph}>
                 <h3 className={SheetStyles.subtitleSheet}>I romanzi</h3>
-                <p className={SheetStyles.paragraph}>
-                    La prima sezione, quella dei romanzi, è senza dubbio quella in cui si registra la maggior concentrazione di luoghi inventati,
+                    <p>La prima sezione, quella dei romanzi, è senza dubbio quella in cui si registra la maggior concentrazione di luoghi inventati,
                     con più della metà delle opere (5 su 9) che presentano almeno un’ambientazione di questo tipo.
                     È noto che la vena immaginifica di Calvino si sviluppi maggiormente nelle opere più estese del corpus, anche in virtù del complesso
                     rapporto dell’autore con il romanzo novecentesco tradizionale<sup> 4</sup>. Si pensi alle storie della <em>Trilogia degli antenati</em>, ambientate tra gli
@@ -57,45 +58,44 @@ export default class SpaceInformationSheet extends React.Component
                     il quale, colpito da una palla di cannone ma miracolosamente salvo per metà, fa ritorno a casa. Terralba si trova in Italia e appartiene alla
                     Repubblica di Genova: è dunque all’interno di uno spazio reale e definito che hanno luogo le avventure fantastiche del protagonista.
                 </p>
+                </div>
                 <div className={SheetStyles.sideContent}>
                     <img className={SheetStyles.image} style={{position:'sticky',top:'calc(var(--navigation-height)+4em)'}} src={zoom_03}/>
                 </div>
 
-                    <p className={SheetStyles.paragraph}>
-                      In apparenza questo non accade nel <em>Barone rampante</em>, ambientato nel libero comune di Ombrosa, territorio - mondo del baronetto Cosimo Piovasco di Rondò.
+                    <div className={SheetStyles.paragraph}>
+                      <p>In apparenza questo non accade nel <em>Barone rampante</em>, ambientato nel libero comune di Ombrosa, territorio - mondo del baronetto Cosimo Piovasco di Rondò.
                       Tuttavia, pur senza essere esplicitamente incorniciata all’ interno di un luogo localizzabile, anche Ombrosa è in qualche modo legata alla Repubblica di Genova,
                       di cui è comune tributario.Pertanto, seppur in modo meno evidente.anche nel caso del Barone rampante lo spazio fantastico si intreccia a quello storico.
                       Il fatto poi che Terralba e Ombrosa siano in qualche modo riconducibili alla Liguria, terra natale di Calvino, è doppiamente significativo.
-                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:
-                    <p className={SheetStyles.paragraph + ' cite '}>
-                    <br></br>
+                      Nel 1965, è lo stesso scrittore, con lo pseudonimo - anagramma di Tonio Cavilla, a sottolineare l’ importanza del paesaggio ligure sullo sfondo:</p>
+                    <p className={' cite '}>
                     "C’è, quasi nascosto dentro il libro, un altro libro più sommesso, di nostalgica evocazione d’ un paesaggio, o meglio: di ri - invenzione d’ un paesaggio attraverso la composizione, l’ ingrandimento, la moltiplicazione di sparsi elementi di memoria. [...] Il romanzo si svolge in un paese immaginario, Ombrosa, ma ci rendiamo presto conto che questa ombrosa si trova in un punto imprecisato della Riviera ligure.Dai dati biografici dell’ Autore sappiamo che egli è di San Remo, che nella cittadina ligure ha passato infanzia e giovinezza fino all’ immediato dopoguerra;
                     da altri scritti dell’ Autore il suo legame col paese risulta nutrito di memorie più antiche[...].
                     </p>
-                  </p>
+                  </div>
 
               <div className={SheetStyles.sideContent}>
                   <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_01}/>
               </div>
 
-                  <p className={SheetStyles.paragraph}>
-                    Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
-                      <span className={SheetStyles.paragraph + ' cite '}>
+                  <div className={SheetStyles.paragraph}>
+                    <p>Evocare il paesaggio ligure, che per Calvino è il paesaggio per eccellenza, assume allora una precisa finalità:</p>
+                      <p className={' cite '}>
                       "Ma tutto questo paesaggio geografico e ideale appartiene al passato: sappiamo che la Riviera in questo dopoguerra è diventata irriconoscibile per il modo caotico in cui si è riempita di caseggiati urbani fino a trasformarsi in una distesa di cemento;
                       sappiamo che le speculazioni economiche e un facile edonismo dominano i rapporti umani di una larga parte della nostra società.Ed è solo da tutti questi elementi sommati insieme che possiamo ricavare la radice lirica del libro, la prima spinta dell’ invenzione poetica.Partendo da un mondo che non esiste più, l’ Autore regredisce a un mondo mai esistito che contenga i nuclei di ciò che è stato e di ciò che avrebbe potuto essere, le allegorie del passato e del presente, le interrogazioni sulla propria esperienza."
-                      </span>
+                      </p>
                       <p className={SheetStyles.paragraph}>
                       Un discorso diverso, ma non così distante, può essere fatto per le Città invisibili,
                       l’opera che raccoglie il maggior numero di ambientazioni fantastiche.
                       Le varie Eufemia, Zora, Despina sembrano così rarefatte che è facile credere di trovarsi infine fuori
                       dal tempo e dallo spazio. Invece, anche in questo caso, Calvino non rinuncia a una cornice storica,
-                      poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.
-                      </p>
+                      poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.</p>
+                  </div>
 
-                      <div className={SheetStyles.sideContent}>
-                        <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_02}/>
+                  <div className={SheetStyles.sideContent} style={{position:'sticky'}}>
+                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height))'}} src={zoom_02}/>
                       </div>
-
                   </div>
 
             <div className={SheetStyles.gridRow}>
