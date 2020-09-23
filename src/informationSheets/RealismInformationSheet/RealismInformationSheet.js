@@ -88,7 +88,7 @@ class RealismInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-          <p className={SheetStyles.paragraph}>
+          <p className={SheetStyles.paragraph + ' references'}>
             <ol className={SheetStyles.references}>
               <li className={SheetStyles.referenceItem}>
                 Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.

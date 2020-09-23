@@ -15,6 +15,7 @@ import ProcessCombiningMainHelp from '../../helpPages/plot/ProcessCombiningMainH
 import ProcessDoubtingMainHelp from '../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
 
 import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
+import RealismHelp from '../../helpPages/transform/RealismHelp/RealismHelp';
 
 
 import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
@@ -40,6 +41,7 @@ export default class HelpSidePanel extends React.Component
       case GlobalData.helpPages.processDoubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
+        case GlobalData.helpPages.realism.main  : helpPage = <RealismHelp />; break;
 
       case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
       case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;

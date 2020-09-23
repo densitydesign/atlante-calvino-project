@@ -8254,6 +8254,10 @@ const GlobalData = {
       main : "plotMain"
     },
 
+    realism : {
+      main : "realismMain"
+    },
+
     compass : {
       time : "compassTime",
       bones : "compassBones"
