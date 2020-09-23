@@ -6,49 +6,6 @@
   </defs>
   <g id="info_03" clip-path="url(#clip-info_03)">
     <g id="Group_4798" data-name="Group 4798" transform="translate(-743 -1334)">
-      <g id="LEGENDA-LAT" transform="translate(8 -48)">
-        <text id="LEGENDA" transform="translate(735 1504)" font-size="16" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700"><tspan x="0" y="14">LEGENDA</tspan></text>
-        <g id="Group_564" data-name="Group 564">
-          <g id="Group_525" data-name="Group 525" transform="translate(734.765 1535.653)">
-            <g id="notes" transform="translate(0.235 -0.653)">
-              <text id="TIPO_DI_SEQUENZA" data-name="TIPO DI SEQUENZA" transform="translate(0 11)" font-size="11" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TIPO DI SEQUENZA</tspan></text>
-            </g>
-          </g>
-          <g id="Group_561" data-name="Group 561" transform="translate(0 17)">
-            <g id="Group_559" data-name="Group 559" transform="translate(735 1535)">
-              <g id="Group_516" data-name="Group 516" transform="translate(0 132.528)">
-                <circle id="Ellipse_284" data-name="Ellipse 284" cx="12.545" cy="12.545" r="12.545" fill="#fff" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.309"/>
-                <circle id="Ellipse_285" data-name="Ellipse 285" cx="5.056" cy="5.056" r="5.056" transform="translate(7.488 7.488)" fill="#5151fc"/>
-              </g>
-              <text id="motivo_in_evidenza" data-name="motivo in evidenza" transform="translate(30.925 146.286)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">motivo in evidenza</tspan></text>
-            </g>
-            <text id="TIPO_DI_MARCATORI" data-name="TIPO DI MARCATORI" transform="translate(735 1650.335)" font-size="11" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TIPO DI MARCATORI</tspan></text>
-            <g id="Group_560" data-name="Group 560" transform="translate(734.765 1535.653)">
-              <g id="pallini" transform="translate(6.599 164.938)">
-                <g id="Group_515" data-name="Group 515">
-                  <circle id="Ellipse_282" data-name="Ellipse 282" cx="6.26" cy="6.26" r="6.26" fill="#707070" stroke="#7f7f7f" stroke-miterlimit="10" stroke-width="1.625"/>
-                  <circle id="Ellipse_283" data-name="Ellipse 283" cx="3.65" cy="3.65" r="3.65" transform="translate(2.61 2.61)" stroke="#7f7f7f" stroke-miterlimit="10" stroke-width="1.625"/>
-                </g>
-              </g>
-              <text id="motivo_inizio_fine_dell_incipit" data-name="motivo inizio/fine 
-dell’incipit" transform="translate(31.16 172.016)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">motivo inizio/fine </tspan><tspan x="0" y="12">dell’incipit</tspan></text>
-            </g>
-          </g>
-          <g id="Group_562" data-name="Group 562" transform="translate(735 1549)">
-            <text id="numero_incipit" data-name="numero incipit" transform="translate(31.245 61.105)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">numero incipit</tspan></text>
-            <text id="numero_segmento_di_storia_del_Lettore" data-name="numero segmento di 
-storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">numero segmento di </tspan><tspan x="0" y="13">storia del Lettore</tspan></text>
-            <text id="iX" transform="translate(0.352 60.993)" font-size="11" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">i</tspan><tspan y="0" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">X</tspan></text>
-            <text id="tX" transform="translate(0.352 78.891)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">t</tspan><tspan y="0" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">X</tspan></text>
-          </g>
-          <g id="Group_563" data-name="Group 563" transform="translate(735 1539)">
-            <text id="racconto_incastonato" data-name="racconto incastonato" transform="translate(31.245 31.463)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">racconto incastonato</tspan></text>
-            <text id="racconto_incastonato-2" data-name="racconto incastonato" transform="translate(31.245 50.463)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">racconto incastonato</tspan></text>
-            <rect id="Rectangle_212" data-name="Rectangle 212" width="25.129" height="10.402" transform="translate(0.797 22.726)" fill="#ccc" stroke="#000" stroke-width="0.5" opacity="0.6"/>
-            <rect id="Rectangle_320" data-name="Rectangle 320" width="25.129" height="10.402" transform="translate(0.797 41.726)" fill="none" stroke="#000" stroke-width="0.5" opacity="0.6"/>
-          </g>
-        </g>
-      </g>
       <g id="Group_578" data-name="Group 578" transform="translate(21 19)">
         <text id="inizio" transform="translate(722 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
         <text id="fine" transform="translate(953 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-15.405" y="0">fine</tspan></text>
@@ -95,6 +52,48 @@ storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-fam
         <g id="Rectangle_333" data-name="Rectangle 333" transform="translate(797 2264)" fill="none" stroke="#5151fc" stroke-width="0.5">
           <rect width="12" height="81" stroke="none"/>
           <rect x="0.25" y="0.25" width="11.5" height="80.5" fill="none"/>
+        </g>
+      </g>
+      <g id="LEGENDA-LAT" transform="translate(8 -48)">
+        <g id="Group_564" data-name="Group 564">
+          <g id="Group_525" data-name="Group 525" transform="translate(734.765 1535.653)">
+            <g id="notes" transform="translate(0.235 -0.653)">
+              <text id="Tipo_di_sequenza" data-name="Tipo di sequenza" transform="translate(0 11)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Tipo di sequenza</tspan></text>
+            </g>
+          </g>
+          <g id="Group_561" data-name="Group 561" transform="translate(0 17)">
+            <g id="Group_559" data-name="Group 559" transform="translate(735 1535)">
+              <g id="Group_516" data-name="Group 516" transform="translate(0 132.528)">
+                <circle id="Ellipse_284" data-name="Ellipse 284" cx="12.545" cy="12.545" r="12.545" fill="#fff" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.309"/>
+                <circle id="Ellipse_285" data-name="Ellipse 285" cx="5.056" cy="5.056" r="5.056" transform="translate(7.488 7.488)" fill="#5151fc"/>
+              </g>
+              <text id="motivo_in_evidenza" data-name="motivo in evidenza" transform="translate(30.925 146.286)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">motivo in evidenza</tspan></text>
+            </g>
+            <text id="TIPO_DI_MARCATORI" data-name="TIPO DI MARCATORI" transform="translate(735 1650.335)" font-size="11" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TIPO DI MARCATORI</tspan></text>
+            <g id="Group_560" data-name="Group 560" transform="translate(734.765 1535.653)">
+              <g id="pallini" transform="translate(6.599 164.938)">
+                <g id="Group_515" data-name="Group 515">
+                  <circle id="Ellipse_282" data-name="Ellipse 282" cx="6.26" cy="6.26" r="6.26" fill="#707070" stroke="#7f7f7f" stroke-miterlimit="10" stroke-width="1.625"/>
+                  <circle id="Ellipse_283" data-name="Ellipse 283" cx="3.65" cy="3.65" r="3.65" transform="translate(2.61 2.61)" stroke="#7f7f7f" stroke-miterlimit="10" stroke-width="1.625"/>
+                </g>
+              </g>
+              <text id="motivo_inizio_fine_dell_incipit" data-name="motivo inizio/fine 
+dell’incipit" transform="translate(31.16 172.016)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">motivo inizio/fine </tspan><tspan x="0" y="12">dell’incipit</tspan></text>
+            </g>
+          </g>
+          <g id="Group_562" data-name="Group 562" transform="translate(735 1549)">
+            <text id="numero_incipit" data-name="numero incipit" transform="translate(31.245 61.105)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">numero incipit</tspan></text>
+            <text id="numero_segmento_di_storia_del_Lettore" data-name="numero segmento di 
+storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">numero segmento di </tspan><tspan x="0" y="13">storia del Lettore</tspan></text>
+            <text id="iX" transform="translate(0.352 60.993)" font-size="11" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">i</tspan><tspan y="0" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">X</tspan></text>
+            <text id="tX" transform="translate(0.352 78.891)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">t</tspan><tspan y="0" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">X</tspan></text>
+          </g>
+          <g id="Group_563" data-name="Group 563" transform="translate(735 1539)">
+            <text id="Incipit" transform="translate(31.245 31.463)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Incipit</tspan></text>
+            <text id="Storia_del_lettore" data-name="Storia del lettore" transform="translate(31.245 50.463)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Storia del lettore</tspan></text>
+            <rect id="Rectangle_212" data-name="Rectangle 212" width="25.129" height="10.402" rx="5" transform="translate(0.797 22.726)" fill="#ccc" opacity="0.6"/>
+            <rect id="Rectangle_320" data-name="Rectangle 320" width="25.129" height="10.402" rx="5" transform="translate(0.797 41.726)" fill="#fff" stroke="#000" stroke-width="0.5"/>
+          </g>
         </g>
       </g>
     </g>

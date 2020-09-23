@@ -5,7 +5,7 @@ import ArrowButton from '../../general/ArrowButton/ArrowButton';
 
 import SheetStyles from '../SheetStyles.module.css';
 
-import legenda from './legenda-01.svg'
+import legenda from './legend_01.svg'
 import marimekko from './marimekko.svg'
 import zoom_02 from './zoom_02.svg'
 import zoom_03 from './zoom_03.svg'

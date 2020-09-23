@@ -6,7 +6,7 @@ import ArrowButton from '../../general/ArrowButton/ArrowButton';
 import './PlotInformationSheet.css';
 import SheetStyles from '../SheetStyles.module.css';
 
-import legenda from './legenda_01.svg'
+import legenda from './legend_01.svg'
 import incastonati from './incastonati.svg'
 import zoom_01 from './zoom_01.svg'
 import zoom_02 from './zoom_02.svg'
