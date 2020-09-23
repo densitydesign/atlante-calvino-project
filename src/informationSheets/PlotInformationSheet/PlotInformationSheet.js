@@ -10,8 +10,12 @@ import legenda from './legenda_01.svg'
 import incastonati from './incastonati.svg'
 import zoom_01 from './zoom_01.svg'
 import zoom_02 from './zoom_02.svg'
+import zoom_03 from './zoom_03.svg'
+import zoom_04 from './zoom_04.svg'
 import info_01 from './info_01.svg'
 import info_02 from './info_02.svg'
+import info_03 from './info_03.svg'
+import info_04 from './info_04.svg'
 
 class PlotInformationSheet extends Component {
   render()
@@ -47,14 +51,14 @@ class PlotInformationSheet extends Component {
               Come è stato largamente studiato,[nota1?] nella tradizione letteraria occidentale l’andamento enumerativo è il procedimento retorico che si oppone alla peripezia, e che con la sua presenza «ostacola, rallenta o differisce il resoconto delle vicende» e «mette in dubbio la possibilità stessa di organizzare gerarchicamente gli eventi di una vita in forma unitaria».[nota2] Risulta quindi molto interessante che il picco più alto del grafico corrisponda al 1945, anno in cui Calvino pubblica un solo racconto: Angoscia in caserma.
               </p>
             </div>
-            <div>
-              <p className= ' captionLeft '> Incipit e trama del lettore</p>
-              <img className={SheetStyles.sideLegend} src={info_01}/>
-            </div>
         </div>
 
         <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.image100w} src={zoom_01} style = {{gridColumn:' 1 / span 17'}} />
+          <img className={SheetStyles.image100w} src={zoom_01} style = {{gridColumn:' 1 / span 10'}} />
+          <div>
+            <img className={SheetStyles.sideLegend} src={info_01}/>
+              <p className= ' captionLeft '> Schema della trama del lettore.</p>
+          </div>
         </div>
 
         <div className={SheetStyles.gridRow}>
@@ -72,6 +76,42 @@ class PlotInformationSheet extends Component {
         <div>
           <p className= ' captionLeft '> Dove siamo</p>
           <img className={SheetStyles.sideLegend} src={info_02}/>
+        </div>
+        </div>
+
+        <div className={SheetStyles.gridRow}>
+        <h2 className={SheetStyles.titleH2}>Costruzione della tensione erotica</h2>
+            <div className={SheetStyles.paragraph}>
+            <p>
+            Il paragrafo finale nella versione cartacea si svolge per più di due pagine senza punti fermi: è composto da una serie di riflessioni, che si incastrano e talvolta sovrappongono. L’argomento principale è la fede politica del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde, producendo un testo denso e ricco di informazioni, il filo del discorso si interrompe bruscamente poiché il narratore afferma di «aver capito finalmente quel che non ci voleva poi tanto a capire» (RR, II, 10).</p>
+        </div>
+          </div>
+
+        <div className={SheetStyles.gridRow}>
+        <div className={SheetStyles.paragraph} style = {{gridColumn:' 1 / span 10', float:'right'}}>
+          <img className={SheetStyles.image100w} src={zoom_03} />
+        </div>
+        <div>
+          <p className= ' captionLeft '> Dove siamo</p>
+          <img className={SheetStyles.sideLegend} src={info_03}/>
+        </div>
+        </div>
+
+        <div className={SheetStyles.gridRow}>
+        <h2 className={SheetStyles.titleH2}>Costruzione del tradimento a rimbalzo</h2>
+            <div className={SheetStyles.paragraph}>
+            <p>
+            Il paragrafo finale nella versione cartacea si svolge per più di due pagine senza punti fermi: è composto da una serie di riflessioni, che si incastrano e talvolta sovrappongono. L’argomento principale è la fede politica del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde, producendo un testo denso e ricco di informazioni, il filo del discorso si interrompe bruscamente poiché il narratore afferma di «aver capito finalmente quel che non ci voleva poi tanto a capire» (RR, II, 10).</p>
+        </div>
+          </div>
+
+        <div className={SheetStyles.gridRow}>
+        <div className={SheetStyles.paragraph} style = {{gridColumn:' 1 / span 10', float:'right'}}>
+          <img className={SheetStyles.image100w} src={zoom_04} />
+        </div>
+        <div>
+          <p className= ' captionLeft '> Dove siamo</p>
+          <img className={SheetStyles.sideLegend} src={info_04}/>
         </div>
         </div>
 

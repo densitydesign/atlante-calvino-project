@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="427" viewBox="0 0 250 427">
   <defs>
-    <clipPath id="clip-info_02">
+    <clipPath id="clip-info_03">
       <rect width="250" height="427"/>
     </clipPath>
   </defs>
-  <g id="info_02" clip-path="url(#clip-info_02)">
+  <g id="info_03" clip-path="url(#clip-info_03)">
     <g id="Group_4798" data-name="Group 4798" transform="translate(-743 -1334)">
       <g id="LEGENDA-LAT" transform="translate(8 -48)">
         <text id="LEGENDA" transform="translate(735 1504)" font-size="16" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700"><tspan x="0" y="14">LEGENDA</tspan></text>
@@ -49,8 +49,12 @@ storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-fam
           </g>
         </g>
       </g>
-      <g id="Group_576" data-name="Group 576" transform="translate(-2 -48)">
-        <g id="Group_571" data-name="Group 571" transform="translate(-6282.617 747.472)">
+      <g id="Group_578" data-name="Group 578" transform="translate(21 19)">
+        <text id="inizio" transform="translate(722 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
+        <text id="fine" transform="translate(953 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-15.405" y="0">fine</tspan></text>
+      </g>
+      <g id="Group_4801" data-name="Group 4801" transform="translate(2.998 -930)">
+        <g id="Group_574" data-name="Group 574" transform="translate(-6292.617 1629.472)">
           <g id="stripes" transform="translate(7027.619 634.244)">
             <g id="Group_573" data-name="Group 573" transform="translate(12.937 0)">
               <rect id="Rectangle_321" data-name="Rectangle 321" width="8.267" height="81.332" fill="#fff" opacity="0.2"/>
@@ -80,14 +84,18 @@ storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-fam
             </g>
           </g>
         </g>
-        <g id="Rectangle_331" data-name="Rectangle 331" transform="translate(745 1382)" fill="none" stroke="#5151fc" stroke-width="0.5">
-          <rect width="40" height="81" stroke="none"/>
-          <rect x="0.25" y="0.25" width="39.5" height="80.5" fill="none"/>
+        <g id="Rectangle_332" data-name="Rectangle 332" transform="translate(821 2264)" fill="none" stroke="#5151fc" stroke-width="0.5">
+          <rect width="12" height="81" stroke="none"/>
+          <rect x="0.25" y="0.25" width="11.5" height="80.5" fill="none"/>
         </g>
-      </g>
-      <g id="Group_578" data-name="Group 578" transform="translate(21 19)">
-        <text id="inizio" transform="translate(722 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
-        <text id="fine" transform="translate(953 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-15.405" y="0">fine</tspan></text>
+        <g id="Rectangle_334" data-name="Rectangle 334" transform="translate(851 2264)" fill="none" stroke="#5151fc" stroke-width="0.5">
+          <rect width="7" height="81" stroke="none"/>
+          <rect x="0.25" y="0.25" width="6.5" height="80.5" fill="none"/>
+        </g>
+        <g id="Rectangle_333" data-name="Rectangle 333" transform="translate(797 2264)" fill="none" stroke="#5151fc" stroke-width="0.5">
+          <rect width="12" height="81" stroke="none"/>
+          <rect x="0.25" y="0.25" width="11.5" height="80.5" fill="none"/>
+        </g>
       </g>
     </g>
   </g>

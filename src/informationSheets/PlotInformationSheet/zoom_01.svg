@@ -7,7 +7,7 @@
   <g id="zoom_01" clip-path="url(#clip-zoom_01)">
     <g id="Group_4795" data-name="Group 4795" transform="translate(0 11.371)">
       <g id="Group_540" data-name="Group 540" transform="translate(0)">
-        <g id="Layer_1" data-name="Layer 1" transform="translate(18.951 0)">
+        <g id="Layer_1" data-name="Layer 1" transform="translate(18.951 0)" opacity="0.506">
           <g id="lines" opacity="0.527">
             <path id="Path_1855" data-name="Path 1855" d="M18.652,363.953H41.109" transform="translate(-18.652 8.938)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.456"/>
             <path id="Path_1856" data-name="Path 1856" d="M39.11,384.041c1.179,0,2.359-169.02,3.538-225.7" transform="translate(-16.653 -11.151)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.456"/>
@@ -222,50 +222,51 @@
           </g>
         </g>
         <g id="notes" transform="translate(529.217 15.839)">
-          <text id="incontro_di_gruppo" data-name="incontro di gruppo" transform="translate(3.536 37.477) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro di gruppo</tspan></text>
+          <text id="incontro_di_gruppo" data-name="incontro di gruppo" transform="translate(3.536 37.477) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro di gruppo</tspan></text>
         </g>
         <g id="LINES-2" data-name="LINES" transform="translate(45.056 146.93)">
           <path id="Path_1937-2" data-name="Path 1937" d="M76.437,230.891l14.278,28.976h34.222l43.741-9.659,5.893-18.846,61.419.092,4.08,18.754,20.851,9.894h5.893l49.407-9.423,3.853-19.317,13.372,19.317h8.839l71.618,9.659,36.716-28.969,29.236-.033,34.676.033,33.543,29.2" transform="translate(-39.111 -150.992)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="0.464"/>
           <path id="Path_1938-2" data-name="Path 1938" d="M42.434,159.023l41.66.028,14.149,19.287,19.42-19.2,30.147,19.208,2.863-19.208h53.536l47.561,19.2,6.692-19.939,8.828,29.244,14.381-29.1L381.058,187.5,392.449,158.1l1.993,29.392,2.808-28.439h10.741l49.828-.1H541.3" transform="translate(-42.434 -158.104)" fill="none" stroke="#5151fc" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.464"/>
         </g>
-        <text id="incontro_femminile" data-name="incontro femminile" transform="translate(0 65.896)" fill="blue" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro femminile</tspan></text>
-        <text id="incontro_maschile" data-name="incontro maschile" transform="translate(0 76.082)" fill="blue" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro maschile</tspan></text>
-        <text id="arrivo_ritorno" data-name="arrivo/ritorno" transform="translate(0 145.897)" fill="#5151fc" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">arrivo/ritorno</tspan></text>
-        <text id="inseguimento_ricerca" data-name="inseguimento/ricerca" transform="translate(0 164.149)" fill="#5151fc" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inseguimento/ricerca</tspan></text>
-        <text id="partenza_sparizione" data-name="partenza/sparizione" transform="translate(0 173.122)" fill="#5151fc" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">partenza/sparizione</tspan></text>
-        <text id="iniziativa_piano" data-name="iniziativa/piano" transform="translate(0 192.723)" fill="#6e94f4" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">iniziativa/piano</tspan></text>
-        <text id="illusione_speranza" data-name="illusione/speranza" transform="translate(0 224.17)" fill="#00c19c" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">illusione/speranza</tspan></text>
-        <text id="angoscia_delusione" data-name="angoscia/delusione" transform="translate(0 244.262)" fill="#00c19c" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">angoscia/delusione</tspan></text>
-        <text id="smarrimento_dubbio" data-name="smarrimento/dubbio" transform="translate(0 253.059)" fill="#00c19c" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">smarrimento/dubbio</tspan></text>
-        <text id="metanarrazione" transform="translate(0 367.06)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">metanarrazione</tspan></text>
+        <text id="incontro_femminile" data-name="incontro femminile" transform="translate(0 65.896)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro femminile</tspan></text>
+        <text id="incontro_maschile" data-name="incontro maschile" transform="translate(0 76.082)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">incontro maschile</tspan></text>
+        <text id="arrivo_ritorno" data-name="arrivo/ritorno" transform="translate(0 145.897)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">arrivo/ritorno</tspan></text>
+        <text id="inseguimento_ricerca" data-name="inseguimento/ricerca" transform="translate(0 164.149)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inseguimento/ricerca</tspan></text>
+        <text id="partenza_sparizione" data-name="partenza/sparizione" transform="translate(0 173.122)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">partenza/sparizione</tspan></text>
+        <text id="iniziativa_piano" data-name="iniziativa/piano" transform="translate(0 192.723)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">iniziativa/piano</tspan></text>
+        <text id="illusione_speranza" data-name="illusione/speranza" transform="translate(0 224.17)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">illusione/speranza</tspan></text>
+        <text id="angoscia_delusione" data-name="angoscia/delusione" transform="translate(0 244.262)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">angoscia/delusione</tspan></text>
+        <text id="smarrimento_dubbio" data-name="smarrimento/dubbio" transform="translate(0 253.059)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">smarrimento/dubbio</tspan></text>
+        <text id="metanarrazione" transform="translate(0 367.06)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">metanarrazione</tspan></text>
       </g>
-      <text id="Ludmilla" transform="translate(73.514 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
-      <text id="Irnerio" transform="translate(123.512 89.146) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-17.402" y="0">Irnerio</tspan></text>
-      <text id="Uzzi-Tuzzi" transform="translate(138.981 89.471) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-26.142" y="0">Uzzi-Tuzzi</tspan></text>
-      <text id="Galligani" transform="translate(187.189 88.917) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-22.57" y="0">Galligani</tspan></text>
-      <text id="Cavedagna" transform="translate(229.103 90.063) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-28.354" y="0">Cavedagna</tspan></text>
-      <text id="Irnerio-2" data-name="Irnerio" transform="translate(329.395 89.146) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-17.402" y="0">Irnerio</tspan></text>
-      <text id="alto_ufficiale" data-name="alto ufficiale" transform="translate(402.207 89.948) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-30.973" y="0">alto ufficiale</tspan></text>
-      <text id="Arkadian_Porphyritch" data-name="ArkadianPorphyritch" transform="translate(459.913 89.987) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-23.145" y="0">Arkadian</tspan><tspan x="-30.053" y="7">Porphyritch</tspan></text>
-      <text id="Anatoly_Anatolin" data-name="AnatolyAnatolin" transform="translate(515.998 88.955) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-19.679" y="0">Anatoly</tspan><tspan x="-21.53" y="7">Anatolin</tspan></text>
-      <text id="Ludmilla-2" data-name="Ludmilla" transform="translate(161.785 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
-      <text id="Ludmilla-3" data-name="Ludmilla" transform="translate(206.612 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
-      <text id="Ludmilla-4" data-name="Ludmilla" transform="translate(304.5 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
-      <text id="Ludmilla-5" data-name="Ludmilla" transform="translate(352.987 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
-      <text id="Lotaria" transform="translate(440.886 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
-      <text id="Lotaria-2" data-name="Lotaria" transform="translate(407.946 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
-      <text id="Lotaria-3" data-name="Lotaria" transform="translate(183.771 61.648) rotate(-45)" font-size="6" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
+      <text id="Ludmilla" transform="translate(73.514 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
+      <text id="Irnerio" transform="translate(123.512 89.146) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-20.303" y="0">Irnerio</tspan></text>
+      <text id="Uzzi-Tuzzi" transform="translate(138.981 89.471) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-30.499" y="0">Uzzi-Tuzzi</tspan></text>
+      <text id="Galligani" transform="translate(187.189 88.917) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-26.332" y="0">Galligani</tspan></text>
+      <text id="Cavedagna" transform="translate(229.103 90.063) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-33.079" y="0">Cavedagna</tspan></text>
+      <text id="Irnerio-2" data-name="Irnerio" transform="translate(329.395 89.146) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-20.303" y="0">Irnerio</tspan></text>
+      <text id="alto_ufficiale" data-name="alto ufficiale" transform="translate(402.207 89.948) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-36.135" y="0">alto ufficiale</tspan></text>
+      <text id="Arkadian_Porphyritch" data-name="ArkadianPorphyritch" transform="translate(459.913 89.987) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-27.002" y="0">Arkadian</tspan><tspan x="-35.062" y="7">Porphyritch</tspan></text>
+      <text id="Anatoly_Anatolin" data-name="AnatolyAnatolin" transform="translate(515.998 88.955) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-22.958" y="0">Anatoly</tspan><tspan x="-25.119" y="7">Anatolin</tspan></text>
+      <text id="Ludmilla-2" data-name="Ludmilla" transform="translate(161.785 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
+      <text id="Ludmilla-3" data-name="Ludmilla" transform="translate(206.612 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
+      <text id="Ludmilla-4" data-name="Ludmilla" transform="translate(304.5 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
+      <text id="Ludmilla-5" data-name="Ludmilla" transform="translate(352.987 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ludmilla</tspan></text>
+      <text id="Lotaria" transform="translate(440.886 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
+      <text id="Lotaria-2" data-name="Lotaria" transform="translate(407.946 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
+      <text id="Lotaria-3" data-name="Lotaria" transform="translate(183.771 61.648) rotate(-45)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Lotaria</tspan></text>
     </g>
-    <text id="_8_2" data-name="8/2" transform="translate(569 81)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">8/2</tspan></text>
-    <text id="_8_7" data-name="8/7" transform="translate(569 92)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">8/7</tspan></text>
+    <text id="_8_2" data-name="8/2" transform="translate(569 81)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">8/2</tspan></text>
+    <text id="_8_7" data-name="8/7" transform="translate(569 92)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">8/7</tspan></text>
     <text id="protagonista_in_movimento" data-name="protagonista 
-in movimento" transform="translate(548.594 180.32)" stroke="#fffffa" stroke-linejoin="bevel" stroke-width="0.2" font-size="7" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0">protagonista </tspan><tspan x="0" y="7">in movimento</tspan></text>
+in movimento" transform="translate(519 139.32)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">protagonista </tspan><tspan x="0" y="10">in movimento</tspan></text>
     <text id="prevalenza_di_smarrimento_e_angoscia" data-name="prevalenza 
 di smarrimento 
-e angoscia" transform="translate(548.594 244.981)" stroke="#fffffa" stroke-linejoin="bevel" stroke-width="0.2" font-size="7" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0">prevalenza </tspan><tspan x="0" y="7">di smarrimento </tspan><tspan x="0" y="14">e angoscia</tspan></text>
+e angoscia" transform="translate(519 205.981)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">prevalenza </tspan><tspan x="0" y="10">di smarrimento </tspan><tspan x="0" y="20">e angoscia</tspan></text>
     <text id="molta_metanarrazione_tra_cui_segmento_di_inizio_e_di_fine" data-name="molta 
 metanarrazione 
 tra cui segmento
-di inizio e di fine" transform="translate(548.594 354.276)" stroke="#fffffa" stroke-linejoin="bevel" stroke-width="0.2" font-size="7" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0">molta </tspan><tspan x="0" y="7">metanarrazione </tspan><tspan x="0" y="14">tra cui segmento</tspan><tspan x="0" y="21">di inizio e di fine</tspan></text>
+di inizio e di fine" transform="translate(519 285.276)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">molta </tspan><tspan x="0" y="10">metanarrazione </tspan><tspan x="0" y="20">tra cui segmento</tspan><tspan x="0" y="30">di inizio e di fine</tspan></text>
+    <text id="Trama_totale" data-name="Trama totale" transform="translate(-1 9)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Trama totale</tspan></text>
   </g>
 </svg>
