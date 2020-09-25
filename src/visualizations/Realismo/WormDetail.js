@@ -65,7 +65,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
 
   const labalesData = useMemo(() => {
     let dataForLabels
-    const dataWormsLabeled = dataWorms.filter(d => d.ghost !== true)
+    const dataWormsLabeled = dataWorms.filter((d) => d.ghost !== true)
     if (dataWormsLabeled.length < 13) {
       dataForLabels = dataWormsLabeled.map((item, i) => {
         const x = CHART_PADDING_X + CHART_MARGIN_LEFT + i * 60
@@ -305,29 +305,30 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               {datum.dataLabel.map((item) => (
                 <g key={item.occurrence_location}>
                   <path d={item.linePath} fill="none" stroke="#858585" />
-                  <text
-                    x={item.x}
-                    y={item.y}
-                    textAnchor="end"
+                  <g
                     style={{
                       transformOrigin: `${item.x}px ${item.y}px`,
                       transform: `rotate(-45deg)`,
                     }}
                   >
-                    {item.occurrence}
-                  </text>
+                    <text x={item.x} y={item.y} textAnchor="end">
+                      {item.occurrence}
+                    </text>
+                  </g>
                 </g>
               ))}
-              {datum.dataLevelWorms.filter(d => d.ghost !== true).map((item) => (
-                <g key={item.occurrence_location}>
-                  <circle
-                    fill="black"
-                    cx={item.xLocation}
-                    cy={yScale(item.level)}
-                    r={LOCATION_RADIUS}
-                  />
-                </g>
-              ))}
+              {datum.dataLevelWorms
+                .filter((d) => d.ghost !== true)
+                .map((item) => (
+                  <g key={item.occurrence_location}>
+                    <circle
+                      fill="black"
+                      cx={item.xLocation}
+                      cy={yScale(item.level)}
+                      r={LOCATION_RADIUS}
+                    />
+                  </g>
+                ))}
             </g>
           ))}
           {ghostWorm && (
