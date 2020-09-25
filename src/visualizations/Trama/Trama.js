@@ -89,7 +89,7 @@ class Trama extends Component {
       helpSidePanelOpen
     } = this.state;
 
-    const helpPage = GlobalData.helpPages.plot.main;
+    const helpPage = GlobalData.helpPages.combine.main;
 
     return (
       <div className="trasformare main">

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 695.9 46.9" style="enable-background:new 0 0 695.9 46.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HKGrotesk-Regular';}
+	.st1{font-size:9px;}
+	.st2{fill:#5151FC;}
+	.st3{fill:#0AFFB7;}
+	.st4{fill:#FFA501;}
+	.st5{font-family:'HKGrotesk-Italic';}
+	.st6{font-size:10px;}
+</style>
+<g id="Group_535" transform="translate(2 18)">
+	<g id="Group_306">
+		<g id="Group_312" transform="translate(0 -1)">
+			<text transform="matrix(1 0 0 1 19.1899 18.6761)" class="st0 st1">Esteriore</text>
+			<path id="Path_47" class="st2" d="M3.7,10.7h8c2.5,0,4.5,2,4.5,4.5s-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5S1.2,10.7,3.7,10.7z"
+				/>
+		</g>
+	</g>
+	<g id="Group_307" transform="translate(74)">
+		<text transform="matrix(1 0 0 1 19.19 17.6761)" class="st0 st1">Interiore</text>
+		<path id="Path_46" class="st3" d="M3.7,10.7h8c2.5,0,4.5,2,4.5,4.5s-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5S1.2,10.7,3.7,10.7z"/>
+	</g>
+	<g id="Group_543" transform="translate(146 0)">
+		<text transform="matrix(1 0 0 1 19.6729 17.6761)" class="st0 st1">Formale</text>
+		<path id="Rectangle_181" class="st4" d="M3.7,10.7h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5l0,0
+			C-0.8,12.7,1.2,10.7,3.7,10.7z"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 0.1899 18.6761)" class="st5 st6">Ambito</text>
+</svg>

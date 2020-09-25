@@ -1,13 +1,13 @@
 
 .root-node {
-  fill: turquoise !important;
+  fill: var(--cool-bg) !important;
 }
 
 .splash-screen-container {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--dark-blue);
+  background-color: var(--text-color);
 }
 
 .splash-screen-svg {
@@ -28,7 +28,7 @@
   position: absolute;
   text-align: center;
   animation: 3s ease-in 0s 1 splash-caption-animation;
-  color: turquoise;
+  color: var(--cool-bg);
 }
 
 .splash-screen-description {
@@ -45,44 +45,157 @@
   top: 90%;
   left: 50%;
   position: absolute;
-  color: turquoise;
+  color: var(--cool-bg);
   background-color: transparent;
   opacity: 1;
   animation: 3s infinite pop;
+  }
+
+svg{
+  align-content: center;
+}
+/* CALOGO */
+
+#interactive-logo {
+    /*background-color: #fafafa;*/
+}
+
+#interactive-logo>.row {
+    height: 100vh;
+}
+
+#logo-box {
+    /*background-color: rgba(255,0,0,.2);*/
+    height: 60%;
+}
+
+#logo-box svg {
+    max-height: 90%
+}
+
+#logo-box h2 {
+    max-height: 10%
+}
+
+#calogo {
+    width: 100%;
+    height: auto;
+}
+
+#calogo polygon {
+    display: none;
+    fill: var(--dark-blue);
+}
+
+#calogo .node {
+    fill: var(--dark-blue);
+    transition: fill .3s linear;
+    /*mix-blend-mode: multiply;*/
+}
+
+#calogo .node.is-inside {
+    fill: var(--dark-blue) !important;
+    /*fill: DODGERBLUE;*/
+}
+
+#calogo .root-node,
+#calogo .root-node.is-inside {
+    fill: darkslategrey;
+
+}
+
+#scroll-down {
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    bottom: 0rem;
+    left: calc(50% - 2rem);
+    height: 3rem;
+    width: 4rem;
+    opacity: 1;
+    transition: padding 0.5s ease, opacity .5s ease;
+}
+
+body.navbar-displayed #scroll-down {
+    /*opacity: 0;*/
+}
+
+#scroll-down:hover {
+    padding: 0.75rem 0 0 0;
+}
+
+/* @media (min-width: 576px) {
+    html {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 1.75rem;
+        color: black;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size: 0.75rem;
+    }
+    body>.navbar {
+        padding: .5rem 1rem;
+    }
+    body>.navbar p {
+        font-size: 1rem;
+    }
+    #logo-unige {
+        width: 63%;
+    }
+
+    #logo-polimi {
+        width: 63%;
+    }
+
+    #logo-dd {
+        width: 46%;
+    }
+} */
+
+.splash-screen-container {
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  background-color: var(--dark-blue);
 }
 
 
 @keyframes splash-caption-animation {
   0% {
-    color: var(--dark-blue);
+    color: var(--cool-bg);
   }
 
   70% {
-    color: turquoise;
-  }  
+    color: var(--cool-bg);
+  }
 
   100% {
-    color: turquoise;
+    color: var(--cool-bg);
   }
 }
 
 @keyframes splash-description-animation {
   0% {
-    color: var(--dark-blue);
+    color: var(--text-color);
   }
 
   30% {
-    color: var(--dark-blue)
+    color: var(--text-color)
   }
 
   100% {
-    color: var(--bg);
+    color: var(--cool-bg);
   }
 }
 
 @keyframes splash-screen-icon-animation {
   0% {
-    color: var(--bg);
+    color: var(--cool-bg);
   }
 
   100% {
@@ -92,20 +205,20 @@
 
 @keyframes pop {
   0% {
-    color: var(--dark-blue);
+    color: var(--text-color);
   }
 
   50% {
-    color: turquoise;
+    color: var(--cool-bg);
   }
 
   100% {
-    color: var(--dark-blue);
+    color: var(--text-color);
   }
 }
 
 .pop {
-  background-color: #FFA500;
+  background-color: var(--cool-bg);
   opacity: 1;
   animation: pop 3s infinite;
 }

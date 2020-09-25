@@ -26,7 +26,7 @@
   grid-template-columns: 1fr;
   height: calc(2 * (100vh - var(--navigation-height)));
   position: relative;
-  background-color:yellow;
+  background-color: #FFA500;
 }
 
 .atlas-intro-sidebar3 {
@@ -68,13 +68,9 @@
   padding: 100px;
 }
 
-h2 {
-margin-bottom:0px !important;
-}
 
 .atlas-intro-sidebar-monoblock-2 {
   background: #FFA500;
-/* background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255,193,7,1) 100%); */
   position:relative;
   width: 100%;
   padding-left:100px;
@@ -111,9 +107,8 @@ image .atlas-intro-cell2 {
   height:20%;
 }
 
-h5{
+.atlas-intro h5{
   opacity:1;
-  color:white  !important;
 }
 
 .atlas-intro-cell3 {
@@ -126,9 +121,6 @@ h5{
 
 h2{
   margin-bottom:2em;
-}
-h3{
-  color:white !important;
 }
 
 

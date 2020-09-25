@@ -11,13 +11,15 @@ import TerritoryShapeHelp from '../../helpPages/territory/TerritoryShapeHelp/Ter
 import TerritorySpaceHelp from '../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp';
 
 import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/TransformMainHelp';
+import ProcessCombiningMainHelp from '../../helpPages/plot/ProcessCombiningMainHelp/ProcessCombiningMainHelp';
+import ProcessDoubtingMainHelp from '../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
 
 import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
+import RealismHelp from '../../helpPages/transform/RealismHelp/RealismHelp';
+
 
 import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
 import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
-
-import ProcessDoubtingMainHelp from '../../helpPages/processDoubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
 
 import './HelpSidePanel.css';
 
@@ -35,13 +37,14 @@ export default class HelpSidePanel extends React.Component
       case GlobalData.helpPages.territory.shape : helpPage = <TerritoryShapeHelp />; break;
 
       case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
+      case GlobalData.helpPages.combine.main  : helpPage = <ProcessCombiningMainHelp />; break;
+      case GlobalData.helpPages.processDoubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
 
       case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
+        case GlobalData.helpPages.realism.main  : helpPage = <RealismHelp />; break;
 
       case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
       case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;
-
-      case GlobalData.helpPages.processDoubting.main : helpPage = <ProcessDoubtingMainHelp />; break;
 
       default : break;
     }
@@ -49,8 +52,12 @@ export default class HelpSidePanel extends React.Component
     return (
       <>
       <div className={"help-side-panel " + (this.props.open ? "help-side-panel-open" : "help-side-panel-closed")}>
-        <div> <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
-                      { helpPage }</div>
+          <div>
+              <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
+                  {
+                    this.props.children?this.props.children:helpPage
+                  }
+          </div>
       </div>
       </>
     );

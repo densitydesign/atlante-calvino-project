@@ -1,9 +1,19 @@
-[
-{"categoria":"esteriore","valore":"esteriore","gruppo":"Ambientazione","colore":"#47C983"}
-,
-{"categoria":"interiore","valore":"interiore","gruppo":"Ambientazione","colore":"#0351E5"}
-,
-{"categoria":"esteriore/interiore","valore":"misto","gruppo":"Ambientazione","colore":"#9606FF"}
-,
-{"categoria":"forma","valore":"forma","gruppo":"Struttura","colore":"#FFCB3E"}
+[{
+    "categoria": "esteriore",
+    "valore": "esteriore",
+    "gruppo": "Ambientazione",
+    "colore": "#5151fc"
+  },
+  {
+    "categoria": "interiore",
+    "valore": "interiore",
+    "gruppo": "Ambientazione",
+    "colore": "#00FFB6"
+  },
+  {
+    "categoria": "forma",
+    "valore": "formale",
+    "gruppo": "Struttura",
+    "colore": "#FFA500"
+  }
 ]

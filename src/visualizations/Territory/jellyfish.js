@@ -155,7 +155,7 @@ function map_color(text, colors)
       case "no_ambientazione"       : return colors.no_ambientazione_bright;
 
       default : return undefined;
-  }  
+  }
 }
 
 function prepare_for_graphics(jellyfish, colors)
@@ -469,7 +469,7 @@ function draw_jellyfish_node(graphicsContainer, d, status, center, text_id, json
   {
     let line_angle = d.angle;
 
-    let captionLenSaturationValue = 35;
+    let captionLenSaturationValue = 100;
 
     let diagonal = d.bbox ? Math.sqrt(d.bbox.width * d.bbox.width + d.bbox.height * d.bbox.height) : 0;
     let diagonalScaleFactor = 1.4;
@@ -564,16 +564,16 @@ export function prepare_jellyfish_data_2(jellyfish, center, radiusScaleFactor)
     const getNodeAngle = id => jellyfish.children.find(d => d.node_id === id).angle;
 
     adjust_angle_ranges(jellyfish, [
-      { 
-        start : { id : "V008@greto",  angle : getNodeAngle("V008@accampamento") * 0.94 }, 
+      {
+        start : { id : "V008@greto",  angle : getNodeAngle("V008@accampamento") * 0.94 },
         end   : { id : "V008@radura", angle : getNodeAngle("V008@radura") * 0.94 },
       },
       {
-        start : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") }, 
+        start : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") },
         end   : { id : "V008@Curvaldia", angle : getNodeAngle("V008@Curvaldia") },
       },
       {
-        start : { id : "V008@Marocco", angle : getNodeAngle("V008@Marocco") }, 
+        start : { id : "V008@Marocco", angle : getNodeAngle("V008@Marocco") },
         end   : { id : "V008@Francia", angle : getNodeAngle("V008@sentieri") },
       }
     ]);
@@ -821,12 +821,12 @@ function adjust_angle_ranges(jellyfish, baseNodeRanges)
       case rangeInfo.start_i === i : delta_angle = rangeInfo.delta_start_angle; break;
       case rangeInfo.end_i   === i : delta_angle = rangeInfo.delta_end_angle;   break;
 
-      default : 
+      default :
 
-        delta_angle = angleDifference(rangeInfo.start_angle_2, subJellyfish.angle) + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1); 
+        delta_angle = angleDifference(rangeInfo.start_angle_2, subJellyfish.angle) + rangeInfo.delta_angle_2 / rangeInfo.delta_angle_1 * angleDifference(subJellyfish.angle, rangeInfo.start_angle_1);
         break;
     }
-      
+
     visit(subJellyfish, {}, d => d.angle = normalizeAngle(d.angle + delta_angle));
   });
 }

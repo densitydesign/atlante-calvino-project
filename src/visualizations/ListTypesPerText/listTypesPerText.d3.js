@@ -11,16 +11,15 @@ class VClass {
     const typeLabels = ['Frasi', 'Misto', 'Parole', 'Sintagmi'];
     const values = ['n_lists_f', 'n_lists_m', 'n_lists_p', 'n_lists_s'];
 
+        var margin = ({
+          top: 50,
+          right: 30,
+          bottom: 30,
+          left: 40
+        });
 
-    var margin = ({
-      top: 50,
-      right: 30,
-      bottom: 30,
-      left: 40
-    });
-
-    var width = document.body.clientWidth - margin.left - margin.right;
-    var height = 300 - margin.top - margin.bottom;
+        var width = d3.select("#mainviz").node().getBoundingClientRect().width;
+        var height = 300 - margin.top - margin.bottom;
 
 
     var x, y;
@@ -186,9 +185,9 @@ console.log("data", data);
       .attr("x", 55)
       .attr("y", 70);
 
-    
-    
-    
+
+
+
     const s_text = append_tooltip_entry(tooltip, 0, color("Sintagmi"));
     const p_text = append_tooltip_entry(tooltip, 1, color("Parole"));
     const m_text = append_tooltip_entry(tooltip, 2, color("Misto"));
@@ -203,7 +202,7 @@ console.log("data", data);
       const year = Math.floor(x.invert(d3.mouse(this)[0])).toString();
 
       yearLabel.text(year);
-    
+
       const item = data.find(d => d.date === year);
 
       if(item)
@@ -226,7 +225,7 @@ console.log("data", data);
     function hideTooltip()
     {
       tooltipLine.attr("display", "none");
-      tooltip.attr("display", "none");      
+      tooltip.attr("display", "none");
     }
   };
 

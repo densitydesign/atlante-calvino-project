@@ -1,57 +1,71 @@
-[
-{"valore":"interazione","gruppo":"Contenuto Esteriore","colore":"#0EE2BF"}
-,
-{"valore":"angoscia/delusione","gruppo":"Contenuto Interiore","colore":"#053BC4"}
-,
-{"valore":"spostamento","gruppo":"Contenuto Esteriore","colore":"#BBF9F9"}
-,
-{"valore":"smarrimento/dubbio","gruppo":"Contenuto Interiore","colore":"#1C4EC9"}
-,
-{"valore":"intenzione","gruppo":"Contenuto Esteriore","colore":"#00FFB6"}
-,
-{"valore":"visione","gruppo":"Contenuto Interiore","colore":"#172B5E"}
-,
-{"valore":"illusione/speranza","gruppo":"Contenuto Interiore","colore":"#0606F7"}
-,
-{"valore":"pausa/sospensione","gruppo":"Contenuto Interiore","colore":"#6E94F4"}
-,
-{"valore":"morte","gruppo":"Contenuto Esteriore/Interiore","colore":"#8131F4"}
-,
-{"valore":"racconto incastonato","gruppo":"Forma","colore":"#EFA625"}
-,
-{"valore":"rivelazione","gruppo":"Contenuto Esteriore/Interiore","colore":"#C890F4"}
-,
-{"valore":"riflessione","gruppo":"Contenuto Interiore","colore":"#A0BAF9"}
-,
-{"valore":"attesa","gruppo":"Contenuto Interiore","colore":"#0653ED"}
-,
-{"valore":"situazione","gruppo":"Contenuto Esteriore","colore":"#06F9FF"}
-,
-{"valore":"innamoramento","gruppo":"Contenuto Interiore","colore":"#1C1CCC"}
-,
-{"valore":"struttura","gruppo":"Forma","colore":"#ED6826"}
-,
-{"valore":"terna","gruppo":"Forma","colore":"#FF3366"}
-,
-{"valore":"mistero/assurdità","gruppo":"Contenuto Interiore","colore":"#5A5AF9"}
-,
-{"valore":"metanarrazione","gruppo":"Forma","colore":"#FFF800"}
-,
-{"valore":"digressione","gruppo":"Contenuto/Forma","colore":"#D9FD12"}
-,
-{"valore":"#N/A","gruppo":"","colore":""}
-,
-{"valore":"cornice","gruppo":"Forma","colore":"#F2CA22"}
-,
-{"valore":"ipotesi","gruppo":"Contenuto Interiore","colore":"#DAE6FD"}
-,
-{"valore":"x","gruppo":"","colore":""}
-,
-{"valore":"","gruppo":"","colore":""}
-,
-{"valore":"","gruppo":"","colore":""}
-,
-{"valore":"","gruppo":"","colore":""}
-,
-{"valore":"","gruppo":"   ","colore":""}
+[{
+    "valore": "eventi liminali",
+    "gruppo": "Esteriore",
+    "colore": "#8131F4"
+  },
+  {
+    "valore": "interazione",
+    "gruppo": "Esteriore",
+    "colore": "#0000ff"
+  },
+  {
+    "valore": "stato euforico",
+    "gruppo": "Interiore",
+    "colore": "#009959"
+  },
+  {
+    "valore": "stato disforico",
+    "gruppo": "Interiore",
+    "colore": "#00c19c"
+  },
+  {
+    "valore": "spostamento",
+    "gruppo": "Esteriore",
+    "colore": "#5151fc"
+  },
+  {
+    "valore": "intenzione",
+    "gruppo": "Esteriore",
+    "colore": "#6E94F4"
+  },
+  {
+    "valore": "racconto incastonato",
+    "gruppo": "Forma",
+    "colore": "#FFF800"
+  },
+  {
+    "valore": "stato riflessivo",
+    "gruppo": "Interiore",
+    "colore": "#8ae297"
+  },
+  {
+    "valore": "stato sospeso",
+    "gruppo": "Interiore",
+    "colore": "#00FFB6"
+  },
+  {
+    "valore": "metanarrazione",
+    "gruppo": "Forma",
+    "colore": "#ffd93b"
+  },
+  {
+    "valore": "cornice",
+    "gruppo": "Forma",
+    "colore": "#FFA500"
+  },
+  {
+    "valore": "struttura",
+    "gruppo": "Forma",
+    "colore": "#ff6c39"
+  },
+  {
+    "valore": "situazione",
+    "gruppo": "Esteriore",
+    "colore": "#00ffff"
+  },
+  {
+    "valore": "terna",
+    "gruppo": "Forma",
+    "colore": "#ff3366"
+  }
 ]

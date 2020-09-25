@@ -1,0 +1,142 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  font-size: var(--text-size);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+#mainviz {
+  grid-column: 1 / span 24;
+  display: grid;
+}
+
+.gridRow {
+  /* background-color: rgb(234, 255, 248); */
+  grid-column: 2 / span 22;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 10px;
+  margin-bottom: 1.7857142857rem !important;
+}
+
+.titleH1 {
+  grid-column: 1 / span 12;
+  /* font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase; */
+  /* margin-bottom: 2rem; */
+}
+
+.titleH2 {
+  grid-column: 1 / span 12;
+  /* font-size: 1.7857142857rem;
+  font-weight: 800; */
+  /* margin-bottom: 1.7857142857rem !important; */
+}
+
+.titleH3 {
+  grid-column: 1 / span 12;
+  /* font-size: 1.2857142857rem;
+  font-weight: 800; */
+  /* margin-bottom: 1rem !important;
+  color: black !important; */
+}
+
+.subtitleSheet{
+  grid-column: 1 / span 12;
+  font-size: 1.2857142857rem;
+  line-height: 3rem;
+  color:var(--text-color);
+}
+
+.titleH4 {
+  grid-column: 1 / span 6;
+  /* font-size: 0.8571428571rem;
+  font-weight: 800; */
+  /* margin-bottom: 0.5rem; */
+}
+
+.allCaps {
+  text-transform: uppercase;
+}
+
+.paragraph {
+  grid-column: 1 / span 7;
+}
+
+.paragraphBig {
+  grid-column: 1 / span 12;
+}
+
+.paragraphCentered {
+  grid-column: 4 / span 7;
+}
+
+.image {
+  max-width: 100%;
+  margin-bottom: 0.3rem;
+}
+
+.image100w {
+  width:100%;
+  height:auto;
+}
+
+.imageTrasp {
+  width:100%;
+  height:auto;
+  border-radius: 0.3571428571rem;
+  border:1px solid var(--text-color);
+}
+
+.sideContent {
+  grid-column: 8 / span 5;
+}
+
+.legend{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    vertical-align:top;
+}
+
+.sideLegend{
+    vertical-align:top;
+    float:right;
+    margin-bottom: 2em;
+}
+
+
+.translucentBackground {
+  backdrop-filter: blur(6px);
+  background-color: rgba(255,255,255,0.25);
+}
+
+sup{
+  color:var(--dark-blue);
+  font-size: 60%;
+}
+
+.stickyElement {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+}
+
+
+@media (min-width: 1280px) {
+  .gridRow {
+    grid-column: 3 / span 20;
+  }
+}
+
+@media (min-width: 1366px) {
+  .gridRow {
+    grid-column: 4 / span 18;
+  }
+}
+
+@media (min-width: 1560px) {
+  .gridRow {
+    grid-column: 5 / span 16;
+  }
+}

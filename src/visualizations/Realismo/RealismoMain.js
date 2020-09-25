@@ -104,7 +104,7 @@ export default function RealismoMain({ title }) {
   const [findFor, setFindFor] = useState('Titolo')
   const [ricerca, setRicerca] = useState([])
 
-  const helpPage = GlobalData.helpPages.plot.main
+  const helpPage = GlobalData.helpPages.realism.main
 
   // const containerRef = useRef()
   // const [measures, setMeasures] = useState(null)

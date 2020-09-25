@@ -4,7 +4,7 @@
   --calvino-red: tomato;
   --dark-green: black;
   --cool-bg-bg: #F3F1EC;
-  --cool-bg: #F1F1F5;
+  --cool-bg: #FFFFFA;
   --dark-blue: #5151FC;
   --small-text: #3f3e4c;
   --secondary-element: #C6CACF;
@@ -15,8 +15,8 @@
   --navigation-borders: black;
   --text-color: black;
   --app-border: 1px solid black;
-  --app-border-bold: 2px solid black;
-  --button-border: 2px solid var(--dark-blue);
+  --app-border-bold: 1px solid black;
+  --button-border: 1px solid var(--dark-blue);
   --text-size: 14px;
   --main-menu: var(--dimGold);
   font-size: 14px;
@@ -45,16 +45,16 @@ a.link:hover {
   color: var(--text-color);
 }
 
-p {
+/* OLD p {
   font-size: 1.4em;
   line-height: 1.4em;
-}
+} */
 
-p.intro {
+/* p.intro {
   font-size: 1.7em;
   line-height: 1.5em;
   margin-bottom: 0 !important;
-}
+} */
 
 strong {
   font-weight: 600;
@@ -85,20 +85,24 @@ body {
   margin: 0;
   font-family: "HKGrotesk", sans-serif;
   overflow-x: hidden;
-  background-color: var(--bg);
+  background-color: var(--cool-bg);
 }
 
+/* PREVIUS HEADERS STYLES (delete when possible) */
 h1 {
   margin: 0;
   font-size: 2.4em;
   color: var(--text-color);
   margin-bottom: 1em;
+  font-weight: 500;
 }
 
 h2 {
   margin: 0;
   font-size: 1.8em;
-  color: black;
+  color: var(--dark-blue);
+  font-weight: 500;
+  letter-spacing: 1;
 }
 
 h3 {
@@ -121,6 +125,73 @@ h5 {
   line-height: 1.4em;
 }
 
+/* TYPOGRAPHY STYLES */
+
+h1 {
+  margin: 0.7142857143em 0;
+  font-size: 2.5em;
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+h2 {
+  margin: 0.7142857143em 0;
+  font-size: 1.5em;
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 0.7142857143rem;
+  line-height: 0.9285714286rem;
+  color: #404040;
+}
+
+p {
+ font-size: 1.2857142857rem;
+ line-height: 2.1428571429rem;
+}
+
+p.small {
+  font-size: 1rem;
+  line-height: 1.2857142857rem;
+ }
+
+ .ac-breadcrumb {
+   color: #666;
+   font-size: 0.8571428571rem;
+   line-height: 2.1428571429rem;
+   letter-spacing: 0.2;
+   text-transform: uppercase;
+   grid-column: 1 / span 12;
+ }
+
+ .legend-text {
+   font-size: 0.7142857143rem;
+   line-height: 0.9285714286rem;
+ }
+
+ .caption {
+   font-size: 0.8571428571rem;
+   text-align: center;
+ }
+
+ .captionLeft {
+   font-size: 0.8571428571rem;
+   text-align: left;
+   color:var(--text-color);
+ }
+
+
+ sup{
+   color:var(--dark-blue);
+   font-size: 60%;
+ }
+
+
+/* /end TYPOGRAPHY STYLES */
+
 .main {
   width: 100vw;
   height: 100vh;
@@ -130,26 +201,49 @@ h5 {
 ol {
   list-style-type: decimal;
   list-style-position: outside;
-  padding-left: 0px;
+  padding-left: 3rem;
   color: var(--small-text);
-  font-size: 1.1em;
 }
 
 ul {
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 4rem;
 }
 
 li {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  padding-left: 0px;
-  font-size: 1.1em;
   color: var(--list);
 }
 
+.references {
+  font-size: 0.8571428571rem;
+  line-height: 1.0714285714rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  padding-left: 0rem;
+}
+
+.references ol, .references ul{
+  padding-left: 0px;
+}
+
+.referenceItem {
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+}
+
+.cite{
+  margin-left:3.8571428571rem;
+  margin-right:3.8571428571rem;
+  color:var(--dark-blue);
+  font-size:1.2857142857rem;
+  line-height:2.1428571429rem;
+  font-style: italic;
+}
+
 .navigations {
-  border-bottom: 2px solid var(--navigation-borders);
+  border-bottom: 1px solid var(--navigation-borders);
   box-sizing: border-box;
   height: var(--navigation-height);
   width: 100vw;
@@ -190,7 +284,7 @@ li {
   position: fixed;
   background-color: var(--bg);
   bottom: 0;
-  border-top: 2px solid var(--navigation-borders);
+  border-top: 1px solid var(--navigation-borders);
   transition: bottom 0.5s ease;
 }
 
@@ -250,8 +344,8 @@ a.button-text, a:visited.button-text {
 
 /* FOOTER */
 footer {
-  background-color: #FFA500;
-  color: black;
+  background-color:var(--dark-blue);
+  color: var(--cool-bg);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -329,18 +423,6 @@ footer {
   background-color: black;
 }
 
-*/ */ .references {
-  margin-top: 2em;
-  font-style: italic;
-  font-size: 1em;
-}
-
-.references p {
-  margin-top: 1em;
-  font-style: italic;
-  font-size: 1em;
-}
-
 .svg-inline--fa {
   font-size: 1.1em;
 }
@@ -358,6 +440,17 @@ footer {
   animation: floatLeft 5s infinite;
   animation-direction: normal;
   height: auto;
+}
+
+.help-side-panel .legend {
+  padding: 0;
+  border: none;
+}
+
+.help-side-panel .legend p, .help-side-panel .legend li {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.35rem;
 }
 
 @keyframes floatLeft {
@@ -402,7 +495,6 @@ footer {
     animation-timing-function: ease-out;
   }
 }
-
 
 #overlay .sizein {
   animation: sizein 2s infinite;
