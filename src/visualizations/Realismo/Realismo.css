@@ -19,6 +19,13 @@
   align-items: center; */
 }
 
+.realismo-label-join {
+  stroke: #C0C0C0;
+}
+.realismo-label-join.reliasmo-label-join-explicit {
+  stroke: black;
+}
+
 .realismo-label {
   cursor: pointer;
 }

@@ -45,7 +45,7 @@ const Worm = React.memo(
     return (
       <g
         style={{
-          opacity: isSelected ? 1 : 0.3,
+          // opacity: isSelected ? 1 : 0.3,
         }}
       >
         <title>{racconto.title}</title>
@@ -307,6 +307,7 @@ export default function CircleWorms({
   radius,
   circlesMap,
   selected,
+  selectedByHand,
   omitted,
   racconti,
   raccontiJoinLines,
@@ -378,9 +379,8 @@ export default function CircleWorms({
               <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
               <path
                 strokeDasharray="2"
-                className="realismo-label-join"
+                className={`realismo-label-join ${selectedByHand[title] ? 'reliasmo-label-join-explicit' : ''}`}
                 fill="none"
-                stroke="black"
                 d={`M ${x1} ${y1} C ${pointAX} ${pointAY}, ${pointBX} ${pointBY}, ${x2} ${y2}`}
               />
             </g>

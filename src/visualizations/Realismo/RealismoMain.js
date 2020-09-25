@@ -402,7 +402,7 @@ export default function RealismoMain({ title }) {
                 <div
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selectedOnWorms[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title] ? 'realismo-label-selected' : ''
                   }`}
                   style={{
                     height: `${lineHeightLeft}px`,
@@ -421,6 +421,7 @@ export default function RealismoMain({ title }) {
                 heightCircle={heightCircle}
                 toggleSelect={toggleSelect}
                 selected={selectedOnWorms}
+                selectedByHand={selected}
                 omitted={omitted}
                 circlesMap={circlesMap}
                 racconti={racconti}
@@ -439,7 +440,7 @@ export default function RealismoMain({ title }) {
                   }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selectedOnWorms[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title] ? 'realismo-label-selected' : ''
                   }`}
                   key={i}
                 >
