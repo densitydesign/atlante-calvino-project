@@ -83,12 +83,6 @@ const TramaPoints = React.memo(({ data }) => {
             <title>{d.motivo_type}</title>
           </circle>
         )
-
-        return (
-          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
-            <title>{d.racconto_incastonato}</title>
-          </circle>
-        )
       })}
     </g>
   )
@@ -103,10 +97,10 @@ const LineaTrama = React.memo(
     width,
     height,
     index,
-    gradient,
     itemSelected,
     toggleItem,
     onRaccontoClick,
+    showInfoUI = true,
   }) => {
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
@@ -137,15 +131,15 @@ const LineaTrama = React.memo(
         {itemSelected && (
           <g>
             <TramaPoints data={data} />
-            <RaccontoInfoBoxSvg
+            {showInfoUI && <RaccontoInfoBoxSvg
               onClick={handleClickRacconto}
               y={-10}
               x={width}
               titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
-            />
+            />}
           </g>
         )}
-        {selectedPoint && (
+        {selectedPoint && showInfoUI && (
           <g>
             <text
               style={{
@@ -198,6 +192,7 @@ const LineeTramaList = React.memo(
     selected,
     toggleSelect,
     xScale,
+    showInfoUI = true,
   }) => {
     return (
       <g>
@@ -222,6 +217,7 @@ const LineeTramaList = React.memo(
                 xScale={xScale}
                 racconto={racconti[i]}
                 data={datum}
+                showInfoUI={showInfoUI}
               ></LineaTrama>
             </g>
           )
@@ -420,8 +416,12 @@ function LineeTramaWithMeasures(
   const xPoint = +x.toFixed(0) + BRUSH_HANDLE_WIDTH / 2
   const currentXHoverRacconti = trameByPoints[xPoint]
 
+  const [showInfoUI, setShowInfoUI] = useState(true)
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
+      // TURN OFF UGLY UI INFO 4 ANIMATION
+      setShowInfoUI(false)
+
       const scaleYOriginal = scaleLinear()
         .domain([0, racconti.length])
         .range([0 + height, measures.height - height])
@@ -526,6 +526,9 @@ function LineeTramaWithMeasures(
       function cleanUpAnimation() {
         // CLEAN UP ANIMATION
 
+        // SHOW INFO UI
+        setShowInfoUI(true)
+
         // RESET ZOOM STATE
         const lastZoomScaleY = lastZoomedScaleYRef.current
         if (lastZoomScaleY) {
@@ -577,18 +580,19 @@ function LineeTramaWithMeasures(
             selected={selected}
             toggleSelect={toggleSelect}
             xScale={xScale}
+            showInfoUI={showInfoUI}
           />
           <SelectedContainers n={dataRacconti.length} />
         </g>
       </svg>
-      <Brush
+      {showInfoUI && <Brush
         x={x}
         onXChange={setX}
         onPrevClick={handlePrevPoint}
         onNextClick={handleNexPoint}
         width={measures.width}
         className="trama2-brush-for-list"
-      />
+      />}
       <div className="trama2-brush-legend-list">
         <div>Inizio del testo</div>
         <div>Lunghezza del testo in caratteri</div>
