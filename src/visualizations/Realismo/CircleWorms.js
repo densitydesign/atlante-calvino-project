@@ -94,7 +94,7 @@ const Worm = React.memo(
                 ></circle>
                 {circle.place && (
                   <circle
-                    style={{ fill: '#fff' }}
+                    style={{ fill: '#000' }}
                     r={circleRadius / 3}
                     cy={cy}
                     cx={cx}
