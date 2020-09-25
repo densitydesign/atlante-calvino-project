@@ -184,18 +184,17 @@ const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
         return (
           <g key={yearArc.year}>
             <g style={{ transform: `rotate(${yearArc.angleLabel}deg)` }}>
-              <text
-                textAnchor={flipText ? 'start' : 'end'}
-                x={textX}
-                y={0}
+              <g
                 style={{
                   transformOrigin: `${textX}px -3px`,
                   transform: flipText ? 'rotate(180deg)' : undefined,
                   fontSize: 10,
                 }}
               >
-                {yearArc.year}
-              </text>
+                <text textAnchor={flipText ? 'start' : 'end'} x={textX} y={0}>
+                  {yearArc.year}
+                </text>
+              </g>
             </g>
             <path
               style={{ fill: '#ddd' }}
