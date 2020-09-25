@@ -33,8 +33,7 @@ import { groupBy } from 'lodash'
 
 const LABEL_BEZIER_DELTA_A = 30
 const RESET_BOX_HEIGHT = 70
-const REALISMO_DIAMETER = 760
-const REALISMO_RADIUS = REALISMO_DIAMETER / 2
+const REALISMO_DIAMETER_BASE = 760
 
 const circlesMap = datasetToCircles(40)
 
@@ -150,7 +149,7 @@ export default function RealismoMain({ title }) {
         const categories = dataset[titolo].map((i) => i.category)
         keep = spazioValues.some((category) => {
           if (category === 'indoor' || category === 'outdoor') {
-            return categories.every(wormCateogry => wormCateogry === category)
+            return categories.every((wormCateogry) => wormCateogry === category)
           }
           return categories.indexOf(category) !== -1
         })
@@ -195,7 +194,7 @@ export default function RealismoMain({ title }) {
     const omittedKeys = Object.keys(omitted)
     if (omittedKeys.length > 0) {
       const keeped = difference(Object.keys(dataset), omittedKeys)
-      keeped.forEach(key => {
+      keeped.forEach((key) => {
         selected2[key] = true
       })
     }
@@ -245,8 +244,15 @@ export default function RealismoMain({ title }) {
   const lineHeightRight = heightCircle / rightRacconti.length
   const lineHeightLeft = (heightCircle - RESET_BOX_HEIGHT) / leftRacconti.length
 
+  const raccontiFontSize = lineHeightRight < 11 ? 11 : 12
+  const realismoDiameter =
+    heightCircle < REALISMO_DIAMETER_BASE
+      ? heightCircle - 10
+      : REALISMO_DIAMETER_BASE
+  const realismoRadius = realismoDiameter / 2
+
   const raccontiJoinLines = useMemo(() => {
-    const paddingTop = (heightCircle - REALISMO_DIAMETER) / 2
+    const paddingTop = (heightCircle - realismoDiameter) / 2
 
     return racconti.reduce((acc, racconto) => {
       const isLeft = racconto.rotation >= 90 && racconto.rotation <= 270
@@ -256,9 +262,9 @@ export default function RealismoMain({ title }) {
       if (isLeft) {
         const angle = Math.abs(180 - racconto.rotation)
         const index = leftRacconti.indexOf(racconto)
-        x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
+        x2 = -(realismoDiameter / 2 + 100) + 5
         y2 =
-          -(REALISMO_DIAMETER / 2) +
+          -(realismoDiameter / 2) +
           index * lineHeightLeft +
           lineHeightLeft / 2 -
           paddingTop +
@@ -266,22 +272,22 @@ export default function RealismoMain({ title }) {
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS - 5) *
+          (realismoRadius - 5) *
           (racconto.rotation > 180 ? 1 : -1)
-        x1 = -Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+        x1 = -Math.cos((Math.PI / 180) * angle) * (realismoRadius - 5)
 
         pointAY =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (realismoRadius + LABEL_BEZIER_DELTA_A) *
           (racconto.rotation > 180 ? 1 : -1)
         pointAX =
           -Math.cos((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+          (realismoRadius + LABEL_BEZIER_DELTA_A)
       } else {
         const index = rightRacconti.indexOf(racconto)
-        x2 = REALISMO_DIAMETER / 2 + 100 - 5
+        x2 = realismoDiameter / 2 + 100 - 5
         y2 =
-          -(REALISMO_DIAMETER / 2) +
+          -(realismoDiameter / 2) +
           index * lineHeightRight +
           lineHeightRight / 2 -
           paddingTop
@@ -290,17 +296,17 @@ export default function RealismoMain({ title }) {
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS - 5) *
+          (realismoRadius - 5) *
           (racconto.rotation > 0 ? -1 : 1)
-        x1 = Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+        x1 = Math.cos((Math.PI / 180) * angle) * (realismoRadius - 5)
 
         pointAY =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (realismoRadius + LABEL_BEZIER_DELTA_A) *
           (racconto.rotation > 0 ? -1 : 1)
         pointAX =
           Math.cos((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+          (realismoRadius + LABEL_BEZIER_DELTA_A)
       }
 
       pointBX = (x1 + x2) / 2
@@ -320,11 +326,13 @@ export default function RealismoMain({ title }) {
       return acc
     }, {})
   }, [
-    leftRacconti,
-    rightRacconti,
     heightCircle,
-    lineHeightRight,
+    realismoDiameter,
+    leftRacconti,
     lineHeightLeft,
+    realismoRadius,
+    rightRacconti,
+    lineHeightRight,
   ])
 
   return (
@@ -426,7 +434,7 @@ export default function RealismoMain({ title }) {
                 circlesMap={circlesMap}
                 racconti={racconti}
                 raccontiJoinLines={raccontiJoinLines}
-                radius={REALISMO_RADIUS}
+                radius={realismoRadius}
               ></CircleWorms>
             )}
           </div>
@@ -437,6 +445,7 @@ export default function RealismoMain({ title }) {
                   style={{
                     lineHeight: `${lineHeightRight}px`,
                     height: `${lineHeightRight}px`,
+                    fontSize: `${raccontiFontSize}px`,
                   }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
