@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 695.9 46.9" style="enable-background:new 0 0 695.9 46.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'HKGrotesk-Regular';}
+	.st1{font-size:10px;}
+	.st2{fill:none;}
+	.st3{fill:none;stroke:#1D1D1B;stroke-width:0.25;stroke-miterlimit:10;}
+	.st4{fill:#1D1D1B;}
+	.st5{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;stroke-dasharray:1.1151,1.1151;}
+	.st7{fill:none;stroke:#1D1D1B;stroke-width:0.2596;stroke-miterlimit:10;stroke-dasharray:0.7582,0.7582;}
+	.st8{fill:#5151FC;}
+	.st9{fill:#FF3366;}
+	.st10{fill:#00C19C;}
+	.st11{fill:#FFA500;}
+</style>
+<g id="Layer_1_1_">
+	<g id="Group_304_1_" transform="translate(102 12.576)">
+		<g id="Group_305_1_" transform="translate(8350 -9660.325)">
+			<g id="dimensione_1_" transform="translate(-8032 9661.423)">
+				<g id="dimensione-X_1_" transform="translate(0 0)">
+					<g id="Group-7_1_">
+						<text transform="matrix(1 0 0 1 -47.7977 21.9709)" class="st0 st1">% tipi di elenchi nel testo</text>
+						<g>
+							<g>
+								<line class="st2" x1="-60.3" y1="-7.4" x2="-60.3" y2="23"/>
+								<g>
+									<line class="st3" x1="-60.3" y1="-7.2" x2="-60.3" y2="22.9"/>
+									<g>
+										<rect x="-61.1" y="-7.4" class="st4" width="1.6" height="0.2"/>
+									</g>
+									<g>
+										<rect x="-61.1" y="22.8" class="st4" width="1.6" height="0.2"/>
+									</g>
+								</g>
+							</g>
+							<g>
+								<line class="st2" x1="-77.4" y1="-7.4" x2="-61.9" y2="-7.4"/>
+								<g>
+									<line class="st5" x1="-77.4" y1="-7.4" x2="-76.9" y2="-7.4"/>
+									<line class="st6" x1="-75.8" y1="-7.4" x2="-62.9" y2="-7.4"/>
+									<line class="st5" x1="-62.4" y1="-7.4" x2="-61.9" y2="-7.4"/>
+								</g>
+							</g>
+							<path class="st3" d="M-77.4-7.4c-6.1,0-6.1,25.9-12.2,25.9s-6.1,4.5-12.2,4.5h36.7C-71.3,23-71.3-7.4-77.4-7.4z"/>
+							<g>
+								<line class="st2" x1="-65.2" y1="23" x2="-61.9" y2="23"/>
+								<g>
+									<line class="st5" x1="-65.2" y1="23" x2="-64.7" y2="23"/>
+									<line class="st7" x1="-63.9" y1="23" x2="-62.8" y2="23"/>
+									<line class="st5" x1="-62.4" y1="23" x2="-61.9" y2="23"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g id="Group_306_1_">
+			<g id="Group_312_1_">
+				<text transform="matrix(1 0 0 1 -82.0423 23.2757)" class="st0 st1">Frasi</text>
+				<path id="Rectangle_179_1_" class="st8" d="M-97.5,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5
+					l0,0C-102,17.1-100,15.1-97.5,15.1z"/>
+			</g>
+		</g>
+		<g id="Group_307_1_" transform="translate(-9)">
+			<text transform="matrix(1 0 0 1 -2.8109 23.2757)" class="st0 st1">Misto</text>
+			<path id="Rectangle_180_1_" class="st9" d="M-18.3,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5
+				l0,0C-22.8,17.1-20.8,15.1-18.3,15.1z"/>
+		</g>
+		<g id="Group_308_1_" transform="translate(-18)">
+			<text transform="matrix(1 0 0 1 79.6253 23.2757)" class="st0 st1">Parole</text>
+			<path id="Rectangle_181_1_" class="st10" d="M63.7,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5
+				l0,0C59.2,17.1,61.2,15.1,63.7,15.1z"/>
+		</g>
+		<g id="Group_309_1_" transform="translate(-27)">
+			<text transform="matrix(1 0 0 1 166.422 23.2757)" class="st0 st1">Sintagmi</text>
+			<path id="Rectangle_182_1_" class="st11" d="M150.5,15.1h8c2.5,0,4.5,2,4.5,4.5l0,0c0,2.5-2,4.5-4.5,4.5h-8c-2.5,0-4.5-2-4.5-4.5
+				l0,0C146,17.1,148,15.1,150.5,15.1z"/>
+		</g>
+	</g>
+</g>
+<g id="Isolation_Mode">
+</g>
+</svg>
