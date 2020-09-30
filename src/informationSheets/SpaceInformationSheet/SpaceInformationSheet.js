@@ -64,7 +64,7 @@ export default class SpaceInformationSheet extends React.Component
                 </p>
                 </div>
                 <div className={SheetStyles.sideContent}>
-                    <img className={SheetStyles.image} style={{position:'sticky',top:'calc(var(--navigation-height)+4em)'}} src={zoom_03}/>
+                    <img className={SheetStyles.image} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_03}/>
                 </div>
         </div>
         <div className={SheetStyles.gridRow} style={{marginTop:'3rem'}}>
@@ -81,7 +81,7 @@ export default class SpaceInformationSheet extends React.Component
                   </div>
 
               <div className={SheetStyles.sideContent}>
-                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height)+4em)'}} src={zoom_01}/>
+                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_01}/>
               </div>
         </div>
         <div className={SheetStyles.gridRow} style={{marginTop:'3rem'}}>
@@ -100,7 +100,7 @@ export default class SpaceInformationSheet extends React.Component
                   </div>
 
                   <div className={SheetStyles.sideContent} style={{position:'sticky'}}>
-                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height))'}} src={zoom_02}/>
+                  <img className={SheetStyles.image} style={{position:'sticky', top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_02}/>
                       </div>
                   </div>
 
