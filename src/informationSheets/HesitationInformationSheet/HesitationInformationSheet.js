@@ -97,7 +97,7 @@ class HesitationInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.sideContent}>
-            <img className={SheetStyles.legend} style = {{gridColumn:' 16 / span 6', float:'left', marginTop:'0px', position:'sticky' ,top:'calc(var(--navigation-height) + 2px)'}}  src={legenda_02}/>
+            <img className={SheetStyles.legend} style = {{gridColumn:' 16 / span 6', float:'left', marginTop:'0px', position:'sticky' ,top:'calc(var(--navigation-height) + 1rem'}}  src={legenda_02}/>
             <img className={SheetStyles.image} src={info_02} style={{position:'sticky',top:'calc(var(--navigation-height) + 2px)'}} />
           </div>
         </div>
@@ -110,29 +110,35 @@ class HesitationInformationSheet extends Component {
 
             <h3 className={SheetStyles.subtitleSheet}>Il processo: i livelli del testo dubitativo</h3>
           <div>
-            <img className={SheetStyles.image} src={zoom_03} style={{position:'sticky',top:'calc(var(--navigation-height) + 2px)', background:'#fffffa'}} />
+            <img className={SheetStyles.image} src={zoom_03} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)', background:'#fffffa', width:'100%', paddingBottom:'0.5rem'}} />
           <p>Questo paragrafo è un ottimo esempio di come il processo dubitativo consista nel “tornare sui propri passi”. Il testo oggetto di dubbio associato a td28 coincide con l’inizio del paragrafo e racchiude in sé dodici td (dal td16 al td27, più della metà del numero totale di occorrenze del capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in parallelo assistiamo a un innalzamento di livello: il numero di livello equivale alla quantità di volte in cui il processo dubitativo insiste sulla stessa identica porzione di testo. Accavallandosi fra loro le occorrenze “dubitano” della loro capacità di ristabilire il senso del discorso. Un altro esempio: il passaggio dal 6° al 7° livello avviene a causa del td29; poteva sembrare che il td28 fosse riuscito una volta per tutte a bloccare la catena dubitativa, eppure ancora una volta c’è qualcosa da dire, da aggiungere, da precisare. E la precisazione non può che avvenire fra parentesi.</p>
           </div>
-                    </div>
+          </div>
+          </div>
 
-          <div className={SheetStyles.paragraphBig}>
+          <div className={SheetStyles.gridRow}>
             <h3 className={SheetStyles.subtitleSheet}>La forma: le parentesi</h3>
             <h4 className={SheetStyles.titleH4}>Capitolo 2</h4>
-          <img className={SheetStyles.legend} style = {{gridColumn:' 18 / span 4'}}  src={legenda_04}/>
-            <img className={SheetStyles.image100w} src={zoom_04}/>
-            <p>
-            Cinque delle occorrenze “intrappolate” dentro il testo oggetto di dubbio di td28 sono a loro volta contenute fra parentesi: td18, td20, td21, td23, td27. Ma la quantità di segni grafici nel paragrafo è molto più alta: infatti circa il 30% del capitolo viene dislocata tra parentesi o dentro un inciso, anche quando da un punto di vista narrativo non sembrerebbe necessario. In alcuni casi le parentesi contengono a loro volta degli incisi, elaborando così una sorta di racconto a “matrioska”. La massiccia concentrazione del processo dubitativo proprio in quell’area è collegata alla presenza dei segni grafici che “stratificano” il testo.
+            </div>
+
+            <div className={SheetStyles.gridRow}>
+          <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 6', float:'left'}}  src={legenda_04}/>
+          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 22'}} src={zoom_04}/>
+        </div>
+           
+            <div className={SheetStyles.gridRow}>
+            <div className={SheetStyles.paragraph}>
+            <p>Cinque delle occorrenze “intrappolate” dentro il testo oggetto di dubbio di td28 sono a loro volta contenute fra parentesi: td18, td20, td21, td23, td27. Ma la quantità di segni grafici nel paragrafo è molto più alta: infatti circa il 30% del capitolo viene dislocata tra parentesi o dentro un inciso, anche quando da un punto di vista narrativo non sembrerebbe necessario. In alcuni casi le parentesi contengono a loro volta degli incisi, elaborando così una sorta di racconto a “matrioska”. La massiccia concentrazione del processo dubitativo proprio in quell’area è collegata alla presenza dei segni grafici che “stratificano” il testo.
             </p>
-          </div>
-          <div className={SheetStyles.paragraphBig}>
+
             <h2 className={SheetStyles.titleH2}>Conclusione</h2>
             <p>Alla fine del secondo capitolo della Giornata d’uno scrutatore, il testo si sviluppa su piani diversi, i quali a volte collaborano, a volte confliggono. La struttura a “strati” sovrapposti, come le «foglie d’un carciofo», da una parte si sforza di garantire maggiore chiarezza al lettore/lettrice, dall’altra li disorienta. Si tratta di un meccanismo narrativo basato sul difficile rapporto fra la ricerca dell’esattezza della scrittura e il fallimento dell’atto interpretativo, per cui l’unico modo per parlare della «complessità delle cose» sembra essere quello di organizzarla in strati (ibidem).
             La parentesi e l’inciso generano questa stratificazione,
             attraverso una forma grafica che introduce un “altro” spazio,
             un altrove rispetto al discorso principale. Tale sdoppiamento del testo viene ulteriormente potenziato dal processo dubitativo,
             che rinforza l’effetto di stratificazione in una modalità meno visibile.</p>
-          </div>
             </div>
+          </div>
 
 
           <div className={SheetStyles.gridRow}>
