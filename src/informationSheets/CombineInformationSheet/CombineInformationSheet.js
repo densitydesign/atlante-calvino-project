@@ -50,7 +50,7 @@ class CombineInformationSheet extends Component {
     </div>
 
     <div className={SheetStyles.gridRow}>
-    <div className={SheetStyles.paragraphBig}>
+    <div className={SheetStyles.paragraph}>
       <p>La riflessione che inaugura il capitolo è immediatamente coinvolta dal processo dubitativo. Con la promessa di una maggiore esattezza,
       <span style={{textDecoration:'underline'}}>td7</span> e <span style={{textDecoration:'underline'}}>td8</span> cercano di giustificare
       la scelta di impiegare solo «termini generici», evitando i nomi propri. Subito però il testo infrange questa regola di comportamento:
@@ -67,29 +67,29 @@ class CombineInformationSheet extends Component {
 
     <div className={SheetStyles.gridRow}>
     <h2 className={SheetStyles.titleH2}>Salti di ambito</h2>
-        <div className={SheetStyles.paragraphBig}>
+        <div className={SheetStyles.paragraph}>
         <p>Il paragrafo finale nella versione cartacea si svolge per oltre due pagine senza punti fermi:
         è composto da una serie di riflessioni, incastrate l’una dentro l’altra, sovrapposte l’una sopra l’altra. L’argomento è la fede politica del protagonista.
         Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde (producendo un testo denso, ricco di informazioni ma di difficile lettura), improvvisamente il filo argomentativo si ritorce su se stesso.
         </p></div>
 
-      <div className={SheetStyles.paragraphBig}>
+      <div className={SheetStyles.paragraphBig} style={{marginTop:'1rem'}}>
         <div>
           <img className={SheetStyles.image} src={zoom_03} />
           <img className={SheetStyles.sideLegend} style = {{gridColumn:' 18 / span 4'}}  src={legenda_03}/>
         </div>
       </div>
-      </div>
+    </div>
 
       <div className={SheetStyles.gridRow}>
       <h2 className={SheetStyles.titleH2}>Salti di ambito</h2>
-          <div className={SheetStyles.paragraphBig}>
+          <div className={SheetStyles.paragraph}>
           <p>Il paragrafo finale nella versione cartacea si svolge per oltre due pagine senza punti fermi:
           è composto da una serie di riflessioni, incastrate l’una dentro l’altra, sovrapposte l’una sopra l’altra. L’argomento è la fede politica del protagonista.
           Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde (producendo un testo denso, ricco di informazioni ma di difficile lettura), improvvisamente il filo argomentativo si ritorce su se stesso.
           </p></div>
 
-        <div className={SheetStyles.paragraphBig}>
+        <div className={SheetStyles.paragraphBig} style={{marginTop:'1rem'}}>
           <div>
             <img className={SheetStyles.image} src={zoom_04} />
             <img className={SheetStyles.sideLegend} style = {{gridColumn:' 18 / span 4'}}  src={legenda_04}/>
