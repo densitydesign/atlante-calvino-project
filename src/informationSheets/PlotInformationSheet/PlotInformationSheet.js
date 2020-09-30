@@ -30,7 +30,7 @@ class PlotInformationSheet extends Component {
           </div>
           <div className={SheetStyles.gridRow}>
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
-            <img className={SheetStyles.image} style = {{gridColumn:'1 / span 12'}}  src={incastonati}/>
+            <img className={SheetStyles.image100w} style = {{gridColumn:'1 / span 12'}}  src={incastonati}/>
         </div>
         <div className={SheetStyles.gridRow}>
           <p className= ' captionLeft ' style={{gridColumn:'1 / span 22'}}> Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></p>
@@ -46,7 +46,7 @@ class PlotInformationSheet extends Component {
 
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Intro sulla struttura e storia lettore</h2>
-            <div className={SheetStyles.paragraph} style = {{gridColumn:' 1 / span 10', float:'right'}}>
+            <div className={SheetStyles.paragraph}>
               <p>
               Come è stato largamente studiato,[nota1?] nella tradizione letteraria occidentale l’andamento enumerativo è il procedimento retorico che si oppone alla peripezia, e che con la sua presenza «ostacola, rallenta o differisce il resoconto delle vicende» e «mette in dubbio la possibilità stessa di organizzare gerarchicamente gli eventi di una vita in forma unitaria».[nota2] Risulta quindi molto interessante che il picco più alto del grafico corrisponda al 1945, anno in cui Calvino pubblica un solo racconto: Angoscia in caserma.
               </p>
