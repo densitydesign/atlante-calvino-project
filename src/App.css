@@ -172,15 +172,14 @@ p.small {
    line-height: 0.9285714286rem;
  }
 
- .caption {
+ .caption, .captionLeft {
    font-size: 0.8571428571rem;
+   line-height: 1.4rem;
    text-align: center;
  }
 
  .captionLeft {
-   font-size: 0.8571428571rem;
    text-align: left;
-   color:var(--text-color);
  }
 
 
