@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import './i18n'
 import './general/HK Grotesk/WEB/stylesheet.css';
 
 
@@ -10,7 +11,9 @@ import AtlasRouter from './views/AtlasRouter/AtlasRouter';
 
 function App() {
   return (
-    <AtlasRouter />
+    <Suspense fallback='Loading'>
+      <AtlasRouter />
+    </Suspense>
   );
 }
 
