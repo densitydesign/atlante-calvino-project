@@ -410,7 +410,11 @@ export default function RealismoMain({ title }) {
                 <div
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title]
+                      ? 'realismo-label-selected'
+                      : omitted[racconto.title]
+                      ? 'realismo-label-omitted'
+                      : ''
                   }`}
                   style={{
                     height: `${lineHeightLeft}px`,
@@ -449,7 +453,11 @@ export default function RealismoMain({ title }) {
                   }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title]
+                      ? 'realismo-label-selected'
+                      : omitted[racconto.title]
+                      ? 'realismo-label-omitted'
+                      : ''
                   }`}
                   key={i}
                 >

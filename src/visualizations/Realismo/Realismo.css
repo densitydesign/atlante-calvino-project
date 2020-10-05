@@ -32,7 +32,10 @@
 .realismo-label.realismo-label-selected {
   font-weight: bold;
 }
-
+.realismo-label.realismo-label-omitted {
+  opacity: 0.5;
+  /* color: #666; */
+}
 /* .realismo-labels-container.on-left {
   padding-right: 100px;
 }
