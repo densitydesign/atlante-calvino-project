@@ -120,8 +120,8 @@
   stroke-width: 2px;
   pointer-events: none;
   /* fill: none; */
+  transition: opacity 0.8s ease-in;
 }
-
 /* .trama2-line {
   transition: all 2s linear;
 } */

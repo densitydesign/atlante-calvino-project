@@ -131,12 +131,14 @@ const LineaTrama = React.memo(
         {itemSelected && (
           <g>
             <TramaPoints data={data} />
-            {showInfoUI && <RaccontoInfoBoxSvg
-              onClick={handleClickRacconto}
-              y={-10}
-              x={width}
-              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
-            />}
+            {showInfoUI && (
+              <RaccontoInfoBoxSvg
+                onClick={handleClickRacconto}
+                y={-10}
+                x={width}
+                titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
+              />
+            )}
           </g>
         )}
         {selectedPoint && showInfoUI && (
@@ -541,6 +543,10 @@ function LineeTramaWithMeasures(
           path.setAttribute('d', resettedDSubPaths[i])
           path.style.stroke = cachedResetStrokes[i]
         })
+        // Reset opacity
+        document.querySelectorAll(
+          '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
+        ).forEach(p => p.style.opacity = '1')
         // Show Points
         document
           .querySelectorAll(
@@ -549,7 +555,14 @@ function LineeTramaWithMeasures(
           .forEach((p) => (p.style.display = 'initial'))
       }
 
-      window.requestAnimationFrame(animate)
+      // Opacity lines
+      document.querySelectorAll(
+        '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
+      ).forEach(p => p.style.opacity = '0.1')
+
+      setTimeout(() => {
+        window.requestAnimationFrame(animate)
+      }, 800)
     },
   }))
 
@@ -585,14 +598,16 @@ function LineeTramaWithMeasures(
           <SelectedContainers n={dataRacconti.length} />
         </g>
       </svg>
-      {showInfoUI && <Brush
-        x={x}
-        onXChange={setX}
-        onPrevClick={handlePrevPoint}
-        onNextClick={handleNexPoint}
-        width={measures.width}
-        className="trama2-brush-for-list"
-      />}
+      {showInfoUI && (
+        <Brush
+          x={x}
+          onXChange={setX}
+          onPrevClick={handlePrevPoint}
+          onNextClick={handleNexPoint}
+          width={measures.width}
+          className="trama2-brush-for-list"
+        />
+      )}
       <div className="trama2-brush-legend-list">
         <div>Inizio del testo</div>
         <div>Lunghezza del testo in caratteri</div>
