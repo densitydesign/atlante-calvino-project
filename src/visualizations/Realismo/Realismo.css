@@ -19,13 +19,23 @@
   align-items: center; */
 }
 
+.realismo-label-join {
+  stroke: #C0C0C0;
+}
+.realismo-label-join.reliasmo-label-join-explicit {
+  stroke: black;
+}
+
 .realismo-label {
   cursor: pointer;
 }
 .realismo-label.realismo-label-selected {
   font-weight: bold;
 }
-
+.realismo-label.realismo-label-omitted {
+  opacity: 0.5;
+  /* color: #666; */
+}
 /* .realismo-labels-container.on-left {
   padding-right: 100px;
 }

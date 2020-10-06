@@ -83,12 +83,6 @@ const TramaPoints = React.memo(({ data }) => {
             <title>{d.motivo_type}</title>
           </circle>
         )
-
-        return (
-          <circle className="trama2-circle" key={i} cx={d.x} cy={d.y} r={2}>
-            <title>{d.racconto_incastonato}</title>
-          </circle>
-        )
       })}
     </g>
   )
@@ -103,10 +97,10 @@ const LineaTrama = React.memo(
     width,
     height,
     index,
-    gradient,
     itemSelected,
     toggleItem,
     onRaccontoClick,
+    showInfoUI = true,
   }) => {
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
@@ -137,15 +131,17 @@ const LineaTrama = React.memo(
         {itemSelected && (
           <g>
             <TramaPoints data={data} />
-            <RaccontoInfoBoxSvg
-              onClick={handleClickRacconto}
-              y={-10}
-              x={width}
-              titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
-            />
+            {showInfoUI && (
+              <RaccontoInfoBoxSvg
+                onClick={handleClickRacconto}
+                y={-10}
+                x={width}
+                titolo={`${data.racconto.titolo}, ${data.racconto.anno}`}
+              />
+            )}
           </g>
         )}
-        {selectedPoint && (
+        {selectedPoint && showInfoUI && (
           <g>
             <text
               style={{
@@ -198,6 +194,7 @@ const LineeTramaList = React.memo(
     selected,
     toggleSelect,
     xScale,
+    showInfoUI = true,
   }) => {
     return (
       <g>
@@ -222,6 +219,7 @@ const LineeTramaList = React.memo(
                 xScale={xScale}
                 racconto={racconti[i]}
                 data={datum}
+                showInfoUI={showInfoUI}
               ></LineaTrama>
             </g>
           )
@@ -420,8 +418,12 @@ function LineeTramaWithMeasures(
   const xPoint = +x.toFixed(0) + BRUSH_HANDLE_WIDTH / 2
   const currentXHoverRacconti = trameByPoints[xPoint]
 
+  const [showInfoUI, setShowInfoUI] = useState(true)
   useImperativeHandle(ref, () => ({
     rotateView: (cb) => {
+      // TURN OFF UGLY UI INFO 4 ANIMATION
+      setShowInfoUI(false)
+
       const scaleYOriginal = scaleLinear()
         .domain([0, racconti.length])
         .range([0 + height, measures.height - height])
@@ -463,8 +465,10 @@ function LineeTramaWithMeasures(
           const prevDatum = raccontoData[i - 1]
           const datum = raccontoData[i]
 
-          const y1 = prevDatum.y * (1 - k) + k * 25
-          const y2 = datum.y * (1 - k) + k * 25
+          // const y1 = prevDatum.y * (1 - k) + k * 25
+          // const y2 = datum.y * (1 - k) + k * 25
+          const y1 = prevDatum.y
+          const y2 = datum.y
 
           const x1 = prevDatum.x * (1 - k) + k * flyToX
           const x2 = datum.x * (1 - k) + k * flyToX
@@ -480,63 +484,85 @@ function LineeTramaWithMeasures(
           window.requestAnimationFrame(animate)
         } else {
           start = null
-          window.requestAnimationFrame(animate2)
+          setTimeout(() => {
+            cb()
+            cleanUpAnimation()
+          }, 50)
+          // window.requestAnimationFrame(animate2)
         }
       }
 
       const cachedResetStrokes = []
 
-      function animate2(timestamp) {
-        if (start === null) {
-          start = timestamp
+      // function animate2(timestamp) {
+      //   if (start === null) {
+      //     start = timestamp
+      //   }
+      //   const k = (timestamp - start) / 1000
+
+      //   const dataFly = []
+      //   for (let i = 1; i < raccontoData.length; i++) {
+      //     const prevDatum = raccontoData[i - 1]
+      //     const datum = raccontoData[i]
+
+      //     const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
+      //     const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
+
+      //     const x1 = flyToX
+      //     const x2 = flyToX
+
+      //     dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+      //   }
+      //   paths.forEach((path, i) => {
+      //     path.setAttribute('d', dataFly[i])
+      //     path.style.stroke = 'var(--blue)'
+      //   })
+      //   if (k < 1) {
+      //     window.requestAnimationFrame(animate2)
+      //   } else {
+      //     cb()
+      //     cleanUpAnimation()
+      //   }
+      // }
+
+      function cleanUpAnimation() {
+        // CLEAN UP ANIMATION
+
+        // SHOW INFO UI
+        setShowInfoUI(true)
+
+        // RESET ZOOM STATE
+        const lastZoomScaleY = lastZoomedScaleYRef.current
+        if (lastZoomScaleY) {
+          imperativeTranslate(lastZoomScaleY)
         }
-        const k = (timestamp - start) / 1000
-
-        const dataFly = []
-        for (let i = 1; i < raccontoData.length; i++) {
-          const prevDatum = raccontoData[i - 1]
-          const datum = raccontoData[i]
-
-          const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
-          const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
-
-          const x1 = flyToX
-          const x2 = flyToX
-
-          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
-        }
+        // RESET SELECTED LINE
+        const resetDPath = lineGenerator(raccontoData)
+        const resettedDSubPaths = splitPath(resetDPath)
         paths.forEach((path, i) => {
-          path.setAttribute('d', dataFly[i])
-          path.style.stroke = 'var(--blue)'
+          path.setAttribute('d', resettedDSubPaths[i])
+          path.style.stroke = cachedResetStrokes[i]
         })
-        if (k < 1) {
-          window.requestAnimationFrame(animate2)
-        } else {
-          cb()
-          // CLEAN UP ANIMATION
-
-          // RESET ZOOM STATE
-          const lastZoomScaleY = lastZoomedScaleYRef.current
-          if (lastZoomScaleY) {
-            imperativeTranslate(lastZoomScaleY)
-          }
-          // RESET SELECTED LINE
-          const resetDPath = lineGenerator(raccontoData)
-          const resettedDSubPaths = splitPath(resetDPath)
-          paths.forEach((path, i) => {
-            path.setAttribute('d', resettedDSubPaths[i])
-            path.style.stroke = cachedResetStrokes[i]
-          })
-          // Show Points
-          document
-            .querySelectorAll(
-              '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
-            )
-            .forEach((p) => (p.style.display = 'initial'))
-        }
+        // Reset opacity
+        document.querySelectorAll(
+          '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
+        ).forEach(p => p.style.opacity = '1')
+        // Show Points
+        document
+          .querySelectorAll(
+            '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
+          )
+          .forEach((p) => (p.style.display = 'initial'))
       }
 
-      window.requestAnimationFrame(animate)
+      // Opacity lines
+      document.querySelectorAll(
+        '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
+      ).forEach(p => p.style.opacity = '0.1')
+
+      setTimeout(() => {
+        window.requestAnimationFrame(animate)
+      }, 800)
     },
   }))
 
@@ -567,18 +593,21 @@ function LineeTramaWithMeasures(
             selected={selected}
             toggleSelect={toggleSelect}
             xScale={xScale}
+            showInfoUI={showInfoUI}
           />
           <SelectedContainers n={dataRacconti.length} />
         </g>
       </svg>
-      <Brush
-        x={x}
-        onXChange={setX}
-        onPrevClick={handlePrevPoint}
-        onNextClick={handleNexPoint}
-        width={measures.width}
-        className="trama2-brush-for-list"
-      />
+      {showInfoUI && (
+        <Brush
+          x={x}
+          onXChange={setX}
+          onPrevClick={handlePrevPoint}
+          onNextClick={handleNexPoint}
+          width={measures.width}
+          className="trama2-brush-for-list"
+        />
+      )}
       <div className="trama2-brush-legend-list">
         <div>Inizio del testo</div>
         <div>Lunghezza del testo in caratteri</div>

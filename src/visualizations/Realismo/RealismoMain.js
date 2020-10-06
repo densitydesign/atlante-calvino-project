@@ -17,6 +17,7 @@ import GlobalData from '../../utilities/GlobalData'
 import RangeFilter from '../../general/RangeFilter'
 
 import sortBy from 'lodash/sortBy'
+import difference from 'lodash/difference'
 import uniqBy from 'lodash/uniqBy'
 
 import {
@@ -32,8 +33,7 @@ import { groupBy } from 'lodash'
 
 const LABEL_BEZIER_DELTA_A = 30
 const RESET_BOX_HEIGHT = 70
-const REALISMO_DIAMETER = 760
-const REALISMO_RADIUS = REALISMO_DIAMETER / 2
+const REALISMO_DIAMETER_BASE = 760
 
 const circlesMap = datasetToCircles(40)
 
@@ -81,7 +81,7 @@ const optionsSpace = [
     value: 'outdoor',
   },
   {
-    label: 'MEZZO DI TRANSPORTO',
+    label: 'MEZZO DI TRASPORTO',
     value: 'transportation',
   },
   {
@@ -148,6 +148,9 @@ export default function RealismoMain({ title }) {
       if (keep && spazioValues.length > 0) {
         const categories = dataset[titolo].map((i) => i.category)
         keep = spazioValues.some((category) => {
+          if (category === 'indoor' || category === 'outdoor') {
+            return categories.every((wormCateogry) => wormCateogry === category)
+          }
           return categories.indexOf(category) !== -1
         })
       }
@@ -185,6 +188,18 @@ export default function RealismoMain({ title }) {
       })
     return mapSelected
   }, [ricerca])
+
+  const selectedOnWorms = useMemo(() => {
+    const selected2 = { ...selected }
+    const omittedKeys = Object.keys(omitted)
+    if (omittedKeys.length > 0) {
+      const keeped = difference(Object.keys(dataset), omittedKeys)
+      keeped.forEach((key) => {
+        selected2[key] = true
+      })
+    }
+    return selected2
+  }, [selected, omitted])
 
   const toggleSelect = useCallback((title) => {
     setRicerca((ricerca) => {
@@ -229,8 +244,15 @@ export default function RealismoMain({ title }) {
   const lineHeightRight = heightCircle / rightRacconti.length
   const lineHeightLeft = (heightCircle - RESET_BOX_HEIGHT) / leftRacconti.length
 
+  const raccontiFontSize = lineHeightRight < 11 ? 11 : 12
+  const realismoDiameter =
+    heightCircle < REALISMO_DIAMETER_BASE
+      ? heightCircle - 10
+      : REALISMO_DIAMETER_BASE
+  const realismoRadius = realismoDiameter / 2
+
   const raccontiJoinLines = useMemo(() => {
-    const paddingTop = (heightCircle - REALISMO_DIAMETER) / 2
+    const paddingTop = (heightCircle - realismoDiameter) / 2
 
     return racconti.reduce((acc, racconto) => {
       const isLeft = racconto.rotation >= 90 && racconto.rotation <= 270
@@ -240,9 +262,9 @@ export default function RealismoMain({ title }) {
       if (isLeft) {
         const angle = Math.abs(180 - racconto.rotation)
         const index = leftRacconti.indexOf(racconto)
-        x2 = -(REALISMO_DIAMETER / 2 + 100) + 5
+        x2 = -(realismoDiameter / 2 + 100) + 5
         y2 =
-          -(REALISMO_DIAMETER / 2) +
+          -(realismoDiameter / 2) +
           index * lineHeightLeft +
           lineHeightLeft / 2 -
           paddingTop +
@@ -250,22 +272,22 @@ export default function RealismoMain({ title }) {
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS - 5) *
+          (realismoRadius - 5) *
           (racconto.rotation > 180 ? 1 : -1)
-        x1 = -Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+        x1 = -Math.cos((Math.PI / 180) * angle) * (realismoRadius - 5)
 
         pointAY =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (realismoRadius + LABEL_BEZIER_DELTA_A) *
           (racconto.rotation > 180 ? 1 : -1)
         pointAX =
           -Math.cos((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+          (realismoRadius + LABEL_BEZIER_DELTA_A)
       } else {
         const index = rightRacconti.indexOf(racconto)
-        x2 = REALISMO_DIAMETER / 2 + 100 - 5
+        x2 = realismoDiameter / 2 + 100 - 5
         y2 =
-          -(REALISMO_DIAMETER / 2) +
+          -(realismoDiameter / 2) +
           index * lineHeightRight +
           lineHeightRight / 2 -
           paddingTop
@@ -274,17 +296,17 @@ export default function RealismoMain({ title }) {
 
         y1 =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS - 5) *
+          (realismoRadius - 5) *
           (racconto.rotation > 0 ? -1 : 1)
-        x1 = Math.cos((Math.PI / 180) * angle) * (REALISMO_RADIUS - 5)
+        x1 = Math.cos((Math.PI / 180) * angle) * (realismoRadius - 5)
 
         pointAY =
           -Math.sin((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A) *
+          (realismoRadius + LABEL_BEZIER_DELTA_A) *
           (racconto.rotation > 0 ? -1 : 1)
         pointAX =
           Math.cos((Math.PI / 180) * angle) *
-          (REALISMO_RADIUS + LABEL_BEZIER_DELTA_A)
+          (realismoRadius + LABEL_BEZIER_DELTA_A)
       }
 
       pointBX = (x1 + x2) / 2
@@ -304,11 +326,13 @@ export default function RealismoMain({ title }) {
       return acc
     }, {})
   }, [
-    leftRacconti,
-    rightRacconti,
     heightCircle,
-    lineHeightRight,
+    realismoDiameter,
+    leftRacconti,
     lineHeightLeft,
+    realismoRadius,
+    rightRacconti,
+    lineHeightRight,
   ])
 
   return (
@@ -372,8 +396,8 @@ export default function RealismoMain({ title }) {
                     // Reset Selection
                     setRicerca([])
                     // Reset Filters
-                    // setSpazio([])
-                    // setMovimento(null)
+                    setSpazio([])
+                    setMovimento(null)
                     // setTimeFilter(yearsExtent)
                   }}
                 >
@@ -386,7 +410,11 @@ export default function RealismoMain({ title }) {
                 <div
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title]
+                      ? 'realismo-label-selected'
+                      : omitted[racconto.title]
+                      ? 'realismo-label-omitted'
+                      : ''
                   }`}
                   style={{
                     height: `${lineHeightLeft}px`,
@@ -404,12 +432,13 @@ export default function RealismoMain({ title }) {
               <CircleWorms
                 heightCircle={heightCircle}
                 toggleSelect={toggleSelect}
-                selected={selected}
+                selected={selectedOnWorms}
+                selectedByHand={selected}
                 omitted={omitted}
                 circlesMap={circlesMap}
                 racconti={racconti}
                 raccontiJoinLines={raccontiJoinLines}
-                radius={REALISMO_RADIUS}
+                radius={realismoRadius}
               ></CircleWorms>
             )}
           </div>
@@ -420,10 +449,15 @@ export default function RealismoMain({ title }) {
                   style={{
                     lineHeight: `${lineHeightRight}px`,
                     height: `${lineHeightRight}px`,
+                    fontSize: `${raccontiFontSize}px`,
                   }}
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
-                    selected[racconto.title] ? 'realismo-label-selected' : ''
+                    selected[racconto.title]
+                      ? 'realismo-label-selected'
+                      : omitted[racconto.title]
+                      ? 'realismo-label-omitted'
+                      : ''
                   }`}
                   key={i}
                 >

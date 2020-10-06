@@ -45,7 +45,7 @@ const Worm = React.memo(
     return (
       <g
         style={{
-          opacity: isSelected ? 1 : 0.3,
+          // opacity: isSelected ? 1 : 0.3,
         }}
       >
         <title>{racconto.title}</title>
@@ -94,7 +94,7 @@ const Worm = React.memo(
                 ></circle>
                 {circle.place && (
                   <circle
-                    style={{ fill: '#fff' }}
+                    style={{ fill: '#000' }}
                     r={circleRadius / 3}
                     cy={cy}
                     cx={cx}
@@ -184,18 +184,17 @@ const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
         return (
           <g key={yearArc.year}>
             <g style={{ transform: `rotate(${yearArc.angleLabel}deg)` }}>
-              <text
-                textAnchor={flipText ? 'start' : 'end'}
-                x={textX}
-                y={0}
+              <g
                 style={{
                   transformOrigin: `${textX}px -3px`,
                   transform: flipText ? 'rotate(180deg)' : undefined,
                   fontSize: 10,
                 }}
               >
-                {yearArc.year}
-              </text>
+                <text textAnchor={flipText ? 'start' : 'end'} x={textX} y={0}>
+                  {yearArc.year}
+                </text>
+              </g>
             </g>
             <path
               style={{ fill: '#ddd' }}
@@ -308,6 +307,7 @@ export default function CircleWorms({
   radius,
   circlesMap,
   selected,
+  selectedByHand,
   omitted,
   racconti,
   raccontiJoinLines,
@@ -379,9 +379,8 @@ export default function CircleWorms({
               <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
               <path
                 strokeDasharray="2"
-                className="realismo-label-join"
+                className={`realismo-label-join ${selectedByHand[title] ? 'reliasmo-label-join-explicit' : ''}`}
                 fill="none"
-                stroke="black"
                 d={`M ${x1} ${y1} C ${pointAX} ${pointAY}, ${pointBX} ${pointBY}, ${x2} ${y2}`}
               />
             </g>

@@ -14,7 +14,7 @@ class AltOptions extends Component {
   };
 
   updateStateFromValue = () => {
-    const { value, multiple, options } = this.props;
+    const { value, multiple, options, allowEmpty } = this.props;
     if (multiple) {
       const indices = options
         .map((item, i) => (indexOf(value, item.label) !== -1 ? i : undefined))
@@ -23,7 +23,9 @@ class AltOptions extends Component {
       indices.forEach(i => (selectedIndices[i] = true));
       this.setState({ selectedIndices });
     } else {
-      if (value) {
+      if (!value && allowEmpty) {
+        this.setState({ selectedIndices: {} });
+      } else if (value) {
         const i = findIndex(options, x => x.label === value);
         this.setState({ selectedIndices: { [i]: true } });
       }
@@ -93,7 +95,7 @@ class AltOptions extends Component {
   };
 
   toggleDropDown = (isOpen, event, metadata) => {
-    
+
     const { multiple, disabled } = this.props;
     if(disabled){
       this.setState({
