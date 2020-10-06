@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { set } from 'object-path-immutable'
 
 export function useFileList() {
   const [fileList, setFileList] = useState(null)
@@ -13,6 +14,10 @@ export function useFileList() {
 export function useIOTranslation(path) {
   const [data, setData] = useState(null)
 
+  const setDataAt = useCallback((key, value) => {
+    setData((data) => set(data, key, value))
+  }, [])
+
   useEffect(() => {
     if (!path) {
       setData(null)
@@ -21,7 +26,13 @@ export function useIOTranslation(path) {
     let canceled = false
     fetch(`/api/locales/${path}`)
       .then(
-        (r) => r.json(),
+        (r) => {
+          if (r.status === 200) {
+            return r.json()
+          } else {
+            return Promise.reject()
+          }
+        },
         () => setData(null)
       )
       .then(
@@ -47,5 +58,5 @@ export function useIOTranslation(path) {
     })
   }
 
-  return [data, setData, saveData]
+  return [data, setDataAt, saveData]
 }

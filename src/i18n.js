@@ -35,11 +35,13 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
 
+    saveMissing: true,
+
     // TODO: Handle in a more generic way....
     backend: {
       loadPath: '/atlante-calvino-project/locales/{{lng}}/{{ns}}.json',
 
       // path to post missing resources
-      addPath: '/atlante-calvino-project/locales/add/{{lng}}/{{ns}}',
+      addPath: '/api/front/locales/add/{{lng}}/{{ns}}',
     }
   })

@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
-// const mapValues = require('lodash/mapValues')
+const set = require('lodash/set')
 const app = express()
 const port = 3023
 
@@ -51,17 +51,49 @@ app.post('/api/locales/:lang/:filePath(*)', async (req, res) => {
   res.json(translation)
 })
 
-app.get('/api/locales/:lang/:filePath(*)', async (req, res) => {
-  const { lang, filePath } = req.params
+app.get('/api/locales/:lang/:relativePath(*)', async (req, res) => {
+  const { lang, relativePath } = req.params
 
-  const rawFile = await fs.promises.readFile(
-    path.join(__dirname, '../public/locales', lang, filePath)
-  )
+  const filePath = path.join(__dirname, '../public/locales', lang, relativePath)
 
-  res.set({
-    'Content-Type': 'application/json; charset=utf-8',
+  try {
+    const rawFile = await fs.promises.readFile(filePath)
+
+    res.set({
+      'Content-Type': 'application/json; charset=utf-8',
+    })
+    res.send(rawFile)
+  } catch (e) {
+    res.status(404).json({ error: `${filePath} not found` })
+  }
+})
+
+app.post('/api/front/locales/add/:lang/:ns', async (req, res) => {
+  const { lang, ns } = req.params
+
+  const filePath = path.join(__dirname, '../public/locales', lang, `${ns}.json`)
+
+  // Load exist translations (or empty object)
+  let translations
+  try {
+    const rawFile = await fs.promises.readFile(filePath)
+    translations = JSON.parse(rawFile)
+  } catch (e) {
+    translations = {}
+  }
+
+  // Set missing keys (deep)
+  const missing = req.body
+  Object.keys(missing).forEach((missingKey) => {
+    const value = missing[missingKey].split('.').slice(-1)[0]
+    set(translations, missingKey, value)
   })
-  res.send(rawFile)
+
+  // Write file
+  await fs.promises.writeFile(filePath, JSON.stringify(translations, null, 2))
+
+  // OK My Boy
+  res.status(204).send()
 })
 
 app.get('*', (req, res) => {
