@@ -6,6 +6,7 @@ const app = express()
 const port = 3023
 
 app.use(express.json())
+app.use(express.static('build'))
 
 async function getLocalesFiles(dir = '') {
   const files = await fs.promises.readdir(
@@ -30,7 +31,7 @@ app.get('/api/ls', async (req, res) => {
   try {
     const localesFiles = await getLocalesFiles()
     res.json(localesFiles)
-  } catch(e) {
+  } catch (e) {
     console.error('Error while `ls` locales', e)
     res.json([])
   }
@@ -54,13 +55,17 @@ app.get('/api/locales/:lang/:filePath(*)', async (req, res) => {
   const { lang, filePath } = req.params
 
   const rawFile = await fs.promises.readFile(
-    path.join(__dirname, '../public/locales', lang, filePath),
+    path.join(__dirname, '../public/locales', lang, filePath)
   )
 
   res.set({
-    'Content-Type': 'application/json; charset=utf-8'
+    'Content-Type': 'application/json; charset=utf-8',
   })
   res.send(rawFile)
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/build/index.html'))
 })
 
 app.listen(port, () => {
