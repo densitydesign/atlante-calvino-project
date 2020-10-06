@@ -13,6 +13,9 @@ export function useFileList() {
 
 export function useIOTranslation(path) {
   const [data, setData] = useState(null)
+  const [reloadTrigger, setReloadTrigger] = useState({})
+
+  const reload = useCallback(() => setReloadTrigger({}), [])
 
   const setDataAt = useCallback((key, value) => {
     setData((data) => set(data, key, value))
@@ -46,7 +49,7 @@ export function useIOTranslation(path) {
     return () => {
       canceled = true
     }
-  }, [path])
+  }, [path, reloadTrigger])
 
   function saveData() {
     fetch(`/api/locales/${path}`, {
@@ -58,5 +61,5 @@ export function useIOTranslation(path) {
     })
   }
 
-  return [data, setDataAt, saveData]
+  return [data, setDataAt, saveData, reload]
 }

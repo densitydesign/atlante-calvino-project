@@ -9,7 +9,7 @@ export default function Admin() {
   const { path } = useParams()
   const history = useHistory()
   const fileList = useFileList()
-  const [data, setDataAt, saveData] = useIOTranslation(path)
+  const [data, setDataAt, saveData, reload] = useIOTranslation(path)
   const [hideKeys, setHideKeys] = useState({})
   const toggle = useCallback((key) => {
     setHideKeys((all) => ({
@@ -70,7 +70,12 @@ export default function Admin() {
               </option>
             ))}
           </select>
-          {data && <button onClick={() => saveData()}>Salva</button>}
+          {data && (
+            <>
+              <button onClick={() => reload()}>Ricarica</button>
+              <button onClick={() => saveData()}>Salva</button>
+            </>
+          )}
         </div>
       )}
       {data && <div className="content">{renderData(data)}</div>}
