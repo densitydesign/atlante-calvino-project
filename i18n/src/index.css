@@ -13,17 +13,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.i18n-admin {
-  padding: 10px;
-}
-
 .navbar {
+  position: fixed;
+  height: 30px;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: hotpink;
+  border-bottom: 1px lightpink solid;
+  align-items: center;
   display: flex;
+}
+.group-key button {
+  font-size: 12px;
+  width: 15px;
+  padding: 0;
+  text-align: center;
 }
 .navbar button {
   margin-left: 5px;
 }
 
 .content {
-  margin-top: 5px;
+  padding: 10px;
+  padding-top: 40px;
 }

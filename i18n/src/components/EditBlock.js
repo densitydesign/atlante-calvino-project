@@ -5,7 +5,7 @@ function EditBlock({ value, localKey, dataKey, setDataAt }) {
     <div>
       <div>
         <b>
-          {localKey} {dataKey}
+          {localKey}
         </b>
       </div>
       <textarea
