@@ -1,0 +1,31 @@
+{
+  "ambito": {
+    "esteriore": "esteriore",
+    "interiore": "interiore",
+    "formale": "formale"
+  },
+  "categorie": {
+    "eventi liminali": "eventi liminali",
+    "interazione": "interazione",
+    "spostamento": "spostamento",
+    "intenzione": "intenzione",
+    "situazione": "situazione",
+    "stato euforico": "stato euforico",
+    "stato disforico": "stato disforico",
+    "stato riflessivo": "stato riflessivo",
+    "stato sospeso": "stato sospeso",
+    "racconto incastonato": "racconto incastonato",
+    "metanarrazione": "metanarrazione",
+    "cornice": "cornice",
+    "struttura": "struttura",
+    "terna": "terna"
+  },
+  "ui": {
+    "dettaglio": "dettaglio",
+    "aggregazione": "aggregazione",
+    "footer_chart": "Lunghezza in caratteri dei testi, disposti in ordine cronologico.",
+    "tipologia_ambito": "TIPOLOGIA DI AMBITO",
+    "numero_livelli_testo": "Numero di livelli nel testo",
+    "categorie_elenco": "CATEGORIE DI ELENCO"
+  }
+}
