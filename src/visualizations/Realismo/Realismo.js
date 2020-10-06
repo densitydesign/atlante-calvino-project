@@ -44,7 +44,7 @@ class Trama extends Component {
   render() {
     const { title } = this.props
 
-    const helpPage = GlobalData.helpPages.plot.main
+    const helpPage = GlobalData.helpPages.realism.main
 
     return (
       <Suspense fallback={<Menu title={title} helpPage={helpPage} />}>

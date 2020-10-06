@@ -10,8 +10,8 @@ export default class ProcessDoubtingMainHelp extends React.Component
   {
     return (
       <>
-      <small>TAPPA 2 </small>
-      <h1>PROCESS-DUBITARE</h1>
+      <small>Tappa 2 </small>
+      <h1>Dubitare</h1>
       <h2>L'opera di Italo Calvino come un process-dubitare</h2>
       <h3>Di cosa si tratta</h3>
       <p>Questa visualizzazione rappresenta il corpus delle opere narrative di Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il 1984.<br />A ogni elemento grafico corrisponde un testo, per cui l’unità minima della

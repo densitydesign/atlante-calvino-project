@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="695" height="10.9" viewBox="0 0 695 10.9">
+  <defs>
+    <clipPath id="clip-legenda_01">
+      <rect width="695" height="10.9"/>
+    </clipPath>
+  </defs>
+  <g id="legenda_01" clip-path="url(#clip-legenda_01)">
+    <g id="Group_795" data-name="Group 795" transform="translate(-1.19 -27.676)">
+      <g id="Esteriore" style="isolation: isolate">
+        <text id="Testo_dubitativo_td_" data-name="Testo dubitativo (td)" transform="translate(21.19 35.676)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Testo dubitativo (td)</tspan></text>
+      </g>
+      <path id="Path_47" data-name="Path 47" d="M5.69,27.676h8a4.5,4.5,0,1,1,0,9h-8a4.5,4.5,0,1,1,0-9Z" fill="#d6d6fc"/>
+      <text id="Testo_oggetto_di_dubbio" data-name="Testo oggetto di dubbio" transform="translate(128.502 35.676)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Testo oggetto di dubbio</tspan></text>
+      <text id="Testo_dubitativo_e_oggetto_di_dubbio" data-name="Testo dubitativo e oggetto di dubbio" transform="translate(249.502 35.676)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Testo dubitativo e oggetto di dubbio</tspan></text>
+      <text id="Testo_dubitativo_con_incisi_o_parentesi" data-name="Testo dubitativo con incisi o parentesi" transform="translate(431.502 35.676)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Testo dubitativo con incisi o parentesi</tspan></text>
+      <path id="Path_46" data-name="Path 46" d="M113,28.676h8a4.5,4.5,0,1,1,0,9h-8a4.5,4.5,0,1,1,0-9Z" fill="#ffd93b"/>
+      <path id="Path_46-2" data-name="Path 46" d="M113,28.676h8a4.5,4.5,0,1,1,0,9h-8a4.5,4.5,0,1,1,0-9Z" transform="translate(121)" fill="#00c19c"/>
+      <path id="Path_649" data-name="Path 649" d="M749.274,9.138c2.056,0,2.056,4.46,4.113,4.46s2.054-4.46,4.109-4.46,2.055,4.46,4.11,4.46,2.055-4.46,4.111-4.46,2.06,4.46,4.118,4.46,2.06-4.46,4.118-4.46" transform="translate(-345.556 21.728)" fill="none" stroke="#4500ff" stroke-miterlimit="10" stroke-width="0.75"/>
+    </g>
+  </g>
+</svg>

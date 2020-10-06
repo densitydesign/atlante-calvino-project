@@ -1,0 +1,142 @@
+/* App.css */
+
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  --nude: #FFE0C3;
+  --bright: #ffffff;
+  --dark: #000000;
+  --typography: #000000;
+  --map-land-fill:#FFE0C3; /* ⚠️ no space between ":" and "#" */
+  --map-land-stroke:none; /* ⚠️ can be 'none' or '#123456' */
+  font-size: 12px;
+}
+
+html { font-family: 'Inter', sans-serif; }
+
+body { color: var(--typography); }
+
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--nude);
+}
+
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+
+
+/* Mobile (max-width 767px) */
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Victor Mono', monospace;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24px;
+  margin: 0;
+}
+
+h4 {
+  font-family: 'Victor Mono', monospace;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Victor Mono', monospace;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+
+h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h6:hover{
+  color:blue;
+}
+
+
+
+/* tablet portrait */
+@media all and (min-width: 768px) {
+  h1 {font-size: 96px;}
+  h2 {}
+  h3 {font-size: 28px;}
+  h4 {font-size: 21px;}
+  h5 {font-size: 16px;}
+  h6 {font-size: 16px;}
+}
+
+/* tablet landscape and up */
+@media all and (min-width: 1024px) {
+  h1 {font-size: 84px;}
+  h2 {}
+  h3 {font-size: 28px;}
+  h4 {font-size: 21px;}
+  h5 {font-size: 16px;}
+  h6 {font-size: 16px;}
+}
+
+.country {
+    background-color: var(--bright);
+    border-top: 1px solid var(--dark);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.country.active {
+    background-color: transparent;
+}
+
+.selector {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--dark);
+}
+
+.selector button {
+  background-color: var(--bright);
+  border: none;
+  border-top: 1px solid var(--dark);
+}
+.selector button:not(:last-of-type) {
+  border-right: 1px solid var(--dark);
+}
+.selector button.active {
+  background-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+.blend-multiply {
+  mix-blend-mode: multiply;
+}

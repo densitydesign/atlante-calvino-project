@@ -5,7 +5,7 @@ main {
 }
 
 main svg {
-  grid-column: 2 / span 24;
+  grid-column: 1 / span 24;
 }
 
 main article {

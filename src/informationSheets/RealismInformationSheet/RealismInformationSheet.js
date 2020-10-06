@@ -27,10 +27,10 @@ class RealismInformationSheet extends Component {
           </p>
           <div className={SheetStyles.sideContent}>
             <img className={SheetStyles.image+' '+SheetStyles.image100w} src={window.devicePixelRatio>1?map2x:map1x} style={{border:'0px solid #333333', borderRadius: 3}} />
-            <p className={SheetStyles.caption}>
+            <p className="captionLeft">
               I luoghi del racconto: le tappe del percorso di Binda sono collegate dalle frecce, gli altri luoghi sono nominati nel racconto ma non attraversati.
             </p>
-            <p className={SheetStyles.caption}>
+            <p className="captionLeft">
               <a href="https://www.openstreetmap.org/#map=14/43.9894/7.7688" target="_blank" rel="noopener noreferrer" >Vai a una mappa più dettagliata</a>
             </p>
           </div>
@@ -49,12 +49,15 @@ class RealismInformationSheet extends Component {
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit.
           </p>
           <div className={SheetStyles.sideContent}>
-            <img className={SheetStyles.image+' '+SheetStyles.image100w} src={treemap} style={{position:'sticky',top:'calc(var(--navigation-height) + 2px)'}} />
-            <p className={SheetStyles.caption}>
-              Treemap
-            </p>
+            <div style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)'}}>
+              <img className={SheetStyles.image+' '+SheetStyles.image100w} src={treemap} />
+              <p className="captionLeft">
+                Treemap
+              </p>
+            </div>
           </div>
           <p style={{
+            marginTop:'1rem',
             gridColumn:'1 / span 4',
             color:'#4500FF',
             fontSize:12
@@ -62,6 +65,7 @@ class RealismInformationSheet extends Component {
             <b>Natura 44%</b> — sentiero, luna, bivio, alberi, scorciatoie, buio, sassi, cespugli, salite, sassi, notte, buio, vallate, legno, castagne, boschi, sentieri, capre, legna, fieno, sassi, castagno, tronco, lichene, pietra, spiazzo, carbonaia, capra, faina, caccia, cespugli, pendio, prati, valli, cane, coda, monte, valle, valle, monte, creste, monte, valle, campagne, vallata, latte, valle, notte, notte, paglia, braci, buio, boschi, valle, l’alba, cresta, ali, pipistrello, costone, buio, vento, erba, foglie, castagno, ricci, foglie, ricci, foglie, ricci, sciacquio, ghiri, alberi, notte, sentiero, mare, foglie, costiera, pista, vallata, rive, riva, buio, pendio, cespugli, stormi, pernici, luce, lume, riva, lumi, sentieri, bestia, orme, lumi, cespuglio, cespuglio, bestia, rami, larici, bestia, bestia, scimmia, prato, luna, versante, sottoterra, montagne, ragni, terra, funghi, bosco, buio, tronchi, cespugli, prato, luna, gufo, fischio, fischio, bestia, cespo, d’eriche, lepre, volpe, arbusti, cespuglio, albero, ghiri, pietraie, rami, radici, alberi siepe, foglie, gufo, aria, sentiero, pietre, strada, sentiero, pietre, alberi, muschio, pietre, alberi, muschio, gradino, sassi, dirupo, roveto, costone, cespo, ginestra, agrifoglio, rigagnolo, acqua, rane, rane, vallata, rane, nicchia, neve, neve, pini, aghi, terriccio, formicaio, nicchia, bosco, fuoco, castagne, ghiri, luce, fuoco, fuoco, alba, cresta, castagne, sperone, roccia, dirupo, cespugli, cespugli
           </p>
           <p style={{
+            marginTop:'1rem',
             gridColumn:'5 / span 4',
             color:'#4500FF',
             fontSize:12
@@ -69,6 +73,7 @@ class RealismInformationSheet extends Component {
             <b>Guerra 21%</b> — staffetta, battaglione, staffetta, brigata, compagni, accampamento, notizie, ordini, compito, arma, fuciletto, distaccamento, risposta, cuoco, marmitte, gavettata, compito, partigiani, marina, guerra, guerra, spari, salvataggi, guerra, partigiani, bersaglieri, militi, rastrellamento, partigiani, bersaglieri, militi, tedeschi, partigiani, rastrellamenti, marcia, militi, distaccamenti, ordine, battaglione, ordine, comandante, consegna, marcia, tedeschi, tedeschi, battaglioni, tedeschi, compagni, compagni, mine, mine, mine, mine, mine, tedeschi, tedeschi, tedesco, tedesco, tedesco, elmi, fucili, tedeschi, tedeschi, armi, mitraglia, elmo, mitra, tedeschi, tedeschi, tedesco, elmi, bandoliere, armi, inseguimento, accampamento, commissario, ordine, tedeschi, elmo, accampamento, compagni, compagni, tedeschi, fascisti, munizioni, treppiede, compagni, marcia
           </p>
           <p style={{
+            marginTop:'1rem',
             gridColumn:'9 / span 4',
             color:'#4500FF',
             fontSize:12
@@ -88,7 +93,7 @@ class RealismInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-          <p className={SheetStyles.paragraph}>
+          <p className={SheetStyles.paragraph + ' references'}>
             <ol className={SheetStyles.references}>
               <li className={SheetStyles.referenceItem}>
                 Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
@@ -107,11 +112,11 @@ class RealismInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="RITORNA ALL'ANALISI" route="/Problem/realism" /></div>
-          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" /></div>
-          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" /></div>
+          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/Phenomena/territory/spaceAnalysis" /></div>
+          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/transforming" /></div>
         </div>
       </main>
-      
+
     </>;
   }
 }
