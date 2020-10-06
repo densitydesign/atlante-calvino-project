@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useReducer, useState } from 'react'
 import { set } from 'object-path-immutable'
 
 export function useFileList() {
@@ -11,19 +11,50 @@ export function useFileList() {
   return fileList
 }
 
+const InitialTranslationState = {
+  lastPathFetched: null,
+  data: null,
+}
+
+function translationReducer(state, action) {
+  const [type, ...args] = action
+  if (type === 'CLEAR') {
+    return InitialTranslationState
+  }
+  if (type === 'END') {
+    const [lastPathFetched, data] = args
+    return {
+      lastPathFetched,
+      data,
+    }
+  }
+  if (type === 'SET') {
+    const [key, value] = args
+    return {
+      ...state,
+      data: set(state.data, key, value),
+    }
+  }
+  throw new Error('Bad translate action')
+}
+
 export function useIOTranslation(path) {
-  const [data, setData] = useState(null)
+  const [state, dispatch] = useReducer(
+    translationReducer,
+    InitialTranslationState
+  )
+  const { data, lastPathFetched } = state
   const [reloadTrigger, setReloadTrigger] = useState({})
 
   const reload = useCallback(() => setReloadTrigger({}), [])
 
   const setDataAt = useCallback((key, value) => {
-    setData((data) => set(data, key, value))
+    dispatch(['SET', key, value])
   }, [])
 
   useEffect(() => {
     if (!path) {
-      setData(null)
+      dispatch(['CLEAR'])
       return
     }
     let canceled = false
@@ -36,15 +67,15 @@ export function useIOTranslation(path) {
             return Promise.reject()
           }
         },
-        () => setData(null)
+        () => dispatch(['END', path, null])
       )
       .then(
         (data) => {
           if (!canceled) {
-            setData(data)
+            dispatch(['END', path, data])
           }
         },
-        () => setData(null)
+        () => dispatch(['END', path, null])
       )
     return () => {
       canceled = true
@@ -61,5 +92,5 @@ export function useIOTranslation(path) {
     })
   }
 
-  return [data, setDataAt, saveData, reload]
+  return [data, lastPathFetched, setDataAt, saveData, reload]
 }

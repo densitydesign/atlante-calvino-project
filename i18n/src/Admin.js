@@ -9,22 +9,30 @@ export default function Admin() {
   const { path } = useParams()
   const history = useHistory()
   const fileList = useFileList()
-  const [data, setDataAt, saveData, reload] = useIOTranslation(path)
-  const [hideKeys, setHideKeys] = useState({})
+  const [data, lastPathFetched, setDataAt, saveData, reload] = useIOTranslation(
+    path
+  )
+  const [hiddenKeys, setHiddenKeys] = useState({})
   const toggle = useCallback((key) => {
-    setHideKeys((all) => ({
+    setHiddenKeys((all) => ({
       ...all,
       [key]: !all[key],
     }))
   }, [])
+
+  // Clear hidden keys when last fetched path changes
+  const [prevPath, setPrevPath] = useState(lastPathFetched)
+  if (prevPath !== lastPathFetched) {
+    setPrevPath(lastPathFetched)
+    setHiddenKeys((all) => (Object.keys(all).length === 0 ? all : {}))
+  }
 
   function renderData(data, parentKey = '') {
     const depth = parentKey.split('.').length
     return Object.keys(data).map((key) => {
       const value = data[key]
       const dataKey = [parentKey, key].filter(Boolean).join('.')
-      const show = !hideKeys[dataKey]
-
+      const show = !hiddenKeys[dataKey]
       if (naiveIsObject(value)) {
         return (
           <div key={key}>
