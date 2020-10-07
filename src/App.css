@@ -87,7 +87,7 @@ body {
 }
 
 /* PREVIUS HEADERS STYLES (delete when possible) */
-h1 {
+/* h1 {
   margin: 0;
   font-size: 2.4em;
   color: var(--text-color);
@@ -117,7 +117,7 @@ h5 {
   font-weight: 100;
   color: var(--small-text);
   line-height: 1.4em;
-}
+} */
 /* end block */
 
 /* TYPOGRAPHY STYLES */
@@ -164,13 +164,13 @@ p.small {
 /* end block */
 
 .ac-breadcrumb {
-   color: #666;
-   font-size: 0.8571428571rem;
-   line-height: 2.1428571429rem;
-   letter-spacing: 0.2;
-   text-transform: uppercase;
-   grid-column: 1 / span 12;
- }
+  color: #666;
+  font-size: 0.8571428571rem;
+  line-height: 2.1428571429rem;
+  letter-spacing: 0.2;
+  text-transform: uppercase;
+  grid-column: 1 / span 12;
+}
 
  .legend-text {
    font-size: 0.7142857143rem;
@@ -186,7 +186,6 @@ p.small {
  .captionLeft {
    text-align: left;
  }
-
 
  sup{
    color:var(--dark-blue);
@@ -234,12 +233,13 @@ ol {
 
 ul {
   list-style-type: none;
-  padding-left: 4rem;
+  padding-left: 3rem;
+  margin: 1rem 0;
 }
 
 li {
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  /* margin-bottom: 0.5em; */
+  /* margin-top: 0.5em; */
   color: var(--list);
 }
 
