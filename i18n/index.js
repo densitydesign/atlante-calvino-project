@@ -2,11 +2,17 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const set = require('lodash/set')
+const get = require('lodash/get')
+const lockFileLib = require('lockfile')
+const util = require('util')
 const app = express()
 const port = 3023
 
 app.use(express.json())
 app.use(express.static('build'))
+
+const lock = util.promisify(lockFileLib.lock)
+const unlock = util.promisify(lockFileLib.unlock)
 
 async function getLocalesFiles(dir = '') {
   const files = await fs.promises.readdir(
@@ -64,7 +70,10 @@ app.get('/api/locales/:lang/:relativePath(*)', async (req, res) => {
     })
     res.send(rawFile)
   } catch (e) {
-    res.status(404).json({ error: `${filePath} not found` })
+    res.status(404).json({
+      error: `${filePath} not found`,
+      details: e,
+    })
   }
 })
 
@@ -72,6 +81,19 @@ app.post('/api/front/locales/add/:lang/:ns', async (req, res) => {
   const { lang, ns } = req.params
 
   const filePath = path.join(__dirname, '../public/locales', lang, `${ns}.json`)
+  const lockFilePath = path.join(__dirname, `${lang}__${ns}.lock`)
+
+  try {
+    await lock(lockFilePath, {
+      // Wait 10 seconds ...
+      wait: 10 * 1000,
+    })
+  } catch (e) {
+    return res.status(500).json({
+      error: `${filePath} was locked by ${lockFilePath}, giving up...`,
+      details: e,
+    })
+  }
 
   // Load exist translations (or empty object)
   let translations
@@ -85,12 +107,38 @@ app.post('/api/front/locales/add/:lang/:ns', async (req, res) => {
   // Set missing keys (deep)
   const missing = req.body
   Object.keys(missing).forEach((missingKey) => {
-    const value = missing[missingKey].split('.').slice(-1)[0]
-    set(translations, missingKey, value)
+    if (get(translations, missingKey) === undefined) {
+      const missingValue = missing[missingKey]
+      let value
+      if (missingValue === missingKey) {
+        value = missingValue.split('.').slice(-1)[0]
+      } else {
+        value = missingValue
+      }
+      set(translations, missingKey, value)
+    }
   })
 
   // Write file
-  await fs.promises.writeFile(filePath, JSON.stringify(translations, null, 2))
+  try {
+    await fs.promises.writeFile(filePath, JSON.stringify(translations, null, 2))
+  } catch (e) {
+    res.status(500).json({
+      error: `Error while tring to write ${filePath}`,
+      details: e,
+    })
+    return
+  }
+
+  try {
+    await unlock(lockFilePath)
+  } catch (e) {
+    res.status(500).json({
+      error: `Error while tring to unlock ${lockFilePath}`,
+      details: e,
+    })
+    return
+  }
 
   // OK My Boy
   res.status(204).send()
