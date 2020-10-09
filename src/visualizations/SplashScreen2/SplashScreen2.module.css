@@ -77,6 +77,6 @@
 }
 
 .disabled-link {
-    cursor: not-allowed;
+    /* cursor: not-allowed; */
     /* pointer-events: none; */
 }
