@@ -2,14 +2,14 @@
 
 /* common CSS */
 :root {
-  --bg: #FBFBFC;
+  --bg: #fbfbfc;
   --calvino-red: tomato;
   --dark-green: black;
-  --cool-bg-bg: #F3F1EC;
-  --cool-bg: #FFFFFA;
-  --dark-blue: #5151FC;
+  --cool-bg-bg: #f3f1ec;
+  --cool-bg: #fffffa;
+  --dark-blue: #5151fc;
   --small-text: #3f3e4c;
-  --secondary-element: #C6CACF;
+  --secondary-element: #c6cacf;
   --header-height: 66px;
   --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
@@ -22,7 +22,7 @@
   --text-size: 14px;
   --main-menu: var(--dimGold);
   font-size: 14px;
-  font-family: 'HKGrotesk', sans-serif;
+  font-family: "HKGrotesk", sans-serif;
 }
 
 title {
@@ -35,8 +35,18 @@ title {
 
 /* ELEMENTI COMUNI */
 a {
-  text-decoration: none;
-  color: var(--text-color);
+  color: var(--dark-blue);
+  transition: all 0.35s ease;
+}
+
+a:hover {
+  color: var(--dark-blue);
+}
+
+a:focus {
+  text-decoration: underline;
+  color: var(--dark-blue);
+  transition: color 0.5s ease;
 }
 
 .link {
@@ -63,19 +73,8 @@ a.link:hover {
   background-color: var(--dark-blue);
 }
 
-a:hover {
-  text-decoration: none;
-  color: var(--dark-blue);
-  transition: color 0.3s ease;
-}
-
-a:focus {
-  text-decoration: underline;
-  color: var(--dark-blue);
-  transition: color 0.5s ease;
-}
-
-html, body {
+html,
+body {
   height: 100vh;
 }
 
@@ -85,40 +84,6 @@ body {
   overflow-x: hidden;
   background-color: var(--cool-bg);
 }
-
-/* PREVIUS HEADERS STYLES (delete when possible) */
-/* h1 {
-  margin: 0;
-  font-size: 2.4em;
-  color: var(--text-color);
-  margin-bottom: 1em;
-  font-weight: 500;
-}
-h2 {
-  margin: 0;
-  font-size: 1.8em;
-  color: var(--dark-blue);
-  font-weight: 500;
-  letter-spacing: 1;
-}
-h3 {
-  margin: 0;
-  font-size: 1.5em;
-  color: black;
-}
-h4 {
-  margin: 0;
-  font-size: 1.3em;
-  color: black;
-}
-h5 {
-  margin: 0;
-  font-size: 1.2em;
-  font-weight: 100;
-  color: var(--small-text);
-  line-height: 1.4em;
-} */
-/* end block */
 
 /* TYPOGRAPHY STYLES */
 h1 {
@@ -140,13 +105,13 @@ h3 {
   color: #404040;
 }
 p {
- font-size: 1.2857142857rem;
- line-height: 2.1428571429rem;
+  font-size: 1.2857142857rem;
+  line-height: 2.1428571429rem;
 }
 p.small {
   font-size: 1rem;
   line-height: 1.2857142857rem;
- }
+}
 .breadcrumb {
   color: #666;
   font-size: 0.8571428571rem;
@@ -172,25 +137,26 @@ p.small {
   grid-column: 1 / span 12;
 }
 
- .legend-text {
-   font-size: 0.7142857143rem;
-   line-height: 0.9285714286rem;
- }
+.legend-text {
+  font-size: 0.7142857143rem;
+  line-height: 0.9285714286rem;
+}
 
- .caption, .captionLeft {
-   font-size: 0.8571428571rem;
-   line-height: 1.4rem;
-   text-align: center;
- }
+.caption,
+.captionLeft {
+  font-size: 0.8571428571rem;
+  line-height: 1.4rem;
+  text-align: center;
+}
 
- .captionLeft {
-   text-align: left;
- }
+.captionLeft {
+  text-align: left;
+}
 
- sup{
-   color:var(--dark-blue);
-   font-size: 60%;
- }
+sup {
+  color: var(--dark-blue);
+  font-size: 60%;
+}
 
 /* /end TYPOGRAPHY STYLES */
 
@@ -251,7 +217,8 @@ li {
   padding-left: 0rem;
 }
 
-.references ol, .references ul{
+.references ol,
+.references ul {
   padding-left: 0px;
 }
 
@@ -260,12 +227,12 @@ li {
   margin-bottom: 1.5rem;
 }
 
-.cite{
-  margin-left:3.8571428571rem;
-  margin-right:3.8571428571rem;
-  color:var(--dark-blue);
-  font-size:1.2857142857rem;
-  line-height:2.1428571429rem;
+.cite {
+  margin-left: 3.8571428571rem;
+  margin-right: 3.8571428571rem;
+  color: var(--dark-blue);
+  font-size: 1.2857142857rem;
+  line-height: 2.1428571429rem;
   font-style: italic;
 }
 
@@ -280,21 +247,24 @@ li {
   position: fixed;
 }
 
-.navigations>*:not(:last-child) {
+.navigations > *:not(:last-child) {
   border-right: 1px solid var(--navigation-borders);
 }
 
-.navigations>div {
+.navigations > div {
   max-height: 100%;
   display: flex;
   align-items: center;
 }
 
-.page-title, .options-container>.dropdown>button, .search-component {
+.page-title,
+.options-container > .dropdown > button,
+.search-component {
   padding: 0 10px;
 }
 
-.navigations>div svg {}
+.navigations > div svg {
+}
 
 .top-nav {
   position: sticky;
@@ -350,7 +320,8 @@ li {
   text-decoration: none;
 }
 
-a.button-text, a:visited.button-text {
+a.button-text,
+a:visited.button-text {
   text-decoration: none;
 }
 
@@ -371,7 +342,7 @@ a.button-text, a:visited.button-text {
 
 /* FOOTER */
 footer {
-  background-color:var(--dark-blue);
+  background-color: var(--dark-blue);
   color: var(--cool-bg);
   /* position: fixed; */
   position: sticky;
@@ -446,7 +417,8 @@ footer {
   transition: color 0.3s ease;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
   color: var(--bg);
   background-color: black;
 }
@@ -459,8 +431,8 @@ footer {
   display: block;
   position: absolute;
   z-index: -9999;
-  width:15%;
-  opacity:0.5;
+  width: 15%;
+  opacity: 0.5;
   /* filter: invert(12%) sepia(67%) saturate(6275%) hue-rotate(237deg) brightness(105%) contrast(98%); */
 }
 
@@ -475,7 +447,8 @@ footer {
   border: none;
 }
 
-.help-side-panel .legend p, .help-side-panel .legend li {
+.help-side-panel .legend p,
+.help-side-panel .legend li {
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 0.35rem;
@@ -526,7 +499,7 @@ footer {
 
 #overlay .sizein {
   animation: sizein 2s infinite;
-  animation-direction:alternate;
+  animation-direction: alternate;
   height: auto;
 }
 
@@ -546,7 +519,7 @@ footer {
   }
 
   100% {
-    width:10%;
+    width: 10%;
     left: 500px;
     top: 500px;
     -webkit-animation-timing-function: ease-out;
@@ -571,12 +544,10 @@ footer {
   }
 
   100% {
-    opacity:100%;
+    opacity: 100%;
     -webkit-animation-timing-function: ease-out;
   }
 }
-
-
 
 /* hover immagini */
 /*
@@ -605,22 +576,22 @@ footer {
   ##Device = Laptops, Desktops
   ##Screen = B/w 1015px to 1280px
 */
-@media (min-width: 1025px) and (max-width: 1280px) {}
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
 
 /*
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
-
-
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
