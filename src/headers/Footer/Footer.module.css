@@ -1,0 +1,19 @@
+.footer {
+  background-color: var(--dark-blue);
+  color: var(--cool-bg);
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  
+  /* padding: 1.5em; */
+  height: 18px;
+  font-size: 0.8571428571rem;
+  line-height: 1rem;
+  padding: 1px 0 0 0;
+}
+
+.footer p {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0
+}

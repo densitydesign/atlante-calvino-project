@@ -18,7 +18,7 @@ export default class Equipe extends React.Component {
     return (
       <>
         <HamburgerIntroHeader />
-        <div className="ac-grid-24 has-sidebar">
+        <div className="ac-grid-24 has-sidebar" style={{marginBottom: '1rem'}}>
           <div className="content">
             <h1>Équipe</h1>
             <h2>
@@ -39,19 +39,19 @@ export default class Equipe extends React.Component {
               risultati della loro ricerca in modalità compatibili con gli
               strumenti di visualizzazione sviluppati dal DensityDesign Research
               Lab.
-              <ul>
-                {people.unige.map((d) => {
-                  return (
-                    <li>
-                      <a href={d.url} target="_blank" rel="noopener noreferrer">
-                        {d.name}
-                      </a>{" "}
-                      – {d.role}
-                    </li>
-                  );
-                })}
-              </ul>
             </p>
+            <ul>
+              {people.unige.map((d, i) => {
+                return (
+                  <li key={"gin-" + i}>
+                    <a href={d.url} target="_blank" rel="noopener noreferrer">
+                      {d.name}
+                    </a>{" "}
+                    – {d.role}
+                  </li>
+                );
+              })}
+            </ul>
             <br />
             <h2>
               DensityDesign Research Lab
@@ -73,19 +73,20 @@ export default class Equipe extends React.Component {
               umanistiche e l’information design, come la progettazione di
               artefatti e metodi digitali per l’elaborazione, l’accesso e la
               visualizzazione dell’informazione.
-              <ul>
-                {people.density.map((d) => {
-                  return (
-                    <li>
-                      <a href={d.url} target="_blank" rel="noopener noreferrer">
-                        {d.name}
-                      </a>{" "}
-                      – {d.role}
-                    </li>
-                  );
-                })}
-              </ul>
             </p>
+            <ul>
+              {people.density.map((d, i) => {
+                return (
+                  <li key={"dd-" + i}>
+                    <a href={d.url} target="_blank" rel="noopener noreferrer">
+                      {d.name}
+                    </a>{" "}
+                    – {d.role}
+                  </li>
+                );
+              })}
+            </ul>
+            <br />
             <p>
               Allo sviluppo delle visualizzazioni hanno collaborato Mauro
               Bianchi e Giovanni Fumagalli di{" "}

@@ -195,9 +195,13 @@ ol {
   list-style-position: outside;
   padding-left: 3rem;
   color: var(--small-text);
+  font-size: 1.2857142857rem;
+  line-height: 2.1428571429rem;
 }
 
 ul {
+  font-size: 1.2857142857rem;
+  line-height: 2.1428571429rem;
   list-style-type: none;
   padding-left: 3rem;
   margin: 1rem 0;
@@ -341,19 +345,20 @@ a:visited.button-text {
 }
 
 /* FOOTER */
-footer {
+/* Moved into footer.js */
+/* footer {
   background-color: var(--dark-blue);
   color: var(--cool-bg);
-  /* position: fixed; */
   position: sticky;
   bottom: 0;
   width: 100%;
   font-size: 0.7em;
   padding: 1.5em;
   height: var(--navigation-height);
-}
+} */
 
-#loghi {
+/* Removed */
+/* #loghi {
   overflow-y: hidden;
 }
 
@@ -367,7 +372,7 @@ footer {
 
 #logo-dd {
   width: 30%;
-}
+} */
 
 #timeline .selection {
   fill: transparent;
