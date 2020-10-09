@@ -3,12 +3,10 @@ import { BsEnvelope } from "react-icons/bs";
 
 import { FaTwitter, FaHashtag } from "react-icons/fa";
 
-import HamburgerIntroHeader from "../../headers/HamburgerIntroHeader/HamburgerIntroHeader";
+import MainMenu from '../../general/MainMenu';
+import PagesNavigation from '../../general/PagesNavigation';
 import Footer from "../../headers/Footer/Footer";
 
-// import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
-// import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
-// import '../../App.css';
 import "./Equipe.css";
 
 import people from "./people.json";
@@ -17,8 +15,11 @@ export default class Equipe extends React.Component {
   render() {
     return (
       <>
-        <HamburgerIntroHeader />
-        <div className="ac-grid-24 has-sidebar" style={{marginBottom: '1rem'}}>
+        <div className="top-nav navigations">
+          <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
+          <PagesNavigation style = {{gridColumn: 'span 22'}}/>
+        </div>
+        <div className="ac-grid-24 has-sidebar">
           <div className="content">
             <h1>Équipe</h1>
             <h2>

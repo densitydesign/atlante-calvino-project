@@ -167,13 +167,13 @@ sup {
 }
 .content {
   padding: 0 calc((100% / 16) * 2);
+  padding-bottom: 1rem;
   grid-column: 1 / 17;
-  padding: 0 calc((100% / 16) * 2);
 }
 .sidebar {
   grid-column: 17 / end;
   border-left: 1px solid black;
-  height: calc(100vh - (var(--navigation-height) * 2));
+  height: calc(100vh - (var(--navigation-height) + 18px));
   /* display: flex; */
   padding: 0 calc(100% / 8);
 }
