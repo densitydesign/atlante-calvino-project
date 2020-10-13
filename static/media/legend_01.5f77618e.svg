@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="36" viewBox="0 0 800 36">
+  <defs>
+    <clipPath id="clip-legend">
+      <rect width="800" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="legend" clip-path="url(#clip-legend)">
+    <g id="Group_795" data-name="Group 795" transform="translate(0 25)">
+      <g id="Group_306" data-name="Group 306">
+        <g id="Group_312" data-name="Group 312" transform="translate(0 -1)">
+          <text id="Esteriore" transform="translate(20 9)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Esteriore</tspan></text>
+          <path id="Path_47" data-name="Path 47" d="M4.5,0h8a4.5,4.5,0,0,1,0,9h-8a4.5,4.5,0,0,1,0-9Z" transform="translate(0 1)" fill="#5151fc"/>
+        </g>
+      </g>
+      <g id="Group_307" data-name="Group 307" transform="translate(74)">
+        <text id="Interiore" transform="translate(20 8)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Interiore</tspan></text>
+        <path id="Path_46" data-name="Path 46" d="M4.5,0h8a4.5,4.5,0,0,1,0,9h-8a4.5,4.5,0,0,1,0-9Z" transform="translate(0 1)" fill="#0affb7"/>
+      </g>
+      <g id="Group_543" data-name="Group 543" transform="translate(146 0)">
+        <text id="Formale" transform="translate(20.483 8)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Formale</tspan></text>
+        <rect id="Rectangle_181" data-name="Rectangle 181" width="17" height="9" rx="4.5" transform="translate(0 1)" fill="#ffa501"/>
+      </g>
+    </g>
+    <text id="Ambito" transform="translate(0 9)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Ambito</tspan></text>
+  </g>
+</svg>
