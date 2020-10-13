@@ -17,6 +17,7 @@ import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
 import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
@@ -50,6 +51,7 @@ export default function AtlasRouter()
       <Route exact path="/"><SplashScreen2 /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
       <Route exact path="/Home"><HamburgerMenu /></Route>
+      <Route exact path="/HomeIndex"><IndexMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>
 
