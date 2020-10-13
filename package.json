@@ -1,7 +1,6 @@
 {
   "name": "atlante-calvino-project",
-  "xhomepage": "https://densitydesign.github.io/atlante-calvino-project",
-  "homepage": ".",
+  "homepage": "https://densitydesign.github.io/atlante-calvino-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
