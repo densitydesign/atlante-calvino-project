@@ -1,7 +1,5 @@
 .IndexMenu{
-    margin-left: 15%;
-    margin-right: 15%;
-    width: 70%;
+    width: 100vw;
 }
 
 .title-viz {
@@ -11,7 +9,7 @@
 
 .territorio{
     position: absolute;
-    top: calc(100vh / 8);
+    top: calc(calc(100vh / 8) - var(--navigation-height));
     left: calc(100% / 12 * 5.5);
     display: flex;
     align-items: center;
@@ -20,7 +18,7 @@
 
 .dubitare{
     position: absolute;
-    top: calc(100vh / 8 * 2.75);
+    top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
     left: calc(100% / 12);
     display: flex;
     align-items: center;
@@ -29,7 +27,7 @@
 
 .nebbia{
     position: absolute;
-    top: calc(100vh / 8 * 1.75);
+    top: calc(calc(100vh / 8 * 1.75) - var(--navigation-height));
     left: calc(100% / 12 * 3);
     display: flex;
     align-items: center;
@@ -38,7 +36,7 @@
 
 .cancellazione{
     position: absolute;
-    top: calc(100vh / 8 * 5.25);
+    top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
     left: calc(100% / 12 * 1.5);
     display: flex;
     align-items: center;
@@ -47,7 +45,7 @@
 
 .trasformare{
     position: absolute;
-    top: calc(100vh / 8 * 4.25);
+    top: calc(calc(100vh / 8 * 4.25) - var(--navigation-height));
     left: calc(100% / 12 * 4);
     display: flex;
     align-items: center;
@@ -56,7 +54,7 @@
 
 .luoghi{
     position: absolute;
-    top: calc(100vh / 8 * 2.5);
+    top: calc(calc(100vh / 8 * 2.5) - var(--navigation-height));
     left: calc(100% / 12 * 5.5);
     display: flex;
     align-items: center;
@@ -65,7 +63,7 @@
 
 .realismo{
     position: absolute;
-    top: calc(100vh / 8 * 6);
+    top: calc(calc(100vh / 8 * 6.15) - var(--navigation-height));
     left: calc(100% / 12 * 6);
     display: flex;
     align-items: center;
@@ -74,7 +72,7 @@
 
 .elenchi{
     position: absolute;
-    top: calc(100vh / 8 * 1.75);
+    top: calc(calc(100vh / 8 * 1.75) - var(--navigation-height));
     left: calc(100% / 12 * 8);
     display: flex;
     align-items: center;
@@ -83,7 +81,7 @@
 
 .combinare{
     position: absolute;
-    top: calc(100vh / 8 * 2.75);
+    top: calc(calc(100vh / 8 * 2.75)  - var(--navigation-height));
     left: calc(100% / 12 * 10);
     display: flex;
     align-items: center;
@@ -92,7 +90,7 @@
 
 .trama{
     position: absolute;
-    top: calc(100vh / 8 * 5.5);
+    top: calc(calc(100vh / 8 * 5.5) - var(--navigation-height));
     left: calc(100% / 12 * 9.5);
     display: flex;
     align-items: center;
@@ -101,18 +99,18 @@
 
 .spazio{
     position: absolute;
-    top: calc(100vh / 8 * 4.5);
+    top: calc(calc(100vh / 8 * 4.5) - var(--navigation-height));
     left: calc(100% / 12 * 5.5);
 }
 
 .forma{
     position: absolute;
-    top: calc(100vh / 8 * 3.5);
+    top: calc(calc(100vh / 8 * 3.5) - var(--navigation-height));
     left: calc(100% / 12 * 7.5);
 }
 .dubbio{
     position: absolute;
-    top: calc(100vh / 8 * 2);
+    top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
     left: calc(100% / 12 * 0.5);
 }
 
@@ -128,20 +126,7 @@
     display: block;
 }
 
-@media screen and (max-width: 1000px) {
-    .icon-width{
-        width: 70px;
-    }
-
-    .big-name{
-        font-size: 45px;
-        letter-spacing: 1px;
-        font-weight: 600;
-        color: var(--violet-index-home);
-    }
-}
-
-@media screen and (min-width: 1001px) and (max-width: 1365px) {
+@media screen and (max-width: 1365px) {
     .icon-width{
         width: 100px;
     }
@@ -179,4 +164,5 @@
         color: #afaff9;
     }
 }
+
 

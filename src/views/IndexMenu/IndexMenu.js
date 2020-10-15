@@ -23,6 +23,7 @@ import { ReactComponent as CombinareIconHover } from "./icons/combinare_blue.svg
 import { ReactComponent as TramaIcon } from "./icons/trama_color.svg"
 import { ReactComponent as TramaIconHover } from "./icons/trama_blue.svg"
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
+import Footer from "../../headers/Footer/Footer"
 
 const ItemIndex = ({
   icon,
@@ -52,26 +53,65 @@ export default function IndexMenu() {
   return (
     <div>
       <IndexMenuHeader />
+      <div
+        className="position-absolute"
+        style={{ top: 58, left: 0, right: 0, bottom: 58 }}
+      >
+        <svg style={{ overflow: "visible", width: "100vw", height: "100%" }}>
+          <g id="Orbite">
+            <ellipse
+              cx="50%"
+              cy="55%"
+              rx="70%"
+              ry="45%"
+              fill="none"
+              stroke="#666"
+              strokeMiterlimit="10"
+              strokeDasharray="3.997405529022217,5.996108531951904"
+            />
+            <ellipse
+              cx="50%"
+              cy="42%"
+              rx="45%"
+              ry="30%"
+              fill="none"
+              stroke="#666"
+              strokeMiterlimit="10"
+              strokeDasharray="3.997405529022217,5.996108531951904"
+            />
+            <ellipse
+              cx="50%"
+              cy="30%"
+              rx="25%"
+              ry="17%"
+              fill="none"
+              stroke="#666"
+              strokeMiterlimit="10"
+              strokeDasharray="3.997405529022217,5.996108531951904"
+            />
+          </g>
+        </svg>
+      </div>
       <div className="IndexMenu position-relative">
         <ItemIndex
           title="territorio"
           className="territorio"
-          icon={<TerritorioIcon className="basic-icon icon-width"  />}
+          icon={<TerritorioIcon className="basic-icon icon-width" />}
           iconHover={<TerritorioIconHover className="hover-icon icon-width" />}
         />
         <ItemIndex
           title="dubitare"
           link="Process/doubting"
           className="dubitare"
-          icon={<DubbioIcon className="basic-icon icon-width"  />}
-          iconHover={<DubbioIconHover className="hover-icon icon-width"  />}
+          icon={<DubbioIcon className="basic-icon icon-width" />}
+          iconHover={<DubbioIconHover className="hover-icon icon-width" />}
         />
         <ItemIndex
           title="nebbia"
           link="Phenomena/territory/doubtAnalysis"
           className="nebbia"
-          icon={<NebbiaIcon className="basic-icon icon-width"  />}
-          iconHover={<NebbiaIconHover className="hover-icon icon-width"  />}
+          icon={<NebbiaIcon className="basic-icon icon-width" />}
+          iconHover={<NebbiaIconHover className="hover-icon icon-width" />}
         />
         <ItemIndex
           title="cancellazione"
@@ -87,9 +127,7 @@ export default function IndexMenu() {
           className="trasformare"
           link="Process/transforming"
           icon={<TrasformareIcon className="basic-icon icon-width" />}
-          iconHover={
-            <TrasformareIconHover className="hover-icon icon-width" />
-          }
+          iconHover={<TrasformareIconHover className="hover-icon icon-width" />}
         />
         <ItemIndex
           title="luoghi"
@@ -135,43 +173,8 @@ export default function IndexMenu() {
         <div className="dubbio">
           <div className="big-name">Dubbio</div>
         </div>
-        <div>
-        <svg style={{ overflow: "visible" }} viewBox="0 0 1366 900">
-          <g id="Orbite">
-            <ellipse
-              cx="682.99999"
-              cy="513.1355"
-              rx="960.36843"
-              ry="355.5"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-            <ellipse
-              cx="683"
-              cy="419.47656"
-              rx="680.98376"
-              ry="251.84106"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-            <ellipse
-              cx="682.99999"
-              cy="296.1355"
-              rx="340.29134"
-              ry="118.5"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-          </g>
-        </svg>
-        </div>
       </div>
+      <Footer />
     </div>
   )
 }

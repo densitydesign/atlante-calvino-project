@@ -8,7 +8,7 @@ class Footer extends React.Component
 
       <footer className="footer text-center">
       <div className="container">
-      <p className="">© 2017-2019 – Atlante Calvino: letteratura e visualizzazione</p></div>
+      <p className="">© Atlante Calvino 2017-{new Date().getFullYear()}</p></div>
 </footer>
   );
 }
