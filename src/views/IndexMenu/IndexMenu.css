@@ -36,7 +36,7 @@
 
 .cancellazione{
     position: absolute;
-    top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
+    top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
     left: calc(100% / 12 * 1.5);
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@
 
 .realismo{
     position: absolute;
-    top: calc(calc(100vh / 8 * 6.15) - var(--navigation-height));
+    top: calc(calc(100vh / 8 * 5.75) - var(--navigation-height));
     left: calc(100% / 12 * 6);
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@
 
 .trama{
     position: absolute;
-    top: calc(calc(100vh / 8 * 5.5) - var(--navigation-height));
+    top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
     left: calc(100% / 12 * 9.5);
     display: flex;
     align-items: center;

@@ -39,11 +39,14 @@ const ItemIndex = ({
         {icon}
         {iconHover}
         <span className="title-viz text-capitalize">{title}</span>
-        {linkApprofondimento && (
+        {/* {linkApprofondimento && (
           <Link to={linkApprofondimento}>
             <IconApprofondimento className="mt-1" />
           </Link>
-        )}
+        )} */}
+        <Link to={linkApprofondimento}>
+          <IconApprofondimento className="mt-1" />
+        </Link>
       </div>
     </Link>
   )
@@ -61,9 +64,9 @@ export default function IndexMenu() {
           <g id="Orbite">
             <ellipse
               cx="50%"
-              cy="55%"
+              cy="53%"
               rx="70%"
-              ry="45%"
+              ry="44%"
               fill="none"
               stroke="#666"
               strokeMiterlimit="10"
@@ -71,7 +74,7 @@ export default function IndexMenu() {
             />
             <ellipse
               cx="50%"
-              cy="42%"
+              cy="41%"
               rx="45%"
               ry="30%"
               fill="none"
