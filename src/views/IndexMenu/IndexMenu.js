@@ -44,9 +44,11 @@ const ItemIndex = ({
             <IconApprofondimento className="mt-1" />
           </Link>
         )} */}
-        <Link to={linkApprofondimento}>
-          <IconApprofondimento className="mt-1" />
-        </Link>
+        {title !== "territorio" && (
+          <Link to={linkApprofondimento}>
+            <IconApprofondimento className="mt-1" />
+          </Link>
+        )}
       </div>
     </Link>
   )
