@@ -3102,7 +3102,7 @@ const territoryColorPalette = {
   paleTurquoise  : "#97DADD"
 };
 
-const publications = [
+let publications = [
     {
       "id": "S001",
       "destination": "«Roma fascista»",
@@ -6824,7 +6824,7 @@ const publications = [
 
 publications.forEach(d=>{
   const collection = collections.find(dd=>dd.id===d.destination);
-  const destinationTitle = collection?collection.n:d.destination.replace('«','').replace('»','');
+  const destinationTitle = collection?collection.n:d.destination //.replace('«','').replace('»','');
   return d.destinationTitle=destinationTitle;
 })
 
