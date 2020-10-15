@@ -1,12 +1,11 @@
 
 import React from 'react';
-
-import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import Footer from '../../headers/Footer/Footer';
 
 import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
 import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
 import '../../App.css';
+import IndexMenuHeader from '../../headers/IndexMenuHeader';
 
 export default class Project extends React.Component
 {
@@ -14,7 +13,7 @@ export default class Project extends React.Component
   {
     return (
       <>
-        <HamburgerIntroHeader />
+        <IndexMenuHeader />
         <div className="grid-with-scrollable-column">
           <div className="scrollable-column-3 col-md-12 col-lg-8">
             <h1>PROGETTO</h1>

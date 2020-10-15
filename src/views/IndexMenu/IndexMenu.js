@@ -1,5 +1,5 @@
 import React from "react"
-import HamburgerMenuHeader from "../../headers/HamburgerMenuHeader"
+import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import "./IndexMenu.css"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_color.svg"
@@ -51,7 +51,7 @@ const ItemIndex = ({
 export default function IndexMenu() {
   return (
     <div>
-      <HamburgerMenuHeader />
+      <IndexMenuHeader />
       <div className="IndexMenu position-relative">
         <ItemIndex
           title="territorio"

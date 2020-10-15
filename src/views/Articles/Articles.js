@@ -2,12 +2,11 @@
 import React from 'react';
 
 import * as d3 from 'd3';
-
-import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import Footer from '../../headers/Footer/Footer';
 
 import '../../general/GridsWithScrollableColumns/GridWithScrollableColumn.css';
 import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
+import IndexMenuHeader from '../../headers/IndexMenuHeader';
 
 export default class Articles extends React.Component
 {
@@ -31,7 +30,7 @@ export default class Articles extends React.Component
     console.log(this.state)
     return (
       <>
-        <HamburgerIntroHeader />
+        <IndexMenuHeader />
         <div className="grid-with-scrollable-column">
           <div className="scrollable-column-3 col-md-12 col-lg-8">
             <h1>PUBBLICAZIONI</h1>

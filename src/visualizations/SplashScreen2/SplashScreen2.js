@@ -22,12 +22,12 @@ class SplashScreen2 extends Component {
           <path className={S["line"]} d="M-50,12.5 C 50,12.5 50,112.5 150,112.5"  vectorEffect="non-scaling-stroke"/>
         </svg>
         <div className={S["project-logo"]}>
-          <Link to="/Home" style={{width:'100%',height:'100%'}}>
+          <Link to='/HomeIndex' style={{width:'100%',height:'100%'}}>
             <InteractiveLogo />
           </Link>
         </div>
-        <div className={S["subtitle"]}><Link to="/Home"><h2 style={{backgroundColor: 'var(--cool-bg)', textAlign:'center'}}>Letteratura e visualizzazione</h2></Link></div>
-        <div className={S["arrow-down"]}><Link to="/Home"><div><BsArrowDown color="var(--dark-blue)"/></div></Link></div>
+        <div className={S["subtitle"]}><Link to="/HomeIndex"><h2 style={{backgroundColor: 'var(--cool-bg)', textAlign:'center'}}>Letteratura e visualizzazione</h2></Link></div>
+        <div className={S["arrow-down"]}><Link to="/HomeIndex"><div><BsArrowDown color="var(--dark-blue)"/></div></Link></div>
         <div className={S["logos-left"]}><a href="http://www.snf.ch/"><img src={logoFnsnf} /></a></div>
         <div className={S["logos-center"]}><a href="https://www.unige.ch/"><img src={logoUnige} /></a><a href="http://densitydesign.org/"><img src={logoDensityDesign} /></a><a href="http://www.dipartimentodesign.polimi.it/"><img src={logoPolitecnico} /></a></div>
         <div className={S["logos-right"]}><a href="https://www.mondadori.it/"><img src={logoMondadori} /></a></div>

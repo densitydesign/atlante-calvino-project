@@ -1,0 +1,34 @@
+<svg viewBox="0 0 1366 900" style='overflow:visible'>
+<g id="Orbite">
+<ellipse
+    cx="682.99999"
+    cy="513.1355"
+    rx="960.36843"
+    ry="355.5"
+    fill="none"
+    stroke="#666"
+    strokeMiterlimit="10"
+    strokeDasharray="3.997405529022217,5.996108531951904"
+/>
+<ellipse
+    cx="683"
+    cy="419.47656"
+    rx="680.98376"
+    ry="251.84106"
+    fill="none"
+    stroke="#666"
+    strokeMiterlimit="10"
+    strokeDasharray="3.997405529022217,5.996108531951904"
+/>
+<ellipse
+    cx="682.99999"
+    cy="296.1355"
+    rx="340.29134"
+    ry="118.5"
+    fill="none"
+    stroke="#666"
+    strokeMiterlimit="10"
+    strokeDasharray="3.997405529022217,5.996108531951904"
+/>
+</g>
+</svg>

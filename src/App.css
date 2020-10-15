@@ -9,6 +9,7 @@
   --small-text: #3f3e4c;
   --secondary-element: #C6CACF;
   --header-height: 66px;
+  --violet-index-home: #afaff9;
   --navigation-height: 58px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
