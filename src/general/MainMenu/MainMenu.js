@@ -24,7 +24,7 @@ class MainMenu extends Component {
   };
 
   render() {
-    const route = "/Home";
+    const route = "/HomeIndex";
     return (
       <div className="main-menu" style={this.props.style}>
         <Link to={route}>

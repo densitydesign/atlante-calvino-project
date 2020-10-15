@@ -23,6 +23,7 @@ import { ReactComponent as CombinareIconHover } from "./icons/combinare_blue.svg
 import { ReactComponent as TramaIcon } from "./icons/trama_color.svg"
 import { ReactComponent as TramaIconHover } from "./icons/trama_blue.svg"
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
+import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import Footer from "../../headers/Footer/Footer"
 
 const ItemIndex = ({
@@ -39,11 +40,6 @@ const ItemIndex = ({
         {icon}
         {iconHover}
         <span className="title-viz text-capitalize">{title}</span>
-        {/* {linkApprofondimento && (
-          <Link to={linkApprofondimento}>
-            <IconApprofondimento className="mt-1" />
-          </Link>
-        )} */}
         {title !== "territorio" && (
           <Link to={linkApprofondimento}>
             <IconApprofondimento className="mt-1" />
@@ -62,40 +58,7 @@ export default function IndexMenu() {
         className="position-absolute"
         style={{ top: 58, left: 0, right: 0, bottom: 58 }}
       >
-        <svg style={{ overflow: "visible", width: "100vw", height: "100%" }}>
-          <g id="Orbite">
-            <ellipse
-              cx="50%"
-              cy="53%"
-              rx="70%"
-              ry="44%"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-            <ellipse
-              cx="50%"
-              cy="41%"
-              rx="45%"
-              ry="30%"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-            <ellipse
-              cx="50%"
-              cy="30%"
-              rx="25%"
-              ry="17%"
-              fill="none"
-              stroke="#666"
-              strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
-            />
-          </g>
-        </svg>
+        <Orbite />
       </div>
       <div className="IndexMenu position-relative">
         <ItemIndex
