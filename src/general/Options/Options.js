@@ -89,7 +89,7 @@ class Options extends Component {
                 </div>
               )
             }
-            { this.props.data.multiple && this.props.title }
+            {/* { this.props.data.multiple && this.props.title } */}
           </Dropdown.Toggle>
           <Dropdown.Menu onToggle={this.toggleDropDown} show={this.state.show}>
             {
@@ -124,6 +124,6 @@ Options.defaultProps = {
     options: [],
     multiple: false
   },
-  title: 'Options',
+  // title: 'Options',
 
 }

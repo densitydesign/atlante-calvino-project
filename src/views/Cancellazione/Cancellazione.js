@@ -41,10 +41,10 @@ const manifestazioniStilistiche={
 const cerca_per={
   multiple: false,
   options: [{
-    'label': 'titolo',
+    'label': 'Filtra per titolo',
     'status': true
   }, {
-    'label': 'pubblicazione',
+    'label': 'Filtra per pubblicazione',
     'status': false
   }]
 };
@@ -80,19 +80,19 @@ class Cancellazione extends Component {
     // set publications array for search
     const gdpFiltered = GlobalData.publications.filter( p=>data.map(d=>d.id).indexOf(p.id)!==-1 );
 
-    const publications = d3.nest()
+    let publications = d3.nest()
       .key(d=>d.destinationTitle)
       .rollup(arr=>arr.map(d=>d.id))
       .entries(gdpFiltered);
 
-    publications.forEach(d=>d.label=d.key);
+    publications.forEach(d=>(d.label=d.key));
 
     this.setState({
       loading:false,
       data:data,
       searchItems: {
-        'titolo': data.map(d=>({'label':d.title,'value':[d.id]})).reverse(),
-        'pubblicazione': publications
+        [cerca_per.options[0].label]: data.map(d=>({'label':d.title,'value':[d.id]})).reverse(),
+        [cerca_per.options[1].label]: publications
       },
       filter:data.map(d=>d.id)
     })
@@ -204,13 +204,13 @@ class Cancellazione extends Component {
         </HelpSidePanel>
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Tappa 3 – Cancellare"} style = {{gridColumn: 'span 9'}}/>
+					<PageTitle title = {"Tappa 3 – Cancellare"} style = {{gridColumn: 'span 7'}}/>
           
-          {this.state.loading && <Loading style={{ gridColumn: 'span 3' }}/>}
+          {this.state.loading && <Loading style={{ gridColumn: 'span 5' }}/>}
           {!this.state.loading &&
-            <Options title = "Cerca per"
+            <Options
               data = {this.state.cerca_per}
-              style = {{gridColumn: 'span 3'}}
+              style = {{gridColumn: 'span 5'}}
               changeOptions = {this.changeCercaPer}
 					  />
           }
