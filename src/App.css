@@ -453,6 +453,10 @@ footer {
   margin-bottom: 0.35rem;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
 @keyframes floatLeft {
   0% {
     left: 50px;

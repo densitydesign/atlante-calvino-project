@@ -12,7 +12,7 @@ export default function IndexMenuHeader() {
   return (
     <div className="top-nav navigations">
       <div
-        className="d-flex justify-content-center"
+        className="d-flex justify-content-center cursor-pointer"
         style={{ gridColumn: "span 1" }}
         onClick={() => history.goBack()}
       >

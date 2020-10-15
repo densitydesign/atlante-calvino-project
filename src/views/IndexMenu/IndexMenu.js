@@ -24,6 +24,7 @@ import { ReactComponent as TramaIcon } from "./icons/trama_color.svg"
 import { ReactComponent as TramaIconHover } from "./icons/trama_blue.svg"
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
+import { ReactComponent as Bussola } from "./icons/bussola.svg"
 import Footer from "../../headers/Footer/Footer"
 
 const ItemIndex = ({
@@ -35,18 +36,18 @@ const ItemIndex = ({
   linkApprofondimento,
 }) => {
   return (
-    <Link to={link}>
-      <div className={className + " hoverable-icon"}>
+    <div className={className + " hoverable-icon"}>
+      <Link to={link}>
         {icon}
         {iconHover}
-        <span className="title-viz text-capitalize">{title}</span>
-        {title !== "territorio" && (
-          <Link to={linkApprofondimento}>
-            <IconApprofondimento className="mt-1" />
-          </Link>
-        )}
-      </div>
-    </Link>
+      </Link>
+      <span className="title-viz text-capitalize">{title}</span>
+      {title !== "territorio" && (
+        <Link to={linkApprofondimento}>
+          <IconApprofondimento className="mt-1" />
+        </Link>
+      )}
+    </div>
   )
 }
 
@@ -54,6 +55,9 @@ export default function IndexMenu() {
   return (
     <div>
       <IndexMenuHeader />
+      <div className='position-absolute' style={{ top: 70, left: 100 }}>
+        <Bussola />
+      </div>
       <div
         className="position-absolute"
         style={{ top: 58, left: 0, right: 0, bottom: 58 }}
