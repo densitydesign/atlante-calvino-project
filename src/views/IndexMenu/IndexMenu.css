@@ -1,0 +1,182 @@
+.IndexMenu{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+.title-viz {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.territorio{
+    position: absolute;
+    top: calc(100vh / 8);
+    left: calc(100% / 12 * 5.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dubitare{
+    position: absolute;
+    top: calc(100vh / 8 * 2.75);
+    left: calc(100% / 12);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nebbia{
+    position: absolute;
+    top: calc(100vh / 8 * 1.75);
+    left: calc(100% / 12 * 3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cancellazione{
+    position: absolute;
+    top: calc(100vh / 8 * 5.25);
+    left: calc(100% / 12 * 1.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.trasformare{
+    position: absolute;
+    top: calc(100vh / 8 * 4.25);
+    left: calc(100% / 12 * 4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.luoghi{
+    position: absolute;
+    top: calc(100vh / 8 * 2.5);
+    left: calc(100% / 12 * 5.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.realismo{
+    position: absolute;
+    top: calc(100vh / 8 * 6);
+    left: calc(100% / 12 * 6);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.elenchi{
+    position: absolute;
+    top: calc(100vh / 8 * 1.75);
+    left: calc(100% / 12 * 8);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.combinare{
+    position: absolute;
+    top: calc(100vh / 8 * 2.75);
+    left: calc(100% / 12 * 10);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.trama{
+    position: absolute;
+    top: calc(100vh / 8 * 5.5);
+    left: calc(100% / 12 * 9.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.spazio{
+    position: absolute;
+    top: calc(100vh / 8 * 4.5);
+    left: calc(100% / 12 * 5.5);
+}
+
+.forma{
+    position: absolute;
+    top: calc(100vh / 8 * 3.5);
+    left: calc(100% / 12 * 7.5);
+}
+.dubbio{
+    position: absolute;
+    top: calc(100vh / 8 * 2);
+    left: calc(100% / 12 * 0.5);
+}
+
+.hoverable-icon .hover-icon{
+    display: none;
+}
+
+.hoverable-icon:hover .basic-icon{
+    display: none;
+}
+
+.hoverable-icon:hover .hover-icon{
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    .icon-width{
+        width: 70px;
+    }
+
+    .big-name{
+        font-size: 45px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #afaff9;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1365px) {
+    .icon-width{
+        width: 100px;
+    }
+
+    .big-name{
+        font-size: 45px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #afaff9;
+    }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1599px) {
+    .icon-width{
+        width: 130px;
+    }
+
+    .big-name{
+        font-size: 60px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #afaff9;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .icon-width{
+        width: 150px;
+    }
+
+    .big-name{
+        font-size: 60px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #afaff9;
+    }
+}
+
