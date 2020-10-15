@@ -1,7 +1,7 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 import { Link, NavLink } from "react-router-dom"
-import { ReactComponent as IconHomeIndex } from "./icons/icon-index.svg"
+import { ReactComponent as IconClose } from "./icons/icon-close.svg"
 import "./IndexMenuHeader.css"
 
 export default function IndexMenuHeader() {
@@ -14,10 +14,9 @@ export default function IndexMenuHeader() {
       <div
         className="d-flex justify-content-center"
         style={{ gridColumn: "span 1" }}
+        onClick={() => history.goBack()}
       >
-        <Link to="/HomeIndex">
-          <IconHomeIndex />
-        </Link>
+        <IconClose />
       </div>
       <div
         style={{ gridColumn: "span 21", marginLeft: 168, marginRight: 168 }}

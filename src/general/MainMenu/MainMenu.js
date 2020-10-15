@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as IconIndexMenu } from '../../headers/IndexMenuHeader/icons/icon-index.svg';
 import { Link } from 'react-router-dom';
 import './MainMenu.css';
 
@@ -28,7 +28,7 @@ class MainMenu extends Component {
     return (
       <div className="main-menu" style={this.props.style}>
         <Link to={route}>
-          <FontAwesomeIcon icon={faBars} />
+          <IconIndexMenu />
         </Link>
       </div>
     );
