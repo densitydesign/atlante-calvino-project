@@ -2,26 +2,26 @@ import React from "react"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import "./IndexMenu.css"
-import { ReactComponent as TerritorioIcon } from "./icons/territorio_color.svg"
-import { ReactComponent as TerritorioIconHover } from "./icons/territorio_blue.svg"
-import { ReactComponent as DubbioIcon } from "./icons/dubitare_color.svg"
-import { ReactComponent as DubbioIconHover } from "./icons/dubitare_blue.svg"
-import { ReactComponent as NebbiaIcon } from "./icons/nebbia_color.svg"
-import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_blue.svg"
-import { ReactComponent as CancellazioneIcon } from "./icons/cancellazione_color.svg"
-import { ReactComponent as CancellazioneIconHover } from "./icons/cancellazione_blue.svg"
-import { ReactComponent as TrasformareIcon } from "./icons/trasformare_color.svg"
-import { ReactComponent as TrasformareIconHover } from "./icons/trasformare_blue.svg"
-import { ReactComponent as LuoghiIcon } from "./icons/luoghi_color.svg"
-import { ReactComponent as LuoghiIconHover } from "./icons/luoghi_blue.svg"
-import { ReactComponent as RealismoIcon } from "./icons/realismo_color.svg"
-import { ReactComponent as RealismoIconHover } from "./icons/realismo_blue.svg"
-import { ReactComponent as ElenchiIcon } from "./icons/elenchi_color.svg"
-import { ReactComponent as ElenchiIconHover } from "./icons/elenchi_blue.svg"
-import { ReactComponent as CombinareIcon } from "./icons/combinare_color.svg"
-import { ReactComponent as CombinareIconHover } from "./icons/combinare_blue.svg"
-import { ReactComponent as TramaIcon } from "./icons/trama_color.svg"
-import { ReactComponent as TramaIconHover } from "./icons/trama_blue.svg"
+import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
+import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
+import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg"
+import { ReactComponent as DubbioIcon } from "./icons/dubitare_blue.svg"
+import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_color.svg"
+import { ReactComponent as NebbiaIcon } from "./icons/nebbia_blue.svg"
+import { ReactComponent as CancellazioneIconHover } from "./icons/cancellazione_color.svg"
+import { ReactComponent as CancellazioneIcon } from "./icons/cancellazione_blue.svg"
+import { ReactComponent as TrasformareIconHover } from "./icons/trasformare_color.svg"
+import { ReactComponent as TrasformareIcon } from "./icons/trasformare_blue.svg"
+import { ReactComponent as LuoghiIconHover } from "./icons/luoghi_color.svg"
+import { ReactComponent as LuoghiIcon } from "./icons/luoghi_blue.svg"
+import { ReactComponent as RealismoIconHover } from "./icons/realismo_color.svg"
+import { ReactComponent as RealismoIcon } from "./icons/realismo_blue.svg"
+import { ReactComponent as ElenchiIconHover } from "./icons/elenchi_color.svg"
+import { ReactComponent as ElenchiIcon } from "./icons/elenchi_blue.svg"
+import { ReactComponent as CombinareIconHover } from "./icons/combinare_color.svg"
+import { ReactComponent as CombinareIcon } from "./icons/combinare_blue.svg"
+import { ReactComponent as TramaIconHover } from "./icons/trama_color.svg"
+import { ReactComponent as TramaIcon } from "./icons/trama_blue.svg"
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import { ReactComponent as Bussola } from "./icons/bussola.svg"
@@ -37,10 +37,17 @@ const ItemIndex = ({
 }) => {
   return (
     <div className={className + " hoverable-icon"}>
-      <Link to={link}>
-        {icon}
-        {iconHover}
-      </Link>
+      {link ? (
+        <Link to={link}>
+          {icon}
+          {iconHover}
+        </Link>
+      ) : (
+        <>
+          {icon}
+          {iconHover}
+        </>
+      )}
       <span className="title-viz text-capitalize">{title}</span>
       {title !== "territorio" && (
         <Link to={linkApprofondimento}>
@@ -55,7 +62,7 @@ export default function IndexMenu() {
   return (
     <div>
       <IndexMenuHeader />
-      <div className='position-absolute' style={{ top: 70, left: 100 }}>
+      <div className="position-absolute" style={{ top: 70, left: 100 }}>
         <Bussola />
       </div>
       <div
