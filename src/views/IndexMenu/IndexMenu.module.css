@@ -130,6 +130,18 @@
     display: block;
 }
 
+.guarda-la-guida{
+    bottom: 58px;
+    right: 0;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top: 1px solid var(--dark-blue);
+    border-left: 1px solid var(--dark-blue);
+}
+
 @media screen and (max-width: 1365px) {
     .icon-width{
         width: 100px;

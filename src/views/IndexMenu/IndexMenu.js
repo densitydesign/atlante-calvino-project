@@ -58,6 +58,9 @@ export default function IndexMenu() {
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
         <Bussola width='70' />
       </div>
+      <div className={`position-absolute ${styles['guarda-la-guida']}`}>
+          Guarda la guida
+      </div>
       <div
         className="position-absolute"
         style={{ top: 58, left: 0, right: 0, bottom: 58 }}
