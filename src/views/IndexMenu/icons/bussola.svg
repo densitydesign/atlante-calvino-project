@@ -1,43 +1,43 @@
-<svg width='100' height='100'>
-<g xmlns="http://www.w3.org/2000/svg" id="NEW_Bussolablack" data-name="NEW Bussolablack">
-      <g style="clip-path: url(#clip-path-21)">
-        <g style="clip-path: url(#clip-path-21)">
-          <path d="M171.18717,102.95844A42.62035,42.62035,0,1,1,213.80752,60.3381a42.66985,42.66985,0,0,1-42.62035,42.62034" style="fill: #fff"/>
-          <path d="M171.18571,18.07647a42.26192,42.26192,0,1,1-42.26192,42.26192,42.3099,42.3099,0,0,1,42.26192-42.26192m0-.71539a42.97731,42.97731,0,1,0,42.97877,42.97731,42.97725,42.97725,0,0,0-42.97877-42.97731"/>
-          <path d="M171.18717,99.23536a38.89712,38.89712,0,1,1,38.89566-38.89712,38.94055,38.94055,0,0,1-38.89566,38.89712" style="fill: #fff"/>
-          <path d="M171.18571,22.02675a38.31193,38.31193,0,1,1-38.31048,38.31193,38.35553,38.35553,0,0,1,38.31048-38.31193m0-1.17037a39.4823,39.4823,0,1,0,39.4823,39.4823,39.48211,39.48211,0,0,0-39.4823-39.4823"/>
-        </g>
-        <text transform="translate(135.95236 69.64878) rotate(68.12826)" style="font-size: 13.16666030883789px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">N</text>
-        <text transform="matrix(0.62958, 0.77694, -0.77694, 0.62958, 140.77726, 80.24635)" style="font-size: 13.166580200195312px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">E</text>
-        <text transform="translate(147.21912 87.54937) rotate(36.36294)" style="font-size: 13.166640281677246px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">L</text>
-        <text transform="translate(154.38349 92.52864) rotate(22.48672)" style="font-size: 13.166589736938477px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">L</text>
-        <text transform="translate(161.46945 95.25729) rotate(12.64204)" style="font-size: 13.166600227355957px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">’</text>
-        <text transform="translate(167.32384 96.60573) rotate(-1.54144)" style="font-size: 13.166560173034668px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">O</text>
-        <text transform="matrix(0.94369, -0.33082, 0.33082, 0.94369, 179.65354, 95.63737)" style="font-size: 13.166569709777832px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">P</text>
-        <text transform="matrix(0.82011, -0.5722, 0.5722, 0.82011, 188.77731, 92.07348)" style="font-size: 13.166589736938477px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">E</text>
-        <text transform="matrix(0.62958, -0.77694, 0.77694, 0.62958, 196.80067, 86.19381)" style="font-size: 13.166580200195312px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">R</text>
-        <text transform="translate(203.17475 77.67043) rotate(-68.47851)" style="font-size: 13.166560173034668px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">A</text>
-        <g style="clip-path: url(#clip-path-21)">
-          <path d="M171.18717,82.85345a22.51492,22.51492,0,1,1,22.51492-22.51492,22.54181,22.54181,0,0,1-22.51492,22.51492" style="fill: #fff"/>
-          <path d="M171.18571,38.40851a21.92974,21.92974,0,1,1-21.92827,21.92973,21.95366,21.95366,0,0,1,21.92827-21.92973m0-1.17037a23.1001,23.1001,0,1,0,23.10156,23.1001,23.099,23.099,0,0,0-23.10156-23.1001"/>
-          <line x1="170.77433" y1="39.93627" x2="170.77433" y2="43.14161" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 1.23619928971743px"/>
-          <line x1="150.74292" y1="61.48842" x2="153.94826" y2="61.48842" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 1.23619928971743px"/>
-          <line x1="188.4255" y1="61.48842" x2="191.62937" y2="61.48842" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 1.23619928971743px"/>
-          <polygon points="168.74 60.167 176.493 51.654 172.89 62.623 165.137 71.138 168.74 60.167" style="fill: #fff"/>
-          <path d="M175.24922,53.79048l-2.80449,8.53782-6.06542,6.67255,2.80595-8.53928,6.064-6.67109m1.62974-3.16a.34491.34491,0,0,0-.25749.117l-8.2935,9.12593a.58026.58026,0,0,0-.03658.06583.28079.28079,0,0,0-.0395.0673l-3.84026,11.68756a.35412.35412,0,0,0,.33941.46669.349.349,0,0,0,.25748-.1185l8.2935-9.12593a.27513.27513,0,0,0,.03511-.06437.268.268,0,0,0,.041-.0673l3.84026-11.689a.35342.35342,0,0,0-.3394-.46522"/>
-          <polygon points="168.728 60.241 172.844 62.647 176.279 52.01 168.728 60.241"/>
-        </g>
-        <text transform="matrix(0.31188, -0.95012, 0.95012, 0.31188, 144.25241, 56.6447)" style="font-size: 13.166620254516602px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">O</text>
-        <text transform="translate(147.47487 47.28608) rotate(-52.74071)" style="font-size: 13.166569709777832px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">R</text>
-        <text transform="translate(152.75418 40.9124) rotate(-39.75459)" style="font-size: 13.166600227355957px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">I</text>
-        <text transform="translate(155.54599 38.33505) rotate(-27.42911)" style="font-size: 13.166540145874023px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">E</text>
-        <text transform="translate(162.21009 34.87662) rotate(-9.70233)" style="font-size: 13.166529655456543px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">N</text>
-        <text transform="translate(171.21499 33.43176) rotate(8.25505)" style="font-size: 13.166549682617188px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">T</text>
-        <text transform="translate(177.61872 34.10163) rotate(23.30219)" style="font-size: 13.166500091552734px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">A</text>
-        <text transform="matrix(0.75001, 0.66142, -0.66142, 0.75001, 185.68131, 37.643)" style="font-size: 13.166589736938477px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">R</text>
-        <text transform="translate(191.69571 43.00797) rotate(58.0695)" style="font-size: 13.166589736938477px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">S</text>
-        <text transform="translate(195.57092 49.75887) rotate(71.28747)" style="font-size: 13.166540145874023px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700">I</text>
-        <text transform="translate(196.8427 53.48066) rotate(78.684)" style="font-size: 13.166569709777832px;font-family: HKGrotesk-Bold, HK Grotesk;font-weight: 700"> </text>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 58.7542 58.7542">
+  <g id="NEW_Bussolablack" data-name="NEW Bussolablack">
+    <g>
+      <g>
+        <path d="M29.3775,58.5099a29.133,29.133,0,1,1,29.133-29.133,29.16684,29.16684,0,0,1-29.133,29.133" fill="#fff"/>
+        <path d="M29.3765.4891A28.888,28.888,0,1,1,.4885,29.3771,28.9208,28.9208,0,0,1,29.3765.4891m0-.489a29.377,29.377,0,1,0,29.378,29.377A29.377,29.377,0,0,0,29.3765.0001"/>
+        <path d="M29.3775,55.965a26.588,26.588,0,1,1,26.587-26.588,26.61769,26.61769,0,0,1-26.587,26.588" fill="#fff"/>
+        <path d="M29.3765,3.1893a26.188,26.188,0,1,1-26.187,26.188,26.2178,26.2178,0,0,1,26.187-26.188m0-.8a26.988,26.988,0,1,0,26.988,26.988,26.98786,26.98786,0,0,0-26.988-26.988"/>
       </g>
+      <text transform="matrix(0.37253, 0.92802, -0.92802, 0.37253, 5.30721, 35.72922)" font-size="9.00003" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">N</text>
+      <text transform="translate(8.58653 42.94946) rotate(50.98087)" font-size="8.99997" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">E</text>
+      <text transform="matrix(0.80528, 0.5929, -0.5929, 0.80528, 12.96674, 47.96508)" font-size="9.00001" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">L</text>
+      <text transform="translate(17.89255 51.35869) rotate(22.48662)" font-size="8.99998" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">L</text>
+      <text transform="translate(22.73441 53.20338) rotate(12.64185)" font-size="8.99999" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">’</text>
+      <text transform="translate(26.72559 54.15502) rotate(-1.54144)" font-size="8.99996" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">O</text>
+      <text transform="matrix(0.94369, -0.33082, 0.33082, 0.94369, 35.20213, 53.5134)" font-size="8.99996" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">P</text>
+      <text transform="translate(41.41802 51.09363) rotate(-34.90389)" font-size="8.99998" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">E</text>
+      <text transform="translate(46.85053 47.04397) rotate(-50.98087)" font-size="8.99997" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">R</text>
+      <text transform="translate(51.27041 41.20029) rotate(-68.47877)" font-size="8.99996" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">A</text>
+      <g>
+        <path d="M29.3775,44.7672a15.39,15.39,0,1,1,15.39-15.39,15.40838,15.40838,0,0,1-15.39,15.39" fill="#fff"/>
+        <path d="M29.3765,14.387a14.99,14.99,0,1,1-14.989,14.99,15.00635,15.00635,0,0,1,14.989-14.99m0-.8a15.79,15.79,0,1,0,15.791,15.79,15.78924,15.78924,0,0,0-15.791-15.79"/>
+        <line x1="29.0953" y1="15.4313" x2="29.0953" y2="17.6223" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.845"/>
+        <line x1="15.4029" y1="30.1632" x2="17.5939" y2="30.1632" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.845"/>
+        <line x1="41.1607" y1="30.1632" x2="43.3507" y2="30.1632" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.845"/>
+        <polygon points="27.705 29.26 33.005 23.441 30.542 30.939 25.242 36.759 27.705 29.26" fill="#fff"/>
+        <path d="M32.1541,24.9013l-1.917,5.836-4.146,4.561,1.918-5.837,4.145-4.56m1.114-2.16a.23577.23577,0,0,0-.176.08l-5.669,6.238a.39583.39583,0,0,0-.025.045.1918.1918,0,0,0-.027.046l-2.625,7.989a.24205.24205,0,0,0,.232.319.23851.23851,0,0,0,.176-.081l5.669-6.238a.18806.18806,0,0,0,.024-.044.18275.18275,0,0,0,.028-.046l2.625-7.99a.24158.24158,0,0,0-.232-.318"/>
+        <polygon points="27.697 29.31 30.51 30.955 32.858 23.684 27.697 29.31"/>
+      </g>
+      <text transform="matrix(0.31188, -0.95012, 0.95012, 0.31188, 10.99192, 26.84419)" font-size="9" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">O</text>
+      <text transform="translate(13.18878 20.49617) rotate(-52.74062)" font-size="8.99997" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">R</text>
+      <text transform="matrix(0.76879, -0.6395, 0.6395, 0.76879, 16.78667, 16.09954)" font-size="8.99998" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">I</text>
+      <text transform="matrix(0.88758, -0.46065, 0.46065, 0.88758, 18.6709, 14.37134)" font-size="8.99994" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">E</text>
+      <text transform="translate(23.25243 11.9216) rotate(-9.70262)" font-size="8.99994" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">N</text>
+      <text transform="translate(29.39746 10.96998) rotate(8.25497)" font-size="8.99995" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">T</text>
+      <text transform="translate(33.7754 11.45774) rotate(23.30225)" font-size="8.99992" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">A</text>
+      <text transform="matrix(0.75001, 0.66142, -0.66142, 0.75001, 39.30528, 13.89387)" font-size="8.99998" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">R</text>
+      <text transform="translate(43.39493 17.5343) rotate(58.06952)" font-size="8.99998" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">S</text>
+      <text transform="matrix(0.32082, 0.94714, -0.94714, 0.32082, 46.07155, 22.12134)" font-size="8.99995" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700">I</text>
+      <text transform="translate(46.93266 24.67067) rotate(78.68382)" font-size="8.99997" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700"> </text>
     </g>
+  </g>
 </svg>

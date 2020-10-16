@@ -114,6 +114,10 @@
     left: calc(100% / 12 * 0.5);
 }
 
+.basic-icon{
+    display: block;
+}
+
 .hoverable-icon .hover-icon{
     display: none;
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
-import "./IndexMenu.css"
+import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
 import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg"
@@ -36,12 +36,12 @@ const ItemIndex = ({
   linkApprofondimento,
 }) => {
   return (
-    <div className={className + " hoverable-icon"}>
+    <div className={styles[className] + " "+styles['hoverable-icon']}>
       <Link to={link}>
         {icon}
         {iconHover}
       </Link>
-      <span className="title-viz text-capitalize">{title}</span>
+      <span className={styles["title-viz","text-capitalize"]}>{title}</span>
       {title !== "territorio" && (
         <Link to={linkApprofondimento}>
           <IconApprofondimento className="mt-1" />
@@ -56,7 +56,7 @@ export default function IndexMenu() {
     <div>
       <IndexMenuHeader />
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Bussola />
+        <Bussola width='70' />
       </div>
       <div
         className="position-absolute"
@@ -68,90 +68,90 @@ export default function IndexMenu() {
         <ItemIndex
           title="territorio"
           link='Phenomena/territory'
-          className="territorio"
-          icon={<TerritorioIcon className="basic-icon icon-width" />}
-          iconHover={<TerritorioIconHover className="hover-icon icon-width" />}
+          className={"territorio"}
+          icon={<TerritorioIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<TerritorioIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="dubitare"
           link="Process/doubting"
           linkApprofondimento="Process/doubting/Hesitation/informationSheet"
-          className="dubitare"
-          icon={<DubbioIcon className="basic-icon icon-width" />}
-          iconHover={<DubbioIconHover className="hover-icon icon-width" />}
+          className={"dubitare"}
+          icon={<DubbioIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<DubbioIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="nebbia"
           linkApprofondimento='Phenomena/territory/doubtAnalysis/informationSheet'
           link="Phenomena/territory/doubtAnalysis"
-          className="nebbia"
-          icon={<NebbiaIcon className="basic-icon icon-width" />}
-          iconHover={<NebbiaIconHover className="hover-icon icon-width" />}
+          className={"nebbia"}
+          icon={<NebbiaIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<NebbiaIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="cancellazione"
           linkApprofondimento='cancellation-sheet'
           link="Problem/cancellation"
-          className="cancellazione"
-          icon={<CancellazioneIcon className="basic-icon icon-width" />}
+          className={"cancellazione"}
+          icon={<CancellazioneIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
           iconHover={
-            <CancellazioneIconHover className="hover-icon icon-width" />
+            <CancellazioneIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />
           }
         />
         <ItemIndex
           title="trasformare"
           linkApprofondimento="Process/transforming/Transform/informationSheet"
-          className="trasformare"
+          className={"trasformare"}
           link="Process/transforming"
-          icon={<TrasformareIcon className="basic-icon icon-width" />}
-          iconHover={<TrasformareIconHover className="hover-icon icon-width" />}
+          icon={<TrasformareIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<TrasformareIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="luoghi"
           linkApprofondimento="Phenomena/territory/spaceAnalysis/informationSheet"
           link="Phenomena/territory/spaceAnalysis"
-          className="luoghi"
-          icon={<LuoghiIcon className="basic-icon icon-width" />}
-          iconHover={<LuoghiIconHover className="hover-icon icon-width" />}
+          className={"luoghi"}
+          icon={<LuoghiIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<LuoghiIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="realismo"
           linkApprofondimento="Process/combining/Combine/informationSheet"
-          className="realismo"
+          className={"realismo"}
           link="Problem/realism"
-          icon={<RealismoIcon className="basic-icon icon-width" />}
-          iconHover={<RealismoIconHover className="hover-icon icon-width" />}
+          icon={<RealismoIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<RealismoIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="elenchi"
           linkApprofondimento="Phenomena/territory/shapeAnalysis/informationSheet"
           link="Phenomena/territory/shapeAnalysis"
-          className="elenchi"
-          icon={<ElenchiIcon className="basic-icon icon-width" />}
-          iconHover={<ElenchiIconHover className="hover-icon icon-width" />}
+          className={"elenchi"}
+          icon={<ElenchiIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<ElenchiIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="combinare"
           link="Process/combining"
-          className="combinare"
-          icon={<CombinareIcon className="basic-icon icon-width" />}
-          iconHover={<CombinareIconHover className="hover-icon icon-width" />}
+          className={"combinare"}
+          icon={<CombinareIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<CombinareIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
         <ItemIndex
           title="trama"
           link="Problem/plot"
-          className="trama"
-          icon={<TramaIcon className="basic-icon icon-width" />}
-          iconHover={<TramaIconHover className="hover-icon icon-width" />}
+          className={"trama"}
+          icon={<TramaIcon className={`${styles["basic-icon"]} ${styles["icon-width"]}`} />}
+          iconHover={<TramaIconHover className={`${styles["hover-icon"]} ${styles["icon-width"]}`} />}
         />
-        <div className="spazio">
-          <div className="big-name">Spazio</div>
+        <div className={styles.spazio}>
+          <div className={styles['big-name']}>Spazio</div>
         </div>
-        <div className="forma">
-          <div className="big-name">Forma</div>
+        <div className={styles.forma}>
+          <div className={styles['big-name']}>Forma</div>
         </div>
-        <div className="dubbio">
-          <div className="big-name">Dubbio</div>
+        <div className={styles.dubbio}>
+          <div className={styles['big-name']}>Dubbio</div>
         </div>
       </div>
       <Footer />
