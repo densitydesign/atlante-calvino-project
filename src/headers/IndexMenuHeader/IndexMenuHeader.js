@@ -3,12 +3,9 @@ import { useHistory } from "react-router-dom"
 import { Link, NavLink } from "react-router-dom"
 import { ReactComponent as IconClose } from "./icons/icon-close.svg"
 import { ReactComponent as IconIndex } from "./icons/icon-index.svg"
-import "./IndexMenuHeader.css"
 
 export default function IndexMenuHeader() {
   const history = useHistory()
-
-  console.log(history.location.pathname)
 
   return (
     <div className="top-nav navigations">
@@ -35,15 +32,33 @@ export default function IndexMenuHeader() {
         </div>
       )}
       <div
-        style={{ gridColumn: "span 21", marginLeft: 168, marginRight: 168 }}
-        className="d-flex justify-content-between"
+        style={{ gridColumn: "span 22" }}
+        className="d-flex justify-content-center"
       >
-        <NavLink to="/">Atlante Calvino</NavLink>
-        <NavLink to="/About">Équipe</NavLink>
-        <NavLink to="/Project">Progetto</NavLink>
-        <NavLink to="/Tools">Istruzioni per l'uso</NavLink>
-        <NavLink to="/Capta">Capta</NavLink>
-        <NavLink to="/Papers">Pubblicazioni</NavLink>
+        <NavLink to="/" className="ml-5 mr-5">
+          Atlante Calvino
+        </NavLink>
+        <NavLink to="/About" className="ml-5 mr-5">
+          Équipe
+        </NavLink>
+        <NavLink to="/Project" className="ml-5 mr-5">
+          Progetto
+        </NavLink>
+        <NavLink to="/Tools" className="ml-5 mr-5">
+          Istruzioni per l'uso
+        </NavLink>
+        <NavLink to="/Capta" className="ml-5 mr-5">
+          Capta
+        </NavLink>
+        <NavLink to="/Papers" className="ml-5 mr-5">
+          Pubblicazioni
+        </NavLink>
+      </div>
+      <div
+        style={{ gridColumn: "span 1" }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        <Link className='text-dark-blue' to='/'>IT</Link>
       </div>
     </div>
   )

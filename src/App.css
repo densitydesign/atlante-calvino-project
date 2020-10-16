@@ -436,6 +436,10 @@ footer {
   /* filter: invert(12%) sepia(67%) saturate(6275%) hue-rotate(237deg) brightness(105%) contrast(98%); */
 }
 
+.text-dark-blue {
+  color: var(--dark-blue);
+}
+
 #overlay .floatLeft {
   animation: floatLeft 5s infinite;
   animation-direction: normal;

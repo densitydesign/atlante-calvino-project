@@ -46,7 +46,7 @@ const ItemIndex = ({
       <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
       {title !== "territorio" && (
         <Link to={linkApprofondimento}>
-          <IconApprofondimento className="mt-1" />
+          <IconApprofondimento className="mt-2" />
         </Link>
       )}
     </div>
