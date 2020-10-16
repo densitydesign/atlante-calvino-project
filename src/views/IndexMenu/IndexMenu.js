@@ -62,9 +62,6 @@ export default function IndexMenu() {
   return (
     <div>
       <IndexMenuHeader />
-      <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Bussola width="70" />
-      </div>
       <div
         className="position-absolute"
         style={{ top: 58, left: 0, right: 0, bottom: 58 }}
@@ -239,6 +236,11 @@ export default function IndexMenu() {
           <div className={styles["big-name"]}>Dubbio</div>
         </div>
       </div>
+      <div className="position-absolute" style={{ top: 70, left: 100 }}>
+        <Link to='/Compass'>
+          <Bussola width="70" />
+        </Link>
+      </div>
       <div
         className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
@@ -253,8 +255,8 @@ export default function IndexMenu() {
         show={showGuida}
         onHide={handleCloseGuida}
       >
-        <Modal.Body style={{ height: 500}}>
-          <div onClick={handleCloseGuida} className='text-right cursor-pointer'>
+        <Modal.Body style={{ height: 500 }}>
+          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
           </div>
         </Modal.Body>
