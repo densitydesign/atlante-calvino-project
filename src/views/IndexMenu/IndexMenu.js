@@ -36,12 +36,12 @@ const ItemIndex = ({
   linkApprofondimento,
 }) => {
   return (
-    <div className={styles[className] + " "+styles['hoverable-icon']}>
+    <div className={`${styles[className]} ${styles['hoverable-icon']}`}>
       <Link to={link}>
         {icon}
         {iconHover}
       </Link>
-      <span className={styles["title-viz","text-capitalize"]}>{title}</span>
+      <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
       {title !== "territorio" && (
         <Link to={linkApprofondimento}>
           <IconApprofondimento className="mt-1" />
