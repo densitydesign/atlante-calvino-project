@@ -1,42 +1,52 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ReactComponent as IconIndexMenu } from '../../headers/IndexMenuHeader/icons/icon-index.svg';
-import { Link } from 'react-router-dom';
-import './MainMenu.css';
+import ReactDOM from 'react-dom'
+import React, { Component, useRef } from 'react'
+import { ReactComponent as IconIndexMenu } from '../../headers/IndexMenuHeader/icons/icon-index.svg'
+import IndexMenu from '../../views/IndexMenu/IndexMenu'
+import './MainMenu.css'
+
+function ModalIndexMenu({ toggle }) {
+  const modalNode = useRef()
+  if (!modalNode.current) {
+    modalNode.current = document.getElementById('index-menu-modal-container')
+  }
+
+  if (modalNode.current) {
+    return ReactDOM.createPortal(
+      <div className="index-menu-open-fixed">
+        <IndexMenu onClose={toggle} />
+      </div>,
+      modalNode.current
+    )
+  }
+
+  return null
+}
 
 class MainMenu extends Component {
-  componentDidMount()
-  {
-    document.addEventListener("mousedown", this.handleClick);
+  state = {
+    open: false,
   }
 
-  componentWillUnmount()
-  {
-    document.removeEventListener("mousedown", this.handleClick);
+  toggle = () => {
+    this.setState((s) => ({
+      open: !s.open,
+    }))
   }
-
-  setWrapperRef = node => this.wrapperRef = node;
-
-  handleClick = event => {
-    if(!this.wrapperRef) return;
-
-    if(this.wrapperRef.contains(event.target)) this.props.onClicked(this.props.id);
-  };
 
   render() {
-    const route = "/HomeIndex";
     return (
       <div className="main-menu" style={this.props.style}>
-        <Link to={route}>
+        <span className="main-menu-inner" onClick={this.toggle}>
           <IconIndexMenu />
-        </Link>
+        </span>
+        {this.state.open && (
+          <ModalIndexMenu toggle={this.toggle} />
+        )}
       </div>
-    );
+    )
   }
 }
 
+export default MainMenu
 
-
-export default MainMenu;
-
-MainMenu.defaultProps = { style: {gridColumn: 'span 1'}}
+MainMenu.defaultProps = { style: { gridColumn: 'span 1' } }

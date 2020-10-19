@@ -13,3 +13,16 @@
 .main-menu a:hover{
   color:var(--bg);
 }
+
+.main-menu-inner {
+  cursor: pointer;
+}
+
+.index-menu-open-fixed {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+}

@@ -1,38 +1,36 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
-import { Link, NavLink } from "react-router-dom"
-import { ReactComponent as IconClose } from "./icons/icon-close.svg"
-import { ReactComponent as IconIndex } from "./icons/icon-index.svg"
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import MainMenu from '../../general/MainMenu/MainMenu'
+import { ReactComponent as IconClose } from './icons/icon-close.svg'
 
-export default function IndexMenuHeader() {
-  const history = useHistory()
-
+export default function IndexMenuHeader({
+  // 'openIndex' | 'closeIndex' | 'homeLink'
+  menuAction = 'openIndex',
+  onClose,
+}) {
   return (
     <div className="top-nav navigations">
-      {history.location.pathname !== "/About" &&
-      history.location.pathname !== "/Project" &&
-      history.location.pathname !== "/Tools" &&
-      history.location.pathname !== "/Capta" &&
-      history.location.pathname !== "/Papers" ? (
+      {menuAction === 'openIndex' && <MainMenu />}
+      {menuAction === 'closeIndex' && (
         <div
           className="d-flex justify-content-center cursor-pointer"
-          style={{ gridColumn: "span 1" }}
-          onClick={() => history.goBack()}
+          style={{ gridColumn: 'span 1' }}
+          onClick={() => onClose()}
         >
           <IconClose />
         </div>
-      ) : (
-        <div
-          className="d-flex justify-content-center cursor-pointer"
-          style={{ gridColumn: "span 1" }}
+      )}
+      {menuAction === 'homeLink' && (
+        <Link
+          to="/"
+          className="d-flex justify-content-center cursor-pointer align-items-center"
+          style={{ gridColumn: 'span 1' }}
         >
-          <Link to="/HomeIndex">
-            <IconIndex />
-          </Link>
-        </div>
+          <IconClose />
+        </Link>
       )}
       <div
-        style={{ gridColumn: "span 22" }}
+        style={{ gridColumn: 'span 22' }}
         className="d-flex justify-content-center"
       >
         <NavLink to="/" className="ml-5 mr-5">
@@ -55,10 +53,12 @@ export default function IndexMenuHeader() {
         </NavLink>
       </div>
       <div
-        style={{ gridColumn: "span 1" }}
+        style={{ gridColumn: 'span 1' }}
         className="d-flex align-items-center justify-content-center"
       >
-        <Link className='text-dark-blue' to='/'>IT</Link>
+        <Link className="text-dark-blue" to="/">
+          IT
+        </Link>
       </div>
     </div>
   )

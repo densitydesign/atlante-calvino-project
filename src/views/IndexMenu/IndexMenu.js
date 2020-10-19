@@ -53,7 +53,7 @@ const ItemIndex = ({
   )
 }
 
-export default function IndexMenu() {
+export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
 
   const handleCloseGuida = () => setShowGuida(false)
@@ -61,17 +61,20 @@ export default function IndexMenu() {
 
   return (
     <div>
-      <IndexMenuHeader />
+      <IndexMenuHeader
+        menuAction={onClose ? 'closeIndex' : 'homeLink'}
+        onClose={onClose}
+      />
       <div
-        className="position-absolute"
+        className={styles['OrbiteContainer']}
         style={{ top: 58, left: 0, right: 0, bottom: 58 }}
       >
         <Orbite />
       </div>
-      <div className="IndexMenu position-relative">
+      <div className={styles['IndexMenu']}>
         <ItemIndex
           title="territorio"
-          link="Phenomena/territory"
+          link="/Phenomena/territory"
           className={"territorio"}
           icon={
             <TerritorioIcon
@@ -86,8 +89,8 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="dubitare"
-          link="Process/doubting"
-          linkApprofondimento="Process/doubting/Hesitation/informationSheet"
+          link="/Process/doubting"
+          linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
           className={"dubitare"}
           icon={
             <DubbioIcon
@@ -102,8 +105,8 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="nebbia"
-          linkApprofondimento="Phenomena/territory/doubtAnalysis/informationSheet"
-          link="Phenomena/territory/doubtAnalysis"
+          linkApprofondimento="/Phenomena/territory/doubtAnalysis/informationSheet"
+          link="/Phenomena/territory/doubtAnalysis"
           className={"nebbia"}
           icon={
             <NebbiaIcon
@@ -118,8 +121,8 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="cancellazione"
-          linkApprofondimento="cancellation-sheet"
-          link="Problem/cancellation"
+          linkApprofondimento="/cancellation-sheet"
+          link="/Problem/cancellation"
           className={"cancellazione"}
           icon={
             <CancellazioneIcon
@@ -134,9 +137,9 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="trasformare"
-          linkApprofondimento="Process/transforming/Transform/informationSheet"
+          linkApprofondimento="/Process/transforming/Transform/informationSheet"
           className={"trasformare"}
-          link="Process/transforming"
+          link="/Process/transforming"
           icon={
             <TrasformareIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -150,8 +153,8 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="luoghi"
-          linkApprofondimento="Phenomena/territory/spaceAnalysis/informationSheet"
-          link="Phenomena/territory/spaceAnalysis"
+          linkApprofondimento="/Phenomena/territory/spaceAnalysis/informationSheet"
+          link="/Phenomena/territory/spaceAnalysis"
           className={"luoghi"}
           icon={
             <LuoghiIcon
@@ -166,9 +169,9 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="realismo"
-          linkApprofondimento="Process/combining/Combine/informationSheet"
+          linkApprofondimento="/Process/combining/Combine/informationSheet"
           className={"realismo"}
-          link="Problem/realism"
+          link="/Problem/realism"
           icon={
             <RealismoIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -182,8 +185,8 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="elenchi"
-          linkApprofondimento="Phenomena/territory/shapeAnalysis/informationSheet"
-          link="Phenomena/territory/shapeAnalysis"
+          linkApprofondimento="/Phenomena/territory/shapeAnalysis/informationSheet"
+          link="/Phenomena/territory/shapeAnalysis"
           className={"elenchi"}
           icon={
             <ElenchiIcon
@@ -198,7 +201,7 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="combinare"
-          link="Process/combining"
+          link="/Process/combining"
           className={"combinare"}
           icon={
             <CombinareIcon
@@ -213,7 +216,7 @@ export default function IndexMenu() {
         />
         <ItemIndex
           title="trama"
-          link="Problem/plot"
+          link="/Problem/plot"
           className={"trama"}
           icon={
             <TramaIcon
