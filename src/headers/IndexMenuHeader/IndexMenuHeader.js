@@ -36,7 +36,7 @@ export default function IndexMenuHeader({
         <NavLink to="/" className="ml-5 mr-5">
           Atlante Calvino
         </NavLink>
-        <NavLink to="/About" className="ml-5 mr-5">
+        <NavLink to="/equipe" className="ml-5 mr-5">
           Équipe
         </NavLink>
         <NavLink to="/Project" className="ml-5 mr-5">

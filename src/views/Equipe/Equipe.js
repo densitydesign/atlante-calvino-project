@@ -6,6 +6,7 @@ import { FaTwitter, FaHashtag } from "react-icons/fa";
 import MainMenu from '../../general/MainMenu';
 import PagesNavigation from '../../general/PagesNavigation';
 import Footer from "../../headers/Footer/Footer";
+import IndexMenuHeader from "../../headers/IndexMenuHeader";
 
 import "./Equipe.css";
 
@@ -15,10 +16,9 @@ export default class Equipe extends React.Component {
   render() {
     return (
       <>
-        <div className="top-nav navigations">
-          <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-          <PagesNavigation style = {{gridColumn: 'span 22'}}/>
-        </div>
+        <IndexMenuHeader
+        menuAction={'openIndex'}
+      />
         <div className="ac-grid-24 has-sidebar">
           <div className="content">
             <h1>Équipe</h1>

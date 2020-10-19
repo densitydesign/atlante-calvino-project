@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--dark-blue);
   color: var(--cool-bg);
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   
