@@ -14,12 +14,13 @@
   --header-height: 66px;
   --violet-index-home: #afaff9;
   --navigation-height: 58px;
+  --footer-height: 18px;
   --navigation-height-by-2: calc(var(--navigation-height) * 2);
   --app-border-top: 6px;
   --navigation-borders: black;
   --text-color: black;
   --app-border: 1px solid black;
-  --app-border-bold: 1px solid black;
+  --app-border-bold: 1px solid rgb(143, 131, 131);
   --button-border: 1px solid var(--dark-blue);
   --text-size: 14px;
   --main-menu: var(--dimGold);

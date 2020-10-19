@@ -50,7 +50,7 @@ export default function AtlasRouter()
       {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
       <Route exact path="/"><SplashScreen2 /></Route>
       <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
-      <Route exact path="/Home"><HamburgerMenu /></Route>
+      <Route exact path="/Home"><IndexMenu /></Route>
       <Route exact path="/HomeIndex"><IndexMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/Compass"><Compass /></Route>

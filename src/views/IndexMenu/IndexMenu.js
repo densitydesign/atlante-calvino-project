@@ -67,7 +67,7 @@ export default function IndexMenu({ onClose }) {
       />
       <div
         className={styles['OrbiteContainer']}
-        style={{ top: 58, left: 0, right: 0, bottom: 58 }}
+        style={{ top: 58, left: 0, right: 0, bottom: 18 }}
       >
         <Orbite />
       </div>

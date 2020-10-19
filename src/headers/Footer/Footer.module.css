@@ -1,13 +1,13 @@
 .footer {
   background-color: var(--dark-blue);
   color: var(--cool-bg);
-  position: sticky;
+  position: absolute;
   bottom: 0;
   width: 100%;
   
   /* padding: 1.5em; */
-  height: 18px;
-  font-size: 0.8571428571rem;
+  height: var(--footer-height);
+  font-size: 0.8rem;
   line-height: 1rem;
   padding: 1px 0 0 0;
 }
