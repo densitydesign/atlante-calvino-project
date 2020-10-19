@@ -75,3 +75,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.disabled-link {
+    /* cursor: not-allowed; */
+    /* pointer-events: none; */
+}

@@ -80,7 +80,7 @@ main article h3 {
   cursor: pointer;
 }
 
-.sticky-element {
+.DELETEsticky-element {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 60px;

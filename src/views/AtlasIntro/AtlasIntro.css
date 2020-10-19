@@ -68,7 +68,6 @@
   padding: 100px;
 }
 
-
 .atlas-intro-sidebar-monoblock-2 {
   background: #FFA500;
   position:relative;
@@ -118,87 +117,3 @@ image .atlas-intro-cell2 {
   align-items: center;
   display:flex;
 }
-
-h2{
-  margin-bottom:2em;
-}
-
-
-
-
- /* @keyframes pop { /* flame pulses */
-    /* 0%   { background-color:var(--bg);}
-    50%  { background-color: var(--dark-blue);}
-    100% { background-color:var(--bg);}
-  }  */
-  /* .pop {
-      background-color: var(--dark-blue);
-      opacity:1;
-      animation: pop 3s infinite;
-  } */
-
-/*
-.fade-in {
-  animation: fadeIn ease 10s;
-  -webkit-animation: fadeIn ease 10s;
-  -moz-animation: fadeIn ease 10s;
-  -o-animation: fadeIn ease 10s;
-  -ms-animation: fadeIn ease 10s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  50% {
-    opacity:0.5;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  50% {
-    opacity:0.5;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  50% {
-    opacity:0.5;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  50% {
-    opacity:0.5;
-  }
-  100% {
-    opacity:1;
-  }
-} */

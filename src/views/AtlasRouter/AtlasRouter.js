@@ -20,7 +20,7 @@ import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
-import AboutAndContacts from '../AboutAndContacts/AboutAndContacts';
+import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
 import PressReview from '../PressReview/PressReview';
@@ -113,10 +113,11 @@ export default function AtlasRouter()
       <Route exact path="/Problem/realism"> <Realismo title={'Realismo'}></Realismo></Route>
       <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
 
+      <Route exact path="/equipe"><Equipe /></Route>
       <Route exact path="/Problem/plot"><Trama2 title="Trama"></Trama2></Route>
       <Route exact path="/plot-sheet"><PlotInformationSheet /></Route>
 
-      <Route exact path="/About"><AboutAndContacts /></Route>
+      {/* <Route exact path="/About"><AboutAndContacts /></Route> */}
       <Route exact path="/Project"><Project/></Route>
       <Route exact path="/Tools"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>

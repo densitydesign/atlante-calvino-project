@@ -1,17 +1,17 @@
-import React from 'react';
-import '../../App.css';
+import React from "react";
 
-class Footer extends React.Component
-{
-  render(){
-  return (
+import styles from "./Footer.module.css";
 
-      <footer className="footer text-center">
-      <div className="container">
-      <p className="">© Atlante Calvino 2017-{new Date().getFullYear()}</p></div>
-</footer>
-  );
-}
+class Footer extends React.Component {
+  render() {
+    return (
+      <footer className={["text-center", "d-flex", "align-items-center", "justify-content-center", styles.footer].join(" ")}>
+        <p className="">
+          Atlante Calvino © 2017-2020
+        </p>
+      </footer>
+    );
+  }
 }
 
 export default Footer;

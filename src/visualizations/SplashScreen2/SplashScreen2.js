@@ -26,8 +26,8 @@ class SplashScreen2 extends Component {
             <InteractiveLogo />
           </Link>
         </div>
-        <div className={S["subtitle"]}><Link to="/HomeIndex"><h2 style={{backgroundColor: 'var(--cool-bg)', textAlign:'center'}}>Letteratura e visualizzazione</h2></Link></div>
-        <div className={S["arrow-down"]}><Link to="/HomeIndex"><div><BsArrowDown color="var(--dark-blue)"/></div></Link></div>
+        <div className={S["subtitle"]}><Link to="/Home" className={S['disabled-link']}><h2 style={{backgroundColor: 'var(--cool-bg)', textAlign:'center'}}>Letteratura e visualizzazione</h2></Link></div>
+        <div className={S["arrow-down"]}><Link to="/Home" className={S['disabled-link']}><div><BsArrowDown color="var(--dark-blue)"/></div></Link></div>
         <div className={S["logos-left"]}><a href="http://www.snf.ch/"><img src={logoFnsnf} /></a></div>
         <div className={S["logos-center"]}><a href="https://www.unige.ch/"><img src={logoUnige} /></a><a href="http://densitydesign.org/"><img src={logoDensityDesign} /></a><a href="http://www.dipartimentodesign.polimi.it/"><img src={logoPolitecnico} /></a></div>
         <div className={S["logos-right"]}><a href="https://www.mondadori.it/"><img src={logoMondadori} /></a></div>

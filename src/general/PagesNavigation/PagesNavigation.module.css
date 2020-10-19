@@ -1,0 +1,7 @@
+/* Names look general, but get scoped-out for this navigation only */
+.nav {
+
+}
+.nav-link {
+  margin: 0 2rem
+}
