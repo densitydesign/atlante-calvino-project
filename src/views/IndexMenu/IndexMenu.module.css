@@ -5,7 +5,7 @@
 
 .OrbiteContainer {
     position: absolute;
-    background-color: white;
+    background-color: var(--cool-bg);
 }
 
 .title-viz {
