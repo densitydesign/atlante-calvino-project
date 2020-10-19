@@ -5,9 +5,10 @@
   --bg: #fbfbfc;
   --calvino-red: tomato;
   --dark-green: black;
-  --cool-bg-bg: #f3f1ec;
-  --cool-bg: #fffffa;
-  --dark-blue: #5151fc;
+  --cool-bg-bg: #F3F1EC;
+  --cool-bg: #FFFFFA;
+  --white: #FFFFFF;
+  --dark-blue: #5151FC;
   --small-text: #3f3e4c;
   --secondary-element: #c6cacf;
   --header-height: 66px;
@@ -273,7 +274,7 @@ li {
 
 .top-nav {
   position: sticky;
-  background-color: var(--bg);
+  background-color: var(--white);
   top: 0;
 }
 
