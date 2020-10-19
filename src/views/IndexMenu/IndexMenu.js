@@ -26,6 +26,9 @@ import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondime
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import { ReactComponent as Bussola } from "./icons/bussola.svg"
 import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/icons/icon-close.svg"
+import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
+import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
+import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -57,21 +60,42 @@ export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
 
   const handleCloseGuida = () => setShowGuida(false)
-  const handleShowGuida = () => setShowGuida(true)
+  const handleShowGuida = () => {
+    console.log("video")
+    setShowGuida(true)
+  }
 
   return (
     <div>
       <IndexMenuHeader
-        menuAction={onClose ? 'closeIndex' : 'homeLink'}
+        menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
       />
       <div
-        className={styles['OrbiteContainer']}
+        className={styles["OrbiteContainer"]}
         style={{ top: 58, left: 0, right: 0, bottom: 18 }}
       >
         <Orbite />
       </div>
-      <div className={styles['IndexMenu']}>
+      <div className={styles["IndexMenu"]}>
+        <div className={styles['tappe']}>
+          TAPPE
+        </div>
+        <Link to='/Phenomena/intro'>
+          <div className={styles["tappa1"]}>
+            <Tappa1 width="20" />
+          </div>
+        </Link>
+        <Link to='/Process/intro'>
+          <div className={styles["tappa2"]}>
+            <Tappa2 width="20" />
+          </div>
+        </Link>
+        <Link to='/Problem/intro'>
+          <div className={styles["tappa3"]}>
+            <Tappa3 width="20" />
+          </div>
+        </Link>
         <ItemIndex
           title="territorio"
           link="/Phenomena/territory"
@@ -240,7 +264,7 @@ export default function IndexMenu({ onClose }) {
         </div>
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link to='/Compass'>
+        <Link to="/Compass">
           <Bussola width="70" />
         </Link>
       </div>
