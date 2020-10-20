@@ -1,10 +1,6 @@
 import React from "react";
 import { BsEnvelope } from "react-icons/bs";
-
 import { FaTwitter, FaHashtag } from "react-icons/fa";
-
-import MainMenu from '../../general/MainMenu';
-import PagesNavigation from '../../general/PagesNavigation';
 import Footer from "../../headers/Footer/Footer";
 import IndexMenuHeader from "../../headers/IndexMenuHeader";
 

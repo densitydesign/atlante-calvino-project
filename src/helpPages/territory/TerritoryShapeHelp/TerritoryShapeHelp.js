@@ -91,6 +91,7 @@ export default function TerritoryShapeHelp() {
             (vedi <strong>Approfondimento</strong>).
           </p>
         </Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
       </Tabs>
     </>
   )

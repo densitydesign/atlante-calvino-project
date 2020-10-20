@@ -1,55 +1,115 @@
+import React, { useState } from "react"
+import ArrowButton from "../../../general/ArrowButton/ArrowButton"
+import { Tabs, Tab } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 
-import React from 'react';
-import ArrowButton from '../../../general/ArrowButton/ArrowButton';
+import "./PlotMainHelp.css"
 
-import './PlotMainHelp.css';
-
-export default class PlotMainHelp extends React.Component
-{
-  render()
-  {
-    return (
-      <>
-        <small>tappa 3 </small>
-        <h1>La trama</h1>
-        <h2>L'opera di Italo Calvino come una trama</h2>
-        <h3>Di cosa si tratta</h3>
-        <p>Questa visualizzazione rappresenta il corpus delle opere narrative di Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il 1984.<br />A ogni elemento grafico corrisponde un testo, per cui l’unità minima della
-        visualizzazione non sarà il volume ma il singolo testo. L’idea alla base di questo lavoro consiste nell’offrire un colpo d’occhio dell’intero corpus dell’autore, disegnando una trama che permetta un nuovo accesso
-        all’opera.</p>
-        <p>Di seguito scopri: come si legge, come si esplora e <a href="#st-insights">cosa ci può dire</a>.</p>
-        <h3>Come si legge la trama</h3>
-        <p>Per leggere correttamente la visualizzazione è necessario prestare attenzione a tre parametri: <em>la disposizione degli elementi, la loro dimensione, l’uso del colore</em>.</p>
-
-        <h4>Disposizione degli elementi</h4>
-        <p>Gli elementi sono posizionati sulla base di due criteri: l’appartenenza a uno stesso volume e la data di prima pubblicazione.
-        Questo significa che un principio di attrazione agisce sia sui testi pubblicati in uno stesso volume sia sui testi cronologicamente coevi.
-        Di conseguenza, osservando la trama, è possibile riconoscere un anello esterno e alcuni gruppi di testi interni. Questi ultimi sono i testi che confluiscono in raccolte.</p>
-        <h4>Dimensione</h4>
-        <p>La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>
-        <h4>Uso del colore</h4>
-        <p>L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al glicine, attiva nella modalità <em>Cronologia</em>, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>
-        <p >Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi.
-        Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcuni contorni (metaballs).</p>
-
-          <h3>Come si esplora la trama</h3>
-        <h4>Informazioni</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/tooltip.png'} className="big" alt="information complement" />
-        <p>Interagendo con un singolo elemento grafico appaiono il titolo, l’anno di prima pubblicazione ed eventuali pubblicazioni successive.</p>
-        <h4>Filtro cronologico</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/chronological-filter.png'} className="big" alt="information complement" />
-        <p>Il filtro a comparsa, o timeline, consente di riorganizzare il corpus su una linea temporale e, se necessario, selezionare un intervallo di tempo specifico (un anno, un decennio ecc.)</p>
-        <h4>Cerca</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/cerca.png'} className="big" alt="information complement" />
-        <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
-
-        <div className="sheet--info">
-          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/plot-sheet" />
-          <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis" />
-          <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
-        </div>
-
-      </>
-    );
-  }
+export default function PlotMainHelp() {
+  const [key, setKey] = useState("info")
+  return (
+    <>
+      <IntestazioneHelpPanel
+        tappa={3}
+        linkTappa1={"/Phenomena/territory/doubtAnalysis"}
+        linkTappa2={"/Process/doubting"}
+        linkTappa3={"/Problem/cancellation"}
+        titolo="Trama"
+        linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
+        nomeItinerario={"ITINERARIO FORMA"}
+      />
+      <Tabs
+        className="mt-5"
+        id="controlled-tab-example"
+        activeKey={key}
+        onSelect={(k) => setKey(k)}
+      >
+        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+          <p className="mt-4">
+            <strong>Di cosa si tratta</strong>
+          </p>
+          <p>
+            La visualizzazione rappresenta le forme della trama che
+            costituiscono l’ossatura narrativa dei testi del corpus. La trama di
+            ogni testo pubblicato in vita da Calvino è sintetizzata nella forma
+            di una linea colorata che, come un sismografo, si muove su due assi:
+            quello orizzontale, orientato da destra a sinistra, rappresenta
+            l’avanzamento lineare del testo dall’incipit alla conclusione,
+            mentre quello verticale presenta un elenco ragionato dei più comuni
+            tipi di sequenza narrativa riscontrati nel corpus, raggruppati e
+            riordinati in base alla loro capacità di perturbare la vicenda
+            narrata, dai più statici, come i brani metaletterari e descrittivi,
+            a quelli intermedi, come i passaggi dedicati ai moti interiori, fino
+            ai più dinamici, come gli incontri-scontri tra personaggi e
+            l’esperienza della morte.
+          </p>
+          <p>
+            <strong>Come si legge</strong>
+          </p>
+          <p>
+            La visualizzazione è organizzata in modo da offrire una doppia
+            direzione di lettura. Nella prima schermata, il panorama frontale
+            delle linee mette a confronto tutte le trame dei testi calviniani,
+            disponendole in uno spazio uniforme indipendentemente dalla loro
+            lunghezza. Il movimento orizzontale di ogni linea è basato sulla
+            scansione del tempo del racconto, cioè aderisce all’intreccio e alla
+            disposizione che la materia narrativa segue nel testo reale,
+            indipendentemente dalla presenza di flashback o anticipazioni.
+            Interagendo con il panorama o con la barra di ricerca per titolo, è
+            possibile portare in evidenza una o più linee, lungo le quali,
+            scorrendo con un cursore, si possono leggere i nomi delle sequenze
+            che articolano il percorso. Cliccando sull’etichetta che contiene il
+            titolo del testo, si può inoltre isolare ogni linea per analizzare
+            in dettaglio tutti i punti della sua struttura narrativa. Sfruttando
+            l’opzione Ruota vista, si può poi accedere alla seconda modalità di
+            lettura: l’intera visualizzazione compie un giro di 90° su se
+            stessa, e permette di osservare il panorama “di profilo”, da una
+            prospettiva che mette in risalto l’estensione verticale delle linee,
+            calcolata sull’intervallo tra il suo punto più basso e quello più
+            alto, e mostra quale parte dell’elenco dei motivi letterari
+            ricorrenti è stata coinvolta da Calvino nella composizione di ogni
+            trama. I due marcatori geometrici che si trovano sulle linee
+            indicano rispettivamente la sequenza di apertura e di chiusura di
+            ogni testo: in questo modo è possibile avere uno sguardo totale sui
+            motivi letterari che l’autore sceglie di usare come incipit e finali
+            dei suoi testi. Per entrambe le modalità di lettura è sempre
+            possibile visualizzare l’elenco delle sequenze, che può anche essere
+            usato per interrogare le visualizzazioni selezionando un proprio
+            intervallo personalizzato e verificando se e quali trame hanno
+            un’estensione che coincide esattamente con i confini scelti.Q
+          </p>
+          <p>
+            <strong>Qualche pista di lettura</strong>
+          </p>
+          <p>
+            Entrambe le modalità di lettura offerte dalla visualizzazione
+            offrono la possibilità di immergersi nel mondo di trame di Calvino
+            per scoprirne aspetti notevoli. Nella visione panoramica frontale,
+            un esempio è l’uso del cursore su due o più linee evidenziate
+            contemporaneamente: uno strumento che permette di rilevare eventuali
+            coincidenze e divaricazioni tra le strutture dei testi, ad esempio
+            mostrando la presenza della stessa sequenza nella stessa posizione
+            in racconti di genere diverso, o composti a distanza di molti anni,
+            oppure viceversa segnalando il disallineamento di racconti che, a
+            prima vista, sembrerebbero invece collegati da una sostanziale
+            somiglianza narrativa. La visione panoramica laterale, da parte sua,
+            consente tra le altre cose di avere un resoconto visivo di una
+            questione primaria per Calvino, quella del Cominciare e del Finire.
+            Grazie alla redistribuzione delle linee si può vedere non soltanto
+            il resoconto delle scelte dell’autore quando si tratta di decidere
+            qual è il modo migliore per far aprire e chiudere una storia, ma si
+            può anche avere una sintesi dell’orientamento complessivo delle
+            trame: sapendo che le sequenze sono disposte in base alla loro
+            potenzialità perturbante rispetto all’entropia della narrazione,
+            possiamo subito dedurre dalla posizione dei marcatori di inizio-fine
+            se l’asse complessivo di un racconto è ascendente o discendente,
+            cioè se la vicenda termina in una situazione di maggiore o minore
+            squilibrio rispetto al suo inizio.
+          </p>
+        </Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+      </Tabs>
+    </>
+  )
 }
