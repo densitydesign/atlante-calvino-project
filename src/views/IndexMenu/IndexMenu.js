@@ -29,6 +29,7 @@ import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/
 import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
 import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
 import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
+import { ReactComponent as Curve1 } from "./icons/curva_combinaretrama.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -78,20 +79,18 @@ export default function IndexMenu({ onClose }) {
         <Orbite />
       </div>
       <div className={styles["IndexMenu"]}>
-        <div className={styles['tappe']}>
-          TAPPE
-        </div>
-        <Link to='/Phenomena/intro'>
+        <div className={styles["tappe"]}>TAPPE</div>
+        <Link to="/Phenomena/intro">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
         </Link>
-        <Link to='/Process/intro'>
+        <Link to="/Process/intro">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
         </Link>
-        <Link to='/Problem/intro'>
+        <Link to="/Problem/intro">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
@@ -273,6 +272,9 @@ export default function IndexMenu({ onClose }) {
         onClick={handleShowGuida}
       >
         Guarda la guida
+      </div>
+      <div className={`position-absolute ${styles["curve-combinare"]}`}>
+        <Curve1 width='100' />
       </div>
       <Footer />
       <Modal

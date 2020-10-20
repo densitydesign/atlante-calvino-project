@@ -1,36 +1,21 @@
 import React, { useState } from "react"
 //import ArrowButton from "../../../general/ArrowButton/ArrowButton"
 import { Tabs, Tab } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import { ReactComponent as ApprofondimentoIcon } from "../../icons/approfondimento.svg"
-import "./TerritoryDoubtHelp.css"
+import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 
 export default function TerritoryDoubtHelp() {
   const [key, setKey] = useState("info")
   return (
     <>
-      <div className="d-flex justify-content-between">
-        <strong className="text-dark-blue">
-          <u>Itinerario DUBBIO</u>
-        </strong>
-        <div className='d-flex justify-content-between'>
-          <span className='text-dark-blue mr-2'>
-            <smalL>Tappa</smalL>
-          </span>
-          <span className='number-tappa-active mr-2'>1</span>
-          <span className='number-tappa mr-2'>2</span>
-          <span className='number-tappa'>3</span>
-        </div>
-      </div>
-      <h1>Nebbia</h1>
-      <div className='d-flex align-items-center'>
-        <ApprofondimentoIcon />
-        <strong className="ml-2">
-          <Link to="/Phenomena/territory/doubtAnalysis/informationSheet">
-            <u>APPROFONDIMENTO</u>
-          </Link>
-        </strong>
-      </div>
+      <IntestazioneHelpPanel
+        tappa={1}
+        linkTappa1={'/Phenomena/territory/doubtAnalysis'}
+        linkTappa2={'/Process/doubting'}
+        linkTappa3={'/Problem/cancellation'}
+        titolo="Nebbia"
+        linkApprofondimento="/Phenomena/territory/doubtAnalysis/informationSheet"
+        nomeItinerario={"ITINERARIO DUBBIO"}
+      />
       <Tabs
         className="mt-5"
         id="controlled-tab-example"
@@ -38,7 +23,9 @@ export default function TerritoryDoubtHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
-          <h3>Di cosa si tratta</h3>
+          <p className="mt-4">
+            <strong>Di cosa si tratta</strong>
+          </p>
           <p>
             Perché la nebbia? Perché è un fenomeno concreto di messa in dubbio
             dell’esistenza della realtà e di destabilizzazione della sua
@@ -57,7 +44,9 @@ export default function TerritoryDoubtHelp() {
             effetto prodotto dall’elemento atmosferico della{" "}
             <span style={{ color: "#5151fc" }}>nebbia</span>.
           </p>
-          <h3>Come funziona</h3>
+          <p>
+            <strong>Come funziona</strong>
+          </p>
           <p>
             Il territorio può essere visualizzato in due diversi modi, che
             mostrano da due differenti punti di vista i dati raccolti.

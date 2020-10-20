@@ -128,6 +128,12 @@
   flex-direction: column;
 }
 
+.curve-combinare{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 5.5) - var(--navigation-height));
+  left: calc(100% / 12 * 10.5);
+}
+
 .trama {
   position: absolute;
   top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
