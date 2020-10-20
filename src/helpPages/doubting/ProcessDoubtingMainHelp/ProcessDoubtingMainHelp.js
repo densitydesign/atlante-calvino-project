@@ -4,7 +4,7 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import "./ProcessDoubtingMainHelp.css"
 import { Link } from "react-router-dom"
 
-export default function ProcessDoubtingMainHelpì() {
+export default function ProcessDoubtingMainHelp() {
   const [key, setKey] = useState("info")
   return (
     <>
