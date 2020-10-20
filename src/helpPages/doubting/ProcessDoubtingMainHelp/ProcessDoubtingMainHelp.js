@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ArrowButton from "../../../general/ArrowButton/ArrowButton"
 import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import "./ProcessDoubtingMainHelp.css"

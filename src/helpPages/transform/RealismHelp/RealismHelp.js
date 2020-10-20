@@ -1,55 +1,144 @@
+import React, { useState } from "react"
+import { Tabs, Tab } from "react-bootstrap"
+import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import { Link } from "react-router-dom"
+import "./RealismHelp.css"
 
-import React from 'react';
-import ArrowButton from '../../../general/ArrowButton/ArrowButton';
-
-import './RealismHelp.css';
-
-export default class RealismHelp extends React.Component
-{
-  render()
-  {
-    return (
-      <>
-        <small>tappa 3 </small>
-        <h1>La trama</h1>
-        <h2>L'opera di Italo Calvino come una trama</h2>
-        <h3>Di cosa si tratta</h3>
-        <p>Questa visualizzazione rappresenta il corpus delle opere narrative di Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il 1984.<br />A ogni elemento grafico corrisponde un testo, per cui l’unità minima della
-        visualizzazione non sarà il volume ma il singolo testo. L’idea alla base di questo lavoro consiste nell’offrire un colpo d’occhio dell’intero corpus dell’autore, disegnando una trama che permetta un nuovo accesso
-        all’opera.</p>
-        <p>Di seguito scopri: come si legge, come si esplora e <a href="#st-insights">cosa ci può dire</a>.</p>
-        <h3>Come si legge la trama</h3>
-        <p>Per leggere correttamente la visualizzazione è necessario prestare attenzione a tre parametri: <em>la disposizione degli elementi, la loro dimensione, l’uso del colore</em>.</p>
-
-        <h4>Disposizione degli elementi</h4>
-        <p>Gli elementi sono posizionati sulla base di due criteri: l’appartenenza a uno stesso volume e la data di prima pubblicazione.
-        Questo significa che un principio di attrazione agisce sia sui testi pubblicati in uno stesso volume sia sui testi cronologicamente coevi.
-        Di conseguenza, osservando la trama, è possibile riconoscere un anello esterno e alcuni gruppi di testi interni. Questi ultimi sono i testi che confluiscono in raccolte.</p>
-        <h4>Dimensione</h4>
-        <p>La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>
-        <h4>Uso del colore</h4>
-        <p>L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al glicine, attiva nella modalità <em>Cronologia</em>, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>
-        <p >Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi.
-        Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcuni contorni (metaballs).</p>
-
-          <h3>Come si esplora la trama</h3>
-        <h4>Informazioni</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/tooltip.png'} className="big" alt="information complement" />
-        <p>Interagendo con un singolo elemento grafico appaiono il titolo, l’anno di prima pubblicazione ed eventuali pubblicazioni successive.</p>
-        <h4>Filtro cronologico</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/chronological-filter.png'} className="big" alt="information complement" />
-        <p>Il filtro a comparsa, o timeline, consente di riorganizzare il corpus su una linea temporale e, se necessario, selezionare un intervallo di tempo specifico (un anno, un decennio ecc.)</p>
-        <h4>Cerca</h4>
-        <img src={process.env.PUBLIC_URL + '/panel/cerca.png'} className="big" alt="information complement" />
-        <p>Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>
-
-        <div className="sheet--info">
-          <ArrowButton arrowDirection="left" textAlign="right" text="SCHEDA" route="/realism-sheet" />
-          <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis" />
-          <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
-        </div>
-
-      </>
-    );
-  }
+export default function RealismHelp() {
+  const [key, setKey] = useState("info")
+  return (
+    <>
+      <IntestazioneHelpPanel
+        tappa={3}
+        linkTappa1={"/Phenomena/territory/spaceAnalysis"}
+        linkTappa2={"/Process/transforming"}
+        linkTappa3={"/Problem/realism"}
+        titolo="Realismo"
+        linkApprofondimento="/combining/Combine/informationSheet"
+        nomeItinerario={"ITINERARIO SPAZIO"}
+      />
+      <Tabs
+        className="mt-5"
+        id="controlled-tab-example"
+        activeKey={key}
+        onSelect={(k) => setKey(k)}
+      >
+        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+          <p className="mt-4">
+            <strong>Di cosa si tratta</strong>
+          </p>
+          <p>
+            Dopo aver esplorato lo spazio dell’opera calviniana in molte delle
+            sue principali dimensioni, la questione della rappresentazione della
+            realtà viene nuovamente affrontata restringendo l’analisi allo
+            spazio d’ambientazione terrestre, localizzabile (es. Sanremo) e non
+            localizzabile (es. una città), dei testi brevi pubblicati in volume
+            tra il 1945 e il 1983. Questa specifica selezione concentra il focus
+            sullo spazio che possiamo definire più realista all’interno
+            dell’opera dell’autore, con l’obiettivo di comprendere in che modo
+            questo complesso insieme di figurazioni spaziali si trasformi e si
+            modifichi nel corso del tempo.
+          </p>
+          <p>
+            <strong>Come funziona</strong>
+          </p>
+          <p>
+            La visualizzazione può essere esplorata in due modalità, che
+            presentano rispettivamente una visione d’insieme di tutti i racconti
+            e una visione in dettaglio di singoli testi che l’utente sceglie di
+            selezionare. Nel primo caso ogni racconto è rappresentato da un
+            elemento grafico lineare che si dispone in ordine cronologico di
+            pubblicazione all’interno di un cerchio. Ogni linea, di lunghezza
+            uniforme, rivela tre aspetti principali:{" "}
+            <ol type="1">
+              <li>
+                il numero di ambientazioni attraverso cui si sviluppa la storia,
+                rappresentate da pallini neri;{" "}
+              </li>
+              <li>
+                la tipologia di ogni ambientazione:{" "}
+                <span style={{ color: "#FFD337" }}>spazio interno</span>,{" "}
+                <span style={{ color: "#00C19C" }}>spazio esterno</span>,{" "}
+                <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,
+                <span style={{ color: "#C6CACF" }}>
+                  assenza di ambientazione
+                </span>
+                ;
+              </li>
+              <li>
+                lo spostamento nello spazio, rappresentato dall’animazione che
+                mostra l’eventuale presenza di movimento all’interno del testo.
+              </li>
+            </ol>
+            Selezionando uno o più elementi e scorrendo verso il basso è
+            possibile avere una visione in dettaglio che permette di scoprire
+            altre tre importanti caratteristiche:{" "}
+            <ol type="1">
+              <li>
+                la lunghezza reale del racconto selezionato, particolarmente
+                utile nel caso in cui si confrontino più testi;
+              </li>
+              <li>la denominazione esatta di ciascun ambientazione;</li>
+              <li>
+                la presenza di livelli spaziali che si annidano l’uno dentro
+                l’altro, qualora ci si trovi di fronte ad ambientazioni interne
+                ad altri ambienti.
+              </li>
+            </ol>{" "}
+          </p>
+          <p>
+            <strong>Qualche pista di lettura</strong>
+          </p>
+          <p>
+            Una prima importante considerazione riguarda il movimento. Mettendo
+            a confronto i primi due decenni della carriera di Calvino con i
+            secondi due, si assiste a un’evidente inversione di tendenza: se tra
+            il 1945 e il 1965 il movimento nello spazio è molto spiccato e
+            soltanto una minima parte dei racconti non contempla scene di
+            spostamento (7 su 73, vale a dire meno del 10%), dal 1965 in avanti
+            i numeri si ribaltano a favore di un sostanziale immobilismo. Lo
+            spostamento nello spazio non scompare ma si assottiglia notevolmente
+            (è presente in 8 testi su 33, ossia circa nel 25% dei casi). Questo
+            fenomeno è giustificato dalla nuova tendenza che emerge nella
+            scrittura di Calvino a partire più o meno dalla metà degli anni
+            Sessanta: l’azione, l’avventura e anche la carica fiabesca che
+            caratterizzavano i testi partigiani, contadini o cittadini (si pensi
+            a Marcovaldo, sempre intento a cimentarsi in qualche impresa)
+            vengono meno, sostituiti da una forma e da un contenuto che si
+            aprono piuttosto alla riflessione, alle digressioni descrittive e a
+            alcuni procedimenti narrativi propri della scrittura saggistica.
+            Questa inversione di tendenza non ha un riflesso diretto, come si
+            potrebbe supporre, sul rapporto tra spazi esterni e spazi interni.
+            Se è vero che nei primissimi anni la produzione calviniana sembra
+            prediligere ambientazioni all’aperto (pensiamo a racconti come Paura
+            sul sentiero, Uomo nei gerbidi, Campo di mine, Ultimo viene il
+            corvo), il sopraggiungere dei primi racconti cittadini (Visti alla
+            mensa, Si dorme come cani, Il gatto e il poliziotto) segna molto
+            presto l’inizio di una sostanziale oscillazione tra ambientazioni
+            esterne e ambientazioni interne (o ancora, come accade in molti
+            casi, miste). Tuttavia, mettendo a confronto la selezione dei
+            racconti che presentano esclusivamente spazi esterni e quella dei
+            racconti che presentano soltanto spazi interni e analizzando nel
+            dettaglio le caratteristiche proprie di ogni testo, si nota come il
+            secondo gruppo sia ragionevolmente molto omogeneo: i testi che ne
+            fanno parte presentano, infatti, pochissimi ambienti e il movimento
+            è quasi assente. Mentre il primo si trasforma in modo sorprendente
+            con il passare degli anni: le numerosissime ambientazioni dei primi
+            racconti all’aperto diminuiscono progressivamente fino a raggiungere
+            la mono-ambientazione, passando da un movimento quasi febbrile ed
+            esclusivamente orizzontale (privo, cioè, di livelli spaziali che si
+            annidino uno dentro l’altro: vedi{" "}
+            <Link to="/combining/Combine/informationSheet">
+              Approfondimento
+            </Link>
+            ) a un sostanziale immobilismo. Non stupisce, allora, che persino i
+            mezzi di trasporto, di cui si trova ampia traccia nella produzione
+            breve calviniana degli anni Cinquanta e Sessanta, scompaiano del
+            tutto dopo il 1967.
+          </p>
+        </Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+      </Tabs>
+    </>
+  )
 }
