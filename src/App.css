@@ -60,6 +60,14 @@ a.link:hover {
   color: var(--text-color);
 }
 
+a.top-menu{
+  color: var(--text-color);
+}
+
+a.active{
+  color: var(--dark-blue);
+}
+
 /* OLD p {
   font-size: 1.4em;
   line-height: 1.4em;

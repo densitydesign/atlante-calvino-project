@@ -33,22 +33,22 @@ export default function IndexMenuHeader({
         style={{ gridColumn: 'span 22' }}
         className="d-flex justify-content-center"
       >
-        <NavLink to="/" className="ml-5 mr-5">
+        <NavLink to="/" className="ml-5 mr-5 top-menu">
           Atlante Calvino
         </NavLink>
-        <NavLink to="/equipe" className="ml-5 mr-5">
+        <NavLink to="/equipe" className="ml-5 mr-5 top-menu">
           Équipe
         </NavLink>
-        <NavLink to="/Project" className="ml-5 mr-5">
+        <NavLink to="/Project" className="ml-5 mr-5 top-menu">
           Progetto
         </NavLink>
-        <NavLink to="/Tools" className="ml-5 mr-5">
+        <NavLink to="/Tools" className="ml-5 mr-5 top-menu">
           Istruzioni per l'uso
         </NavLink>
-        <NavLink to="/Capta" className="ml-5 mr-5">
+        <NavLink to="/Capta" className="ml-5 mr-5 top-menu">
           Capta
         </NavLink>
-        <NavLink to="/Papers" className="ml-5 mr-5">
+        <NavLink to="/Papers" className="ml-5 mr-5 top-menu">
           Pubblicazioni
         </NavLink>
       </div>
