@@ -18,7 +18,7 @@ export default function TerritoryDoubtHelp() {
       />
       <Tabs
         className="mt-5"
-        id="controlled-tab-example"
+        id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >

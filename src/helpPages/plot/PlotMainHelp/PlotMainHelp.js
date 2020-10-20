@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import ArrowButton from "../../../general/ArrowButton/ArrowButton"
 import { Tabs, Tab } from "react-bootstrap"
-import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 
 import "./PlotMainHelp.css"
@@ -12,8 +10,8 @@ export default function PlotMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={3}
-        linkTappa1={"/Phenomena/territory/doubtAnalysis"}
-        linkTappa2={"/Process/doubting"}
+        linkTappa1={"/Phenomena/territory/shapeAnalysis"}
+        linkTappa2={"/Process/combining"}
         linkTappa3={"/Problem/cancellation"}
         titolo="Trama"
         linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
@@ -21,7 +19,7 @@ export default function PlotMainHelp() {
       />
       <Tabs
         className="mt-5"
-        id="controlled-tab-example"
+        id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
