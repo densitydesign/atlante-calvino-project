@@ -4,7 +4,7 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import "./ProcessDoubtingMainHelp.css"
 import { Link } from "react-router-dom"
 import { ReactComponent as Legend01 } from "./icons/dubitare_disposizione.svg"
-import { ReactComponent as Legend02 } from "./icons/dubitare_disposizioneGIF.gif"
+import Legend02 from "./icons/dubitare_disposizioneGIF.gif"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function ProcessDoubtingMainHelp() {
@@ -123,7 +123,7 @@ export default function ProcessDoubtingMainHelp() {
             </div>
             <div className="d-flex">
               <Legend01 />
-              <img className="ml-3" src={Legend02} alt="Legenda" />
+              <img className="ml-5" src={Legend02} alt="Legenda" />
             </div>
           </div>
           <div className="row mt-4">

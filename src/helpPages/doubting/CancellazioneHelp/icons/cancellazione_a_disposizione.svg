@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="301" height="86.51" viewBox="0 0 301 86.51">
+  <g id="Raggruppa_22304" data-name="Raggruppa 22304" transform="translate(-19.001 -266)">
+    <circle id="Ellisse_471" data-name="Ellisse 471" cx="21.231" cy="21.231" r="21.231" transform="translate(253.57 306.426)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="1" stroke-dasharray="0.1 3"/>
+    <circle id="Ellisse_472" data-name="Ellisse 472" cx="21.231" cy="21.231" r="21.231" transform="translate(202 267.426)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="1" stroke-dasharray="0.1 3"/>
+    <g id="Raggruppa_4729" data-name="Raggruppa 4729" transform="translate(418.008 1.671) rotate(41)">
+      <line id="Linea_1454" data-name="Linea 1454" y2="2.814" transform="translate(63.59 342.918)" fill="none" stroke="#444" stroke-width="0.567"/>
+      <line id="Linea_1455" data-name="Linea 1455" y2="2.814" transform="translate(83.453 342.918)" fill="none" stroke="#444" stroke-width="0.567"/>
+      <line id="Linea_1456" data-name="Linea 1456" x2="19.863" transform="translate(63.59 344.326)" fill="none" stroke="#444" stroke-width="0.5"/>
+    </g>
+    <path id="Tracciato_124407" data-name="Tracciato 124407" d="M1195.183,491.073c-.608-.6-.925-.587-1.192-.314a1.342,1.342,0,0,1-2.265-1.247c.083-.356-.085-.664-1.262-.945a4.45,4.45,0,0,1,1.986-8.676c1.268.281,1.814-.07,2.021-1.007a3.288,3.288,0,0,1,6.485,1c-.087.962.273,1.4,1.235,1.485a3.287,3.287,0,0,1-.49,6.555c-.968-.056-1.371.3-1.425,1.185a3,3,0,0,1-5.093,1.959Z" transform="translate(-972.807 -195.307)" fill="#8fcc81"/>
+    <text id="Somiglianza_basata_su:_a._quantità_di_testo_dubitativo_in_proporzione_alla_lunghezza_totale_dell_opera_b._combinazioni_delle_categorie_e_degli_stili_nel_testo_dubitativo" data-name="Somiglianza basata su: 
+a. quantità di testo dubitativo in proporzione alla lunghezza totale dell’opera;  
+b. combinazioni delle categorie e degli stili nel testo dubitativo" transform="translate(19.667 267.51)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Somiglianza basata su: </tspan><tspan x="0" y="23">a. quantità di testo dubitativo in </tspan><tspan x="0" y="36">proporzione alla lunghezza </tspan><tspan x="0" y="49" xml:space="preserve">totale dell’opera;  </tspan><tspan x="0" y="62">b. combinazioni delle categorie </tspan><tspan x="0" y="75">e degli stili nel testo dubitativo</tspan></text>
+    <path id="Tracciato_124406" data-name="Tracciato 124406" d="M1146.269,471.787c.547-1.389.218-2.144-1.025-2.635a4.551,4.551,0,0,1,3.241-8.505c1.23.452,1.7.226,1.926-.388a2.276,2.276,0,0,1,4.3,1.5c-.207.638,0,1.047.9,1.344a3.219,3.219,0,0,1,.393,5.948c-.839.409-1.062,1.047-.414,2.372a5.089,5.089,0,1,1-9.313.369Z" transform="translate(-875.362 -140.777)" fill="#d78f66"/>
+    <rect id="Rettangolo_18726" data-name="Rettangolo 18726" width="301" height="86" transform="translate(19.001 266)" fill="none"/>
+  </g>
+</svg>
