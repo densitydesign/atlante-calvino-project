@@ -3,6 +3,9 @@ import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import "./ProcessDoubtingMainHelp.css"
 import { Link } from "react-router-dom"
+import { ReactComponent as Legend01 } from "./icons/dubitare_disposizione.svg"
+import { ReactComponent as Legend02 } from "./icons/dubitare_disposizioneGIF.gif"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function ProcessDoubtingMainHelp() {
   const [key, setKey] = useState("info")
@@ -10,11 +13,11 @@ export default function ProcessDoubtingMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={2}
-        linkTappa1={"/Phenomena/territory/doubtAnalysis"}
-        linkTappa2={"/Process/doubting"}
-        linkTappa3={"/Problem/cancellation"}
+        linkTappa1={"/doubt/phase1"}
+        linkTappa2={"/doubt/phase2"}
+        linkTappa3={"/doubt/phase3"}
         titolo="Dubitare"
-        linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
+        linkApprofondimento="/doubt/phase2/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
       />
       <Tabs
@@ -23,7 +26,7 @@ export default function ProcessDoubtingMainHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>
@@ -62,15 +65,18 @@ export default function ProcessDoubtingMainHelp() {
             l’informazione è riportata in percentuale accanto al tipo di testo
             corrispondente. Il numero di volte che un testo dubitativo o un
             testo oggetto di dubbio sono stati messi in discussione determina il
-            Numero di livelli. Varie funzioni permettono di esplorare i dati
-            raccolti, filtrando i testi secondo diversi criteri (Cerca per; Tipo
-            di pubblicazione; Numero di livelli, Filtro cronologico) o
-            modificando la loro scala di valore (Lunghezza). Inoltre è possibile
-            riorganizzare la successione delle barre scegliendo un tipo di testo
-            come parametro ordinante. Il secondo modo mostra l’andamento del
-            processo dubitativo nel testo selezionato. In questo caso è
-            possibile vedere le singole occorrenze dei diversi tipi di testo, ma
-            soprattutto in che modo si creano i livelli.
+            <i>Numero di livelli</i>. Varie funzioni permettono di esplorare i
+            dati raccolti, filtrando i testi secondo diversi criteri (
+            <i>
+              Cerca per; Tipo di pubblicazione; Numero di livelli, Filtro
+              cronologico
+            </i>
+            ) o modificando la loro scala di valore (<i>Lunghezza</i>). Inoltre
+            è possibile riorganizzare la successione delle barre scegliendo un
+            tipo di testo come parametro ordinante. Il secondo modo mostra
+            l’andamento del processo dubitativo nel testo selezionato. In questo
+            caso è possibile vedere le singole occorrenze dei diversi tipi di
+            testo, ma soprattutto in che modo si creano i <i>livelli</i>.
           </p>
           <p>
             <strong>Qualche pista di lettura</strong>
@@ -95,24 +101,45 @@ export default function ProcessDoubtingMainHelp() {
             possono individuare due tendenze: a) da un lato troviamo opere che
             si costruiscono su catene di ipotesi frammentate e di estensione
             contenuta, stabilendo così un percorso di lettura fortemente
-            instabile (es. Ti con Zero); b) dall’altro invece opere che, dopo
-            aver accumulato alcune occorrenze di{" "}
+            instabile (es. <i>Ti con Zero</i>); b) dall’altro invece opere che,
+            dopo aver accumulato alcune occorrenze di{" "}
             <span style={{ color: "#BBBBFF" }}>testo dubitativo</span>, tendono
             verso la fine ad annullare il percorso compiuto, includendo
             nell’ultimo{" "}
             <span style={{ color: "#FFD337" }}>oggetto di dubbio</span> una
-            grande quantità di testo (es. L’inseguimento). Nel primo caso il
-            numero dei livelli sale molto di più che nel secondo. Le due
+            grande quantità di testo (es. <i>L’inseguimento</i>). Nel primo caso
+            il numero dei livelli sale molto di più che nel secondo. Le due
             tendenze sono più evidenti nelle forme brevi, ma anche nei romanzi
             si possono individuare strategie simili nella distribuzione delle
             occorrenze del processo dubitativo (vedi{" "}
-            <Link to="/Process/doubting/Hesitation/informationSheet">
-              Approfondimento
-            </Link>
+            <Link to="/doubt/phase2/focus">Approfondimento</Link>
             ).
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="mt-4">
+            <div>
+              <small>DISPOSIZIONE SULLE COLONNE</small>
+            </div>
+            <div className="d-flex">
+              <Legend01 />
+              <img className="ml-3" src={Legend02} alt="Legenda" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#BBBBFF" name="Testo dubitativo (dt)" />
+                <BadgeLegenda color="#FFD337" name="Oggetto di dubbio" />
+                <BadgeLegenda color="#00C19C" name="Dubitativo e oggetto di dubbio" />
+                <BadgeLegenda color="#C6CACF" name="Non dubitativo" />
+              </div>
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

@@ -10,9 +10,9 @@ export default function TerritoryShapeHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={"/Phenomena/territory/shapeAnalysis"}
-        linkTappa2={"/Problem/plot"}
-        linkTappa3={"/Problem/intro"}
+        linkTappa1={"/form/phase1"}
+        linkTappa2={"/form/phase3"}
+        linkTappa3={"/phase3-problem"}
         titolo="Elenchi"
         linkApprofondimento="/"
         nomeItinerario={"ITINERARIO FORMA"}
@@ -23,7 +23,7 @@ export default function TerritoryShapeHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>

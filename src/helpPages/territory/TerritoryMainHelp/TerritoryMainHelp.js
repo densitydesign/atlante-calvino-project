@@ -1,6 +1,13 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import { ReactComponent as Info01 } from "./icons/territorio_a_disposizione_cronologia.svg"
+import { ReactComponent as Info02 } from "./icons/territorio_dimensione.svg"
+import { ReactComponent as Info03 } from "./icons/territorio_a_cronologia.svg"
+import { ReactComponent as Info04 } from "./icons/territorio_b_situazione_editoriale_1.svg"
+import { ReactComponent as Info05 } from "./icons/territorio_b_situazione_editoriale_2.svg"
+import { ReactComponent as Info06 } from "./icons/territorio_b_situazione_editoriale_3.svg"
+import { ReactComponent as Info07 } from "./icons/territorio_b_situazione_editoriale_4.svg"
 
 import "./TerritoryMainHelp.css"
 
@@ -10,9 +17,9 @@ export default function TerritoryMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={"/Phenomena/intro"}
-        linkTappa2={"/Process/intro"}
-        linkTappa3={"/Problem/intro"}
+        linkTappa1={"/phase1-phenomena"}
+        linkTappa2={"/phase2-process"}
+        linkTappa3={"/phase3-problem"}
         titolo="Esplorare l'opera come un territorio"
         nomeItinerario={"IL FENOMENO"}
       />
@@ -22,7 +29,7 @@ export default function TerritoryMainHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>
@@ -45,8 +52,105 @@ export default function TerritoryMainHelp() {
             attenzione a tre parametri: a) la disposizione degli elementi; b) la
             loro dimensione; c) l’uso del colore.
           </p>
+          <p className="text-center">
+            <Info01 width="250" />
+          </p>
+          <p>
+            a) Gli elementi sono posizionati sulla base di due criteri:
+            l’appartenenza a uno stesso volume e la data di prima pubblicazione.
+            Questo significa che un principio di attrazione agisce sia sui testi
+            pubblicati in uno stesso volume sia sui testi cronologicamente
+            coevi. Di conseguenza, osservando il territorio, è possibile
+            riconoscere un anello esterno e alcuni gruppi di testi interni.
+            Questi ultimi sono i testi che confluiscono in raccolte.
+          </p>
+          <p className="text-center">
+            <Info02 width="150" />
+          </p>
+          <p>
+            b) La dimensione di ogni elemento è proporzionale alla lunghezza del
+            testo che rappresenta; a colpo d’occhio è quindi possibile
+            individuare le opere più consistenti del corpus.
+          </p>
+          <div className="text-center">
+            <small>CRONOLOGIA</small>
+          </div>
+          <p className="text-center">
+            <Info03 width="300" className="mt-3" />
+          </p>
+          <p>
+            c) L’uso del colore introduce due differenti modalità esplorative:
+            la scala cromatica che va dal verde al viola, attiva nella modalità
+            Cronologia, segnala l’ordine cronologico di prima pubblicazione di
+            tutti i testi del corpus.
+          </p>
+          <div className="text-center">
+            <small>SITUAZIONE EDITORIALE</small>
+          </div>
+          <p className="d-flex justify-content-center">
+            <Info04 />
+            <Info05 />
+            <Info06 />
+            <Info07 />
+          </p>
+          <p>
+            Selezionando invece la modalità Volumi, il colore consente di
+            riconoscere tutti i volumi pubblicati in vita dall’autore, sia che
+            si tratti di raccolte di racconti, sia che si tratti di altri tipi
+            di testi. Le raccolte di racconti sono riconoscibili con gli stessi
+            colori anche in modalità Cronologia, attraverso l’utilizzo di alcune
+            linee di contorno.
+          </p>
+          <p>
+            Interagendo con un singolo elemento grafico appaiono il titolo,
+            l’anno di prima pubblicazione ed eventuali pubblicazioni successive.
+            Il Filtro cronologico consente di riorganizzare il corpus su una
+            linea temporale e, se necessario, selezionare un intervallo di tempo
+            specifico (un anno, un decennio ecc.) Utilizzando la funzione Cerca
+            è possibile individuare singoli testi o raccolte di racconti.
+          </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <Info02 className="mt-2" />
+            </div>
+            <div className="offset-md-3 col-md-5">
+              <div>
+                <small>DISPOSIZIONE</small>
+              </div>
+              <Info01 className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-8">
+              <div>
+                <small>CRONOLOGIA</small>
+              </div>
+              <Info03 className="mt-2" />
+            </div>
+          </div>
+          <div className="mt-4">
+            <small>SITUAZIONE EDITORIALE</small>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
+              <Info04 />
+            </div>
+            <div className="col-md-3">
+              <Info05 />
+            </div>
+            <div className="col-md-3">
+              <Info06 />
+            </div>
+            <div className="col-md-3">
+              <Info07 />
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

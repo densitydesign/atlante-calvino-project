@@ -301,7 +301,7 @@ const tabs = {
     sheet: (
         <>
             <h2 className={styles.h2}>Vai alla scheda</h2>
-            <ArrowButton arrowDirection="right" textAlign="right" text="SCHEDA" route="/cancellation-sheet" />
+            <ArrowButton arrowDirection="right" textAlign="right" text="SCHEDA" route="/doubt/phase3/focus" />
         </>
     )
 }

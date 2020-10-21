@@ -1,7 +1,11 @@
 import React, { useState } from "react"
-//import ArrowButton from "../../../general/ArrowButton/ArrowButton"
 import { Tabs, Tab } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
+import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
 export default function TerritoryDoubtHelp() {
   const [key, setKey] = useState("info")
@@ -9,11 +13,11 @@ export default function TerritoryDoubtHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={'/Phenomena/territory/doubtAnalysis'}
-        linkTappa2={'/Process/doubting'}
-        linkTappa3={'/Problem/cancellation'}
+        linkTappa1={"/doubt/phase1"}
+        linkTappa2={"/doubt/phase2"}
+        linkTappa3={"/doubt/phase3"}
         titolo="Nebbia"
-        linkApprofondimento="/Phenomena/territory/doubtAnalysis/informationSheet"
+        linkApprofondimento="/doubt/phase1/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
       />
       <Tabs
@@ -22,7 +26,7 @@ export default function TerritoryDoubtHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>
@@ -71,29 +75,42 @@ export default function TerritoryDoubtHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <h3>Qualche pista di lettura</h3>
-          <p>
-            Un’informazione rilevante che emerge dalla visualizzazione consiste
-            nel diverso tipo di distribuzione nel tempo e nell’opera dei due
-            fenomeni: la nebbia, maggiormente presente nelle forme brevi, si
-            sposta dalle raccolte centrali nella carriera di Calvino verso i
-            testi isolati degli ultimi anni. La cancellazione invece si dispone
-            in maniera uniforme lungo tutta l’opera, intensificandosi
-            progressivamente a partire dagli anni Sessanta. La seconda metà
-            dell’opera di Calvino sembra essere pervasa dalla nebbia: se però
-            osserviamo la sua evoluzione cronologica, salta all’occhio che la
-            presenza numerica del fenomeno non riflette tale percezione (vedi{" "}
-            <strong>Approfondimento</strong>).
-          </p>
-          <p>
-            Un altro aspetto interessante è l’osservazione dell’impiego
-            solitamente disgiunto di nebbia e cancellazione: i testi che
-            contengono entrambi sono soltanto una decina. Se ne deduce che i due
-            fenomeni sono complementari: laddove la nebbia ha concretamente
-            spazio, il narratore non sembra aver bisogno di evocare la
-            cancellazione; viceversa, laddove la cancellazione dilaga,
-            l’apparizione della nebbia vera e propria diventa superflua.
-          </p>
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div>
+                <small>DISPOSIZIONE</small>
+              </div>
+              <Analisi01 className="mt-2" />
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <Analisi02 className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#5151FC" name="Nebbia" />
+                <BadgeLegenda color="#00C19C" name="Cancellazione" />
+                <BadgeLegenda color="#FF6C39" name="Entrambi" />
+              </div>
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>FREQUENZA</small>
+              </div>
+              <div>
+                <FrequenzaLegenda color="#5151FC" />
+                <FrequenzaLegenda color="#00C19C" />
+                <FrequenzaLegenda color="#FF6C39" />
+              </div>
+            </div>
+          </div>
         </Tab>
       </Tabs>
     </>

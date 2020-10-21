@@ -14,11 +14,11 @@ export default function CancellazioneHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={3}
-        linkTappa1={"/Phenomena/territory/doubtAnalysis"}
-        linkTappa2={"/Process/doubting"}
-        linkTappa3={"/Problem/cancellation"}
+        linkTappa1={"/doubt/phase1"}
+        linkTappa2={"/doubt/phase2"}
+        linkTappa3={"/doubt/phase3"}
         titolo="Cancellazione"
-        linkApprofondimento="/cancellation-sheet"
+        linkApprofondimento="/doubt/phase3/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
       />
       <Tabs
@@ -27,7 +27,7 @@ export default function CancellazioneHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>

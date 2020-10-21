@@ -178,3 +178,9 @@
   text-align: center;
   background: var(--white);
 }
+
+small{
+  color: #404040;
+  font-size: 10px;
+  font-weight: bold;
+}

@@ -39,16 +39,16 @@ export default function IndexMenuHeader({
         <NavLink to="/equipe" className="ml-5 mr-5 top-menu">
           Équipe
         </NavLink>
-        <NavLink to="/Project" className="ml-5 mr-5 top-menu">
+        <NavLink to="/project" className="ml-5 mr-5 top-menu">
           Progetto
         </NavLink>
-        <NavLink to="/Tools" className="ml-5 mr-5 top-menu">
+        <NavLink to="/instructions" className="ml-5 mr-5 top-menu">
           Istruzioni per l'uso
         </NavLink>
-        <NavLink to="/Capta" className="ml-5 mr-5 top-menu">
+        <NavLink to="/capta" className="ml-5 mr-5 top-menu">
           Capta
         </NavLink>
-        <NavLink to="/Papers" className="ml-5 mr-5 top-menu">
+        <NavLink to="/publications" className="ml-5 mr-5 top-menu">
           Pubblicazioni
         </NavLink>
       </div>

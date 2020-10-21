@@ -10,9 +10,9 @@ export default function RealismHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={3}
-        linkTappa1={"/Phenomena/territory/spaceAnalysis"}
-        linkTappa2={"/Process/transforming"}
-        linkTappa3={"/Problem/realism"}
+        linkTappa1={"/space/phase1"}
+        linkTappa2={"/space/phase2"}
+        linkTappa3={"/space/phase3"}
         titolo="Realismo"
         linkApprofondimento="/combining/Combine/informationSheet"
         nomeItinerario={"ITINERARIO SPAZIO"}
@@ -23,7 +23,7 @@ export default function RealismHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>

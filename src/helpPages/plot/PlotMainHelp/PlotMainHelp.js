@@ -10,11 +10,11 @@ export default function PlotMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={3}
-        linkTappa1={"/Phenomena/territory/shapeAnalysis"}
-        linkTappa2={"/Process/combining"}
-        linkTappa3={"/Problem/cancellation"}
+        linkTappa1={"/form/phase1"}
+        linkTappa2={"/form/phase2"}
+        linkTappa3={"/doubt/phase3"}
         titolo="Trama"
-        linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
+        linkApprofondimento="/doubt/phase2/focus"
         nomeItinerario={"ITINERARIO FORMA"}
       />
       <Tabs
@@ -23,7 +23,7 @@ export default function PlotMainHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>

@@ -10,7 +10,7 @@ export default class CompassTimeHelp extends React.Component {
         <small>TAPPA 3 </small>
         <h1>LA TRAMA</h1>
         <h2>L'opera di Italo Calvino come una trama</h2>
-        <h3>Di cosa si tratta</h3>
+        <h3>Spiegazione</h3>
         <p>
           Questa visualizzazione rappresenta il corpus delle opere narrative di
           Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il
@@ -40,13 +40,13 @@ export default class CompassTimeHelp extends React.Component {
             arrowDirection="right"
             textAlign="left"
             text="TAPPA 2"
-            route="/Process/intro"
+            route="/phase2-process"
           />
           <ArrowButton
             arrowDirection="right"
             textAlign="left"
             text="TAPPA 3"
-            route="/Problem/intro"
+            route="/phase3-problem"
           />
         </div>
       </>

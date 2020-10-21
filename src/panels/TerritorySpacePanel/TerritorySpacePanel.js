@@ -88,11 +88,11 @@ export default class TerritorySpacePanel extends React.Component
         <TerritoryDescriptionSubPanel
           title="L'ORGANIZZAZIONE DEI LUOGHI"
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
-          informationSheetRoute="/Phenomena/territory/spaceAnalysis/informationSheet"
+          informationSheetRoute="/space/phase1/focus"
           informationSheetDescription="SCHEDA"
-          itineraryStop2Route="/Process/transforming"
+          itineraryStop2Route="/space/phase2"
           itineraryStop2Description="TAPPA 2"
-          itineraryStop3Route="/Problem/realism"
+          itineraryStop3Route="/space/phase3"
           itineraryStop3Description="TAPPA 3"
         />
 

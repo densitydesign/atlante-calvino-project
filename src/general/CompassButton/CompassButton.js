@@ -43,7 +43,7 @@ export default class CompassButton extends React.Component
     }
     else
     {
-      const route = "/Compass";
+      const route = "/compass";
 
       return (
         <div className="compass-button" style={this.props.style}>

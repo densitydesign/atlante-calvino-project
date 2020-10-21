@@ -11,11 +11,11 @@ export default function TransformMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={2}
-        linkTappa1={"/Phenomena/territory/spaceAnalysis"}
-        linkTappa2={"/Process/intro"}
-        linkTappa3={"/Problem/intro"}
+        linkTappa1={"/space/phase1"}
+        linkTappa2={"/phase2-process"}
+        linkTappa3={"/phase3-problem"}
         titolo="Trasformare"
-        linkApprofondimento="/Process/transforming/Transform/informationSheet"
+        linkApprofondimento="/space/phase2/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}
       />
       <Tabs
@@ -24,7 +24,7 @@ export default function TransformMainHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>
@@ -81,7 +81,7 @@ export default function TransformMainHelp() {
             Una prima considerazione riguarda la categoria dei luoghi terrestri
             localizzabili, che riflette con una certa precisione la geografia
             biografica dell’autore (vedi{" "}
-            <Link to="/Process/transforming/Transform/informationSheet">
+            <Link to="/space/phase2/focus">
               Approfondimento
             </Link>
             ). La disposizione spaziale degli elementi rivela una coincidenza

@@ -65,11 +65,11 @@ export default class TerritoryDoubtPanel extends React.Component
         <TerritoryDescriptionSubPanel
           title="L'ORGANIZZAZIONE DELLA NEBBIA"
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
-          informationSheetRoute="/Phenomena/territory/doubtAnalysis/informationSheet"
+          informationSheetRoute="/doubt/phase1/focus"
           informationSheetDescription="SCHEDA"
-          itineraryStop2Route="/Process/doubting"
+          itineraryStop2Route="/doubt/phase2"
           itineraryStop2Description="TAPPA 2"
-          itineraryStop3Route="/Problem/cancellation"
+          itineraryStop3Route="/doubt/phase3"
           itineraryStop3Description="TAPPA 3"
         />
 

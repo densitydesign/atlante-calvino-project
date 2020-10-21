@@ -11,9 +11,9 @@ export default function ProcessCombiningMainHelp() {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={"/Process/combining/Combine/informationSheet"}
-        linkTappa2={"/Phenomena/territory/shapeAnalysis"}
-        linkTappa3={"/Problem/intro"}
+        linkTappa1={"/space/phase3/focus"}
+        linkTappa2={"/form/phase1"}
+        linkTappa3={"/phase3-problem"}
         titolo="Combinare"
         nomeItinerario={"ITINERARIO FORMA"}
       />
@@ -23,7 +23,7 @@ export default function ProcessCombiningMainHelp() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab tabClassName="tab-info" eventKey="info" title="Di cosa si tratta">
+        <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
           <p className="mt-4">
             <strong>Di cosa si tratta</strong>
           </p>

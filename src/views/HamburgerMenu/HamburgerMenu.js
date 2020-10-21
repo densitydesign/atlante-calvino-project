@@ -21,7 +21,7 @@ export default class HamburgerMenu extends React.Component
 
             <div className="nav-menu-cell-grid" >
               <div className="nav-menu-cell"><Link to="/equipe"><h2>Équipe</h2></Link></div>
-              <div className="nav-menu-cell"><Link to="/Project"><h2>Progetto</h2></Link></div>
+              <div className="nav-menu-cell"><Link to="/project"><h2>Progetto</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Tools"><h2>Metodologia</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/Papers"><h2>Pubblicazioni</h2></Link></div>
               <div className="nav-menu-cell"><Link to="/News"><h2>Rassegna Stampa</h2></Link></div>

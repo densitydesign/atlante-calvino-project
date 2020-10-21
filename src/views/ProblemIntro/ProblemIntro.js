@@ -24,8 +24,8 @@ export default class ProblemIntro extends React.Component
               </p>
             </div>
             <div className="other-phases-subheader" >
-              <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/intro" />
-              <ArrowButton arrowDirection="left" textAlign="left" text="TAPPA 2" route="/Process/intro" />
+              <ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/phase1-phenomena" />
+              <ArrowButton arrowDirection="left" textAlign="left" text="TAPPA 2" route="/phase2-process" />
             </div>
           </div>
           <div className="category-subentries-grid">
@@ -33,21 +33,21 @@ export default class ProblemIntro extends React.Component
             <CategoryEntryBlock
               smallTitle="Itinerario ⟶ DUBBIO"
               linkText="Cancellazione"
-              route="/Problem/cancellation"
+              route="/doubt/phase3"
               description="Scrivere è un modo per opporsi al vuoto della pagina. Ma anche per accogliere quel vuoto dentro la scrittura, che in Calvino combatte sempre ad armi impari contro la tendenza alla cancellazione del testo e alla scomparsa del suo significato. "
             />
 
             <CategoryEntryBlock
               smallTitle="Itinerario ⟶ SPAZIO"
               linkText="Realismo"
-              route="/Problem/realism"
+              route="/space/phase3"
               description="Dopo aver attraversato gli spazi dell’opera di Calvino, il problema della rappresentazione della realtà resta intatto: dopo le infinite metamorfosi alle quali abbiamo assistito, come riconoscere il vero dal falso? "
             />
 
             <CategoryEntryBlock
               smallTitle="Itinerario ⟶ FORMA" 
               linkText="Trama"
-              route="/Problem/plot"
+              route="/form/phase3"
               description="Senza trame non ci sono narrazioni. Ma le narrazioni possono avere rapporti molto complicati con le trame. Come l’opera di Calvino dimostra in modo esemplare."
             />
 

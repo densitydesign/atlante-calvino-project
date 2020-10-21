@@ -80,24 +80,24 @@ export default function IndexMenu({ onClose }) {
       </div>
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>TAPPE</div>
-        <Link to="/Phenomena/intro">
+        <Link to="/phase1-phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
         </Link>
-        <Link to="/Process/intro">
+        <Link to="/phase2-process">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
         </Link>
-        <Link to="/Problem/intro">
+        <Link to="/phase3-problem">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
         </Link>
         <ItemIndex
           title="territorio"
-          link="/Phenomena/territory"
+          link="/archipelago"
           className={"territorio"}
           icon={
             <TerritorioIcon
@@ -112,8 +112,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="dubitare"
-          link="/Process/doubting"
-          linkApprofondimento="/Process/doubting/Hesitation/informationSheet"
+          link="/doubt/phase2"
+          linkApprofondimento="/doubt/phase2/focus"
           className={"dubitare"}
           icon={
             <DubbioIcon
@@ -128,8 +128,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="nebbia"
-          linkApprofondimento="/Phenomena/territory/doubtAnalysis/informationSheet"
-          link="/Phenomena/territory/doubtAnalysis"
+          linkApprofondimento="/doubt/phase1/focus"
+          link="/doubt/phase1"
           className={"nebbia"}
           icon={
             <NebbiaIcon
@@ -144,8 +144,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="cancellazione"
-          linkApprofondimento="/cancellation-sheet"
-          link="/Problem/cancellation"
+          linkApprofondimento="/doubt/phase3/focus"
+          link="/doubt/phase3"
           className={"cancellazione"}
           icon={
             <CancellazioneIcon
@@ -160,9 +160,9 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="trasformare"
-          linkApprofondimento="/Process/transforming/Transform/informationSheet"
+          linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
-          link="/Process/transforming"
+          link="/space/phase2"
           icon={
             <TrasformareIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -176,8 +176,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="luoghi"
-          linkApprofondimento="/Phenomena/territory/spaceAnalysis/informationSheet"
-          link="/Phenomena/territory/spaceAnalysis"
+          linkApprofondimento="/space/phase1/focus"
+          link="/space/phase1"
           className={"luoghi"}
           icon={
             <LuoghiIcon
@@ -192,9 +192,9 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="realismo"
-          linkApprofondimento="/Process/combining/Combine/informationSheet"
+          linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
-          link="/Problem/realism"
+          link="/space/phase3"
           icon={
             <RealismoIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -208,8 +208,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="elenchi"
-          linkApprofondimento="/Phenomena/territory/shapeAnalysis/informationSheet"
-          link="/Phenomena/territory/shapeAnalysis"
+          linkApprofondimento="/form/phase1/focus"
+          link="/form/phase1"
           className={"elenchi"}
           icon={
             <ElenchiIcon
@@ -224,7 +224,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="combinare"
-          link="/Process/combining"
+          link="/form/phase2"
           className={"combinare"}
           icon={
             <CombinareIcon
@@ -239,7 +239,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="trama"
-          link="/Problem/plot"
+          link="/form/phase3"
           className={"trama"}
           icon={
             <TramaIcon
@@ -263,7 +263,7 @@ export default function IndexMenu({ onClose }) {
         </div>
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link to="/Compass">
+        <Link to="/compass">
           <Bussola width="70" />
         </Link>
       </div>
