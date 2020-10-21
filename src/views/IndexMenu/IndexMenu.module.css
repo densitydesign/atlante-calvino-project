@@ -214,7 +214,7 @@
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1600px) and (max-width: 1899px) {
   .icon-width {
     width: 150px;
   }
@@ -226,3 +226,59 @@
     color: #afaff9;
   }
 }
+
+@media screen and (min-width: 1900px){
+  .icon-width {
+    width: 200px;
+  }
+
+  .big-name {
+    font-size: 60px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #afaff9;
+  }
+
+  .tappe{
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    position: absolute;
+    top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 7.35);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tappa1{
+    position: absolute;
+    top: calc(calc(100vh / 5.75) - var(--navigation-height));
+    left: calc(100% / 12 * 7);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa2{
+    position: absolute;
+    top: calc(calc(100vh / 6.5) - var(--navigation-height));
+    left: calc(100% / 12 * 7.5);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa3{
+    position: absolute;
+    top: calc(calc(100vh / 7.25) - var(--navigation-height));
+    left: calc(100% / 12 * 8);
+    width: 44px;
+    height: 44px;
+  }
+
+  .curve-combinare{
+    position: absolute;
+    top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
+    left: calc(100% / 12 * 10.5);
+    width: 300px;
+  }
+
+}
+

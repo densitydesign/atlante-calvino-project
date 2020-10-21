@@ -55,14 +55,16 @@ export default function IntestazioneHelpPanel({
         </div>
       </div>
       <h1>{titolo}</h1>
-      <div className="d-flex align-items-center">
-        <ApprofondimentoIcon />
-        <strong className="ml-2">
-          <Link to={linkApprofondimento}>
-            <u>APPROFONDIMENTO</u>
-          </Link>
-        </strong>
-      </div>
+      {linkApprofondimento && (
+        <div className="d-flex align-items-center">
+          <ApprofondimentoIcon />
+          <strong className="ml-2">
+            <Link className='link' to={linkApprofondimento}>
+              <u>APPROFONDIMENTO</u>
+            </Link>
+          </strong>
+        </div>
+      )}
     </>
   )
 }
