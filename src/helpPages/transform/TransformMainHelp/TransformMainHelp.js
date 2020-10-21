@@ -2,8 +2,12 @@ import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
-
+import { ReactComponent as Legend01 } from './icons/trasformare_aspetto.svg'
+import { ReactComponent as Legend02 } from './icons/trasformare_dimensione.svg'
+import { ReactComponent as Legend03 } from './icons/trasformare_posizione.svg'
+import Legend04 from './icons/trasformare_interazioneGIF.gif'
 import "./TransformMainHelp.css"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function TransformMainHelp() {
   const [key, setKey] = useState("info")
@@ -12,8 +16,8 @@ export default function TransformMainHelp() {
       <IntestazioneHelpPanel
         tappa={2}
         linkTappa1={"/space/phase1"}
-        linkTappa2={"/phase2-process"}
-        linkTappa3={"/phase3-problem"}
+        linkTappa2={"/space/phase2"}
+        linkTappa3={"/space/phase3"}
         titolo="Trasformare"
         linkApprofondimento="/space/phase2/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}
@@ -81,9 +85,7 @@ export default function TransformMainHelp() {
             Una prima considerazione riguarda la categoria dei luoghi terrestri
             localizzabili, che riflette con una certa precisione la geografia
             biografica dell’autore (vedi{" "}
-            <Link to="/space/phase2/focus">
-              Approfondimento
-            </Link>
+            <Link to="/space/phase2/focus">Approfondimento</Link>
             ). La disposizione spaziale degli elementi rivela una coincidenza
             significativa con il tempo della storia: al centro dell’asse
             verticale della visualizzazione, salvo alcune eccezioni, il tempo
@@ -101,7 +103,51 @@ export default function TransformMainHelp() {
             certo punto è interrotta dalle esplorazioni cosmiche.
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div>
+                <small>ASPETTO</small>
+              </div>
+              <Legend01 className="mt-2" />
+            </div>
+            <div className="offset-md-2 col-md-4">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <Legend02 className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div>
+                <small>POSIZIONE</small>
+              </div>
+              <Legend03 className="mt-2" />
+            </div>
+            <div className="offset-md-2 col-md-4">
+              <div>
+                <small>INTERAZIONE</small>
+              </div>
+              <img src={Legend04} width='200' className="mt-2" alt='Legenda' />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>TIPO DI LUOGO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
+                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+              </div>
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

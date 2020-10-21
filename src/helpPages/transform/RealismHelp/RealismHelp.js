@@ -1,6 +1,10 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
+import { ReactComponent as Legend01 } from "./icons/realismo_disposizione.svg"
+import Legend02 from "./icons/realismo_movimentoGIF.gif"
+import { ReactComponent as Legend03 } from "./icons/realismo_dettaglio.svg"
 import { Link } from "react-router-dom"
 import "./RealismHelp.css"
 
@@ -14,7 +18,7 @@ export default function RealismHelp() {
         linkTappa2={"/space/phase2"}
         linkTappa3={"/space/phase3"}
         titolo="Realismo"
-        linkApprofondimento="/combining/Combine/informationSheet"
+        linkApprofondimento="/space/phase3/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}
       />
       <Tabs
@@ -128,16 +132,52 @@ export default function RealismHelp() {
             la mono-ambientazione, passando da un movimento quasi febbrile ed
             esclusivamente orizzontale (privo, cioè, di livelli spaziali che si
             annidino uno dentro l’altro: vedi{" "}
-            <Link to="/combining/Combine/informationSheet">
-              Approfondimento
-            </Link>
-            ) a un sostanziale immobilismo. Non stupisce, allora, che persino i
-            mezzi di trasporto, di cui si trova ampia traccia nella produzione
-            breve calviniana degli anni Cinquanta e Sessanta, scompaiano del
-            tutto dopo il 1967.
+            <Link to="/space/phase3/focus">Approfondimento</Link>) a un
+            sostanziale immobilismo. Non stupisce, allora, che persino i mezzi
+            di trasporto, di cui si trova ampia traccia nella produzione breve
+            calviniana degli anni Cinquanta e Sessanta, scompaiano del tutto
+            dopo il 1967.
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="mt-4">
+            <div>
+              <small>DISPOSIZIONE</small>
+            </div>
+            <div>
+              <Legend01 className="mt-2" />
+            </div>
+          </div>
+          <div className="mt-4">
+            <small>COLORE</small>
+            <div className="row">
+              <div className="col-md-4">
+                <BadgeLegenda color="#FFD337" name="Luogo interno" />
+                <BadgeLegenda color="#00C19C" name="Luogo esterno" />
+              </div>
+              <div className="col-md-6">
+                <BadgeLegenda color="#5151FF" name="Mezzo di trasporto" />
+                <BadgeLegenda color="#C6CACF" name="Assenza di ambientazione" />
+              </div>
+            </div>
+          </div>
+          <div className="mt-4">
+            <div>
+              <small>MOVIMENTO</small>
+            </div>
+            <div>
+              <img src={Legend02} alt="Visione in dettaglio" className="mt-2" />
+            </div>
+          </div>
+          <div className="mt-4">
+            <div>
+              <small>VISIONE IN DETTAGLIO</small>
+            </div>
+            <div>
+              <Legend03 className="mt-2" />
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

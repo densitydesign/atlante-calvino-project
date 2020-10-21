@@ -4,11 +4,6 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import { ReactComponent as Legend01 } from "./icons/cancellazione_a_dimensione.svg"
 import { ReactComponent as Legend02 } from "./icons/cancellazione_a_disposizione.svg"
 import { ReactComponent as Legend04 } from "./icons/cancellazione_griglia.svg"
-// import { ReactComponent as Legend02 } from './legenda-02.svg'
-// import { ReactComponent as Legend03 } from './legenda-03.svg'
-// import { ReactComponent as Legend04 } from './legenda-04.svg'
-import datum from "./legend-colore.json"
-import styles from "./CancellazioneHelp.module.css"
 
 export default function CancellazioneHelp() {
   const [key, setKey] = useState("info")

@@ -3,6 +3,10 @@ import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { Link } from "react-router-dom"
 import "./TerritorySpaceHelp.css"
+import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
+import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
 export default function TerritorySpaceHelp() {
   const [key, setKey] = useState("info")
@@ -12,7 +16,7 @@ export default function TerritorySpaceHelp() {
         tappa={1}
         linkTappa1={"/space/phase1"}
         linkTappa2={"/space/phase2"}
-        linkTappa3={"/phase3-problem"}
+        linkTappa3={"/space/phase3"}
         titolo="Luoghi"
         linkApprofondimento="/space/phase1/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}
@@ -108,7 +112,7 @@ export default function TerritorySpaceHelp() {
             del territorio, siano spesso incorniciati all’interno di luoghi
             terrestri localizzabili. Inoltre, in Calvino, l’invenzione prende
             forma non soltanto all’interno di spazi noti ma in molti casi anche
-            familiari (vedi <strong><Link to='/Phenomena/territory/spaceAnalysis/informationSheet'>Approfondimento</Link></strong>).
+            familiari (vedi <strong><Link to='/space/phase1/focus'>Approfondimento</Link></strong>).
           </p>
           <p>
             L’assenza di ambientazione è quasi esclusivamente concentrata in
@@ -118,7 +122,50 @@ export default function TerritorySpaceHelp() {
             prosa di tipo saggistico.
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="row mt-4">
+            <div className="col-md-5">
+              <div>
+                <small>DISPOSIZIONE</small>
+              </div>
+              <Analisi01 className="mt-2" />
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <Analisi02 className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-5">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
+                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+              </div>
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>FREQUENZA</small>
+              </div>
+              <div>
+                <FrequenzaLegenda color="#FF6C39" />
+                <FrequenzaLegenda color="#FFA500" />
+                <FrequenzaLegenda color="#5151FC" />
+                <FrequenzaLegenda color="#BBBBFF" />
+                <FrequenzaLegenda color="#00C19C" />
+                <FrequenzaLegenda color="#C6CACF" />
+              </div>
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )
