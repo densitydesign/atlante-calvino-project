@@ -16,6 +16,7 @@ export default function ProcessCombiningMainHelp() {
         linkTappa1={"/form/phase1"}
         linkTappa2={"/form/phase2"}
         linkTappa3={"/form/phase3"}
+        linkItinerario={"/itineraries#form"}
         titolo="Combinare"
         nomeItinerario={"ITINERARIO FORMA"}
       />

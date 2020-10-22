@@ -22,7 +22,7 @@ class SplashScreen2 extends Component {
           <path className={S["line"]} d="M-50,12.5 C 50,12.5 50,112.5 150,112.5"  vectorEffect="non-scaling-stroke"/>
         </svg>
         <div className={S["project-logo"]}>
-          <Link to='/HomeIndex' style={{width:'100%',height:'100%'}}>
+          <Link to='/navigation' style={{width:'100%',height:'100%'}}>
             <InteractiveLogo />
           </Link>
         </div>

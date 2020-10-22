@@ -47,7 +47,7 @@ export default function RealismHelp() {
           <p>
             <strong>Come funziona</strong>
           </p>
-          <p>
+          <div>
             La visualizzazione può essere esplorata in due modalità, che
             presentano rispettivamente una visione d’insieme di tutti i racconti
             e una visione in dettaglio di singoli testi che l’utente sceglie di
@@ -90,7 +90,7 @@ export default function RealismHelp() {
                 ad altri ambienti.
               </li>
             </ol>{" "}
-          </p>
+          </div>
           <p>
             <strong>Qualche pista di lettura</strong>
           </p>

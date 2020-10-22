@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
 import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as LegendaProporzione } from "./icons/nebbia_b_proporzione.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
@@ -16,6 +17,7 @@ export default function TerritoryDoubtHelp() {
         linkTappa1={"/doubt/phase1"}
         linkTappa2={"/doubt/phase2"}
         linkTappa3={"/doubt/phase3"}
+        linkItinerario={"/itineraries#doubt"}
         titolo="Nebbia"
         linkApprofondimento="/doubt/phase1/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
@@ -108,6 +110,27 @@ export default function TerritoryDoubtHelp() {
                 <FrequenzaLegenda color="#5151FC" />
                 <FrequenzaLegenda color="#00C19C" />
                 <FrequenzaLegenda color="#FF6C39" />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#5151FC" name="Nebbia" />
+                <BadgeLegenda color="#00C19C" name="Cancellazione" />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>PROPORZIONE</small>
+              </div>
+              <div className='text-center'>
+                <LegendaProporzione className='mt-2' />
               </div>
             </div>
           </div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 274 80.1" style="enable-background:new 0 0 274 80.1;" xml:space="preserve">
+<style type="text/css">
+	.st0_793dri{font-family:'HKGrotesk-Regular';}
+	.st1_793dri{font-size:10px;}
+	.st2_793dri{fill:none;stroke:#444444;stroke-width:0.25;stroke-dasharray:1.9,1.9;}
+	.st3_793dri{fill:none;stroke:#5151FC;stroke-width:2.684;stroke-linejoin:round;}
+	.st4_793dri{fill:none;stroke:#00C19C;stroke-width:2.76;stroke-miterlimit:10;}
+</style>
+<g id="nebbia_2" transform="translate(-1 -0.033)">
+	<g id="Raggruppa_4028" transform="translate(1 1.375)">
+		<g id="Raggruppa_4024" transform="translate(111 14.843)">
+			<text transform="matrix(1 0 0 1 0 10.082)" class="st0_793dri st1_793dri">nebbia</text>
+		</g>
+		<g id="Raggruppa_4025" transform="translate(211.951 14.843)">
+			<text transform="matrix(1 0 0 1 4.580469e-05 10.0001)" class="st0_793dri st1_793dri">cancellazione</text>
+		</g>
+		<g id="Group-3" transform="translate(137 22.373)">
+			<path id="Path-6" class="st2_793dri" d="M14.3,0H0"/>
+			<path id="Path-6-2" class="st2_793dri" d="M72.4,0H58.1"/>
+		</g>
+		<g id="Ellipse_22" transform="translate(151.475)">
+			<path id="Path_89" class="st3_793dri" d="M6.5,38.1c-8.7-8.8-8.6-22.9,0.2-31.6c8.7-8.6,22.7-8.6,31.4,0l0,0"/>
+			<path id="Path_90" class="st4_793dri" d="M38.1,6.5c8.7,8.8,8.6,22.9-0.2,31.6c-8.7,8.6-22.7,8.6-31.4,0"/>
+		</g>
+		<text transform="matrix(1 0 0 1 0 12.925)" class="st0_793dri st1_793dri">Proporzioni della </text>
+		<text transform="matrix(1 0 0 1 0 25.925)" class="st0_793dri st1_793dri">presenza di nebbia e </text>
+		<text transform="matrix(1 0 0 1 0 38.925)" class="st0_793dri st1_793dri">cancellazione </text>
+		<text transform="matrix(1 0 0 1 0 51.925)" class="st0_793dri st1_793dri">secondo il numero di </text>
+		<text transform="matrix(1 0 0 1 0 64.925)" class="st0_793dri st1_793dri">occorrenze </text>
+		<text transform="matrix(1 0 0 1 0 77.925)" class="st0_793dri st1_793dri">all’interno del testo</text>
+	</g>
+</g>
+</svg>
