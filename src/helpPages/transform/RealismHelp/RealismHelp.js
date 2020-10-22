@@ -17,6 +17,7 @@ export default function RealismHelp() {
         linkTappa1={"/space/phase1"}
         linkTappa2={"/space/phase2"}
         linkTappa3={"/space/phase3"}
+        linkItinerario={"/itineraries#space"}
         titolo="Realismo"
         linkApprofondimento="/space/phase3/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}

@@ -18,6 +18,7 @@ export default function TransformMainHelp() {
         linkTappa1={"/space/phase1"}
         linkTappa2={"/space/phase2"}
         linkTappa3={"/space/phase3"}
+        linkItinerario={"/itineraries#space"}
         titolo="Trasformare"
         linkApprofondimento="/space/phase2/focus"
         nomeItinerario={"ITINERARIO SPAZIO"}

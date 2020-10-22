@@ -16,6 +16,7 @@ export default function TerritoryShapeHelp() {
       <IntestazioneHelpPanel
         tappa={1}
         linkTappa1={"/form/phase1"}
+        linkItinerario={"/itineraries#form"}
         linkTappa2={"/form/phase2"}
         linkTappa3={"/form/phase3"}
         titolo="Elenchi"

@@ -15,6 +15,7 @@ export default function CancellazioneHelp() {
         linkTappa2={"/doubt/phase2"}
         linkTappa3={"/doubt/phase3"}
         titolo="Cancellazione"
+        linkItinerario={"/itineraries#doubt"}
         linkApprofondimento="/doubt/phase3/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
       />

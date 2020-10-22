@@ -12,6 +12,7 @@ export default function PlotMainHelp() {
         tappa={3}
         linkTappa1={"/form/phase1"}
         linkTappa2={"/form/phase2"}
+        linkItinerario={"/itineraries#form"}
         linkTappa3={"/doubt/phase3"}
         titolo="Trama"
         linkApprofondimento="/doubt/phase2/focus"

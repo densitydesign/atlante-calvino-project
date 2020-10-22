@@ -11,16 +11,17 @@ export default function IntestazioneHelpPanel({
   linkTappa1,
   linkTappa2,
   linkTappa3,
+  linkItinerario,
 }) {
   return (
     <>
       <div className="d-flex justify-content-between">
         <strong className="text-dark-blue">
-          <u>{nomeItinerario}</u>
+          <Link to={linkItinerario}><u>{nomeItinerario}</u></Link>
         </strong>
         <div className="d-flex justify-content-between">
           <span className="text-dark-blue mr-2">
-            <small>Tappa</small>
+            <small className='text-dark-blue'>Tappa</small>
           </span>
           <Link to={linkTappa1}>
             <div
@@ -59,8 +60,8 @@ export default function IntestazioneHelpPanel({
         <div className="d-flex align-items-center">
           <ApprofondimentoIcon />
           <strong className="ml-2">
-            <Link className='link' to={linkApprofondimento}>
-              <u>APPROFONDIMENTO</u>
+            <Link to={linkApprofondimento}>
+              <u style={{ color: '#000'}}>APPROFONDIMENTO</u>
             </Link>
           </strong>
         </div>

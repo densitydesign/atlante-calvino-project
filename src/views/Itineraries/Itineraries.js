@@ -45,7 +45,7 @@ export default class Itineraries extends React.Component
 
           </section>
 
-          <section id="shape">
+          <section id="form">
             <h1>La Forma</h1>
             <p>Nell’itinerario che pone al centro la forma, si tenterà di studiare i modi in cui la scrittura di Calvino si sforza di dare forma alla realtà. Se esiste una battaglia delle battaglie che la letteratura ha il dovere di combattere, come un nobile paladino dell’esercito di Carlo Magno, questa è per Calvino la battaglia contro l’informe. L’informe che ci assedia e minaccia da ogni parte. Vincerla forse è impossibile, ma bisogna continuare a provarci. In che modo? Schierando per esempio le parole in lunghe file di elenchi, che facciano argine al caos; o al contrario lo riproducano, quel caos dilagante, nel tentativo di padroneggiarlo. Oppure costruendo elaborate strutture fatte di racconti in serie, concatenati. Per Calvino, l’arma della combinazione sembra sia quella che possa salvarci dall’assedio del magma. Alla ricerca di una trama che ormai il Novecento ha messo in soffitta da tempo, Calvino sperimenta le forme narrative più varie nel corso della sua carriera letteraria. Anche se forse non erano altro che travestimenti di un’unica trama, elementare e ossessiva.</p>
 

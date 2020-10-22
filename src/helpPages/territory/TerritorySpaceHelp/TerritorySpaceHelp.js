@@ -16,6 +16,7 @@ export default function TerritorySpaceHelp() {
         tappa={1}
         linkTappa1={"/space/phase1"}
         linkTappa2={"/space/phase2"}
+        linkItinerario={"/itineraries#space"}
         linkTappa3={"/space/phase3"}
         titolo="Luoghi"
         linkApprofondimento="/space/phase1/focus"

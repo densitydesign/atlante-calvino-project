@@ -16,6 +16,7 @@ export default function ProcessDoubtingMainHelp() {
         linkTappa1={"/doubt/phase1"}
         linkTappa2={"/doubt/phase2"}
         linkTappa3={"/doubt/phase3"}
+        linkItinerario={"/itineraries#doubt"}
         titolo="Dubitare"
         linkApprofondimento="/doubt/phase2/focus"
         nomeItinerario={"ITINERARIO DUBBIO"}
