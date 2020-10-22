@@ -102,7 +102,7 @@ class Trama extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
-            title={"LA STRUTTURA DEI VOLUMI"}
+            title={"Combinare"}
             style={{ gridColumn: "span 10" }}
           />
 

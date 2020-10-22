@@ -204,11 +204,11 @@ class Cancellazione extends Component {
         </HelpSidePanel>
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Tappa 3 – Cancellare"} style = {{gridColumn: 'span 9'}}/>
+					<PageTitle title = {"Cancellazione"} style = {{gridColumn: 'span 9'}}/>
           
           {this.state.loading && <Loading style={{ gridColumn: 'span 3' }}/>}
           {!this.state.loading &&
-            <Options title = "Cerca per"
+            <Options title = "Filtra per"
               data = {this.state.cerca_per}
               style = {{gridColumn: 'span 3'}}
               changeOptions = {this.changeCercaPer}

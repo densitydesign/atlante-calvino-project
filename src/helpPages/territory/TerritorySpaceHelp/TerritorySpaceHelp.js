@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import "./TerritorySpaceHelp.css"
 import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
 import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as LegendaProporzione } from "./icons/luoghi_b_proporzione.svg"
+import { ReactComponent as LegendaLivelli } from "./icons/luoghi_c_livelli.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
@@ -163,6 +165,52 @@ export default function TerritorySpaceHelp() {
                 <FrequenzaLegenda color="#BBBBFF" />
                 <FrequenzaLegenda color="#00C19C" />
                 <FrequenzaLegenda color="#C6CACF" />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-5">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
+                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+              </div>
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>PROPORZIONE</small>
+              </div>
+              <div>
+                <LegendaProporzione />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-5">
+              <div>
+                <small>TIPO DI FENOMENO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
+                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+              </div>
+            </div>
+            <div className="offset-md-2 col-md-3">
+              <div>
+                <small>LIVELLI SPAZIALI</small>
+              </div>
+              <div>
+                <LegendaLivelli width='150' />
               </div>
             </div>
           </div>

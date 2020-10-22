@@ -272,6 +272,10 @@ li {
   align-items: center;
 }
 
+.page-title{
+  color: var(--dark-blue);
+}
+
 .page-title,
 .options-container > .dropdown > button,
 .search-component {

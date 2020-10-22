@@ -591,11 +591,11 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Il dubbio nell'opera"} style = {{gridColumn: 'span 10'}}/>
+					<PageTitle title = {"Dubitare"} style = {{gridColumn: 'span 10'}}/>
 
           {	this.state.isLoading && <Loading style = {{gridColumn: 'span 4'}}/>}
           {	!this.state.isLoading &&
-					<Options title = "Cerca per"
+					<Options title = "Filtra per"
 						data = {this.state.cerca_per}
 						style = {{gridColumn: 'span 4'}}
 						changeOptions = {this.changeCercaPer}

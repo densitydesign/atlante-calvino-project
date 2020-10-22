@@ -103,7 +103,7 @@ export default function TerritoryShapeHelp() {
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Legend01 className="mt-2" />
+              <Legend01 width='160' className="mt-2" />
             </div>
             <div className="col-md-6">
               <div>
@@ -131,6 +131,28 @@ export default function TerritoryShapeHelp() {
               </div>
               <div className='mt-2'>
                 <LegendProporzione />
+              </div>
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-6">
+              <div>
+                <small>TIPO DI ELENCO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FC0303" name="Misto" />
+                <BadgeLegenda color="#00C19C" name="Parole" />
+                <BadgeLegenda color="#FFA500" name="Sintagmi" />
+                <BadgeLegenda color="#5151FC" name="Frasi" />
+                <BadgeLegenda border="#C6CACF" name="Senza elenco" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <small>PROPORZIONE</small>
+              </div>
+              <div className='mt-2'>
+                <LegendPercentuale />
               </div>
             </div>
           </div>

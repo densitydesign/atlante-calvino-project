@@ -30,7 +30,7 @@ class MoreInfo extends Component {
         style={this.props.style} 
         className="more-info"
         ref={this.setWrapperRef} >
-        <FontAwesomeIcon icon={faQuestionCircle} />
+        ?
       </div>
     );
   }
