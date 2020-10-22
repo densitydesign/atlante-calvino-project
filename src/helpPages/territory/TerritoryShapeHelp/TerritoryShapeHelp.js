@@ -1,6 +1,11 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import { ReactComponent as Legend01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Legend02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as LegendProporzione } from "./icons/elenchi_a_proporzione.svg"
+import { ReactComponent as LegendPercentuale } from "./icons/elenchi_b_percentuale.svg"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 import "./TerritoryShapeHelp.css"
 
@@ -11,8 +16,8 @@ export default function TerritoryShapeHelp() {
       <IntestazioneHelpPanel
         tappa={1}
         linkTappa1={"/form/phase1"}
-        linkTappa2={"/form/phase3"}
-        linkTappa3={"/phase3-problem"}
+        linkTappa2={"/form/phase2"}
+        linkTappa3={"/form/phase3"}
         titolo="Elenchi"
         linkApprofondimento="/"
         nomeItinerario={"ITINERARIO FORMA"}
@@ -91,7 +96,44 @@ export default function TerritoryShapeHelp() {
             (vedi <strong>Approfondimento</strong>).
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="row mt-4">
+            <div className="col-md-6">
+              <div>
+                <small>DISPOSIZIONE</small>
+              </div>
+              <Legend01 className="mt-2" />
+            </div>
+            <div className="col-md-6">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <Legend02 width='100' className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-6">
+              <div>
+                <small>TIPO DI ELENCO</small>
+              </div>
+              <div>
+                <BadgeLegenda color="#FC0303" name="Misto" />
+                <BadgeLegenda color="#00C19C" name="Parole" />
+                <BadgeLegenda color="#FFA500" name="Sintagmi" />
+                <BadgeLegenda color="#5151FC" name="Frasi" />
+                <BadgeLegenda border="#C6CACF" name="Senza elenco" />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div>
+                <small>PROPORZIONE</small>
+              </div>
+              <div className='mt-2'>
+                <LegendProporzione />
+              </div>
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

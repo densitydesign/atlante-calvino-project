@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="126" height="78.44" viewBox="0 0 126 78.44">
+  <g id="Raggruppa_22302" data-name="Raggruppa 22302" transform="translate(-175 -320)">
+    <text id="Proporzione_tra_i_vari_tipi_di_elenco" data-name="Proporzione tra i vari tipi di elenco" transform="translate(175 320)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Proporzione tra i vari tipi di </tspan><tspan x="0" y="23">elenco</tspan></text>
+    <g id="Ellipse_22" data-name="Ellipse 22" transform="translate(175 350.97)">
+      <path id="Path_89" data-name="Path 89" d="M23.944,1.38h0" fill="none" stroke="#5151fc" stroke-linejoin="round" stroke-width="2.684"/>
+      <path id="Path_89-2" data-name="Path 89" d="M23.944,46.09A22.379,22.379,0,0,1,1.589,23.735" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="2.76"/>
+      <path id="Path_89-3" data-name="Path 89" d="M1.589,23.735A22.379,22.379,0,0,1,23.944,1.38" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="2.76"/>
+      <path id="Path_90" data-name="Path 90" d="M46.3,23.735A22.379,22.379,0,0,1,23.944,46.09" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="2.76"/>
+      <path id="Path_90-2" data-name="Path 90" d="M23.944,1.38" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="2.76"/>
+      <path id="Path_90-3" data-name="Path 90" d="M23.944,1.38A22.38,22.38,0,0,1,46.3,23.735" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="2.76"/>
+    </g>
+  </g>
+</svg>

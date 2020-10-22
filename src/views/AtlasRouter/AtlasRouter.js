@@ -54,7 +54,6 @@ export default function AtlasRouter()
       <Route exact path="/HomeIndex"><IndexMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
       <Route exact path="/compass"><Compass /></Route>
-
       <Route exact path="/compass/time-and-works"><CompassTime /></Route>
       <Route exact path="/compass/flows-of-stories"><CompassFlux /></Route>
 
@@ -94,7 +93,7 @@ export default function AtlasRouter()
           mainAnalysisMode={GlobalData.analysisModes.shape}
         />
       </Route>
-      <Route exact path="/form/phase1/focus"><ShapeInformationSheet /></Route>
+      <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
 
       <Route exact path="/phase2-process"><ProcessIntro /></Route>
       <Route exact path="/doubt/phase2"><ProcessDoubting title= {'Dubitare'}/></Route>
