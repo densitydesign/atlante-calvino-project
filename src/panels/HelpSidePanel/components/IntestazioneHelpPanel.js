@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { HashLink } from 'react-router-hash-link'
 import classnames from "classnames"
 import { ReactComponent as ApprofondimentoIcon } from "../../../helpPages/icons/approfondimento.svg"
 
@@ -17,7 +18,7 @@ export default function IntestazioneHelpPanel({
     <>
       <div className="d-flex justify-content-between">
         <strong className="text-dark-blue">
-          <Link to={linkItinerario}><u>{nomeItinerario}</u></Link>
+          <HashLink to={linkItinerario}><u>{nomeItinerario}</u></HashLink>
         </strong>
         <div className="d-flex justify-content-between">
           <span className="text-dark-blue mr-2">
