@@ -2,13 +2,9 @@
   background-color: var(--bg);
   grid-column: 11 / span 7;
   height: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
 }
 
 .territory-space-main-options-subpanel *{
-  width: 31.5%;
   margin-right:0.5em;
   margin-bottom:0.5em;
 }

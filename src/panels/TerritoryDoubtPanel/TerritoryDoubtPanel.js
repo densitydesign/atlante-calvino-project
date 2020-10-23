@@ -9,13 +9,13 @@ import "./TerritoryDoubtPanel.css"
 
 export default class TerritoryDoubtPanel extends React.Component {
   fogRadioButtonId = "fogRadioButton"
-  fogRadioButtonCaption = "NEBBIA"
+  fogRadioButtonCaption = "Nebbia"
 
   cancellationRadioButtonId = "cancellationRadioButton"
-  cancellationRadioButtonCaption = "CANCELLAZIONE"
+  cancellationRadioButtonCaption = "Cancellazione"
 
   allRadioButtonId = "allRadioButton"
-  allRadioButtonCaption = "ENTRAMBI"
+  allRadioButtonCaption = "Entrambi"
 
   percentageRadioButtonId = "percentageRadioButton"
   percentageRadioButtonCaption = "%"
@@ -114,8 +114,8 @@ export default class TerritoryDoubtPanel extends React.Component {
     return (
       <>
         <TerritoryDescriptionSubPanel
-          title="L'ORGANIZZAZIONE DELLA NEBBIA"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+          title="Vedere la nebbia"
+          text="Come la nebbia e la cancellazione si distribuiscono nell’opera."
           informationSheetRoute="/doubt/phase1/focus"
           informationSheetDescription="SCHEDA"
           itineraryStop2Route="/doubt/phase2"

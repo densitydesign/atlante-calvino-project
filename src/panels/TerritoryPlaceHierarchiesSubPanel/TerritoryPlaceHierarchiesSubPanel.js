@@ -10,7 +10,7 @@ export default class TerritoryPlaceHierarchiesSubPanel extends React.Component
   {
     return (
       <div className="territory-placeHierarchies-subpanel">
-      <div className="title-panel"><h4>Meduse</h4></div>
+      <div className="title-panel"><h4>Dettagli</h4></div>
 
         <RadioButton id={this.props.placeHierarchiesRadioButtonId}
         caption={this.props.placeHierarchiesRadioButtonCaption}

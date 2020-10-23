@@ -54,8 +54,8 @@ export default class TerritoryShapePanel extends React.Component
       <>
 
       <TerritoryDescriptionSubPanel
-        title="L'ORGANIZZAZIONE DEGLI ELENCHI"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dictum sapien sed sollicitudin"
+        title="Vedere gli elenchi"
+        text="Come gli elenchi si distribuiscono nell'opera"
         informationSheetRoute="/form/phase1/focus"
         informationSheetDescription="SCHEDA"
         itineraryStop2Route="/form/phase2"

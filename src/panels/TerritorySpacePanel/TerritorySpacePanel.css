@@ -1,6 +1,5 @@
 
 .territory-space-panel {
   background-color : var(--bg);
-  grid-column: 11 / span 7;
-  margin-left: 2em;
+  grid-column: 8 / span 13;
 }

@@ -224,7 +224,7 @@ export default class TerritoryFooter extends React.Component {
   render() {
     return (
       <div className="bottom-nav navigations">
-        <ToggleButton
+        {/* <ToggleButton
           id={this.legendToggleButtonId}
           style={{ gridColumn: "span 8" }}
           caption={this.legendToggleButtonCaption}
@@ -234,7 +234,11 @@ export default class TerritoryFooter extends React.Component {
           }
           disabled
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
-        />
+        /> */}
+
+        <div style={{ gridColumn: "span 8" }} className='d-flex justify-content-center'>
+          <div className='text-secondary-color'>Cronologia</div>
+        </div>
 
         <ToggleButton
           id={this.analysisModeToggleButtonId}

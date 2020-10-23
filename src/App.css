@@ -460,6 +460,10 @@ a:visited.button-text {
   color: var(--dark-blue);
 }
 
+.text-secondary-color{
+  color: var(--secondary-element);
+}
+
 #overlay .floatLeft {
   animation: floatLeft 5s infinite;
   animation-direction: normal;

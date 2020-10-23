@@ -1,15 +1,18 @@
 .territory-percentage-panel {
-  grid-column: 18 / span 7;
+  grid-column: 21 / span 3;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 2em;
+  flex-direction: column;
+  padding-top: 18px;
+}
+
+.territory-placeHierarchies-subpanel{
+  display: flex;
+  align-items: center;
 }
 
 .categories-panel {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 0.8em;
-  margin-bottom: 1.2em;
+  padding-top: 18px;
 }
 
 .categories-panel * {
