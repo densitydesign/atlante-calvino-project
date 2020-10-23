@@ -467,6 +467,7 @@ export default class TerritoryWrapper extends React.Component {
         <HelpSidePanel
           open={this.state.helpSidePanelOpen}
           page={helpPage}
+          helpPages={this.state}
           closeButtonClicked={this.toggleHelpSidePanel}
         />
 

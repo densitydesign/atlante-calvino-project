@@ -8,8 +8,9 @@ import { ReactComponent as LegendaProporzione } from "./icons/nebbia_b_proporzio
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
-export default function TerritoryDoubtHelp() {
+export default function TerritoryDoubtHelp({ helpProps }) {
   const [key, setKey] = useState("info")
+  console.log(helpProps, "helpProps")
   return (
     <>
       <IntestazioneHelpPanel
@@ -91,49 +92,56 @@ export default function TerritoryDoubtHelp() {
               <Analisi02 className="mt-2" />
             </div>
           </div>
-          <div className="row mt-4">
-            <div className="col-md-4">
-              <div>
-                <small>TIPO DI FENOMENO</small>
+          {helpProps.helpPages.doubtAnalysisMode === "fog" ||
+          helpProps.helpPages.doubtAnalysisMode === "cancellation" ||
+          helpProps.helpPages.doubtAnalysisMode === "all" ? (
+            <div className="row mt-4">
+              <div className="col-md-4">
+                <div>
+                  <small>TIPO DI FENOMENO</small>
+                </div>
+                <div>
+                  <BadgeLegenda color="#5151FC" name="Nebbia" />
+                  <BadgeLegenda color="#00C19C" name="Cancellazione" />
+                  <BadgeLegenda color="#FF6C39" name="Entrambi" />
+                </div>
               </div>
-              <div>
-                <BadgeLegenda color="#5151FC" name="Nebbia" />
-                <BadgeLegenda color="#00C19C" name="Cancellazione" />
-                <BadgeLegenda color="#FF6C39" name="Entrambi" />
-              </div>
-            </div>
-            <div className="offset-md-2 col-md-3">
-              <div>
-                <small>FREQUENZA</small>
-              </div>
-              <div>
-                <FrequenzaLegenda color="#5151FC" />
-                <FrequenzaLegenda color="#00C19C" />
-                <FrequenzaLegenda color="#FF6C39" />
-              </div>
-            </div>
-          </div>
-          <div className="row mt-4">
-            <div className="col-md-12">
-              <div>
-                <small>TIPO DI FENOMENO</small>
-              </div>
-              <div>
-                <BadgeLegenda color="#5151FC" name="Nebbia" />
-                <BadgeLegenda color="#00C19C" name="Cancellazione" />
+              <div className="offset-md-2 col-md-3">
+                <div>
+                  <small>FREQUENZA</small>
+                </div>
+                <div>
+                  <FrequenzaLegenda color="#5151FC" />
+                  <FrequenzaLegenda color="#00C19C" />
+                  <FrequenzaLegenda color="#FF6C39" />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row mt-4">
-            <div className="col-md-12">
-              <div>
-                <small>PROPORZIONE</small>
+          ) : (
+            <>
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>TIPO DI FENOMENO</small>
+                  </div>
+                  <div>
+                    <BadgeLegenda color="#5151FC" name="Nebbia" />
+                    <BadgeLegenda color="#00C19C" name="Cancellazione" />
+                  </div>
+                </div>
               </div>
-              <div className='text-center'>
-                <LegendaProporzione className='mt-2' />
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>PROPORZIONE</small>
+                  </div>
+                  <div className="text-center">
+                    <LegendaProporzione className="mt-2" />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </Tab>
       </Tabs>
     </>

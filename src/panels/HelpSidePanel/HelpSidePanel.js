@@ -1,67 +1,93 @@
+import React from "react"
 
-import React from 'react';
+import CloseButton from "../../general/CloseButton/CloseButton"
 
-import CloseButton from '../../general/CloseButton/CloseButton';
+import GlobalData from "../../utilities/GlobalData"
 
-import GlobalData from '../../utilities/GlobalData';
+import TerritoryMainHelp from "../../helpPages/territory/TerritoryMainHelp/TerritoryMainHelp"
+import TerritoryDoubtHelp from "../../helpPages/territory/TerritoryDoubtHelp/TerritoryDoubtHelp"
+import TerritoryShapeHelp from "../../helpPages/territory/TerritoryShapeHelp/TerritoryShapeHelp"
+import TerritorySpaceHelp from "../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp"
 
-import TerritoryMainHelp from '../../helpPages/territory/TerritoryMainHelp/TerritoryMainHelp';
-import TerritoryDoubtHelp from '../../helpPages/territory/TerritoryDoubtHelp/TerritoryDoubtHelp';
-import TerritoryShapeHelp from '../../helpPages/territory/TerritoryShapeHelp/TerritoryShapeHelp';
-import TerritorySpaceHelp from '../../helpPages/territory/TerritorySpaceHelp/TerritorySpaceHelp';
+import TransformMainHelp from "../../helpPages/transform/TransformMainHelp/TransformMainHelp"
+import ProcessCombiningMainHelp from "../../helpPages/plot/ProcessCombiningMainHelp/ProcessCombiningMainHelp"
+import ProcessDoubtingMainHelp from "../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp"
 
-import TransformMainHelp from '../../helpPages/transform/TransformMainHelp/TransformMainHelp';
-import ProcessCombiningMainHelp from '../../helpPages/plot/ProcessCombiningMainHelp/ProcessCombiningMainHelp';
-import ProcessDoubtingMainHelp from '../../helpPages/doubting/ProcessDoubtingMainHelp/ProcessDoubtingMainHelp';
+import PlotMainHelp from "../../helpPages/plot/PlotMainHelp/PlotMainHelp"
+import RealismHelp from "../../helpPages/transform/RealismHelp/RealismHelp"
 
-import PlotMainHelp from '../../helpPages/plot/PlotMainHelp/PlotMainHelp';
-import RealismHelp from '../../helpPages/transform/RealismHelp/RealismHelp';
+import CompassTimeHelp from "../../helpPages/compass/CompassTimeHelp/CompassTimeHelp"
+import CompassBonesHelp from "../../helpPages/compass/CompassBonesHelp/CompassBonesHelp"
 
+import "./HelpSidePanel.css"
 
-import CompassTimeHelp from '../../helpPages/compass/CompassTimeHelp/CompassTimeHelp';
-import CompassBonesHelp from '../../helpPages/compass/CompassBonesHelp/CompassBonesHelp';
+export default class HelpSidePanel extends React.Component {
+  render() {
+    let helpPage
 
-import './HelpSidePanel.css';
+    console.log(this.props.helpPages)
 
-export default class HelpSidePanel extends React.Component
-{
-  render()
-  {
-    let helpPage;
+    switch (this.props.page) {
+      case GlobalData.helpPages.territory.main:
+        helpPage = <TerritoryMainHelp />
+        break
+      case GlobalData.helpPages.territory.space:
+        helpPage = <TerritorySpaceHelp />
+        break
+      case GlobalData.helpPages.territory.doubt:
+        helpPage = <TerritoryDoubtHelp helpProps={{ ...this.props }} />
+        break
+      case GlobalData.helpPages.territory.shape:
+        helpPage = <TerritoryShapeHelp />
+        break
 
-    console.log(this.props,'props')
+      case GlobalData.helpPages.transform.main:
+        helpPage = <TransformMainHelp />
+        break
+      case GlobalData.helpPages.combine.main:
+        helpPage = <ProcessCombiningMainHelp />
+        break
+      case GlobalData.helpPages.processDoubting.main:
+        helpPage = <ProcessDoubtingMainHelp />
+        break
 
-    switch(this.props.page)
-    {
-      case GlobalData.helpPages.territory.main  : helpPage = <TerritoryMainHelp />; break;
-      case GlobalData.helpPages.territory.space : helpPage = <TerritorySpaceHelp />; break;
-      case GlobalData.helpPages.territory.doubt : helpPage = <TerritoryDoubtHelp />; break;
-      case GlobalData.helpPages.territory.shape : helpPage = <TerritoryShapeHelp />; break;
+      case GlobalData.helpPages.plot.main:
+        helpPage = <PlotMainHelp />
+        break
+      case GlobalData.helpPages.realism.main:
+        helpPage = <RealismHelp />
+        break
 
-      case GlobalData.helpPages.transform.main  : helpPage = <TransformMainHelp />; break;
-      case GlobalData.helpPages.combine.main  : helpPage = <ProcessCombiningMainHelp />; break;
-      case GlobalData.helpPages.processDoubting.main  : helpPage = <ProcessDoubtingMainHelp />; break;
+      case GlobalData.helpPages.compass.time:
+        helpPage = <CompassTimeHelp />
+        break
+      case GlobalData.helpPages.compass.bones:
+        helpPage = <CompassBonesHelp />
+        break
 
-      case GlobalData.helpPages.plot.main  : helpPage = <PlotMainHelp />; break;
-        case GlobalData.helpPages.realism.main  : helpPage = <RealismHelp />; break;
-
-      case GlobalData.helpPages.compass.time  : helpPage = <CompassTimeHelp />; break;
-      case GlobalData.helpPages.compass.bones  : helpPage = <CompassBonesHelp />; break;
-
-      default : break;
+      default:
+        break
     }
 
     return (
       <>
-      <div className={"help-side-panel " + (this.props.open ? "help-side-panel-open" : "help-side-panel-closed")}>
+        <div
+          className={
+            "help-side-panel " +
+            (this.props.open
+              ? "help-side-panel-open"
+              : "help-side-panel-closed")
+          }
+        >
           <div>
-              <CloseButton id="helpSidePanelCloseButton" onClicked={this.props.closeButtonClicked} />
-                  {
-                    this.props.children?this.props.children:helpPage
-                  }
+            <CloseButton
+              id="helpSidePanelCloseButton"
+              onClicked={this.props.closeButtonClicked}
+            />
+            {this.props.children ? this.props.children : helpPage}
           </div>
-      </div>
+        </div>
       </>
-    );
+    )
   }
 }
