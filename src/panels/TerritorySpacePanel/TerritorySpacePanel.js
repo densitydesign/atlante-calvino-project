@@ -251,10 +251,11 @@ export default class TerritorySpacePanel extends React.Component {
             }
           />
         </div>
-        <div className="territory-percentage-panel">
+        <div className="territory-percentage-panel-double">
           <TerritoryPercentageSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
             percentageRadioButtonId={this.proportionRadioButtonId}
+            isDouble
             percentageRadioButtonCaption={this.proportionRadioButtonCaption}
             percentageRadioButtonPressed={
               this.state.optionRadioButtonsStates.find(

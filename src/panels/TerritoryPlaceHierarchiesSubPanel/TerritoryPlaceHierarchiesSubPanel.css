@@ -8,6 +8,8 @@
 .territory-placeHierarchies-subpanel{
   display: flex;
   align-items: center;
+  margin-top: 1em;
+  width: 100%;
 }
 
 .categories-panel {
