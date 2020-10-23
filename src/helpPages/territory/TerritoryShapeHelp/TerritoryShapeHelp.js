@@ -7,10 +7,9 @@ import { ReactComponent as LegendProporzione } from "./icons/elenchi_a_proporzio
 import { ReactComponent as LegendPercentuale } from "./icons/elenchi_b_percentuale.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
-import "./TerritoryShapeHelp.css"
-
-export default function TerritoryShapeHelp() {
+export default function TerritoryShapeHelp({ helpProps }) {
   const [key, setKey] = useState("info")
+  console.log(helpProps, "elenchi")
   return (
     <>
       <IntestazioneHelpPanel
@@ -103,15 +102,16 @@ export default function TerritoryShapeHelp() {
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Legend01 width='160' className="mt-2" />
+              <Legend01 width="160" className="mt-2" />
             </div>
             <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Legend02 width='100' className="mt-2" />
+              <Legend02 width="100" className="mt-2" />
             </div>
           </div>
+          {helpProps.helpPages.shapeAnalysisMode === "types" && (
           <div className="row mt-4">
             <div className="col-md-6">
               <div>
@@ -129,33 +129,36 @@ export default function TerritoryShapeHelp() {
               <div>
                 <small>PROPORZIONE</small>
               </div>
-              <div className='mt-2'>
+              <div className="mt-2">
                 <LegendProporzione />
               </div>
             </div>
           </div>
-          <div className="row mt-4">
-            <div className="col-md-6">
-              <div>
-                <small>TIPO DI ELENCO</small>
+          )}
+          {helpProps.helpPages.shapeAnalysisMode === "shape_proportion" && (
+            <div className="row mt-4">
+              <div className="col-md-6">
+                <div>
+                  <small>TIPO DI ELENCO</small>
+                </div>
+                <div>
+                  <BadgeLegenda color="#FC0303" name="Misto" />
+                  <BadgeLegenda color="#00C19C" name="Parole" />
+                  <BadgeLegenda color="#FFA500" name="Sintagmi" />
+                  <BadgeLegenda color="#5151FC" name="Frasi" />
+                  <BadgeLegenda border="#C6CACF" name="Senza elenco" />
+                </div>
               </div>
-              <div>
-                <BadgeLegenda color="#FC0303" name="Misto" />
-                <BadgeLegenda color="#00C19C" name="Parole" />
-                <BadgeLegenda color="#FFA500" name="Sintagmi" />
-                <BadgeLegenda color="#5151FC" name="Frasi" />
-                <BadgeLegenda border="#C6CACF" name="Senza elenco" />
+              <div className="col-md-6">
+                <div>
+                  <small>PROPORZIONE</small>
+                </div>
+                <div className="mt-2">
+                  <LegendPercentuale />
+                </div>
               </div>
             </div>
-            <div className="col-md-6">
-              <div>
-                <small>PROPORZIONE</small>
-              </div>
-              <div className='mt-2'>
-                <LegendPercentuale />
-              </div>
-            </div>
-          </div>
+          )}
         </Tab>
       </Tabs>
     </>

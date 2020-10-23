@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
-import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
 import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
