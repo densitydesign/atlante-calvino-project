@@ -232,8 +232,6 @@ class Cancellazione extends Component {
           <CompassButton
             style={{
               gridColumn: "span 1",
-              color: "white",
-              backgroundColor: "black"
             }}
           />
         </div>

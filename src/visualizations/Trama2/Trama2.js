@@ -31,8 +31,6 @@ const Menu = ({ title, helpPage }) => {
         <CompassButton
           style={{
             gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
           }}
         />
       </div>

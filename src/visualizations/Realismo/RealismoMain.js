@@ -375,8 +375,6 @@ export default function RealismoMain({ title }) {
         <CompassButton
           style={{
             gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
           }}
         />
       </div>

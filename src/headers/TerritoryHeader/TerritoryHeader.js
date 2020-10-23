@@ -139,8 +139,6 @@ export default class TerritoryHeader extends React.Component {
         <CompassButton
           style={{
             gridColumn: "span 1",
-            color: "white",
-            backgroundColor: "black",
           }}
           containerToggleCompassPanel={this.props.containerToggleCompassPanel}
         />

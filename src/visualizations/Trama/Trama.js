@@ -143,8 +143,8 @@ class Trama extends Component {
           <CompassButton
             style={{
               gridColumn: "span 1",
-              color: "white",
-              backgroundColor: "black"
+              color: "black",
+              backgroundColor: "white"
             }}
           />
         </div>

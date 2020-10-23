@@ -130,8 +130,6 @@ function Trama2Main({ title }) {
         <CompassButton
           style={{
             gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
           }}
         />
       </div>
