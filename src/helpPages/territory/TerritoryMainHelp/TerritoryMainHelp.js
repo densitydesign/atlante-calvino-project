@@ -8,11 +8,13 @@ import { ReactComponent as Info04 } from "./icons/territorio_b_situazione_editor
 import { ReactComponent as Info05 } from "./icons/territorio_b_situazione_editoriale_2.svg"
 import { ReactComponent as Info06 } from "./icons/territorio_b_situazione_editoriale_3.svg"
 import { ReactComponent as Info07 } from "./icons/territorio_b_situazione_editoriale_4.svg"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 import "./TerritoryMainHelp.css"
 
-export default function TerritoryMainHelp() {
+export default function TerritoryMainHelp({ helpProps }) {
   const [key, setKey] = useState("info")
+
   return (
     <>
       <IntestazioneHelpPanel
@@ -125,31 +127,60 @@ export default function TerritoryMainHelp() {
               <Info01 className="mt-2" />
             </div>
           </div>
-          <div className="row mt-4">
-            <div className="col-md-8">
-              <div>
-                <small>CRONOLOGIA</small>
+          {helpProps.helpPages.noAnalysisMode === "chronology" && (
+            <div className="row mt-4">
+              <div className="col-md-8">
+                <div>
+                  <small>CRONOLOGIA</small>
+                </div>
+                <Info03 className="mt-2" />
               </div>
-              <Info03 className="mt-2" />
             </div>
-          </div>
-          <div className="mt-4">
-            <small>SITUAZIONE EDITORIALE</small>
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <Info04 />
-            </div>
-            <div className="col-md-3">
-              <Info05 />
-            </div>
-            <div className="col-md-3">
-              <Info06 />
-            </div>
-            <div className="col-md-3">
-              <Info07 />
-            </div>
-          </div>
+          )}
+          {helpProps.helpPages.noAnalysisMode === "volumes" && (
+            <>
+              <div className="mt-4">
+                <small>SITUAZIONE EDITORIALE</small>
+              </div>
+              <div className="row">
+                <div className="col-md-3">
+                  <Info04 />
+                </div>
+                <div className="col-md-3">
+                  <Info05 />
+                </div>
+                <div className="col-md-3">
+                  <Info06 />
+                </div>
+                <div className="col-md-3">
+                  <Info07 />
+                </div>
+              </div>
+            </>
+          )}
+          {helpProps.helpPages.noAnalysisMode === "volumes" && (
+            <>
+              <div className="mt-4">
+                <small>RACCOLTE</small>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <BadgeLegenda color="#00C19C" name="Ultimo viene il corvo" />
+                  <BadgeLegenda color="#8AE297" name="L’entrata in guerra" />
+                  <BadgeLegenda color="#5151FC" name="I racconti" />
+                  <BadgeLegenda color="#BBBBFF" name="Marcovaldo" />
+                  <BadgeLegenda color="#97DADD" name="Le Cosmicomiche" />
+                </div>
+                <div className="col-md-6">
+                  <BadgeLegenda color="#FF3366" name="Ti con Zero" />
+                  <BadgeLegenda color="#FFA500" name="La memoria del mondo" />
+                  <BadgeLegenda color="#FFD337" name="Gli amori difficili" />
+                  <BadgeLegenda color="#FF6C39" name="Palomar" />
+                  <BadgeLegenda color="#00BFD3" name="Le Cosmicomiche vecchie e nuove" />
+                </div>
+              </div>
+            </>
+          )}
         </Tab>
       </Tabs>
     </>

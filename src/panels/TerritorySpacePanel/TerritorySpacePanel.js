@@ -185,6 +185,9 @@ export default class TerritorySpacePanel extends React.Component {
   render() {
     return (
       <>
+        <div className='position-absolute' style={{ right: 20 }}>
+          
+        </div>
         <TerritoryDescriptionSubPanel
           title="Vedere i luoghi"
           text="Come i luoghi d'ambientazione si distribuiscono nell'opera"

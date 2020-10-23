@@ -29,7 +29,7 @@ export default class HelpSidePanel extends React.Component {
 
     switch (this.props.page) {
       case GlobalData.helpPages.territory.main:
-        helpPage = <TerritoryMainHelp />
+        helpPage = <TerritoryMainHelp helpProps={{ ...this.props }} />
         break
       case GlobalData.helpPages.territory.space:
         helpPage = <TerritorySpaceHelp helpProps={{ ...this.props }} />
