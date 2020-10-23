@@ -10,8 +10,9 @@ import { ReactComponent as LegendaLivelli } from "./icons/luoghi_c_livelli.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
-export default function TerritorySpaceHelp() {
+export default function TerritorySpaceHelp({ helpProps }) {
   const [key, setKey] = useState("info")
+  console.log(helpProps, "helpProps")
   return (
     <>
       <IntestazioneHelpPanel
@@ -115,7 +116,11 @@ export default function TerritorySpaceHelp() {
             del territorio, siano spesso incorniciati all’interno di luoghi
             terrestri localizzabili. Inoltre, in Calvino, l’invenzione prende
             forma non soltanto all’interno di spazi noti ma in molti casi anche
-            familiari (vedi <strong><Link to='/space/phase1/focus'>Approfondimento</Link></strong>).
+            familiari (vedi{" "}
+            <strong>
+              <Link to="/space/phase1/focus">Approfondimento</Link>
+            </strong>
+            ).
           </p>
           <p>
             L’assenza di ambientazione è quasi esclusivamente concentrata in
@@ -140,80 +145,100 @@ export default function TerritorySpaceHelp() {
               <Analisi02 className="mt-2" />
             </div>
           </div>
-          <div className="row mt-4">
-            <div className="col-md-5">
-              <div>
-                <small>TIPO DI FENOMENO</small>
+          {(helpProps.helpPages.spaceAnalysisMode === "genericTerrestrial" ||
+            helpProps.helpPages.spaceAnalysisMode === "genericCosmic" ||
+            helpProps.helpPages.spaceAnalysisMode === "invented" ||
+            helpProps.helpPages.spaceAnalysisMode === "namedCosmic" ||
+            helpProps.helpPages.spaceAnalysisMode === "namedTerrestrial" ||
+            helpProps.helpPages.spaceAnalysisMode === "noSetting") && (
+            <div className="row mt-4">
+              <div className="col-md-5">
+                <div>
+                  <small>TIPO DI FENOMENO</small>
+                </div>
+                <div>
+                  <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                  <BadgeLegenda
+                    color="#FFA500"
+                    name="Terrestri localizzabili"
+                  />
+                  <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                  <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                  <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                  <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+                </div>
               </div>
-              <div>
-                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
-                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
-                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
-                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
-                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
-                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
-              </div>
-            </div>
-            <div className="offset-md-2 col-md-3">
-              <div>
-                <small>FREQUENZA</small>
-              </div>
-              <div>
-                <FrequenzaLegenda color="#FF6C39" />
-                <FrequenzaLegenda color="#FFA500" />
-                <FrequenzaLegenda color="#5151FC" />
-                <FrequenzaLegenda color="#BBBBFF" />
-                <FrequenzaLegenda color="#00C19C" />
-                <FrequenzaLegenda color="#C6CACF" />
-              </div>
-            </div>
-          </div>
-          <div className="row mt-4">
-            <div className="col-md-5">
-              <div>
-                <small>TIPO DI FENOMENO</small>
-              </div>
-              <div>
-                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
-                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
-                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
-                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
-                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
-                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+              <div className="offset-md-2 col-md-3">
+                <div>
+                  <small>FREQUENZA</small>
+                </div>
+                <div>
+                  <FrequenzaLegenda color="#FF6C39" />
+                  <FrequenzaLegenda color="#FFA500" />
+                  <FrequenzaLegenda color="#5151FC" />
+                  <FrequenzaLegenda color="#BBBBFF" />
+                  <FrequenzaLegenda color="#00C19C" />
+                  <FrequenzaLegenda color="#C6CACF" />
+                </div>
               </div>
             </div>
-            <div className="offset-md-2 col-md-3">
-              <div>
-                <small>PROPORZIONE</small>
+          )}
+          {helpProps.helpPages.spaceAnalysisMode === "space_proportion" && (
+            <div className="row mt-4">
+              <div className="col-md-5">
+                <div>
+                  <small>TIPO DI FENOMENO</small>
+                </div>
+                <div>
+                  <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                  <BadgeLegenda
+                    color="#FFA500"
+                    name="Terrestri localizzabili"
+                  />
+                  <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                  <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                  <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                  <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+                </div>
               </div>
-              <div>
-                <LegendaProporzione />
-              </div>
-            </div>
-          </div>
-          <div className="row mt-4">
-            <div className="col-md-5">
-              <div>
-                <small>TIPO DI FENOMENO</small>
-              </div>
-              <div>
-                <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
-                <BadgeLegenda color="#FFA500" name="Terrestri localizzabili" />
-                <BadgeLegenda color="#5151FC" name="Cosmici generici" />
-                <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
-                <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
-                <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
-              </div>
-            </div>
-            <div className="offset-md-2 col-md-3">
-              <div>
-                <small>LIVELLI SPAZIALI</small>
-              </div>
-              <div>
-                <LegendaLivelli width='150' />
+              <div className="offset-md-2 col-md-3">
+                <div>
+                  <small>PROPORZIONE</small>
+                </div>
+                <div>
+                  <LegendaProporzione />
+                </div>
               </div>
             </div>
-          </div>
+          )}
+          {helpProps.helpPages.spaceAnalysisMode === "placeHierarchies" && (
+            <div className="row mt-4">
+              <div className="col-md-5">
+                <div>
+                  <small>TIPO DI FENOMENO</small>
+                </div>
+                <div>
+                  <BadgeLegenda color="#FF6C39" name="Terrestri generici" />
+                  <BadgeLegenda
+                    color="#FFA500"
+                    name="Terrestri localizzabili"
+                  />
+                  <BadgeLegenda color="#5151FC" name="Cosmici generici" />
+                  <BadgeLegenda color="#BBBBFF" name="Cosmici localizzabili" />
+                  <BadgeLegenda color="#00C19C" name="Terrestri inventati" />
+                  <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
+                </div>
+              </div>
+              <div className="offset-md-2 col-md-3">
+                <div>
+                  <small>LIVELLI SPAZIALI</small>
+                </div>
+                <div>
+                  <LegendaLivelli width="150" />
+                </div>
+              </div>
+            </div>
+          )}
         </Tab>
       </Tabs>
     </>

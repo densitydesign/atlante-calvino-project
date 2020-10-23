@@ -10,7 +10,6 @@ import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/Frequenza
 
 export default function TerritoryDoubtHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  console.log(helpProps, "helpProps")
   return (
     <>
       <IntestazioneHelpPanel

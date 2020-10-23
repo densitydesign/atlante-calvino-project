@@ -32,13 +32,13 @@ export default class HelpSidePanel extends React.Component {
         helpPage = <TerritoryMainHelp />
         break
       case GlobalData.helpPages.territory.space:
-        helpPage = <TerritorySpaceHelp />
+        helpPage = <TerritorySpaceHelp helpProps={{ ...this.props }} />
         break
       case GlobalData.helpPages.territory.doubt:
         helpPage = <TerritoryDoubtHelp helpProps={{ ...this.props }} />
         break
       case GlobalData.helpPages.territory.shape:
-        helpPage = <TerritoryShapeHelp />
+        helpPage = <TerritoryShapeHelp helpProps={{ ...this.props }} />
         break
 
       case GlobalData.helpPages.transform.main:
