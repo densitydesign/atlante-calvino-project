@@ -136,7 +136,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
                     <small>PROPORZIONE</small>
                   </div>
                   <div className="text-center">
-                    <LegendaProporzione className="mt-2" />
+                    <LegendaProporzione width='400' className="mt-2" />
                   </div>
                 </div>
               </div>
