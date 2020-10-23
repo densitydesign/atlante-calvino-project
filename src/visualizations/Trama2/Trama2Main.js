@@ -38,6 +38,8 @@ function Trama2Main({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
   const [ricerca, setRicerca] = useState([])
 
+  const [currentView, setCurrentView] = useState('list')
+
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
   }, [])
@@ -86,6 +88,7 @@ function Trama2Main({ title }) {
       <HelpSidePanel
         open={helpSidePanelOpen}
         page={helpPage}
+        helpPages={currentView}
         closeButtonClicked={toggleHelpSidePanel}
       />
 
@@ -139,6 +142,8 @@ function Trama2Main({ title }) {
         tipologieByTipologia={tipologieByTipologia}
         colors={colors}
         racconti={racconti}
+        currentView={currentView}
+        setCurrentView={setCurrentView}
         byRacconto={byRacconto}
         selected={selected}
         setSelected={setSelected}

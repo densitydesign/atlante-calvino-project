@@ -52,7 +52,7 @@ export default class HelpSidePanel extends React.Component {
         break
 
       case GlobalData.helpPages.plot.main:
-        helpPage = <PlotMainHelp />
+        helpPage = <PlotMainHelp helpProps={{ ...this.props }} />
         break
       case GlobalData.helpPages.realism.main:
         helpPage = <RealismHelp />

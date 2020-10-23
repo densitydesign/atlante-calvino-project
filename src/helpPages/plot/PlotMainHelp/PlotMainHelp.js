@@ -9,8 +9,9 @@ import { ReactComponent as LegendForma02 } from "./icons/trama_b_forma.svg"
 import "./PlotMainHelp.css"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
-export default function PlotMainHelp() {
+export default function PlotMainHelp({ helpProps }) {
   const [key, setKey] = useState("info")
+  console.log(helpProps, "trama")
   return (
     <>
       <IntestazioneHelpPanel
@@ -113,22 +114,46 @@ export default function PlotMainHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-4">
-            <div className="col-md-12">
-              <div>
-                <small>DIMENSIONE E COLORE</small>
+          {helpProps.helpPages === "list" && (
+            <>
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>DIMENSIONE E COLORE</small>
+                  </div>
+                  <LegendDimensione01 width="300" className="mt-2" />
+                </div>
               </div>
-              <LegendDimensione01 width="300" className="mt-2" />
-            </div>
-          </div>
-          <div className="row mt-4">
-            <div className="col-md-12">
-              <div>
-                <small>Forma</small>
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>Forma</small>
+                  </div>
+                  <LegendForma01 className="mt-2" />
+                </div>
               </div>
-              <LegendForma01 className="mt-2" />
-            </div>
-          </div>
+            </>
+          )}
+          {helpProps.helpPages === "boxplot" && (
+            <>
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>DIMENSIONE E COLORE</small>
+                  </div>
+                  <LegendDimensione02 width="300" className="mt-2" />
+                </div>
+              </div>
+              <div className="row mt-4">
+                <div className="col-md-12">
+                  <div>
+                    <small>Forma</small>
+                  </div>
+                  <LegendForma02 className="mt-2" />
+                </div>
+              </div>
+            </>
+          )}
           <div className="row mt-4">
             <div className="col-md-4">
               <div
