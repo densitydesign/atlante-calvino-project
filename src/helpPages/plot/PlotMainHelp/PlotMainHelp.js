@@ -11,7 +11,6 @@ import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function PlotMainHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  console.log(helpProps, "trama")
   return (
     <>
       <IntestazioneHelpPanel

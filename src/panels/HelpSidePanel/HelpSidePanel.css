@@ -4,7 +4,7 @@
 
 .help-side-panel {
   padding: 20px;
-  height: 100%;
+  height: calc(100% - var(--navigation-height));
   position: fixed;
   top: var(--navigation-height);
   max-height: 100%;

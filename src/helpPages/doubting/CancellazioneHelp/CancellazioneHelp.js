@@ -3,6 +3,7 @@ import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Legend01 } from "./icons/cancellazione_a_dimensione.svg"
 import { ReactComponent as Legend02 } from "./icons/cancellazione_a_disposizione.svg"
+import { ReactComponent as Legend03 } from "./icons/cancellazione_a_colore.svg"
 import { ReactComponent as Legend04 } from "./icons/cancellazione_griglia.svg"
 
 export default function CancellazioneHelp() {
@@ -119,24 +120,32 @@ export default function CancellazioneHelp() {
             <div>
               <small>DIMENSIONE</small>
             </div>
-            <div>
-              <Legend01 />
+            <div className="mt-2">
+              <Legend01 width="400" />
             </div>
           </div>
           <div className="mt-4">
             <div>
               <small>DISPOSIZIONE</small>
             </div>
-            <div>
+            <div className="mt-2">
               <Legend02 />
+            </div>
+          </div>
+          <div className="mt-4">
+            <div>
+              <small>COLORE</small>
+            </div>
+            <div className="mt-2">
+              <Legend03 />
             </div>
           </div>
           <div className="mt-4">
             <div>
               <small>GRIGLIA</small>
             </div>
-            <div>
-              <Legend04 />
+            <div className="mt-2">
+              <Legend04 height="auto" className="mb-4" />
             </div>
           </div>
         </Tab>
