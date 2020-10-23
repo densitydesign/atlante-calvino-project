@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
+import { ReactComponent as LegendDimensione01 } from "./icons/trama_a_dimensione_colore.svg"
+import { ReactComponent as LegendDimensione02 } from "./icons/trama_b_dimensione_colore.svg"
+import { ReactComponent as LegendForma01 } from "./icons/trama_a_forma.svg"
+import { ReactComponent as LegendForma02 } from "./icons/trama_b_forma.svg"
 
 import "./PlotMainHelp.css"
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function PlotMainHelp() {
   const [key, setKey] = useState("info")
@@ -107,7 +112,110 @@ export default function PlotMainHelp() {
             squilibrio rispetto al suo inizio.
           </p>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda"></Tab>
+        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>DIMENSIONE E COLORE</small>
+              </div>
+              <LegendDimensione01 width="300" className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <div>
+                <small>Forma</small>
+              </div>
+              <LegendForma01 className="mt-2" />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div
+                className="mt-2 font-weight-bold"
+                style={{ color: "#5151FC" }}
+              >
+                PIANO ESTERIORE
+              </div>
+            </div>
+            <div className="col-md-8">
+              <BadgeLegenda
+                color="#8131F4"
+                name="Eventi eliminali"
+                italic="rivelazione, morte"
+              />
+              <BadgeLegenda
+                color="#0000FF"
+                name="Interazione"
+                italic="guerra, aggressione/scontro, aiuto/salvataggio, compito/missione, incontro animale, incontro di gruppo, incontro femminile, incontro maschile, matrimonio, offerta, rifiuto, scena erotica, scommessa, telefonata"
+              />
+              <BadgeLegenda
+                color="#5151FC"
+                name="Spostamento"
+                italic="arrivo/ritorno, fuga, inseguimento/ricerca, partenza/sparizione, viaggio"
+              />
+              <BadgeLegenda
+                color="#6E94F4"
+                name="Intenzione"
+                italic="iniziativa/piano, ostacolo, successoo"
+              />
+              <BadgeLegenda
+                color="#00FFFF"
+                name="Situazione"
+                italic="illusione/speranza, innamoramento"
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <div
+                className="mt-2 font-weight-bold"
+                style={{ color: "#00FFCC" }}
+              >
+                PIANO INTERIORE
+              </div>
+            </div>
+            <div className="col-md-8">
+              <BadgeLegenda
+                color="#009959"
+                name="Stato euforico"
+                italic="angoscia/delusione, smarrimento/dubbio"
+              />
+              <BadgeLegenda
+                color="#00C19C"
+                name="Stato disforico"
+                italic="visione, riflessione, mistero/assurdità, ipotesi"
+              />
+              <BadgeLegenda
+                color="#67E9B1"
+                name="Stato riflessivo"
+                italic="pausa/sospensione, attesa"
+              />
+              <BadgeLegenda
+                color="#00FFB6"
+                name="Stato sospeso"
+                italic="cambiamento, città magica, situazione"
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <div
+                className="mt-2 font-weight-bold"
+                style={{ color: "#FFA500" }}
+              >
+                PIANO FORMALE
+              </div>
+            </div>
+            <div className="col-md-8">
+              <BadgeLegenda color="#FFF800" name="Racconto incastonato" />
+              <BadgeLegenda color="#F2CA22" name="Metanarrazione" />
+              <BadgeLegenda color="#EFA625" name="Cornice" />
+              <BadgeLegenda color="#ED6826" name="Struttura" />
+              <BadgeLegenda color="#FF3366" name="Terra" />
+            </div>
+          </div>
+        </Tab>
       </Tabs>
     </>
   )

@@ -9,7 +9,6 @@ import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function TerritoryShapeHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  console.log(helpProps, "elenchi")
   return (
     <>
       <IntestazioneHelpPanel
