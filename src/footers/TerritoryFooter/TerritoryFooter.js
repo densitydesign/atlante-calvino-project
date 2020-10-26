@@ -2,14 +2,37 @@ import React from "react"
 import ToggleButton from "../../general/ToggleButton/ToggleButton"
 import GlobalData from "../../utilities/GlobalData"
 import TerritoryItinerariesDropUp from "../../general/TerritoryItinerariesDropUp/TerritoryItinerariesDropUp"
+import TerritoryNoAnalysisDropDown from "../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown"
 
 import "../../App.css"
 
 export default class TerritoryFooter extends React.Component {
-  territoryLabel = "TERRITORIO"
-  doubtLabel = "NEBBIA"
-  spaceLabel = "LUOGHI"
-  shapeLabel = "ELENCHI"
+  territoryLabel = "Analisi dei fenomeni"
+  doubtLabel = "Nebbia"
+  spaceLabel = "Luoghi"
+  shapeLabel = "Elenchi"
+  analysisLabel = "Cronologia"
+  chronologyLabel = "Cronologia"
+  volumesLabel = "Volumi"
+
+  noAnalysisModeVisualizationMap = new Map([
+    [
+      GlobalData.analysisModes.noAnalysis.chronology,
+      { label: this.chronologyLabel },
+    ],
+    [GlobalData.analysisModes.noAnalysis.volumes, { label: this.volumesLabel }],
+  ])
+
+  analysisButtonVisualizationModeMap = new Map([
+    [
+      TerritoryNoAnalysisDropDown.chronologyButtonId,
+      { analysisMode: GlobalData.analysisModes.noAnalysis.chronology },
+    ],
+    [
+      TerritoryNoAnalysisDropDown.volumesButtonId,
+      { analysisMode: GlobalData.analysisModes.noAnalysis.volumes },
+    ],
+  ])
 
   itineraryLabelOptionPanelModeMap = new Map([
     [
@@ -100,7 +123,7 @@ export default class TerritoryFooter extends React.Component {
   analysisModeToggleButtonId = "footerAnalysisModeToggleButton"
 
   chronologicalFilterToggleButtonId = "chronologicalFilterToggleButton"
-  chronologicalFilterToggleButtonCaption = "FILTRO CRONOLOGICO"
+  chronologicalFilterToggleButtonCaption = "Filtro cronologico"
 
   legendToggleButtonId = "legendToggleButton"
   legendToggleButtonCaption = "Cronologia"
@@ -129,6 +152,7 @@ export default class TerritoryFooter extends React.Component {
   getActiveOption = (options) =>
     options.find((item) => item.status === true).label
 
+
   toggleButtonPressed = (buttonId) => {
     switch (buttonId) {
       case this.analysisModeToggleButtonId:
@@ -149,7 +173,7 @@ export default class TerritoryFooter extends React.Component {
 
             this.props.setBottomPanelMode(bottomPanelMode)
           }
-        } else {
+        }  else {
           if (
             this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
           ) {
@@ -222,9 +246,19 @@ export default class TerritoryFooter extends React.Component {
   }
 
   render() {
+    let analysisModeToggleButtonCaption
+
+    console.log(this.props.bottomPanelMode,'bottomPanel')
+
+    if (this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis) {
+      analysisModeToggleButtonCaption = this.noAnalysisModeVisualizationMap.get(
+        this.props.noAnalysisMode
+      ).label
+    } else analysisModeToggleButtonCaption = this.analysisLabel
     return (
       <div className="bottom-nav navigations">
-        {/* <ToggleButton
+        {/* {this.props.bottomPanelMode === 'noAnalysis' ? (
+          <ToggleButton
           id={this.legendToggleButtonId}
           style={{ gridColumn: "span 8" }}
           caption={this.legendToggleButtonCaption}
@@ -234,11 +268,25 @@ export default class TerritoryFooter extends React.Component {
           }
           disabled
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
-        /> */}
+        />
+        ) : (
+          <div
+            style={{ gridColumn: "span 8" }}
+            className="d-flex justify-content-center"
+          >
+            <div className="text-center">Cronologia</div>
+          </div>
+        )} */}
 
-        <div style={{ gridColumn: "span 8" }} className='d-flex justify-content-center'>
-          <div className='text-secondary-color'>Cronologia</div>
-        </div>
+        <ToggleButton
+          id={this.analysisModeToggleButtonId}
+          style={{ gridColumn: "span 8", textAlign: "center" }}
+          caption={analysisModeToggleButtonCaption}
+          pressed={
+            this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
+          }
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
+        />
 
         <ToggleButton
           id={this.analysisModeToggleButtonId}

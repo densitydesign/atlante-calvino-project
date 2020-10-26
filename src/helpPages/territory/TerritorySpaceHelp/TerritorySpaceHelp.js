@@ -26,7 +26,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
         nomeItinerario={"ITINERARIO SPAZIO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -136,13 +136,13 @@ export default function TerritorySpaceHelp({ helpProps }) {
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Analisi01 className="mt-2" />
+              <Analisi01 width='119' className="mt-2" />
             </div>
             <div className="offset-md-2 col-md-3">
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Analisi02 className="mt-2" />
+              <Analisi02 width='70' className="mt-2" />
             </div>
           </div>
           {(helpProps.helpPages.spaceAnalysisMode === "genericTerrestrial" ||
@@ -151,7 +151,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
             helpProps.helpPages.spaceAnalysisMode === "namedCosmic" ||
             helpProps.helpPages.spaceAnalysisMode === "namedTerrestrial" ||
             helpProps.helpPages.spaceAnalysisMode === "noSetting") && (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-5">
                 <div>
                   <small>TIPO DI FENOMENO</small>
@@ -178,13 +178,13 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <FrequenzaLegenda color="#5151FC" />
                   <FrequenzaLegenda color="#BBBBFF" />
                   <FrequenzaLegenda color="#00C19C" />
-                  <FrequenzaLegenda color="#C6CACF" />
+                  <FrequenzaLegenda color="#C6CACF" isLast={true} />
                 </div>
               </div>
             </div>
           )}
           {helpProps.helpPages.spaceAnalysisMode === "space_proportion" && (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-5">
                 <div>
                   <small>TIPO DI FENOMENO</small>
@@ -206,13 +206,13 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <small>PROPORZIONE</small>
                 </div>
                 <div>
-                  <LegendaProporzione />
+                  <LegendaProporzione width='119' />
                 </div>
               </div>
             </div>
           )}
           {helpProps.helpPages.spaceAnalysisMode === "placeHierarchies" && (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-5">
                 <div>
                   <small>TIPO DI FENOMENO</small>
@@ -234,7 +234,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <small>LIVELLI SPAZIALI</small>
                 </div>
                 <div>
-                  <LegendaLivelli width="150" />
+                  <LegendaLivelli width="137" />
                 </div>
               </div>
             </div>

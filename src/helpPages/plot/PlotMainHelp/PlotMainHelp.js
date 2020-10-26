@@ -24,7 +24,7 @@ export default function PlotMainHelp({ helpProps }) {
         nomeItinerario={"ITINERARIO FORMA"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}

@@ -223,7 +223,7 @@ export default class TerritoryWrapper extends React.Component {
   callTerritoryShowHills = (opacity) => this.territoryShowHills(opacity)
 
   toggleNoAnalysisDropDownPosition = () => {
-    if (!this.state.allowDropMenus) return
+    //if (!this.state.allowDropMenus) return
 
     const newValue =
       this.state.noAnalysisDropDownPosition ===
@@ -241,6 +241,8 @@ export default class TerritoryWrapper extends React.Component {
       newValue === GlobalData.noAnalysisDropDownPositions.open
         ? GlobalData.bottomPanelModes.noAnalysis
         : this.state.bottomPanelMode
+
+    console.log(bottomPanelMode,bottomPanelPosition,newValue,'state')
 
     this.setState({
       noAnalysisDropDownPosition: newValue,
@@ -587,6 +589,11 @@ export default class TerritoryWrapper extends React.Component {
         <TerritoryFooter
           mainAnalysisMode={this.state.mainAnalysisMode}
           bottomPanelMode={this.state.bottomPanelMode}
+          toggleNoAnalysisDropDownPosition={
+            this.toggleNoAnalysisDropDownPosition
+          }
+          noAnalysisDropDownPosition={this.state.noAnalysisDropDownPosition}
+          noAnalysisMode={this.state.noAnalysisMode}
           dataExtent={this.state.dataExtent}
           setMainAnalysisMode={this.setMainAnalysisMode}
           setBottomPanelMode={this.setBottomPanelMode}

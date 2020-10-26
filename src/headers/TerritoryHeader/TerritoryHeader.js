@@ -10,8 +10,8 @@ import TerritoryNoAnalysisDropDown from "../../general/TerritoryNoAnalysisDropDo
 
 export default class TerritoryHeader extends React.Component {
   analysisLabel = "Filtra per volume"
-  chronologyLabel = "CRONOLOGIA"
-  volumesLabel = "VOLUMI"
+  chronologyLabel = "Cronologia"
+  volumesLabel = "Volumi"
 
   noAnalysisModeVisualizationMap = new Map([
     [
@@ -102,7 +102,18 @@ export default class TerritoryHeader extends React.Component {
           style={{ gridColumn: "span 7" }}
         />
 
-        <ToggleButton
+        <div
+          className="d-flex justify-content-center"
+          style={{
+            gridColumn: "span 4",
+            textAlign: "center",
+            fontWeight: "bold",
+          }}
+        >
+          Filtra per volume
+        </div>
+
+        {/* <ToggleButton
           id={this.analysisModeToggleButtonId}
           style={{ gridColumn: "span 4", textAlign: "center" }}
           caption={analysisModeToggleButtonCaption}
@@ -110,7 +121,7 @@ export default class TerritoryHeader extends React.Component {
             this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
           }
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
-        />
+        /> */}
 
         {this.props.isLoading && (
           <div

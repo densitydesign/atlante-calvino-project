@@ -23,7 +23,7 @@ export default function RealismHelp() {
         nomeItinerario={"ITINERARIO SPAZIO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -115,10 +115,10 @@ export default function RealismHelp() {
             Questa inversione di tendenza non ha un riflesso diretto, come si
             potrebbe supporre, sul rapporto tra spazi esterni e spazi interni.
             Se è vero che nei primissimi anni la produzione calviniana sembra
-            prediligere ambientazioni all’aperto (pensiamo a racconti come Paura
+            prediligere ambientazioni all’aperto (pensiamo a racconti come <i>Paura
             sul sentiero, Uomo nei gerbidi, Campo di mine, Ultimo viene il
-            corvo), il sopraggiungere dei primi racconti cittadini (Visti alla
-            mensa, Si dorme come cani, Il gatto e il poliziotto) segna molto
+            corvo</i>), il sopraggiungere dei primi racconti cittadini (Visti alla
+            mensa, <i>Si dorme come cani, Il gatto e il poliziotto</i>) segna molto
             presto l’inizio di una sostanziale oscillazione tra ambientazioni
             esterne e ambientazioni interne (o ancora, come accade in molti
             casi, miste). Tuttavia, mettendo a confronto la selezione dei
@@ -141,15 +141,15 @@ export default function RealismHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>DISPOSIZIONE</small>
             </div>
             <div>
-              <Legend01 className="mt-2" />
+              <Legend01 width='288' className="mt-2" />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <small>COLORE</small>
             <div className="row">
               <div className="col-md-4">
@@ -162,20 +162,20 @@ export default function RealismHelp() {
               </div>
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>MOVIMENTO</small>
             </div>
             <div>
-              <img src={Legend02} alt="Visione in dettaglio" className="mt-2" />
+              <img src={Legend02} width='200' alt="Visione in dettaglio" className="mt-2" />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>VISIONE IN DETTAGLIO</small>
             </div>
             <div>
-              <Legend03 className="mt-2" />
+              <Legend03 width='291' className="mt-2" />
             </div>
           </div>
         </Tab>

@@ -22,7 +22,7 @@ export default function ProcessDoubtingMainHelp() {
         nomeItinerario={"ITINERARIO DUBBIO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -122,9 +122,20 @@ export default function ProcessDoubtingMainHelp() {
             <div>
               <small>DISPOSIZIONE SULLE COLONNE</small>
             </div>
-            <div className="d-flex">
-              <Legend01 />
-              <img className="ml-5" src={Legend02} alt="Legenda" />
+            <div className="row">
+              <div className="col-md-6">
+                <Legend01 width="124" />
+              </div>
+              <div className="col-md-6 text-left">
+                <img width="157" src={Legend02} alt="Legenda" />
+                <div>
+                  <small style={{ lineHeight: '0.5'}}>
+                    Testi disposti secondo data di prima pubblicazione. Apri la
+                    colonna cliccando, poi scorri verso il basso per vedere
+                    l’andamento del processo dubitativo.
+                  </small>
+                </div>
+              </div>
             </div>
           </div>
           <div className="row mt-4">
@@ -135,7 +146,10 @@ export default function ProcessDoubtingMainHelp() {
               <div>
                 <BadgeLegenda color="#BBBBFF" name="Testo dubitativo (dt)" />
                 <BadgeLegenda color="#FFD337" name="Oggetto di dubbio" />
-                <BadgeLegenda color="#00C19C" name="Dubitativo e oggetto di dubbio" />
+                <BadgeLegenda
+                  color="#00C19C"
+                  name="Dubitativo e oggetto di dubbio"
+                />
                 <BadgeLegenda color="#C6CACF" name="Non dubitativo" />
               </div>
             </div>

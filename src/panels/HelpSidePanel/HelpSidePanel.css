@@ -147,7 +147,7 @@
 
 .tab-content{
   overflow: scroll;
-  height: 60vh;
+  height: 65vh;
   padding-bottom: 20px;
 }
 
@@ -195,4 +195,8 @@ small{
 .badge-legenda-small{
   color: #C6CACF;
   font-weight: normal;
+}
+
+.badge-legenda-name{
+  font-size: 10px;
 }

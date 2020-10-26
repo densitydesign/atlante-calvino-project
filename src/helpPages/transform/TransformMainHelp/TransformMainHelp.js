@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
-import { ReactComponent as Legend01 } from './icons/trasformare_aspetto.svg'
-import { ReactComponent as Legend02 } from './icons/trasformare_dimensione.svg'
-import { ReactComponent as Legend03 } from './icons/trasformare_posizione.svg'
-import Legend04 from './icons/trasformare_interazioneGIF.gif'
+import { ReactComponent as Legend01 } from "./icons/trasformare_aspetto.svg"
+import { ReactComponent as Legend02 } from "./icons/trasformare_dimensione.svg"
+import { ReactComponent as Legend03 } from "./icons/trasformare_posizione.svg"
+import Legend04 from "./icons/trasformare_interazioneGIF.gif"
 import "./TransformMainHelp.css"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
@@ -24,7 +24,7 @@ export default function TransformMainHelp() {
         nomeItinerario={"ITINERARIO SPAZIO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -105,35 +105,39 @@ export default function TransformMainHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-4">
               <div>
                 <small>ASPETTO</small>
               </div>
-              <Legend01 className="mt-2" />
+              <Legend01 width="145" className="mt-2" />
             </div>
             <div className="offset-md-2 col-md-4">
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Legend02 className="mt-2" />
+              <Legend02 width="123" className="mt-2" />
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-4">
               <div>
                 <small>POSIZIONE</small>
               </div>
-              <Legend03 className="mt-2" />
+              <Legend03 width="134" className="mt-2" />
             </div>
             <div className="offset-md-2 col-md-4">
               <div>
                 <small>INTERAZIONE</small>
               </div>
-              <img src={Legend04} width='200' className="mt-2" alt='Legenda' />
+              <img src={Legend04} width="117" className="mt-2" alt="Legenda" />
+              <small style={{ lineHeight: 0.5 }}>
+                Facendo doppio click sull’elemento grafico compaiono i luoghi
+                contenuti all’interno
+              </small>
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-12">
               <div>
                 <small>TIPO DI LUOGO</small>

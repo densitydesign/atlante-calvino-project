@@ -22,7 +22,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
         nomeItinerario={"ITINERARIO DUBBIO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -81,19 +81,19 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Analisi01 className="mt-2" />
+              <Analisi01 width='119' className="mt-2" />
             </div>
             <div className="offset-md-2 col-md-3">
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Analisi02 className="mt-2" />
+              <Analisi02 width='70' className="mt-2" />
             </div>
           </div>
           {helpProps.helpPages.doubtAnalysisMode === "fog" ||
           helpProps.helpPages.doubtAnalysisMode === "cancellation" ||
           helpProps.helpPages.doubtAnalysisMode === "all" ? (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-4">
                 <div>
                   <small>TIPO DI FENOMENO</small>
@@ -111,13 +111,13 @@ export default function TerritoryDoubtHelp({ helpProps }) {
                 <div>
                   <FrequenzaLegenda color="#5151FC" />
                   <FrequenzaLegenda color="#00C19C" />
-                  <FrequenzaLegenda color="#FF6C39" />
+                  <FrequenzaLegenda color="#FF6C39" isLast={true} />
                 </div>
               </div>
             </div>
           ) : (
             <>
-              <div className="row mt-4">
+              <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
                     <small>TIPO DI FENOMENO</small>
@@ -133,8 +133,8 @@ export default function TerritoryDoubtHelp({ helpProps }) {
                   <div>
                     <small>PROPORZIONE</small>
                   </div>
-                  <div className="text-center">
-                    <LegendaProporzione width='400' className="mt-2" />
+                  <div>
+                    <LegendaProporzione width='274' className="mt-2" />
                   </div>
                 </div>
               </div>

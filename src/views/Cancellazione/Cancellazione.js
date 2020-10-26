@@ -232,6 +232,7 @@ class Cancellazione extends Component {
           <CompassButton
             style={{
               gridColumn: "span 1",
+
             }}
           />
         </div>
@@ -250,7 +251,7 @@ class Cancellazione extends Component {
 
           {this.state.loading && <Loading style={{ gridColumn: 'span 12' }}/>}
 					{	!this.state.loading &&
-						<Options title = "Colora per stile"
+						<Options title = "Manifestazioni stilistiche"
 							data = {this.state.manifestazioniStilistiche}
 							style = {{gridColumn: 'span 12',textAlign: 'center'}}
 							changeOptions = {this.changeColor}

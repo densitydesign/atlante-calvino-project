@@ -22,7 +22,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
         nomeItinerario={"ITINERARIO FORMA"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -101,13 +101,13 @@ export default function TerritoryShapeHelp({ helpProps }) {
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Legend01 width="160" className="mt-2" />
+              <Legend01 width="119.9" className="mt-2" />
             </div>
             <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Legend02 width="100" className="mt-2" />
+              <Legend02 width="70.4" className="mt-2" />
             </div>
           </div>
           {helpProps.helpPages.shapeAnalysisMode === "types" && (
@@ -129,7 +129,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
                 <small>PROPORZIONE</small>
               </div>
               <div className="mt-2">
-                <LegendProporzione />
+                <LegendProporzione width='126' />
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
                   <small>PROPORZIONE</small>
                 </div>
                 <div className="mt-2">
-                  <LegendPercentuale />
+                  <LegendPercentuale width='145.922' />
                 </div>
               </div>
             </div>

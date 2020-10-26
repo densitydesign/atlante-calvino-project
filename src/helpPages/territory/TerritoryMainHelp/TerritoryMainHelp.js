@@ -26,7 +26,7 @@ export default function TerritoryMainHelp({ helpProps }) {
         nomeItinerario={"IL FENOMENO"}
       />
       <Tabs
-        className="mt-5"
+        className="mt-2"
         id="info-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
@@ -55,7 +55,7 @@ export default function TerritoryMainHelp({ helpProps }) {
             loro dimensione; c) l’uso del colore.
           </p>
           <p className="text-center">
-            <Info01 width="250" />
+            <Info01 width='145' />
           </p>
           <p>
             a) Gli elementi sono posizionati sulla base di due criteri:
@@ -67,7 +67,7 @@ export default function TerritoryMainHelp({ helpProps }) {
             Questi ultimi sono i testi che confluiscono in raccolte.
           </p>
           <p className="text-center">
-            <Info02 width="150" />
+            <Info02 width='84.5' />
           </p>
           <p>
             b) La dimensione di ogni elemento è proporzionale alla lunghezza del
@@ -78,7 +78,7 @@ export default function TerritoryMainHelp({ helpProps }) {
             <small>CRONOLOGIA</small>
           </div>
           <p className="text-center">
-            <Info03 width="300" className="mt-3" />
+            <Info03 width='220.4' className="mt-3" />
           </p>
           <p>
             c) L’uso del colore introduce due differenti modalità esplorative:
@@ -90,10 +90,10 @@ export default function TerritoryMainHelp({ helpProps }) {
             <small>SITUAZIONE EDITORIALE</small>
           </div>
           <p className="d-flex justify-content-center">
-            <Info04 />
-            <Info05 />
-            <Info06 />
-            <Info07 />
+            <Info04 width='75.5' />
+            <Info05 width='75.5' />
+            <Info06 width='75.5' />
+            <Info07 width='75.5' />
           </p>
           <p>
             Selezionando invece la modalità Volumi, il colore consente di
@@ -118,49 +118,49 @@ export default function TerritoryMainHelp({ helpProps }) {
               <div>
                 <small>DIMENSIONE</small>
               </div>
-              <Info02 className="mt-2" />
+              <Info02 width='84.5' className="mt-2" />
             </div>
-            <div className="offset-md-3 col-md-5">
+            <div className="offset-md-2 col-md-5">
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
-              <Info01 className="mt-2" />
+              <Info01 width='145.5' className="mt-2" />
             </div>
           </div>
           {helpProps.helpPages.noAnalysisMode === "chronology" && (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-8">
                 <div>
                   <small>CRONOLOGIA</small>
                 </div>
-                <Info03 className="mt-2" />
+                <Info03 width='220.4' className="mt-2" />
               </div>
             </div>
           )}
           {helpProps.helpPages.noAnalysisMode === "volumes" && (
             <>
-              <div className="mt-4">
+              <div className="mt-2">
                 <small>SITUAZIONE EDITORIALE</small>
               </div>
               <div className="row">
                 <div className="col-md-3">
-                  <Info04 />
+                  <Info04 width='75.5' />
                 </div>
                 <div className="col-md-3">
-                  <Info05 />
+                  <Info05 width='75.5' />
                 </div>
                 <div className="col-md-3">
-                  <Info06 />
+                  <Info06 width='75.5' />
                 </div>
                 <div className="col-md-3">
-                  <Info07 />
+                  <Info07 width='75.5' />
                 </div>
               </div>
             </>
           )}
           {helpProps.helpPages.noAnalysisMode === "volumes" && (
             <>
-              <div className="mt-4">
+              <div className="mt-2">
                 <small>RACCOLTE</small>
               </div>
               <div className="row">
