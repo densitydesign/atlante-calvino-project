@@ -122,6 +122,8 @@ export default class TerritoryFooter extends React.Component {
 
   analysisModeToggleButtonId = "footerAnalysisModeToggleButton"
 
+  chronology = "chronology"
+
   chronologicalFilterToggleButtonId = "chronologicalFilterToggleButton"
   chronologicalFilterToggleButtonCaption = "Filtro cronologico"
 
@@ -183,6 +185,10 @@ export default class TerritoryFooter extends React.Component {
           }
         }
 
+        break
+      
+      case 'chronology':
+        this.props.toggleNoAnalysisDropDownPosition()
         break
 
       case TerritoryItinerariesDropUp.doubtButtonId:
@@ -279,7 +285,7 @@ export default class TerritoryFooter extends React.Component {
         )} */}
 
         <ToggleButton
-          id={this.analysisModeToggleButtonId}
+          id={this.chronology}
           style={{ gridColumn: "span 8", textAlign: "center" }}
           caption={analysisModeToggleButtonCaption}
           pressed={
