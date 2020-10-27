@@ -1,6 +1,19 @@
 
 .territory-space-panel {
   background-color : var(--bg);
-  grid-column: 11 / span 7;
-  margin-left: 2em;
+  grid-column: 8 / span 13;
+}
+
+.territory-percentage-panel-double{
+  grid-column: 21 / span 3;
+  display: flex;
+  flex-direction: column;
+  padding-top: 37px;
+}
+
+.territory-percentage-subpanel-double{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }

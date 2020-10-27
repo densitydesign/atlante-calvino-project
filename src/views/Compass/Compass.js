@@ -64,7 +64,7 @@ export default class Compass extends React.Component
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
-              interactiveViewUrl="/Compass/flux"
+              interactiveViewUrl="/compass/flows-of-stories"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
               text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo." />
 
@@ -79,7 +79,7 @@ export default class Compass extends React.Component
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
-              interactiveViewUrl="/Compass/time"
+              interactiveViewUrl="/compass/time-and-works"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
               text="Si tratta di una mappa sintetica, che segue l’andamento dei quattro decenni della carriera letteraria di Calvino, mostrando gli snodi più importanti della sua storia editoriale: i principali volumi e le collaborazioni giornalistiche. La divisione per generi permette di seguire le oscillazioni tra forma breve e lunga, le sperimentazioni sulla struttura, l’articolarsi inquieto dell’opera in cerca della sua giusta forma."
             />

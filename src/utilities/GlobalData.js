@@ -8202,7 +8202,8 @@ const GlobalData = {
     shape : "shape",
     space : "space",
     chronologicalFilter : "chronologicalFilter",
-    legend : "legend"
+    legend : "legend",
+    chronology: "chronology",
   },
   bottomPanelPositions : {
     open : "open",

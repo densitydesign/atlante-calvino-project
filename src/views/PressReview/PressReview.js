@@ -28,7 +28,6 @@ export default class PressReview extends React.Component
 
   render()
   {
-    console.log(this.state)
     return (
       <>
         <HamburgerIntroHeader />

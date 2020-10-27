@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <g id="Grid">
+    <line x1="-786.83269" y1="3.23807" x2="579.16667" y2="3.23828" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5" opacity="0.1"/>
+    <line x1="10" y1="-174.51173" x2="10" y2="773.48827" fill="none" stroke="#000" stroke-miterlimit="10" opacity="0.1"/>
+  </g>
+  <g id="Orbite">
+    <ellipse cx="-103.83334" cy="338.62377" rx="998.36843" ry="355.5" fill="none" stroke="#666" stroke-miterlimit="10" stroke-dasharray="3.99741 5.99611"/>
+    <ellipse cx="-103.83333" cy="244.96483" rx="723.98376" ry="251.84106" fill="none" stroke="#666" stroke-miterlimit="10" stroke-dasharray="3.99773 5.99659"/>
+    <ellipse cx="-103.83334" cy="121.62377" rx="340.29134" ry="118.5" fill="none" stroke="#666" stroke-miterlimit="10" stroke-dasharray="3.99201 5.98802"/>
+  </g>
+  <g id="Directions">
+    <g>
+      <circle cx="10" cy="10" r="10" fill="#5151fc"/>
+      <path d="M11.071,5.27733V15.041H9.72624V8.00878H7.37272V6.81835h1.457c.51856,0,.89649-.168.89649-.83985V5.27733Z" fill="#fff"/>
+    </g>
+    <rect x="-13" y="-13" width="46" height="46" fill="none" stroke="#03f3ff" stroke-miterlimit="10" stroke-width="0.2833"/>
+  </g>
+</svg>

@@ -78,9 +78,9 @@ export default class DoubtInformationSheet extends React.Component
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Phenomena/territory/doubtAnalysis" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/intro" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/intro" />
+            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/doubt/phase1" />
+            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/phase2-process" />
+            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/phase3-problem" />
           </div>
 </main>
 

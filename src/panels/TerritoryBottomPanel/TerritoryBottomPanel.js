@@ -65,6 +65,18 @@ export default class TerritoryBottomPanel extends React.Component
 
         break;
 
+        case this.props.bottomPanelMode === GlobalData.bottomPanelModes.chronology :
+
+          internalPanel = (
+            <div>
+              <div>
+                Cronologia
+              </div>
+            </div>
+          );
+  
+          break;
+
       case this.props.bottomPanelMode === GlobalData.bottomPanelModes.legend :
 
         internalPanel = (
@@ -72,6 +84,7 @@ export default class TerritoryBottomPanel extends React.Component
         );
 
         break;
+        
 
       default : internalPanel = <></>
     }

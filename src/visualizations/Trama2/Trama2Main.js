@@ -1,17 +1,17 @@
-import React, { useCallback, useState, useMemo, useEffect } from 'react'
-import MainMenu from '../../general/MainMenu'
-import PageTitle from '../../general/PageTitle'
-import MoreInfo from '../../general/MoreInfo'
-import CompassButton from '../../general/CompassButton/CompassButton'
-import SearchDropDown from '../../general/Search/SearchDropDownControlled'
-import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
+import React, { useCallback, useState, useMemo, useEffect } from "react"
+import MainMenu from "../../general/MainMenu"
+import PageTitle from "../../general/PageTitle"
+import MoreInfo from "../../general/MoreInfo"
+import CompassButton from "../../general/CompassButton/CompassButton"
+import SearchDropDown from "../../general/Search/SearchDropDownControlled"
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
 
-import AltOptions from '../../general/Options/AltOptions'
-import GlobalData from '../../utilities/GlobalData'
-import Trama2Content from './Trama2Content'
-import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from './utils'
-import keyBy from 'lodash/keyBy'
-import './Trama2.css'
+import AltOptions from "../../general/Options/AltOptions"
+import GlobalData from "../../utilities/GlobalData"
+import Trama2Content from "./Trama2Content"
+import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from "./utils"
+import keyBy from "lodash/keyBy"
+import "./Trama2.css"
 
 // SCALES
 const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
@@ -32,11 +32,13 @@ const searchOptions = racconti.map((racconto) => ({
   value: racconto.titolo,
 }))
 
-const cercaOptions = [{ label: 'Titolo' }]
+const cercaOptions = [{ label: "Titolo" }]
 
 function Trama2Main({ title }) {
-  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
   const [ricerca, setRicerca] = useState([])
+
+  const [currentView, setCurrentView] = useState("list")
 
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
@@ -77,7 +79,7 @@ function Trama2Main({ title }) {
         value: item.value,
         fromBounds: item.fromBounds === undefined ? false : item.fromBounds,
       })),
-      'value'
+      "value"
     )
   }, [ricerca])
 
@@ -86,27 +88,29 @@ function Trama2Main({ title }) {
       <HelpSidePanel
         open={helpSidePanelOpen}
         page={helpPage}
+        isFullPage={true}
+        helpPages={currentView}
         closeButtonClicked={toggleHelpSidePanel}
       />
 
       <div className="top-nav navigations">
-        <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
-        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
+        <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
+        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
 
         <AltOptions
           title="Cerca per"
           options={cercaOptions}
           disabled={true}
-          value={'Titolo'}
+          value={"Titolo"}
           onChange={(x) => {}}
           style={{
-            gridColumn: 'span 3',
+            gridColumn: "span 3",
           }}
         />
 
         <SearchDropDown
           style={{
-            gridColumn: 'span 8',
+            gridColumn: "span 8",
           }}
           data={{ options: searchOptions }}
           changeOptions={(newOptions) => {
@@ -121,14 +125,13 @@ function Trama2Main({ title }) {
         />
 
         <MoreInfo
-          style={{ gridColumn: 'span 1' }}
+          helpSidePanelOpen={helpSidePanelOpen}
+          style={{ gridColumn: "span 1" }}
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton
           style={{
-            gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
+            gridColumn: "span 1",
           }}
         />
       </div>
@@ -139,6 +142,8 @@ function Trama2Main({ title }) {
         tipologieByTipologia={tipologieByTipologia}
         colors={colors}
         racconti={racconti}
+        currentView={currentView}
+        setCurrentView={setCurrentView}
         byRacconto={byRacconto}
         selected={selected}
         setSelected={setSelected}

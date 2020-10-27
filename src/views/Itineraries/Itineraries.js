@@ -25,9 +25,9 @@ export default class Itineraries extends React.Component
             <p>Nell’itinerario che pone al centro il dubbio, si tenterà di analizzare un fenomeno che tende a dilagare nell’opera di Calvino, soprattutto a partire dagli anni Sessanta. Tormentato da un dubbio fondamentale, che riguarda la capacità delle parole di dire le cose giuste, il testo torna continuamente indietro per cancellarsi e ricominciare. Trovando nel processo di negazione, rettifica e riformulazione una paradossale ma potente spinta narrativa: la scrittura si disperde nel dubbio e nello stesso tempo si salva, perché s’inventa un modo per non finire mai. Il testo dubitativo è un testo dove a un certo punto la nebbia sale, confondendo ogni cosa: da una parte c’è la grande paura di avere sbagliato strada, dall’altra quella di non vedere più nulla. In mezzo dovremo riconoscere la prossimità che la letteratura ha con la morte, mentre cammina in bilico sul suo rovescio vuoto e contempla la cancellazione di tutto quello che riuscirà a dire. Prima ancora di averlo detto.</p>
 
             <div className="sheet--info">
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/Phenomena/territory/doubtAnalysis" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/doubting" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/cancellation" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/doubt/phase1" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/doubt/phase2" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/doubt/phase3" />
             </div>
 
           </section>
@@ -38,21 +38,21 @@ export default class Itineraries extends React.Component
             </p>
 
             <div className="sheet--info">
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/Phenomena/territory/spaceAnalysis" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/transforming" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/realism" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/space/phase1" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/space/phase2" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/space/phase3" />
             </div>
 
           </section>
 
-          <section id="shape">
+          <section id="form">
             <h1>La Forma</h1>
             <p>Nell’itinerario che pone al centro la forma, si tenterà di studiare i modi in cui la scrittura di Calvino si sforza di dare forma alla realtà. Se esiste una battaglia delle battaglie che la letteratura ha il dovere di combattere, come un nobile paladino dell’esercito di Carlo Magno, questa è per Calvino la battaglia contro l’informe. L’informe che ci assedia e minaccia da ogni parte. Vincerla forse è impossibile, ma bisogna continuare a provarci. In che modo? Schierando per esempio le parole in lunghe file di elenchi, che facciano argine al caos; o al contrario lo riproducano, quel caos dilagante, nel tentativo di padroneggiarlo. Oppure costruendo elaborate strutture fatte di racconti in serie, concatenati. Per Calvino, l’arma della combinazione sembra sia quella che possa salvarci dall’assedio del magma. Alla ricerca di una trama che ormai il Novecento ha messo in soffitta da tempo, Calvino sperimenta le forme narrative più varie nel corso della sua carriera letteraria. Anche se forse non erano altro che travestimenti di un’unica trama, elementare e ossessiva.</p>
 
             <div className="sheet--info">
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/Process/combining" />
-              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/Problem/plot" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 1" route="/form/phase1" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/form/phase2" />
+              <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/form/phase3" />
             </div>
 
           </section>

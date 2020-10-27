@@ -65,7 +65,7 @@ class Cancellazione extends Component {
       controlsEnabled: true,
       currentTextID: null,
   
-      helpSidePanelOpen: false,
+      helpSidePanelOpen: true,
       manifestazioniStilistiche: manifestazioniStilistiche,
       cerca_per: cerca_per,
       searchedItems:[],
@@ -204,7 +204,7 @@ class Cancellazione extends Component {
         </HelpSidePanel>
         <div className="top-nav navigations">
           <MainMenu className = "main-menu" style = {{gridColumn: 'span 1'}}/>
-					<PageTitle title = {"Tappa 3 – Cancellare"} style = {{gridColumn: 'span 7'}}/>
+					<PageTitle title = {"Cancellazione"} style = {{gridColumn: 'span 9'}}/>
           
           {this.state.loading && <Loading style={{ gridColumn: 'span 5' }}/>}
           {!this.state.loading &&
@@ -227,13 +227,13 @@ class Cancellazione extends Component {
 
           <MoreInfo
             style={{ gridColumn: "span 1" }}
+            helpSidePanelOpen={this.state.helpSidePanelOpen}
             onClicked={this.toggleHelpSidePanel}
           />
           <CompassButton
             style={{
               gridColumn: "span 1",
-              color: "white",
-              backgroundColor: "black"
+
             }}
           />
         </div>
@@ -252,7 +252,7 @@ class Cancellazione extends Component {
 
           {this.state.loading && <Loading style={{ gridColumn: 'span 12' }}/>}
 					{	!this.state.loading &&
-						<Options title = "Colora per stile"
+						<Options title = "Manifestazioni stilistiche"
 							data = {this.state.manifestazioniStilistiche}
 							style = {{gridColumn: 'span 12',textAlign: 'center'}}
 							changeOptions = {this.changeColor}

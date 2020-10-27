@@ -1,7 +1,8 @@
 
 .territory-description-subpanel {
-  grid-column: 4 / span 7;
-  padding : 1em;
+  grid-column: 4 / span 3;
+  padding-top: 18px;
+  padding-left: 40px;
 }
 
 .description-link-group {
@@ -10,6 +11,10 @@
   flex-direction : row;
 }
 
+.title-subpanel-territory{
+  text-transform: none;
+  font-size: 14px;
+}
 .step-link {
   text-decoration : underline;
   margin-right:2em;

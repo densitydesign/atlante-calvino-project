@@ -96,7 +96,7 @@ const cercaOptions = [
 ]
 
 export default function RealismoMain({ title }) {
-  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
   }, [])
@@ -370,13 +370,12 @@ export default function RealismoMain({ title }) {
         />
         <MoreInfo
           style={{ gridColumn: 'span 1' }}
+          helpSidePanelOpen={helpSidePanelOpen} 
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton
           style={{
             gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
           }}
         />
       </div>

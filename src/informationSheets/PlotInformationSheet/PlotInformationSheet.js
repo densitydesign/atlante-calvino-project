@@ -128,9 +128,9 @@ class PlotInformationSheet extends Component {
           </div>
 
         <div className={SheetStyles.gridRow}>
-          <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/Problem/plot" /></div>
-          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/Phenomena/territory/shapeAnalysis"/></div>
-          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 2" route="/Process/combining" /></div>
+          <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/form/phase3" /></div>
+          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/form/phase1"/></div>
+          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 2" route="/form/phase2" /></div>
         </div>
 
       </main>

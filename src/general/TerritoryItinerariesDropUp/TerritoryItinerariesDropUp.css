@@ -25,6 +25,8 @@
   position : fixed;
   bottom: var(--navigation-height);
   width : 33.33%;
+  border-left: 1px solid var(--dark-green);
+  left:33.33%;
   height: calc(var(--navigation-height)*3);
   z-index : 20;
   display : grid;
