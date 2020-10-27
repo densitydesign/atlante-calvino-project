@@ -18,6 +18,7 @@ const Menu = ({ title, helpPage }) => {
     <div className="trasformare main">
       <HelpSidePanel
         open={false}
+        isFullPage={true}
         page={helpPage}
         closeButtonClicked={() => {}}
       />

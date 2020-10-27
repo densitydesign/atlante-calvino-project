@@ -88,6 +88,7 @@ function Trama2Main({ title }) {
       <HelpSidePanel
         open={helpSidePanelOpen}
         page={helpPage}
+        isFullPage={true}
         helpPages={currentView}
         closeButtonClicked={toggleHelpSidePanel}
       />

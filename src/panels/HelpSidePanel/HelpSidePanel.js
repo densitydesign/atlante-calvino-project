@@ -1,6 +1,5 @@
 import React from "react"
-
-import CloseButton from "../../general/CloseButton/CloseButton"
+import classnames from 'classnames'
 
 import GlobalData from "../../utilities/GlobalData"
 
@@ -66,15 +65,15 @@ export default class HelpSidePanel extends React.Component {
       default:
         break
     }
-
+    console.log(this.props,'props')
     return (
       <>
         <div
-          className={
-            "help-side-panel " +
-            (this.props.open
-              ? "help-side-panel-open"
-              : "help-side-panel-closed")
+          className={classnames("help-side-panel",{
+            "help-side-panel-open" : this.props.open,
+            "help-side-panel-closed": !this.props.open,
+            "help-side-panel-full": this.props.isFullPage !== undefined
+          })
           }
         >
           <div>

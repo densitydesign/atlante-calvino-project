@@ -126,7 +126,7 @@ export default function PlotMainHelp({ helpProps }) {
               <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
-                    <small>Forma</small>
+                    <small>FORMA</small>
                   </div>
                   <LegendForma01 className="mt-2" />
                 </div>
@@ -146,23 +146,18 @@ export default function PlotMainHelp({ helpProps }) {
               <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
-                    <small>Forma</small>
+                    <small>FORMA</small>
                   </div>
                   <LegendForma02 className="mt-2" />
                 </div>
               </div>
             </>
           )}
-          <div className="row mt-2">
-            <div className="col-md-4">
-              <div
-                className="mt-2 font-weight-bold"
-                style={{ color: "#5151FC" }}
-              >
-                PIANO ESTERIORE
+          <div className="row mt-3">
+            <div className="col-md-12">
+              <div>
+                <small>TIPO DI SEQUENZA</small>
               </div>
-            </div>
-            <div className="col-md-8">
               <BadgeLegenda
                 color="#8131F4"
                 name="Eventi eliminali"
@@ -191,15 +186,7 @@ export default function PlotMainHelp({ helpProps }) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
-              <div
-                className="mt-2 font-weight-bold"
-                style={{ color: "#00FFCC" }}
-              >
-                PIANO INTERIORE
-              </div>
-            </div>
-            <div className="col-md-8">
+            <div className="col-md-12">
               <BadgeLegenda
                 color="#009959"
                 name="Stato euforico"
@@ -223,15 +210,7 @@ export default function PlotMainHelp({ helpProps }) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
-              <div
-                className="mt-2 font-weight-bold"
-                style={{ color: "#FFA500" }}
-              >
-                PIANO FORMALE
-              </div>
-            </div>
-            <div className="col-md-8">
+            <div className="col-md-12">
               <BadgeLegenda color="#FFF800" name="Racconto incastonato" />
               <BadgeLegenda color="#F2CA22" name="Metanarrazione" />
               <BadgeLegenda color="#EFA625" name="Cornice" />
