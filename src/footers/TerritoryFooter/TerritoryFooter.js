@@ -282,7 +282,18 @@ export default class TerritoryFooter extends React.Component {
           </div>
         )} */}
 
-        <ToggleButton
+        {/* <ToggleButton
+          id={this.chronology}
+          style={{ gridColumn: "span 8", textAlign: "center" }}
+          caption={analysisModeToggleButtonCaption}
+          pressed={
+            this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
+          }
+          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
+        /> */}
+
+        {this.props.bottomPanelMode === 'noAnalysis' ? (
+          <ToggleButton
           id={this.chronology}
           style={{ gridColumn: "span 8", textAlign: "center" }}
           caption={analysisModeToggleButtonCaption}
@@ -291,6 +302,14 @@ export default class TerritoryFooter extends React.Component {
           }
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
+        ) : (
+          <div
+            style={{ gridColumn: "span 8" }}
+            className="d-flex justify-content-center"
+          >
+            <div className="text-center">Cronologia</div>
+          </div>
+        )}
 
         <ToggleButton
           id={this.analysisModeToggleButtonId}
