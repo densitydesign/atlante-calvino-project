@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="197.329" height="63" viewBox="0 0 197.329 63">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a906ff"/>
+      <stop offset="0" stop-color="#4e1afa"/>
+      <stop offset="0.498" stop-color="#38d1ff"/>
+      <stop offset="1" stop-color="#ffbb03"/>
+    </linearGradient>
+  </defs>
+  <g id="Raggruppa_23025" data-name="Raggruppa 23025" transform="translate(-71 -202)">
+    <g id="Raggruppa_882" data-name="Raggruppa 882" transform="translate(45 104)">
+      <g id="Raggruppa_879" data-name="Raggruppa 879" transform="translate(66 39)">
+        <rect id="Rettangolo_9608" data-name="Rettangolo 9608" width="5" height="54" transform="translate(20 65)" fill="url(#linear-gradient)"/>
+      </g>
+      <g id="Raggruppa_880" data-name="Raggruppa 880" transform="translate(66 39)">
+        <line id="Linea_219" data-name="Linea 219" y2="53" transform="translate(22.5 65.5)" fill="none" stroke="#000" stroke-width="1"/>
+        <line id="Linea_220" data-name="Linea 220" x2="10" transform="translate(17.5 65.5)" fill="none" stroke="#000" stroke-width="1"/>
+        <line id="Linea_221" data-name="Linea 221" x2="10" transform="translate(17.5 118.5)" fill="none" stroke="#000" stroke-width="1"/>
+      </g>
+    </g>
+    <line id="Linea_222" data-name="Linea 222" x2="26.339" transform="translate(100.5 208.5)" fill="none" stroke="#999" stroke-width="0.5" stroke-dasharray="2"/>
+    <line id="Linea_223" data-name="Linea 223" x2="19.339" transform="translate(107.5 261.5)" fill="none" stroke="#999" stroke-width="0.5" stroke-dasharray="2"/>
+    <text id="morte" transform="translate(71 212)" fill="#8131f4" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">morte</tspan></text>
+    <text id="cornice" transform="translate(71 262)" fill="orange" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">cornice</tspan></text>
+    <text id="escursione_narrativa_fra_la_sequenza_più_statica_e_la_sequenza_più_dinamica" data-name="escursione narrativa fra la sequenza più statica e la sequenza più dinamica" transform="translate(170.329 210)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">escursione narrativa </tspan><tspan x="0" y="22">fra la sequenza più </tspan><tspan x="0" y="34">statica e la sequenza </tspan><tspan x="0" y="46">più dinamica</tspan></text>
+  </g>
+</svg>

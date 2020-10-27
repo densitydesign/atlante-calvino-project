@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="166.354" height="60.409" viewBox="0 0 166.354 60.409">
+  <g id="Raggruppa_23027" data-name="Raggruppa 23027" transform="translate(-18.646 -331)">
+    <g id="Rectangle_8748" data-name="Rectangle 8748" transform="translate(-291.019 -311.006)">
+      <rect id="Rettangolo_9623" data-name="Rettangolo 9623" width="11" height="11" transform="translate(312.019 643.006)" fill="#fff"/>
+      <rect id="Rettangolo_9624" data-name="Rettangolo 9624" width="10.5" height="10.5" transform="translate(312.269 643.256)" fill="none" stroke="#000" stroke-width="0.5"/>
+    </g>
+    <text id="Inizio_del_testo" data-name="Inizio del testo" transform="translate(42 341)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Inizio del testo</tspan></text>
+    <text id="Fine_del_testo" data-name="Fine del testo" transform="translate(42 364)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Fine del testo</tspan></text>
+    <rect id="Rettangolo_9625" data-name="Rettangolo 9625" width="11" height="11" transform="translate(18.722 360.779) rotate(-45)" fill="#fff"/>
+    <rect id="Rettangolo_9626" data-name="Rettangolo 9626" width="10.5" height="10.5" transform="translate(19.076 360.779) rotate(-45)" fill="none" stroke="#000" stroke-width="0.5"/>
+    <text id="Corrispondenza_fra_inizio_e_fine" data-name="Corrispondenza fra inizio e fine" transform="translate(43 386)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Corrispondenza fra inizio e fine</tspan></text>
+    <path id="Tracciato_116471" data-name="Tracciato 116471" d="M473.446,369.2l2.278-2.278-2.278-2.278v-3.222h-3.222l-2.278-2.278-2.278,2.278h-3.222v3.222l-2.278,2.278,2.278,2.278v3.222h3.222l2.278,2.278,2.278-2.278h3.222Z" transform="translate(-441.168 16.36)" fill="#e72eff" stroke="#000" stroke-width="0.5"/>
+  </g>
+</svg>
