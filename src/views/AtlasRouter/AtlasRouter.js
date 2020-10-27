@@ -93,7 +93,7 @@ export default function AtlasRouter()
           mainAnalysisMode={GlobalData.analysisModes.shape}
         />
       </Route>
-      <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
+      <Route exact path="/form/phase1/focus"><ShapeInformationSheet /></Route>
 
       <Route exact path="/phase2-process"><ProcessIntro /></Route>
       <Route exact path="/doubt/phase2"><ProcessDoubting title= {'Dubitare'}/></Route>
@@ -101,7 +101,7 @@ export default function AtlasRouter()
       <Route exact path="/space/phase2"><Trasformare title= {'Trasformare'} /></Route>
       <Route exact path="/space/phase2/focus"><TransformInformationSheet /></Route>
       <Route exact path="/form/phase2"><Trama title={'Combinare'}/></Route>
-      <Route exact path="/space/phase3/focus"><CombineInformationSheet /></Route>
+      <Route exact path="/form/phase2/focus"><CombineInformationSheet /></Route>
 
       <Route exact path="/phase3-problem"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>

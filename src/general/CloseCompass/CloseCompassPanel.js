@@ -1,9 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { useHistory } from 'react-router-dom';
-import '../../App.css';
-import './CloseCompass.css';
+import { ReactComponent as IconClose } from '../../headers/IndexMenuHeader/icons/icon-close.svg'
 
 export default class CloseCompassPanel extends React.Component
 {
@@ -35,7 +31,7 @@ export default class CloseCompassPanel extends React.Component
   {
     return (
       <div className="back-from-main-menu" style={this.props.style} ref={this.setWrapperRef}>
-          <FontAwesomeIcon icon={faTimes} />
+          <IconClose /> 
       </div>
     );
   }

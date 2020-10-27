@@ -29,7 +29,7 @@ import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/
 import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
 import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
 import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
-import { ReactComponent as Curve1 } from "./icons/curva_combinaretrama.svg"
+import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -191,7 +191,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="realismo"
-          linkApprofondimento="/space/phase3/focus"
+          linkApprofondimento="/form/phase2/focus"
           className={"realismo"}
           link="/space/phase3"
           icon={
@@ -224,6 +224,7 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title="combinare"
           link="/form/phase2"
+          linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
           icon={
             <CombinareIcon
@@ -263,9 +264,9 @@ export default function IndexMenu({ onClose }) {
       >
         Guarda la guida
       </div>
-      {/* <div className={`position-absolute ${styles["curve-combinare"]}`}>
-        <Curve1 width='100' />
-      </div> */}
+      <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
+        <Curve1 width='80' />
+      </div>
       <Footer />
       <Modal
         size="lg"

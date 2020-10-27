@@ -65,6 +65,12 @@
   flex-direction: column;
 }
 
+.curve-dubbio-1{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 3) - var(--navigation-height));
+  left: calc(100% / 12 * 2.25);
+}
+
 .nebbia {
   position: absolute;
   top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
@@ -126,12 +132,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.curve-combinare{
-  position: absolute;
-  top: calc(calc(100vh / 8 * 5.5) - var(--navigation-height));
-  left: calc(100% / 12 * 10.5);
 }
 
 .trama {
