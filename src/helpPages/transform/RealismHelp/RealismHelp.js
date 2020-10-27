@@ -152,7 +152,7 @@ export default function RealismHelp() {
           <div className="mt-2">
             <small>COLORE</small>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <BadgeLegenda color="#FFD337" name="Luogo interno" />
                 <BadgeLegenda color="#00C19C" name="Luogo esterno" />
               </div>

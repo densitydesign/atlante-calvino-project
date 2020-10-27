@@ -106,13 +106,13 @@ export default function TransformMainHelp() {
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
           <div className="row mt-2">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <div>
                 <small>ASPETTO</small>
               </div>
               <Legend01 width="145" className="mt-2" />
             </div>
-            <div className="offset-md-2 col-md-4">
+            <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
@@ -120,13 +120,13 @@ export default function TransformMainHelp() {
             </div>
           </div>
           <div className="row mt-2">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <div>
                 <small>POSIZIONE</small>
               </div>
               <Legend03 width="134" className="mt-2" />
             </div>
-            <div className="offset-md-2 col-md-4">
+            <div className="col-md-6">
               <div>
                 <small>INTERAZIONE</small>
               </div>

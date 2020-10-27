@@ -131,13 +131,13 @@ export default function TerritorySpaceHelp({ helpProps }) {
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
           <div className="row mt-2">
-            <div className="col-md-5">
+            <div className="col-md-6">
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
               <Analisi01 width='119' className="mt-2" />
             </div>
-            <div className="offset-md-2 col-md-3">
+            <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
@@ -151,7 +151,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
             helpProps.helpPages.spaceAnalysisMode === "namedTerrestrial" ||
             helpProps.helpPages.spaceAnalysisMode === "noSetting") && (
             <div className="row mt-2">
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div>
                   <small>TIPO DI FENOMENO</small>
                 </div>
@@ -167,7 +167,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
                 </div>
               </div>
-              <div className="offset-md-2 col-md-3">
+              <div className="col-md-6">
                 <div>
                   <small>FREQUENZA</small>
                 </div>
@@ -184,7 +184,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
           )}
           {helpProps.helpPages.spaceAnalysisMode === "space_proportion" && (
             <div className="row mt-2">
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div>
                   <small>TIPO DI FENOMENO</small>
                 </div>
@@ -200,7 +200,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
                 </div>
               </div>
-              <div className="offset-md-2 col-md-3">
+              <div className="col-md-6">
                 <div>
                   <small>PROPORZIONE</small>
                 </div>
@@ -212,7 +212,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
           )}
           {helpProps.helpPages.spaceAnalysisMode === "placeHierarchies" && (
             <div className="row mt-2">
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div>
                   <small>TIPO DI FENOMENO</small>
                 </div>
@@ -228,7 +228,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <BadgeLegenda color="#C6CACF" name="Nessun luogo" />
                 </div>
               </div>
-              <div className="offset-md-2 col-md-3">
+              <div className="col-md-6">
                 <div>
                   <small>LIVELLI SPAZIALI</small>
                 </div>

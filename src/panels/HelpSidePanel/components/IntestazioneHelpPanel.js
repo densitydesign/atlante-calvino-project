@@ -15,7 +15,7 @@ export default function IntestazioneHelpPanel({
   linkItinerario,
 }) {
   return (
-    <>
+    <div style={{ height: '10vh'}}>
       <div className="d-flex justify-content-between">
         <strong className="text-dark-blue">
           <HashLink to={linkItinerario}><u>{nomeItinerario}</u></HashLink>
@@ -67,6 +67,6 @@ export default function IntestazioneHelpPanel({
           </strong>
         </div>
       )}
-    </>
+    </div>
   )
 }

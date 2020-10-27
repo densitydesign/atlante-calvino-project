@@ -77,13 +77,13 @@ export default function TerritoryDoubtHelp({ helpProps }) {
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
           <div className="row mt-2">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
               <Analisi01 width='119' className="mt-2" />
             </div>
-            <div className="offset-md-2 col-md-3">
+            <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
@@ -94,7 +94,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
           helpProps.helpPages.doubtAnalysisMode === "cancellation" ||
           helpProps.helpPages.doubtAnalysisMode === "all" ? (
             <div className="row mt-2">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <div>
                   <small>TIPO DI FENOMENO</small>
                 </div>
@@ -104,7 +104,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
                   <BadgeLegenda color="#FF6C39" name="Entrambi" />
                 </div>
               </div>
-              <div className="offset-md-2 col-md-3">
+              <div className="col-md-6">
                 <div>
                   <small>FREQUENZA</small>
                 </div>

@@ -114,13 +114,13 @@ export default function TerritoryMainHelp({ helpProps }) {
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
           <div className="row mt-2">
-            <div className="col-md-4">
+            <div className="6">
               <div>
                 <small>DIMENSIONE</small>
               </div>
               <Info02 width='84.5' className="mt-2" />
             </div>
-            <div className="offset-md-2 col-md-5">
+            <div className="col-md-6">
               <div>
                 <small>DISPOSIZIONE</small>
               </div>
@@ -129,7 +129,7 @@ export default function TerritoryMainHelp({ helpProps }) {
           </div>
           {helpProps.helpPages.noAnalysisMode === "chronology" && (
             <div className="row mt-2">
-              <div className="col-md-8">
+              <div className="col-md-12">
                 <div>
                   <small>CRONOLOGIA</small>
                 </div>
