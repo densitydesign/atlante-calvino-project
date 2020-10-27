@@ -227,6 +227,7 @@ class Cancellazione extends Component {
 
           <MoreInfo
             style={{ gridColumn: "span 1" }}
+            helpSidePanelOpen={this.state.helpSidePanelOpen}
             onClicked={this.toggleHelpSidePanel}
           />
           <CompassButton

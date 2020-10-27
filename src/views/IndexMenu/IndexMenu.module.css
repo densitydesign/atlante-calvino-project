@@ -143,23 +143,6 @@
   flex-direction: column;
 }
 
-.spazio {
-  position: absolute;
-  top: calc(calc(100vh / 8 * 4.5) - var(--navigation-height));
-  left: calc(100% / 12 * 5.5);
-}
-
-.forma {
-  position: absolute;
-  top: calc(calc(100vh / 8 * 3.75) - var(--navigation-height));
-  left: calc(100% / 12 * 7.5);
-}
-.dubbio {
-  position: absolute;
-  top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
-  left: calc(100% / 12 * 0.5);
-}
-
 .basic-icon {
   display: block;
 }

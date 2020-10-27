@@ -370,6 +370,7 @@ export default function RealismoMain({ title }) {
         />
         <MoreInfo
           style={{ gridColumn: 'span 1' }}
+          helpSidePanelOpen={helpSidePanelOpen} 
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton

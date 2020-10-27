@@ -251,15 +251,6 @@ export default function IndexMenu({ onClose }) {
             />
           }
         />
-        <div className={styles.spazio}>
-          <div className={styles["big-name"]}>Spazio</div>
-        </div>
-        <div className={styles.forma}>
-          <div className={styles["big-name"]}>Forma</div>
-        </div>
-        <div className={styles.dubbio}>
-          <div className={styles["big-name"]}>Dubbio</div>
-        </div>
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
         <Link to="/compass">

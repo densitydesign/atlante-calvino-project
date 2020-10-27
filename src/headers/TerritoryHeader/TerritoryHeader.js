@@ -143,6 +143,7 @@ export default class TerritoryHeader extends React.Component {
         )}
 
         <MoreInfo
+          helpSidePanelOpen={this.props.helpSidePanelOpen}
           style={{ gridColumn: "span 1" }}
           onClicked={this.props.helpButtonClicked}
         />

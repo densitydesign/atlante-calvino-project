@@ -478,6 +478,7 @@ export default class TerritoryWrapper extends React.Component {
           <TerritoryHeader
             isLoading={this.state.isLoading}
             mainAnalysisMode={this.state.mainAnalysisMode}
+            helpSidePanelOpen={this.state.helpSidePanelOpen}
             noAnalysisMode={this.state.noAnalysisMode}
             textsData={this.state.data.textsData}
             callTerritorySetHighlightMode={this.callTerritorySetHighlightMode}
