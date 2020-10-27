@@ -35,7 +35,7 @@ const searchOptions = racconti.map((racconto) => ({
 const cercaOptions = [{ label: 'Titolo' }]
 
 function Trama2Main({ title }) {
-  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
   const [ricerca, setRicerca] = useState([])
 
   const [currentView, setCurrentView] = useState('list')

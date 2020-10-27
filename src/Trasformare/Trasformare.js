@@ -73,7 +73,7 @@ class Trasformare extends Component {
           },
         ],
       },
-      helpSidePanelOpen: false,
+      helpSidePanelOpen: true,
       legendOpen: false,
     }
 

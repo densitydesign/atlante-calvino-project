@@ -35,7 +35,7 @@ export default class TerritoryWrapper extends React.Component {
     shapeAnalysisMode: GlobalData.analysisModes.shape.types,
 
     compassPanelOpen: false,
-    helpSidePanelOpen: false,
+    helpSidePanelOpen: true,
     allowDropMenus: false,
 
     dataExtent: [...GlobalData.defaultTerritoryDataExtent],

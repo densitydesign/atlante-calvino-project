@@ -54,7 +54,7 @@ class Trama extends Component {
     controlsEnabled: true,
     currentTextID: null,
 
-    helpSidePanelOpen: false
+    helpSidePanelOpen: true
   };
 
   setCurrentTextID = currentTextID => {
@@ -143,8 +143,6 @@ class Trama extends Component {
           <CompassButton
             style={{
               gridColumn: "span 1",
-              color: "black",
-              backgroundColor: "white"
             }}
           />
         </div>

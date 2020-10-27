@@ -1,5 +1,5 @@
 :root {
-  --help-side-panel-width: 33.3vw;
+  --help-side-panel-width: 340px;
 }
 
 .help-side-panel {
@@ -24,7 +24,7 @@
 }
 
 .help-side-panel-closed {
-  right: -33.3vw;
+  right: -340px;
 }
 
 .help-side-panel p {
@@ -146,7 +146,8 @@
 }
 
 .tab-content{
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 65vh;
   padding-bottom: 20px;
 }
@@ -185,9 +186,13 @@
   background: var(--white);
 }
 
+.link-tappa:hover{
+  text-decoration: none;
+}
+
 small{
   color: #404040;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: bold;
 }
 

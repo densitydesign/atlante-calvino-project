@@ -65,7 +65,7 @@ class Cancellazione extends Component {
       controlsEnabled: true,
       currentTextID: null,
   
-      helpSidePanelOpen: false,
+      helpSidePanelOpen: true,
       manifestazioniStilistiche: manifestazioniStilistiche,
       cerca_per: cerca_per,
       searchedItems:[],

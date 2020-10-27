@@ -192,6 +192,7 @@ class ProcessDoubting extends Component {
       // data: 'data still not loaded',
       data: [],
       isLoading: true,
+      helpSidePanelOpen: true,
       stackMode: "normalized",
       lunghezzaTesti: {
 				multiple: false,

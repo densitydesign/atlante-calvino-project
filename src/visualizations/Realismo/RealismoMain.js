@@ -96,7 +96,7 @@ const cercaOptions = [
 ]
 
 export default function RealismoMain({ title }) {
-  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(false)
+  const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
   }, [])
