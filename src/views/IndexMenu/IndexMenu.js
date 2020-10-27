@@ -62,7 +62,6 @@ export default function IndexMenu({ onClose }) {
 
   const handleCloseGuida = () => setShowGuida(false)
   const handleShowGuida = () => {
-    console.log("video")
     setShowGuida(true)
   }
 
@@ -273,9 +272,9 @@ export default function IndexMenu({ onClose }) {
       >
         Guarda la guida
       </div>
-      <div className={`position-absolute ${styles["curve-combinare"]}`}>
+      {/* <div className={`position-absolute ${styles["curve-combinare"]}`}>
         <Curve1 width='100' />
-      </div>
+      </div> */}
       <Footer />
       <Modal
         size="lg"

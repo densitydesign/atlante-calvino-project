@@ -242,8 +242,6 @@ export default class TerritoryWrapper extends React.Component {
         ? GlobalData.bottomPanelModes.noAnalysis
         : this.state.bottomPanelMode
 
-    console.log(bottomPanelMode,bottomPanelPosition,newValue,'state')
-
     this.setState({
       noAnalysisDropDownPosition: newValue,
       itineraryDropUpPosition: GlobalData.itineraryDropUpPositions.closed,
@@ -461,8 +459,6 @@ export default class TerritoryWrapper extends React.Component {
           "mainAnalysisMode not recognized : " + this.state.mainAnalysisMode
         )
     }
-
-    console.log(this.state)
 
     return (
       <div className="main">

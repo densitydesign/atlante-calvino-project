@@ -27,7 +27,7 @@ export default function CancellazioneHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -116,7 +116,7 @@ export default function CancellazioneHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>DIMENSIONE</small>
             </div>
@@ -124,7 +124,7 @@ export default function CancellazioneHelp() {
               <Legend01 width="400" />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>DISPOSIZIONE</small>
             </div>
@@ -132,7 +132,7 @@ export default function CancellazioneHelp() {
               <Legend02 />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>COLORE</small>
             </div>
@@ -140,7 +140,7 @@ export default function CancellazioneHelp() {
               <Legend03 />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>GRIGLIA</small>
             </div>

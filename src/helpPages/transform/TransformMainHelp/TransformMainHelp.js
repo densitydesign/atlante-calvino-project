@@ -30,7 +30,7 @@ export default function TransformMainHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>

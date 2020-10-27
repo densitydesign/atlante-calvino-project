@@ -12,7 +12,6 @@ import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/Frequenza
 
 export default function TerritorySpaceHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  console.log(helpProps, "helpProps")
   return (
     <>
       <IntestazioneHelpPanel
@@ -32,7 +31,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -131,7 +130,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-5">
               <div>
                 <small>DISPOSIZIONE</small>

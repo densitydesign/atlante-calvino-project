@@ -30,7 +30,7 @@ export default function PlotMainHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -115,7 +115,7 @@ export default function PlotMainHelp({ helpProps }) {
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
           {helpProps.helpPages === "list" && (
             <>
-              <div className="row mt-4">
+              <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
                     <small>DIMENSIONE E COLORE</small>
@@ -123,7 +123,7 @@ export default function PlotMainHelp({ helpProps }) {
                   <LegendDimensione01 width="300" className="mt-2" />
                 </div>
               </div>
-              <div className="row mt-4">
+              <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
                     <small>Forma</small>
@@ -135,7 +135,7 @@ export default function PlotMainHelp({ helpProps }) {
           )}
           {helpProps.helpPages === "boxplot" && (
             <>
-              <div className="row mt-4">
+              <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
                     <small>DIMENSIONE E COLORE</small>
@@ -143,7 +143,7 @@ export default function PlotMainHelp({ helpProps }) {
                   <LegendDimensione02 width="300" className="mt-2" />
                 </div>
               </div>
-              <div className="row mt-4">
+              <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
                     <small>Forma</small>
@@ -153,7 +153,7 @@ export default function PlotMainHelp({ helpProps }) {
               </div>
             </>
           )}
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-4">
               <div
                 className="mt-2 font-weight-bold"

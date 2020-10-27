@@ -28,7 +28,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -96,7 +96,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-6">
               <div>
                 <small>DISPOSIZIONE</small>
@@ -111,7 +111,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
             </div>
           </div>
           {helpProps.helpPages.shapeAnalysisMode === "types" && (
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-6">
               <div>
                 <small>TIPO DI ELENCO</small>
@@ -135,7 +135,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
           </div>
           )}
           {helpProps.helpPages.shapeAnalysisMode === "shape_proportion" && (
-            <div className="row mt-4">
+            <div className="row mt-2">
               <div className="col-md-6">
                 <div>
                   <small>TIPO DI ELENCO</small>

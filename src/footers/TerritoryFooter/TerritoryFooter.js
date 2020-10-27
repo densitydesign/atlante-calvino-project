@@ -254,8 +254,6 @@ export default class TerritoryFooter extends React.Component {
   render() {
     let analysisModeToggleButtonCaption
 
-    console.log(this.props.bottomPanelMode,'bottomPanel')
-
     if (this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis) {
       analysisModeToggleButtonCaption = this.noAnalysisModeVisualizationMap.get(
         this.props.noAnalysisMode

@@ -154,7 +154,6 @@ export default class TerritorySpacePanel extends React.Component {
   }
 
   optionRadioButtonPressed = (buttonId) => {
-    console.log("buttonId", buttonId)
     const buttonState = this.state.optionRadioButtonsStates.find(
       (item) => item.id === buttonId
     )

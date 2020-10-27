@@ -27,7 +27,7 @@ export default function ProcessCombiningMainHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -108,7 +108,7 @@ export default function ProcessCombiningMainHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-12">
               <div>
                 <small>DISPOSIZIONE E POSIZIONE</small>
@@ -118,7 +118,7 @@ export default function ProcessCombiningMainHelp() {
               </div>
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-4">
               <div
                 className="mt-2 font-weight-bold"

@@ -28,7 +28,7 @@ export default function ProcessDoubtingMainHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-4">
+          <p className="mt-2">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -118,7 +118,7 @@ export default function ProcessDoubtingMainHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="mt-4">
+          <div className="mt-2">
             <div>
               <small>DISPOSIZIONE SULLE COLONNE</small>
             </div>
@@ -138,7 +138,7 @@ export default function ProcessDoubtingMainHelp() {
               </div>
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row mt-2">
             <div className="col-md-12">
               <div>
                 <small>TIPO DI FENOMENO</small>

@@ -25,8 +25,6 @@ export default class HelpSidePanel extends React.Component {
   render() {
     let helpPage
 
-    console.log(this.props.helpPages)
-
     switch (this.props.page) {
       case GlobalData.helpPages.territory.main:
         helpPage = <TerritoryMainHelp helpProps={{ ...this.props }} />
