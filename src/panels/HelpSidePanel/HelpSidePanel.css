@@ -140,6 +140,7 @@
   font-weight: bold;
   color: var(--dark-green);
   background: none !important;
+  font-size: 10px;
 }
 
 .tab-info:hover {
@@ -196,7 +197,7 @@
 
 small{
   color: #404040;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
 }
 
