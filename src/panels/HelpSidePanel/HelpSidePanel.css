@@ -56,7 +56,7 @@
 .help-side-panel h2 {
   margin: 0;
   font-size: 1.6em;
-  color: black;
+  color: var(--dark-blue);
 }
 
 .help-side-panel h3 {
