@@ -20,6 +20,7 @@ import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
+import Instructions from '../Instructions';
 import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
@@ -117,6 +118,7 @@ export default function AtlasRouter()
       <Route exact path="/plot-sheet"><PlotInformationSheet /></Route>
 
       {/* <Route exact path="/About"><AboutAndContacts /></Route> */}
+      <Route exact path="/instructions"><Instructions/></Route>
       <Route exact path="/project"><Project/></Route>
       <Route exact path="/capta"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>
