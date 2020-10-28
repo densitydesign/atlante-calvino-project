@@ -12,6 +12,7 @@
 
 .rotated-title {
   position: absolute;
+  cursor: pointer;
   padding: 90px;
     transform: rotate(90deg);
     -ms-transform: rotate(90deg);
@@ -19,14 +20,14 @@
     -webkit-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     line-height: 10px;
-    margin-top: 30px;
+    margin-top: 90px;
     height: 10px;
     width: 10px;
     overflow: visible;
     white-space: nowrap;
 }
   .sliding-panel-main-text{
-    padding: 100px 200px 100px 200px;
+    padding: 175px 240px 100px 200px;
   }
 
   .sliding-panel-hide {

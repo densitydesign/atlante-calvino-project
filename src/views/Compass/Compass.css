@@ -27,6 +27,7 @@
 
 .panel1-closed {
   left : calc(100% - 3 * var(--panel-border-width));
+  color: transparent;
 }
 
 .panel2-open {
