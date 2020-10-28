@@ -19,9 +19,10 @@ export default function TerritoryMainHelp({ helpProps }) {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={"/phase1-phenomena"}
-        linkTappa2={"/phase2-process"}
-        linkTappa3={"/phase3-problem"}
+        linkTappa1={"/phases#tappa1"}
+        linkTappa2={"/phases#tappa2"}
+        linkTappa3={"/phases#tappa3"}
+        linkItinerario={"/phases#tappa1"}
         titolo="Esplorare l'opera come un territorio"
         nomeItinerario={"IL FENOMENO"}
       />

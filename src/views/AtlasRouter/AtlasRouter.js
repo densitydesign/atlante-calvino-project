@@ -60,7 +60,7 @@ export default function AtlasRouter()
 
       <Route path="/itineraries"><Itineraries /></Route>
 
-      <Route exact path="/phase1-phenomena"><PhenomenaIntro /></Route>
+      <Route exact path="/phases"><PhenomenaIntro /></Route>
       <Route exact path="/archipelago">
         <TerritoryWrapper
           title="L'ARCIPELAGO DELLE OPERE PER"
