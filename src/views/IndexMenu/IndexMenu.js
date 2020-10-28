@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
+import { HashLink } from 'react-router-hash-link'
 import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
@@ -79,21 +80,21 @@ export default function IndexMenu({ onClose }) {
       </div>
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>TAPPE</div>
-        <Link to="/phase1-phenomena">
+        <HashLink to="/phase1-phenomena#tappa1">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
-        </Link>
-        <Link to="/phase2-process">
+        </HashLink>
+        <HashLink to="/phase1-phenomena#tappa2">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
-        </Link>
-        <Link to="/phase3-problem">
+        </HashLink>
+        <HashLink to="/phase1-phenomena#tappa3">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
-        </Link>
+        </HashLink>
         <ItemIndex
           title="territorio"
           link="/archipelago"
