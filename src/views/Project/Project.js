@@ -3,7 +3,6 @@ import Footer from "../../headers/Footer/Footer"
 
 import "../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css"
 import "../../general/GridsWithScrollableColumns/ScrollableColumn.css"
-import "../../App.css"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 
 export default class Project extends React.Component {
@@ -11,8 +10,8 @@ export default class Project extends React.Component {
     return (
       <>
         <IndexMenuHeader />
-        <div className="grid-with-scrollable-column">
-          <div className="scrollable-column-3 col-md-12 col-lg-8">
+        <div className="">
+          <div className="col-md-12 col-lg-8" style={{ padding: '0 4em 0em 8em'}}>
             <h1>Progetto</h1>
             <p>
               Oggi Italo Calvino avrebbe quasi cento anni. E di fronte alle
@@ -54,38 +53,39 @@ export default class Project extends React.Component {
               editrice Mondadori, che detiene i diritti italiani dell’intera
               opera di Calvino.
             </p>
-            <p>
-              Le due anime del progetto, quella letteraria e quella del design
-              dell’informazione, sono state chiamate a mescolarsi per trovare
-              soluzioni efficaci e innovative intorno al caso esemplare
-              dell’opera di Calvino: l’opportunità di mettere in contatto un
-              oggetto letterario e analisi di sistemi complessi condotta tramite
-              la visualizzazione è l’obiettivo principale di questa ricerca.
-              Nato a Santiago de Las Vegas nel 1923 e morto a Siena nel 1985,
-              Italo Calvino è uno dei più noti e studiati scrittori della
-              letteratura italiana contemporanea. La statura internazionale
-              della sua fama, insieme alla bibliografia critica ormai sterminata
-              che lo riguarda e alla varietà sperimentale delle sue opere, lo
-              rende un modello perfetto per una ricerca fondata sul contributo
-              scientifico che la visualizzazione dei dati può fornire agli studi
-              letterari.
-            </p>
-            <p>
-              Il risultato del progetto è la piattaforma web in cui vi trovate,
-              che offre la possibilità di esplorare l’opera narrativa dello
-              scrittore da un nuovo punto di vista: vale a dire attraverso un
-              certo numero di elaborazioni visuali, che corrispondono ad
-              altrettante interrogazioni letterarie rivolte al corpus dei testi
-              calviniani. L’unione tra la figura di un autore fondamentale della
-              letteratura del XX secolo e un metodo di studio innovativo ambisce
-              a offrire un valido esempio di ricerca nel campo delle Digital
-              Humanities di seconda generazione, che contribuisca all’attuale
-              esigenza di rinnovamento delle discipline letterarie. La qualità
-              scientifica del progetto si sforza di combinarsi, in questo senso,
-              con le sue qualità pedagogiche, estetiche e comunicative, al fine
-              di proporre una nuova “narrazione visuale” dell’autore.
-            </p>
           </div>
+          <div className="col-md-12 offset-lg-4 col-lg-6">
+          <p>
+            Le due anime del progetto, quella letteraria e quella del design
+            dell’informazione, sono state chiamate a mescolarsi per trovare
+            soluzioni efficaci e innovative intorno al caso esemplare dell’opera
+            di Calvino: l’opportunità di mettere in contatto un oggetto
+            letterario e analisi di sistemi complessi condotta tramite la
+            visualizzazione è l’obiettivo principale di questa ricerca. Nato a
+            Santiago de Las Vegas nel 1923 e morto a Siena nel 1985, Italo
+            Calvino è uno dei più noti e studiati scrittori della letteratura
+            italiana contemporanea. La statura internazionale della sua fama,
+            insieme alla bibliografia critica ormai sterminata che lo riguarda e
+            alla varietà sperimentale delle sue opere, lo rende un modello
+            perfetto per una ricerca fondata sul contributo scientifico che la
+            visualizzazione dei dati può fornire agli studi letterari.
+          </p>
+          <p>
+            Il risultato del progetto è la piattaforma web in cui vi trovate,
+            che offre la possibilità di esplorare l’opera narrativa dello
+            scrittore da un nuovo punto di vista: vale a dire attraverso un
+            certo numero di elaborazioni visuali, che corrispondono ad
+            altrettante interrogazioni letterarie rivolte al corpus dei testi
+            calviniani. L’unione tra la figura di un autore fondamentale della
+            letteratura del XX secolo e un metodo di studio innovativo ambisce a
+            offrire un valido esempio di ricerca nel campo delle Digital
+            Humanities di seconda generazione, che contribuisca all’attuale
+            esigenza di rinnovamento delle discipline letterarie. La qualità
+            scientifica del progetto si sforza di combinarsi, in questo senso,
+            con le sue qualità pedagogiche, estetiche e comunicative, al fine di
+            proporre una nuova “narrazione visuale” dell’autore.
+          </p>
+        </div>
         </div>
         <Footer />
       </>

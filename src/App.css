@@ -184,7 +184,7 @@ sup {
 .sidebar {
   grid-column: 17 / end;
   border-left: 1px solid black;
-  height: calc(100vh - (var(--navigation-height) + 18px));
+  height: 100vh;
   /* display: flex; */
   padding: 0 calc(100% / 8);
 }

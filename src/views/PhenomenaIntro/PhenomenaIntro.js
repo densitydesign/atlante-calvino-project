@@ -1,18 +1,15 @@
-import React from 'react'
+import React from "react"
 
-import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
-import LinkParagraph from './LinkParagraph';
-import ArrowButton from '../../general/ArrowButton/ArrowButton';
-import { Link } from 'react-router-dom';
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import LinkParagraph from "./LinkParagraph"
+import ArrowButton from "../../general/ArrowButton/ArrowButton"
+import { Link } from "react-router-dom"
 
-import './PhenomenaIntro.css';
-import '../../App.css';
+import "./PhenomenaIntro.css"
+import "../../App.css"
 
-
-export default class PhenomenaIntro extends React.Component
-{
-  render()
-  {
+export default class PhenomenaIntro extends React.Component {
+  render() {
     return (
       <>
         <HamburgerCompassHeader />
@@ -21,19 +18,38 @@ export default class PhenomenaIntro extends React.Component
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 1</strong>
               <div className="other-phases-subheader">
-                <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/phase2-process" />
-                <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/phase3-problem" />
+                <ArrowButton
+                  arrowDirection="right"
+                  textAlign="left"
+                  text="TAPPA 2"
+                  route="/phase2-process"
+                />
+                <ArrowButton
+                  arrowDirection="right"
+                  textAlign="left"
+                  text="TAPPA 3"
+                  route="/phase3-problem"
+                />
               </div>
             </div>
             <div className="col-md-12 col-lg-8">
               <h1>ESPLORARE L'OPERA</h1>
-              <p className="intro">Per la prima tappa, quella dei fenomeni, abbiamo deciso di disegnare un territorio comune che i tre itinerari ci faranno esplorare.
-              <br /> Il territorio è formato ancora una volta dal corpus di tutte le opere di Calvino, che ci sforziamo di riunire in una forma visiva che possa aiutarci a meglio comprenderle.   </p>
-                <Link to="/archipelago"><button type="button" className="button-text">ESPLORARE L'OPERA</button></Link>
+              <p className="intro">
+                Per la prima tappa, quella dei fenomeni, abbiamo deciso di
+                disegnare un territorio comune che i tre itinerari ci faranno
+                esplorare.
+                <br /> Il territorio è formato ancora una volta dal corpus di
+                tutte le opere di Calvino, che ci sforziamo di riunire in una
+                forma visiva che possa aiutarci a meglio comprenderle.{" "}
+              </p>
+              <Link to="/archipelago">
+                <button type="button" className="button-text">
+                  ESPLORARE L'OPERA
+                </button>
+              </Link>
             </div>
           </div>
           <div className="itineraries-subgrid">
-
             <LinkParagraph
               smallTitle="Itinerario ⟶ DUBBIO"
               linkText="Nebbia"
@@ -54,11 +70,9 @@ export default class PhenomenaIntro extends React.Component
               linkText="Elenchi"
               description="Calvino è sempre stato un maniaco degli elenchi. L’elenco può funzionare come marca di realismo o all’opposto come fuga nell’astrazione. Fa vedere alcune cose, ma se aumenta il suo voltaggio, scivolando nel delirio elencatorio, non fa vedere più nulla."
             />
-
           </div>
         </div>
       </>
-
-    );
+    )
   }
 }

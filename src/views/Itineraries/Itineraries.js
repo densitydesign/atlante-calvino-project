@@ -13,6 +13,7 @@ import "../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.cs
 import "../../general/GridsWithScrollableColumns/ScrollableColumn.css"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
+import Footer from "../../headers/Footer/Footer"
 
 export default class Itineraries extends React.Component {
   render() {
@@ -186,6 +187,7 @@ export default class Itineraries extends React.Component {
             </p>
           </div>
         </div>
+        <Footer />
       </>
     )
   }
