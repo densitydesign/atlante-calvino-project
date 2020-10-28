@@ -1,8 +1,9 @@
 .scrollable-column-2 {
-  border-right: var(--app-border);
-  padding: 7em 4em 13em 8em;
+  border-left: var(--app-border);
+  padding: 4em 4em 13em 8em;
   position: fixed;
   height: 100%;
+  left: 30%;
   overflow: scroll;
 }
 
