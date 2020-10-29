@@ -17,6 +17,7 @@ export default function ProcessCombiningMainHelp() {
         linkTappa2={"/form/phase2"}
         linkTappa3={"/form/phase3"}
         linkItinerario={"/itineraries#form"}
+        linkApprofondimento={"/form/phase2/focus"}
         titolo="Combinare"
         nomeItinerario={"ITINERARIO FORMA"}
       />
@@ -104,7 +105,7 @@ export default function ProcessCombiningMainHelp() {
             pratica combinatoria e una forte attenzione al calcolo degli
             equilibri strutturali in opere solitamente considerate
             “tradizionali” come i racconti realistici composti tra gli anni
-            Cinquanta e Sessanta (vedi <Link to="/">Approfondimento</Link>).
+            Cinquanta e Sessanta (vedi <Link to="/form/phase2/focus">Approfondimento</Link>).
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">

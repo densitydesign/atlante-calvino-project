@@ -6,6 +6,7 @@ import { ReactComponent as Legend02 } from "./icons/analisi_dimensione.svg"
 import { ReactComponent as LegendProporzione } from "./icons/elenchi_a_proporzione.svg"
 import { ReactComponent as LegendPercentuale } from "./icons/elenchi_b_percentuale.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
+import { Link } from "react-router-dom"
 
 export default function TerritoryShapeHelp({ helpProps }) {
   const [key, setKey] = useState("info")
@@ -18,7 +19,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
         linkTappa2={"/form/phase2"}
         linkTappa3={"/form/phase3"}
         titolo="Elenchi"
-        linkApprofondimento="/"
+        linkApprofondimento="/form/phase1/focus"
         nomeItinerario={"ITINERARIO FORMA"}
       />
       <Tabs
@@ -92,7 +93,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
             la tendenza a mescolare sempre i diversi tipi, il che segnala una
             precisa consapevolezza artistica e la ricerca di una forma di
             equilibrio nell’impiego di questa forma di accumulazione verbale
-            (vedi <strong>Approfondimento</strong>).
+            (vedi <strong><Link to={'/form/phase1/focus'}>Approfondimento</Link></strong>).
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">

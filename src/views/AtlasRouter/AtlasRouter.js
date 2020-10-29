@@ -111,7 +111,7 @@ export default function AtlasRouter()
       <Route exact path="/doubt/phase3/focus"><CancellationInformationSheet /></Route>
 
       <Route exact path="/space/phase3"> <Realismo title={'Realismo'}></Realismo></Route>
-      <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
+      <Route exact path="/space/phase3/focus"><RealismInformationSheet /></Route>
 
       <Route exact path="/equipe"><Equipe /></Route>
       <Route exact path="/form/phase3"><Trama2 title="Trama"></Trama2></Route>

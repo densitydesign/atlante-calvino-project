@@ -192,7 +192,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="realismo"
-          linkApprofondimento="/form/phase2/focus"
+          linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           link="/space/phase3"
           icon={

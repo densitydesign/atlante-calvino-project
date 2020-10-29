@@ -95,10 +95,12 @@ class Options extends Component {
           <Dropdown.Menu
             onToggle={this.toggleDropDown}
             show={this.state.show}
-          >
-            <div className={{
+            className={{
               "d-flex": this.props.isFlex,
-            }}>
+              "flex-start": this.props.isFlex,
+              "bg-danger": this.props.isFlex,
+            }}
+          >
             {this.props.data.options.map((d, i) => {
               return (
                 <Dropdown.Item
@@ -108,14 +110,12 @@ class Options extends Component {
                   onClick={this.handleChange}
                   className={classnames({
                     active: d.status,
-                    "flex-wrap": i % 4 === 0,
                   })}
                 >
                   {d.label}
                 </Dropdown.Item>
               )
             })}
-            </div>
             {this.props.data.multiple && (
               <Dropdown.Item
                 key={5}
