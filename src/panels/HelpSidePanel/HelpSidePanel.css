@@ -157,6 +157,13 @@
   padding-bottom: 20px;
 }
 
+@media (min-width: 1799px) {
+  .tab-content{
+    height: 70vh;
+  }
+}
+
+
 .tab-info.active {
   text-align: center;
   background: none !important;
