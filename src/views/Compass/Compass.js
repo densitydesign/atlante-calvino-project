@@ -42,7 +42,7 @@ export default class Compass extends React.Component {
           <HamburgerCloseHeader
             containerToggleCompassPanel={this.props.containerToggleCompassPanel}
           />
-          <div className="compass-main-description">
+          <div className="compass-main-description mt-5">
             <div>
               <h1>Bussola</h1>
               <p className="text-dark-blue">
@@ -61,7 +61,7 @@ export default class Compass extends React.Component {
               id="1"
               open={this.state.selectedPanel >= 1}
               zIndex="1"
-              icon={<Bussola1 />}
+              icon={<Bussola1 className='mr-5' />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
@@ -78,7 +78,7 @@ export default class Compass extends React.Component {
               id="2"
               open={this.state.selectedPanel >= 2}
               zIndex="2"
-              icon={<Bussola2 />}
+              icon={<Bussola2 className='mr-5' />}
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
@@ -95,7 +95,7 @@ export default class Compass extends React.Component {
               id="3"
               open={this.state.selectedPanel >= 3}
               zIndex="3"
-              icon={<Bussola3 />}
+              icon={<Bussola3 className='mr-5' />}
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}

@@ -68,7 +68,10 @@ export default class SlidingPanel extends React.Component {
         }}
       >
         <div className="rotated-title">
-          <h1>{this.props.title}</h1>
+          <h1>
+            {this.props.icon}
+            {this.props.title}
+          </h1>
         </div>
         <div className="sliding-panel-main-text">
           <div>

@@ -12,8 +12,12 @@
 }
 
 
+
+
 .compass-main-description {
-  padding: 6em 8em 4em 4em;
+  padding-left: 70px;
+  padding-top: 20px;
+  padding-right: 70px;
   position: absolute;
   height: calc(100% - var(--navigation-height));
   background-color: var(--bg);
@@ -21,27 +25,52 @@
   overflow-x: hidden;
 }
 
+
+@media screen and (max-width: 1024px){
+  .compass-main-description {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 .panel1-open {
   left : calc(var(--description-panel-width) + 0 * var(--panel-border-width));
+  width: 58vw;
 }
 
 .panel1-closed {
   left : calc(100% - 3 * var(--panel-border-width));
+  width: 12vh;
+}
+
+.panel1-closed > .sliding-panel-main-text{
+  color: transparent;
+}
+
+.panel2-closed > .sliding-panel-main-text{
+  color: transparent;
+}
+
+.panel3-closed > .sliding-panel-main-text{
   color: transparent;
 }
 
 .panel2-open {
+  width: 58vw;
   left : calc(var(--description-panel-width) + 1 * var(--panel-border-width));
 }
 
 .panel2-closed {
   left : calc(100% - 2 * var(--panel-border-width));
+  width: 12vh;
 }
 
 .panel3-open {
+  width: 58vw;
   left : calc(var(--description-panel-width) + 2 * var(--panel-border-width));
 }
 
 .panel3-closed {
   left : calc(100% - 1 * var(--panel-border-width));
+  width: 12vh;
 }

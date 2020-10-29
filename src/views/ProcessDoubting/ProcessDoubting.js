@@ -660,7 +660,7 @@ class ProcessDoubting extends Component {
 						/> }
           {this.state.isLoading && <Loading style={{ gridColumn: 'span 4' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Numero di livelli"
+						<Options isFlex={true} title = "Numero di livelli"
 							data = {this.state.annidamenti}
 							style = {{gridColumn: 'span 4',textAlign: 'center'}}
 							changeOptions = {this.changeAnnidamenti}
