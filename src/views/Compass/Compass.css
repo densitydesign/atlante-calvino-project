@@ -20,7 +20,7 @@
   padding-right: 70px;
   position: absolute;
   height: calc(100% - var(--navigation-height));
-  background-color: var(--bg);
+  background-color: var(--cool-bg);
   width: 30%;
   overflow-x: hidden;
 }
