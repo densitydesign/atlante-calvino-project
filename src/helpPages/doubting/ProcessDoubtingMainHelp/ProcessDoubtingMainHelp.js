@@ -129,7 +129,7 @@ export default function ProcessDoubtingMainHelp() {
               <div className="col-md-6 text-left">
                 <img width="157" src={Legend02} alt="Legenda" />
                 <div>
-                  <small style={{ lineHeight: '0.5'}}>
+                  <small className='badge-legenda-small'>
                     Testi disposti secondo data di prima pubblicazione. Apri la
                     colonna cliccando, poi scorri verso il basso per vedere
                     l’andamento del processo dubitativo.

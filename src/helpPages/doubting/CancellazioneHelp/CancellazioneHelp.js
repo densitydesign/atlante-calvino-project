@@ -116,12 +116,14 @@ export default function CancellazioneHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="mt-2">
-            <div>
-              <small>DIMENSIONE</small>
-            </div>
-            <div className="mt-2">
-              <Legend01 width="400" />
+          <div className="row mt-2">
+            <div className="col-md-12">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <div className="mt-2">
+                <Legend01 />
+              </div>
             </div>
           </div>
           <div className="mt-2">
