@@ -12,7 +12,7 @@ import { ReactComponent as CombinareIcon } from "../IndexMenu/icons/combinare_bl
 import { ReactComponent as TramaIcon } from "../IndexMenu/icons/trama_blue.svg"
 import { Link } from "react-router-dom"
 
-import "./PhenomenaIntro.css"
+import "./Phases.css"
 import "../../App.css"
 import Footer from "../../headers/Footer/Footer"
 
@@ -21,7 +21,7 @@ export default class PhenomenaIntro extends React.Component {
     return (
       <>
         <HamburgerCompassHeader />
-        <div id='tappa1' className="phenomena-intro-grid">
+        <div id='phenomena' className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 1</strong>
@@ -125,7 +125,7 @@ export default class PhenomenaIntro extends React.Component {
             </div>
           </div>
         </div>
-        <div id='tappa2' className="phenomena-intro-grid">
+        <div id='process' className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 2</strong>
@@ -224,7 +224,7 @@ export default class PhenomenaIntro extends React.Component {
             </div>
           </div>
         </div>
-        <div id='tappa3' className="phenomena-intro-grid">
+        <div id='problem' className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 3</strong>

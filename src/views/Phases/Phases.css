@@ -3,11 +3,12 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 1fr 2fr;
-  height: 100%;
+  height: calc(100% - var(--footer-height));
+  border-bottom: 1px solid #000;
 }
 
 .itineraries-subgrid {
-  padding:4em 8em 4em 4em;
+  padding:4em 8em 4em 5em;
   grid-template-rows : 1fr 1fr 1fr;
   overflow-y: scroll;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

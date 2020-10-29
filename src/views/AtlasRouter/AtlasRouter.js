@@ -12,7 +12,7 @@ import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';
 import CompassFlux from '../CompassFlux/CompassFlux';
-import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
+import Phases from '../Phases/Phases';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
@@ -60,7 +60,7 @@ export default function AtlasRouter()
 
       <Route path="/itineraries"><Itineraries /></Route>
 
-      <Route exact path="/phases"><PhenomenaIntro /></Route>
+      <Route exact path="/phases"><Phases /></Route>
       <Route exact path="/archipelago">
         <TerritoryWrapper
           title="L'ARCIPELAGO DELLE OPERE PER"

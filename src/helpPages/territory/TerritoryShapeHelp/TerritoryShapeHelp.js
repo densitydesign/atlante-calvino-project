@@ -28,7 +28,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-2">
+          <p className="mt-3">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>

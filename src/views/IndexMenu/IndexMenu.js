@@ -80,17 +80,17 @@ export default function IndexMenu({ onClose }) {
       </div>
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>TAPPE</div>
-        <HashLink to="/phases#tappa1">
+        <HashLink to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#tappa2">
+        <HashLink to="/phases#process">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#tappa3">
+        <HashLink to="/phases#problem">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>

@@ -2,6 +2,9 @@ import React from "react"
 import Footer from "../../headers/Footer/Footer"
 import HamburgerCloseHeader from "../../headers/HamburgerCloseHeader/HamburgerCloseHeader"
 import SlidingPanel from "../../panels/SlidingPanel/SlidingPanel"
+import { ReactComponent as Bussola1 } from './icons/bussola_1.svg'
+import { ReactComponent as Bussola2 } from './icons/bussola_2.svg'
+import { ReactComponent as Bussola3 } from './icons/bussola_3.svg'
 
 import "./Compass.css"
 
@@ -58,6 +61,7 @@ export default class Compass extends React.Component {
               id="1"
               open={this.state.selectedPanel >= 1}
               zIndex="1"
+              icon={<Bussola1 />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
@@ -74,6 +78,7 @@ export default class Compass extends React.Component {
               id="2"
               open={this.state.selectedPanel >= 2}
               zIndex="2"
+              icon={<Bussola2 />}
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
@@ -90,6 +95,7 @@ export default class Compass extends React.Component {
               id="3"
               open={this.state.selectedPanel >= 3}
               zIndex="3"
+              icon={<Bussola3 />}
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}
