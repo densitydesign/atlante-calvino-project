@@ -115,7 +115,7 @@ export default function AtlasRouter()
 
       <Route exact path="/equipe"><Equipe /></Route>
       <Route exact path="/form/phase3"><Trama2 title="Trama"></Trama2></Route>
-      <Route exact path="/plot-sheet"><PlotInformationSheet /></Route>
+      <Route exact path="/form/phase3/focus"><PlotInformationSheet /></Route>
 
       {/* <Route exact path="/About"><AboutAndContacts /></Route> */}
       <Route exact path="/instructions"><Instructions/></Route>
