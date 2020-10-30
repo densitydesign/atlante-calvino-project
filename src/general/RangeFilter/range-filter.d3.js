@@ -58,6 +58,7 @@ Viz.initialize = (el, data, changeSpan) => {
 	context.append('rect')
 		.classed("context-window", true)
 		.attr("width", width)
+		.attr("rx","5")
 		.attr("height", height)
 
   // important before brushed is called or assigned

@@ -73,6 +73,19 @@ export default function IndexMenu({ onClose }) {
 
   return (
     <div>
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showGuida}
+        onHide={handleCloseGuida}
+      >
+        <Modal.Body style={{ height: 500 }}>
+          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
+            <IconCloseGuida />
+          </div>
+        </Modal.Body>
+      </Modal>
       <IndexMenuHeader
         menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
@@ -303,19 +316,6 @@ export default function IndexMenu({ onClose }) {
         </HashLink>
       </div>
       <Footer />
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={showGuida}
-        onHide={handleCloseGuida}
-      >
-        <Modal.Body style={{ height: 500 }}>
-          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
-            <IconCloseGuida />
-          </div>
-        </Modal.Body>
-      </Modal>
     </div>
   )
 }

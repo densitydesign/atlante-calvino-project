@@ -27,28 +27,16 @@ export default class CompassButton extends React.Component {
   }
 
   render() {
-    if (this.props.containerToggleCompassPanel) {
-      return (
-        <div
-          className="compass-button"
-          style={this.props.style}
-          ref={this.setWrapperRef}
-        >
-          <Compass />
-        </div>
-      )
-    } else {
-      const route = "/compass"
+    const route = "/compass"
 
-      return (
-        <Link className="top-menu" to={route}>
-          <div className="compass-button" style={this.props.style}>
-            <div className="main-menu-inner">
-              <Compass width="30" />
-            </div>
+    return (
+      <Link target="_blank" className="top-menu" to={route}>
+        <div className="compass-button" style={this.props.style}>
+          <div className="main-menu-inner">
+            <Compass width="30" />
           </div>
-        </Link>
-      )
-    }
+        </div>
+      </Link>
+    )
   }
 }
