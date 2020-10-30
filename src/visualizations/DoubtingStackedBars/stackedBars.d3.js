@@ -638,7 +638,8 @@ V.update = (data, stackMode, baseLayer) => {
     let selector_background = selector.append("rect")
         .attr("width", `${width-x.step()*20}`)
         .attr("height", 36)
-        .attr("fill","WHITESMOKE")
+        .attr("fill","#FFFFFF")
+        .attr("stroke","#C6CACF")
     
     let selector_handle = selector.append("g")
         .style("cursor", "grab")

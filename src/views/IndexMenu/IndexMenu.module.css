@@ -77,6 +77,30 @@
   left: calc(100% / 12 * 1.75);
 }
 
+.curve-spazio-1{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 4.75) - var(--navigation-height));
+  left: calc(100% / 12 * 5.25);
+}
+
+.curve-spazio-2{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 6.5) - var(--navigation-height));
+  left: calc(100% / 12 * 5);
+}
+
+.curve-forma-1{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 3) - var(--navigation-height));
+  left: calc(100% / 12 * 9.25);
+}
+
+.curve-forma-2{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
+  left: calc(100% / 12 * 9.5);
+}
+
 .nebbia {
   position: absolute;
   top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
@@ -252,7 +276,7 @@
 
 @media screen and (min-width: 1700px){
   .icon-width {
-    width: 200px;
+    width: 180px;
   }
 
   .big-name {
