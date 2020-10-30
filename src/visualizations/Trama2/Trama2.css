@@ -194,7 +194,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 30px;
+  height: 36px;
 }
 .trama2-brush-for-detail {
   position: absolute;
@@ -202,7 +202,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 30px;
+  height: 36px;
 }
 .trama2-brush-container {
   position: absolute;
@@ -210,14 +210,14 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 30px;
+  height: 36px;
 }
 .trama2-top-legend-list {
   color: darkgray;
   position: absolute;
   top: 20px;
-  left: 0;
-  text-align: center;
+  left: 50px;
+  text-align: left;
   font-style: italic;
   right: 0;
 }
@@ -227,7 +227,7 @@
   left: 30px;
   right: 30px;
   display: flex;
-  color: darkgray;
+  color: black;
   justify-content: space-between;
   font-style: italic;
 }
@@ -239,18 +239,30 @@
 .trama2-brush-button {
   width: 30px;
   background: white;
-  border: 1px solid var(--dark-blue);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--dark-green);
   color: black;
-  border-radius: 5px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
+
+.trama2-next-brush-button{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .trama2-list-brush {
-  background: #eee;
+  background: white;
+  border: 1px solid var(--secondary-element);
   flex: 1;
 }
 .trama2-list-brush > .trama2-drag-handle {
   width: 12px;
   height: 100%;
-  border: 1px solid var(--dark-blue);
+  border: 1px solid var(--dark-green);
   border-radius: 5px;
   background: white;
 }
@@ -323,7 +335,7 @@
 .trama2-info-box {
   fill: white;
   stroke-width: 1px;
-  stroke: var(--dark-blue);
+  stroke: var(--dark-green);
 }
 
 .trama2-boxplot-content {

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Draggable from 'react-draggable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { ReactComponent as FaLeft } from './icons/chevron-left.svg'
+import { ReactComponent as FaRight } from './icons/chevron-right.svg'
 
 export const BRUSH_HANDLE_WIDTH = 12
 const Brush = React.memo(({
@@ -39,7 +41,7 @@ const Brush = React.memo(({
             })
           }}
         >
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <FaLeft height='19' width='19' />
         </button>
         <div className="trama2-list-brush">
           <Draggable
@@ -75,7 +77,7 @@ const Brush = React.memo(({
             })
           }}
         >
-          <FontAwesomeIcon icon={faArrowRight} />
+          <FaRight height='19' width='19' />
         </button>
       </div>
     </>
