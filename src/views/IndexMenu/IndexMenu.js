@@ -31,6 +31,7 @@ import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
 import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
 import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
 import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
+import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -79,7 +80,7 @@ export default function IndexMenu({ onClose }) {
         <Orbite />
       </div>
       <div className={styles["IndexMenu"]}>
-        <div className={styles["tappe"]}>TAPPE</div>
+        <div className={styles["tappe"]}>Tappa</div>
         <HashLink to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
@@ -266,7 +267,10 @@ export default function IndexMenu({ onClose }) {
         Guarda la guida
       </div>
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
-        <Curve1 width='80' />
+        <Curve1 width='60' />
+      </div>
+      <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
+        <Curve2 width='60' />
       </div>
       <Footer />
       <Modal

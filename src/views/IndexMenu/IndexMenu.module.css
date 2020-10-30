@@ -33,7 +33,7 @@
 }
 
 .tappe{
-  color: var(--dark-blue);
+  color: var(--dark-green);
   text-transform: uppercase;
   position: absolute;
   top: calc(calc(100vh / 7.5) - var(--navigation-height));
@@ -69,6 +69,12 @@
   position: absolute;
   top: calc(calc(100vh / 8 * 3) - var(--navigation-height));
   left: calc(100% / 12 * 2.25);
+}
+
+.curve-dubbio-2{
+  position: absolute;
+  top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
+  left: calc(100% / 12 * 1.75);
 }
 
 .nebbia {
@@ -203,7 +209,7 @@
   }
 
   .tappe{
-    color: var(--dark-blue);
+    color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
     top: calc(calc(100vh / 9) - var(--navigation-height));
@@ -257,7 +263,7 @@
   }
 
   .tappe{
-    color: var(--dark-blue);
+    color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
     top: calc(calc(100vh / 9) - var(--navigation-height));

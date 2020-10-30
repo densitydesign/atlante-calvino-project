@@ -93,13 +93,11 @@ class Options extends Component {
             {this.props.data.multiple && this.props.title}
           </Dropdown.Toggle>
           <Dropdown.Menu
-            onToggle={this.toggleDropDown}
-            show={this.state.show}
             className={{
               "d-flex": this.props.isFlex,
-              "flex-start": this.props.isFlex,
-              "bg-danger": this.props.isFlex,
             }}
+            onToggle={this.toggleDropDown}
+            show={this.state.show}
           >
             {this.props.data.options.map((d, i) => {
               return (

@@ -9,12 +9,17 @@
   stroke-width: 1px;
 }
 
+.overlay {
+  fill: var(--dark-blue);
+}
+
 .range-filter rect.selection {
-  fill: var(--secondary-element);
+  fill: var(--cool-bg);
   stroke: none;
   fill-opacity: 1;
 }
 
 .range-filter text.info {
   fill: var(--navigation-borders);
+  font-weight: bold;
 }
