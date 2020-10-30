@@ -20,7 +20,7 @@ export default function PlotMainHelp({ helpProps }) {
         linkItinerario={"/itineraries#form"}
         linkTappa3={"/doubt/phase3"}
         titolo="Trama"
-        linkApprofondimento="/doubt/phase2/focus"
+        linkApprofondimento="/"
         nomeItinerario={"ITINERARIO FORMA"}
       />
       <Tabs
@@ -30,7 +30,7 @@ export default function PlotMainHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-2">
+          <p className="mt-3">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>

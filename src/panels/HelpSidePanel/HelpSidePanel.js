@@ -65,7 +65,6 @@ export default class HelpSidePanel extends React.Component {
       default:
         break
     }
-    console.log(this.props,'props')
     return (
       <>
         <div

@@ -1,9 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as IconClose } from '../../headers/IndexMenuHeader/icons/icon-close.svg'
 import { useHistory } from 'react-router-dom';
-import '../../App.css';
-import './CloseCompass.css';
 
 const CloseCompass = (props) =>
 {
@@ -12,7 +9,7 @@ const CloseCompass = (props) =>
 
   return (
     <div className="back-from-main-menu" style={props.style} onClick={() => history.goBack()}>
-        <FontAwesomeIcon icon={faTimes} />
+        <IconClose />
     </div>
   );
 }

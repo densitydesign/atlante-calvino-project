@@ -3,7 +3,6 @@ import Footer from "../../headers/Footer/Footer"
 
 import "../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css"
 import "../../general/GridsWithScrollableColumns/ScrollableColumn.css"
-import "../../App.css"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 
 export default class Project extends React.Component {
@@ -11,9 +10,13 @@ export default class Project extends React.Component {
     return (
       <>
         <IndexMenuHeader />
-        <div className="grid-with-scrollable-column">
-          <div className="scrollable-column-3 col-md-12 col-lg-8">
+        <div className="">
+          <div
+            className="col-md-12 col-lg-8"
+            style={{ padding: "0 4em 0em 8em" }}
+          >
             <h1>Progetto</h1>
+            <h2>Uscire a vedere</h2>
             <p>
               Oggi Italo Calvino avrebbe quasi cento anni. E di fronte alle
               profonde trasformazioni a cui la letteratura, la stampa, i mezzi
@@ -54,6 +57,8 @@ export default class Project extends React.Component {
               editrice Mondadori, che detiene i diritti italiani dell’intera
               opera di Calvino.
             </p>
+          </div>
+          <div className="col-md-12 offset-lg-4 col-lg-6">
             <p>
               Le due anime del progetto, quella letteraria e quella del design
               dell’informazione, sono state chiamate a mescolarsi per trovare

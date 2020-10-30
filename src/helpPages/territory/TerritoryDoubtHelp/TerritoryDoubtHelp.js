@@ -28,7 +28,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-2">
+          <p className="mt-3">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -76,7 +76,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-2">
+          <div className="row mt-3">
             <div className="col-md-6">
               <div>
                 <small>DISPOSIZIONE</small>

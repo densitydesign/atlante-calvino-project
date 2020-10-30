@@ -12,10 +12,10 @@ export default class HamburgerCloseHeader extends React.Component
     return (
       <div className="top-nav navigations">
         <MainMenu style={{gridColumn: 'span 1'}} />
-        <div style={{gridColumn: 'span 21'}} />
+        <div style={{gridColumn: 'span 22'}} />
         {this.props.containerToggleCompassPanel ?
-          <CloseCompassPanel style={{gridColumn: 'span 2'}} containerToggleCompassPanel={this.props.containerToggleCompassPanel} /> :
-          <CloseCompass style={{gridColumn: 'span 2'}} />
+          <CloseCompassPanel style={{gridColumn: 'span 1'}} containerToggleCompassPanel={this.props.containerToggleCompassPanel} /> :
+          <CloseCompass style={{gridColumn: 'span 1'}} />
         }
       </div>
     );

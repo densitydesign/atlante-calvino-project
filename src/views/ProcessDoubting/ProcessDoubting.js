@@ -596,7 +596,7 @@ class ProcessDoubting extends Component {
 
           {	this.state.isLoading && <Loading style = {{gridColumn: 'span 4'}}/>}
           {	!this.state.isLoading &&
-					<Options title = "Filtra per"
+					<Options title = "Cerca per"
 						data = {this.state.cerca_per}
 						style = {{gridColumn: 'span 4'}}
 						changeOptions = {this.changeCercaPer}
@@ -644,31 +644,31 @@ class ProcessDoubting extends Component {
         </div>
 
         <div className="bottom-nav navigations">
-          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 4' }}/>}
 					{	!this.state.isLoading &&
 						<Options title = "Lunghezza"
 							data = {this.state.lunghezzaTesti}
-							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							style = {{gridColumn: 'span 4',textAlign: 'center'}}
 							changeOptions = {this.changeLunghezzaTesti}
 						/> }
-          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 4' }}/>}
 					{	!this.state.isLoading &&
 						<Options title = "Tipo di pubblicazione"
 							data = {this.state.pubblicazioni}
-							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							style = {{gridColumn: 'span 4',textAlign: 'center'}}
 							changeOptions = {this.changePubblicazioni}
 						/> }
-          {this.state.isLoading && <Loading style={{ gridColumn: 'span 5' }}/>}
+          {this.state.isLoading && <Loading style={{ gridColumn: 'span 4' }}/>}
 					{	!this.state.isLoading &&
-						<Options title = "Numero di livelli"
+						<Options isFlex={true} title = "Numero di livelli"
 							data = {this.state.annidamenti}
-							style = {{gridColumn: 'span 5',textAlign: 'center'}}
+							style = {{gridColumn: 'span 4',textAlign: 'center'}}
 							changeOptions = {this.changeAnnidamenti}
 						/> }
-          { this.state.isLoading && <Loading style = {{gridColumn: 'span 9'}}/>}
+          { this.state.isLoading && <Loading style = {{gridColumn: 'span 12'}}/>}
 					{	!this.state.isLoading &&
 						<RangeFilter
-							style = {{gridColumn: 'span 9'}}
+							style = {{gridColumn: 'span 12'}}
 							data = {this.state.timeExtent}
 							changeOptions = {this.changeTimeSpan}
 						/> }

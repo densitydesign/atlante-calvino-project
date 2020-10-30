@@ -9,7 +9,7 @@ import PageTitle from "../../general/PageTitle"
 import TerritoryNoAnalysisDropDown from "../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown"
 
 export default class TerritoryHeader extends React.Component {
-  analysisLabel = "Filtra per volume"
+  analysisLabel = "Cerca per volume"
   chronologyLabel = "Cronologia"
   volumesLabel = "Volumi"
 
@@ -110,7 +110,7 @@ export default class TerritoryHeader extends React.Component {
             fontWeight: "bold",
           }}
         >
-          Filtra per volume
+          Cerca per volume
         </div>
 
         {/* <ToggleButton

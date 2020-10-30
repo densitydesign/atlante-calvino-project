@@ -12,7 +12,7 @@ import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
 import CompassTime from '../CompassTime/CompassTime';
 import CompassFlux from '../CompassFlux/CompassFlux';
-import PhenomenaIntro from '../PhenomenaIntro/PhenomenaIntro';
+import Phases from '../Phases/Phases';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
 import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
@@ -20,6 +20,7 @@ import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
+import Instructions from '../Instructions';
 import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
@@ -59,7 +60,7 @@ export default function AtlasRouter()
 
       <Route path="/itineraries"><Itineraries /></Route>
 
-      <Route exact path="/phase1-phenomena"><PhenomenaIntro /></Route>
+      <Route exact path="/phases"><Phases /></Route>
       <Route exact path="/archipelago">
         <TerritoryWrapper
           title="L'ARCIPELAGO DELLE OPERE PER"
@@ -93,7 +94,7 @@ export default function AtlasRouter()
           mainAnalysisMode={GlobalData.analysisModes.shape}
         />
       </Route>
-      <Route exact path="/Phenomena/territory/shapeAnalysis/informationSheet"><ShapeInformationSheet /></Route>
+      <Route exact path="/form/phase1/focus"><ShapeInformationSheet /></Route>
 
       <Route exact path="/phase2-process"><ProcessIntro /></Route>
       <Route exact path="/doubt/phase2"><ProcessDoubting title= {'Dubitare'}/></Route>
@@ -101,7 +102,7 @@ export default function AtlasRouter()
       <Route exact path="/space/phase2"><Trasformare title= {'Trasformare'} /></Route>
       <Route exact path="/space/phase2/focus"><TransformInformationSheet /></Route>
       <Route exact path="/form/phase2"><Trama title={'Combinare'}/></Route>
-      <Route exact path="/space/phase3/focus"><CombineInformationSheet /></Route>
+      <Route exact path="/form/phase2/focus"><CombineInformationSheet /></Route>
 
       <Route exact path="/phase3-problem"><ProblemIntro /></Route>
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
@@ -110,13 +111,14 @@ export default function AtlasRouter()
       <Route exact path="/doubt/phase3/focus"><CancellationInformationSheet /></Route>
 
       <Route exact path="/space/phase3"> <Realismo title={'Realismo'}></Realismo></Route>
-      <Route exact path="/realism-sheet"><RealismInformationSheet /></Route>
+      <Route exact path="/space/phase3/focus"><RealismInformationSheet /></Route>
 
       <Route exact path="/equipe"><Equipe /></Route>
       <Route exact path="/form/phase3"><Trama2 title="Trama"></Trama2></Route>
-      <Route exact path="/plot-sheet"><PlotInformationSheet /></Route>
+      <Route exact path="/form/phase3/focus"><PlotInformationSheet /></Route>
 
       {/* <Route exact path="/About"><AboutAndContacts /></Route> */}
+      <Route exact path="/instructions"><Instructions/></Route>
       <Route exact path="/project"><Project/></Route>
       <Route exact path="/capta"><ToolsAndMethods /></Route>
       <Route exact path="/News"><PressReview /></Route>

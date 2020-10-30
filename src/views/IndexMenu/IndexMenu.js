@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
+import { HashLink } from 'react-router-hash-link'
 import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
@@ -29,7 +30,8 @@ import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/
 import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
 import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
 import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
-import { ReactComponent as Curve1 } from "./icons/curva_combinaretrama.svg"
+import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
+import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -78,22 +80,22 @@ export default function IndexMenu({ onClose }) {
         <Orbite />
       </div>
       <div className={styles["IndexMenu"]}>
-        <div className={styles["tappe"]}>TAPPE</div>
-        <Link to="/phase1-phenomena">
+        <div className={styles["tappe"]}>Tappa</div>
+        <HashLink to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
-        </Link>
-        <Link to="/phase2-process">
+        </HashLink>
+        <HashLink to="/phases#process">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
-        </Link>
-        <Link to="/phase3-problem">
+        </HashLink>
+        <HashLink to="/phases#problem">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
-        </Link>
+        </HashLink>
         <ItemIndex
           title="territorio"
           link="/archipelago"
@@ -224,6 +226,7 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title="combinare"
           link="/form/phase2"
+          linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
           icon={
             <CombinareIcon
@@ -263,9 +266,12 @@ export default function IndexMenu({ onClose }) {
       >
         Guarda la guida
       </div>
-      {/* <div className={`position-absolute ${styles["curve-combinare"]}`}>
-        <Curve1 width='100' />
-      </div> */}
+      <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
+        <Curve1 width='60' />
+      </div>
+      <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
+        <Curve2 width='60' />
+      </div>
       <Footer />
       <Modal
         size="lg"

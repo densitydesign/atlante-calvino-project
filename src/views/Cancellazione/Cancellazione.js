@@ -208,7 +208,7 @@ class Cancellazione extends Component {
           
           {this.state.loading && <Loading style={{ gridColumn: 'span 3' }}/>}
           {!this.state.loading &&
-            <Options title = "Filtra per"
+            <Options title = "Cerca per"
               data = {this.state.cerca_per}
               style = {{gridColumn: 'span 3'}}
               changeOptions = {this.changeCercaPer}

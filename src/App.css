@@ -176,6 +176,10 @@ sup {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
 }
+.ac-grid-32 {
+  display: grid;
+  grid-template-columns: repeat(32, 1fr);
+}
 .content {
   padding: 0 calc((100% / 16) * 2);
   padding-bottom: 1rem;
@@ -184,7 +188,7 @@ sup {
 .sidebar {
   grid-column: 17 / end;
   border-left: 1px solid black;
-  height: calc(100vh - (var(--navigation-height) + 18px));
+  height: 100vh;
   /* display: flex; */
   padding: 0 calc(100% / 8);
 }
