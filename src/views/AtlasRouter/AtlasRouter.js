@@ -14,7 +14,7 @@ import CompassTime from '../CompassTime/CompassTime';
 import CompassFlux from '../CompassFlux/CompassFlux';
 import Phases from '../Phases/Phases';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
-import ProcessIntro from '../ProcessIntro/ProcessIntro';
+// import ProcessIntro from '../ProcessIntro/ProcessIntro';
 import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
@@ -96,7 +96,7 @@ export default function AtlasRouter()
       </Route>
       <Route exact path="/form/phase1/focus"><ShapeInformationSheet /></Route>
 
-      <Route exact path="/phase2-process"><ProcessIntro /></Route>
+      {/* <Route exact path="/phase2-process"><ProcessIntro /></Route> */}
       <Route exact path="/doubt/phase2"><ProcessDoubting title= {'Dubitare'}/></Route>
       <Route exact path="/doubt/phase2/focus"><HesitationInformationSheet /></Route>
       <Route exact path="/space/phase2"><Trasformare title= {'Trasformare'} /></Route>
@@ -104,7 +104,7 @@ export default function AtlasRouter()
       <Route exact path="/form/phase2"><Trama title={'Combinare'}/></Route>
       <Route exact path="/form/phase2/focus"><CombineInformationSheet /></Route>
 
-      <Route exact path="/phase3-problem"><ProblemIntro /></Route>
+      {/* <Route exact path="/phase3-problem"><ProblemIntro /></Route> */}
       <Route exact path="/Problem/cancellation-draft"><Df3 /></Route>
 
       <Route exact path="/doubt/phase3"><Cancellazione title={'Cancellazione'} /></Route>
