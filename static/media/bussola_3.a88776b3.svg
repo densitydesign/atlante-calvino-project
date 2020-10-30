@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="44" viewBox="0 0 43 44">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <clipPath id="clip-Artboard_7">
+      <rect width="43" height="44"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_7" data-name="Artboard – 7" clip-path="url(#clip-Artboard_7)">
+    <rect width="43" height="44" fill="#fff"/>
+    <g id="Group_23180" data-name="Group 23180" transform="translate(-1207 -124)">
+      <ellipse id="Ellipse_20509" data-name="Ellipse 20509" cx="20.5" cy="21" rx="20.5" ry="21" transform="translate(1208 125)" fill="url(#radial-gradient)"/>
+      <g id="Ellipse_20510" data-name="Ellipse 20510" transform="translate(1224 141)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20511" data-name="Ellipse 20511" transform="translate(1230 148)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20512" data-name="Ellipse 20512" transform="translate(1236 146)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20515" data-name="Ellipse 20515" transform="translate(1227 158)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20516" data-name="Ellipse 20516" transform="translate(1230 128)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20513" data-name="Ellipse 20513" transform="translate(1217 141)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+      <g id="Ellipse_20514" data-name="Ellipse 20514" transform="translate(1220 136)" fill="#fff" stroke="#000" stroke-width="1">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
