@@ -10,7 +10,10 @@ import AtlasRouter from './views/AtlasRouter/AtlasRouter';
 
 function App() {
   return (
-    <AtlasRouter />
+    <>
+      <AtlasRouter />
+      <div id='index-menu-modal-container' />
+    </>
   );
 }
 

@@ -8,13 +8,13 @@ import './TerritoryItinerariesDropUp.css';
 export default class TerritoryItinerariesDropUp extends React.Component
 {
   static get doubtButtonId() { return "doubtButton"; }
-  doubtButtonCaption = "NEBBIA";
+  doubtButtonCaption = "Nebbia";
 
   static get spaceButtonId() { return "spaceButton"; }
-  spaceButtonCaption = "LUOGHI";
+  spaceButtonCaption = "Luoghi";
 
   static get shapeButtonId() { return  "shapeButton"; }
-  shapeButtonCaption = "ELENCHI";
+  shapeButtonCaption = "Elenchi";
 
   render()
   {

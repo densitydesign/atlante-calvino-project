@@ -1,7 +1,6 @@
 
 import React from 'react';
 
-import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import ToolMethodCell from './ToolMethodCell';
 import Footer from '../../headers/Footer/Footer';
 
@@ -9,6 +8,7 @@ import '../../App.css';
 import './ToolsAndMethods.css';
 import '../../general/GridsWithScrollableColumns/GridWithScrollableColumn.css';
 import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
+import IndexMenuHeader from '../../headers/IndexMenuHeader';
 
 export default class ToolsAndMethods extends React.Component
 {
@@ -16,7 +16,7 @@ export default class ToolsAndMethods extends React.Component
   {
     return (
       <>
-        <HamburgerIntroHeader />
+        <IndexMenuHeader />
         <div className="grid-with-scrollable-column ">
           <div className="scrollable-column-3 col-lg-10">
             <h1>METODOLOGIA</h1>

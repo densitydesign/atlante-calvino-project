@@ -3,5 +3,20 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-size: 21px;
+  color: var(--dark-green);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.more-info-active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 21px;
+  background-color: var(--dark-blue);
+  color: var(--bg);
+  font-weight: bold;
   cursor: pointer;
 }

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124.563" height="113.585" viewBox="0 0 124.563 113.585">
+  <g id="Raggruppa_22302" data-name="Raggruppa 22302" transform="translate(-30 -187.415)">
+    <text id="Proporzione_fra_i_tipi_di_testo" data-name="Proporzione fra i tipi di testo" transform="translate(97.563 222)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Proporzione </tspan><tspan x="0" y="23">fra i tipi di </tspan><tspan x="0" y="36">testo</tspan></text>
+    <text id="Data_titolo" data-name="Data, titolo" transform="translate(30.563 286.921)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="3.071" y="10">Data, titolo</tspan></text>
+    <g id="Group-2" transform="translate(-11.024 560.694) rotate(-90)">
+      <path id="Path-2" d="M303.505,98.9v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+      <path id="Path-3" d="M303.505,96V74.1" fill="none" stroke="#444" stroke-width="0.25" stroke-dasharray="1.9 1.9"/>
+      <path id="Path-4" d="M303.505,73.2v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+    </g>
+    <g id="Group-2-2" data-name="Group-2" transform="translate(-11.024 545.694) rotate(-90)">
+      <path id="Path-2-2" data-name="Path-2" d="M303.505,98.9v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+      <path id="Path-3-2" data-name="Path-3" d="M303.505,96V74.1" fill="none" stroke="#444" stroke-width="0.25" stroke-dasharray="1.9 1.9"/>
+      <path id="Path-4-2" data-name="Path-4" d="M303.505,73.2v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+    </g>
+    <g id="Group-2-3" data-name="Group-2" transform="translate(-11.024 502.694) rotate(-90)">
+      <path id="Path-2-3" data-name="Path-2" d="M303.505,98.9v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+      <path id="Path-3-3" data-name="Path-3" d="M303.505,96V74.1" fill="none" stroke="#444" stroke-width="0.25" stroke-dasharray="1.9 1.9"/>
+      <path id="Path-4-3" data-name="Path-4" d="M303.505,73.2v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+    </g>
+    <g id="Group-2-4" data-name="Group-2" transform="translate(-11.024 491.694) rotate(-90)">
+      <path id="Path-2-4" data-name="Path-2" d="M303.505,98.9v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+      <path id="Path-3-4" data-name="Path-3" d="M303.505,96V74.1" fill="none" stroke="#444" stroke-width="0.25" stroke-dasharray="1.9 1.9"/>
+      <path id="Path-4-4" data-name="Path-4" d="M303.505,73.2v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+    </g>
+    <g id="Group-2-5" data-name="Group-2" transform="translate(-11.024 576.694) rotate(-90)">
+      <path id="Path-2-5" data-name="Path-2" d="M303.505,98.9v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+      <path id="Path-3-5" data-name="Path-3" d="M303.505,96V74.1" fill="none" stroke="#444" stroke-width="0.25" stroke-dasharray="1.9 1.9"/>
+      <path id="Path-4-5" data-name="Path-4" d="M303.505,73.2v-1" fill="none" stroke="#444" stroke-width="0.25"/>
+    </g>
+    <g id="Group" transform="translate(-12.043 525.672) rotate(-90)">
+      <path id="Path" d="M337.553,99.9l-85.348.2" transform="translate(0)" fill="none" stroke="#444" stroke-width="0.5"/>
+      <rect id="Rectangle" width="1" height="3.3" transform="translate(337.248 98.3) rotate(-0.172)" fill="#444"/>
+      <rect id="Rectangle-2" width="1" height="3.3" transform="translate(252 98.5) rotate(-0.178)" fill="#444"/>
+    </g>
+    <rect id="misto_perc-S172" width="6.115" height="14.866" transform="translate(58 242.77)" fill="#00c19c" opacity="0.7"/>
+    <rect id="soggetto_perc-S172" width="6.115" height="44.355" transform="translate(58 198.414)" fill="#ffc806" opacity="0.7"/>
+    <rect id="dubbio_perc-S172" width="6.115" height="15.9" transform="translate(58 257.635)" fill="#bbf" opacity="0.7"/>
+    <rect id="definitivo_perc-S170" width="6.116" height="10.548" transform="translate(58 188.189)" fill="#eaeaea" opacity="0.7"/>
+    <g id="Rettangolo_18727" data-name="Rettangolo 18727" transform="translate(30 286)" fill="none" stroke="#000" stroke-width="1">
+      <rect width="58" height="15" stroke="none"/>
+      <rect x="0.5" y="0.5" width="57" height="14" fill="none"/>
+    </g>
+    <line id="Linea_5253" data-name="Linea 5253" y2="11" transform="translate(60.5 275.5)" fill="none" stroke="#000" stroke-linecap="square" stroke-width="0.5"/>
+  </g>
+</svg>

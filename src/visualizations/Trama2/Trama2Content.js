@@ -35,6 +35,8 @@ export default function Trama2Content({
   selected,
   toggleSelect,
   setSelected,
+  currentView,
+  setCurrentView,
 }) {
   const [sidePanelOpen, setSidePanelOpen] = useState(false)
   const toggleSidePanel = useCallback(() => {
@@ -95,7 +97,6 @@ export default function Trama2Content({
   }, [selected])
 
   const listRef = useRef()
-  const [currentView, setCurrentView] = useState('list')
   const [currentTramaDetail, setCurrentTramaDetail] = useState(null)
 
   const handleClickRacconto = useCallback((data) => {

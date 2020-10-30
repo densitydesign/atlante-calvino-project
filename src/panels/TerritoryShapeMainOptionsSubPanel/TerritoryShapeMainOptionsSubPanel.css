@@ -6,14 +6,11 @@
 .categories-panel-shape {
   display: flex;
   margin-bottom: 1.2em;
+  margin-top: 1em;
 }
 
 .categories-panel-shape * {
   width: 100px;;
-}
-
-.territory-shape-main-options-subpanel *{
-  margin-top: 0.5em
 }
 
 .territory-shape-main-options-subpanel .radio-button-down, .territory-shape-main-options-subpanel .radio-button-up {

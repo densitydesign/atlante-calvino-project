@@ -15,7 +15,7 @@ export default class HamburgerInfoCompassHeader extends React.Component
         <MoreInfo
           style={{ gridColumn : "span 1" }}
           onClicked={this.props.helpButtonClicked} />
-        <CompassButton style={{ gridColumn : "span 1", color : "white", backgroundColor : "black" }} />
+        <CompassButton style={{ gridColumn : "span 1"}} />
       </div>
     );
   }

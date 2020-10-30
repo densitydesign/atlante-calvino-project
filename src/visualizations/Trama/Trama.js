@@ -54,7 +54,7 @@ class Trama extends Component {
     controlsEnabled: true,
     currentTextID: null,
 
-    helpSidePanelOpen: false
+    helpSidePanelOpen: true
   };
 
   setCurrentTextID = currentTextID => {
@@ -102,7 +102,7 @@ class Trama extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
-            title={"LA STRUTTURA DEI VOLUMI"}
+            title={"Combinare"}
             style={{ gridColumn: "span 10" }}
           />
 
@@ -138,13 +138,12 @@ class Trama extends Component {
           )}
           <MoreInfo
             style={{ gridColumn: "span 1" }}
+            helpSidePanelOpen={this.state.helpSidePanelOpen}
             onClicked={this.toggleHelpSidePanel}
           />
           <CompassButton
             style={{
               gridColumn: "span 1",
-              color: "white",
-              backgroundColor: "black"
             }}
           />
         </div>

@@ -18,6 +18,7 @@ const Menu = ({ title, helpPage }) => {
     <div className="trasformare main">
       <HelpSidePanel
         open={false}
+        isFullPage={true}
         page={helpPage}
         closeButtonClicked={() => {}}
       />
@@ -31,8 +32,6 @@ const Menu = ({ title, helpPage }) => {
         <CompassButton
           style={{
             gridColumn: 'span 1',
-            color: 'white',
-            backgroundColor: 'black',
           }}
         />
       </div>
