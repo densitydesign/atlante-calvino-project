@@ -37,7 +37,7 @@
   text-transform: uppercase;
   position: absolute;
   top: calc(calc(100vh / 7.5) - var(--navigation-height));
-  left: calc(100% / 12 * 7.35);
+  left: calc(100% / 12 * 7.4);
   font-size: 14px;
   font-weight: bold;
 }
