@@ -2,7 +2,7 @@
   border-left: var(--app-border);
   padding: 4em 4em 13em 8em;
   position: fixed;
-  height: 100%;
+  height: calc(100% - var(--navigation-height) - var(--footer-height));
   left: 30%;
   overflow: scroll;
 }
