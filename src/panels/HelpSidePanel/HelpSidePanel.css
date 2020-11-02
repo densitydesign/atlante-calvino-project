@@ -163,6 +163,10 @@
   }
 }
 
+.help-side-panel-full > div > .tab-content{
+  height: 75vh !important;
+}
+
 
 .tab-info.active {
   text-align: center;

@@ -252,7 +252,7 @@ and (max-device-width : 1024px) {
 
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
   .icon-width {
-    width: 100px;
+    width: 140px;
   }
 
   .big-name {
