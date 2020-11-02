@@ -209,7 +209,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title="Aggregazione"
+            title="Modalità"
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}

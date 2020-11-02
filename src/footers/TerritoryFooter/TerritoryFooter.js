@@ -154,7 +154,6 @@ export default class TerritoryFooter extends React.Component {
   getActiveOption = (options) =>
     options.find((item) => item.status === true).label
 
-
   toggleButtonPressed = (buttonId) => {
     switch (buttonId) {
       case this.analysisModeToggleButtonId:
@@ -175,7 +174,7 @@ export default class TerritoryFooter extends React.Component {
 
             this.props.setBottomPanelMode(bottomPanelMode)
           }
-        }  else {
+        } else {
           if (
             this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
           ) {
@@ -186,8 +185,8 @@ export default class TerritoryFooter extends React.Component {
         }
 
         break
-      
-      case 'chronology':
+
+      case "chronology":
         this.props.toggleNoAnalysisDropDownPosition()
         break
 
@@ -292,25 +291,6 @@ export default class TerritoryFooter extends React.Component {
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         /> */}
 
-        {this.props.bottomPanelMode === 'noAnalysis' ? (
-          <ToggleButton
-          id={this.chronology}
-          style={{ gridColumn: "span 8", textAlign: "center" }}
-          caption={analysisModeToggleButtonCaption}
-          pressed={
-            this.props.mainAnalysisMode === GlobalData.analysisModes.noAnalysis
-          }
-          callStateContainerToggleButtonPressed={this.toggleButtonPressed}
-        />
-        ) : (
-          <div
-            style={{ gridColumn: "span 8" }}
-            className="d-flex justify-content-center"
-          >
-            <div className="text-center">Cronologia</div>
-          </div>
-        )}
-
         <ToggleButton
           id={this.analysisModeToggleButtonId}
           style={{ gridColumn: "span 8" }}
@@ -322,6 +302,27 @@ export default class TerritoryFooter extends React.Component {
           }
           callStateContainerToggleButtonPressed={this.toggleButtonPressed}
         />
+
+        {this.props.bottomPanelMode === "noAnalysis" ? (
+          <ToggleButton
+            id={this.chronology}
+            style={{ gridColumn: "span 8", textAlign: "center" }}
+            caption={analysisModeToggleButtonCaption}
+            title={'Modalità'}
+            pressed={
+              this.props.mainAnalysisMode ===
+              GlobalData.analysisModes.noAnalysis
+            }
+            callStateContainerToggleButtonPressed={this.toggleButtonPressed}
+          />
+        ) : (
+          <div
+            style={{ gridColumn: "span 8" }}
+            className="d-flex justify-content-center"
+          >
+            <div className="text-center">Cronologia</div>
+          </div>
+        )}
 
         <ToggleButton
           id={this.chronologicalFilterToggleButtonId}

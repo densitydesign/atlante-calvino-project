@@ -53,17 +53,6 @@ export default class TerritoryShapePanel extends React.Component
     return (
       <>
 
-      <TerritoryDescriptionSubPanel
-        title="Vedere gli elenchi"
-        text="Come gli elenchi si distribuiscono nell'opera"
-        informationSheetRoute="/form/phase1/focus"
-        informationSheetDescription="SCHEDA"
-        itineraryStop2Route="/form/phase2"
-        itineraryStop2Description="TAPPA 2"
-        itineraryStop3Route="/form/phase3"
-        itineraryStop3Description="TAPPA 3"
-      />
-
       <div className="territory-shape-panel">
 
         <TerritoryShapeMainOptionsSubPanel

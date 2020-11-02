@@ -2,6 +2,6 @@
 .territory-doubt-panel {
   padding-top: 18px;
   background-color : var(--bg);
-  grid-column: 8/ span 13;
+  grid-column: 5 / span 12;
   
 }

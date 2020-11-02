@@ -33,7 +33,7 @@ const manifestazioniStilistiche={
     'label': 'riformulazione',
     'status': false
   }, {
-    'label': 'nessuno',
+    'label': 'non attivo',
     'status': true
   }]
 };
@@ -252,7 +252,7 @@ class Cancellazione extends Component {
 
           {this.state.loading && <Loading style={{ gridColumn: 'span 12' }}/>}
 					{	!this.state.loading &&
-						<Options title = "Manifestazioni stilistiche"
+						<Options title = "Colora per stile"
 							data = {this.state.manifestazioniStilistiche}
 							style = {{gridColumn: 'span 12',textAlign: 'center'}}
 							changeOptions = {this.changeColor}

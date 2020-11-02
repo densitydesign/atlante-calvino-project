@@ -10,7 +10,7 @@ export default class TerritoryShapeMainOptionsSubPanel extends React.Component {
     return (
       <div className="territory-shape-main-options-subpanel">
         <div className="title-panel">
-          <h4>Tipologie di Elenco</h4>
+          <h4>Tipo di Elenco</h4>
         </div>
         <RadioButton
           id={this.props.typesRadioButtonId}
@@ -36,8 +36,10 @@ export default class TerritoryShapeMainOptionsSubPanel extends React.Component {
           >
             Sintagmi
           </div>
-          <div style={{ color: GlobalData.visualizationColors.territory.frasi }}>
-            Frasi
+          <div
+            style={{ color: GlobalData.visualizationColors.territory.frasi }}
+          >
+            Proposizioni
           </div>
         </div>
       </div>

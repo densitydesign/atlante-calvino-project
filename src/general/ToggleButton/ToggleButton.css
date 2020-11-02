@@ -24,6 +24,12 @@
   font-size: 1em;
 }
 
+.micro-title {
+  font-style: italic;
+  font-size: 0.6em;
+  display: block;
+}
+
 .toggle-button-drop-up {
   color : black;
   background-color : white;
