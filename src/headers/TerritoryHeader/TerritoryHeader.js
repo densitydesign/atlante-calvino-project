@@ -110,7 +110,7 @@ export default class TerritoryHeader extends React.Component {
             fontWeight: "bold",
           }}
         >
-          Cerca per titolo
+          {this.analysisLabel}
         </div>
 
         {/* <ToggleButton
