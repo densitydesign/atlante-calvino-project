@@ -201,7 +201,56 @@
   border-left: 1px solid var(--dark-blue);
 }
 
-@media screen and (max-width: 1365px) {
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  .icon-width {
+    width: 90px;
+  }
+
+  .big-name {
+    font-size: 45px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--violet-index-home);
+  }
+
+  .tappe{
+    color: var(--dark-green);
+    text-transform: uppercase;
+    position: absolute;
+    top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 7.3);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tappa1{
+    position: absolute;
+    top: calc(calc(100vh / 5.25) - var(--navigation-height));
+    left: calc(100% / 12 * 7);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa2{
+    position: absolute;
+    top: calc(calc(100vh / 5.75) - var(--navigation-height));
+    left: calc(100% / 12 * 7.5);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa3{
+    position: absolute;
+    top: calc(calc(100vh / 6.5) - var(--navigation-height));
+    left: calc(100% / 12 * 8);
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
   .icon-width {
     width: 100px;
   }
@@ -212,9 +261,43 @@
     font-weight: 600;
     color: var(--violet-index-home);
   }
+
+  .tappe{
+    color: var(--dark-green);
+    text-transform: uppercase;
+    position: absolute;
+    top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 7.42);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tappa1{
+    position: absolute;
+    top: calc(calc(100vh / 5.75) - var(--navigation-height));
+    left: calc(100% / 12 * 7);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa2{
+    position: absolute;
+    top: calc(calc(100vh / 6.25) - var(--navigation-height));
+    left: calc(100% / 12 * 7.5);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa3{
+    position: absolute;
+    top: calc(calc(100vh / 7) - var(--navigation-height));
+    left: calc(100% / 12 * 8);
+    width: 44px;
+    height: 44px;
+  }
 }
 
-@media screen and (min-width: 1366px) and (max-width: 1699px) {
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
   .icon-width {
     width: 130px;
   }

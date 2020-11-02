@@ -58,7 +58,7 @@ export default class Project extends React.Component {
               opera di Calvino.
             </p>
           </div>
-          <div className="col-md-12 offset-lg-4 col-lg-6">
+          <div className="col-md-12 offset-lg-3 col-lg-6">
             <p>
               Le due anime del progetto, quella letteraria e quella del design
               dell’informazione, sono state chiamate a mescolarsi per trovare
