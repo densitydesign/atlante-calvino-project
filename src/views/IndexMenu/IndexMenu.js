@@ -45,11 +45,12 @@ const ItemIndex = ({
   title,
   className,
   link,
+  onClose,
   linkApprofondimento,
 }) => {
   return (
     <div className={`${styles[className]} ${styles["hoverable-icon"]}`}>
-      <Link to={link}>
+      <Link onClick={onClose} to={link}>
         {icon}
         {iconHover}
       </Link>
@@ -115,6 +116,7 @@ export default function IndexMenu({ onClose }) {
         </HashLink>
         <ItemIndex
           title="territorio"
+          onClose={onClose}
           link="/archipelago"
           className={"territorio"}
           icon={

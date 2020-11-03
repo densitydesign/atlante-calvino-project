@@ -357,7 +357,7 @@ and (max-device-width : 1024px) {
   }
 }
 
-@media screen and (min-width: 1700px){
+@media screen and (min-width: 1700px) and (max-width: 1999px) {
   .icon-width {
     width: 180px;
   }
@@ -398,6 +398,54 @@ and (max-device-width : 1024px) {
   .tappa3{
     position: absolute;
     top: calc(calc(100vh / 6.75) - var(--navigation-height));
+    left: calc(100% / 12 * 8);
+    width: 44px;
+    height: 44px;
+  }
+
+  .curve-combinare{
+    position: absolute;
+    top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
+    left: calc(100% / 12 * 10.5);
+    width: 300px;
+  }
+
+}
+
+@media screen and (min-width: 2000px){
+  .icon-width {
+    width: 200px;
+  }
+
+  .tappe{
+    color: var(--dark-green);
+    text-transform: uppercase;
+    position: absolute;
+    top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 7.42);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tappa1{
+    position: absolute;
+    top: calc(calc(100vh / 6) - var(--navigation-height));
+    left: calc(100% / 12 * 7);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa2{
+    position: absolute;
+    top: calc(calc(100vh / 6.75) - var(--navigation-height));
+    left: calc(100% / 12 * 7.5);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .tappa3{
+    position: absolute;
+    top: calc(calc(100vh / 7.5) - var(--navigation-height));
     left: calc(100% / 12 * 8);
     width: 44px;
     height: 44px;

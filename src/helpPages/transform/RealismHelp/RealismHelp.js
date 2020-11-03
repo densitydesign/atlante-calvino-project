@@ -91,7 +91,7 @@ export default function RealismHelp() {
               </li>
             </ol>{" "}
           </div>
-          <p>
+          <p className='mt-3'>
             <strong>Qualche pista di lettura</strong>
           </p>
           <p>

@@ -157,11 +157,19 @@
   padding-bottom: 20px;
 }
 
-@media (min-width: 1799px) {
+@media (min-width: 1799px) and (max-width: 1999px){
   .tab-content{
     height: 70vh;
   }
 }
+
+@media (min-width: 2000px){
+  .tab-content{
+    height: 78vh;
+  }
+}
+
+
 
 .help-side-panel-full > div > .tab-content{
   height: 75vh !important;
