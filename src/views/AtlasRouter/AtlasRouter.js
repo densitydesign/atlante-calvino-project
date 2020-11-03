@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 
 import GlobalData from '../../utilities/GlobalData';
-import SplashScreenWrapper from '../../visualizations/SplashScreen/SplashScreenWrapper';
 import SplashScreen2 from '../../visualizations/SplashScreen2/';
 import AtlasIntro from '../AtlasIntro/AtlasIntro';
 import Compass from '../Compass/Compass';
@@ -14,8 +13,6 @@ import CompassTime from '../CompassTime/CompassTime';
 import CompassFlux from '../CompassFlux/CompassFlux';
 import Phases from '../Phases/Phases';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
-// import ProcessIntro from '../ProcessIntro/ProcessIntro';
-import ProblemIntro from '../ProblemIntro/ProblemIntro';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';

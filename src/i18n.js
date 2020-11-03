@@ -35,7 +35,9 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
 
-    saveMissing: true,
+    saveMissing: process.env.NODE_ENV !== 'production',
+    //saveMissing: false,
+
 
     ns: ['translation'],
     defaultNS: "translation",

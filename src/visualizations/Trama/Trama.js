@@ -1,45 +1,26 @@
-import React, { Component } from "react";
-import { withTranslation } from 'react-i18next'
-import MainMenu from "../../general/MainMenu";
-import PageTitle from "../../general/PageTitle";
-import MoreInfo from "../../general/MoreInfo";
-import CompassButton from "../../general/CompassButton/CompassButton";
-import SearchDropDown from "../../general/Search/SearchDropDown";
-import Loading from "../../general/Loading";
-import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
+import React, { Component } from "react"
+import { withTranslation } from "react-i18next"
+import MainMenu from "../../general/MainMenu"
+import PageTitle from "../../general/PageTitle"
+import MoreInfo from "../../general/MoreInfo"
+import CompassButton from "../../general/CompassButton/CompassButton"
+import SearchDropDown from "../../general/Search/SearchDropDown"
+import Loading from "../../general/Loading"
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
 
-import AltOptions from "../../general/Options/AltOptions";
-import MarimekkoViz from "./MarimekkoViz";
-import marimekkoData from "./marimekko.json";
+import AltOptions from "../../general/Options/AltOptions"
+import MarimekkoViz from "./MarimekkoViz"
+import marimekkoData from "./marimekko.json"
 
-import volumi from "./volumi.json";
-import GlobalData from "../../utilities/GlobalData";
+import volumi from "./volumi.json"
+import GlobalData from "../../utilities/GlobalData"
 
 // const marimekkoData = MD.filter(x => x.textID === "V005")
 
-
-
-const searchOptions = volumi.map(item => ({
+const searchOptions = volumi.map((item) => ({
   label: item.titolo,
-  value: item.textID
-}));
-
-const tipologiaOptions = [
-  { label: "uno" },
-  { label: "due" },
-  { label: "tre" },
-  { label: "quattro" },
-  { label: "cinque" }
-];
-
-const dettaglioOptions = [{ label: "ambito" }, { label: "categorie" }];
-
-const aggregazioneOptions = [
-  { label: "aggregato" },
-  { label: "non aggregato" }
-];
-
-const cercaOptions = [{ label: "volume" }];
+  value: item.textID,
+}))
 
 class Trama extends Component {
   state = {
@@ -49,32 +30,32 @@ class Trama extends Component {
     cercaPer: "volume",
     dettaglio: "ambito",
     aggregazione: "aggregato",
-    tipologia: tipologiaOptions.map(x => x.label),
+    tipologia: ["uno", "due", "tre", "quattro", "cinque"],
     ricerca: [],
 
     controlsEnabled: true,
     currentTextID: null,
 
-    helpSidePanelOpen: true
-  };
+    helpSidePanelOpen: true,
+  }
 
-  setCurrentTextID = currentTextID => {
-    const oldValue = this.state.currentTextID;
+  setCurrentTextID = (currentTextID) => {
+    const oldValue = this.state.currentTextID
     if (currentTextID === oldValue) {
-      return;
+      return
     }
-    const newState = { currentTextID, controlsEnabled: !currentTextID };
-    this.setState(newState);
-  };
+    const newState = { currentTextID, controlsEnabled: !currentTextID }
+    this.setState(newState)
+  }
 
-  changeRicerca = newOptions => {
-    this.setState({ ricerca: newOptions.map(x => x.value) });
-  };
+  changeRicerca = (newOptions) => {
+    this.setState({ ricerca: newOptions.map((x) => x.value) })
+  }
 
   toggleHelpSidePanel = () =>
     this.setState({
-      helpSidePanelOpen: !this.state.helpSidePanelOpen
-    });
+      helpSidePanelOpen: !this.state.helpSidePanelOpen,
+    })
 
   componentDidMount() {}
 
@@ -89,9 +70,29 @@ class Trama extends Component {
       controlsEnabled,
       currentTextID,
       helpSidePanelOpen,
-    } = this.state;
+    } = this.state
 
-    const helpPage = GlobalData.helpPages.combine.main;
+    const helpPage = GlobalData.helpPages.combine.main
+
+    const tipologiaOptions = [
+      { label: t("ui.uno"), value: "uno" },
+      { label: t("ui.due"), value: "due" },
+      { label: t("ui.tre"), value: "tre" },
+      { label: t("ui.quattro"), value: "quattro" },
+      { label: t("ui.cinque"), value: "cinque" },
+    ]
+
+    const dettaglioOptions = [
+      { label: t("ui.ambito"), value: "ambito" },
+      { label: t("ui.categorie"), value: "categorie" },
+    ]
+
+    const aggregazioneOptions = [
+      { label: t("ui.aggregato"), value: "aggregato" },
+      { label: t("ui.non_aggregato"), value: "non aggregato" },
+    ]
+
+    const cercaOptions = [{ label: t("ui.volume"), value: "volume" }]
 
     return (
       <div className="trasformare main">
@@ -103,10 +104,7 @@ class Trama extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle
-            title={"Combinare"}
-            style={{ gridColumn: "span 10" }}
-          />
+          <PageTitle title={t('ui.combinare')} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
@@ -115,13 +113,13 @@ class Trama extends Component {
               options={cercaOptions}
               disabled={true}
               value={cercaPer}
-              onChange={x => {
-                this.setState({ cercaPer: x.label });
+              onChange={(x) => {
+                this.setState({ cercaPer: x.value })
               }}
               style={{
                 gridColumn: "span 3",
                 pointerEvents: !controlsEnabled ? "none" : undefined,
-                opacity: !controlsEnabled ? 0.4 : undefined
+                opacity: !controlsEnabled ? 0.4 : undefined,
               }}
             />
           )}
@@ -131,7 +129,7 @@ class Trama extends Component {
             <SearchDropDown
               style={{
                 gridColumn: "span 8",
-                pointerEvents: currentTextID ? "none" : undefined
+                pointerEvents: currentTextID ? "none" : undefined,
               }}
               data={{ options: searchOptions }}
               changeOptions={this.changeRicerca}
@@ -163,8 +161,8 @@ class Trama extends Component {
               ) {
                 this.setState({
                   aggregazione: "non aggregato",
-                  dettaglio: "categorie"
-                });
+                  dettaglio: "categorie",
+                })
               }
             }}
             tipologia={tipologia}
@@ -184,12 +182,12 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
             allowEmpty={false}
             value={tipologia}
-            onChange={tipologia => {
-              this.setState({ tipologia: tipologia.map(x => x.label) });
+            onChange={(tipologia) => {
+              this.setState({ tipologia: tipologia.map((x) => x.value) })
             }}
           />
 
@@ -198,38 +196,38 @@ class Trama extends Component {
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={dettaglio}
-            onChange={x => {
-              this.setState({ dettaglio: x.label });
+            onChange={(x) => {
+              this.setState({ dettaglio: x.value })
             }}
             options={dettaglioOptions}
             style={{
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
 
           <AltOptions
-            title="Modalità"
+            title={t("ui.modalita")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}
-            onChange={x => {
-              this.setState({ aggregazione: x.label });
+            onChange={(x) => {
+              this.setState({ aggregazione: x.value })
             }}
             options={aggregazioneOptions}
             style={{
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default withTranslation('combining')(Trama);
+export default withTranslation("combining")(Trama)

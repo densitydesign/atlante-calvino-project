@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
+import { useTranslation } from "react-i18next"
 import classnames from "classnames"
 import { ReactComponent as ApprofondimentoIcon } from "../../../helpPages/icons/approfondimento.svg"
 
@@ -14,6 +15,9 @@ export default function IntestazioneHelpPanel({
   linkTappa3,
   linkItinerario,
 }) {
+
+  const { t } = useTranslation()
+
   return (
     <div style={{ height: "10vh" }}>
       <div className="d-flex justify-content-between">
@@ -26,7 +30,7 @@ export default function IntestazioneHelpPanel({
         </strong>
         <div className="d-flex justify-content-between">
           <span className="text-dark-blue mr-2">
-            <small className="text-dark-blue">TAPPA</small>
+            <small className="text-dark-blue text-uppercase">{t('help_panel.tappa')}</small>
           </span>
           <Link to={linkTappa1} className="link-tappa">
             <div
@@ -67,7 +71,7 @@ export default function IntestazioneHelpPanel({
           <strong className="ml-2">
             <Link to={linkApprofondimento}>
               <u style={{ color: "#000" }}>
-                <small>APPROFONDIMENTO</small>
+                <small className='text-uppercase'>{t('help_panel.approfondimento')}</small>
               </u>
             </Link>
           </strong>
