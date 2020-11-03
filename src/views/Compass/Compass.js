@@ -2,9 +2,10 @@ import React from "react"
 import Footer from "../../headers/Footer/Footer"
 import HamburgerCloseHeader from "../../headers/HamburgerCloseHeader/HamburgerCloseHeader"
 import SlidingPanel from "../../panels/SlidingPanel/SlidingPanel"
-import { ReactComponent as Bussola1 } from './icons/bussola_1.svg'
-import { ReactComponent as Bussola2 } from './icons/bussola_2.svg'
-import { ReactComponent as Bussola3 } from './icons/bussola_3.svg'
+import { ReactComponent as Bussola1 } from "./icons/bussola_1.svg"
+import { ReactComponent as Bussola2 } from "./icons/bussola_2.svg"
+import { ReactComponent as Bussola3 } from "./icons/bussola_3.svg"
+import CompassFlux from "../CompassFlux/CompassFlux"
 
 import "./Compass.css"
 
@@ -12,7 +13,7 @@ export default class Compass extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { selectedPanel: 1 }
+    this.state = { selectedPanel: 1, openFlowsOfStories: false }
 
     this.getSelectedPanel = this.getSelectedPanel.bind(this)
     this.setSelectedPanel = this.setSelectedPanel.bind(this)
@@ -33,6 +34,10 @@ export default class Compass extends React.Component {
 
   panelClicked(panelId) {
     this.setState({ selectedPanel: panelId })
+  }
+
+  toggleFlowOfStories = () => {
+    this.setState({ openFlowsOfStories: !this.state.openFlowsOfStories })
   }
 
   render() {
@@ -58,10 +63,11 @@ export default class Compass extends React.Component {
           </div>
           <div style={{ width: "70%" }}>
             <SlidingPanel
+              toggleFlowOfStories={this.toggleFlowOfStories}
               id="1"
               open={this.state.selectedPanel >= 1}
               zIndex="1"
-              icon={<Bussola1 className='mr-5' />}
+              icon={<Bussola1 className="mr-5" />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
@@ -78,7 +84,7 @@ export default class Compass extends React.Component {
               id="2"
               open={this.state.selectedPanel >= 2}
               zIndex="2"
-              icon={<Bussola2 className='mr-5' />}
+              icon={<Bussola2 className="mr-5" />}
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
@@ -95,7 +101,7 @@ export default class Compass extends React.Component {
               id="3"
               open={this.state.selectedPanel >= 3}
               zIndex="3"
-              icon={<Bussola3 className='mr-5' />}
+              icon={<Bussola3 className="mr-5" />}
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}
@@ -110,6 +116,11 @@ export default class Compass extends React.Component {
           </div>
         </div>
         <Footer />
+        {this.state.openFlowsOfStories && (
+          <div className='compass-flux-modal'>
+            <CompassFlux toggleFlowOfStories={this.toggleFlowOfStories} />
+          </div>
+        )}
       </>
     )
   }

@@ -29,7 +29,13 @@ export default class CompassButton extends React.Component {
   render() {
     const route = "/compass"
 
-    return (
+    return this.props.toggleFlowOfStories ? (
+      <div onClick={this.props.toggleFlowOfStories} className="compass-button" style={this.props.style}>
+        <div className="main-menu-inner">
+          <Compass width="30" />
+        </div>
+      </div>
+    ) : (
       <Link target="_blank" className="top-menu" to={route}>
         <div className="compass-button" style={this.props.style}>
           <div className="main-menu-inner">

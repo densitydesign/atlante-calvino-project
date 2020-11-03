@@ -74,3 +74,14 @@
   left : calc(100% - 1 * var(--panel-border-width));
   width: 12vh;
 }
+
+.compass-flux-modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--cool-bg);
+  right: 0;
+  overflow-y: auto;
+  bottom: 0;
+  z-index: 950;
+}

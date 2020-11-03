@@ -11,7 +11,7 @@ export default class HamburgerCompassHeader extends React.Component
       <div className="top-nav navigations">
         <MainMenu style={{ gridColumn : "span 1" }} />
         <div style={{ gridColumn : "span 22" }} />
-        <CompassButton style={{ gridColumn : "span 1" }} />
+        <CompassButton toggleFlowOfStories={this.props.toggleFlowOfStories} style={{ gridColumn : "span 1" }} />
       </div>
     );
   }
