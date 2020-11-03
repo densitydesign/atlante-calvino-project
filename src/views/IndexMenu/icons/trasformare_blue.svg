@@ -1,12 +1,7 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128.842 84.44931">
-  <defs>
-    <clipPath id="clip-path">
-      <rect y="4.24295" width="128.842" height="79.96341" fill="none"/>
-    </clipPath>
-  </defs>
   <g id="trasformare">
-    <g clip-path="url(#clip-path)">
-      <g clip-path="url(#clip-path)">
+    <g>
+      <g>
         <path d="M73.0912,15.80626a11.0555,11.0555,0,1,1-11.056-11.056,11.05672,11.05672,0,0,1,11.056,11.056" fill="#fffffa"/>
         <path d="M73.0912,15.80626a11.0555,11.0555,0,1,1-11.056-11.056A11.05672,11.05672,0,0,1,73.0912,15.80626Z" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="1.014"/>
         <path d="M47.8324,17.64116a6.8275,6.8275,0,1,1-6.828-6.827,6.82715,6.82715,0,0,1,6.828,6.827" fill="#fffffa"/>
