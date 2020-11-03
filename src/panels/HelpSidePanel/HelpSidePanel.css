@@ -10,7 +10,7 @@
   max-height: 100%;
   width: var(--help-side-panel-width);
   background-color: #FFFFFFE3;
-  z-index: 10001;
+  z-index: 950;
   /* to overcome z-index=10000 of 'navigations' style */
   transition: right 1s;
   overflow-y: hidden;

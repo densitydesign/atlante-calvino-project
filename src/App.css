@@ -262,7 +262,7 @@ li {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  z-index: 10000;
+  z-index: 900;
   position: fixed;
 }
 
