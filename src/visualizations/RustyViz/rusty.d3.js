@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import annotazioni from "./cancellazione-annotazioni.svg";
 import styles from './RustyViz.module.css';
 
 const V = {};
@@ -31,14 +32,13 @@ V.init = async (options)=>{
         .on("zoom", ()=>{
             g1.attr("transform", d3.event.transform);
             length.attr('stroke-width',strokeWidth/d3.event.transform.k);
-            // g3.selectAll('text').style("transform",`scale(${1/d3.event.transform.k})`);
             g3.selectAll('path,line').attr("stroke-width",annotationsStrokeWidth/d3.event.transform.k);
             if (d3.event.transform.k>=1.75){
                 label.attr('display','block').attr("font-size",fontSize/d3.event.transform.k);
-                g3.selectAll('text').attr('display','none')
+                g3.attr('display','none')
             } else {
                 label.attr('display','none');
-                g3.selectAll('text').attr('display','block')
+                g3.attr('display','block')
             }
         });
     svg.call(zoom);
@@ -62,8 +62,10 @@ V.init = async (options)=>{
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
     
-    const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
+    // const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
+    const incomingSVG = await d3.svg(annotazioni)
     const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-2740/2)+','+(-1568/2)+')');
+    annotations.selectAll('#lines path, #lines line').attr('stroke-dasharray','2 4')
     g3.node().appendChild(annotations.node());
     //  Ended init, run the update to paint first time
     V.update(options);
