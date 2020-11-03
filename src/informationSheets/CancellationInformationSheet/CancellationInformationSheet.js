@@ -12,10 +12,10 @@ import distribution from './distribution.svg';
 import miniviz from './miniviz.svg';
 import legend from './legend.svg';
 
-import section01 from './section01.png';
-import section02 from './section02.png';
-import section03 from './section03.png';
-import section04 from './section04.png';
+import section01 from './section01.svg';
+import section02 from './section02.svg';
+import section03 from './section03.svg';
+import section04 from './section04.svg';
 
 import visualizationPDF from './muro-di-testo-avventura-di-un-soldato.pdf';
 
