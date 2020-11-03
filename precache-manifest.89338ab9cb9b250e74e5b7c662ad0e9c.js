@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ddd602a524da9aeaeda775e550263f33",
+    "revision": "3cba05ca1456db7dedf0c601bdc20172",
     "url": "/atlante-calvino-project/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/css/4.669295d1.chunk.css"
   },
   {
-    "revision": "c69b1462866eca70ad4a",
+    "revision": "09a7a9c54f9580f3dcc5",
     "url": "/atlante-calvino-project/static/css/main.8b8423d2.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/js/4.b795a554.chunk.js"
   },
   {
-    "revision": "c69b1462866eca70ad4a",
-    "url": "/atlante-calvino-project/static/js/main.97fc98d7.chunk.js"
+    "revision": "09a7a9c54f9580f3dcc5",
+    "url": "/atlante-calvino-project/static/js/main.04d9e16f.chunk.js"
   },
   {
     "revision": "9d5c731e44a4beb1b95c",
@@ -152,8 +152,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/atlante-calvino-project/static/media/bussola_3.a88776b3.svg"
   },
   {
-    "revision": "4d6f1e88aeccdc2d175ca229f1c3ea16",
-    "url": "/atlante-calvino-project/static/media/cancellazione-annotazioni.4d6f1e88.svg"
+    "revision": "1eac602b5837ff63058e479ccc5c907f",
+    "url": "/atlante-calvino-project/static/media/cancellazione-annotazioni.1eac602b.svg"
   },
   {
     "revision": "ae4e81b0dff72345d3c5f29630a206e7",

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/atlante-calvino-project/static/css/main.8b8423d2.chunk.css",
-    "main.js": "/atlante-calvino-project/static/js/main.97fc98d7.chunk.js",
-    "main.js.map": "/atlante-calvino-project/static/js/main.97fc98d7.chunk.js.map",
+    "main.js": "/atlante-calvino-project/static/js/main.04d9e16f.chunk.js",
+    "main.js.map": "/atlante-calvino-project/static/js/main.04d9e16f.chunk.js.map",
     "runtime-main.js": "/atlante-calvino-project/static/js/runtime-main.1464331b.js",
     "runtime-main.js.map": "/atlante-calvino-project/static/js/runtime-main.1464331b.js.map",
     "static/css/2.b4e55e6b.chunk.css": "/atlante-calvino-project/static/css/2.b4e55e6b.chunk.css",
@@ -15,7 +15,7 @@
     "static/js/4.b795a554.chunk.js": "/atlante-calvino-project/static/js/4.b795a554.chunk.js",
     "static/js/4.b795a554.chunk.js.map": "/atlante-calvino-project/static/js/4.b795a554.chunk.js.map",
     "index.html": "/atlante-calvino-project/index.html",
-    "precache-manifest.aaa55846dc96c30722ba5559054f72ea.js": "/atlante-calvino-project/precache-manifest.aaa55846dc96c30722ba5559054f72ea.js",
+    "precache-manifest.89338ab9cb9b250e74e5b7c662ad0e9c.js": "/atlante-calvino-project/precache-manifest.89338ab9cb9b250e74e5b7c662ad0e9c.js",
     "service-worker.js": "/atlante-calvino-project/service-worker.js",
     "static/css/2.b4e55e6b.chunk.css.map": "/atlante-calvino-project/static/css/2.b4e55e6b.chunk.css.map",
     "static/css/3.669295d1.chunk.css.map": "/atlante-calvino-project/static/css/3.669295d1.chunk.css.map",
@@ -35,7 +35,7 @@
     "static/media/bussola_1.58f4080c.svg": "/atlante-calvino-project/static/media/bussola_1.58f4080c.svg",
     "static/media/bussola_2.7d83e6f1.svg": "/atlante-calvino-project/static/media/bussola_2.7d83e6f1.svg",
     "static/media/bussola_3.a88776b3.svg": "/atlante-calvino-project/static/media/bussola_3.a88776b3.svg",
-    "static/media/cancellazione-annotazioni.svg": "/atlante-calvino-project/static/media/cancellazione-annotazioni.4d6f1e88.svg",
+    "static/media/cancellazione-annotazioni.svg": "/atlante-calvino-project/static/media/cancellazione-annotazioni.1eac602b.svg",
     "static/media/cancellazione_a_colore.ae4e81b0.svg": "/atlante-calvino-project/static/media/cancellazione_a_colore.ae4e81b0.svg",
     "static/media/cancellazione_a_dimensione.f3304bbc.svg": "/atlante-calvino-project/static/media/cancellazione_a_dimensione.f3304bbc.svg",
     "static/media/cancellazione_a_disposizione.b2fcc8ed.svg": "/atlante-calvino-project/static/media/cancellazione_a_disposizione.b2fcc8ed.svg",
@@ -165,6 +165,6 @@
     "static/css/2.b4e55e6b.chunk.css",
     "static/js/2.3e425ef6.chunk.js",
     "static/css/main.8b8423d2.chunk.css",
-    "static/js/main.97fc98d7.chunk.js"
+    "static/js/main.04d9e16f.chunk.js"
   ]
 }
