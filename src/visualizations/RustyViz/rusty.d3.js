@@ -5,7 +5,7 @@ import styles from './RustyViz.module.css';
 const V = {};
 export default V;
 
-let width, height, fontSize=12, strokeWidth=1.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
+let width, height, fontSize=12, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
     svg, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
@@ -62,7 +62,6 @@ V.init = async (options)=>{
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
     
-    // const incomingSVG = await d3.svg(process.env.PUBLIC_URL+'/cancellazione-annotazioni.svg');
     const incomingSVG = await d3.svg(annotazioni)
     const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-2740/2)+','+(-1568/2)+')');
     annotations.selectAll('#lines path, #lines line').attr('stroke-dasharray','2 4')
@@ -88,8 +87,9 @@ V.update = (options)=>{
             .classed('length',true)
             .attr('id',d=>'length-'+d.id)
             .attr('fill',d=>d.perc_dubbio>=minPerc?'#fff':'transparent')
-            .attr('fill-opacity','0.5')
-            .attr('stroke','#fff')
+            .attr('fill-opacity','0.8')
+            .attr('stroke','#999')
+            // .attr('stroke-dasharray','2 4')
             .attr('stroke-width',strokeWidth)
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
@@ -104,6 +104,11 @@ V.update = (options)=>{
                 }
             })
             .merge(length);
+
+    length.filter(d=>d.perc_dubbio <= 2.5)
+        .attr('fill','#eeeeee')
+        .attr('fill-opacity','1')
+        .attr('stroke','white')
             
 
     combinations=combinations.data(reducedData, d=>d.id);
