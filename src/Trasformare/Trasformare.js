@@ -51,11 +51,11 @@ class Trasformare extends Component {
             status: true,
           },
           {
-            label: "titolo pubblicazione",
+            label: "titolo",
             status: false,
           },
           {
-            label: "titolo",
+            label: "sede di pubblicazione",
             status: false,
           },
         ],
@@ -496,7 +496,7 @@ class Trasformare extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
-            title={"Tutti i luoghi di ambientazione all’interno dell’opera"}
+            title={"Trasformare"}
             style={{ gridColumn: "span 10" }}
           />
 
@@ -558,41 +558,31 @@ class Trasformare extends Component {
         )}
 
         <div className="bottom-nav navigations">
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
-          {!this.state.isLoading && (
-            <ToggleButton
-              id={this.legendToggleButtonId}
-              style={{ gridColumn: "span 5" }}
-              caption={this.legendToggleButtonCaption}
-              pressed={this.state.legendOpen}
-              callStateContainerToggleButtonPressed={this.toggleButtonPressed}
-            />
-          )}
 
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
+          {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Pubblicazioni"
+              title="Tipo di Pubblicazione"
               data={this.state.pubblicazioni}
-              style={{ gridColumn: "span 5", textAlign: "center" }}
+              style={{ gridColumn: "span 7", textAlign: "center" }}
               changeOptions={this.changePubblicazioni}
             />
           )}
 
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
+          {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
           {!this.state.isLoading && (
             <Options
               title="Contesti"
               data={this.state.ambienti}
-              style={{ gridColumn: "span 5", textAlign: "center" }}
+              style={{ gridColumn: "span 7", textAlign: "center" }}
               changeOptions={this.changeAmbienti}
             />
           )}
 
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 9" }} />}
+          {this.state.isLoading && <Loading style={{ gridColumn: "span 10" }} />}
           {!this.state.isLoading && (
             <RangeFilter
-              style={{ gridColumn: "span 9" }}
+              style={{ gridColumn: "span 10" }}
               data={this.state.timeExtent}
               changeOptions={this.changeTimeSpan}
             />

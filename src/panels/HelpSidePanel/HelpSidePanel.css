@@ -10,7 +10,7 @@
   max-height: 100%;
   width: var(--help-side-panel-width);
   background-color: #FFFFFFE3;
-  z-index: 10001;
+  z-index: 950;
   /* to overcome z-index=10000 of 'navigations' style */
   transition: right 1s;
   overflow-y: hidden;
@@ -157,10 +157,22 @@
   padding-bottom: 20px;
 }
 
-@media (min-width: 1799px) {
+@media (min-width: 1799px) and (max-width: 1999px){
   .tab-content{
     height: 70vh;
   }
+}
+
+@media (min-width: 2000px){
+  .tab-content{
+    height: 78vh;
+  }
+}
+
+
+
+.help-side-panel-full > div > .tab-content{
+  height: 75vh !important;
 }
 
 

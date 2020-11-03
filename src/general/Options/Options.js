@@ -93,9 +93,10 @@ class Options extends Component {
             {this.props.data.multiple && this.props.title}
           </Dropdown.Toggle>
           <Dropdown.Menu
-            className={{
+            className={classnames({
               "d-flex": this.props.isFlex,
-            }}
+              "flex-wrap": this.props.isFlex,
+            })}
             onToggle={this.toggleDropDown}
             show={this.state.show}
           >
@@ -108,6 +109,7 @@ class Options extends Component {
                   onClick={this.handleChange}
                   className={classnames({
                     active: d.status,
+                    "dropdown-chessboard": this.props.isFlex,
                   })}
                 >
                   {d.label}
@@ -119,9 +121,12 @@ class Options extends Component {
                 key={5}
                 name="all"
                 onClick={this.handleChange}
-                className={{ active: false }}
+                className={classnames({
+                  active: false,
+                  "dropdown-chessboard": this.props.isFlex,
+                })}
               >
-                Inverti Selezione
+                {this.props.isFlex ? "Inverti" : "Inverti Selezione"}
               </Dropdown.Item>
             )}
           </Dropdown.Menu>

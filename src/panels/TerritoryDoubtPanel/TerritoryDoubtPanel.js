@@ -113,16 +113,6 @@ export default class TerritoryDoubtPanel extends React.Component {
   render() {
     return (
       <>
-        <TerritoryDescriptionSubPanel
-          title="Vedere la nebbia"
-          text="Come la nebbia e la cancellazione si distribuiscono nell’opera."
-          informationSheetRoute="/doubt/phase1/focus"
-          informationSheetDescription="SCHEDA"
-          itineraryStop2Route="/doubt/phase2"
-          itineraryStop2Description="TAPPA 2"
-          itineraryStop3Route="/doubt/phase3"
-          itineraryStop3Description="TAPPA 3"
-        />
 
         <div className="territory-doubt-panel">
           <TerritoryDoubtMainOptionsSubPanel

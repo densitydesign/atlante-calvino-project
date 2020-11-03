@@ -36,6 +36,7 @@ import {
 import mappaCategorie from "./mappa-categorie.json";
 import mappaClusterTipologie from "./mappa-cluster-tipologie.json";
 import volumi from "./volumi.json";
+import { useTranslation } from "react-i18next";
 
 const volumiByID = keyBy(volumi, "textID");
 
@@ -167,12 +168,12 @@ const preprocessData = (data, options = {}) => {
           }
           return acc;
         }, {});
-      
+
       const filteredData = data.filter(x => x.textID === item.textID)
       const categoriesMatchesForBook = keyBy(filteredData.map(x => x['cluster tipologie']))
-      
+
       const numLevels = max(filteredData.map(x => x.livello).map(x => levelMaps[x]))
-      
+
       const dataVolume = get(volumiByID, item.textID);
       return {
         ...out,
@@ -204,6 +205,8 @@ function MarimekkoViz({
   currentTextID,
   setCurrentTextID
 }) {
+  const { t } = useTranslation('combining')
+
   const vizContainerRef = useRef();
   const topAxisContainerRef = useRef();
 
@@ -252,7 +255,7 @@ function MarimekkoViz({
     dimensions.vizWidth
   ]);
   const columnWidth = useMemo(() => icycleWidth / 5, [icycleWidth]);
-  
+
 
   //resetting aggregazione
   useEffect(() => {
@@ -277,7 +280,7 @@ function MarimekkoViz({
     return booksData.length > 4 ? dimensions.vizWidth: columnWidth * 4
 
   }, [booksData.length, columnWidth, dimensions.vizWidth])
-  
+
 
   const booksDataWithPositions = useMemo(() => {
     return computeHorizontalPositions(booksData, availableWidth, false, booksData.length >= 4);
@@ -302,7 +305,7 @@ function MarimekkoViz({
       });
   }, [currentTextID, data]);
 
-  
+
   const [currentPosition, setCurrentPosition] = useState(0);
   const [currentSequences, setCurrentSequences] = useState([]);
   const [currentSequencesSelected, setCurrentSequencesSelected] = useState([]);
@@ -320,7 +323,7 @@ function MarimekkoViz({
     if(!currentTextID){
       setCurrentSequencesSelected([]);
     }
-    
+
   }, [currentTextID]);
 
   const currentBook = useMemo(() => {
@@ -436,7 +439,7 @@ function MarimekkoViz({
         <div className="col-sm-9 d-flex flex-column">
           <div className="row no-gutters" style={{ flex: 2, minHeight: 160 }}>
             <div className="col-sm-12" ref={topAxisContainerRef}>
-              {availableWidth && (
+              {availableWidth > 0 && (
                 <MarimekkoTopAxis
                   height={dimensions.topAxisHeight}
                   width={availableWidth}
@@ -484,7 +487,7 @@ function MarimekkoViz({
                   >
                     LIVELLO {levelMapsInverted[r+1]}
                   </div>
-                  
+
                 </div>
               ))}
               {currentTextID && currentSequencesDisplay.map((seq, i) => (
@@ -512,7 +515,7 @@ function MarimekkoViz({
                 </div>
               ))}
               {!currentTextID && <div className={styles.marimekkoXaxisText}>
-                Lunghezza in caratteri dei testi, disposti in ordine cronologico.
+                {t('ui.footer_chart')}
               </div>}
             </div>
           </div>

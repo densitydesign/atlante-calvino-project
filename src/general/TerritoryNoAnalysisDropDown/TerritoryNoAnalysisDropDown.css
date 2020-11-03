@@ -2,7 +2,7 @@
 .territory-no-analysis-drop-down {
   background-color : white;
   position : fixed;
-  left : 0%;
+  left : 33.3%;
   bottom: var(--navigation-height);
   width : 33.3%;
   height: calc(var(--navigation-height)*2);

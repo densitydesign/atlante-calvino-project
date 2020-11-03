@@ -1,11 +1,12 @@
-import React from "react"
-import Footer from "../../headers/Footer/Footer"
+import React from 'react'
+import Footer from '../../headers/Footer/Footer'
 
-import "../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css"
-import "../../general/GridsWithScrollableColumns/ScrollableColumn.css"
-import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css'
+import '../../general/GridsWithScrollableColumns/ScrollableColumn.css'
+import IndexMenuHeader from '../../headers/IndexMenuHeader'
+import { Trans, withTranslation } from 'react-i18next'
 
-export default class Project extends React.Component {
+class Project extends React.Component {
   render() {
     return (
       <>
@@ -13,52 +14,54 @@ export default class Project extends React.Component {
         <div className="">
           <div
             className="col-md-12 col-lg-8"
-            style={{ padding: "0 4em 0em 8em" }}
+            style={{ padding: '0 4em 0em 8em' }}
           >
-            <h1>Progetto</h1>
-            <h2>Uscire a vedere</h2>
-            <p>
-              Oggi Italo Calvino avrebbe quasi cento anni. E di fronte alle
-              profonde trasformazioni a cui la letteratura, la stampa, i mezzi
-              di comunicazione e la ricerca stanno assistendo non sarebbe
-              rimasto chiuso a difendere la cittadella umanistica assediata.
-              Sarebbe uscito a vedere.
-            </p>
-            <p>
-              La letteratura come l’ha pensata, praticata e modellata Calvino
-              tra gli anni Quaranta e gli anni Ottanta del secolo scorso aveva
-              soprattutto un fine: quello di tenere la mente aperta. Renderla
-              abbastanza elastica non certo da capire tutta la complessità del
-              mondo, ma almeno da misurarla. E trarne qualche conseguenza: la
-              prima di queste è che abbiamo bisogno di storie, perché la nostra
-              mente non si limiti a riprodurre se stessa, ma attraverso la
-              narrazione si trasformi in un grande laboratorio di possibilità.
-              Aperto al futuro, grazie alla molteplicità di sguardi con cui
-              partecipa alla costruzione del passato.
-            </p>
-            <p>
-              Il progetto finanziato dal Fondo Nazionale Svizzero e intitolato{" "}
-              <em>Atlante Calvino: letteratura e visualizzazione</em> ha
-              scommesso sulla critica letteraria come esercizio intellettuale di
-              apertura mentale e sperimentazione. Per tre anni (2017-2020) il
-              progetto ha messo in contatto un’équipe letteraria dell’
-              <a
-                href="https://www.unige.ch/lettres/roman/unites/italien/accueil/"
-                className="link"
-              >
-                Unità d'italiano
-              </a>{" "}
-              dell’Università di Ginevra e il laboratorio di ricerca{" "}
-              <a href="https://www.densitydesign.org" className="link">
-                DensityDesign Research Lab
-              </a>{" "}
-              del Politecnico di Milano, specializzato in progetti di Digital
-              Humanities e Data Visualization, con la collaborazione della casa
-              editrice Mondadori, che detiene i diritti italiani dell’intera
-              opera di Calvino.
-            </p>
+            <Trans i18nKey={'text'} t={this.props.t} ns="project">
+              <h1>Progetto</h1>
+              <h2>Uscire a vedere</h2>
+              <p>
+                Oggi Italo Calvino avrebbe quasi cento anni. E di fronte alle
+                profonde trasformazioni a cui la letteratura, la stampa, i mezzi
+                di comunicazione e la ricerca stanno assistendo non sarebbe
+                rimasto chiuso a difendere la cittadella umanistica assediata.
+                Sarebbe uscito a vedere.
+              </p>
+              <p>
+                La letteratura come l’ha pensata, praticata e modellata Calvino
+                tra gli anni Quaranta e gli anni Ottanta del secolo scorso aveva
+                soprattutto un fine: quello di tenere la mente aperta. Renderla
+                abbastanza elastica non certo da capire tutta la complessità del
+                mondo, ma almeno da misurarla. E trarne qualche conseguenza: la
+                prima di queste è che abbiamo bisogno di storie, perché la
+                nostra mente non si limiti a riprodurre se stessa, ma attraverso
+                la narrazione si trasformi in un grande laboratorio di
+                possibilità. Aperto al futuro, grazie alla molteplicità di
+                sguardi con cui partecipa alla costruzione del passato.
+              </p>
+              <p>
+                Il progetto finanziato dal Fondo Nazionale Svizzero e intitolato{' '}
+                <em>Atlante Calvino: letteratura e visualizzazione</em> ha
+                scommesso sulla critica letteraria come esercizio intellettuale
+                di apertura mentale e sperimentazione. Per tre anni (2017-2020)
+                il progetto ha messo in contatto un’équipe letteraria dell’
+                <a
+                  href="https://www.unige.ch/lettres/roman/unites/italien/accueil/"
+                  className="link"
+                >
+                  Unità d'italiano
+                </a>{' '}
+                dell’Università di Ginevra e il laboratorio di ricerca{' '}
+                <a href="https://www.densitydesign.org" className="link">
+                  DensityDesign Research Lab
+                </a>{' '}
+                del Politecnico di Milano, specializzato in progetti di Digital
+                Humanities e Data Visualization, con la collaborazione della
+                casa editrice Mondadori, che detiene i diritti italiani
+                dell’intera opera di Calvino.
+              </p>
+            </Trans>
           </div>
-          <div className="col-md-12 offset-lg-4 col-lg-6">
+          <div className="col-md-12 offset-lg-3 col-lg-6">
             <p>
               Le due anime del progetto, quella letteraria e quella del design
               dell’informazione, sono state chiamate a mescolarsi per trovare
@@ -97,3 +100,5 @@ export default class Project extends React.Component {
     )
   }
 }
+
+export default withTranslation('project')(Project)

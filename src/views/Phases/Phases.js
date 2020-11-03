@@ -21,7 +21,7 @@ export default class PhenomenaIntro extends React.Component {
     return (
       <>
         <HamburgerCompassHeader />
-        <div id='phenomena' className="phenomena-intro-grid">
+        <div id="phenomena" className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 1</strong>
@@ -46,7 +46,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <NebbiaIcon height="100" />
+                  <Link to="/doubt/phase1">
+                    <NebbiaIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -72,7 +74,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <LuoghiIcon height="100" />
+                  <Link to="/space/phase1">
+                    <LuoghiIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -99,7 +103,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <ElenchiIcon height="100" />
+                  <Link to="/form/phase1">
+                    <ElenchiIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -125,7 +131,7 @@ export default class PhenomenaIntro extends React.Component {
             </div>
           </div>
         </div>
-        <div id='process' className="phenomena-intro-grid">
+        <div id="process" className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 2</strong>
@@ -147,7 +153,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <DubbioIcon height="100" />
+                  <Link to="/doubt/phase2">
+                    <DubbioIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -173,7 +181,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="d-flex flex-column align-items-center">
-                  <TrasformareIcon height="100" />
+                  <Link to="/space/phase2">
+                    <TrasformareIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -199,7 +209,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="d-flex flex-column align-items-center">
-                  <CombinareIcon height="100" />
+                  <Link to="/form/phase2">
+                    <CombinareIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -224,7 +236,7 @@ export default class PhenomenaIntro extends React.Component {
             </div>
           </div>
         </div>
-        <div id='problem' className="phenomena-intro-grid">
+        <div id="problem" className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
               <strong className="current-phase-subheader">TAPPA 3</strong>
@@ -244,7 +256,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <CancellazioneIcon height="100" />
+                  <Link to="/doubt/phase3">
+                    <CancellazioneIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -270,7 +284,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="mt-4 d-flex flex-column align-items-center">
-                  <RealismoIcon height="100" />
+                  <Link to="/space/phase3">
+                    <RealismoIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -296,7 +312,9 @@ export default class PhenomenaIntro extends React.Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="d-flex flex-column align-items-center">
-                  <TramaIcon height="100" />
+                  <Link to="/form/phase3">
+                    <TramaIcon height="100" />
+                  </Link>
                   <div className="mt-3 itineraries-small-text font-weight-bold">
                     <span>TAPPA</span>
                     <Link
@@ -312,9 +330,9 @@ export default class PhenomenaIntro extends React.Component {
               <div className="col-md-8">
                 <h2>Trama</h2>
                 <p>
-                  Senza trame non ci sono narrazioni. Ma le narrazioni
-                  possono avere rapporti molto complicati con le trame. Come
-                  l’opera di Calvino dimostra in modo esemplare.
+                  Senza trame non ci sono narrazioni. Ma le narrazioni possono
+                  avere rapporti molto complicati con le trame. Come l’opera di
+                  Calvino dimostra in modo esemplare.
                 </p>
               </div>
             </div>

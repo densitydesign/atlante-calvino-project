@@ -389,7 +389,7 @@ export default function RealismoMain({ title }) {
           <div className="realismo-labels-container on-left text-right">
             <div className="realismo-reset">
               <div>
-                <div>Seleziona i test e poi scorri in basso</div>
+                <div>Seleziona il testo e poi scorri in basso</div>
                 <button
                   onClick={() => {
                     // Reset Selection

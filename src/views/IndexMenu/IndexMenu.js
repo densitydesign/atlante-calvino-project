@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
-import { HashLink } from 'react-router-hash-link'
+import { HashLink } from "react-router-hash-link"
 import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
@@ -32,6 +32,10 @@ import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
 import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
 import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
 import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg"
+import { ReactComponent as Curve3 } from "./icons/curva-spazio-1.svg"
+import { ReactComponent as Curve4 } from "./icons/curva-spazio-2.svg"
+import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg"
+import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 
@@ -41,11 +45,12 @@ const ItemIndex = ({
   title,
   className,
   link,
+  onClose,
   linkApprofondimento,
 }) => {
   return (
     <div className={`${styles[className]} ${styles["hoverable-icon"]}`}>
-      <Link to={link}>
+      <Link onClick={onClose} to={link}>
         {icon}
         {iconHover}
       </Link>
@@ -69,6 +74,19 @@ export default function IndexMenu({ onClose }) {
 
   return (
     <div>
+      <Modal
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={showGuida}
+        onHide={handleCloseGuida}
+      >
+        <Modal.Body style={{ height: 500 }}>
+          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
+            <IconCloseGuida />
+          </div>
+        </Modal.Body>
+      </Modal>
       <IndexMenuHeader
         menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
@@ -98,6 +116,7 @@ export default function IndexMenu({ onClose }) {
         </HashLink>
         <ItemIndex
           title="territorio"
+          onClose={onClose}
           link="/archipelago"
           className={"territorio"}
           icon={
@@ -113,6 +132,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="dubitare"
+          onClose={onClose}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
           className={"dubitare"}
@@ -129,6 +149,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="nebbia"
+          onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
           className={"nebbia"}
@@ -145,6 +166,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="cancellazione"
+          onClose={onClose}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
           className={"cancellazione"}
@@ -161,6 +183,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="trasformare"
+          onClose={onClose}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           link="/space/phase2"
@@ -177,6 +200,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="luoghi"
+          onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
           className={"luoghi"}
@@ -193,6 +217,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="realismo"
+          onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           link="/space/phase3"
@@ -225,6 +250,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="combinare"
+          onClose={onClose}
           link="/form/phase2"
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
@@ -256,7 +282,7 @@ export default function IndexMenu({ onClose }) {
         />
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link to="/compass">
+        <Link to="/compass" onClick={onClose}>
           <Bussola width="70" />
         </Link>
       </div>
@@ -266,26 +292,39 @@ export default function IndexMenu({ onClose }) {
       >
         Guarda la guida
       </div>
+
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
-        <Curve1 width='60' />
+        <HashLink to="/itineraries#doubt">
+          <Curve1 width="60" />
+        </HashLink>
       </div>
+
       <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
-        <Curve2 width='60' />
+        <HashLink to="/itineraries#doubt">
+          <Curve2 width="60" />
+        </HashLink>
+      </div>
+      <div className={`position-absolute ${styles["curve-spazio-1"]}`}>
+        <HashLink to="/itineraries#space">
+          <Curve3 width="60" />
+        </HashLink>
+      </div>
+      <div className={`position-absolute ${styles["curve-spazio-2"]}`}>
+        <HashLink to="/itineraries#space">
+          <Curve4 width="60" />
+        </HashLink>
+      </div>
+      <div className={`position-absolute ${styles["curve-forma-1"]}`}>
+        <HashLink to="/itineraries#form">
+          <Curve5 width="60" />
+        </HashLink>
+      </div>
+      <div className={`position-absolute ${styles["curve-forma-2"]}`}>
+        <HashLink to="/itineraries#form">
+          <Curve6 width="60" />
+        </HashLink>
       </div>
       <Footer />
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={showGuida}
-        onHide={handleCloseGuida}
-      >
-        <Modal.Body style={{ height: 500 }}>
-          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
-            <IconCloseGuida />
-          </div>
-        </Modal.Body>
-      </Modal>
     </div>
   )
 }

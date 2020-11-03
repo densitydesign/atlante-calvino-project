@@ -11,6 +11,7 @@
 
 .overlay {
   fill: var(--dark-blue);
+  border-radius: 6px;
 }
 
 .range-filter rect.selection {

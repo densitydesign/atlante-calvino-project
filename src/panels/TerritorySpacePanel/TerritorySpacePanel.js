@@ -187,17 +187,6 @@ export default class TerritorySpacePanel extends React.Component {
         <div className='position-absolute' style={{ right: 20 }}>
           
         </div>
-        <TerritoryDescriptionSubPanel
-          title="Vedere i luoghi"
-          text="Come i luoghi d'ambientazione si distribuiscono nell'opera"
-          informationSheetRoute="/space/phase1/focus"
-          informationSheetDescription="SCHEDA"
-          itineraryStop2Route="/space/phase2"
-          itineraryStop2Description="TAPPA 2"
-          itineraryStop3Route="/space/phase3"
-          itineraryStop3Description="TAPPA 3"
-        />
-
         <div className="territory-space-panel">
           <TerritorySpaceMainOptionsSubPanel
             callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}

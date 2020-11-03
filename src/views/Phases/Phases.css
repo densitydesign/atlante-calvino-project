@@ -3,8 +3,10 @@
   display : grid;
   grid-template-rows : 1fr;
   grid-template-columns : 1fr 2fr;
-  height: calc(100% - var(--footer-height));
+  height: calc(100vh - var(--footer-height));
   border-bottom: 1px solid #000;
+  margin-top: -40px;
+  padding-top: 40px;
 }
 
 .itineraries-subgrid {

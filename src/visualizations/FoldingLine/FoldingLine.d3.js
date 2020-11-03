@@ -215,7 +215,7 @@ V.initialize = (init_options) => {
         .attr('fill','#666666')
         .attr('font-size','0.8571428571rem')
         .attr('font-style','italic')
-        .text('Clicca su un elemento per evidenziarne l’occorrenza di testo dubitativo.')
+        .text('Clicca su un elemento per evidenziare l’occorrenza di testo dubitativo.')
 
     V.update({data:init_options.data,showLabels:init_options.showLabels,showMisto:init_options.showMisto});
 }

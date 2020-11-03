@@ -1,6 +1,6 @@
 
 .territory-shape-panel {
   background-color : var(--bg);
-  grid-column: 8/ span 13;
+  grid-column: 7/ span 10;
   padding-top: 18px;
 }
