@@ -37,6 +37,9 @@ i18n
 
     saveMissing: true,
 
+    ns: ['translation'],
+    defaultNS: "translation",
+
     // TODO: Handle in a more generic way....
     backend: {
       loadPath: '/atlante-calvino-project/locales/{{lng}}/{{ns}}.json',
