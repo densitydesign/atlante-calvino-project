@@ -106,7 +106,7 @@ V.update = (options)=>{
             .merge(length);
 
     length.filter(d=>d.perc_dubbio <= 2.5)
-        .attr('fill','#eeeeee')
+        .attr('fill','#eeeeea')
         .attr('fill-opacity','1')
         .attr('stroke','white')
             
