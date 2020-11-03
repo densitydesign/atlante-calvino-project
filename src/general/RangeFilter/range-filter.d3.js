@@ -58,6 +58,7 @@ Viz.initialize = (el, data, changeSpan) => {
 	context.append('rect')
 		.classed("context-window", true)
 		.attr("width", width)
+		.attr("rx","5")
 		.attr("height", height)
 
   // important before brushed is called or assigned
@@ -77,7 +78,7 @@ Viz.update = (span) => {
 	info = info.enter().append('text')
 		.attr('class', 'info')
 		.attr('x', d => { return Viz.x(d) })
-		.attr('y', height-1.9) // this value depends on the font-size
+		.attr('y', 22) // this value depends on the font-size
 		.attr('text-anchor', (d, i) => {
 			function getAnchor(d, scale, width) {
 				let anchor;

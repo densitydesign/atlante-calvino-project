@@ -5,18 +5,18 @@
 
 #mainGrid {
   border-right: var(--app-border);
-  padding: 7em 4em 13em 8em;
+  padding: 4em 4em 13em 8em;
   position: fixed;
   height: 100%;
   overflow: scroll;
 }
 
 .unscrollable-column {
-  left: 130%;
-    padding: 7em 4em 4em 8em;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: hidden;
+  left: 0% !important;
+  padding: 4em 8em 4em 4em !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: hidden;
 }
 
 .itineraries-block {
@@ -27,16 +27,34 @@
   overflow: none;
 }
 
+.itineraries-small-text{
+  font-size: 10px;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.2px;
+}
+
 #doubt {
+  margin-top: -40px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6em;
+  height: 100vh;
 }
 
-
-#space{
-margin-top:6em;
-margin-bottom:6em;
+#space {
+  margin-top: -40px;
+  padding-top: 40px;
+  margin-bottom: 6em;
+  height: 100vh;
 }
 
-#shape{
-margin-top:6em;
-margin-bottom:20em;
+#shape {
+  margin-top: -40px;
+  padding-top: 40px;
+  margin-bottom: 20em;
+  height: 100vh;
 }

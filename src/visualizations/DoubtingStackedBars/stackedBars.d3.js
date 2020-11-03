@@ -57,10 +57,10 @@ let width,
     orderMessage,
     orderMessages = {
         'id':'Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.',
-        'definitivo':'Opere ordinate per quantità di testo definitivo, usa il selettore per espanderne una.',
+        'definitivo':'Opere ordinate per quantità di testo non dubitativo, usa il selettore per espanderne una.',
         'dubbio':'Opere ordinate per quantità di testo dubitativo, usa il selettore per espanderne una.',
-        'soggetto':'Opere ordinate per quantità di testo soggetto, usa il selettore per espanderne una.',
-        'misto':'Opere ordinate per quantità di testo misto, usa il selettore per espanderne una.'
+        'soggetto':'Opere ordinate per quantità di testo oggetto di dubbio, usa il selettore per espanderne una.',
+        'misto':'Opere ordinate per quantità di testo dubitativo e oggetto di dubbio, usa il selettore per espanderne una.'
     },
     selector,
     serie,
@@ -638,7 +638,8 @@ V.update = (data, stackMode, baseLayer) => {
     let selector_background = selector.append("rect")
         .attr("width", `${width-x.step()*20}`)
         .attr("height", 36)
-        .attr("fill","WHITESMOKE")
+        .attr("fill","#FFFFFF")
+        .attr("stroke","#C6CACF")
     
     let selector_handle = selector.append("g")
         .style("cursor", "grab")

@@ -5,6 +5,12 @@
   padding-left: 40px;
 }
 
+@media (max-width: 1024px){
+  .territory-description-subpanel {
+    line-height: 14px;
+  }
+}
+
 .description-link-group {
   width : 100%;
   display : flex;

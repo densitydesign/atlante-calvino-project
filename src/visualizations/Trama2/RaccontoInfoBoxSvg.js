@@ -1,5 +1,6 @@
 import React, { useRef, useState, useLayoutEffect, useContext } from 'react'
 import { CurretTramaViewContext } from './Trama2Content'
+import { ReactComponent as IconClose } from './icons/icon-close.svg'
 
 const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
   const containerRef = useRef(null)
@@ -22,7 +23,6 @@ const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
           <rect
             height={22}
             width={measures.width + 35}
-            rx={5}
             className="trama2-info-box"
           />
           <line
@@ -32,9 +32,7 @@ const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
             y2={22}
             className="trama2-info-box"
           />
-          <text stroke={'var(--dark-blue)'} x={measures.width + 22} y={15}>
-            o
-          </text>
+          <IconClose x={measures.width+20} y={5} />
         </g>
       )}
       <text

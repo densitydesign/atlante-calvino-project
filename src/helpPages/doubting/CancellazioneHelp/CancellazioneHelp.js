@@ -5,6 +5,7 @@ import { ReactComponent as Legend01 } from "./icons/cancellazione_a_dimensione.s
 import { ReactComponent as Legend02 } from "./icons/cancellazione_a_disposizione.svg"
 import { ReactComponent as Legend03 } from "./icons/cancellazione_a_colore.svg"
 import { ReactComponent as Legend04 } from "./icons/cancellazione_griglia.svg"
+import { Link } from "react-router-dom"
 
 export default function CancellazioneHelp() {
   const [key, setKey] = useState("info")
@@ -27,7 +28,7 @@ export default function CancellazioneHelp() {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-2">
+          <p className="mt-3">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -104,8 +105,9 @@ export default function CancellazioneHelp() {
             sinistra tenderanno infatti a collocarsi i testi prima degli anni
             ’60, con qualche rara eccezione: “superano” la linea{" "}
             <i>Campo di mine</i>
-            (1946), <i>L’avventura di un soldato</i> (1949) (vedi
-            Approfondimento), <i>La casa degli alveari</i> (1949),{" "}
+            (1946), <i>L’avventura di un soldato</i> (1949) (vedi{" "}
+            <Link to="/doubt/phase3/focus">Approfondimento</Link>),{" "}
+            <i>La casa degli alveari</i> (1949),{" "}
             <i>L’avventura di un impiegato</i> (1953),
             <i>L’avventura di un fotografo</i> (1955),{" "}
             <i>Il cavaliere inesistente</i> (1959). Una maggiore densità di
@@ -116,12 +118,14 @@ export default function CancellazioneHelp() {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="mt-2">
-            <div>
-              <small>DIMENSIONE</small>
-            </div>
-            <div className="mt-2">
-              <Legend01 width="400" />
+          <div className="row mt-2">
+            <div className="col-md-12">
+              <div>
+                <small>DIMENSIONE</small>
+              </div>
+              <div className="mt-2">
+                <Legend01 />
+              </div>
             </div>
           </div>
           <div className="mt-2">

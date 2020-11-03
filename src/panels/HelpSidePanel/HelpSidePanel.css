@@ -10,7 +10,7 @@
   max-height: 100%;
   width: var(--help-side-panel-width);
   background-color: #FFFFFFE3;
-  z-index: 10001;
+  z-index: 950;
   /* to overcome z-index=10000 of 'navigations' style */
   transition: right 1s;
   overflow-y: hidden;
@@ -56,7 +56,7 @@
 .help-side-panel h2 {
   margin: 0;
   font-size: 1.6em;
-  color: black;
+  color: var(--dark-blue);
 }
 
 .help-side-panel h3 {
@@ -140,6 +140,7 @@
   font-weight: bold;
   color: var(--dark-green);
   background: none !important;
+  font-size: 10px;
 }
 
 .tab-info:hover {
@@ -155,6 +156,25 @@
   height: 68vh;
   padding-bottom: 20px;
 }
+
+@media (min-width: 1799px) and (max-width: 1999px){
+  .tab-content{
+    height: 70vh;
+  }
+}
+
+@media (min-width: 2000px){
+  .tab-content{
+    height: 78vh;
+  }
+}
+
+
+
+.help-side-panel-full > div > .tab-content{
+  height: 75vh !important;
+}
+
 
 .tab-info.active {
   text-align: center;
@@ -196,13 +216,14 @@
 
 small{
   color: #404040;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
 }
 
 
 .badge-legenda-small{
   color: #777777;
+  line-height: 0.5 !important;
   font-size: 10px;
   font-weight: normal;
 }

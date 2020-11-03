@@ -15,8 +15,12 @@
 
 .territory-itineraries-panel .radio-button-with-close-down{
 padding:1.2em 0.6em 0.6em 0.6em;;
+display: flex;
+justify-content: center;
 }
 
 .territory-itineraries-panel .radio-button-with-close-up{
 padding:1.2em 0.6em 0.6em 0.6em;;
+display: flex;
+justify-content: center;
 }

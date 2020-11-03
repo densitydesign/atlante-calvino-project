@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import groupBy from "lodash/groupBy";
 import styles from "./Trama.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function MarimekkoLegend({
   selectedLegendEntries,
@@ -9,6 +10,7 @@ export default function MarimekkoLegend({
   dettaglio,
   currentBook,
 }) {
+  const { t } = useTranslation('combining')
 
   const byGruppo = groupBy(
     legendMap.filter(x => x.gruppo),
@@ -25,7 +27,7 @@ export default function MarimekkoLegend({
       }`}
     >
       <div className="">
-        <h4>{dettaglio === 'ambito' ? 'TIPOLOGIA DI AMBITO': 'CATEGORIE DI ELENCO'}</h4>
+        <h4>{dettaglio === 'ambito' ? 'TIPO DI PIANO': 'CATEGORIE DI ELENCO'}</h4>
       </div>
       {Object.keys(byGruppo).map(gruppo => (
         <div key={gruppo} className="mt-1">
@@ -55,7 +57,7 @@ export default function MarimekkoLegend({
                     setSelectedLegendEntries(newEntries);
                   }}
                 ></div>
-                <span className={styles.legendEntryText}>{item.label || item.valore}</span>
+                <span className={styles.legendEntryText}>{t(`${dettaglio}.${item.label || item.valore}`)}</span>
               </div>
             )})}
           </div>

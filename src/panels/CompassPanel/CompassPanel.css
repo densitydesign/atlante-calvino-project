@@ -10,7 +10,7 @@
   width: var(--compass-panel-width);
   height : 100vw;
   background-color: var(--bg);
-  z-index: 20001;
+  z-index: 1200;
   /* to overcome z-index=10000 of 'navigations' style */
   overflow-y: scroll;
   overflow-x: hidden;

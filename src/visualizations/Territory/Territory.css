@@ -21,3 +21,7 @@
 .node circle {
   shape-rendering: geometricprecision;
 }
+
+.territory-body > div > div > svg > g > .overlay{
+  fill: none;
+}

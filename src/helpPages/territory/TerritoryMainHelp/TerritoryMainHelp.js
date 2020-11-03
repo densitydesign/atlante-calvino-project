@@ -19,9 +19,10 @@ export default function TerritoryMainHelp({ helpProps }) {
     <>
       <IntestazioneHelpPanel
         tappa={1}
-        linkTappa1={"/phase1-phenomena"}
-        linkTappa2={"/phase2-process"}
-        linkTappa3={"/phase3-problem"}
+        linkTappa1={"/phases#tappa1"}
+        linkTappa2={"/phases#tappa2"}
+        linkTappa3={"/phases#tappa3"}
+        linkItinerario={"/phases#tappa1"}
         titolo="Esplorare l'opera come un territorio"
         nomeItinerario={"IL FENOMENO"}
       />
@@ -32,7 +33,7 @@ export default function TerritoryMainHelp({ helpProps }) {
         onSelect={(k) => setKey(k)}
       >
         <Tab tabClassName="tab-info" eventKey="info" title="Spiegazione">
-          <p className="mt-2">
+          <p className="mt-3">
             <strong>Di cosa si tratta</strong>
           </p>
           <p>
@@ -113,8 +114,8 @@ export default function TerritoryMainHelp({ helpProps }) {
           </p>
         </Tab>
         <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
-          <div className="row mt-2">
-            <div className="6">
+          <div className="row mt-3">
+            <div className="col-md-6">
               <div>
                 <small>DIMENSIONE</small>
               </div>

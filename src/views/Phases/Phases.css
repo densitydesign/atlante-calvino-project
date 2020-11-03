@@ -2,14 +2,15 @@
 .phenomena-intro-grid {
   display : grid;
   grid-template-rows : 1fr;
-  grid-template-columns : 2fr 1fr;
-  height:100%;
-  top:100;
-  position: fixed;
+  grid-template-columns : 1fr 2fr;
+  height: calc(100vh - var(--footer-height));
+  border-bottom: 1px solid #000;
+  margin-top: -40px;
+  padding-top: 40px;
 }
 
 .itineraries-subgrid {
-  padding:13em 4em 13em 4em;
+  padding:4em 8em 4em 5em;
   grid-template-rows : 1fr 1fr 1fr;
   overflow-y: scroll;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -20,20 +21,15 @@
   color: var(--dark-blue);
 }
 
-.itineraries-subgrid p {
-  margin-bottom:3em;
-}
-
 .subheaders-container {
   display : grid;
   grid-template-columns : 1fr 1fr;
-  height: 80px;
   overflow : hidden;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
 
 .currentPhase{
-padding:7em 4em 13em 8em;
+padding:4em 8em 4em 4em;
 border-right:var(--app-border);
 }

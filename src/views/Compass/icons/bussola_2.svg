@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="37" viewBox="0 0 43 37">
+  <defs>
+    <clipPath id="clip-Artboard_6">
+      <rect width="43" height="37"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_6" data-name="Artboard – 6" clip-path="url(#clip-Artboard_6)">
+    <rect width="43" height="37" fill="#fff"/>
+    <g id="Artwork_9" data-name="Artwork 9" transform="translate(21.402 9.069)">
+      <g id="Group_6319" data-name="Group 6319" transform="translate(-20.903 -13.404)">
+        <path id="Path_119550" data-name="Path 119550" d="M6.4,12.083C11.411,12.083,17.077,1,23.831,1" transform="translate(5.707 5.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.8"/>
+        <path id="Path_119551" data-name="Path 119551" d="M24.485,4.5c-6.6,0-11.155.166-17.985.166" transform="translate(5.053 13.334)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.8"/>
+        <path id="Path_119552" data-name="Path 119552" d="M6.4,22.463C14.9,22.463,17.077,1,23.831,1" transform="translate(5.707 5.834)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2.681"/>
+        <path id="Path_119553" data-name="Path 119553" d="M6.4,22.463C15.168,22.463,17.416,1,24.385,1" transform="translate(5.153 5.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.8"/>
+        <path id="Path_119554" data-name="Path 119554" d="M24.484,27.257C17.883,27.257,13.33,16.7,6.5,16.7" transform="translate(5.053 11.598)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.8"/>
+        <line id="Line_2067" data-name="Line 2067" x2="9.434" transform="translate(0 18)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_2154" data-name="Line 2154" x2="9.783" transform="translate(31.217 6.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_2156" data-name="Line 2156" x2="9.783" transform="translate(31.217 17.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_2153" data-name="Line 2153" x2="9.434" transform="translate(0 28.618)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_2155" data-name="Line 2155" x2="9.783" transform="translate(31.217 38.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_2157" data-name="Line 2157" x2="9.783" transform="translate(31.217 27.834)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_119555" data-name="Path 119555" d="M6.4,12.8H23.831" transform="translate(5.706 15.498)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.8"/>
+      </g>
+    </g>
+  </g>
+</svg>

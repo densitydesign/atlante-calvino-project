@@ -1,10 +1,8 @@
 
 import React from 'react';
 import Footer from '../../headers/Footer/Footer';
-
 import '../../general/GridsWithScrollableColumns/GridWithScrollableLeftColumn.css';
 import '../../general/GridsWithScrollableColumns/ScrollableColumn.css';
-import '../../App.css';
 import './AboutAndContacts.css';
 import IndexMenuHeader from '../../headers/IndexMenuHeader';
 

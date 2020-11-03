@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withTranslation } from 'react-i18next'
 import MainMenu from "../../general/MainMenu";
 import PageTitle from "../../general/PageTitle";
 import MoreInfo from "../../general/MoreInfo";
@@ -78,6 +79,7 @@ class Trama extends Component {
   componentDidMount() {}
 
   render() {
+    const { t } = this.props
     const {
       cercaPer,
       dettaglio,
@@ -86,7 +88,7 @@ class Trama extends Component {
       ricerca,
       controlsEnabled,
       currentTextID,
-      helpSidePanelOpen
+      helpSidePanelOpen,
     } = this.state;
 
     const helpPage = GlobalData.helpPages.combine.main;
@@ -173,7 +175,7 @@ class Trama extends Component {
 
         <div className="bottom-nav navigations">
           <AltOptions
-            title="Numero di livelli nel testo"
+            title={t("ui.numero_livelli_testo")}
             multiple
             disabled={!controlsEnabled}
             options={tipologiaOptions}
@@ -192,7 +194,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title="Dettaglio"
+            title={t("ui.dettaglio")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={dettaglio}
@@ -209,7 +211,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title="Aggregazione"
+            title="Modalità"
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}
@@ -230,4 +232,4 @@ class Trama extends Component {
   }
 }
 
-export default Trama;
+export default withTranslation('combining')(Trama);

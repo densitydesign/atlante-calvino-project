@@ -6,9 +6,9 @@
               rx="70%"
               ry="44%"
               fill="none"
-              stroke="#666"
+              stroke="#000"
               strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
+              strokeDasharray="2,4"
             />
             <ellipse
               cx="50%"
@@ -16,9 +16,9 @@
               rx="45%"
               ry="30%"
               fill="none"
-              stroke="#666"
+              stroke="#000"
               strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
+              strokeDasharray="2,4"
             />
             <ellipse
               cx="50%"
@@ -26,9 +26,9 @@
               rx="25%"
               ry="17%"
               fill="none"
-              stroke="#666"
+              stroke="#000"
               strokeMiterlimit="10"
-              strokeDasharray="3.997405529022217,5.996108531951904"
+              strokeDasharray="2,4"
             />
           </g>
         </svg>
