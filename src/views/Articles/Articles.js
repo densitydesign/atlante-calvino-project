@@ -20,7 +20,7 @@ export default class Articles extends React.Component
 
   componentDidMount() {
     console.log('press review')
-    d3.tsv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQTLGjZLV0-w_72af5IdeY9kNUA6FTqjWdGfR1LGfLz5ix5CusACEWo0jB77hHdKRM2hPegDYawAoXo/pub?output=tsv').then(data => {
+    d3.tsv(process.env.PUBLIC_URL+'/pubblicazioni.tsv').then(data => {
       this.setState({data: data})
     })
   }

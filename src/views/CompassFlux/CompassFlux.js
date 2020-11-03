@@ -3,8 +3,6 @@ import React from "react"
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 import CompassLische from "../../visualizations/CompassLische/CompassLische"
 
-import V from "./compassFlux.d3"
-
 import "./CompassFlux.css"
 
 export default class CompassFlux extends React.Component {

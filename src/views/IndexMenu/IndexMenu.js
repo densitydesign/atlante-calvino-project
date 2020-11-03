@@ -132,6 +132,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="dubitare"
+          onClose={onClose}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
           className={"dubitare"}
@@ -148,6 +149,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="nebbia"
+          onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
           className={"nebbia"}
@@ -164,6 +166,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="cancellazione"
+          onClose={onClose}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
           className={"cancellazione"}
@@ -180,6 +183,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="trasformare"
+          onClose={onClose}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           link="/space/phase2"
@@ -196,6 +200,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="luoghi"
+          onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
           className={"luoghi"}
@@ -212,6 +217,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="realismo"
+          onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           link="/space/phase3"
@@ -244,6 +250,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title="combinare"
+          onClose={onClose}
           link="/form/phase2"
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
