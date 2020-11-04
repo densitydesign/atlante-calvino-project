@@ -10,7 +10,7 @@ import legend01 from './legend01.svg';
 import legend02 from './legend02.svg';
 import textWall01 from './textWall01.svg';
 import textWall02 from './textWall02.svg';
-import treemap from './treemapRatioWordsConcreteAbstract.svg';
+import treemap from './TreemapAbsoluteWordsConcreteAbstract.svg';
 
 class RealismInformationSheet extends Component {
   render() {
@@ -60,6 +60,8 @@ class RealismInformationSheet extends Component {
           <p className={SheetStyles.paragraph}>
             A proposito di realtà: alcuni numeri possono dare un’idea chiara di come il meccanismo di slittamento dal piano reale a quello immaginario (e poi da quello immaginario a quello reale) si inneschi sempre a partire da elementi estremamente concreti, da ciò che Binda ha sotto gli occhi mentre cammina. Percentualmente, l’84% dei sostantivi utilizzati nel testo afferiscono a un lessico concreto, soltanto il 16% a un lessico astratto. All’interno di questo 84%, poi, si possono individuare tre importanti campi semantici: la natura (44%), la guerra (21%) e il corpo (18%).
           </p>
+          <img className={SheetStyles.image} src={treemap} style={{gridColumn:'1 / span 12',width:'100%',marginTop:'2rem'}}/>
+          <br></br><br></br>
           <p className={SheetStyles.paragraph}>
           A essere messa in dubbio è sempre la realtà concreta, poiché Binda, non diversamente dal protagonista di <i>Campo di mine</i>, «deve ridefinire le cose che in apparenza sono armoniche e in realtà ambigue: ogni cosa può essere se stessa o il suo contrario» (Falaschi 1976, 132). In questo modo, per esempio, finisce per credere che ci sia «un tedesco per ogni cespuglio, un tedesco appollaiato in cima a ogni albero, coi ghiri. Le pietraie pullulavano d’elmi, fucili s’alzavano tra i rami, le radici degli alberi finivano in piedi umani. Binda marciava lungo una doppia siepe di tedeschi in agguato, che lo guardavano con occhi luccicanti come foglie: più camminava più s’approfondiva in mezzo a loro». Si tratta di un vero e proprio processo di metamorfosi che si ripete frequentemente nelle storie di Calvino, soprattutto in questi anni, e che si sviluppa in presenza di alcuni elementi chiave come il sentimento di <i>paura</i> e il movimento lungo un sentiero: le due parole che, non a caso, campeggiano nel titolo del racconto che stiamo analizzando. Pensiamo, oltre ai testi citati in precedenza, a un racconto come <i>Un pomeriggio, Adamo</i> (1949) o anche al primo romanzo dell’autore, <i>Il sentiero dei nidi di ragno</i> (1947). Il processo metamorfico crea inevitabilmente equivoci, poiché introduce uno scarto «tra la catena di false interpretazioni e la realtà» (Serra 2006, 66).
           </p>
