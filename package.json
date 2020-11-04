@@ -18,7 +18,7 @@
     "i18next": "^19.8.1",
     "i18next-http-backend": "^1.0.21",
     "kld-intersections": "^0.7.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "query-string": "^6.13.5",
     "rc-slider": "^9.2.1",
     "react": "^16.13.1",

@@ -86,7 +86,11 @@ storia del Lettore" transform="translate(31.245 77.009)" font-size="11" font-fam
       </g>
       <g id="Group_578" data-name="Group 578" transform="translate(21 19)">
         <text id="inizio" transform="translate(722 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
-        <text id="fine" transform="translate(953 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-15.405" y="0">fine</tspan></text>
+        <text id="fine" transform="translate(953 1409)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-16.12" y="0">fine</tspan></text>
+      </g>
+      <g id="Group_23663" data-name="Group 23663" transform="translate(743 1334)">
+        <text id="squilibrio" transform="translate(30.925 371.669)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">squilibrio</tspan></text>
+        <line id="Line_6422" data-name="Line 6422" x2="21" transform="translate(0.5 371.5)" fill="none" stroke="red" stroke-width="1" stroke-dasharray="2 4"/>
       </g>
     </g>
   </g>
