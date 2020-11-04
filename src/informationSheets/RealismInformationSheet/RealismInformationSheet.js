@@ -7,9 +7,10 @@ import map1x from './mappa-ver02@1x.png';
 import map2x from './mappa-ver02@2x.png';
 
 import legend01 from './legend01.svg';
-import textWall01 from './textWall01.png';
-import textWall02 from './textWall02.png';
-import treemap from './treemapRatioWordsConcreteAbstract.svg';
+import legend02 from './legend02.svg';
+import textWall01 from './textWall01.svg';
+import textWall02 from './textWall02.svg';
+import treemap from './TreemapAbsoluteWordsConcreteAbstract.svg';
 
 class RealismInformationSheet extends Component {
   render() {
@@ -48,42 +49,11 @@ class RealismInformationSheet extends Component {
           <p className={SheetStyles.paragraph}>
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit.
           </p>
-          <div className={SheetStyles.sideContent}>
-            <div style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)'}}>
-              <img className={SheetStyles.image+' '+SheetStyles.image100w} src={treemap} />
-              <p className="captionLeft">
-                Treemap
-              </p>
-            </div>
-          </div>
-          <p style={{
-            marginTop:'1rem',
-            gridColumn:'1 / span 4',
-            color:'#4500FF',
-            fontSize:12
-          }}>
-            <b>Natura 44%</b> — sentiero, luna, bivio, alberi, scorciatoie, buio, sassi, cespugli, salite, sassi, notte, buio, vallate, legno, castagne, boschi, sentieri, capre, legna, fieno, sassi, castagno, tronco, lichene, pietra, spiazzo, carbonaia, capra, faina, caccia, cespugli, pendio, prati, valli, cane, coda, monte, valle, valle, monte, creste, monte, valle, campagne, vallata, latte, valle, notte, notte, paglia, braci, buio, boschi, valle, l’alba, cresta, ali, pipistrello, costone, buio, vento, erba, foglie, castagno, ricci, foglie, ricci, foglie, ricci, sciacquio, ghiri, alberi, notte, sentiero, mare, foglie, costiera, pista, vallata, rive, riva, buio, pendio, cespugli, stormi, pernici, luce, lume, riva, lumi, sentieri, bestia, orme, lumi, cespuglio, cespuglio, bestia, rami, larici, bestia, bestia, scimmia, prato, luna, versante, sottoterra, montagne, ragni, terra, funghi, bosco, buio, tronchi, cespugli, prato, luna, gufo, fischio, fischio, bestia, cespo, d’eriche, lepre, volpe, arbusti, cespuglio, albero, ghiri, pietraie, rami, radici, alberi siepe, foglie, gufo, aria, sentiero, pietre, strada, sentiero, pietre, alberi, muschio, pietre, alberi, muschio, gradino, sassi, dirupo, roveto, costone, cespo, ginestra, agrifoglio, rigagnolo, acqua, rane, rane, vallata, rane, nicchia, neve, neve, pini, aghi, terriccio, formicaio, nicchia, bosco, fuoco, castagne, ghiri, luce, fuoco, fuoco, alba, cresta, castagne, sperone, roccia, dirupo, cespugli, cespugli
-          </p>
-          <p style={{
-            marginTop:'1rem',
-            gridColumn:'5 / span 4',
-            color:'#4500FF',
-            fontSize:12
-          }}>
-            <b>Guerra 21%</b> — staffetta, battaglione, staffetta, brigata, compagni, accampamento, notizie, ordini, compito, arma, fuciletto, distaccamento, risposta, cuoco, marmitte, gavettata, compito, partigiani, marina, guerra, guerra, spari, salvataggi, guerra, partigiani, bersaglieri, militi, rastrellamento, partigiani, bersaglieri, militi, tedeschi, partigiani, rastrellamenti, marcia, militi, distaccamenti, ordine, battaglione, ordine, comandante, consegna, marcia, tedeschi, tedeschi, battaglioni, tedeschi, compagni, compagni, mine, mine, mine, mine, mine, tedeschi, tedeschi, tedesco, tedesco, tedesco, elmi, fucili, tedeschi, tedeschi, armi, mitraglia, elmo, mitra, tedeschi, tedeschi, tedesco, elmi, bandoliere, armi, inseguimento, accampamento, commissario, ordine, tedeschi, elmo, accampamento, compagni, compagni, tedeschi, fascisti, munizioni, treppiede, compagni, marcia
-          </p>
-          <p style={{
-            marginTop:'1rem',
-            gridColumn:'9 / span 4',
-            color:'#4500FF',
-            fontSize:12
-          }}>
-            <b>Corpo 18%</b> —  passo, corpo, petto, petto, respiro, gambe, volto, faccia, pugno, faccia, labbro, corpo, muscoli, spalle, gola, piedi, gomito, gomito, gomiti, gambe, polmoni, mano, alito, baffi, narici, pelle, piedi, occhi, cuore, palpebre, passi, gola, corpi, teste, capelli, passo, tempie, dita, saliva, nervi, sangue, collo, passi, piedi, occhi, urlo, piedi, petto, sorriso, mani, spalle, mani, dito, fianco, mani, bocche, mani, pelle, mano, testa, gola, petto, passi, man, mano, occhi, sorriso, labbra, faccia, pugno, fiato, palpebre, mani, spalle, passi
-          </p>
+          <img className={SheetStyles.image} src={treemap} style={{gridColumn:'1 / span 12',width:'100%',marginTop:'2rem'}}/> 
         </div>
         <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Trasformazioni, visioni, dubbi</h2>
-          <img className={SheetStyles.image+' '+SheetStyles.translucentBackground} src={legend01} style={{ borderBottom: '1px solid #5151fc', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 0px)',width:'100%'}} />
+          <img className={SheetStyles.image+' '+SheetStyles.translucentBackground} src={legend02} style={{ borderBottom: '1px solid #5151fc', gridColumn:'1 / span 12', marginBottom:'1rem', position:'sticky', top:'calc(var(--navigation-height) - 0px)',width:'100%'}} />
           <img className={SheetStyles.image} src={textWall02} style={{gridColumn:'1 / span 12',width:'100%'}}/>
         </div>
         <div className={SheetStyles.gridRow}>
