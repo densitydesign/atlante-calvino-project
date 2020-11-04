@@ -130,7 +130,7 @@ export default function ProcessCombiningMainHelp() {
           <div className="row mt-2">
             <div className="col-md-12">
               <div>
-                <small>DISPOSIZIONE E POSIZIONE</small>
+                <small>{t('combining:help_panel.disposizione_e_posizione')}</small>
               </div>
               <div className="text-center">
                 <Legend01 className="mt-2" />
@@ -143,33 +143,33 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#5151FC" }}
               >
-                PIANO ESTERIORE
+                {t('combining:help_panel.piano_esteriore')}
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#8131F4"
-                name="Eventi eliminali"
+                name={t('combining:help_panel.eventi_eliminali')}
                 italic="rivelazione, morte"
               />
               <BadgeLegenda
                 color="#0000FF"
-                name="Interazione"
+                name={t('combining:help_panel.interazione')}
                 italic="guerra, aggressione/scontro, aiuto/salvataggio, compito/missione, incontro animale, incontro di gruppo, incontro femminile, incontro maschile, matrimonio, offerta, rifiuto, scena erotica, scommessa, telefonata"
               />
               <BadgeLegenda
                 color="#5151FC"
-                name="Spostamento"
+                name={t('combining:help_panel.spostamento')}
                 italic="arrivo/ritorno, fuga, inseguimento/ricerca, partenza/sparizione, viaggio"
               />
               <BadgeLegenda
                 color="#6E94F4"
-                name="Intenzione"
+                name={t('combining:help_panel.intenzione')}
                 italic="iniziativa/piano, ostacolo, successoo"
               />
               <BadgeLegenda
                 color="#00FFFF"
-                name="Situazione"
+                name={t('combining:help_panel.situazione')}
                 italic="illusione/speranza, innamoramento"
               />
             </div>
@@ -180,28 +180,28 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#00FFCC" }}
               >
-                PIANO INTERIORE
+                {t('combining:help_panel.piano_interiore')}
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#009959"
-                name="Stato euforico"
+                name={t('combining:help_panel.stato_euforico')}
                 italic="angoscia/delusione, smarrimento/dubbio"
               />
               <BadgeLegenda
                 color="#00C19C"
-                name="Stato disforico"
+                name={t('combining:help_panel.stato_disforico')}
                 italic="visione, riflessione, mistero/assurdità, ipotesi"
               />
               <BadgeLegenda
                 color="#67E9B1"
-                name="Stato riflessivo"
+                name={t('combining:help_panel.stato_riflessivo')}
                 italic="pausa/sospensione, attesa"
               />
               <BadgeLegenda
                 color="#00FFB6"
-                name="Stato sospeso"
+                name={t('combining:help_panel.stato_sospeso')}
                 italic="cambiamento, città magica, situazione"
               />
             </div>
@@ -212,15 +212,15 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#FFA500" }}
               >
-                PIANO FORMALE
+                {t('combining:help_panel.piano_formale')}
               </div>
             </div>
             <div className="col-md-8">
-              <BadgeLegenda color="#FFF800" name="Racconto incastonato" />
-              <BadgeLegenda color="#F2CA22" name="Metanarrazione" />
-              <BadgeLegenda color="#EFA625" name="Cornice" />
-              <BadgeLegenda color="#ED6826" name="Struttura" />
-              <BadgeLegenda color="#FF3366" name="Terra" />
+              <BadgeLegenda color="#FFF800" name={t('combining:help_panel.racconto_incastonato')} />
+              <BadgeLegenda color="#F2CA22" name={t('combining:help_panel.metanarrazione')} />
+              <BadgeLegenda color="#EFA625" name={t('combining:help_panel.cornice')} />
+              <BadgeLegenda color="#ED6826" name={t('combining:help_panel.struttura')} />
+              <BadgeLegenda color="#FF3366" name={t('combining:help_panel.terra')} />
             </div>
           </div>
         </Tab>
