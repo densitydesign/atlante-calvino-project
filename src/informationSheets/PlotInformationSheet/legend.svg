@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="12" viewBox="0 0 800 12">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="36" viewBox="0 0 800 36">
   <defs>
     <clipPath id="clip-legend_01">
-      <rect width="800" height="12"/>
+      <rect width="800" height="36"/>
     </clipPath>
   </defs>
   <g id="legend_01" clip-path="url(#clip-legend_01)">
-    <g id="Group_795" data-name="Group 795" transform="translate(0 1)">
+    <g id="Group_795" data-name="Group 795" transform="translate(0 25)">
       <g id="Group_306" data-name="Group 306">
         <g id="Group_312" data-name="Group 312" transform="translate(0 -1)">
           <text id="Incipit" transform="translate(20 9)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Incipit</tspan></text>
@@ -24,5 +24,6 @@
         <rect id="Rectangle_181" data-name="Rectangle 181" width="17" height="9" rx="4.5" transform="translate(0 1)" fill="#dbdbea"/>
       </g>
     </g>
+    <text id="Sequenze" transform="translate(0 9)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Sequenze</tspan></text>
   </g>
 </svg>

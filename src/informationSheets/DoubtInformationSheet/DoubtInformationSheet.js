@@ -8,9 +8,9 @@ import SheetStyles from '../SheetStyles.module.css';
 
 import './DoubtInformationSheet.css';
 
-import legenda from './Scheda_Dubbio_dimensione.svg'
-import zoom_01 from './infosheet-nebbia-02.svg'
-import zoom_02 from './infosheet-nebbia-01.svg'
+import legenda from './legend.svg'
+import zoom_01 from './zoom-01.svg'
+import zoom_02 from './zoom-02.svg'
 
 
 export default class DoubtInformationSheet extends React.Component
@@ -26,7 +26,7 @@ export default class DoubtInformationSheet extends React.Component
           <h1 className={SheetStyles.titleH1}>Analisi di occorrenze del campo semantico del dubbio</h1>
           </div>
       <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
+          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 12'}}  src={legenda}/>
         </div>
 
                   <div id="mainviz" className={SheetStyles.gridRow}>
