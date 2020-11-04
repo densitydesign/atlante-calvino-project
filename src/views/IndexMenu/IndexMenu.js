@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTranslation, Trans } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
@@ -72,6 +73,8 @@ export default function IndexMenu({ onClose }) {
     setShowGuida(true)
   }
 
+  const { t } = useTranslation('translation')
+
   return (
     <div>
       <Modal
@@ -98,7 +101,7 @@ export default function IndexMenu({ onClose }) {
         <Orbite />
       </div>
       <div className={styles["IndexMenu"]}>
-        <div className={styles["tappe"]}>Tappa</div>
+        <div className={styles["tappe"]}>{t('tappa')}</div>
         <HashLink to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
@@ -115,7 +118,7 @@ export default function IndexMenu({ onClose }) {
           </div>
         </HashLink>
         <ItemIndex
-          title="territorio"
+          title={t('territorio')}
           onClose={onClose}
           link="/archipelago"
           className={"territorio"}
@@ -131,7 +134,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="dubitare"
+          title={t('dubitare')}
           onClose={onClose}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
@@ -148,7 +151,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="nebbia"
+          title={t('nebbia')}
           onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
@@ -165,7 +168,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="cancellazione"
+          title={t('cancellazione')}
           onClose={onClose}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
@@ -182,7 +185,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="trasformare"
+          title={t('trasformare')}
           onClose={onClose}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
@@ -199,7 +202,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="luoghi"
+          title={t('luoghi')}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -216,7 +219,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="realismo"
+          title={t('realismo')}
           onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
@@ -233,7 +236,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="elenchi"
+          title={t('elenchi')}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
           className={"elenchi"}
@@ -249,7 +252,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="combinare"
+          title={t('combinare')}
           onClose={onClose}
           link="/form/phase2"
           linkApprofondimento="/form/phase2/focus"
@@ -266,7 +269,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="trama"
+          title={t('trama')}
           link="/form/phase3"
           className={"trama"}
           icon={
@@ -290,7 +293,7 @@ export default function IndexMenu({ onClose }) {
         className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
       >
-        Guarda la guida
+        {t('index_menu.guarda_la_guida')}
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>

@@ -24,5 +24,10 @@
     "itinerario_forma": "ITINERARIO FORMA",
     "proporzione": "PROPORZIONE",
     "il_fenomeno": "IL FENOMENO"
+  },
+  "tappa": "tappa",
+  "territorio": "Territorio",
+  "index_menu": {
+    "guarda_la_guida": "Guarda la guida"
   }
 }
