@@ -11,8 +11,10 @@
     "itinerario_dubbio": "ITINERARIO DUBBIO",
     "disposizione": "DISPOSIZIONE",
     "dimensione": "DIMENSIONE",
-    "frequenza": "FREQUENZA"
+    "frequenza": "FREQUENZA",
+    "itinerario_spazio": "ITINERARIO SPAZIO"
   },
   "dubitare": "Dubitare",
-  "nebbia": "Nebbia"
+  "nebbia": "Nebbia",
+  "luoghi": "Luoghi"
 }
