@@ -7,6 +7,12 @@
     "legenda": "legenda",
     "di_cosa_si_tratta": "Di cosa si tratta",
     "come_funziona": "Come funziona",
-    "qualche_pista_di_lettura": "Qualche pista di lettura"
-  }
+    "qualche_pista_di_lettura": "Qualche pista di lettura",
+    "itinerario_dubbio": "ITINERARIO DUBBIO",
+    "disposizione": "DISPOSIZIONE",
+    "dimensione": "DIMENSIONE",
+    "frequenza": "FREQUENZA"
+  },
+  "dubitare": "Dubitare",
+  "nebbia": "Nebbia"
 }
