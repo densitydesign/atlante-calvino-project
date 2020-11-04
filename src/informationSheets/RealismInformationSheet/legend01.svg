@@ -37,7 +37,6 @@
 	<text transform="matrix(1 0 0 1 237.244 85.819)" class="st6 st1">Luoghi geografici localizzabili su mappa</text>
 </g>
 <text transform="matrix(1 0 0 1 0.244 22.8068)" class="st5 st6 st1">TIPOLOGIA SEQUENZA NARRATIVA</text>
-<line class="st9" x1="0.2" y1="103.4" x2="938.2" y2="103.4"/>
-<line class="st9" x1="0.2" y1="-0.2" x2="938.2" y2="-0.2"/>
+<line class="st9" x1="0" y1="0.6" x2="938" y2="0.6"/>
 <rect id="Rectangle_50" y="0" class="st10" width="938" height="104.4"/>
 </svg>
