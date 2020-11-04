@@ -12,9 +12,12 @@
     "disposizione": "DISPOSIZIONE",
     "dimensione": "DIMENSIONE",
     "frequenza": "FREQUENZA",
-    "itinerario_spazio": "ITINERARIO SPAZIO"
+    "itinerario_spazio": "ITINERARIO SPAZIO",
+    "itinerario_forma": "itinerario_forma",
+    "proporzione": "PROPORZIONE"
   },
   "dubitare": "Dubitare",
   "nebbia": "Nebbia",
-  "luoghi": "Luoghi"
+  "luoghi": "Luoghi",
+  "elenchi": "Elenchi"
 }

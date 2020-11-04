@@ -142,7 +142,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
-                    <small>{t('nebbia:help_panel.proporzione')}</small>
+                    <small>{t('help_panel.proporzione')}</small>
                   </div>
                   <div>
                     <LegendaProporzione width="274" className="mt-2" />
