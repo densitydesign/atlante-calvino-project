@@ -1,5 +1,11 @@
 {
   "combinare": "Combinare",
+  "dubitare": "Dubitare",
+  "nebbia": "Nebbia",
+  "luoghi": "Luoghi",
+  "elenchi": "Elenchi",
+  "trasformare": "Trasformare",
+  "cancellazione": "Cancellazione",
   "help_panel": {
     "approfondimento": "approfondimento",
     "tappa": "tappa",
@@ -16,10 +22,5 @@
     "itinerario_forma": "ITINERARIO FORMA",
     "proporzione": "PROPORZIONE",
     "il_fenomeno": "IL FENOMENO"
-  },
-  "dubitare": "Dubitare",
-  "nebbia": "Nebbia",
-  "luoghi": "Luoghi",
-  "elenchi": "Elenchi",
-  "trasformare": "Trasformare"
+  }
 }
