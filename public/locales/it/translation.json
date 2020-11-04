@@ -30,5 +30,12 @@
   "index_menu": {
     "guarda_la_guida": "Guarda la guida"
   },
-  "bussola": "Bussola"
+  "bussola": "Bussola",
+  "header": {
+    "equipe": "Équipe",
+    "progetto": "Progetto",
+    "istruzioni_per_uso": "Istruzioni per l'uso",
+    "capta": "Capta",
+    "pubblicazioni": "Pubblicazioni"
+  }
 }
