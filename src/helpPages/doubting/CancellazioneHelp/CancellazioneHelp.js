@@ -134,7 +134,7 @@ export default function CancellazioneHelp() {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+        <Tab tabClassName="tab-info" eventKey="legenda" title={t("help_panel.legenda")}>
           <div className="row mt-2">
             <div className="col-md-12">
               <div>
