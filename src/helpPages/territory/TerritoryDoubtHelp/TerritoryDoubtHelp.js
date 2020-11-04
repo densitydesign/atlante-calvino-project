@@ -86,17 +86,21 @@ export default function TerritoryDoubtHelp({ helpProps }) {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title={t('help_panel.legenda')}>
+        <Tab
+          tabClassName="tab-info"
+          eventKey="legenda"
+          title={t("help_panel.legenda")}
+        >
           <div className="row mt-3">
             <div className="col-md-6">
               <div>
-                <small>{t('help_panel.disposizione')}</small>
+                <small>{t("help_panel.disposizione")}</small>
               </div>
               <Analisi01 width="119" className="mt-2" />
             </div>
             <div className="col-md-6">
               <div>
-                <small>{t('help_panel.dimensione')}</small>
+                <small>{t("help_panel.dimensione")}</small>
               </div>
               <Analisi02 width="70" className="mt-2" />
             </div>
@@ -107,17 +111,23 @@ export default function TerritoryDoubtHelp({ helpProps }) {
             <div className="row mt-2">
               <div className="col-md-6">
                 <div>
-                  <small>{t('nebbia:help_panel.tipo_di_fenomeno')}</small>
+                  <small>{t("nebbia:help_panel.tipo_di_fenomeno")}</small>
                 </div>
                 <div>
-                  <BadgeLegenda color="#5151FC" name={t('nebbia')} />
-                  <BadgeLegenda color="#00C19C" name={t('nebbia:help_panel.cancellazione')} />
-                  <BadgeLegenda color="#FF6C39" name={t('nebbia:help_panel.entrambi')} />
+                  <BadgeLegenda color="#5151FC" name={t("nebbia")} />
+                  <BadgeLegenda
+                    color="#00C19C"
+                    name={t("nebbia:help_panel.cancellazione")}
+                  />
+                  <BadgeLegenda
+                    color="#FF6C39"
+                    name={t("nebbia:help_panel.entrambi")}
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div>
-                  <small>{t('help_panel.frequenza')}</small>
+                  <small>{t("help_panel.frequenza")}</small>
                 </div>
                 <div>
                   <FrequenzaLegenda color="#5151FC" />
@@ -131,18 +141,21 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
-                    <small>{t('nebbia:help_panel.tipo_di_fenomeno')}</small>
+                    <small>{t("nebbia:help_panel.tipo_di_fenomeno")}</small>
                   </div>
                   <div>
-                    <BadgeLegenda color="#5151FC" name={t('nebbia')} />
-                    <BadgeLegenda color="#00C19C" name={t('nebbia:help_panel.cancellazione')} />
+                    <BadgeLegenda color="#5151FC" name={t("nebbia")} />
+                    <BadgeLegenda
+                      color="#00C19C"
+                      name={t("nebbia:help_panel.cancellazione")}
+                    />
                   </div>
                 </div>
               </div>
               <div className="row mt-2">
                 <div className="col-md-12">
                   <div>
-                    <small>{t('help_panel.proporzione')}</small>
+                    <small>{t("help_panel.proporzione")}</small>
                   </div>
                   <div>
                     <LegendaProporzione width="274" className="mt-2" />

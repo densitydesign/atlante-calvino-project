@@ -13,8 +13,9 @@
     "dimensione": "DIMENSIONE",
     "frequenza": "FREQUENZA",
     "itinerario_spazio": "ITINERARIO SPAZIO",
-    "itinerario_forma": "itinerario_forma",
-    "proporzione": "PROPORZIONE"
+    "itinerario_forma": "ITINERARIO FORMA",
+    "proporzione": "PROPORZIONE",
+    "il_fenomeno": "IL FENOMENO"
   },
   "dubitare": "Dubitare",
   "nebbia": "Nebbia",
