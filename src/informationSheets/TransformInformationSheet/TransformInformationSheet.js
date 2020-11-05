@@ -35,18 +35,15 @@ class TransformInformationSheet extends Component {
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
           <div className={SheetStyles.gridRow}>
-            <div style={{gridColumn:'1 / span 22'}}>
-            <h4 className="ac-breadcrumb">Tappa 3 - Cancellare</h4>
-            <h1>L'orizzonte geografico e letterario in Calvino</h1>
-            <h2>L'idea</h2>
-            <img className = {SheetStyles.imageTrasp} style={{width:'100%'}} src={inquadramento}/>
+            <div style={{gridColumn:'1 / span 12'}}>
+            <h4 className={SheetStyles.titleH4}>Tappa 3 > cancellare</h4>
+            <h1>Cartografia dei luoghi terrestri</h1>
+            <img className = {SheetStyles.image} src={inquadramento}/>
             </div>
-            <div style={{gridColumn:'1 / span 8'}}>
+            <div style={{gridColumn:'1 / span 9'}}>
                 <img className={SheetStyles.legend} src={legenda_0}/>
             </div>
-          </div>
 
-<div className={SheetStyles.gridRow}>
     <h2 className={SheetStyles.titleH2}>L'analisi</h2>
     <h3 className={SheetStyles.subtitleSheet}>Geoletteratura</h3>
       <p className={SheetStyles.paragraph}>
@@ -78,7 +75,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1945 - 1955</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}} src={legenda_01}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_1}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_1}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1945 al 1955 </p>
 
     </div>
@@ -91,7 +88,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1956 - 1965</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_02}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_2}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_2}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1956 al 1965 </p>
     </div>
   </Carousel.Caption>
@@ -103,7 +100,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc', color:'#5151fc'}}>1966 - 1975</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_03}/>
-        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_3}/>
+        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_3}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1966 al 1975 </p>
     </div>
   </Carousel.Caption>
@@ -115,7 +112,7 @@ class TransformInformationSheet extends Component {
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1976 - 1985</h2>
     <div className={SheetStyles.gridRow}>
         <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_04}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.imageTrasp} style = {{gridColumn:'8 / span 5'}} src={zoom_4}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_4}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1976 al 1985 </p>
     </div>
   </Carousel.Caption>
@@ -128,23 +125,15 @@ class TransformInformationSheet extends Component {
   <div className={SheetStyles.gridRow}>
     <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
       <ol className={[SheetStyles.paragraph,'references'].join(' ')  }>
-
         <li className="referenceItem">
-        Frank Zipfel, Fiktion, Fiktivität, Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der
-        Literaturwissenschaft, Erich Schmidt Verlag, Berlin 2001. Barbara Piatti, Die Geographie der Literatur. Schauplätze,
-        Handlungsräume, Raumphantasien, Wallstein, Göttingen 2008.
+        Piatti et al. 2009: B. Piatti, H. R. Bär, A. Reuschel, L. Hurni. W. Cartwright, Mapping Literature: Towards A Geography of Fiction in W. Cartwright, G. Gartner, A. Lehn, Cartography and Art, Berlin, Springer, pp. 177-192.
         </li>
         <li className="referenceItem">
-        Cfr. Barbara Patti et al, Mapping Literature: Towards a Geography of Fiction, in William Cartwright, Georg Gartner,
-        Antje Lehn (a cura di), Cartography And art, Springer, Berlin 2009, pp. 177-199. O anche Anne-Kathrin Reuschel, Lorenz
-        Hurni, Mapping Literature: Visualisation of Spatial Uncertainty in Fiction, «The Cartographic Journal», vol. 48, n. 4, 2011,
-        p. 296.</li>
+        Reuschel-Hurni 2011: A. Reuschel, L. Hurni, Mapping Literature: Visualisation of Spatial Uncertainty in Fiction, in «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.
+        </li>
         <li className="referenceItem">
-        Francesca Serra, Calvino, Salerno, Roma 2006, p. 322.</li>
-        <li className="referenceItem">
-        «Calvino è sempre stato un narratore che non sente il romanzo, che persino ne diffida. Narratore anti-romanzesco: nel senso che la problematica sociale e morale, la scienza della vita quotidiana come microstoriografia, che caratterizzano il romanzo moderno, sono sempre stati fuori del suo orizzonte».
-        Alfonso Berardinelli, Calvino moralista. Ovvero restare sani dopo la fine del mondo, in «Diario», VII, 9, 1991, p. 39</li>
-      </ol>
+        Genette 1972: G. Genette, Figures III, Paris, Seuil. </li>
+        </ol>
         </div>
 
     <div className={SheetStyles.gridRow}>

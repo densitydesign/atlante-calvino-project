@@ -1,14 +1,20 @@
+
+body{
+    background-color: white;
+}
+
+
 .main {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
   font-size: var(--text-size);
   margin-bottom: 2rem;
   margin-top: 3rem;
 }
 
 #mainviz {
-  grid-column: 1 / span 24;
+  grid-column: 1 / span 22;
   display: grid;
+
 }
 
 .gridRow {
@@ -75,8 +81,8 @@
 }
 
 .image {
-  max-width: 100%;
-  margin-bottom: 0.3rem;
+  width: 100%;
+  margin: 0 0 2rem 0;
 }
 
 .image100w {

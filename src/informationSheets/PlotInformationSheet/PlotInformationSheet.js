@@ -6,7 +6,7 @@ import ArrowButton from '../../general/ArrowButton/ArrowButton';
 import './PlotInformationSheet.css';
 import SheetStyles from '../SheetStyles.module.css';
 
-import legenda from './legend_01.svg'
+import legenda from './legend.svg'
 import incastonati from './incastonati.svg'
 import zoom_01 from './zoom_01.svg'
 import zoom_02 from './zoom_02.svg'
@@ -25,7 +25,7 @@ class PlotInformationSheet extends Component {
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 3 - Trama</h4>
+          <h4 className="ac-breadcrumb">Tappa 3 > trama</h4>
           <h1 className={SheetStyles.titleH1}>Se una notte d'inverno un viaggiatore</h1>
           </div>
           <div className={SheetStyles.gridRow}>

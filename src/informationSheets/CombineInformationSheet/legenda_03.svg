@@ -1,26 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127" height="70" viewBox="0 0 127 70">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127" height="162" viewBox="0 0 127 162">
   <defs>
     <clipPath id="clip-legenda_03">
-      <rect width="127" height="70"/>
+      <rect width="127" height="162"/>
     </clipPath>
   </defs>
   <g id="legenda_03" clip-path="url(#clip-legenda_03)">
-    <g id="Group_791" data-name="Group 791" transform="translate(-792 -2026)">
-      <text id="Ambito" transform="translate(792 2035)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Ambito</tspan></text>
-      <g id="Group_306" data-name="Group 306" transform="translate(792 2053)">
-        <g id="Group_312" data-name="Group 312" transform="translate(0 -1)">
-          <text id="Esteriore" transform="translate(20 9)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Esteriore</tspan></text>
-          <path id="Path_47" data-name="Path 47" d="M4.5,0h8a4.5,4.5,0,0,1,0,9h-8a4.5,4.5,0,0,1,0-9Z" transform="translate(0 1)" fill="#5151fc"/>
-        </g>
-      </g>
-      <g id="Group_307" data-name="Group 307" transform="translate(792 2069)">
-        <text id="Interiore" transform="translate(20 8)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Interiore</tspan></text>
-        <path id="Path_46" data-name="Path 46" d="M4.5,0h8a4.5,4.5,0,0,1,0,9h-8a4.5,4.5,0,0,1,0-9Z" transform="translate(0 1)" fill="#0affb7"/>
-      </g>
-      <g id="Group_543" data-name="Group 543" transform="translate(792 2085)">
-        <text id="Formale" transform="translate(20.483 8)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Formale</tspan></text>
-        <rect id="Rectangle_181" data-name="Rectangle 181" width="17" height="9" rx="4.5" transform="translate(0 1)" fill="#ffa501"/>
-      </g>
+    <text id="Ambito" transform="translate(0 9)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Ambito</tspan></text>
+    <text id="Salti_di_ambito" data-name="Salti di ambito" transform="translate(0 106)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Salti di ambito</tspan></text>
+    <text id="Esteriore" transform="translate(30 35)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Esteriore</tspan></text>
+    <path id="Path_47" data-name="Path 47" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 27)" fill="#5151fc"/>
+    <text id="Interiore" transform="translate(30 51)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Interiore</tspan></text>
+    <path id="Path_46" data-name="Path 46" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 44)" fill="#0affb7"/>
+    <text id="Formale" transform="translate(29.483 68)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Formale</tspan></text>
+    <text id="Dall_ambito_interiore_all_ambito_esteriore" data-name="Dall’ambito
+interiore 
+all’ambito 
+esteriore" transform="translate(48.483 123)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Dall’ambito</tspan><tspan x="0" y="10.8">interiore </tspan><tspan x="0" y="21.6">all’ambito </tspan><tspan x="0" y="32.4">esteriore</tspan></text>
+    <rect id="Rectangle_181" data-name="Rectangle 181" width="20" height="10" rx="5" transform="translate(0 60)" fill="#ffa501"/>
+    <g id="Group_630" data-name="Group 630" transform="translate(0.095 116.68)">
+      <rect id="Rectangle_1651" data-name="Rectangle 1651" width="19.223" height="1.353" fill="#00ffb6"/>
+      <rect id="Rectangle_1652" data-name="Rectangle 1652" width="19.223" height="5.051" transform="translate(0 1.354)" fill="#00ffb6"/>
+      <rect id="Rectangle_1653" data-name="Rectangle 1653" width="19.223" height="4.449" transform="translate(0 6.406)" fill="#00ffb6"/>
+      <rect id="Rectangle_1654" data-name="Rectangle 1654" width="19.223" height="2.736" transform="translate(0 10.857)" fill="#00ffb6"/>
+      <rect id="Rectangle_1655" data-name="Rectangle 1655" width="19.223" height="0.76" transform="translate(0 13.594)" fill="#00ffb6"/>
+      <rect id="Rectangle_1656" data-name="Rectangle 1656" width="19.223" height="1.749" transform="translate(0 14.355)" fill="#00ffb6"/>
+      <rect id="Rectangle_1657" data-name="Rectangle 1657" width="19.223" height="0.518" transform="translate(0 16.105)" fill="#00ffb6"/>
+      <rect id="Rectangle_1658" data-name="Rectangle 1658" width="19.223" height="2.483" transform="translate(0 16.624)" fill="#00ffb6"/>
     </g>
+    <g id="Group_631" data-name="Group 631" transform="translate(19.891 135.788)">
+      <rect id="Rectangle_1659" data-name="Rectangle 1659" width="19.223" height="4.158" fill="#5151fc"/>
+    </g>
+    <path id="Path_148130" data-name="Path 148130" d="M6205.737,884.324c0-14.219-12.946-17.644-18.588-17.644" transform="translate(-6167 -750)" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="2"/>
   </g>
 </svg>

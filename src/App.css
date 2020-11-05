@@ -212,6 +212,7 @@ ol {
   color: var(--small-text);
   font-size: 1.2857142857rem;
   line-height: 2.1428571429rem;
+  margin: 1rem 0;
 }
 
 ul {
@@ -231,8 +232,8 @@ li {
 .references {
   font-size: 0.8571428571rem;
   line-height: 1.0714285714rem;
-  font-weight: 400;
-  margin-bottom: 4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
   padding-left: 0rem;
 }
 
@@ -243,7 +244,7 @@ li {
 
 .referenceItem {
   list-style-position: inside;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .cite {

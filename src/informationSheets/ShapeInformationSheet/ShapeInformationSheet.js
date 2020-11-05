@@ -10,10 +10,10 @@ import SheetStyles from '../SheetStyles.module.css';
 
 
 import legenda from './legenda.svg'
-import zoom_01 from './zoom_01.png'
-import zoom_02 from './zoom_02.png'
-import zoom_03 from './zoom_03.png'
-import zoom_04 from './zoom_04.png'
+import zoom_01 from './zoom-01.svg'
+import zoom_02 from './zoom-02.svg'
+import zoom_03 from './zoom-03.svg'
+import zoom_04 from './zoom-04.svg'
 
 
 export default class ShapeInformationSheet extends React.Component
@@ -25,11 +25,11 @@ export default class ShapeInformationSheet extends React.Component
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 1 - Elenchi</h4>
+          <h4 className="ac-breadcrumb">Tappa 1 > elenchi</h4>
           <h1 className={SheetStyles.titleH1}>Analisi di occorrenze del campo semantico del dubbio</h1>
         </div>
         <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 9'}}  src={legenda}/>
+          <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 12'}}  src={legenda}/>
         </div>
 
         <div id="mainviz" className={SheetStyles.gridRow}>
