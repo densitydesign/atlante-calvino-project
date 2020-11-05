@@ -2,6 +2,7 @@ import React from "react"
 import { Link, NavLink } from "react-router-dom"
 import { useTranslation, Trans } from "react-i18next"
 import MainMenu from "../../general/MainMenu/MainMenu"
+import LanguageSwitch from "../../general/LanguageSwitch"
 import { ReactComponent as IconClose } from "./icons/icon-close.svg"
 
 export default function IndexMenuHeader({
@@ -59,9 +60,7 @@ export default function IndexMenuHeader({
         style={{ gridColumn: "span 1" }}
         className="d-flex align-items-center justify-content-center"
       >
-        <Link className="text-dark-blue" to="/">
-          IT
-        </Link>
+        <LanguageSwitch />
       </div>
     </div>
   )

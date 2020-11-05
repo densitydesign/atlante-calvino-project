@@ -38,7 +38,8 @@
     "numero_livelli_testo": "Numero di livelli nel testo",
     "categorie_elenco": "CATEGORIE DI ELENCO",
     "non_aggregato": "non aggregato",
-    "combinare": "Combinare"
+    "combinare": "Combinare",
+    "livello": "livello"
   },
   "help_panel": {
     "itinerario_forma": "ITINERARIO FORMA",
@@ -50,18 +51,18 @@
     "piano_interiore": "PIANO INTERIORE",
     "piano_formale": "PIANO FORMALE",
     "eventi_eliminali": "Eventi eliminali",
-    "interazione": "interazione",
-    "spostamento": "spostamento",
-    "intenzione": "intenzione",
-    "situazione": "situazione",
-    "stato_euforico": "stato euforico",
-    "stato_disforico": "stato disforico",
-    "stato_riflessivo": "stato riflessivo",
-    "stato_sospeso": "stato sospeso",
-    "racconto_incastonato": "racconto incastonato",
-    "metanarrazione": "metanarrazione",
-    "cornice": "cornice",
-    "struttura": "struttura",
-    "terra": "terra"
+    "interazione": "Interazione",
+    "spostamento": "Spostamento",
+    "intenzione": "Intenzione",
+    "situazione": "Situazione",
+    "stato_euforico": "Stato euforico",
+    "stato_disforico": "Stato disforico",
+    "stato_riflessivo": "Stato riflessivo",
+    "stato_sospeso": "Stato sospeso",
+    "racconto_incastonato": "Racconto incastonato",
+    "metanarrazione": "Metanarrazione",
+    "cornice": "Cornice",
+    "struttura": "Struttura",
+    "terra": "Terra"
   }
 }

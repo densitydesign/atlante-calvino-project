@@ -1,7 +1,7 @@
 {
   "combinare": "Combinare",
   "dubitare": "Dubitare",
-  "nebbia": "Nebbia",
+  "nebbia": "Fog",
   "luoghi": "Luoghi",
   "elenchi": "Elenchi",
   "trasformare": "Trasformare",
@@ -26,7 +26,6 @@
     "il_fenomeno": "IL FENOMENO"
   },
   "tappa": "tappa",
-  "territorio": "Territorio",
   "index_menu": {
     "guarda_la_guida": "Guarda la guida"
   },
@@ -37,5 +36,7 @@
     "istruzioni_per_uso": "Istruzioni per l'uso",
     "capta": "Capta",
     "pubblicazioni": "Pubblicazioni"
-  }
+  },
+  "territorio": "Territorio",
+  "entrambi": "Entrambi"
 }

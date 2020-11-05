@@ -6,5 +6,8 @@
     "cancellazione": "Cancellazione",
     "entrambi": "Entrambi",
     "proporzione": "PROPORZIONE"
+  },
+  "footer": {
+    "presenza_del_fenomeno": "Presenza del fenomeno"
   }
 }

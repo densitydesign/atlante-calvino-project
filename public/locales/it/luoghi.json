@@ -12,5 +12,9 @@
     "nessun_luogo": "Nessun luogo",
     "proporzione": "PROPORZIONE",
     "livelli_spaziali": "LIVELLI SPAZIALI"
+  },
+  "footer": {
+    "tipo_di_luogo": "tipo di luogo",
+    "livelli_spaziali": "Livelli spaziali"
   }
 }

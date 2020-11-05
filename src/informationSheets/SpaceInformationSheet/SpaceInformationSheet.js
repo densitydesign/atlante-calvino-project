@@ -321,15 +321,15 @@ class SpaceInformationSheet extends React.Component {
                 arrowDirection="none"
                 textAlign="left"
                 text={this.props.t("ANALISI")}
-                route="/space/phase2"
+                route="/space/phase1"
               />
             </div>
             <div style={{ gridColumn: "4 / span 2" }}>
               <ArrowButton
-                arrowDirection="left"
+                arrowDirection="right"
                 textAlign="right"
-                text={this.props.t("TAPPA 1")}
-                route="/space/phase1"
+                text={this.props.t("TAPPA 2")}
+                route="/space/phase2"
               />
             </div>
             <div style={{ gridColumn: "6 / span 2" }}>

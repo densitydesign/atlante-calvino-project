@@ -21,5 +21,9 @@
     "struttura": "Struttura",
     "terra": "Terra",
     "tipo_di_sequenza": "tipo_di_sequenza"
-  }
+  },
+  "scrolla_per_zoomare": "Scrolla per zoomare",
+  "inizio_del_testo": "Inizio del testo",
+  "fine_del_testo": "Fine del testo",
+  "lunghezza_del_testo": "Lunghezza del testo in caratteri"
 }

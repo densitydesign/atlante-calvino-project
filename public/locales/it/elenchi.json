@@ -9,5 +9,12 @@
     "sintagmi": "sintagmi",
     "frasi": "frasi",
     "senza_elenco": "senza_elenco"
+  },
+  "footer": {
+    "tipo_di_elenco": "tipo di elenco",
+    "Misto": "Misto",
+    "Proposizioni": "Proposizioni",
+    "Parole": "Parole",
+    "Sintagmi": "Sintagmi"
   }
 }

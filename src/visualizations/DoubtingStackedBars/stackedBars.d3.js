@@ -309,7 +309,7 @@ V.update = (data, stackMode, baseLayer) => {
                 let this_percentage = ""
                 if (showPercentage && d.percentage) this_percentage = " "+(d.percentage<1?d.percentage.toFixed(3):d.percentage.toFixed(2))+"%";
                 let html = `<rect width="16" height="8" fill="${d.color}" rx="5"></rect>
-                <text x="20" y="8" font-size="0.8571428571rem">${d.label + '' + this_percentage}</text>`;
+                <text x="20" y="8" font-size="0.8571428571rem">${d.label+''+this_percentage}</text>`;
                 return html;
             });
 
