@@ -268,6 +268,7 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title="trama"
           link="/form/phase3"
+          linkApprofondimento="/form/phase3/focus"
           className={"trama"}
           icon={
             <TramaIcon
