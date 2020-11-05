@@ -45,7 +45,7 @@
         <line id="Line_20" data-name="Line 20" x1="4.036" transform="translate(17.601 87.849)" fill="none" stroke="#000" stroke-width="1"/>
         <text id="_20" data-name="20" transform="translate(2.048 89.01)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">20</tspan></text>
         <line id="Line_21" data-name="Line 21" x1="4.036" transform="translate(17.601 52.709)" fill="none" stroke="#000" stroke-width="1"/>
-        <text id="_30" data-name="30" transform="translate(2.048 53.871)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">30</tspan></text>
+        <text id="_30" data-name="30" transform="translate(2.048 53.871)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">30</tspan></text>
         <line id="Line_22" data-name="Line 22" x1="4.036" transform="translate(17.601 17.57)" fill="none" stroke="#000" stroke-width="1"/>
         <text id="_40" data-name="40" transform="translate(2.048 18.732)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">40</tspan></text>
         <path id="Path_15" data-name="Path 15" d="M-6,50.5h4.266V208.249" transform="translate(23.244 -50.5)" fill="none" stroke="#000" stroke-width="1"/>

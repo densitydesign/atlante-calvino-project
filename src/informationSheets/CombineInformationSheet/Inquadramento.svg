@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="294" viewBox="0 0 900 294">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="367" viewBox="0 0 900 367">
   <defs>
     <clipPath id="clip-path">
       <circle id="Ellipse_33418" data-name="Ellipse 33418" cx="157.6" cy="157.6" r="157.6" transform="translate(-129.1 -70.6)"/>
@@ -10,17 +10,17 @@
       <circle id="Ellipse_33423" data-name="Ellipse 33423" cx="157.6" cy="157.6" r="157.6" transform="translate(649.9 -91.1)"/>
     </clipPath>
     <clipPath id="clip-Inquadramento">
-      <rect width="900" height="294"/>
+      <rect width="900" height="367"/>
     </clipPath>
   </defs>
   <g id="Inquadramento" clip-path="url(#clip-Inquadramento)">
-    <rect width="900" height="294" fill="#fff"/>
-    <g id="inquadramento-2" data-name="inquadramento" transform="translate(28.3 33.4)">
+    <rect width="900" height="367" fill="#fff"/>
+    <g id="inquadramento-2" data-name="inquadramento" transform="translate(28.3 107.4)">
       <rect id="Rectangle_19231" data-name="Rectangle 19231" width="852.9" height="250.3" transform="translate(-3.1 -4.8)" fill="#fff"/>
       <g id="Group_24102" data-name="Group 24102">
         <g id="World">
-          <path id="Path_149928" data-name="Path 149928" d="M157.6,0A157.6,157.6,0,1,1,0,157.6,157.6,157.6,0,0,1,157.6,0Z" transform="translate(-129.1 -70.6)" fill="none" stroke="#5151fc" stroke-width="0.5"/>
-          <circle id="Ellipse_33416" data-name="Ellipse 33416" cx="157.6" cy="157.6" r="157.6" transform="translate(196 -115.6)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.5"/>
+          <circle id="Ellipse_33415" data-name="Ellipse 33415" cx="157.6" cy="157.6" r="157.6" transform="translate(-129.1 -70.6)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.25"/>
+          <circle id="Ellipse_33416" data-name="Ellipse 33416" cx="157.6" cy="157.6" r="157.6" transform="translate(196 -115.6)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.25"/>
           <circle id="Ellipse_33417" data-name="Ellipse 33417" cx="157.6" cy="157.6" r="157.6" transform="translate(649.9 -91.1)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.25"/>
           <g id="ne_50m_admin_0_countries_lakes" opacity="0.52">
             <path id="Path_148131" data-name="Path 148131" d="M158.6,98.6l.4-.4.4-.3.7-.3.1-.1-.5-.3.2-.2.2-.3v-.1l-.1-.1-.4-.2-.5-.1-.6.1v-.4l-.3-.2-.3.1-.2.2-.3.2-.3.5V97l-.6.5.1.1,1-.2-.1.2-.9.8-.2.2h-.8l-.5.2-.1-.2.2-.3.3-.2V98l-.3-.1.2-.2.5-.2v-.1h-.3l-.5.2h-.2l.8-.5.4-.2.3-.1.7-.4.2-.2.1-.3v-.2l.1-.5.4-1.1.2-.6v-.2l-.4-.8v-.2l.1-.2h-.7l-.2.2-.5.5-.5.4-.3.3-.2.4-1,1.8-.3.3-.4.4-.3.6-.1.6.2,1.1.2.3.3.3.2.2h.2l.2-.1h.4l.5-.1h.4l.4.1h.4l1.2-.3Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1"/>
@@ -1377,7 +1377,7 @@
                 </g>
               </g>
             </g>
-            <circle id="Ellipse_33420" data-name="Ellipse 33420" cx="157.6" cy="157.6" r="157.6" transform="translate(649.9 -91.1)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.5"/>
+            <circle id="Ellipse_33420" data-name="Ellipse 33420" cx="157.6" cy="157.6" r="157.6" transform="translate(649.9 -91.1)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.25"/>
             <g id="Group_24101" data-name="Group 24101">
               <g id="Group_24100" data-name="Group 24100" clip-path="url(#clip-path-3)">
                 <g id="ne_50m_admin_0_countries_lakes-4">
