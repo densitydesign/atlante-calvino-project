@@ -47,6 +47,10 @@
   font-weight: 700;
 }
 
+.icon-width {
+  width: 80px;
+}
+
 .territorio {
   position: absolute;
   top: calc(calc(100vh / 8) - var(--navigation-height));
@@ -97,8 +101,8 @@
 
 .curve-forma-2{
   position: absolute;
-  top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
-  left: calc(100% / 12 * 9.5);
+  top: calc(calc(100vh / 8 * 4.8) - var(--navigation-height));
+  left: calc(100% / 12 * 9.7);
 }
 
 .nebbia {
@@ -203,7 +207,7 @@
 
 @media only screen 
 and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
+and (max-device-width : 1023px) {
   .icon-width {
     width: 90px;
   }
@@ -449,13 +453,6 @@ and (max-device-width : 1024px) {
     left: calc(100% / 12 * 8);
     width: 44px;
     height: 44px;
-  }
-
-  .curve-combinare{
-    position: absolute;
-    top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
-    left: calc(100% / 12 * 10.5);
-    width: 300px;
   }
 
 }
