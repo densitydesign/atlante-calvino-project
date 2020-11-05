@@ -10,10 +10,15 @@
     "raccolte": "RACCOLTE"
   },
   "header": {
-    "Cerca per titolo": "Cerca per titolo"
+    "cerca_per_titolo": "Cerca per titolo",
+    "esplorare_opera": "Esplorare l’opera come un territorio"
   },
   "footer": {
     "Cronologia": "Cronologia",
-    "modalita": "Modalità"
+    "modalita": "Modalità",
+    "analisi_dei_fenomeni": "Analisi dei fenomeni",
+    "cronologia": "cronologia",
+    "volumi": "Volumi",
+    "filtro_cronologico": "Filtro cronologico"
   }
 }

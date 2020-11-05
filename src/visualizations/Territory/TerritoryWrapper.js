@@ -477,7 +477,6 @@ class TerritoryWrapper extends React.Component {
 
         <>
           <TerritoryHeader
-            t={this.props.t}
             isLoading={this.state.isLoading}
             mainAnalysisMode={this.state.mainAnalysisMode}
             helpSidePanelOpen={this.state.helpSidePanelOpen}
@@ -588,7 +587,6 @@ class TerritoryWrapper extends React.Component {
         <TerritoryFooter
           mainAnalysisMode={this.state.mainAnalysisMode}
           bottomPanelMode={this.state.bottomPanelMode}
-          t={this.props.t}
           toggleNoAnalysisDropDownPosition={
             this.toggleNoAnalysisDropDownPosition
           }

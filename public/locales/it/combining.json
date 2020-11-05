@@ -38,7 +38,8 @@
     "numero_livelli_testo": "Numero di livelli nel testo",
     "categorie_elenco": "CATEGORIE DI ELENCO",
     "non_aggregato": "non aggregato",
-    "combinare": "Combinare"
+    "combinare": "Combinare",
+    "livello": "livello"
   },
   "help_panel": {
     "itinerario_forma": "ITINERARIO FORMA",
