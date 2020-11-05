@@ -14,5 +14,9 @@
     "cosmici_localizzabili": "Cosmici localizzabili",
     "terrestri_inventati": "Terrestri inventati",
     "nessun_luogo": "Nessun luogo"
+  },
+  "footer": {
+    "tipo_di_pubblicazione": "Tipo di pubblicazione",
+    "contesti": "contesti"
   }
 }

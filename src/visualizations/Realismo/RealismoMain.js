@@ -15,7 +15,7 @@ import CompassButton from '../../general/CompassButton/CompassButton'
 import useDimensions from 'react-use-dimensions'
 import GlobalData from '../../utilities/GlobalData'
 import RangeFilter from '../../general/RangeFilter'
-
+import { useTranslation, Trans } from 'react-i18next'
 import sortBy from 'lodash/sortBy'
 import difference from 'lodash/difference'
 import uniqBy from 'lodash/uniqBy'
@@ -65,35 +65,14 @@ const titoliByVolume = groupBy(racconti, 'volume')
 const optionsMovimento = [
   {
     label: 'SI MOVIMENTO',
+    value: 'SI MOVIMENTO'
   },
   {
     label: 'NO MOVIMENTO',
+    value: 'NO MOVIMENTO'
   },
 ]
 
-const optionsSpace = [
-  {
-    label: 'INTERNO',
-    value: 'indoor',
-  },
-  {
-    label: 'ESTERNO',
-    value: 'outdoor',
-  },
-  {
-    label: 'MEZZO DI TRASPORTO',
-    value: 'transportation',
-  },
-  {
-    label: 'ASSENZA DI AMBIENTAZIONE',
-    value: 'no_setting',
-  },
-]
-
-const cercaOptions = [
-  { label: 'Volume', value: 'volume' },
-  { label: 'Titolo', value: 'titolo' },
-]
 
 export default function RealismoMain({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
@@ -103,7 +82,33 @@ export default function RealismoMain({ title }) {
   const [findFor, setFindFor] = useState('Titolo')
   const [ricerca, setRicerca] = useState([])
 
+  const { t } = useTranslation(['translation','realismo'])
+
   const helpPage = GlobalData.helpPages.realism.main
+
+  const optionsSpace = [
+    {
+      label: t('realismo:INTERNO'),
+      value: 'indoor',
+    },
+    {
+      label: t('realismo:ESTERNO'),
+      value: 'outdoor',
+    },
+    {
+      label: t('realismo:MEZZO DI TRASPORTO'),
+      value: 'transportation',
+    },
+    {
+      label: t('realismo:ASSENZA DI AMBIENTAZIONE'),
+      value: 'no_setting',
+    },
+  ]
+  
+  const cercaOptions = [
+    { label: 'Volume', value: 'volume' },
+    { label: 'Titolo', value: 'titolo' },
+  ]
 
   // const containerRef = useRef()
   // const [measures, setMeasures] = useState(null)
@@ -347,7 +352,7 @@ export default function RealismoMain({ title }) {
         <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
         <AltOptions
           multiple={false}
-          title="Cerca per"
+          title={t('cerca_per')}
           options={cercaOptions}
           value={findFor}
           onChange={(x) => setFindFor(x.label)}
@@ -389,7 +394,7 @@ export default function RealismoMain({ title }) {
           <div className="realismo-labels-container on-left text-right">
             <div className="realismo-reset">
               <div>
-                <div>Seleziona il testo e poi scorri in basso</div>
+                <div>{t('realismo:seleziona_testo')}</div>
                 <button
                   onClick={() => {
                     // Reset Selection
@@ -509,7 +514,7 @@ export default function RealismoMain({ title }) {
       </div>
       {ricerca.length > 0 && (
         <div className="realismo-details-container" ref={ref}>
-          <h4>VEDI IN DETTAGLIO I TESTI SELEZIONATI</h4>
+          <h4>{t('realismo:vedi_dettaglio')}</h4>
           {width &&
             selctedTitoliSorted.map((item) => (
               <WormDetail

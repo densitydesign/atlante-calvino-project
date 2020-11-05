@@ -20,7 +20,7 @@
     "cornice": "Cornice",
     "struttura": "Struttura",
     "terra": "Terra",
-    "tipo_di_sequenza": "tipo_di_sequenza"
+    "tipo_di_sequenza": "TIPO DI SEQUENZA"
   },
   "scrolla_per_zoomare": "Scrolla per zoomare",
   "inizio_del_testo": "Inizio del testo",
@@ -67,6 +67,8 @@
     "rivelazione": "rivelazione",
     "iniziativa/piano": "iniziativa/piano",
     "scena erotica": "scena erotica",
-    "compito/missione": "compito/missione"
+    "compito/missione": "compito/missione",
+    "aggressione/aiuto/salvataggio": "aggressione/aiuto/salvataggio",
+    "arrivo/fuga": "arrivo/fuga"
   }
 }
