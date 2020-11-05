@@ -16,15 +16,15 @@ import legenda_02 from './legenda_02.svg'
 import legenda_03 from './legenda_03.svg'
 import legenda_04 from './legenda_04.svg'
 
-import zoom_1 from './zoom_1.svg'
-import zoom_2 from './zoom_2.svg'
-import zoom_3 from './zoom_3.svg'
-import zoom_4 from './zoom_4.svg'
+import zoom_1 from './zoom_01.svg'
+import zoom_2 from './zoom_02.svg'
+import zoom_3 from './zoom_03.svg'
+import zoom_4 from './zoom_04.svg'
 
-import slide_01 from './slide_01.svg'
-import slide_02 from './slide_02.svg'
-import slide_03 from './slide_03.svg'
-import slide_04 from './slide_04.svg'
+import slide_01 from './slide-01.svg'
+import slide_02 from './slide-02.svg'
+import slide_03 from './slide-03.svg'
+import slide_04 from './slide-04.svg'
 
 
 class TransformInformationSheet extends Component {
@@ -40,7 +40,7 @@ class TransformInformationSheet extends Component {
             <h1>Cartografia dei luoghi terrestri</h1>
             <img className = {SheetStyles.image} src={inquadramento}/>
             </div>
-            <div style={{gridColumn:'1 / span 9'}}>
+            <div style={{gridColumn:'1 / span 7'}}>
                 <img className={SheetStyles.legend} src={legenda_0}/>
             </div>
 
@@ -73,9 +73,10 @@ class TransformInformationSheet extends Component {
 <Carousel.Item>
   <Carousel.Caption>
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1945 - 1955</h2>
+  <br />
     <div className={SheetStyles.gridRow}>
-        <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}} src={legenda_01}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_1}/>
+        <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 7'}} src={legenda_01}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'10 / span 3'}} src={zoom_1}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1945 al 1955 </p>
 
     </div>
@@ -86,9 +87,10 @@ class TransformInformationSheet extends Component {
 <Carousel.Item>
   <Carousel.Caption>
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1956 - 1965</h2>
+  <br />
     <div className={SheetStyles.gridRow}>
-        <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_02}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_2}/>
+        <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 7'}}  src={legenda_02}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'10 / span 3'}} src={zoom_2}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1956 al 1965 </p>
     </div>
   </Carousel.Caption>
@@ -98,9 +100,10 @@ class TransformInformationSheet extends Component {
 <Carousel.Item>
   <Carousel.Caption>
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc', color:'#5151fc'}}>1966 - 1975</h2>
+  <br />
     <div className={SheetStyles.gridRow}>
-        <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_03}/>
-        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_3}/>
+        <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 7'}}  src={legenda_03}/>
+        <img className= {SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'10 / span 3'}} src={zoom_3}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1966 al 1975 </p>
     </div>
   </Carousel.Caption>
@@ -110,9 +113,10 @@ class TransformInformationSheet extends Component {
 <Carousel.Item>
   <Carousel.Caption>
   <h2 className={SheetStyles.titleH2} style={{fontStyle:'italic', color:'#5151fc'}}>1976 - 1985</h2>
+  <br />
     <div className={SheetStyles.gridRow}>
-        <img className={SheetStyles.image} style = {{gridColumn:'1 / span 7'}}  src={legenda_04}/>
-        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'8 / span 5'}} src={zoom_4}/>
+        <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 7'}}  src={legenda_04}/>
+        <img className={SheetStyles.sideContent + ' ' + SheetStyles.image} style = {{gridColumn:'10 / span 3'}} src={zoom_4}/>
         <p className='captionLeft' style = {{gridColumn:'9 / span 5'}}> Orizzonte dal 1976 al 1985 </p>
     </div>
   </Carousel.Caption>
