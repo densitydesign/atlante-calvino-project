@@ -82,7 +82,7 @@ let width,
         .unknown("#ccc"),
     performed_selection_data=null;
 
-V.initialize = (el, data_for_update, _onSelectedElement) => {
+V.initialize = (el, data_for_update, _onSelectedElement,t) => {
     console.log("initialize dubbio fase 2")
 
     onSelectedElement = _onSelectedElement
@@ -115,7 +115,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .style("cursor","pointer")
         .on("click",()=>{
             let sortedData = sortData(data_for_update.data, "id", data_for_update.stackMode);
-            d3.select(".legend-message").text("Clicca per riordinare");
+            d3.select(".legend-message").text(t("Clicca per riordinare"));
             legend.select(".legend-message-box").style("display","none");
             // d.id is the baselayer ordering setting
             // In the Update cycle it is skipped if equal to "id" or "definitivo"
@@ -127,7 +127,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("font-weight",600)
         .attr("y",21)
         .attr("x",21)
-        .text("TIPO DI TESTO")
+        .text(t("TIPO DI TESTO"))
         .append("tspan")
         .style("pointer-events","none")
         .classed("legend-message",true)
@@ -136,7 +136,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("font-size","0.8571428571rem")
         .attr("dx",45)
         .attr("fill","#666666")
-        .text("Clicca per riordinare");
+        .text(t("Clicca per riordinare"));
 
     orderMessage = svg.append('text')
         .classed(".order-message",true)
@@ -145,7 +145,7 @@ V.initialize = (el, data_for_update, _onSelectedElement) => {
         .attr("font-style","italic")
         .attr("font-size","0.8571428571rem")
         .attr('fill','#666')
-        .text('Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.');
+        .text(t('opere_ordinate'));
 
     legendItem = legend.append("g").classed("legend-items",true).attr("transform","translate(-1,36)").selectAll(".legend-item");
     serie = g.selectAll(".serie");

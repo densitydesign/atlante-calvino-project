@@ -110,7 +110,7 @@ export default class TerritoryHeader extends React.Component {
             fontWeight: "bold",
           }}
         >
-          {this.analysisLabel}
+          {this.props.t('territorio:header.'+this.analysisLabel)}
         </div>
 
         {/* <ToggleButton

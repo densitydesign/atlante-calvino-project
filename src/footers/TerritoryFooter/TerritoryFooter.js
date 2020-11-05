@@ -306,9 +306,9 @@ export default class TerritoryFooter extends React.Component {
         {this.props.bottomPanelMode === "noAnalysis" ? (
           <ToggleButton
             id={this.chronology}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{ gridColumn: "span 8", textAlign: "center", flexDirection: 'column' }}
             caption={analysisModeToggleButtonCaption}
-            title={'Modalità'}
+            title={this.props.t('territorio:footer.modalita')}
             pressed={
               this.props.mainAnalysisMode ===
               GlobalData.analysisModes.noAnalysis
@@ -320,7 +320,9 @@ export default class TerritoryFooter extends React.Component {
             style={{ gridColumn: "span 8" }}
             className="d-flex justify-content-center"
           >
-            <div className="text-center">Cronologia</div>
+            <div className="text-center">
+              {this.props.t(`territorio:footer.${this.chronologyLabel}`)}
+            </div>
           </div>
         )}
 

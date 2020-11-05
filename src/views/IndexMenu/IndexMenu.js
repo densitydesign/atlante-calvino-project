@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useTranslation, Trans } from "react-i18next"
+import { useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"

@@ -14,8 +14,9 @@ import CompassPanel from "../../panels/CompassPanel/CompassPanel"
 import { draw_jellyfish, prepare_jellyfish_data, visit } from "./jellyfish"
 
 import "./TerritoryWrapper.css"
+import { withTranslation } from "react-i18next"
 
-export default class TerritoryWrapper extends React.Component {
+class TerritoryWrapper extends React.Component {
   state = {
     data: "data still not loaded",
     isLoading: true,
@@ -476,6 +477,7 @@ export default class TerritoryWrapper extends React.Component {
 
         <>
           <TerritoryHeader
+            t={this.props.t}
             isLoading={this.state.isLoading}
             mainAnalysisMode={this.state.mainAnalysisMode}
             helpSidePanelOpen={this.state.helpSidePanelOpen}
@@ -586,6 +588,7 @@ export default class TerritoryWrapper extends React.Component {
         <TerritoryFooter
           mainAnalysisMode={this.state.mainAnalysisMode}
           bottomPanelMode={this.state.bottomPanelMode}
+          t={this.props.t}
           toggleNoAnalysisDropDownPosition={
             this.toggleNoAnalysisDropDownPosition
           }
@@ -1092,3 +1095,5 @@ function array_intersection(a1, a2) {
 
   return result
 }
+
+export default withTranslation(['translation','nebbia','luoghi','elenchi'])(TerritoryWrapper)

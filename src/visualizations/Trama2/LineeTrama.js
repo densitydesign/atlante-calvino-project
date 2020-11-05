@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom'
+import { useTranslation } from 'react-i18next'
 import React, {
   useRef,
   useState,
@@ -566,9 +567,11 @@ function LineeTramaWithMeasures(
     },
   }))
 
+  const { t } = useTranslation('trama')
+
   return (
     <>
-      <div className="trama2-top-legend-list">Scrolla per zoomare</div>
+      <div className="trama2-top-legend-list">{t('scrolla_per_zoomare')}</div>
       <svg
         style={{
           height: measures.height,
@@ -609,9 +612,9 @@ function LineeTramaWithMeasures(
         />
       )}
       <div className="trama2-brush-legend-list">
-        <div>Inizio del testo</div>
-        <div>Lunghezza del testo in caratteri</div>
-        <div>Fine del testo</div>
+        <div>{t('inizio_del_testo')}</div>
+        <div>{t('lunghezza_del_testo')}</div>
+        <div>{t('fine_del_testo')}</div>
       </div>
     </>
   )
