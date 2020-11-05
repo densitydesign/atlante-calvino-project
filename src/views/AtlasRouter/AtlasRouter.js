@@ -21,7 +21,7 @@ import Instructions from '../Instructions';
 import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
-import PressReview from '../PressReview/PressReview';
+//import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
 import DoubtInformationSheet from '../../informationSheets/DoubtInformationSheet/DoubtInformationSheet';
 import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet/ShapeInformationSheet';
@@ -118,7 +118,7 @@ export default function AtlasRouter()
       <Route exact path="/instructions"><Instructions/></Route>
       <Route exact path="/project"><Project/></Route>
       <Route exact path="/capta"><ToolsAndMethods /></Route>
-      <Route exact path="/News"><PressReview /></Route>
+      {/* <Route exact path="/News"><PressReview /></Route> */}
       <Route exact path="/publications"><Articles /></Route>
 
     </BrowserRouter>
