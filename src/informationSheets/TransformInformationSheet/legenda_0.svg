@@ -1,120 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 578.6 110.6" style="enable-background:new 0 0 578.6 110.6;" xml:space="preserve">
-<style type="text/css">
-	.st0{display:none;}
-	.st1{font-family:'HKGrotesk-Medium';}
-	.st2{font-size:12px;}
-	.st3{fill:#FFFFFF;}
-	.st4{font-family:'HKGrotesk-Light';}
-	.st5{font-size:8px;}
-	.st6{fill:#FF916B;}
-	.st7{fill:#40E6FD;}
-	.st8{fill:#40D1B5;}
-	.st9{fill:#8383FF;}
-	.st10{fill:#6E6E6E;}
-	.st11{fill:none;}
-	.st12{fill:#FFDA40;}
-</style>
-<g id="Layer_4" class="st0">
-</g>
-<g id="Layer_1_1_">
-</g>
-<g id="legenda">
-	<g>
-		<text transform="matrix(1 0 0 1 7.5519 17.7791)" class="st1 st2">TEMPO DELLA STORIA</text>
-	</g>
-	<g>
-		<text transform="matrix(1 0 0 1 276.1853 17.7791)" class="st1 st2">DECENNI DI SCRITTURA</text>
-	</g>
-</g>
-<g id="Isolation_Mode">
-	<g>
-		<path class="st3" d="M11.1,38.9c-2.1,0-3.8-1.7-3.8-3.8s1.7-3.8,3.8-3.8h6c2.1,0,3.8,1.7,3.8,3.8s-1.7,3.8-3.8,3.8H11.1z"/>
-		<path d="M17.1,31.7c1.9,0,3.5,1.6,3.5,3.5s-1.6,3.5-3.5,3.5h-6c-1.9,0-3.5-1.6-3.5-3.5s1.6-3.5,3.5-3.5H17.1 M17.1,31.2h-6
-			c-2.2,0-4,1.8-4,4s1.8,4,4,4h6c2.2,0,4-1.8,4-4S19.3,31.2,17.1,31.2L17.1,31.2z"/>
-	</g>
-	<circle cx="14.1" cy="35.2" r="0.7"/>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 294.2029 66.944)" class="st4 st5">Ambientazioni di testi scritti </text>
-			<text transform="matrix(1 0 0 1 294.2029 76.544)" class="st4 st5">tra il 1945 e il 1955</text>
-		</g>
-		<path class="st6" d="M283.4,68.2h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0
-			C287.4,66.4,285.6,68.2,283.4,68.2z"/>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 293.936 95.9125)" class="st4 st5">Ambientazioni di testi scritti</text>
-			<text transform="matrix(1 0 0 1 293.936 105.5125)" class="st4 st5">tra il 1956 e il 1965</text>
-		</g>
-		<path class="st7" d="M283.2,97.1h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0
-			C287.2,95.3,285.4,97.1,283.2,97.1z"/>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 472.844 37.9755)" class="st4 st5">Ambientazioni di testi scritti</text>
-			<text transform="matrix(1 0 0 1 472.844 47.5755)" class="st4 st5">tra il 1966 e il 1975</text>
-		</g>
-		<path class="st8" d="M462.1,39.2h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0
-			C466.1,37.4,464.3,39.2,462.1,39.2z"/>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 472.844 66.9441)" class="st4 st5">Ambientazioni di testi scritti</text>
-			<text transform="matrix(1 0 0 1 472.844 76.5441)" class="st4 st5">tra il 1976  e il 1985</text>
-		</g>
-		<path class="st9" d="M462.1,68.5h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0
-			C466.1,66.7,464.3,68.5,462.1,68.5z"/>
-	</g>
-	<g>
-		<path class="st10" d="M17.1,69.3h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0C21.1,67.5,19.3,69.3,17.1,69.3z"
-			/>
-		<g>
-			<g>
-				<rect x="24.8" y="60.2" class="st11" width="154.4" height="53.4"/>
-				<text transform="matrix(1 0 0 1 24.7794 66.9438)" class="st4 st5">A</text>
-				<text transform="matrix(1 0 0 1 29.8794 66.9438)" class="st4 st5">mbientazioni di </text>
-				<text transform="matrix(1 0 0 1 86.3794 66.9438)" class="st4 st5">t</text>
-				<text transform="matrix(1 0 0 1 88.9794 66.9438)" class="st4 st5">esti in </text>
-				<text transform="matrix(1 0 0 1 112.0794 66.9438)" class="st4 st5">c</text>
-				<text transform="matrix(1 0 0 1 116.0794 66.9438)" class="st4 st5">ui il </text>
-				<text transform="matrix(1 0 0 1 130.7794 66.9438)" class="st4 st5">t</text>
-				<text transform="matrix(1 0 0 1 133.2794 66.9438)" class="st4 st5">empo della </text>
-				<text transform="matrix(1 0 0 1 24.7794 76.5438)" class="st4 st5">storia è collocato nella </text>
-				<text transform="matrix(1 0 0 1 106.6895 76.5438)" class="st1 st5">contemporaneità</text>
-				<text transform="matrix(1 0 0 1 24.7794 86.1438)" class="st4 st5">o in cui presente e passato si fondono in </text>
-				<text transform="matrix(1 0 0 1 24.7794 95.7438)" class="st4 st5">un </text>
-				<text transform="matrix(1 0 0 1 35.7794 95.7438)" class="st1 st5">tempo misto</text>
-				<text transform="matrix(1 0 0 1 80.5794 95.7438)" class="st4 st5">. </text>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<rect x="25.2" y="31.2" class="st11" width="172.7" height="24.5"/>
-				<text transform="matrix(1 0 0 1 25.1739 37.976)" class="st4 st5">Ambientazioni di testi in cui il tempo  della </text>
-				<text transform="matrix(1 0 0 1 25.1739 47.576)" class="st4 st5">storia è collocato in un </text>
-				<text transform="matrix(1 0 0 1 108.4739 47.576)" class="st1 st5">tempo indefinito</text>
-				<text transform="matrix(1 0 0 1 167.0739 47.576)" class="st4 st5">.</text>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<text transform="matrix(1 0 0 1 294.2029 37.9757)" class="st4 st5">Luoghi d’ambientazione ricorrenti</text>
-			<text transform="matrix(1 0 0 1 294.2029 47.5757)" class="st4 st5">che attraversano più di un decennio</text>
-		</g>
-		<path class="st12" d="M283.4,39.2h-6c-2.2,0-4-1.8-4-4l0,0c0-2.2,1.8-4,4-4h6c2.2,0,4,1.8,4,4l0,0
-			C287.4,37.4,285.6,39.2,283.4,39.2z"/>
-	</g>
-</g>
-<g id="Layer_6">
-</g>
-<g id="Livello_3">
-</g>
-<g id="Tavola_2">
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="103" viewBox="0 0 600 103">
+  <defs>
+    <clipPath id="clip-legenda_0">
+      <rect width="600" height="103"/>
+    </clipPath>
+  </defs>
+  <g id="legenda_0" clip-path="url(#clip-legenda_0)">
+    <text id="TEMPO_DELLA_STORIA" data-name="TEMPO DELLA STORIA" transform="translate(0.452 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TEMPO DELLA STORIA</tspan></text>
+    <text id="DECENNI_DI_SCRITTURA" data-name="DECENNI DI SCRITTURA" transform="translate(243.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">DECENNI DI SCRITTURA</tspan></text>
+    <path id="Path_534" data-name="Path 534" d="M13.168,41.3c-3.243,0-5.868-2.237-5.868-5s2.625-5,5.868-5h9.265c3.243,0,5.868,2.237,5.868,5s-2.625,5-5.868,5Z" transform="translate(-7.1 -7.8)" fill="#fff" stroke="#000" stroke-width="0.5"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="0.7" cy="0.7" r="0.7" transform="translate(10.3 27.721)"/>
+    <path id="Path_536" data-name="Path 536" d="M288.4,70.2h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C294.4,67.95,291.7,70.2,288.4,70.2Z" transform="translate(-30.4 -6.779)" fill="#ff916b"/>
+    <path id="Path_537" data-name="Path 537" d="M288.2,99.1h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C294.2,96.85,291.5,99.1,288.2,99.1Z" transform="translate(-30.2 -6.779)" fill="#40e6fd"/>
+    <path id="Path_538" data-name="Path 538" d="M467.1,41.2h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C473.1,38.95,470.4,41.2,467.1,41.2Z" transform="translate(-25.1 -8.2)" fill="#40d1b5"/>
+    <path id="Path_539" data-name="Path 539" d="M467.1,70.5h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C473.1,68.25,470.4,70.5,467.1,70.5Z" transform="translate(-25.1 -7.779)" fill="#8383ff"/>
+    <path id="Path_540" data-name="Path 540" d="M22.1,71.3h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C28.1,69.05,25.4,71.3,22.1,71.3Z" transform="translate(-7.1 -7.779)" fill="#6e6e6e"/>
+    <text id="Ambientazioni_di_testi_in_cui_il_tempo_della_storia_è_collocato_nella_contemporaneità_o_in_cui_presente_e_passato_si_fondono_in_un_tempo_misto" data-name="Ambientazioni di testi in cui 
+il tempo della storia è collocato nella contemporaneità o in cui presente e passato si fondono in un tempo misto" transform="translate(30 54)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi in cui </tspan><tspan x="0" y="19">il tempo della storia è collocato nella </tspan><tspan x="0" y="30" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">contemporaneità</tspan><tspan y="30" xml:space="preserve"> o in cui presente e passato </tspan><tspan x="0" y="41">si fondono in un </tspan><tspan y="41" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">tempo misto</tspan></text>
+    <path id="Path_541" data-name="Path 541" d="M288.4,41.2h-9c-3.3,0-6-2.25-6-5h0c0-2.75,2.7-5,6-5h9c3.3,0,6,2.25,6,5h0C294.4,38.95,291.7,41.2,288.4,41.2Z" transform="translate(-30.4 -8.2)" fill="#ffda40"/>
+    <text id="Ambientazioni_di_testi_in_cui_il_tempo_della_storia_è_collocato_in_un_tempo_indefinito_" data-name="Ambientazioni di testi in cui il tempo
+della storia è collocato in un tempo indefinito " transform="translate(30 23)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi in cui il tempo</tspan><tspan x="0" y="19">della storia è collocato in un </tspan><tspan y="19" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">tempo indefinito </tspan></text>
+    <text id="Luoghi_d_ambientazione_ricorrenti_che_attraversano_un_decennio" data-name="Luoghi d’ambientazione ricorrenti 
+che attraversano un decennio" transform="translate(272 23)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Luoghi d’ambientazione ricorrenti </tspan><tspan x="0" y="19">che attraversano un decennio</tspan></text>
+    <text id="Ambientazioni_di_testi_scritti_tra_il_1945_e_il_1955" data-name="Ambientazioni di testi scritti 
+tra il 1945 e il 1955" transform="translate(272 52)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi scritti </tspan><tspan x="0" y="19">tra il 1945 e il 1955</tspan></text>
+    <text id="Ambientazioni_di_testi_scritti_tra_il_1956_e_il_1965" data-name="Ambientazioni di testi scritti 
+tra il 1956 e il 1965" transform="translate(272 80)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi scritti </tspan><tspan x="0" y="19">tra il 1956 e il 1965</tspan></text>
+    <text id="Ambientazioni_di_testi_scritti_tra_il_1966_e_il_1975" data-name="Ambientazioni di testi scritti 
+tra il 1966 e il 1975" transform="translate(454 23)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi scritti </tspan><tspan x="0" y="19">tra il 1966 e il 1975</tspan></text>
+    <text id="Ambientazioni_di_testi_scritti_tra_il_1976_e_il_1985" data-name="Ambientazioni di testi scritti 
+tra il 1976 e il 1985" transform="translate(454 52)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="8">Ambientazioni di testi scritti </tspan><tspan x="0" y="19">tra il 1976 e il 1985</tspan></text>
+  </g>
 </svg>
