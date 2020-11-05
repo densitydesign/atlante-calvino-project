@@ -1,3 +1,42 @@
 {
-  "hello": "Hello"
+  "combinare": "Combinare",
+  "dubitare": "Dubitare",
+  "nebbia": "Fog",
+  "luoghi": "Luoghi",
+  "elenchi": "Elenchi",
+  "trasformare": "Trasformare",
+  "cancellazione": "Cancellazione",
+  "realismo": "Realismo",
+  "trama": "Trama",
+  "help_panel": {
+    "approfondimento": "approfondimento",
+    "tappa": "tappa",
+    "spiegazione": "spiegazione",
+    "legenda": "legenda",
+    "di_cosa_si_tratta": "What is it?",
+    "come_funziona": "How does it work?",
+    "qualche_pista_di_lettura": "Reading tips",
+    "itinerario_dubbio": "ITINERARIO DUBBIO",
+    "disposizione": "DISPOSIZIONE",
+    "dimensione": "DIMENSIONE",
+    "frequenza": "FREQUENZA",
+    "itinerario_spazio": "ITINERARIO SPAZIO",
+    "itinerario_forma": "ITINERARIO FORMA",
+    "proporzione": "PROPORZIONE",
+    "il_fenomeno": "IL FENOMENO"
+  },
+  "tappa": "tappa",
+  "index_menu": {
+    "guarda_la_guida": "Guarda la guida"
+  },
+  "bussola": "Bussola",
+  "header": {
+    "equipe": "Équipe",
+    "progetto": "Progetto",
+    "istruzioni_per_uso": "Istruzioni per l'uso",
+    "capta": "Capta",
+    "pubblicazioni": "Pubblicazioni"
+  },
+  "territorio": "Territorio",
+  "entrambi": "Entrambi"
 }
