@@ -79,7 +79,7 @@ class Compass extends React.Component {
               id="1"
               open={this.state.selectedPanel >= 1}
               zIndex="1"
-              icon={<Bussola1 className="mr-5" />}
+              icon={<Bussola1 className="mr-5 compass" />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
@@ -97,7 +97,7 @@ class Compass extends React.Component {
               toggleTempoEOpere={this.toggleTempoEOpere}
               open={this.state.selectedPanel >= 2}
               zIndex="2"
-              icon={<Bussola2 className="mr-5" />}
+              icon={<Bussola2 className="mr-5 compass" />}
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
@@ -114,7 +114,7 @@ class Compass extends React.Component {
               id="3"
               open={this.state.selectedPanel >= 3}
               zIndex="3"
-              icon={<Bussola3 className="mr-5" />}
+              icon={<Bussola3 className="mr-5 compass" />}
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}
