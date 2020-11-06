@@ -10,7 +10,7 @@
   "trama": "Trama",
   "help_panel": {
     "approfondimento": "approfondimento",
-    "tappa": "tappa",
+    "tappa": "tappe",
     "spiegazione": "spiegazione",
     "legenda": "legenda",
     "di_cosa_si_tratta": "Di cosa si tratta",
@@ -25,7 +25,7 @@
     "proporzione": "PROPORZIONE",
     "il_fenomeno": "IL FENOMENO"
   },
-  "tappa": "tappa",
+  "tappa": "tappe",
   "index_menu": {
     "guarda_la_guida": "Guarda la guida"
   },
