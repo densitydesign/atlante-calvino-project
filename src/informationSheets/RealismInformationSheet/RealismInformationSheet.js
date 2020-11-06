@@ -17,8 +17,8 @@ class RealismInformationSheet extends Component {
       <HamburgerCompassHeader />
       <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className={SheetStyles.titleH4}>Tappa 3 > realismo</h4>
-          <h1 className={SheetStyles.titleH1}>Virgi Scheda 3</h1>
+          <h4 className="ac-breadcrumb">Tappa 3 > realismo</h4>
+          <h1 className={SheetStyles.titleH1}>Metamorfosi della realtà: sulle tracce della paura</h1>
           <h2 className={SheetStyles.titleH2}>L'idea</h2>
           <p className={SheetStyles.paragraph}>
             Questa scheda nasce come approfondimento della terza tappa dell’itinerario spaziale, nella quale si è scelto di rappresentare la presenza o l’assenza di movimento all’interno dei racconti della produzione breve di Calvino che presentano ambientazioni di tipo terrestre. In particolare, in questa scheda si prende in esame uno solo di questi testi, Paura sul sentiero, racconto pubblicato nel 1946 sulla rivista «Darsena nuova» e in seguito nei volumi Ultimo viene il corvo (1949) e I racconti (1958). Paura sul sentiero è uno dei primi racconti dell’autore e presenta non a caso caratteristiche tematiche e stilistiche conformi alla prima fase della scrittura di Calvino. Protagonista del testo è Binda, giovane staffetta partigiana che durante la notte si inoltra a piedi nei boschi dell’entroterra ligure di ponente per raggiungere nel minor tempo possibile il casolare in cui si trova la sua brigata partigiana, con l’intento di comunicare ai compagni l’ordine di spostarsi. Siamo dunque nelle terre natali di Calvino, durante gli ultimi anni della Seconda guerra mondiale, in un contesto specifico che l’autore ha conosciuto direttamente e che descrive con dovizia di dettagli fornendo indicazioni geografiche molto precise che ci consentono di ricostruire per filo e per segno il percorso compiuto dal protagonista.<br/><br/>

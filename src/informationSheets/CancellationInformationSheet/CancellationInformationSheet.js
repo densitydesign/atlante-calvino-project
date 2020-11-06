@@ -26,7 +26,7 @@ class CancellationInformationSheet extends Component {
       <HamburgerCompassHeader />
       <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className={SheetStyles.titleH4}>Tappa 3 > cancellare</h4>
+          <h4 className="ac-breadcrumb">Tappa 3 > cancellare</h4>
           <h1 className={SheetStyles.titleH1}>L'avventura di un soldato</h1>
           <h2 className={SheetStyles.titleH2}>L'idea</h2>
           <p className={SheetStyles.paragraph}>

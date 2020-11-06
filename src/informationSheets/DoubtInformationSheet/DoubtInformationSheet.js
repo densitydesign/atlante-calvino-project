@@ -29,8 +29,8 @@ export default class DoubtInformationSheet extends React.Component
                   <div id="mainviz" className={SheetStyles.gridRow}>
                   <DoubtTypePerYearWrapper  />
                 </div>
-                    <div className={SheetStyles.gridRow}> <h2
-                    className={SheetStyles.titleH2}>Concreto e astratto </h2>
+                    <div className={SheetStyles.gridRow}>
+                    <h2 className={SheetStyles.titleH2}>Concreto e astratto </h2>
                     <p className={SheetStyles.paragraphBig}> Il grafico mostra i
                     due fenomeni, <em>nebbia e cancellazione</em>, distribuiti
                     cronologicamente e non più ancorati ai singoli testi. Le
@@ -57,7 +57,7 @@ export default class DoubtInformationSheet extends React.Component
                     </div>
 
                   <div className={SheetStyles.gridRow}>
-                    <h3 className={SheetStyles.subtitleSheet}>La nebbia che non c’è</h3>
+                    <h2 className={SheetStyles.titleH2}>La nebbia che non c’è</h2>
                       <p className={SheetStyles.paragraph}>
                       Mettere a confronto l’inizio <span style={{color:'#0E08F9'}}>(a)</span> e la
                       fine <span style={{color:'#0E08F9'}}>(b)</span> della carriera narrativa di
@@ -84,14 +84,14 @@ export default class DoubtInformationSheet extends React.Component
                       testo ne imita gli effetti.
                       </p>
                   <div className={SheetStyles.sideContent}>
-                    <img style={{top:'var(--navigation-height)', width:'100%', position:'sticky', top:'6.4em'}} src={zoom_02}/>
+                    <img style={{top:'var(--navigation-height)', position:'sticky', top:'6.4em'}} src={zoom_02}/>
                   </div>
                                     </div>
 
 
 
                 <div className={SheetStyles.gridRow}>
-                    <h3 className={SheetStyles.subtitleSheet}>Ostacoli visivi</h3>
+                    <h2 className={SheetStyles.titleH2}>Ostacoli visivi</h2>
                       <p className={SheetStyles.paragraph}>
                               È in questi anni che, prima di cominciare a scrivere le vicende dell’entità
                       interstellare Qwfwq, Calvino conclude il suo percorso con il personaggio
@@ -123,7 +123,7 @@ export default class DoubtInformationSheet extends React.Component
                       nell’intervallo visualizzato. Da questo momento in poi la cancellazione avrà
                       la meglio sulla nebbia. </p>
           <div className={SheetStyles.sideContent}>
-            <img style={{top:'var(--navigation-height)', position:'sticky', width:'100%'}} src={zoom_01}/>
+            <img style={{top:'var(--navigation-height)', position:'sticky'}} src={zoom_01}/>
 
           </div>
                         </div>
@@ -132,8 +132,7 @@ export default class DoubtInformationSheet extends React.Component
               <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
               <ol className={SheetStyles.paragraph+' references '}>
                   <li className='referenceItem'>
-                    Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer.
-                  </li>
+                  Scarpa 2005: D. Scarpa, Italo Calvino, Milano, Mondadori.</li>
                 </ol>
           </div>
 

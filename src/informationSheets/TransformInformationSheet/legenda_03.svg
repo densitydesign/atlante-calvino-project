@@ -120,11 +120,8 @@
       <line id="Line_7772" data-name="Line 7772" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#869fd1" stroke-miterlimit="10" stroke-width="0.5"/>
     </g>
     <path id="Path_148039" data-name="Path 148039" d="M209,96.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,98.75,205.7,96.5,209,96.5Z" transform="translate(40.086 2.229)" fill="none" stroke="#869fd1" stroke-miterlimit="10" stroke-width="0.5"/>
-    <text id="TEMPO_DELLA_STORIA" data-name="TEMPO DELLA STORIA" transform="translate(0 13)" font-size="13" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TEMPO DELLA STORIA</tspan></text>
+    <text id="TEMPO_DELLA_STORIA" data-name="TEMPO DELLA STORIA" transform="translate(0 13)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TEMPO DELLA STORIA</tspan></text>
     <text id="CONTESTI" transform="translate(243.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">CONTESTI</tspan></text>
-    <text id="Numero_di_occorrenze" data-name="Numero di occorrenze" transform="translate(419.82 34.764)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Numero di occorrenze</tspan></text>
-    <circle id="Ellipse_33203" data-name="Ellipse 33203" cx="2.89" cy="2.89" r="2.89" transform="translate(397.074 31.531)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-    <circle id="Ellipse_33204" data-name="Ellipse 33204" cx="6.357" cy="6.357" r="6.357" transform="translate(393.606 24.596)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
     <text id="DIMENSIONE" transform="translate(391.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">DIMENSIONE</tspan></text>
     <g id="Group_24681" data-name="Group 24681">
       <path id="Path_148042" data-name="Path 148042" d="M7.5,97.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C1.5,99.45,4.2,97.2,7.5,97.2Z" transform="translate(0 2.337)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
@@ -164,5 +161,8 @@ della storia è collocato nel passato" transform="translate(30 61)" font-size="9
         <path id="Path_157233" data-name="Path 157233" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-202.797 -9.178)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
       </g>
     </g>
+    <text id="Numero_di_occorrenze" data-name="Numero di occorrenze" transform="translate(414.83 36.743)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Numero di occorrenze</tspan></text>
+    <circle id="Ellipse_33243" data-name="Ellipse 33243" cx="2.876" cy="2.876" r="2.876" transform="translate(396.769 33.502)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+    <circle id="Ellipse_33244" data-name="Ellipse 33244" cx="6.327" cy="6.327" r="6.327" transform="translate(393.325 26.578)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
   </g>
 </svg>

@@ -20,11 +20,11 @@
       <stop offset="0.346" stop-color="#fff"/>
       <stop offset="1" stop-color="#fffcf0" stop-opacity="0"/>
     </linearGradient>
-    <clipPath id="clip-zoom_03">
+    <clipPath id="clip-zoom-02">
       <rect width="600" height="376"/>
     </clipPath>
   </defs>
-  <g id="zoom_03" clip-path="url(#clip-zoom_03)">
+  <g id="zoom-02" clip-path="url(#clip-zoom-02)">
     <path id="Path_552" data-name="Path 552" d="M33.548,293.134,30.612,65.17Z" transform="translate(-15.261 -51.486)" fill="url(#linear-gradient)"/>
     <line id="Line_174" data-name="Line 174" x2="585.729" transform="translate(17.543 232.111)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.5"/>
     <text id="_0" data-name="0" transform="translate(1.279 234.372)" font-size="10" font-family="Helvetica-Light, Helvetica" font-weight="300" style="isolation: isolate"><tspan x="0" y="0">0</tspan></text>

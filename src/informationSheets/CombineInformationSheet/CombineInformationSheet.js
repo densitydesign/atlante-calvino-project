@@ -20,7 +20,7 @@ class CombineInformationSheet extends Component {
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
           <div className={SheetStyles.gridRow}>
-            <h4 className={SheetStyles.titleH4}>Tappa 3 > combinare</h4>
+            <h4 className="ac-breadcrumb">Tappa 2 > combinare</h4>
             <h1 className={SheetStyles.titleH1}>Costruire la varietà</h1>
             <h2 className={SheetStyles.titleH2}>Compatto vs molteplice: un passaggio sfumato</h2>
             <p className={SheetStyles.paragraph}>

@@ -7,6 +7,7 @@ body{
 .main {
   display: grid;
   font-size: var(--text-size);
+  background-color: white;
   margin-bottom: 2rem;
   margin-top: 3rem;
 }
@@ -99,6 +100,7 @@ body{
 
 .sideContent {
   grid-column: 8 / span 5;
+  width: 60%;
 }
 
 .legend{
