@@ -35,6 +35,11 @@
     border: none;
 }
 
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: black;
+  opacity: 1;
+}
+
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
     color: var(--bg);
     border: none;
