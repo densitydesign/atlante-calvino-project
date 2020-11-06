@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react"
+import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
@@ -91,7 +91,7 @@ export default function IndexMenu({ onClose }) {
     return d
   }
 
-  useLayoutEffect(() => {
+  const tappeLayout = useCallback(() => {
     const el = orbiteRef.current
     const bbox = el.getBoundingClientRect()
     const g = el.querySelector("g")
@@ -130,7 +130,17 @@ export default function IndexMenu({ onClose }) {
         el3.style.transform = "translate(-50%, -50%)"
       }
     })
-  })
+  },[])
+
+  useLayoutEffect(() => {
+    tappeLayout() 
+  },[tappeLayout])
+
+  useEffect(() => {
+    const cb = tappeLayout
+    window.addEventListener('resize', cb)
+    return () => void window.removeEventListener('resize', cb)
+  }, [tappeLayout])
 
   console.log(orbiteRef)
 
