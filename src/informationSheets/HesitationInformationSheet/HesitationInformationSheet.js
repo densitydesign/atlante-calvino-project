@@ -7,15 +7,14 @@ import './HesitationInformationSheet.css';
 import SheetStyles from '../SheetStyles.module.css';
 
 
-import giornata from './scheda-dubitare-01.png'
-import legenda_01 from './legenda_01.svg'
-import zoom_01 from './zoom_01.svg'
-import zoom_02 from './zoom_02.svg'
-import info_02 from './info_02.svg'
-import legenda_02 from './legenda_02.svg'
-import zoom_03 from './zoom_03.svg'
-import zoom_04 from './zoom_04.svg'
-import legenda_04 from './legenda_04.svg'
+import giornata from './dubitare-01.svg'
+import legenda from './legenda.svg'
+import zoom_01 from './zoom-01.svg'
+import info_01 from './info-01.svg'
+import legenda_01 from './legenda-01.svg'
+import zoom_02 from './zoom-02.svg'
+import zoom_03 from './zoom-03.svg'
+import legenda_03 from './legenda-03.svg'
 
 
 
@@ -32,8 +31,8 @@ class HesitationInformationSheet extends Component {
         </div>
         <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraphBig}>
-          <img className={SheetStyles.legend} style = {{gridColumn:' 16 / span 6', float:'left'}}  src={legenda_01}/>
-          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={zoom_01}/>
+          <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 22', float:'left'}}  src={legenda}/>
+          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={giornata}/>
             La giornata d’uno scrutatore è uno dei romanzi di Calvino che presenta la più alta percentuale di quello che abbiamo denominato “testo dubitativo”: il 35%. Il dato non stupisce, considerando la natura profondamente ibrida del libro pubblicato nel 1963, «una sorta di romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del vivere associato, autoritratto morale» (Barenghi 2009, 56).
             In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il segno interrogativo, per quanto simbolicamente così importante, non è l’unico a caratterizzare il romanzo: La giornata d’uno scrutatore è un libro anche di parentesi e di incisi. Segni che interrompono la continuità lineare del discorso, creando degli spazi di scrittura indipendenti che spezzano il testo principale, annidandovi dentro un secondo testo. Lo scopo di questo approfondimento è mostrare la distribuzione di tali segni grafici e soprattutto in che modo collaborano con il processo dubitativo, amplificando il suo effetto.
             La giornata d’uno scrutatore racconta l’esperienza di Amerigo Ormea, militante e intellettuale, nel ruolo di scrutatore durante le elezioni dell’8 giugno 1953, presso un istituto per persone con disabilità mentali e fisiche trasformato in seggio elettorale.
@@ -41,7 +40,7 @@ class HesitationInformationSheet extends Component {
           </p>
         </div>
         <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.image} style={{gridColumn:'1 / span 22'}} src={zoom_02} />
+          <img className={SheetStyles.image} style={{gridColumn:'1 / span 22'}} src={zoom_01} />
           <p className= ' captionLeft ' style={{gridColumn:'1 / span 22'}}> Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></p>
         </div>
 
@@ -96,10 +95,8 @@ class HesitationInformationSheet extends Component {
           principio l’importanza del suo contenuto o diffidando apertamente del proprio lettore.</p>
           </div>
 
-          <div className={SheetStyles.sideContent}>
-            <img className={SheetStyles.legend} style = {{gridColumn:' 16 / span 6', float:'left', marginTop:'0px', position:'sticky' ,top:'calc(var(--navigation-height) + 1rem'}}  src={legenda_02}/>
-            <img className={SheetStyles.image} src={info_02} style={{position:'sticky',top:'calc(var(--navigation-height) + 2px)'}} />
-          </div>
+            <img className={SheetStyles.image} src={info_01} style={{position:'sticky',top:'calc(var(--navigation-height) + 3px)',gridColumn:'8 / span 3'}} />
+
         </div>
 
         <div className={SheetStyles.gridRow}>
@@ -110,7 +107,7 @@ class HesitationInformationSheet extends Component {
 
             <h3 className={SheetStyles.subtitleSheet}>Il processo: i livelli del testo dubitativo</h3>
           <div>
-            <img className={SheetStyles.image} src={zoom_03} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)', background:'#fffffa', width:'100%', paddingBottom:'0.5rem'}} />
+            <img className={SheetStyles.image} src={zoom_02} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)', background:'#fffffa', width:'100%', paddingBottom:'0.5rem'}} />
           <p>Questo paragrafo è un ottimo esempio di come il processo dubitativo consista nel “tornare sui propri passi”. Il testo oggetto di dubbio associato a td28 coincide con l’inizio del paragrafo e racchiude in sé dodici td (dal td16 al td27, più della metà del numero totale di occorrenze del capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in parallelo assistiamo a un innalzamento di livello: il numero di livello equivale alla quantità di volte in cui il processo dubitativo insiste sulla stessa identica porzione di testo. Accavallandosi fra loro le occorrenze “dubitano” della loro capacità di ristabilire il senso del discorso. Un altro esempio: il passaggio dal 6° al 7° livello avviene a causa del td29; poteva sembrare che il td28 fosse riuscito una volta per tutte a bloccare la catena dubitativa, eppure ancora una volta c’è qualcosa da dire, da aggiungere, da precisare. E la precisazione non può che avvenire fra parentesi.</p>
           </div>
           </div>
@@ -122,8 +119,8 @@ class HesitationInformationSheet extends Component {
             </div>
 
             <div className={SheetStyles.gridRow}>
-          <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 6', float:'left'}}  src={legenda_04}/>
-          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 22'}} src={zoom_04}/>
+          <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 6', float:'left'}}  src={legenda_03}/>
+          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 22'}} src={zoom_03}/>
         </div>
 
             <div className={SheetStyles.gridRow}>
