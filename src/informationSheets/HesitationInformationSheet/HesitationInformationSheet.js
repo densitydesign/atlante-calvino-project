@@ -125,7 +125,7 @@ class HesitationInformationSheet extends Component {
           <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 6', float:'left'}}  src={legenda_04}/>
           <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 22'}} src={zoom_04}/>
         </div>
-           
+
             <div className={SheetStyles.gridRow}>
             <div className={SheetStyles.paragraph}>
             <p>Cinque delle occorrenze “intrappolate” dentro il testo oggetto di dubbio di td28 sono a loro volta contenute fra parentesi: td18, td20, td21, td23, td27. Ma la quantità di segni grafici nel paragrafo è molto più alta: infatti circa il 30% del capitolo viene dislocata tra parentesi o dentro un inciso, anche quando da un punto di vista narrativo non sembrerebbe necessario. In alcuni casi le parentesi contengono a loro volta degli incisi, elaborando così una sorta di racconto a “matrioska”. La massiccia concentrazione del processo dubitativo proprio in quell’area è collegata alla presenza dei segni grafici che “stratificano” il testo.
@@ -143,11 +143,11 @@ class HesitationInformationSheet extends Component {
 
           <div className={SheetStyles.gridRow}>
           <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-            <ol className={SheetStyles.paragraph+' references '}>
-              <li className={SheetStyles.referenceItem}>
+            <ol className={[SheetStyles.paragraph,'references'].join(' ')  }>
+              <li className="referenceItem">
               Mengaldo 1996: P.V. Mengaldo, Aspetti della lingua di Calvino, in Id., La tradizione del Novecento, Torino, Einaudi, pp. 227-291.
               </li>
-              <li className={SheetStyles.referenceItem}>
+              <li className="referenceItem">
               Barenghi 2009: M. Barenghi, Calvino, Bologna, Mulino.
               </li>
           </ol>

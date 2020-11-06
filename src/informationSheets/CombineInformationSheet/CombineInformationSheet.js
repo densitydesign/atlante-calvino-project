@@ -271,7 +271,7 @@ class CombineInformationSheet extends Component {
           <div className={SheetStyles.gridRow}>
   <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
   <p className={SheetStyles.paragraph}>
-    <ol className=" references">
+    <ol className={[SheetStyles.paragraph,'references'].join(' ')  }>
       <li className="referenceItem">
         Barthes 2002: Roland Barthes, Saggi critici, ed. it. a cura di G.
         Marrone, Torino, Einaudi.
