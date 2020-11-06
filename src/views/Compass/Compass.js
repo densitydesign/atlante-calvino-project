@@ -9,12 +9,13 @@ import { ReactComponent as Bussola3 } from "./icons/bussola_3.svg"
 import CompassFlux from "../CompassFlux/CompassFlux"
 
 import "./Compass.css"
+import CompassTime from "../CompassTime/CompassTime"
 
 class Compass extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { selectedPanel: 1, openFlowsOfStories: false }
+    this.state = { selectedPanel: 1, openFlowsOfStories: false, openTempoEStorie: false }
 
     this.getSelectedPanel = this.getSelectedPanel.bind(this)
     this.setSelectedPanel = this.setSelectedPanel.bind(this)
@@ -39,6 +40,10 @@ class Compass extends React.Component {
 
   toggleFlowOfStories = () => {
     this.setState({ openFlowsOfStories: !this.state.openFlowsOfStories })
+  }
+
+  toggleTempoEOpere = () => {
+    this.setState({ openTempoEStorie: !this.state.openTempoEStorie })
   }
 
   render() {
@@ -89,6 +94,7 @@ class Compass extends React.Component {
 
             <SlidingPanel
               id="2"
+              toggleTempoEOpere={this.toggleTempoEOpere}
               open={this.state.selectedPanel >= 2}
               zIndex="2"
               icon={<Bussola2 className="mr-5" />}
@@ -126,6 +132,11 @@ class Compass extends React.Component {
         {this.state.openFlowsOfStories && (
           <div className="compass-flux-modal">
             <CompassFlux toggleFlowOfStories={this.toggleFlowOfStories} />
+          </div>
+        )}
+        {this.state.openTempoEStorie && (
+          <div className="compass-flux-modal">
+            <CompassTime toggleTempoEOpere={this.toggleTempoEOpere} />
           </div>
         )}
       </>

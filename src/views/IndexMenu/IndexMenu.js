@@ -344,7 +344,7 @@ export default function IndexMenu({ onClose }) {
         />
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link to="/compass" onClick={onClose}>
+        <Link target='_blank' to="/compass" onClick={onClose}>
           <Bussola width="70" />
         </Link>
       </div>
