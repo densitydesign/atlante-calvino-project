@@ -119,7 +119,7 @@ class Trama extends Component {
               style={{
                 gridColumn: "span 3",
                 pointerEvents: !controlsEnabled ? "none" : undefined,
-                opacity: !controlsEnabled ? 0.4 : undefined,
+                //opacity: !controlsEnabled ? 0.4 : undefined,
               }}
             />
           )}
@@ -182,7 +182,7 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined,
+              //opacity: !controlsEnabled ? 0.4 : undefined,
             }}
             allowEmpty={false}
             value={tipologia}
@@ -204,7 +204,7 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined,
+              //opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
 
@@ -221,7 +221,7 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              opacity: !controlsEnabled ? 0.4 : undefined,
+              //opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
         </div>
