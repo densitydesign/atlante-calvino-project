@@ -81,7 +81,7 @@ class Options extends Component {
     return (
       <div className="options-container" style={this.props.style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
-          <Dropdown.Toggle>
+          <Dropdown.Toggle disabled={this.props.disabled}>
             {!this.props.data.multiple && (
               <div>
                 <span className="micro-title">{this.props.title}</span>

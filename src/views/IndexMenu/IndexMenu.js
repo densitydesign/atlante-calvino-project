@@ -347,7 +347,7 @@ export default function IndexMenu({ onClose }) {
         className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
       >
-        {t("index_menu.guarda_la_guida")}
+        {t('index_menu.video_guida')}
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>

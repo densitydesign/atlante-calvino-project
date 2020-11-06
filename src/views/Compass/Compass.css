@@ -73,6 +73,7 @@
 .panel3-closed {
   left : calc(100% - 1 * var(--panel-border-width));
   width: 12vh;
+  background-color : var(--cool-bg);
 }
 
 .compass-flux-modal{
