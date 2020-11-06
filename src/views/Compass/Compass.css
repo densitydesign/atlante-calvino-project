@@ -41,6 +41,7 @@
 .panel1-closed {
   left : calc(100% - 3 * var(--panel-border-width));
   width: 12vh;
+  transition: ease-out 2s;
 }
 
 .panel1-closed > .sliding-panel-main-text{
@@ -63,6 +64,7 @@
 .panel2-closed {
   left : calc(100% - 2 * var(--panel-border-width));
   width: 12vh;
+  transition: ease-out 0.7s;
 }
 
 .panel3-open {
@@ -74,6 +76,7 @@
   left : calc(100% - 1 * var(--panel-border-width));
   width: 12vh;
   background-color : var(--cool-bg);
+  transition: ease-out 0.7s;
 }
 
 .compass-flux-modal{
