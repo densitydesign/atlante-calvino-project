@@ -105,7 +105,6 @@ export default function RealismoMain({ title }) {
   ]
 
   const cercaOptions = [
-    { label: t("realismo:Volume"), value: "volume" },
     { label: t("realismo:Titolo"), value: "titolo" },
   ]
 
@@ -352,6 +351,7 @@ export default function RealismoMain({ title }) {
         <AltOptions
           multiple={false}
           title={t("cerca_per")}
+          disabled
           options={cercaOptions}
           value={findFor}
           onChange={(x) => setFindFor(x.label)}

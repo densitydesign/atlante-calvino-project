@@ -59,12 +59,7 @@ const cerca_per = {
       label: "titolo",
       value: "titolo",
       status: true,
-    },
-    {
-      label: "pubblicazione",
-      value: "pubblicazione",
-      status: false,
-    },
+    }
   ],
 }
 
@@ -230,6 +225,7 @@ class Cancellazione extends Component {
             {this.state.loading && <Loading style={{ gridColumn: "span 3" }} />}
             {!this.state.loading && (
               <Options
+                disabled
                 title={this.props.t('cerca_per')}
                 data={this.state.cerca_per}
                 style={{ gridColumn: "span 3" }}
