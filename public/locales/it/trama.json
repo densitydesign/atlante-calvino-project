@@ -26,7 +26,7 @@
   "inizio_del_testo": "Inizio del testo",
   "fine_del_testo": "Fine del testo",
   "lunghezza_del_testo": "Lunghezza del testo in caratteri",
-  "ordine_di_turbamento": "<0>Ordine <br/>di turbamento</0>",
+  "ordine_di_turbamento": "<0>Lista<br/>delle sequenze</0>",
   "tipologia": {
     "morte": "morte",
     "guerra": "guerra",

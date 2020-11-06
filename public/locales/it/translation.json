@@ -25,7 +25,7 @@
     "proporzione": "PROPORZIONE",
     "il_fenomeno": "IL FENOMENO"
   },
-  "tappa": "tappe",
+  "tappa": "tappa",
   "index_menu": {
     "video_guida": "Video guida"
   },
@@ -39,5 +39,8 @@
   },
   "territorio": "Territorio",
   "entrambi": "Entrambi",
-  "cerca_per": "Cerca per"
+  "cerca_per": "Cerca per",
+  "TAPPA 1": "TAPPA 1",
+  "TAPPA 2": "TAPPA 2",
+  "TAPPA 3": "TAPPA 3"
 }

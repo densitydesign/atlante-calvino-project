@@ -66,5 +66,18 @@
     "cornice": "Cornice",
     "struttura": "Struttura",
     "terra": "Terra"
+  },
+  "piano": {
+    "eventi liminali": "eventi liminali",
+    "stato disforico": "stato disforico",
+    "stato riflessivo": "stato riflessivo",
+    "stato sospeso": "stato sospeso",
+    "racconto incastonato": "racconto incastonato",
+    "metanarrazione": "metanarrazione",
+    "cornice": "cornice",
+    "struttura": "struttura",
+    "terna": "terna",
+    "interazione": "interazione",
+    "intenzione": "intenzione"
   }
 }

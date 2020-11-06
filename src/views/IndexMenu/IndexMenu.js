@@ -1,45 +1,45 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import IndexMenuHeader from "../../headers/IndexMenuHeader";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import styles from "./IndexMenu.module.css";
-import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg";
-import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg";
-import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg";
-import { ReactComponent as DubbioIcon } from "./icons/dubitare_blue.svg";
-import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_color.svg";
-import { ReactComponent as NebbiaIcon } from "./icons/nebbia_blue.svg";
-import { ReactComponent as CancellazioneIconHover } from "./icons/cancellazione_color.svg";
-import { ReactComponent as CancellazioneIcon } from "./icons/cancellazione_blue.svg";
-import { ReactComponent as TrasformareIconHover } from "./icons/trasformare_color.svg";
-import { ReactComponent as TrasformareIcon } from "./icons/trasformare_blue.svg";
-import { ReactComponent as LuoghiIconHover } from "./icons/luoghi_color.svg";
-import { ReactComponent as LuoghiIcon } from "./icons/luoghi_blue.svg";
-import { ReactComponent as RealismoIconHover } from "./icons/realismo_color.svg";
-import { ReactComponent as RealismoIcon } from "./icons/realismo_blue.svg";
-import { ReactComponent as ElenchiIconHover } from "./icons/elenchi_color.svg";
-import { ReactComponent as ElenchiIcon } from "./icons/elenchi_blue.svg";
-import { ReactComponent as CombinareIconHover } from "./icons/combinare_color.svg";
-import { ReactComponent as CombinareIcon } from "./icons/combinare_blue.svg";
-import { ReactComponent as TramaIconHover } from "./icons/trama_color.svg";
-import { ReactComponent as TramaIcon } from "./icons/trama_blue.svg";
-import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg";
-import { ReactComponent as Orbite } from "./icons/orbite.svg";
-import { ReactComponent as Bussola } from "./icons/bussola.svg";
-import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/icons/icon-close.svg";
-import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg";
-import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg";
-import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg";
-import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg";
-import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg";
-import { ReactComponent as Curve3 } from "./icons/curva-spazio-1.svg";
-import { ReactComponent as Curve4 } from "./icons/curva-spazio-2.svg";
-import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg";
-import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg";
-import Footer from "../../headers/Footer/Footer";
-import { Modal } from "react-bootstrap";
-import { faWindowRestore } from "@fortawesome/free-regular-svg-icons";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react"
+import { useTranslation } from "react-i18next"
+import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
+import styles from "./IndexMenu.module.css"
+import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
+import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
+import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg"
+import { ReactComponent as DubbioIcon } from "./icons/dubitare_blue.svg"
+import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_color.svg"
+import { ReactComponent as NebbiaIcon } from "./icons/nebbia_blue.svg"
+import { ReactComponent as CancellazioneIconHover } from "./icons/cancellazione_color.svg"
+import { ReactComponent as CancellazioneIcon } from "./icons/cancellazione_blue.svg"
+import { ReactComponent as TrasformareIconHover } from "./icons/trasformare_color.svg"
+import { ReactComponent as TrasformareIcon } from "./icons/trasformare_blue.svg"
+import { ReactComponent as LuoghiIconHover } from "./icons/luoghi_color.svg"
+import { ReactComponent as LuoghiIcon } from "./icons/luoghi_blue.svg"
+import { ReactComponent as RealismoIconHover } from "./icons/realismo_color.svg"
+import { ReactComponent as RealismoIcon } from "./icons/realismo_blue.svg"
+import { ReactComponent as ElenchiIconHover } from "./icons/elenchi_color.svg"
+import { ReactComponent as ElenchiIcon } from "./icons/elenchi_blue.svg"
+import { ReactComponent as CombinareIconHover } from "./icons/combinare_color.svg"
+import { ReactComponent as CombinareIcon } from "./icons/combinare_blue.svg"
+import { ReactComponent as TramaIconHover } from "./icons/trama_color.svg"
+import { ReactComponent as TramaIcon } from "./icons/trama_blue.svg"
+import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
+import { ReactComponent as Orbite } from "./icons/orbite.svg"
+import { ReactComponent as Bussola } from "./icons/bussola.svg"
+import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/icons/icon-close.svg"
+import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
+import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
+import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
+import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
+import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg"
+import { ReactComponent as Curve3 } from "./icons/curva-spazio-1.svg"
+import { ReactComponent as Curve4 } from "./icons/curva-spazio-2.svg"
+import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg"
+import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
+import Footer from "../../headers/Footer/Footer"
+import { Modal } from "react-bootstrap"
+import { faWindowRestore } from "@fortawesome/free-regular-svg-icons"
 
 const ItemIndex = ({
   icon,
@@ -63,71 +63,76 @@ const ItemIndex = ({
         </Link>
       )}
     </div>
-  );
-};
+  )
+}
 
 export default function IndexMenu({ onClose }) {
-  const [showGuida, setShowGuida] = useState(false);
+  const [showGuida, setShowGuida] = useState(false)
 
-  const handleCloseGuida = () => setShowGuida(false);
+  const handleCloseGuida = () => setShowGuida(false)
   const handleShowGuida = () => {
-    setShowGuida(true);
-  };
-
-  const { t } = useTranslation("translation");
-
-  const orbiteRef = useRef();
-
-  function getD(cx, cy, rx, ry) {
-    var kappa = 0.5522847498;
-    var ox = rx * kappa; // x offset for the control point
-    var oy = ry * kappa; // y offset for the control point
-    let d = `M${cx - rx},${cy}`;
-    d += `C${cx - rx}, ${cy - oy}, ${cx - ox}, ${cy - ry}, ${cx}, ${cy - ry},`;
-    d += `C${cx + ox}, ${cy - ry}, ${cx + rx}, ${cy - oy}, ${cx + rx}, ${cy},`;
-    d += `C${cx + rx}, ${cy + oy}, ${cx + ox}, ${cy + ry}, ${cx}, ${cy + ry},`;
-    d += `C${cx - ox}, ${cy + ry}, ${cx - rx}, ${cy + oy}, ${cx - rx}, ${cy},`;
-    d += `z`;
-    return d;
+    setShowGuida(true)
   }
 
-  useEffect(() => {
-    const el = orbiteRef.current;
-    const bbox = el.getBoundingClientRect();
-    const g = el.querySelector("g");
+  const { t } = useTranslation("translation")
+
+  const orbiteRef = useRef()
+
+  function getD(cx, cy, rx, ry) {
+    var kappa = 0.5522847498
+    var ox = rx * kappa // x offset for the control point
+    var oy = ry * kappa // y offset for the control point
+    let d = `M${cx - rx},${cy}`
+    d += `C${cx - rx}, ${cy - oy}, ${cx - ox}, ${cy - ry}, ${cx}, ${cy - ry},`
+    d += `C${cx + ox}, ${cy - ry}, ${cx + rx}, ${cy - oy}, ${cx + rx}, ${cy},`
+    d += `C${cx + rx}, ${cy + oy}, ${cx + ox}, ${cy + ry}, ${cx}, ${cy + ry},`
+    d += `C${cx - ox}, ${cy + ry}, ${cx - rx}, ${cy + oy}, ${cx - rx}, ${cy},`
+    d += `z`
+    return d
+  }
+
+  useLayoutEffect(() => {
+    const el = orbiteRef.current
+    const bbox = el.getBoundingClientRect()
+    const g = el.querySelector("g")
     g.querySelectorAll("ellipse").forEach((o, i) => {
       // transforming the ellipse into a path (in order to use 'getPointAtLength()')
-      const cx = parseInt(o.getAttribute('cx'))/100*bbox.width,
-            cy = parseInt(o.getAttribute('cy'))/100*bbox.height,
-            rx = parseInt(o.getAttribute('rx'))/100*bbox.width,
-            ry = parseInt(o.getAttribute('ry'))/100*bbox.height;
-      const d = getD(cx, cy, rx, ry);
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute("d",d)
-      path.setAttribute("fill","none")
-      path.setAttribute("stroke","red")
+      const cx = (parseInt(o.getAttribute("cx")) / 100) * bbox.width,
+        cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
+        rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
+        ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height
+      const d = getD(cx, cy, rx, ry)
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      )
+      path.setAttribute("d", d)
+      path.setAttribute("fill", "none")
+      path.setAttribute("stroke", "red")
       // g.appendChild(path); // uncomment to show the path
 
       // positioning the circles
-      const length = path.getTotalLength();
-      const percentages = [0.34,0.34,0.34]; // adjust these to fix positioning
-      const position = length*percentages[i]; // position depends on the totalLength
-      const point = path.getPointAtLength(position);
-      const cl = "tappa" + (i + 1);
-      const el2 = document.querySelector("." + styles[cl]);
-      el2.style.top = point.y - 10 + "px";
-      el2.style.left = point.x - 10 + "px";
+      const length = path.getTotalLength()
+      const percentages = [0.34, 0.34, 0.34] // adjust these to fix positioning
+      const position = length * percentages[i] // position depends on the totalLength
+      const point = path.getPointAtLength(position)
+      const cl = "tappa" + (i + 1)
+      const el2 = document.querySelector("." + styles[cl])
+      el2.style.top = point.y - 10 + "px"
+      el2.style.left = point.x - 10 + "px"
 
       // positioning the label "tappe"
-      if (i===1) {
-        const el3 = document.querySelector(`.${styles["tappe"]}`);
-        const el3bbox = el3.getBoundingClientRect();
-        el3.style.top = point.y - 25 + "px";
-        el3.style.left = point.x + "px";
-        el3.style.transform= "translate(-50%, -50%)";
+      if (i === 1) {
+        const el3 = document.querySelector(`.${styles["tappe"]}`)
+        const el3bbox = el3.getBoundingClientRect()
+        el3.style.top = point.y - 25 + "px"
+        el3.style.left = point.x + "px"
+        el3.style.transform = "translate(-50%, -50%)"
       }
-    });
-  }, [orbiteRef.current]);
+    })
+  })
+
+  console.log(orbiteRef)
 
   return (
     <div>
@@ -347,7 +352,7 @@ export default function IndexMenu({ onClose }) {
         className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
       >
-        {t('index_menu.video_guida')}
+        {t("index_menu.video_guida")}
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
@@ -383,5 +388,5 @@ export default function IndexMenu({ onClose }) {
       </div>
       <Footer />
     </div>
-  );
+  )
 }

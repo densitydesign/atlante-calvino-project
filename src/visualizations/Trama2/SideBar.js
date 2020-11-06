@@ -123,8 +123,7 @@ function SideBar({
             paddingLeft: leftAsMyNavGridIs,
           }}
         >
-          Ordine <br />
-          di turbamento
+          Lista delle sequenze
         </div>
       </Trans>
       {Object.keys(tipologieGrouped).map((k) => {
