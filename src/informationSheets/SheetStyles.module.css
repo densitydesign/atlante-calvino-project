@@ -83,7 +83,7 @@ body{
 
 .image {
   width: 100%;
-  margin: 0;
+  margin-bottom:20px;
 }
 
 .image100w {
@@ -100,7 +100,6 @@ body{
 
 .sideContent {
   grid-column: 8 / span 5;
-  width: 60%;
 }
 
 .legend{

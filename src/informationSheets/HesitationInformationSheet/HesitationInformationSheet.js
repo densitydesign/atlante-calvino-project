@@ -26,34 +26,45 @@ class HesitationInformationSheet extends Component {
         <HamburgerCompassHeader />
         <main className={SheetStyles.main}>
         <div className={SheetStyles.gridRow}>
-          <h4 className="ac-breadcrumb">Tappa 2 - Dubitare</h4>
-          <h1 className={SheetStyles.titleH1}>La giornata di uno scrutatore</h1>
+          <h4 className="ac-breadcrumb">Tappa 2 > dubitare</h4>
+          <h1 className={SheetStyles.titleH1}>Il romanzo-saggio che dubita</h1>
         </div>
         <div className={SheetStyles.gridRow}>
-          <p className={SheetStyles.paragraphBig}>
-          <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 22', float:'left'}}  src={legenda}/>
-          <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={giornata}/>
-            La giornata d’uno scrutatore è uno dei romanzi di Calvino che presenta la più alta percentuale di quello che abbiamo denominato “testo dubitativo”: il 35%. Il dato non stupisce, considerando la natura profondamente ibrida del libro pubblicato nel 1963, «una sorta di romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del vivere associato, autoritratto morale» (Barenghi 2009, 56).
-            In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il segno interrogativo, per quanto simbolicamente così importante, non è l’unico a caratterizzare il romanzo: La giornata d’uno scrutatore è un libro anche di parentesi e di incisi. Segni che interrompono la continuità lineare del discorso, creando degli spazi di scrittura indipendenti che spezzano il testo principale, annidandovi dentro un secondo testo. Lo scopo di questo approfondimento è mostrare la distribuzione di tali segni grafici e soprattutto in che modo collaborano con il processo dubitativo, amplificando il suo effetto.
-            La giornata d’uno scrutatore racconta l’esperienza di Amerigo Ormea, militante e intellettuale, nel ruolo di scrutatore durante le elezioni dell’8 giugno 1953, presso un istituto per persone con disabilità mentali e fisiche trasformato in seggio elettorale.
-            Il libro è diviso in 15 capitoli e presenta un totale di 214 occorrenze di <span style={{color:'#cfcfff'}}>testo dubitativo</span>, distribuite in maniera diseguale all’interno del volume. Il secondo capitolo possiede una delle concentrazioni maggiori: 23 occorrenze. Abbiamo deciso di concentrarci sulla fine e l’inizio del capitolo, analizzando le due zone del testo separatamente.
-          </p>
-        </div>
-        <div className={SheetStyles.gridRow}>
+        <h3 className={SheetStyles.subtitleSheet} style = {{gridColumn:' 1 / span 22'}}>La giornata d'uno scrutatore</h3>
+        <img className={SheetStyles.legend} style = {{gridColumn:' 1 / span 22', float:'left'}}  src={legenda}/>
+        <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={giornata}/>
+        <p className={SheetStyles.paragraphBig}><em>La giornata d’uno scrutatore</em> è uno dei
+          romanzi di Calvino che presenta la più alta percentuale di quello che abbiamo
+          denominato “testo dubitativo”: il 35%. Il dato non stupisce, considerando la
+          natura profondamente ibrida del libro pubblicato nel 1963, «una sorta di
+          romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del
+          vivere associato, autoritratto morale» (Barenghi 2009, 56).
+          <br />
+          In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il
+          segno interrogativo, per quanto simbolicamente così importante, non è l’unico a
+          caratterizzare il romanzo: <em>La giornata d’uno scrutatore</em> è un libro anche di
+          parentesi e di incisi. Segni che interrompono la continuità lineare del
+          discorso, creando degli spazi di scrittura indipendenti che spezzano il testo
+          principale, annidandovi dentro un secondo testo. Lo scopo di questo
+          approfondimento è mostrare la distribuzione di tali segni grafici e soprattutto
+          in che modo collaborano con il processo dubitativo, amplificando il suo effetto.
+          <em>La giornata d’uno scrutatore</em> racconta l’esperienza di Amerigo Ormea, militante e
+          intellettuale, nel ruolo di scrutatore durante le elezioni dell’8 giugno 1953,
+          presso un istituto per persone con disabilità mentali e fisiche trasformato in
+          seggio elettorale. Il libro è diviso in 15 capitoli e presenta un totale di 214
+          occorrenze di testo dubitativo, distribuite in maniera diseguale all’interno del
+          volume. Il secondo capitolo possiede una delle concentrazioni maggiori: 23
+          occorrenze. Abbiamo deciso di concentrarci sulla fine e l’inizio del capitolo,
+          analizzando le due zone del testo separatamente. </p>
           <img className={SheetStyles.image} style={{gridColumn:'1 / span 22'}} src={zoom_01} />
           <p className= ' captionLeft ' style={{gridColumn:'1 / span 22'}}> Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></p>
         </div>
 
         <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>Parole: istruzioni per l'uso</h2>
-            <h3 className={SheetStyles.subtitleSheet}>Scegliere le parole</h3>
-
-          <div className={SheetStyles.paragraph}>
-
-          <p className =' cite '> Se si usano dei termini generici come «partito di sinistra»,
-           «istituto religioso», non è perché non si vogliano chiamare le cose con il loro nome, ma perché… (RR, II, p. 7).
-          </p>
-          <p>La riflessione che inaugura il capitolo è immediatamente coinvolta dal processo dubitativo. Con la promessa di una maggiore esattezza,
+          <h2 className={SheetStyles.titleH2}>Parole: istruzioni per l'uso</h2>
+          <p className={SheetStyles.paragraph}>
+          All’inizio del secondo capitolo, la voce narrante riflette su quale sia il modo migliore di «chiamare le cose» di cui si vuole discorrere: l’obiettivo è di raggiungere una forma di espressione esatta, precisa, che non generi alcuna incomprensione nella lettrice/lettore. La scelta ricade sui «termini generici», ritenuti più adatti rispetto ai termini specifici. Ognuno, infatti, è «portato ad attribuire valori diversi o magari contrastanti» a questi ultimi, «secondo le proprie cognizioni ed esperienze», e per questo motivo «resterebbe da precisare ancora» (RR, II, 7).</p>
+          <p className={SheetStyles.paragraph}>La riflessione che inaugura il capitolo è immediatamente coinvolta dal processo dubitativo. Con la promessa di una maggiore esattezza,
           <span style={{textDecoration:'underline'}}>td7</span> e <span style={{textDecoration:'underline'}}>td8</span> cercano di giustificare
           la scelta di impiegare solo «termini generici», evitando i nomi propri. Subito però il testo infrange questa regola di comportamento:
           viene infatti svelata l’identità del «partito di sinistra» a cui appartiene il protagonista (ovvero «partito comunista») e l’«istituto
@@ -65,49 +76,103 @@ class HesitationInformationSheet extends Component {
           quanto detto in precedenza.
           </p>
 
-          <h3 className={SheetStyles.subtitleSheet}>Interpretare le parole</h3>
-          <p className =' cite '> Alla parola «comunismo» o alla parola «Cottolengo»,
-          capita che ognuno, secondo le proprie cognizioni ed esperienze, è portato ad attribuire valori diversi o magari contrastanti… (ibidem).</p>
-          <p><span style={{textDecoration:'underline'}}>td9</span> afferma che il significato
-          attribuito a un nome non sempre è stabile, ma può cambiare da individuo a individuo, a volte rivelandosi semanticamente incompatibile.
-          Se un significato univoco non esiste,
-          non è più possibile chiamare le cose con il proprio nome senza avere il timore di essere fraintesi.
-          Assistiamo qui a una crisi delle capacità comunicative del linguaggio, altro tratto caratteristico del processo dubitativo.
-          </p>
+          <h2 className={SheetStyles.titleH2}>Parole: scegliere, interpretare, precisare </h2>
+          <p className={SheetStyles.paragraph}>
+          All’inizio del secondo capitolo, la voce narrante riflette su quale sia il
+          modo migliore di «chiamare le cose» di cui si vuole discorrere: l’obiettivo è
+          di raggiungere una forma di espressione esatta, precisa, che non generi alcuna
+          incomprensione nella lettrice/lettore. La scelta ricade sui «termini
+          generici», ritenuti più adatti rispetto ai termini specifici. Ognuno, infatti,
+          è «portato ad attribuire valori diversi o magari contrastanti» a questi
+          ultimi, «secondo le proprie cognizioni ed esperienze», e per questo motivo
+          «resterebbe da precisare ancora» (RR, II, 7).</p>
+          <p className={SheetStyles.paragraph}>La riflessione che inaugura
+          il capitolo è immediatamente interessata dal processo dubitativo, aprendosi
+          con il tema della scelta. Con la promessa di una maggiore esattezza, il testo
+           (<strong>td7</strong> e <strong>td8</strong>) cerca di giustificare la decisione di impiegare solo parole
+          comuni, evitando i nomi propri. Subito, però, il testo infrange questa regola
+          di comportamento, in plateale contraddizione con quanto affermato in
+          precedenza: viene infatti svelata l’identità del «partito di sinistra» a cui
+          appartiene il protagonista (ovvero «partito comunista») e l’«istituto
+          religioso» anonimo diventa «il Cottolengo di Torino» (RR, II, 7). La figura
+          retorica utilizzata è la preterizione, che spesso collabora con il processo
+          dubitativo: informare negando, infatti, corrisponde al funzionamento più
+          frequente del testo dubitativo, che alimenta la narrazione tramite
+          un’operazione volta alla sottrazione, ossia mettendo in discussione quanto
+          detto in precedenza.
+          <br />
+          In secondo luogo il processo dubitativo investe il problema
+          dell’interpretazione. Il testo (<strong>td9</strong>) afferma che il significato
+          attribuito a un nome non sempre è stabile, ma può cambiare da individuo
+          a individuo, moltiplicando le proprie accezioni fino a raggiungere
+          varianti semanticamente incompatibili tra loro. Se un significato
+          univoco non esiste, non è più possibile chiamare le cose con il proprio
+          nome senza avere il timore di essere fraintesi. Assistiamo qui a una
+          crisi delle capacità comunicative del linguaggio, altro tratto
+          caratteristico del processo dubitativo.
+          <br />
+          In terzo luogo si arriva alla
+          questione del precisare. Il testo (td10) fornisce un’informazione che
+          aumenta la consapevolezza di una ipotetica lettrice/lettore sulle
+          funzioni del Cottolengo. Come conseguenza dell’instabilità semantica che
+          sta dietro le parole, l’unico modo per assicurarsi di essere compresi
+          correttamente è quello di «precisare» (RR, II, 7), ridefinendo ancora e
+          ancora il concetto, accumulando le puntualizzazioni (cfr. Mengaldo 1996,
+          278). Il testo in questione si trova all’interno di un inciso; qui il
+          segno grafico delimita un’informazione, ma crea anche una deviazione dal
+          testo principale.
+          <br />
+          In conclusione, all’inizio del secondo capitolo della
+          <em>Giornata d’uno scrutatore</em>, l’accento è posto sulla difficoltà di
+          comunicare correttamente con la lettrice/lettore. Il significato delle
+          parole è instabile e di conseguenza è necessario spiegare ogni termine
+          per evitare il fraintendimento; tuttavia questi continui chiarimenti
+          complicano ancora di più l’operazione cognitiva richiesta a chi sta
+          leggendo, poiché il testo procede accumulando ragionamenti digressivi e
+          sviluppi laterali, a volte racchiusi dentro appositi segni grafici.</p>
 
-          <h3 className={SheetStyles.subtitleSheet}>Precisare le parole</h3>
-          <p className =' cite '>…quanto al «Cottolengo», altrimenti detto «Piccola Casa della Divina Provvidenza» – ammesso che tutti sappiano la funzione di quell’enorme ospizio… (ibidem).</p>
-          <p>Il <span style={{textDecoration:'underline'}}>td10</span> fornisce un’informazione che aumenta la consapevolezza
-          di un ipotetico lettore sulle funzioni del Cottolengo.
-          Come conseguenza dell’instabilità semantica dietro le parole, l’unico modo per assicurarsi di essere compreso correttamente è «precisare»,
-          ridefinendo ancora e ancora il concetto, sommando le puntualizzazioni (cfr. Mengaldo 1996, 278).
-          Il <span style={{textDecoration:'underline'}}>td10</span>
-          si trova all’interno di un inciso; qui il segno grafico delimita un’informazione, ma crea anche una deviazione nel testo principale.
-          </p>
-
-          <h3 className={SheetStyles.subtitleSheet}>Conclusione per 'Le parole: istruzioni per l'uso'</h3>
-          <p> All’inizio del secondo capitolo della Giornata di uno scrutatore,
-          l’accento è posto sulla difficoltà di comunicare correttamente con il lettore. Il significato delle parole è instabile e
-          di conseguenza è necessario spiegare ogni termine per evitare il fraintendimento; tuttavia questi continui chiarimenti corrono
-          il rischio di confondere ancora di più, soffocando la narrazione. Il testo procede accumulando ragionamenti digressivi,
-          sviluppi laterali a volte racchiusi dentro segni grafici. In particolare il td10 inizia con la parola formula «ammesso che»,
-          la stessa del td2 nella Nota dell’autore: sembra che il romanzo stia cercando di sabotarsi, minimizzando fin dal
-          principio l’importanza del suo contenuto o diffidando apertamente del proprio lettore.</p>
-          </div>
-
-            <img className={SheetStyles.image} src={info_01} style={{position:'sticky',top:'calc(var(--navigation-height) + 3px)',gridColumn:'8 / span 3'}} />
-
-        </div>
+          <img className={SheetStyles.sideContent} src={info_01} style={{position:'sticky',top:'calc(var(--navigation-height) + 3px)',gridColumn:'8 / span 3'}} />
+</div>
 
         <div className={SheetStyles.gridRow}>
         <h2 className={SheetStyles.titleH2}>Gli strati del testo</h2>
             <div className={SheetStyles.paragraph}>
-            <p>
-            Il paragrafo finale nella versione cartacea si svolge per più di due pagine senza punti fermi: è composto da una serie di riflessioni, che si incastrano e talvolta sovrappongono. L’argomento principale è la fede politica del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne l’origine e le motivazioni profonde, producendo un testo denso e ricco di informazioni, il filo del discorso si interrompe bruscamente poiché il narratore afferma di «aver capito finalmente quel che non ci voleva poi tanto a capire» (RR, II, 10).</p>
+            <p>Il paragrafo finale di questa parte del libro (RR, II, 9-11) è composto da più
+            di due pagine senza punti fermi: si tratta di una serie di riflessioni, che si
+            incastrano e talvolta sovrappongono. L’argomento principale è la fede politica
+            del protagonista. Dopo aver esaminato ogni elemento in grado di stabilirne
+            l’origine e le motivazioni profonde, producendo un testo denso e ricco di
+            informazioni, il filo del discorso si interrompe bruscamente poiché il narratore
+            afferma di «aver capito finalmente quel che non ci voleva poi tanto a capire»
+            (RR, II, 10). Questo paragrafo è un ottimo esempio di come il processo
+            dubitativo consista nel “tornare sui propri passi”. Il testo oggetto di dubbio
+            associato a td28 coincide con l’inizio del paragrafo e racchiude in sé dodici
+            occorrenze del testo dubitativo (dal <strong>td16</strong> al
+            <strong>td27</strong>, più della metà del numero totale di occorrenze del
+            capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in
+            parallelo assistiamo a un innalzamento di livello: il numero di livello equivale
+            alla quantità di volte in cui il processo dubitativo insiste sulla stessa
+            identica porzione di testo. Accavallandosi fra loro, le occorrenze dubitano
+            della loro capacità di ristabilire il senso del discorso. Un altro esempio: il
+            passaggio dal 6° al 7° livello avviene a causa del td29; poteva sembrare che il
+            testo (<strong>td28</strong>) fosse riuscito una volta per tutte a bloccare la
+            catena dubitativa, eppure ancora una volta c’è qualcosa da dire, da aggiungere,
+            da precisare. Ed è significativo che la precisazione avvenga fra parentesi.
+            Cinque delle occorrenze “intrappolate” dentro il testo oggetto di dubbio di <strong>td28</strong>
+            sono a loro volta contenute fra parentesi (<strong>td18</strong>,
+            <strong>td20</strong>, <strong>td21</strong>, <strong>td23</strong>,
+            <strong>td27</strong>). Ma la quantità di segni grafici nel paragrafo è molto
+            più alta: infatti circa il 30% del capitolo viene dislocata tra parentesi o
+            dentro un inciso, anche quando da un punto di vista narrativo non sembrerebbe
+            necessario. In alcuni casi le parentesi contengono a loro volta degli incisi,
+            elaborando così una sorta di racconto a matrioska. La massiccia concentrazione
+            del processo dubitativo proprio in quell’area è collegata alla presenza dei
+            segni grafici che stratificano il testo.</p>
 
-            <h3 className={SheetStyles.subtitleSheet}>Il processo: i livelli del testo dubitativo</h3>
+            <h2 className={SheetStyles.titleH2}>Il processo: i livelli del testo dubitativo</h2>
+
           <div>
-            <img className={SheetStyles.image} src={zoom_02} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)', background:'#fffffa', width:'100%', paddingBottom:'0.5rem'}} />
+            <img className={SheetStyles.sideContent} src={zoom_02} style={{position:'sticky',top:'calc(var(--navigation-height) + 1rem)', background:'#fffffa', width:'100%', paddingBottom:'0.5rem'}} />
           <p>Questo paragrafo è un ottimo esempio di come il processo dubitativo consista nel “tornare sui propri passi”. Il testo oggetto di dubbio associato a td28 coincide con l’inizio del paragrafo e racchiude in sé dodici td (dal td16 al td27, più della metà del numero totale di occorrenze del capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in parallelo assistiamo a un innalzamento di livello: il numero di livello equivale alla quantità di volte in cui il processo dubitativo insiste sulla stessa identica porzione di testo. Accavallandosi fra loro le occorrenze “dubitano” della loro capacità di ristabilire il senso del discorso. Un altro esempio: il passaggio dal 6° al 7° livello avviene a causa del td29; poteva sembrare che il td28 fosse riuscito una volta per tutte a bloccare la catena dubitativa, eppure ancora una volta c’è qualcosa da dire, da aggiungere, da precisare. E la precisazione non può che avvenire fra parentesi.</p>
           </div>
           </div>
