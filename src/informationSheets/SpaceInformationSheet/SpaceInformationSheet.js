@@ -31,7 +31,7 @@ export default class SpaceInformationSheet extends React.Component
           <img className={SheetStyles.legend} style = {{gridColumn:'1 / span 5'}}  src={legenda}/>
           <img className = {SheetStyles.image100w} style={{gridColumn:'1 / span 12'}} src={inventati}/>
           <h2 className={SheetStyles.titleH2}>L'analisi</h2>
-          <div className={SheetStyles.paragraph}>
+          <div className={SheetStyles.paragraphBig}>
             <p>La categoria dei <span style={{color:'#00C19C'}}>luoghi
             inventati</span> riprende una delle quattro categorie ideate da Frank
             Zipfel nel 2001 e poi concettualizzate da Barbara Piatti nel 2008, sulla
@@ -104,8 +104,9 @@ export default class SpaceInformationSheet extends React.Component
             evidente, anche nel caso del Barone rampante lo spazio fantastico
             si intreccia a quello storico. </p>
             </div>
-            <img className={SheetStyles.sideContent}
-            style={{position:'sticky',top:'calc(var(--navigation-height) +1rem)'}} src={zoom_03}/>
+            <div className={SheetStyles.sideContent}>
+          <img style={{position:'sticky',top:'calc(var(--navigation-height) +1rem)'}} src={zoom_03}/>
+          </div>
             </div>
 
         <div className={SheetStyles.gridRow} style={{marginTop:'3rem'}}>
@@ -124,8 +125,9 @@ export default class SpaceInformationSheet extends React.Component
             edilizie che avevano deturpato la Liguria del dopoguerra (cfr.
             ivi, 1229). </p>
           </div>
-              <img className={SheetStyles.sideContent}
-              style={{position:'sticky', top:'calc(var(--navigation-height) +1rem)'}} src={zoom_01}/>
+              <div className={SheetStyles.sideContent}>
+            <img style={{position:'sticky', top:'calc(var(--navigation-height) +1rem)'}} src={zoom_01}/>
+            </div>
         </div>
 
         <div className={SheetStyles.gridRow} style={{marginTop:'3rem'}}>
@@ -137,14 +139,15 @@ export default class SpaceInformationSheet extends React.Component
                       dal tempo e dallo spazio. Invece, anche in questo caso, Calvino non rinuncia a una cornice storica,
                       poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.</p>
                   </div>
-
-                  <img className={SheetStyles.sideContent} style={{position:'sticky', top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_02}/>
+                  <div className={SheetStyles.sideContent}>
+                  <img style={{position:'sticky', top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_02}/>
+                  </div>
 
                   </div>
 
             <div className={SheetStyles.gridRow}>
               <h2 className={SheetStyles.titleH2}>I racconti</h2>
-                      <img className={SheetStyles.image} style={{gridColumn:'1 / span 8'}} src={zoom_04}/>
+                      <img className={SheetStyles.image} style={{gridColumn:'1 / span 10'}} src={zoom_04}/>
                       <p className='captionLeft' style={{gridColumn:'1 / span 7'}} >Una selezione di racconti scritti a metà degli anni Cinquanta</p>
                       <p className={SheetStyles.paragraph}> Nella forma breve, sia che si tratti di racconti pubblicati in volume sia che si
                       tratti di testi usciti su periodici e poi non più raccolti, la diffusione di
@@ -179,17 +182,17 @@ export default class SpaceInformationSheet extends React.Component
 
             <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
-              <ol className={SheetStyles.paragraph+' references '}>
-                  <li className={SheetStyles.referenceItem}>
+              <ol className={[SheetStyles.paragraph,'references'].join(' ')  }>
+                  <li className="referenceItem">
                   Zipfel 2001: F. Zipfel, Fiktion, Fiktivität, Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der Literaturwissenschaft, Berlin, Erich Schmidt Verlag.
                   </li>
-                  <li className={SheetStyles.referenceItem}>
+                  <li className="referenceItem">
                   Piatti 2008: B. Piatti, Die Geographie der Literatur. Schauplätze, Handlungsräume, Raumphantasien, Göttingen, Wallstein.</li>
-                  <li className={SheetStyles.referenceItem}>
+                  <li className="referenceItem">
                   Reuschel-Hurni 2011: A. Reuschel, L. Hurni, Mapping Literature: Visualisation of Spatial Uncertainty in Fiction, in  «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.</li>
-                  <li className={SheetStyles.referenceItem}>
+                  <li className="referenceItem">
                    Berardinelli 1991: A. Berardinelli, Calvino moralista. Ovvero restare sani dopo la fine del mondo, in «Diario», VII, 9, pp. 37-58.</li>
-                   <li className={SheetStyles.referenceItem}>
+                   <li className="referenceItem">
                    Serra 2006: F. Serra, Calvino, Roma, Salerno.
                    </li>
               </ol>
