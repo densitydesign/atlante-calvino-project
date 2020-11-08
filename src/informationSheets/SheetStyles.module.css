@@ -102,6 +102,7 @@ body{
 
 .sideContent {
   grid-column: 8 / span 5;
+  width: 120%;
 }
 
 .legend{

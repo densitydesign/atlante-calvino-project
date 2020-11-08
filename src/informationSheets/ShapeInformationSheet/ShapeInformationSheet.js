@@ -89,8 +89,6 @@ export default class ShapeInformationSheet extends React.Component
 
     <div className={SheetStyles.gridRow}>
       <h3 className={SheetStyles.subtitleSheet}>Sintagmi e Preposizioni</h3>
-      <img className={SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={zoom_03}/>
-      <img className={SheetStyles.image} style={{gridColumn:'1 / span 12'}} src={zoom_04}/>
       <p className={SheetStyles.paragraph}>Un dato trasversale all’intero
       corpus, che colpisce per la costanza con cui si mantiene stabile su
       un’estensione di oltre quarant’anni che attraversa generi e stili molto
@@ -101,7 +99,14 @@ export default class ShapeInformationSheet extends React.Component
       cui la ripetizione non si limita alla ripresa di un oggetto grammaticale,
       ma coinvolge delle porzioni di testo anche molto estese, la cui
       riconoscibilità seriale non deriva solo dal piano sintattico ma anche da
-      quello semantico. Questo dato rappresenta bene l’elemento di ambiguità
+      quello semantico.</p>
+      </div>
+    <div className={SheetStyles.gridRow}>
+      <img className={SheetStyles.image100w} src={zoom_03}/>
+      <br />
+      <img className={SheetStyles.image100w} src={zoom_04}/>
+      <p className={SheetStyles.paragraph}>
+      Questo dato rappresenta bene l’elemento di ambiguità
       presente nella poetica calviniana: nello stesso punto in cui si registra
       la più forte tendenza a far proliferare l’elemento orizzontale dell’elenco
       a discapito dell’elemento verticale dell’architettura compositiva, con un
