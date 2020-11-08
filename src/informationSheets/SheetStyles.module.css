@@ -89,6 +89,8 @@ body{
 .image100w {
   width:100%;
   height:auto;
+  margin-bottom:20px;
+  grid-column: 1 / span 12;
 }
 
 .imageTrasp {
