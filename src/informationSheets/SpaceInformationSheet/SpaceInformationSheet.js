@@ -105,7 +105,7 @@ export default class SpaceInformationSheet extends React.Component
             si intreccia a quello storico. </p>
             </div>
             <div className={SheetStyles.sideContent}>
-          <img style={{position:'sticky',top:'calc(var(--navigation-height) +1rem)'}} src={zoom_03}/>
+          <img style={{position:'sticky',top:'calc(var(--navigation-height) +5rem)'}} src={zoom_03}/>
           </div>
             </div>
 
@@ -126,7 +126,7 @@ export default class SpaceInformationSheet extends React.Component
             ivi, 1229). </p>
           </div>
               <div className={SheetStyles.sideContent}>
-            <img style={{position:'sticky', top:'calc(var(--navigation-height) +1rem)'}} src={zoom_01}/>
+            <img style={{position:'sticky', top:'calc(var(--navigation-height) +4rem)'}} src={zoom_01}/>
             </div>
         </div>
 
@@ -140,14 +140,14 @@ export default class SpaceInformationSheet extends React.Component
                       poiché tutte e cinquantacinque le città visitate da Marco Polo appartengono allo sterminato impero di Kublai Khan.</p>
                   </div>
                   <div className={SheetStyles.sideContent}>
-                  <img style={{position:'sticky', top:'calc(var(--navigation-height) + 1rem)'}} src={zoom_02}/>
+                  <img style={{position:'sticky', top:'calc(var(--navigation-height) + 4rem)'}} src={zoom_02}/>
                   </div>
 
                   </div>
 
             <div className={SheetStyles.gridRow}>
               <h2 className={SheetStyles.titleH2}>I racconti</h2>
-                      <img className={SheetStyles.image} style={{gridColumn:'1 / span 10'}} src={zoom_04}/>
+                      <img className={SheetStyles.image} style={{gridColumn:'1 / span 8'}} src={zoom_04}/>
                       <p className='captionLeft' style={{gridColumn:'1 / span 7'}} >Una selezione di racconti scritti a metà degli anni Cinquanta</p>
                       <p className={SheetStyles.paragraph}> Nella forma breve, sia che si tratti di racconti pubblicati in volume sia che si
                       tratti di testi usciti su periodici e poi non più raccolti, la diffusione di
@@ -184,16 +184,16 @@ export default class SpaceInformationSheet extends React.Component
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
               <ol className={[SheetStyles.paragraph,'references'].join(' ')  }>
                   <li className="referenceItem">
-                  Zipfel 2001: F. Zipfel, Fiktion, Fiktivität, Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der Literaturwissenschaft, Berlin, Erich Schmidt Verlag.
+                  Zipfel 2001: F. Zipfel, Fiktion, Fiktivität, <em>Fiktionalität: Analysen zur Fiktion in der Literatur und zum Fiktionsbegriff in der Literaturwissenschaft</em>, Berlin, Erich Schmidt Verlag.
                   </li>
                   <li className="referenceItem">
-                  Piatti 2008: B. Piatti, Die Geographie der Literatur. Schauplätze, Handlungsräume, Raumphantasien, Göttingen, Wallstein.</li>
+                  Piatti 2008: B. Piatti, <em>Die Geographie der Literatur.</em> Schauplätze, Handlungsräume, Raumphantasien, Göttingen, Wallstein.</li>
                   <li className="referenceItem">
-                  Reuschel-Hurni 2011: A. Reuschel, L. Hurni, Mapping Literature: Visualisation of Spatial Uncertainty in Fiction, in  «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.</li>
+                  Reuschel-Hurni 2011: A. Reuschel, L. Hurni, <em>Mapping Literature: Visualisation of Spatial Uncertainty in Fiction</em> in  «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.</li>
                   <li className="referenceItem">
-                   Berardinelli 1991: A. Berardinelli, Calvino moralista. Ovvero restare sani dopo la fine del mondo, in «Diario», VII, 9, pp. 37-58.</li>
+                   Berardinelli 1991: A. Berardinelli, <em>Calvino moralista. Ovvero restare sani dopo la fine del mondo</em>, in «Diario», VII, 9, pp. 37-58.</li>
                    <li className="referenceItem">
-                   Serra 2006: F. Serra, Calvino, Roma, Salerno.
+                   Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
                    </li>
               </ol>
             </div>

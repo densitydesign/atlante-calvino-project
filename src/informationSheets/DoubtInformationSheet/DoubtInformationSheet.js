@@ -134,14 +134,14 @@ export default class DoubtInformationSheet extends React.Component
               <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
               <ol className={SheetStyles.paragraph+' references '}>
                   <li className='referenceItem'>
-                  Scarpa 2005: D. Scarpa, Italo Calvino, Milano, Mondadori.</li>
+                  Scarpa 2005: D. Scarpa, <em>Italo Calvino</em>, Milano, Mondadori.</li>
                 </ol>
           </div>
 
           <div className={SheetStyles.gridRow}>
             <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/doubt/phase1" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/phase2-process" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/phase3-problem" />
+            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/doubt/phase2" />
+            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/doubt/phase3" />
           </div>
 </main>
 
