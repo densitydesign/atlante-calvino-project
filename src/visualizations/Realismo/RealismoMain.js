@@ -4,21 +4,21 @@ import React, {
   useRef,
   useLayoutEffect,
   useMemo,
-} from 'react'
-import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
-import MainMenu from '../../general/MainMenu'
-import PageTitle from '../../general/PageTitle'
-import AltOptions from '../../general/Options/AltOptions'
-import SearchDropDown from '../../general/Search/SearchDropDownControlled'
-import MoreInfo from '../../general/MoreInfo'
-import CompassButton from '../../general/CompassButton/CompassButton'
-import useDimensions from 'react-use-dimensions'
-import GlobalData from '../../utilities/GlobalData'
-import RangeFilter from '../../general/RangeFilter'
-
-import sortBy from 'lodash/sortBy'
-import difference from 'lodash/difference'
-import uniqBy from 'lodash/uniqBy'
+} from "react"
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
+import MainMenu from "../../general/MainMenu"
+import PageTitle from "../../general/PageTitle"
+import AltOptions from "../../general/Options/AltOptions"
+import SearchDropDown from "../../general/Search/SearchDropDownControlled"
+import MoreInfo from "../../general/MoreInfo"
+import CompassButton from "../../general/CompassButton/CompassButton"
+import useDimensions from "react-use-dimensions"
+import GlobalData from "../../utilities/GlobalData"
+import RangeFilter from "../../general/RangeFilter"
+import { useTranslation, Trans } from "react-i18next"
+import sortBy from "lodash/sortBy"
+import difference from "lodash/difference"
+import uniqBy from "lodash/uniqBy"
 
 import {
   datasetToCircles,
@@ -26,10 +26,10 @@ import {
   raccontiDegs as racconti,
   yearsExtent,
   detailWormsCircles,
-} from './utils'
-import CircleWorms from './CircleWorms'
-import WormDetail from './WormDetail'
-import { groupBy } from 'lodash'
+} from "./utils"
+import CircleWorms from "./CircleWorms"
+import WormDetail from "./WormDetail"
+import { groupBy } from "lodash"
 
 const LABEL_BEZIER_DELTA_A = 30
 const RESET_BOX_HEIGHT = 70
@@ -46,11 +46,11 @@ const searchOptionsVolume = (() => {
     acc[r.title] = true
     return acc
   }, {})
-  return uniqBy(racconti, 'volume').map((racconto) => {
+  return uniqBy(racconti, "volume").map((racconto) => {
     const volume = racconto.volume
     let volumeLabel = volume
     if (keyByTitolo[volumeLabel]) {
-      volumeLabel += ' (volume)'
+      volumeLabel += " (volume)"
     }
     return {
       label: volumeLabel,
@@ -60,50 +60,53 @@ const searchOptionsVolume = (() => {
   })
 })()
 
-const titoliByVolume = groupBy(racconti, 'volume')
-
-const optionsMovimento = [
-  {
-    label: 'SI MOVIMENTO',
-  },
-  {
-    label: 'NO MOVIMENTO',
-  },
-]
-
-const optionsSpace = [
-  {
-    label: 'INTERNO',
-    value: 'indoor',
-  },
-  {
-    label: 'ESTERNO',
-    value: 'outdoor',
-  },
-  {
-    label: 'MEZZO DI TRASPORTO',
-    value: 'transportation',
-  },
-  {
-    label: 'ASSENZA DI AMBIENTAZIONE',
-    value: 'no_setting',
-  },
-]
-
-const cercaOptions = [
-  { label: 'Volume', value: 'volume' },
-  { label: 'Titolo', value: 'titolo' },
-]
+const titoliByVolume = groupBy(racconti, "volume")
 
 export default function RealismoMain({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
   }, [])
-  const [findFor, setFindFor] = useState('Titolo')
+  const [findFor, setFindFor] = useState("Titolo")
   const [ricerca, setRicerca] = useState([])
 
+  const { t } = useTranslation(["translation", "realismo"])
+
   const helpPage = GlobalData.helpPages.realism.main
+
+  const optionsMovimento = [
+    {
+      label: t("realismo:SI MOVIMENTO"),
+      value: "SI MOVIMENTO",
+    },
+    {
+      label: t("realismo:NO MOVIMENTO"),
+      value: "NO MOVIMENTO",
+    },
+  ]
+
+  const optionsSpace = [
+    {
+      label: t("realismo:INTERNO"),
+      value: "indoor",
+    },
+    {
+      label: t("realismo:ESTERNO"),
+      value: "outdoor",
+    },
+    {
+      label: t("realismo:MEZZO DI TRASPORTO"),
+      value: "transportation",
+    },
+    {
+      label: t("realismo:ASSENZA DI AMBIENTAZIONE"),
+      value: "no_setting",
+    },
+  ]
+
+  const cercaOptions = [
+    { label: t("realismo:Titolo"), value: "titolo" },
+  ]
 
   // const containerRef = useRef()
   // const [measures, setMeasures] = useState(null)
@@ -128,17 +131,17 @@ export default function RealismoMain({ title }) {
       let keep = true
 
       if (keep && movimento !== null) {
-        if (movimento === 'SI MOVIMENTO') {
+        if (movimento === "SI MOVIMENTO") {
           keep = dataset[titolo].some((datum) => {
-            if (movimento === 'SI MOVIMENTO') {
-              return datum.movement === 'TRUE'
+            if (movimento === "SI MOVIMENTO") {
+              return datum.movement === "TRUE"
             }
             return false
           })
         } else {
           keep = dataset[titolo].every((datum) => {
-            if (movimento === 'NO MOVIMENTO') {
-              return datum.movement === 'FALSE'
+            if (movimento === "NO MOVIMENTO") {
+              return datum.movement === "FALSE"
             }
             return false
           })
@@ -148,7 +151,7 @@ export default function RealismoMain({ title }) {
       if (keep && spazioValues.length > 0) {
         const categories = dataset[titolo].map((i) => i.category)
         keep = spazioValues.some((category) => {
-          if (category === 'indoor' || category === 'outdoor') {
+          if (category === "indoor" || category === "outdoor") {
             return categories.every((wormCateogry) => wormCateogry === category)
           }
           return categories.indexOf(category) !== -1
@@ -226,7 +229,7 @@ export default function RealismoMain({ title }) {
           []
         )
         .concat(ricerca.filter((r) => !r.volume)),
-      'value'
+      "value"
     )
     return sortBy(ricercaTitoli, (item) => dataset[item.value]?.[0]?.year)
   }, [ricerca])
@@ -343,25 +346,26 @@ export default function RealismoMain({ title }) {
         closeButtonClicked={toggleHelpSidePanel}
       />
       <div className="top-nav navigations">
-        <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
-        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
+        <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
+        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
         <AltOptions
           multiple={false}
-          title="Cerca per"
+          title={t("cerca_per")}
+          disabled
           options={cercaOptions}
           value={findFor}
           onChange={(x) => setFindFor(x.label)}
           style={{
-            gridColumn: 'span 3',
+            gridColumn: "span 3",
           }}
         />
         <SearchDropDown
           style={{
-            gridColumn: 'span 8',
+            gridColumn: "span 8",
           }}
           data={{
             options:
-              findFor === 'Titolo' ? searchOptionsTitolo : searchOptionsVolume,
+              findFor === "Titolo" ? searchOptionsTitolo : searchOptionsVolume,
           }}
           changeOptions={(newOptions) => {
             setRicerca(newOptions)
@@ -369,13 +373,13 @@ export default function RealismoMain({ title }) {
           selectedOptions={ricerca}
         />
         <MoreInfo
-          style={{ gridColumn: 'span 1' }}
-          helpSidePanelOpen={helpSidePanelOpen} 
+          style={{ gridColumn: "span 1" }}
+          helpSidePanelOpen={helpSidePanelOpen}
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton
           style={{
-            gridColumn: 'span 1',
+            gridColumn: "span 1",
           }}
         />
       </div>
@@ -383,13 +387,13 @@ export default function RealismoMain({ title }) {
         <div
           className="h-100 w-100 d-flex justify-content-center realismo-circle-wrapper"
           style={{
-            position: 'relative',
+            position: "relative",
           }}
         >
           <div className="realismo-labels-container on-left text-right">
             <div className="realismo-reset">
               <div>
-                <div>Seleziona il testo e poi scorri in basso</div>
+                <div>{t("realismo:seleziona_testo")}</div>
                 <button
                   onClick={() => {
                     // Reset Selection
@@ -410,10 +414,10 @@ export default function RealismoMain({ title }) {
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
                     selected[racconto.title]
-                      ? 'realismo-label-selected'
+                      ? "realismo-label-selected"
                       : omitted[racconto.title]
-                      ? 'realismo-label-omitted'
-                      : ''
+                      ? "realismo-label-omitted"
+                      : ""
                   }`}
                   style={{
                     height: `${lineHeightLeft}px`,
@@ -453,10 +457,10 @@ export default function RealismoMain({ title }) {
                   onClick={() => toggleSelect(racconto.title)}
                   className={`realismo-label ${
                     selected[racconto.title]
-                      ? 'realismo-label-selected'
+                      ? "realismo-label-selected"
                       : omitted[racconto.title]
-                      ? 'realismo-label-omitted'
-                      : ''
+                      ? "realismo-label-omitted"
+                      : ""
                   }`}
                   key={i}
                 >
@@ -480,8 +484,8 @@ export default function RealismoMain({ title }) {
               }
             }}
             style={{
-              gridColumn: 'span 8',
-              textAlign: 'center',
+              gridColumn: "span 8",
+              textAlign: "center",
             }}
           />
           <AltOptions
@@ -494,12 +498,12 @@ export default function RealismoMain({ title }) {
               setSpazio(s)
             }}
             style={{
-              gridColumn: 'span 8',
-              textAlign: 'center',
+              gridColumn: "span 8",
+              textAlign: "center",
             }}
           />
           <RangeFilter
-            style={{ gridColumn: 'span 8' }}
+            style={{ gridColumn: "span 8" }}
             data={timeFilter}
             changeOptions={(timeSpan) => {
               setTimeFilter(timeSpan)
@@ -509,7 +513,7 @@ export default function RealismoMain({ title }) {
       </div>
       {ricerca.length > 0 && (
         <div className="realismo-details-container" ref={ref}>
-          <h4>VEDI IN DETTAGLIO I TESTI SELEZIONATI</h4>
+          <h4>{t("realismo:vedi_dettaglio")}</h4>
           {width &&
             selctedTitoliSorted.map((item) => (
               <WormDetail

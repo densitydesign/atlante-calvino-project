@@ -5,15 +5,16 @@ import TerritoryItinerariesDropUp from "../../general/TerritoryItinerariesDropUp
 import TerritoryNoAnalysisDropDown from "../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown"
 
 import "../../App.css"
+import { withTranslation } from "react-i18next"
 
-export default class TerritoryFooter extends React.Component {
-  territoryLabel = "Analisi dei fenomeni"
-  doubtLabel = "Nebbia"
-  spaceLabel = "Luoghi"
-  shapeLabel = "Elenchi"
-  analysisLabel = "Cronologia"
-  chronologyLabel = "Cronologia"
-  volumesLabel = "Volumi"
+class TerritoryFooter extends React.Component {
+  territoryLabel = this.props.t("territorio:footer.analisi_dei_fenomeni")
+  doubtLabel = this.props.t("nebbia")
+  spaceLabel = this.props.t("luoghi")
+  shapeLabel = this.props.t("elenchi")
+  analysisLabel = this.props.t("territorio:footer.Cronologia")
+  chronologyLabel = this.props.t("territorio:footer.Cronologia")
+  volumesLabel = this.props.t("territorio:footer.volumi")
 
   noAnalysisModeVisualizationMap = new Map([
     [
@@ -125,10 +126,10 @@ export default class TerritoryFooter extends React.Component {
   chronology = "chronology"
 
   chronologicalFilterToggleButtonId = "chronologicalFilterToggleButton"
-  chronologicalFilterToggleButtonCaption = "Filtro cronologico"
+  chronologicalFilterToggleButtonCaption = this.props.t("territorio:footer.filtro_cronologico")
 
   legendToggleButtonId = "legendToggleButton"
-  legendToggleButtonCaption = "Cronologia"
+  legendToggleButtonCaption = this.props.t("territorio:footer.Cronologia")
 
   toggleButtonsMap = new Map([
     [
@@ -306,9 +307,9 @@ export default class TerritoryFooter extends React.Component {
         {this.props.bottomPanelMode === "noAnalysis" ? (
           <ToggleButton
             id={this.chronology}
-            style={{ gridColumn: "span 8", textAlign: "center" }}
+            style={{ gridColumn: "span 8", textAlign: "center", flexDirection: 'column' }}
             caption={analysisModeToggleButtonCaption}
-            title={'Modalità'}
+            title={this.props.t('territorio:footer.modalita')}
             pressed={
               this.props.mainAnalysisMode ===
               GlobalData.analysisModes.noAnalysis
@@ -320,7 +321,9 @@ export default class TerritoryFooter extends React.Component {
             style={{ gridColumn: "span 8" }}
             className="d-flex justify-content-center"
           >
-            <div className="text-center">Cronologia</div>
+            <div className="text-center">
+              {this.props.t(`territorio:footer.${this.chronologyLabel}`)}
+            </div>
           </div>
         )}
 
@@ -343,6 +346,8 @@ export default class TerritoryFooter extends React.Component {
     )
   }
 }
+
+export default withTranslation(['translation','territorio'])(TerritoryFooter)
 
 function matchPair(p1, p2) {
   return p1[0] <= p2[0] && p1[1] >= p2[1]

@@ -1,0 +1,25 @@
+{
+  "esplorare_l_opera": "Esplorare l'opera come un territorio",
+  "help_panel": {
+    "di_cosa_si_tratta": "<p>Questa visualizzazione, che accomuna la prima tappa di tutti e tre gli itinerari, rappresenta il corpus delle opere narrative di Calvino: oltre duecento testi scritti e pubblicati tra il 1943 e il 1985, distribuiti secondo criteri cronologici ed editoriali. A ogni elemento grafico corrisponde un testo, per cui l’unità minima della visualizzazione non sarà il volume ma il singolo testo. All’inizio dell’Atlante abbiamo sentito la necessità di rappresentare l’intero corpus dell’autore in un solo colpo d’occhio che fornisse una nuova visione generale dell’opera, invitando a esplorarla.</p>",
+    "come_funziona": "<p>Per leggere correttamente la visualizzazione è necessario prestare attenzione a tre parametri: a) la disposizione degli elementi; b) la loro dimensione; c) l’uso del colore.</p><1><0></0></1><p>a) Gli elementi sono posizionati sulla base di due criteri: l’appartenenza a uno stesso volume e la data di prima pubblicazione. Questo significa che un principio di attrazione agisce sia sui testi pubblicati in uno stesso volume sia sui testi cronologicamente coevi. Di conseguenza, osservando il territorio, è possibile riconoscere un anello esterno e alcuni gruppi di testi interni. Questi ultimi sono i testi che confluiscono in raccolte.</p><3><0></0></3><p>b) La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>",
+    "cronologia": "CRONOLOGIA",
+    "testo_cronologia": "<p>c) L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al viola, attiva nella modalità Cronologia, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>",
+    "situazione_editoriale": "SITUAZIONE EDITORIALE",
+    "testo_situazione_editoriale": "<p>Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi. Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcune linee di contorno.</p><p>Interagendo con un singolo elemento grafico appaiono il titolo, l’anno di prima pubblicazione ed eventuali pubblicazioni successive. Il Filtro cronologico consente di riorganizzare il corpus su una linea temporale e, se necessario, selezionare un intervallo di tempo specifico (un anno, un decennio ecc.) Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>",
+    "raccolte": "RACCOLTE"
+  },
+  "header": {
+    "cerca_per_titolo": "Cerca per titolo",
+    "esplorare_opera": "Esplorare l’opera come un territorio"
+  },
+  "footer": {
+    "Cronologia": "Cronologia",
+    "modalita": "Modalità",
+    "analisi_dei_fenomeni": "Analisi dei fenomeni",
+    "cronologia": "cronologia",
+    "volumi": "Volumi",
+    "filtro_cronologico": "Filtro cronologico",
+    "proporzione": "proporzione"
+  }
+}
