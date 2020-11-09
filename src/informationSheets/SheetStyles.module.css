@@ -27,6 +27,12 @@ body{
   margin-bottom: 1.7857142857rem !important;
 }
 
+.footerRow{
+  grid-template-columns: repeat(24, 1fr);
+  grid-column: 2 / span 22;
+  display: grid;
+}
+
 .titleH1 {
   grid-column: 1 / span 12;
   /* font-size: 2.5rem;
@@ -132,7 +138,6 @@ sup{
   position: -webkit-sticky; /* Safari */
   position: sticky;
 }
-
 
 @media (min-width: 1280px) {
   .gridRow {
