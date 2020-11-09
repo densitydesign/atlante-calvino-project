@@ -36,6 +36,7 @@
 
 .carousel-caption {
   margin-top:0px;
+  margin-bottom:0px !important;
   position: relative;
   text-align: left;
   left: 0%;
