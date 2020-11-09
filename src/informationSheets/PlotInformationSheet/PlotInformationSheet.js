@@ -280,7 +280,7 @@ class PlotInformationSheet extends Component {
                 <img className={SheetStyles.image} src={zoom_01} style={{ gridColumn: " 1 / span 10" }}/>
                 <div style={{gridColumn: " 12 / span 1" }}>
                 <img className={SheetStyles.sideLegend} src={info_01} />
-                <p className=" captionLeft " style={{ gridColumn: " 12 / span 1" }}> Schema della trama del lettore.</p>
+                <p className=" captionLeft " style={{ gridColumn: " 12 / span 1" }}> Schema della trama del lettore</p>
             </div>
             </div>
 
