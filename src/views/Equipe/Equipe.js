@@ -20,13 +20,11 @@ class Equipe extends React.Component {
           <Trans i18nKey={"testo_equipe"} t={this.props.t} ns="equipe">
           <div className="content">
             <h1>Équipe</h1>
-            <h2>
-              Équipe letteraria, Unité d’italien
-              <br />
-              Département de langues et littératures romanes,
+            <h2>Équipe letteraria, Unité d’italien</h2>
+            <h3 style={{color:'black'}}>Département de langues et littératures romanes,
               <br />
               Université de Genève
-            </h2>
+            </h3>
             <p>
               L'équipe letteraria del progetto lavora all'interno dell'Unité
               d’italien del Département des langues et des littératures romanes
@@ -52,13 +50,11 @@ class Equipe extends React.Component {
               })}
             </ul>
             <br />
-            <h2>
-              DensityDesign Research Lab
-              <br />
-              Dipartimento di Design
+            <h2>DensityDesign Research Lab</h2>
+            <h3 style={{color:'black'}}>Dipartimento di Design
               <br />
               Politecnico di Milano
-            </h2>
+            </h3>
             <p>
               Il laboratorio di ricerca{" "}
               <a href="http://densitydesign.org/" rel="noopener noreferrer">
@@ -88,11 +84,13 @@ class Equipe extends React.Component {
             <br />
             <p>
               Allo sviluppo delle visualizzazioni hanno collaborato Mauro
-              Bianchi e Giovanni Fumagalli di{" "}
+              Bianchi, Giovanni Fumagalli e Matteo Scaffidi di{" "}
               <a href="https://inmagik.com/" rel="noopener noreferrer">
                 Inmagik
               </a>
               .
+              <br />
+              Ringraziamo Lorenzo Faggi per la registrazione, presso lo spazio occupato Piano Terra,  dell’audio del video introduttivo
             </p>
           </div>
           </Trans>

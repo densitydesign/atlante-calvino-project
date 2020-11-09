@@ -61,7 +61,7 @@ class Project extends React.Component {
               </p>
             </Trans>
           </div>
-          <div className="col-md-12 offset-lg-3 col-lg-6">
+          <div className="col-md-12 offset-lg-2 col-lg-6">
             <p>
               Le due anime del progetto, quella letteraria e quella del design
               dell’informazione, sono state chiamate a mescolarsi per trovare
