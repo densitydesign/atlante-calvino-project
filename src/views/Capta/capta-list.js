@@ -2,6 +2,8 @@ import React from "react";
 
 const corpus = {
     name: "Corpus",
+    type: "data",
+    license: "https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png",
     open:true,
     file:"",
     jsx: (
