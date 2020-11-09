@@ -21,7 +21,7 @@ export default function LanguageSwitch() {
 
   return (
     <div>
-      <div className="cursor-pointer" onClick={() => setOpenLang(!openLang)}>
+      <div className="cursor-pointer text-dark-blue" style={{ borderBottom: '2px solid #5151FC'}} onClick={() => setOpenLang(!openLang)}>
         {i18n.language === "it" ? "IT" : "EN"}
       </div>
       {openLang && (
