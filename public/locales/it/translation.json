@@ -81,6 +81,23 @@
     "Inverti_Selezione": "Inverti Selezione",
     "assoluti": "assoluti",
     "Inverti": "Inverti",
-    "normalizzata": "normalizzata"
-  }
+    "normalizzata": "normalizzata",
+    "Titolo": "Titolo",
+    "SI MOVIMENTO": "SI MOVIMENTO",
+    "INTERNO": "INTERNO",
+    "NO MOVIMENTO": "NO MOVIMENTO",
+    "ESTERNO": "ESTERNO",
+    "ASSENZA DI AMBIENTAZIONE": "ASSENZA DI AMBIENTAZIONE",
+    "MEZZO DI TRASPORTO": "MEZZO DI TRASPORTO",
+    "uno": "1",
+    "due": "2",
+    "aggregato": "aggregato",
+    "non aggregato": "non aggregato",
+    "ambito": "ambito",
+    "quattro": "4",
+    "categorie": "categorie",
+    "cinque": "5",
+    "tre": "3"
+  },
+  "legenda": "legenda"
 }
