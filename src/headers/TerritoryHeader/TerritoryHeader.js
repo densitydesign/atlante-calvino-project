@@ -7,9 +7,8 @@ import CompassButton from "../../general/CompassButton/CompassButton"
 import MoreInfo from "../../general/MoreInfo/MoreInfo"
 import PageTitle from "../../general/PageTitle"
 import TerritoryNoAnalysisDropDown from "../../general/TerritoryNoAnalysisDropDown/TerritoryNoAnalysisDropDown"
-import { withTranslation } from "react-i18next"
 
- class TerritoryHeader extends React.Component {
+export default class TerritoryHeader extends React.Component {
   analysisLabel = "Cerca per titolo"
   chronologyLabel = "Cronologia"
   volumesLabel = "Volumi"
@@ -99,7 +98,7 @@ import { withTranslation } from "react-i18next"
       <div className="top-nav navigations">
         <MainMenu style={{ gridColumn: "span 1" }} />
         <PageTitle
-          title={this.props.t('territorio:header.esplorare_opera')}
+          title={"Esplorare l’opera come un territorio"}
           style={{ gridColumn: "span 7" }}
         />
 
@@ -111,7 +110,7 @@ import { withTranslation } from "react-i18next"
             fontWeight: "bold",
           }}
         >
-          {this.props.t('territorio:header.cerca_per_titolo')}
+          {this.analysisLabel}
         </div>
 
         {/* <ToggleButton
@@ -159,5 +158,3 @@ import { withTranslation } from "react-i18next"
     )
   }
 }
-
-export default withTranslation('territorio')(TerritoryHeader)

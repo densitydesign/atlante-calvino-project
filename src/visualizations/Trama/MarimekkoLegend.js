@@ -27,7 +27,7 @@ export default function MarimekkoLegend({
       }`}
     >
       <div className="">
-        <h4>{dettaglio === 'ambito' ? 'TIPO DI PIANO': 'TIPO DI SEQUENZA'}</h4>
+        <h4>{dettaglio === 'ambito' ? 'TIPO DI PIANO': 'CATEGORIE DI ELENCO'}</h4>
       </div>
       {Object.keys(byGruppo).map(gruppo => (
         <div key={gruppo} className="mt-1">

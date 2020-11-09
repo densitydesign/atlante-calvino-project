@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../App.css';
 import './AtlasIntro.css';
-//import '../HamburgerMenu/HamburgerMenu.css';
+import '../HamburgerMenu/HamburgerMenu.css';
 
 export default class IntroViewSelector extends React.Component
 {

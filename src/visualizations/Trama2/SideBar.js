@@ -1,17 +1,15 @@
-import React, { useMemo, useState, useEffect } from "react"
-import { useTranslation, Trans } from "react-i18next"
-import keyBy from "lodash/keyBy"
-import groupBy from "lodash/groupBy"
-import find from "lodash/find"
-import orderBy from "lodash/orderBy"
-import uniq from "lodash/uniq"
+import React, { useMemo, useState, useEffect } from 'react'
+import keyBy from 'lodash/keyBy'
+import groupBy from 'lodash/groupBy'
+import find from 'lodash/find'
+import orderBy from 'lodash/orderBy'
+import uniq from 'lodash/uniq'
 
 const SideBarItem = React.memo(
   ({
     tipologia,
     addBound,
     disabled,
-    t,
     selected,
     fromDarkItem,
     itemHeight,
@@ -22,21 +20,21 @@ const SideBarItem = React.memo(
       key={tipologia.tipologia}
       onClick={() => addBound(tipologia.tipologia)}
       className={`trama2-sidebar-item
-        ${disabled ? "disabled" : ""}
+        ${disabled ? 'disabled' : ''}
         ${
-          fromDarkItem >= Number(tipologia["ordine tipologia"])
-            ? "item-dark"
-            : "item-light"
+          fromDarkItem >= Number(tipologia['ordine tipologia'])
+            ? 'item-dark'
+            : 'item-light'
         }
-        ${disableEvents ? "no-pointer-events" : ""}
-        ${selected ? "selected" : ""}`}
+        ${disableEvents ? 'no-pointer-events' : ''}
+        ${selected ? 'selected' : ''}`}
       style={{
         paddingLeft: left,
         height: itemHeight,
         background: selected ? tipologia.colore.colori : undefined,
       }}
     >
-      {t('tipologia.'+tipologia.tipologia)}
+      {tipologia.tipologia}
     </div>
   )
 )
@@ -48,9 +46,9 @@ function useWindowWidth() {
     function setCurrentWidth() {
       setWidth(window.outerWidth)
     }
-    window.addEventListener("resize", setCurrentWidth)
+    window.addEventListener('resize', setCurrentWidth)
     return () => {
-      window.removeEventListener("resize", setCurrentWidth)
+      window.removeEventListener('resize', setCurrentWidth)
     }
   }, [])
 
@@ -93,12 +91,12 @@ function SideBar({
   }
 
   const tipologieGrouped = useMemo(() => {
-    return groupBy(tipologie, "cluster tipologia")
+    return groupBy(tipologie, 'cluster tipologia')
   }, [tipologie])
 
   const fromDarkItem = useMemo(() => {
     return (
-      find(tipologie, { tipologia: "visione" })?.["ordine tipologia"] ??
+      find(tipologie, { tipologia: 'visione' })?.['ordine tipologia'] ??
       -Infinity
     )
   }, [tipologie])
@@ -106,26 +104,20 @@ function SideBar({
   const motiviDetail = useMemo(() => {
     if (tramaDetail) {
       return uniq(
-        orderBy(tramaDetail, "ordineMotivo", "desc").map((x) => x.motivo_type)
+        orderBy(tramaDetail, 'ordineMotivo', 'desc').map((x) => x.motivo_type)
       )
     }
     return null
   }, [tramaDetail])
 
-  const { t } = useTranslation("trama")
-
   return (
     <div className="trama2-sidebar">
-      <Trans i18nKey={"ordine_di_turbamento"} t={t} ns="trama">
-        <div
-          className="trama2-sidebar-header"
-          style={{
-            paddingLeft: leftAsMyNavGridIs,
-          }}
-        >
-          Lista delle sequenze
-        </div>
-      </Trans>
+      <div className="trama2-sidebar-header" style={{
+        paddingLeft: leftAsMyNavGridIs,
+      }}>
+        Ordine <br />
+        di turbamento
+      </div>
       {Object.keys(tipologieGrouped).map((k) => {
         const tipologie = tipologieGrouped[k]
         return (
@@ -152,7 +144,6 @@ function SideBar({
                   tipologia={tipologia}
                   addBound={addBound}
                   disabled={disabled}
-                  t={t}
                   selected={selected}
                   itemHeight={itemHeight}
                   fromDarkItem={fromDarkItem}
@@ -163,12 +154,9 @@ function SideBar({
           </div>
         )
       })}
-      <div
-        className="trama2-sidebar-footer"
-        style={{
-          paddingLeft: leftAsMyNavGridIs,
-        }}
-      >
+      <div className="trama2-sidebar-footer" style={{
+        paddingLeft: leftAsMyNavGridIs,
+      }}>
         Clicca per scegliere il <br />
         punto più alto e più basso
         <br />

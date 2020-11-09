@@ -45,7 +45,7 @@ export default class SlidingPanel extends React.Component {
       <a
         onClick={(e) => {
           e.preventDefault()
-          this.props.toggleFlowOfStories ? this.props.toggleFlowOfStories() : this.props.toggleTempoEOpere()
+          this.props.toggleFlowOfStories()
         }}
         className="button-text"
         href={process.env.PUBLIC_URL + this.props.interactiveViewUrl}

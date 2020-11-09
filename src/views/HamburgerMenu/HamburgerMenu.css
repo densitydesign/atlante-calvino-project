@@ -1,0 +1,165 @@
+
+.hamburger-menu-container {
+  position:relative;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.hamburger-menu {
+  display : grid;
+  grid-template-rows : 1fr;
+  grid-template-columns : 2fr 4fr;
+  height: calc(100vh - var(--navigation-height));
+}
+
+.hamburger-menu-sidebar {
+  display : grid;
+  grid-template-rows : 0.375fr 0.625fr;
+  grid-template-columns : 1fr;
+  border-bottom:var(--app-border);
+  border-right: var(--app-border-bold);
+  background: var(--cool-bg);
+  transition: background-color 0.5s ease;}
+
+.compass-selector-cell {
+  display:flex;
+  align-items: center;
+  justify-content: left;
+  padding:100px;
+  background-color:#FFA500;
+}
+
+a .compass-selector-cell  {
+  margin: 0;
+  white-space: nowrap;
+  transition: color 0.5s ease;
+  color: black;
+}
+
+a:hover .compass-selector-cell  {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 1.8em;
+  transition: color 0.5s ease;
+  color: var(--dark-blue);
+}
+
+
+.hamburger-menu-cell-grid {
+  position : relative;
+  display : grid;
+  grid-template-rows : 1fr 1fr 1fr 1fr;
+  grid-template-columns : 1fr 1fr 1fr 1fr;
+}
+
+.hamburger-menu-cell {
+  border-bottom : var(--app-border);
+  border-right :var(--app-border);
+  justify-content: center;
+  text-align : center;
+  align-items: center;
+  display:flex;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.hamburger-menu-cell-grid :hover {
+  color:var(--dark-blue);
+  transition: color 0.5s ease;
+}
+ /* Color menu grid */
+
+.itineraries-intro{
+  background-color: black;
+}
+
+.itineraries-intro h3{
+  color:white;
+}
+
+.viz-intro{
+  background-color: var(--dark-blue);
+}
+
+.viz-intro a{
+color: var(--bg);
+}
+
+.viz-intro h5{
+color: var(--bg);
+}
+
+
+.viz-intro a:hover{
+color: turquoise;
+}
+
+.viz-intro h5:hover{
+color: turquoise;
+}
+
+
+.step-intro{
+  background-color: turquoise;
+}
+
+.blank-intro{
+  background-color:var(--text-color);
+}
+
+.blank-intro h3{
+color:white;
+}
+
+
+/* transition menu colors */
+
+@keyframes tint-sidebar {
+  0%   { background-color:var(--bg);}
+  100% { background-color:#FFA500;}
+}
+
+.tint-sidebar {
+    background-color: #FFA500;
+    opacity:1;
+    animation: tint-sidebar 2s;
+    border-bottom:1px solid black;
+}
+
+@keyframes tint-itineraries-intro {
+  0%   { background-color:var(--bg);}
+  100% { background-color:black;}
+}
+
+.tint-itineraries-intro {
+    background-color: black;
+    opacity:1;
+    animation: tint-itineraries-intro 3s;
+    color:white;
+}
+
+.tint-itineraries-intro h3 {
+    color:white;
+}
+
+@keyframes tint-viz-intro {
+  0%   { background-color:var(--bg);}
+  100% { background-color:var(--dark-blue);}
+}
+
+.tint-viz-intro {
+    background-color: var(--dark-blue);
+    opacity:1;
+    animation: tint-viz-intro 2s;
+}
+
+@keyframes tint-step-intro {
+  0%   { background-color:var(--bg);}
+  100% { background-color:turquoise;}
+}
+
+.tint-step-intro {
+    background-color: turquoise;
+    opacity:1;
+    animation: tint-step-intro 3s;
+}

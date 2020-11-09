@@ -75,24 +75,24 @@ class Trama extends Component {
     const helpPage = GlobalData.helpPages.combine.main
 
     const tipologiaOptions = [
-      { label: t("combining:ui.uno"), value: "uno" },
-      { label: t("combining:ui.due"), value: "due" },
-      { label: t("combining:ui.tre"), value: "tre" },
-      { label: t("combining:ui.quattro"), value: "quattro" },
-      { label: t("combining:ui.cinque"), value: "cinque" },
+      { label: t("ui.uno"), value: "uno" },
+      { label: t("ui.due"), value: "due" },
+      { label: t("ui.tre"), value: "tre" },
+      { label: t("ui.quattro"), value: "quattro" },
+      { label: t("ui.cinque"), value: "cinque" },
     ]
 
     const dettaglioOptions = [
-      { label: t("combining:ui.ambito"), value: "ambito" },
-      { label: t("combining:ui.categorie"), value: "categorie" },
+      { label: t("ui.ambito"), value: "ambito" },
+      { label: t("ui.categorie"), value: "categorie" },
     ]
 
     const aggregazioneOptions = [
-      { label: t("combining:ui.aggregato"), value: "aggregato" },
-      { label: t("combining:ui.non_aggregato"), value: "non aggregato" },
+      { label: t("ui.aggregato"), value: "aggregato" },
+      { label: t("ui.non_aggregato"), value: "non aggregato" },
     ]
 
-    const cercaOptions = [{ label: t("combining:ui.volume"), value: "volume" }]
+    const cercaOptions = [{ label: t("ui.volume"), value: "volume" }]
 
     return (
       <div className="trasformare main">
@@ -104,12 +104,12 @@ class Trama extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={t('combinare')} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={t('ui.combinare')} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
             <AltOptions
-              title={t('cerca_per')}
+              title="Cerca per"
               options={cercaOptions}
               disabled={true}
               value={cercaPer}
@@ -119,7 +119,7 @@ class Trama extends Component {
               style={{
                 gridColumn: "span 3",
                 pointerEvents: !controlsEnabled ? "none" : undefined,
-                //opacity: !controlsEnabled ? 0.4 : undefined,
+                opacity: !controlsEnabled ? 0.4 : undefined,
               }}
             />
           )}
@@ -173,7 +173,7 @@ class Trama extends Component {
 
         <div className="bottom-nav navigations">
           <AltOptions
-            title={t("combining:ui.numero_livelli_testo")}
+            title={t("ui.numero_livelli_testo")}
             multiple
             disabled={!controlsEnabled}
             options={tipologiaOptions}
@@ -182,7 +182,7 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              //opacity: !controlsEnabled ? 0.4 : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
             allowEmpty={false}
             value={tipologia}
@@ -192,7 +192,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title={t("combining:ui.dettaglio")}
+            title={t("ui.dettaglio")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={dettaglio}
@@ -204,12 +204,12 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              //opacity: !controlsEnabled ? 0.4 : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
 
           <AltOptions
-            title={t("combining:ui.modalita")}
+            title={t("ui.modalita")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}
@@ -221,7 +221,7 @@ class Trama extends Component {
               gridColumn: "span 8",
               textAlign: "center",
               pointerEvents: !controlsEnabled ? "none" : undefined,
-              //opacity: !controlsEnabled ? 0.4 : undefined,
+              opacity: !controlsEnabled ? 0.4 : undefined,
             }}
           />
         </div>
@@ -230,4 +230,4 @@ class Trama extends Component {
   }
 }
 
-export default withTranslation(["translation","combining"])(Trama)
+export default withTranslation("combining")(Trama)

@@ -1,8 +1,7 @@
-import React, { useCallback } from "react"
-import { colorScale, yearsArcs } from "./utils"
-import { scaleLinear } from "d3-scale"
-import { arc } from "d3"
-import { useTranslation } from "react-i18next"
+import React, { useCallback } from 'react'
+import { colorScale, yearsArcs } from './utils'
+import { scaleLinear } from 'd3-scale'
+import { arc } from 'd3'
 
 const LABEL_VISIBLE_SIZE = 0
 const LABEL_SIZE_PERCENT = 0
@@ -45,11 +44,9 @@ const Worm = React.memo(
 
     return (
       <g
-        style={
-          {
-            // opacity: isSelected ? 1 : 0.3,
-          }
-        }
+        style={{
+          // opacity: isSelected ? 1 : 0.3,
+        }}
       >
         <title>{racconto.title}</title>
         <g
@@ -59,14 +56,14 @@ const Worm = React.memo(
             }
           }}
           style={{
-            cursor: isOmitted ? undefined : "pointer",
+            cursor: isOmitted ? undefined : 'pointer',
           }}
         >
           {circles.map((circle, i) => {
             const cx = wormStart + i * circleRadius * 2 + circleRadius
             const cy = 0
 
-            if (circle.movement === "TRUE") {
+            if (circle.movement === 'TRUE') {
               animationGroups[circle.occurrence_location] =
                 animationGroups[circle.occurrence_location] === undefined
                   ? 0
@@ -74,7 +71,7 @@ const Worm = React.memo(
             }
 
             const delay =
-              circle.direction === "forward"
+              circle.direction === 'forward'
                 ? animationGroups[circle.occurrence_location] * 0.2
                 : (animationDelays[circle.occurrence_location] -
                     animationGroups[circle.occurrence_location]) *
@@ -84,8 +81,8 @@ const Worm = React.memo(
               <g key={i}>
                 <circle
                   className={`${
-                    circle.movement === "TRUE" && !isOmitted ? "movement" : ""
-                  } fill-realismo-circle-${circle.category ?? "unknown"}`}
+                    circle.movement === 'TRUE' && !isOmitted ? 'movement' : ''
+                  } fill-realismo-circle-${circle.category ?? 'unknown'}`}
                   style={{
                     // fill: colorScale(circle.category),
                     transformOrigin: `${cx}px ${cy}px`,
@@ -97,7 +94,7 @@ const Worm = React.memo(
                 ></circle>
                 {circle.place && (
                   <circle
-                    style={{ fill: "#000" }}
+                    style={{ fill: '#000' }}
                     r={circleRadius / 3}
                     cy={cy}
                     cx={cx}
@@ -131,21 +128,21 @@ const WormLabel = React.memo(
     const circleRadius = wormSize / circles.length / 2
     const flipTextStyle = flipText
       ? {
-          transform: "rotate(180deg)",
+          transform: 'rotate(180deg)',
           transformOrigin: `${wormEnd}px 0px`,
         }
       : undefined
 
     return (
       <g
-        className={`worm-label-container${flipText ? "-flipped" : ""}`}
+        className={`worm-label-container${flipText ? '-flipped' : ''}`}
         style={{
           opacity: isSelected ? 1 : 0.3,
         }}
       >
         <g style={flipTextStyle}>
           <text
-            style={{ alignmentBaseline: "middle" }}
+            style={{ alignmentBaseline: 'middle' }}
             x={wormEnd - (flipText ? LABEL_VISIBLE_SIZE : 0)}
           >
             {racconto.title}
@@ -190,17 +187,17 @@ const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
               <g
                 style={{
                   transformOrigin: `${textX}px -3px`,
-                  transform: flipText ? "rotate(180deg)" : undefined,
+                  transform: flipText ? 'rotate(180deg)' : undefined,
                   fontSize: 10,
                 }}
               >
-                <text textAnchor={flipText ? "start" : "end"} x={textX} y={0}>
+                <text textAnchor={flipText ? 'start' : 'end'} x={textX} y={0}>
                   {yearArc.year}
                 </text>
               </g>
             </g>
             <path
-              style={{ fill: "#ddd" }}
+              style={{ fill: '#ddd' }}
               d={arcGenerator({
                 ...yearArc,
                 outerRadius: radius - radiusStrokeSize / 2,
@@ -215,7 +212,7 @@ const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
 })
 
 const Legend = React.memo(
-  ({ labelSize, x, wormSize, endLineStart, endLineEnd, t }) => {
+  ({ labelSize, x, wormSize, endLineStart, endLineEnd }) => {
     return (
       <g>
         <line
@@ -248,26 +245,26 @@ const Legend = React.memo(
         <text
           x={x}
           y={labelSize + LABEL_PADDING - LEGEND_TEXT_MARGIN}
-          className="realismo-legend-text text-uppercase"
-          textAnchor={"end"}
+          className="realismo-legend-text"
+          textAnchor={'end'}
           style={{
             transformOrigin: `${x}px ${labelSize + LABEL_PADDING}px`,
-            transform: "rotate(270deg)",
+            transform: 'rotate(270deg)',
           }}
         >
-          {t("fine")}
+          FINE
         </text>
         <text
           x={x}
           y={labelSize + LABEL_PADDING + wormSize - LEGEND_TEXT_MARGIN}
           className="realismo-legend-text"
-          textAnchor={"start"}
+          textAnchor={'start'}
           style={{
             transformOrigin: `${x}px ${labelSize + LABEL_PADDING + wormSize}px`,
-            transform: "rotate(270deg)",
+            transform: 'rotate(270deg)',
           }}
         >
-          {t("INIZIO DEL TESTO")}
+          INIZIO DEL TESTO
         </text>
 
         <line
@@ -287,17 +284,17 @@ const Legend = React.memo(
             x={0}
             y={0}
             className="realismo-legend-text"
-            textAnchor={"start"}
+            textAnchor={'start'}
           >
-            {t("ANNO PRIMA")}
+            ANNO PRIMA
           </text>
           <text
             x={0}
             y={10}
             className="realismo-legend-text"
-            textAnchor={"start"}
+            textAnchor={'start'}
           >
-            {t("PUBBLICAZIONE")}
+            PUBBLICAZIONE
           </text>
         </g>
       </g>
@@ -323,8 +320,6 @@ export default function CircleWorms({
     },
     [toggleSelect]
   )
-
-  const { t } = useTranslation("realismo")
 
   const selectedKeys = Object.keys(selected)
   const allSelected = selectedKeys.length === 0
@@ -384,9 +379,7 @@ export default function CircleWorms({
               <circle cx={pointBX} cy={pointBY} r={5} fill={'purple'} /> */}
               <path
                 strokeDasharray="2"
-                className={`realismo-label-join ${
-                  selectedByHand[title] ? "reliasmo-label-join-explicit" : ""
-                }`}
+                className={`realismo-label-join ${selectedByHand[title] ? 'reliasmo-label-join-explicit' : ''}`}
                 fill="none"
                 d={`M ${x1} ${y1} C ${pointAX} ${pointAY}, ${pointBX} ${pointBY}, ${x2} ${y2}`}
               />
@@ -444,7 +437,6 @@ export default function CircleWorms({
       </g>
       <g transform={`translate(100, ${paddingTop})`}>
         <Legend
-          t={t}
           x={radius}
           wormSize={wormSize}
           labelSize={labelSize}

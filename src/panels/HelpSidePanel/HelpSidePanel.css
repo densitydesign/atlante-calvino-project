@@ -15,7 +15,7 @@
   transition: right 1s;
   overflow-y: hidden;
   overflow-x: hidden;
-  opacity: 0.90;
+  opacity: 1;
   border-left: 1px solid black;
 }
 

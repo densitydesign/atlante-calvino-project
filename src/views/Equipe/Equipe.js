@@ -1,5 +1,4 @@
 import React from "react";
-import { withTranslation, Trans } from "react-i18next";
 import { BsEnvelope } from "react-icons/bs";
 import { FaTwitter, FaHashtag } from "react-icons/fa";
 import Footer from "../../headers/Footer/Footer";
@@ -9,7 +8,7 @@ import "./Equipe.css";
 
 import people from "./people.json";
 
-class Equipe extends React.Component {
+export default class Equipe extends React.Component {
   render() {
     return (
       <>
@@ -17,7 +16,6 @@ class Equipe extends React.Component {
         menuAction={'openIndex'}
       />
         <div className="ac-grid-24 has-sidebar">
-          <Trans i18nKey={"testo_equipe"} t={this.props.t} ns="equipe">
           <div className="content">
             <h1>Équipe</h1>
             <h2>
@@ -95,9 +93,8 @@ class Equipe extends React.Component {
               .
             </p>
           </div>
-          </Trans>
           <div className="sidebar sticky-element">
-            <h1>{this.props.t('contatti')}</h1>
+            <h1>Contatti</h1>
             <p>
               <BsEnvelope /> atlantecalvino@unige.ch
             </p>
@@ -118,5 +115,3 @@ class Equipe extends React.Component {
     );
   }
 }
-
-export default withTranslation('equipe')(Equipe)

@@ -21,7 +21,6 @@ import RangeFilter from "../../general/RangeFilter"
 
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
 import FoldingLine from "../../visualizations/FoldingLine/FoldingLine"
-import { Trans, withTranslation } from 'react-i18next'
 
 const structureData = (arr) => {
   arr = arr.map((d, i) => {
@@ -635,6 +634,7 @@ class ProcessDoubting extends Component {
 
   render() {
     const helpPage = GlobalData.helpPages.processDoubting.main
+    console.log(this.state);
     return (
       <div
         className="process-doubting main"
@@ -652,7 +652,7 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={"Dubitare"} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
@@ -798,4 +798,4 @@ class ProcessDoubting extends Component {
   }
 }
 
-export default withTranslation(['translation','doubting'])(ProcessDoubting)
+export default ProcessDoubting

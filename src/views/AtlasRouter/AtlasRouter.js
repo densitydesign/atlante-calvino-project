@@ -13,6 +13,7 @@ import CompassTime from '../CompassTime/CompassTime';
 import CompassFlux from '../CompassFlux/CompassFlux';
 import Phases from '../Phases/Phases';
 import TerritoryWrapper from '../../visualizations/Territory/TerritoryWrapper';
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
 import IndexMenu from '../IndexMenu';
 import Trasformare from '../../Trasformare';
 import Itineraries from '../Itineraries/Itineraries';
@@ -20,7 +21,7 @@ import Instructions from '../Instructions';
 import Equipe from '../Equipe/Equipe';
 import Project from '../Project/Project';
 import ToolsAndMethods from '../ToolsAndMethods/ToolsAndMethods';
-//import PressReview from '../PressReview/PressReview';
+import PressReview from '../PressReview/PressReview';
 import Articles from '../Articles/Articles';
 import DoubtInformationSheet from '../../informationSheets/DoubtInformationSheet/DoubtInformationSheet';
 import ShapeInformationSheet from '../../informationSheets/ShapeInformationSheet/ShapeInformationSheet';
@@ -46,6 +47,7 @@ export default function AtlasRouter()
 {/*      <Route exact path="/"><StaticSplashScreen /></Route> */}
       {/* <Route exact path="/"><SplashScreenWrapper /></Route> */}
       <Route exact path="/"><SplashScreen2 /></Route>
+      <Route exact path="/IntroFinished"><HamburgerMenu backRoute="/" /></Route>
       <Route exact path="/navigation"><IndexMenu /></Route>
       <Route exact path="/HomeIndex"><IndexMenu /></Route>
       <Route exact path="/AtlasIntro"><AtlasIntro /></Route>
@@ -116,7 +118,7 @@ export default function AtlasRouter()
       <Route exact path="/instructions"><Instructions/></Route>
       <Route exact path="/project"><Project/></Route>
       <Route exact path="/capta"><ToolsAndMethods /></Route>
-      {/* <Route exact path="/News"><PressReview /></Route> */}
+      <Route exact path="/News"><PressReview /></Route>
       <Route exact path="/publications"><Articles /></Route>
 
     </BrowserRouter>
