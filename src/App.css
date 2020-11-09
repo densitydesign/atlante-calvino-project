@@ -106,13 +106,14 @@ h1 {
 }
 h2 {
   margin: 0.7142857143em 0;
+  line-height: 2rem;
   font-size: 1.5em;
   color: var(--dark-blue);
   font-weight: 500;
 }
 h3 {
-  font-size: 0.7142857143rem;
-  line-height: 0.9285714286rem;
+  font-size: 1.28rem;
+  line-height: 2.14rem;
   color: #404040;
 }
 p {
@@ -212,7 +213,7 @@ ol {
   color: var(--small-text);
   font-size: 1.2857142857rem;
   line-height: 2.1428571429rem;
-  margin: 1rem 0;
+  margin: 1rem 2rem;
 }
 
 ul {

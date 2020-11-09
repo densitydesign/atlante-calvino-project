@@ -19,7 +19,7 @@ export default function Instructions() {
             ogni punto dell’Atlante, 3 visualizzazioni di orientamento:
           </p>
           <div>
-            <ol type="1" style={{ marginLeft: 70 }}>
+            <ol type="1">
               <li>
                 una mappa sintetica della carriera letteraria dell’autore (Il
                 tempo e le opere)
@@ -39,7 +39,7 @@ export default function Instructions() {
             riguardano:
           </p>
           <div>
-            <ol type="1" style={{ marginLeft: 70 }}>
+            <ol type="1">
               <li>
                 la prima tappa (fenomeno) introduce all’itinerario nel suo
                 aspetto più concreto e tangibile
