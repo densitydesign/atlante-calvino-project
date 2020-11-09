@@ -205,6 +205,8 @@ sup {
   grid-column: 2 / 7;
   border-right: 1px solid black;
   height: 100vh;
+  padding-top: 1.7em;
+  padding-right: 1.7em;
   /* display: flex; */
 }
 
