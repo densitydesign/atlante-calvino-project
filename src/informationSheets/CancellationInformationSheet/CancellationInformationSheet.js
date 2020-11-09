@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SheetStyles from '../SheetStyles.module.css';
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
-import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import FooterSchede3 from '../FooterSchede3';
+
 
 import context_webm_1x from './animation-text-context@1x.webm';
 import context_mp4_1x from './animation-text-context@1x.mp4';
@@ -101,11 +102,13 @@ class CancellationInformationSheet extends Component {
               </li>
             </ol>
         </div>
-        <div className={SheetStyles.gridRow}>
-          <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="RITORNA ALL'ANALISI" route="/doubt/phase3" /></div>
-          <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/phase2-process" /></div>
-          <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/phase3-problem" /></div>
-        </div>
+
+        <FooterSchede3
+          linkTappaA={"/doubt/phase1"}
+          linkTappaB={"/doubt/phase2"}
+          linkAnalisi={"/doubt/phase3"}
+        />
+
       </main>
     </>;
   }

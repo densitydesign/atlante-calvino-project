@@ -213,7 +213,8 @@
 
 .number-tappa:hover{
   background: var(--dark-blue);
-    color:var(--white);
+  color:var(--white);
+  border: 1px solid var(--white);
 }
 
 .link-tappa:hover{

@@ -2,7 +2,7 @@ import React from 'react';
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import ListTypePerTextWrapper from '../../visualizations/ListTypesPerText/ListTypesPerTextWrapper';
-import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import FooterSchede1 from '../FooterSchede1';
 
 import '../../App.css';
 import './ShapeInformationSheet.css';
@@ -181,11 +181,11 @@ export default class ShapeInformationSheet extends React.Component
 </div>
 
 
-      <div className={SheetStyles.gridRow}>
-        <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/shape/phase2" /></div>
-        <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/shape/phase1"/></div>
-        <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/shape/phase3" /></div>
-      </div>
+<FooterSchede1
+  linkTappaA={"/form/phase2"}
+  linkTappaB={"/form/phase3"}
+  linkAnalisi={"/form/phase1"}
+/>
     </main>
   </>
 

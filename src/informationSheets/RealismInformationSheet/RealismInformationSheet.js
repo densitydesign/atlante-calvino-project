@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SheetStyles from "../SheetStyles.module.css";
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import ArrowButton from "../../general/ArrowButton/ArrowButton";
+import FooterSchede3 from '../FooterSchede3';
 
 import map1x from "./mappa-ver02@1x.png";
 import map2x from "./mappa-ver02@2x.png";
@@ -365,32 +365,13 @@ class RealismInformationSheet extends Component {
               </li>
             </ol>
           </div>
-          <div className={SheetStyles.gridRow}>
-            <div style={{ gridColumn: "1 / span 3" }}>
-              <ArrowButton
-                arrowDirection="none"
-                textAlign="left"
-                text="ANALISI"
-                route="/space/phase3"
-              />
-            </div>
-            <div style={{ gridColumn: "4 / span 2" }}>
-              <ArrowButton
-                arrowDirection="right"
-                textAlign="left"
-                text="TAPPA 1"
-                route="/space/phase1"
-              />
-            </div>
-            <div style={{ gridColumn: "6 / span 2" }}>
-              <ArrowButton
-                arrowDirection="right"
-                textAlign="left"
-                text="TAPPA 2"
-                route="/space/phase2"
-              />
-            </div>
-          </div>
+
+          <FooterSchede3
+            linkTappaA={"/space/phase1"}
+            linkTappaB={"/space/phase2"}
+            linkAnalisi={"/space/phase3"}
+          />
+
         </main>
       </>
     );

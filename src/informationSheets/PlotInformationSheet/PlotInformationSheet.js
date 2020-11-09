@@ -2,7 +2,7 @@ import React, { useState, Component} from "react"
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
 
-import FooterSchede from "../FooterSchede"
+import FooterSchede3 from "../FooterSchede3"
 
 import "./PlotInformationSheet.css";
 import SheetStyles from "../SheetStyles.module.css";
@@ -617,7 +617,7 @@ class PlotInformationSheet extends Component {
             </ol>
           </div>
 
-          <FooterSchede
+          <FooterSchede3
             linkTappaA={"/form/phase1"}
             linkTappaB={"/form/phase2"}
             linkAnalisi={"/form/phase3"}
