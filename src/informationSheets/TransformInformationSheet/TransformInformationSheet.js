@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import SheetStyles from "../SheetStyles.module.css";
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import ArrowButton from "../../general/ArrowButton/ArrowButton";
+import FooterSchede2 from '../FooterSchede2';
 
 import "./TransformInformationSheet.css";
 
@@ -312,32 +312,12 @@ class TransformInformationSheet extends Component {
             </ol>
           </div>
 
-          <div className={SheetStyles.gridRow}>
-            <div style={{ gridColumn: "1 / span 3" }}>
-              <ArrowButton
-                arrowDirection="none"
-                textAlign="left"
-                text="INDIETRO"
-                route="/space/phase2"
-              />
-            </div>
-            <div style={{ gridColumn: "4 / span 2" }}>
-              <ArrowButton
-                arrowDirection="left"
-                textAlign="right"
-                text="TAPPA 1"
-                route="/space/phase1"
-              />
-            </div>
-            <div style={{ gridColumn: "6 / span 2" }}>
-              <ArrowButton
-                arrowDirection="right"
-                textAlign="left"
-                text="TAPPA 3"
-                route="/space/phase3"
-              />
-            </div>
-          </div>
+
+          <FooterSchede2
+            linkTappaA={"/space/phase1"}
+            linkTappaB={"/space/phase3"}
+            linkAnalisi={"/space/phase2"}
+          />
         </main>
       </>
     );

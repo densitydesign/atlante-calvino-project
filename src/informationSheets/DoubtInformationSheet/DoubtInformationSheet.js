@@ -3,7 +3,7 @@ import React from 'react';
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import DoubtTypePerYearWrapper from '../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper';
-import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import FooterSchede1 from '../FooterSchede1';
 import SheetStyles from '../SheetStyles.module.css';
 
 import './DoubtInformationSheet.css';
@@ -138,11 +138,11 @@ export default class DoubtInformationSheet extends React.Component
                 </ol>
           </div>
 
-          <div className={SheetStyles.gridRow}>
-            <ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/doubt/phase1" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 2" route="/doubt/phase2" />
-            <ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/doubt/phase3" />
-          </div>
+          <FooterSchede1
+            linkTappaA={"/doubt/phase2"}
+            linkTappaB={"/doubt/phase3"}
+            linkAnalisi={"/doubt/phase1"}
+          />
 </main>
 
       </>

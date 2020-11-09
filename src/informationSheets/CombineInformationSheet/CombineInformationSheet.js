@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SheetStyles from "../SheetStyles.module.css";
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import ArrowButton from "../../general/ArrowButton/ArrowButton";
+import FooterSchede2 from '../FooterSchede2';
 
 import legenda from "./legend_01.svg";
 import marimekko from "./marimekko.svg";
@@ -411,11 +411,12 @@ class CombineInformationSheet extends Component {
             </p>
           </div>
 
-                  <div className={SheetStyles.gridRow}>
-                    <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/form/phase2" /></div>
-                    <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/form/phase1"/></div>
-                    <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/form/phase3" /></div>
-                  </div>
+
+                  <FooterSchede2
+                    linkTappaA={"/form/phase1"}
+                    linkTappaB={"/form/phase3"}
+                    linkAnalisi={"/form/phase2"}
+                  />
           ;
         </main>
       </>

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
-import ArrowButton from '../../general/ArrowButton/ArrowButton';
+import FooterSchede1 from '../FooterSchede1';
 import SheetStyles from '../SheetStyles.module.css';
 
 import './SpaceInformationSheet.css';
@@ -198,11 +198,12 @@ export default class SpaceInformationSheet extends React.Component
               </ol>
             </div>
 
-          <div className={SheetStyles.gridRow}>
-            <div style={{gridColumn:'1 / span 3'}}><ArrowButton arrowDirection="none" textAlign="left" text="ANALISI" route="/space/phase2" /></div>
-            <div style={{gridColumn:'4 / span 2'}}><ArrowButton arrowDirection="left" textAlign="right" text="TAPPA 1" route="/space/phase1"/></div>
-            <div style={{gridColumn:'6 / span 2'}}><ArrowButton arrowDirection="right" textAlign="left" text="TAPPA 3" route="/space/phase3" /></div>
-          </div>
+
+            <FooterSchede1
+              linkTappaA={"/space/phase2"}
+              linkTappaB={"/space/phase3"}
+              linkAnalisi={"/space/phase1"}
+            />
         </main>
       </>
     );
