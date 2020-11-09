@@ -1,0 +1,16 @@
+.info-box {
+  border: 1px solid blue;
+  padding: 1rem;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.capta-list {
+  grid-column: 2 / span 6;
+  border-right: 1px solid black;
+}
+
+.capta-focus {
+  grid-column-start: 8;
+  grid-column-end: -3;
+}
