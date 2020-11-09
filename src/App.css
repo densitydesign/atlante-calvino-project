@@ -497,6 +497,21 @@ a:visited.button-text {
   cursor: pointer;
 }
 
+.lang-switch {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-green);
+  border-left: 1px solid var(--dark-green);
+  border-right: 1px solid var(--dark-green);
+  justify-content: center;
+  right: 0;
+  height: 61px;
+  cursor: pointer;
+  width: 61px;
+  top: var(--navigation-height);
+}
+
 @keyframes floatLeft {
   0% {
     left: 50px;

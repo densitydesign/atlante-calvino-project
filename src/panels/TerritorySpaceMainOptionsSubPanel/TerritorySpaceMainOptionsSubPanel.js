@@ -1,16 +1,17 @@
 import React from "react"
+import { withTranslation } from "react-i18next"
 
 import RadioButton from "../../general/RadioButton/RadioButton"
 import GlobalData from "../../utilities/GlobalData"
 
 import "./TerritorySpaceMainOptionsSubPanel.css"
 
-export default class TerritorySpaceMainOptionsSubPanel extends React.Component {
+class TerritorySpaceMainOptionsSubPanel extends React.Component {
   render() {
     return (
       <>
         <div className="categories-panel">
-          <h4>TIPO DI LUOGO</h4>
+          <h4>{this.props.t('footer.tipo_di_luogo')}</h4>
         </div>
 
         <div className="territory-space-main-options-subpanel">
@@ -92,3 +93,5 @@ export default class TerritorySpaceMainOptionsSubPanel extends React.Component {
     )
   }
 }
+
+export default withTranslation('luoghi')(TerritorySpaceMainOptionsSubPanel)
