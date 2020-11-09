@@ -177,17 +177,17 @@ export default function IndexMenu({ onClose }) {
       </div>
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>{t("tappa")}</div>
-        <HashLink to="/phases#phenomena">
+        <HashLink onClick={onClose} to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#process">
+        <HashLink onClick={onClose} to="/phases#process">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#problem">
+        <HashLink onClick={onClose} to="/phases#problem">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
@@ -372,33 +372,33 @@ export default function IndexMenu({ onClose }) {
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
-        <HashLink to="/itineraries#doubt">
+        <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve1 width="60" />
         </HashLink>
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
-        <HashLink to="/itineraries#doubt">
+        <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve2 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-spazio-1"]}`}>
-        <HashLink to="/itineraries#space">
+        <HashLink onClick={onClose} to="/itineraries#space">
           <Curve3 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-spazio-2"]}`}>
-        <HashLink to="/itineraries#space">
+        <HashLink onClick={onClose} to="/itineraries#space">
           <Curve4 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-forma-1"]}`}>
-        <HashLink to="/itineraries#form">
+        <HashLink onClick={onClose} to="/itineraries#form">
           <Curve5 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-forma-2"]}`}>
-        <HashLink to="/itineraries#form">
+        <HashLink onClick={onClose} to="/itineraries#form">
           <Curve6 width="60" />
         </HashLink>
       </div>
