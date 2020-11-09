@@ -1,17 +1,16 @@
 import React from "react"
-import { withTranslation } from "react-i18next"
 
 import RadioButton from "../../general/RadioButton/RadioButton"
 import GlobalData from "../../utilities/GlobalData"
 
 import "./TerritoryDoubtMainOptionsSubPanel.css"
 
-class TerritoryDoubtMainOptionsSubPanel extends React.Component {
+export default class TerritoryDoubtMainOptionsSubPanel extends React.Component {
   render() {
     return (
       <>
         <div className="title-panel">
-          <h4>{this.props.t('footer.presenza_del_fenomeno')}</h4>
+          <h4>Presenza del fenomeno</h4>
         </div>
         <div className="territory-doubt-main-options-subpanel">
           <RadioButton
@@ -52,5 +51,3 @@ class TerritoryDoubtMainOptionsSubPanel extends React.Component {
     )
   }
 }
-
-export default withTranslation("nebbia")(TerritoryDoubtMainOptionsSubPanel)

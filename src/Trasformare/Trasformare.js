@@ -9,6 +9,7 @@ import PageTitle from "../general/PageTitle"
 import MoreInfo from "../general/MoreInfo"
 import CompassButton from "../general/CompassButton/CompassButton"
 import HelpSidePanel from "../panels/HelpSidePanel/HelpSidePanel"
+import ToggleButton from "../general/ToggleButton/ToggleButton"
 
 import Loading from "../general/Loading"
 
@@ -18,7 +19,7 @@ import RangeFilter from "../general/RangeFilter"
 
 import PlacesMatrix from "../visualizations/PlacesMatrix"
 import ParseMatrixData from "../utilities/parse-matrix-data"
-import { withTranslation } from "react-i18next"
+import TransformLegendPanel from "../panels/TransformLegendPanel/TransformLegendPanel"
 
 class Trasformare extends Component {
   constructor(props) {
@@ -47,17 +48,14 @@ class Trasformare extends Component {
         options: [
           {
             label: "luogo",
-            value: "luogo",
             status: true,
           },
           {
             label: "titolo",
-            value: "titolo",
             status: false,
           },
           {
             label: "sede di pubblicazione",
-            value: "sede di pubblicazione",
             status: false,
           },
         ],
@@ -67,12 +65,10 @@ class Trasformare extends Component {
         options: [
           {
             label: "aperti",
-            value: "aperti",
             status: false,
           },
           {
             label: "chiusi",
-            value: "chiusi",
             status: true,
           },
         ],
@@ -85,7 +81,7 @@ class Trasformare extends Component {
   }
 
   legendToggleButtonId = "legendToggleButton"
-  legendToggleButtonCaption = this.props.t("help_panel.legenda")
+  legendToggleButtonCaption = "LEGENDA"
 
   loadData() {
     d3.tsv(process.env.PUBLIC_URL + "/places-matrix-data.tsv")
@@ -500,14 +496,14 @@ class Trasformare extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle
-            title={this.props.t('trasformare')}
+            title={"Trasformare"}
             style={{ gridColumn: "span 10" }}
           />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
             <Options
-              title={this.props.t('cerca_per')}
+              title="Cerca per"
               data={this.state.cerca_per}
               style={{ gridColumn: "span 4" }}
               changeOptions={this.changeCercaPer}
@@ -555,12 +551,18 @@ class Trasformare extends Component {
           )}
         </div>
 
+        {this.state.legendOpen && (
+          <TransformLegendPanel
+            page={GlobalData.legendPages.transform.mainLegend}
+          />
+        )}
+
         <div className="bottom-nav navigations">
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
           {!this.state.isLoading && (
             <Options
-              title={this.props.t("transform:footer.tipo_di_pubblicazione")}
+              title="Tipo di Pubblicazione"
               data={this.state.pubblicazioni}
               style={{ gridColumn: "span 7", textAlign: "center" }}
               changeOptions={this.changePubblicazioni}
@@ -570,7 +572,7 @@ class Trasformare extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
           {!this.state.isLoading && (
             <Options
-              title={this.props.t("transform:footer.contesti")}
+              title="Contesti"
               data={this.state.ambienti}
               style={{ gridColumn: "span 7", textAlign: "center" }}
               changeOptions={this.changeAmbienti}
@@ -591,4 +593,4 @@ class Trasformare extends Component {
   }
 }
 
-export default withTranslation(['translation','transform'])(Trasformare)
+export default Trasformare

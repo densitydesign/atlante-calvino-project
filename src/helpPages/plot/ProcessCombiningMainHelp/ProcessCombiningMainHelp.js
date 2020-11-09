@@ -96,11 +96,7 @@ export default function ProcessCombiningMainHelp() {
           <p>
             <strong>{t("help_panel.qualche_pista_di_lettura")}</strong>
           </p>
-          <Trans
-            i18nKey={"help_panel.qualche_pista_di_lettura"}
-            t={t}
-            ns="combining"
-          >
+          <Trans i18nKey={"help_panel.qualche_pista_di_lettura"} t={t} ns="combining">
             <p>
               Nel complesso la visualizzazione offre una sintesi visiva delle
               abitudini compositive di Calvino, che tende a costruire i suoi
@@ -134,9 +130,7 @@ export default function ProcessCombiningMainHelp() {
           <div className="row mt-2">
             <div className="col-md-12">
               <div>
-                <small>
-                  {t("combining:help_panel.disposizione_e_posizione")}
-                </small>
+                <small>DISPOSIZIONE E POSIZIONE</small>
               </div>
               <div className="text-center">
                 <Legend01 className="mt-2" />
@@ -149,58 +143,34 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#5151FC" }}
               >
-                {t("combining:help_panel.piano_esteriore")}
+                PIANO ESTERIORE
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#8131F4"
-                name={t("trama:help_panel.eventi_eliminali")}
-                italic={`${t("trama:tipologia.rivelazione")}, ${t(
-                  "trama:tipologia.morte"
-                )}`}
+                name="Eventi eliminali"
+                italic="rivelazione, morte"
               />
               <BadgeLegenda
                 color="#0000FF"
-                name={t("trama:help_panel.interazione")}
-                italic={`${t("trama:tipologia.guerra")}, ${t(
-                  "trama:tipologia.aggressione/scontro"
-                )}, ${t("trama:tipologia.aggressione/aiuto/salvataggio")}, ${t(
-                  "trama:tipologia.compito/missione"
-                )}, ${t("trama:tipologia.incontro animale")}, ${t(
-                  "trama:tipologia.incontro di gruppo"
-                )}, ${t("trama:tipologia.incontro femminile")}, ${t(
-                  "trama:tipologia.incontro maschile"
-                )}, ${t("trama:tipologia.matrimonio")}, ${t(
-                  "trama:tipologia.offerta"
-                )}, ${t("trama:tipologia.rifiuto")}, ${t(
-                  "trama:tipologia.scena erotica"
-                )}, ${t("trama:tipologia.scommessa")}, ${t(
-                  "trama:tipologia.telefonata"
-                )}`}
+                name="Interazione"
+                italic="guerra, aggressione/scontro, aiuto/salvataggio, compito/missione, incontro animale, incontro di gruppo, incontro femminile, incontro maschile, matrimonio, offerta, rifiuto, scena erotica, scommessa, telefonata"
               />
               <BadgeLegenda
                 color="#5151FC"
-                name={t("trama:help_panel.spostamento")}
-                italic={`${t("trama:tipologia.arrivo/ritorno")}, ${t(
-                  "trama:tipologia.arrivo/fuga"
-                )}, ${t("trama:tipologia.inseguimento/ricerca")}, ${t(
-                  "trama:tipologia.partenza/sparizione"
-                )}, ${t("trama:tipologia.viaggio")}`}
+                name="Spostamento"
+                italic="arrivo/ritorno, fuga, inseguimento/ricerca, partenza/sparizione, viaggio"
               />
               <BadgeLegenda
                 color="#6E94F4"
-                name={t("trama:help_panel.intenzione")}
-                italic={`${t("trama:tipologia.iniziativa/piano")}, ${t(
-                  "trama:tipologia.ostacolo"
-                )}, ${t("trama:tipologia.successo")}`}
+                name="Intenzione"
+                italic="iniziativa/piano, ostacolo, successoo"
               />
               <BadgeLegenda
                 color="#00FFFF"
-                name={t("trama:help_panel.situazione")}
-                italic={`${t("trama:tipologia.illusione/speranza")}, ${t(
-                  "trama:tipologia.innamoramento"
-                )}`}
+                name="Situazione"
+                italic="illusione/speranza, innamoramento"
               />
             </div>
           </div>
@@ -210,39 +180,29 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#00FFCC" }}
               >
-                {t("combining:help_panel.piano_interiore")}
+                PIANO INTERIORE
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#009959"
-                name={t("trama:help_panel.stato_euforico")}
-                italic={`${t("trama:tipologia.angoscia/delusione")}, ${t(
-                  "trama:tipologia.smarrimento/dubbio"
-                )}`}
+                name="Stato euforico"
+                italic="angoscia/delusione, smarrimento/dubbio"
               />
               <BadgeLegenda
                 color="#00C19C"
-                name={t("trama:help_panel.stato_disforico")}
-                italic={`${t("trama:tipologia.visione")}, ${t(
-                  "trama:tipologia.riflessione"
-                )}, ${t("trama:tipologia.mistero/assurdità")}, ${t(
-                  "trama:tipologia.ipotesi"
-                )}`}
+                name="Stato disforico"
+                italic="visione, riflessione, mistero/assurdità, ipotesi"
               />
               <BadgeLegenda
                 color="#67E9B1"
-                name={t("trama:help_panel.stato_riflessivo")}
-                italic={`${t("trama:tipologia.pausa/sospensione")}, ${t(
-                  "trama:tipologia.attesa"
-                )}`}
+                name="Stato riflessivo"
+                italic="pausa/sospensione, attesa"
               />
               <BadgeLegenda
                 color="#00FFB6"
-                name={t("trama:help_panel.stato_sospeso")}
-                italic={`${t("trama:tipologia.cambiamento")}, ${t(
-                  "trama:tipologia.città magica"
-                )}, ${t("trama:tipologia.situazione")}`}
+                name="Stato sospeso"
+                italic="cambiamento, città magica, situazione"
               />
             </div>
           </div>
@@ -252,30 +212,15 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#FFA500" }}
               >
-                {t("combining:help_panel.piano_formale")}
+                PIANO FORMALE
               </div>
             </div>
             <div className="col-md-8">
-              <BadgeLegenda
-                color="#FFF800"
-                name={t("combining:help_panel.racconto_incastonato")}
-              />
-              <BadgeLegenda
-                color="#F2CA22"
-                name={t("combining:help_panel.metanarrazione")}
-              />
-              <BadgeLegenda
-                color="#EFA625"
-                name={t("combining:help_panel.cornice")}
-              />
-              <BadgeLegenda
-                color="#ED6826"
-                name={t("combining:help_panel.struttura")}
-              />
-              <BadgeLegenda
-                color="#FF3366"
-                name={t("combining:help_panel.terra")}
-              />
+              <BadgeLegenda color="#FFF800" name="Racconto incastonato" />
+              <BadgeLegenda color="#F2CA22" name="Metanarrazione" />
+              <BadgeLegenda color="#EFA625" name="Cornice" />
+              <BadgeLegenda color="#ED6826" name="Struttura" />
+              <BadgeLegenda color="#FF3366" name="Terra" />
             </div>
           </div>
         </Tab>

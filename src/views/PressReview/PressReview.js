@@ -3,7 +3,7 @@ import React from 'react';
 
 import * as d3 from 'd3';
 
-//import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
+import HamburgerIntroHeader from '../../headers/HamburgerIntroHeader/HamburgerIntroHeader';
 import Footer from '../../headers/Footer/Footer';
 
 import '../../general/GridsWithScrollableColumns/GridWithScrollableColumn.css';
@@ -30,7 +30,7 @@ export default class PressReview extends React.Component
   {
     return (
       <>
-        {/* <HamburgerIntroHeader /> */}
+        <HamburgerIntroHeader />
         <div className="grid-with-scrollable-column">
           <div className="scrollable-column-3 col-md-12 col-lg-8">
             <h1>RASSEGNA STAMPA</h1>

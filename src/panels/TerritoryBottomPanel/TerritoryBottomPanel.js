@@ -2,7 +2,7 @@
 import React from 'react';
 
 import TerritoryItinerariesPanel from '../TerritoryItinerariesPanel/TerritoryItinerariesPanel';
-//import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
+import TerritoryLegendPanel from '../TerritoryLegendPanel/TerritoryLegendPanel';
 import TerritoryTimelinePanel from '../TerritoryTimelinePanel/TerritoryTimelinePanel';
 
 // import PullDownButton from '../../general/PullDownButton/PullDownButton';
@@ -80,7 +80,7 @@ export default class TerritoryBottomPanel extends React.Component
       case this.props.bottomPanelMode === GlobalData.bottomPanelModes.legend :
 
         internalPanel = (
-          <div></div>// <TerritoryLegendPanel page={this.props.legendPage} />
+          <TerritoryLegendPanel page={this.props.legendPage} />
         );
 
         break;

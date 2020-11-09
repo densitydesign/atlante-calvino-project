@@ -1,0 +1,5 @@
+.the-body-viz {
+  height: calc(100vh - 72px);
+  display: flex;
+  background-color: antiquewhite;
+}

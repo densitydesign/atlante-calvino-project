@@ -127,7 +127,7 @@
 } */
 
 .trama2-label-container {
-  cursor: default;
+  cursor: help;
 }
 .trama2-start-symbol {
   transform: translate(-2px, -2px);

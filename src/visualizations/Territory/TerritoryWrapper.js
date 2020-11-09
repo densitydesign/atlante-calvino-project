@@ -14,9 +14,8 @@ import CompassPanel from "../../panels/CompassPanel/CompassPanel"
 import { draw_jellyfish, prepare_jellyfish_data, visit } from "./jellyfish"
 
 import "./TerritoryWrapper.css"
-import { withTranslation } from "react-i18next"
 
-class TerritoryWrapper extends React.Component {
+export default class TerritoryWrapper extends React.Component {
   state = {
     data: "data still not loaded",
     isLoading: true,
@@ -1093,5 +1092,3 @@ function array_intersection(a1, a2) {
 
   return result
 }
-
-export default withTranslation(['translation','nebbia','luoghi','elenchi'])(TerritoryWrapper)

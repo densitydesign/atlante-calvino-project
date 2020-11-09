@@ -2,9 +2,8 @@ import React from "react"
 import classnames from "classnames"
 import RadioButton from "../../general/RadioButton/RadioButton"
 import "./TerritoryPercentageSubPanel.css"
-import { withTranslation } from "react-i18next"
 
-class TerritoryPercentageSubPanel extends React.Component {
+export default class TerritoryPercentageSubPanel extends React.Component {
   render() {
     const { isDouble } = this.props
     return (
@@ -15,7 +14,7 @@ class TerritoryPercentageSubPanel extends React.Component {
         })}
       >
         <div className={classnames("title-panel", { "mr-2": isDouble })}>
-          <h4>{this.props.t('footer.proporzione')}</h4>
+          <h4>Proporzione</h4>
         </div>
         <RadioButton
           id={this.props.percentageRadioButtonId}
@@ -29,5 +28,3 @@ class TerritoryPercentageSubPanel extends React.Component {
     )
   }
 }
-
-export default withTranslation('territorio')(TerritoryPercentageSubPanel)
