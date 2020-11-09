@@ -17,7 +17,7 @@ export default class ToolsAndMethods extends React.Component {
         <IndexMenuHeader menuAction={"openIndex"} />
         <div className="ac-grid-24 has-sidebar">
           <div className="sidebarLeft sticky-element">
-            <h2 style={{ margin: "0.7142857143rem 0" }}>
+            <h2 style={{ margin: "3.5rem 0" }}>
               Elenco dei capta spiegati in dettaglio.{" "}
             </h2>
             <h3>Clicca su uno dei seguenti... </h3>
