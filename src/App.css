@@ -333,12 +333,11 @@ li {
 .button-text {
   border: var(--button-border);
   margin-top: 3em;
-  padding: 0.5em 1.3em 0.5em 1.3em;
-  font-size: 1em;
+  padding: 15px 40px 15px 40px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--dark-blue);
-  background-color: var(--bg);
-  text-transform: uppercase;
+  background-color: var(--bg-cool);
   transition: color 0.3s ease;
   text-decoration: none;
 }

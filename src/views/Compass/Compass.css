@@ -93,5 +93,5 @@
 svg.compass {
   overflow: hidden;
   vertical-align: middle;
-  transform: rotate(180deg);
+  transform: rotate(270deg);
 }
