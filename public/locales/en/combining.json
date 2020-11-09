@@ -33,13 +33,15 @@
     "aggregato": "aggregato",
     "volume": "volume",
     "aggregazione": "aggregazione",
-    "footer_chart": "Lunghezza in caratteri dei testi, disposti in ordine cronologico.",
+    "footer_chart": "Volumi disposti secondo la data di prima pubblicazione; lo spessore corrisponde alla lunghezza in caratteri.    ",
     "tipologia_ambito": "TIPOLOGIA DI AMBITO",
     "numero_livelli_testo": "Numero di livelli nel testo",
     "categorie_elenco": "CATEGORIE DI ELENCO",
     "non_aggregato": "non aggregato",
     "combinare": "Combinare",
-    "livello": "livello"
+    "livello": "livello",
+    "piano": "piano",
+    "sequenza": "sequenza"
   },
   "help_panel": {
     "itinerario_forma": "ITINERARIO FORMA",
@@ -64,5 +66,18 @@
     "cornice": "Cornice",
     "struttura": "Struttura",
     "terra": "Terra"
+  },
+  "piano": {
+    "eventi liminali": "eventi liminali",
+    "stato disforico": "stato disforico",
+    "stato riflessivo": "stato riflessivo",
+    "stato sospeso": "stato sospeso",
+    "racconto incastonato": "racconto incastonato",
+    "metanarrazione": "metanarrazione",
+    "cornice": "cornice",
+    "struttura": "struttura",
+    "terna": "terna",
+    "interazione": "interazione",
+    "intenzione": "intenzione"
   }
 }

@@ -10,5 +10,19 @@
     "assenza_di_ambientazione": "Assenza di ambientazione",
     "movimento": "MOVIMENTO",
     "visione_in_dettaglio": "VISIONE IN DETTAGLIO"
-  }
+  },
+  "seleziona_testo": "Seleziona il testo e poi scorri in basso",
+  "vedi_dettaglio": "VEDI IN DETTAGLIO I TESTI SELEZIONATI",
+  "INTERNO": "INTERNO",
+  "ESTERNO": "ESTERNO",
+  "MEZZO DI TRASPORTO": "MEZZO DI TRASPORTO",
+  "ASSENZA DI AMBIENTAZIONE": "ASSENZA DI AMBIENTAZIONE",
+  "fine": "fine",
+  "INIZIO DEL TESTO": "INIZIO DEL TESTO",
+  "ANNO PRIMA": "ANNO PRIMA",
+  "PUBBLICAZIONE": "PUBBLICAZIONE",
+  "SI MOVIMENTO": "SI MOVIMENTO",
+  "NO MOVIMENTO": "NO MOVIMENTO",
+  "Volume": "Volume",
+  "Titolo": "Titolo"
 }
