@@ -3,6 +3,7 @@ import classnames from "classnames"
 import "./Options.css"
 
 import Dropdown from "react-bootstrap/Dropdown"
+import { withTranslation } from "react-i18next"
 
 class Options extends Component {
   constructor(props) {
@@ -81,7 +82,7 @@ class Options extends Component {
     return (
       <div className="options-container" style={this.props.style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
-          <Dropdown.Toggle>
+          <Dropdown.Toggle disabled={this.props.disabled}>
             {!this.props.data.multiple && (
               <div>
                 <span className="micro-title">{this.props.title}</span>
@@ -112,7 +113,7 @@ class Options extends Component {
                     "dropdown-chessboard": this.props.isFlex,
                   })}
                 >
-                  {d.label}
+                  {this.props.t('options.'+d.label)}
                 </Dropdown.Item>
               )
             })}
@@ -126,7 +127,7 @@ class Options extends Component {
                   "dropdown-chessboard": this.props.isFlex,
                 })}
               >
-                {this.props.isFlex ? "Inverti" : "Inverti Selezione"}
+                {this.props.isFlex ? this.props.t("options.Inverti") : this.props.t("options.Inverti_Selezione")}
               </Dropdown.Item>
             )}
           </Dropdown.Menu>
@@ -136,7 +137,7 @@ class Options extends Component {
   }
 }
 
-export default Options
+export default withTranslation(['translation'])(Options)
 
 Options.defaultProps = {
   style: {

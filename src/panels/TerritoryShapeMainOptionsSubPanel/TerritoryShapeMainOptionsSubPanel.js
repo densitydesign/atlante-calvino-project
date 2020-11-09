@@ -1,16 +1,17 @@
 import React from "react"
+import { withTranslation } from "react-i18next"
 
 import RadioButton from "../../general/RadioButton/RadioButton"
 import GlobalData from "../../utilities/GlobalData"
 
 import "./TerritoryShapeMainOptionsSubPanel.css"
 
-export default class TerritoryShapeMainOptionsSubPanel extends React.Component {
+class TerritoryShapeMainOptionsSubPanel extends React.Component {
   render() {
     return (
       <div className="territory-shape-main-options-subpanel">
         <div className="title-panel">
-          <h4>Tipo di Elenco</h4>
+          <h4>{this.props.t('elenchi:footer.tipo_di_elenco')}</h4>
         </div>
         <RadioButton
           id={this.props.typesRadioButtonId}
@@ -24,25 +25,27 @@ export default class TerritoryShapeMainOptionsSubPanel extends React.Component {
           <div
             style={{ color: GlobalData.visualizationColors.territory.misto }}
           >
-            Misto
+            {this.props.t('elenchi:footer.Misto')}
           </div>
           <div
             style={{ color: GlobalData.visualizationColors.territory.parole }}
           >
-            Parole
+            {this.props.t('elenchi:footer.Parole')}
           </div>
           <div
             style={{ color: GlobalData.visualizationColors.territory.sintagmi }}
           >
-            Sintagmi
+            {this.props.t('elenchi:footer.Sintagmi')}
           </div>
           <div
             style={{ color: GlobalData.visualizationColors.territory.frasi }}
           >
-            Proposizioni
+            {this.props.t('elenchi:footer.Proposizioni')}
           </div>
         </div>
       </div>
     )
   }
 }
+
+export default withTranslation(['translation','elenchi'])(TerritoryShapeMainOptionsSubPanel)

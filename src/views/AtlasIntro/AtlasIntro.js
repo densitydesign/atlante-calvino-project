@@ -6,7 +6,7 @@ import IntroViewSelector from './IntroViewSelector.js';
 
 import '../../App.css';
 import './AtlasIntro.css';
-import '../HamburgerMenu/HamburgerMenu.css';
+//import '../HamburgerMenu/HamburgerMenu.css';
 
 class AtlasIntro extends React.Component
 {

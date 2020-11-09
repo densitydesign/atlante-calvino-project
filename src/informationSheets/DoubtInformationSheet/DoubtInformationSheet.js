@@ -1,12 +1,18 @@
+import React from "react"
 
-import React from 'react';
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import DoubtTypePerYearWrapper from "../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper"
+import ArrowButton from "../../general/ArrowButton/ArrowButton"
+import SheetStyles from "../SheetStyles.module.css"
 
 import HamburgerCompassHeader from '../../headers/HamburgerCompassHeader/HamburgerCompassHeader';
 import DoubtTypePerYearWrapper from '../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper';
 import FooterSchede1 from '../FooterSchede1';
 import SheetStyles from '../SheetStyles.module.css';
 
-import './DoubtInformationSheet.css';
+import legenda from "./Scheda_Dubbio_dimensione.svg"
+import zoom_01 from "./infosheet-nebbia-02.svg"
+import zoom_02 from "./infosheet-nebbia-01.svg"
 
 import legenda from './legend.svg'
 import zoom_01 from './zoom-01.svg'
@@ -145,7 +151,28 @@ export default class DoubtInformationSheet extends React.Component
           />
 </main>
 
+          <div className={SheetStyles.gridRow}>
+            <ArrowButton
+              arrowDirection="none"
+              textAlign="left"
+              text="ANALISI"
+              route="/doubt/phase1"
+            />
+            <ArrowButton
+              arrowDirection="right"
+              textAlign="left"
+              text="TAPPA 2"
+              route="/phase2-process"
+            />
+            <ArrowButton
+              arrowDirection="right"
+              textAlign="left"
+              text="TAPPA 3"
+              route="/phase3-problem"
+            />
+          </div>
+        </main>
       </>
-    );
+    )
   }
 }
