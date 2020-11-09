@@ -182,14 +182,16 @@ sup {
   grid-template-columns: repeat(32, 1fr);
 }
 .content {
-  padding: 0 calc((100% / 16) * 2);
+  padding: 0 calc((100% / 16));
   padding-bottom: 3rem;
+  padding-top: 3rem;
   grid-column: 1 / 17;
 }
 
 .contentRight {
-  padding: 0 calc((100% / 16) * 2);
+  padding: 0 calc((100% / 16));
   padding-bottom: 3rem;
+  padding-top: 3rem;
   grid-column: 8 / 20;
 }
 
