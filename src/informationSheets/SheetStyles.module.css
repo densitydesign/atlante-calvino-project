@@ -139,6 +139,9 @@ sup{
   position: sticky;
 }
 
+ol{
+  margin-left:0px;
+}
 @media (min-width: 1280px) {
   .gridRow {
     grid-column: 3 / span 20;
