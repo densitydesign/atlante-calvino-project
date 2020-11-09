@@ -1,6 +1,7 @@
 import React from "react"
 import Footer from "../../headers/Footer/Footer"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import { Link } from "react-router-dom"
 
 export default function Instructions() {
   return (
@@ -15,41 +16,41 @@ export default function Instructions() {
             itinerari, che si articolano ciascuno in 3 tappe.
           </p>
           <p>
-            La <strong>Bussola</strong> consente di avere a disposizione, in
+            La <Link to='/compass'><strong>Bussola</strong></Link> consente di avere a disposizione, in
             ogni punto dell’Atlante, 3 visualizzazioni di orientamento:
           </p>
           <div>
             <ol type="1">
               <li>
-                una mappa sintetica della carriera letteraria dell’autore (Il
-                tempo e le opere)
+                Una mappa sintetica della carriera letteraria dell’autore (<Link to='compass/time-and-works'>Il
+                tempo e le opere</Link>)
               </li>
               <li>
-                la ricostruzione della vicenda editoriale di tutti i racconti (I
-                flussi dei racconti)
+                La ricostruzione della vicenda editoriale di tutti i racconti (<Link to='compass/flows-of-stories'>Il
+          I flussi dei racconti</Link>)
               </li>
               <li>
-                la rappresentazione della biblioteca mentale dello scrittore
-                (L’arcipelago dei nomi)
+                La rappresentazione della biblioteca mentale dello scrittore
+                (<Link to='/compass'>L’arcipelago dei nomi</Link>)
               </li>
             </ol>
           </div>
           <p>
-            I <strong>3 itinerari</strong> che abbiamo scelto di percorrere
+            I <Link to='/itineraries'><strong>3 itinerari</strong></Link> che abbiamo scelto di percorrere
             riguardano:
           </p>
           <div>
             <ol type="1">
               <li>
-                la prima tappa (fenomeno) introduce all’itinerario nel suo
+                La prima tappa (<Link to='/phases#phaenomenon'>fenomeno</Link>) introduce all’itinerario nel suo
                 aspetto più concreto e tangibile
               </li>
               <li>
-                la seconda tappa (processo) cerca di cogliere la dinamica che
+                La seconda tappa (<Link to='/phases#process'>processo</Link>) cerca di cogliere la dinamica che
                 sta dietro a ciascuno dei tre fenomeni
               </li>
               <li>
-                la terza tappa (problema) indaga la questione principale che
+                La terza tappa (<Link to='/phases#problem'>problema</Link>) indaga la questione principale che
                 muove verso il fenomeno, dando avvio al processo
               </li>
             </ol>
@@ -69,7 +70,7 @@ export default function Instructions() {
           </p>
           <p>
             La maggior parte della ricerca è stata svolta sull’intero{" "}
-            <strong>corpus</strong>
+            <strong>corpus </strong>
             narrativo, basandosi sul testo stabilito nell’edizione dei{" "}
             <i>Romanzi e racconti</i>, edizione diretta da Claudio Milanini, a
             cura di Mario Barenghi e Bruno Falcetto (3 voll., 1991, 1992, 1994:
@@ -84,15 +85,15 @@ export default function Instructions() {
             Il lavoro è stato collettivo, ma ciascuna delle tre ricercatrici
             dell’équipe letteraria dell’Università di Ginevra si è occupata in
             particolare di uno dei tre itinerari, secondo la seguente
-            ripartizione:z
+            ripartizione:
           </p>
           <p>
             {" "}
-            itinerario del dubbio: <strong>Margherita Parigini</strong>
+            <Link to='/itineraries#doubt'>Itinerario del dubbio</Link>: <strong>Margherita Parigini</strong>
             <br />
-            itinerario dello spazio: <strong>Virginia Giustetto</strong>
+            <Link to='/itineraries#space'>Itinerario dello spazio</Link>: <strong>Virginia Giustetto</strong>
             <br />
-            itinerario della forma: <strong>Valeria Cavalloro</strong>
+            <Link to='/itineraries#shape'>Itinerario della forma</Link>: <strong>Valeria Cavalloro</strong>
           </p>
         </div>
       </div>
