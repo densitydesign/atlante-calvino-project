@@ -19,7 +19,7 @@ class DoubtingStackedBars extends Component {
       prevProps.data !== this.props.data ||
       prevProps.stackMode !== this.props.stackMode
     ) {
-      V.update(this.props.data, this.props.stackMode)
+      V.update(this.props.data, this.props.stackMode, this.props.t)
       // V.filter(this.props.surviveFilters);
     }
     if (
@@ -48,6 +48,7 @@ class DoubtingStackedBars extends Component {
       <svg
         id={this.props.id}
         style={styleSvg}
+        t={this.props.t}
         ref={this._setRef.bind(this)}
       ></svg>
     )

@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from "react"
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useCallback,
+} from "react"
 import { useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
@@ -130,16 +136,16 @@ export default function IndexMenu({ onClose }) {
         el3.style.transform = "translate(-50%, -50%)"
       }
     })
-  },[])
+  }, [])
 
   useLayoutEffect(() => {
-    tappeLayout() 
-  },[tappeLayout])
+    tappeLayout()
+  }, [tappeLayout])
 
   useEffect(() => {
     const cb = tappeLayout
-    window.addEventListener('resize', cb)
-    return () => void window.removeEventListener('resize', cb)
+    window.addEventListener("resize", cb)
+    return () => void window.removeEventListener("resize", cb)
   }, [tappeLayout])
 
   console.log(orbiteRef)
@@ -354,7 +360,7 @@ export default function IndexMenu({ onClose }) {
         />
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link target='_blank' to="/compass" onClick={onClose}>
+        <Link target="_blank" to="/compass" onClick={onClose}>
           <Bussola width="70" />
         </Link>
       </div>
