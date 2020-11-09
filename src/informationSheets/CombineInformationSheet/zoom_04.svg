@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="508" viewBox="0 0 250 508">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="328" viewBox="0 0 250 328">
   <defs>
     <clipPath id="clip-zoom_04">
-      <rect width="250" height="508"/>
+      <rect width="250" height="328"/>
     </clipPath>
   </defs>
   <g id="zoom_04" clip-path="url(#clip-zoom_04)">
-    <rect width="250" height="508" fill="#fff"/>
+    <rect width="250" height="328" fill="#fff"/>
     <g id="Group_24954" data-name="Group 24954" transform="translate(0 17)">
       <g id="Group_24952" data-name="Group 24952" transform="translate(-149 109.055)">
         <g id="Group_771" data-name="Group 771" transform="translate(150 -87.908)">
@@ -184,24 +184,6 @@
       <text id="LIVELLO_DUE" data-name="LIVELLO DUE" transform="translate(58.056 304)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-23.908" y="0">LIVELLO DUE</tspan></text>
       <text id="LIVELLO_TRE" data-name="LIVELLO TRE" transform="translate(166 305)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-23.314" y="0">LIVELLO TRE</tspan></text>
     </g>
-    <g id="Group_24955" data-name="Group 24955" transform="translate(0.5 -158)">
-      <rect id="Rectangle_19583" data-name="Rectangle 19583" width="72.664" height="1.819" transform="translate(-0.5 516.505)" fill="#5151fc" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19584" data-name="Rectangle 19584" width="72.664" height="5.808" transform="translate(-0.5 518.328)" fill="#009959" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19585" data-name="Rectangle 19585" width="72.664" height="8.908" transform="translate(-0.5 524.14)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19586" data-name="Rectangle 19586" width="72.664" height="3.871" transform="translate(76.571 516.769)" fill="#5151fc" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19587" data-name="Rectangle 19587" width="72.664" height="18.776" transform="translate(76.571 519.872)" fill="#009959" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19588" data-name="Rectangle 19588" width="72.664" height="8.76" transform="translate(76.571 538.624)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19589" data-name="Rectangle 19589" width="72.664" height="2.423" transform="translate(-0.5 585.926)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19590" data-name="Rectangle 19590" width="72.664" height="2.578" transform="translate(-0.5 592.669)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19591" data-name="Rectangle 19591" width="72.664" height="3.938" transform="translate(-0.5 603.588)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19592" data-name="Rectangle 19592" width="72.664" height="6.249" transform="translate(-0.5 646.799)" fill="#5151fc" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19593" data-name="Rectangle 19593" width="72.664" height="7.756" transform="translate(-0.5 653.3)" fill="#00c19c" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19594" data-name="Rectangle 19594" width="72.664" height="6.997" transform="translate(78.571 647.148)" fill="#5151fc" stroke="#fff" stroke-width="0.22"/>
-      <rect id="Rectangle_19595" data-name="Rectangle 19595" width="72.664" height="2.945" transform="translate(78.571 654.149)" fill="#8ae297" stroke="#fff" stroke-width="0.22"/>
-    </g>
-    <text id="Serie_1" data-name="Serie 1" transform="translate(0 348)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">serie 1</tspan></text>
-    <text id="Serie_2" data-name="Serie 2" transform="translate(0 417)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">serie 2</tspan></text>
-    <text id="Serie_3" data-name="Serie 3" transform="translate(0 478)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">serie 3</tspan></text>
     <text id="La_nuvola_di_smog_e_la_formica_argentina" data-name="La nuvola di smog e la formica argentina" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="11">La nuvola di smog e la formica argentina</tspan></text>
   </g>
 </svg>

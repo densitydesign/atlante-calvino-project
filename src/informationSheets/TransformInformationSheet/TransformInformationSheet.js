@@ -97,7 +97,7 @@ class TransformInformationSheet extends Component {
             </div>
           </div>
 
-          <div className={SheetStyles.gridRow}>
+          <div className={SheetStyles.gridRow} style={{marginBottom:'0px'}}>
             <div className="CarouselSlide" data-interval="false">
               <h2 className={SheetStyles.titleH2}>Approfondimento</h2>
               <Carousel>
@@ -124,19 +124,9 @@ class TransformInformationSheet extends Component {
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "10 / span 3", marginTop: "20px" }}
+                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
                         src={zoom_1}
                       />
-                      <p
-                        className="captionLeft"
-                        style={{
-                          gridColumn: "9 / span 5",
-                          marginTop: "0px",
-                          paddingTop: "0px",
-                        }}
-                      >
-                        Orizzonte dal 1945 al 1955
-                      </p>
                     </div>
                   </Carousel.Caption>
                   <img
@@ -169,19 +159,9 @@ class TransformInformationSheet extends Component {
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "10 / span 3", marginTop: "20px" }}
+                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
                         src={zoom_2}
                       />
-                      <p
-                        className="captionLeft"
-                        style={{
-                          gridColumn: "9 / span 5",
-                          marginTop: "0px",
-                          paddingTop: "0px",
-                        }}
-                      >
-                        Orizzonte dal 1956 al 1965
-                      </p>
                     </div>
                   </Carousel.Caption>
                   <img
@@ -218,19 +198,9 @@ class TransformInformationSheet extends Component {
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "10 / span 3", marginTop: "20px" }}
+                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
                         src={zoom_3}
                       />
-                      <p
-                        className="captionLeft"
-                        style={{
-                          gridColumn: "9 / span 5",
-                          marginTop: "0px",
-                          paddingTop: "0px",
-                        }}
-                      >
-                        Orizzonte dal 1966 al 1975
-                      </p>
                     </div>
                   </Carousel.Caption>
                   <img
@@ -263,19 +233,9 @@ class TransformInformationSheet extends Component {
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "10 / span 3", marginTop: "20px" }}
+                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
                         src={zoom_4}
                       />
-                      <p
-                        className="captionLeft"
-                        style={{
-                          gridColumn: "9 / span 5",
-                          marginTop: "0px",
-                          paddingTop: "0px",
-                        }}
-                      >
-                        Orizzonte dal 1976 al 1985
-                      </p>
                     </div>
                   </Carousel.Caption>
                   <img
