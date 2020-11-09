@@ -87,7 +87,7 @@ class PlotInformationSheet extends Component {
               degli anni Settanta e raccolti, con una significativa coincidenza
               cronologica, proprio nel 1979 nel volume <em>Lector in fabula</em>, per
               moltissimi aspetti “opera sorella” di <em>Se una notte d’inverno un
-              viaggiatorea</em>.
+              viaggiatore</em>.
               <br />
               L’impatto di questa stagione teorica sull’ultima
               grande fatica narrativa di Calvino è clamorosamente evidente:
@@ -591,14 +591,23 @@ class PlotInformationSheet extends Component {
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
-              <li className={'referenceItem'}>
-                Mengaldo 1996: P.V. Mengaldo, <em>Aspetti della lingua di Calvino</em>,
-                in Id., <em>La tradizione del Novecento</em>, Torino, Einaudi, pp.
-                227-291.
-              </li>
-              <li className={'referenceItem'}>
-                Barenghi 2009: M. Barenghi, <em>Calvino</em>, Bologna, Mulino.
-              </li>
+              <li className={'referenceItem'}>Barenghi 1992: Mario Barenghi, <em>L’autorità dell’autore</em>, Lecce, Milella.</li>
+              <li className={'referenceItem'}>Calvino 1995a: Italo Calvino, <em>Cominciare e finire, appendice alle Lezioni americane</em>, SSI, pp. 734-753.</li>
+              <li className={'referenceItem'}>Calvino 1995b: Italo Calvino, <em>Ariosto: la struttura dell’«Orlando furioso» </em>[1975], in Id., <em>Saggi. 1945-1985</em>, pp. 759-768.</li>
+              <li className={'referenceItem'}>Du Plessix Gray 1981: Francine du Plessix Gray, <em>Visiting Italo Calvino</em>, in <em>«The New York Times Review of Books»</em>, June 21.</li>
+              <li className={'referenceItem'}>Eco 1979: Umberto Eco, <em>Lector in fabula. La cooperazione interpretativa nei testi narrativi</em>, Milano, Bompiani.</li>
+              <li className={'referenceItem'}>Falcetto 1992: Bruno Falcetto, <em>«Se una notte d’inverno un viaggiatore»</em>, in <em>Note e notizie sui testi</em>, a cura di M. Barenghi, B. Falcetto, C. Milanini, RR, II, pp. 1381-1401.</li>
+              <li className={'referenceItem'}>Jauss 1969: Hans Robert Jauss, <em>Perché la storia della letteratura?</em>, ed. it. a cura di A. Varvaro, Napoli, Guida. </li>
+              <li className={'referenceItem'}>Jauss 1988: Hans Robert Jauss, <em>Estetica della ricezione</em>, trad. it. di A. Giugliano, Napoli, Guida.</li>
+              <li className={'referenceItem'}>Iser 1974: Wolfgang Iser, <em>The Implied Reader. Patterns of communication in prose fiction from Bunyan to Beckett</em> [1972], eng. transl., Baltimore, Johns Hopkins University Press.</li>
+              <li className={'referenceItem'}>Iser 1976: Wolfgang Iser, <em>L’acte de lecture. Theorie de l’effet esthètique</em>, fr. trad. par E. Sznycer, Bruxelles, Mardaga.</li>
+              <li className={'referenceItem'}>Kermode 1972: Frank Kermode, <em>Il senso della fine. Studi sulla teoria del romanzo</em>, trad. it. di G. Montefoschi, Milano, Rizzoli.</li>
+              <li className={'referenceItem'}>Matte Blanco 1990: <em>Ignacio Matte Blanco, L’inconscio come insiemi infiniti. Saggio sulla bi-logica</em>, trad. it. di P. Bria, Torino, Einaudi.</li>
+              <li className={'referenceItem'}>Rivière 1913: Jacques Rivière, <em>Le Roman d’aventure</em>, in «Nouvelle Revue Française», LIII (mai 1913), pp. 748-765, LIV (juin 1913), pp. 914-933, LV (juillet 1913), pp. 56-77.</li>
+              <li className={'referenceItem'}>Sorapure 1985: Madeleine Sorapure,<em> Being in the Midst: Italo Calvino’s If on a winter’s night a traveler</em>, in «Modern Fiction Studies», XXXI, pp. 702-710.</li>
+              <li className={'referenceItem'}>Todorov 2008: Tzvetan Todorov, <em>La letteratura in pericolo</em>, trad. it. di E. Lana, Milano, Garzanti.</li>
+              <li className={'referenceItem'}>Tortonese 2013: Paolo Tortonese, <em>L’homme en action. La représentation littéraire d’Aristote à Zola</em>, Paris, Classiques Garnier.</li>
+              <li className={'referenceItem'}>Woolf 1995: Virginia Woolf, <em>Il lettore comune</em>, trad. it. di D. Guglielmino, Genova, il Melangolo.</li>
             </ol>
           </div>
 
