@@ -208,10 +208,17 @@
   color: var(--dark-green);
   text-align: center;
   background: var(--white);
+  transition:1s ease;
+}
+
+.number-tappa:hover{
+  background: var(--dark-blue);
+    color:var(--white);
 }
 
 .link-tappa:hover{
   text-decoration: none;
+
 }
 
 small{

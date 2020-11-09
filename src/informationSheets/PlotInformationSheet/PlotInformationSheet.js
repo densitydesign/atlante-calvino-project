@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { useState, Component} from "react"
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import ArrowButton from "../../general/ArrowButton/ArrowButton";
+
+import FooterSchede from "../FooterSchede"
 
 import "./PlotInformationSheet.css";
 import SheetStyles from "../SheetStyles.module.css";
@@ -16,6 +17,7 @@ import info_01 from "./info_01.svg";
 import info_02 from "./info_02.svg";
 import info_03 from "./info_03.svg";
 import info_04 from "./info_04.svg";
+
 
 class PlotInformationSheet extends Component {
   render() {
@@ -398,6 +400,7 @@ class PlotInformationSheet extends Component {
               <img className={SheetStyles.sideLegend} src={info_02} />
             </div>
           </div>
+
             <div className={SheetStyles.gridRow}>
             <p className={SheetStyles.paragraph}>
                   L’interazione tra gli incipit dei romanzi e la vicenda del Lettore, e in
@@ -482,6 +485,7 @@ class PlotInformationSheet extends Component {
               suo protagonista verso l’agognata conquista della Lettrice.
               </p>
           </div>
+
           <div className={SheetStyles.gridRow}>
             <div className={SheetStyles.paragraph} style={{ gridColumn: " 1 / span 10", float: "right" }}>
               <img className={SheetStyles.image100w} src={zoom_03} />
@@ -491,6 +495,7 @@ class PlotInformationSheet extends Component {
               <img className={SheetStyles.sideLegend} src={info_03} />
             </div>
           </div>
+
           <div className={SheetStyles.gridRow}>
           <p className={SheetStyles.paragraph}>
               Nuovamente, i romanzi fanno qui da scorciatoia esperienziale: il lettore,
@@ -526,6 +531,7 @@ class PlotInformationSheet extends Component {
               frattura della dinamica consolidata.
             </p>
             </div>
+
             <div className={SheetStyles.gridRow}>
               <div className={SheetStyles.paragraph} style={{ gridColumn: " 1 / span 10", float: "right" }}>
                 <img className={SheetStyles.image100w} src={zoom_04} />
@@ -535,6 +541,7 @@ class PlotInformationSheet extends Component {
                 <img className={SheetStyles.sideLegend} src={info_04} />
               </div>
             </div>
+
             <div className={SheetStyles.gridRow}>
             <p className={SheetStyles.paragraph}>
             Siamo quasi alla fine del testo: durante la seconda metà del romanzo, una
@@ -587,7 +594,6 @@ class PlotInformationSheet extends Component {
             </p>
             </div>
 
-
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
@@ -611,32 +617,13 @@ class PlotInformationSheet extends Component {
             </ol>
           </div>
 
-          <div className={SheetStyles.gridRow}>
-            <div style={{ gridColumn: "1 / span 3" }}>
-              <ArrowButton
-                arrowDirection="none"
-                textAlign="left"
-                text="ANALISI"
-                route="/form/phase3"
-              />
-            </div>
-            <div style={{ gridColumn: "4 / span 2" }}>
-              <ArrowButton
-                arrowDirection="left"
-                textAlign="right"
-                text="TAPPA 1"
-                route="/form/phase1"
-              />
-            </div>
-            <div style={{ gridColumn: "6 / span 2" }}>
-              <ArrowButton
-                arrowDirection="left"
-                textAlign="right"
-                text="TAPPA 2"
-                route="/form/phase2"
-              />
-            </div>
-          </div>
+          <FooterSchede
+            linkTappaA={"/form/phase1"}
+            linkTappaB={"/form/phase2"}
+            linkAnalisi={"/form/phase3"}
+          />
+
+
         </main>
       </>
     );
