@@ -51,13 +51,7 @@ export default class Compass extends React.Component {
             <div>
               <h1>Bussola</h1>
               <p className="text-dark-blue">
-                Prima di iniziare il viaggio, ci vuole una bussola. Per quello
-                abbiamo creato tre visualizzazioni orientative, I flussi dei
-                racconti, Il tempo e le opere e L’arcipelago dei nomi che
-                aiutino a muoversi dentro l’intero corpus dell’opera e che siano
-                sempre a portata di mano. Fornendo un colpo d’occhio sulla
-                storia dei volumi, sulla vicenda dei racconti e sulla biblioteca
-                mentale dell’autore.
+                Prima di iniziare il viaggio, ci vuole una bussola. Per quello abbiamo creato tre visualizzazioni orientative, <i>Il tempo e le opere, I flussi dei racconti</i> e <i>L’arcipelago dei nomi</i> che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano. Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.
               </p>
             </div>
           </div>
@@ -71,23 +65,6 @@ export default class Compass extends React.Component {
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
-              title="I flussi dei racconti"
-              getSelectedPanel={this.getSelectedPanel}
-              setSelectedPanel={this.setSelectedPanel}
-              panelClicked={this.panelClicked}
-              interactiveViewUrl="/compass/flows-of-stories"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
-              text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo."
-            />
-
-            <SlidingPanel
-              id="2"
-              open={this.state.selectedPanel >= 2}
-              zIndex="2"
-              icon={<Bussola2 className="mr-5" />}
-              openClassName="panel2-open"
-              closedClassName="panel2-closed"
-              hide={this.props.hide}
               title="Il tempo e le opere"
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
@@ -95,6 +72,24 @@ export default class Compass extends React.Component {
               interactiveViewUrl="/compass/time-and-works"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
               text="Si tratta di una mappa sintetica, che segue l’andamento dei quattro decenni della carriera letteraria di Calvino, mostrando gli snodi più importanti della sua storia editoriale: i principali volumi e le collaborazioni giornalistiche. La divisione per generi permette di seguire le oscillazioni tra forma breve e lunga, le sperimentazioni sulla struttura, l’articolarsi inquieto dell’opera in cerca della sua giusta forma."
+            />
+
+            <SlidingPanel
+              toggleFlowOfStories={this.togleTimeAndWorks}
+              id="2"
+              open={this.state.selectedPanel >= 2}
+              zIndex="2"
+              icon={<Bussola2 className="mr-5" />}
+              openClassName="panel2-open"
+              closedClassName="panel2-closed"
+              hide={this.props.hide}
+              title="I flussi dei racconti"
+              getSelectedPanel={this.getSelectedPanel}
+              setSelectedPanel={this.setSelectedPanel}
+              panelClicked={this.panelClicked}
+              interactiveViewUrl="/compass/flows-of-stories"
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
+              text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo."
             />
 
             <SlidingPanel
