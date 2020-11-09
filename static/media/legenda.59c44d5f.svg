@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="695" height="32" viewBox="0 0 695 32">
+  <defs>
+    <clipPath id="clip-legenda">
+      <rect width="695" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="legenda" clip-path="url(#clip-legenda)">
+    <g id="Layer_1_1_" transform="translate(0 -5.273)">
+      <g id="Group_304_1_" transform="translate(102 12.576)">
+        <g id="Group_305_1_" transform="translate(8350 -9660.325)">
+          <g id="dimensione_1_" transform="translate(-8032 9661.423)">
+            <g id="dimensione-X_1_">
+              <g id="Group-7_1_">
+                <text id="_tipi_di_elenchi_nel_testo" data-name="% tipi di elenchi nel testo" transform="translate(-47.798 21.971)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">% tipi di elenchi nel testo</tspan></text>
+                <g id="Group_24089" data-name="Group 24089">
+                  <g id="Group_24084" data-name="Group 24084">
+                    <line id="Line_7897" data-name="Line 7897" y2="30.4" transform="translate(-60.3 -7.4)" fill="none"/>
+                    <g id="Group_24083" data-name="Group 24083">
+                      <line id="Line_7898" data-name="Line 7898" y2="30.1" transform="translate(-60.3 -7.2)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.25"/>
+                      <g id="Group_24081" data-name="Group 24081">
+                        <rect id="Rectangle_19229" data-name="Rectangle 19229" width="1.6" height="0.2" transform="translate(-61.1 -7.4)" fill="#1d1d1b"/>
+                      </g>
+                      <g id="Group_24082" data-name="Group 24082">
+                        <rect id="Rectangle_19230" data-name="Rectangle 19230" width="1.6" height="0.2" transform="translate(-61.1 22.8)" fill="#1d1d1b"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g id="Group_24086" data-name="Group 24086">
+                    <line id="Line_7899" data-name="Line 7899" x2="15.5" transform="translate(-77.4 -7.4)" fill="none"/>
+                    <g id="Group_24085" data-name="Group 24085">
+                      <line id="Line_7900" data-name="Line 7900" x2="0.5" transform="translate(-77.4 -7.4)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26"/>
+                      <line id="Line_7901" data-name="Line 7901" x2="12.9" transform="translate(-75.8 -7.4)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26" stroke-dasharray="1.115 1.115"/>
+                      <line id="Line_7902" data-name="Line 7902" x2="0.5" transform="translate(-62.4 -7.4)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26"/>
+                    </g>
+                  </g>
+                  <path id="Path_148124" data-name="Path 148124" d="M-77.4-7.4c-6.1,0-6.1,25.9-12.2,25.9S-95.7,23-101.8,23h36.7C-71.3,23-71.3-7.4-77.4-7.4Z" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.25"/>
+                  <g id="Group_24088" data-name="Group 24088">
+                    <line id="Line_7903" data-name="Line 7903" x2="3.3" transform="translate(-65.2 23)" fill="none"/>
+                    <g id="Group_24087" data-name="Group 24087">
+                      <line id="Line_7904" data-name="Line 7904" x2="0.5" transform="translate(-65.2 23)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26"/>
+                      <line id="Line_7905" data-name="Line 7905" x2="1.1" transform="translate(-63.9 23)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26" stroke-dasharray="0.758 0.758"/>
+                      <line id="Line_7906" data-name="Line 7906" x2="0.5" transform="translate(-62.4 23)" fill="none" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="0.26"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Group_306_1_">
+          <g id="Group_312_1_">
+            <text id="Frasi" transform="translate(-82.042 23.276)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Frasi</tspan></text>
+            <path id="Rectangle_179_1_" d="M-97.5,15.1h8A4.481,4.481,0,0,1-85,19.6h0a4.481,4.481,0,0,1-4.5,4.5h-8a4.481,4.481,0,0,1-4.5-4.5h0A4.481,4.481,0,0,1-97.5,15.1Z" fill="#5151fc"/>
+          </g>
+        </g>
+        <g id="Group_307_1_" transform="translate(-9)">
+          <text id="Misto" transform="translate(-2.811 23.276)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Misto</tspan></text>
+          <path id="Rectangle_180_1_" d="M-18.3,15.1h8a4.481,4.481,0,0,1,4.5,4.5h0a4.481,4.481,0,0,1-4.5,4.5h-8a4.481,4.481,0,0,1-4.5-4.5h0A4.481,4.481,0,0,1-18.3,15.1Z" fill="#f36"/>
+        </g>
+        <g id="Group_308_1_" transform="translate(-18)">
+          <text id="Parole" transform="translate(79.625 23.276)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Parole</tspan></text>
+          <path id="Rectangle_181_1_" d="M63.7,15.1h8a4.481,4.481,0,0,1,4.5,4.5h0a4.481,4.481,0,0,1-4.5,4.5h-8a4.481,4.481,0,0,1-4.5-4.5h0A4.481,4.481,0,0,1,63.7,15.1Z" fill="#00c19c"/>
+        </g>
+        <g id="Group_309_1_" transform="translate(-27)">
+          <text id="Sintagmi" transform="translate(166.422 23.276)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Sintagmi</tspan></text>
+          <path id="Rectangle_182_1_" d="M150.5,15.1h8a4.481,4.481,0,0,1,4.5,4.5h0a4.481,4.481,0,0,1-4.5,4.5h-8a4.481,4.481,0,0,1-4.5-4.5h0A4.481,4.481,0,0,1,150.5,15.1Z" fill="orange"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

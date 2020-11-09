@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="157" viewBox="0 0 600 157">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_157308" data-name="Path 157308" d="M209,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,37.75,205.7,35.5,209,35.5Z" transform="translate(-203 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_157310" data-name="Path 157310" d="M209,55.8h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,58.05,205.7,55.8,209,55.8Z" transform="translate(-203 -55.8)"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Path_157312" data-name="Path 157312" d="M209,76.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,78.45,205.7,76.2,209,76.2Z" transform="translate(-203 -76.2)"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="Path_157232" data-name="Path 157232" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-203.5 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-legenda_04">
+      <rect width="600" height="157"/>
+    </clipPath>
+  </defs>
+  <g id="legenda_04" clip-path="url(#clip-legenda_04)">
+    <g id="legenda_04-2" data-name="legenda_04" transform="translate(0.61 -10.99)">
+      <g id="Layer_1" transform="translate(0.667 10.99)">
+        <g id="Isolation_Mode">
+          <text id="Numero_di_occorrenze" data-name="Numero di occorrenze" transform="translate(413.553 36.743)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Numero di occorrenze</tspan></text>
+          <text id="DIMENSIONE" transform="translate(392.313 14.15)" font-size="13" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">DIMENSIONE</tspan></text>
+          <circle id="Ellipse_33243" data-name="Ellipse 33243" cx="2.876" cy="2.876" r="2.876" transform="translate(395.492 33.502)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+          <circle id="Ellipse_33244" data-name="Ellipse 33244" cx="6.327" cy="6.327" r="6.327" transform="translate(392.048 26.578)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+          <text id="Metropoli" transform="translate(271.018 34.867)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Metropoli</tspan></text>
+          <g id="Group_24941" data-name="Group 24941" transform="translate(241.809 28.299)" clip-path="url(#clip-path)">
+            <line id="Line_7941" data-name="Line 7941" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7942" data-name="Line 7942" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7943" data-name="Line 7943" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7944" data-name="Line 7944" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7945" data-name="Line 7945" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7946" data-name="Line 7946" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7947" data-name="Line 7947" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7948" data-name="Line 7948" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7949" data-name="Line 7949" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7950" data-name="Line 7950" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7951" data-name="Line 7951" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7952" data-name="Line 7952" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7953" data-name="Line 7953" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7954" data-name="Line 7954" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7955" data-name="Line 7955" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7956" data-name="Line 7956" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7957" data-name="Line 7957" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7958" data-name="Line 7958" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7959" data-name="Line 7959" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7960" data-name="Line 7960" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7961" data-name="Line 7961" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Path_157309" data-name="Path 157309" d="M209,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,37.75,205.7,35.5,209,35.5Z" transform="translate(38.809 -7.201)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+          <text id="Ambiente_urbano" data-name="Ambiente urbano" transform="translate(271.018 59.34)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ambiente urbano</tspan></text>
+          <g id="Group_24942" data-name="Group 24942" transform="translate(241.809 51.737)" clip-path="url(#clip-path-2)">
+            <line id="Line_7962" data-name="Line 7962" x2="107.1" y2="89.25" transform="translate(-66 1.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7963" data-name="Line 7963" x2="107.1" y2="89.25" transform="translate(-62.4 0.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7964" data-name="Line 7964" x2="107.1" y2="89.25" transform="translate(-58.8 -1.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7965" data-name="Line 7965" x2="107.1" y2="89.25" transform="translate(-55.2 -2.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7966" data-name="Line 7966" x2="107.1" y2="89.25" transform="translate(-51.6 -4.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7967" data-name="Line 7967" x2="107.1" y2="89.25" transform="translate(-48 -5.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7968" data-name="Line 7968" x2="107.1" y2="89.25" transform="translate(-44.4 -7.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7969" data-name="Line 7969" x2="107.1" y2="89.25" transform="translate(-40.8 -8.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7970" data-name="Line 7970" x2="107.1" y2="89.25" transform="translate(-37.2 -10.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7971" data-name="Line 7971" x2="107.1" y2="89.25" transform="translate(-33.6 -11.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7972" data-name="Line 7972" x2="107.1" y2="89.25" transform="translate(-30 -13.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7973" data-name="Line 7973" x2="107.1" y2="89.25" transform="translate(-26.4 -14.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7974" data-name="Line 7974" x2="107.1" y2="89.25" transform="translate(-22.8 -16.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7975" data-name="Line 7975" x2="107.1" y2="89.25" transform="translate(-19.2 -17.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7976" data-name="Line 7976" x2="107.1" y2="89.25" transform="translate(-15.6 -19.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7977" data-name="Line 7977" x2="107.1" y2="89.25" transform="translate(-12 -20.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7978" data-name="Line 7978" x2="107.1" y2="89.25" transform="translate(-8.4 -22.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7979" data-name="Line 7979" x2="107.1" y2="89.25" transform="translate(-4.8 -23.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7980" data-name="Line 7980" x2="107.1" y2="89.25" transform="translate(-1.2 -25.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7981" data-name="Line 7981" x2="107.1" y2="89.25" transform="translate(2.4 -26.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7982" data-name="Line 7982" x2="107.1" y2="89.25" transform="translate(6 -28.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Path_157311" data-name="Path 157311" d="M209,55.8h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,58.05,205.7,55.8,209,55.8Z" transform="translate(38.809 -4.063)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+          <text id="Paesaggio_cosmico" data-name="Paesaggio cosmico" transform="translate(271.018 82.824)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Paesaggio cosmico</tspan></text>
+          <g id="Group_24943" data-name="Group 24943" transform="translate(241.809 75.291)" clip-path="url(#clip-path-3)">
+            <line id="Line_7983" data-name="Line 7983" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7984" data-name="Line 7984" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7985" data-name="Line 7985" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7986" data-name="Line 7986" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7987" data-name="Line 7987" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7988" data-name="Line 7988" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7989" data-name="Line 7989" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7990" data-name="Line 7990" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7991" data-name="Line 7991" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7992" data-name="Line 7992" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7993" data-name="Line 7993" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7994" data-name="Line 7994" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7995" data-name="Line 7995" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7996" data-name="Line 7996" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7997" data-name="Line 7997" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7998" data-name="Line 7998" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_7999" data-name="Line 7999" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_8000" data-name="Line 8000" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_8001" data-name="Line 8001" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_8002" data-name="Line 8002" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Line_8003" data-name="Line 8003" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Path_157313" data-name="Path 157313" d="M209,76.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,78.45,205.7,76.2,209,76.2Z" transform="translate(38.809 -0.909)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+        </g>
+      </g>
+      <g id="Isolation_Mode_1_" transform="translate(-0.61 10.99)">
+        <text id="TEMPO_DELLA_STORIA" data-name="TEMPO DELLA STORIA" transform="translate(0 13)" font-size="13" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">TEMPO DELLA STORIA</tspan></text>
+      </g>
+    </g>
+    <g id="Group_24681" data-name="Group 24681">
+      <path id="Path_148042" data-name="Path 148042" d="M7.5,97.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C1.5,99.45,4.2,97.2,7.5,97.2Z" transform="translate(0 2.337)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <path id="Path_148043" data-name="Path 148043" d="M7.5,128h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C1.5,130.25,4.2,128,7.5,128Z" transform="translate(0 7.099)" fill="none" stroke="red" stroke-miterlimit="10" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <text id="Luoghi_scomparsi_dalla_narrazione" data-name="Luoghi scomparsi dalla narrazione" transform="translate(29 142.667)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Luoghi scomparsi dalla narrazione</tspan></text>
+      <text id="Ambientazioni_di_testi_in_cui_presente_e_passato_si_fondono_in_un_testo_misto" data-name="Ambientazioni di testi in cui presente
+e passato si fondono in un testo misto" transform="translate(29 97)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="9">Ambientazioni di testi in cui presente</tspan><tspan x="0" y="21">e passato si fondono in un </tspan><tspan y="21" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">testo misto</tspan></text>
+      <text id="Ambientazioni_di_testi_in_cui_il_tempo_della_storia_è_collocato_in_un_tempo_indefinito_" data-name="Ambientazioni di testi in cui il tempo
+della storia è collocato in un tempo indefinito " transform="translate(30 25)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="9">Ambientazioni di testi in cui il tempo</tspan><tspan x="0" y="21">della storia è collocato in un </tspan><tspan y="21" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">tempo indefinito </tspan></text>
+      <text id="Ambientazioni_di_testi_in_cui_il_tempo_della_storia_è_collocato_nel_passato" data-name="Ambientazioni di testi in cui il tempo
+della storia è collocato nel passato" transform="translate(30 61)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="9">Ambientazioni di testi in cui il tempo</tspan><tspan x="0" y="21">della storia è collocato nel </tspan><tspan y="21" font-family="HKGrotesk-MediumLegacy, HK Grotesk" font-weight="500">passato</tspan></text>
+      <path id="Path_157234" data-name="Path 157234" d="M7.654,76.8C4.585,76.8,2,74.514,2,71.8s2.585-5,5.654-5h9.692c3.069,0,5.654,2.286,5.654,5s-2.585,5-5.654,5Z" transform="translate(-1 -5.309)" fill="#dbdbdb"/>
+      <g id="Group_24680" data-name="Group 24680">
+        <g id="Group_24678" data-name="Group 24678" transform="translate(0.703 26.322)" clip-path="url(#clip-path-4)">
+          <line id="Line_7918" data-name="Line 7918" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7919" data-name="Line 7919" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7920" data-name="Line 7920" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7921" data-name="Line 7921" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7922" data-name="Line 7922" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7923" data-name="Line 7923" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7924" data-name="Line 7924" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7925" data-name="Line 7925" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7926" data-name="Line 7926" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7927" data-name="Line 7927" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7928" data-name="Line 7928" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7929" data-name="Line 7929" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7930" data-name="Line 7930" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7931" data-name="Line 7931" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7932" data-name="Line 7932" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7933" data-name="Line 7933" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7934" data-name="Line 7934" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7935" data-name="Line 7935" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7936" data-name="Line 7936" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7937" data-name="Line 7937" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+          <line id="Line_7938" data-name="Line 7938" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        </g>
+        <path id="Path_157233" data-name="Path 157233" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-202.797 -9.178)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+      </g>
+    </g>
+    <text id="CONTESTI" transform="translate(243.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">CONTESTI</tspan></text>
+  </g>
+</svg>
