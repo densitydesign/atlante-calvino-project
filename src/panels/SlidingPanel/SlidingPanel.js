@@ -44,8 +44,8 @@ export default class SlidingPanel extends React.Component {
     const interactiveViewLink = this.props.interactiveViewUrl ? (
       <a
         onClick={(e) => {
-          e.preventDefault()
-          this.props.toggleFlowOfStories()
+          
+          this.props.toggleFlowOfStories() && this.props.toggleTimeAndWorks()
         }}
         className="button-text"
         href={process.env.PUBLIC_URL + this.props.interactiveViewUrl}

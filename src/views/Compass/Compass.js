@@ -81,6 +81,7 @@ export default class Compass extends React.Component {
             />
 
             <SlidingPanel
+              toggleTimeAndWorks={this.toggleTimeAndWorks}
               id="2"
               open={this.state.selectedPanel >= 2}
               zIndex="2"
