@@ -93,6 +93,7 @@ class Compass extends React.Component {
             />
 
             <SlidingPanel
+              toggleTimeAndWorks={this.toggleTimeAndWorks}
               id="2"
               toggleTempoEOpere={this.toggleTempoEOpere}
               open={this.state.selectedPanel >= 2}
