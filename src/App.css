@@ -183,7 +183,7 @@ sup {
 }
 .content {
   padding: 0 calc((100% / 16) * 2);
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
   grid-column: 1 / 17;
 }
 .sidebar {
@@ -330,6 +330,7 @@ li {
 .pubblication-abstract {
   margin-top: 1rem;
 }
+
 
 /*BUTTON*/
 .button-text {

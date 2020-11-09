@@ -11,11 +11,9 @@ class Project extends React.Component {
     return (
       <>
         <IndexMenuHeader />
-        <div className="">
-          <div
-            className="col-md-12 col-lg-8"
-            style={{ padding: '0 4em 0em 8em' }}
-          >
+
+        <div className="ac-grid-24">
+          <div className="content">
             <Trans i18nKey={'text'} t={this.props.t} ns="project">
               <h1>Progetto</h1>
               <h2>Uscire a vedere</h2>
@@ -60,8 +58,10 @@ class Project extends React.Component {
                 dell’intera opera di Calvino.
               </p>
             </Trans>
+            </div>
           </div>
-          <div className="col-md-12 offset-lg-2 col-lg-6">
+          <div className="ac-grid-24">
+          <div className="content" style={{gridColumn:'4 / span 16'}}>
             <p>
               Le due anime del progetto, quella letteraria e quella del design
               dell’informazione, sono state chiamate a mescolarsi per trovare
@@ -94,7 +94,9 @@ class Project extends React.Component {
               di proporre una nuova “narrazione visuale” dell’autore.
             </p>
           </div>
-        </div>
+
+            </div>
+
         <Footer />
       </>
     )
