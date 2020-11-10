@@ -1,13 +1,39 @@
 .info-box {
   border: 1px solid blue;
-  padding: 1rem;
+  padding: 2rem;
   display: inline-block;
   border-radius: 6px;
+  font-size: 1rem !important;
+  margin: 2rem 0 3rem;
+}
+
+.info-box * {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.info-box p {
+  margin-bottom: 0.9rem;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.info-box li {
+  list-style-type: circle;
+  margin-bottom: 0.5rem;
 }
 
 .capta-list {
-  grid-column: 2 / span 6;
+  grid-column: 3 / span 6;
   border-right: 1px solid black;
+}
+
+.capta-list ul {
+  padding: 0;
+  margin: 0;
 }
 
 .capta-focus {
