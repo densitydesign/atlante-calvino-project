@@ -125,7 +125,7 @@ class AltOptions extends Component {
     if (!multiple) {
       current = anySelected ? options[indices[0]].label : undefined
     } else {
-      current = anySelected ? indices.map((i) => options[i].label) : []
+      current = anySelected ? indices.map((i) => this.props.t('options.'+options[i].label)) : []
     }
     return (
       <div className="options-container" style={style}>
@@ -134,7 +134,7 @@ class AltOptions extends Component {
             {!multiple && anySelected && (
               <div>
                 <span className="micro-title">{title}</span>
-                <span className="current-selection">{current}</span>
+                <span className="current-selection">{this.props.t('options.'+current)}</span>
               </div>
             )}
             {multiple && anySelected && (

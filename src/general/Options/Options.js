@@ -87,7 +87,7 @@ class Options extends Component {
               <div>
                 <span className="micro-title">{this.props.title}</span>
                 <span className="current-selection">
-                  {this.state.selection}
+                  {this.props.t('options.'+this.state.selection)}
                 </span>
               </div>
             )}
