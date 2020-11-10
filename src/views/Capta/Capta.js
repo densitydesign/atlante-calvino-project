@@ -25,7 +25,7 @@ export default function Capta() {
             nostro lavoro e che è ormai conosciuto nell’ambito delle Digital
             Humanities.
           </p>
-          <p>
+          <p className="cite">
             «Capta is “taken” actively while data is assumed to be a “given”
             able to be recorded and observed. From this distinction, a world of
             differences arises. Humanistic inquiry acknowledges the situated,
