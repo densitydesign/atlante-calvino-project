@@ -1,6 +1,5 @@
 import React from "react"
 import { withTranslation, Trans } from "react-i18next"
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 import { ReactComponent as DubbioIcon } from "../IndexMenu/icons/dubitare_blue.svg"
 import { ReactComponent as NebbiaIcon } from "../IndexMenu/icons/nebbia_blue.svg"
 import { ReactComponent as CancellazioneIcon } from "../IndexMenu/icons/cancellazione_blue.svg"
@@ -15,12 +14,13 @@ import { Link } from "react-router-dom"
 import "./Phases.css"
 import "../../App.css"
 import Footer from "../../headers/Footer/Footer"
+import IndexMenuHeader from "../../headers/IndexMenuHeader"
 
 class Phases extends React.Component {
   render() {
     return (
       <>
-        <HamburgerCompassHeader />
+        <IndexMenuHeader />
         <div id="phenomena" className="phenomena-intro-grid">
           <div className="currentPhase">
             <div className="subheaders-container">
