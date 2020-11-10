@@ -637,3 +637,8 @@ a:visited.button-text {
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}

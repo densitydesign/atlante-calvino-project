@@ -1,10 +1,18 @@
 .info-box {
-  border: 1px solid blue;
+  border: 1px solid var(--dark-blue);
+  background-color: #5151fc1a;
   padding: 2rem;
   display: inline-block;
   border-radius: 6px;
   font-size: 1rem !important;
   margin: 2rem 0 3rem;
+}
+.info-box:before {
+  content: "Nota sulla terminologia";
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.6rem;
 }
 
 .info-box * {
@@ -29,6 +37,7 @@
 .capta-list {
   grid-column: 3 / span 6;
   border-right: 1px solid black;
+  padding: 2rem 1rem 2rem 0;
 }
 
 .capta-list ul {
@@ -36,7 +45,62 @@
   margin: 0;
 }
 
+.capta-list li {
+  margin: 0;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease;
+  font-size: 1.1428571429rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.capta-list li:hover {
+  /* color: var(--dark-blue); */
+  left: 1rem;
+}
+
+.capta-list li.active-capta {
+  color: var(--dark-blue);
+  left: 0.5rem;
+}
+
 .capta-focus {
-  grid-column-start: 8;
+  grid-column-start: 9;
   grid-column-end: -3;
+  padding: 2rem 0 2rem 2rem;
+}
+
+.downloadArea {
+  display: flex;
+  align-items: center;
+}
+
+.dataset-download {
+  background-color: var(--dark-blue);
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+  color: white;
+  padding: 0 0.5rem;
+  opacity:0.9;
+  margin-right: 1rem;
+  outline: none;
+}
+
+.dataset-download:hover, .dataset-download:focus {
+  opacity: 1;
+  color:white;
+}
+
+.dataset-download.disabled {
+  background-color: #444;
+}
+
+.dataset-license {
+  height: 31px;
+  display: inline-flex;
 }

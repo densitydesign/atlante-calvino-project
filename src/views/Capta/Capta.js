@@ -3,6 +3,7 @@ import IndexMenuHeader from "../../headers/IndexMenuHeader";
 import Footer from "../../headers/Footer/Footer";
 import capta from "./capta-list";
 import styles from "./capta.module.css";
+import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
   const [selected, setSelected] = useState(capta[0]);
@@ -58,48 +59,86 @@ export default function Capta() {
           </p>
           <span className={styles["info-box"]}>
             <p>
-              Per un’agile comprensione del testo di questa pagina, è importante
+              Per meglio comprendere il testo di questa pagina è importante
               sottolineare che:
             </p>
             <ul>
-              <li>L’ opera è l’insieme di tutti i testi;</li>
+              <li>l’opera è l’insieme di tutti i testi;</li>
               <li>
-                Il testo è il singolo racconto/volume indicato da un titolo;
+                il testo è il singolo racconto/volume indicato da un titolo;
               </li>
               <li>
-                L’ occorrenza è la parola, la formula o la frase presa in
-                analisi come unità minima del dataset;
+                l’occorrenza è la parola, la formula o la frase presa in analisi
+                come unità minima del dataset;
               </li>
               <li>
-                La lunghezza dei testi può essere calcolata in numero di
+                la lunghezza dei testi può essere calcolata in numero di
                 caratteri o in numero di parole;
               </li>
               <li>
-                La posizione delle occorrenze nel testo è indicata tramite il
+                la posizione delle occorrenze nel testo è indicata tramite il
                 numero di caratteri;
               </li>
               <li>
-                Posizione e lunghezza delle occorrenze possono essere
+                posizione e lunghezza delle occorrenze possono essere
                 “normalizzate” ovvero ricalcolate in percentuale rispetto al
                 totale dei caratteri di riferimento.
               </li>
             </ul>
           </span>
           <p>
-            Di seguito i dati, o i capta, e gli strumenti che abbiamo usato o
-            costruito.
+            Di seguito i dati, o capta, e gli strumenti che abbiamo costruito.
           </p>
         </div>
       </div>
-      <div className="ac-grid-24" style={{ borderTop: "1px solid black", borderBottom: "1px solid black" }}>
+      <div
+        className="ac-grid-24"
+        style={{
+          borderTop: "1px solid black",
+          borderBottom: "1px solid black",
+        }}
+      >
         <div className={styles["capta-list"]}>
           <ul>
             {capta.map((d) => (
-              <li key={d.name} onClick={()=>setSelected(d)}>{d.name}</li>
+              <li
+                key={d.name}
+                onClick={() => setSelected(d)}
+                className={d === selected ? styles["active-capta"] : ""}
+              >
+                {d.name}
+              </li>
             ))}
           </ul>
         </div>
-            <div className={styles["capta-focus"]}>{selected.jsx}</div>
+        <div className={styles["capta-focus"]}>
+          <h2>{selected.name}</h2>
+          <div className={styles.downloadArea}>
+            <a
+              href={selected.file}
+              className={[
+                styles["dataset-download"],
+                "noselect",
+                selected.open ? "" : `disabled ${styles.disabled}`,
+              ].join(" ")}
+              download
+            >
+              <BsFileEarmarkSpreadsheet style={{ marginRight: "0.5rem" }} />
+              {selected.open
+                ? "scarica il dataset"
+                : "dataset non ancora disponibile"}
+            </a>
+            <a
+              href={selected.licenseUrl}
+              className={[styles["dataset-license"]].join(" ")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={selected.license} />
+            </a>
+          </div>
+          {selected.jsx}
+        </div>
       </div>
       <div className="ac-grid-24">
         <div className="content">

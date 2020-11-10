@@ -3,7 +3,8 @@ import React from "react";
 const corpus = {
     name: "Corpus",
     type: "data",
-    license: "https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png",
+    license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
+    licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     open:true,
     file:"",
     jsx: (
@@ -13,6 +14,9 @@ const corpus = {
 
 const saggi = {
     name: "Saggi: L’arcipelago dei nomi",
+    type: "data",
+    license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
+    licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     open:false,
     file:"",
     jsx: (
