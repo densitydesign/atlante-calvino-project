@@ -82,7 +82,6 @@ class Options extends Component {
     return (
       <div className="options-container" style={this.props.style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
-<<<<<<< HEAD
           <Dropdown.Toggle disabled={this.props.disabled}>
             {!this.props.data.multiple && (
               <div>
@@ -93,17 +92,6 @@ class Options extends Component {
               </div>
             )}
             {this.props.data.multiple && this.props.title}
-=======
-          <Dropdown.Toggle>
-            { !this.props.data.multiple && (
-                <div>
-                  <span className="micro-title">{this.props.title}</span>
-                  <span className="current-selection">{this.state.selection}</span>
-                </div>
-              )
-            }
-            {/* { this.props.data.multiple && this.props.title } */}
->>>>>>> 290df94... ricerca cancellazione
           </Dropdown.Toggle>
           <Dropdown.Menu
             className={classnames({
@@ -159,10 +147,5 @@ Options.defaultProps = {
     options: [],
     multiple: false,
   },
-<<<<<<< HEAD
   title: "Options",
-=======
-  // title: 'Options',
-
->>>>>>> 290df94... ricerca cancellazione
 }
