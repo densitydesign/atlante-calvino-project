@@ -98,8 +98,8 @@ export default function Capta() {
           borderBottom: "1px solid black",
         }}
       >
-        <div className={styles["capta-list"]}>
-          <ul>
+        <div className={[styles["capta-list"]].join(" ")}>
+          <ul className="sticky-element">
             {capta.map((d) => (
               <li
                 key={d.name}
@@ -113,30 +113,52 @@ export default function Capta() {
         </div>
         <div className={styles["capta-focus"]}>
           <h2>{selected.name}</h2>
-          <div className={styles.downloadArea}>
-            <a
-              href={selected.file}
-              className={[
-                styles["dataset-download"],
-                "noselect",
-                selected.open ? "" : `disabled ${styles.disabled}`,
-              ].join(" ")}
-              download
-            >
-              <BsFileEarmarkSpreadsheet style={{ marginRight: "0.5rem" }} />
-              {selected.open
-                ? "scarica il dataset"
-                : "dataset non ancora disponibile"}
-            </a>
-            <a
-              href={selected.licenseUrl}
-              className={[styles["dataset-license"]].join(" ")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={selected.license} />
-            </a>
-          </div>
+          {selected.type === "data" && (
+            <div className={styles.downloadArea}>
+              {selected.files.map((file) => {
+                return (
+                  <a
+                    href={file.file}
+                    className={[
+                      styles["dataset-download"],
+                      "noselect",
+                      selected.open ? "" : `disabled ${styles.disabled}`,
+                    ].join(" ")}
+                    download={file.label}
+                  >
+                    <BsFileEarmarkSpreadsheet
+                      style={{ marginRight: "0.5rem" }}
+                    />
+                    {selected.open
+                      ? file.label.replace("[Atlante Calvino] ", "")
+                      : "dataset non ancora disponibile"}
+                  </a>
+                );
+              })}
+              {/* <a
+                href={selected.file}
+                className={[
+                  styles["dataset-download"],
+                  "noselect",
+                  selected.open ? "" : `disabled ${styles.disabled}`,
+                ].join(" ")}
+                download="renamed.txt"
+              >
+                <BsFileEarmarkSpreadsheet style={{ marginRight: "0.5rem" }} />
+                {selected.open
+                  ? "scarica il dataset"
+                  : "dataset non ancora disponibile"}
+              </a> */}
+              <a
+                href={selected.licenseUrl}
+                className={[styles["dataset-license"]].join(" ")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={selected.license} />
+              </a>
+            </div>
+          )}
           {selected.jsx}
         </div>
       </div>

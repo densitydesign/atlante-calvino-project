@@ -26,12 +26,18 @@
 
 .info-box ul {
   margin: 0;
-  padding-left: 1.3rem;
+  padding-left: 0;
 }
 
 .info-box li {
-  list-style-type: circle;
   margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.info-box li:before {
+  content: "–";
+  position: absolute;
+  left: 0.2rem;
 }
 
 .capta-list {
@@ -68,14 +74,15 @@
 }
 
 .capta-focus {
-  grid-column-start: 9;
+  grid-column-start: 10;
   grid-column-end: -3;
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem 0;
 }
 
 .downloadArea {
   display: flex;
   align-items: center;
+  margin: 3rem 0;
 }
 
 .dataset-download {
@@ -85,15 +92,16 @@
   align-items: center;
   border-radius: 3px;
   color: white;
-  padding: 0 0.5rem;
-  opacity:0.9;
+  padding: 0 1rem;
+  opacity: 0.9;
   margin-right: 1rem;
   outline: none;
 }
 
-.dataset-download:hover, .dataset-download:focus {
+.dataset-download:hover,
+.dataset-download:focus {
   opacity: 1;
-  color:white;
+  color: white;
 }
 
 .dataset-download.disabled {
@@ -103,4 +111,22 @@
 .dataset-license {
   height: 31px;
   display: inline-flex;
+}
+
+.capta-focus li:before {
+  content: "–";
+  padding: 0 0.5rem 0 0.2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .capta-focus {
+    grid-column-start: 10;
+    grid-column-end: -4;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .capta-focus {
+    grid-column-start: 10;
+    grid-column-end: -6;
+  }
 }
