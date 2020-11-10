@@ -13,15 +13,14 @@ class Equipe extends React.Component {
   render() {
     return (
       <>
-        <IndexMenuHeader
-        menuAction={'openIndex'}
-      />
+        <IndexMenuHeader menuAction={"openIndex"} />
         <div className="ac-grid-24 has-sidebar">
           <Trans i18nKey={"testo_equipe"} t={this.props.t} ns="equipe">
           <div className="content">
             <h1>Équipe</h1>
             <h2>Équipe letteraria, Unité d’italien</h2>
-            <h3 style={{color:'black'}}>Département de langues et littératures romanes,
+            <h3 style={{ color: "black" }}>
+              Département de langues et littératures romanes,
               <br />
               Université de Genève
             </h3>
@@ -51,7 +50,8 @@ class Equipe extends React.Component {
             </ul>
             <br />
             <h2>DensityDesign Research Lab</h2>
-            <h3 style={{color:'black'}}>Dipartimento di Design
+            <h3 style={{ color: "black" }}>
+              Dipartimento di Design
               <br />
               Politecnico di Milano
             </h3>
@@ -90,7 +90,10 @@ class Equipe extends React.Component {
               </a>
               .
               <br />
-              Ringraziamo Lorenzo Faggi per la registrazione, presso lo spazio occupato Piano Terra,  dell’audio del video introduttivo
+              Ringraziamo Lorenzo Faggi per la registrazione, presso lo spazio
+              occupato Piano Terra, dell’audio del video introduttivo.
+              <br />
+              La voce narrante italiana è di Beatrice Gobbo.
             </p>
           </div>
           </Trans>
