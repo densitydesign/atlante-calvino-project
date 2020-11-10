@@ -1,78 +1,78 @@
 {
-    "unige": [
-        {
-            "name": "Francesca Serra",
-            "role": "Direttrice del progetto",
-            "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/serra/"
-        },
-        {
-            "name": "Valeria Cavalloro",
-            "role": "Ricercatrice",
-            "url": "https://unige.academia.edu/ValeriaCavalloro"
-        },
-        {
-            "name": "Virginia Giustetto",
-            "role": "Ricercatrice",
-            "url": "https://www.unige.ch/lettres/roman/unites/italien/collaborateurs/virginia-giustetto/"
-        },
-        {
-            "name": "Margherita Parigini",
-            "role": "Ricercatrice",
-            "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/margherita-parigini/"
-        }
-    ],
-    "density": [
-        {
-            "name": "Michele Mauri",
-            "role": "Co-direzione del progetto",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Tommaso Elli",
-            "role": "Ricerca in design e sviluppo",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Ángeles Briones",
-            "role": "Ricerca in design e gestione del progetto",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Beatrice Gobbo",
-            "role": "Ricerca in design e sviluppo",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Gabriele Colombo",
-            "role": "Ricerca in design",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Marco Pappalepore",
-            "role": "Sviluppo",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Serena Del Nero",
-            "role": "Ricerca in Design",
-            "url": "http://densitydesign.org/"
-        },
-        {
-            "name": "Matteo Banal",
-            "role": "Ricerca in Design",
-            "url": "http://densitydesign.org/"
-        },
+  "unige": [
+    {
+      "name": "Francesca Serra",
+      "role": "Direttrice del progetto",
+      "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/serra/"
+    },
+    {
+      "name": "Valeria Cavalloro",
+      "role": "Ricercatrice",
+      "url": "https://unige.academia.edu/ValeriaCavalloro"
+    },
+    {
+      "name": "Virginia Giustetto",
+      "role": "Ricercatrice",
+      "url": "https://www.unige.ch/lettres/roman/unites/italien/collaborateurs/virginia-giustetto/"
+    },
+    {
+      "name": "Margherita Parigini",
+      "role": "Ricercatrice",
+      "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/margherita-parigini/"
+    }
+  ],
+  "density": [
+    {
+      "name": "Michele Mauri",
+      "role": "Co-direzione del progetto",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Tommaso Elli",
+      "role": "Ricerca in design e sviluppo",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Ángeles Briones",
+      "role": "Ricerca in design e gestione del progetto",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Beatrice Gobbo",
+      "role": "Ricerca in design e sviluppo",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Gabriele Colombo",
+      "role": "Ricerca in design",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Marco Pappalepore",
+      "role": "Sviluppo",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Serena Del Nero",
+      "role": "Ricerca in Design",
+      "url": "http://densitydesign.org/"
+    },
+    {
+      "name": "Matteo Banal",
+      "role": "Ricerca in Design",
+      "url": "http://densitydesign.org/"
+    },
 
-        {
-            "name": "Giovanni Lombardi",
-            "role": "Ricerca in Design",
-            "url": "http://densitydesign.org/"
-        },
+    {
+      "name": "Giovanni Lombardi",
+      "role": "Ricerca in Design",
+      "url": "http://densitydesign.org/"
+    },
 
-        {
-            "name": "Paolo Ciuccarelli",
-            "role": "Co-direzione del progetto",
-            "url": "http://densitydesign.org/"
-        }
-    ]
+    {
+      "name": "Paolo Ciuccarelli",
+      "role": "Co-direzione del progetto",
+      "url": "http://densitydesign.org/"
+    }
+  ]
 }
