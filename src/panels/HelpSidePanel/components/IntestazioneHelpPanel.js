@@ -24,7 +24,7 @@ export default function IntestazioneHelpPanel({
         <strong>
           <HashLink to={linkItinerario}>
             <u>
-              <small className="text-dark-blue">{nomeItinerario}</small>
+              <small className="text-dark-blue text-uppercase">{nomeItinerario}</small>
             </u>
           </HashLink>
         </strong>
