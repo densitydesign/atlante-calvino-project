@@ -38,22 +38,11 @@ export default class SpaceInformationSheet extends React.Component
             base del grado di dipendenza dei luoghi finzionali da quelli
             geospaziali<sup> 1</sup>. Per Barbara Piatti gli <em>invented
             places</em> sono tutti i luoghi inventati creati all’interno di realtà
-            geograficamente familiari<sup> 2</sup>. A testimonianza di come
-            l’invenzione sia «una vena naturale»<sup> 3</sup> di Calvino,
-            dall’inizio alla fine della sua vita, le ambientazioni inventate del
-            corpus si distribuiscono in modo omogeneo nel corso del tempo: il primo
-            luogo compare nel 1948, ed è il paesino di <em>Sant’Alcide </em>
-            <span style={{color:'#5151fc'}}><strong>(1)</strong></span> in cui è
-            ambientato il racconto <em>Isabella e Fioravanti</em>; l’ultimo, nel
-            1982, è <em>Casa Palomar </em>  <span style={{color:'#5151fc'}}>
-            <strong>(2)</strong></span>, la dimora
-            cittadina del protagonista dell’ultima raccolta dell’autore.
-            Osservando la visualizzazione, si nota anche
-            come questa distribuzione riguardi tutte le tipologie di opere: i
-            romanzi, i racconti confluiti in raccolta e i testi pubblicati su
-            periodici e poi rimasti inediti. Prendendo singolarmente in esame le
-            tre differenti sezioni si evidenziano tuttavia delle caratteristiche
-            molto diverse. Vediamo quali. </p>
+            geograficamente familiari<sup> 2</sup>.<br></br>
+            Le ambientazioni inventate del corpus si distribuiscono in modo omogeneo nel corso del tempo: la prima occorrenza compare nel 1948 (il paesino di <em>Sant’Alcide </em>
+            <span style={{color:'#5151fc'}}><strong>(1)</strong></span>) in cui è ambientato il racconto  <em>Isabella e Fioravanti</em>; l’ultimo, nel 1982, è <em>Casa Palomar </em>  <span style={{color:'#5151fc'}}>
+            <strong>(2)</strong></span>, la dimora cittadina del protagonista del libro che porta il suo nome.<br></br>
+            Osservando la visualizzazione, si nota anche come questa distribuzione riguardi tutte le tipologie di opere: i romanzi, i racconti confluiti in raccolta e i testi pubblicati su periodici e poi rimasti inediti. Prendendo singolarmente in esame le tre differenti sezioni si evidenziano tuttavia delle caratteristiche molto diverse. Vediamo quali.</p>
           </div>
         </div>
         <div className={SheetStyles.gridRow}>
@@ -61,26 +50,18 @@ export default class SpaceInformationSheet extends React.Component
           <div className={SheetStyles.paragraph}>
             <p>La prima sezione, quella dei romanzi, è senza dubbio quella in cui si
             registra la maggior concentrazione di luoghi inventati, con più della metà
-            delle opere (5 su 9) che presentano almeno un’ambientazione di questo tipo. È
+            delle opere (5 su 10) che presentano almeno un’ambientazione di questo tipo. È
             noto che la vena immaginifica di Calvino si sviluppi maggiormente nelle opere
             più estese del corpus, anche in virtù del complesso rapporto dell’autore con
-            il romanzo novecentesco tradizionale<sup> 4</sup>. Si pensi alle storie della
+            il romanzo novecentesco tradizionale. «Calvino è sempre stato un narratore che non sente il romanzo, che persino ne diffida. Narratore anti-romanzesco: nel senso che la problematica sociale e morale, la scienza della vita quotidiana come microstoriografia, che caratterizzano il romanzo moderno, sono sempre stati fuori del suo orizzonte»<sup> 4</sup>. Si pensi alle storie della
             <em> Trilogia degli antenati</em>, ambientate tra gli alberi di Ombrosa e i
             boschi di Terralba. Oppure alle città visionarie e simboliche esplorate da
             Marco Polo nelle Città invisibili, o ancora, ai luoghi dai nomi
             impronunciabili – Petkwo, Kudgiwa, Oquedal – in cui si muovono i personaggi di
             <em> Se una notte d’inverno un viaggiatore</em>. Il modo in cui queste
             ambientazioni fantastiche si inseriscono nel tessuto narrativo delle storie
-            merita tuttavia uno sguardo più attento. Le visualizzazioni nel secondo e del
-            terzo livello di analisi mostrano come in molti casi i luoghi d’invenzione
-            intrattengano uno stretto dialogo con quelli reali e riconoscibili. Pensiamo,
-            ad esempio, al <em>Visconte dimezzato</em>, primo capitolo della Trilogia. Il
-            racconto si apre in Boemia, durante la guerra cristiana contro i Turchi, ma la
-            storia principale si sviluppa a Terralba, terra natale del visconte Medardo,
-            il quale, colpito da una palla di cannone ma miracolosamente salvo per metà,
-            fa ritorno a casa. Terralba si trova in Italia e appartiene alla Repubblica di
-            Genova: è dunque all’interno di uno spazio reale e definito che hanno luogo le
-            avventure fantastiche del protagonista. </p>
+            merita tuttavia uno sguardo più attento.
+            </p>
           </div>
         </div>
         <div className={SheetStyles.gridRow} style={{marginTop:'3rem'}}>

@@ -59,8 +59,7 @@ export default class DoubtInformationSheet extends React.Component
                   <div className={SheetStyles.gridRow}>
                     <h2 className={SheetStyles.titleH2}>La nebbia che non c’è</h2>
                       <p className={SheetStyles.paragraph}>
-                      Mettere a confronto l’inizio <span style={{color:'#0E08F9'}}>(a)</span>
-                      e la fine <span style={{color:'#0E08F9'}}>(b)</span> della carriera narrativa
+                      Mettere a confronto l’inizio <span style={{color:'#0E08F9'}}>(a)</span> e la fine <span style={{color:'#0E08F9'}}>(b)</span> della carriera narrativa
                       di Calvino permette di scoprire un dettaglio non trascurabile
                       del modo in cui l’autore ha impiegato i due fenomeni nel corso
                       della sua carriera. Il confronto mostra un progressivo
@@ -69,14 +68,16 @@ export default class DoubtInformationSheet extends React.Component
                       vent’anni, mano a mano diminuisce a favore della
                       cancellazione. Nonostante l’impressione inversa che viene
                       generalmente percepita, ovverosia che siano le opere tardive
-                      di Calvino a essere immerse nella nebbia. La cancellazione
+                      di Calvino a essere immerse nella nebbia.<br></br>
+                      La cancellazione
                       rappresenta, in un certo senso, l’effetto della presenza della
                       nebbia; a partire dagli anni Sessanta sembra, però, che non ci
                       sia più bisogno di integrare nel testo un fenomeno fisico in
                       grado di giustificare la scomparsa dell’universo narrativo. La
                       cancellazione si trasforma in una forza che trascende il
                       fenomeno naturale; l’universo narrativo si disfa sotto gli
-                      occhi del lettore senza cause apparenti. Il confronto consente
+                      occhi del lettore senza cause apparenti.<br></br>
+                      Il confronto consente
                       di verificare la tendenza dei testi calviniani a spostarsi nel
                       corso del tempo verso dimensioni sempre più incorporee. La
                       nebbia, che si ha l’impressione di incontrare nelle opere
@@ -111,7 +112,8 @@ export default class DoubtInformationSheet extends React.Component
                       Dopo appena una rivoluzione della Galassia, scopre che qualcuno lo ha cancellato
                       e riscritto, imitando maldestramente il suo gesto; ha inizio allora una catena
                       di cancellazioni reciproche destinata a ricoprire di tracce illeggibili l’intero
-                      universo. Entrambi questi testi raccontano un ostacolo visivo, ma se nel primo
+                      universo.<br></br>
+                      Entrambi questi testi raccontano un ostacolo visivo, ma se nel primo
                       caso ci troviamo di fronte a una “sottrazione” subita dal personaggio, nel
                       secondo abbiamo a che vedere con una forma di “eliminazione” volontaria che
                       assume il ruolo di motore della creazione. Si tratta di un chiaro momento di
