@@ -22,7 +22,7 @@ export default function PlotMainHelp({ helpProps }) {
         linkItinerario={"/itineraries#form"}
         linkTappa3={"/doubt/phase3"}
         titolo={t("trama")}
-        linkApprofondimento="/"
+        linkApprofondimento="/form/phase3/focus"
         nomeItinerario={t("help_panel.itinerario_forma")}
       />
       <Tabs
@@ -91,7 +91,7 @@ export default function PlotMainHelp({ helpProps }) {
               sequenze, che può anche essere usato per interrogare le
               visualizzazioni selezionando un proprio intervallo personalizzato
               e verificando se e quali trame hanno un’estensione che coincide
-              esattamente con i confini scelti.Q
+              esattamente con i confini scelti.
             </p>
           </Trans>
           <p>
