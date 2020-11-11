@@ -68,7 +68,7 @@ export default class SpaceInformationSheet extends React.Component
           <div className={SheetStyles.paragraph}>
             <p>Le visualizzazioni nel secondo e del terzo livello di analisi mostrano come in
             molti casi i luoghi d’invenzione intrattengano uno stretto dialogo con quelli
-            reali e riconoscibili. Pensiamo, ad esempio, al Visconte dimezzato, primo libro
+            reali e riconoscibili. Pensiamo, ad esempio, al <em>Visconte dimezzato</em>, primo libro
             della <em>Trilogia</em>. Il racconto si apre in Boemia, durante la guerra cristiana
             contro i Turchi, ma la storia principale si sviluppa a Terralba, terra natale
             del visconte Medardo, il quale, colpito da una palla di cannone ma
@@ -82,7 +82,7 @@ export default class SpaceInformationSheet extends React.Component
             esplicitamente incorniciata all’interno di un luogo localizzabile,
             anche Ombrosa è in qualche modo legata alla Repubblica di Genova,
             di cui è comune tributario. Pertanto, seppur in modo meno
-            evidente, anche nel caso del Barone rampante lo spazio fantastico
+            evidente, anche nel caso del <em>Barone rampante</em> lo spazio fantastico
             si intreccia a quello storico. </p>
             </div>
             <div className={SheetStyles.sideContent}>
@@ -134,7 +134,8 @@ export default class SpaceInformationSheet extends React.Component
                       tratti di testi usciti su periodici e poi non più raccolti, la diffusione di
                       luoghi inventati è decisamente inferiore. Tuttavia, come mostra la
                       visualizzazione, si rilevano alcune zone di concentrazione: una, in particolare,
-                      più interessante delle altre. Tra la fine del 1953 e l’inizio del 1954, dopo
+                      più interessante delle altre. <br></br>
+                      Tra la fine del 1953 e l’inizio del 1954, dopo
                       aver pubblicato sull’«Unità» di Torino il primo blocco di storie che andranno a
                       comporre <em>Marcovaldo</em>, Calvino scrive una serie di testi brevi di natura molto
                       diversa, accomunati dall’incedere favolistico e dalla presenza di ambientazioni
@@ -142,20 +143,23 @@ export default class SpaceInformationSheet extends React.Component
                       biblioteca</em>, 1953) compaiono ancora sull’edizione torinese dell’«Unità»; gli
                       altri tre (<em>Libertà! Libertà!</em>, 1954; <em>Lo ius primae noctis</em>, 1954; <em>I mozzatori di
                       nasi</em>, 1954), scritti l’anno successivo, sono pubblicati sul settimanale «Il
-                      Contemporaneo» in una rubrica intitolata I viaggi di Gulliver all’interno della
+                      Contemporaneo» in una rubrica intitolata <em>I viaggi di Gulliver</em> all’interno della
                       quale Calvino raccolse alcuni apologhi politici con riferimenti evidenti
-                      all’attualità. Ciò che accomuna tutti questi testi è la presenza di
+                      all’attualità.<br></br>
+                      Ciò che accomuna tutti questi testi è la presenza di
                       un’ambientazione unidimensionale – un generico paese senza nome o luoghi
                       d’invenzione come Sant’Alcide, Marzalia, Panduria, Cocinindia o Atrabilia –
                       «dedita a una sola cosa, che sottostà a una sola regola, che conosce un solo
                       modo d’essere» (Serra 2006, 322). Nella quasi totalità dei casi questa
                       situazione iniziale viene messa a dura prova da un accadimento inatteso, che
                       scombina l’ordine delle cose e da cui si ricava spesso un insegnamento o una
-                      morale. L’aspetto più interessante di questi racconti scritti a metà degli anni
+                      morale.<br></br>
+                      L’aspetto più interessante di questi racconti scritti a metà degli anni
                       Cinquanta è il fatto che sia possibile riconoscere in nuce, pertanto in forma
                       acerba e a tratti elementare, alcuni elementi fondanti delle <em>Città Invisibili</em>:
                       l’ambientazione unidimensionale, la regola o il carattere <em>sui generis</em> che
-                      connota la città, i nomi dei luoghi esclusivamente femminili.  In filigrana si
+                      connota la città, i nomi dei luoghi esclusivamente femminili.<br></br>
+                      In filigrana si
                       riconosce un percorso organico e continuativo, che affonda le radici in un tempo
                       piuttosto remoto e trova il suo compimento negli anni Settanta del Novecento.
 </p>

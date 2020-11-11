@@ -70,7 +70,7 @@ class HesitationInformationSheet extends Component {
           generici», ritenuti più adatti rispetto ai termini specifici. Ognuno, infatti,
           è «portato ad attribuire valori diversi o magari contrastanti» a questi
           ultimi, «secondo le proprie cognizioni ed esperienze», e per questo motivo
-          «resterebbe da precisare ancora» (RR, II, 7).</p>
+          «resterebbe da precisare ancora» (<em>RR</em>, II, 7).</p>
           <p className={SheetStyles.paragraph}>La riflessione che inaugura
           il capitolo è immediatamente interessata dal processo dubitativo, aprendosi
           con il tema della scelta. Con la promessa di una maggiore esattezza, il testo
@@ -79,7 +79,7 @@ class HesitationInformationSheet extends Component {
           di comportamento, in plateale contraddizione con quanto affermato in
           precedenza: viene infatti svelata l’identità del «partito di sinistra» a cui
           appartiene il protagonista (ovvero «partito comunista») e l’«istituto
-          religioso» anonimo diventa «il Cottolengo di Torino» (RR, II, 7). La figura
+          religioso» anonimo diventa «il Cottolengo di Torino» (<em>RR</em>, II, 7). La figura
           retorica utilizzata è la preterizione, che spesso collabora con il processo
           dubitativo: informare negando, infatti, corrisponde al funzionamento più
           frequente del testo dubitativo, che alimenta la narrazione tramite
@@ -101,7 +101,7 @@ class HesitationInformationSheet extends Component {
           aumenta la consapevolezza di una ipotetica lettrice/lettore sulle
           funzioni del Cottolengo. Come conseguenza dell’instabilità semantica che
           sta dietro le parole, l’unico modo per assicurarsi di essere compresi
-          correttamente è quello di «precisare» (RR, II, 7), ridefinendo ancora e
+          correttamente è quello di «precisare» (<em>RR</em>, II, 7), ridefinendo ancora e
           ancora il concetto, accumulando le puntualizzazioni (cfr. Mengaldo 1996,
           278). Il testo in questione si trova all’interno di un inciso; qui il
           segno grafico delimita un’informazione, ma crea anche una deviazione dal
