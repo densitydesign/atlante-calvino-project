@@ -63,7 +63,7 @@ const ItemIndex = ({
         {iconHover}
       </Link>
       <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
-      {title !== "territorio" && (
+      {title !== "Territorio" && (
         <Link to={linkApprofondimento}>
           <IconApprofondimento className="mt-2" />
         </Link>
