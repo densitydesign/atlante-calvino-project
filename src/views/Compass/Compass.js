@@ -10,12 +10,17 @@ import CompassFlux from "../CompassFlux/CompassFlux"
 
 import "./Compass.css"
 import CompassTime from "../CompassTime/CompassTime"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 
 class Compass extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { selectedPanel: 1, openFlowsOfStories: false, openTempoEStorie: false }
+    this.state = {
+      selectedPanel: 1,
+      openFlowsOfStories: false,
+      openTempoEStorie: false,
+    }
 
     this.getSelectedPanel = this.getSelectedPanel.bind(this)
     this.setSelectedPanel = this.setSelectedPanel.bind(this)
@@ -50,18 +55,12 @@ class Compass extends React.Component {
     return (
       <>
         <div>
-          <HamburgerCloseHeader
-            containerToggleCompassPanel={this.props.containerToggleCompassPanel}
-          />
+          <HamburgerCompassHeader />
           <div className="compass-main-description mt-5">
             <div>
               <h1>{this.props.t("bussola")}</h1>
               <p className="text-dark-blue">
-                <Trans
-                  i18nKey={"testo_bussola"}
-                  t={this.props.t}
-                  ns="bussola"
-                >
+                <Trans i18nKey={"testo_bussola"} t={this.props.t} ns="bussola">
                   Prima di iniziare il viaggio, ci vuole una bussola. Per quello
                   abbiamo creato tre visualizzazioni orientative, I flussi dei
                   racconti, Il tempo e le opere e L’arcipelago dei nomi che
@@ -89,7 +88,7 @@ class Compass extends React.Component {
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/flows-of-stories"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
-              text={this.props.t('bussola:flussi_testo')}
+              text={this.props.t("bussola:flussi_testo")}
             />
 
             <SlidingPanel
@@ -102,13 +101,13 @@ class Compass extends React.Component {
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
-              title={this.props.t('bussola:il_tempo_e_le_opere')}
+              title={this.props.t("bussola:il_tempo_e_le_opere")}
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/time-and-works"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
-              text={this.props.t('bussola:tempo_testo')}
+              text={this.props.t("bussola:tempo_testo")}
             />
 
             <SlidingPanel
@@ -119,13 +118,13 @@ class Compass extends React.Component {
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}
-              title={this.props.t('bussola:l_arcipelago_dei_nomi')}
+              title={this.props.t("bussola:l_arcipelago_dei_nomi")}
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl=""
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-03-arcipelago.zip"
-              text={this.props.t('bussola:testo_arcipelago')}
+              text={this.props.t("bussola:testo_arcipelago")}
             />
           </div>
         </div>
