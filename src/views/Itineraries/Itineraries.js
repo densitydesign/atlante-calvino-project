@@ -72,24 +72,7 @@ export default class Itineraries extends React.Component {
             <section id="space">
               <h1 className="text-dark-blue">Lo Spazio</h1>
               <p>
-                Lo spazio Nell’itinerario che pone al centro lo spazio, si
-                tenterà di analizzare i modi in cui Calvino ha usato lo spazio
-                per parlare della realtà. E nello stesso tempo per negarla.
-                Perché un momento dopo averla nominata, la realtà si è già
-                trasformata in qualcos’altro. Le parole, che vorrebbero fermare
-                le cose in un punto dello spazio, si perdono in un inseguimento
-                senza fine. Nell’opera di Calvino lo spazio sembra avere più
-                importanza del tempo. Tale predominanza spaziale sembra inoltre
-                essere collegata a quella “visuale” che caratterizza la sua
-                scrittura. In quale misura tali impressioni siano vere e quali
-                forme prendano nel corso degli anni è ciò che dovremo riuscire a
-                capire meglio, percorrendo questo itinerario che ci porterà nel
-                cuore stesso dell’idea di letteratura di Calvino. Sia che
-                racconti della Liguria biografica sia che ci trasporti
-                nell’astrazione cosmica, infatti, Calvino ci dimostra come la
-                letteratura sia il più sofisticato strumento che l’umanità abbia
-                per interrogarsi sul complesso e fondamentale rapporto che la
-                realtà intrattiene con la finzione.
+                Nell’itinerario che pone al centro lo spazio, si tenterà di analizzare i modi in cui Calvino ha usato lo spazio per parlare della realtà. E nello stesso tempo per negarla. Perché un momento dopo averla nominata, la realtà si è già trasformata in qualcos’altro. Le parole, che vorrebbero fermare le cose in un punto dello spazio, si perdono in un inseguimento senza fine. Nell’opera di Calvino lo spazio sembra avere più importanza del tempo. Tale predominanza spaziale sembra inoltre essere collegata a quella “visuale” che caratterizza la sua scrittura. In quale misura tali impressioni siano vere e quali forme prendano nel corso degli anni è ciò che dovremo riuscire a capire meglio, percorrendo questo itinerario che ci porterà nel cuore stesso dell’idea di letteratura di Calvino. Sia che racconti della Liguria biografica sia che ci trasporti nell’astrazione cosmica, infatti, Calvino ci dimostra come la letteratura sia il più sofisticato strumento che l’umanità abbia per interrogarsi sul complesso e fondamentale rapporto che la realtà intrattiene con la finzione.
               </p>
 
               <div className="d-flex justify-content-between">
@@ -123,24 +106,7 @@ export default class Itineraries extends React.Component {
             <section id="form">
               <h1 className="text-dark-blue">La Forma</h1>
               <p>
-                La forma Nell’itinerario che pone al centro la forma, si tenterà
-                di studiare i modi in cui la scrittura di Calvino si sforza di
-                dare forma alla realtà. Se esiste una battaglia delle battaglie
-                che la letteratura ha il dovere di combattere, come un nobile
-                paladino dell’esercito di Carlo Magno, questa è per Calvino la
-                battaglia contro l’informe. L’informe che ci assedia e minaccia
-                da ogni parte. Vincerla forse è impossibile, ma bisogna
-                continuare a provarci. In che modo? Schierando per esempio le
-                parole in lunghe file di elenchi, che facciano argine al caos; o
-                al contrario lo riproducano, quel caos dilagante, nel tentativo
-                di padroneggiarlo. Oppure costruendo elaborate strutture fatte
-                di racconti in serie, concatenati. Per Calvino, l’arma della
-                combinazione sembra sia quella che possa salvarci dall’assedio
-                del magma. Alla ricerca di una trama che ormai il Novecento ha
-                messo in soffitta da tempo, Calvino sperimenta le forme
-                narrative più varie nel corso della sua carriera letteraria.
-                Anche se forse non erano altro che travestimenti di un’unica
-                trama, elementare e ossessiva.
+                Nell’itinerario che pone al centro la forma, si tenterà di studiare i modi in cui la scrittura di Calvino si sforza di dare forma alla realtà. Se esiste una battaglia delle battaglie che la letteratura ha il dovere di combattere, come un nobile paladino dell’esercito di Carlo Magno, questa è per Calvino la battaglia contro l’informe. L’informe che ci assedia e minaccia da ogni parte. Vincerla forse è impossibile, ma bisogna continuare a provarci. In che modo? Schierando per esempio le parole in lunghe file di elenchi, che facciano argine al caos; o al contrario lo riproducano, quel caos dilagante, nel tentativo di padroneggiarlo. Oppure costruendo elaborate strutture fatte di racconti in serie, concatenati. Per Calvino, l’arma della combinazione sembra sia quella che possa salvarci dall’assedio del magma. Alla ricerca di una trama che ormai il Novecento ha messo in soffitta da tempo, Calvino sperimenta le forme narrative più varie nel corso della sua carriera letteraria. Anche se forse non erano altro che travestimenti di un’unica trama, elementare e ossessiva.
               </p>
 
               <div className="d-flex justify-content-between">
