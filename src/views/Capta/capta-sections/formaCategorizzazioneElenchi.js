@@ -49,6 +49,29 @@ const formaCategorizzazioneElenchi = {
       <ul>
         <li>Formale (Sequenze che riguardano la struttura del testo)</li>
       </ul>
+      <p>
+        Ogni sotto-tipologia è organizzata in altre categorie che ne specificano
+        il contenuto. Esteriore: eventi liminali, interazione, spostamento,
+        intenzione, situazione. Interiore: stato euforico, stato disforico,
+        stato riflessivo; stato sospeso. Forma: racconto incastonato,
+        metanarrazione, cornice, struttura, terna.</p><p>Ogni volume contiene
+        all’interno un numero specifico di sequenze che possono anche avere una
+        struttura gerarchica a livelli. Infatti, ogni sequenza può contenere
+        all’interno altre sottosequenze che appartengono a diverse categorie.
+        Per esempio: un volume che presenta al primo livello una struttura
+        esclusivamente formale composta da una serie limitata di sequenza, al
+        secondo livello può evidenziare come una delle sequenze formali contenga
+        al suo interno una sequenza riguardante un “evento liminale” e uno
+        “stato euforico”. Grazie a questa struttura gerarchica e nidificata è
+        possibile identificare e rappresentare fino a cinque livelli di
+        sottosequenze nei volumi analizzati (ad esempio come in <i>Il castello dei
+        destini incrociati (riediz)</i> e <i>Le cosmicomiche vecchie e nuove</i>). Questo
+        tipo di comportamento è stato registrato nel dataset impostando delle
+        concatenazioni di sequenze (per esempio: struttura;incontro
+        femminile; inseguimento/ricerca), ordinate secondo il numero di
+        caratteri. Ogni sequenza e le successive sono identificate con un ID che
+        permette di concatenare la intera struttura.
+      </p>
     </>
   ),
 };
