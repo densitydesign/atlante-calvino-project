@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import IndexMenuHeader from "../../headers/IndexMenuHeader";
 import Footer from "../../headers/Footer/Footer";
 import capta from "./capta-list";
-import styles from "./capta.module.css";
+import styles from "./capta-sections/capta.module.css";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[4]);
+  const [selected, setSelected] = useState(capta[5]);
   return (
     <>
       <IndexMenuHeader />
