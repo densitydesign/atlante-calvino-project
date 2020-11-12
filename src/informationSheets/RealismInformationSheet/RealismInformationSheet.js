@@ -47,23 +47,23 @@ class RealismInformationSheet extends Component {
                 uno di arrivo, spesso attraverso l’attraversamento di alcune
                 tappe intermedie. Tra il 1946 e il 1948 i racconti che
                 presentano questo schema sono sette:
-                <i>
+                <em>
                   Andato al comando, Paura sul sentiero, Uomo nei gerbidi, Campo
                   di mine, L’occhio del padrone, Un bastimento carico di
                   granchi, Il giardino incantato
-                </i>
+                </em>
                 . A questi se ne può aggiungere un nono, Ultimo viene il corvo,
                 che si distingue per la presenza di un’unica e poco
                 significativa ambientazione interna (una baita in cui il
                 protagonista trascorre la notte). A livello tematico, questi
                 testi possono essere raccolti in tre gruppi distinti: racconti
                 di guerra (
-                <i>Andato al comando, Paura sul sentiero, Campo di mine</i> e
-                <i>Ultimo viene il corvo</i>); racconti campestri (
-                <i>Uomo nei gerbidi, L’occhio del padrone</i>); racconti con
+                <em>Andato al comando, Paura sul sentiero, Campo di mine</em> e
+                <em>Ultimo viene il corvo</em>); racconti campestri (
+                <em>Uomo nei gerbidi, L’occhio del padrone</em>); racconti con
                 protagonisti bambini (
-                <i>Un bastimento carico di granchi, Il giardino incantato</i> e
-                nuovamente <i>Ultimo viene il corvo</i>). Il primo e il secondo
+                <em>Un bastimento carico di granchi, Il giardino incantato</em> e
+                nuovamente <em>Ultimo viene il corvo</em>). Il primo e il secondo
                 di questi temi sono apparentemente ascrivibili al tentativo di
                 documentazione di una realtà fattuale e sociale della cosiddetta
                 stagione “neoralista”. Tuttavia, se concentriamo la nostra
@@ -126,9 +126,9 @@ class RealismInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 Come testo esemplare di questa dinamica, prendiamo il racconto
-                <i>Paura sul sentiero</i>, pubblicato nel 1946 su «Darsena
-                nuova» e in seguito nei volumi <i>Ultimo viene il corvo</i>{" "}
-                (1949) e<i>I racconti</i> (1958). Protagonista del testo è
+                <em>Paura sul sentiero</em>, pubblicato nel 1946 su «Darsena
+                nuova» e in seguito nei volumi <em>Ultimo viene il corvo</em>{" "}
+                (1949) e<em>I racconti</em> (1958). Protagonista del testo è
                 Binda, giovane staffetta partigiana che durante la notte si
                 inoltra a piedi nei boschi dell’entroterra ligure di ponente per
                 raggiungere nel minor tempo possibile il casolare in cui si
@@ -144,7 +144,7 @@ class RealismInformationSheet extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  (vedi mappa)
+                  vedi mappa
                 </a>
                 .
               </p>
@@ -161,9 +161,9 @@ class RealismInformationSheet extends Component {
                 effettivamente combattuta. A rafforzare l’effetto di una
                 aderenza testimoniale ai fatti della storia, la presenza diffusa
                 di nomi di battaglia (
-                <i>
+                <em>
                   Vendetta, Serpe, Pelle, Guerriglia, Fegato, Sciabola, Civetta
-                </i>
+                </em>
                 ), attribuiti ai compagni che Binda deve raggiungere e che
                 attendono sue notizie. L’impianto narrativo realista si
                 accompagna però, fin da subito, alla rappresentazione di una
@@ -171,12 +171,12 @@ class RealismInformationSheet extends Component {
                 l’effetto di visioni, pensieri e immaginazioni dovute
                 soprattutto al dilagare del sentimento della paura (che è lo
                 stesso presente in molti protagonisti di questi racconti, come{" "}
-                <i>Andato al comando</i> o<i>Campo di mine</i>). Al punto che a
+                <em>Andato al comando</em> o<em>Campo di mine</em>). Al punto che a
                 più riprese il racconto partigiano si trasforma e prende le
                 sembianze di un racconto d’avventura o addirittura di una fiaba:
                 l’eroe Binda, lontano dalla sua amata (che si chiama{" "}
-                <i>Regina</i>), deve raggiungere la meta, ma lungo il cammino è
-                inseguito dal nemico <i>Gund</i>, un terribile e gigantesco
+                <em>Regina</em>), deve raggiungere la meta, ma lungo il cammino è
+                inseguito dal nemico <em>Gund</em>, un terribile e gigantesco
                 tedesco munito di elmo e armatura, che tenta in ogni modo di
                 ostacolarlo.
               </p>
@@ -245,11 +245,11 @@ class RealismInformationSheet extends Component {
                 emblematica, soprattutto se calata nel contesto del racconto
                 resistenziale: «Calvino in many of his early stories that
                 “write” the Resistance adopts the literary strategies of the
-                fairy tale and the <i>racconto d’avventura</i> as forms with
+                fairy tale and the <em>racconto d’avventura</em> as forms with
                 which to erode and undermine the dominant discursive logic of
                 the epic» (Re 1990, 157). Qualcosa di molto simile accade anche
                 negli altri tre racconti bellici citati in precedenza:
-                <i>Andato al comando, Campo di mine, Ultimo viene il corvo</i>.
+                <em>Andato al comando, Campo di mine, Ultimo viene il corvo</em>.
                 In tutti questi casi il contesto storico e politico è per molti
                 tratti davvero marginale rispetto agli interrogativi che animano
                 i protagonisti, per i quali comprendere quale sia la strada
@@ -257,12 +257,12 @@ class RealismInformationSheet extends Component {
                 versante opposto di un monte, per colpire un bersaglio e
                 individuare il successivo), assume un significato metaforico ben
                 prima che letterale. Se il personaggio bambino di
-                <i>Ultimo viene il corvo</i> non ha dubbi sugli oggetti da
+                <em>Ultimo viene il corvo</em> non ha dubbi sugli oggetti da
                 prendere di mira lungo il suo tragitto, che gli consentono da un
                 lato di arricchire il suo bagaglio di conoscenza e dall’altro di
                 spostarsi sempre più lontano, lo stesso non si può dire per i
-                due protagonisti di <i>Andato al comando</i> e{" "}
-                <i>Campo di mine</i>. I quali, non diversamente da Binda, sono
+                due protagonisti di <em>Andato al comando</em> e{" "}
+                <em>Campo di mine</em>. I quali, non diversamente da Binda, sono
                 divorati dai dubbi, dalle domande, dal sentimento di paura che
                 trasformando le cose concrete in simboli e allucinazioni finisce
                 per farli capitolare. A Binda questo non accade perché – come
@@ -306,7 +306,7 @@ class RealismInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 A essere messa in dubbio è sempre la realtà concreta, poiché
-                Binda, non diversamente dal protagonista di <i>Campo di mine</i>
+                Binda, non diversamente dal protagonista di <em>Campo di mine</em>
                 , «deve ridefinire le cose che in apparenza sono armoniche e in
                 realtà ambigue: ogni cosa può essere se stessa o il suo
                 contrario» (Falaschi 1976, 132). In questo modo, per esempio,
@@ -320,12 +320,12 @@ class RealismInformationSheet extends Component {
                 processo di metamorfosi che si ripete frequentemente nelle
                 storie di Calvino, soprattutto in questi anni, e che si sviluppa
                 in presenza di alcuni elementi chiave come il sentimento di{" "}
-                <i>paura</i> e il movimento lungo un sentiero: le due parole
+                <em>paura</em> e il movimento lungo un sentiero: le due parole
                 che, non a caso, campeggiano nel titolo del racconto che stiamo
                 analizzando. Pensiamo, oltre ai testi citati in precedenza, a un
                 racconto come
-                <i>Un pomeriggio, Adamo</i> (1949) o anche al primo romanzo
-                dell’autore, <i>Il sentiero dei nidi di ragno</i> (1947). Il
+                <em>Un pomeriggio, Adamo</em> (1949) o anche al primo romanzo
+                dell’autore, <em>Il sentiero dei nidi di ragno</em> (1947). Il
                 processo metamorfico crea inevitabilmente equivoci, poiché
                 introduce uno scarto «tra la catena di false interpretazioni e
                 la realtà» (Serra 2006, 66).
@@ -366,7 +366,7 @@ class RealismInformationSheet extends Component {
                 che insegue il protagonista, poi una scimmia aggrappata al suo
                 collo; le mine si muovono sotto i suoi piedi «come ragni
                 sotterranei» (mentre in
-                <i>Campo di mine</i> erano «enormi marmotte accoccolate in tane
+                <em>Campo di mine</em> erano «enormi marmotte accoccolate in tane
                 sotterranee»); l’ansia «è un leggero battere di ali di
                 pipistrello nei polmoni»; gli occhi di Gund sono tondi e lucenti
                 «come quelli dei ghiri». Il ventaglio di figure animalesche che
@@ -416,12 +416,12 @@ class RealismInformationSheet extends Component {
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className="referenceItem">
                 Re 1990: L. Re,
-                <i>Calvino and the Age of Neorealism: Fables of Estrangement</i>
+                <em> Calvino and the Age of Neorealism: Fables of Estrangement</em>
                 ), Stanford, Stanford University Press.
               </li>
               <li className="referenceItem">
                 Falaschi 1976: G. Falaschi,
-                <i>La resistenza armata nella narrativa italiana</i>, Torino,
+                <em> La resistenza armata nella narrativa italiana</em>, Torino,
                 Einaudi.
               </li>
               <li className="referenceItem">
