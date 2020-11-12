@@ -6,7 +6,7 @@ import styles from "./capta-sections/capta.module.css";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[6]);
+  const [selected, setSelected] = useState(capta[0]);
   return (
     <>
       <IndexMenuHeader />
@@ -154,22 +154,25 @@ export default function Capta() {
       </div>
       <div className="ac-grid-24">
         <div className="content">
-          <h2>Riferimenti bibliografici</h2>
-          <ol>
-            <li>
+          <h2>Bibliografia</h2>
+          <ol className="references">
+            <li className="referenceItem">
+            Drucker, Johanna. ‘Humanities Approaches to Graphical Display’. Digital Humanities Quarterly 5, no. 1 (2011): 1–23. <a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener noreferrer">Link</a>
+            </li>
+            <li className="referenceItem">
               RR: Romanzi e racconti, edizione diretta da Claudio Milanini, a
               cura di Mario Barenghi e Bruno Falcetto, MIlano, Mondadori, 1991,
               1992, 1994, 3 voll.
             </li>
-            <li>
+            <li className="referenceItem">
               SS: Saggi. 1945-1985, a cura di Mario Barenghi, Milano, Mondadori,
               1995, 2 voll.
             </li>
-            <li>
+            <li className="referenceItem">
               AC: Album Calvino, a cura di Luca Baranelli ed Ernesto Ferrero,
               Milano, Mondadori 1995.
             </li>
-            <li>
+            <li className="referenceItem">
               Lettere: Lettere. 1940-1985, a cura di Luca Baranelli.
               Introduzione di Claudio Milanini, Cronologia a cura di Mario
               Barenghi e Bruno Falcetto, Avvertenza di Luca Baranelli, Milano,

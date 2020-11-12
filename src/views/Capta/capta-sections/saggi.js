@@ -24,7 +24,7 @@ const saggi = {
           in cui è presente. Ad esempio:
         </p>
         <p className="cite cite2">
-          Balzac, Honoré de
+          Balzac, Honoré de:
           <br />
           34-6, <wbr />
           110, <wbr />

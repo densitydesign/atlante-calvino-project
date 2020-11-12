@@ -92,11 +92,10 @@ const corpus = {
         </p>
         <p>
           Tutte le visualizzazioni facenti parte dell'Atlante sono basate,
-          direttamente o indirettamente, su questo dataset, fatta eccezione per
-          <Link to="/compass">«L’arcipelago dei nomi»</Link>.
-          <br />
-          Consigliamo la consultazione di:
+          direttamente o indirettamente, su questo dataset, fatta eccezione per{" "}
+          <Link to="/compass" style={{whiteSpace:"nowrap"}}>«L’arcipelago dei nomi»</Link>.
         </p>
+        <p>Consigliamo la consultazione di:</p>
         <ul>
           <li>
             <Link to="/compass">«Il tempo e le opere» (Bussola)</Link>

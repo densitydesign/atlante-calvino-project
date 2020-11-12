@@ -53,7 +53,7 @@ const spazioRealismo = {
           è parte di città, luogo esterno di livello 0, poiché nel racconto non
           sono presenti ulteriori cornici.
         </p>
-        <p>Il dataset è stato rappresentato nella visualizzazione <Link to="/space/phase3">«realismo»</Link>.</p>
+        <p>Il dataset è stato rappresentato nella visualizzazione <Link to="/space/phase3">«Realismo»</Link>.</p>
       </>
     ),
   };

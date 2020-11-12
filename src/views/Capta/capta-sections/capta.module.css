@@ -114,9 +114,15 @@
   display: inline-flex;
 }
 
+.capta-focus li {
+  position: relative;
+}
+
 .capta-focus li:before {
   content: "–";
   padding: 0 0.5rem 0 0.2rem;
+  position: absolute;
+  left: -1.5rem;
 }
 
 .tag {
