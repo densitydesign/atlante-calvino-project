@@ -32,9 +32,9 @@ class RealismInformationSheet extends Component {
               orizzontale insistito, che conduce i protagonisti delle storie da
               un luogo di partenza ad uno di arrivo, spesso attraverso
               l’attraversamento di alcune tappe intermedie. Tra il 1946 e il
-              1948 i racconti che presentano questo schema sono sette:
+              1948 i racconti che presentano questo schema sono sette: 
               <em>
-                Andato al comando, Paura sul sentiero, Uomo nei gerbidi, Campo
+                 Andato al comando, Paura sul sentiero, Uomo nei gerbidi, Campo
                 di mine, L’occhio del padrone, Un bastimento carico di granchi,
                 Il giardino incantato
               </em>
@@ -44,7 +44,7 @@ class RealismInformationSheet extends Component {
               la notte). A livello tematico, questi testi possono essere
               raccolti in tre gruppi distinti: racconti di guerra (
               <em>Andato al comando, Paura sul sentiero, Campo di mine</em> e
-              <em>Ultimo viene il corvo</em>); racconti campestri (
+              <em> Ultimo viene il corvo</em>); racconti campestri (
               <em>Uomo nei gerbidi, L’occhio del padrone</em>); racconti con
               protagonisti bambini (
               <em>Un bastimento carico di granchi, Il giardino incantato</em> e
@@ -94,7 +94,7 @@ class RealismInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>Un racconto esemplare</h2>
             <p className={SheetStyles.paragraph}>
               Come testo esemplare di questa dinamica, prendiamo il racconto
-              <em>Paura sul sentiero</em>, pubblicato nel 1946 su «Darsena nuova»
+              <em> Paura sul sentiero</em>, pubblicato nel 1946 su «Darsena nuova»
               e in seguito nei volumi <em>Ultimo viene il corvo</em> (1949) e
               <em>I racconti</em> (1958). Protagonista del testo è Binda, giovane
               staffetta partigiana che durante la notte si inoltra a piedi nei
@@ -106,18 +106,18 @@ class RealismInformationSheet extends Component {
               direttamente e che descrive con dovizia di dettagli fornendo
               indicazioni geografiche molto precise, che consentono di
               ricostruire per filo e per segno il percorso compiuto dal
-              protagonista
+              protagonista (
               <a
                 href="https://www.openstreetmap.org/#map=14/43.9894/7.7688"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                (vedi mappa)
+                  vedi mappa
               </a>
-              .
+            ).
             </p>
             <p className={SheetStyles.paragraph}>
-              I <b>luoghi localizzabili</b> che è possibile individuare sono
+              I <strong>luoghi localizzabili</strong> che è possibile individuare sono
               numerosissimi: piccoli comuni, borgate, valli e montagne del
               territorio imperiese in cui la battaglia partigiana fu
               effettivamente combattuta. A rafforzare l’effetto di una aderenza
@@ -133,7 +133,7 @@ class RealismInformationSheet extends Component {
               pensieri e immaginazioni dovute soprattutto al dilagare del
               sentimento della paura (che è lo stesso presente in molti
               protagonisti di questi racconti, come <em>Andato al comando</em> o
-              <em>Campo di mine</em>). Al punto che a più riprese il racconto
+              <em> Campo di mine</em>). Al punto che a più riprese il racconto
               partigiano si trasforma e prende le sembianze di un racconto
               d’avventura o addirittura di una fiaba: l’eroe Binda, lontano
               dalla sua amata (che si chiama <em>Regina</em>), deve raggiungere la
@@ -144,11 +144,11 @@ class RealismInformationSheet extends Component {
             <p className={SheetStyles.paragraph}>
               Quest’oscillazione tra realtà e immaginazione è qui rappresentata
               suddividendo il testo in tre tipologie di sequenze narrative: in
-              <span style={{ color: "#00bfd3" }}>blu</span>le parti di racconto
+              <span style={{ color: "#00bfd3" }}> blu</span> le parti di racconto
               ancorate alla realtà, in cui si descrivono per filo e per segno il
               percorso che Binda sta compiendo, il tempo che impiegherà e ciò
               che effettivamente incontra lungo il cammino; in
-              <span style={{ color: "#ff3366" }}>rosso</span>, al contrario, i
+              <span style={{ color: "#ff3366" }}> rosso</span>, al contrario, i
               momenti in cui il personaggio è sopraffatto dal dubbio, da
               inspiegabili allucinazioni, dalle visite frequenti di Regina e
               Gund: momenti in cui la stessa meta appare irraggiungibile o perde
@@ -160,7 +160,7 @@ class RealismInformationSheet extends Component {
             </p>
             <p className={SheetStyles.paragraph}>
               A queste due tipologie di sequenze se ne aggiunge una terza, in
-              <span style={{ color: "#bbbbff" }}>viola</span>, presente solo una
+              <span style={{ color: "#bbbbff" }}> viola</span>, presente solo una
               volta e in posizione quasi incipitaria: si tratta dell’unico
               momento in cui la descrizione del tragitto compiuto dal
               protagonista è sospesa e sono fornite alcune importanti
@@ -196,11 +196,11 @@ class RealismInformationSheet extends Component {
               emblematica, soprattutto se calata nel contesto del racconto
               resistenziale: «Calvino in many of his early stories that “write”
               the Resistance adopts the literary strategies of the fairy tale
-              and the <i>racconto d’avventura</i> as forms with which to erode
+              and the <em>racconto d’avventura</em> as forms with which to erode
               and undermine the dominant discursive logic of the epic» (Re 1990,
               157). Qualcosa di molto simile accade anche negli altri tre
               racconti bellici citati in precedenza:
-              <i>Andato al comando, Campo di mine, Ultimo viene il corvo</i>. In
+              <em> Andato al comando, Campo di mine, Ultimo viene il corvo</em>. In
               tutti questi casi il contesto storico e politico è per molti
               tratti davvero marginale rispetto agli interrogativi che animano i
               protagonisti, per i quali comprendere quale sia la strada giusta
@@ -208,11 +208,11 @@ class RealismInformationSheet extends Component {
               opposto di un monte, per colpire un bersaglio e individuare il
               successivo), assume un significato metaforico ben prima che
               letterale. Se il personaggio bambino di
-              <i>Ultimo viene il corvo</i> non ha dubbi sugli oggetti da
+              <em>Ultimo viene il corvo</em> non ha dubbi sugli oggetti da
               prendere di mira lungo il suo tragitto, che gli consentono da un
               lato di arricchire il suo bagaglio di conoscenza e dall’altro di
               spostarsi sempre più lontano, lo stesso non si può dire per i due
-              protagonisti di <i>Andato al comando</i> e <i>Campo di mine</i>. I
+              protagonisti di <em>Andato al comando</em> e <em>Campo di mine</em>. I
               quali, non diversamente da Binda, sono divorati dai dubbi, dalle
               domande, dal sentimento di paura che trasformando le cose concrete
               in simboli e allucinazioni finisce per farli capitolare. A Binda
@@ -248,7 +248,7 @@ class RealismInformationSheet extends Component {
             <br></br>
             <p className={SheetStyles.paragraph}>
               A essere messa in dubbio è sempre la realtà concreta, poiché
-              Binda, non diversamente dal protagonista di <i>Campo di mine</i>,
+              Binda, non diversamente dal protagonista di <em>Campo di mine</em>,
               «deve ridefinire le cose che in apparenza sono armoniche e in
               realtà ambigue: ogni cosa può essere se stessa o il suo contrario»
               (Falaschi 1976, 132). In questo modo, per esempio, finisce per
@@ -261,12 +261,12 @@ class RealismInformationSheet extends Component {
               a loro». Si tratta di un vero e proprio processo di metamorfosi
               che si ripete frequentemente nelle storie di Calvino, soprattutto
               in questi anni, e che si sviluppa in presenza di alcuni elementi
-              chiave come il sentimento di <i>paura</i> e il movimento lungo un
+              chiave come il sentimento di <em>paura</em> e il movimento lungo un
               sentiero: le due parole che, non a caso, campeggiano nel titolo
               del racconto che stiamo analizzando. Pensiamo, oltre ai testi
               citati in precedenza, a un racconto come
-              <i>Un pomeriggio, Adamo</i> (1949) o anche al primo romanzo
-              dell’autore, <i>Il sentiero dei nidi di ragno</i> (1947). Il
+              <em> Un pomeriggio, Adamo</em> (1949) o anche al primo romanzo
+              dell’autore, <em>Il sentiero dei nidi di ragno</em> (1947). Il
               processo metamorfico crea inevitabilmente equivoci, poiché
               introduce uno scarto «tra la catena di false interpretazioni e la
               realtà» (Serra 2006, 66).
@@ -278,14 +278,14 @@ class RealismInformationSheet extends Component {
               Nel gioco dell’ambiguità, che può diventare facilmente spaventoso,
               tornano con insistenza alcuni meccanismi narrativi, messi in
               evidenza nell’ultima visualizzazione. Innanzitutto gli
-              <span style={{ color: "#FFA500" }}>interrogativi</span> («Chi era
+              <span style={{ color: "#FFA500" }}> interrogativi</span> («Chi era
               mai a quell’ora?»; «Ma si sarebbe raggiunto mai il casone?») o
               l’uso insistito del
-              <span style={{ color: "#FFA500" }}>forse</span> («forse una lepre,
+              <span style={{ color: "#FFA500" }}> forse</span> («forse una lepre,
               forse una volpe, forse un tedesco coricato tra gli arbusti che lo
               prendeva di mira»; «forse aveva rallentato senz’avvedersene, forse
               s’era fermato»); in secondo luogo le
-              <span style={{ color: "#FFD337" }}>visioni</span> di Binda, in
+              <span style={{ color: "#FFD337" }}> visioni</span> di Binda, in
               alcuni casi vere e proprie allucinazioni, spesso introdotte
               dall’uso del condizionale («Uno in mezzo a loro, detto Gund, con
               un terribile sorriso bianco sotto l’elmo, avrebbe proteso le mani
@@ -297,7 +297,7 @@ class RealismInformationSheet extends Component {
               sorriso bianco di denti tra le labbra tumide. Gund gli faceva
               cenno: «Siediti». E Binda si sarebbe seduto»). Infine, la presenza
               diffusa di <span style={{ color: "#67DEE3" }}>similitudini</span>,
-              <span style={{ color: "#F299C1" }}>metafore</span> e iperboli, che
+              <span style={{ color: "#F299C1" }}> metafore</span> e iperboli, che
               nell’attuazione del processo metamorfico di trasformazione della
               realtà giocano senza dubbio un ruolo decisivo. Non stupisce,
               allora, che come nella più classica delle metamorfosi, anche in
@@ -305,7 +305,7 @@ class RealismInformationSheet extends Component {
               animale: la paura è prima una generica bestia che insegue il
               protagonista, poi una scimmia aggrappata al suo collo; le mine si
               muovono sotto i suoi piedi «come ragni sotterranei» (mentre in
-              <i>Campo di mine</i> erano «enormi marmotte accoccolate in tane
+              <em> Campo di mine</em> erano «enormi marmotte accoccolate in tane
               sotterranee»); l’ansia «è un leggero battere di ali di pipistrello
               nei polmoni»; gli occhi di Gund sono tondi e lucenti «come quelli
               dei ghiri». Il ventaglio di figure animalesche che Binda vede e
@@ -351,12 +351,12 @@ class RealismInformationSheet extends Component {
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className="referenceItem">
                 Re 1990: L. Re,
-                <i>Calvino and the Age of Neorealism: Fables of Estrangement</i>
+                <em> Calvino and the Age of Neorealism: Fables of Estrangement</em>
                 ), Stanford, Stanford University Press.
               </li>
               <li className="referenceItem">
                 Falaschi 1976: G. Falaschi,
-                <i>La resistenza armata nella narrativa italiana</i>, Torino,
+                <em> La resistenza armata nella narrativa italiana</em>, Torino,
                 Einaudi.
               </li>
               <li className="referenceItem">

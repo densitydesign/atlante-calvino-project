@@ -33,7 +33,7 @@ class PlotInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>Modi di leggere</h2>
             <p className={SheetStyles.paragraph}>
               Al momento della sua uscita, nel 1979,
-              <em>Se una notte d’inverno un viaggiatore</em>
+              <em> Se una notte d’inverno un viaggiatore</em>
               segna sicuramente il nuovo picco della sperimentazione formale di
               Calvino, l’opera che manifesta con più forza l’intento di
               legittimare artisticamente la dinamica combinatoria come
@@ -129,7 +129,7 @@ class PlotInformationSheet extends Component {
               Il ruolo della trama come motore del meccanismo che produce lo scambio di
               significati tra scrittore e pubblico non è un concetto moderno, al contrario
               risale alle origini stesse della letteratura occidentale, ed è radicato nella
-              <em>Poetica</em> di Aristotele, in cui si trovano delle prescrizioni sul modo corretto di
+              <em> Poetica</em> di Aristotele, in cui si trovano delle prescrizioni sul modo corretto di
               costruire i racconti che rimangono quasi ininterrottamente attive nella storia
               delle narrazioni per tutti i ventitré secoli che ci separano dalla loro
               elaborazione: agli autori «epici» (cioè di testi narrativi) è raccomandato di
