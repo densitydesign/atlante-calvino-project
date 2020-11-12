@@ -112,7 +112,7 @@ export default function Capta() {
           </ul>
         </div>
         <div className={styles["capta-focus"]}>
-          <h2>{selected.name}</h2>
+          <h1>{selected.name}</h1>
           {selected.type === "data" && (
             <div className={styles.downloadArea}>
               {selected.files.map((file) => {
@@ -135,20 +135,6 @@ export default function Capta() {
                   </a>
                 );
               })}
-              {/* <a
-                href={selected.file}
-                className={[
-                  styles["dataset-download"],
-                  "noselect",
-                  selected.open ? "" : `disabled ${styles.disabled}`,
-                ].join(" ")}
-                download="renamed.txt"
-              >
-                <BsFileEarmarkSpreadsheet style={{ marginRight: "0.5rem" }} />
-                {selected.open
-                  ? "scarica il dataset"
-                  : "dataset non ancora disponibile"}
-              </a> */}
               <a
                 href={selected.licenseUrl}
                 className={[styles["dataset-license"]].join(" ")}

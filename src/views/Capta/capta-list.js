@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./capta.module.css"
 import corpusTitles from "./datasets/[capta] corpus - titles.csv";
 import corpusPublications from "./datasets/[capta] corpus - publications.csv";
 
 const corpus = {
-  name: "Corpus",
+  name: "Corpus delle opere",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -22,22 +23,22 @@ const corpus = {
         La casa editrice italiana Mondadori, che detiene i diritti sul lavoro di
         Italo Calvino, ha collaborato al progetto fornendo l’opera completa
         nella collana “I Meridiani”, che si compone in questo modo: l’opera
-        narrativa integrale nei 3 volumi intitolati Romanzi e racconti; le Fiabe
-        italiane curate dall’autore nel 1956; un’ampia parte della produzione
+        narrativa integrale nei 3 volumi intitolati <i>Romanzi e racconti</i>; le <i>Fiabe
+        italiane</i> curate dall’autore nel 1956; un’ampia parte della produzione
         saggistica pubblicata nei 2 volumi dei Saggi; la selezione di epistole
-        pubblicata nel volume singolo Lettere; l’Album Calvino. Per realizzare i
+        pubblicata nel volume singolo <i>Lettere</i>; l’<i>Album Calvino</i>. Per realizzare i
         tre Itinerari abbiamo deciso di focalizzarci unicamente sull’opera
         narrativa pubblicata mentre Calvino era in vita. Il corpus di
         riferimento si compone di oltre venti volumi distribuiti tra il 1946 e
         il 1984: romanzi, raccolte di racconti, forme ibride a metà strada tra
-        romanzi brevi e racconti lunghi, per un totale di 206 titoli (vedi
-        Istruzioni per l’uso). Il dataset è composto da due tabelle relazionali
+        romanzi brevi e racconti lunghi, per un totale di 206 titoli (vedi{" "}
+        <Link to="instructions">Istruzioni per l’uso</Link>). Il dataset è composto da due tabelle relazionali
         che racchiudono le informazioni riguardanti la selezione dei testi
-        studiati in questo progetto. Le informazioni provengono: dalla sezione
-        Note e notizie sui testi a cura di Mario Barenghi, Bruno Falcetto e
-        Claudio Milanini all’interno dei tre volumi Romanzi e racconti (I pp.
-        1242-1393; II pp. 1309-1475; III 1195-1350); dalla Bibliografia di Italo
-        Calvino di Luca Baranelli (Pisa, Scuola Normale Superiore, 2007).
+        studiati in questo progetto. Le informazioni provengono: dalla sezione{" "}
+        <i>Note e notizie sui testi</i> a cura di Mario Barenghi, Bruno Falcetto e
+        Claudio Milanini all’interno dei tre volumi <i>Romanzi e racconti</i> (I pp.
+        1242-1393; II pp. 1309-1475; III 1195-1350); dalla <i>Bibliografia di Italo
+        Calvino</i> di Luca Baranelli (Pisa, Scuola Normale Superiore, 2007).
       </p>
       <p>
         La prima tabella elenca i titoli di ogni testo racconti, romanzi,
@@ -45,12 +46,12 @@ const corpus = {
         corrispondono:
       </p>
       <ul>
-        <li>un identificatore univoco o ID;</li>
-        <li>la lunghezza in caratteri e in parole;</li>
-        <li>il genere;</li>
-        <li>il volume de «i Meridiani» in cui è possibile trovare il testo;</li>
+        <li>un identificatore univoco o <span className={styles.tag}>ID</span>;</li>
+        <li>la lunghezza in <span className={styles.tag}>caratteri</span> e in <span className={styles.tag}>parole</span>;</li>
+        <li>il <span className={styles.tag}>genere</span>;</li>
+        <li>il <span className={styles.tag}>volume</span> de «i Meridiani» in cui è possibile trovare il testo;</li>
         <li>
-          il nome del file .txt che contiene la digitalizzazione del testo
+          il nome del <span  className={styles.tag}>file .txt</span> che contiene la digitalizzazione del testo
           (disponibile solo per uso interno).
         </li>
       </ul>
@@ -62,12 +63,12 @@ const corpus = {
       </p>
       <ul>
         <li>
-          sede di pubblicazione (e.g. la rivista «Il caffè letterario e
+          <span className={styles.tag}>sede di pubblicazione</span> (e.g. la rivista «Il caffè letterario e
           satirico»);
         </li>
-        <li>data di pubblicazione;</li>
+        <li><span className={styles.tag}>data</span> di pubblicazione;</li>
         <li>
-          un flag (e.g. vero/falso) che indica se si tratta o meno della prima
+          un <span className={styles.tag}>flag</span> (e.g. vero/falso) che indica se si tratta o meno della prima
           pubblicazione.
         </li>
       </ul>
@@ -76,7 +77,7 @@ const corpus = {
         di racconti, viene indicato l’ID corrispondente.
       </p>
       <p>
-        Tutte le visualizzazioni facenti parte di questo progetto sono basate,
+        Tutte le visualizzazioni facenti parte dell'Atlante sono basate,
         direttamente o indirettamente, su questo dataset, fatta eccezione per
         <Link to="/compass">«L’arcipelago dei nomi»</Link>.
         <br />
