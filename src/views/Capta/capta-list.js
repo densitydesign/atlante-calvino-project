@@ -224,8 +224,8 @@ const saggi = {
       </p>
       <p>
         Per ampliare le potenzialità della visualizzazione, sono state raccolte
-        informazioni biografiche dei personaggi nominati da Calvino (data
-        di nascita e di morte, mestiere, nazionalità, ecc.). Questo processo è
+        informazioni biografiche dei personaggi nominati da Calvino (data di
+        nascita e di morte, mestiere, nazionalità, ecc.). Questo processo è
         stato condotto in maniera semi-manuale, sfruttando la funzione di
         OpenRefine per la riconciliazione di entità Wikidata. Alcune
         informazioni sono state aggiunte o modificate manualmente nel caso in
@@ -245,8 +245,39 @@ const dubbioNebbia = {
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   open: false,
-  files: [],
-  jsx: <h2>Dubbio: la nebbia, la cancellazione</h2>,
+  files: [
+    {
+      label: "[Atlante Calvino] dubbio - nebbia e cancellazione.csv",
+      file: null,
+    },
+  ],
+  jsx: (
+    <>
+      <p>
+        Il dataset rappresenta l’uso nell’opera dei termini ‘nebbia’ e
+        ‘cancellazione’. La loro diffusione è stata misurata sommando il numero
+        di occorrenze di ‘nebbia’, ‘cancellazione’ e di eventuali sinonimi
+        riportati in seguito:
+      </p>
+      <ul>
+        <li>Nebbia: nebbia, bruma, caligine, foschia (e derivati).</li>
+        <li>Cancellazione: cancellare, cancellazione (e derivati).</li>
+      </ul>
+      <p>
+        Da questi dati è stato possibile risalire anche alla loro distribuzione
+        cronologica. Utilizzando il numero di caratteri come unità di misura, è
+        stata calcolata la proporzione tra i vari campi semantici e la loro
+        frequenza rispetto al numero totale di caratteri di ogni singolo testo.
+      </p>
+      <p>
+        Il dataset è stato utilizzato per realizzare le visualizzazioni <Link to="/doubt/phase1">«Nebbia»</Link>{" "}
+        e <Link to="/doubt/phase1/focus">«L’effetto-nebbia»</Link>; quest’ultima integra un’informazione
+        supplementare rispetto al dataset della Tappa 1: nell’Approfondimento,
+        infatti, ogni occorrenza è distinta a seconda che il suo uso venga
+        considerato astratto o concreto.
+      </p>
+    </>
+  ),
 };
 
 const dubbioProcesso = {

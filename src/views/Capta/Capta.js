@@ -6,7 +6,7 @@ import styles from "./capta.module.css";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[1]);
+  const [selected, setSelected] = useState(capta[2]);
   return (
     <>
       <IndexMenuHeader />
