@@ -23,13 +23,10 @@ const spazioLuoghi = {
         presente nel testo senza ospitare le azioni dei personaggi. Ad esempio:
       </p>
       <p className="cite cite2">
-        Colla Bracca, luogo di ambientazione:
-        <br />
+        – Colla Bracca, luogo di ambientazione:<br/>
         «Alle nove e un quarto [Briga] arrivò su Colla Bracca assieme alla luna»
-      </p>
-      <p className="cite cite2">
-        Ceppo, luogo nominato:
-        <br />
+        <br/>
+        – Ceppo, luogo nominato:<br/>
         «le mine erano distanti, sull’altro versante di Ceppo»
       </p>
       <p>

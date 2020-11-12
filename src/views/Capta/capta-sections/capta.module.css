@@ -43,7 +43,7 @@
 .capta-list {
   grid-column: 3 / span 6;
   border-right: 1px solid black;
-  padding: 2rem 1rem 2rem 0;
+  padding: 4.33rem 1rem 2rem 0;
 }
 
 .capta-list ul {
@@ -53,7 +53,7 @@
 
 .capta-list li {
   margin: 0;
-  padding: 0.4rem 0;
+  padding: 0.7rem 0;
   cursor: pointer;
   position: relative;
   left: 0;

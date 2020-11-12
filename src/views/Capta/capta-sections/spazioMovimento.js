@@ -3,7 +3,7 @@ import React from "react";
 // import styles from "./capta.module.css";
 
 const spazioMovimento = {
-  name: "Spazio: interni, esterni e movimento",
+  name: "Spazio: luoghi interni, esterni e movimento",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
