@@ -23,7 +23,6 @@ class RealismInformationSheet extends Component {
             <h1 className={SheetStyles.titleH1}>
               Metamorfosi della realtà: sulle tracce della paura
             </h1>
-            <h2 className={SheetStyles.titleH2}>L'idea</h2>
             <p className={SheetStyles.paragraph}>
               Dall’analisi sullo spostamento spaziale terrestre nella produzione
               breve calviniana emergono alcune tendenze significative, che è
@@ -34,22 +33,22 @@ class RealismInformationSheet extends Component {
               un luogo di partenza ad uno di arrivo, spesso attraverso
               l’attraversamento di alcune tappe intermedie. Tra il 1946 e il
               1948 i racconti che presentano questo schema sono sette:
-              <i>
+              <em>
                 Andato al comando, Paura sul sentiero, Uomo nei gerbidi, Campo
                 di mine, L’occhio del padrone, Un bastimento carico di granchi,
                 Il giardino incantato
-              </i>
+              </em>
               . A questi se ne può aggiungere un nono, Ultimo viene il corvo,
               che si distingue per la presenza di un’unica e poco significativa
               ambientazione interna (una baita in cui il protagonista trascorre
               la notte). A livello tematico, questi testi possono essere
               raccolti in tre gruppi distinti: racconti di guerra (
-              <i>Andato al comando, Paura sul sentiero, Campo di mine</i> e
-              <i>Ultimo viene il corvo</i>); racconti campestri (
-              <i>Uomo nei gerbidi, L’occhio del padrone</i>); racconti con
+              <em>Andato al comando, Paura sul sentiero, Campo di mine</em> e
+              <em>Ultimo viene il corvo</em>); racconti campestri (
+              <em>Uomo nei gerbidi, L’occhio del padrone</em>); racconti con
               protagonisti bambini (
-              <i>Un bastimento carico di granchi, Il giardino incantato</i> e
-              nuovamente <i>Ultimo viene il corvo</i>). Il primo e il secondo di
+              <em>Un bastimento carico di granchi, Il giardino incantato</em> e
+              nuovamente <em>Ultimo viene il corvo</em>). Il primo e il secondo di
               questi temi sono apparentemente ascrivibili al tentativo di
               documentazione di una realtà fattuale e sociale della cosiddetta
               stagione “neoralista”. Tuttavia, se concentriamo la nostra analisi
@@ -95,9 +94,9 @@ class RealismInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>Un racconto esemplare</h2>
             <p className={SheetStyles.paragraph}>
               Come testo esemplare di questa dinamica, prendiamo il racconto
-              <i>Paura sul sentiero</i>, pubblicato nel 1946 su «Darsena nuova»
-              e in seguito nei volumi <i>Ultimo viene il corvo</i> (1949) e
-              <i>I racconti</i> (1958). Protagonista del testo è Binda, giovane
+              <em>Paura sul sentiero</em>, pubblicato nel 1946 su «Darsena nuova»
+              e in seguito nei volumi <em>Ultimo viene il corvo</em> (1949) e
+              <em>I racconti</em> (1958). Protagonista del testo è Binda, giovane
               staffetta partigiana che durante la notte si inoltra a piedi nei
               boschi dell’entroterra ligure di ponente per raggiungere nel minor
               tempo possibile il casolare in cui si trova la sua brigata
@@ -124,21 +123,21 @@ class RealismInformationSheet extends Component {
               effettivamente combattuta. A rafforzare l’effetto di una aderenza
               testimoniale ai fatti della storia, la presenza diffusa di nomi di
               battaglia (
-              <i>
+              <em>
                 Vendetta, Serpe, Pelle, Guerriglia, Fegato, Sciabola, Civetta
-              </i>
+              </em>
               ), attribuiti ai compagni che Binda deve raggiungere e che
               attendono sue notizie. L’impianto narrativo realista si accompagna
               però, fin da subito, alla rappresentazione di una realtà che si
               trasforma e si sfalda continuamente, sotto l’effetto di visioni,
               pensieri e immaginazioni dovute soprattutto al dilagare del
               sentimento della paura (che è lo stesso presente in molti
-              protagonisti di questi racconti, come <i>Andato al comando</i> o
-              <i>Campo di mine</i>). Al punto che a più riprese il racconto
+              protagonisti di questi racconti, come <em>Andato al comando</em> o
+              <em>Campo di mine</em>). Al punto che a più riprese il racconto
               partigiano si trasforma e prende le sembianze di un racconto
               d’avventura o addirittura di una fiaba: l’eroe Binda, lontano
-              dalla sua amata (che si chiama <i>Regina</i>), deve raggiungere la
-              meta, ma lungo il cammino è inseguito dal nemico <i>Gund</i>, un
+              dalla sua amata (che si chiama <em>Regina</em>), deve raggiungere la
+              meta, ma lungo il cammino è inseguito dal nemico <em>Gund</em>, un
               terribile e gigantesco tedesco munito di elmo e armatura, che
               tenta in ogni modo di ostacolarlo.
             </p>

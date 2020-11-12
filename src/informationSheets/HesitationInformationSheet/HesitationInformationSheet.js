@@ -40,7 +40,7 @@ class HesitationInformationSheet extends Component {
           romanzo-saggio, sospeso fra testimonianza, riflessione sui fondamenti etici del
           vivere associato, autoritratto morale» (Barenghi 2009, 56).
           <br />
-          In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (RR, II, 1311). Ma il
+          In un’intervista del 1963 Calvino lo definì «un libro di punti interrogativi» (<em>RR</em>, II, 1311). Ma il
           segno interrogativo, per quanto simbolicamente così importante, non è l’unico a
           caratterizzare il romanzo: <em>La giornata d’uno scrutatore</em> è un libro anche di
           parentesi e di incisi. Segni che interrompono la continuità lineare del
@@ -57,7 +57,7 @@ class HesitationInformationSheet extends Component {
           occorrenze. Abbiamo deciso di concentrarci sulla fine e l’inizio del capitolo,
           analizzando le due zone del testo separatamente. </p>
           <img className={SheetStyles.image} style={{gridColumn:'1 / span 22'}} src={zoom_01} />
-          <p className= ' captionLeft ' style={{gridColumn:'1 / span 22'}}> Numero di occorrenze di testo dubitativo attraverso i capitoli di <i>La giornata di uno scrutatore</i></p>
+          <p className= ' captionLeft ' style={{gridColumn:'1 / span 22'}}> Occorrenze di testo dubitativo distribuite per capitolo in <em>La giornata di uno scrutatore</em></p>
         </div>
 
         <div className={SheetStyles.gridRow}>
@@ -97,7 +97,7 @@ class HesitationInformationSheet extends Component {
           caratteristico del processo dubitativo.
           <br />
           In terzo luogo si arriva alla
-          questione del precisare. Il testo (td10) fornisce un’informazione che
+          questione del precisare. Il testo (<strong>td10</strong>) fornisce un’informazione che
           aumenta la consapevolezza di una ipotetica lettrice/lettore sulle
           funzioni del Cottolengo. Come conseguenza dell’instabilità semantica che
           sta dietro le parole, l’unico modo per assicurarsi di essere compresi
@@ -108,7 +108,7 @@ class HesitationInformationSheet extends Component {
           testo principale.
           <br />
           In conclusione, all’inizio del secondo capitolo della
-          <em>Giornata d’uno scrutatore</em>, l’accento è posto sulla difficoltà di
+          <em> Giornata d’uno scrutatore</em>, l’accento è posto sulla difficoltà di
           comunicare correttamente con la lettrice/lettore. Il significato delle
           parole è instabile e di conseguenza è necessario spiegare ogni termine
           per evitare il fraintendimento; tuttavia questi continui chiarimenti
@@ -134,7 +134,7 @@ class HesitationInformationSheet extends Component {
               < br/>
               Questo paragrafo è un ottimo esempio di come il processo
               dubitativo consista nel “tornare sui propri passi”. Il testo oggetto di dubbio
-              associato a td28 coincide con l’inizio del paragrafo e racchiude in sé dodici
+              associato a <strong>td28</strong> coincide con l’inizio del paragrafo e racchiude in sé dodici
               occorrenze del testo dubitativo (dal <strong>td16</strong> al
               <strong> td27</strong>, più della metà del numero totale di occorrenze del
               capitolo). L’improvviso incremento di occorrenze non è unicamente numerico; in

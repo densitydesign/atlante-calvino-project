@@ -44,14 +44,14 @@ export default class DoubtInformationSheet extends React.Component
                     < br/>
                     Per concreto qui si intende una presenza fisica dell’elemento nella
                     narrazione: es. «c’era un po’ di nebbia verso il mare e l’aria era umida»
-                    (<em>Pranzo con un pastore</em>, 1948, in RR, I, 211); «Invece si limita a farci
+                    (<em>Pranzo con un pastore</em>, 1948, in <em>RR</em>, I, 211); «Invece si limita a farci
                     strisciare sopra un dito e a vedere l’impronta umida come la scia d’una nave,
                     poi a cancellarla col maglione fregandoci con il gomito» (<em>La notte dei numeri</em>,
-                    1958, in RR, II, 1058). Viceversa, per <em>astratto</em> si intende una presenza “non
+                    1958, in <em>RR</em>, II, 1058). Viceversa, per <em>astratto</em> si intende una presenza “non
                     fisica” dell’elemento nella narrazione: es. «un’ombra bruna sale dal fondo e
                     come nella nebbia del ricordo lascia trasparire le sparse membra dell’oca» (<em>Un
-                    chilo e mezzo di grasso d’oca</em>, 1976, in RR, II, 930); «lei abbassava le ciglia
-                    e lui si sentì come cancellato» (<em>L’avventura di uno sciatore</em>, 1959, RR, II,
+                    chilo e mezzo di grasso d’oca</em>, 1976, in <em>RR</em>, II, 930); «lei abbassava le ciglia
+                    e lui si sentì come cancellato» (<em>L’avventura di uno sciatore</em>, 1959, <em>RR</em>, II,
                     1175).
                     </p>
                     </div>
