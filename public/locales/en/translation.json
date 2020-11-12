@@ -10,7 +10,7 @@
   "trama": "Plot",
   "help_panel": {
     "approfondimento": "approfondimento",
-    "tappa": "tappe",
+    "tappa": "stages",
     "spiegazione": "spiegazione",
     "legenda": "legenda",
     "di_cosa_si_tratta": "Di cosa si tratta",
@@ -25,7 +25,7 @@
     "proporzione": "PROPORZIONE",
     "il_fenomeno": "IL FENOMENO"
   },
-  "tappa": "tappa",
+  "tappa": "stage",
   "index_menu": {
     "video_guida": "Video guida"
   },
@@ -40,10 +40,10 @@
   "territorio": "Territorio",
   "entrambi": "Entrambi",
   "cerca_per": "Cerca per",
-  "TAPPA 1": "TAPPA 1",
-  "TAPPA 2": "TAPPA 2",
-  "TAPPA 3": "TAPPA 3",
-  "Bussola": "Bussola",
+  "TAPPA 1": "STAGE 1",
+  "TAPPA 2": "STAGE 2",
+  "TAPPA 3": "STAGE 3",
+  "Bussola": "Compass",
   "options": {
     "0": "0",
     "1": "1",
