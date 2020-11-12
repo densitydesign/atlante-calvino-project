@@ -12,7 +12,7 @@ import Trama2Content from "./Trama2Content"
 import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from "./utils"
 import keyBy from "lodash/keyBy"
 import "./Trama2.css"
-import { withTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next"
 
 // SCALES
 const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
@@ -84,6 +84,8 @@ function Trama2Main({ title }) {
     )
   }, [ricerca])
 
+  const { t } = useTranslation('translation')
+
   return (
     <div className="trasformare main">
       <HelpSidePanel
@@ -99,7 +101,7 @@ function Trama2Main({ title }) {
         <PageTitle title={title} style={{ gridColumn: "span 10" }} />
 
         <AltOptions
-          title={this.props.t("cerca_per")}
+          title={t("cerca_per")}
           options={cercaOptions}
           disabled={true}
           value={"Titolo"}
@@ -154,4 +156,4 @@ function Trama2Main({ title }) {
   )
 }
 
-export default withTranslation(['translation','trama'])(Trama2Main)
+export default Trama2Main
