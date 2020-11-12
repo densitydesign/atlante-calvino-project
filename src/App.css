@@ -260,6 +260,7 @@ li {
   font-size: 1.1rem;
   line-height: 1.8rem;
   margin: 2rem 0 2rem 3rem;
+  hyphens: manual;
 }
 
 .navigations {
