@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SheetStyles from "../SheetStyles.module.css";
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede2 from '../FooterSchede2';
+import FooterSchede2 from "../FooterSchede2";
 
 import legenda from "./legend_01.svg";
 import marimekko from "./marimekko.svg";
@@ -51,18 +51,18 @@ class CombineInformationSheet extends Component {
               (Donnarumma 2008, 82). Sono anni interamente dedicati
               all’affinamento di una «macchina narrativa combinatoria»
               (espressione con cui lui stesso definirà il ruolo dei tarocchi nel
-              <em> Castello</em>; Calvino 1973, RR,<em> II</em>, 1276) che, dotata dei giusti
-              elementi di partenza e di un set di regole efficaci, possa
-              produrre una varietà infinita di esiti, anticipando di mezzo
-              secolo novità che la rivoluzione tecnologica dei suoi anni
-              permetteva a stento di indovinare, oggi in uso come la
-              “generazione procedurale” condotta tramite algoritmo. Al centro
+              <em> Castello</em>; Calvino 1973, RR,<em> II</em>, 1276) che,
+              dotata dei giusti elementi di partenza e di un set di regole
+              efficaci, possa produrre una varietà infinita di esiti,
+              anticipando di mezzo secolo novità che la rivoluzione tecnologica
+              dei suoi anni permetteva a stento di indovinare, oggi in uso come
+              la “generazione procedurale” condotta tramite algoritmo. Al centro
               simbolico di questa svolta è l’anno 1965, che vede l’uscita della
               raccolta in volume delle
-              <em> Cosmicomiche</em> e l’inaugurazione di un variegato filone che
-              si protrarrà per i successivi due decenni (gli ultimi testi, <em>Il
-              niente e il poco</em> e <em>L’implosione</em>, escono nel settembre
-              1984 su «la Repubblica» ancora sotto il titolo di{" "}
+              <em> Cosmicomiche</em> e l’inaugurazione di un variegato filone
+              che si protrarrà per i successivi due decenni (gli ultimi testi,{" "}
+              <em>Il niente e il poco</em> e <em>L’implosione</em>, escono nel
+              settembre 1984 su «la Repubblica» ancora sotto il titolo di{" "}
               <em>Le nuove cosmicomiche</em>), e che costituisce probabilmente
               il massimo punto di equilibrio tra l’ostentazione di un modello
               ripetuto (la citazione di un fatto scientifico in apertura, la
@@ -99,10 +99,11 @@ class CombineInformationSheet extends Component {
               un quadro serio della società italiana del dopoguerra: una forma
               non più tenuta a distanza dal filtro straniante di un linguaggio
               volutamente semplice, dai tratti infantili, come accadeva ad
-              esempio in <em>Ultimo viene il corvo</em> o nel trittico dell’<em>Entrata in
-              guerra</em>, ma affrontata in modo diretto, disilluso, “adulto”. Una
-              modalità che riunisce una piccola famiglia di titoli tutto sommato
-              non incospicua, alla quale si possono ricondurre anche
+              esempio in <em>Ultimo viene il corvo</em> o nel trittico dell’
+              <em>Entrata in guerra</em>, ma affrontata in modo diretto,
+              disilluso, “adulto”. Una modalità che riunisce una piccola
+              famiglia di titoli tutto sommato non incospicua, alla quale si
+              possono ricondurre anche
               <em> La speculazione edilizia</em> e
               <em> La giornata d’uno scrutatore</em>, le avventure irrisolte
               degli <em>Amori difficili</em>, e almeno in parte
@@ -111,7 +112,8 @@ class CombineInformationSheet extends Component {
               stile eccentrico della lettera di “non-difesa” scritta in risposta
               a un saggio che analizzava proprio la <em>Nuvola di smog</em>,
               nella quale Calvino finge di interpretare il critico di se stesso
-              e proclama il proprio «moravismo» (Calvino 1964, 104; la <em>Nuvola </em>
+              e proclama il proprio «moravismo» (Calvino 1964, 104; la{" "}
+              <em>Nuvola </em>
               era del resto uscita su «Nuovi argomenti», la rivista diretta da
               Moravia), in un gioco delle parti che però lascia qualcosa di
               ambiguo alla dichiarazione, un sospetto di insicurezza poetica sul
@@ -122,12 +124,25 @@ class CombineInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>Un confronto insolito</h2>
             <img
               className={SheetStyles.image}
-              style={{ gridColumn: " 1 / span 10", position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1rem', backgroundColor:'var(--white)'}}
+              style={{
+                gridColumn: " 1 / span 10",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                backgroundColor: "var(--white)",
+              }}
               src={marimekko}
             />
             <img
               className={SheetStyles.sideLegend}
-              style={{ gridColumn: "12 / span 1",position:'sticky',top:'calc(var(--navigation-height))', paddingTop:'1rem',paddingBottom:'1rem', }}
+              style={{
+                gridColumn: "12 / span 1",
+                position: "sticky",
+                top: "calc(var(--navigation-height))",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+              }}
               src={legenda_02}
             />
             <p className={SheetStyles.paragraph}>
@@ -135,55 +150,70 @@ class CombineInformationSheet extends Component {
               in una forma grafica che ne metta in evidenza la struttura, il
               risultato visivo sembra confermare indubbiamente l’impressione di
               lettura che chiunque potrebbe condividere semplicemente prendendo
-              in mano i rispettivi testi. Da un lato abbiamo le <em>Cosmicomiche</em>,
-              una sequenza di dodici testi brevi, agili, dai ritmi serrati, che
-              sono il trionfo della varietà e della fantasia più sfrenata: una
-              raccolta che esibisce una mobilità quasi al limite del nevrotico,
-              con rimbalzi continui tra inserti metaletterari, segmenti di
-              dinamismo forsennato, descrizioni di mondi collocati al di là
-              dello spaziotempo come lo conosciamo, peripezie di ampiezza
-              letteralmente “cosmica” animate da personaggi che attraversano
-              piani dimensionali disparati e sono allo stesso tempo così piccoli
-              da usare atomi come biglie e così grandi da cavalcare intere
-              galassie come fossero slittini. Dall’altro lato abbiamo un volume
-              asciutto e compatto, occupato da due soli testi che si prendono il
-              loro tempo e sono legati da corrispondenze tematiche e strutturali
-              così forti che, se i due protagonisti non avessero origini sociali
-              diverse, si potrebbe pensare di avere davanti due metà dello
-              stesso racconto, due episodi della vita di un unico eroe. Due
-              «meditazioni sul “male di vivere” e sull’atteggiamento da prendere
-              per fronteggiarlo» (Falcetto 1991, 1312) che si mettono in
-              perfetta continuità l’una rispetto all’altra e mettono tutti i
-              loro contenuti nel segno di un’immobilità obbligata: entrambe
-              dominate da un nemico sovraumano che si presenta come mostro
-              particellare, soverchiante ma impalpabile, contro il quale è
-              impossibile agire; entrambe presentano un protagonista passivo,
-              disilluso e stoico, che attraversa una coreografia di personaggi a
-              loro volta alle prese con lo stesso male e alla ricerca della loro
-              personale soluzione alla vita; in entrambe la mossa d’apertura è
-              lo «stabilirsi altrove» (Serra 2006, 141), cioè il gesto che mette
-              tutto il racconto sotto il segno dello sradicamento, della perdita
-              di ciò che era noto e familiare, del passaggio a uno stato di
-              azzeramento e ripartenza totale in cui la vita rimane impantanata
-              nella condizione in cui ogni cosa deve essere re-incontrata,
+              in mano i rispettivi testi. Da un lato abbiamo le{" "}
+              <em>Cosmicomiche</em>, una sequenza di dodici testi brevi, agili,
+              dai ritmi serrati, che sono il trionfo della varietà e della
+              fantasia più sfrenata: una raccolta che esibisce una mobilità
+              quasi al limite del nevrotico, con rimbalzi continui tra inserti
+              metaletterari, segmenti di dinamismo forsennato, descrizioni di
+              mondi collocati al di là dello spaziotempo come lo conosciamo,
+              peripezie di ampiezza letteralmente “cosmica” animate da
+              personaggi che attraversano piani dimensionali disparati e sono
+              allo stesso tempo così piccoli da usare atomi come biglie e così
+              grandi da cavalcare intere galassie come fossero slittini.
+              Dall’altro lato abbiamo un volume asciutto e compatto, occupato da
+              due soli testi che si prendono il loro tempo e sono legati da
+              corrispondenze tematiche e strutturali così forti che, se i due
+              protagonisti non avessero origini sociali diverse, si potrebbe
+              pensare di avere davanti due metà dello stesso racconto, due
+              episodi della vita di un unico eroe. Due «meditazioni sul “male di
+              vivere” e sull’atteggiamento da prendere per fronteggiarlo»
+              (Falcetto 1991, 1312) che si mettono in perfetta continuità l’una
+              rispetto all’altra e mettono tutti i loro contenuti nel segno di
+              un’immobilità obbligata: entrambe dominate da un nemico sovraumano
+              che si presenta come mostro particellare, soverchiante ma
+              impalpabile, contro il quale è impossibile agire; entrambe
+              presentano un protagonista passivo, disilluso e stoico, che
+              attraversa una coreografia di personaggi a loro volta alle prese
+              con lo stesso male e alla ricerca della loro personale soluzione
+              alla vita; in entrambe la mossa d’apertura è lo «stabilirsi
+              altrove» (Serra 2006, 141), cioè il gesto che mette tutto il
+              racconto sotto il segno dello sradicamento, della perdita di ciò
+              che era noto e familiare, del passaggio a uno stato di azzeramento
+              e ripartenza totale in cui la vita rimane impantanata nella
+              condizione in cui ogni cosa deve essere re-incontrata,
               ri-decifrata, re-imparata.<br></br>
-              Insomma da un lato un’opera di pura
-              molteplicità, leggerezza, esuberanza fantastica, con personaggi
-              poco meno che onnipotenti, e dall’altro un’opera che è
-              programmaticamente stazionaria, lenta, monocorde, abitata da eroi
-              passivi che rinunciano a ogni <em>agency</em> quasi per principio. Eppure…
+              Insomma da un lato un’opera di pura molteplicità, leggerezza,
+              esuberanza fantastica, con personaggi poco meno che onnipotenti, e
+              dall’altro un’opera che è programmaticamente stazionaria, lenta,
+              monocorde, abitata da eroi passivi che rinunciano a ogni{" "}
+              <em>agency</em> quasi per principio. Eppure…
             </p>
           </div>
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>La varietà nascosta</h2>
             <img
               className={SheetStyles.image}
-              style={{ gridColumn: " 1 / span 10",  position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1.5rem', backgroundColor:'var(--white)' }}
+              style={{
+                gridColumn: " 1 / span 10",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1.5rem",
+                backgroundColor: "var(--white)",
+              }}
               src={zoom_02}
             />
             <img
               className={SheetStyles.sideLegend}
-              style={{ gridColumn: "12 / span 1",  position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1.5rem', backgroundColor:'var(--white)' }}
+              style={{
+                gridColumn: "12 / span 1",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1.5rem",
+                backgroundColor: "var(--white)",
+              }}
               src={legenda_02}
             />
             <p className={SheetStyles.paragraph}>
@@ -197,20 +227,22 @@ class CombineInformationSheet extends Component {
               dimenticando per un attimo ciò che sappiamo su di loro e
               limitandoci alla ricognizione delle sequenze narrative di base che
               si susseguono nelle storie, veniamo a scoprire che l’impressione è
-              tutt’altro che confermata. A conti fatti, le <em>Cosmicomiche</em>, nella
-              loro caleidoscopica varietà di mondi e situazioni, e il dittico
-              <em> Nuvola-Formica</em>, coppia di monoliti dove a regnare sono «il povero,
-              il disadorno, lo squallore, il grigiore» (Calvino 1964, 108), in
-              realtà presentano sostanzialmente dallo stesso numero di sequenze:
-              rispettivamente 148 e 142. Se poi si va a verificare tra quante
-              categorie sono distribuite queste sequenze, scopriamo addirittura
-              che alle 19 delle <em>Cosmicomiche</em> rispondono le 22 della
+              tutt’altro che confermata. A conti fatti, le <em>Cosmicomiche</em>
+              , nella loro caleidoscopica varietà di mondi e situazioni, e il
+              dittico
+              <em> Nuvola-Formica</em>, coppia di monoliti dove a regnare sono
+              «il povero, il disadorno, lo squallore, il grigiore» (Calvino
+              1964, 108), in realtà presentano sostanzialmente dallo stesso
+              numero di sequenze: rispettivamente 148 e 142. Se poi si va a
+              verificare tra quante categorie sono distribuite queste sequenze,
+              scopriamo addirittura che alle 19 delle <em>Cosmicomiche</em>{" "}
+              rispondono le 22 della
               <em> Nuvola-Formica</em>.<br></br>
-              Com’è possibile? Come si spiega che l’uniforme
-              narrazione senza sorprese del dittico più cupo di Calvino abbia la
-              stessa quantità di segmenti narrativi dell’atlante cosmicomico e
-              addirittura una varietà di categorie <em>superiore</em> alla raccolta
-              variegata per eccellenza? Dov’è il trucco?
+              Com’è possibile? Come si spiega che l’uniforme narrazione senza
+              sorprese del dittico più cupo di Calvino abbia la stessa quantità
+              di segmenti narrativi dell’atlante cosmicomico e addirittura una
+              varietà di categorie <em>superiore</em> alla raccolta variegata
+              per eccellenza? Dov’è il trucco?
             </p>
           </div>
           <div className={SheetStyles.gridRow}>
@@ -219,12 +251,26 @@ class CombineInformationSheet extends Component {
             </h2>
             <img
               className={SheetStyles.image}
-              style={{ gridColumn: " 1 / span 10",  position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1rem', backgroundColor:'var(--white)'}}
+              style={{
+                gridColumn: " 1 / span 10",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                backgroundColor: "var(--white)",
+              }}
               src={zoom_03}
             />
             <img
               className={SheetStyles.sideLegend}
-              style={{ gridColumn: "12 / span 1",  position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1rem', backgroundColor:'var(--white)' }}
+              style={{
+                gridColumn: "12 / span 1",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                backgroundColor: "var(--white)",
+              }}
               src={legenda_03}
             />
             <p className={SheetStyles.paragraph}>
@@ -236,21 +282,25 @@ class CombineInformationSheet extends Component {
               solo l’effetto complessivo o la quantità molecolare delle parti,
               ma la struttura e le catene connettive in cui queste parti si
               raggruppano.<br></br>
-              Ed ecco apparire il trucco, quello che dimostra
-              davvero l’estensione della padronanza che Calvino ha sulle
-              tecniche di composizione e di combinazione: il potere di rivelare
-              o nascondere la varietà di un testo non modificando il numero
-              delle parti coinvolte, ma calibrandone l’effetto attraverso un
-              attento processo di assemblaggio strategico. Se riportiamo le
-              categorie ai tre grandi ambiti generali di appartenenza in cui può
-              essere sezionato un testo narrativo – quello <span style= {{color:'#FFA500'}}>formale</span> che contiene
-              gli elementi metatestuali che si trovano oltre il confine
-              diegetico, quello <span style= {{backgroundColor:'#0AFFB7'}}>interiore</span> che raccoglie stati d’animo,
-              sentimenti e condizioni psicologiche dei personaggi, e quello
-              <span style= {{color:'#5151FC'}}> esteriore</span>, che copre gesti, eventi e interazioni che si sviluppano
-              nel mondo del racconto – le ragioni delle differenze così spiccate
-              tra i due volumi, che risultavano indecifrabili sul piano delle
-              parti minime, emergono e iniziano a farsi chiare: a produrre (o
+              Ed ecco apparire il trucco, quello che dimostra davvero
+              l’estensione della padronanza che Calvino ha sulle tecniche di
+              composizione e di combinazione: il potere di rivelare o nascondere
+              la varietà di un testo non modificando il numero delle parti
+              coinvolte, ma calibrandone l’effetto attraverso un attento
+              processo di assemblaggio strategico. Se riportiamo le categorie ai
+              tre grandi ambiti generali di appartenenza in cui può essere
+              sezionato un testo narrativo – quello{" "}
+              <span style={{ color: "#FFA500" }}>formale</span> che contiene gli
+              elementi metatestuali che si trovano oltre il confine diegetico,
+              quello{" "}
+              <span style={{ backgroundColor: "#0AFFB7" }}>interiore</span> che
+              raccoglie stati d’animo, sentimenti e condizioni psicologiche dei
+              personaggi, e quello
+              <span style={{ color: "#5151FC" }}> esteriore</span>, che copre
+              gesti, eventi e interazioni che si sviluppano nel mondo del
+              racconto – le ragioni delle differenze così spiccate tra i due
+              volumi, che risultavano indecifrabili sul piano delle parti
+              minime, emergono e iniziano a farsi chiare: a produrre (o
               smorzare) l’effetto di varietà non è il numero delle sequenze, ma
               la frequenza con cui la narrazione compie il salto di ambito.
             </p>
@@ -258,13 +308,14 @@ class CombineInformationSheet extends Component {
               La manopola che permette a Calvino di partire da due repertori di
               motivi tutto sommato equivalenti e ottenere risultati così diversi
               è nascosta insomma nel fatto che i passaggi tra un motivo e
-              l’altro non contato per la loro <em>quantità</em>, ma per la loro <em>qualità</em>.
-              Se osserviamo la situazione nel dettaglio, possiamo vedere che
-              nelle <em>Cosmicomiche</em> la narrazione coinvolge tutti e tre gli ambiti
-              nominati, e passa dall’uno all’altro 70 volte; d’altra parte il
-              dittico <em>Nuvola-Formica</em> , a parità di numero di sequenze, coinvolge
-              solo due ambiti (escludendo del tutto quello formale), e i
-              passaggi sono 50, un intero quarto dei casi in meno. Che cosa
+              l’altro non contato per la loro <em>quantità</em>, ma per la loro{" "}
+              <em>qualità</em>. Se osserviamo la situazione nel dettaglio,
+              possiamo vedere che nelle <em>Cosmicomiche</em> la narrazione
+              coinvolge tutti e tre gli ambiti nominati, e passa dall’uno
+              all’altro 70 volte; d’altra parte il dittico{" "}
+              <em>Nuvola-Formica</em> , a parità di numero di sequenze,
+              coinvolge solo due ambiti (escludendo del tutto quello formale), e
+              i passaggi sono 50, un intero quarto dei casi in meno. Che cosa
               significa questo, in pratica? Significa che nel primo caso gli
               ambiti sono frantumati e mischiati, e i confini tra interno ed
               esterno (tanto dei personaggi quanto del testo stesso) sono
@@ -301,29 +352,30 @@ class CombineInformationSheet extends Component {
               comparata tra due testi: uno sguardo attento sulle scelte fatte da
               Calvino nel distribuire i suoi materiali può rivelarci dettagli
               illuminanti su come viene costruito l’equilibrio interno di una
-              storia. Un esempio è la funzione dell’<em>incontro</em> come meccanismo di
-              dissimulazione della complessità. Sia nella <em>Nuvola di smog</em> che
-              nella <em>Formica argentina</em>, l’ossatura fondamentale del testo è
-              basata sulla stessa dinamica: «un protagonista che parla in prima
-              persona ma non ha nome né volto si muove tra uno stuolo di
-              personaggi minori ognuno dei quali ha un suo modo di contrapporsi
-              alle formiche o allo smog» (Falcetto 1991, 1313), con un modello
-              che riprende, da un lato, il modello dantesco del viaggio
-              nell’oltretomba popolato da anime-<em>exempla</em>, e dall’altro la forma
-              del <em>Bildungsroman</em> goethiano, in cui l’eroe è avviato a un percorso
-              di crescita la cui riuscita dipende dall’insegnamento che sa
-              estrarre dai personaggi che incrocia. Ma nelle pieghe di questa
-              modalità a prima vista elementare, che scandisce il testo in pochi
-              lunghi blocchi ricorrenti, si annida un intero repertorio di
-              situazioni, sentimenti, scoperte, incontri negli incontri:
-              l’interazione con un altro individuo non è soltanto una delle
-              occasioni che possono darsi nella vicenda dei protagonisti, ma un
-              momento di innesco che moltiplica gli eventi narrativi pur
-              tenendoli tutti al suo interno. Una tattica su cui Calvino è
-              capace di costruire un effetto nell’effetto, come succede nella
-              seconda parte della <em>Formica</em>, dove esibisce un gusto combinatorio
-              già molto simile per sensibilità alle opere “<em>oulipienne</em>” degli
-              anni Settanta. In queste pagine, infatti, vediamo ben tre esempi
+              storia. Un esempio è la funzione dell’<em>incontro</em> come
+              meccanismo di dissimulazione della complessità. Sia nella{" "}
+              <em>Nuvola di smog</em> che nella <em>Formica argentina</em>,
+              l’ossatura fondamentale del testo è basata sulla stessa dinamica:
+              «un protagonista che parla in prima persona ma non ha nome né
+              volto si muove tra uno stuolo di personaggi minori ognuno dei
+              quali ha un suo modo di contrapporsi alle formiche o allo smog»
+              (Falcetto 1991, 1313), con un modello che riprende, da un lato, il
+              modello dantesco del viaggio nell’oltretomba popolato da anime-
+              <em>exempla</em>, e dall’altro la forma del <em>Bildungsroman</em>{" "}
+              goethiano, in cui l’eroe è avviato a un percorso di crescita la
+              cui riuscita dipende dall’insegnamento che sa estrarre dai
+              personaggi che incrocia. Ma nelle pieghe di questa modalità a
+              prima vista elementare, che scandisce il testo in pochi lunghi
+              blocchi ricorrenti, si annida un intero repertorio di situazioni,
+              sentimenti, scoperte, incontri negli incontri: l’interazione con
+              un altro individuo non è soltanto una delle occasioni che possono
+              darsi nella vicenda dei protagonisti, ma un momento di innesco che
+              moltiplica gli eventi narrativi pur tenendoli tutti al suo
+              interno. Una tattica su cui Calvino è capace di costruire un
+              effetto nell’effetto, come succede nella seconda parte della{" "}
+              <em>Formica</em>, dove esibisce un gusto combinatorio già molto
+              simile per sensibilità alle opere “<em>oulipienne</em>” degli anni
+              Settanta. In queste pagine, infatti, vediamo ben tre esempi
               consecutivi di “serie perfette”, o quasi, vale a dire tre casi in
               cui la narrazione assume una struttura compiutamente modulare e
               ripete intenzionalmente frammenti di se stessa, tutti imperniati
@@ -338,37 +390,51 @@ class CombineInformationSheet extends Component {
               con un altro personaggio ma l’incomunicabilità e il contatto
               fallito lo gettano in uno stato di depressione); e infine la terza
               è di nuovo una serie di due ripetizioni, ma stavolta con una
-              variazione: incontro-iniziativa-delusione e
-              incontro-iniziativa-<em>visione</em>, con la ricercata rottura dello schema
-              che acutizza il senso di disperazione dell’eroe ormai vicino al
-              punto di rottura.<br></br>
-              Non si tratta ovviamente solo di un piccolo
-              gioco nascosto dall’autore dietro le quinte della storia:
-              l’effetto di ripetizione è integrale alla rappresentazione del
-              pessimismo incombente del racconto, che moltiplica gli sforzi
-              degli individui perseguitati dalle formiche per sottolineare
-              ancora più nettamente la loro inutilità. Ma è anche funzionale a
-              rivelare la lucidità disillusa del protagonista: se infatti un
-              singolo incontro, con una singola raccomandazione strategica,
-              potrebbe costituire un punto di speranza, tenacia, e di sfida
-              all’universo, facendo apparire la tendenza del protagonista allo
-              scoraggiamento come un tratto di debolezza, la girandola degli
-              incontri e dei suggerimenti disparati trasmette immediatamente la
-              sensazione di una vuota illusione e di un disperato attaccamento a
-              qualche menzogna consolatoria, di fronte alla quale il realismo
-              stoico e disincantato del protagonista, che tenta tutto senza
-              convinzione, rimane a campeggiare come l’unica basata su una
-              disposizione d’animo condivisibile: la dignitosa rassegnazione
-              alla presenza del male nell’universo e il coraggio della realtà
+              variazione: incontro-iniziativa-delusione e incontro-iniziativa-
+              <em>visione</em>, con la ricercata rottura dello schema che
+              acutizza il senso di disperazione dell’eroe ormai vicino al punto
+              di rottura.<br></br>
+              Non si tratta ovviamente solo di un piccolo gioco nascosto
+              dall’autore dietro le quinte della storia: l’effetto di
+              ripetizione è integrale alla rappresentazione del pessimismo
+              incombente del racconto, che moltiplica gli sforzi degli individui
+              perseguitati dalle formiche per sottolineare ancora più nettamente
+              la loro inutilità. Ma è anche funzionale a rivelare la lucidità
+              disillusa del protagonista: se infatti un singolo incontro, con
+              una singola raccomandazione strategica, potrebbe costituire un
+              punto di speranza, tenacia, e di sfida all’universo, facendo
+              apparire la tendenza del protagonista allo scoraggiamento come un
+              tratto di debolezza, la girandola degli incontri e dei
+              suggerimenti disparati trasmette immediatamente la sensazione di
+              una vuota illusione e di un disperato attaccamento a qualche
+              menzogna consolatoria, di fronte alla quale il realismo stoico e
+              disincantato del protagonista, che tenta tutto senza convinzione,
+              rimane a campeggiare come l’unica basata su una disposizione
+              d’animo condivisibile: la dignitosa rassegnazione alla presenza
+              del male nell’universo e il coraggio della realtà
             </p>
             <img
               className={SheetStyles.image}
-              style={{ gridColumn: "8 / span 4", position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1rem', backgroundColor:'var(--white)' }}
+              style={{
+                gridColumn: "8 / span 4",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                backgroundColor: "var(--white)",
+              }}
               src={zoom_04}
             />
             <img
               className={SheetStyles.sideLegend}
-              style={{ gridColumn: "12 / span 1", position:'sticky',top:'calc(var(--navigation-height)', paddingTop:'1rem',paddingBottom:'1rem', backgroundColor:'var(--white)' }}
+              style={{
+                gridColumn: "12 / span 1",
+                position: "sticky",
+                top: "calc(var(--navigation-height)",
+                paddingTop: "1rem",
+                paddingBottom: "1rem",
+                backgroundColor: "var(--white)",
+              }}
               src={legenda_04}
             />
           </div>
@@ -414,13 +480,11 @@ class CombineInformationSheet extends Component {
               </ol>
             </p>
           </div>
-
-
-                  <FooterSchede2
-                    linkTappaA={"/form/phase1"}
-                    linkTappaB={"/form/phase3"}
-                    linkAnalisi={"/form/phase2"}
-                  />
+          <FooterSchede2
+            linkTappaA={"/form/phase1"}
+            linkTappaB={"/form/phase3"}
+            linkAnalisi={"/form/phase2"}
+          />
           ;
         </main>
       </>

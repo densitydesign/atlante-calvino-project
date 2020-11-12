@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import SheetStyles from "../SheetStyles.module.css";
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede2 from '../FooterSchede2';
+import FooterSchede2 from "../FooterSchede2";
 
 import "./TransformInformationSheet.css";
 
@@ -50,10 +50,9 @@ class TransformInformationSheet extends Component {
               «the setting corresponds with the geographical reality by
               realistically portraying the surrounding» (Reuschel-Hurni 2011,
               296).<br></br>
-              Analizzando il tempo della storia (cfr. Genette 1972) dei
-              testi del corpus calviniano che presentano ambientazioni di questo
-              tipo è necessario operare un’ulteriore distinzione in tre
-              tipologie:
+              Analizzando il tempo della storia (cfr. Genette 1972) dei testi
+              del corpus calviniano che presentano ambientazioni di questo tipo
+              è necessario operare un’ulteriore distinzione in tre tipologie:
               <ol>
                 <li>
                   Ambientazioni di testi in cui il tempo della storia è
@@ -82,11 +81,10 @@ class TransformInformationSheet extends Component {
               terrestri localizzabili del corpus quattro differenti mappe che
               mostrano una selezione degli stessi luoghi sulla base del decennio
               di pubblicazione delle opere (1945-1955; 1956-1965; 1966-1975;
-              1976-1984).<br></br>
-              È allora piuttosto significativo rilevare come, nel
-              passaggio dagli anni Quaranta agli anni Ottanta del Novecento,
-              l’orizzonte geografico dello scrittore si ampli progressivamente,
-              arrivando infine a comprendere tutto il mondo.
+              1976-1984).<br></br>È allora piuttosto significativo rilevare
+              come, nel passaggio dagli anni Quaranta agli anni Ottanta del
+              Novecento, l’orizzonte geografico dello scrittore si ampli
+              progressivamente, arrivando infine a comprendere tutto il mondo.
             </p>
             <div className={SheetStyles.sideContent}>
               <img
@@ -311,7 +309,6 @@ class TransformInformationSheet extends Component {
               </li>
             </ol>
           </div>
-
 
           <FooterSchede2
             linkTappaA={"/space/phase1"}
