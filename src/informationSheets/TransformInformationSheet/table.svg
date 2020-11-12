@@ -1,335 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 318.9 135.1" style="enable-background:new 0 0 318.9 135.1;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;}
-	.st1{fill:none;stroke:#FFDA40;stroke-width:0.3;stroke-linecap:square;}
-	.st2{fill:url(#SVGID_1_);}
-	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st4{font-family:'HKGrotesk-Medium';}
-	.st5{font-size:8.2366px;}
-	.st6{font-family:'HKGrotesk-Regular';}
-</style>
-<pattern  x="2.5" y="136.2" width="72" height="62" patternUnits="userSpaceOnUse" id="USGS_8_Sewage_Disposal" viewBox="50.3 -113.4 72 62" style="overflow:visible;">
-	<g>
-		<rect x="50.3" y="-113.4" class="st0" width="72" height="62"/>
-		<rect x="50.3" y="-113.4" class="st0" width="72" height="62"/>
-		<line class="st1" x1="14.6" y1="-71.6" x2="65.6" y2="-20.6"/>
-		<line class="st1" x1="13.4" y1="-70.4" x2="64.4" y2="-19.4"/>
-		<line class="st1" x1="12.2" y1="-69.2" x2="63.1" y2="-18.2"/>
-		<line class="st1" x1="11" y1="-68" x2="61.9" y2="-17"/>
-		<line class="st1" x1="9.8" y1="-66.8" x2="60.7" y2="-15.8"/>
-		<line class="st1" x1="8.6" y1="-65.5" x2="59.5" y2="-14.6"/>
-		<line class="st1" x1="7.4" y1="-64.3" x2="58.3" y2="-13.4"/>
-		<line class="st1" x1="6.2" y1="-63.1" x2="57.1" y2="-12.2"/>
-		<line class="st1" x1="5" y1="-61.9" x2="55.9" y2="-11"/>
-		<line class="st1" x1="3.8" y1="-60.7" x2="54.7" y2="-9.8"/>
-		<line class="st1" x1="2.6" y1="-59.5" x2="53.5" y2="-8.6"/>
-		<line class="st1" x1="1.4" y1="-58.3" x2="52.3" y2="-7.4"/>
-		<line class="st1" x1="0.2" y1="-57.1" x2="51.1" y2="-6.2"/>
-		<line class="st1" x1="86.7" y1="-71.6" x2="137.6" y2="-20.6"/>
-		<line class="st1" x1="85.5" y1="-70.4" x2="136.4" y2="-19.4"/>
-		<line class="st1" x1="84.3" y1="-69.2" x2="135.2" y2="-18.2"/>
-		<line class="st1" x1="83.1" y1="-68" x2="134" y2="-17"/>
-		<line class="st1" x1="81.9" y1="-66.8" x2="132.8" y2="-15.8"/>
-		<line class="st1" x1="80.7" y1="-65.5" x2="131.6" y2="-14.6"/>
-		<line class="st1" x1="79.5" y1="-64.3" x2="130.4" y2="-13.4"/>
-		<line class="st1" x1="78.3" y1="-63.1" x2="129.2" y2="-12.2"/>
-		<line class="st1" x1="77" y1="-61.9" x2="128" y2="-11"/>
-		<line class="st1" x1="75.8" y1="-60.7" x2="126.8" y2="-9.8"/>
-		<line class="st1" x1="74.6" y1="-59.5" x2="125.6" y2="-8.6"/>
-		<line class="st1" x1="73.4" y1="-58.3" x2="124.4" y2="-7.4"/>
-		<line class="st1" x1="72.2" y1="-57.1" x2="123.2" y2="-6.2"/>
-		<line class="st1" x1="71" y1="-55.9" x2="122" y2="-5"/>
-		<line class="st1" x1="69.8" y1="-54.7" x2="120.7" y2="-3.8"/>
-		<line class="st1" x1="68.6" y1="-53.5" x2="119.5" y2="-2.6"/>
-		<line class="st1" x1="67.4" y1="-52.3" x2="118.3" y2="-1.4"/>
-		<line class="st1" x1="66.2" y1="-51.1" x2="117.1" y2="-0.2"/>
-		<line class="st1" x1="14.6" y1="-102.6" x2="65.6" y2="-51.7"/>
-		<line class="st1" x1="13.4" y1="-101.4" x2="64.4" y2="-50.5"/>
-		<line class="st1" x1="12.2" y1="-100.2" x2="63.1" y2="-49.3"/>
-		<line class="st1" x1="11" y1="-99" x2="61.9" y2="-48.1"/>
-		<line class="st1" x1="9.8" y1="-97.8" x2="60.7" y2="-46.9"/>
-		<line class="st1" x1="8.6" y1="-96.6" x2="59.5" y2="-45.7"/>
-		<line class="st1" x1="7.4" y1="-95.4" x2="58.3" y2="-44.5"/>
-		<line class="st1" x1="6.2" y1="-94.2" x2="57.1" y2="-43.3"/>
-		<line class="st1" x1="5" y1="-93" x2="55.9" y2="-42.1"/>
-		<line class="st1" x1="3.8" y1="-91.8" x2="54.7" y2="-40.9"/>
-		<line class="st1" x1="2.6" y1="-90.6" x2="53.5" y2="-39.7"/>
-		<line class="st1" x1="1.4" y1="-89.4" x2="52.3" y2="-38.5"/>
-		<line class="st1" x1="0.2" y1="-88.2" x2="51.1" y2="-37.2"/>
-		<line class="st1" x1="86.7" y1="-102.6" x2="137.6" y2="-51.7"/>
-		<line class="st1" x1="85.5" y1="-101.4" x2="136.4" y2="-50.5"/>
-		<line class="st1" x1="84.3" y1="-100.2" x2="135.2" y2="-49.3"/>
-		<line class="st1" x1="83.1" y1="-99" x2="134" y2="-48.1"/>
-		<line class="st1" x1="81.9" y1="-97.8" x2="132.8" y2="-46.9"/>
-		<line class="st1" x1="80.7" y1="-96.6" x2="131.6" y2="-45.7"/>
-		<line class="st1" x1="79.5" y1="-95.4" x2="130.4" y2="-44.5"/>
-		<line class="st1" x1="78.3" y1="-94.2" x2="129.2" y2="-43.3"/>
-		<line class="st1" x1="77" y1="-93" x2="128" y2="-42.1"/>
-		<line class="st1" x1="75.8" y1="-91.8" x2="126.8" y2="-40.9"/>
-		<line class="st1" x1="74.6" y1="-90.6" x2="125.6" y2="-39.7"/>
-		<line class="st1" x1="73.4" y1="-89.4" x2="124.4" y2="-38.5"/>
-		<line class="st1" x1="72.2" y1="-88.2" x2="123.2" y2="-37.2"/>
-		<line class="st1" x1="71" y1="-87" x2="122" y2="-36"/>
-		<line class="st1" x1="69.8" y1="-85.8" x2="120.7" y2="-34.8"/>
-		<line class="st1" x1="68.6" y1="-84.6" x2="119.5" y2="-33.6"/>
-		<line class="st1" x1="67.4" y1="-83.4" x2="118.3" y2="-32.4"/>
-		<line class="st1" x1="66.2" y1="-82.2" x2="117.1" y2="-31.2"/>
-		<line class="st1" x1="65" y1="-80.9" x2="115.9" y2="-30"/>
-		<line class="st1" x1="63.8" y1="-79.7" x2="114.7" y2="-28.8"/>
-		<line class="st1" x1="62.6" y1="-78.5" x2="113.5" y2="-27.6"/>
-		<line class="st1" x1="61.4" y1="-77.3" x2="112.3" y2="-26.4"/>
-		<line class="st1" x1="60.2" y1="-76.1" x2="111.1" y2="-25.2"/>
-		<line class="st1" x1="59" y1="-74.9" x2="109.9" y2="-24"/>
-		<line class="st1" x1="57.8" y1="-73.7" x2="108.7" y2="-22.8"/>
-		<line class="st1" x1="56.6" y1="-72.5" x2="107.5" y2="-21.6"/>
-		<line class="st1" x1="55.4" y1="-71.3" x2="106.3" y2="-20.4"/>
-		<line class="st1" x1="54.2" y1="-70.1" x2="105.1" y2="-19.2"/>
-		<line class="st1" x1="53" y1="-68.9" x2="103.9" y2="-18"/>
-		<line class="st1" x1="51.8" y1="-67.7" x2="102.7" y2="-16.8"/>
-		<line class="st1" x1="50.6" y1="-66.5" x2="101.5" y2="-15.6"/>
-		<line class="st1" x1="49.4" y1="-65.3" x2="100.3" y2="-14.4"/>
-		<line class="st1" x1="48.2" y1="-64.1" x2="99.1" y2="-13.2"/>
-		<line class="st1" x1="47" y1="-62.9" x2="97.9" y2="-12"/>
-		<line class="st1" x1="45.8" y1="-61.7" x2="96.7" y2="-10.8"/>
-		<line class="st1" x1="44.6" y1="-60.5" x2="95.5" y2="-9.6"/>
-		<line class="st1" x1="43.4" y1="-59.3" x2="94.3" y2="-8.4"/>
-		<line class="st1" x1="42.2" y1="-58.1" x2="93.1" y2="-7.2"/>
-		<line class="st1" x1="41" y1="-56.9" x2="91.9" y2="-6"/>
-		<line class="st1" x1="39.8" y1="-55.7" x2="90.7" y2="-4.8"/>
-		<line class="st1" x1="38.6" y1="-54.5" x2="89.5" y2="-3.6"/>
-		<line class="st1" x1="37.4" y1="-53.3" x2="88.3" y2="-2.4"/>
-		<line class="st1" x1="36.2" y1="-52.1" x2="87.1" y2="-1.2"/>
-		<line class="st1" x1="121.4" y1="-65.3" x2="172.3" y2="-14.4"/>
-		<line class="st1" x1="120.2" y1="-64.1" x2="171.1" y2="-13.2"/>
-		<line class="st1" x1="119" y1="-62.9" x2="169.9" y2="-12"/>
-		<line class="st1" x1="117.8" y1="-61.7" x2="168.7" y2="-10.8"/>
-		<line class="st1" x1="116.6" y1="-60.5" x2="167.5" y2="-9.6"/>
-		<line class="st1" x1="115.4" y1="-59.3" x2="166.3" y2="-8.4"/>
-		<line class="st1" x1="114.2" y1="-58.1" x2="165.1" y2="-7.2"/>
-		<line class="st1" x1="113" y1="-56.9" x2="163.9" y2="-6"/>
-		<line class="st1" x1="111.8" y1="-55.7" x2="162.7" y2="-4.8"/>
-		<line class="st1" x1="110.6" y1="-54.5" x2="161.5" y2="-3.6"/>
-		<line class="st1" x1="109.4" y1="-53.3" x2="160.3" y2="-2.4"/>
-		<line class="st1" x1="108.2" y1="-52.1" x2="159.1" y2="-1.2"/>
-		<line class="st1" x1="14.6" y1="-133.6" x2="65.6" y2="-82.7"/>
-		<line class="st1" x1="13.4" y1="-132.4" x2="64.4" y2="-81.5"/>
-		<line class="st1" x1="12.2" y1="-131.2" x2="63.1" y2="-80.3"/>
-		<line class="st1" x1="11" y1="-130" x2="61.9" y2="-79.1"/>
-		<line class="st1" x1="9.8" y1="-128.8" x2="60.7" y2="-77.9"/>
-		<line class="st1" x1="8.6" y1="-127.6" x2="59.5" y2="-76.7"/>
-		<line class="st1" x1="7.4" y1="-126.4" x2="58.3" y2="-75.5"/>
-		<line class="st1" x1="6.2" y1="-125.2" x2="57.1" y2="-74.3"/>
-		<line class="st1" x1="5" y1="-124" x2="55.9" y2="-73.1"/>
-		<line class="st1" x1="3.8" y1="-122.8" x2="54.7" y2="-71.9"/>
-		<line class="st1" x1="2.6" y1="-121.6" x2="53.5" y2="-70.7"/>
-		<line class="st1" x1="1.4" y1="-120.4" x2="52.3" y2="-69.5"/>
-		<line class="st1" x1="0.2" y1="-119.2" x2="51.1" y2="-68.3"/>
-		<line class="st1" x1="86.7" y1="-133.6" x2="137.6" y2="-82.7"/>
-		<line class="st1" x1="85.5" y1="-132.4" x2="136.4" y2="-81.5"/>
-		<line class="st1" x1="84.3" y1="-131.2" x2="135.2" y2="-80.3"/>
-		<line class="st1" x1="83.1" y1="-130" x2="134" y2="-79.1"/>
-		<line class="st1" x1="81.9" y1="-128.8" x2="132.8" y2="-77.9"/>
-		<line class="st1" x1="80.7" y1="-127.6" x2="131.6" y2="-76.7"/>
-		<line class="st1" x1="79.5" y1="-126.4" x2="130.4" y2="-75.5"/>
-		<line class="st1" x1="78.3" y1="-125.2" x2="129.2" y2="-74.3"/>
-		<line class="st1" x1="77" y1="-124" x2="128" y2="-73.1"/>
-		<line class="st1" x1="75.8" y1="-122.8" x2="126.8" y2="-71.9"/>
-		<line class="st1" x1="74.6" y1="-121.6" x2="125.6" y2="-70.7"/>
-		<line class="st1" x1="73.4" y1="-120.4" x2="124.4" y2="-69.5"/>
-		<line class="st1" x1="72.2" y1="-119.2" x2="123.2" y2="-68.3"/>
-		<line class="st1" x1="71" y1="-118" x2="122" y2="-67.1"/>
-		<line class="st1" x1="69.8" y1="-116.8" x2="120.7" y2="-65.9"/>
-		<line class="st1" x1="68.6" y1="-115.6" x2="119.5" y2="-64.7"/>
-		<line class="st1" x1="67.4" y1="-114.4" x2="118.3" y2="-63.5"/>
-		<line class="st1" x1="66.2" y1="-113.2" x2="117.1" y2="-62.3"/>
-		<line class="st1" x1="65" y1="-112" x2="115.9" y2="-61.1"/>
-		<line class="st1" x1="63.8" y1="-110.8" x2="114.7" y2="-59.9"/>
-		<line class="st1" x1="62.6" y1="-109.6" x2="113.5" y2="-58.7"/>
-		<line class="st1" x1="61.4" y1="-108.4" x2="112.3" y2="-57.5"/>
-		<line class="st1" x1="60.2" y1="-107.2" x2="111.1" y2="-56.3"/>
-		<line class="st1" x1="59" y1="-106" x2="109.9" y2="-55.1"/>
-		<line class="st1" x1="57.8" y1="-104.8" x2="108.7" y2="-53.8"/>
-		<line class="st1" x1="56.6" y1="-103.6" x2="107.5" y2="-52.6"/>
-		<line class="st1" x1="55.4" y1="-102.4" x2="106.3" y2="-51.4"/>
-		<line class="st1" x1="54.2" y1="-101.2" x2="105.1" y2="-50.2"/>
-		<line class="st1" x1="53" y1="-100" x2="103.9" y2="-49"/>
-		<line class="st1" x1="51.8" y1="-98.8" x2="102.7" y2="-47.8"/>
-		<line class="st1" x1="50.6" y1="-97.5" x2="101.5" y2="-46.6"/>
-		<line class="st1" x1="49.4" y1="-96.3" x2="100.3" y2="-45.4"/>
-		<line class="st1" x1="48.2" y1="-95.1" x2="99.1" y2="-44.2"/>
-		<line class="st1" x1="47" y1="-93.9" x2="97.9" y2="-43"/>
-		<line class="st1" x1="45.8" y1="-92.7" x2="96.7" y2="-41.8"/>
-		<line class="st1" x1="44.6" y1="-91.5" x2="95.5" y2="-40.6"/>
-		<line class="st1" x1="43.4" y1="-90.3" x2="94.3" y2="-39.4"/>
-		<line class="st1" x1="42.2" y1="-89.1" x2="93.1" y2="-38.2"/>
-		<line class="st1" x1="41" y1="-87.9" x2="91.9" y2="-37"/>
-		<line class="st1" x1="39.8" y1="-86.7" x2="90.7" y2="-35.8"/>
-		<line class="st1" x1="38.6" y1="-85.5" x2="89.5" y2="-34.6"/>
-		<line class="st1" x1="37.4" y1="-84.3" x2="88.3" y2="-33.4"/>
-		<line class="st1" x1="36.2" y1="-83.1" x2="87.1" y2="-32.2"/>
-		<line class="st1" x1="35" y1="-81.9" x2="85.9" y2="-31"/>
-		<line class="st1" x1="121.4" y1="-96.3" x2="172.3" y2="-45.4"/>
-		<line class="st1" x1="120.2" y1="-95.1" x2="171.1" y2="-44.2"/>
-		<line class="st1" x1="119" y1="-93.9" x2="169.9" y2="-43"/>
-		<line class="st1" x1="117.8" y1="-92.7" x2="168.7" y2="-41.8"/>
-		<line class="st1" x1="116.6" y1="-91.5" x2="167.5" y2="-40.6"/>
-		<line class="st1" x1="115.4" y1="-90.3" x2="166.3" y2="-39.4"/>
-		<line class="st1" x1="114.2" y1="-89.1" x2="165.1" y2="-38.2"/>
-		<line class="st1" x1="113" y1="-87.9" x2="163.9" y2="-37"/>
-		<line class="st1" x1="111.8" y1="-86.7" x2="162.7" y2="-35.8"/>
-		<line class="st1" x1="110.6" y1="-85.5" x2="161.5" y2="-34.6"/>
-		<line class="st1" x1="109.4" y1="-84.3" x2="160.3" y2="-33.4"/>
-		<line class="st1" x1="108.2" y1="-83.1" x2="159.1" y2="-32.2"/>
-		<line class="st1" x1="107" y1="-81.9" x2="157.9" y2="-31"/>
-		<line class="st1" x1="13.4" y1="-163.4" x2="64.4" y2="-112.5"/>
-		<line class="st1" x1="12.2" y1="-162.2" x2="63.1" y2="-111.3"/>
-		<line class="st1" x1="11" y1="-161" x2="61.9" y2="-110.1"/>
-		<line class="st1" x1="9.8" y1="-159.8" x2="60.7" y2="-108.9"/>
-		<line class="st1" x1="8.6" y1="-158.6" x2="59.5" y2="-107.7"/>
-		<line class="st1" x1="7.4" y1="-157.4" x2="58.3" y2="-106.5"/>
-		<line class="st1" x1="6.2" y1="-156.2" x2="57.1" y2="-105.3"/>
-		<line class="st1" x1="5" y1="-155" x2="55.9" y2="-104.1"/>
-		<line class="st1" x1="3.8" y1="-153.8" x2="54.7" y2="-102.9"/>
-		<line class="st1" x1="2.6" y1="-152.6" x2="53.5" y2="-101.7"/>
-		<line class="st1" x1="1.4" y1="-151.4" x2="52.3" y2="-100.5"/>
-		<line class="st1" x1="0.2" y1="-150.2" x2="51.1" y2="-99.3"/>
-		<line class="st1" x1="85.5" y1="-163.4" x2="136.4" y2="-112.5"/>
-		<line class="st1" x1="84.3" y1="-162.2" x2="135.2" y2="-111.3"/>
-		<line class="st1" x1="83.1" y1="-161" x2="134" y2="-110.1"/>
-		<line class="st1" x1="81.9" y1="-159.8" x2="132.8" y2="-108.9"/>
-		<line class="st1" x1="80.7" y1="-158.6" x2="131.6" y2="-107.7"/>
-		<line class="st1" x1="79.5" y1="-157.4" x2="130.4" y2="-106.5"/>
-		<line class="st1" x1="78.3" y1="-156.2" x2="129.2" y2="-105.3"/>
-		<line class="st1" x1="77" y1="-155" x2="128" y2="-104.1"/>
-		<line class="st1" x1="75.8" y1="-153.8" x2="126.8" y2="-102.9"/>
-		<line class="st1" x1="74.6" y1="-152.6" x2="125.6" y2="-101.7"/>
-		<line class="st1" x1="73.4" y1="-151.4" x2="124.4" y2="-100.5"/>
-		<line class="st1" x1="72.2" y1="-150.2" x2="123.2" y2="-99.3"/>
-		<line class="st1" x1="71" y1="-149" x2="122" y2="-98.1"/>
-		<line class="st1" x1="69.8" y1="-147.8" x2="120.7" y2="-96.9"/>
-		<line class="st1" x1="68.6" y1="-146.6" x2="119.5" y2="-95.7"/>
-		<line class="st1" x1="67.4" y1="-145.4" x2="118.3" y2="-94.5"/>
-		<line class="st1" x1="66.2" y1="-144.2" x2="117.1" y2="-93.3"/>
-		<line class="st1" x1="65" y1="-143" x2="115.9" y2="-92.1"/>
-		<line class="st1" x1="63.8" y1="-141.8" x2="114.7" y2="-90.9"/>
-		<line class="st1" x1="62.6" y1="-140.6" x2="113.5" y2="-89.7"/>
-		<line class="st1" x1="61.4" y1="-139.4" x2="112.3" y2="-88.5"/>
-		<line class="st1" x1="60.2" y1="-138.2" x2="111.1" y2="-87.3"/>
-		<line class="st1" x1="59" y1="-137" x2="109.9" y2="-86.1"/>
-		<line class="st1" x1="57.8" y1="-135.8" x2="108.7" y2="-84.9"/>
-		<line class="st1" x1="56.6" y1="-134.6" x2="107.5" y2="-83.7"/>
-		<line class="st1" x1="55.4" y1="-133.4" x2="106.3" y2="-82.5"/>
-		<line class="st1" x1="54.2" y1="-132.2" x2="105.1" y2="-81.3"/>
-		<line class="st1" x1="53" y1="-131" x2="103.9" y2="-80.1"/>
-		<line class="st1" x1="51.8" y1="-129.8" x2="102.7" y2="-78.9"/>
-		<line class="st1" x1="50.6" y1="-128.6" x2="101.5" y2="-77.7"/>
-		<line class="st1" x1="49.4" y1="-127.4" x2="100.3" y2="-76.5"/>
-		<line class="st1" x1="48.2" y1="-126.2" x2="99.1" y2="-75.3"/>
-		<line class="st1" x1="47" y1="-125" x2="97.9" y2="-74.1"/>
-		<line class="st1" x1="45.8" y1="-123.8" x2="96.7" y2="-72.9"/>
-		<line class="st1" x1="44.6" y1="-122.6" x2="95.5" y2="-71.7"/>
-		<line class="st1" x1="43.4" y1="-121.4" x2="94.3" y2="-70.4"/>
-		<line class="st1" x1="42.2" y1="-120.2" x2="93.1" y2="-69.2"/>
-		<line class="st1" x1="41" y1="-119" x2="91.9" y2="-68"/>
-		<line class="st1" x1="39.8" y1="-117.8" x2="90.7" y2="-66.8"/>
-		<line class="st1" x1="38.6" y1="-116.6" x2="89.5" y2="-65.6"/>
-		<line class="st1" x1="37.4" y1="-115.4" x2="88.3" y2="-64.4"/>
-		<line class="st1" x1="36.2" y1="-114.1" x2="87.1" y2="-63.2"/>
-		<line class="st1" x1="35" y1="-112.9" x2="85.9" y2="-62"/>
-		<line class="st1" x1="121.4" y1="-127.4" x2="172.3" y2="-76.5"/>
-		<line class="st1" x1="120.2" y1="-126.2" x2="171.1" y2="-75.3"/>
-		<line class="st1" x1="119" y1="-125" x2="169.9" y2="-74.1"/>
-		<line class="st1" x1="117.8" y1="-123.8" x2="168.7" y2="-72.9"/>
-		<line class="st1" x1="116.6" y1="-122.6" x2="167.5" y2="-71.7"/>
-		<line class="st1" x1="115.4" y1="-121.4" x2="166.3" y2="-70.4"/>
-		<line class="st1" x1="114.2" y1="-120.2" x2="165.1" y2="-69.2"/>
-		<line class="st1" x1="113" y1="-119" x2="163.9" y2="-68"/>
-		<line class="st1" x1="111.8" y1="-117.8" x2="162.7" y2="-66.8"/>
-		<line class="st1" x1="110.6" y1="-116.6" x2="161.5" y2="-65.6"/>
-		<line class="st1" x1="109.4" y1="-115.4" x2="160.3" y2="-64.4"/>
-		<line class="st1" x1="108.2" y1="-114.1" x2="159.1" y2="-63.2"/>
-		<line class="st1" x1="107" y1="-112.9" x2="157.9" y2="-62"/>
-		<line class="st1" x1="55.4" y1="-164.4" x2="106.3" y2="-113.5"/>
-		<line class="st1" x1="54.2" y1="-163.2" x2="105.1" y2="-112.3"/>
-		<line class="st1" x1="53" y1="-162" x2="103.9" y2="-111.1"/>
-		<line class="st1" x1="51.8" y1="-160.8" x2="102.7" y2="-109.9"/>
-		<line class="st1" x1="50.6" y1="-159.6" x2="101.5" y2="-108.7"/>
-		<line class="st1" x1="49.4" y1="-158.4" x2="100.3" y2="-107.5"/>
-		<line class="st1" x1="48.2" y1="-157.2" x2="99.1" y2="-106.3"/>
-		<line class="st1" x1="47" y1="-156" x2="97.9" y2="-105.1"/>
-		<line class="st1" x1="45.8" y1="-154.8" x2="96.7" y2="-103.9"/>
-		<line class="st1" x1="44.6" y1="-153.6" x2="95.5" y2="-102.7"/>
-		<line class="st1" x1="43.4" y1="-152.4" x2="94.3" y2="-101.5"/>
-		<line class="st1" x1="42.2" y1="-151.2" x2="93.1" y2="-100.3"/>
-		<line class="st1" x1="41" y1="-150" x2="91.9" y2="-99.1"/>
-		<line class="st1" x1="39.8" y1="-148.8" x2="90.7" y2="-97.9"/>
-		<line class="st1" x1="38.6" y1="-147.6" x2="89.5" y2="-96.7"/>
-		<line class="st1" x1="37.4" y1="-146.4" x2="88.3" y2="-95.5"/>
-		<line class="st1" x1="36.2" y1="-145.2" x2="87.1" y2="-94.3"/>
-		<line class="st1" x1="35" y1="-144" x2="85.9" y2="-93.1"/>
-		<line class="st1" x1="121.4" y1="-158.4" x2="172.3" y2="-107.5"/>
-		<line class="st1" x1="120.2" y1="-157.2" x2="171.1" y2="-106.3"/>
-		<line class="st1" x1="119" y1="-156" x2="169.9" y2="-105.1"/>
-		<line class="st1" x1="117.8" y1="-154.8" x2="168.7" y2="-103.9"/>
-		<line class="st1" x1="116.6" y1="-153.6" x2="167.5" y2="-102.7"/>
-		<line class="st1" x1="115.4" y1="-152.4" x2="166.3" y2="-101.5"/>
-		<line class="st1" x1="114.2" y1="-151.2" x2="165.1" y2="-100.3"/>
-		<line class="st1" x1="113" y1="-150" x2="163.9" y2="-99.1"/>
-		<line class="st1" x1="111.8" y1="-148.8" x2="162.7" y2="-97.9"/>
-		<line class="st1" x1="110.6" y1="-147.6" x2="161.5" y2="-96.7"/>
-		<line class="st1" x1="109.4" y1="-146.4" x2="160.3" y2="-95.5"/>
-		<line class="st1" x1="108.2" y1="-145.2" x2="159.1" y2="-94.3"/>
-		<line class="st1" x1="107" y1="-144" x2="157.9" y2="-93.1"/>
-	</g>
-</pattern>
-<title>table</title>
-<pattern  id="SVGID_1_" xlink:href="#USGS_8_Sewage_Disposal" patternTransform="matrix(1 0 0 -1 46.91 -16107.96)">
-</pattern>
-<rect x="2.2" y="1.5" class="st2" width="83.4" height="24.1"/>
-<rect x="1.9" y="1" class="st3" width="315" height="133.1"/>
-<line class="st3" x1="1.9" y1="25.1" x2="316.7" y2="25.1"/>
-<line class="st3" x1="1.9" y1="68.7" x2="316.7" y2="68.7"/>
-<line class="st3" x1="1.9" y1="46.9" x2="316.7" y2="46.9"/>
-<line class="st3" x1="27.2" y1="134.1" x2="316.7" y2="134.1"/>
-<line class="st3" x1="1.9" y1="112.3" x2="316.7" y2="112.3"/>
-<line class="st3" x1="1.9" y1="90.5" x2="316.7" y2="90.5"/>
-<line class="st3" x1="85.3" y1="0.8" x2="85.3" y2="134.3"/>
-<line class="st3" x1="143.2" y1="0.8" x2="143.2" y2="134.3"/>
-<line class="st3" x1="201" y1="0.8" x2="201" y2="134.3"/>
-<line class="st3" x1="258.9" y1="0.8" x2="258.9" y2="134.3"/>
-<line class="st3" x1="316.8" y1="3.3" x2="316.8" y2="134.3"/>
-<text transform="matrix(1 0 0 1 7.8696 11.1236)" class="st4 st5">AMBIENTAZIONI </text>
-<text transform="matrix(1 0 0 1 7.8696 21.0079)" class="st4 st5">RICORRENTI</text>
-<text transform="matrix(1 0 0 1 8.2197 125.9322)" class="st6 st5">New York</text>
-<text transform="matrix(1 0 0 1 284.0849 125.9322)" class="st6 st5">9</text>
-<text transform="matrix(1 0 0 1 109.4687 125.9322)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 169.5654 125.9322)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 226.9951 125.9322)" class="st6 st5">?</text>
-<text transform="matrix(1 0 0 1 281.748 105.3404)" class="st6 st5">20</text>
-<text transform="matrix(1 0 0 1 109.4687 105.3404)" class="st6 st5">1</text>
-<text transform="matrix(1 0 0 1 169.5654 105.3404)" class="st6 st5">4</text>
-<text transform="matrix(1 0 0 1 224.5039 105.3404)" class="st6 st5">12</text>
-<text transform="matrix(1 0 0 1 8.2197 104.5689)" class="st6 st5">Parigi</text>
-<text transform="matrix(1 0 0 1 284.0849 81.6607)" class="st6 st5">8</text>
-<text transform="matrix(1 0 0 1 109.4482 82.69)" class="st4 st5">0</text>
-<text transform="matrix(1 0 0 1 169.5654 82.69)" class="st6 st5">6</text>
-<text transform="matrix(1 0 0 1 226.8408 82.69)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 8.2197 82.1754)" class="st6 st5">Roma</text>
-<text transform="matrix(1 0 0 1 91.1938 17.6099)" class="st4 st5">1945 - 1955</text>
-<text transform="matrix(1 0 0 1 149.9004 17.6099)" class="st4 st5">1956 - 1965</text>
-<text transform="matrix(1 0 0 1 208.5859 17.6099)" class="st4 st5">1966 - 1975</text>
-<text transform="matrix(1 0 0 1 265.2129 17.6099)" class="st4 st5">1976 - 1985</text>
-<text transform="matrix(1 0 0 1 284.0849 39.5816)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 109.4687 39.5816)" class="st6 st5">5</text>
-<text transform="matrix(1 0 0 1 169.5654 39.5816)" class="st6 st5">2</text>
-<text transform="matrix(1 0 0 1 226.8408 39.5816)" class="st6 st5">3</text>
-<text transform="matrix(1 0 0 1 8.2197 38.2945)" class="st6 st5">Sanremo</text>
-<text transform="matrix(1 0 0 1 284.0849 62.232)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 109.4687 61.2027)" class="st6 st5">5</text>
-<text transform="matrix(1 0 0 1 169.5654 61.2027)" class="st6 st5">4</text>
-<text transform="matrix(1 0 0 1 226.8408 62.232)" class="st6 st5">0</text>
-<text transform="matrix(1 0 0 1 8.2197 61.2027)" class="st6 st5">Torino</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="108" viewBox="0 0 250 108">
+  <defs>
+    <clipPath id="clip-Table">
+      <rect width="250" height="108"/>
+    </clipPath>
+  </defs>
+  <g id="Table" clip-path="url(#clip-Table)">
+    <g id="table-2" data-name="table" transform="translate(-1.9 -0.8)">
+      <rect id="Rectangle_18845" data-name="Rectangle 18845" width="66.19" height="19.127" transform="translate(2.138 1.356)" fill="#ffd337" opacity="0.355"/>
+      <path id="Path_157235" data-name="Path 157235" d="M0,105.635Z" transform="translate(1.9 3.006)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Line_5884" data-name="Line 5884" x2="249.841" transform="translate(1.9 20.086)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5885" data-name="Line 5885" x2="249.841" transform="translate(1.9 55.73)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5886" data-name="Line 5886" x2="249.841" transform="translate(1.9 38.094)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5888" data-name="Line 5888" x2="249.841" transform="translate(1.9 91.339)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5889" data-name="Line 5889" x2="249.841" transform="translate(1.9 73.366)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5890" data-name="Line 5890" y2="108" transform="translate(68.09 0.8)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5891" data-name="Line 5891" y2="108" transform="translate(114.043 0.8)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5892" data-name="Line 5892" y2="108" transform="translate(159.916 0.8)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_5893" data-name="Line 5893" y2="108" transform="translate(205.868 0.8)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <text id="AMBIENTAZIONI" transform="translate(5.638 8.853)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">AMBIENTAZIONI</tspan></text>
+      <text id="RICORRENTI" transform="translate(5.638 16.698)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">RICORRENTI</tspan></text>
+      <text id="New_York" data-name="New York" transform="translate(6.9 101.847)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">New York</tspan></text>
+      <text id="Parigi" transform="translate(6.9 84.8)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">Parigi</tspan></text>
+      <text id="Sanremo" transform="translate(6.9 30.8)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">Sanremo</tspan></text>
+      <text id="Roma" transform="translate(6.9 65.8)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">Roma</tspan></text>
+      <text id="Torino" transform="translate(6.9 48.64)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">Torino</tspan></text>
+      <text id="_1945_-_1955" data-name="1945 - 1955" transform="translate(71.9 12.001)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">1945 - 1955</tspan></text>
+      <text id="_1956_-_1965" data-name="1956 - 1965" transform="translate(117.9 12.001)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">1956 - 1965</tspan></text>
+      <text id="_1966_-_1975" data-name="1966 - 1975" transform="translate(164.9 12.001)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">1966 - 1975</tspan></text>
+      <text id="_1976_-_1985" data-name="1976 - 1985" transform="translate(210.9 12.001)" font-size="7" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">1976 - 1985</tspan></text>
+      <text id="_9" data-name="9" transform="translate(226.9 101.227)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">9</tspan></text>
+      <text id="_0" data-name="0" transform="translate(87.9 101.227)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_0-2" data-name="0" transform="translate(133.9 101.227)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_" data-name="?" transform="translate(181.9 101.227)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">?</tspan></text>
+      <text id="_20" data-name="20" transform="translate(224.9 84.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">20</tspan></text>
+      <text id="_1" data-name="1" transform="translate(87.9 84.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">1</tspan></text>
+      <text id="_4" data-name="4" transform="translate(133.9 84.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">4</tspan></text>
+      <text id="_12" data-name="12" transform="translate(179.9 84.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">12</tspan></text>
+      <text id="_8" data-name="8" transform="translate(226.9 65.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">8</tspan></text>
+      <text id="_0-3" data-name="0" transform="translate(87.9 65.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_6" data-name="6" transform="translate(133.9 65.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">6</tspan></text>
+      <text id="_0-4" data-name="0" transform="translate(180.9 65.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_0-5" data-name="0" transform="translate(226.9 30.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_5" data-name="5" transform="translate(87.9 30.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">5</tspan></text>
+      <text id="_2" data-name="2" transform="translate(133.9 30.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">2</tspan></text>
+      <text id="_3" data-name="3" transform="translate(180.9 30.8)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">3</tspan></text>
+      <text id="_0-6" data-name="0" transform="translate(226.9 48.46)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+      <text id="_5-2" data-name="5" transform="translate(87.9 47.627)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">5</tspan></text>
+      <text id="_4-2" data-name="4" transform="translate(133.9 47.627)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">4</tspan></text>
+      <text id="_0-7" data-name="0" transform="translate(180.9 48.46)" font-size="7" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
+    </g>
+    <g id="Rectangle_19366" data-name="Rectangle 19366" fill="none" stroke="#000" stroke-width="0.5">
+      <rect width="250" height="108" stroke="none"/>
+      <rect x="0.25" y="0.25" width="249.5" height="107.5" fill="none"/>
+    </g>
+  </g>
 </svg>

@@ -1,4 +1,11 @@
-import React, { useState } from "react"
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useCallback,
+} from "react"
+import { useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
@@ -38,6 +45,7 @@ import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg"
 import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
+import { faWindowRestore } from "@fortawesome/free-regular-svg-icons"
 
 const ItemIndex = ({
   icon,
@@ -55,7 +63,7 @@ const ItemIndex = ({
         {iconHover}
       </Link>
       <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
-      {title !== "territorio" && (
+      {title !== "Territorio" && (
         <Link to={linkApprofondimento}>
           <IconApprofondimento className="mt-2" />
         </Link>
@@ -71,6 +79,76 @@ export default function IndexMenu({ onClose }) {
   const handleShowGuida = () => {
     setShowGuida(true)
   }
+
+  const { t } = useTranslation("translation")
+
+  const orbiteRef = useRef()
+
+  function getD(cx, cy, rx, ry) {
+    var kappa = 0.5522847498
+    var ox = rx * kappa // x offset for the control point
+    var oy = ry * kappa // y offset for the control point
+    let d = `M${cx - rx},${cy}`
+    d += `C${cx - rx}, ${cy - oy}, ${cx - ox}, ${cy - ry}, ${cx}, ${cy - ry},`
+    d += `C${cx + ox}, ${cy - ry}, ${cx + rx}, ${cy - oy}, ${cx + rx}, ${cy},`
+    d += `C${cx + rx}, ${cy + oy}, ${cx + ox}, ${cy + ry}, ${cx}, ${cy + ry},`
+    d += `C${cx - ox}, ${cy + ry}, ${cx - rx}, ${cy + oy}, ${cx - rx}, ${cy},`
+    d += `z`
+    return d
+  }
+
+  const tappeLayout = useCallback(() => {
+    const el = orbiteRef.current
+    const bbox = el.getBoundingClientRect()
+    const g = el.querySelector("g")
+    g.querySelectorAll("ellipse").forEach((o, i) => {
+      // transforming the ellipse into a path (in order to use 'getPointAtLength()')
+      const cx = (parseInt(o.getAttribute("cx")) / 100) * bbox.width,
+        cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
+        rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
+        ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height
+      const d = getD(cx, cy, rx, ry)
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      )
+      path.setAttribute("d", d)
+      path.setAttribute("fill", "none")
+      path.setAttribute("stroke", "red")
+      // g.appendChild(path); // uncomment to show the path
+
+      // positioning the circles
+      const length = path.getTotalLength()
+      const percentages = [0.34, 0.34, 0.34] // adjust these to fix positioning
+      const position = length * percentages[i] // position depends on the totalLength
+      const point = path.getPointAtLength(position)
+      const cl = "tappa" + (i + 1)
+      const el2 = document.querySelector("." + styles[cl])
+      el2.style.top = point.y - 10 + "px"
+      el2.style.left = point.x - 10 + "px"
+
+      // positioning the label "tappe"
+      if (i === 1) {
+        const el3 = document.querySelector(`.${styles["tappe"]}`)
+        const el3bbox = el3.getBoundingClientRect()
+        el3.style.top = point.y - 25 + "px"
+        el3.style.left = point.x + "px"
+        el3.style.transform = "translate(-50%, -50%)"
+      }
+    })
+  }, [])
+
+  useLayoutEffect(() => {
+    tappeLayout()
+  }, [tappeLayout])
+
+  useEffect(() => {
+    const cb = tappeLayout
+    window.addEventListener("resize", cb)
+    return () => void window.removeEventListener("resize", cb)
+  }, [tappeLayout])
+
+  console.log(orbiteRef)
 
   return (
     <div>
@@ -95,27 +173,27 @@ export default function IndexMenu({ onClose }) {
         className={styles["OrbiteContainer"]}
         style={{ top: 58, left: 0, right: 0, bottom: 18 }}
       >
-        <Orbite />
+        <Orbite ref={orbiteRef} />
       </div>
       <div className={styles["IndexMenu"]}>
-        <div className={styles["tappe"]}>Tappa</div>
-        <HashLink to="/phases#phenomena">
+        <div className={styles["tappe"]}>{t("tappa")}</div>
+        <HashLink onClick={onClose} to="/phases#phenomena">
           <div className={styles["tappa1"]}>
             <Tappa1 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#process">
+        <HashLink onClick={onClose} to="/phases#process">
           <div className={styles["tappa2"]}>
             <Tappa2 width="20" />
           </div>
         </HashLink>
-        <HashLink to="/phases#problem">
+        <HashLink onClick={onClose} to="/phases#problem">
           <div className={styles["tappa3"]}>
             <Tappa3 width="20" />
           </div>
         </HashLink>
         <ItemIndex
-          title="territorio"
+          title={t("territorio")}
           onClose={onClose}
           link="/archipelago"
           className={"territorio"}
@@ -131,7 +209,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="dubitare"
+          title={t("dubitare")}
           onClose={onClose}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
@@ -148,7 +226,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="nebbia"
+          title={t("nebbia")}
           onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
@@ -165,7 +243,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="cancellazione"
+          title={t("cancellazione")}
           onClose={onClose}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
@@ -182,7 +260,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="trasformare"
+          title={t("trasformare")}
           onClose={onClose}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
@@ -199,7 +277,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="luoghi"
+          title={t("luoghi")}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -216,7 +294,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="realismo"
+          title={t("realismo")}
           onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
@@ -233,9 +311,10 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="elenchi"
+          title={t("elenchi")}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
+          onClose={onClose}
           className={"elenchi"}
           icon={
             <ElenchiIcon
@@ -249,7 +328,7 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="combinare"
+          title={t("combinare")}
           onClose={onClose}
           link="/form/phase2"
           linkApprofondimento="/form/phase2/focus"
@@ -266,8 +345,10 @@ export default function IndexMenu({ onClose }) {
           }
         />
         <ItemIndex
-          title="trama"
+          title={t("trama")}
+          onClose={onClose}
           link="/form/phase3"
+          linkApprofondimento="/form/phase3/focus"
           className={"trama"}
           icon={
             <TramaIcon
@@ -282,7 +363,7 @@ export default function IndexMenu({ onClose }) {
         />
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link to="/compass" onClick={onClose}>
+        <Link target="_blank" to="/compass">
           <Bussola width="70" />
         </Link>
       </div>
@@ -290,37 +371,37 @@ export default function IndexMenu({ onClose }) {
         className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
       >
-        Guarda la guida
+        {t("index_menu.video_guida")}
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
-        <HashLink to="/itineraries#doubt">
+        <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve1 width="60" />
         </HashLink>
       </div>
 
       <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
-        <HashLink to="/itineraries#doubt">
+        <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve2 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-spazio-1"]}`}>
-        <HashLink to="/itineraries#space">
+        <HashLink onClick={onClose} to="/itineraries#space">
           <Curve3 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-spazio-2"]}`}>
-        <HashLink to="/itineraries#space">
+        <HashLink onClick={onClose} to="/itineraries#space">
           <Curve4 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-forma-1"]}`}>
-        <HashLink to="/itineraries#form">
+        <HashLink onClick={onClose} to="/itineraries#form">
           <Curve5 width="60" />
         </HashLink>
       </div>
       <div className={`position-absolute ${styles["curve-forma-2"]}`}>
-        <HashLink to="/itineraries#form">
+        <HashLink onClick={onClose} to="/itineraries#form">
           <Curve6 width="60" />
         </HashLink>
       </div>

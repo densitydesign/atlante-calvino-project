@@ -1,14 +1,21 @@
+
+body{
+    background-color: white;
+}
+
+
 .main {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
   font-size: var(--text-size);
+  background-color: white;
   margin-bottom: 2rem;
   margin-top: 3rem;
 }
 
 #mainviz {
-  grid-column: 1 / span 24;
+  grid-column: 1 / span 22;
   display: grid;
+
 }
 
 .gridRow {
@@ -18,6 +25,12 @@
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 10px;
   margin-bottom: 1.7857142857rem !important;
+}
+
+.footerRow{
+  grid-template-columns: repeat(24, 1fr);
+  grid-column: 2 / span 22;
+  display: grid;
 }
 
 .titleH1 {
@@ -75,13 +88,15 @@
 }
 
 .image {
-  max-width: 100%;
-  margin-bottom: 0.3rem;
+  width: 100%;
+  margin-bottom:20px;
 }
 
 .image100w {
   width:100%;
   height:auto;
+  margin-bottom:20px;
+  grid-column: 1 / span 12;
 }
 
 .imageTrasp {
@@ -93,6 +108,7 @@
 
 .sideContent {
   grid-column: 8 / span 5;
+  width: 120%;
 }
 
 .legend{
@@ -123,7 +139,9 @@ sup{
   position: sticky;
 }
 
-
+ol{
+  margin-left:0px;
+}
 @media (min-width: 1280px) {
   .gridRow {
     grid-column: 3 / span 20;

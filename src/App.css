@@ -106,13 +106,14 @@ h1 {
 }
 h2 {
   margin: 0.7142857143em 0;
+  line-height: 2rem;
   font-size: 1.5em;
   color: var(--dark-blue);
   font-weight: 500;
 }
 h3 {
-  font-size: 0.7142857143rem;
-  line-height: 0.9285714286rem;
+  font-size: 1.28rem;
+  line-height: 2.14rem;
   color: #404040;
 }
 p {
@@ -181,10 +182,19 @@ sup {
   grid-template-columns: repeat(32, 1fr);
 }
 .content {
-  padding: 0 calc((100% / 16) * 2);
-  padding-bottom: 1rem;
+  padding: 0 calc((100% / 16));
+  padding-bottom: 3rem;
+  padding-top: 3rem;
   grid-column: 1 / 17;
 }
+
+.contentRight {
+  padding: 0 calc((100% / 16));
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  grid-column: 8 / 20;
+}
+
 .sidebar {
   grid-column: 17 / end;
   border-left: 1px solid black;
@@ -192,6 +202,16 @@ sup {
   /* display: flex; */
   padding: 0 calc(100% / 8);
 }
+
+.sidebarLeft {
+  grid-column: 2 / 7;
+  border-right: 1px solid black;
+  height: 100vh;
+  padding-top: 1.7em;
+  padding-right: 1.7em;
+  /* display: flex; */
+}
+
 .sticky-element {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -212,6 +232,7 @@ ol {
   color: var(--small-text);
   font-size: 1.2857142857rem;
   line-height: 2.1428571429rem;
+  margin: 1rem 2rem;
 }
 
 ul {
@@ -231,8 +252,8 @@ li {
 .references {
   font-size: 0.8571428571rem;
   line-height: 1.0714285714rem;
-  font-weight: 400;
-  margin-bottom: 4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
   padding-left: 0rem;
 }
 
@@ -243,7 +264,7 @@ li {
 
 .referenceItem {
   list-style-position: inside;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .cite {
@@ -341,12 +362,11 @@ li {
 .button-text {
   border: var(--button-border);
   margin-top: 3em;
-  padding: 0.5em 1.3em 0.5em 1.3em;
-  font-size: 1em;
+  padding: 15px 40px 15px 40px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--dark-blue);
-  background-color: var(--bg);
-  text-transform: uppercase;
+  background-color: var(--bg-cool);
   transition: color 0.3s ease;
   text-decoration: none;
 }
@@ -502,6 +522,21 @@ a:visited.button-text {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.lang-switch {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-green);
+  border-left: 1px solid var(--dark-green);
+  border-right: 1px solid var(--dark-green);
+  justify-content: center;
+  right: 0;
+  height: 61px;
+  cursor: pointer;
+  width: 61px;
+  top: var(--navigation-height);
 }
 
 @keyframes floatLeft {

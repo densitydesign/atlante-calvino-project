@@ -1,5 +1,6 @@
 import React from "react"
 import Footer from "../../headers/Footer/Footer"
+import { withTranslation, Trans } from "react-i18next"
 import HamburgerCloseHeader from "../../headers/HamburgerCloseHeader/HamburgerCloseHeader"
 import SlidingPanel from "../../panels/SlidingPanel/SlidingPanel"
 import { ReactComponent as Bussola1 } from "./icons/bussola_1.svg"
@@ -8,12 +9,18 @@ import { ReactComponent as Bussola3 } from "./icons/bussola_3.svg"
 import CompassFlux from "../CompassFlux/CompassFlux"
 
 import "./Compass.css"
+import CompassTime from "../CompassTime/CompassTime"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 
-export default class Compass extends React.Component {
+class Compass extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { selectedPanel: 1, openFlowsOfStories: false }
+    this.state = {
+      selectedPanel: 1,
+      openFlowsOfStories: false,
+      openTempoEStorie: false,
+    }
 
     this.getSelectedPanel = this.getSelectedPanel.bind(this)
     this.setSelectedPanel = this.setSelectedPanel.bind(this)
@@ -40,24 +47,28 @@ export default class Compass extends React.Component {
     this.setState({ openFlowsOfStories: !this.state.openFlowsOfStories })
   }
 
+  toggleTempoEOpere = () => {
+    this.setState({ openTempoEStorie: !this.state.openTempoEStorie })
+  }
+
   render() {
     return (
       <>
         <div>
-          <HamburgerCloseHeader
-            containerToggleCompassPanel={this.props.containerToggleCompassPanel}
-          />
+          <HamburgerCompassHeader />
           <div className="compass-main-description mt-5">
             <div>
-              <h1>Bussola</h1>
+              <h1>{this.props.t("bussola")}</h1>
               <p className="text-dark-blue">
-                Prima di iniziare il viaggio, ci vuole una bussola. Per quello
-                abbiamo creato tre visualizzazioni orientative, I flussi dei
-                racconti, Il tempo e le opere e L’arcipelago dei nomi che
-                aiutino a muoversi dentro l’intero corpus dell’opera e che siano
-                sempre a portata di mano. Fornendo un colpo d’occhio sulla
-                storia dei volumi, sulla vicenda dei racconti e sulla biblioteca
-                mentale dell’autore.
+                <Trans i18nKey={"testo_bussola"} t={this.props.t} ns="bussola">
+                  Prima di iniziare il viaggio, ci vuole una bussola. Per quello
+                  abbiamo creato tre visualizzazioni orientative, I flussi dei
+                  racconti, Il tempo e le opere e L’arcipelago dei nomi che
+                  aiutino a muoversi dentro l’intero corpus dell’opera e che
+                  siano sempre a portata di mano. Fornendo un colpo d’occhio
+                  sulla storia dei volumi, sulla vicenda dei racconti e sulla
+                  biblioteca mentale dell’autore.
+                </Trans>
               </p>
             </div>
           </div>
@@ -67,61 +78,70 @@ export default class Compass extends React.Component {
               id="1"
               open={this.state.selectedPanel >= 1}
               zIndex="1"
-              icon={<Bussola1 className="mr-5" />}
+              icon={<Bussola1 className="mr-5 compass" />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
               hide={this.props.hide}
-              title="I flussi dei racconti"
+              title={this.props.t("bussola:i_flussi_dei_racconti")}
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/flows-of-stories"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
-              text="I racconti sono la spina dorsale dell’opera di Calvino. Per questo abbiamo schierato gli oltre duecento titoli in un lungo elenco, che consente di ricostruire il flusso della storia editoriale dei racconti grazie a un’unica visualizzazione: dalla prima pubblicazione su giornali o riviste, fino alla raccolta nei volumi e alle varie ricomposizioni che questi ultimi subiscono nel corso del tempo."
+              text={this.props.t("bussola:flussi_testo")}
             />
 
             <SlidingPanel
+              toggleTimeAndWorks={this.toggleTimeAndWorks}
               id="2"
+              toggleTempoEOpere={this.toggleTempoEOpere}
               open={this.state.selectedPanel >= 2}
               zIndex="2"
-              icon={<Bussola2 className="mr-5" />}
+              icon={<Bussola2 className="mr-5 compass" />}
               openClassName="panel2-open"
               closedClassName="panel2-closed"
               hide={this.props.hide}
-              title="Il tempo e le opere"
+              title={this.props.t("bussola:il_tempo_e_le_opere")}
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/time-and-works"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
-              text="Si tratta di una mappa sintetica, che segue l’andamento dei quattro decenni della carriera letteraria di Calvino, mostrando gli snodi più importanti della sua storia editoriale: i principali volumi e le collaborazioni giornalistiche. La divisione per generi permette di seguire le oscillazioni tra forma breve e lunga, le sperimentazioni sulla struttura, l’articolarsi inquieto dell’opera in cerca della sua giusta forma."
+              text={this.props.t("bussola:tempo_testo")}
             />
 
             <SlidingPanel
               id="3"
               open={this.state.selectedPanel >= 3}
               zIndex="3"
-              icon={<Bussola3 className="mr-5" />}
+              icon={<Bussola3 className="mr-5 compass" />}
               openClassName="panel3-open"
               closedClassName="panel3-closed"
               hide={this.props.hide}
-              title="L'arcipelago dei nomi"
+              title={this.props.t("bussola:l_arcipelago_dei_nomi")}
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl=""
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-03-arcipelago.zip"
-              text="I saggi non saranno oggetto della nostra analisi, che si limita all’opera narrativa. Ma stanno sullo sfondo, come un arcipelago di isole e isolotti che con questa visualizzazione si suggerisce di circumnavigare, per farsi un’idea di quale sia stata la biblioteca mentale di Calvino. Quasi duemila nomi, citati nel gran numero di saggi e articoli che lo scrittore ha pubblicato nell’arco di quarant’anni, vengono qui riuniti per indicare la via di una loro esplorazione inedita."
+              text={this.props.t("bussola:testo_arcipelago")}
             />
           </div>
         </div>
         <Footer />
         {this.state.openFlowsOfStories && (
-          <div className='compass-flux-modal'>
+          <div className="compass-flux-modal">
             <CompassFlux toggleFlowOfStories={this.toggleFlowOfStories} />
+          </div>
+        )}
+        {this.state.openTempoEStorie && (
+          <div className="compass-flux-modal">
+            <CompassTime toggleTempoEOpere={this.toggleTempoEOpere} />
           </div>
         )}
       </>
     )
   }
 }
+
+export default withTranslation(["translation", "bussola"])(Compass)

@@ -21,6 +21,7 @@ import RangeFilter from "../../general/RangeFilter"
 
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
 import FoldingLine from "../../visualizations/FoldingLine/FoldingLine"
+import { Trans, withTranslation } from 'react-i18next'
 
 const structureData = (arr) => {
   arr = arr.map((d, i) => {
@@ -634,7 +635,6 @@ class ProcessDoubting extends Component {
 
   render() {
     const helpPage = GlobalData.helpPages.processDoubting.main
-    console.log(this.state);
     return (
       <div
         className="process-doubting main"
@@ -652,12 +652,12 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={"Dubitare"} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Cerca per"
+              title={this.props.t("cerca_per")}
               data={this.state.cerca_per}
               style={{ gridColumn: "span 4" }}
               changeOptions={this.changeCercaPer}
@@ -709,7 +709,7 @@ class ProcessDoubting extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Lunghezza"
+              title={this.props.t("doubting:Lunghezza")}
               data={this.state.lunghezzaTesti}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changeLunghezzaTesti}
@@ -718,7 +718,7 @@ class ProcessDoubting extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Tipo di pubblicazione"
+              title={this.props.t("doubting:Tipo di pubblicazione")}
               data={this.state.pubblicazioni}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changePubblicazioni}
@@ -776,7 +776,7 @@ class ProcessDoubting extends Component {
           {!this.state.isLoading && (
             <Options
               isFlex={true}
-              title="Numero di livelli"
+              title={this.props.t("doubting:Numero di livelli")}
               data={this.state.annidamenti}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changeAnnidamenti}
@@ -798,4 +798,4 @@ class ProcessDoubting extends Component {
   }
 }
 
-export default ProcessDoubting
+export default withTranslation(['translation','doubting'])(ProcessDoubting)

@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation, Trans } from "react-i18next";
 import { BsEnvelope } from "react-icons/bs";
 import { FaTwitter, FaHashtag } from "react-icons/fa";
 import Footer from "../../headers/Footer/Footer";
@@ -8,23 +9,21 @@ import "./Equipe.css";
 
 import people from "./people.json";
 
-export default class Equipe extends React.Component {
+class Equipe extends React.Component {
   render() {
     return (
       <>
-        <IndexMenuHeader
-        menuAction={'openIndex'}
-      />
+        <IndexMenuHeader menuAction={"openIndex"} />
         <div className="ac-grid-24 has-sidebar">
+          <Trans i18nKey={"testo_equipe"} t={this.props.t} ns="equipe">
           <div className="content">
             <h1>Équipe</h1>
-            <h2>
-              Équipe letteraria, Unité d’italien
-              <br />
+            <h2>Équipe letteraria, Unité d’italien</h2>
+            <h3 style={{ color: "black" }}>
               Département de langues et littératures romanes,
               <br />
               Université de Genève
-            </h2>
+            </h3>
             <p>
               L'équipe letteraria del progetto lavora all'interno dell'Unité
               d’italien del Département des langues et des littératures romanes
@@ -50,13 +49,12 @@ export default class Equipe extends React.Component {
               })}
             </ul>
             <br />
-            <h2>
-              DensityDesign Research Lab
-              <br />
+            <h2>DensityDesign Research Lab</h2>
+            <h3 style={{ color: "black" }}>
               Dipartimento di Design
               <br />
               Politecnico di Milano
-            </h2>
+            </h3>
             <p>
               Il laboratorio di ricerca{" "}
               <a href="http://densitydesign.org/" rel="noopener noreferrer">
@@ -86,15 +84,21 @@ export default class Equipe extends React.Component {
             <br />
             <p>
               Allo sviluppo delle visualizzazioni hanno collaborato Mauro
-              Bianchi e Giovanni Fumagalli di{" "}
+              Bianchi, Giovanni Fumagalli e Matteo Scaffidi di{" "}
               <a href="https://inmagik.com/" rel="noopener noreferrer">
                 Inmagik
               </a>
               .
+              <br />
+              Ringraziamo Lorenzo Faggi per la registrazione, presso lo spazio
+              occupato Piano Terra, dell’audio del video introduttivo.
+              <br />
+              La voce narrante italiana è di Beatrice Gobbo.
             </p>
           </div>
+          </Trans>
           <div className="sidebar sticky-element">
-            <h1>Contatti</h1>
+            <h1>{this.props.t('contatti')}</h1>
             <p>
               <BsEnvelope /> atlantecalvino@unige.ch
             </p>
@@ -115,3 +119,5 @@ export default class Equipe extends React.Component {
     );
   }
 }
+
+export default withTranslation('equipe')(Equipe)

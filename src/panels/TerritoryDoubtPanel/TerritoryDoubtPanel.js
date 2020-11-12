@@ -1,21 +1,20 @@
 import React from "react"
-
-import TerritoryDescriptionSubPanel from "../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel"
 import TerritoryDoubtMainOptionsSubPanel from "../TerritoryDoubtMainOptionsSubPanel/TerritoryDoubtMainOptionsSubPanel"
 import TerritoryPercentageSubPanel from "../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel"
 import GlobalData from "../../utilities/GlobalData"
 
 import "./TerritoryDoubtPanel.css"
+import { withTranslation } from "react-i18next"
 
-export default class TerritoryDoubtPanel extends React.Component {
+class TerritoryDoubtPanel extends React.Component {
   fogRadioButtonId = "fogRadioButton"
-  fogRadioButtonCaption = "Nebbia"
+  fogRadioButtonCaption = this.props.t("nebbia")
 
   cancellationRadioButtonId = "cancellationRadioButton"
-  cancellationRadioButtonCaption = "Cancellazione"
+  cancellationRadioButtonCaption = this.props.t("cancellazione")
 
   allRadioButtonId = "allRadioButton"
-  allRadioButtonCaption = "Entrambi"
+  allRadioButtonCaption = this.props.t("entrambi")
 
   percentageRadioButtonId = "percentageRadioButton"
   percentageRadioButtonCaption = "%"
@@ -157,3 +156,5 @@ export default class TerritoryDoubtPanel extends React.Component {
     )
   }
 }
+
+export default withTranslation('translation')(TerritoryDoubtPanel)
