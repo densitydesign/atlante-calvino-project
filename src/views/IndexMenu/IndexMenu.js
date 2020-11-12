@@ -314,6 +314,7 @@ export default function IndexMenu({ onClose }) {
           title={t("elenchi")}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
+          onClose={onClose}
           className={"elenchi"}
           icon={
             <ElenchiIcon
@@ -345,6 +346,7 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title={t("trama")}
+          onClose={onClose}
           link="/form/phase3"
           linkApprofondimento="/form/phase3/focus"
           className={"trama"}
@@ -361,7 +363,7 @@ export default function IndexMenu({ onClose }) {
         />
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
-        <Link target="_blank" to="/compass" onClick={onClose}>
+        <Link target="_blank" to="/compass">
           <Bussola width="70" />
         </Link>
       </div>
