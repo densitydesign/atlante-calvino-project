@@ -1,0 +1,13 @@
+{
+  "help_panel": {
+    "di_cosa_si_tratta": "<0>Perché la nebbia? Perché è un fenomeno concreto di messa in dubbio dell’esistenza della realtà e di destabilizzazione della sua rappresentazione, che sembra tornare in varie parti dell’opera di Calvino. Prendendo la nebbia come oggetto di studio, abbiamo cercato di tracciare la ricorrenza di questo elemento atmosferico nell’opera di Calvino. A tal fine, sono state catalogate tutte le occorrenze delle parole derivate dal termine nebbia; inoltre, sono stati presi in considerazione anche elementi atmosferici non esattamente coincidenti ma simili, quali “bruma”, “caligine”, “foschia” e eventuali derivati. Infine, abbiamo deciso di integrare un altro parametro alla ricerca: sono state catalogate le occorrenze delle parole derivate dal termine <2>cancellazione</2> (comprese le varie forme del verbo “cancellare”), che rappresenta il principale effetto prodotto dall’elemento atmosferico della <5>nebbia</5>.</0>",
+    "come_funziona": "<p>Il territorio può essere visualizzato in due diversi modi, che mostrano da due differenti punti di vista i dati raccolti.</p><1><0>Presenza del fenomeno</0> segnala la presenza e l’intensità dei due fenomeni analizzati (<2>nebbia</2> e <5>cancellazione</5>) in tutta l’opera, testo per testo. La visualizzazione consente di vedere separatamente l’evoluzione nel tempo dell’utilizzo di un solo fenomeno, unendo a questo parametro l’intensità con il quale è stato impiegato. Si può vedere anche la presenza e l’intensità dei due fenomeni riuniti (<7>entrambi</7>).</1><2><0>Proporzione</0> segnala il rapporto dei due fenomeni all’interno di uno stesso testo: il perimetro di ogni elemento grafico viene colorato a seconda della proporzione quantitativa del fenomeno analizzato.</2>",
+    "tipo_di_fenomeno": "TIPO DI FENOMENO",
+    "cancellazione": "Cancellazione",
+    "entrambi": "Entrambi",
+    "proporzione": "PROPORZIONE"
+  },
+  "footer": {
+    "presenza_del_fenomeno": "Presenza del fenomeno"
+  }
+}

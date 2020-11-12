@@ -1,37 +1,36 @@
 import React from "react"
-
-import TerritoryDescriptionSubPanel from "../TerritoryDescriptionSubPanel/TerritoryDescriptionSubPanel"
 import TerritorySpaceMainOptionsSubPanel from "../TerritorySpaceMainOptionsSubPanel/TerritorySpaceMainOptionsSubPanel"
 import TerritoryPercentageSubPanel from "../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel"
 import TerritoryPlaceHierarchiesSubPanel from "../TerritoryPlaceHierarchiesSubPanel/TerritoryPlaceHierarchiesSubPanel"
 import GlobalData from "../../utilities/GlobalData"
 
 import "./TerritorySpacePanel.css"
+import { withTranslation } from "react-i18next"
 
-export default class TerritorySpacePanel extends React.Component {
+class TerritorySpacePanel extends React.Component {
   genericCosmicRadioButtonId = "genericCosmicRadioButton"
-  genericCosmicRadioButtonCaption = "Cosmici generici"
+  genericCosmicRadioButtonCaption = this.props.t("help_panel.cosmici_generici")
 
   namedCosmicRadioButtonId = "namedCosmicRadioButton"
-  namedCosmicRadioButtonCaption = "Cosmici localizzabili"
+  namedCosmicRadioButtonCaption = this.props.t("help_panel.cosmici_localizzabili")
 
   genericTerrestrialRadioButtonId = "genericTerrestrialRadioButton"
-  genericTerrestrialRadioButtonCaption = "Terrestri generici"
+  genericTerrestrialRadioButtonCaption = this.props.t("help_panel.terrestri_generici")
 
   namedTerrestrialRadioButtonId = "namedTerrestrialRadioButton"
-  namedTerrestrialRadioButtonCaption = "Terrestri localizzabili"
+  namedTerrestrialRadioButtonCaption = this.props.t("help_panel.terrestri_localizzabili")
 
   inventedRadioButtonId = "inventedRadioButton"
-  inventedRadioButtonCaption = "Terrestri inventati"
+  inventedRadioButtonCaption = this.props.t("help_panel.terrestri_inventati")
 
   noSettingRadioButtonId = "noSettingRadioButton"
-  noSettingRadioButtonCaption = "Nessun luogo"
+  noSettingRadioButtonCaption = this.props.t("help_panel.nessun_luogo")
 
   proportionRadioButtonId = "proportionRadioButton"
   proportionRadioButtonCaption = "%"
 
   placeHierarchiesRadioButtonId = "placeHierarchiesRadioButton"
-  placeHierarchiesRadioButtonCaption = "Livelli spaziali"
+  placeHierarchiesRadioButtonCaption = this.props.t("footer.livelli_spaziali")
 
   optionRadioButtonsMap = new Map([
     [
@@ -271,3 +270,5 @@ export default class TerritorySpacePanel extends React.Component {
     )
   }
 }
+
+export default withTranslation('luoghi')(TerritorySpacePanel)

@@ -15,7 +15,7 @@
   transition: right 1s;
   overflow-y: hidden;
   overflow-x: hidden;
-  opacity: 1;
+  opacity: 0.90;
   border-left: 1px solid black;
 }
 
@@ -226,6 +226,7 @@ small{
   color: #404040;
   font-size: 10px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 

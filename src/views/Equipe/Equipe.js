@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation, Trans } from "react-i18next";
 import { BsEnvelope } from "react-icons/bs";
 import { FaTwitter, FaHashtag } from "react-icons/fa";
 import Footer from "../../headers/Footer/Footer";
@@ -8,12 +9,13 @@ import "./Equipe.css";
 
 import people from "./people.json";
 
-export default class Equipe extends React.Component {
+class Equipe extends React.Component {
   render() {
     return (
       <>
         <IndexMenuHeader menuAction={"openIndex"} />
         <div className="ac-grid-24 has-sidebar">
+          <Trans i18nKey={"testo_equipe"} t={this.props.t} ns="equipe">
           <div className="content">
             <h1>Équipe</h1>
             <h2>Équipe letteraria, Unité d’italien</h2>
@@ -94,8 +96,9 @@ export default class Equipe extends React.Component {
               La voce narrante italiana è di Beatrice Gobbo.
             </p>
           </div>
+          </Trans>
           <div className="sidebar sticky-element">
-            <h1>Contatti</h1>
+            <h1>{this.props.t('contatti')}</h1>
             <p>
               <BsEnvelope /> atlantecalvino@unige.ch
             </p>
@@ -116,3 +119,5 @@ export default class Equipe extends React.Component {
     );
   }
 }
+
+export default withTranslation('equipe')(Equipe)

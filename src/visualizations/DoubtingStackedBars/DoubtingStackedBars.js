@@ -1,45 +1,58 @@
-import React, { Component } from 'react';
-import V from './stackedBars.d3'
+import React, { Component } from "react"
+import V from "./stackedBars.d3"
 
-import './DoubtingStackedBars.css';
+import "./DoubtingStackedBars.css"
+import { withTranslation } from "react-i18next"
 
 class DoubtingStackedBars extends Component {
-
   componentDidMount() {
     const data_for_update = {
       data: this.props.data,
-      stackMode: this.props.stackMode
+      stackMode: this.props.stackMode,
     }
-    V.initialize(this._rootNode, data_for_update, this.props.onSelectedElement);
+    V.initialize(this._rootNode, data_for_update, this.props.onSelectedElement,this.props.t)
   }
 
   componentDidUpdate(prevProps, prevState) {
     // console.log("component updated")
-    if (prevProps.data !== this.props.data || prevProps.stackMode !== this.props.stackMode) {
-      V.update(this.props.data, this.props.stackMode);
+    if (
+      prevProps.data !== this.props.data ||
+      prevProps.stackMode !== this.props.stackMode
+    ) {
+      V.update(this.props.data, this.props.stackMode, this.props.t)
       // V.filter(this.props.surviveFilters);
     }
-    if (prevProps.surviveFilters !== this.props.surviveFilters || prevProps.stackMode !== this.props.stackMode) {
-      V.filter(this.props.surviveFilters);
+    if (
+      prevProps.surviveFilters !== this.props.surviveFilters ||
+      prevProps.stackMode !== this.props.stackMode
+    ) {
+      V.filter(this.props.surviveFilters)
     }
   }
 
   componentWillUnmount() {
     // console.log('componentWillUnmount')
-    V.destroy(this._rootNode);
+    V.destroy(this._rootNode)
   }
 
   _setRef(componentNode) {
-    this._rootNode = componentNode;
+    this._rootNode = componentNode
   }
 
   render() {
-    const styleSvg={
-      width: '100%',
-      height: '100%'
+    const styleSvg = {
+      width: "100%",
+      height: "100%",
     }
-    return <svg id={this.props.id} style={styleSvg} ref={this._setRef.bind(this)}></svg>;
+    return (
+      <svg
+        id={this.props.id}
+        style={styleSvg}
+        t={this.props.t}
+        ref={this._setRef.bind(this)}
+      ></svg>
+    )
   }
 }
 
-export default DoubtingStackedBars;
+export default withTranslation("doubting")(DoubtingStackedBars)

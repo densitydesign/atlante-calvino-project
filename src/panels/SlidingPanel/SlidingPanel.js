@@ -3,10 +3,11 @@ import React from "react"
 import "./SlidingPanel.css"
 import "../../views/Compass/Compass.css"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { ReactComponent as PdfIcon } from '../../views/Compass/icons/pdf-download.svg'
 import { faLink } from "@fortawesome/free-solid-svg-icons"
+import { withTranslation } from "react-i18next"
 
-export default class SlidingPanel extends React.Component {
+class SlidingPanel extends React.Component {
   constructor(props) {
     super(props)
 
@@ -44,14 +45,14 @@ export default class SlidingPanel extends React.Component {
     const interactiveViewLink = this.props.interactiveViewUrl ? (
       <a
         onClick={(e) => {
-          
-          this.props.toggleFlowOfStories() && this.props.toggleTimeAndWorks()
+          e.preventDefault()
+          this.props.toggleFlowOfStories ? this.props.toggleFlowOfStories() : this.props.toggleTempoEOpere()
         }}
         className="button-text"
         href={process.env.PUBLIC_URL + this.props.interactiveViewUrl}
         target="blank"
       >
-        Esplora
+        {this.props.t('Esplora')}
       </a>
     ) : (
       <></>
@@ -88,7 +89,7 @@ export default class SlidingPanel extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                PDF <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
+                <PdfIcon /> PDF 
               </a>
             </p>
             <br />
@@ -99,3 +100,5 @@ export default class SlidingPanel extends React.Component {
     )
   }
 }
+
+export default withTranslation(['compass'])(SlidingPanel)
