@@ -41,17 +41,16 @@ class TransformInformationSheet extends Component {
               <img className={SheetStyles.legend} src={legenda_0} />
             </div>
 
-            <h2 className={SheetStyles.titleH2}>L'analisi</h2>
-            <h3 className={SheetStyles.subtitleSheet}>Geoletteratura</h3>
             <p className={SheetStyles.paragraph}>
               La categoria dei luoghi terrestri localizzabili, rielaborata a
-              partire dalla definizione inglese di <em>imported places</em>
+              partire dalla definizione inglese di <em>imported places </em>
               (Piatti <em>et al.</em> 2009), è l’unica che per caratteristiche
               intrinseche si presta a una rappresentazione cartografica. Si
               tratta infatti di ambientazioni localizzabili su una mappa, poiché
               «the setting corresponds with the geographical reality by
               realistically portraying the surrounding» (Reuschel-Hurni 2011,
-              296). Analizzando il tempo della storia (cfr. Genette 1972) dei
+              296).<br></br>
+              Analizzando il tempo della storia (cfr. Genette 1972) dei
               testi del corpus calviniano che presentano ambientazioni di questo
               tipo è necessario operare un’ulteriore distinzione in tre
               tipologie:
@@ -83,7 +82,8 @@ class TransformInformationSheet extends Component {
               terrestri localizzabili del corpus quattro differenti mappe che
               mostrano una selezione degli stessi luoghi sulla base del decennio
               di pubblicazione delle opere (1945-1955; 1956-1965; 1966-1975;
-              1976-1984). È allora piuttosto significativo rilevare come, nel
+              1976-1984).<br></br>
+              È allora piuttosto significativo rilevare come, nel
               passaggio dagli anni Quaranta agli anni Ottanta del Novecento,
               l’orizzonte geografico dello scrittore si ampli progressivamente,
               arrivando infine a comprendere tutto il mondo.

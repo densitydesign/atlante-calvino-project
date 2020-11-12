@@ -51,7 +51,7 @@ class CombineInformationSheet extends Component {
               (Donnarumma 2008, 82). Sono anni interamente dedicati
               all’affinamento di una «macchina narrativa combinatoria»
               (espressione con cui lui stesso definirà il ruolo dei tarocchi nel
-              Castello; Calvino 1973, RR<em>II</em>, 1276) che, dotata dei giusti
+              <em> Castello</em>; Calvino 1973, RR,<em> II</em>, 1276) che, dotata dei giusti
               elementi di partenza e di un set di regole efficaci, possa
               produrre una varietà infinita di esiti, anticipando di mezzo
               secolo novità che la rivoluzione tecnologica dei suoi anni
@@ -59,9 +59,9 @@ class CombineInformationSheet extends Component {
               “generazione procedurale” condotta tramite algoritmo. Al centro
               simbolico di questa svolta è l’anno 1965, che vede l’uscita della
               raccolta in volume delle
-              <em>Cosmicomiche</em> e l’inaugurazione di un variegato filone che
-              si protrarrà per i successivi due decenni (gli ultimi testi, Il
-              niente e il poco e <em>L’implosione</em>, escono nel settembre
+              <em> Cosmicomiche</em> e l’inaugurazione di un variegato filone che
+              si protrarrà per i successivi due decenni (gli ultimi testi, <em>Il
+              niente e il poco</em> e <em>L’implosione</em>, escono nel settembre
               1984 su «la Repubblica» ancora sotto il titolo di{" "}
               <em>Le nuove cosmicomiche</em>), e che costituisce probabilmente
               il massimo punto di equilibrio tra l’ostentazione di un modello
@@ -79,7 +79,7 @@ class CombineInformationSheet extends Component {
               volume che raccoglie due testi precedentemente usciti su rivista
               (rispettivamente in «Nuovi Argomenti», 34, 1958 e in «Botteghe
               Oscure», quaderno X, 1952) in uno strano dittico:
-              <em>La nuvola di smog</em> e <em>La formica argentina</em>. Il
+              <em> La nuvola di smog</em> e <em>La formica argentina</em>. Il
               volumetto Einaudi, parte di un progetto mai realizzato che doveva
               consistere in un «ciclo narrativo sull’Italia di metà secolo»
               (Calvino 1963), è significativo forse proprio in quanto
@@ -103,15 +103,15 @@ class CombineInformationSheet extends Component {
               guerra</em>, ma affrontata in modo diretto, disilluso, “adulto”. Una
               modalità che riunisce una piccola famiglia di titoli tutto sommato
               non incospicua, alla quale si possono ricondurre anche
-              <em>La speculazione edilizia</em> e
-              <em>La giornata d’uno scrutatore</em>, le avventure irrisolte
+              <em> La speculazione edilizia</em> e
+              <em> La giornata d’uno scrutatore</em>, le avventure irrisolte
               degli <em>Amori difficili</em>, e almeno in parte
-              <em>I Racconti</em>, e con la quale tuttavia l’autore non sembra
+              <em> I Racconti</em>, e con la quale tuttavia l’autore non sembra
               essere del tutto a suo agio. Lo si può forse intravedere nello
               stile eccentrico della lettera di “non-difesa” scritta in risposta
               a un saggio che analizzava proprio la <em>Nuvola di smog</em>,
               nella quale Calvino finge di interpretare il critico di se stesso
-              e proclama il proprio «moravismo» (Calvino 1964, 104; la Nuvola
+              e proclama il proprio «moravismo» (Calvino 1964, 104; la <em>Nuvola </em>
               era del resto uscita su «Nuovi argomenti», la rivista diretta da
               Moravia), in un gioco delle parti che però lascia qualcosa di
               ambiguo alla dichiarazione, un sospetto di insicurezza poetica sul
@@ -166,11 +166,12 @@ class CombineInformationSheet extends Component {
               di ciò che era noto e familiare, del passaggio a uno stato di
               azzeramento e ripartenza totale in cui la vita rimane impantanata
               nella condizione in cui ogni cosa deve essere re-incontrata,
-              ri-decifrata, re-imparata. Insomma da un lato un’opera di pura
+              ri-decifrata, re-imparata.<br></br>
+              Insomma da un lato un’opera di pura
               molteplicità, leggerezza, esuberanza fantastica, con personaggi
               poco meno che onnipotenti, e dall’altro un’opera che è
               programmaticamente stazionaria, lenta, monocorde, abitata da eroi
-              passivi che rinunciano a ogni agency quasi per principio. Eppure…
+              passivi che rinunciano a ogni <em>agency</em> quasi per principio. Eppure…
             </p>
           </div>
           <div className={SheetStyles.gridRow}>
@@ -196,15 +197,16 @@ class CombineInformationSheet extends Component {
               dimenticando per un attimo ciò che sappiamo su di loro e
               limitandoci alla ricognizione delle sequenze narrative di base che
               si susseguono nelle storie, veniamo a scoprire che l’impressione è
-              tutt’altro che confermata. A conti fatti, le Cosmicomiche, nella
+              tutt’altro che confermata. A conti fatti, le <em>Cosmicomiche</em>, nella
               loro caleidoscopica varietà di mondi e situazioni, e il dittico
-              Nuvola-Formica, coppia di monoliti dove a regnare sono «il povero,
+              <em> Nuvola-Formica</em>, coppia di monoliti dove a regnare sono «il povero,
               il disadorno, lo squallore, il grigiore» (Calvino 1964, 108), in
               realtà presentano sostanzialmente dallo stesso numero di sequenze:
               rispettivamente 148 e 142. Se poi si va a verificare tra quante
               categorie sono distribuite queste sequenze, scopriamo addirittura
               che alle 19 delle <em>Cosmicomiche</em> rispondono le 22 della
-              <em>Nuvola-Formica</em>. Com’è possibile? Come si spiega che l’uniforme
+              <em> Nuvola-Formica</em>.<br></br>
+              Com’è possibile? Come si spiega che l’uniforme
               narrazione senza sorprese del dittico più cupo di Calvino abbia la
               stessa quantità di segmenti narrativi dell’atlante cosmicomico e
               addirittura una varietà di categorie <em>superiore</em> alla raccolta
@@ -233,7 +235,8 @@ class CombineInformationSheet extends Component {
               iniziato; una collocazione da cui possiamo mettere a fuoco non più
               solo l’effetto complessivo o la quantità molecolare delle parti,
               ma la struttura e le catene connettive in cui queste parti si
-              raggruppano. Ed ecco apparire il trucco, quello che dimostra
+              raggruppano.<br></br>
+              Ed ecco apparire il trucco, quello che dimostra
               davvero l’estensione della padronanza che Calvino ha sulle
               tecniche di composizione e di combinazione: il potere di rivelare
               o nascondere la varietà di un testo non modificando il numero
@@ -298,7 +301,7 @@ class CombineInformationSheet extends Component {
               comparata tra due testi: uno sguardo attento sulle scelte fatte da
               Calvino nel distribuire i suoi materiali può rivelarci dettagli
               illuminanti su come viene costruito l’equilibrio interno di una
-              storia. Un esempio è la funzione dell’incontro come meccanismo di
+              storia. Un esempio è la funzione dell’<em>incontro</em> come meccanismo di
               dissimulazione della complessità. Sia nella <em>Nuvola di smog</em> che
               nella <em>Formica argentina</em>, l’ossatura fondamentale del testo è
               basata sulla stessa dinamica: «un protagonista che parla in prima
@@ -338,7 +341,8 @@ class CombineInformationSheet extends Component {
               variazione: incontro-iniziativa-delusione e
               incontro-iniziativa-<em>visione</em>, con la ricercata rottura dello schema
               che acutizza il senso di disperazione dell’eroe ormai vicino al
-              punto di rottura. Non si tratta ovviamente solo di un piccolo
+              punto di rottura.<br></br>
+              Non si tratta ovviamente solo di un piccolo
               gioco nascosto dall’autore dietro le quinte della storia:
               l’effetto di ripetizione è integrale alla rappresentazione del
               pessimismo incombente del racconto, che moltiplica gli sforzi
