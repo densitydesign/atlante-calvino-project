@@ -1,15 +1,17 @@
 import React from "react"
-import { useTranslation, Trans } from "react-i18next"
 import Footer from "../../headers/Footer/Footer"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import { Link } from "react-router-dom"
+import { Trans, useTranslation } from "react-i18next"
 
 export default function Instructions() {
   const { t } = useTranslation("instructions")
+
   return (
     <div>
       <IndexMenuHeader menuAction={"openIndex"} />
-      <Trans i18nKey={"instructions_testo"} t={t} ns="instructions">
-        <div className="ac-grid-24">
+      <div className="ac-grid-24">
+        <Trans i18nKey='instructions_text' ns='instructions' t={t}>
           <div className="content">
             <h1>Istruzioni per l'uso</h1>
             <h2>Elementi che compongono l’Atlante</h2>
@@ -18,49 +20,63 @@ export default function Instructions() {
               3 itinerari, che si articolano ciascuno in 3 tappe.
             </p>
             <p>
-              La <strong>Bussola</strong> consente di avere a disposizione, in
-              ogni punto dell’Atlante, 3 visualizzazioni di orientamento:
+              La
+              <Link to="/compass">
+                <strong> Bussola </strong>
+              </Link>
+              consente di avere a disposizione, in ogni punto dell’Atlante, 3
+              visualizzazioni di orientamento:
             </p>
             <div>
-              <ol type="1" style={{ marginLeft: 70 }}>
+              <ol type="1">
                 <li>
-                  una mappa sintetica della carriera letteraria dell’autore (Il
-                  tempo e le opere)
+                  Una mappa sintetica della carriera letteraria dell’autore (
+                  <Link to="compass/time-and-works">Il tempo e le opere</Link>)
                 </li>
                 <li>
-                  la ricostruzione della vicenda editoriale di tutti i racconti
-                  (I flussi dei racconti)
+                  La ricostruzione della vicenda editoriale di tutti i racconti
+                  (
+                  <Link to="compass/flows-of-stories">
+                    Il I flussi dei racconti
+                  </Link>
+                  )
                 </li>
                 <li>
-                  la rappresentazione della biblioteca mentale dello scrittore
-                  (L’arcipelago dei nomi)
+                  La rappresentazione della biblioteca mentale dello scrittore (
+                  <Link to="/compass">L’arcipelago dei nomi</Link>)
                 </li>
               </ol>
             </div>
             <p>
-              I <strong>3 itinerari</strong> che abbiamo scelto di percorrere
-              riguardano:
+              I
+              <Link to="/itineraries">
+                <strong>3 itinerari</strong>
+              </Link>
+              che abbiamo scelto di percorrere riguardano:
             </p>
             <div>
-              <ol type="1" style={{ marginLeft: 70 }}>
+              <ol type="1">
                 <li>
-                  la prima tappa (fenomeno) introduce all’itinerario nel suo
-                  aspetto più concreto e tangibile
+                  La prima tappa (<Link to="/phases#phaenomenon">fenomeno</Link>
+                  ) introduce all’itinerario nel suo aspetto più concreto e
+                  tangibile
                 </li>
                 <li>
-                  la seconda tappa (processo) cerca di cogliere la dinamica che
-                  sta dietro a ciascuno dei tre fenomeni
+                  La seconda tappa (<Link to="/phases#process">processo</Link>)
+                  cerca di cogliere la dinamica che sta dietro a ciascuno dei
+                  tre fenomeni
                 </li>
                 <li>
-                  la terza tappa (problema) indaga la questione principale che
-                  muove verso il fenomeno, dando avvio al processo
+                  La terza tappa (<Link to="/phases#problem">problema</Link>)
+                  indaga la questione principale che muove verso il fenomeno,
+                  dando avvio al processo
                 </li>
               </ol>
             </div>
             <p>
-              Ogni visualizzazione presente nell’Atlante contiene una{" "}
-              <strong>legenda</strong> e una <strong>spiegazione</strong>{" "}
-              (articolata in tre sezioni:{" "}
+              Ogni visualizzazione presente nell’Atlante contiene una
+              <strong> legenda</strong> e una <strong>spiegazione </strong>
+              (articolata in tre sezioni:
               <i>Di cosa si tratta, Come si legge, Qualche pista di lettura</i>)
               che guidano la lettura e che si possono consultare sul lato destro
               della pagina.
@@ -72,9 +88,9 @@ export default function Instructions() {
               principali.
             </p>
             <p>
-              La maggior parte della ricerca è stata svolta sull’intero{" "}
-              <strong>corpus</strong>
-              narrativo, basandosi sul testo stabilito nell’edizione dei{" "}
+              La maggior parte della ricerca è stata svolta sull’intero
+              <strong> corpus </strong>
+              narrativo, basandosi sul testo stabilito nell’edizione dei
               <i>Romanzi e racconti</i>, edizione diretta da Claudio Milanini, a
               cura di Mario Barenghi e Bruno Falcetto (3 voll., 1991, 1992,
               1994: d’ora in avanti RR, seguito dal volume e dal numero di
@@ -85,23 +101,24 @@ export default function Instructions() {
               esplicitamente indicati.
             </p>
             <p>
-              {" "}
               Il lavoro è stato collettivo, ma ciascuna delle tre ricercatrici
               dell’équipe letteraria dell’Università di Ginevra si è occupata in
               particolare di uno dei tre itinerari, secondo la seguente
-              ripartizione:z
+              ripartizione:
             </p>
             <p>
-              {" "}
-              itinerario del dubbio: <strong>Margherita Parigini</strong>
+              <Link to="/itineraries#doubt">Itinerario del dubbio</Link>:
+              <strong> Margherita Parigini</strong>
               <br />
-              itinerario dello spazio: <strong>Virginia Giustetto</strong>
+              <Link to="/itineraries#space">Itinerario dello spazio</Link>:
+              <strong> Virginia Giustetto</strong>
               <br />
-              itinerario della forma: <strong>Valeria Cavalloro</strong>
+              <Link to="/itineraries#shape">Itinerario della forma</Link>:
+              <strong> Valeria Cavalloro</strong>
             </p>
           </div>
-        </div>
-      </Trans>
+        </Trans>
+      </div>
       <Footer />
     </div>
   )
