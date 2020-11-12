@@ -516,84 +516,14 @@ class CompassTime extends React.Component {
                       ns="compass-time"
                     >
                       <h2>Anni 60</h2>
-                      <p>
-                        Tra gli Anni 50 e l&#x27;inizio degli{" "}
-                        <span className="Xfont-weight-bold">Anni 60</span>{" "}
-                        sperimenta vari esempi di forme ibride tra romanzo breve
-                        e racconto lungo.{" "}
-                        <span
-                          className="work-title ibrido"
-                          data-attribute="V010"
-                        >
-                          La speculazione edilizia
-                        </span>
-                        ,{" "}
-                        <span
-                          className="work-title ibrido"
-                          data-attribute="V012"
-                        >
-                          La nuvola di smog
-                        </span>{" "}
-                        e{" "}
-                        <span
-                          className="work-title ibrido"
-                          data-attribute="V012"
-                        >
-                          La formica argentina
-                        </span>
-                        , originariamente pubblicati su rivista, vengono
-                        riproposti in volume all&#x27;inizio del nuovo decennio.
-                        Nel 1963 pubblica un ultimo romanzo breve (
-                        <span
-                          className="work-title ibrido"
-                          data-attribute="V009"
-                        >
-                          La giornata d&#x27;uno scrutatore
-                        </span>
-                        ) e riunisce in volume i racconti di{" "}
-                        <span
-                          className="work-title racconti-protagonista"
-                          data-attribute="V011"
-                        >
-                          Marcovaldo
-                        </span>
-                        , primo esempio di un sottogenere che avr&#xE0; molta
-                        fortuna nella sua opera: la raccolta di racconti con un
-                        unico protagonista. La seconda met&#xE0; degli anni 60
-                        &#xE8; segnata dall&#x2019;invenzione della serie di
-                        racconti delle Cosmicomiche, che vengono raccolti in due
-                        libri (
-                        <span
-                          className="work-title racconti-protagonista"
-                          data-attribute="V013"
-                        >
-                          Le cosmicomiche
-                        </span>{" "}
-                        e{" "}
-                        <span
-                          className="work-title racconti-protagonista"
-                          data-attribute="V014"
-                        >
-                          Ti con zero
-                        </span>
-                        ), ma lascer&#xE0; strascichi fino al 1984 con il volume
-                        <span className="font-italic racconti-protagonista">
-                          Cosmicomiche vecchie e nuove
-                        </span>
-                        , passando per{" "}
-                        <span className="font-italic racconti-protagonista">
-                          La memoria del mondo
-                        </span>{" "}
-                        del 1968. Alla fine degli anni 60 inaugura un nuovo
-                        genere di ibridazioni destinato a imporsi negli anni 60:
-                        il romanzo di racconti racchiusi dentro una cornice (
-                        <span
-                          className="work-title racconti-cornice"
-                          data-attribute="V018"
-                        >
-                          Il castello dei destini incrociati
-                        </span>
-                        ).
+                      <p>Tra gli Anni 50 e l&#x27;inizio degli <span className="Xfont-weight-bold">Anni 60</span> sperimenta vari esempi di forme ibride tra romanzo breve e racconto lungo. <span className="work-title ibrido"
+                      data-attribute="V010">La speculazione edilizia</span>, <span className="work-title ibrido" data-attribute="V012">La nuvola di smog</span> e <span className="work-title ibrido" data-attribute="V012">La
+                      formica argentina</span>, originariamente pubblicati su rivista, vengono riproposti in volume all&#x27;inizio del nuovo decennio. Nel 1963 pubblica un ultimo romanzo breve (<span className="work-title ibrido"
+                      data-attribute="V009">La giornata d&#x27;uno scrutatore</span>) e riunisce in volume i racconti di <span className="work-title racconti-protagonista" data-attribute="V011">Marcovaldo</span>, primo esempio di un
+                    sottogenere che avr&#xE0; molta fortuna nella sua opera: la raccolta di racconti con un unico protagonista.
+                    La seconda met&#xE0; degli anni 60 &#xE8; segnata dall&#x2019;invenzione della serie di racconti delle Cosmicomiche, che vengono raccolti in due libri (<span className="work-title racconti-protagonista" data-attribute="V013">Le cosmicomiche</span> e <span className="work-title racconti-protagonista" data-attribute="V014">Ti con zero</span>), ma lascer&#xE0; strascichi fino al 1984 con il volume
+                     <span className="font-italic racconti-protagonista">Cosmicomiche vecchie e nuove</span>, passando per <span className="font-italic racconti-protagonista">La memoria del mondo</span> del 1968. Alla fine degli Anni 60 inaugura un nuovo genere di ibridazioni destinato a imporsi negli Anni 70: il romanzo di racconti racchiusi dentro una cornice (<span className="work-title racconti-cornice"
+                      data-attribute="V018">Il castello dei destini incrociati</span>).
                       </p>
                     </Trans>
                   </div>

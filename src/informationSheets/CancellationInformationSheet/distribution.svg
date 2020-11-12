@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="385" height="92" viewBox="0 0 385 92"><g transform="translate(-596 -615)"><rect width="385" height="92" transform="translate(596 615)" fill="none"/><text transform="translate(605 633)" font-size="12" font-family="HKGrotesk-SemiBoldItalic, HK Grotesk" font-weight="600" font-style="italic"><tspan x="0" y="0"></tspan><tspan x="0" y="20">Significato</tspan><tspan x="0" y="40">Forma</tspan><tspan x="0" y="60">Contenuto</tspan></text><text transform="translate(892 633)" font-size="12" font-family="HKGrotesk-SemiBoldItalic, HK Grotesk" font-weight="600" font-style="italic"><tspan x="0" y="0">Riformulazione</tspan><tspan font-family="HKGrotesk-SemiBold, HK Grotesk" font-style="normal"><tspan x="0" y="20">7</tspan><tspan x="0" y="40">1</tspan><tspan x="0" y="60">2</tspan></tspan></text><text transform="translate(701 633)" font-size="12" font-family="HKGrotesk-SemiBoldItalic, HK Grotesk" font-weight="600" font-style="italic"><tspan x="0" y="0">Negazione</tspan><tspan font-family="HKGrotesk-SemiBold, HK Grotesk" font-style="normal"><tspan x="0" y="20">3</tspan><tspan x="0" y="40">1</tspan><tspan x="0" y="60">14</tspan></tspan></text><text transform="translate(797 633)" font-size="12" font-family="HKGrotesk-SemiBoldItalic, HK Grotesk" font-weight="600" font-style="italic"><tspan x="0" y="0">Esitazione</tspan><tspan font-family="HKGrotesk-SemiBold, HK Grotesk" font-style="normal"><tspan x="0" y="20">5</tspan><tspan x="0" y="40">-</tspan><tspan x="0" y="60">24</tspan></tspan></text><line y2="92" transform="translate(692.5 615)" fill="none" stroke="#000" stroke-width="0.5"/><line y2="92" transform="translate(788.5 615)" fill="none" stroke="#000" stroke-width="0.5"/><line y2="92" transform="translate(884.5 615)" fill="none" stroke="#000" stroke-width="0.5"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 385 118" style="enable-background:new 0 0 385 118;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{font-family:'HKGrotesk-Italic';}
+	.st2{font-size:12px;}
+	.st3{font-family:'HKGrotesk-BoldItalic';}
+	.st4{font-family:'HKGrotesk-SemiBold';}
+	.st5{fill:none;stroke:#000000;stroke-width:0.5;}
+</style>
+<g transform="translate(-596 -615)">
+	<rect x="596" y="641" class="st0" width="385" height="92"/>
+	<text transform="matrix(1 0 0 1 605 678.9943)" class="st1 st2">Significato</text>
+	<text transform="matrix(1 0 0 1 605 658.9946)" class="st3 st2">Categorie</text>
+	<text transform="matrix(1 0 0 1 797.5684 632.2887)" class="st3 st2">Stili</text>
+	<text transform="matrix(1 0 0 1 605 698.9943)" class="st1 st2">Forma</text>
+	<text transform="matrix(1 0 0 1 605 718.9943)" class="st1 st2">Contenuto</text>
+	<text transform="matrix(1 0 0 1 892 658.9943)" class="st1 st2">Riformulazione</text>
+	<text transform="matrix(1 0 0 1 892 678.9943)" class="st4 st2">7</text>
+	<text transform="matrix(1 0 0 1 892 698.9943)" class="st4 st2">1</text>
+	<text transform="matrix(1 0 0 1 892 718.9943)" class="st4 st2">2</text>
+	<text transform="matrix(1 0 0 1 701 658.9943)" class="st1 st2">Negazione</text>
+	<text transform="matrix(1 0 0 1 701 678.9943)" class="st4 st2">3</text>
+	<text transform="matrix(1 0 0 1 701 698.9943)" class="st4 st2">1</text>
+	<text transform="matrix(1 0 0 1 701 718.9943)" class="st4 st2">14</text>
+	<text transform="matrix(1 0 0 1 797 658.9943)" class="st1 st2">Esitazione</text>
+	<text transform="matrix(1 0 0 1 797 678.9943)" class="st4 st2">5</text>
+	<text transform="matrix(1 0 0 1 797 698.9943)" class="st4 st2">-</text>
+	<text transform="matrix(1 0 0 1 797 718.9943)" class="st4 st2">24</text>
+	<line class="st5" x1="692.5" y1="641" x2="692.5" y2="733"/>
+	<line class="st5" x1="788.5" y1="641" x2="788.5" y2="733"/>
+	<line class="st5" x1="884.5" y1="641" x2="884.5" y2="733"/>
+</g>
+</svg>

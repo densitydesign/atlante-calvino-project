@@ -102,8 +102,8 @@ class HesitationInformationSheet extends Component {
                 style={{ gridColumn: "1 / span 22" }}
               >
                 {" "}
-                Numero di occorrenze di testo dubitativo attraverso i capitoli
-                di <i>La giornata di uno scrutatore</i>
+                Occorrenze di testo dubitativo distribuite per capitolo in{" "}
+              <em>La giornata di uno scrutatore</em>
               </p>
             </Trans>
           </div>
@@ -140,7 +140,7 @@ class HesitationInformationSheet extends Component {
                 affermato in precedenza: viene infatti svelata l’identità del
                 «partito di sinistra» a cui appartiene il protagonista (ovvero
                 «partito comunista») e l’«istituto religioso» anonimo diventa
-                «il Cottolengo di Torino» (RR, II, 7). La figura retorica
+                «il Cottolengo di Torino» (<em>RR</em>, II, 7). La figura retorica
                 utilizzata è la preterizione, che spesso collabora con il
                 processo dubitativo: informare negando, infatti, corrisponde al
                 funzionamento più frequente del testo dubitativo, che alimenta
@@ -163,7 +163,7 @@ class HesitationInformationSheet extends Component {
                 una ipotetica lettrice/lettore sulle funzioni del Cottolengo.
                 Come conseguenza dell’instabilità semantica che sta dietro le
                 parole, l’unico modo per assicurarsi di essere compresi
-                correttamente è quello di «precisare» (RR, II, 7), ridefinendo
+                correttamente è quello di «precisare» (<em>RR</em>, II, 7), ridefinendo
                 ancora e ancora il concetto, accumulando le puntualizzazioni
                 (cfr. Mengaldo 1996, 278). Il testo in questione si trova
                 all’interno di un inciso; qui il segno grafico delimita
@@ -228,7 +228,7 @@ class HesitationInformationSheet extends Component {
                 <br />
                 Questo paragrafo è un ottimo esempio di come il processo
                 dubitativo consista nel “tornare sui propri passi”. Il testo
-                oggetto di dubbio associato a td28 coincide con l’inizio del
+                oggetto di dubbio associato a <strong>td28</strong> coincide con l’inizio del
                 paragrafo e racchiude in sé dodici occorrenze del testo
                 dubitativo (dal <strong>td16</strong> al
                 <strong> td27</strong>, più della metà del numero totale di

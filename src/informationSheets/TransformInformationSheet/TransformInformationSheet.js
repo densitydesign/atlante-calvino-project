@@ -48,12 +48,6 @@ class TransformInformationSheet extends Component {
               <img alt="" className={SheetStyles.legend} src={legenda_0} />
             </div>
 
-            <h2 className={SheetStyles.titleH2}>
-              {this.props.t("transform-sheet:L'analisi")}
-            </h2>
-            <h3 className={SheetStyles.subtitleSheet}>
-              {this.props.t("transform-sheet:Geoletteratura")}
-            </h3>
             <Trans i18nKey='paragraph-geoletterature' ns='transform-sheet' t={this.props.t}>
               <p className={SheetStyles.paragraph}>
                 La categoria dei luoghi terrestri localizzabili, rielaborata a
@@ -63,7 +57,7 @@ class TransformInformationSheet extends Component {
                 tratta infatti di ambientazioni localizzabili su una mappa,
                 poiché «the setting corresponds with the geographical reality by
                 realistically portraying the surrounding» (Reuschel-Hurni 2011,
-                296). Analizzando il tempo della storia (cfr. Genette 1972) dei
+                296).<br></br>Analizzando il tempo della storia (cfr. Genette 1972) dei
                 testi del corpus calviniano che presentano ambientazioni di
                 questo tipo è necessario operare un’ulteriore distinzione in tre
                 tipologie:
@@ -96,7 +90,7 @@ class TransformInformationSheet extends Component {
                 tutti i luoghi terrestri localizzabili del corpus quattro
                 differenti mappe che mostrano una selezione degli stessi luoghi
                 sulla base del decennio di pubblicazione delle opere (1945-1955;
-                1956-1965; 1966-1975; 1976-1984). È allora piuttosto
+                1956-1965; 1966-1975; 1976-1984).<br></br>È allora piuttosto
                 significativo rilevare come, nel passaggio dagli anni Quaranta
                 agli anni Ottanta del Novecento, l’orizzonte geografico dello
                 scrittore si ampli progressivamente, arrivando infine a

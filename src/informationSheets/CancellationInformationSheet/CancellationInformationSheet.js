@@ -212,6 +212,14 @@ class CancellationInformationSheet extends Component {
               ns="cancellazione-sheet"
               t={this.props.t}
             >
+              <h2
+                className={[
+                  SheetStyles.paragraphCentered,
+                  SheetStyles.titleH2,
+                ].join(" ")}
+              >
+                a. Cominciare
+              </h2>
               <p
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
@@ -291,6 +299,14 @@ class CancellationInformationSheet extends Component {
               ns="cancellazione-sheet"
               t={this.props.t}
             >
+              <h2
+                className={[
+                  SheetStyles.paragraphCentered,
+                  SheetStyles.titleH2,
+                ].join(" ")}
+              >
+                b. Ricominciare
+              </h2>
               <p
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
@@ -408,6 +424,14 @@ class CancellationInformationSheet extends Component {
               ns="cancellazione-sheet"
               t={this.props.t}
             >
+              <h2
+              className={[
+                SheetStyles.paragraphCentered,
+                SheetStyles.titleH2,
+              ].join(" ")}
+              >
+                c. Buio e attesa
+              </h2>
               <p
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
@@ -468,11 +492,19 @@ class CancellationInformationSheet extends Component {
               }}
               alt=""
             />
+            <h2
+              className={[
+                SheetStyles.paragraphCentered,
+                SheetStyles.titleH2,
+              ].join(" ")}
+            >
+              d. Cancellazione
+            </h2>
             <p
               className={SheetStyles.paragraphCentered}
               style={{ marginTop: "1rem" }}
             >
-              <br />Nell’ultima sezione del racconto il testo dubitativo
+              <br></br>Nell’ultima sezione del racconto il testo dubitativo
               diminuisce sensibilmente. È trascorso del tempo, i due personaggi
               sono rimasti soli mentre si sta facendo sera. Ormai i gesti di
               Tomagra sono sempre più espliciti: esita brevemente (
@@ -494,8 +526,8 @@ class CancellationInformationSheet extends Component {
               di prendere l’iniziativa finale, che scioglierà ogni dubbio sul
               carattere sessuale dell’avventura a cui abbiamo assistito: «al
               fante Tomagra non restava che far sì che non ci fossero più dubbi
-              possibili» (ivi, 328).<br />
-              <br />
+              possibili» (ivi, 328).<br></br>
+              <br></br>
               Se non fosse che fuori da quel dubbio e da quelle incertezze non
               viene lasciato nessuno spazio alla rappresentazione: nel momento
               decisivo dell’azione che infine dovrebbe eliminare ogni ambiguità,
@@ -511,19 +543,20 @@ class CancellationInformationSheet extends Component {
               tutto «ebbe ancora un moto di paura d’avere […] osato tanto»
               (ibidem). La cancellazione si svela infine essere la vera
               protagonista del racconto, la forza sotterranea in grado di
-              trasformarsi in un paradossale principio creativo.<br />
-              <br />
+              trasformarsi in un paradossale principio creativo.<br></br>
+              <br></br>
             </p>
           </div>
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
             <ol className={SheetStyles.paragraph + " references"}>
               <li className="referenceItem">
-                Serra 2010: F. Serra, <i>La notte del morto nel paese nemico</i>
-                , «Paragone», a. LXI, n. 90-91-92, Agosto-Dicembre.
+                Serra 2010: F. Serra,{" "}
+                <em>La notte del morto nel paese nemico</em>, «Paragone», a.
+                LXI, n. 90-91-92, Agosto-Dicembre.
               </li>
               <li className="referenceItem">
-                Calvino 2011: I. Calvino, <i>Gli amori difficili</i>,
+                Calvino 2011: I. Calvino, <em>Gli amori difficili</em>,
                 presentazione dell’autore con uno scritto di Michele Rago,
                 Milano, Mondadori.
               </li>
@@ -537,7 +570,7 @@ class CancellationInformationSheet extends Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 

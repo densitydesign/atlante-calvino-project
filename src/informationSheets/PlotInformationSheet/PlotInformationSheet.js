@@ -2,7 +2,7 @@ import React, { useState, Component } from "react"
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 
-import FooterSchede3 from "../FooterSchede3"
+import FooterSchede3 from "../FooterSchede3";
 
 import "./PlotInformationSheet.css"
 import SheetStyles from "../SheetStyles.module.css"

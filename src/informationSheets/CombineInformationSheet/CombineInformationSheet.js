@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import SheetStyles from "../SheetStyles.module.css"
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede2 from "../FooterSchede2"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede2 from "../FooterSchede2";
 
 import legenda from "./legend_01.svg"
 import marimekko from "./marimekko.svg"

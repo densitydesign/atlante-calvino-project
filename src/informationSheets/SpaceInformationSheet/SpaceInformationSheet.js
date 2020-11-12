@@ -1,18 +1,18 @@
-import React from "react"
+import React from "react";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede1 from "../FooterSchede1"
-import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede1 from "../FooterSchede1";
+import SheetStyles from "../SheetStyles.module.css";
 
-import "./SpaceInformationSheet.css"
+import "./SpaceInformationSheet.css";
 
-import inventati from "./infosheet-spazio.svg"
-import legenda from "./legend.svg"
-import zoom_01 from "./zoom-01.svg"
-import zoom_02 from "./zoom-02.svg"
-import zoom_03 from "./zoom-03.svg"
-import zoom_04 from "./zoom-04.svg"
-import { Trans, withTranslation } from "react-i18next"
+import inventati from "./infosheet-spazio.svg";
+import legenda from "./legend.svg";
+import zoom_01 from "./zoom-01.svg";
+import zoom_02 from "./zoom-02.svg";
+import zoom_03 from "./zoom-03.svg";
+import zoom_04 from "./zoom-04.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class SpaceInformationSheet extends React.Component {
   render() {
@@ -181,19 +181,14 @@ class SpaceInformationSheet extends React.Component {
                 t={this.props.t}
               >
                 <p>
-                  Il fatto poi che Terralba e Ombrosa siano in qualche modo
-                  riconducibili alla Liguria, terra natale di Calvino, è
-                  doppiamente significativo. Nel 1965 lo stesso scrittore, con
-                  lo pseudonimo-anagramma di Tonio Cavilla, sottolinea
-                  l’importanza del paesaggio ligure sullo sfondo del
-                  <em> Barone rampante</em>: «Il romanzo si svolge in un paese
-                  immaginario, Ombrosa, ma ci rendiamo presto conto che questa
-                  Ombrosa si trova in un punto imprecisato della Riviera ligure»
-                  (RR, III, 1228-29). Evocare il paesaggio ligure, che per
-                  Calvino è il paesaggio per eccellenza, assume allora la
-                  precisa finalità di riallacciamento lirico con un passato
-                  mitizzato, in polemica con le trasformazioni edilizie che
-                  avevano deturpato la Liguria del dopoguerra (cfr. ivi, 1229).{" "}
+                  Un discorso diverso, ma non così distante, può essere fatto
+                  per le <em>Città invisibili</em>, l’opera che raccoglie il
+                  maggior numero di ambientazioni fantastiche. Le varie Eufemia,
+                  Zora, Despina sembrano così rarefatte che è facile credere di
+                  trovarsi infine fuori dal tempo e dallo spazio. Invece, anche
+                  in questo caso, Calvino non rinuncia a una cornice storica,
+                  poiché tutte e cinquantacinque le città visitate da Marco Polo
+                  appartengono allo sterminato impero di Kublai Khan.
                 </p>
               </Trans>
             </div>
@@ -201,12 +196,75 @@ class SpaceInformationSheet extends React.Component {
               <img
                 style={{
                   position: "sticky",
-                  top: "calc(var(--navigation-height) +4rem)",
+                  top: "calc(var(--navigation-height) + 4rem)",
                 }}
-                src={zoom_01}
-                alt=""
+                src={zoom_02}
               />
             </div>
+          </div>
+
+          <div className={SheetStyles.gridRow}>
+            <h2 className={SheetStyles.titleH2}>I racconti</h2>
+            <img
+              className={SheetStyles.image}
+              style={{ gridColumn: "1 / span 8" }}
+              src={zoom_04}
+            />
+            <p className="captionLeft" style={{ gridColumn: "1 / span 7" }}>
+              Una selezione di racconti scritti a metà degli anni Cinquanta
+            </p>
+            <p className={SheetStyles.paragraph}>
+              {" "}
+              Nella forma breve, sia che si tratti di racconti pubblicati in
+              volume sia che si tratti di testi usciti su periodici e poi non
+              più raccolti, la diffusione di luoghi inventati è decisamente
+              inferiore. Tuttavia, come mostra la visualizzazione, si rilevano
+              alcune zone di concentrazione: una, in particolare, più
+              interessante delle altre. <br></br>
+              Tra la fine del 1953 e l’inizio del 1954, dopo aver pubblicato
+              sull’«Unità» di Torino il primo blocco di storie che andranno a
+              comporre <em>Marcovaldo</em>, Calvino scrive una serie di testi
+              brevi di natura molto diversa, accomunati dall’incedere
+              favolistico e dalla presenza di ambientazioni fantastiche. Due di
+              questi testi (<em>Un paese disgraziato</em>, 1953;{" "}
+              <em>Il generale in biblioteca</em>, 1953) compaiono ancora
+              sull’edizione torinese dell’«Unità»; gli altri tre (
+              <em>Libertà! Libertà!</em>, 1954; <em>Lo ius primae noctis</em>,
+              1954; <em>I mozzatori di nasi</em>, 1954), scritti l’anno
+              successivo, sono pubblicati sul settimanale «Il Contemporaneo» in
+              una rubrica intitolata <em>I viaggi di Gulliver</em> all’interno
+              della quale Calvino raccolse alcuni apologhi politici con
+              riferimenti evidenti all’attualità.<br></br>
+              Ciò che accomuna tutti questi testi è la presenza di
+              un’ambientazione unidimensionale – un generico paese senza nome o
+              luoghi d’invenzione come Sant’Alcide, Marzalia, Panduria,
+              Cocinindia o Atrabilia – «dedita a una sola cosa, che sottostà a
+              una sola regola, che conosce un solo modo d’essere» (Serra 2006,
+              322). Nella quasi totalità dei casi questa situazione iniziale
+              viene messa a dura prova da un accadimento inatteso, che scombina
+              l’ordine delle cose e da cui si ricava spesso un insegnamento o
+              una morale.<br></br>
+              L’aspetto più interessante di questi racconti scritti a metà degli
+              anni Cinquanta è il fatto che sia possibile riconoscere in nuce,
+              pertanto in forma acerba e a tratti elementare, alcuni elementi
+              fondanti delle <em>Città Invisibili</em>: l’ambientazione
+              unidimensionale, la regola o il carattere <em>sui generis</em> che
+              connota la città, i nomi dei luoghi esclusivamente femminili.
+              <br></br>
+              In filigrana si riconosce un percorso organico e continuativo, che
+              affonda le radici in un tempo piuttosto remoto e trova il suo
+              compimento negli anni Settanta del Novecento.
+            </p>
+          </div>
+          <div className={SheetStyles.sideContent}>
+            <img
+              style={{
+                position: "sticky",
+                top: "calc(var(--navigation-height) +4rem)",
+              }}
+              src={zoom_01}
+              alt=""
+            />
           </div>
 
           <div className={SheetStyles.gridRow} style={{ marginTop: "3rem" }}>
@@ -302,7 +360,9 @@ class SpaceInformationSheet extends React.Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className="referenceItem">
                 Zipfel 2001: F. Zipfel, Fiktion, Fiktivität,{" "}
@@ -345,10 +405,10 @@ class SpaceInformationSheet extends React.Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "luoghi-sheet"])(
   SpaceInformationSheet
-)
+);
