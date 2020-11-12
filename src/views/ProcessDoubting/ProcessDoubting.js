@@ -657,7 +657,7 @@ class ProcessDoubting extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Cerca per"
+              title={this.props.t("cerca_per")}
               data={this.state.cerca_per}
               style={{ gridColumn: "span 4" }}
               changeOptions={this.changeCercaPer}
@@ -709,7 +709,7 @@ class ProcessDoubting extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Lunghezza"
+              title={this.props.t("doubting:Lunghezza")}
               data={this.state.lunghezzaTesti}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changeLunghezzaTesti}
@@ -718,7 +718,7 @@ class ProcessDoubting extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
-              title="Tipo di pubblicazione"
+              title={this.props.t("doubting:Tipo di pubblicazione")}
               data={this.state.pubblicazioni}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changePubblicazioni}
@@ -776,7 +776,7 @@ class ProcessDoubting extends Component {
           {!this.state.isLoading && (
             <Options
               isFlex={true}
-              title="Numero di livelli"
+              title={this.props.t("doubting:Numero di livelli")}
               data={this.state.annidamenti}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changeAnnidamenti}
