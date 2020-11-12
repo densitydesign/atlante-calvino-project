@@ -105,8 +105,8 @@
 }
 
 .dataset-download.disabled {
-  background-color: #666;
-  color: #ccc;
+  background-color: #aaa;
+  color: #eee;
 }
 
 .dataset-license {
