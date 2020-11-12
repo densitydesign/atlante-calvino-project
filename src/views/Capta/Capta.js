@@ -6,7 +6,7 @@ import styles from "./capta-sections/capta.module.css";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[5]);
+  const [selected, setSelected] = useState(capta[6]);
   return (
     <>
       <IndexMenuHeader />
@@ -33,7 +33,8 @@ export default function Capta() {
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
             as a natural representation of pre-existing fact.»
-            <br /><br />– Johanna Drucker, 2011
+            <br />
+            <br />– Johanna Drucker, 2011
           </p>
           <p>
             Infatti, il lavoro di osservazione e di registrazione delle
@@ -88,6 +89,8 @@ export default function Capta() {
           </span>
           <p>
             Di seguito i dati, o capta, e gli strumenti che abbiamo costruito.
+            Una parte di questi non è ancora stata resa disponibile per il download, poiché
+            in attesa di pubblicazione in tesi dottorali o ricerche correlate.
           </p>
         </div>
       </div>

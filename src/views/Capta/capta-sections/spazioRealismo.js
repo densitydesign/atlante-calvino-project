@@ -1,6 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import styles from "./capta.module.css";
+import { Link } from "react-router-dom";
+import styles from "./capta.module.css";
 
 const spazioRealismo = {
     name: "Spazio: spazio realista nell’opera",
@@ -18,7 +18,7 @@ const spazioRealismo = {
       <>
         <p>
           Il dataset rappresenta un approfondimento di quanto descritto
-          precedentemente (I Luoghi dell’Opera), focalizzandosi su un subset del
+          precedentemente (Spazio: i luoghi dell’Opera), focalizzandosi su un subset del
           corpus dell’autore. Questo sotto gruppo riguarda la produzione
           presumibilmente più realista di Calvino, ossia quei racconti in cui
           compaiono luoghi terrestri localizzabili o generici.
@@ -29,16 +29,16 @@ const spazioRealismo = {
         </p>
         <ul>
           <li>
-            <span>Tipologia</span>
+            <span className={styles.tag}>Tipologia</span>
           </li>
           <li>
-            <span>Livello</span>
+            <span className={styles.tag}>Livello</span>
           </li>
           <li>
-            <span>Movimento</span>
+            <span className={styles.tag}>Movimento</span>
           </li>
           <li>
-            <span>Direzione del movimento</span>
+            <span className={styles.tag}>Direzione del movimento</span>
           </li>
         </ul>
         <p>
@@ -53,6 +53,7 @@ const spazioRealismo = {
           è parte di città, luogo esterno di livello 0, poiché nel racconto non
           sono presenti ulteriori cornici.
         </p>
+        <p>Il dataset è stato rappresentato nella visualizzazione <Link to="/space/phase3">«realismo»</Link>.</p>
       </>
     ),
   };
