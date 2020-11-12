@@ -6,13 +6,13 @@ import styles from "./capta.module.css";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[0]);
+  const [selected, setSelected] = useState(capta[1]);
   return (
     <>
       <IndexMenuHeader />
       <div className="ac-grid-24 has-sidebar">
         <div className="content">
-          <h1>Équipe</h1>
+          <h1>Capta</h1>
           <h2>Data/Capta</h2>
           <p>
             In questa pagina è riportata una descrizione dei dataset che abbiamo
@@ -26,14 +26,14 @@ export default function Capta() {
             nostro lavoro e che è ormai conosciuto nell’ambito delle Digital
             Humanities.
           </p>
-          <p className="cite">
+          <p className="cite cite2">
             «Capta is “taken” actively while data is assumed to be a “given”
             able to be recorded and observed. From this distinction, a world of
             differences arises. Humanistic inquiry acknowledges the situated,
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
             as a natural representation of pre-existing fact.»
-            <br />– Johanna Drucker, 2011
+            <br /><br />– Johanna Drucker, 2011
           </p>
           <p>
             Infatti, il lavoro di osservazione e di registrazione delle
@@ -118,6 +118,7 @@ export default function Capta() {
               {selected.files.map((file) => {
                 return (
                   <a
+                    key={file.label}
                     href={file.file}
                     className={[
                       styles["dataset-download"],
