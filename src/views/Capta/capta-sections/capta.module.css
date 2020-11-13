@@ -41,26 +41,30 @@
 }
 
 .capta-list {
-  grid-column: 3 / span 6;
+  grid-column: 4 / span 6;
   border-right: 1px solid black;
-  padding: 4.33rem 1rem 2rem 0;
 }
 
 .capta-list ul {
-  padding: 0;
   margin: 0;
+  height: calc(100vh - 76px);
+  padding: 3.63rem 0;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .capta-list li {
   margin: 0;
-  padding: 0.7rem 0;
   cursor: pointer;
   position: relative;
   left: 0;
   transition: all 0.5s ease;
-  font-size: 1.1428571429rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 .capta-list li:hover {
@@ -74,15 +78,16 @@
 }
 
 .capta-focus {
-  grid-column-start: 10;
-  grid-column-end: -3;
+  grid-column-start: 11;
+  grid-column-end: -4;
   padding: 2rem 0;
 }
 
 .downloadArea {
   display: flex;
   align-items: center;
-  margin: 3rem 0;
+  margin: 3rem 0 2.5rem;
+  flex-wrap: wrap;
 }
 
 .dataset-download {
@@ -96,6 +101,7 @@
   opacity: 0.9;
   margin-right: 1rem;
   outline: none;
+  margin-bottom: 1rem;
 }
 
 .dataset-download:hover,
@@ -112,6 +118,7 @@
 .dataset-license {
   height: 31px;
   display: inline-flex;
+  margin-bottom: 1rem;
 }
 
 .capta-focus li {
@@ -132,14 +139,9 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .capta-focus {
-    grid-column-start: 10;
-    grid-column-end: -4;
-  }
 }
 @media screen and (min-width: 1440px) {
   .capta-focus {
-    grid-column-start: 10;
     grid-column-end: -6;
   }
 }

@@ -33,7 +33,6 @@ export default function Capta() {
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
             as a natural representation of pre-existing fact.»
-            <br />
             <br />– Johanna Drucker, 2011
           </p>
           <p>
@@ -107,7 +106,10 @@ export default function Capta() {
             {capta.map((d) => (
               <li
                 key={d.name}
-                onClick={() => setSelected(d)}
+                onClick={() => {
+                  document.querySelector('.'+styles["capta-focus"]).scrollIntoView({behavior:"auto",block:"start"});
+                  setSelected(d)}
+                }
                 className={d === selected ? styles["active-capta"] : ""}
               >
                 {d.name}
@@ -146,7 +148,7 @@ export default function Capta() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={selected.license} />
+                <img src={selected.license} alt={selected.licenseAltAttr} />
               </a>
             </div>
           )}

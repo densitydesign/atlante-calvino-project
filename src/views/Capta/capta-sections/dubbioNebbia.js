@@ -7,6 +7,7 @@ const dubbioNebbia = {
     type: "data",
     license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
     licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    licenseAltAttr: "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
     open: false,
     files: [
       {

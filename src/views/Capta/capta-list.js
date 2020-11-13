@@ -8,8 +8,6 @@ import spazioMovimento from "./capta-sections/spazioMovimento.js"
 import formaElenchi from "./capta-sections/formaElenchi.js"
 import formaCategorizzazioneElenchi from "./capta-sections/formaCategorizzazioneElenchi.js"
 import tools from "./capta-sections/tools.js"
-// import explorer from "./capta-sections/explorer.js"
-// import wanderer from "./capta-sections/wanderer.js"
 
 const capta = [
   corpus,
