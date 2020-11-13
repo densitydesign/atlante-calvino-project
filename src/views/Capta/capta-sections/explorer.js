@@ -3,11 +3,16 @@ import React from "react";
 // import styles from "./capta.module.css";
 
 const explorer = {
-    name: "Explorer",
+    name: "Explorer: strumento per annotazioni semplici",
     type: "tool",
-    open: true,
-    files: [],
-    jsx: <h2>Explorer</h2>,
+    urls: [
+      {label: "Explorer", url: "https://densitydesign.github.io/atlante-calvino/explorer"}
+    ],
+    jsx: (
+      <>
+        <h4>trovare un nuovo nome</h4>
+      </>
+    )
   };
 
   export default explorer

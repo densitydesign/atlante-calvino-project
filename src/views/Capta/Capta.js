@@ -3,7 +3,7 @@ import IndexMenuHeader from "../../headers/IndexMenuHeader";
 import Footer from "../../headers/Footer/Footer";
 import capta from "./capta-list";
 import styles from "./capta-sections/capta.module.css";
-import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { BsFileEarmarkSpreadsheet, BsBoxArrowUpRight } from "react-icons/bs";
 
 export default function Capta() {
   const [selected, setSelected] = useState(capta[0]);
@@ -89,8 +89,9 @@ export default function Capta() {
           </span>
           <p>
             Di seguito i dati, o capta, e gli strumenti che abbiamo costruito.
-            Una parte di questi non è ancora stata resa disponibile per il download, poiché
-            in attesa di pubblicazione in tesi dottorali o ricerche correlate.
+            Una parte di questi non è ancora stata resa disponibile per il
+            download, poiché in attesa di pubblicazione in tesi dottorali o
+            ricerche correlate.
           </p>
         </div>
       </div>
@@ -149,6 +150,29 @@ export default function Capta() {
               </a>
             </div>
           )}
+          {selected.type === "tool" && (
+            <div className={styles.downloadArea}>
+              {selected.urls.map((url) => {
+                return (
+                  <a
+                    key={url.label}
+                    href={url.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={[
+                      styles["dataset-download"],
+                      "noselect",
+                    ].join(" ")}
+                  >
+                    { url.label }
+                    <BsBoxArrowUpRight
+                      style={{ marginLeft: "0.5rem" }}
+                    />
+                  </a>
+                );
+              })}
+            </div>
+          )}
           {selected.jsx}
         </div>
       </div>
@@ -157,7 +181,15 @@ export default function Capta() {
           <h2>Bibliografia</h2>
           <ol className="references">
             <li className="referenceItem">
-            Drucker, Johanna. ‘Humanities Approaches to Graphical Display’. Digital Humanities Quarterly 5, no. 1 (2011): 1–23. <a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener noreferrer">Link</a>
+              Drucker, Johanna. ‘Humanities Approaches to Graphical Display’.
+              Digital Humanities Quarterly 5, no. 1 (2011): 1–23.{" "}
+              <a
+                href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Link
+              </a>
             </li>
             <li className="referenceItem">
               RR: Romanzi e racconti, edizione diretta da Claudio Milanini, a

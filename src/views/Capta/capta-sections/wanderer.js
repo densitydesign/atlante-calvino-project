@@ -5,9 +5,14 @@ import React from "react";
 const wanderer = {
     name: "Wanderer",
     type: "tool",
-    open: true,
-    files: [],
-    jsx: <h2>Wanderer</h2>,
+    urls: [
+      {label: "Explorer", url: "https://densitydesign.github.io/atlante-calvino/explorer"}
+    ],
+    jsx: (
+      <>
+        <h4>trovare un nuovo nome</h4>
+      </>
+    )
   };
 
   export default wanderer
