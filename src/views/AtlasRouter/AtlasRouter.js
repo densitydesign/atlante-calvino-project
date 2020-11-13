@@ -119,6 +119,7 @@ export default function AtlasRouter()
       <Route exact path="/toolsmeth"><ToolsAndMethods /></Route>
       {/* <Route exact path="/News"><PressReview /></Route> */}
       <Route exact path="/capta"><Capta /></Route>
+      {/* <Route exact path="/capta"><ToolsAndMethods /></Route> */}
       {/* <Route exact path="/News"><PressReview /></Route> */}
       <Route exact path="/publications"><Articles /></Route>
 
