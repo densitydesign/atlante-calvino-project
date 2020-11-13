@@ -46,6 +46,7 @@ import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
 import { faWindowRestore } from "@fortawesome/free-regular-svg-icons"
+import Curves from "./Curves.js"
 
 const ItemIndex = ({
   icon,
@@ -175,6 +176,7 @@ export default function IndexMenu({ onClose }) {
       >
         <Orbite ref={orbiteRef} />
       </div>
+      <Curves />
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
@@ -380,7 +382,7 @@ export default function IndexMenu({ onClose }) {
         </HashLink>
       </div>
 
-      <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
+      {/* <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
         <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve2 width="60" />
         </HashLink>
@@ -404,7 +406,8 @@ export default function IndexMenu({ onClose }) {
         <HashLink onClick={onClose} to="/itineraries#form">
           <Curve6 width="60" />
         </HashLink>
-      </div>
+      </div> */}
+
       <Footer />
     </div>
   )

@@ -1,0 +1,51 @@
+.curvesSvg {
+  width: 100vw;
+  height: calc(100vh - (var(--navigation-height) + 18px));
+  position: absolute;
+  /* comment-out the z-index to go production */
+  z-index: 1000;
+}
+
+.curve {
+  fill: none;
+  stroke: black;
+}
+
+.controlPoints {
+  /* set display none to go production */
+  /* display: none; */
+}
+
+.whiteCircles {
+  r: 80;
+  fill: white;
+  stroke: none;
+  /* keep the above to go production */
+  /* comment-out below to go production */
+  stroke: black;
+  fill: none;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1025px) {
+  .whiteCircles {
+    r: 70;
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1367px) {
+  .whiteCircles {
+    r: 65;
+  }
+}
+
+@media screen and (max-width: 1699px) and (min-width: 1600px) {
+  .whiteCircles {
+    r: 75;
+  }
+}
+
+@media screen and (max-width: 1999px) and (min-width: 1700px) {
+  .whiteCircles {
+    r: 90px;
+  }
+}
