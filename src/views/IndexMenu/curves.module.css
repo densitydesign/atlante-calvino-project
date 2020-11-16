@@ -3,6 +3,7 @@
   height: calc(100vh - (var(--navigation-height) + 18px));
   position: absolute;
   pointer-events: none;
+  background-color: var(--cool-bg);
 }
 
 .curve {

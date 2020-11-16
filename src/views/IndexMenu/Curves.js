@@ -25,7 +25,7 @@ const line = d3
 const Curves = () => {
   const svg = useRef();
   const [controlPoints, setControlPoints] = useState(pp_w16h9)
-  const [dev, setDev] = useState(true)
+  const [dev, setDev] = useState(!true)
 
   let bbox;
 

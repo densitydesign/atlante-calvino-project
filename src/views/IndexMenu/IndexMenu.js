@@ -170,13 +170,13 @@ export default function IndexMenu({ onClose }) {
         menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
       />
+      <Curves />
       <div
         className={styles["OrbiteContainer"]}
         style={{ top: 58, left: 0, right: 0, bottom: 18 }}
       >
         <Orbite ref={orbiteRef} />
       </div>
-      <Curves />
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
