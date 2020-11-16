@@ -3,17 +3,20 @@ import * as d3 from "d3";
 import styles from "./curves.module.css";
 import whiteCircles from "./curves/white-circles-background.json"
 import pp_w4h3 from "./curves/curves-w4h3.json";
-import pp_w16h9 from "./curves/curves-w4h3.json";
-import pp_w3h4 from "./curves/curves-w4h3.json";
+import pp_w16h9 from "./curves/curves-w16h9.json";
+import pp_w3h4 from "./curves/curves-w3h4.json";
+import pp_w9h16 from "./curves/curves-w16h9.json";
 
 const curvesPoints = {
-  [4 / 3]: pp_w4h3,
-  [16 / 9]: pp_w16h9,
-  [3 / 4]: pp_w3h4,
-  [9 / 16]: pp_w16h9,
+  [4/3]: pp_w4h3,
+  [16/9]: pp_w16h9,
+  [3/4]: pp_w3h4,
+  [9/16]: pp_w9h16,
 };
 
-console.log(curvesPoints);
+console.log(curvesPoints, "asd")
+
+let pp = pp_w16h9;
 
 const line = d3
   .line()
@@ -25,15 +28,14 @@ const Curves = () => {
   const svg = useRef();
   let bbox;
 
-  const [pp, setPP] = useState(pp_w4h3);
-
   const drawCurves = useCallback(() => {
     bbox = svg.current.getBoundingClientRect();
     const goal = bbox.width / bbox.height;
     const ratio = Object.keys(curvesPoints).reduce(function (prev, curr) {
       return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
-    });
-    const pp = curvesPoints[ratio];
+    }).toString();
+    // console.log(goal, ratio)
+    pp = curvesPoints[ratio];
     const points = pp.map((arr) => {
       return arr.map((d) => ({
         position: d.position,
@@ -84,6 +86,7 @@ const Curves = () => {
         // Remove temporary element
         document.body.removeChild(el);
       }
+      console.log(pp)
       copyStringToClipboard(JSON.stringify(pp, null, 2));
     }
   }, []);
