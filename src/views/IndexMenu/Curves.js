@@ -14,7 +14,7 @@ const curvesPoints = {
   [9/16]: pp_w9h16,
 };
 
-console.log(curvesPoints, "asd")
+console.log(curvesPoints)
 
 let pp = pp_w16h9;
 
@@ -26,6 +26,7 @@ const line = d3
 
 const Curves = () => {
   const svg = useRef();
+  const [controlPoints, setControlPoints] = useState(pp_w16h9)
   let bbox;
 
   const drawCurves = useCallback(() => {
@@ -34,8 +35,11 @@ const Curves = () => {
     const ratio = Object.keys(curvesPoints).reduce(function (prev, curr) {
       return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
     }).toString();
-    // console.log(goal, ratio)
-    pp = curvesPoints[ratio];
+    console.log(goal, ratio)
+    if ( pp !== curvesPoints[ratio]) {
+      pp = curvesPoints[ratio];
+      setControlPoints(pp)
+    }
     const points = pp.map((arr) => {
       return arr.map((d) => ({
         position: d.position,
@@ -98,7 +102,7 @@ const Curves = () => {
   }, [drawCurves]);
 
   return (
-    <svg className={styles.curvesSvg} ref={svg}>
+    <svg className={[styles.curvesSvg, styles.development].join(' ')} ref={svg}>
       {/* <defs>
         <radialGradient id="rgrad" cx="50%" cy="50%" r="75%">
           <stop
