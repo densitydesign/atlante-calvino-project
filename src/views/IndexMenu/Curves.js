@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
 import styles from "./curves.module.css";
+import whiteCircles from "./curves/white-circles-background.json"
 import pp_w4h3 from "./curves/curves-w4h3.json";
 import pp_w16h9 from "./curves/curves-w4h3.json";
 import pp_w3h4 from "./curves/curves-w4h3.json";
@@ -19,51 +20,6 @@ const line = d3
   .curve(d3.curveNatural)
   .x((d) => d.x)
   .y((d) => d.y);
-
-const whiteCircles = [
-  [
-    {
-      x: 29.270833333333336,
-      y: 30.100334448160538,
-    },
-    {
-      x: 7.51953125,
-      y: 41.040462427745666,
-    },
-    {
-      x: 17.049666419570052,
-      y: 76.54986522911051,
-    },
-  ],
-  [
-    {
-      x: 49.53125,
-      y: 38.46153846153847,
-    },
-    {
-      x: 38.072916666666664,
-      y: 57.63656633221851,
-    },
-    {
-      x: 54.79166666666667,
-      y: 83.61204013377926,
-    },
-  ],
-  [
-    {
-      x: 71.82291666666667,
-      y: 29.76588628762542,
-    },
-    {
-      x: 86.40625,
-      y: 44.569677,
-    },
-    {
-      x: 83.95833333333333,
-      y: 74.47045707915272,
-    },
-  ],
-];
 
 const Curves = () => {
   const svg = useRef();
