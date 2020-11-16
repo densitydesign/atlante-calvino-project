@@ -5,7 +5,7 @@ import whiteCircles from "./curves/white-circles-background.json"
 import pp_w4h3 from "./curves/curves-w4h3.json";
 import pp_w16h9 from "./curves/curves-w16h9.json";
 import pp_w3h4 from "./curves/curves-w3h4.json";
-import pp_w9h16 from "./curves/curves-w16h9.json";
+import pp_w9h16 from "./curves/curves-w9h16.json";
 
 const curvesPoints = {
   [4/3]: pp_w4h3,
@@ -13,8 +13,6 @@ const curvesPoints = {
   [3/4]: pp_w3h4,
   [9/16]: pp_w9h16,
 };
-
-console.log(curvesPoints)
 
 let pp = pp_w16h9;
 
@@ -92,7 +90,6 @@ const Curves = () => {
         // Remove temporary element
         document.body.removeChild(el);
       }
-      console.log(pp)
       copyStringToClipboard(JSON.stringify(pp, null, 2));
     }
   }, []);

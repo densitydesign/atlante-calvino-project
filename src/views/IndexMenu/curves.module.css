@@ -16,13 +16,9 @@
 
 .whiteCircles {
   r: 70;
-  /* fill: url(#rgrad); */
   fill: white;
+  /* fill: url(#rgrad); */
   stroke: none;
-  /* keep the above to go production */
-  /* comment-out below to go production */
-  stroke: #999;
-  fill: none;
 }
 
 .development.curvesSvg {
