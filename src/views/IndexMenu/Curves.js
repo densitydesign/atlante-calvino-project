@@ -6,13 +6,13 @@ import pp_w16h9 from "./curves/curves-w4h3.json";
 import pp_w3h4 from "./curves/curves-w4h3.json";
 
 const curvesPoints = {
-  [4/3] : pp_w4h3, 
-  [16/9] : pp_w16h9, 
-  [3/4] : pp_w3h4,
-  [9/16] : pp_w16h9, 
+  [4 / 3]: pp_w4h3,
+  [16 / 9]: pp_w16h9,
+  [3 / 4]: pp_w3h4,
+  [9 / 16]: pp_w16h9,
 };
 
-console.log(curvesPoints)
+console.log(curvesPoints);
 
 const line = d3
   .line()
@@ -21,13 +21,51 @@ const line = d3
   .y((d) => d.y);
 
 const whiteCircles = [
-  [0, 5, 10],
-  [0, 5, 10],
-  [0, 4, 10],
+  [
+    {
+      x: 29.270833333333336,
+      y: 30.100334448160538,
+    },
+    {
+      x: 7.51953125,
+      y: 41.040462427745666,
+    },
+    {
+      x: 17.049666419570052,
+      y: 76.54986522911051,
+    },
+  ],
+  [
+    {
+      x: 49.53125,
+      y: 38.46153846153847,
+    },
+    {
+      x: 38.072916666666664,
+      y: 57.63656633221851,
+    },
+    {
+      x: 54.79166666666667,
+      y: 83.61204013377926,
+    },
+  ],
+  [
+    {
+      x: 71.82291666666667,
+      y: 29.76588628762542,
+    },
+    {
+      x: 86.40625,
+      y: 44.569677,
+    },
+    {
+      x: 83.95833333333333,
+      y: 74.47045707915272,
+    },
+  ],
 ];
 
 const Curves = () => {
-
   const svg = useRef();
   let bbox;
 
@@ -36,11 +74,10 @@ const Curves = () => {
   const drawCurves = useCallback(() => {
     bbox = svg.current.getBoundingClientRect();
     const goal = bbox.width / bbox.height;
-    const ratio = Object.keys(curvesPoints).reduce(function(prev, curr) {
-      return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+    const ratio = Object.keys(curvesPoints).reduce(function (prev, curr) {
+      return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
     });
-    // console.log(goal, ratio)
-    const pp = curvesPoints[ratio]
+    const pp = curvesPoints[ratio];
     const points = pp.map((arr) => {
       return arr.map((d) => ({
         position: d.position,
@@ -119,20 +156,19 @@ const Curves = () => {
       <path className={styles.curve} />
       <path className={styles.curve} />
       {/* White circles in the background */}
-      {pp.map((arr, i) =>
-        arr
-          .filter((f, j) => whiteCircles[i].indexOf(j) > -1)
-          .map((p, ii) => (
-            <circle
-              key={ii}
-              className={styles.whiteCircles}
-              index1={i}
-              index2={ii}
-              cx={p.x + "%"}
-              cy={p.y + "%"}
-            />
-          ))
-      )}
+      {whiteCircles.map((arr,j)=>
+        arr.map((p, i) => (
+          <circle
+            key={i}
+            className={styles.whiteCircles}
+            index={i}
+            cx={p.x + "%"}
+            cy={p.y + "%"}
+          />
+        ))
+      )
+          
+      }
       {/* control points, hid in CSS module before publishing */}
       {pp.map((arr, i) =>
         arr.map((p, ii) => (
