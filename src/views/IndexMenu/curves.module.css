@@ -2,6 +2,7 @@
   width: 100vw;
   height: calc(100vh - (var(--navigation-height) + 18px));
   position: absolute;
+  pointer-events: none;
 }
 
 .curve {
@@ -26,6 +27,7 @@
 
 .development.curvesSvg {
   z-index: 1000;
+  pointer-events: auto;
 }
 
 .development .controlPoints {

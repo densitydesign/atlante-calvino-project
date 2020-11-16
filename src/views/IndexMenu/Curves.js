@@ -27,6 +27,8 @@ const line = d3
 const Curves = () => {
   const svg = useRef();
   const [controlPoints, setControlPoints] = useState(pp_w16h9)
+  const [dev, setDev] = useState(true)
+
   let bbox;
 
   const drawCurves = useCallback(() => {
@@ -102,7 +104,7 @@ const Curves = () => {
   }, [drawCurves]);
 
   return (
-    <svg className={[styles.curvesSvg, styles.development].join(' ')} ref={svg}>
+    <svg className={[styles.curvesSvg, dev?styles.development:''].join(' ')} ref={svg}>
       {/* <defs>
         <radialGradient id="rgrad" cx="50%" cy="50%" r="75%">
           <stop
