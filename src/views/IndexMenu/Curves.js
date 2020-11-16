@@ -1,7 +1,18 @@
-import React, { useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
 import styles from "./curves.module.css";
-import pp from "./curves-points.json";
+import pp_w4h3 from "./curves/curves-w4h3.json";
+import pp_w16h9 from "./curves/curves-w4h3.json";
+import pp_w3h4 from "./curves/curves-w4h3.json";
+
+const curvesPoints = {
+  [4/3] : pp_w4h3, 
+  [16/9] : pp_w16h9, 
+  [3/4] : pp_w3h4,
+  [9/16] : pp_w16h9, 
+};
+
+console.log(curvesPoints)
 
 const line = d3
   .line()
@@ -16,11 +27,20 @@ const whiteCircles = [
 ];
 
 const Curves = () => {
+
   const svg = useRef();
   let bbox;
 
+  const [pp, setPP] = useState(pp_w4h3);
+
   const drawCurves = useCallback(() => {
     bbox = svg.current.getBoundingClientRect();
+    const goal = bbox.width / bbox.height;
+    const ratio = Object.keys(curvesPoints).reduce(function(prev, curr) {
+      return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+    });
+    // console.log(goal, ratio)
+    const pp = curvesPoints[ratio]
     const points = pp.map((arr) => {
       return arr.map((d) => ({
         position: d.position,
@@ -83,7 +103,7 @@ const Curves = () => {
 
   return (
     <svg className={styles.curvesSvg} ref={svg}>
-      <defs>
+      {/* <defs>
         <radialGradient id="rgrad" cx="50%" cy="50%" r="75%">
           <stop
             offset="40%"
@@ -94,10 +114,11 @@ const Curves = () => {
             stopColor="rgba(255,255,255,0)"
           />
         </radialGradient>
-      </defs>
+      </defs> */}
       <path className={styles.curve} />
       <path className={styles.curve} />
       <path className={styles.curve} />
+      {/* White circles in the background */}
       {pp.map((arr, i) =>
         arr
           .filter((f, j) => whiteCircles[i].indexOf(j) > -1)
@@ -112,6 +133,7 @@ const Curves = () => {
             />
           ))
       )}
+      {/* control points, hid in CSS module before publishing */}
       {pp.map((arr, i) =>
         arr.map((p, ii) => (
           <circle
