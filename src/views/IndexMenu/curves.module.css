@@ -3,7 +3,7 @@
   height: calc(100vh - (var(--navigation-height) + 18px));
   position: absolute;
   /* comment-out the z-index to go production */
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 .curve {
@@ -13,17 +13,18 @@
 
 .controlPoints {
   /* set display none to go production */
-  /* display: none; */
+  display: none;
 }
 
 .whiteCircles {
-  r: 80;
+  r: 70;
+  /* fill: url(#rgrad); */
   fill: white;
   stroke: none;
   /* keep the above to go production */
   /* comment-out below to go production */
-  stroke: black;
-  fill: none;
+  /* stroke: #999; */
+  /* fill: white; */
 }
 
 @media screen and (max-width: 1366px) and (min-width: 1025px) {

@@ -376,13 +376,13 @@ export default function IndexMenu({ onClose }) {
         {t("index_menu.video_guida")}
       </div>
 
-      <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
+      {/* <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
         <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve1 width="60" />
         </HashLink>
       </div>
 
-      {/* <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
+      <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
         <HashLink onClick={onClose} to="/itineraries#doubt">
           <Curve2 width="60" />
         </HashLink>
