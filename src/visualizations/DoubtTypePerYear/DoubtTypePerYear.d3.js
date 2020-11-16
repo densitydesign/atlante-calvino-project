@@ -115,7 +115,7 @@ console.log("data", data);
       .append("text")
       .attr("y", height + 20)
       .attr("x", 0)
-      .text("anni di pubblicazione");
+      .text("anno di pubblicazione");
 
 
     const stream = svg.append("g");

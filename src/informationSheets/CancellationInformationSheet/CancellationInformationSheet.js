@@ -1,24 +1,24 @@
-import React, { Component } from "react"
-import SheetStyles from "../SheetStyles.module.css"
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede3 from "../FooterSchede3"
+import React, { Component } from "react";
+import SheetStyles from "../SheetStyles.module.css";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede3 from "../FooterSchede3";
 
-import context_webm_1x from "./animation-text-context@1x.webm"
-import context_mp4_1x from "./animation-text-context@1x.mp4"
-import context_webm_2x from "./animation-text-context@2x.webm"
-import context_mp4_2x from "./animation-text-context@2x.mp4"
+import context_webm_1x from "./animation-text-context@1x.webm";
+import context_mp4_1x from "./animation-text-context@1x.mp4";
+import context_webm_2x from "./animation-text-context@2x.webm";
+import context_mp4_2x from "./animation-text-context@2x.mp4";
 
-import distribution from "./distribution.svg"
-import miniviz from "./miniviz.svg"
-import legend from "./legend.svg"
+import distribution from "./distribution.svg";
+import miniviz from "./miniviz.svg";
+import legend from "./legend.svg";
 
-import section01 from "./section01.svg"
-import section02 from "./section02.svg"
-import section03 from "./section03.svg"
-import section04 from "./section04.svg"
+import section01 from "./section01.svg";
+import section02 from "./section02.svg";
+import section03 from "./section03.svg";
+import section04 from "./section04.svg";
 
-import visualizationPDF from "./muro-di-testo-avventura-di-un-soldato.pdf"
-import { Trans, withTranslation } from "react-i18next"
+import visualizationPDF from "./muro-di-testo-avventura-di-un-soldato.pdf";
+import { Trans, withTranslation } from "react-i18next";
 
 class CancellationInformationSheet extends Component {
   render() {
@@ -130,9 +130,7 @@ class CancellationInformationSheet extends Component {
                 </video>
               </div>
               <p className="captionLeft">
-                {this.props.t(
-                  "cancellazione-sheet:Posizione del racconto"
-                )}
+                {this.props.t("cancellazione-sheet:Posizione del racconto")}
               </p>
               <img
                 className={SheetStyles.image + " " + SheetStyles.image100w}
@@ -174,12 +172,12 @@ class CancellationInformationSheet extends Component {
             </Trans>
             <div
               className={SheetStyles.sideContent}
-              style={{ textAlign: "center" }}
+              style={{ textAlign: "center", position: "sticky", top: "var(--navigation-height)"}}
             >
               <img
-                className={SheetStyles.image}
+              
                 src={miniviz}
-                style={{ position: "sticky", top: "var(--navigation-height)" }}
+                style={{float:'left' }}
                 alt=""
               />
             </div>
@@ -224,8 +222,9 @@ class CancellationInformationSheet extends Component {
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
               >
-                <br />Nella prima sezione le occorrenze di testo dubitativo
-                sono rarefatte: a colpo d’occhio emerge la categoria del{" "}
+                <br />
+                Nella prima sezione le occorrenze di testo dubitativo sono
+                rarefatte: a colpo d’occhio emerge la categoria del{" "}
                 <span style={{ color: "#FFA500" }}>contenuto</span>, unito allo
                 stile della negazione. I paragrafi iniziali sono occupati dalla
                 descrizione della donna e dalle prime impressioni di Tomagra,
@@ -234,10 +233,11 @@ class CancellationInformationSheet extends Component {
                 soldato comincia a ragionare, a riflettere sulle motivazioni che
                 potrebbero aver spinto la vedova a scegliere proprio quel posto:
                 «certo per via di qualche comodità del viaggiare, s’affrettò a
-                pensare il fante, correnti d’aria o direzioni della corsa» (RR,
-                I, 319) (<span style={{ color: "#FFA500" }}>2, 3</span>). Ma ben
-                presto si profila un’altra ipotesi: la signora potrebbe voler
-                stabilire un contatto con lui.
+                pensare il fante, correnti d’aria o direzioni della corsa» (
+                <em>RR</em>, I, 319) (
+                <span style={{ color: "#FFA500" }}>2, 3</span>). Ma ben presto
+                si profila un’altra ipotesi: la signora potrebbe voler stabilire
+                un contatto con lui.
                 <br />
                 <br />
                 Nel 7§ la donna dallo sguardo «irraggiungibile», «fisso»,
@@ -311,9 +311,10 @@ class CancellationInformationSheet extends Component {
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
               >
-                <br />L’andirivieni mentale e fisico di Tomagra appena
-                descritto riflette con estrema fedeltà il comportamento del
-                testo dubitativo. Nell’articolo{" "}
+                <br />
+                L’andirivieni mentale e fisico di Tomagra appena descritto
+                riflette con estrema fedeltà il comportamento del testo
+                dubitativo. Nell’articolo{" "}
                 <i>La notte del morto nel paese nemico</i>, Francesca Serra
                 descrive il meccanismo dubitativo su cui è costruito{" "}
                 <i>Ricordo di una battaglia</i>, ribattezzandolo «racconto
@@ -323,10 +324,11 @@ class CancellationInformationSheet extends Component {
                 dando così vita a una serie potenzialmente infinita di nuovi
                 inizi. Nelle prime righe del 9§, Tomagra conclude fra sé che,
                 avendo perso «quella paziente e prudentissima opera di
-                contatto», «bisognava ricominciare da capo» (RR, I, 321).
-                Successivamente riprenderà la sua «opera» più volte, dando modo
-                al testo dubitativo di intensificarsi e diversificarsi,
-                accompagnando i movimenti e i dubbi del soldato.<br />
+                contatto», «bisognava ricominciare da capo» (<em>RR</em>, I,
+                321). Successivamente riprenderà la sua «opera» più volte, dando
+                modo al testo dubitativo di intensificarsi e diversificarsi,
+                accompagnando i movimenti e i dubbi del soldato.
+                <br />
                 Osservando la visualizzazione, si percepisce un uso eterogeneo
                 sia delle categorie che degli stili; notiamo un’alternanza
                 cadenzata fra le occorrenze di{" "}
@@ -336,7 +338,8 @@ class CancellationInformationSheet extends Component {
                 in misura minore la categoria{" "}
                 <span style={{ color: "#00bfd3" }}>forma</span>. Nel complesso
                 potremmo sostenere che l’andamento narrativo e il processo
-                dubitativo avanzano parallelamente fra loro.<br />
+                dubitativo avanzano parallelamente fra loro.
+                <br />
                 Al centro di questo andirivieni non si trova, però, il
                 personaggio nella sua interezza. Piuttosto la sua mano,
                 rappresentata come un’entità a sé stante, una sorta di appendice
@@ -359,7 +362,8 @@ class CancellationInformationSheet extends Component {
                 <span style={{ color: "#ff3366" }}>10</span>) alla fine del
                 racconto (<span style={{ color: "#ff3366" }}>56</span>),
                 solitamente nello sforzo frustrato di chiarire una volta per
-                tutte il senso che sta dietro ai gesti.<br />
+                tutte il senso che sta dietro ai gesti.
+                <br />
                 <br />
                 La parcellizzazione del corpo di Tomagra riflette il modo in cui
                 viene descritto lo scambio muto di gesti fra lui e la vedova:
@@ -388,7 +392,8 @@ class CancellationInformationSheet extends Component {
                 basarsi sulle reazioni della vedova, ma «lei, lei, lei era una
                 sfinge» (ibidem), ennesimo simbolo che rappresenta l’enigma
                 femminile e, contemporaneamente, il principio di metamorfosi che
-                altera la realtà.<br />
+                altera la realtà.
+                <br />
                 La conclusione del ventiquattresimo paragrafo riprende la frase
                 iniziale della sezione: Tomagra è arretrato per l’ennesima
                 volta, eppure esita, «come volesse <i>
@@ -405,7 +410,8 @@ class CancellationInformationSheet extends Component {
                 Tomagra si è illuso della complicità raggiunta con la vedova.
                 Qui compaiono, infatti, le parole “profondità” e “sogno”, per
                 evocare una dimensione onirica e sospesa di assoluta incertezza,
-                subito ripresa nella sezione successiva.<br />
+                subito ripresa nella sezione successiva.
+                <br />
                 <br />
               </p>
             </Trans>
@@ -425,10 +431,10 @@ class CancellationInformationSheet extends Component {
               t={this.props.t}
             >
               <h2
-              className={[
-                SheetStyles.paragraphCentered,
-                SheetStyles.titleH2,
-              ].join(" ")}
+                className={[
+                  SheetStyles.paragraphCentered,
+                  SheetStyles.titleH2,
+                ].join(" ")}
               >
                 c. Buio e attesa
               </h2>
@@ -436,7 +442,8 @@ class CancellationInformationSheet extends Component {
                 className={SheetStyles.paragraphCentered}
                 style={{ marginTop: "1rem" }}
               >
-                <br />«Una galleria piombò loro addosso» (ivi, 326). Cala
+                <br />
+                «Una galleria piombò loro addosso» (ivi, 326). Cala
                 istantaneamente il buio e da quell’oscurità Tomagra è confortato
                 al punto da tentare qualcosa di inedito: si azzarda a toccare il
                 seno della donna. Il primo paragrafo (§25), del tutto privo di
@@ -454,7 +461,8 @@ class CancellationInformationSheet extends Component {
                 superare, poi si trasforma nel sintomo, nella prova-simbolo
                 della partecipazione da parte della vedova a quello scambio con
                 il soldato. Rivelando che il linguaggio è il primo veicolo
-                dell’ambiguità che avvolge il mondo reale.<br />
+                dell’ambiguità che avvolge il mondo reale.
+                <br />
                 <br />
                 In questa sezione non c’è luce, quindi non c’è visione: siamo
                 all’apice di un progressivo percorso verso l’accecamento, una
@@ -471,7 +479,7 @@ class CancellationInformationSheet extends Component {
                 la galleria era lunga […] certo se subito avesse approfittato
                 avrebbe avuto molto tempo innanzi a sé» (
                 <span style={{ color: "#FFA500" }}>51-53</span>) (ibidem). Il
-                paragrafo rappresenta l’attesa, parola latina composta da ad-
+                paragrafo rappresenta l’attesa, parola latina composta da <em>ad-</em>
                 per “verso” e <i>téndere</i> nel senso traslato di “mirare,
                 aspirare” ma che significa anche “tirare”: il testo si dilata,
                 si gonfia tramite il processo dubitativo, si “tende” aumentando
@@ -576,4 +584,4 @@ class CancellationInformationSheet extends Component {
 
 export default withTranslation(["translation", "cancellazione-sheet"])(
   CancellationInformationSheet
-)
+);

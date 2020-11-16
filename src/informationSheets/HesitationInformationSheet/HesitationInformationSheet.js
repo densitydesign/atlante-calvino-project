@@ -61,7 +61,7 @@ class HesitationInformationSheet extends Component {
                 associato, autoritratto morale» (Barenghi 2009, 56).
                 <br />
                 In un’intervista del 1963 Calvino lo definì «un libro di punti
-                interrogativi» (RR, II, 1311). Ma il segno interrogativo, per
+                interrogativi» (<em>RR</em>, II, 1311). Ma il segno interrogativo, per
                 quanto simbolicamente così importante, non è l’unico a
                 caratterizzare il romanzo: <em>
                   La giornata d’uno scrutatore
@@ -127,7 +127,7 @@ class HesitationInformationSheet extends Component {
                 specifici. Ognuno, infatti, è «portato ad attribuire valori
                 diversi o magari contrastanti» a questi ultimi, «secondo le
                 proprie cognizioni ed esperienze», e per questo motivo
-                «resterebbe da precisare ancora» (RR, II, 7).
+                «resterebbe da precisare ancora» (<em>RR</em>, II, 7).
               </p>
               <p className={SheetStyles.paragraph}>
                 La riflessione che inaugura il capitolo è immediatamente

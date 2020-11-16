@@ -137,11 +137,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
   return (
     <div className="realismo-detail">
       <div className="realismo-detail-info-legend">
-        Livelli
+        Livelli:
         <br />
-        di annidamento
+        luoghi contenuti
         <br />
-        dei luoghi
+        in altri luoghi
       </div>
       <div style={{ margin: `0px ${CHART_PADDING_X}px` }}>
         <MiniInfoBox
