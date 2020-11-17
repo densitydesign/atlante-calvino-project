@@ -4,13 +4,15 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import "./ProcessDoubtingMainHelp.css"
 import { Link } from "react-router-dom"
 import { ReactComponent as Legend01 } from "./icons/dubitare_disposizione.svg"
+import { ReactComponent as Legend01En } from "./icons/dubitare_disposizione_en.svg"
 import Legend02 from "./icons/dubitare_disposizioneGIF.gif"
+import Legend02En from "./icons/dubitare_disposizioneGIF_en.gif"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import { useTranslation, Trans } from "react-i18next"
 
 export default function ProcessDoubtingMainHelp() {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "doubting"])
+  const { t, i18n } = useTranslation(["translation", "doubting"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -19,7 +21,7 @@ export default function ProcessDoubtingMainHelp() {
         linkTappa2={"/doubt/phase2"}
         linkTappa3={"/doubt/phase3"}
         linkItinerario={"/itineraries#doubt"}
-        titolo={t('dubitare')}
+        titolo={t("dubitare")}
         linkApprofondimento="/doubt/phase2/focus"
         nomeItinerario={t("doubting:help_panel.itinerario_dubbio")}
       />
@@ -136,7 +138,11 @@ export default function ProcessDoubtingMainHelp() {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title={t('help_panel.legenda')}>
+        <Tab
+          tabClassName="tab-info"
+          eventKey="legenda"
+          title={t("help_panel.legenda")}
+        >
           <div className="mt-2">
             <div>
               <small>
@@ -145,16 +151,16 @@ export default function ProcessDoubtingMainHelp() {
             </div>
             <div className="row">
               <div className="col-md-6">
-                <Legend01 width="124" />
+                {i18n.language === "it" ? (
+                  <Legend01 width="124" />
+                ) : (
+                  <Legend01En width="124" />
+                )}
               </div>
               <div className="col-md-6 text-left">
                 <img width="157" src={Legend02} alt="Legenda" />
                 <div>
-                  <Trans
-                    i18nKey={"help_panel.testo_gif"}
-                    t={t}
-                    ns="doubting"
-                  >
+                  <Trans i18nKey={"help_panel.testo_gif"} t={t} ns="doubting">
                     <small className="badge-legenda-small">
                       Testi disposti secondo data di prima pubblicazione. Apri
                       la colonna cliccando, poi scorri verso il basso per vedere
@@ -171,13 +177,22 @@ export default function ProcessDoubtingMainHelp() {
                 <small>{t("doubting:help_panel.tipo_di_fenomeno")}</small>
               </div>
               <div>
-                <BadgeLegenda color="#BBBBFF" name={t("doubting:help_panel.testo_dubitativo_dt")} />
-                <BadgeLegenda color="#FFD337" name={t("doubting:help_panel.oggetto_di_dubbio")} />
+                <BadgeLegenda
+                  color="#BBBBFF"
+                  name={t("doubting:help_panel.testo_dubitativo_dt")}
+                />
+                <BadgeLegenda
+                  color="#FFD337"
+                  name={t("doubting:help_panel.oggetto_di_dubbio")}
+                />
                 <BadgeLegenda
                   color="#00C19C"
                   name={t("doubting:help_panel.dubitativo_e_oggetto_di_dubbio")}
                 />
-                <BadgeLegenda color="#C6CACF" name={t("doubting:help_panel.non_dubitativo")} />
+                <BadgeLegenda
+                  color="#C6CACF"
+                  name={t("doubting:help_panel.non_dubitativo")}
+                />
               </div>
             </div>
           </div>
