@@ -65,7 +65,7 @@ const ItemIndex = ({
       className={
         tappa && tappaHover && tappa === tappaHover
           ? styles[className]
-          : styles[className]+' '+styles["hoverable-icon"]
+          : styles[className] + " " + styles["hoverable-icon"]
       }
     >
       {tappa && tappaHover && tappa === tappaHover ? (
@@ -180,6 +180,12 @@ export default function IndexMenu({ onClose }) {
           <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
           </div>
+          <video width="100%" height="90%" controls>
+            <source
+              src={process.env.PUBLIC_URL + "/introcalvino.mp4"}
+              type="video/mp4"
+            />
+          </video>
         </Modal.Body>
       </Modal>
       <IndexMenuHeader
