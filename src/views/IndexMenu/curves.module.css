@@ -13,12 +13,13 @@
 
 .controlPoints {
   display: none;
+  fill: transparent;
 }
 
 .whiteCircles {
-  r: 70;
+  r: 55;
   fill: white;
-  /* fill: url(#rgrad); */
+  fill: url(#rgrad);
   stroke: none;
 }
 

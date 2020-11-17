@@ -29,7 +29,7 @@ const line = d3
 const Curves = () => {
   const svg = useRef();
   const [controlPoints, setControlPoints] = useState(pp_w16h9)
-  const [dev, setDev] = useState(true)
+  const [dev, setDev] = useState(!true)
 
   let bbox;
 
@@ -107,18 +107,18 @@ const Curves = () => {
 
   return (
     <svg className={[styles.curvesSvg, dev?styles.development:''].join(' ')} ref={svg}>
-      {/* <defs>
+      <defs>
         <radialGradient id="rgrad" cx="50%" cy="50%" r="75%">
           <stop
-            offset="40%"
+            offset="55%"
             stopColor="rgba(255,255,255,1)"
           />
           <stop
-            offset="50%"
+            offset="70%"
             stopColor="rgba(255,255,255,0)"
           />
         </radialGradient>
-      </defs> */}
+      </defs>
       <path className={styles.curve} />
       <path className={styles.curve} />
       <path className={styles.curve} />
@@ -142,7 +142,7 @@ const Curves = () => {
           <circle
             key={ii}
             className={styles.controlPoints}
-            fill={d3.schemeCategory10[i]}
+            stroke={d3.schemeCategory10[i]}
             index1={i}
             index2={ii}
             r="5"
