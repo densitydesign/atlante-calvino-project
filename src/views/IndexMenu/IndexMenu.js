@@ -45,6 +45,7 @@ import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg"
 import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
+import classnames from "classnames"
 import { faWindowRestore } from "@fortawesome/free-regular-svg-icons"
 
 const ItemIndex = ({
@@ -55,13 +56,28 @@ const ItemIndex = ({
   link,
   onClose,
   linkApprofondimento,
+  tappa,
+  tappaHover,
 }) => {
+  console.log(tappa, tappaHover)
   return (
-    <div className={`${styles[className]} ${styles["hoverable-icon"]}`}>
-      <Link onClick={onClose} to={link}>
-        {icon}
-        {iconHover}
-      </Link>
+    <div
+      className={
+        tappa && tappaHover && tappa === tappaHover
+          ? styles[className]
+          : styles[className]+' '+styles["hoverable-icon"]
+      }
+    >
+      {tappa && tappaHover && tappa === tappaHover ? (
+        <Link onClick={onClose} to={link}>
+          {iconHover}
+        </Link>
+      ) : (
+        <Link onClick={onClose} to={link}>
+          {icon}
+          {iconHover}
+        </Link>
+      )}
       <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
       {title !== "Territorio" && (
         <Link to={linkApprofondimento}>
@@ -74,6 +90,7 @@ const ItemIndex = ({
 
 export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
+  const [tappaHover, setTappaHover] = useState(null)
 
   const handleCloseGuida = () => setShowGuida(false)
   const handleShowGuida = () => {
@@ -179,17 +196,29 @@ export default function IndexMenu({ onClose }) {
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
           <div className={styles["tappa1"]}>
-            <Tappa1 width="20" />
+            <Tappa1
+              onMouseEnter={() => setTappaHover(1)}
+              onMouseLeave={() => setTappaHover(null)}
+              width="20"
+            />
           </div>
         </HashLink>
         <HashLink onClick={onClose} to="/phases#process">
           <div className={styles["tappa2"]}>
-            <Tappa2 width="20" />
+            <Tappa2
+              width="20"
+              onMouseEnter={() => setTappaHover(2)}
+              onMouseLeave={() => setTappaHover(null)}
+            />
           </div>
         </HashLink>
         <HashLink onClick={onClose} to="/phases#problem">
           <div className={styles["tappa3"]}>
-            <Tappa3 width="20" />
+            <Tappa3
+              width="20"
+              onMouseEnter={() => setTappaHover(3)}
+              onMouseLeave={() => setTappaHover(null)}
+            />
           </div>
         </HashLink>
         <ItemIndex
@@ -197,6 +226,8 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           link="/archipelago"
           className={"territorio"}
+          tappaHover={tappaHover}
+          tappa={1}
           icon={
             <TerritorioIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -211,6 +242,8 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("dubitare")}
           onClose={onClose}
+          tappaHover={tappaHover}
+          tappa={2}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
           className={"dubitare"}
@@ -227,6 +260,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title={t("nebbia")}
+          tappaHover={tappaHover}
+          tappa={1}
           onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
@@ -245,6 +280,8 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("cancellazione")}
           onClose={onClose}
+          tappaHover={tappaHover}
+          tappa={3}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
           className={"cancellazione"}
@@ -264,6 +301,8 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
+          tappaHover={tappaHover}
+          tappa={2}
           link="/space/phase2"
           icon={
             <TrasformareIcon
@@ -278,6 +317,8 @@ export default function IndexMenu({ onClose }) {
         />
         <ItemIndex
           title={t("luoghi")}
+          tappaHover={tappaHover}
+          tappa={1}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -299,6 +340,8 @@ export default function IndexMenu({ onClose }) {
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           link="/space/phase3"
+          tappaHover={tappaHover}
+          tappa={3}
           icon={
             <RealismoIcon
               className={`${styles["basic-icon"]} ${styles["icon-width"]}`}
@@ -314,6 +357,8 @@ export default function IndexMenu({ onClose }) {
           title={t("elenchi")}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
+          tappaHover={tappaHover}
+          tappa={1}
           onClose={onClose}
           className={"elenchi"}
           icon={
@@ -331,6 +376,8 @@ export default function IndexMenu({ onClose }) {
           title={t("combinare")}
           onClose={onClose}
           link="/form/phase2"
+          tappaHover={tappaHover}
+          tappa={2}
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
           icon={
@@ -348,6 +395,8 @@ export default function IndexMenu({ onClose }) {
           title={t("trama")}
           onClose={onClose}
           link="/form/phase3"
+          tappaHover={tappaHover}
+          tappa={3}
           linkApprofondimento="/form/phase3/focus"
           className={"trama"}
           icon={
