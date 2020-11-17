@@ -180,7 +180,7 @@ export default function IndexMenu({ onClose }) {
           <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
           </div>
-          <video width="100%" height="90%" controls>
+          <video width="100%" height="90%" controls autoplay='autoplay'>
             <source
               src={process.env.PUBLIC_URL + "/introcalvino.mp4"}
               type="video/mp4"
