@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { useTranslation, Trans, withTranslation } from "react-i18next"
+import { useTranslation, Trans } from "react-i18next"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Legend01 } from "./icons/combinare_disposizione_posizione.svg"
