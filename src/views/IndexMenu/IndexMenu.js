@@ -180,7 +180,7 @@ export default function IndexMenu({ onClose }) {
           <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
           </div>
-          <video width="100%" height="90%" controls autoplay='autoplay'>
+          <video width="100%" height="90%" controls autoplay="autoplay">
             <source
               src={process.env.PUBLIC_URL + "/introcalvino.mp4"}
               type="video/mp4"
@@ -202,29 +202,35 @@ export default function IndexMenu({ onClose }) {
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
           <div className={styles["tappa1"]}>
-            <Tappa1
+            <div
               onMouseEnter={() => setTappaHover(1)}
               onMouseLeave={() => setTappaHover(null)}
-              width="20"
-            />
+              className={"number-tappa"}
+            >
+              1
+            </div>
           </div>
         </HashLink>
         <HashLink onClick={onClose} to="/phases#process">
           <div className={styles["tappa2"]}>
-            <Tappa2
-              width="20"
-              onMouseEnter={() => setTappaHover(2)}
+            <div
+              onMouseEnter={() => setTappaHover(1)}
               onMouseLeave={() => setTappaHover(null)}
-            />
+              className={"number-tappa"}
+            >
+              2
+            </div>
           </div>
         </HashLink>
         <HashLink onClick={onClose} to="/phases#problem">
           <div className={styles["tappa3"]}>
-            <Tappa3
-              width="20"
-              onMouseEnter={() => setTappaHover(3)}
+            <div
+              onMouseEnter={() => setTappaHover(1)}
               onMouseLeave={() => setTappaHover(null)}
-            />
+              className={"number-tappa"}
+            >
+              3
+            </div>
           </div>
         </HashLink>
         <ItemIndex
