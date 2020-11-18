@@ -3,16 +3,20 @@ import { Tabs, Tab } from "react-bootstrap"
 import { useTranslation, Trans } from "react-i18next"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as LegendDimensione01 } from "./icons/trama_a_dimensione_colore.svg"
+import { ReactComponent as LegendDimensione01En } from "./icons/trama_a_dimensione_colore_en.svg"
 import { ReactComponent as LegendDimensione02 } from "./icons/trama_b_dimensione_colore.svg"
+import { ReactComponent as LegendDimensione02En } from "./icons/trama_b_dimensione_colore_en.svg"
 import { ReactComponent as LegendForma01 } from "./icons/trama_a_forma.svg"
+import { ReactComponent as LegendForma01En } from "./icons/trama_a_forma_en.svg"
 import { ReactComponent as LegendForma02 } from "./icons/trama_b_forma.svg"
+import { ReactComponent as LegendForma02En } from "./icons/trama_b_forma_en.svg"
 
 import "./PlotMainHelp.css"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function PlotMainHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "trama"])
+  const { t, i18n } = useTranslation(["translation", "trama"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -138,7 +142,11 @@ export default function PlotMainHelp({ helpProps }) {
                   <div>
                     <small>{t("trama:help_panel.dimensione_e_colore")}</small>
                   </div>
-                  <LegendDimensione01 width="300" className="mt-2" />
+                  {i18n.language === "it" ? (
+                    <LegendDimensione01 width="300" className="mt-2" />
+                  ) : (
+                    <LegendDimensione01En width="300" className="mt-2" />
+                  )}
                 </div>
               </div>
               <div className="row mt-2">
@@ -146,7 +154,11 @@ export default function PlotMainHelp({ helpProps }) {
                   <div>
                     <small>{t("trama:help_panel.forma")}</small>
                   </div>
-                  <LegendForma01 className="mt-2" />
+                  {i18n.language === "it" ? (
+                    <LegendForma01 className="mt-2" />
+                  ) : (
+                    <LegendForma01En className="mt-2" />
+                  )}
                 </div>
               </div>
             </>
@@ -158,7 +170,11 @@ export default function PlotMainHelp({ helpProps }) {
                   <div>
                     <small>{t("trama:help_panel.dimensione_e_colore")}</small>
                   </div>
-                  <LegendDimensione02 width="300" className="mt-2" />
+                  {i18n.language === "it" ? (
+                    <LegendDimensione02 width="300" className="mt-2" />
+                  ) : (
+                    <LegendDimensione02En width="300" className="mt-2" />
+                  )}
                 </div>
               </div>
               <div className="row mt-2">
@@ -166,7 +182,11 @@ export default function PlotMainHelp({ helpProps }) {
                   <div>
                     <small>{t("trama:help_panel.forma")}</small>
                   </div>
-                  <LegendForma02 className="mt-2" />
+                  {i18n.language === "it" ? (
+                    <LegendForma02 className="mt-2" />
+                  ) : (
+                    <LegendForma02En className="mt-2" />
+                  )}
                 </div>
               </div>
             </>
