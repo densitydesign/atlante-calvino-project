@@ -54,7 +54,7 @@ const Curves = ({dev}) => {
     });
     document
       .querySelectorAll("." + styles.curve)
-      .forEach((path, i) => path.setAttribute("d", line(points[i])));
+      .forEach((path, i) => path.setAttribute("d", line(points[i])) );
   }, []);
 
   useEffect(() => {
