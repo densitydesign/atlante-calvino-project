@@ -9,8 +9,10 @@ import { ReactComponent as DoiIcon } from "./icons/doi.svg"
 import { ReactComponent as PdfIcon } from "./icons/pdf.svg"
 
 export default function Articles() {
-
-  const [data,setData] = useState(null)
+  const [data, setData] = useState(null)
+  const [articoliScientifici, setArticoliScientifici] = useState(true)
+  const [articoliDivulgativi, setArticoliDivulgativi] = useState(true)
+  const [rassegnaStampa, setRassegnaStampa] = useState(true)
 
   useEffect(() => {
     d3.tsv(process.env.PUBLIC_URL + "/pubblicazioni/pubblicazioni.tsv").then(
@@ -29,106 +31,120 @@ export default function Articles() {
           <h2>Mostra</h2>
           <div className="d-flex justify-content-between">
             <div className="d-flex align-items-center">
-              <input type="checkbox" className="mr-2" /> Articoli
-              scientifici
+              <input
+                type="checkbox"
+                checked={articoliScientifici}
+                onChange={() => setArticoliScientifici(!articoliScientifici)}
+                className="mr-2"
+              />{" "}
+              Articoli scientifici
             </div>
             <div className="d-flex align-items-center">
-              <input type="checkbox" className="mr-2" /> Articoli divulgativi
+              <input
+                type="checkbox"
+                checked={articoliDivulgativi}
+                className="mr-2"
+                onChange={() => setArticoliDivulgativi(!articoliDivulgativi)}
+              />{" "}
+              Articoli divulgativi
             </div>
             <div className="d-flex align-items-center">
-              <input type="checkbox" className="mr-2" /> Rassegna stampa
+              <input
+                type="checkbox"
+                checked={rassegnaStampa}
+                onChange={() => setRassegnaStampa(!rassegnaStampa)}
+                className="mr-2"
+              />{" "}
+              Rassegna stampa
             </div>
           </div>
           <hr />
-          {data && data
-            .filter((d) => d.title)
-            .map((d, i) => {
-              let pdf
-              if (d.pdf !== "") {
-                pdf = (
-                  <>
-                    <a
-                      a
-                      className="link"
-                      href={d.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <PdfIcon className="text-dark" /> PDF
-                    </a>
-                  </>
-                )
-              }
-              let externalLinkLink
-              if (d.link !== "") {
-                externalLinkLink = (
-                  <>
-                    <a
-                      className="link"
-                      href={d.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <LinkIcon className="text-dark" /> Link
-                    </a>
-                  </>
-                )
-              }
-              let pageCapture
-              if (d.page_capture !== "") {
-                pageCapture = (
-                  <>
-                    <a
-                      className="link"
-                      href={d.page_capture}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Page capture
-                    </a>
-                  </>
-                )
-              }
+          {data &&
+            data
+              .filter((d) => d.title)
+              .filter(d => !rassegnaStampa ? d.kind !== 'rassegna-stampa' : d)
+              .filter(d => !articoliScientifici ? d.kind !== 'articolo-scientifico' : d)
+              .filter(d => !articoliDivulgativi ? d.kind !== 'articolo-divulgativo' : d)
+              .map((d, i) => {
+                let pdf
+                if (d.pdf !== "") {
+                  pdf = (
+                    <>
+                      <a
+                        a
+                        className="link"
+                        href={d.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <PdfIcon className="text-dark" /> PDF
+                      </a>
+                    </>
+                  )
+                }
+                let externalLinkLink
+                if (d.link !== "") {
+                  externalLinkLink = (
+                    <>
+                      <a
+                        className="link"
+                        href={d.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkIcon className="text-dark" /> Link
+                      </a>
+                    </>
+                  )
+                }
+                let pageCapture
+                if (d.page_capture !== "") {
+                  pageCapture = (
+                    <>
+                      <a
+                        className="link"
+                        href={d.page_capture}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Page capture
+                      </a>
+                    </>
+                  )
+                }
 
-              let doi
-              if (d.doi !== "") {
-                doi = (
-                  <>
-                    <a
-                      className="link"
-                      href={d.doi}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <DoiIcon className="text-dark" /> {d.doi}
-                    </a>
-                  </>
+                let doi
+                if (d.doi !== "") {
+                  doi = (
+                    <>
+                      <a
+                        className="link"
+                        href={d.doi}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <DoiIcon className="text-dark" /> {d.doi}
+                      </a>
+                    </>
+                  )
+                }
+                return (
+                  <div className="pubblication-item" key={i}>
+                    <small className="text-capitalize">
+                      {d.kind.replace("-", " ")}
+                    </small>
+                    <h3 className="font-weight-bold">{d.title}</h3>
+                    {d.authors && <h5>{d.authors}</h5>}
+                    <p>{d.publication_place_date}</p>
+                    <h5 className="d-flex justify-content-between">
+                      {pdf}
+                      {externalLinkLink}
+                      {pageCapture}
+                      {doi}
+                    </h5>
+                  </div>
                 )
-              }
-
-              let pages
-              if (d.pages !== "") {
-                pages = <>{d.pages}, </>
-              }
-
-              return (
-                <div className="pubblication-item" key={i}>
-                  <small className="text-capitalize">
-                    {d.kind.replace("-", " ")}
-                  </small>
-                  <h3 className="font-weight-bold">{d.title}</h3>
-                  {d.authors && <h5>{d.authors}</h5>}
-                  <p>{d.publication_place_date}</p>
-                  <p className="pubblication-abstract">{d.abstract}</p>
-                  <h5 className="d-flex justify-content-between">
-                    {pdf}
-                    {externalLinkLink}
-                    {pageCapture}
-                    {doi}
-                  </h5>
-                </div>
-              )
-            })}
+              })}
         </div>
       </div>
 
