@@ -45,6 +45,8 @@
 
 .development.curvesSvg {
   background: none;
+  pointer-events: auto;
+  z-index: 10000;
 }
 
 .development .controlPoints {

@@ -197,8 +197,6 @@ export default function IndexMenu({ onClose }) {
     return () => void window.removeEventListener("resize", cb);
   }, [tappeLayout]);
 
-  console.log(orbiteRef);
-
   return (
     <div className={[dev ? styles.development : ""].join(" ")}>
       <Modal
