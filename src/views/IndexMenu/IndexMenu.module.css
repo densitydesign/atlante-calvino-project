@@ -6,10 +6,17 @@
   /* width: 100vw; */
   position: relative;
   height: calc(100vh - (var(--navigation-height) + 18px));
+  pointer-events: none;
+}
+
+.IndexMenu > * {
+  pointer-events: auto;
 }
 
 .OrbiteContainer {
     position: absolute;
+    pointer-events: none;
+    background-color: var(--cool-bg);
 }
 
 .tappa1{

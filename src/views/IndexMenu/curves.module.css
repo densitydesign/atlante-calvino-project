@@ -2,8 +2,6 @@
   width: 100vw;
   height: calc(100vh - (var(--navigation-height) + 18px));
   position: absolute;
-  pointer-events: none;
-  background-color: var(--cool-bg);
 }
 
 .curve {
@@ -25,13 +23,27 @@
 .whiteCircles {
   r: 55;
   fill: white;
-  /* fill: url(#rgrad); */
+  stroke: none;
+}
+
+.linkItinerary, .linkItinerary:hover {
+  text-decoration: none;
+}
+
+.labelItinerary {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  fill: white;
+  stroke: var(--dark-blue);
+}
+
+.labelItinerary:hover {
+  fill: var(--dark-blue);
   stroke: none;
 }
 
 .development.curvesSvg {
-  
-  pointer-events: auto;
   background: none;
 }
 
