@@ -7,6 +7,7 @@ import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { ReactComponent as LinkIcon } from "./icons/link.svg"
 import { ReactComponent as DoiIcon } from "./icons/doi.svg"
 import { ReactComponent as PdfIcon } from "./icons/pdf.svg"
+import { ReactComponent as CaptureIcon } from "./icons/capture.svg"
 
 export default function Articles() {
   const [data, setData] = useState(null)
@@ -29,7 +30,7 @@ export default function Articles() {
         <div className="content" style={{ gridColumn: "span 12" }}>
           <h1>Pubblicazioni</h1>
           <h2>Mostra</h2>
-          <div className="d-flex justify-content-between">
+          <div className="sticky-element bg-white d-flex justify-content-between pb-4">
             <div className="d-flex align-items-center">
               <input
                 type="checkbox"
@@ -107,7 +108,7 @@ export default function Articles() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Page capture
+                        <CaptureIcon className='text-dark' /> Page capture
                       </a>
                     </>
                   )
@@ -133,10 +134,10 @@ export default function Articles() {
                     <small className="text-capitalize">
                       {d.kind.replace("-", " ")}
                     </small>
-                    <h3 className="font-weight-bold">{d.title}</h3>
-                    {d.authors && <h5>{d.authors}</h5>}
-                    <p>{d.publication_place_date}</p>
-                    <h5 className="d-flex justify-content-between">
+                    <h3 style={{ fontSize: 18, fontWeight: 'bold' }}>{d.title}</h3>
+                    {d.authors && <h5 style={{ fontSize: 18 }}>{d.authors}</h5>}
+                    <p style={{ fontSize: 18 }}>{d.publication_place_date}</p>
+                    <h5 className="d-flex justify-content-between" style={{ fontSize: 14 }}>
                       {pdf}
                       {externalLinkLink}
                       {pageCapture}

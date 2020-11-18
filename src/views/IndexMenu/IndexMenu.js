@@ -34,9 +34,6 @@ import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondime
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import { ReactComponent as Bussola } from "./icons/bussola.svg"
 import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/icons/icon-close.svg"
-import { ReactComponent as Tappa1 } from "./icons/tappa_1.svg"
-import { ReactComponent as Tappa2 } from "./icons/tappa_2.svg"
-import { ReactComponent as Tappa3 } from "./icons/tappa_3.svg"
 import { ReactComponent as Curve1 } from "./icons/curva-dubbio-1.svg"
 import { ReactComponent as Curve2 } from "./icons/curva-dubbio-2.svg"
 import { ReactComponent as Curve3 } from "./icons/curva-spazio-1.svg"
@@ -45,7 +42,6 @@ import { ReactComponent as Curve5 } from "./icons/curva-forma-1.svg"
 import { ReactComponent as Curve6 } from "./icons/curva-forma-2.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
-import classnames from "classnames"
 import { faWindowRestore } from "@fortawesome/free-regular-svg-icons"
 
 const ItemIndex = ({
@@ -58,8 +54,9 @@ const ItemIndex = ({
   linkApprofondimento,
   tappa,
   tappaHover,
+  titleApprofondimento,
 }) => {
-  console.log(tappa, tappaHover)
+  const [apprHover, setApprHover] = useState(false)
   return (
     <div
       className={
@@ -80,8 +77,19 @@ const ItemIndex = ({
       )}
       <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
       {title !== "Territorio" && (
-        <Link to={linkApprofondimento}>
-          <IconApprofondimento className="mt-2" />
+        <Link
+          to={linkApprofondimento}
+          onMouseEnter={() => setApprHover(true)}
+          onMouseLeave={() => setApprHover(false)}
+        >
+          {apprHover ? (
+            <div className="d-flex align-items-center text-dark">
+              <IconApprofondimento className="mt-2 mr-2" />{" "}
+              <span>{titleApprofondimento}</span>
+            </div>
+          ) : (
+            <IconApprofondimento className="mt-2  text-dark" />
+          )}
         </Link>
       )}
     </div>
@@ -255,6 +263,7 @@ export default function IndexMenu({ onClose }) {
           title={t("dubitare")}
           onClose={onClose}
           tappaHover={tappaHover}
+          titleApprofondimento={t('Il romanzo-saggio che dubita')}
           tappa={2}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
