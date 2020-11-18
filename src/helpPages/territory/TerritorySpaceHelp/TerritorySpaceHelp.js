@@ -5,15 +5,19 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import { Link } from "react-router-dom"
 import "./TerritorySpaceHelp.css"
 import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Analisi01En } from "./icons/analisi_disposizione_en.svg"
 import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as Analisi02En } from "./icons/analisi_dimensione_en.svg"
 import { ReactComponent as LegendaProporzione } from "./icons/luoghi_b_proporzione.svg"
+import { ReactComponent as LegendaProporzioneEn } from "./icons/luoghi_b_proporzione_en.svg"
 import { ReactComponent as LegendaLivelli } from "./icons/luoghi_c_livelli.svg"
+import { ReactComponent as LegendaLivelliEn } from "./icons/luoghi_c_livelli_en.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
 export default function TerritorySpaceHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "luoghi"])
+  const { t, i18n } = useTranslation(["translation", "luoghi"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -156,13 +160,21 @@ export default function TerritorySpaceHelp({ helpProps }) {
               <div>
                 <small>{t("help_panel.disposizione")}</small>
               </div>
-              <Analisi01 width="119" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Analisi01 width="119" className="mt-2" />
+              ) : (
+                <Analisi01En width="119" className="mt-2" />
+              )}
             </div>
             <div className="col-md-6">
               <div>
                 <small>{t("help_panel.dimensione")}</small>
               </div>
-              <Analisi02 width="70" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Analisi02 width="70" className="mt-2" />
+              ) : (
+                <Analisi02En width="70" className="mt-2" />
+              )}
             </div>
           </div>
           {(helpProps.helpPages.spaceAnalysisMode === "genericTerrestrial" ||
@@ -256,7 +268,11 @@ export default function TerritorySpaceHelp({ helpProps }) {
                   <small>{t("luoghi:help_panel.proporzione")}</small>
                 </div>
                 <div>
-                  <LegendaProporzione width="119" />
+                  {i18n.language === "it" ? (
+                    <LegendaProporzione width="119" />
+                  ) : (
+                    <LegendaProporzioneEn width="119" />
+                  )}
                 </div>
               </div>
             </div>
@@ -296,10 +312,14 @@ export default function TerritorySpaceHelp({ helpProps }) {
               </div>
               <div className="col-md-6">
                 <div>
-                  <small>{t('luoghi:help_panel.livelli_spaziali')}</small>
+                  <small>{t("luoghi:help_panel.livelli_spaziali")}</small>
                 </div>
                 <div>
-                  <LegendaLivelli width="137" />
+                  {i18n.language === "it" ? (
+                    <LegendaLivelli width="137" />
+                  ) : (
+                    <LegendaLivelliEn width="137" />
+                  )}
                 </div>
               </div>
             </div>

@@ -3,15 +3,19 @@ import { Tabs, Tab } from "react-bootstrap"
 import { useTranslation, Trans } from "react-i18next"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Legend01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Legend01En } from "./icons/analisi_disposizione_en.svg"
 import { ReactComponent as Legend02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as Legend02En } from "./icons/analisi_dimensione_en.svg"
 import { ReactComponent as LegendProporzione } from "./icons/elenchi_a_proporzione.svg"
+import { ReactComponent as LegendProporzioneEn } from "./icons/elenchi_a_proporzione_en.svg"
 import { ReactComponent as LegendPercentuale } from "./icons/elenchi_b_percentuale.svg"
+import { ReactComponent as LegendPercentualeEn } from "./icons/elenchi_b_percentuale_en.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import { Link } from "react-router-dom"
 
 export default function TerritoryShapeHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "elenchi"])
+  const { t, i18n } = useTranslation(["translation", "elenchi"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -127,13 +131,21 @@ export default function TerritoryShapeHelp({ helpProps }) {
               <div>
                 <small>{t("help_panel.disposizione")}</small>
               </div>
-              <Legend01 width="119.9" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Legend01 width="119.9" className="mt-2" />
+              ) : (
+                <Legend01En width="119.9" className="mt-2" />
+              )}
             </div>
             <div className="col-md-6">
               <div>
                 <small>{t("help_panel.dimensione")}</small>
               </div>
-              <Legend02 width="70.4" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Legend02 width="70.4" className="mt-2" />
+              ) : (
+                <Legend02En width="70.4" className="mt-2" />
+              )}
             </div>
           </div>
           {helpProps.helpPages.shapeAnalysisMode === "types" && (
@@ -170,7 +182,11 @@ export default function TerritoryShapeHelp({ helpProps }) {
                   <small>{t("help_panel.proporzione")}</small>
                 </div>
                 <div className="mt-2">
-                  <LegendProporzione width="126" />
+                  {i18n.language === "it" ? (
+                    <LegendProporzione width="126" />
+                  ) : (
+                    <LegendProporzioneEn width="126" />
+                  )}
                 </div>
               </div>
             </div>
@@ -209,7 +225,11 @@ export default function TerritoryShapeHelp({ helpProps }) {
                   <small>{t("help_panel.proporzione")}</small>
                 </div>
                 <div className="mt-2">
-                  <LegendPercentuale width="145.922" />
+                  {i18n.language === "it" ? (
+                    <LegendPercentuale width="145.922" />
+                  ) : (
+                    <LegendPercentualeEn width="145.922" />
+                  )}
                 </div>
               </div>
             </div>
