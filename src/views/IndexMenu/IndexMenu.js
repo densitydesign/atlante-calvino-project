@@ -98,7 +98,7 @@ const ItemIndex = ({
 
 export default function IndexMenu({ onClose }) {
   // use this to enable curves adjustments
-  const [dev, setDev] = useState(true)
+  const [dev, setDev] = useState(false)
 
   const [showGuida, setShowGuida] = useState(false)
 
@@ -196,7 +196,7 @@ export default function IndexMenu({ onClose }) {
         menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
       />
-      <Curves dev />
+      <Curves dev={dev} />
       <div
         className={styles["OrbiteContainer"]}
         style={{ top: 58, left: 0, right: 0, bottom: 18 }}
