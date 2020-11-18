@@ -1,3 +1,7 @@
+.development > * {
+  pointer-events: none;
+}
+
 .IndexMenu {
   /* width: 100vw; */
   position: relative;

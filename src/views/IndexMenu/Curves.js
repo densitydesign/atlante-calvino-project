@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import * as d3 from "d3";
 import styles from "./curves.module.css";
+import iconsStyles from "./IndexMenu.module.css"
 import whiteCircles from "./curves/white-circles-background.json"
 import pp_w4h3 from "./curves/curves-w4h3.json";
 import pp_w3h2 from "./curves/curves-w3h2.json";
@@ -26,13 +27,12 @@ const line = d3
   .x((d) => d.x)
   .y((d) => d.y);
 
-const Curves = () => {
+const Curves = ({dev}) => {
   const svg = useRef();
   const [controlPoints, setControlPoints] = useState(pp_w16h9)
-  const [dev, setDev] = useState(!true)
+  // const [dev, setDev] = useState(true)
 
   let bbox;
-
   const drawCurves = useCallback(() => {
     bbox = svg.current.getBoundingClientRect();
     // const goal = bbox.width / bbox.height;
@@ -123,7 +123,7 @@ const Curves = () => {
       <path className={styles.curve} />
       <path className={styles.curve} />
       {/* White circles in the background */}
-      {whiteCircles.map((arr,j)=>
+      {/* {whiteCircles.map((arr,j)=>
         arr.map((p, i) => (
           <circle
             key={i}
@@ -133,11 +133,9 @@ const Curves = () => {
             cy={p.y + "%"}
           />
         ))
-      )
-          
-      }
-      {/* control points, hid in CSS module before publishing */}
-      {pp.map((arr, i) =>
+      )} */}
+      {/* control points, hidden in CSS module before publishing */}
+      { dev && pp.map((arr, i) =>
         arr.map((p, ii) => (
           <circle
             key={ii}

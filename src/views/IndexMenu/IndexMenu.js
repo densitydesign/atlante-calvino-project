@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useLayoutEffect,
   useCallback,
+  useMemo,
 } from "react"
 import { useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
@@ -12,6 +13,7 @@ import { HashLink } from "react-router-hash-link"
 import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
+
 import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg"
 import { ReactComponent as DubbioIcon } from "./icons/dubitare_blue.svg"
 import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_color.svg"
@@ -30,6 +32,7 @@ import { ReactComponent as CombinareIconHover } from "./icons/combinare_color.sv
 import { ReactComponent as CombinareIcon } from "./icons/combinare_blue.svg"
 import { ReactComponent as TramaIconHover } from "./icons/trama_color.svg"
 import { ReactComponent as TramaIcon } from "./icons/trama_blue.svg"
+
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import { ReactComponent as Bussola } from "./icons/bussola.svg"
@@ -57,15 +60,35 @@ const ItemIndex = ({
   onClose,
   linkApprofondimento,
 }) => {
+  const iconEl = useRef()
+  const groupEl = useRef()
+  const [yAlign, setYAlign] = useState(0)
+
+  const alignItem = ()=>{
+    const group_bbox = groupEl.current.getBoundingClientRect()
+    const icon_bbox = iconEl.current.getBoundingClientRect()
+    setYAlign((group_bbox.height - icon_bbox.height)/2)
+    // console.log("group", group_bbox.height)
+    // console.log("height", icon_bbox.height)
+    // console.log(group_bbox.height - icon_bbox.height)
+  };
+
+  useEffect(() => {
+    alignItem()
+    const cb = alignItem;
+    window.addEventListener("resize", cb);
+    return () => void window.removeEventListener("resize", cb);
+  }, []);
+
   return (
-    <div className={`${styles[className]} ${styles["hoverable-icon"]}`}>
-      <Link onClick={onClose} to={link}>
+    <div ref={groupEl} className={`${styles[className]} ${styles["hoverable-icon"]}`}>
+      <Link ref={iconEl} onClick={onClose} to={link} style={{transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`}}>
         {icon}
         {iconHover}
       </Link>
-      <span className={`${styles["title-viz"]} text-capitalize`}>{title}</span>
+      <span className={`${styles["title-viz"]} text-capitalize`} style={{transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`}}>{title}</span>
       {title !== "Territorio" && (
-        <Link to={linkApprofondimento}>
+        <Link to={linkApprofondimento} style={{transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`}}>
           <IconApprofondimento className="mt-2" />
         </Link>
       )}
@@ -74,6 +97,9 @@ const ItemIndex = ({
 }
 
 export default function IndexMenu({ onClose }) {
+  // use this to enable curves adjustments
+  const [dev, setDev] = useState(true)
+
   const [showGuida, setShowGuida] = useState(false)
 
   const handleCloseGuida = () => setShowGuida(false)
@@ -152,7 +178,7 @@ export default function IndexMenu({ onClose }) {
   console.log(orbiteRef)
 
   return (
-    <div>
+    <div className={[dev?styles.development:""].join(" ")}>
       <Modal
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -170,7 +196,7 @@ export default function IndexMenu({ onClose }) {
         menuAction={onClose ? "closeIndex" : "homeLink"}
         onClose={onClose}
       />
-      <Curves />
+      <Curves dev />
       <div
         className={styles["OrbiteContainer"]}
         style={{ top: 58, left: 0, right: 0, bottom: 18 }}

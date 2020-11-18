@@ -14,17 +14,23 @@
 .controlPoints {
   display: none;
   fill: transparent;
+  opacity: 0.25;
+  z-index: 1000;
+  cursor: pointer;
+}
+.controlPoints:hover {
+  opacity: 1;
 }
 
 .whiteCircles {
   r: 55;
   fill: white;
-  fill: url(#rgrad);
+  /* fill: url(#rgrad); */
   stroke: none;
 }
 
 .development.curvesSvg {
-  z-index: 1000;
+  
   pointer-events: auto;
   background: none;
 }
