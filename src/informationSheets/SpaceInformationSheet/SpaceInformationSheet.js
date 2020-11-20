@@ -8,10 +8,9 @@ import "./SpaceInformationSheet.css";
 
 import inventati from "./infosheet-spazio.svg";
 import legenda from "./legend.svg";
-import zoom_01 from "./zoom-01.svg";
 import zoom_02 from "./zoom-02.svg";
-import zoom_03 from "./zoom-03.svg";
 import zoom_04 from "./zoom-04.svg";
+import zoom_05 from "./zoom-05.svg";
 import { Trans, withTranslation } from "react-i18next";
 
 class SpaceInformationSheet extends React.Component {
@@ -64,7 +63,7 @@ class SpaceInformationSheet extends React.Component {
                     <strong>(1)</strong>
                   </span>{" "}
                   in cui è ambientato il racconto <em>Isabella e Fioravanti</em>
-                  ) ; l’ultimo, nel 1982, è <em>Casa Palomar </em>{" "}
+                  ); l’ultimo, nel 1982, è <em>Casa Palomar </em>{" "}
                   <span style={{ color: "#5151fc" }}>
                     <strong>(2)</strong>
                   </span>
@@ -108,10 +107,9 @@ class SpaceInformationSheet extends React.Component {
                   Si pensi alle storie della <em>Trilogia degli antenati</em>,
                   ambientate tra gli alberi di Ombrosa e i boschi di Terralba.
                   Oppure alle città visionarie e simboliche esplorate da Marco
-                  Polo nelle
-                  <em>Città invisibili</em>, o ancora, ai luoghi dai nomi
-                  impronunciabili – Petkwo, Kudgiwa, Oquedal – in cui si muovono
-                  i personaggi di
+                  Polo nelle <em>Città invisibili</em>, o ancora, ai luoghi dai
+                  nomi impronunciabili – Petkwo, Kudgiwa, Oquedal – in cui si
+                  muovono i personaggi di{" "}
                   <em>Se una notte d’inverno un viaggiatore</em>. Il modo in cui
                   queste ambientazioni fantastiche si inseriscono nel tessuto
                   narrativo delle storie merita uno sguardo più attento.
@@ -121,6 +119,7 @@ class SpaceInformationSheet extends React.Component {
           </div>
           <div className={SheetStyles.gridRow} style={{ marginTop: "3rem" }}>
             <div className={SheetStyles.paragraph}>
+              
               <Trans
                 i18nKey="paragraph-romanzi-2"
                 ns={"luoghi-sheet"}
@@ -152,19 +151,21 @@ class SpaceInformationSheet extends React.Component {
                   seppur in modo meno evidente, anche nel caso del Barone
                   rampante lo spazio fantastico si intreccia a quello storico.
                   <br />
+                  <br />
                   Il fatto poi che Terralba e Ombrosa siano in qualche modo
                   riconducibili alla Liguria, terra natale di Calvino, è
                   doppiamente significativo. Nel 1965 lo stesso scrittore, con
                   lo pseudonimo-anagramma di Tonio Cavilla, sottolinea
-                  l’importanza del paesaggio ligure sullo sfondo del <em>Barone
-                  rampante</em>: «Il romanzo si svolge in un paese immaginario,
-                  Ombrosa, ma ci rendiamo presto conto che questa Ombrosa si
-                  trova in un punto imprecisato della Riviera ligure» (<em>RR</em>, III,
-                  1228-29). Evocare il paesaggio ligure, che per Calvino è <em>il</em>
-                  paesaggio per eccellenza, assume allora la precisa finalità di
-                  riallacciamento lirico con un passato mitizzato, in polemica
-                  con le trasformazioni edilizie che avevano deturpato la
-                  Liguria del dopoguerra (cfr. ivi, 1229).{" "}
+                  l’importanza del paesaggio ligure sullo sfondo del{" "}
+                  <em>Barone rampante</em>: «Il romanzo si svolge in un paese
+                  immaginario, Ombrosa, ma ci rendiamo presto conto che questa
+                  Ombrosa si trova in un punto imprecisato della Riviera ligure»
+                  (<em>RR</em>, III, 1228-29). Evocare il paesaggio ligure, che
+                  per Calvino è <em>il</em> paesaggio per eccellenza, assume
+                  allora la precisa finalità di riallacciamento lirico con un
+                  passato mitizzato, in polemica con le trasformazioni edilizie
+                  che avevano deturpato la Liguria del dopoguerra (cfr. ivi,
+                  1229).{" "}
                 </p>
               </Trans>
             </div>
@@ -174,7 +175,7 @@ class SpaceInformationSheet extends React.Component {
                   position: "sticky",
                   top: "calc(var(--navigation-height) +5rem)",
                 }}
-                src={zoom_03}
+                src={zoom_05}
                 alt=""
               />
             </div>
@@ -206,37 +207,6 @@ class SpaceInformationSheet extends React.Component {
                   top: "calc(var(--navigation-height) + 4rem)",
                 }}
                 src={zoom_02}
-              />
-            </div>
-          </div>
-
-          <div className={SheetStyles.gridRow} style={{ marginTop: "3rem" }}>
-            <div className={SheetStyles.paragraph}>
-              <Trans
-                i18nKey="paragraph-romanzi-4"
-                ns={"luoghi-sheet"}
-                t={this.props.t}
-              >
-                <p>
-                  Un discorso diverso, ma non così distante, può essere fatto
-                  per le <em>Città invisibili</em>, l’opera che raccoglie il
-                  maggior numero di ambientazioni fantastiche. Le varie Eufemia,
-                  Zora, Despina sembrano così rarefatte che è facile credere di
-                  trovarsi infine fuori dal tempo e dallo spazio. Invece, anche
-                  in questo caso, Calvino non rinuncia a una cornice storica,
-                  poiché tutte e cinquantacinque le città visitate da Marco Polo
-                  appartengono allo sterminato impero di Kublai Khan.
-                </p>
-              </Trans>
-            </div>
-            <div className={SheetStyles.sideContent}>
-              <img
-                style={{
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) + 4rem)",
-                }}
-                src={zoom_02}
-                alt=""
               />
             </div>
           </div>

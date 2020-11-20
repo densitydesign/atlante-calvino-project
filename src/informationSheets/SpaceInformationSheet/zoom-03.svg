@@ -72,12 +72,12 @@
       <text id="Salto_della_Ghigna" data-name="Salto della Ghigna" transform="translate(172.515 159.257) rotate(101)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Salto della Ghigna</tspan></text>
       <text id="Prato_delle_Monache" data-name="Prato delle Monache" transform="matrix(-0.292, 0.956, -0.956, -0.292, 188.798, 160.362)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Prato delle Monache</tspan></text>
     </g>
-    <text id="Le_città_invisibili" data-name="Le città invisibili" transform="translate(143 318)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-30.766" y="0">Le città invisibili</tspan></text>
-    <text id="Le_città_invisibili-2" data-name="Le città invisibili" transform="translate(143 77)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-30.766" y="0">Le città invisibili</tspan></text>
+    <text id="Il_visconte_dimezzato" data-name="Il visconte dimezzato" transform="translate(143 318)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-40.449" y="0">Il visconte dimezzato</tspan></text>
     <g id="Group_24059" data-name="Group 24059">
       <text id="Relazione_gerarchica_dei_luoghi_LE_MEDUSE" data-name="Relazione gerarchica dei luoghi
 LE MEDUSE" transform="translate(1.967 153.059)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0" letter-spacing="-0.01em">R</tspan><tspan y="0">elazione ge</tspan><tspan y="0" letter-spacing="-0.02em">r</tspan><tspan y="0">a</tspan><tspan y="0" letter-spacing="-0.02em">r</tspan><tspan y="0">chi</tspan><tspan y="0" letter-spacing="-0.01em">c</tspan><tspan y="0">a dei luoghi</tspan><tspan x="0" y="11">LE MEDUSE</tspan></text>
       <text id="Primo_livello" data-name="Primo livello" transform="translate(1.967 10)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0" letter-spacing="-0.01em">P</tspan><tspan y="0">rimo li</tspan><tspan y="0" letter-spacing="-0.01em">v</tspan><tspan y="0">ello</tspan></text>
     </g>
+    <text id="Il_visconte_dimezzato-2" data-name="Il visconte dimezzato" transform="translate(143 77)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-40.449" y="0">Il visconte dimezzato</tspan></text>
   </g>
 </svg>
