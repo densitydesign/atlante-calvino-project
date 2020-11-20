@@ -47,10 +47,6 @@ class TransformInformationSheet extends Component {
             <div style={{ gridColumn: "1 / span 7" }}>
               <img alt="" className={SheetStyles.legend} src={legenda_0} />
             </div>
-
-            <h2 className={SheetStyles.titleH2}>
-              {this.props.t("transform-sheet:L'analisi")}
-            </h2>
             <h3 className={SheetStyles.subtitleSheet}>
               {this.props.t("transform-sheet:Geoletteratura")}
             </h3>
@@ -61,7 +57,7 @@ class TransformInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 La categoria dei luoghi terrestri localizzabili, rielaborata a
-                partire dalla definizione inglese di <em>imported places</em>
+                partire dalla definizione inglese di <em>imported places</em>{" "}
                 (Piatti <em>et al.</em> 2009), è l’unica che per caratteristiche
                 intrinseche si presta a una rappresentazione cartografica. Si
                 tratta infatti di ambientazioni localizzabili su una mappa,
@@ -78,13 +74,13 @@ class TransformInformationSheet extends Component {
                   </li>
                   <li>
                     Ambientazioni di testi in cui il tempo della storia è
-                    collocato nel passato o in un tempo indefinito (ad es.
+                    collocato nel passato o in un tempo indefinito (ad es.{" "}
                     <em>Il visconte dimezzato</em> è ambientato al tempo di
                     Carlo Magno, <em>Le città invisibili</em> nel 1200).
                   </li>
                   <li>
                     Ambientazioni di testi in cui presente e passato si fondono
-                    in un tempo della storia misto (ad es. nel racconto
+                    in un tempo della storia misto (ad es. nel racconto{" "}
                     <em>I cristalli</em> l’ambientazione pre-cosmica e
                     primordiale presenta riferimenti geografici della New York
                     contemporanea).
