@@ -41,9 +41,6 @@ class SpaceInformationSheet extends React.Component {
               src={inventati}
               alt=""
             />
-            <h2 className={SheetStyles.titleH2}>
-              {this.props.t("luoghi-sheet:L'analisi")}
-            </h2>
             <div className={SheetStyles.paragraphBig}>
               <Trans
                 i18nKey="paragraph-analisi"
@@ -56,27 +53,28 @@ class SpaceInformationSheet extends React.Component {
                   riprende una delle quattro categorie ideate da Frank Zipfel
                   nel 2001 e poi concettualizzate da Barbara Piatti nel 2008,
                   sulla base del grado di dipendenza dei luoghi finzionali da
-                  quelli geospaziali<sup> 1</sup>. Per Barbara Piatti gli{" "}
-                  <em>invented places</em> sono tutti i luoghi inventati creati
-                  all’interno di realtà geograficamente familiari<sup> 2</sup>.
-                  A testimonianza di come l’invenzione sia «una vena naturale»
-                  <sup> 3</sup> di Calvino, dall’inizio alla fine della sua
-                  vita, le ambientazioni inventate del corpus si distribuiscono
-                  in modo omogeneo nel corso del tempo: il primo luogo compare
-                  nel 1948, ed è il paesino di <em>Sant’Alcide </em>
+                  quelli geospaziali (Zipfel 2001; Piatti 2008). Per Barbara
+                  Piatti gli <em>invented places</em> sono tutti i luoghi
+                  inventati creati all’interno di realtà geograficamente
+                  familiari (Reuschel-Hurni 2011, 296). Le ambientazioni
+                  inventate del corpus si distribuiscono in modo omogeneo nel
+                  corso del tempo: la prima occorrenza compare nel 1948 (il
+                  paesino di <em>Sant’Alcide </em>
                   <span style={{ color: "#5151fc" }}>
                     <strong>(1)</strong>
                   </span>{" "}
                   in cui è ambientato il racconto <em>Isabella e Fioravanti</em>
-                  ; l’ultimo, nel 1982, è <em>Casa Palomar </em>{" "}
+                  ) ; l’ultimo, nel 1982, è <em>Casa Palomar </em>{" "}
                   <span style={{ color: "#5151fc" }}>
                     <strong>(2)</strong>
                   </span>
                   , la dimora cittadina del protagonista dell’ultima raccolta
-                  dell’autore. Osservando la visualizzazione, si nota anche come
-                  questa distribuzione riguardi tutte le tipologie di opere: i
-                  romanzi, i racconti confluiti in raccolta e i testi pubblicati
-                  su periodici e poi rimasti inediti. Prendendo singolarmente in
+                  dell’autore.
+                  <br />
+                  Osservando la visualizzazione, si nota anche come questa
+                  distribuzione riguardi tutte le tipologie di opere: i romanzi,
+                  i racconti confluiti in raccolta e i testi pubblicati su
+                  periodici e poi rimasti inediti. Prendendo singolarmente in
                   esame le tre differenti sezioni si evidenziano tuttavia delle
                   caratteristiche molto diverse. Vediamo quali.{" "}
                 </p>
@@ -96,33 +94,27 @@ class SpaceInformationSheet extends React.Component {
                 <p>
                   La prima sezione, quella dei romanzi, è senza dubbio quella in
                   cui si registra la maggior concentrazione di luoghi inventati,
-                  con più della metà delle opere (5 su 9) che presentano almeno
+                  con più della metà delle opere (5 su 10) che presentano almeno
                   un’ambientazione di questo tipo. È noto che la vena
                   immaginifica di Calvino si sviluppi maggiormente nelle opere
                   più estese del corpus, anche in virtù del complesso rapporto
-                  dell’autore con il romanzo novecentesco tradizionale
-                  <sup> 4</sup>. Si pensi alle storie della
-                  <em> Trilogia degli antenati</em>, ambientate tra gli alberi
-                  di Ombrosa e i boschi di Terralba. Oppure alle città
-                  visionarie e simboliche esplorate da Marco Polo nelle Città
-                  invisibili, o ancora, ai luoghi dai nomi impronunciabili –
-                  Petkwo, Kudgiwa, Oquedal – in cui si muovono i personaggi di
-                  <em> Se una notte d’inverno un viaggiatore</em>. Il modo in
-                  cui queste ambientazioni fantastiche si inseriscono nel
-                  tessuto narrativo delle storie merita tuttavia uno sguardo più
-                  attento. Le visualizzazioni nel secondo e del terzo livello di
-                  analisi mostrano come in molti casi i luoghi d’invenzione
-                  intrattengano uno stretto dialogo con quelli reali e
-                  riconoscibili. Pensiamo, ad esempio, al{" "}
-                  <em>Visconte dimezzato</em>, primo capitolo della Trilogia. Il
-                  racconto si apre in Boemia, durante la guerra cristiana contro
-                  i Turchi, ma la storia principale si sviluppa a Terralba,
-                  terra natale del visconte Medardo, il quale, colpito da una
-                  palla di cannone ma miracolosamente salvo per metà, fa ritorno
-                  a casa. Terralba si trova in Italia e appartiene alla
-                  Repubblica di Genova: è dunque all’interno di uno spazio reale
-                  e definito che hanno luogo le avventure fantastiche del
-                  protagonista.{" "}
+                  dell’autore con il genere del romanzo inteso in senso
+                  tradizionale: «Calvino è sempre stato un narratore che non
+                  sente il romanzo, che persino ne diffida. Narratore
+                  anti-romanzesco: nel senso che la problematica sociale e
+                  morale, la scienza della vita quotidiana come
+                  microstoriografia, che caratterizzano il romanzo moderno, sono
+                  sempre stati fuori del suo orizzonte» (Berardinelli 1991, 39).
+                  Si pensi alle storie della <em>Trilogia degli antenati</em>,
+                  ambientate tra gli alberi di Ombrosa e i boschi di Terralba.
+                  Oppure alle città visionarie e simboliche esplorate da Marco
+                  Polo nelle
+                  <em>Città invisibili</em>, o ancora, ai luoghi dai nomi
+                  impronunciabili – Petkwo, Kudgiwa, Oquedal – in cui si muovono
+                  i personaggi di
+                  <em>Se una notte d’inverno un viaggiatore</em>. Il modo in cui
+                  queste ambientazioni fantastiche si inseriscono nel tessuto
+                  narrativo delle storie merita uno sguardo più attento.
                 </p>
               </div>
             </Trans>
@@ -135,18 +127,19 @@ class SpaceInformationSheet extends React.Component {
                 t={this.props.t}
               >
                 <p>
-                  Le visualizzazioni nel secondo e del terzo livello di analisi
+                  Le visualizzazioni del secondo e del terzo livello di analisi
                   mostrano come in molti casi i luoghi d’invenzione
                   intrattengano uno stretto dialogo con quelli reali e
-                  riconoscibili. Pensiamo, ad esempio, al Visconte dimezzato,
-                  primo libro della <em>Trilogia</em>. Il racconto si apre in
-                  Boemia, durante la guerra cristiana contro i Turchi, ma la
-                  storia principale si sviluppa a Terralba, terra natale del
-                  visconte Medardo, il quale, colpito da una palla di cannone ma
-                  miracolosamente salvo per metà, fa ritorno a casa. Terralba si
-                  trova in Italia e appartiene alla Repubblica di Genova: è
-                  dunque all’interno di uno spazio reale e definito che hanno
-                  luogo le avventure fantastiche del protagonista.
+                  riconoscibili. Pensiamo, ad esempio, al{" "}
+                  <em>Visconte dimezzato</em>, primo libro della{" "}
+                  <em>Trilogia</em>. Il racconto si apre in Boemia, durante la
+                  guerra cristiana contro i Turchi, ma la storia principale si
+                  sviluppa a Terralba, terra natale del visconte Medardo, il
+                  quale, colpito da una palla di cannone ma miracolosamente
+                  salvo per metà, fa ritorno a casa. Terralba si trova in Italia
+                  e appartiene alla Repubblica di Genova: è dunque all’interno
+                  di uno spazio reale e definito che hanno luogo le avventure
+                  fantastiche del protagonista.
                 </p>
                 <br />
                 <p>
@@ -157,7 +150,21 @@ class SpaceInformationSheet extends React.Component {
                   localizzabile, anche Ombrosa è in qualche modo legata alla
                   Repubblica di Genova, di cui è comune tributario. Pertanto,
                   seppur in modo meno evidente, anche nel caso del Barone
-                  rampante lo spazio fantastico si intreccia a quello storico.{" "}
+                  rampante lo spazio fantastico si intreccia a quello storico.
+                  <br />
+                  Il fatto poi che Terralba e Ombrosa siano in qualche modo
+                  riconducibili alla Liguria, terra natale di Calvino, è
+                  doppiamente significativo. Nel 1965 lo stesso scrittore, con
+                  lo pseudonimo-anagramma di Tonio Cavilla, sottolinea
+                  l’importanza del paesaggio ligure sullo sfondo del <em>Barone
+                  rampante</em>: «Il romanzo si svolge in un paese immaginario,
+                  Ombrosa, ma ci rendiamo presto conto che questa Ombrosa si
+                  trova in un punto imprecisato della Riviera ligure» (<em>RR</em>, III,
+                  1228-29). Evocare il paesaggio ligure, che per Calvino è <em>il</em>
+                  paesaggio per eccellenza, assume allora la precisa finalità di
+                  riallacciamento lirico con un passato mitizzato, in polemica
+                  con le trasformazioni edilizie che avevano deturpato la
+                  Liguria del dopoguerra (cfr. ivi, 1229).{" "}
                 </p>
               </Trans>
             </div>
