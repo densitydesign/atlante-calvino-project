@@ -64,7 +64,7 @@ class CombineInformationSheet extends Component {
                 autoriflessivo» (Donnarumma 2008, 82). Sono anni interamente
                 dedicati all’affinamento di una «macchina narrativa
                 combinatoria» (espressione con cui lui stesso definirà il ruolo
-                dei tarocchi nel Castello; Calvino 1973, RR<em>II</em>, 1276)
+                dei tarocchi nel Castello; Calvino 1973, <em>RR</em> II, 1276)
                 che, dotata dei giusti elementi di partenza e di un set di
                 regole efficaci, possa produrre una varietà infinita di esiti,
                 anticipando di mezzo secolo novità che la rivoluzione
@@ -73,8 +73,8 @@ class CombineInformationSheet extends Component {
                 algoritmo. Al centro simbolico di questa svolta è l’anno 1965,
                 che vede l’uscita della raccolta in volume delle{" "}
                 <em>Cosmicomiche</em> e l’inaugurazione di un variegato filone
-                che si protrarrà per i successivi due decenni (gli ultimi testi,
-                Il niente e il poco e <em>L’implosione</em>, escono nel
+                che si protrarrà per i successivi due decenni (gli ultimi testi,{" "}
+                <em>Il niente e il poco</em> e <em>L’implosione</em>, escono nel
                 settembre 1984 su «la Repubblica» ancora sotto il titolo di{" "}
                 <em>Le nuove cosmicomiche</em>), e che costituisce probabilmente
                 il massimo punto di equilibrio tra l’ostentazione di un modello
@@ -126,9 +126,9 @@ class CombineInformationSheet extends Component {
                 risposta a un saggio che analizzava proprio la{" "}
                 <em>Nuvola di smog</em>, nella quale Calvino finge di
                 interpretare il critico di se stesso e proclama il proprio
-                «moravismo» (Calvino 1964, 104; la Nuvola era del resto uscita
-                su «Nuovi argomenti», la rivista diretta da Moravia), in un
-                gioco delle parti che però lascia qualcosa di ambiguo alla
+                «moravismo» (Calvino 1964, 104; la <em>Nuvola</em> era del resto
+                uscita su «Nuovi argomenti», la rivista diretta da Moravia), in
+                un gioco delle parti che però lascia qualcosa di ambiguo alla
                 dichiarazione, un sospetto di insicurezza poetica sul valore di
                 questo formato del «grigiore».
               </p>
@@ -329,9 +329,9 @@ class CombineInformationSheet extends Component {
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
                 gli elementi metatestuali che si trovano oltre il confine
                 diegetico, quello{" "}
-                <span style={{ color: "#0AFFB7" }}>interiore</span>{" "}
-                che raccoglie stati d’animo, sentimenti e condizioni
-                psicologiche dei personaggi, e quello
+                <span style={{ color: "#0AFFB7" }}>interiore</span> che
+                raccoglie stati d’animo, sentimenti e condizioni psicologiche
+                dei personaggi, e quello
                 <span style={{ color: "#5151FC" }}> esteriore</span>, che copre
                 gesti, eventi e interazioni che si sviluppano nel mondo del
                 racconto – le ragioni delle differenze così spiccate tra i due
@@ -499,9 +499,9 @@ class CombineInformationSheet extends Component {
                   a cura di G. Marrone, Torino, Einaudi.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>, Torino,
-                  Einaudi, risvolto di copertina anonimo ma attribuibile
-                  all’autore.
+                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>
+                  , Torino, Einaudi, risvolto di copertina anonimo ma
+                  attribuibile all’autore.
                 </li>
                 <li className="referenceItem">
                   Calvino 1964: Italo Calvino, <em>Lettera a Mario Boselli</em>,
