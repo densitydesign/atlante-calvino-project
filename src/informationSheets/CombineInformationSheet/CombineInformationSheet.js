@@ -257,11 +257,11 @@ class CombineInformationSheet extends Component {
                 limitandoci alla ricognizione delle sequenze narrative di base
                 che si susseguono nelle storie, veniamo a scoprire che
                 l’impressione è tutt’altro che confermata. A conti fatti, le
-                Cosmicomiche, nella loro caleidoscopica varietà di mondi e
-                situazioni, e il dittico Nuvola-Formica, coppia di monoliti dove
+                <em>Cosmicomiche</em>, nella loro caleidoscopica varietà di mondi e
+                situazioni, e il dittico <em>Nuvola-Formica</em>, coppia di monoliti dove
                 a regnare sono «il povero, il disadorno, lo squallore, il
                 grigiore» (Calvino 1964, 108), in realtà presentano
-                sostanzialmente dallo stesso numero di sequenze: rispettivamente
+                sostanzialmente lo stesso numero di sequenze: rispettivamente
                 148 e 142. Se poi si va a verificare tra quante categorie sono
                 distribuite queste sequenze, scopriamo addirittura che alle 19
                 delle <em>Cosmicomiche</em> rispondono le 22 della{" "}
@@ -325,7 +325,7 @@ class CombineInformationSheet extends Component {
                 l’effetto attraverso un attento processo di assemblaggio
                 strategico. Se riportiamo le categorie ai tre grandi ambiti
                 generali di appartenenza in cui può essere sezionato un testo
-                narrativo – quello{" "}
+                narrativo – il piano{" "}
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
                 gli elementi metatestuali che si trovano oltre il confine
                 diegetico, quello{" "}
@@ -338,7 +338,7 @@ class CombineInformationSheet extends Component {
                 volumi, che risultavano indecifrabili sul piano delle parti
                 minime, emergono e iniziano a farsi chiare: a produrre (o
                 smorzare) l’effetto di varietà non è il numero delle sequenze,
-                ma la frequenza con cui la narrazione compie il salto di ambito.
+                ma la frequenza con cui la narrazione compie il salto di piano.
               </p>
               <p className={SheetStyles.paragraph}>
                 La manopola che permette a Calvino di partire da due repertori
@@ -347,13 +347,13 @@ class CombineInformationSheet extends Component {
                 motivo e l’altro non contato per la loro <em>quantità</em>, ma
                 per la loro <em>qualità</em>. Se osserviamo la situazione nel
                 dettaglio, possiamo vedere che nelle <em>Cosmicomiche</em> la
-                narrazione coinvolge tutti e tre gli ambiti nominati, e passa
+                narrazione coinvolge tutti e tre i piani nominati, e passa
                 dall’uno all’altro 70 volte; d’altra parte il dittico{" "}
                 <em>Nuvola-Formica</em> , a parità di numero di sequenze,
-                coinvolge solo due ambiti (escludendo del tutto quello formale),
+                coinvolge solo due piani (escludendo del tutto quello formale),
                 e i passaggi sono 50, un intero quarto dei casi in meno. Che
                 cosa significa questo, in pratica? Significa che nel primo caso
-                gli ambiti sono frantumati e mischiati, e i confini tra interno
+                i piani sono frantumati e mischiati, e i confini tra interno
                 ed esterno (tanto dei personaggi quanto del testo stesso) sono
                 perfettamente permeabili per la voce narrante ondivaga di Qfwfq,
                 mentre nel secondo caso le sequenze “parenti” tendono ad
@@ -375,7 +375,7 @@ class CombineInformationSheet extends Component {
                 tutta sulla ribalta, interamente accessibile ai personaggi che
                 la percorrono in lungo e in largo, è intrappolata in zone
                 inagibili e spinta sullo sfondo, ma rimane comunque presente
-                come un baluginio sul fondo di uno specchio d’acqua
+                come un baluginio sul fondo di uno specchio d’acqua.
               </p>
             </Trans>
           </div>
@@ -396,14 +396,14 @@ class CombineInformationSheet extends Component {
                 comparata tra due testi: uno sguardo attento sulle scelte fatte
                 da Calvino nel distribuire i suoi materiali può rivelarci
                 dettagli illuminanti su come viene costruito l’equilibrio
-                interno di una storia. Un esempio è la funzione dell’incontro
+                interno di una storia. Un esempio è la funzione dell’<em>incontro</em>
                 come meccanismo di dissimulazione della complessità. Sia nella{" "}
                 <em>Nuvola di smog</em> che nella <em>Formica argentina</em>,
                 l’ossatura fondamentale del testo è basata sulla stessa
                 dinamica: «un protagonista che parla in prima persona ma non ha
                 nome né volto si muove tra uno stuolo di personaggi minori
                 ognuno dei quali ha un suo modo di contrapporsi alle formiche o
-                allo smog» (Falcetto 1991, 1313), con un modello che riprende,
+                allo smog» (Falcetto 1991, 1313), con un formato che riprende,
                 da un lato, il modello dantesco del viaggio nell’oltretomba
                 popolato da anime-
                 <em>exempla</em>, e dall’altro la forma del{" "}
@@ -446,7 +446,7 @@ class CombineInformationSheet extends Component {
                 pessimismo incombente del racconto, che moltiplica gli sforzi
                 degli individui perseguitati dalle formiche per sottolineare
                 ancora più nettamente la loro inutilità. Ma è anche funzionale a
-                rivelare la lucidità disillusa del protagonista: se infatti un
+                rivelare la lucidità disillusa del protagonista. Se infatti un
                 singolo incontro, con una singola raccomandazione strategica,
                 potrebbe costituire un punto di speranza, tenacia, e di sfida
                 all’universo, facendo apparire la tendenza del protagonista allo
@@ -456,7 +456,7 @@ class CombineInformationSheet extends Component {
                 attaccamento a qualche menzogna consolatoria, di fronte alla
                 quale il realismo stoico e disincantato del protagonista, che
                 tenta tutto senza convinzione, rimane a campeggiare come l’unica
-                basata su una disposizione d’animo condivisibile: la dignitosa
+                disposizione d’animo condivisibile: la dignitosa
                 rassegnazione alla presenza del male nell’universo e il coraggio
                 della realtà.
               </p>
@@ -509,7 +509,7 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Calvino 1973: Italo Calvino, <em>Nota [1973]</em>, in Id.,{" "}
-                  <em>Il castello dei destini incrociati</em>, RR<em>II</em>.
+                  <em>Il castello dei destini incrociati</em>, <em>RR</em>, II.
                 </li>
                 <li className="referenceItem">
                   Donnarumma 2008: Raffaele Donnarumma,{" "}
@@ -518,8 +518,8 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Falcetto 1991: Bruno Falcetto, <em>«La formica argentina»</em>
-                  , in Note e notizie sui testi, a cura di M. Barenghi, B.
-                  Falcetto, C. Milanini, RRI, pp. 1312-1315.
+                  , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi, B.
+                  Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
                 </li>
                 <li className="referenceItem">
                   Serra 2006: Francesca Serra, <em>Calvino</em>, Roma, Salerno.
