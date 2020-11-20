@@ -29,7 +29,7 @@ class CombineInformationSheet extends Component {
             </h1>
             <h2 className={SheetStyles.titleH2}>
               {this.props.t(
-                "combining-sheet:Compatto vs molteplice un passaggio sfumato"
+                "combining-sheet:Compatto vs molteplice, un passaggio sfumato"
               )}
             </h2>
             <Trans
@@ -499,7 +499,7 @@ class CombineInformationSheet extends Component {
                   a cura di G. Marrone, Torino, Einaudi.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1963: Italo Calvino, La speculazione edilizia, Torino,
+                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>, Torino,
                   Einaudi, risvolto di copertina anonimo ma attribuibile
                   all’autore.
                 </li>
