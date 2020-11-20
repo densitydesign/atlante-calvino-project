@@ -256,18 +256,18 @@ class CombineInformationSheet extends Component {
                 libri, dimenticando per un attimo ciò che sappiamo su di loro e
                 limitandoci alla ricognizione delle sequenze narrative di base
                 che si susseguono nelle storie, veniamo a scoprire che
-                l’impressione è tutt’altro che confermata. A conti fatti, le
-                <em>Cosmicomiche</em>, nella loro caleidoscopica varietà di mondi e
-                situazioni, e il dittico <em>Nuvola-Formica</em>, coppia di monoliti dove
-                a regnare sono «il povero, il disadorno, lo squallore, il
-                grigiore» (Calvino 1964, 108), in realtà presentano
-                sostanzialmente lo stesso numero di sequenze: rispettivamente
-                148 e 142. Se poi si va a verificare tra quante categorie sono
-                distribuite queste sequenze, scopriamo addirittura che alle 19
-                delle <em>Cosmicomiche</em> rispondono le 22 della{" "}
-                <em>Nuvola-Formica</em>. Com’è possibile? Come si spiega che
-                l’uniforme narrazione senza sorprese del dittico più cupo di
-                Calvino abbia la stessa quantità di segmenti narrativi
+                l’impressione è tutt’altro che confermata. A conti fatti, le{" "}
+                <em>Cosmicomiche</em>, nella loro caleidoscopica varietà di
+                mondi e situazioni, e il dittico <em>Nuvola-Formica</em>, coppia
+                di monoliti dove a regnare sono «il povero, il disadorno, lo
+                squallore, il grigiore» (Calvino 1964, 108), in realtà
+                presentano sostanzialmente lo stesso numero di sequenze:
+                rispettivamente 148 e 142. Se poi si va a verificare tra quante
+                categorie sono distribuite queste sequenze, scopriamo
+                addirittura che alle 19 delle <em>Cosmicomiche</em> rispondono
+                le 22 della <em>Nuvola-Formica</em>. Com’è possibile? Come si
+                spiega che l’uniforme narrazione senza sorprese del dittico più
+                cupo di Calvino abbia la stessa quantità di segmenti narrativi
                 dell’atlante cosmicomico e addirittura una varietà di categorie{" "}
                 <em>superiore</em> alla raccolta variegata per eccellenza? Dov’è
                 il trucco?
@@ -353,8 +353,8 @@ class CombineInformationSheet extends Component {
                 coinvolge solo due piani (escludendo del tutto quello formale),
                 e i passaggi sono 50, un intero quarto dei casi in meno. Che
                 cosa significa questo, in pratica? Significa che nel primo caso
-                i piani sono frantumati e mischiati, e i confini tra interno
-                ed esterno (tanto dei personaggi quanto del testo stesso) sono
+                i piani sono frantumati e mischiati, e i confini tra interno ed
+                esterno (tanto dei personaggi quanto del testo stesso) sono
                 perfettamente permeabili per la voce narrante ondivaga di Qfwfq,
                 mentre nel secondo caso le sequenze “parenti” tendono ad
                 aggregarsi tra loro, assemblando le particelle iniziali in
@@ -396,7 +396,8 @@ class CombineInformationSheet extends Component {
                 comparata tra due testi: uno sguardo attento sulle scelte fatte
                 da Calvino nel distribuire i suoi materiali può rivelarci
                 dettagli illuminanti su come viene costruito l’equilibrio
-                interno di una storia. Un esempio è la funzione dell’<em>incontro</em>
+                interno di una storia. Un esempio è la funzione dell’
+                <em>incontro</em>
                 come meccanismo di dissimulazione della complessità. Sia nella{" "}
                 <em>Nuvola di smog</em> che nella <em>Formica argentina</em>,
                 l’ossatura fondamentale del testo è basata sulla stessa
@@ -456,9 +457,8 @@ class CombineInformationSheet extends Component {
                 attaccamento a qualche menzogna consolatoria, di fronte alla
                 quale il realismo stoico e disincantato del protagonista, che
                 tenta tutto senza convinzione, rimane a campeggiare come l’unica
-                disposizione d’animo condivisibile: la dignitosa
-                rassegnazione alla presenza del male nell’universo e il coraggio
-                della realtà.
+                disposizione d’animo condivisibile: la dignitosa rassegnazione
+                alla presenza del male nell’universo e il coraggio della realtà.
               </p>
             </Trans>
             <img
@@ -518,8 +518,8 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Falcetto 1991: Bruno Falcetto, <em>«La formica argentina»</em>
-                  , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi, B.
-                  Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
+                  , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi,
+                  B. Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
                 </li>
                 <li className="referenceItem">
                   Serra 2006: Francesca Serra, <em>Calvino</em>, Roma, Salerno.
