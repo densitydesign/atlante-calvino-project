@@ -252,7 +252,7 @@ class ShapeInformationSheet extends React.Component {
                   Foresman & Company.
                 </li>
                 <li className="referenceItem">
-                  Inglese 2012: A. Inglese,
+                  Inglese 2012: A. Inglese, 
                   <em>
                     Gli ideali della letteratura moderna e la strategia
                     dell’inventario
@@ -262,19 +262,17 @@ class ShapeInformationSheet extends React.Component {
                   77-95.
                 </li>
                 <li className="referenceItem">
-                  Marchese 1991: A. Marchese,
+                  Marchese 1991: A. Marchese, 
                   <em>Dizionario di retorica e stilistica</em>, Milano,
                   Mondadori.
                 </li>
                 <li className="referenceItem">
-                  Orr 1991: L. Orr,{" "}
-                  <em>Problems and Poetics of the Nonaristotelian Novel</em>,
+                  Orr 1991: L. Orr, <em>Problems and Poetics of the Nonaristotelian Novel</em>,
                   Lewisburg, Bucknell University Press, London and Toronto,
                   Associated University Presses.
                 </li>
                 <li className="referenceItem">
-                  Spitzer 1991: L. Spitzer,{" "}
-                  <em>L’enumerazione caotica nella poesia moderna</em>, trad.
+                  Spitzer 1991: L. Spitzer, <em>L’enumerazione caotica nella poesia moderna</em>, trad.
                   it. di A. De Benedetto, in «L’Asino d’Oro», 3, II, pp. 92-130.
                 </li>
               </ol>

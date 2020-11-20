@@ -1,17 +1,17 @@
-import React, { Component } from "react"
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede2 from "../FooterSchede2"
-import "./HesitationInformationSheet.css"
-import SheetStyles from "../SheetStyles.module.css"
-import giornata from "./dubitare-01.svg"
-import legenda from "./legenda.svg"
-import zoom_01 from "./zoom-01.svg"
-import info_01 from "./info-01.svg"
-import legenda_01 from "./legenda-01.svg"
-import zoom_02 from "./zoom-02.svg"
-import zoom_03 from "./zoom-03.svg"
-import legenda_03 from "./legenda-03.svg"
-import { withTranslation, Trans } from "react-i18next"
+import React, { Component } from "react";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede2 from "../FooterSchede2";
+import "./HesitationInformationSheet.css";
+import SheetStyles from "../SheetStyles.module.css";
+import giornata from "./dubitare-01.svg";
+import legenda from "./legenda.svg";
+import zoom_01 from "./zoom-01.svg";
+import info_01 from "./info-01.svg";
+import legenda_01 from "./legenda-01.svg";
+import zoom_02 from "./zoom-02.svg";
+import zoom_03 from "./zoom-03.svg";
+import legenda_03 from "./legenda-03.svg";
+import { withTranslation, Trans } from "react-i18next";
 
 class HesitationInformationSheet extends Component {
   render() {
@@ -61,22 +61,20 @@ class HesitationInformationSheet extends Component {
                 associato, autoritratto morale» (Barenghi 2009, 56).
                 <br />
                 In un’intervista del 1963 Calvino lo definì «un libro di punti
-                interrogativi» (<em>RR</em>, II, 1311). Ma il segno interrogativo, per
-                quanto simbolicamente così importante, non è l’unico a
-                caratterizzare il romanzo: <em>
-                  La giornata d’uno scrutatore
-                </em>{" "}
-                è un libro anche di parentesi e di incisi. Segni che
-                interrompono la continuità lineare del discorso, creando degli
-                spazi di scrittura indipendenti che spezzano il testo
-                principale, annidandovi dentro un secondo testo. Lo scopo di
-                questo approfondimento è mostrare la distribuzione di tali segni
-                grafici e soprattutto in che modo collaborano con il processo
-                dubitativo, amplificando il suo effetto.
-                <em>La giornata d’uno scrutatore</em> racconta l’esperienza di
-                Amerigo Ormea, militante e intellettuale, nel ruolo di
-                scrutatore durante le elezioni dell’8 giugno 1953, presso un
-                istituto per persone con disabilità mentali e fisiche
+                interrogativi» (<em>RR</em>, II, 1311). Ma il segno
+                interrogativo, per quanto simbolicamente così importante, non è
+                l’unico a caratterizzare il romanzo:{" "}
+                <em>La giornata d’uno scrutatore</em> è un libro anche di
+                parentesi e di incisi. Segni che interrompono la continuità
+                lineare del discorso, creando degli spazi di scrittura
+                indipendenti che spezzano il testo principale, annidandovi
+                dentro un secondo testo. Lo scopo di questo approfondimento è
+                mostrare la distribuzione di tali segni grafici e soprattutto in
+                che modo collaborano con il processo dubitativo, amplificando il
+                suo effetto. <em>La giornata d’uno scrutatore</em> racconta
+                l’esperienza di Amerigo Ormea, militante e intellettuale, nel
+                ruolo di scrutatore durante le elezioni dell’8 giugno 1953,
+                presso un istituto per persone con disabilità mentali e fisiche
                 trasformato in seggio elettorale. Il libro è diviso in 15
                 capitoli e presenta un totale di 214 occorrenze di testo
                 dubitativo, distribuite in maniera diseguale all’interno del
@@ -103,14 +101,16 @@ class HesitationInformationSheet extends Component {
               >
                 {" "}
                 Occorrenze di testo dubitativo distribuite per capitolo in{" "}
-              <em>La giornata di uno scrutatore</em>
+                <em>La giornata di uno scrutatore</em>
               </p>
             </Trans>
           </div>
 
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>
-              {this.props.t("doubting-sheet:parole-title")}{" "}
+              {this.props.t(
+                "doubting-sheet:Parole: scegliere, interpretare, precisare"
+              )}{" "}
             </h2>
             <Trans
               i18nKey="paragraph-parole"
@@ -140,12 +140,13 @@ class HesitationInformationSheet extends Component {
                 affermato in precedenza: viene infatti svelata l’identità del
                 «partito di sinistra» a cui appartiene il protagonista (ovvero
                 «partito comunista») e l’«istituto religioso» anonimo diventa
-                «il Cottolengo di Torino» (<em>RR</em>, II, 7). La figura retorica
-                utilizzata è la preterizione, che spesso collabora con il
-                processo dubitativo: informare negando, infatti, corrisponde al
-                funzionamento più frequente del testo dubitativo, che alimenta
-                la narrazione tramite un’operazione volta alla sottrazione,
-                ossia mettendo in discussione quanto detto in precedenza.
+                «il Cottolengo di Torino» (<em>RR</em>, II, 7). La figura
+                retorica utilizzata è la preterizione, che spesso collabora con
+                il processo dubitativo: informare negando, infatti, corrisponde
+                al funzionamento più frequente del testo dubitativo, che
+                alimenta la narrazione tramite un’operazione volta alla
+                sottrazione, ossia mettendo in discussione quanto detto in
+                precedenza.
                 <br />
                 In secondo luogo il processo dubitativo investe il problema
                 dell’interpretazione. Il testo (<strong>td9</strong>) afferma
@@ -159,18 +160,18 @@ class HesitationInformationSheet extends Component {
                 caratteristico del processo dubitativo.
                 <br />
                 In terzo luogo si arriva alla questione del precisare. Il testo
-                (td10) fornisce un’informazione che aumenta la consapevolezza di
-                una ipotetica lettrice/lettore sulle funzioni del Cottolengo.
-                Come conseguenza dell’instabilità semantica che sta dietro le
-                parole, l’unico modo per assicurarsi di essere compresi
-                correttamente è quello di «precisare» (<em>RR</em>, II, 7), ridefinendo
-                ancora e ancora il concetto, accumulando le puntualizzazioni
-                (cfr. Mengaldo 1996, 278). Il testo in questione si trova
-                all’interno di un inciso; qui il segno grafico delimita
-                un’informazione, ma crea anche una deviazione dal testo
-                principale.
+                (<strong>td10</strong>) fornisce un’informazione che aumenta la
+                consapevolezza di una ipotetica lettrice/lettore sulle funzioni
+                del Cottolengo. Come conseguenza dell’instabilità semantica che
+                sta dietro le parole, l’unico modo per assicurarsi di essere
+                compresi correttamente è quello di «precisare» (<em>RR</em>, II,
+                7), ridefinendo ancora e ancora il concetto, accumulando le
+                puntualizzazioni (cfr. Mengaldo 1996, 278). Il testo in
+                questione si trova all’interno di un inciso; qui il segno
+                grafico delimita un’informazione, ma crea anche una deviazione
+                dal testo principale.
                 <br />
-                In conclusione, all’inizio del secondo capitolo della
+                In conclusione, all’inizio del secondo capitolo della{" "}
                 <em>Giornata d’uno scrutatore</em>, l’accento è posto sulla
                 difficoltà di comunicare correttamente con la lettrice/lettore.
                 Il significato delle parole è instabile e di conseguenza è
@@ -201,7 +202,6 @@ class HesitationInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: "1 / span 8",
-                position: "sticky",
                 top: "calc(var(--navigation-height) + 0.3rem)",
                 backgroundColor: "var(--white)",
               }}
@@ -228,9 +228,9 @@ class HesitationInformationSheet extends Component {
                 <br />
                 Questo paragrafo è un ottimo esempio di come il processo
                 dubitativo consista nel “tornare sui propri passi”. Il testo
-                oggetto di dubbio associato a <strong>td28</strong> coincide con l’inizio del
-                paragrafo e racchiude in sé dodici occorrenze del testo
-                dubitativo (dal <strong>td16</strong> al
+                oggetto di dubbio associato a <strong>td28</strong> coincide con
+                l’inizio del paragrafo e racchiude in sé dodici occorrenze del
+                testo dubitativo (dal <strong>td16</strong> al
                 <strong> td27</strong>, più della metà del numero totale di
                 occorrenze del capitolo). L’improvviso incremento di occorrenze
                 non è unicamente numerico; in parallelo assistiamo a un
@@ -248,10 +248,10 @@ class HesitationInformationSheet extends Component {
                 Cinque delle occorrenze “intrappolate” dentro il testo oggetto
                 di dubbio di <strong>td28 </strong>
                 sono a loro volta contenute fra parentesi (<strong>td18</strong>
-                ,<strong> td20</strong>, <strong>td21</strong>,{" "}
-                <strong>td23</strong>,<strong> td27</strong>). Ma la quantità di
-                segni grafici nel paragrafo è molto più alta: infatti circa il
-                30% del capitolo viene dislocata tra parentesi o dentro un
+                ,<strong> td20</strong>,<strong> td21</strong>,
+                <strong> td23</strong>,<strong> td27</strong>). Ma la quantità
+                di segni grafici nel paragrafo è molto più alta: infatti circa
+                il 30% del capitolo viene dislocata tra parentesi o dentro un
                 inciso, anche quando da un punto di vista narrativo non
                 sembrerebbe necessario. In alcuni casi le parentesi contengono a
                 loro volta degli incisi, elaborando così una sorta di racconto a
@@ -285,8 +285,8 @@ class HesitationInformationSheet extends Component {
                 li disorienta. Si tratta di un meccanismo narrativo basato sul
                 difficile rapporto fra la ricerca dell’esattezza della scrittura
                 e l’insuccesso dell’atto interpretativo, per cui l’unico modo
-                per parlare della «complessità delle cose» (<em>ibidem</em>)
-                sembra essere quello di organizzarla in strati.
+                per parlare della «complessità delle cose» (ibidem) sembra
+                essere quello di organizzarla in strati.
                 <br />
                 La parentesi e l’inciso generano questa stratificazione,
                 attraverso una forma grafica che introduce un altro spazio, un
@@ -299,7 +299,9 @@ class HesitationInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className="referenceItem">
                 Barenghi 2009: M. Barenghi, <em>Calvino</em>, Bologna, Mulino.
@@ -320,10 +322,10 @@ class HesitationInformationSheet extends Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "doubting-sheet"])(
   HesitationInformationSheet
-)
+);
