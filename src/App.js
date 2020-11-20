@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import LoadingWrapper from "./general/LoadingWrapper";
 import './i18n'
 import './general/HK Grotesk/WEB/stylesheet.css';
 
@@ -11,7 +12,7 @@ import AtlasRouter from './views/AtlasRouter/AtlasRouter';
 
 function App() {
   return (
-    <Suspense fallback='Loading'>
+    <Suspense fallback={<LoadingWrapper/>}>
       <AtlasRouter />
       <div id='index-menu-modal-container' />
     </Suspense>
