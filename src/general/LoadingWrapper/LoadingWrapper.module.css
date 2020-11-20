@@ -1,6 +1,6 @@
 :root {
 	--loadingA: #b0b0f6;
-	--loadingB: #6767f0;
+	--loadingB: var(--dark-blue);
 }
 
 .main {
@@ -35,7 +35,7 @@
   width: 300vw;
 	height: 100vw;
   display: grid;
-  background: linear-gradient(45deg, var(--loadingA), var(--loadingB), var(--loadingA), var(--loadingB), var(--loadingA));
+  background: linear-gradient(45deg, var(--loadingA) 1%, var(--loadingB) 25%, var(--loadingA) 49%, var(--loadingA) 51%, var(--loadingB) 75%, var(--loadingA) 99%);
   position: absolute;
   top: 0;
   left: 0;
