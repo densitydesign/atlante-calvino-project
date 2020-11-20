@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import SheetStyles from "../SheetStyles.module.css"
+import React, { Component } from "react";
+import SheetStyles from "../SheetStyles.module.css";
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
 import FooterSchede2 from "../FooterSchede2";
 
-import legenda from "./legend_01.svg"
-import marimekko from "./marimekko.svg"
-import zoom_02 from "./zoom_02.svg"
-import zoom_03 from "./zoom_03.svg"
-import zoom_04 from "./zoom_04.svg"
-import legenda_02 from "./legenda_02.svg"
-import legenda_03 from "./legenda_03.svg"
-import legenda_04 from "./legenda_04.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legenda from "./legend_01.svg";
+import marimekko from "./marimekko.svg";
+import zoom_02 from "./zoom_02.svg";
+import zoom_03 from "./zoom_03.svg";
+import zoom_04 from "./zoom_04.svg";
+import legenda_02 from "./legenda_02.svg";
+import legenda_03 from "./legenda_03.svg";
+import legenda_04 from "./legenda_04.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class CombineInformationSheet extends Component {
   render() {
@@ -71,7 +71,7 @@ class CombineInformationSheet extends Component {
                 tecnologica dei suoi anni permetteva a stento di indovinare,
                 oggi in uso come la “generazione procedurale” condotta tramite
                 algoritmo. Al centro simbolico di questa svolta è l’anno 1965,
-                che vede l’uscita della raccolta in volume delle
+                che vede l’uscita della raccolta in volume delle{" "}
                 <em>Cosmicomiche</em> e l’inaugurazione di un variegato filone
                 che si protrarrà per i successivi due decenni (gli ultimi testi,
                 Il niente e il poco e <em>L’implosione</em>, escono nel
@@ -91,7 +91,7 @@ class CombineInformationSheet extends Component {
                 biografia letteraria calviniana con un altro titolo, un piccolo
                 volume che raccoglie due testi precedentemente usciti su rivista
                 (rispettivamente in «Nuovi Argomenti», 34, 1958 e in «Botteghe
-                Oscure», quaderno X, 1952) in uno strano dittico:
+                Oscure», quaderno X, 1952) in uno strano dittico:{" "}
                 <em>La nuvola di smog</em> e <em>La formica argentina</em>. Il
                 volumetto Einaudi, parte di un progetto mai realizzato che
                 doveva consistere in un «ciclo narrativo sull’Italia di metà
@@ -113,12 +113,11 @@ class CombineInformationSheet extends Component {
                 italiana del dopoguerra: una forma non più tenuta a distanza dal
                 filtro straniante di un linguaggio volutamente semplice, dai
                 tratti infantili, come accadeva ad esempio in{" "}
-                <em>Ultimo viene il corvo</em> o nel trittico dell’
+                <em>Ultimo viene il corvo</em> o nel trittico dell’{" "}
                 <em>Entrata in guerra</em>, ma affrontata in modo diretto,
                 disilluso, “adulto”. Una modalità che riunisce una piccola
                 famiglia di titoli tutto sommato non incospicua, alla quale si
-                possono ricondurre anche
-                <em>La speculazione edilizia</em> e
+                possono ricondurre anche <em>La speculazione edilizia</em> e{" "}
                 <em>La giornata d’uno scrutatore</em>, le avventure irrisolte
                 degli <em>Amori difficili</em>, e almeno in parte
                 <em>I Racconti</em>, e con la quale tuttavia l’autore non sembra
@@ -143,7 +142,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -156,7 +154,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height))",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -223,7 +220,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1.5rem",
@@ -236,7 +232,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1.5rem",
@@ -269,7 +264,7 @@ class CombineInformationSheet extends Component {
                 sostanzialmente dallo stesso numero di sequenze: rispettivamente
                 148 e 142. Se poi si va a verificare tra quante categorie sono
                 distribuite queste sequenze, scopriamo addirittura che alle 19
-                delle <em>Cosmicomiche</em> rispondono le 22 della
+                delle <em>Cosmicomiche</em> rispondono le 22 della{" "}
                 <em>Nuvola-Formica</em>. Com’è possibile? Come si spiega che
                 l’uniforme narrazione senza sorprese del dittico più cupo di
                 Calvino abbia la stessa quantità di segmenti narrativi
@@ -289,7 +284,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -302,7 +296,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -336,7 +329,7 @@ class CombineInformationSheet extends Component {
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
                 gli elementi metatestuali che si trovano oltre il confine
                 diegetico, quello{" "}
-                <span style={{ backgroundColor: "#0AFFB7" }}>interiore</span>{" "}
+                <span style={{ color: "#0AFFB7" }}>interiore</span>{" "}
                 che raccoglie stati d’animo, sentimenti e condizioni
                 psicologiche dei personaggi, e quello
                 <span style={{ color: "#5151FC" }}> esteriore</span>, che copre
@@ -465,7 +458,7 @@ class CombineInformationSheet extends Component {
                 tenta tutto senza convinzione, rimane a campeggiare come l’unica
                 basata su una disposizione d’animo condivisibile: la dignitosa
                 rassegnazione alla presenza del male nell’universo e il coraggio
-                della realtà
+                della realtà.
               </p>
             </Trans>
             <img
@@ -479,7 +472,7 @@ class CombineInformationSheet extends Component {
                 backgroundColor: "var(--white)",
               }}
               src={zoom_04}
-              alt=''
+              alt=""
             />
             <img
               className={SheetStyles.sideLegend}
@@ -492,11 +485,13 @@ class CombineInformationSheet extends Component {
                 backgroundColor: "var(--white)",
               }}
               src={legenda_04}
-              alt=''
+              alt=""
             />
           </div>
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
@@ -545,10 +540,10 @@ class CombineInformationSheet extends Component {
           ;
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "combining-sheet"])(
   CombineInformationSheet
-)
+);
