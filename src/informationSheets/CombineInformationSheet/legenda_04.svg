@@ -6,26 +6,26 @@
   </defs>
   <g id="legenda_04" clip-path="url(#clip-legenda_04)">
     <g id="Group_788" data-name="Group 788" transform="translate(-839 -1229)">
-      <text id="Tipologia" transform="translate(839 1238)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Tipologia</tspan></text>
+      <text id="Tipo_di_sequenza" data-name="Tipo di sequenza" transform="translate(839 1238)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">Tipo di sequenza</tspan></text>
       <g id="Group_24094" data-name="Group 24094" transform="translate(839 1229)">
         <text id="Eventi_liminali" data-name="Eventi liminali" transform="translate(30 35)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Eventi liminali</tspan></text>
-        <path id="Path_47" data-name="Path 47" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 27)" fill="#8131f4"/>
+        <path id="Path_47" data-name="Path 47" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 27)" fill="#8131f4"/>
         <text id="Interazione" transform="translate(29.483 54)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Interazione</tspan></text>
-        <rect id="Rectangle_181" data-name="Rectangle 181" width="20" height="10" rx="5" transform="translate(0 46)" fill="blue"/>
-        <path id="Path_48" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 65)" fill="#5151fc"/>
+        <rect id="Rectangle_181" data-name="Rectangle 181" width="21" height="10" rx="5" transform="translate(0 46)" fill="blue"/>
+        <path id="Path_48" data-name="Path 48" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 65)" fill="#5151fc"/>
         <text id="Spostamento" transform="translate(29.483 73)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Spostamento</tspan></text>
-        <path id="Path_48-2" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 104)" fill="aqua"/>
+        <path id="Path_48-2" data-name="Path 48" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 104)" fill="aqua"/>
         <text id="Situazione" transform="translate(28.483 112)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Situazione</tspan></text>
-        <path id="Path_48-3" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 123)" fill="#009959"/>
+        <path id="Path_48-3" data-name="Path 48" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 123)" fill="#009959"/>
         <text id="Stato_euforico" data-name="Stato euforico" transform="translate(29.483 131)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Stato euforico</tspan></text>
-        <path id="Path_48-4" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 142)" fill="#00c19c"/>
+        <path id="Path_48-4" data-name="Path 48" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 142)" fill="#00c19c"/>
         <text id="Stato_disforico" data-name="Stato disforico" transform="translate(29.483 150)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Stato disforico</tspan></text>
         <path id="Path_48-5" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 162)" fill="#8ae297"/>
         <text id="Stato_riflessivo" data-name="Stato riflessivo" transform="translate(28.483 170)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Stato riflessivo</tspan></text>
         <path id="Path_48-6" data-name="Path 48" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 181)" fill="#00ffb6"/>
         <text id="Stato_sospeso" data-name="Stato sospeso" transform="translate(28.483 189)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Stato sospeso</tspan></text>
         <text id="Intenzione" transform="translate(29 93)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Intenzione</tspan></text>
-        <path id="Path_46" data-name="Path 46" d="M5.294,0h9.412A5.153,5.153,0,0,1,20,5a5.153,5.153,0,0,1-5.294,5H5.294A5.153,5.153,0,0,1,0,5,5.153,5.153,0,0,1,5.294,0Z" transform="translate(0 85)" fill="#6e94f4"/>
+        <path id="Path_46" data-name="Path 46" d="M5.559,0h9.882A5.3,5.3,0,0,1,21,5a5.3,5.3,0,0,1-5.559,5H5.559A5.3,5.3,0,0,1,0,5,5.3,5.3,0,0,1,5.559,0Z" transform="translate(0 85)" fill="#6e94f4"/>
       </g>
     </g>
   </g>
