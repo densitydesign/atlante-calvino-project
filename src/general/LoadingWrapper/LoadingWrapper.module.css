@@ -1,6 +1,7 @@
 :root {
-	--loadingA: #b0b0f6;
-	--loadingB: var(--dark-blue);
+  --loadingA: var(--dark-blue);
+  --loadingA: #afaff9;
+  --loadingB: #ffffff;
 }
 
 .main {
@@ -35,22 +36,22 @@
   width: 300vw;
 	height: 100vw;
   display: grid;
-  background: linear-gradient(45deg, var(--loadingA) 1%, var(--loadingB) 25%, var(--loadingA) 49%, var(--loadingA) 51%, var(--loadingB) 75%, var(--loadingA) 99%);
+  background: linear-gradient(-45deg, var(--loadingA) 0%, var(--loadingB) 25%, var(--loadingA) 50%, var(--loadingB) 75%, var(--loadingA) 100%);
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   animation-name: bg-animation;
-  animation-duration: 6s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
 
 @keyframes bg-animation {
   from {
-    left:0;
+    left:-200vw;
   }
   to {
-    left:-200vw;
+    left:0vw;
   }
 }
