@@ -55,7 +55,7 @@ const Curves = ({ dev }) => {
         return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
       })
       .toString();
-    console.log(goal, _ratio);
+    // console.log(goal, _ratio);
     pp = curvesPoints[_ratio];
     labels = labelsData[_ratio];
     setRatio(ratio);

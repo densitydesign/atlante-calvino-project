@@ -24,7 +24,7 @@ class MoreInfo extends Component {
   }
 
   render() {
-    console.log(this.props, "moreinfo")
+    // console.log(this.props, "moreinfo")
 
     return this.props.helpSidePanelOpen ? (
       <div
