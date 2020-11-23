@@ -13,7 +13,6 @@ import { HashLink } from "react-router-hash-link"
 import styles from "./IndexMenu.module.css"
 import { ReactComponent as TerritorioIconHover } from "./icons/territorio_color.svg"
 import { ReactComponent as TerritorioIcon } from "./icons/territorio_blue.svg"
-
 import { ReactComponent as DubbioIconHover } from "./icons/dubitare_color.svg"
 import { ReactComponent as DubbioIcon } from "./icons/dubitare_blue.svg"
 import { ReactComponent as NebbiaIconHover } from "./icons/nebbia_color.svg"
@@ -52,10 +51,14 @@ const ItemIndex = ({
   tappa,
   tappaHover,
   titleApprofondimento,
+  itinerarioHover,
+  itinerario,
 }) => {
   const iconEl = useRef()
   const groupEl = useRef()
   const [yAlign, setYAlign] = useState(0)
+
+  console.log(itinerario,itinerarioHover,'itinerario')
 
   const alignItem = () => {
     const group_bbox = groupEl.current.getBoundingClientRect()
@@ -77,12 +80,12 @@ const ItemIndex = ({
     <div
       ref={groupEl}
       className={
-        tappa && tappaHover && tappa === tappaHover
+        (tappa && tappaHover && tappa === tappaHover) || (itinerario && itinerarioHover === itinerario)
           ? styles[className]
           : styles[className] + " " + styles["hoverable-icon"]
       }
     >
-      {tappa && tappaHover && tappa === tappaHover ? (
+      {((tappa && tappaHover && tappa === tappaHover) || (itinerario && itinerarioHover === itinerario)) ? (
         <Link
           onClick={onClose}
           to={link}
@@ -126,6 +129,7 @@ export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
   const [tappaHover, setTappaHover] = useState(null)
   const [dev, setDev] = useState(false)
+  const [itinerarioHover,setItinerario] = useState(null)
 
   const handleCloseGuida = () => setShowGuida(false)
   const handleShowGuida = () => {
@@ -232,7 +236,7 @@ export default function IndexMenu({ onClose }) {
       >
         <Orbite ref={orbiteRef} />
       </div>
-      <Curves dev={dev} />
+      <Curves dev={dev} itinerarioHover={itinerarioHover} setItinerario={setItinerario} />
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
@@ -274,6 +278,7 @@ export default function IndexMenu({ onClose }) {
           link="/archipelago"
           className={"territorio"}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={1}
           icon={
             <TerritorioIcon
@@ -290,6 +295,8 @@ export default function IndexMenu({ onClose }) {
           title={t("dubitare")}
           onClose={onClose}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
+          itinerario={'Dubbio'}
           titleApprofondimento={t("Il romanzo-saggio che dubita")}
           tappa={2}
           link="/doubt/phase2"
@@ -309,7 +316,9 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("nebbia")}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={1}
+          itinerario={'Dubbio'}
           onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
@@ -329,6 +338,8 @@ export default function IndexMenu({ onClose }) {
           title={t("cancellazione")}
           onClose={onClose}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
+          itinerario={'Dubbio'}
           tappa={3}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
@@ -347,9 +358,11 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("trasformare")}
           onClose={onClose}
+          itinerario={'Spazio'}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={2}
           link="/space/phase2"
           icon={
@@ -366,7 +379,9 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("luoghi")}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={1}
+          itinerario={'Spazio'}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -387,8 +402,10 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
+          itinerario={'Spazio'}
           link="/space/phase3"
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={3}
           icon={
             <RealismoIcon
@@ -405,7 +422,9 @@ export default function IndexMenu({ onClose }) {
           title={t("elenchi")}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
+          itinerario={'Forma'}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={1}
           onClose={onClose}
           className={"elenchi"}
@@ -423,8 +442,10 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("combinare")}
           onClose={onClose}
+          itinerario={'Forma'}
           link="/form/phase2"
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={2}
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
@@ -443,7 +464,9 @@ export default function IndexMenu({ onClose }) {
           title={t("trama")}
           onClose={onClose}
           link="/form/phase3"
+          itinerario={'Forma'}
           tappaHover={tappaHover}
+          itinerarioHover={itinerarioHover}
           tappa={3}
           linkApprofondimento="/form/phase3/focus"
           className={"trama"}
