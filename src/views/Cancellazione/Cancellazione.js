@@ -223,34 +223,10 @@ class Cancellazione extends Component {
           </HelpSidePanel>
           <div className="top-nav navigations">
             <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-            {/* <PageTitle
+            <PageTitle
               title={this.props.t('cancellazione')}
               style={{ gridColumn: "span 9" }}
-            /> */}
-
-            {this.state.loading && <Loading style={{ gridColumn: "span 3" }} />}
-            {!this.state.loading && (
-              <Options
-                title={this.props.t('cerca_per')}
-                data={this.state.cerca_per}
-                style={{ gridColumn: "span 3" }}
-                changeOptions={this.changeCercaPer}
-              />
-            )}
-
-            {this.state.loading && <Loading style={{ gridColumn: "span 6" }} />}
-            {!this.state.loading && (
-              <SearchDropDown
-                style={{ gridColumn: "span 6" }}
-                data={{
-                  options: this.state.searchItems[
-                    this.state.cerca_per.options.find((d) => d.status).label
-                  ],
-                }}
-                changeOptions={this.changeResearch}
-                selectedOptions={this.state.searchedItems}
-              />
-            )}
+            />
 
             {this.state.loading && <Loading style={{ gridColumn: "span 12" }} />}
             {!this.state.loading && (
