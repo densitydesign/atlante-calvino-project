@@ -265,8 +265,9 @@ li {
 }
 
 .references ol,
-.references ul {
+.references li {
   padding-left: 0px;
+  list-style-type: none;
 }
 
 .referenceItem {

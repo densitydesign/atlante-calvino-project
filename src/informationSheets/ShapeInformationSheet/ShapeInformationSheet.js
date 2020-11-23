@@ -1,19 +1,19 @@
-import React from "react"
+import React from "react";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper"
-import FooterSchede1 from "../FooterSchede1"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper";
+import FooterSchede1 from "../FooterSchede1";
 
-import "../../App.css"
-import "./ShapeInformationSheet.css"
-import SheetStyles from "../SheetStyles.module.css"
+import "../../App.css";
+import "./ShapeInformationSheet.css";
+import SheetStyles from "../SheetStyles.module.css";
 
-import legenda from "./legenda.svg"
-import zoom_01 from "./zoom-01.svg"
-import zoom_02 from "./zoom-02.svg"
-import zoom_03 from "./zoom-03.svg"
-import zoom_04 from "./zoom-04.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legenda from "./legenda.svg";
+import zoom_01 from "./zoom-01.svg";
+import zoom_02 from "./zoom-02.svg";
+import zoom_03 from "./zoom-03.svg";
+import zoom_04 from "./zoom-04.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class ShapeInformationSheet extends React.Component {
   render() {
@@ -55,15 +55,14 @@ class ShapeInformationSheet extends React.Component {
             >
               <p className={SheetStyles.paragraph}>
                 Sono tutti anni in cui Calvino pubblica pochi titoli: nel 1945
-                solo
-                <em>Angoscia in caserma</em>, nel 1951 solo{" "}
-                <em>Il reggimento smarrito</em> e
+                solo <em>Angoscia in caserma</em>, nel 1951 solo{" "}
+                <em>Il reggimento smarrito</em>e{" "}
                 <em>L’avventura di una bagnante</em>, nel 1962 solo{" "}
                 <em>La strada di San Giovanni</em>, nel 1966 solo{" "}
                 <em>Ti con zero</em>, nel 1972 solo <em>Il nome, il naso</em>e{" "}
                 <em>Le città invisibili</em>. Tutti i testi in questione sono
-                composti negli anni della rispettiva pubblicazione, tranne La
-                strada e Le città, che cominciano a essere scritti
+                composti negli anni della rispettiva pubblicazione, tranne{" "}
+                <em>La strada e Le città</em>, che cominciano a essere scritti
                 rispettivamente a partire dal 1960 e dal 1970, in periodi in cui
                 le pubblicazioni si diradano. Il risultato sembra suggerire una
                 forma di correlazione tra la rarefazione del numero di testi e
@@ -197,12 +196,11 @@ class ShapeInformationSheet extends React.Component {
                 <span style={{ color: "#ffa500" }}>sintagmi</span> e addirittura
                 intere <span style={{ color: "#5151fc" }}> proposizioni</span>,
                 gesto che, in termini retorici, costituisce il polo opposto all’
-                <em>accumulatio</em>, vale a dire la
-                <em>distributio</em>: quel formato enumerativo in cui la
-                ripetizione non si limita alla ripresa di un oggetto
-                grammaticale, ma coinvolge delle porzioni di testo anche molto
-                estese, la cui riconoscibilità seriale non deriva solo dal piano
-                sintattico ma anche da quello semantico.
+                <em>accumulatio</em>, vale a dire la <em>distributio</em>: quel
+                formato enumerativo in cui la ripetizione non si limita alla
+                ripresa di un oggetto grammaticale, ma coinvolge delle porzioni
+                di testo anche molto estese, la cui riconoscibilità seriale non
+                deriva solo dal piano sintattico ma anche da quello semantico.
               </p>
             </Trans>
           </div>
@@ -254,7 +252,7 @@ class ShapeInformationSheet extends React.Component {
                   Foresman & Company.
                 </li>
                 <li className="referenceItem">
-                  Inglese 2012: A. Inglese,{" "}
+                  Inglese 2012: A. Inglese, 
                   <em>
                     Gli ideali della letteratura moderna e la strategia
                     dell’inventario
@@ -264,19 +262,17 @@ class ShapeInformationSheet extends React.Component {
                   77-95.
                 </li>
                 <li className="referenceItem">
-                  Marchese 1991: A. Marchese,{" "}
+                  Marchese 1991: A. Marchese, 
                   <em>Dizionario di retorica e stilistica</em>, Milano,
                   Mondadori.
                 </li>
                 <li className="referenceItem">
-                  Orr 1991: L. Orr,{" "}
-                  <em>Problems and Poetics of the Nonaristotelian Novel</em>,
+                  Orr 1991: L. Orr, <em>Problems and Poetics of the Nonaristotelian Novel</em>,
                   Lewisburg, Bucknell University Press, London and Toronto,
                   Associated University Presses.
                 </li>
                 <li className="referenceItem">
-                  Spitzer 1991: L. Spitzer,{" "}
-                  <em>L’enumerazione caotica nella poesia moderna</em>, trad.
+                  Spitzer 1991: L. Spitzer, <em>L’enumerazione caotica nella poesia moderna</em>, trad.
                   it. di A. De Benedetto, in «L’Asino d’Oro», 3, II, pp. 92-130.
                 </li>
               </ol>
@@ -290,10 +286,10 @@ class ShapeInformationSheet extends React.Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "elenchi-sheet"])(
   ShapeInformationSheet
-)
+);
