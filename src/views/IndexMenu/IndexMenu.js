@@ -57,8 +57,7 @@ const ItemIndex = ({
   const iconEl = useRef()
   const groupEl = useRef()
   const [yAlign, setYAlign] = useState(0)
-
-  console.log(itinerario,itinerarioHover,'itinerario')
+  const [hoverApprofondimento, setHoverApprofondimento] = useState(false)
 
   const alignItem = () => {
     const group_bbox = groupEl.current.getBoundingClientRect()
@@ -80,25 +79,19 @@ const ItemIndex = ({
     <div
       ref={groupEl}
       className={
-        (tappa && tappaHover && tappa === tappaHover) || (itinerario && itinerarioHover === itinerario)
+        (tappa && tappaHover && tappa === tappaHover) ||
+        (itinerario && itinerarioHover === itinerario)
           ? styles[className]
           : styles[className] + " " + styles["hoverable-icon"]
       }
     >
-      {((tappa && tappaHover && tappa === tappaHover) || (itinerario && itinerarioHover === itinerario)) ? (
-        <Link
-          onClick={onClose}
-          to={link}
-          ref={iconEl}
-        >
+      {(tappa && tappaHover && tappa === tappaHover) ||
+      (itinerario && itinerarioHover === itinerario) ? (
+        <Link onClick={onClose} to={link} ref={iconEl}>
           {iconHover}
         </Link>
       ) : (
-        <Link
-          onClick={onClose}
-          to={link}
-          ref={iconEl}
-        >
+        <Link onClick={onClose} to={link} ref={iconEl}>
           {icon}
           {iconHover}
         </Link>
@@ -111,16 +104,40 @@ const ItemIndex = ({
       >
         {title}
       </span>
-      {title !== "Territorio" && (
-        <Link
-          to={linkApprofondimento}
-          style={{
-            transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`,
-          }}
-        >
-          <IconApprofondimento className="mt-2" />
-        </Link>
-      )}
+      {title !== "Territorio" &&
+        (!hoverApprofondimento ? (
+          <Link
+            to={linkApprofondimento}
+            style={{
+              transform: `translate(0, ${
+                title !== "Territorio" ? yAlign : 0
+              }px)`,
+            }}
+          >
+            <IconApprofondimento
+              onMouseEnter={() => setHoverApprofondimento(true)}
+              onMouseLeave={() => setHoverApprofondimento(false)}
+              className="mt-2"
+            />
+          </Link>
+        ) : (
+          <Link
+            to={linkApprofondimento}
+            className='d-flex align-items-center'
+            style={{
+              transform: `translate(0, ${
+                title !== "Territorio" ? yAlign : 0
+              }px)`,
+            }}
+          >
+            <IconApprofondimento
+              onMouseEnter={() => setHoverApprofondimento(true)}
+              onMouseLeave={() => setHoverApprofondimento(false)}
+              className="mt-2 mr-2"
+            />
+            {titleApprofondimento}
+          </Link>
+        ))}
     </div>
   )
 }
@@ -129,7 +146,7 @@ export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
   const [tappaHover, setTappaHover] = useState(null)
   const [dev, setDev] = useState(false)
-  const [itinerarioHover,setItinerario] = useState(null)
+  const [itinerarioHover, setItinerario] = useState(null)
 
   const handleCloseGuida = () => setShowGuida(false)
   const handleShowGuida = () => {
@@ -236,7 +253,12 @@ export default function IndexMenu({ onClose }) {
       >
         <Orbite ref={orbiteRef} />
       </div>
-      <Curves dev={dev} itinerarioHover={itinerarioHover} setItinerario={setItinerario} />
+      <Curves
+        dev={dev}
+        itinerarioHover={itinerarioHover}
+        setItinerario={setItinerario}
+        onClose={onClose}
+      />
       <div className={styles["IndexMenu"]}>
         <div className={styles["tappe"]}>{t("tappa")}</div>
         <HashLink onClick={onClose} to="/phases#phenomena">
@@ -296,7 +318,7 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
-          itinerario={'Dubbio'}
+          itinerario={"Dubbio"}
           titleApprofondimento={t("Il romanzo-saggio che dubita")}
           tappa={2}
           link="/doubt/phase2"
@@ -318,7 +340,7 @@ export default function IndexMenu({ onClose }) {
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
           tappa={1}
-          itinerario={'Dubbio'}
+          itinerario={"Dubbio"}
           onClose={onClose}
           linkApprofondimento="/doubt/phase1/focus"
           link="/doubt/phase1"
@@ -339,8 +361,9 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
-          itinerario={'Dubbio'}
+          itinerario={"Dubbio"}
           tappa={3}
+          titleApprofondimento={t("Il dubbio e la cancellazione")}
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
           className={"cancellazione"}
@@ -358,7 +381,7 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("trasformare")}
           onClose={onClose}
-          itinerario={'Spazio'}
+          itinerario={"Spazio"}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           tappaHover={tappaHover}
@@ -381,7 +404,7 @@ export default function IndexMenu({ onClose }) {
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
           tappa={1}
-          itinerario={'Spazio'}
+          itinerario={"Spazio"}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -402,7 +425,7 @@ export default function IndexMenu({ onClose }) {
           onClose={onClose}
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
-          itinerario={'Spazio'}
+          itinerario={"Spazio"}
           link="/space/phase3"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
@@ -422,7 +445,7 @@ export default function IndexMenu({ onClose }) {
           title={t("elenchi")}
           linkApprofondimento="/form/phase1/focus"
           link="/form/phase1"
-          itinerario={'Forma'}
+          itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
           tappa={1}
@@ -442,7 +465,7 @@ export default function IndexMenu({ onClose }) {
         <ItemIndex
           title={t("combinare")}
           onClose={onClose}
-          itinerario={'Forma'}
+          itinerario={"Forma"}
           link="/form/phase2"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
@@ -464,7 +487,7 @@ export default function IndexMenu({ onClose }) {
           title={t("trama")}
           onClose={onClose}
           link="/form/phase3"
-          itinerario={'Forma'}
+          itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
           tappa={3}
@@ -493,39 +516,6 @@ export default function IndexMenu({ onClose }) {
       >
         {t("index_menu.video_guida")}
       </div>
-
-      {/* <div className={`position-absolute ${styles["curve-dubbio-1"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#doubt">
-          <Curve1 width="60" />
-        </HashLink>
-      </div>
-
-      <div className={`position-absolute ${styles["curve-dubbio-2"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#doubt">
-          <Curve2 width="60" />
-        </HashLink>
-      </div>
-      <div className={`position-absolute ${styles["curve-spazio-1"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#space">
-          <Curve3 width="60" />
-        </HashLink>
-      </div>
-      <div className={`position-absolute ${styles["curve-spazio-2"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#space">
-          <Curve4 width="60" />
-        </HashLink>
-      </div>
-      <div className={`position-absolute ${styles["curve-forma-1"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#form">
-          <Curve5 width="60" />
-        </HashLink>
-      </div>
-      <div className={`position-absolute ${styles["curve-forma-2"]}`}>
-        <HashLink onClick={onClose} to="/itineraries#form">
-          <Curve6 width="60" />
-        </HashLink>
-      </div> */}
-
       <Footer />
     </div>
   )
