@@ -1,69 +1,56 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import classnames from "classnames";
-import { withTranslation } from "react-i18next";
+// import { withTranslation } from "react-i18next";
 
 import Dropdown from "react-bootstrap/Dropdown";
+import SearchDropDown from "../../general/Search/SearchDropDownControlled";
 import styles from "./TextSearch.module.css";
 
-import titles from "./TextSearchData - title.tsv";
-import volumes from "./TextSearchData - volume.tsv";
-import publications from "./TextSearchData - publication.tsv";
+import titles from "./titles.json";
+import volumes from "./volumes.json";
+import publications from "./publications.json";
 
-const options = []
-
-export default function TextSearch({ style, ...props }) {
-	const [show, setShow] = useState(false);
-	const [option, setOption] = useState(options[0])
+export default function TextSearch({ style, changeOptions, selectedOptions }) {
+  const options = [
+    { id: "titles", label: { it: "titolo", en: "title" }, data: titles },
+    { id: "volume", label: { it: "volume", en: "volume" }, data: volumes },
+    {
+      id: "publication",
+      label: { it: "pubblicazione", en: "publication" },
+      data: publications,
+    },
+  ];
+  const [option, setOption] = useState(options[0]);
   return (
     <div className={styles.container} style={style}>
-      <div className={styles.selector}>
-        {/* <Dropdown onToggle={()=>setShow(!show)} show={show}>
+      <div className={classnames("options-container", styles.selector)}>
+        <Dropdown>
           <Dropdown.Toggle>
-            {"this.props.title"}
+            <div>
+              <span className="micro-title">Cerca per</span>
+              <span className="current-selection">{option.label.it}</span>
+            </div>
           </Dropdown.Toggle>
-          <Dropdown.Menu
-            // className={classnames({
-            //   // "d-flex": this.props.isFlex,
-            //   // "flex-wrap": this.props.isFlex,
-            // })}
-            onToggle={()=>setShow(!show)}
-            show={show}
-          >
-            {this.props.data.options.map((d, i) => {
-              return (
-                <Dropdown.Item
-                  style={{ borderRight: "1px solid #000" }}
-                  key={i}
-                  name={d.label}
-                  onClick={this.handleChange}
-                  className={classnames({
-                    active: d.status,
-                    "dropdown-chessboard": this.props.isFlex,
-                  })}
-                >
-                  {this.props.t("options." + d.label)}
-                </Dropdown.Item>
-              );
-            })}
-            {this.props.data.multiple && (
+          <Dropdown.Menu>
+            {options.map((d, i) => (
               <Dropdown.Item
-                key={5}
-                name="all"
-                onClick={this.handleChange}
-                className={classnames({
-                  active: false,
-                  "dropdown-chessboard": this.props.isFlex,
+                key={i}
+                className={classnames(styles.dropdownItem, {
+                  active: option === d,
                 })}
+                onClick={() => setOption(d)}
               >
-                {this.props.isFlex
-                  ? this.props.t("options.Inverti")
-                  : this.props.t("options.Inverti_Selezione")}
+                {d.label.it}
               </Dropdown.Item>
-            )}
+            ))}
           </Dropdown.Menu>
-        </Dropdown> */}
+        </Dropdown>
       </div>
-      <div className={styles.textInput}>Text Search</div>
+      <SearchDropDown
+        data={{ options: option.data }}
+        changeOptions={changeOptions}
+        selectedOptions={selectedOptions}
+      />
     </div>
   );
 }

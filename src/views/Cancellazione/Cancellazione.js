@@ -256,14 +256,9 @@ class Cancellazione extends Component {
             {!this.state.loading && (
               <TextSearch
                 style={{ gridColumn: "span 12" }}
-                data={{
-                  options: this.state.searchItems[
-                    this.state.cerca_per.options.find((d) => d.status).label
-                  ],
-                }}
                 changeOptions={this.changeResearch}
                 selectedOptions={this.state.searchedItems}
-              />
+                />
             )}
 
             <MoreInfo
