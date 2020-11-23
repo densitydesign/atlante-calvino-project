@@ -149,7 +149,7 @@ V.initialize = (el, data_for_update, _onSelectedElement, t) => {
       legend.select(".legend-message-box").style("display", "none")
       // d.id is the baselayer ordering setting
       // In the Update cycle it is skipped if equal to "id" or "definitivo"
-      V.update(sortedData, data_for_update.stackMode, "id")
+      V.update(sortedData, data_for_update.stackMode, "id", t)
     })
 
   legend
@@ -223,7 +223,7 @@ V.initialize = (el, data_for_update, _onSelectedElement, t) => {
     .attr("fill", "#999999")
 
   // Run update to populate viz
-  V.update(data_for_update.data, data_for_update.stackMode)
+  V.update(data_for_update.data, data_for_update.stackMode, undefined, t)
 }
 
 const sortData = (data, property, stackMode) => {
@@ -240,7 +240,7 @@ const sortData = (data, property, stackMode) => {
   return data
 }
 
-V.update = (data, stackMode, baseLayer) => {
+V.update = (data, stackMode, baseLayer, t) => {
   console.log("update dubbio fase 2")
 
   let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]))
@@ -343,10 +343,9 @@ V.update = (data, stackMode, baseLayer) => {
   yAxis
     .select(".y-axis-label")
     .text(
-      "LUNGHEZZA " +
         (stackMode === "normalized"
-          ? "NORMALIZZATA (PERCENTUALI)"
-          : "IN CARATTERI (MIGLIAIA)")
+          ? t("LUNGHEZZA NORMALIZZATA (PERCENTUALI)")
+          : t("LUNGHEZZA IN CARATTERI (MIGLIAIA)"))
     )
 
   const updateLegend = () => {
@@ -393,13 +392,13 @@ V.update = (data, stackMode, baseLayer) => {
       .on("click", (d) => {
         if (d.baseCategory) {
           d3.select(".legend-message").text(
-            "Ripristina ordine di prima pubblicazione"
+            t("Ripristina ordine di prima pubblicazione")
           )
           d3.select(".legend-message-box").style("display", "block")
           let sortedData = sortData(data, d.id, stackMode)
           // d.id is the baselayer ordering setting
           // In the Update cycle it is skipped if equal to "id" or "definitivo"
-          V.update(sortedData, stackMode, d.id)
+          V.update(sortedData, stackMode, d.id, t)
         }
       })
       .html((d) => {
@@ -413,7 +412,7 @@ V.update = (data, stackMode, baseLayer) => {
             "%"
         let html = `<rect width="16" height="8" fill="${d.color}" rx="5"></rect>
                 <text x="20" y="8" font-size="0.8571428571rem">${
-                  d.label + "" + this_percentage
+                  t(`tipi_testo.${d.label}`) + "" + this_percentage
                 }</text>`
         return html
       })

@@ -1,39 +1,89 @@
-import React from "react";
+import React, { useEffect, useState } from "react"
 
-import * as d3 from "d3";
-import Footer from "../../headers/Footer/Footer";
+import * as d3 from "d3"
+import Footer from "../../headers/Footer/Footer"
 
-import IndexMenuHeader from "../../headers/IndexMenuHeader";
+import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import { ReactComponent as LinkIcon } from "./icons/link.svg"
+import { ReactComponent as DoiIcon } from "./icons/doi.svg"
+import { ReactComponent as PdfIcon } from "./icons/pdf.svg"
+import { ReactComponent as CaptureIcon } from "./icons/capture.svg"
 
-export default class Articles extends React.Component {
-  constructor(props) {
-    super(props);
+export default function Articles() {
+  const [data, setData] = useState(null)
+  const [articoliScientifici, setArticoliScientifici] = useState(true)
+  const [articoliDivulgativi, setArticoliDivulgativi] = useState(true)
+  const [rassegnaStampa, setRassegnaStampa] = useState(true)
 
-    this.state = {
-      data: [],
-    };
-  }
+  useEffect(() => {
+    d3.tsv(process.env.PUBLIC_URL + "/pubblicazioni/pubblicazioni.tsv").then(
+      (data) => {
+        setData(data)
+      }
+    )
+  })
 
-  componentDidMount() {
-    console.log("press review");
-    d3.tsv(process.env.PUBLIC_URL + "/pubblicazioni.tsv").then((data) => {
-      this.setState({ data: data });
-    });
-  }
-
-  render() {
-    console.log(this.state);
-    return (
-      <>
-        <IndexMenuHeader />
-        <div className="ac-grid-24">
-          <div className="content">
-            <h1>Pubblicazioni</h1>
-            <h2>Rassegna stampa</h2>
-            {this.state.data
-              .filter((d) => d.section === "Articoli")
+  return (
+    <>
+      <IndexMenuHeader />
+      <div className="ac-grid-24">
+        <div className="content">
+          <h1>Pubblicazioni</h1>
+          <h2>Mostra</h2>
+          <div className="sticky-element bg-white d-flex justify-content-between pb-4">
+            <div className="d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={articoliScientifici}
+                onChange={() => setArticoliScientifici(!articoliScientifici)}
+                className="mr-2"
+              />{" "}
+              Articoli scientifici
+            </div>
+            <div className="d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={articoliDivulgativi}
+                className="mr-2"
+                onChange={() => setArticoliDivulgativi(!articoliDivulgativi)}
+              />{" "}
+              Articoli divulgativi
+            </div>
+            <div className="d-flex align-items-center">
+              <input
+                type="checkbox"
+                checked={rassegnaStampa}
+                onChange={() => setRassegnaStampa(!rassegnaStampa)}
+                className="mr-2"
+              />{" "}
+              Rassegna stampa
+            </div>
+          </div>
+          <hr />
+          {data &&
+            data
+              .filter((d) => d.title)
+              .filter(d => !rassegnaStampa ? d.kind !== 'rassegna-stampa' : d)
+              .filter(d => !articoliScientifici ? d.kind !== 'articolo-scientifico' : d)
+              .filter(d => !articoliDivulgativi ? d.kind !== 'articolo-divulgativo' : d)
               .map((d, i) => {
-                let externalLinkLink;
+                let pdf
+                if (d.pdf !== "") {
+                  pdf = (
+                    <>
+                      <a
+                        a
+                        className="link"
+                        href={d.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <PdfIcon className="text-dark" /> PDF
+                      </a>
+                    </>
+                  )
+                }
+                let externalLinkLink
                 if (d.link !== "") {
                   externalLinkLink = (
                     <>
@@ -43,72 +93,63 @@ export default class Articles extends React.Component {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Link esterno
+                        <LinkIcon className="text-dark" /> Link
                       </a>
                     </>
-                  );
+                  )
                 }
-                let archiveLink;
-                if (d.archive !== "") {
-                  archiveLink = (
+                let pageCapture
+                if (d.page_capture !== "") {
+                  pageCapture = (
                     <>
-                      ,{" "}
                       <a
                         className="link"
-                        href={d.archive}
+                        href={d.page_capture}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Versione archiviata
+                        <CaptureIcon className='text-dark' /> Page capture
                       </a>
                     </>
-                  );
+                  )
                 }
-                let download;
-                if (d.download !== "") {
-                  download = (
+
+                let doi
+                if (d.doi !== "") {
+                  doi = (
                     <>
-                      ,{" "}
                       <a
-                        a
                         className="link"
-                        href={d.download}
+                        href={d.doi}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        PDF
+                        <DoiIcon className="text-dark" /> {d.doi}
                       </a>
                     </>
-                  );
+                  )
                 }
-
-                let pages;
-                if (d.pages !== "") {
-                  pages = <>{d.pages}, </>;
-                }
-
                 return (
                   <div className="pubblication-item" key={i}>
-                    <h3>{d.title}</h3>
-                    <h5>
-                      {d.venue}, {pages}
-                      {d.date}
-                    </h5>
-                    <h5>{d.authors}</h5>
-                    <p className="pubblication-abstract">{d.abstract}</p>
-                    <h5>
+                    <small className="text-capitalize">
+                      {d.kind.replace("-", " ")}
+                    </small>
+                    <h3 style={{ fontSize: 18, fontWeight: 'bold' }}>{d.title}</h3>
+                    {d.authors && <h5 style={{ fontSize: 18 }}>{d.authors}</h5>}
+                    <p style={{ fontSize: 18 }}>{d.publication_place_date}</p>
+                    <h5 className="d-flex justify-content-between" style={{ fontSize: 14 }}>
+                      {pdf}
                       {externalLinkLink}
-                      {archiveLink}
-                      {download}
+                      {pageCapture}
+                      {doi}
                     </h5>
                   </div>
-                );
+                )
               })}
-          </div>
         </div>
+      </div>
 
-        <Footer />
-      </>
-    );
-  }
+      <Footer />
+    </>
+  )
 }

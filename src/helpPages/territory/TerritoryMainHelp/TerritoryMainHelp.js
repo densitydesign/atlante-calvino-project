@@ -9,13 +9,20 @@ import { ReactComponent as Info04 } from "./icons/territorio_b_situazione_editor
 import { ReactComponent as Info05 } from "./icons/territorio_b_situazione_editoriale_2.svg"
 import { ReactComponent as Info06 } from "./icons/territorio_b_situazione_editoriale_3.svg"
 import { ReactComponent as Info07 } from "./icons/territorio_b_situazione_editoriale_4.svg"
+import { ReactComponent as Info01En } from "./icons/territorio_a_disposizione_cronologia_en.svg"
+import { ReactComponent as Info02En } from "./icons/territorio_dimensione_en.svg"
+import { ReactComponent as Info03En } from "./icons/territorio_a_cronologia_en.svg"
+import { ReactComponent as Info04En } from "./icons/territorio_b_situazione_editoriale_1_en.svg"
+import { ReactComponent as Info05En } from "./icons/territorio_b_situazione_editoriale_2_en.svg"
+import { ReactComponent as Info06En } from "./icons/territorio_b_situazione_editoriale_3_en.svg"
+import { ReactComponent as Info07En } from "./icons/territorio_b_situazione_editoriale_4_en.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 import "./TerritoryMainHelp.css"
 
 export default function TerritoryMainHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "territorio"])
+  const { t, i18n } = useTranslation(["translation", "territorio"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -66,7 +73,11 @@ export default function TerritoryMainHelp({ helpProps }) {
             </p>
 
             <p className="text-center">
-              <Info01 width="145" />
+              {i18n.language === "it" ? (
+                <Info01 width="145" />
+              ) : (
+                <Info01En width="145" />
+              )}
             </p>
             <p>
               a) Gli elementi sono posizionati sulla base di due criteri:
@@ -78,7 +89,11 @@ export default function TerritoryMainHelp({ helpProps }) {
               interni. Questi ultimi sono i testi che confluiscono in raccolte.
             </p>
             <p className="text-center">
-              <Info02 width="84.5" />
+              {i18n.language === "it" ? (
+                <Info02 width="84.5" />
+              ) : (
+                <Info02En width="84.5" />
+              )}
             </p>
             <p>
               b) La dimensione di ogni elemento è proporzionale alla lunghezza
@@ -90,7 +105,11 @@ export default function TerritoryMainHelp({ helpProps }) {
             <small>{t("territorio:help_panel.cronologia")}</small>
           </div>
           <p className="text-center">
-            <Info03 width="220.4" className="mt-3" />
+            {i18n.language === "it" ? (
+              <Info03 width="220.4" className="mt-3" />
+            ) : (
+              <Info03En width="220.4" className="mt-3" />
+            )}
           </p>
           <Trans i18nKey={"help_panel.testo_cronologia"} t={t} ns="territorio">
             <p>
@@ -104,10 +123,21 @@ export default function TerritoryMainHelp({ helpProps }) {
             <small>{t("territorio:help_panel.situazione_editoriale")}</small>
           </div>
           <p className="d-flex justify-content-center">
-            <Info04 width="75.5" />
-            <Info05 width="75.5" />
-            <Info06 width="75.5" />
-            <Info07 width="75.5" />
+            {i18n.language === "it" ? (
+              <>
+                <Info04 width="75.5" />
+                <Info05 width="75.5" />
+                <Info06 width="75.5" />
+                <Info07 width="75.5" />
+              </>
+            ) : (
+              <>
+                <Info04En width="75.5" />
+                <Info05En width="75.5" />
+                <Info06En width="75.5" />
+                <Info07En width="75.5" />
+              </>
+            )}
           </p>
           <Trans
             i18nKey={"help_panel.testo_situazione_editoriale"}
@@ -133,19 +163,31 @@ export default function TerritoryMainHelp({ helpProps }) {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title={t("help_panel.legenda")}>
+        <Tab
+          tabClassName="tab-info"
+          eventKey="legenda"
+          title={t("help_panel.legenda")}
+        >
           <div className="row mt-3">
             <div className="col-md-6">
               <div>
                 <small>{t("help_panel.dimensione")}</small>
               </div>
-              <Info02 width="84.5" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Info02 width="84.5" className="mt-2" />
+              ) : (
+                <Info02En width="84.5" className="mt-2" />
+              )}
             </div>
             <div className="col-md-6">
               <div>
                 <small>{t("help_panel.disposizione")}</small>
               </div>
-              <Info01 width="145.5" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Info01 width="145.5" className="mt-2" />
+              ) : (
+                <Info01En width="145.5" className="mt-2" />
+              )}
             </div>
           </div>
           {helpProps.helpPages.noAnalysisMode === "chronology" && (
@@ -154,27 +196,49 @@ export default function TerritoryMainHelp({ helpProps }) {
                 <div>
                   <small>{t("territorio:help_panel.cronologia")}</small>
                 </div>
-                <Info03 width="220.4" className="mt-2" />
+                {i18n.language === "it" ? (
+                  <Info03 width="220.4" className="mt-2" />
+                ) : (
+                  <Info03En width="220.4" className="mt-2" />
+                )}
               </div>
             </div>
           )}
           {helpProps.helpPages.noAnalysisMode === "volumes" && (
             <>
               <div className="mt-2">
-                <small>{t("territorio:help_panel.situazione_editoriale")}</small>
+                <small>
+                  {t("territorio:help_panel.situazione_editoriale")}
+                </small>
               </div>
               <div className="row">
                 <div className="col-md-3">
-                  <Info04 width="75.5" />
+                  {i18n.language === "it" ? (
+                    <Info04 width="75.5" />
+                  ) : (
+                    <Info04En width="75.5" />
+                  )}
                 </div>
                 <div className="col-md-3">
-                  <Info05 width="75.5" />
+                  {i18n.language === "it" ? (
+                    <Info05 width="75.5" />
+                  ) : (
+                    <Info05En width="75.5" />
+                  )}
                 </div>
                 <div className="col-md-3">
-                  <Info06 width="75.5" />
+                  {i18n.language === "it" ? (
+                    <Info06 width="75.5" />
+                  ) : (
+                    <Info06En width="75.5" />
+                  )}
                 </div>
                 <div className="col-md-3">
-                  <Info07 width="75.5" />
+                  {i18n.language === "it" ? (
+                    <Info07 width="75.5" />
+                  ) : (
+                    <Info07En width="75.5" />
+                  )}
                 </div>
               </div>
             </>

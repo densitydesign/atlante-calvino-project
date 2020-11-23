@@ -3,14 +3,17 @@ import { Tabs, Tab } from "react-bootstrap"
 import { useTranslation, Trans } from "react-i18next"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Analisi01 } from "./icons/analisi_disposizione.svg"
+import { ReactComponent as Analisi01En } from "./icons/analisi_disposizione_en.svg"
 import { ReactComponent as Analisi02 } from "./icons/analisi_dimensione.svg"
+import { ReactComponent as Analisi02En } from "./icons/analisi_dimensione_en.svg"
 import { ReactComponent as LegendaProporzione } from "./icons/nebbia_b_proporzione.svg"
+import { ReactComponent as LegendaProporzioneEn } from "./icons/nebbia_b_proporzione_en.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
 
 export default function TerritoryDoubtHelp({ helpProps }) {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "nebbia"])
+  const { t, i18n } = useTranslation(["translation", "nebbia"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -96,13 +99,21 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               <div>
                 <small>{t("help_panel.disposizione")}</small>
               </div>
-              <Analisi01 width="119" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Analisi01 width="119" className="mt-2" />
+              ) : (
+                <Analisi01En width="119" className="mt-2" />
+              )}
             </div>
             <div className="col-md-6">
               <div>
                 <small>{t("help_panel.dimensione")}</small>
               </div>
-              <Analisi02 width="70" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Analisi02 width="70" className="mt-2" />
+              ) : (
+                <Analisi02En width="70" className="mt-2" />
+              )}
             </div>
           </div>
           {helpProps.helpPages.doubtAnalysisMode === "fog" ||
@@ -158,7 +169,11 @@ export default function TerritoryDoubtHelp({ helpProps }) {
                     <small>{t("help_panel.proporzione")}</small>
                   </div>
                   <div>
-                    <LegendaProporzione width="274" className="mt-2" />
+                    {i18n.language === "it" ? (
+                      <LegendaProporzione width="274" className="mt-2" />
+                    ) : (
+                      <LegendaProporzioneEn width="274" className="mt-2" />
+                    )}
                   </div>
                 </div>
               </div>

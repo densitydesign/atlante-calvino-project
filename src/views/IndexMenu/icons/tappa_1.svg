@@ -10,9 +10,9 @@
   </g>
   <g id="Directions">
     <g>
-      <circle cx="10" cy="10" r="10" fill="#5151fc"/>
-      <path d="M11.071,5.27733V15.041H9.72624V8.00878H7.37272V6.81835h1.457c.51856,0,.89649-.168.89649-.83985V5.27733Z" fill="#fff"/>
+      <circle cx="10" cy="10" r="10" fill="white" stroke='#5151fc' stroke-width='2' />
+      <path d="M11.071,5.27733V15.041H9.72624V8.00878H7.37272V6.81835h1.457c.51856,0,.89649-.168.89649-.83985V5.27733Z" fill="#5151fc"/>
     </g>
-    <rect x="-13" y="-13" width="46" height="46" fill="none" stroke="#03f3ff" stroke-miterlimit="10" stroke-width="0.2833"/>
+    <rect x="-13" y="-13" width="46" height="46" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.2833"/>
   </g>
 </svg>

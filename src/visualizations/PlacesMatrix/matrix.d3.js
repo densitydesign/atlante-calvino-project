@@ -28,7 +28,7 @@ let simulation
 
 class VClass
 {
-  initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter) => {
+  initialize = (el, data, _originalData, _onChangeCategorie, _resetFilter, t) => {
 // console.log('init');
 // console.log('data:', data);
 // console.log('filters:', filters);
@@ -68,7 +68,11 @@ class VClass
     yAxisCall = d3.axisRight(y)
       .tickSize(width)
       .tickFormat(d => {
-        return d.replace(/_/g, ' ')
+        const categoria = d.replace(/_/g, ' ')
+        if (typeof t === 'function') {
+          return t(`transform:categoria.${categoria}`)
+        }
+        return categoria
       });
 
     r = d3.scalePow().exponent(0.5)
@@ -97,7 +101,7 @@ class VClass
       .call(g => g.selectAll(".tick text")
         .attr("x", 4)
         .attr("dy", -y.step() / 10));
-      
+
     this.selectedCategories = [];
     const selCats = this.selectedCategories;
 
@@ -110,7 +114,7 @@ class VClass
         if(d3.select(this).classed('cat-selected') === false) {
 //        selectedCategory = d;
           selCats.push(d);
-/*        
+/*
 				if(d3.selectAll('.tick.cat-selected').size() > 0) {
 					nodes.filter(nnn => nnn.part_of === '').forEach(n => { closeSubnodes(n, false) });
 					d3.selectAll('.tick')
@@ -453,7 +457,7 @@ class VClass
     }
 
     if(parents2open.length > 0) {
-      
+
       parents2open.reverse().forEach((parentId, i) => {
         const parent_id = originalData.filter(od => od.id === parentId)[0].id;
         // surviveFilters[2].push(parent_id);
@@ -468,7 +472,7 @@ class VClass
 
   openAll = () => {
     const self = this;
-    runAll(nodes);    
+    runAll(nodes);
 
     function runAll(nodesList) {
       nodesList.forEach(n => {
@@ -648,7 +652,7 @@ class VClass
     }
   }
 
-  applyFilter = (filter, doReset,alsoCategories) => 
+  applyFilter = (filter, doReset,alsoCategories) =>
   {
     if (doReset==='do reset') this.reset();
 
@@ -786,7 +790,7 @@ class VClass
       ' L ' + p3 + ' A ' + [this.hullPadding, this.hullPadding, '0,0,0', p0].join(',');
   };
 
-  ticked = () => 
+  ticked = () =>
   {
     node.attr("cx", (d, i) => d.x)
       .attr("cy", d => d.y);
@@ -808,7 +812,7 @@ class VClass
       var convexHull = (points.length < 3) ? points : d3.polygonHull(points);
       return this.roundedHull(convexHull, d);
     })
-  }  
+  }
 }
 
 const V = new VClass();

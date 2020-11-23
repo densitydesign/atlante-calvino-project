@@ -1,16 +1,17 @@
 import React, { useState } from "react"
 import { Tabs, Tab } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { useTranslation, Trans, withTranslation } from "react-i18next"
+import { useTranslation, Trans } from "react-i18next"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Legend01 } from "./icons/combinare_disposizione_posizione.svg"
+import { ReactComponent as Legend01En } from "./icons/combinare_disposizione_posizione_en.svg"
 
 import "./ProcessCombiningMainHelp.css"
 
 export default function ProcessCombiningMainHelp() {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "combining"])
+  const { t, i18n } = useTranslation(["translation", "combining"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -139,7 +140,11 @@ export default function ProcessCombiningMainHelp() {
                 </small>
               </div>
               <div className="text-center">
-                <Legend01 className="mt-2" />
+                {i18n.language === "it" ? (
+                  <Legend01 className="mt-2" />
+                ) : (
+                  <Legend01En className="mt-2" />
+                )}
               </div>
             </div>
           </div>

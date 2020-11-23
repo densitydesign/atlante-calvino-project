@@ -6,13 +6,17 @@ import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/Inte
 import { ReactComponent as Legend01 } from "./icons/trasformare_aspetto.svg"
 import { ReactComponent as Legend02 } from "./icons/trasformare_dimensione.svg"
 import { ReactComponent as Legend03 } from "./icons/trasformare_posizione.svg"
+import { ReactComponent as Legend01En } from "./icons/trasformare_aspetto_en.svg"
+import { ReactComponent as Legend02En } from "./icons/trasformare_dimensione_en.svg"
+import { ReactComponent as Legend03En } from "./icons/trasformare_posizione_en.svg"
 import Legend04 from "./icons/trasformare_interazioneGIF.gif"
+import Legend04En from "./icons/trasformare_interazioneGIF_en.gif"
 import "./TransformMainHelp.css"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
 export default function TransformMainHelp() {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "transform"])
+  const { t, i18n } = useTranslation(["translation", "transform"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -120,13 +124,21 @@ export default function TransformMainHelp() {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title={t("help_panel.legenda")}>
+        <Tab
+          tabClassName="tab-info"
+          eventKey="legenda"
+          title={t("help_panel.legenda")}
+        >
           <div className="row mt-2">
             <div className="col-md-6">
               <div>
                 <small>{t("transform:help_panel.aspetto")}</small>
               </div>
-              <Legend01 width="145" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Legend01 width="145" className="mt-2" />
+              ) : (
+                <Legend01En width="145" className="mt-2" />
+              )}
             </div>
             <div className="col-md-6">
               <div>
@@ -148,7 +160,7 @@ export default function TransformMainHelp() {
               </div>
               <img src={Legend04} width="117" className="mt-2" alt="Legenda" />
               <small style={{ lineHeight: 0.5 }}>
-                  {t('transform:help_panel.testo_gif')}
+                {t("transform:help_panel.testo_gif")}
               </small>
             </div>
           </div>
@@ -158,12 +170,30 @@ export default function TransformMainHelp() {
                 <small>{t("transform:help_panel.tipo_di_luogo")}</small>
               </div>
               <div>
-                <BadgeLegenda color="#FF6C39" name={t("transform:help_panel.terrestri_generici")} />
-                <BadgeLegenda color="#FFA500" name={t("transform:help_panel.terrestri_localizzabili")} />
-                <BadgeLegenda color="#5151FC" name={t("transform:help_panel.cosmici_generici")} />
-                <BadgeLegenda color="#BBBBFF" name={t("transform:help_panel.cosmici_localizzabili")} />
-                <BadgeLegenda color="#00C19C" name={t("transform:help_panel.terrestri_inventati")} />
-                <BadgeLegenda color="#C6CACF" name={t("transform:help_panel.nessun_luogo")} />
+                <BadgeLegenda
+                  color="#FF6C39"
+                  name={t("transform:help_panel.terrestri_generici")}
+                />
+                <BadgeLegenda
+                  color="#FFA500"
+                  name={t("transform:help_panel.terrestri_localizzabili")}
+                />
+                <BadgeLegenda
+                  color="#5151FC"
+                  name={t("transform:help_panel.cosmici_generici")}
+                />
+                <BadgeLegenda
+                  color="#BBBBFF"
+                  name={t("transform:help_panel.cosmici_localizzabili")}
+                />
+                <BadgeLegenda
+                  color="#00C19C"
+                  name={t("transform:help_panel.terrestri_inventati")}
+                />
+                <BadgeLegenda
+                  color="#C6CACF"
+                  name={t("transform:help_panel.nessun_luogo")}
+                />
               </div>
             </div>
           </div>

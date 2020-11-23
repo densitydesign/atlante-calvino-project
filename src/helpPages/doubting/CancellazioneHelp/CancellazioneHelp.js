@@ -3,14 +3,18 @@ import { Tabs, Tab } from "react-bootstrap"
 import { useTranslation, Trans } from "react-i18next"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import { ReactComponent as Legend01 } from "./icons/cancellazione_a_dimensione.svg"
+import { ReactComponent as Legend01En } from "./icons/cancellazione_a_dimensione_en.svg"
 import { ReactComponent as Legend02 } from "./icons/cancellazione_a_disposizione.svg"
+import { ReactComponent as Legend02En } from "./icons/cancellazione_a_disposizione_en.svg"
 import { ReactComponent as Legend03 } from "./icons/cancellazione_a_colore.svg"
+import { ReactComponent as Legend03En } from "./icons/cancellazione_a_colore_en.svg"
 import { ReactComponent as Legend04 } from "./icons/cancellazione_griglia.svg"
+import { ReactComponent as Legend04En } from "./icons/cancellazione_griglia_en.svg"
 import { Link } from "react-router-dom"
 
 export default function CancellazioneHelp() {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "cancellazione"])
+  const { t, i18n } = useTranslation(["translation", "cancellazione"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -105,7 +109,11 @@ export default function CancellazioneHelp() {
           <p>
             <strong>{t("help_panel.qualche_pista_di_lettura")}</strong>
           </p>
-          <Trans i18nKey={"help_panel.qualche_pista_di_lettura"} t={t} ns="cancellazione">
+          <Trans
+            i18nKey={"help_panel.qualche_pista_di_lettura"}
+            t={t}
+            ns="cancellazione"
+          >
             <p>
               La linea verticale è stata introdotta all’interno della
               visualizzazione per sottolineare una particolare distribuzione
@@ -134,39 +142,47 @@ export default function CancellazioneHelp() {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title={t("help_panel.legenda")}>
+        <Tab
+          tabClassName="tab-info"
+          eventKey="legenda"
+          title={t("help_panel.legenda")}
+        >
           <div className="row mt-2">
             <div className="col-md-12">
               <div>
-                <small>{t('help_panel.dimensione')}</small>
+                <small>{t("help_panel.dimensione")}</small>
               </div>
               <div className="mt-2">
-                <Legend01 />
+                {i18n.language === "it" ? <Legend01 /> : <Legend01En />}
               </div>
             </div>
           </div>
           <div className="mt-2">
             <div>
-              <small>{t('help_panel.disposizione')}</small>
+              <small>{t("help_panel.disposizione")}</small>
             </div>
             <div className="mt-2">
-              <Legend02 />
+              {i18n.language === "it" ? <Legend02 /> : <Legend02En />}
             </div>
           </div>
           <div className="mt-2">
             <div>
-              <small>{t('cancellazione:help_panel.colore')}</small>
+              <small>{t("cancellazione:help_panel.colore")}</small>
             </div>
             <div className="mt-2">
-              <Legend03 />
+              {i18n.language === "it" ? <Legend03 /> : <Legend03En />}
             </div>
           </div>
           <div className="mt-2">
             <div>
-              <small>{t('cancellazione:help_panel.griglia')}</small>
+              <small>{t("cancellazione:help_panel.griglia")}</small>
             </div>
             <div className="mt-2">
-              <Legend04 height="auto" className="mb-4" />
+              {i18n.language === "it" ? (
+                <Legend04 height="auto" className="mb-4" />
+              ) : (
+                <Legend04En height="auto" className="mb-4" />
+              )}
             </div>
           </div>
         </Tab>

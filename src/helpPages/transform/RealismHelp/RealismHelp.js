@@ -4,14 +4,17 @@ import { useTranslation, Trans } from "react-i18next"
 import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import { ReactComponent as Legend01 } from "./icons/realismo_disposizione.svg"
+import { ReactComponent as Legend01En } from "./icons/realismo_disposizione_en.svg"
 import Legend02 from "./icons/realismo_movimentoGIF.gif"
+import Legend02En from "./icons/realismo_movimentoGIF_en.gif"
 import { ReactComponent as Legend03 } from "./icons/realismo_dettaglio.svg"
+import { ReactComponent as Legend03En } from "./icons/realismo_dettaglio_en.svg"
 import { Link } from "react-router-dom"
 import "./RealismHelp.css"
 
 export default function RealismHelp() {
   const [key, setKey] = useState("info")
-  const { t } = useTranslation(["translation", "realismo"])
+  const { t, i18n } = useTranslation(["translation", "realismo"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -172,19 +175,35 @@ export default function RealismHelp() {
               <small>{t("help_panel.disposizione")}</small>
             </div>
             <div>
-              <Legend01 width="288" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Legend01 width="288" className="mt-2" />
+              ) : (
+                <Legend01En width="288" className="mt-2" />
+              )}
             </div>
           </div>
           <div className="mt-2">
             <small>{t("realismo:help_panel.colore")}</small>
             <div className="row">
               <div className="col-md-6">
-                <BadgeLegenda color="#FFD337" name={t("realismo:help_panel.luogo_interno")} />
-                <BadgeLegenda color="#00C19C" name={t("realismo:help_panel.luogo_esterno")} />
+                <BadgeLegenda
+                  color="#FFD337"
+                  name={t("realismo:help_panel.luogo_interno")}
+                />
+                <BadgeLegenda
+                  color="#00C19C"
+                  name={t("realismo:help_panel.luogo_esterno")}
+                />
               </div>
               <div className="col-md-6">
-                <BadgeLegenda color="#5151FF" name={t("realismo:help_panel.mezzo_di_trasporto")} />
-                <BadgeLegenda color="#C6CACF" name={t("realismo:help_panel.assenza_di_ambientazione")} />
+                <BadgeLegenda
+                  color="#5151FF"
+                  name={t("realismo:help_panel.mezzo_di_trasporto")}
+                />
+                <BadgeLegenda
+                  color="#C6CACF"
+                  name={t("realismo:help_panel.assenza_di_ambientazione")}
+                />
               </div>
             </div>
           </div>
@@ -193,12 +212,21 @@ export default function RealismHelp() {
               <small>{t("realismo:help_panel.movimento")}</small>
             </div>
             <div>
-              <img
-                src={Legend02}
-                width="200"
-                alt="Visione in dettaglio"
-                className="mt-2"
-              />
+              {i18n.language === "it" ? (
+                <img
+                  src={Legend02}
+                  width="200"
+                  alt="Visione in dettaglio"
+                  className="mt-2"
+                />
+              ) : (
+                <img
+                  src={Legend02En}
+                  width="200"
+                  alt="Visione in dettaglio"
+                  className="mt-2"
+                />
+              )}
             </div>
           </div>
           <div className="mt-2">
@@ -206,7 +234,11 @@ export default function RealismHelp() {
               <small>{t("realismo:help_panel.visione_in_dettaglio")}</small>
             </div>
             <div>
-              <Legend03 width="291" className="mt-2" />
+              {i18n.language === "it" ? (
+                <Legend03 width="291" className="mt-2" />
+              ) : (
+                <Legend03En width="291" className="mt-2" />
+              )}
             </div>
           </div>
         </Tab>
