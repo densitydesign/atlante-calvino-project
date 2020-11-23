@@ -192,7 +192,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title={t("combining:ui.dettaglio")}
+            //title={t("combining:ui.dettaglio")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={dettaglio}
@@ -209,7 +209,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title={t("combining:ui.modalita")}
+            //title={t("combining:ui.modalita")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}
