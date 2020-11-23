@@ -12,11 +12,11 @@ import publications from "./publications.json";
 
 export default function TextSearch({ style, changeOptions, selectedOptions }) {
   const options = [
-    { id: "titles", label: { it: "titolo", en: "title" }, data: titles },
-    { id: "volume", label: { it: "volume", en: "volume" }, data: volumes },
+    { id: "titles", label: { it: "Titolo", en: "Title" }, data: titles },
+    { id: "volume", label: { it: "Volume", en: "Volume" }, data: volumes },
     {
       id: "publication",
-      label: { it: "pubblicazione", en: "publication" },
+      label: { it: "Sede di pubblicazione", en: "Publication" },
       data: publications,
     },
   ];

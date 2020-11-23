@@ -17,6 +17,10 @@
 	grid-column: none !important;
 }
 
+.dropdownItem {
+	
+}
+
 .dropdownItem:last-child {
 	border-bottom: none;
 }	

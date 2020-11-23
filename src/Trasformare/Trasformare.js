@@ -167,9 +167,9 @@ class Trasformare extends Component {
 
         let data_research = {
           // luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
-          luogo: searchByLuogo,
-          "titolo pubblicazione": nodesByPublicationTitle,
-          titolo: searchByCompositionTitle,
+          "luogo": searchByLuogo,
+          "sede di pubblicazione": nodesByPublicationTitle,
+          "titolo": searchByCompositionTitle,
         }
 
         let time = d3.extent(data.data, (d) => d.year)
@@ -222,7 +222,7 @@ class Trasformare extends Component {
       return
     }
     selection = selection[0].label
-    // console.log(selection)
+    console.log(selection)
 
     let research_options = this.state.data_research[selection]
 
