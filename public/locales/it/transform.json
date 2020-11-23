@@ -18,5 +18,13 @@
   "footer": {
     "tipo_di_pubblicazione": "Tipo di pubblicazione",
     "contesti": "contesti"
+  },
+  "categoria": {
+    "Cosmici generici": "Cosmici generici",
+    "Cosmici localizzabili": "Cosmici localizzabili",
+    "Terrestri localizzabili": "Terrestri localizzabili",
+    "Terrestri generici": "Terrestri generici",
+    "Terrestri Inventati": "Terrestri Inventati",
+    "Nessun luogo": "Nessun luogo"
   }
 }
