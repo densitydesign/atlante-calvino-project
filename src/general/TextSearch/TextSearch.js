@@ -16,7 +16,7 @@ export default function TextSearch({
   selectedOptions,
   availableIds,
 }) {
-  console.log("IDS available in visualization:", availableIds)
+  // console.log("IDS available in visualization:", availableIds)
   let titles = _titles, volumes = _volumes, publications = _publications;
   const options = [
     { id: "titles", label: { it: "Titolo", en: "Title" }, data: titles },
