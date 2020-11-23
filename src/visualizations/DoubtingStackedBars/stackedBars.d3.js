@@ -259,7 +259,7 @@ V.update = (data, stackMode, baseLayer) => {
   xAxis.call(
     xAxisCall.tickFormat((d) => {
       const item = data.find((datum) => datum.id === d)
-      return item.id + " - " + item.year + " - " + item.title
+      return item.year + " - " + item.title
     })
   )
   xAxis.selectAll(".tick").each(function (d) {

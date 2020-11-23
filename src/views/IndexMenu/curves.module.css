@@ -1,0 +1,83 @@
+.curvesSvg {
+  width: 100vw;
+  height: calc(100vh - (var(--navigation-height) + 18px));
+  position: absolute;
+}
+
+.curve {
+  fill: none;
+  stroke: black;
+}
+
+.controlPoints {
+  display: none;
+  fill: transparent;
+  opacity: 0.25;
+  z-index: 1000;
+  cursor: pointer;
+}
+.controlPoints:hover {
+  opacity: 1;
+}
+
+.whiteCircles {
+  r: 55;
+  fill: white;
+  stroke: none;
+}
+
+.linkItinerary, .linkItinerary:hover {
+  text-decoration: none;
+}
+
+.labelItinerary {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  fill: white;
+  stroke: var(--dark-blue);
+}
+
+.labelItinerary:hover {
+  fill: var(--dark-blue);
+  stroke: none;
+}
+
+.development.curvesSvg {
+  background: none;
+  pointer-events: auto;
+  z-index: 10000;
+}
+
+.development .controlPoints {
+  display: block;
+}
+
+.development .whiteCircles {
+  stroke: #999;
+  fill: none;
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1025px) {
+  .whiteCircles {
+    r: 70;
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1367px) {
+  .whiteCircles {
+    r: 65;
+  }
+}
+
+@media screen and (max-width: 1699px) and (min-width: 1600px) {
+  .whiteCircles {
+    r: 75;
+  }
+}
+
+@media screen and (max-width: 1999px) and (min-width: 1700px) {
+  .whiteCircles {
+    r: 90px;
+  }
+}

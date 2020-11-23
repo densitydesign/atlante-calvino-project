@@ -307,7 +307,7 @@ export function checkMapAndInsert(obj, mapName, key, value)
 
 function circleArcPath(p4, escaped, r) 
 {
-	return 'A' + r + ' ' + r + ' ' + 0 + ' ' + (escaped ? 1 : 0) + 0 + ' ' + p4.x + ' ' + p4.y + ' ';
+	return 'A' + r + ' ' + r + ' ' + 0 + ' ' + (escaped ? 1 : 0) + ' ' + 0 + ' ' + p4.x + ' ' + p4.y + ' ';
 }
 
 function circles_to_vector_points(circles) 

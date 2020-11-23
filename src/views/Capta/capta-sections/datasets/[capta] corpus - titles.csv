@@ -1,0 +1,230 @@
+id,title,txt_length_chars,txt_lenght_words,meridiano,genre
+S001,Passatempi,2164,416,III,racconto
+S002,Dieci soldi in plastilina,4066,727,III,racconto
+S003,Invece era un'altra,986,177,III,racconto
+S004,Angoscia in caserma,19473,3127,I,racconto
+S005,Andato al comando,10457,1753,I,racconto
+S006,Di padre in figlio,8291,1384,I,racconto
+S007,Paura sul sentiero,13175,2184,I,racconto
+S008,E il settimo si riposò,12532,2234,III,racconto
+S009,Uomo nei gerbidi,9042,1524,I,racconto
+S010,Campo di mine,9702,1635,I,racconto
+S011,I fratelli Bagnasco,9240,1644,I,racconto
+S012,Ragionamento del cugino,7490,1296,III,racconto
+S013,Cinque dopodomani: guerra finita!,7287,1177,III,racconto
+S014,Alba sui rami nudi,13871,2310,I,racconto
+S015,Come non fui Noè (Buon a nulla),9027,1507,III,racconto
+S016,Ultimo viene il corvo,10809,1862,I,racconto
+S017,Visti alla mensa,8658,1428,I,racconto
+S018,L'occhio del padrone,10063,1720,I,racconto
+S019,Come un volo d'anitre,11326,1905,III,racconto
+S020,La fame a Bévera,11391,1922,I,racconto
+S021,Furto in una pasticceria,14106,2352,I,racconto
+S022,Un bastimento carico di granchi,9906,1649,I,racconto
+S023,I figli poltroni,9860,1747,I,racconto
+S024,Il giardino incantato,8487,1396,I,racconto
+S025,Impiccagione di un giudice,15971,2565,I,racconto
+S026,Il bosco degli animali,15495,2656,I,racconto
+S027,Si dorme come cani,12910,2204,I,racconto
+S028,Com'era grande il mare,3554,616,III,racconto
+S029,Il gatto e il poliziotto,12933,2108,I,racconto
+S030,Pranzo con un pastore,14313,2402,I,racconto
+S031,Voglia di mare,5327,866,III,racconto
+S032,Isabella e Fioravanti,9727,1583,III,racconto
+S033,Chi ha messo la mina nel mare?,10473,1727,I,racconto
+S034,Dollari e vecchie mondane,21698,3593,I,racconto
+S035,Freddo a Napoli,8005,1345,III,racconto
+S036,Lasciare Anna,9089,1537,III,racconto
+S037,"Un pomeriggio, Adamo",16625,2725,I,racconto
+S038,La casa degli alveari,7418,1301,I,racconto
+S039,La stessa cosa del sangue,12987,2175,I,racconto
+S040,Attesa della morte in un albergo,15582,2525,I,racconto
+S041,Uno dei tre è ancora vivo,14887,2508,I,racconto
+S042,L'avventura di un soldato,19767,3212,I,racconto
+S043,Desiderio in novembre,14101,2310,I,racconto
+S044,Lettera ad Amelia sui dischi volanti,7633,1264,III,racconto
+S045,Storia del soldato che portò il cannone a casa,11610,1961,III,racconto
+S046,"Pesci grossi, pesci piccoli",16862,2863,II,racconto
+S047,Cimitero di biciclette,12416,2111,III,racconto
+S048,Mai nessuno degli uomini lo seppe,15006,2587,II,racconto
+S049,Il reggimento smarrito,10193,1603,III,racconto
+S050,L'avventura di una bagnante,21333,3514,II,racconto
+S051,Un compagno venuto da lontano,8251,1358,III,racconto
+S052,Un bel gioco dura poco,11940,1943,II,racconto
+S053,Funghi in città,6506,1074,I,racconto
+S054,La formica argentina,71831,11967,I,racconto
+S055,Il piccione comunale,4278,682,I,racconto
+S056,La pietanziera,7069,1161,I,racconto
+S057,Gli occhi del nemico,7070,1162,III,racconto
+S058,La fabbrica occupata,7735,1261,III,racconto
+S059,La ragazza licenziata,7919,1295,III,racconto
+S060,Le disgrazie di un paese,6734,1075,III,racconto
+S061,Il bosco sull'autostrada,5431,897,I,racconto
+S062,La cura delle vespe,8053,1291,I,racconto
+S063,La storia di Kim-Ghi-U,10989,1814,III,racconto
+S064,Paese infido,17761,3006,II,racconto
+S065,Gli avanguardisti a Mentone,51188,8320,I,racconto
+S066,L'aria buona,7594,1257,I,racconto
+S067,L'entrata in guerra,27190,4478,I,racconto
+S068,L'avventura di un impiegato,17132,2768,II,racconto
+S069,Un paese disgraziato,5596,851,III,racconto
+S070,Il generale in biblioteca,10429,1600,III,racconto
+S071,La fabbrica nella montagna,10615,1716,III,racconto
+S072,Le notti dell'UNPA,39484,6448,I,racconto
+S073,La bomba addormentata nel bosco,8394,1353,III,racconto
+S074,Libertà! Libertà!,4546,701,III,racconto
+S075,I mozzatori di nasi,3962,646,III,racconto
+S076,Dove va l'avvoltoio?,4867,745,III,racconto
+S077,Il dittatore,4114,635,III,racconto
+S078,Lo jus primae noctis,7027,1167,III,racconto
+S079,L'adultera,6306,1056,III,racconto
+S080,La lente d'ingrandimento,4042,612,III,racconto
+S081,I Marziani,4019,622,III,racconto
+S082,La domenica delle follie,6485,1040,III,racconto
+S083,Il coniglio velenoso,16872,2803,I,racconto
+S084,L'avventura di un fotografo,26301,4092,II,racconto
+S085,Un viaggio con le mucche,8752,1439,I,racconto
+S086,Luna e Gnac,10513,1729,I,racconto
+S087,La gran bonaccia delle Antille,8971,1458,III,racconto
+S088,La speculazione edilizia,168428,27518,I,racconto
+S089,Dialogo sul satellite,8266,1340,III,racconto
+S090,Monologo notturno d'un nobile scozzese,7421,1238,III,racconto
+S091,Una bella giornata di marzo,6351,1101,III,racconto
+S092,La gallina di reparto,17022,2752,II,racconto
+S093,La notte dei numeri,21230,3553,II,racconto
+S094,L'avventura di un lettore,29812,4938,II,racconto
+S095,La nuvola di smog,101390,16490,I,racconto
+S096,La signora Paulatim,15161,2253,II,racconto
+S097,L'avventura di un viaggiatore,30293,4824,II,racconto
+S098,La villeggiatura in panchina,14003,2221,I,racconto
+S099,Va' così che vai bene,27454,4598,II,racconto
+S100,Un letto di passaggio,10616,1773,II,racconto
+S101,L'avventura di un miope,18975,3115,II,racconto
+S102,L'avventura di una moglie,14457,2442,II,racconto
+S103,L'avventura di due sposi,7814,1339,II,racconto
+S104,L'avventura di un poeta,11830,1943,II,racconto
+S105,L'avventura di uno sciatore,13850,2331,II,racconto
+S106,La strada di San Giovanni,39265,6583,III,racconto
+S107,Diario in clinica,10815,1774,III,racconto
+S108,Marcovaldo al supermarket,10606,1707,I,racconto
+S109,La pioggia e le foglie,12518,1982,I,racconto
+S110,La fermata sbagliata,13030,2025,I,racconto
+S111,"Fumo, vento e bolle di sapone",12414,1914,I,racconto
+S112,"Un sabato di sole, sabbia e sonno",7838,1258,I,racconto
+S113,La città tutta per lui,6089,917,I,racconto
+S114,Il giardino dei gatti ostinati,20899,3324,I,racconto
+S115,I figli di Babbo Natale,15228,2340,I,racconto
+S116,Dov'è più azzurro il fiume,5787,942,I,racconto
+S117,La città smarrita nella neve,8741,1425,I,racconto
+S118,La distanza della Luna,29733,4980,II,racconto
+S119,Sul far del giorno,19463,3284,II,racconto
+S120,Un segno nello spazio,19237,3240,II,racconto
+S121,Tutto in un punto,9490,1592,II,racconto
+S122,Senza colori,18946,3128,II,racconto
+S123,Fino a che dura il Sole,14692,2490,II,racconto
+S124,Lo zio acquatico,21396,3587,II,racconto
+S125,La Luna come un fungo,16925,2793,II,racconto
+S126,Giochi senza fine,11691,1959,II,racconto
+S127,I meteoriti,17758,2835,II,racconto
+S128,La forma dello spazio,15776,3338,II,racconto
+S129,Quanto scommettiamo,16962,2742,II,racconto
+S130,I Dinosauri,32538,5375,II,racconto
+S131,Gli anni-luce,26660,4259,II,racconto
+S132,La spirale,27755,4652,II,racconto
+S133,Ti con zero,27727,4695,II,racconto
+S134,I. Mitosi,27482,4558,II,racconto
+S135,L'inseguimento,26513,4316,II,racconto
+S136,I cristalli,15771,2535,II,racconto
+S137,L'origine degli uccelli,21376,3473,II,racconto
+S138,La memoria del mondo,13732,2184,II,racconto
+S139,"Il sangue, il mare",21043,3509,II,racconto
+S140,Il guidatore notturno,14578,2506,II,racconto
+S141,La molle Luna,16603,2707,II,racconto
+S142,II. Meiosi,18954,3183,II,racconto
+S143,III. Morte,9299,1529,II,racconto
+S144,Il conte di Montecristo,22375,3620,II,racconto
+S145,Le figlie della Luna,23452,3777,II,racconto
+S146,Il cielo di pietra,13895,2249,II,racconto
+S147,Tempesta solare,18603,2995,II,racconto
+S148,Le conchiglie e il tempo,7831,1258,II,racconto
+S149,La decapitazione dei capi,25519,4046,III,racconto
+S150,Dall'opaco,22085,3754,III,racconto
+S151,"Il nome, il naso",25010,4251,III,racconto
+S152,La taverna dei destini incrociati,98779,16348,II,racconto
+S153,Ricordo di una battaglia,15654,2642,III,racconto
+S154,Autobiografia di uno spettatore,44046,6994,III,racconto
+S155,La pompa di benzina,12331,2000,III,racconto
+S156,La glaciazione,6231,1026,III,racconto
+S157,L'uomo di Neanderthal,15168,2590,III,racconto
+S158,Montezuma,20699,3387,III,racconto
+S159,Prima che tu dica «Pronto»,16064,2603,III,racconto
+S160,La corsa delle giraffe,2780,452,II,racconto
+S161,Del mordersi la lingua,3124,532,II,racconto
+S162,Il fischio del merlo,9784,1587,II,racconto
+S163,Del prendersela coi giovani,3072,494,II,racconto
+S164,Lettura di un'onda,8420,1361,II,racconto
+S165,La pantofola spaiata,2992,479,II,racconto
+S166,Un chilo e mezzo di grasso d'oca,4952,792,II,racconto
+S167,Altre città,6749,1148,III,racconto
+S168,Serpenti e teschi,5772,927,II,racconto
+S169,Il richiamo dell'acqua,8736,1387,III,racconto
+S170,L'aiola di sabbia,5037,767,II,racconto
+S171,La poubelle agréée,41079,6522,III,racconto
+S172,Il seno nudo,5137,803,II,racconto
+S173,Il crollo del tempo,8431,1395,III,racconto
+S174,Parafrasi,3825,615,III,racconto
+S175,Lo specchio e il bersaglio,12906,2050,III,racconto
+S176,La coscienza a posto,7552,1166,III,racconto
+S177,Quattro favole d'Esopo per Valerio Adami,7490,1266,III,racconto
+S178,Il gorilla albino,4684,769,II,racconto
+S179,L'altra euridice,16915,2734,III,racconto
+S180,Essere pietra (per Alberto Magnelli),4167,669,III,racconto
+S181,Le memorie di Casanova,18849,3022,III,racconto
+S182,L'invasione degli storni,9054,1458,II,racconto
+S183,Il silenzio e la città,12343,1976,III,racconto
+S184,L'occhio e i pianeti,8184,1308,II,racconto
+S185,Sapore Sapere,41220,6320,III,racconto
+S186,Il mondo guarda il mondo,3938,671,II,racconto
+S187,La pancia del geco,6400,1040,II,racconto
+S188,Quattro studi dal vero,14889,2323,III,racconto
+S189,Viaggio nelle città di de Chirico,17663,2908,III,racconto
+S190,La spada del sole,9267,1551,II,racconto
+S191,La contemplazione delle stelle,8612,1397,II,racconto
+S192,Gli amori delle tartarughe,3998,652,II,racconto
+S193,Il prato infinito,6978,1120,II,racconto
+S194,Luna di pomeriggio,4615,783,II,racconto
+S195,Dal terrazzo,7605,1207,II,racconto
+S196,Il museo dei formaggi,6229,970,II,racconto
+S197,Il marmo e il sangue,4138,638,II,racconto
+S198,L'ordine degli squamati,6634,1065,II,racconto
+S199,Il modello dei modelli,6836,1080,II,racconto
+S200,L'universo come specchio,7002,1125,II,racconto
+S201,Come imparare a essere morto,9295,1554,II,racconto
+S202,L'ultimo canale,12804,2099,III,racconto
+S203,Il ricordo è bendato,11582,1867,III,racconto
+S204,Un re in ascolto,46528,7658,III,racconto
+S205,Il niente e il poco,15867,2523,II,racconto
+S206,L'implosione,9364,1471,II,racconto
+V001,Il sentiero dei nidi di ragno,249888,41704,I,romanzo
+V002,Ultimo viene il corvo,,,I,raccolta
+V003,Il visconte dimezzato,138103,22316,I,ibrido
+V004,L'entrata in guerra,,,I,raccolta
+V005,Il barone rampante,416814,67577,I,romanzo
+V006,I racconti,,,,raccolta
+V007,La formica argentina,71854,11969,I,ibrido
+V008,Il cavaliere inesistente,197268,31349,I,romanzo
+V009,La giornata di uno scrutatore,121328,19647,,ibrido
+V010,La speculazione edilizia,191068,31048,I,ibrido
+V011,Marcovaldo,,,I,raccolta
+V012,La nuvola di smog e La formica argentina,,,,raccolta
+V013,Le cosmicomiche,,,II,raccolta
+V014,Ti con Zero,,,II,raccolta
+V015,La memoria del mondo,,,,raccolta
+V016,Il castello dei destini incrociati,62895,10138,II,romanzo
+V017,Gli amori difficili,,,,raccolta
+V018,Le città invisibili,146738,24327,II,romanzo
+V019,Il castello dei destini incrociati (riediz),161674,,,raccolta
+V020,Eremita a Parigi,16246,2702,III,racconto
+V021,Se una notte d'inverno un viaggiatore,458335,74434,II,romanzo
+V022,Palomar,,,II,raccolta
+V023,Le cosmicomiche vecchie e nuove,,,,raccolta

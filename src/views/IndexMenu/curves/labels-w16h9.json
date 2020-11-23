@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dubbio",
+    "anchor": "middle",
+    "link": "/itineraries#doubt",
+    "x": 15,
+    "y": 35
+  },
+  {
+    "name": "Spazio",
+    "anchor": "middle",
+    "link": "/itineraries#space",
+    "x": 55.5,
+    "y": 71
+  },
+  {
+    "name": "Forma",
+    "anchor": "middle",
+    "link": "/itineraries#form",
+    "x": 87,
+    "y": 30.5
+  }
+]

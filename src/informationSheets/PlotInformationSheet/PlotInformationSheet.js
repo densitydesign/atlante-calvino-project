@@ -1,23 +1,23 @@
-import React, { useState, Component } from "react"
+import React, { useState, Component } from "react";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
 
-import FooterSchede3 from "../FooterSchede3"
+import FooterSchede3 from "../FooterSchede3";
 
-import "./PlotInformationSheet.css"
-import SheetStyles from "../SheetStyles.module.css"
+import "./PlotInformationSheet.css";
+import SheetStyles from "../SheetStyles.module.css";
 
-import legend from "./legend.svg"
-import incastonati from "./incastonati.svg"
-import zoom_01 from "./zoom_01.svg"
-import zoom_02 from "./zoom_02.svg"
-import zoom_03 from "./zoom_03.svg"
-import zoom_04 from "./zoom_04.svg"
-import info_01 from "./info_01.svg"
-import info_02 from "./info_02.svg"
-import info_03 from "./info_03.svg"
-import info_04 from "./info_04.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legend from "./legend.svg";
+import incastonati from "./incastonati.svg";
+import zoom_01 from "./zoom_01.svg";
+import zoom_02 from "./zoom_02.svg";
+import zoom_03 from "./zoom_03.svg";
+import zoom_04 from "./zoom_04.svg";
+import info_01 from "./info_01.svg";
+import info_02 from "./info_02.svg";
+import info_03 from "./info_03.svg";
+import info_04 from "./info_04.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class PlotInformationSheet extends Component {
   render() {
@@ -43,18 +43,18 @@ class PlotInformationSheet extends Component {
               t={this.props.t}
             >
               <p className={SheetStyles.paragraph}>
-                Al momento della sua uscita, nel 1979,
-                <em>Se una notte d’inverno un viaggiatore</em>
-                segna sicuramente il nuovo picco della sperimentazione formale
-                di Calvino, l’opera che manifesta con più forza l’intento di
-                legittimare artisticamente la dinamica combinatoria come
-                procedimento creativo, portandola oltre il mero mosaico
-                strutturale delle <em>Città invisibili</em> (1972) e del{" "}
+                Al momento della sua uscita, nel 1979,{" "}
+                <em>Se una notte d’inverno un viaggiatore</em> segna sicuramente
+                il nuovo picco della sperimentazione formale di Calvino, l’opera
+                che manifesta con più forza l’intento di legittimare
+                artisticamente la dinamica combinatoria come procedimento
+                creativo, portandola oltre il mero mosaico strutturale delle{" "}
+                <em>Città invisibili</em> (1972) e del{" "}
                 <em>Castello dei destini incrociati </em>(1973) e integrandola
                 in un organismo narrativo paradossalmente compatto, che si
-                estende fino a comporre il corpo della forma maior della
-                letteratura moderna, il romanzo. Questo testo non occupa però
-                soltanto una posizione di rilievo nel percorso individuale
+                estende fino a comporre il corpo della forma <em>maior</em>{" "}
+                della letteratura moderna, il romanzo. Questo testo non occupa
+                però soltanto una posizione di rilievo nel percorso individuale
                 dell’autore, ma anche nel panorama teorico-letterario generale
                 del decennio in cui viene composto: pur essendo ampiamente
                 anticipato da esperimenti precedenti, infatti, il romanzo è per
@@ -129,7 +129,7 @@ class PlotInformationSheet extends Component {
                 vistoso dato superficiale: c’è infatti un livello compositivo
                 ancora più profondo in cui la riflessione metaletteraria si
                 infiltra e diventa una vera e propria vivisezione dei meccanismi
-                di creazione e fruizione, ed è la trama
+                di creazione e fruizione, ed è la trama.
               </p>
             </Trans>
             <Trans
@@ -155,9 +155,8 @@ class PlotInformationSheet extends Component {
                 motore del meccanismo che produce lo scambio di significati tra
                 scrittore e pubblico non è un concetto moderno, al contrario
                 risale alle origini stesse della letteratura occidentale, ed è
-                radicato nella
-                <em>Poetica</em> di Aristotele, in cui si trovano delle
-                prescrizioni sul modo corretto di costruire i racconti che
+                radicato nella <em>Poetica</em> di Aristotele, in cui si trovano
+                delle prescrizioni sul modo corretto di costruire i racconti che
                 rimangono quasi ininterrottamente attive nella storia delle
                 narrazioni per tutti i ventitré secoli che ci separano dalla
                 loro elaborazione: agli autori «epici» (cioè di testi narrativi)
@@ -298,7 +297,7 @@ class PlotInformationSheet extends Component {
                 che entra in gioco non soltanto la Lettrice, ma anche tutti gli
                 altri personaggi più o meno lettori che, susseguendosi in vari
                 incontri, esprimono la loro visione dell’esperienza narrativa
-                contestando e relativizzando quella del protagonista che
+                contestando e relativizzando quella del protagonista, che
                 potremmo essere tentati di considerare come l’unica valida.
                 Mettendo il Lettore di fronte a concezioni del libro e della
                 lettura che sono diverse dalla sua e che, soprattutto, sono
@@ -322,14 +321,14 @@ class PlotInformationSheet extends Component {
                 segreto su come organizzare la propria caotica esperienza, ma
                 solo a patto di seguirlo fino in fondo (Kermode 1972). Essendo
                 proiettato sulla scoperta del finale, quindi, si capisce come le
-                cesure che gli impediscono di procedere in avanti nelle storie e
-                di chiudere le parabole aperte delle trame siano la massima
-                forma di sabotaggio delle sue aspirazioni, ben più di quanto non
-                lo siano per la Lettrice, che invece dimostra di avere un
-                approccio più organico e immediato all’esperienza della lettura,
-                non così ossessivamente finalizzato al raggiungimento della
-                conclusione. Ma qual è la trama di questo Lettore perseguitato
-                dalle trame?
+                cesure che impediscono al lettore di procedere in avanti nelle
+                storie e di chiudere le parabole aperte delle trame siano la
+                massima forma di sabotaggio delle sue aspirazioni, ben più di
+                quanto non lo siano per la Lettrice, che invece dimostra di
+                avere un approccio più organico e immediato all’esperienza della
+                lettura, non così ossessivamente finalizzato al raggiungimento
+                della conclusione. Ma qual è la trama di questo Lettore
+                perseguitato dalle trame?
               </p>
             </Trans>
           </div>
@@ -412,10 +411,10 @@ class PlotInformationSheet extends Component {
                 proprio stato di naturale indecisione dai continui imprevisti
                 esterni e dall’incentivo sentimentale dell’interazione con
                 Ludmilla, concretizza il proprio impulso all’azione pianificando
-                un’iniziativa, una prova di conquista dell’agency che nonostante
-                i fallimenti si ripete per ben 13 volte. Ma il dato forse più
-                notevole è la ricorrenza del motivo dello spostamento nello
-                spazio: l’insieme dei motivi legati al movimento conta 21
+                un’iniziativa, una prova di conquista dell’<em>agency</em> che
+                nonostante i fallimenti si ripete per ben 13 volte. Ma il dato
+                forse più notevole è la ricorrenza del motivo dello spostamento
+                nello spazio: l’insieme dei motivi legati al movimento conta 21
                 occorrenze, e porta alla luce l’elemento forse a prima vista
                 meno appariscente della vicenda del Lettore, ovvero il fatto che
                 la sua è nei fatti la storia di un viaggio in senso proprio. Un
@@ -448,27 +447,26 @@ class PlotInformationSheet extends Component {
                 alle trame dei romanzi avventurosi del XVIII secolo, e in
                 particolare a quella del <em>Tom Jones</em> di Henry Fielding,
                 forse la massima incarnazione di questo genere nell’intera
-                letteratura moderna. Leggendo la trama del Lettore escludendo le
+                letteratura moderna. Leggendo la trama del Lettore senza le
                 interruzioni dei libri altrui scopriamo insomma che{" "}
                 <em>Se una notte d’inverno un viaggiatore</em>, il romanzo
                 metaletterario per eccellenza di Calvino, cioè un autore che fin
                 dagli anni Cinquanta aveva contestato ironicamente il genere
-                avventuroso intitolando
-                <em>avventure</em> le sue storie di piccole esperienze di vita
-                comune (quelle che sarebbero finite a comporre{" "}
-                <em>Gli amori difficili</em>), usa in realtà come propria
-                struttura nascosta lo scheletro della trama romanzesca “ingenua”
-                per eccellenza, recuperata in blocco da quel{" "}
-                <em>romance o roman d’aventure</em> (Rivière 1913) con cui il
-                Novecento aveva tentato di dichiarare chiusi i conti. il
+                avventuroso intitolando <em>avventure</em> le sue storie di
+                piccole esperienze di vita comune (quelle che sarebbero finite a
+                comporre <em>Gli amori difficili</em>), usa in realtà come
+                propria struttura nascosta lo scheletro della trama romanzesca
+                “ingenua” per eccellenza, recuperata in blocco da quel{" "}
+                <em>romance</em> o <em>roman d’aventure</em> (Rivière 1913) con
+                cui il Novecento aveva tentato di dichiarare chiusi i conti: il
                 racconto avventuroso basato sulla peripezia e lo spostamento,
                 radicato nella grande genealogia occidentale che parte dai poemi
                 omerici e dalle <em>Etiopiche</em> di Eliodoro per arrivare agli
                 autori della materia arturiana, ad Ariosto,
                 all’avventuriero-lettore (e anche lui lettore problematico){" "}
                 <em>Don Chisciotte</em>, e infine alle narrazioni rocambolesche
-                dei romanzi moderni dai <em>Viaggi di Gulliver</em>
-                di Jonathan Swift in poi.
+                dei romanzi moderni dai <em>Viaggi di Gulliver</em> di Jonathan
+                Swift in poi.
               </p>
             </Trans>
           </div>
@@ -560,22 +558,22 @@ class PlotInformationSheet extends Component {
                 lingue e letterature botno-ugriche dell’Università e qui
                 incontrerà Irnerio, che nel giro di poche pagine prenderà nella
                 sua mente il ruolo di rivale («pensando a Ludmilla che veniva
-                qui, che si nascondeva qui, <em>forse con Irnerio</em>», RR, II,
-                660). Tuttavia è qui che notiamo la prima delle tante variazioni
-                che Calvino inserisce nel meccanismo di rispecchiamento per
-                alterare la corrispondenza diretta tra vicende narrate e
-                peripezie del Lettore: se infatti il primo incipit si riversava
-                sulla cornice con un perfetto parallelismo, così che in entrambi
-                i casi all’incontro con la donna seguiva il momento
-                dell’esaltazione sentimentale e il desiderio di instaurare una
-                relazione, il secondo incipit stabilisce un precedente che nella
-                cornice viene ribaltato, aprendo una divaricazione tra il
-                personaggio del romanzo, che al primo sospetto di gelosia si
-                scaglia contro il proprio avversario coinvolgendolo in una rissa
-                violenta, e il Lettore che invece, di fronte allo stesso
-                sentimento potenziale, cade in uno stato di turbamento e
-                immobilità e lascia allontanare il possibile rivale quasi con un
-                senso di sconfitta preventiva.
+                qui, che si nascondeva qui, <em>forse con Irnerio</em>»,{" "}
+                <em>RR</em>, II, 660). Tuttavia è qui che notiamo la prima delle
+                tante variazioni che Calvino inserisce nel meccanismo di
+                rispecchiamento per alterare la corrispondenza diretta tra
+                vicende narrate e peripezie del Lettore: se infatti il primo
+                incipit si riversava sulla cornice con un perfetto parallelismo,
+                così che in entrambi i casi all’incontro con la donna seguiva il
+                momento dell’esaltazione sentimentale e il desiderio di
+                instaurare una relazione, il secondo incipit stabilisce un
+                precedente che nella cornice viene ribaltato, aprendo una
+                divaricazione tra il personaggio del romanzo, che al primo
+                sospetto di gelosia si scaglia contro il proprio avversario
+                coinvolgendolo in una rissa violenta, e il Lettore che invece,
+                di fronte allo stesso sentimento potenziale, cade in uno stato
+                di turbamento e immobilità e lascia allontanare il possibile
+                rivale quasi con un senso di sconfitta preventiva.
                 <br />
                 Gli incipit fanno quindi da esperienza vicaria sia per il
                 protagonista sia per il lettore (reale), e l’attenta calibratura
@@ -637,9 +635,9 @@ class PlotInformationSheet extends Component {
                 Lettrice una curiosità apprensiva non dissimile a quella che ti
                 lega a Zwida Ozkart, nel romanzo di cui stai cercando il
                 seguito, e anche alla signora Marne nel romanzo che avevi
-                cominciato a leggere il giorno prima» (RR, II, 659). È quindi
-                particolarmente rivelatore il modo in cui Calvino conduce il suo
-                protagonista verso l’agognata conquista della Lettrice.
+                cominciato a leggere il giorno prima» (<em>RR</em>, II, 659). È
+                quindi particolarmente rivelatore il modo in cui Calvino conduce
+                il suo protagonista verso l’agognata conquista della Lettrice.
               </p>
             </Trans>
           </div>
@@ -668,16 +666,16 @@ class PlotInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 Nuovamente, i romanzi fanno qui da scorciatoia esperienziale: il
-                lettore, proiettato nelle vicende dei personaggi dei romanzi,
+                Lettore, proiettato nelle vicende dei personaggi dei romanzi,
                 sperimenta modalità di interazione con la donna-amante che vanno
                 dalla complicità al conflitto, e integrano anche la presenza di
                 un terzo soggetto che interviene come rivale, evidente
                 proiezione sia di Irnerio sia del fantasmatico Ermes Marana, sui
                 quali si intrecciano interessanti elementi mortuari o mortiferi.
                 L’intera prima metà del romanzo prepara così l’avvicinamento dei
-                due protagonisti costruendo un crescendo della tensione erotica
-                che rimane rigorosamente confinato negli incipit finché, a
-                ridosso dell’evento semitraumatico che è la scoperta delle
+                due protagonisti costruendo un <em>crescendo</em> della tensione
+                erotica che rimane rigorosamente confinato negli incipit finché,
+                a ridosso dell’evento semitraumatico che è la scoperta delle
                 lettere di Ermes Marana e della precedente relazione tra il
                 falsario e la Lettrice, l’incontro amoroso tra i due personaggi
                 centrali del romanzo si può finalmente realizzare. Le letture
@@ -690,7 +688,7 @@ class PlotInformationSheet extends Component {
                 creare una dinamica di continuità paradossale che trasforma i
                 “vuoti” in “pieni”, e anche se il protagonista non vive
                 esperienze “reali”, le esperienze di lettura nelle quali si
-                proietta intervengono a coprire il vuoto e finiscono per
+                proietta intervengono a coprire la mancanza e finiscono per
                 diventare parte integrante della trama pur essendone
                 teoricamente una sospensione. Così che alla fine della storia
                 abbiamo la sensazione che il Lettore e la Lettrice abbiano
@@ -755,23 +753,24 @@ class PlotInformationSheet extends Component {
                 dalla lettura appena fatta il quadro psicologico ed emotivo con
                 cui affrontare il seguito della sua realtà, dimostrandosi
                 malleabile e pronto a plasmare se stesso sul modello della
-                narrazione che ha appena assorbito, ora il gesto di tradimento
-                che scompagina le carte della storia rovescia anche l’ordine
-                delle influenze e rimbalza sulla lettura seguente. L’esperienza
-                disorientante del rapporto con Lotaria, e il collasso delle
-                identità tra le due sorelle, che arriva a scompiglia l’identità
-                del Lettore stesso, con un effetto di simmetria impossibile che
-                ricorda la logica notturna teorizzata da Matte Blanco (Matte
-                Blanco 1990), ribalta l’ordine naturale dell’immedesimazione e
-                fa in modo che, per una volta, sia la vita del protagonista a
-                influenzare la scrittura del romanzo successivo: la storia di un
-                personaggio alla ricerca delle proprie ignote origini, che si
-                imbatte e tenta di sedurre due diverse ragazze che però sono
-                entrambe sue sorellastre, in un triangolo di rapporti simmetrici
-                e allo stesso tempo asimmetrici che ripete esattamente la
-                dinamica appena capitata al protagonista della cornice
-                incarnando vistosamente, tra le altre cose, il suo chiaro senso
-                di colpa e di smarrimento per l’azione compiuta.
+                narrazione che aveva appena assorbito, ora il gesto di
+                tradimento che scompagina le carte della storia rovescia anche
+                l’ordine delle influenze e rimbalza sulla lettura seguente.
+                L’esperienza disorientante del rapporto con Lotaria, e il
+                collasso delle identità tra le due sorelle, che arriva a
+                scompigliare l’identità del Lettore stesso, con un effetto di
+                simmetria impossibile che ricorda la logica notturna teorizzata
+                da Matte Blanco (Matte Blanco 1990), ribalta l’ordine naturale
+                dell’immedesimazione e fa in modo che, per una volta, sia la
+                vita del protagonista a influenzare la scrittura del romanzo
+                successivo: la storia di un personaggio alla ricerca delle
+                proprie ignote origini, che si imbatte e tenta di sedurre due
+                diverse ragazze che però sono entrambe sue sorellastre, in un
+                triangolo di rapporti simmetrici e allo stesso tempo asimmetrici
+                che ripete esattamente la dinamica appena capitata al
+                protagonista della cornice incarnando vistosamente, tra le altre
+                cose, il suo chiaro senso di colpa e di smarrimento per l’azione
+                compiuta.
                 <br />
                 Nel complesso, vediamo come Calvino riesca a sfruttare le
                 stratificazioni della sua opera più postmoderna, e cioè più
@@ -795,7 +794,9 @@ class PlotInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className={"referenceItem"}>
                 Barenghi 1992: Mario Barenghi, <em>L’autorità dell’autore</em>,
@@ -804,17 +805,17 @@ class PlotInformationSheet extends Component {
               <li className={"referenceItem"}>
                 Calvino 1995a: Italo Calvino,{" "}
                 <em>Cominciare e finire, appendice alle Lezioni americane</em>,
-                SSI, pp. 734-753.
+                SS, I, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995b: Italo Calvino,{" "}
                 <em>Ariosto: la struttura dell’«Orlando furioso» </em>[1975], in
-                Id., <em>Saggi. 1945-1985</em>, pp. 759-768.
+                Id., SS, I, pp. 759-768.
               </li>
               <li className={"referenceItem"}>
                 Du Plessix Gray 1981: Francine du Plessix Gray,{" "}
-                <em>Visiting Italo Calvino</em>, in{" "}
-                <em>«The New York Times Review of Books»</em>, June 21.
+                <em>Visiting Italo Calvino</em>, in «The New York Times Review
+                of Books», June 21.
               </li>
               <li className={"referenceItem"}>
                 Eco 1979: Umberto Eco,{" "}
@@ -828,7 +829,7 @@ class PlotInformationSheet extends Component {
                 Falcetto 1992: Bruno Falcetto,{" "}
                 <em>«Se una notte d’inverno un viaggiatore»</em>, in{" "}
                 <em>Note e notizie sui testi</em>, a cura di M. Barenghi, B.
-                Falcetto, C. Milanini, RR, II, pp. 1381-1401.
+                Falcetto, C. Milanini, <em>RR</em>, II, pp. 1381-1401.
               </li>
               <li className={"referenceItem"}>
                 Jauss 1969: Hans Robert Jauss,{" "}
@@ -858,10 +859,9 @@ class PlotInformationSheet extends Component {
                 trad. it. di G. Montefoschi, Milano, Rizzoli.
               </li>
               <li className={"referenceItem"}>
-                Matte Blanco 1990:{" "}
+                Matte Blanco 1990: Ignacio Matte Blanco,{" "}
                 <em>
-                  Ignacio Matte Blanco, L’inconscio come insiemi infiniti.
-                  Saggio sulla bi-logica
+                  L’inconscio come insiemi infiniti. Saggio sulla bi-logica
                 </em>
                 , trad. it. di P. Bria, Torino, Einaudi.
               </li>
@@ -874,8 +874,8 @@ class PlotInformationSheet extends Component {
                 Sorapure 1985: Madeleine Sorapure,
                 <em>
                   {" "}
-                  Being in the Midst: Italo Calvino’s If on a winter’s night a
-                  traveler
+                  Being in the Midst: Italo Calvino’s «If on a winter’s night a
+                  traveler»
                 </em>
                 , in «Modern Fiction Studies», XXXI, pp. 702-710.
               </li>
@@ -906,10 +906,10 @@ class PlotInformationSheet extends Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "trama-sheet"])(
   PlotInformationSheet
-)
+);

@@ -104,7 +104,7 @@ class Itineraries extends React.Component {
               <Trans i18nKey={"lo_spazio"} t={this.props.t} ns="itineraries">
                 <h1 className="text-dark-blue">Lo Spazio</h1>
                 <p>
-                  Lo spazio Nell’itinerario che pone al centro lo spazio, si
+                  Nell’itinerario che pone al centro lo spazio, si
                   tenterà di analizzare i modi in cui Calvino ha usato lo spazio
                   per parlare della realtà. E nello stesso tempo per negarla.
                   Perché un momento dopo averla nominata, la realtà si è già
@@ -184,7 +184,7 @@ class Itineraries extends React.Component {
               <Trans i18nKey={"la_forma"} t={this.props.t} ns="itineraries">
                 <h1 className="text-dark-blue">La Forma</h1>
                 <p>
-                  La forma Nell’itinerario che pone al centro la forma, si
+                  Nell’itinerario che pone al centro la forma, si
                   tenterà di studiare i modi in cui la scrittura di Calvino si
                   sforza di dare forma alla realtà. Se esiste una battaglia
                   delle battaglie che la letteratura ha il dovere di combattere,

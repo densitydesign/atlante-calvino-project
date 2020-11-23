@@ -61,7 +61,7 @@ class Project extends React.Component {
           </div>
         </div>
         <div className="ac-grid-24">
-          <div className="content" style={{ gridColumn: "4 / span 16" }}>
+          <div className="content indented">
             <Trans i18nKey={"text_2"} t={this.props.t} ns="project">
               <p>
                 Le due anime del progetto, quella letteraria e quella del design

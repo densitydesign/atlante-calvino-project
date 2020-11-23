@@ -20,7 +20,8 @@ const InteractiveLogo = () => {
                     .attr('r',0)
                     .attr('cx',d=>d._x)
                     .attr('cy',d=>d._y)
-                    .attr('fill','var(--dark-blue)');
+                    .attr('fill',(d,i)=>i===data.length-1?'white':'var(--dark-blue)')
+                    .attr('stroke',(d,i)=>i===data.length-1?'var(--dark-blue)':'none');
         circle.transition()
             .duration(1000)
             .delay((d,i)=>Math.floor(i/50)*50)

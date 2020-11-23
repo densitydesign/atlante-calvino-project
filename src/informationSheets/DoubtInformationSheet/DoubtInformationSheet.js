@@ -59,18 +59,18 @@ class DoubtInformationSheet extends React.Component {
                 <br />
                 Per concreto qui si intende una presenza fisica dell’elemento
                 nella narrazione: es. «c’era un po’ di nebbia verso il mare e
-                l’aria era umida» (<em>Pranzo con un pastore</em>, 1948, in RR,
+                l’aria era umida» (<em>Pranzo con un pastore</em>, 1948, in <em>RR</em>,
                 I, 211); «Invece si limita a farci strisciare sopra un dito e a
                 vedere l’impronta umida come la scia d’una nave, poi a
                 cancellarla col maglione fregandoci con il gomito» (
-                <em>La notte dei numeri</em>, 1958, in RR, II, 1058). Viceversa,
+                <em>La notte dei numeri</em>, 1958, in <em>RR</em>, II, 1058). Viceversa,
                 per <em>astratto</em> si intende una presenza “non fisica”
                 dell’elemento nella narrazione: es. «un’ombra bruna sale dal
                 fondo e come nella nebbia del ricordo lascia trasparire le
                 sparse membra dell’oca» (
-                <em>Un chilo e mezzo di grasso d’oca</em>, 1976, in RR, II,
+                <em>Un chilo e mezzo di grasso d’oca</em>, 1976, in <em>RR</em>, II,
                 930); «lei abbassava le ciglia e lui si sentì come cancellato» (
-                <em>L’avventura di uno sciatore</em>, 1959, RR, II, 1175).
+                <em>L’avventura di uno sciatore</em>, 1959, <em>RR</em>, II, 1175).
               </p>
             </Trans>
           </div>
@@ -86,7 +86,7 @@ class DoubtInformationSheet extends React.Component {
             >
               <p className={SheetStyles.paragraph}>
                 Mettere a confronto l’inizio{" "}
-                <span style={{ color: "#0E08F9" }}>(a)</span>e la fine{" "}
+                <span style={{ color: "#0E08F9" }}>(a)</span> e la fine{" "}
                 <span style={{ color: "#0E08F9" }}>(b)</span> della carriera
                 narrativa di Calvino permette di scoprire un dettaglio non
                 trascurabile del modo in cui l’autore ha impiegato i due

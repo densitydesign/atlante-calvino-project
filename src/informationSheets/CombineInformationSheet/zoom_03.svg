@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="750" height="367" viewBox="0 0 750 367">
   <defs>
-    <filter id="La_nuvola_di_smog_e_la_formica_argentina" x="-7" y="112" width="417" height="35" filterUnits="userSpaceOnUse">
+    <filter id="La_nuvola_di_smog_e_La_formica_argentina" x="-7" y="112" width="417" height="35" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-color="#fff"/>
@@ -377,7 +377,7 @@
       </g>
     </g>
     <text id="fine" transform="translate(723 220)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">fine</tspan></text>
-    <text id="fine-2" data-name="fine" transform="translate(520 327)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">fine</tspan></text>
+    <text id="fine-2" data-name="fine" transform="translate(559 329)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">fine</tspan></text>
     <g id="Group_23660" data-name="Group 23660" transform="translate(0 17)">
       <path id="Path_89" data-name="Path 89" d="M4202.022,2217.257c0,1.981-.022,8.27-.022,8.27" transform="translate(-4198.5 -1895)" fill="none" stroke="#000" stroke-width="0.5"/>
       <path id="Path_90" data-name="Path 90" d="M4202,2217.6v7.925" transform="translate(-4085.5 -1895)" fill="none" stroke="#000" stroke-width="0.5"/>
@@ -389,8 +389,8 @@
       <text id="_50" data-name="50" transform="translate(532 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">50</tspan></text>
       <text id="_0" data-name="0" transform="translate(0 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0</tspan></text>
       <path id="Path_98" data-name="Path 98" d="M0,0H737" transform="translate(3.5 322.5)" fill="none" stroke="#000" stroke-width="0.5"/>
-      <text id="salti_di_ambito" data-name="salti di ambito" transform="translate(15 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">salti di ambito</tspan></text>
-      <text id="salti_di_ambito-2" data-name="salti di ambito" transform="translate(548 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">salti di ambito</tspan></text>
+      <text id="salti_di_piano" data-name="salti di piano" transform="translate(15 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">salti di piano</tspan></text>
+      <text id="salti_di_piano-2" data-name="salti di piano" transform="translate(548 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">salti di piano</tspan></text>
       <path id="Path_96" data-name="Path 96" d="M4202,2217.6v7.925" transform="translate(-3461.5 -1895)" fill="none" stroke="#000" stroke-width="0.5"/>
       <text id="_70" data-name="70" transform="translate(734 346)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">70</tspan></text>
     </g>
@@ -405,14 +405,14 @@
       <rect id="Rectangle_19596" data-name="Rectangle 19596" width="260" height="35" transform="translate(0 80.169)" fill="#fff"/>
     </g>
     <g id="nuvola">
-      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#La_nuvola_di_smog_e_la_formica_argentina)">
-        <text id="La_nuvola_di_smog_e_la_formica_argentina-2" data-name="La nuvola di smog e la formica argentina" transform="translate(2 118)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="13">La nuvola di smog e la formica argentina</tspan></text>
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#La_nuvola_di_smog_e_La_formica_argentina)">
+        <text id="La_nuvola_di_smog_e_La_formica_argentina-2" data-name="La nuvola di smog e La formica argentina" transform="translate(2 118)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="13">La nuvola di smog e La formica argentina</tspan></text>
       </g>
       <text id="inizio" transform="translate(2 147)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
     </g>
     <g id="cosmi">
-      <text id="Le_cosmicomiche" data-name="Le cosmicomiche" transform="translate(0 -2)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="13">Le cosmicomiche</tspan></text>
-      <text id="inizio_del_testo" data-name="inizio del testo" transform="translate(0 30)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio del testo</tspan></text>
+      <text id="Le_Cosmicomiche" data-name="Le Cosmicomiche" transform="translate(0 -2)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="13">Le Cosmicomiche</tspan></text>
+      <text id="inizio-2" data-name="inizio" transform="translate(0 30)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">inizio</tspan></text>
     </g>
   </g>
 </svg>

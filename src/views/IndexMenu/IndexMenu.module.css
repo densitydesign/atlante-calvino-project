@@ -1,10 +1,21 @@
+.development > * {
+  pointer-events: none;
+}
+
 .IndexMenu {
   /* width: 100vw; */
   position: relative;
+  height: calc(100vh - (var(--navigation-height) + 18px));
+  pointer-events: none;
+}
+
+.IndexMenu > * {
+  pointer-events: auto;
 }
 
 .OrbiteContainer {
     position: absolute;
+    pointer-events: none;
     background-color: var(--cool-bg);
 }
 
@@ -62,8 +73,11 @@
 
 .dubitare {
   position: absolute;
-  top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
-  left: calc(100% / 12);
+  /* top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
+  left: calc(100% / 12); */
+  top: 48.490842%;
+  left: 14.431613%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -107,8 +121,11 @@
 
 .nebbia {
   position: absolute;
-  top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
-  left: calc(100% / 12 * 3);
+  /* top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
+  left: calc(100% / 12 * 3); */
+  top:30.100334448160538%;
+  left:29.270833333333336%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -116,8 +133,11 @@
 
 .cancellazione {
   position: absolute;
-  top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
-  left: calc(100% / 12 * 1.5);
+  /* top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
+  left: calc(100% / 12 * 1.5); */
+  left: 17.049666419570052%;
+  top: 76.54986522911051%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -125,8 +145,11 @@
 
 .trasformare {
   position: absolute;
-  top: calc(calc(100vh / 8 * 4.25) - var(--navigation-height));
-  left: calc(100% / 12 * 4);
+  /* top: calc(calc(100vh / 8 * 4.25) - var(--navigation-height));
+  left: calc(100% / 12 * 4); */
+  left: 38.072916666666664%;
+  top: 57.63656633221851%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -134,8 +157,11 @@
 
 .luoghi {
   position: absolute;
-  top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
-  left: calc(100% / 12 * 5.5);
+  /* top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
+  left: calc(100% / 12 * 5.5); */
+  left: 49.53125%;
+  top: 38.46153846153847%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -143,8 +169,11 @@
 
 .realismo {
   position: absolute;
-  top: calc(calc(100vh / 8 * 6) - var(--navigation-height));
-  left: calc(100% / 12 * 6);
+  /* top: calc(calc(100vh / 8 * 6) - var(--navigation-height));
+  left: calc(100% / 12 * 6); */
+  left: 54.79166666666667%;
+  top: 83.61204013377926%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -152,8 +181,11 @@
 
 .elenchi {
   position: absolute;
-  top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
-  left: calc(100% / 12 * 8);
+  /* top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
+  left: calc(100% / 12 * 8); */
+  left: 71.82291666666667%;
+  top: 29.76588628762542%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -163,6 +195,9 @@
   position: absolute;
   top: calc(calc(100vh / 8 * 2.75) - var(--navigation-height));
   left: calc(100% / 12 * 10);
+  left: 86.40625%;
+  top: 44.569677%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -172,6 +207,9 @@
   position: absolute;
   top: calc(calc(100vh / 8 * 5.25) - var(--navigation-height));
   left: calc(100% / 12 * 9.5);
+  left: 83.95833333333333%;
+  top: 74.47045707915272%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   flex-direction: column;

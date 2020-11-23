@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import SheetStyles from "../SheetStyles.module.css"
+import React, { Component } from "react";
+import SheetStyles from "../SheetStyles.module.css";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede2 from "../FooterSchede2"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede2 from "../FooterSchede2";
 
-import legenda from "./legend_01.svg"
-import marimekko from "./marimekko.svg"
-import zoom_02 from "./zoom_02.svg"
-import zoom_03 from "./zoom_03.svg"
-import zoom_04 from "./zoom_04.svg"
-import legenda_02 from "./legenda_02.svg"
-import legenda_03 from "./legenda_03.svg"
-import legenda_04 from "./legenda_04.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legenda from "./legend_01.svg";
+import marimekko from "./marimekko.svg";
+import zoom_02 from "./zoom_02.svg";
+import zoom_03 from "./zoom_03.svg";
+import zoom_04 from "./zoom_04.svg";
+import legenda_02 from "./legenda_02.svg";
+import legenda_03 from "./legenda_03.svg";
+import legenda_04 from "./legenda_04.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class CombineInformationSheet extends Component {
   render() {
@@ -29,7 +29,7 @@ class CombineInformationSheet extends Component {
             </h1>
             <h2 className={SheetStyles.titleH2}>
               {this.props.t(
-                "combining-sheet:Compatto vs molteplice un passaggio sfumato"
+                "combining-sheet:Compatto vs molteplice, un passaggio sfumato"
               )}
             </h2>
             <Trans
@@ -64,17 +64,17 @@ class CombineInformationSheet extends Component {
                 autoriflessivo» (Donnarumma 2008, 82). Sono anni interamente
                 dedicati all’affinamento di una «macchina narrativa
                 combinatoria» (espressione con cui lui stesso definirà il ruolo
-                dei tarocchi nel Castello; Calvino 1973, RR<em>II</em>, 1276)
+                dei tarocchi nel Castello; Calvino 1973, <em>RR</em> II, 1276)
                 che, dotata dei giusti elementi di partenza e di un set di
                 regole efficaci, possa produrre una varietà infinita di esiti,
                 anticipando di mezzo secolo novità che la rivoluzione
                 tecnologica dei suoi anni permetteva a stento di indovinare,
                 oggi in uso come la “generazione procedurale” condotta tramite
                 algoritmo. Al centro simbolico di questa svolta è l’anno 1965,
-                che vede l’uscita della raccolta in volume delle
+                che vede l’uscita della raccolta in volume delle{" "}
                 <em>Cosmicomiche</em> e l’inaugurazione di un variegato filone
-                che si protrarrà per i successivi due decenni (gli ultimi testi,
-                Il niente e il poco e <em>L’implosione</em>, escono nel
+                che si protrarrà per i successivi due decenni (gli ultimi testi,{" "}
+                <em>Il niente e il poco</em> e <em>L’implosione</em>, escono nel
                 settembre 1984 su «la Repubblica» ancora sotto il titolo di{" "}
                 <em>Le nuove cosmicomiche</em>), e che costituisce probabilmente
                 il massimo punto di equilibrio tra l’ostentazione di un modello
@@ -91,7 +91,7 @@ class CombineInformationSheet extends Component {
                 biografia letteraria calviniana con un altro titolo, un piccolo
                 volume che raccoglie due testi precedentemente usciti su rivista
                 (rispettivamente in «Nuovi Argomenti», 34, 1958 e in «Botteghe
-                Oscure», quaderno X, 1952) in uno strano dittico:
+                Oscure», quaderno X, 1952) in uno strano dittico:{" "}
                 <em>La nuvola di smog</em> e <em>La formica argentina</em>. Il
                 volumetto Einaudi, parte di un progetto mai realizzato che
                 doveva consistere in un «ciclo narrativo sull’Italia di metà
@@ -113,12 +113,11 @@ class CombineInformationSheet extends Component {
                 italiana del dopoguerra: una forma non più tenuta a distanza dal
                 filtro straniante di un linguaggio volutamente semplice, dai
                 tratti infantili, come accadeva ad esempio in{" "}
-                <em>Ultimo viene il corvo</em> o nel trittico dell’
+                <em>Ultimo viene il corvo</em> o nel trittico dell’{" "}
                 <em>Entrata in guerra</em>, ma affrontata in modo diretto,
                 disilluso, “adulto”. Una modalità che riunisce una piccola
                 famiglia di titoli tutto sommato non incospicua, alla quale si
-                possono ricondurre anche
-                <em>La speculazione edilizia</em> e
+                possono ricondurre anche <em>La speculazione edilizia</em> e{" "}
                 <em>La giornata d’uno scrutatore</em>, le avventure irrisolte
                 degli <em>Amori difficili</em>, e almeno in parte
                 <em>I Racconti</em>, e con la quale tuttavia l’autore non sembra
@@ -127,9 +126,9 @@ class CombineInformationSheet extends Component {
                 risposta a un saggio che analizzava proprio la{" "}
                 <em>Nuvola di smog</em>, nella quale Calvino finge di
                 interpretare il critico di se stesso e proclama il proprio
-                «moravismo» (Calvino 1964, 104; la Nuvola era del resto uscita
-                su «Nuovi argomenti», la rivista diretta da Moravia), in un
-                gioco delle parti che però lascia qualcosa di ambiguo alla
+                «moravismo» (Calvino 1964, 104; la <em>Nuvola</em> era del resto
+                uscita su «Nuovi argomenti», la rivista diretta da Moravia), in
+                un gioco delle parti che però lascia qualcosa di ambiguo alla
                 dichiarazione, un sospetto di insicurezza poetica sul valore di
                 questo formato del «grigiore».
               </p>
@@ -143,7 +142,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -156,7 +154,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height))",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -223,7 +220,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1.5rem",
@@ -236,7 +232,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1.5rem",
@@ -261,18 +256,18 @@ class CombineInformationSheet extends Component {
                 libri, dimenticando per un attimo ciò che sappiamo su di loro e
                 limitandoci alla ricognizione delle sequenze narrative di base
                 che si susseguono nelle storie, veniamo a scoprire che
-                l’impressione è tutt’altro che confermata. A conti fatti, le
-                Cosmicomiche, nella loro caleidoscopica varietà di mondi e
-                situazioni, e il dittico Nuvola-Formica, coppia di monoliti dove
-                a regnare sono «il povero, il disadorno, lo squallore, il
-                grigiore» (Calvino 1964, 108), in realtà presentano
-                sostanzialmente dallo stesso numero di sequenze: rispettivamente
-                148 e 142. Se poi si va a verificare tra quante categorie sono
-                distribuite queste sequenze, scopriamo addirittura che alle 19
-                delle <em>Cosmicomiche</em> rispondono le 22 della
-                <em>Nuvola-Formica</em>. Com’è possibile? Come si spiega che
-                l’uniforme narrazione senza sorprese del dittico più cupo di
-                Calvino abbia la stessa quantità di segmenti narrativi
+                l’impressione è tutt’altro che confermata. A conti fatti, le{" "}
+                <em>Cosmicomiche</em>, nella loro caleidoscopica varietà di
+                mondi e situazioni, e il dittico <em>Nuvola-Formica</em>, coppia
+                di monoliti dove a regnare sono «il povero, il disadorno, lo
+                squallore, il grigiore» (Calvino 1964, 108), in realtà
+                presentano sostanzialmente lo stesso numero di sequenze:
+                rispettivamente 148 e 142. Se poi si va a verificare tra quante
+                categorie sono distribuite queste sequenze, scopriamo
+                addirittura che alle 19 delle <em>Cosmicomiche</em> rispondono
+                le 22 della <em>Nuvola-Formica</em>. Com’è possibile? Come si
+                spiega che l’uniforme narrazione senza sorprese del dittico più
+                cupo di Calvino abbia la stessa quantità di segmenti narrativi
                 dell’atlante cosmicomico e addirittura una varietà di categorie{" "}
                 <em>superiore</em> alla raccolta variegata per eccellenza? Dov’è
                 il trucco?
@@ -289,7 +284,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.image}
               style={{
                 gridColumn: " 1 / span 10",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -302,7 +296,6 @@ class CombineInformationSheet extends Component {
               className={SheetStyles.sideLegend}
               style={{
                 gridColumn: "12 / span 1",
-                position: "sticky",
                 top: "calc(var(--navigation-height)",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
@@ -332,20 +325,20 @@ class CombineInformationSheet extends Component {
                 l’effetto attraverso un attento processo di assemblaggio
                 strategico. Se riportiamo le categorie ai tre grandi ambiti
                 generali di appartenenza in cui può essere sezionato un testo
-                narrativo – quello{" "}
+                narrativo – il piano{" "}
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
                 gli elementi metatestuali che si trovano oltre il confine
                 diegetico, quello{" "}
-                <span style={{ backgroundColor: "#0AFFB7" }}>interiore</span>{" "}
-                che raccoglie stati d’animo, sentimenti e condizioni
-                psicologiche dei personaggi, e quello
+                <span style={{ color: "#0AFFB7" }}>interiore</span> che
+                raccoglie stati d’animo, sentimenti e condizioni psicologiche
+                dei personaggi, e quello
                 <span style={{ color: "#5151FC" }}> esteriore</span>, che copre
                 gesti, eventi e interazioni che si sviluppano nel mondo del
                 racconto – le ragioni delle differenze così spiccate tra i due
                 volumi, che risultavano indecifrabili sul piano delle parti
                 minime, emergono e iniziano a farsi chiare: a produrre (o
                 smorzare) l’effetto di varietà non è il numero delle sequenze,
-                ma la frequenza con cui la narrazione compie il salto di ambito.
+                ma la frequenza con cui la narrazione compie il salto di piano.
               </p>
               <p className={SheetStyles.paragraph}>
                 La manopola che permette a Calvino di partire da due repertori
@@ -354,14 +347,14 @@ class CombineInformationSheet extends Component {
                 motivo e l’altro non contato per la loro <em>quantità</em>, ma
                 per la loro <em>qualità</em>. Se osserviamo la situazione nel
                 dettaglio, possiamo vedere che nelle <em>Cosmicomiche</em> la
-                narrazione coinvolge tutti e tre gli ambiti nominati, e passa
+                narrazione coinvolge tutti e tre i piani nominati, e passa
                 dall’uno all’altro 70 volte; d’altra parte il dittico{" "}
                 <em>Nuvola-Formica</em> , a parità di numero di sequenze,
-                coinvolge solo due ambiti (escludendo del tutto quello formale),
+                coinvolge solo due piani (escludendo del tutto quello formale),
                 e i passaggi sono 50, un intero quarto dei casi in meno. Che
                 cosa significa questo, in pratica? Significa che nel primo caso
-                gli ambiti sono frantumati e mischiati, e i confini tra interno
-                ed esterno (tanto dei personaggi quanto del testo stesso) sono
+                i piani sono frantumati e mischiati, e i confini tra interno ed
+                esterno (tanto dei personaggi quanto del testo stesso) sono
                 perfettamente permeabili per la voce narrante ondivaga di Qfwfq,
                 mentre nel secondo caso le sequenze “parenti” tendono ad
                 aggregarsi tra loro, assemblando le particelle iniziali in
@@ -382,7 +375,7 @@ class CombineInformationSheet extends Component {
                 tutta sulla ribalta, interamente accessibile ai personaggi che
                 la percorrono in lungo e in largo, è intrappolata in zone
                 inagibili e spinta sullo sfondo, ma rimane comunque presente
-                come un baluginio sul fondo di uno specchio d’acqua
+                come un baluginio sul fondo di uno specchio d’acqua.
               </p>
             </Trans>
           </div>
@@ -403,14 +396,15 @@ class CombineInformationSheet extends Component {
                 comparata tra due testi: uno sguardo attento sulle scelte fatte
                 da Calvino nel distribuire i suoi materiali può rivelarci
                 dettagli illuminanti su come viene costruito l’equilibrio
-                interno di una storia. Un esempio è la funzione dell’incontro
+                interno di una storia. Un esempio è la funzione dell’
+                <em>incontro</em>
                 come meccanismo di dissimulazione della complessità. Sia nella{" "}
                 <em>Nuvola di smog</em> che nella <em>Formica argentina</em>,
                 l’ossatura fondamentale del testo è basata sulla stessa
                 dinamica: «un protagonista che parla in prima persona ma non ha
                 nome né volto si muove tra uno stuolo di personaggi minori
                 ognuno dei quali ha un suo modo di contrapporsi alle formiche o
-                allo smog» (Falcetto 1991, 1313), con un modello che riprende,
+                allo smog» (Falcetto 1991, 1313), con un formato che riprende,
                 da un lato, il modello dantesco del viaggio nell’oltretomba
                 popolato da anime-
                 <em>exempla</em>, e dall’altro la forma del{" "}
@@ -453,7 +447,7 @@ class CombineInformationSheet extends Component {
                 pessimismo incombente del racconto, che moltiplica gli sforzi
                 degli individui perseguitati dalle formiche per sottolineare
                 ancora più nettamente la loro inutilità. Ma è anche funzionale a
-                rivelare la lucidità disillusa del protagonista: se infatti un
+                rivelare la lucidità disillusa del protagonista. Se infatti un
                 singolo incontro, con una singola raccomandazione strategica,
                 potrebbe costituire un punto di speranza, tenacia, e di sfida
                 all’universo, facendo apparire la tendenza del protagonista allo
@@ -463,9 +457,8 @@ class CombineInformationSheet extends Component {
                 attaccamento a qualche menzogna consolatoria, di fronte alla
                 quale il realismo stoico e disincantato del protagonista, che
                 tenta tutto senza convinzione, rimane a campeggiare come l’unica
-                basata su una disposizione d’animo condivisibile: la dignitosa
-                rassegnazione alla presenza del male nell’universo e il coraggio
-                della realtà
+                disposizione d’animo condivisibile: la dignitosa rassegnazione
+                alla presenza del male nell’universo e il coraggio della realtà.
               </p>
             </Trans>
             <img
@@ -479,7 +472,7 @@ class CombineInformationSheet extends Component {
                 backgroundColor: "var(--white)",
               }}
               src={zoom_04}
-              alt=''
+              alt=""
             />
             <img
               className={SheetStyles.sideLegend}
@@ -492,11 +485,13 @@ class CombineInformationSheet extends Component {
                 backgroundColor: "var(--white)",
               }}
               src={legenda_04}
-              alt=''
+              alt=""
             />
           </div>
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
@@ -504,9 +499,9 @@ class CombineInformationSheet extends Component {
                   a cura di G. Marrone, Torino, Einaudi.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1963: Italo Calvino, La speculazione edilizia, Torino,
-                  Einaudi, risvolto di copertina anonimo ma attribuibile
-                  all’autore.
+                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>
+                  , Torino, Einaudi, risvolto di copertina anonimo ma
+                  attribuibile all’autore.
                 </li>
                 <li className="referenceItem">
                   Calvino 1964: Italo Calvino, <em>Lettera a Mario Boselli</em>,
@@ -514,7 +509,7 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Calvino 1973: Italo Calvino, <em>Nota [1973]</em>, in Id.,{" "}
-                  <em>Il castello dei destini incrociati</em>, RR<em>II</em>.
+                  <em>Il castello dei destini incrociati</em>, <em>RR</em>, II.
                 </li>
                 <li className="referenceItem">
                   Donnarumma 2008: Raffaele Donnarumma,{" "}
@@ -523,8 +518,8 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Falcetto 1991: Bruno Falcetto, <em>«La formica argentina»</em>
-                  , in Note e notizie sui testi, a cura di M. Barenghi, B.
-                  Falcetto, C. Milanini, RRI, pp. 1312-1315.
+                  , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi,
+                  B. Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
                 </li>
                 <li className="referenceItem">
                   Serra 2006: Francesca Serra, <em>Calvino</em>, Roma, Salerno.
@@ -545,10 +540,10 @@ class CombineInformationSheet extends Component {
           ;
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "combining-sheet"])(
   CombineInformationSheet
-)
+);

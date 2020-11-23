@@ -39,7 +39,7 @@ title {
 /* ELEMENTI COMUNI */
 a {
   color: var(--dark-blue);
-  transition: all 0.35s ease;
+  /* transition: all 0.35s ease; */
 }
 
 a:hover {
@@ -186,6 +186,13 @@ sup {
   padding-bottom: 3rem;
   padding-top: 3rem;
   grid-column: 1 / 17;
+
+  /* new layout */
+  padding: 3rem 0;
+  grid-column: 4 / span 12;
+}
+.content.indented {
+  grid-column-start: 6;
 }
 
 .contentRight {
@@ -258,8 +265,9 @@ li {
 }
 
 .references ol,
-.references ul {
+.references li {
   padding-left: 0px;
+  list-style-type: none;
 }
 
 .referenceItem {
@@ -274,6 +282,14 @@ li {
   font-size: 1.2857142857rem;
   line-height: 2.1428571429rem;
   font-style: italic;
+}
+
+/* added this second style to make a proposal of a different quotation style. Builds on top of the previous, so inc ase we have to integrate this into '.cite' */
+.cite2 {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  margin: 2rem 0 2rem 3rem;
+  hyphens: manual;
 }
 
 .navigations {
@@ -626,43 +642,6 @@ a:visited.button-text {
   }
 }
 
-/* hover immagini */
-/*
-#overlay {
-  position:absolute;
-  height:100%;
-  width:100%;
-  margin:0 auto;
-}
-
-#overlay img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
-
-#overlay img.top:hover {
-  opacity:0;
-} */
-/*MEDIA QUERIES
-
-/*
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1015px to 1280px
-*/
-@media (min-width: 1025px) and (max-width: 1280px) {
-}
-
-/*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-}
-
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -672,3 +651,37 @@ a:visited.button-text {
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1280px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+  .content {
+    grid-column: 5 / span 9;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+
+}
+
+
+

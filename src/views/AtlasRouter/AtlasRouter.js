@@ -37,6 +37,7 @@ import RealismInformationSheet from '../../informationSheets/RealismInformationS
 import ProcessDoubting from '../ProcessDoubting/ProcessDoubting';
 import Df3 from '../Df3';
 import Cancellazione from '../Cancellazione';
+import Capta from '../Capta';
 
 export default function AtlasRouter()
 {
@@ -115,7 +116,10 @@ export default function AtlasRouter()
       {/* <Route exact path="/About"><AboutAndContacts /></Route> */}
       <Route exact path="/instructions"><Instructions/></Route>
       <Route exact path="/project"><Project/></Route>
-      <Route exact path="/capta"><ToolsAndMethods /></Route>
+      <Route exact path="/toolsmeth"><ToolsAndMethods /></Route>
+      {/* <Route exact path="/News"><PressReview /></Route> */}
+      <Route exact path="/capta"><Capta /></Route>
+      {/* <Route exact path="/capta"><ToolsAndMethods /></Route> */}
       {/* <Route exact path="/News"><PressReview /></Route> */}
       <Route exact path="/publications"><Articles /></Route>
 

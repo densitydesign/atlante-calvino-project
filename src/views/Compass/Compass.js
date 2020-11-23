@@ -61,13 +61,7 @@ class Compass extends React.Component {
               <h1>{this.props.t("bussola")}</h1>
               <p className="text-dark-blue">
                 <Trans i18nKey={"testo_bussola"} t={this.props.t} ns="bussola">
-                  Prima di iniziare il viaggio, ci vuole una bussola. Per quello
-                  abbiamo creato tre visualizzazioni orientative, I flussi dei
-                  racconti, Il tempo e le opere e L’arcipelago dei nomi che
-                  aiutino a muoversi dentro l’intero corpus dell’opera e che
-                  siano sempre a portata di mano. Fornendo un colpo d’occhio
-                  sulla storia dei volumi, sulla vicenda dei racconti e sulla
-                  biblioteca mentale dell’autore.
+                  Prima di iniziare il viaggio, ci vuole una bussola. Per quello abbiamo creato tre visualizzazioni orientative, <i>Il tempo e le opere, I flussi dei racconti</i> e <i>L’arcipelago dei nomi</i> che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano. Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.
                 </Trans>
               </p>
             </div>
@@ -86,8 +80,8 @@ class Compass extends React.Component {
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
-              interactiveViewUrl="/compass/flows-of-stories"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
+              interactiveViewUrl="/compass/time-and-works"
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
               text={this.props.t("bussola:flussi_testo")}
             />
 
@@ -105,8 +99,8 @@ class Compass extends React.Component {
               getSelectedPanel={this.getSelectedPanel}
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
-              interactiveViewUrl="/compass/time-and-works"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
+              interactiveViewUrl="/compass/flows-of-stories"
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
               text={this.props.t("bussola:tempo_testo")}
             />
 
