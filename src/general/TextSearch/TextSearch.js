@@ -6,11 +6,18 @@ import Dropdown from "react-bootstrap/Dropdown";
 import SearchDropDown from "../../general/Search/SearchDropDownControlled";
 import styles from "./TextSearch.module.css";
 
-import titles from "./titles.json";
-import volumes from "./volumes.json";
-import publications from "./publications.json";
+import _titles from "./titles.json";
+import _volumes from "./volumes.json";
+import _publications from "./publications.json";
 
-export default function TextSearch({ style, changeOptions, selectedOptions }) {
+export default function TextSearch({
+  style,
+  changeOptions,
+  selectedOptions,
+  availableIds,
+}) {
+  console.log("IDS available in visualization:", availableIds)
+  let titles = _titles, volumes = _volumes, publications = _publications;
   const options = [
     { id: "titles", label: { it: "Titolo", en: "Title" }, data: titles },
     { id: "volume", label: { it: "Volume", en: "Volume" }, data: volumes },
@@ -20,6 +27,7 @@ export default function TextSearch({ style, changeOptions, selectedOptions }) {
       data: publications,
     },
   ];
+  // console.log(options)
   const [option, setOption] = useState(options[0]);
   return (
     <div className={styles.container} style={style}>

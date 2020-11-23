@@ -721,6 +721,7 @@ class ProcessDoubting extends Component {
               style={{ gridColumn: "span 12" }}
               changeOptions={this.changeRicerca2}
               selectedOptions={this.state.searchedItems}
+              availableIds={this.state.data.map(d=>d.id)}
             />
           )}
 

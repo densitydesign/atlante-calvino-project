@@ -257,6 +257,7 @@ class Cancellazione extends Component {
                 style={{ gridColumn: "span 12" }}
                 changeOptions={this.changeResearch}
                 selectedOptions={this.state.searchedItems}
+                availableIds={this.state.data.map(d=>d.id)}
               />
             )}
 
