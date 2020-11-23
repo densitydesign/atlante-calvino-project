@@ -1,31 +1,31 @@
-import React, { Component } from "react"
-import styles from "./Cancellazione.module.css"
+import React, { Component } from "react";
+import styles from "./Cancellazione.module.css";
 
-import * as d3 from "d3"
-import Loading from "../../general/Loading"
-import RustyViz from "../../visualizations/RustyViz"
+import * as d3 from "d3";
+import Loading from "../../general/Loading";
+import RustyViz from "../../visualizations/RustyViz";
 
-import MainMenu from "../../general/MainMenu"
-import PageTitle from "../../general/PageTitle"
+import MainMenu from "../../general/MainMenu";
+import PageTitle from "../../general/PageTitle";
 // import AltOptions from "../../general/Options/AltOptions";
 
-import MoreInfo from "../../general/MoreInfo"
-import CompassButton from "../../general/CompassButton/CompassButton"
-import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
-import CancellazioneHelp from "../../helpPages/doubting/CancellazioneHelp"
+import MoreInfo from "../../general/MoreInfo";
+import CompassButton from "../../general/CompassButton/CompassButton";
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel";
+import CancellazioneHelp from "../../helpPages/doubting/CancellazioneHelp";
 
-import Options from "../../general/Options"
-import SearchDropDown from "../../general/Search/SearchDropDownControlled"
-import RangeFilter from "../../general/RangeFilter"
-import TextSearch from "../../general/TextSearch"
+import Options from "../../general/Options";
+import SearchDropDown from "../../general/Search/SearchDropDownControlled";
+import RangeFilter from "../../general/RangeFilter";
+import TextSearch from "../../general/TextSearch";
 
-import GlobalData from "../../utilities/GlobalData"
-import { withTranslation } from "react-i18next"
+import GlobalData from "../../utilities/GlobalData";
+import { withTranslation } from "react-i18next";
 
 const filters = {
   search: [],
   time: [],
-}
+};
 
 const manifestazioniStilistiche = {
   multiple: false,
@@ -51,7 +51,7 @@ const manifestazioniStilistiche = {
       status: true,
     },
   ],
-}
+};
 
 const cerca_per = {
   multiple: false,
@@ -65,13 +65,13 @@ const cerca_per = {
       label: "volume",
       value: "volume",
       status: true,
-    }
+    },
   ],
-}
+};
 
 class Cancellazione extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       loading: true,
 
@@ -86,26 +86,26 @@ class Cancellazione extends Component {
       searchedItems: [],
       timeExtent: [+new Date("1945"), +new Date("1985")],
       color: manifestazioniStilistiche.options.find((d) => d.status).value,
-    }
+    };
   }
   async componentDidMount() {
     const data = await d3.json(
       process.env.PUBLIC_URL + "/cancellazione_dataset_spatialized.json"
-    )
-    const timeExtent = d3.extent(data, (d) => +new Date(d.year))
+    );
+    const timeExtent = d3.extent(data, (d) => +new Date(d.year));
 
     // set publications array for search
     const gdpFiltered = GlobalData.publications.filter(
       (p) => data.map((d) => d.id).indexOf(p.id) !== -1
-    )
+    );
 
     const publications = d3
       .nest()
       .key((d) => d.destinationTitle)
       .rollup((arr) => arr.map((d) => d.id))
-      .entries(gdpFiltered)
+      .entries(gdpFiltered);
 
-    publications.forEach((d) => (d.label = d.key))
+    publications.forEach((d) => (d.label = d.key));
 
     this.setState({
       loading: false,
@@ -115,45 +115,45 @@ class Cancellazione extends Component {
         pubblicazione: publications,
       },
       filter: data.map((d) => d.id),
-    })
+    });
   }
 
   toggleHelpSidePanel = () => {
     this.setState({
       helpSidePanelOpen: !this.state.helpSidePanelOpen,
-    })
-  }
+    });
+  };
 
   changeTimeSpan = (newOptions) => {
-    newOptions = newOptions.map((d) => d.getFullYear())
+    newOptions = newOptions.map((d) => d.getFullYear());
     filters.time = this.state.data
       .filter((d) => {
-        const year = Number(d.year)
-        return year >= newOptions[0] && year <= newOptions[1]
+        const year = Number(d.year);
+        return year >= newOptions[0] && year <= newOptions[1];
       })
-      .map((d) => d.id)
-    this.applyFilters()
-  }
+      .map((d) => d.id);
+    this.applyFilters();
+  };
 
   applyFilters = () => {
-    let ids = this.state.data.map((d) => d.id)
+    let ids = this.state.data.map((d) => d.id);
     if (filters.search.length > 0) {
-      ids = ids.filter((d) => filters.search.indexOf(d) > -1)
+      ids = ids.filter((d) => filters.search.indexOf(d) > -1);
     }
     if (filters.time.length > 0) {
-      ids = ids.filter((d) => filters.time.indexOf(d) > -1)
+      ids = ids.filter((d) => filters.time.indexOf(d) > -1);
     }
     if (ids.length === this.state.data.length) {
-      ids = "no filters"
+      ids = "no filters";
     }
-    this.setState({ filter: ids })
-  }
+    this.setState({ filter: ids });
+  };
 
   changeColor = (newOptions) => {
     this.setState({
       color: newOptions.find((d) => d.status).value,
-    })
-  }
+    });
+  };
 
   changeCercaPer = (newOptions) => {
     this.setState((prevState) => ({
@@ -161,27 +161,28 @@ class Cancellazione extends Component {
         ...prevState.cerca_per,
         options: newOptions,
       },
-    }))
-  }
+    }));
+  };
 
   /**
    *
    * @param {Array} newOptions array of objects. Each object is { label:"title of composition, collection or publication venue", value:["S001", [and other ids] ] }
    */
   changeResearch = (newOptions) => {
+    console.log("change research", newOptions);
     const ids = d3
       .nest()
       .key((d) => d)
       .entries(newOptions.map((d) => d.value).flat())
-      .map((d) => d.key)
+      .map((d) => d.key);
 
-    filters.search = ids
-    this.applyFilters()
-    this.setState({ searchedItems: newOptions })
-  }
+    filters.search = ids;
+    this.applyFilters();
+    this.setState({ searchedItems: newOptions });
+  };
 
   onSelection = (id) => {
-    console.log(id)
+    console.log(id);
     // console.log(this.state.searchedItems)
     // const index=this.state.searchedItems.map(d=>d.value).flat().indexOf(id);
     // console.log(index)
@@ -206,12 +207,10 @@ class Cancellazione extends Component {
     //   console.log(newSearchedItems)
     //   this.setState({searchedItems: newSearchedItems});
     // }
-  }
+  };
 
   render() {
-    const {
-      helpSidePanelOpen,
-    } = this.state
+    const { helpSidePanelOpen } = this.state;
     return (
       <>
         <div className={styles.main}>
@@ -224,17 +223,43 @@ class Cancellazione extends Component {
           <div className="top-nav navigations">
             <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
             <PageTitle
-              title={this.props.t('cancellazione')}
+              title={this.props.t("cancellazione")}
               style={{ gridColumn: "span 9" }}
             />
 
-            {this.state.loading && <Loading style={{ gridColumn: "span 12" }} />}
+            {/* {this.state.loading && <Loading style={{ gridColumn: "span 3" }} />}
+            {!this.state.loading && (
+              <Options
+                title={this.props.t('cerca_per')}
+                data={this.state.cerca_per}
+                style={{ gridColumn: "span 3" }}
+                changeOptions={this.changeCercaPer}
+              />
+            )}
+
+            {this.state.loading && <Loading style={{ gridColumn: "span 6" }} />}
+            {!this.state.loading && (
+              <SearchDropDown
+                style={{ gridColumn: "span 6" }}
+                data={{
+                  options: this.state.searchItems[
+                    this.state.cerca_per.options.find((d) => d.status).label
+                  ],
+                }}
+                changeOptions={this.changeResearch}
+                selectedOptions={this.state.searchedItems}
+              />
+            )} */}
+
+            {this.state.loading && (
+              <Loading style={{ gridColumn: "span 12" }} />
+            )}
             {!this.state.loading && (
               <TextSearch
                 style={{ gridColumn: "span 12" }}
                 changeOptions={this.changeResearch}
                 selectedOptions={this.state.searchedItems}
-                />
+              />
             )}
 
             <MoreInfo
@@ -264,7 +289,7 @@ class Cancellazione extends Component {
             )}
             {!this.state.loading && (
               <Options
-                title={this.props.t('cancellazione:footer.colora_per_stile')}
+                title={this.props.t("cancellazione:footer.colora_per_stile")}
                 data={this.state.manifestazioniStilistiche}
                 style={{ gridColumn: "span 12", textAlign: "center" }}
                 changeOptions={this.changeColor}
@@ -284,8 +309,8 @@ class Cancellazione extends Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default withTranslation(['translation','cancellazione'])(Cancellazione)
+export default withTranslation(["translation", "cancellazione"])(Cancellazione);
