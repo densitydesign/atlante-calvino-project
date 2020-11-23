@@ -53,21 +53,21 @@ const manifestazioniStilistiche = {
   ],
 };
 
-const cerca_per = {
-  multiple: false,
-  options: [
-    {
-      label: "titolo",
-      value: "titolo",
-      status: true,
-    },
-    {
-      label: "volume",
-      value: "volume",
-      status: true,
-    },
-  ],
-};
+// const cerca_per = {
+//   multiple: false,
+//   options: [
+//     {
+//       label: "titolo",
+//       value: "titolo",
+//       status: true,
+//     },
+//     {
+//       label: "volume",
+//       value: "volume",
+//       status: true,
+//     },
+//   ],
+// };
 
 class Cancellazione extends Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class Cancellazione extends Component {
 
       helpSidePanelOpen: true,
       manifestazioniStilistiche: manifestazioniStilistiche,
-      cerca_per: cerca_per,
+      // cerca_per: cerca_per,
       searchedItems: [],
       timeExtent: [+new Date("1945"), +new Date("1985")],
       color: manifestazioniStilistiche.options.find((d) => d.status).value,
@@ -94,26 +94,26 @@ class Cancellazione extends Component {
     );
     const timeExtent = d3.extent(data, (d) => +new Date(d.year));
 
-    // set publications array for search
-    const gdpFiltered = GlobalData.publications.filter(
-      (p) => data.map((d) => d.id).indexOf(p.id) !== -1
-    );
+    // // set publications array for search
+    // const gdpFiltered = GlobalData.publications.filter(
+    //   (p) => data.map((d) => d.id).indexOf(p.id) !== -1
+    // );
 
-    const publications = d3
-      .nest()
-      .key((d) => d.destinationTitle)
-      .rollup((arr) => arr.map((d) => d.id))
-      .entries(gdpFiltered);
+    // const publications = d3
+    //   .nest()
+    //   .key((d) => d.destinationTitle)
+    //   .rollup((arr) => arr.map((d) => d.id))
+    //   .entries(gdpFiltered);
 
-    publications.forEach((d) => (d.label = d.key));
+    // publications.forEach((d) => (d.label = d.key));
 
     this.setState({
       loading: false,
       data: data,
-      searchItems: {
-        titolo: data.map((d) => ({ label: d.title, value: [d.id] })).reverse(),
-        pubblicazione: publications,
-      },
+      // searchItems: {
+      //   titolo: data.map((d) => ({ label: d.title, value: [d.id] })).reverse(),
+      //   pubblicazione: publications,
+      // },
       filter: data.map((d) => d.id),
     });
   }
@@ -155,14 +155,14 @@ class Cancellazione extends Component {
     });
   };
 
-  changeCercaPer = (newOptions) => {
-    this.setState((prevState) => ({
-      cerca_per: {
-        ...prevState.cerca_per,
-        options: newOptions,
-      },
-    }));
-  };
+  // changeCercaPer = (newOptions) => {
+  //   this.setState((prevState) => ({
+  //     cerca_per: {
+  //       ...prevState.cerca_per,
+  //       options: newOptions,
+  //     },
+  //   }));
+  // };
 
   /**
    *
@@ -226,7 +226,6 @@ class Cancellazione extends Component {
               title={this.props.t("cancellazione")}
               style={{ gridColumn: "span 9" }}
             />
-
             {/* {this.state.loading && <Loading style={{ gridColumn: "span 3" }} />}
             {!this.state.loading && (
               <Options
@@ -250,7 +249,6 @@ class Cancellazione extends Component {
                 selectedOptions={this.state.searchedItems}
               />
             )} */}
-
             {this.state.loading && (
               <Loading style={{ gridColumn: "span 12" }} />
             )}

@@ -18,6 +18,7 @@ import Options from "../../general/Options"
 import Search from "../../general/Search"
 import SearchDropDown from "../../general/Search/SearchDropDown"
 import RangeFilter from "../../general/RangeFilter"
+import TextSearch from "../../general/TextSearch";
 
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
 import FoldingLine from "../../visualizations/FoldingLine/FoldingLine"
@@ -194,6 +195,7 @@ class ProcessDoubting extends Component {
 
     this.changeCercaPer = this.changeCercaPer.bind(this)
     this.changeRicerca = this.changeRicerca.bind(this)
+    this.changeRicerca2 = this.changeRicerca2.bind(this)
     this.changeTimeSpan = this.changeTimeSpan.bind(this)
     this.changePubblicazioni = this.changePubblicazioni.bind(this)
     this.changeAnnidamenti = this.changeAnnidamenti.bind(this)
@@ -251,6 +253,7 @@ class ProcessDoubting extends Component {
           },
         ],
       },
+      searchedItems: [],
     }
   }
 
@@ -512,6 +515,8 @@ class ProcessDoubting extends Component {
   changeRicerca(newOptions) {
     console.log("survive search:", newOptions)
 
+    this.setState({ searchedItems: newOptions });
+
     let toPreserve = newOptions.map((d) => d.id)
     toPreserve = _.flattenDeep(toPreserve)
 
@@ -534,6 +539,38 @@ class ProcessDoubting extends Component {
         },
       }))
     }
+  }
+
+  changeRicerca2(newOptions) {
+    // console.log("survive search (new):", newOptions)
+
+    this.setState({ searchedItems: newOptions });
+
+    let toPreserve = newOptions.map((d) => d.value)
+    toPreserve = toPreserve.flat()
+    toPreserve = _.uniq(toPreserve)
+
+    // console.log(toPreserve)
+
+    if (!toPreserve.length) {
+      console.warn("Can't filter against an empty array")
+      this.setState((prevState) => ({
+        filters: {
+          ...prevState.filters,
+          ricerca: prevState.filters.all,
+        },
+      }))
+      return
+    } else {
+      this.setState((prevState) => ({
+        filters: {
+          ...prevState.filters,
+          ricerca: toPreserve,
+        },
+      }))
+    }
+
+    this.applyFilters();
   }
 
   changeTimeSpan(newOptions) {
@@ -615,12 +652,13 @@ class ProcessDoubting extends Component {
   }
 
   applyFilters() {
-    // console.log("apply filters");
+    console.log("apply filters", this.state.filters);
     let survive_filters = this.state.data.map((d) => d.id)
     let id_arrays = []
     for (var f in this.state.filters) {
       survive_filters = _.intersection(survive_filters, this.state.filters[f])
     }
+    console.log(survive_filters)
     this.setState({ survive_filters: survive_filters })
   }
 
@@ -652,26 +690,37 @@ class ProcessDoubting extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 9" }} />
 
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
+          {/* {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
           {!this.state.isLoading && (
             <Options
               title={this.props.t("cerca_per")}
               data={this.state.cerca_per}
-              style={{ gridColumn: "span 4" }}
+              style={{ gridColumn: "span 3" }}
               changeOptions={this.changeCercaPer}
             />
           )}
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
+          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
           {!this.state.isLoading && (
             <SearchDropDown
               style={{
-                gridColumn: "span 7",
+                gridColumn: "span 5",
               }}
               data={{ options: this.state.data_research.titolo }}
               changeOptions={this.changeRicerca}
               selectedOptions={this.state.ricerca}
+            />
+          )} */}
+
+          {this.state.loading && (
+            <Loading style={{ gridColumn: "span 12" }} />
+          )}
+          {!this.state.loading && (
+            <TextSearch
+              style={{ gridColumn: "span 12" }}
+              changeOptions={this.changeRicerca2}
+              selectedOptions={this.state.searchedItems}
             />
           )}
 

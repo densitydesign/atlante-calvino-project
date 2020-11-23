@@ -1,0 +1,4 @@
+.filtered {
+  opacity: 0.15 !important;
+  cursor: not-allowed;
+}
