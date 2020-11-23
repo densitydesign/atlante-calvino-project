@@ -354,6 +354,7 @@ export default function IndexMenu({ onClose }) {
           }
           iconHover={
             <NebbiaIconHover
+              style={{ transition: 'ease-in 0.5s'}}
               className={`${styles["hover-icon"]} ${styles["icon-width"]}`}
             />
           }

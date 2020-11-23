@@ -229,6 +229,7 @@
 
 .hoverable-icon:hover .hover-icon {
   display: block;
+  transition: ease-in 0.5s !important;
 }
 
 .guarda-la-guida {
