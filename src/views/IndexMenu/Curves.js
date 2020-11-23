@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react"
 import * as d3 from "d3"
-import { Link } from "react-router-dom"
 import styles from "./curves.module.css"
 import pp_w4h3 from "./curves/curves-w4h3.json"
 import pp_w3h2 from "./curves/curves-w3h2.json"
@@ -13,7 +12,8 @@ import labels_w3h2 from "./curves/labels-w3h2.json"
 import labels_w16h9 from "./curves/labels-w16h9.json"
 import labels_w3h4 from "./curves/labels-w3h4.json"
 import labels_w9h16 from "./curves/labels-w9h16.json"
-import { useTranslation, withTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next"
+import { HashLink } from "react-router-hash-link"
 
 const curvesPoints = {
   [4 / 3]: pp_w4h3,
@@ -40,7 +40,7 @@ const line = d3
   .x((d) => d.x)
   .y((d) => d.y)
 
-const Curves = ({ dev, setItinerario, itinerarioHover }) => {
+const Curves = ({ dev, setItinerario, itinerarioHover, onClose }) => {
   const svg = useRef()
   const [ratio, setRatio] = useState(4 / 3)
   const { t } = useTranslation("translation")
@@ -149,7 +149,8 @@ const Curves = ({ dev, setItinerario, itinerarioHover }) => {
           ))
         )}
       {labels.map((l, i) => (
-        <Link
+        <HashLink
+          onClick={onClose}
           key={i}
           to={l.link}
           className={styles.linkItinerary}
@@ -164,7 +165,7 @@ const Curves = ({ dev, setItinerario, itinerarioHover }) => {
           >
             {t(l.name)}
           </text>
-        </Link>
+        </HashLink>
       ))}
     </svg>
   )

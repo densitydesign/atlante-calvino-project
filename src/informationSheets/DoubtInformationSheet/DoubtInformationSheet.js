@@ -23,7 +23,7 @@ class DoubtInformationSheet extends React.Component {
               {this.props.t("TAPPA 1")} {">"} {this.props.t("nebbia")}
             </h4>
             <h1 className={SheetStyles.titleH1}>
-              {this.props.t("nebbia-sheet:title")}
+              {this.props.t("nebbia-sheet:L’effetto-nebbia")}
             </h1>
             <img
               className={SheetStyles.legend}
