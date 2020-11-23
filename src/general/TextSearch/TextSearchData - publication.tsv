@@ -1,0 +1,414 @@
+id	publication
+S001	«Roma fascista»
+S002	«Roma fascista»
+S003	«Roma fascista»
+S004	«Aretusa»
+S005	«Politecnico»
+S006	«L'Unità» (Milano)
+S007	«Darsena nuova»
+S008	«Unità» (Torino)
+S009	«L'Unità» (Torino)
+S010	«L'Unità» (Genova)
+S011	«L'Unità» (Milano)
+S012	«Unità» (Torino)
+S013	«Unità» (Torino)
+S014	«Agorà»
+S016	«L'Unità» (Milano)
+S017	«L'Unità» (Milano)
+S018	«L'Unità» (Genova)
+S019	«Il Settimanale»
+S020	«L'Unità» (Genova)
+S021	«L'Unità» (Torino)
+S015	«Graal. Rivista d’arte e pensiero»
+S022	«L'Unità» (Genova)
+V001	V001
+S023	«L'Unità» (Torino)
+S024	«L'Unità» (Torino)
+S025	«Rinascita»
+S026	«L'Unità» (Torino)
+S027	«L'Unità» (Torino)
+S028	«Milano-sera»
+S029	«L'Unità» (Torino)
+S030	«L'Unità» (Torino)
+S031	«Unità» (Torino)
+S032	«Unità» (Torino)
+S033	«L'Unità» (Torino)
+S034	Antologia Einaudi 1948
+S035	«Unità» (Torino)
+S036	«Unità» (Torino)
+S004	V002
+S005	V002
+S006	V002
+S007	V002
+S009	V002
+S010	V002
+S011	V002
+S014	V002
+S016	V002
+S017	V002
+S018	V002
+S020	V002
+S021	V002
+S022	V002
+S023	V002
+S024	V002
+S025	V002
+S026	V002
+S027	V002
+S029	V002
+S030	V002
+S033	V002
+S034	V002
+S067	V002
+S037	V002
+S038	V002
+S039	V002
+S040	V002
+S041	V002
+S042	V002
+S043	V002
+V002	V002
+S044	«Unità» (Torino)
+S045	«Unità» (Torino)
+S046	«Inventario»
+S047	«Rinascita»
+S048	«L'Unità» (Torino)
+S049	«Unità» (Torino)
+S050	«Paragone-letteratura»
+V003	V003
+S051	«Unità» (Torino)
+S052	«L'Unità»
+S053	«L'Unità» (Torino)
+S054	«Botteghe Oscure»
+S055	«L'Unità» (Torino)
+S056	«L'Unità» (Torino)
+S057	«Unità» (Torino)
+S058	«Unità» (Torino)
+S059	«Unità» (Torino)
+S060	«Unità» (Torino)
+S061	«L'Unità» (Torino)
+S062	«L'Unità» (Torino)
+S063	«Unità» (Torino)
+S064	«L'Unità» (Torino)
+S065	«Nuovi Argomenti»
+S066	«L'Unità» (Torino)
+S067	«Il Ponte»
+S068	«Paragone-letteratura»
+S069	«Unità» (Torino)
+S070	«Unità» (Torino)
+S071	«Unità» (Torino)
+S072	V004
+V004	V004
+S065	V004
+S067	V004
+S073	«Incontri oggi»
+S074	«Il contemporaneo»
+S075	«Il contemporaneo»
+S076	«Il contemporaneo»
+S077	«Il contemporaneo»
+S078	«Il contemporaneo»
+S079	«Il contemporaneo»
+S080	«Il contemporaneo»
+S081	«Il contemporaneo»
+S082	«Il contemporaneo»
+S083	«Il contemporaneo»
+S084	«Il contemporaneo»
+S085	«Il Caffè»
+S086	«Corriere d'informazione»
+V005	V005
+S087	«Città aperta»
+S088	«Botteghe Oscure»
+S089	«Città aperta»
+S090	«L'Espresso»
+S091	«Città aperta»
+S092	«Nuova Corrente»
+S093	«Il Mondo»
+S094	«Tempo presente»
+S095	«Nuovi Argomenti»
+S096	«Il Caffè»
+S097	«Il Verri»
+S005	V006
+S007	V006
+S009	V006
+S010	V006
+S011	V006
+S016	V006
+S018	V006
+S021	V006
+S022	V006
+S023	V006
+S024	V006
+S026	V006
+S027	V006
+S029	V006
+S030	V006
+S034	V006
+S037	V006
+S041	V006
+S042	V006
+S046	V006
+S048	V006
+S050	V006
+S052	V006
+S053	V006
+S054	V006
+S055	V006
+S056	V006
+S061	V006
+S062	V006
+S064	V006
+S065	V006
+S066	V006
+S068	V006
+S072	V006
+S083	V006
+S085	V006
+S086	V006
+S088	V006
+S092	V006
+S093	V006
+S094	V006
+S095	V006
+S096	V006
+S097	V006
+S098	V006
+S099	V006
+S100	V006
+S101	V006
+S102	V006
+S103	V006
+S104	V006
+V006	V006
+S054	V007
+V007	V007
+S105	«Successo»
+V008	V008
+S106	«Questo e altro», n.1
+V009	V009
+S107	«L'Europa letteraria»
+S088	V010
+V010	V010
+S108	«Il Corriere dei Piccoli»
+S109	«Il Corriere dei Piccoli»
+S110	«Il Corriere dei Piccoli»
+S111	«Il Corriere dei Piccoli»
+S053	V011
+S055	V011
+S056	V011
+S061	V011
+S062	V011
+S066	V011
+S083	V011
+S085	V011
+S086	V011
+S098	V011
+S108	V011
+S109	V011
+S110	V011
+S111	V011
+S112	V011
+S113	V011
+S114	V011
+S115	V011
+S116	V011
+S117	V011
+V011	V011
+S118	«Il Caffè politico e letterario»
+S119	«Il Caffè politico e letterario»
+S120	«Il Caffè politico e letterario»
+S121	«Il Caffè politico e letterario»
+S122	«Il Giorno»
+S123	«Il Giorno»
+S124	«Il Giorno»
+S125	«Il Giorno»
+S054	V012
+S095	V012
+V012	V012
+S126	«Il Giorno»
+S127	«Il Giorno»
+S128	«L'Espresso»
+S046	V012
+S129	V013
+S130	V013
+S131	V013
+S132	V013
+S118	V013
+S119	V013
+S120	V013
+S121	V013
+V013	V013
+S122	V013
+S124	V013
+S126	V013
+S128	V013
+S133	Almanacco Letterario Bompiani 1967
+S134	«Nuova Corrente»
+S135	«Il Giorno»
+S136	«Il Giorno»
+S137	«Linus»
+S138	«Il Giorno»
+S139	«Rendiconti»
+S140	«Il Giorno»
+S133	V014
+S134	V014
+S135	V014
+S136	V014
+S137	V014
+S139	V014
+S140	V014
+S141	V014
+S142	V014
+S143	V014
+S144	V014
+V014	V014
+S145	«Playmen»
+S146	V015
+S147	V015
+S148	V015
+V015	V015
+S118	V015
+S119	V015
+S122	V015
+S123	V015
+S124	V015
+S125	V015
+S126	V015
+S127	V015
+S130	V015
+S135	V015
+S136	V015
+S137	V015
+S138	V015
+S140	V015
+S141	V015
+S144	V015
+S145	V015
+S149	«Il caffè letterario e satirico»
+V016	V016
+S042	V017
+S050	V017
+S054	V017
+S068	V017
+S084	V017
+S094	V017
+S095	V017
+S097	V017
+S100	V017
+S101	V017
+S102	V017
+S103	V017
+S104	V017
+S105	V017
+S140	V017
+V017	V017
+S150	Adelphiana 1971
+S151	«Playboy»
+V018	V018
+S152	V019
+V019	V019
+S153	«Corriere della sera»
+S154	F. Fellini, Quattro film
+V020	V020
+S155	«Corriere della sera»
+S156	«Corriere della sera»
+S157	Aa. Vv., Le interviste imposibili
+S158	Aa. Vv., Le interviste imposibili
+S159	«Corriere della sera»
+S160	«Corriere della sera»
+S161	«Corriere della sera»
+S162	«Corriere della sera»
+S163	«Corriere della sera»
+S164	«Corriere della sera»
+S165	«Corriere della sera»
+S166	«Corriere della sera»
+S167	L'atelier de l'artiste
+S168	«Corriere della sera»
+S169	-V. Gobbi/S. Toresella, Acquedotti ieri e oggi
+S170	«Corriere della sera»
+S171	«Paragone»
+S172	«Corriere della sera»
+S173	«Il Caffè»
+S174	Paraphrases
+S175	«Corriere della sera»
+V021	V021
+S176	«la Repubblica»
+S177	«Derrière le miroir»
+S178	«la Repubblica»
+S179	«Gran Bazaar»
+S180	Magnelli. Les pierres: 1931-1935
+S181	I. Calvino/M. Campigli, Le memorie di Casanova
+S182	«la Repubblica»
+S183	Firenze perduta
+S184	«la Repubblica»
+S185	«FMR»
+S186	«Cnac Magazine»
+S187	«la Repubblica»
+S188	Gnoli
+S189	«FMR»
+S190	«la Repubblica»
+S191	«la Repubblica»
+S192	V022
+S193	V022
+S194	V022
+S195	V022
+S196	V022
+S197	V022
+S198	V022
+S199	V022
+S200	V022
+S201	V022
+V022	V022
+S160	V022
+S161	V022
+S162	V022
+S163	V022
+S164	V022
+S165	V022
+S166	V022
+S168	V022
+S170	V022
+S172	V022
+S178	V022
+S182	V022
+S184	V022
+S186	V022
+S187	V022
+S190	V022
+S191	V022
+S202	«la Repubblica»
+S203	Cremonini. Opere dal 1960 al 1984
+S204	«la Repubblica»
+S205	«la Repubblica»
+S206	«la Repubblica»
+S118	V023
+S119	V023
+S120	V023
+S121	V023
+S122	V023
+S123	V023
+S124	V023
+S125	V023
+S126	V023
+S127	V023
+S128	V023
+S129	V023
+S130	V023
+S131	V023
+S132	V023
+S133	V023
+S134	V023
+S135	V023
+S136	V023
+S137	V023
+S139	V023
+S140	V023
+S141	V023
+S142	V023
+S143	V023
+S144	V023
+S145	V023
+S146	V023
+S147	V023
+V023	V023
+S205	V023
+S206	V023

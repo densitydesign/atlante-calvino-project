@@ -17,6 +17,7 @@ import CancellazioneHelp from "../../helpPages/doubting/CancellazioneHelp"
 import Options from "../../general/Options"
 import SearchDropDown from "../../general/Search/SearchDropDownControlled"
 import RangeFilter from "../../general/RangeFilter"
+import TextSearch from "../../general/TextSearch"
 
 import GlobalData from "../../utilities/GlobalData"
 import { withTranslation } from "react-i18next"
@@ -222,10 +223,10 @@ class Cancellazione extends Component {
           </HelpSidePanel>
           <div className="top-nav navigations">
             <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-            <PageTitle
+            {/* <PageTitle
               title={this.props.t('cancellazione')}
               style={{ gridColumn: "span 9" }}
-            />
+            /> */}
 
             {this.state.loading && <Loading style={{ gridColumn: "span 3" }} />}
             {!this.state.loading && (
@@ -237,10 +238,24 @@ class Cancellazione extends Component {
               />
             )}
 
-            {this.state.loading && <Loading style={{ gridColumn: "span 9" }} />}
+            {this.state.loading && <Loading style={{ gridColumn: "span 6" }} />}
             {!this.state.loading && (
               <SearchDropDown
-                style={{ gridColumn: "span 9" }}
+                style={{ gridColumn: "span 6" }}
+                data={{
+                  options: this.state.searchItems[
+                    this.state.cerca_per.options.find((d) => d.status).label
+                  ],
+                }}
+                changeOptions={this.changeResearch}
+                selectedOptions={this.state.searchedItems}
+              />
+            )}
+
+            {this.state.loading && <Loading style={{ gridColumn: "span 12" }} />}
+            {!this.state.loading && (
+              <TextSearch
+                style={{ gridColumn: "span 12" }}
                 data={{
                   options: this.state.searchItems[
                     this.state.cerca_per.options.find((d) => d.status).label

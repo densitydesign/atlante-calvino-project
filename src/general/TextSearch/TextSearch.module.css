@@ -1,0 +1,14 @@
+.container {
+	height: 100%;
+}
+
+.selector {
+	width: 25%;
+	height: 100%;
+}
+
+.textInput {
+	width: 75%;
+	height: 100%;
+	border-left: 1px solid black;
+}
