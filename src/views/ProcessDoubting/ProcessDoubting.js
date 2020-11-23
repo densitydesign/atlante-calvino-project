@@ -458,7 +458,7 @@ class ProcessDoubting extends Component {
       case "assoluti":
         option = "absolute"
         break
-      case "normalizzati":
+      case "normalizzata":
         option = "normalized"
         break
     }
