@@ -123,7 +123,7 @@ const ItemIndex = ({
         ) : (
           <Link
             to={linkApprofondimento}
-            className='d-flex align-items-center'
+            className="d-flex align-items-center"
             style={{
               transform: `translate(0, ${
                 title !== "Territorio" ? yAlign : 0
@@ -339,6 +339,7 @@ export default function IndexMenu({ onClose }) {
           title={t("nebbia")}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
+          titleApprofondimento={t("L’effetto-nebbia")}
           tappa={1}
           itinerario={"Dubbio"}
           onClose={onClose}
@@ -382,6 +383,7 @@ export default function IndexMenu({ onClose }) {
           title={t("trasformare")}
           onClose={onClose}
           itinerario={"Spazio"}
+          titleApprofondimento={t("Cartografia dei luoghi terrestri")}
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           tappaHover={tappaHover}
@@ -405,6 +407,7 @@ export default function IndexMenu({ onClose }) {
           itinerarioHover={itinerarioHover}
           tappa={1}
           itinerario={"Spazio"}
+          titleApprofondimento={t("La forma della geografia inventata")}
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -426,6 +429,9 @@ export default function IndexMenu({ onClose }) {
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           itinerario={"Spazio"}
+          titleApprofondimento={t(
+            "Metamorfosi della realtà sulle tracce della paura"
+          )}
           link="/space/phase3"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
@@ -448,6 +454,7 @@ export default function IndexMenu({ onClose }) {
           itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
+          titleApprofondimento={t("Per un'estetica elencatoria")}
           tappa={1}
           onClose={onClose}
           className={"elenchi"}
@@ -469,6 +476,7 @@ export default function IndexMenu({ onClose }) {
           link="/form/phase2"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
+          titleApprofondimento={t('Costruire la varietà')}
           tappa={2}
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
@@ -490,6 +498,7 @@ export default function IndexMenu({ onClose }) {
           itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
+          titleApprofondimento={t('Leggere fra le trame')}
           tappa={3}
           linkApprofondimento="/form/phase3/focus"
           className={"trama"}
