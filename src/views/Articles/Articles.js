@@ -27,7 +27,7 @@ export default function Articles() {
     <>
       <IndexMenuHeader />
       <div className="ac-grid-24">
-        <div className="content" style={{ gridColumn: "span 12" }}>
+        <div className="content">
           <h1>Pubblicazioni</h1>
           <h2>Mostra</h2>
           <div className="sticky-element bg-white d-flex justify-content-between pb-4">
