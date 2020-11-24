@@ -47,7 +47,7 @@ export default function ProcessCombiningMainHelp() {
               mostrano l’organizzazione strutturale del contenuto in tre piani
               fondamentali: il piano{" "}
               <span style={{ color: "#00C19C" }}>esteriore</span> (che riunisce
-              le azioni dei personaggi e gli eventi del mondo fisico), il piano
+              le azioni dei personaggi e gli eventi del mondo fisico), il piano{" "}
               <span style={{ color: "#5151FC" }}>interiore</span> (che riunisce
               sentimenti, pensieri e stati d’animo), il piano{" "}
               <span style={{ color: "#FFA500" }}>formale</span> (che riunisce
@@ -60,7 +60,8 @@ export default function ProcessCombiningMainHelp() {
           <Trans i18nKey={"help_panel.come_funziona"} t={t} ns="combining">
             <p>
               La visualizzazione è organizzata su diversi livelli di
-              approfondimento progressivo. In primo luogo, la segmentazione
+              approfondimento progressivo.<br /><br />
+              In primo luogo, la segmentazione
               delle colonne mostra la struttura di superficie dei volumi:
               l’ampiezza e la disposizione dei tre tipi di segmenti colorati,
               che possono essere visualizzati in modo <i>Aggregato</i> o{" "}
@@ -69,13 +70,15 @@ export default function ProcessCombiningMainHelp() {
               alternando scene del mondo esterno e parentesi di interiorità,
               oppure ponendo il lettore davanti a indici stratificati e soglie
               metaletterarie, o ancora con una combinazione di tutte le
-              possibilità). Selezionando il filtro <i>Piani/Sequenze</i> si
+              possibilità).<br /><br />
+              Selezionando il filtro <i>Piani/Sequenze</i> si
               passa alla struttura intermedia: in questa configurazione la
               visualizzazione permette di vedere le sequenze narrative
               particolari che compongono i tre piani di superficie, rivelando
               più in dettaglio quali sono i blocchi ricorrenti delle narrazioni
               calviniane e come si distribuiscono all’interno dei volumi e nel
-              corso del tempo. Cliccando su una specifica colonna, infine, si
+              corso del tempo.<br /><br />
+              Cliccando su una specifica colonna, infine, si
               accede alla struttura di profondità: il volume selezionato si apre
               per rivelare tutti i livelli interni alle sequenze, esponendo la
               stratificazione dei singoli motivi che si annidano l’uno
@@ -116,7 +119,7 @@ export default function ProcessCombiningMainHelp() {
               nella raccolta <i>Le cosmicomiche vecchie e nuove</i>, che
               ridispone in raggruppamenti nuovi i racconti già usciti nelle
               raccolte precedenti), e passano da esperimenti di minimalismo
-              estremo come il livello unico delle Città invisibili a formule
+              estremo come il livello unico delle <i>Città invisibili</i> a formule
               caotiche come la struttura composita di{" "}
               <i>Se una notte d’inverno un viaggiatore</i>. Ma, in modo più
               sottile, consente anche di ritrovare tracce di pratica

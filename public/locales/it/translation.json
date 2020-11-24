@@ -97,7 +97,20 @@
     "quattro": "4",
     "categorie": "sequenza",
     "cinque": "5",
-    "tre": "3"
+    "tre": "3",
+    "ui": {
+      "volume": "volume",
+      "uno": "uno",
+      "due": "due",
+      "tre": "tre",
+      "quattro": "quattro",
+      "cinque": "cinque",
+      "ambito": "ambito",
+      "categorie": "categorie",
+      "aggregato": "aggregato",
+      "non_aggregato": "non_aggregato"
+    },
+    "non_aggregato": "non_aggregato"
   },
   "legenda": "legenda",
   "analisi": "Vai alla visualizzazione",

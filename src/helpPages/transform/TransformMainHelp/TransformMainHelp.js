@@ -65,11 +65,12 @@ export default function TransformMainHelp() {
               aderenza alla realtà. Le categorie scelte, distribuite sull’asse
               verticale, sono quelle già presenti nella prima tappa:{" "}
               <span style={{ color: "#5151FC" }}>cosmici generici</span>,{" "}
-              <span style={{ color: "#BBBBFF" }}>cosmici localizzabili</span>,
-              <span style={{ color: "#FFA500" }}>terrestri localizzabili</span>,
-              <span style={{ color: "#FF6C39" }}>terrestri generici</span>,
-              <span style={{ color: "#00C19C" }}>terrestri inventati</span>,
-              <span style={{ color: "#C6CACF" }}>nessun luogo</span>. Tutte le
+              <span style={{ color: "#BBBBFF" }}>cosmici localizzabili</span>,{" "}
+              <span style={{ color: "#FFA500" }}>terrestri localizzabili</span>,{" "}
+              <span style={{ color: "#FF6C39" }}>terrestri generici</span>,{" "}
+              <span style={{ color: "#00C19C" }}>terrestri inventati</span>,{" "}
+              <span style={{ color: "#AFAFAF" }}>nessun luogo</span>. <br /><br />
+              Tutte le
               ambientazioni sono rappresentate da un cerchio. La dimensione dei
               cerchi non è uniforme, ma varia in rapporto al numero di luoghi
               che appartengono a una stessa ambientazione. Nel caso in cui la
@@ -77,7 +78,8 @@ export default function TransformMainHelp() {
               luogo, quest’ultimo, da un punto di vista grafico, scompare e la
               circonferenza del primo aumenta, mettendo in evidenza la presenza
               di un contenuto nascosto. Per svelare questo contenuto interno è
-              sufficiente selezionare e aprire il cerchio “contenitore”. È
+              sufficiente selezionare e aprire il cerchio “contenitore”.<br /><br />
+              È
               possibile attivare o disattivare un ampio numero di filtri, che
               permettono di trasformare il campo della ricerca, osservandolo da
               prospettive differenti. I risultati possono essere filtrati per
@@ -93,8 +95,8 @@ export default function TransformMainHelp() {
               o attraverso il <i>Filtro cronologico</i>.
             </p>
           </Trans>
-          <p>
-            <strong>{"help_panel.qualche_pista_di_lettura"}</strong>
+          <p className="mt-3">
+            <strong>{t("help_panel.qualche_pista_di_lettura")}</strong>
           </p>
           <Trans
             i18nKey={"help_panel.qualche_pista_di_lettura"}
@@ -106,13 +108,15 @@ export default function TransformMainHelp() {
               terrestri localizzabili, che riflette con una certa precisione la
               geografia biografica dell’autore (vedi{" "}
               <Link to="/space/phase2/focus">Approfondimento</Link>
-              ). La disposizione spaziale degli elementi rivela una coincidenza
+              ).<br /><br /> 
+              La disposizione spaziale degli elementi rivela una coincidenza
               significativa con il tempo della storia: al centro dell’asse
               verticale della visualizzazione, salvo alcune eccezioni, il tempo
               della storia coincide con il momento storico in cui Calvino
               scrive; allontanandosi verso l’alto o verso il basso, questa
               corrispondenza viene meno e ci si trova catapultati all’indietro,
-              in un passato recente o ai primordi del mondo. Un’ultima
+              in un passato recente o ai primordi del mondo.<br /><br />
+              Un’ultima
               considerazione riguarda l’utilità dei filtri: selezionando l’opera
               per <i>Tipo di pubblicazione</i>, emergono differenze rilevanti: i
               romanzi esplorano maggiormente gli spazi del fantastico; invece i

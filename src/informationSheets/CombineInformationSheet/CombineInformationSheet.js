@@ -277,7 +277,7 @@ class CombineInformationSheet extends Component {
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>
               {this.props.t(
-                "combining-sheet:Salti di ambito, o il potere dell’assemblaggio strategico"
+                "combining-sheet:Salti di piano, o il potere dell’assemblaggio strategico"
               )}
             </h2>
             <img
@@ -317,13 +317,14 @@ class CombineInformationSheet extends Component {
                 abbiamo iniziato; una collocazione da cui possiamo mettere a
                 fuoco non più solo l’effetto complessivo o la quantità
                 molecolare delle parti, ma la struttura e le catene connettive
-                in cui queste parti si raggruppano. Ed ecco apparire il trucco,
+                in cui queste parti si raggruppano.<br></br>
+                Ed ecco apparire il trucco,
                 quello che dimostra davvero l’estensione della padronanza che
                 Calvino ha sulle tecniche di composizione e di combinazione: il
                 potere di rivelare o nascondere la varietà di un testo non
                 modificando il numero delle parti coinvolte, ma calibrandone
                 l’effetto attraverso un attento processo di assemblaggio
-                strategico. Se riportiamo le categorie ai tre grandi ambiti
+                strategico. Se riportiamo le categorie ai tre grandi piani
                 generali di appartenenza in cui può essere sezionato un testo
                 narrativo – il piano{" "}
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
@@ -404,8 +405,8 @@ class CombineInformationSheet extends Component {
                 dinamica: «un protagonista che parla in prima persona ma non ha
                 nome né volto si muove tra uno stuolo di personaggi minori
                 ognuno dei quali ha un suo modo di contrapporsi alle formiche o
-                allo smog» (Falcetto 1991, 1313), con un formato che riprende,
-                da un lato, il modello dantesco del viaggio nell’oltretomba
+                allo smog» (Falcetto 1991, 1313), con un modello che riprende,
+                da un lato, il formato dantesco del viaggio nell’oltretomba
                 popolato da anime-
                 <em>exempla</em>, e dall’altro la forma del{" "}
                 <em>Bildungsroman</em> goethiano, in cui l’eroe è avviato a un
@@ -441,7 +442,8 @@ class CombineInformationSheet extends Component {
                 incontro-iniziativa-
                 <em>visione</em>, con la ricercata rottura dello schema che
                 acutizza il senso di disperazione dell’eroe ormai vicino al
-                punto di rottura. Non si tratta ovviamente solo di un piccolo
+                punto di rottura.<br></br><br></br> 
+                Non si tratta ovviamente solo di un piccolo
                 gioco nascosto dall’autore dietro le quinte della storia:
                 l’effetto di ripetizione è integrale alla rappresentazione del
                 pessimismo incombente del racconto, che moltiplica gli sforzi
