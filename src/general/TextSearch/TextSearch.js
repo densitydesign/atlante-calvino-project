@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useState } from "react";
+import _ from "lodash";
 import classnames from "classnames";
 // import { withTranslation } from "react-i18next";
 
@@ -16,8 +17,19 @@ export default function TextSearch({
   selectedOptions,
   availableIds,
 }) {
+  let titles = _titles,
+      volumes = _volumes,
+      publications = _publications;
+
   // console.log("IDS available in visualization:", availableIds)
-  let titles = _titles, volumes = _volumes, publications = _publications;
+  // console.log("titles not in viz:", _.difference(_titles.map(d=>d.id).flat(), availableIds))
+  // console.log("all titles", _titles)
+  if (availableIds && availableIds.length > 0) {
+    titles = _titles.filter(
+      (d) => _.intersection(availableIds, d.id).length > 0
+    );
+  }
+
   const options = [
     { id: "titles", label: { it: "Titolo", en: "Title" }, data: titles },
     { id: "volume", label: { it: "Volume", en: "Volume" }, data: volumes },
