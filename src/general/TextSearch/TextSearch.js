@@ -15,7 +15,8 @@ export default function TextSearch({
   style,
   changeOptions,
   selectedOptions,
-  availableIds,
+  availableIds, // array of IDS, use this to filter available options in typeahead
+  availableOptions // array of options (title, volume, publication) use this to filter dropdown options
 }) {
   let titles = _titles,
       volumes = _volumes,
@@ -30,8 +31,8 @@ export default function TextSearch({
     );
   }
 
-  const options = [
-    { id: "titles", label: { it: "Titolo", en: "Title" }, data: titles },
+  let options = [
+    { id: "title", label: { it: "Titolo", en: "Title" }, data: titles },
     { id: "volume", label: { it: "Volume", en: "Volume" }, data: volumes },
     {
       id: "publication",
@@ -39,7 +40,10 @@ export default function TextSearch({
       data: publications,
     },
   ];
-  // console.log(options)
+  if (availableOptions && availableOptions.length > 0) {
+    options = options.filter(o=>availableOptions.indexOf(o.id)>-1);
+  }
+
   const [option, setOption] = useState(options[0]);
   return (
     <div className={styles.container} style={style}>
