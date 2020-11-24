@@ -321,13 +321,14 @@ class PlotInformationSheet extends Component {
                 segreto su come organizzare la propria caotica esperienza, ma
                 solo a patto di seguirlo fino in fondo (Kermode 1972). Essendo
                 proiettato sulla scoperta del finale, quindi, si capisce come le
-                cesure che impediscono al lettore di procedere in avanti nelle
+                cesure che impediscono al Lettore di procedere in avanti nelle
                 storie e di chiudere le parabole aperte delle trame siano la
                 massima forma di sabotaggio delle sue aspirazioni, ben più di
                 quanto non lo siano per la Lettrice, che invece dimostra di
                 avere un approccio più organico e immediato all’esperienza della
                 lettura, non così ossessivamente finalizzato al raggiungimento
-                della conclusione. Ma qual è la trama di questo Lettore
+                della conclusione.<br></br>
+                Ma qual è la trama di questo Lettore
                 perseguitato dalle trame?
               </p>
             </Trans>

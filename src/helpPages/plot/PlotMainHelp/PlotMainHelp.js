@@ -46,7 +46,8 @@ export default function PlotMainHelp({ helpProps }) {
           <Trans i18nKey={"help_panel.di_cosa_si_tratta"} t={t} ns="trama">
             <p>
               La visualizzazione rappresenta le forme della trama che
-              costituiscono l’ossatura narrativa dei testi del corpus. La trama
+              costituiscono l’ossatura narrativa dei testi del corpus.<br></br>
+              La trama
               di ogni testo pubblicato in vita da Calvino è sintetizzata nella
               forma di una linea colorata che, come un sismografo, si muove su
               due assi: quello orizzontale, orientato da destra a sinistra,
@@ -61,12 +62,13 @@ export default function PlotMainHelp({ helpProps }) {
             </p>
           </Trans>
           <p>
-            <strong>{t("trama:help_panel.come_si_legge")}</strong>
+            <strong>{t("help_panel.come_funziona")}</strong>
           </p>
-          <Trans i18nKey={"help_panel.come_si_legge_testo"} t={t} ns="trama">
+          <Trans i18nKey={"help_panel.come_funziona"} t={t} ns="trama">
             <p>
               La visualizzazione è organizzata in modo da offrire una doppia
-              direzione di lettura. Nella prima schermata, il panorama frontale
+              direzione di lettura.<br></br>
+              Nella prima schermata, il panorama frontale
               delle linee mette a confronto tutte le trame dei testi calviniani,
               disponendole in uno spazio uniforme indipendentemente dalla loro
               lunghezza. Il movimento orizzontale di ogni linea è basato sulla
@@ -79,7 +81,8 @@ export default function PlotMainHelp({ helpProps }) {
               che articolano il percorso. Cliccando sull’etichetta che contiene
               il titolo del testo, si può inoltre isolare ogni linea per
               analizzare in dettaglio tutti i punti della sua struttura
-              narrativa. Sfruttando l’opzione Ruota vista, si può poi accedere
+              narrativa.<br></br>
+              Sfruttando l’opzione Ruota vista, si può poi accedere
               alla seconda modalità di lettura: l’intera visualizzazione compie
               un giro di 90° su se stessa, e permette di osservare il panorama
               “di profilo”, da una prospettiva che mette in risalto l’estensione
@@ -90,7 +93,8 @@ export default function PlotMainHelp({ helpProps }) {
               trovano sulle linee indicano rispettivamente la sequenza di
               apertura e di chiusura di ogni testo: in questo modo è possibile
               avere uno sguardo totale sui motivi letterari che l’autore sceglie
-              di usare come incipit e finali dei suoi testi. Per entrambe le
+              di usare come incipit e finali dei suoi testi.<br></br>
+              Per entrambe le
               modalità di lettura è sempre possibile visualizzare l’elenco delle
               sequenze, che può anche essere usato per interrogare le
               visualizzazioni selezionando un proprio intervallo personalizzato
@@ -109,7 +113,8 @@ export default function PlotMainHelp({ helpProps }) {
             <p>
               Entrambe le modalità di lettura offerte dalla visualizzazione
               offrono la possibilità di immergersi nel mondo di trame di Calvino
-              per scoprirne aspetti notevoli. Nella visione panoramica frontale,
+              per scoprirne aspetti notevoli.<br></br>
+              Nella visione panoramica frontale,
               un esempio è l’uso del cursore su due o più linee evidenziate
               contemporaneamente: uno strumento che permette di rilevare
               eventuali coincidenze e divaricazioni tra le strutture dei testi,
@@ -117,7 +122,8 @@ export default function PlotMainHelp({ helpProps }) {
               stessa posizione in racconti di genere diverso, o composti a
               distanza di molti anni, oppure viceversa segnalando il
               disallineamento di racconti che, a prima vista, sembrerebbero
-              invece collegati da una sostanziale somiglianza narrativa. La
+              invece collegati da una sostanziale somiglianza narrativa.<br></br>
+              La
               visione panoramica laterale, da parte sua, consente tra le altre
               cose di avere un resoconto visivo di una questione primaria per
               Calvino, quella del Cominciare e del Finire. Grazie alla
