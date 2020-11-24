@@ -264,8 +264,8 @@ class RealismInformationSheet extends Component {
                 trasformando le cose concrete in simboli e allucinazioni finisce
                 per farli capitolare. A Binda questo non accade perché – come
                 mostra l’equilibrio quasi perfetto tra le sequenze{" "}
-                <span style={{ color: "#ff3366" }}>rosso</span> e le sequenze{" "}
-                <span style={{ color: "#00bfd3" }}>blu</span> – nei momenti in
+                <span style={{ color: "#ff3366" }}>rosse</span> e le sequenze{" "}
+                <span style={{ color: "#00bfd3" }}>azzurre</span> – nei momenti in
                 cui l’immaginazione sembra prendere il sopravvento, c’è sempre
                 qualcosa che lo riporta alla realtà e gli permette di completare
                 la sua missione.
