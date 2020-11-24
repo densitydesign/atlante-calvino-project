@@ -70,10 +70,7 @@
     "fabbrica": "fabbrica",
     "metropoli": "metropoli",
     "raccolta": "raccolta",
-    "sede di pubblicazione": "sede di pubblicazione",
     "romanzo": "romanzo",
-    "titolo": "titolo",
-    "volume": "volume",
     "negazione": "negazione",
     "riformulazione": "riformulazione",
     "esitazione": "esitazione",
@@ -116,5 +113,8 @@
   "Leggere fra le trame": "Leggere fra le trame",
   "Costruire la varietà": "Costruire la varietà",
   "Per un'estetica elencatoria": "Per un'estetica elencatoria",
-  "L’effetto-nebbia": "L’effetto-nebbia"
+  "L’effetto-nebbia": "L’effetto-nebbia",
+  "titolo": "Titolo",
+  "volume": "Volume",
+  "sede di pubblicazione": "Sede di pubblicazione"
 }

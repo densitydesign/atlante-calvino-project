@@ -10,6 +10,7 @@ import styles from "./TextSearch.module.css";
 import _titles from "./titles.json";
 import _volumes from "./volumes.json";
 import _publications from "./publications.json";
+import { useTranslation } from "react-i18next";
 
 export default function TextSearch({
   style,
@@ -32,18 +33,18 @@ export default function TextSearch({
   }
 
   let options = [
-    { id: "title", label: { it: "Titolo", en: "Title" }, data: titles },
-    { id: "volume", label: { it: "Volume", en: "Volume" }, data: volumes },
+    { id: "title", label: "titolo", data: titles },
+    { id: "volume", label: "volume", data: volumes },
     {
       id: "publication",
-      label: { it: "Sede di pubblicazione", en: "Publication" },
+      label: "sede di pubblicazione",
       data: publications,
     },
   ];
   if (availableOptions && availableOptions.length > 0) {
     options = options.filter(o=>availableOptions.indexOf(o.id)>-1);
   }
-
+  const {t} = useTranslation("translation")
   const [option, setOption] = useState(options[0]);
   return (
     <div className={styles.container} style={style}>
@@ -51,8 +52,8 @@ export default function TextSearch({
         <Dropdown>
           <Dropdown.Toggle>
             <div>
-              <span className="micro-title">Cerca per</span>
-              <span className="current-selection">{option.label.it}</span>
+              <span className="micro-title">{t("cerca_per")}</span>
+              <span className="current-selection">{t(option.label)}</span>
             </div>
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -64,7 +65,7 @@ export default function TextSearch({
                 })}
                 onClick={() => setOption(d)}
               >
-                {d.label.it}
+                {t(d.label)}
               </Dropdown.Item>
             ))}
           </Dropdown.Menu>
