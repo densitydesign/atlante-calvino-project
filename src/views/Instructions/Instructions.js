@@ -48,10 +48,10 @@ export default function Instructions() {
               </ol>
             </div>
             <p>
-              I
+              I {" "}
               <Link to="/itineraries">
                 <strong>3 itinerari</strong>
-              </Link>
+              </Link>{" "}
               che abbiamo scelto di percorrere riguardano:
             </p>
             <div>
@@ -76,7 +76,7 @@ export default function Instructions() {
             <p>
               Ogni visualizzazione presente nell’Atlante contiene una
               <strong> legenda</strong> e una <strong>spiegazione </strong>
-              (articolata in tre sezioni:
+              (articolata in tre sezioni:{" "}
               <i>Di cosa si tratta, Come si legge, Qualche pista di lettura</i>)
               che guidano la lettura e che si possono consultare sul lato destro
               della pagina.
@@ -90,10 +90,10 @@ export default function Instructions() {
             <p>
               La maggior parte della ricerca è stata svolta sull’intero
               <strong> corpus </strong>
-              narrativo, basandosi sul testo stabilito nell’edizione dei
+              narrativo, basandosi sul testo stabilito nell’edizione dei{" "}
               <i>Romanzi e racconti</i>, edizione diretta da Claudio Milanini, a
               cura di Mario Barenghi e Bruno Falcetto (3 voll., 1991, 1992,
-              1994: d’ora in avanti RR, seguito dal volume e dal numero di
+              1994: d’ora in avanti <i>RR</i>, seguito dal volume e dal numero di
               pagina) di cui la casa editrice Mondadori ci ha consentito
               l’utilizzo in formato digitale per la creazione dei dataset
               necessari alle elaborazioni visive. I casi in cui la

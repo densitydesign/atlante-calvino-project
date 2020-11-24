@@ -78,7 +78,7 @@ export default function CancellazioneHelp() {
               <span style={{ color: "#FFD337" }}>contenuto</span> (si dubita del
               contenuto che si vuole raccontare),{" "}
               <span style={{ color: "#00BFD3" }}>forma</span> (si dubita del
-              modo in cui si vuole esprimere il contenuto della narrazione),
+              modo in cui si vuole esprimere il contenuto della narrazione),{" "}
               <span style={{ color: "#FF3366" }}>significato</span> (si dubita
               dell’interpretazione del contenuto della narrazione). E da tre
               tipi di <i>stile</i>: <i>esitazione</i> (si esita sul contenuto,
@@ -87,11 +87,11 @@ export default function CancellazioneHelp() {
               significato di quanto appena affermato), <i>negazione</i> (si nega
               il contenuto, la forma o il significato di quanto appena
               affermato). Ogni occorrenza di testo dubitativo è stata analizzata
-              attraverso il duplice <i>focus</i> dei
+              attraverso il duplice <i>focus</i> dei{" "}
               <i>Livelli</i> e degli <i>Stili</i>. Il colore degli elementi
               grafici corrisponde alla percentuale di utilizzo delle diverse{" "}
               <i>Categorie</i> nel testo dubitativo di ogni singola opera. La
-              loro dimensione corrisponde alla quantità in caratteri di testo
+              loro dimensione corrisponde alla quantità di testo
               dubitativo misurata in caratteri. Se selezionato, ogni{" "}
               <i>elemento grafico</i> si “apre”, mostrando la distribuzione
               interna delle occorrenze in base alla griglia con la quale il
@@ -100,9 +100,9 @@ export default function CancellazioneHelp() {
               testi possono essere selezionati in base a un intervallo temporale
               (<i>Filtro cronologico</i>). Inoltre è possibile modificare la
               scala cromatica della visualizzazione, scegliendo come parametro
-              uno stile (<i>olora per stile</i>): questa funzione permette di
+              uno stile (<i>Colora per stile</i>): questa funzione permette di
               vedere l’intensità d’utilizzo nei vari <i>elementi grafici</i> del
-              tipo di
+              tipo di{" "}
               <i>stile</i> selezionato.
             </p>
           </Trans>
@@ -128,11 +128,11 @@ export default function CancellazioneHelp() {
               ai dati raccolti, sembra rispecchiare una divisione cronologica; a
               sinistra tenderanno infatti a collocarsi i testi prima degli anni
               ’60, con qualche rara eccezione: “superano” la linea{" "}
-              <i>Campo di mine</i>
+              <i>Campo di mine</i>{" "}
               (1946), <i>L’avventura di un soldato</i> (1949) (vedi{" "}
               <Link to="/doubt/phase3/focus">Approfondimento</Link>),{" "}
               <i>La casa degli alveari</i> (1949),{" "}
-              <i>L’avventura di un impiegato</i> (1953),
+              <i>L’avventura di un impiegato</i> (1953),{" "}
               <i>L’avventura di un fotografo</i> (1955),{" "}
               <i>Il cavaliere inesistente</i> (1959). Una maggiore densità di
               testo dubitativo spinge questi testi verso destra, suggerendoci

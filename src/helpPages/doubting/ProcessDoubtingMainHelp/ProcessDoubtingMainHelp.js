@@ -63,21 +63,22 @@ export default function ProcessDoubtingMainHelp() {
               sull’estensione del processo in tutta l’opera. Le colonne, che
               rappresentano i testi, sono disposte cronologicamente per data di
               prima pubblicazione lungo l’asse orizzontale e colorate secondo la
-              presenza di quattro tipi di testo:
+              presenza di quattro tipi di testo:{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> (zona
               di espressione del dubbio);{" "}
               <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span>{" "}
-              (zona del testo messa in dubbio); testo dubitativo e oggetto di
-              dubbio (zona del testo in cui viene espresso un dubbio e di cui
-              poi si dubita); testo non dubitativo (zona neutra).
+              (zona del testo messa in dubbio);  <span style={{ color: "#00C19C" }}>testo dubitativo e oggetto di
+              dubbio</span>{" "} (zona del testo in cui viene espresso un dubbio e di cui
+              poi si dubita); <span style={{ color: "#AFAFAF" }}>testo non dubitativo</span>{" "} (zona neutra).
               <br />
               Ogni colonna se selezionata si “apre” e mostra, tramite una scala
               cromatica d’intensità crescente, la quantità di caratteri che è
               stata messa in discussione una o più volte dal processo
               dubitativo; l’informazione è riportata in percentuale accanto al
-              tipo di testo corrispondente. Il numero di volte che un testo
-              dubitativo o un testo oggetto di dubbio sono stati messi in
-              discussione determina il
+              tipo di testo corrispondente. Il numero di volte che un {" "}
+              <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> o un {" "}
+              <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span> sono stati messi in
+              discussione determina il{" "}
               <i>Numero di livelli</i>. Varie funzioni permettono di esplorare i
               dati raccolti, filtrando i testi secondo diversi criteri (
               <i>
