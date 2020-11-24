@@ -175,9 +175,10 @@ class Trama extends Component {
           <AltOptions
             title={t("combining:ui.numero_livelli_testo")}
             multiple
+            isFlex
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            allLink="tutti"
+            allLink="tutti"              
             style={{
               gridColumn: "span 8",
               textAlign: "center",

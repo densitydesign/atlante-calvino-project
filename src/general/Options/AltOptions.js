@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import findIndex from "lodash/findIndex"
 import range from "lodash/range"
+import classnames from "classnames"
 import indexOf from "lodash/indexOf"
 import "../../App.css"
 import "./Options.css"
@@ -150,6 +151,10 @@ class AltOptions extends Component {
             {!anySelected && title}
           </Dropdown.Toggle>
           <Dropdown.Menu
+            className={classnames({
+              "d-flex": this.props.isFlex,
+              "flex-wrap": this.props.isFlex,
+            })}
             onToggle={multiple ? undefined : this.toggleDropDown}
             show={this.state.show}
           >
@@ -158,7 +163,11 @@ class AltOptions extends Component {
                 <Dropdown.Item
                   key={i}
                   onClick={() => this.handleChange(i)}
-                  className={{ active: selectedIndices[i] }}
+                  style={{ width: this.props.isFlex ? "33.3%" : undefined }}
+                  className={classnames({
+                    active: selectedIndices[i],
+                    "border-right border-dark": this.props.isFlex,
+                  })}
                 >
                   {this.props.t("options." + d.label)}
                 </Dropdown.Item>
@@ -166,6 +175,7 @@ class AltOptions extends Component {
             })}
             {allLink && multiple && (
               <Dropdown.Item
+                style={{ width: this.props.isFlex ? "33.3%" : undefined }}
                 onClick={() => this.handleSelectAll()}
                 className={{ active: allSelected }}
               >
