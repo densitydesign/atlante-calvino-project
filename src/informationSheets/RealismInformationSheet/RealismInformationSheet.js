@@ -114,7 +114,7 @@ class RealismInformationSheet extends Component {
               </p>
             </div>
             <h2 className={SheetStyles.titleH2}>
-              {this.props.t("realismo-sheet:Un racconto esemplare")}
+              {this.props.t("realismo-sheet:Paura sul sentiero")}
             </h2>
             <Trans
               i18nKey="paragrapg-un-racconto-esemplare"
@@ -125,7 +125,7 @@ class RealismInformationSheet extends Component {
                 Come testo esemplare di questa dinamica, prendiamo il racconto{" "}
                 <em>Paura sul sentiero</em>, pubblicato nel 1946 su «Darsena
                 nuova» e in seguito nei volumi <em>Ultimo viene il corvo</em>{" "}
-                (1949) e<em>I racconti</em> (1958). Protagonista del testo è
+                (1949) e <em>I racconti</em> (1958). Protagonista del testo è
                 Binda, giovane staffetta partigiana che durante la notte si
                 inoltra a piedi nei boschi dell’entroterra ligure di ponente per
                 raggiungere nel minor tempo possibile il casolare in cui si
@@ -180,12 +180,12 @@ class RealismInformationSheet extends Component {
               <p className={SheetStyles.paragraph}>
                 Quest’oscillazione tra realtà e immaginazione è qui
                 rappresentata suddividendo il testo in tre tipologie di sequenze
-                narrative: in
-                <span style={{ color: "#00bfd3" }}>blu</span>le parti di
+                narrative: in{" "}
+                <span style={{ color: "#00bfd3" }}>azzurro</span> le parti di
                 racconto ancorate alla realtà, in cui si descrivono per filo e
                 per segno il percorso che Binda sta compiendo, il tempo che
                 impiegherà e ciò che effettivamente incontra lungo il cammino;
-                in
+                in {" "}
                 <span style={{ color: "#ff3366" }}>rosso</span>, al contrario, i
                 momenti in cui il personaggio è sopraffatto dal dubbio, da
                 inspiegabili allucinazioni, dalle visite frequenti di Regina e
