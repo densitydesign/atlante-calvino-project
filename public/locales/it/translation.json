@@ -94,7 +94,10 @@
     "quattro": "4",
     "categorie": "sequenza",
     "cinque": "5",
-    "tre": "3"
+    "tre": "3",
+    "titolo": "titolo",
+    "sede di pubblicazione": "sede di pubblicazione",
+    "volume": "volume"
   },
   "legenda": "legenda",
   "analisi": "Vai alla visualizzazione",
