@@ -70,10 +70,7 @@
     "fabbrica": "fabbrica",
     "metropoli": "metropoli",
     "raccolta": "raccolta",
-    "sede di pubblicazione": "sede di pubblicazione",
     "romanzo": "romanzo",
-    "titolo": "titolo",
-    "volume": "volume",
     "negazione": "negazione",
     "riformulazione": "riformulazione",
     "esitazione": "esitazione",
@@ -98,19 +95,9 @@
     "categorie": "sequenza",
     "cinque": "5",
     "tre": "3",
-    "ui": {
-      "volume": "volume",
-      "uno": "uno",
-      "due": "due",
-      "tre": "tre",
-      "quattro": "quattro",
-      "cinque": "cinque",
-      "ambito": "ambito",
-      "categorie": "categorie",
-      "aggregato": "aggregato",
-      "non_aggregato": "non_aggregato"
-    },
-    "non_aggregato": "non_aggregato"
+    "titolo": "titolo",
+    "sede di pubblicazione": "sede di pubblicazione",
+    "volume": "volume"
   },
   "legenda": "legenda",
   "analisi": "Vai alla visualizzazione",
@@ -129,5 +116,8 @@
   "Leggere fra le trame": "Leggere fra le trame",
   "Costruire la varietà": "Costruire la varietà",
   "Per un'estetica elencatoria": "Per un'estetica elencatoria",
-  "L’effetto-nebbia": "L’effetto-nebbia"
+  "L’effetto-nebbia": "L’effetto-nebbia",
+  "titolo": "Titolo",
+  "volume": "Volume",
+  "sede di pubblicazione": "Sede di pubblicazione"
 }
