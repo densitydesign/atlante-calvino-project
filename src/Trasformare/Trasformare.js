@@ -15,6 +15,8 @@ import Loading from "../general/Loading"
 import Options from "../general/Options"
 import Search from "../general/Search"
 import RangeFilter from "../general/RangeFilter"
+import _volumes from "../general/TextSearch/volumes.json"
+import _titles from "../general/TextSearch/volumes.json"
 
 import PlacesMatrix from "../visualizations/PlacesMatrix"
 import ParseMatrixData from "../utilities/parse-matrix-data"
@@ -53,6 +55,11 @@ class Trasformare extends Component {
           {
             label: "titolo",
             value: "titolo",
+            status: false,
+          },
+          {
+            label: "volume",
+            value: "volume",
             status: false,
           },
           {
@@ -149,6 +156,7 @@ class Trasformare extends Component {
               label: d.key,
               id: d.values.map((dd) => dd.id),
               status: true,
+              sourceID: d.values[0].source
             }
           })
 
@@ -165,12 +173,32 @@ class Trasformare extends Component {
           })
           .sort((a, b) => a.label.localeCompare(b.label))
 
+        let serachByVolume = _volumes.map(v=>{
+          // console.log(v)
+          const textsIds= v.value
+          // console.log(textsIds)
+          let texts = textsIds.map(id=>searchByCompositionTitle.find(c=>id===c.sourceID))
+          texts = texts.filter(d=>d)
+          // console.log(texts)
+          let places = texts.map(d=>d.id).flat()
+          places = _.uniq(places)
+          // console.log(places)
+          return {
+            label: v.label,
+            id: places,
+            status: true
+          }
+        })
+
         let data_research = {
           // luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
-          luogo: searchByLuogo,
-          "titolo pubblicazione": nodesByPublicationTitle,
-          titolo: searchByCompositionTitle,
+          "luogo": searchByLuogo,
+          "sede di pubblicazione": nodesByPublicationTitle,
+          "titolo": searchByCompositionTitle,
+          "volume": serachByVolume,
         }
+
+        console.log(data_research)
 
         let time = d3.extent(data.data, (d) => d.year)
         // console.log(time)
@@ -222,7 +250,7 @@ class Trasformare extends Component {
       return
     }
     selection = selection[0].label
-    // console.log(selection)
+    console.log(selection)
 
     let research_options = this.state.data_research[selection]
 
@@ -245,6 +273,7 @@ class Trasformare extends Component {
   }
 
   changeRicerca(newOptions) {
+    
     let toPreserve = newOptions.map((d) => d.id)
     toPreserve = _.flattenDeep(toPreserve)
 

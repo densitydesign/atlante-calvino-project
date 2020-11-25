@@ -452,7 +452,7 @@ a:visited.button-text {
   grid-column: 1 / span 3;
   font-size: 1.1em;
   position: relative;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   text-align: center;
   border-radius: 0px;
   align-content: flex-end;

@@ -1,4 +1,5 @@
 import * as d3 from "d3"
+import styles from "./DoubtingStackedBars.module.css"
 import { withTranslation } from "react-i18next"
 
 const V = {}
@@ -943,15 +944,15 @@ V.update = (data, stackMode, baseLayer, t) => {
 }
 
 V.filter = (survive_filters) => {
-  // console.log("filter visualization - survivers:", survive_filters.length);
+  console.log("filter visualization - survivers:", survive_filters);
   svg.classed("there-is-filter", true)
   serie
     .selectAll("rect")
     .classed("filtered", true)
-    .filter((n) => {
-      return survive_filters.indexOf(n.data.id) > -1
-    })
+    .classed(styles.filtered, true)
+    .filter((n) => survive_filters.indexOf(n.data.id) > -1)
     .classed("filtered", false)
+    .classed(styles.filtered, false)
 }
 
 V.destroy = (el) => {

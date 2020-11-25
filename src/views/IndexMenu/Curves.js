@@ -56,11 +56,11 @@ const Curves = ({ dev, setItinerario, itinerarioHover, onClose }) => {
       .reduce(function (prev, curr) {
         return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev
       })
-      .toString()
-    console.log(goal, _ratio)
-    pp = curvesPoints[_ratio]
-    labels = labelsData[_ratio]
-    setRatio(ratio)
+      .toString();
+    // console.log(goal, _ratio);
+    pp = curvesPoints[_ratio];
+    labels = labelsData[_ratio];
+    setRatio(ratio);
     // setControlPoints(pp);
     // setLabels(labelsData[ratio]);
     const points = pp.map((arr) => {

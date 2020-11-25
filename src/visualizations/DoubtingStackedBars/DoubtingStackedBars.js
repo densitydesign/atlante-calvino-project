@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import V from "./stackedBars.d3"
 
-import "./DoubtingStackedBars.css"
+// import styles from "./DoubtingStackedBars.module.css"
 import { withTranslation } from "react-i18next"
 
 class DoubtingStackedBars extends Component {
@@ -25,6 +25,7 @@ class DoubtingStackedBars extends Component {
       prevProps.surviveFilters !== this.props.surviveFilters ||
       prevProps.stackMode !== this.props.stackMode
     ) {
+      console.log("filter or stackmode")
       V.filter(this.props.surviveFilters)
     }
   }

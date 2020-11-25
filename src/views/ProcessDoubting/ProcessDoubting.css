@@ -1,29 +1,29 @@
-ing-stacked-bars .selected {
+#doubting-stacked-bars .selected {
     opacity: 1 !important;
 }
 
-ing-stacked-bars .treemap-misto, ing-stacked-bars .treemap-soggetto {
+#doubting-stacked-bars .treemap-misto, #doubting-stacked-bars .treemap-soggetto {
     pointer-events: none;
 }
 
-/* ing-stacked-bars{
+/* #doubting-stacked-bars{
     padding-left:1em;
     padding-right:1em;
   } */
 
-ing-stacked-bars .serie > rect {
+#doubting-stacked-bars .serie > rect {
     cursor: pointer;
 }
   
-ing-stacked-bars.there-is-filter .serie rect.filtered {
+#doubting-stacked-bars.there-is-filter .serie rect.filtered {
   opacity: 0.15 !important;
   cursor: not-allowed;
 }
 
-ing-stacked-bars .selector image {
+#doubting-stacked-bars .selector image {
   cursor: pointer;
 }
 
-ing-stacked-bars .selector image:active {
+#doubting-stacked-bars .selector image:active {
   opacity: 0.75;
 }

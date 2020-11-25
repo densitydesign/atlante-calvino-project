@@ -1,0 +1,26 @@
+.container {
+	height: 100%;
+}
+
+.selector {
+	width: calc((4 / 12) * 100%);
+	height: 100%;
+}
+
+.container :global .search-component {
+	width: calc((8 / 12) * 100%);;
+	height: 100%;
+	max-height: 100%;
+	border-left: 1px solid black;
+	display: flex;
+	align-items: center;
+	grid-column: none !important;
+}
+
+.dropdownItem {
+	
+}
+
+.dropdownItem:last-child {
+	border-bottom: none;
+}	

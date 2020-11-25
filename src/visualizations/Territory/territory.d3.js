@@ -130,6 +130,8 @@ class VClass
   {
     if(!input_data.json_nodes || input_data.json_nodes === "data still not loaded") return;
 
+    // console.log(input_data)
+
     this.containerOnSvgClicked = containerOnSvgClicked;
 
     const json_nodes = input_data.json_nodes;
@@ -163,6 +165,8 @@ class VClass
       node.steps.forEach(step =>
         collections.forEach(coll => 
           checkMapAndInsert(step, CollectionMapNames.metaballCorner, coll.id, false))));
+    
+    // console.log(json_nodes)
 
     collections
       .filter(coll => (GlobalData.allowedCollections === "all" && coll.has_metaball) || GlobalData.allowedCollectionsSplit.includes(coll.id))
@@ -192,7 +196,10 @@ class VClass
         .filter(d => d[CollectionMapNames.metaballCorner].get(coll.id))
         .append("svg:path")
         .attr("class", d => "metaball collection_" + coll.id)
-        .attr("d", d => d[CollectionMapNames.lobe].get(coll.id))
+        .attr("d", d => {
+          const path = d[CollectionMapNames.lobe].get(coll.id);
+          return path;
+        })
         .attr("fill", "none")
         .attr("stroke", d => d[CollectionMapNames.lobeColor].get(coll.id))
         .attr("stroke-opacity", 0)

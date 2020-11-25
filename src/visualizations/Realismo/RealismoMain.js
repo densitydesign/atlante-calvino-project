@@ -10,6 +10,7 @@ import MainMenu from "../../general/MainMenu"
 import PageTitle from "../../general/PageTitle"
 import AltOptions from "../../general/Options/AltOptions"
 import SearchDropDown from "../../general/Search/SearchDropDownControlled"
+import TextSearch from "../../general/TextSearch"
 import MoreInfo from "../../general/MoreInfo"
 import CompassButton from "../../general/CompassButton/CompassButton"
 import useDimensions from "react-use-dimensions"
@@ -347,8 +348,8 @@ export default function RealismoMain({ title }) {
       />
       <div className="top-nav navigations">
         <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
-        <AltOptions
+        <PageTitle title={title} style={{ gridColumn: "span 9" }} />
+        {/* <AltOptions
           multiple={false}
           title={t("cerca_per")}
           disabled
@@ -361,17 +362,43 @@ export default function RealismoMain({ title }) {
         />
         <SearchDropDown
           style={{
-            gridColumn: "span 8",
+            gridColumn: "span 6",
           }}
           data={{
             options:
               findFor === "Titolo" ? searchOptionsTitolo : searchOptionsVolume,
           }}
           changeOptions={(newOptions) => {
+            console.log(newOptions)
             setRicerca(newOptions)
           }}
           selectedOptions={ricerca}
+        /> */}
+
+        <TextSearch
+          style={{ gridColumn: "span 12" }}
+          changeOptions={(newOptions)=>{
+            let temp = newOptions.map(d=>
+              {
+                const arr = d.id ? d.id : d.value;
+                return arr.map(id=>
+                  racconti.find(dd=>dd.id===id)
+                ) 
+              } 
+            )
+            temp = temp.flat()
+            temp = temp.filter(d=>d)
+            // destination : {label:"title", value:"title"}
+            temp = temp.map(d=>({label:d.title, value:d.title}))            
+            setRicerca(temp)
+          }}
+          selectedOptions={ricerca.map(d=>{
+            const temp = racconti.find(dd=>dd.title===d.value)
+            return {label: temp.title, value: [temp.id]}
+          })}
+          availableIds={racconti.map(d=>d.id)}
         />
+
         <MoreInfo
           style={{ gridColumn: "span 1" }}
           helpSidePanelOpen={helpSidePanelOpen}

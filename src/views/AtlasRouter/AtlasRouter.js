@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LoadingWrapper from "../../general/LoadingWrapper";
+
 import {
   BrowserRouter,
   Route
@@ -122,6 +124,8 @@ export default function AtlasRouter()
       {/* <Route exact path="/capta"><ToolsAndMethods /></Route> */}
       {/* <Route exact path="/News"><PressReview /></Route> */}
       <Route exact path="/publications"><Articles /></Route>
+
+      <Route exact path="/loading-wrapper"><LoadingWrapper/></Route>
 
     </BrowserRouter>
   );
