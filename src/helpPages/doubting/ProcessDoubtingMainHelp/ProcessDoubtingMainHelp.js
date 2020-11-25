@@ -63,22 +63,24 @@ export default function ProcessDoubtingMainHelp() {
               sull’estensione del processo in tutta l’opera. Le colonne, che
               rappresentano i testi, sono disposte cronologicamente per data di
               prima pubblicazione lungo l’asse orizzontale e colorate secondo la
-              presenza di quattro tipi di testo:
+              presenza di quattro tipi di testo:{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> (zona
               di espressione del dubbio);{" "}
               <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span>{" "}
-              (zona del testo messa in dubbio); testo dubitativo e oggetto di
-              dubbio (zona del testo in cui viene espresso un dubbio e di cui
-              poi si dubita); testo non dubitativo (zona neutra).
-              <br />
+              (zona del testo messa in dubbio);  <span style={{ color: "#00C19C" }}>testo dubitativo e oggetto di
+              dubbio</span>{" "} (zona del testo in cui viene espresso un dubbio e di cui
+              poi si dubita); <span style={{ color: "#AFAFAF" }}>testo non dubitativo</span>{" "} (zona neutra).
+              <br /><br />
               Ogni colonna se selezionata si “apre” e mostra, tramite una scala
               cromatica d’intensità crescente, la quantità di caratteri che è
               stata messa in discussione una o più volte dal processo
               dubitativo; l’informazione è riportata in percentuale accanto al
-              tipo di testo corrispondente. Il numero di volte che un testo
-              dubitativo o un testo oggetto di dubbio sono stati messi in
-              discussione determina il
-              <i>Numero di livelli</i>. Varie funzioni permettono di esplorare i
+              tipo di testo corrispondente. Il numero di volte che un {" "}
+              <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> o un {" "}
+              <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span> sono stati messi in
+              discussione determina il{" "}
+              <i>Numero di livelli</i>.<br /><br />
+              Varie funzioni permettono di esplorare i
               dati raccolti, filtrando i testi secondo diversi criteri (
               <i>
                 Cerca per; Tipo di pubblicazione; Numero di livelli, Filtro
@@ -86,7 +88,8 @@ export default function ProcessDoubtingMainHelp() {
               </i>
               ) o modificando la loro scala di valore (<i>Lunghezza</i>).
               Inoltre è possibile riorganizzare la successione delle barre
-              scegliendo un tipo di testo come parametro ordinante. Il secondo
+              scegliendo un tipo di testo come parametro ordinante.<br /><br />
+              Il secondo
               modo mostra l’andamento del processo dubitativo nel testo
               selezionato. In questo caso è possibile vedere le singole
               occorrenze dei diversi tipi di testo, ma soprattutto in che modo
@@ -115,7 +118,8 @@ export default function ProcessDoubtingMainHelp() {
               il proprio statuto, più il{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> a sua
               volta diventa fragile e oggetto di continue negazioni e
-              riformulazioni. Passando a esaminare la struttura interna dei
+              riformulazioni.<br /><br />
+              Passando a esaminare la struttura interna dei
               singoli racconti o romanzi, la visualizzazione mostra la diversa
               configurazione del processo dubitativo a seconda del testo. In
               particolare, rispetto al modo in cui si strutturano i livelli, si
@@ -129,7 +133,8 @@ export default function ProcessDoubtingMainHelp() {
               includendo nell’ultimo{" "}
               <span style={{ color: "#FFD337" }}>oggetto di dubbio</span> una
               grande quantità di testo (es. <i>L’inseguimento</i>). Nel primo
-              caso il numero dei livelli sale molto di più che nel secondo. Le
+              caso il numero dei livelli sale molto di più che nel secondo.<br /><br />
+              Le
               due tendenze sono più evidenti nelle forme brevi, ma anche nei
               romanzi si possono individuare strategie simili nella
               distribuzione delle occorrenze del processo dubitativo (vedi{" "}

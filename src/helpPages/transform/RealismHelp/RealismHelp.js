@@ -46,10 +46,10 @@ export default function RealismHelp() {
               Dopo aver esplorato lo spazio dell’opera calviniana in molte delle
               sue principali dimensioni, la questione della rappresentazione
               della realtà viene nuovamente affrontata restringendo l’analisi
-              allo spazio d’ambientazione terrestre, localizzabile (es. Sanremo)
-              e non localizzabile (es. una città), dei testi brevi pubblicati in
+              allo spazio d’ambientazione terrestre, localizzabile (es. <em>Sanremo</em>)
+              e non localizzabile (es. una <em>città</em>), dei testi brevi pubblicati in
               volume tra il 1945 e il 1983. Questa specifica selezione concentra
-              il focus sullo spazio che possiamo definire più realista
+              il<em>focus</em> sullo spazio che possiamo definire più <em>realista</em>
               all’interno dell’opera dell’autore, con l’obiettivo di comprendere
               in che modo questo complesso insieme di figurazioni spaziali si
               trasformi e si modifichi nel corso del tempo.
@@ -63,7 +63,8 @@ export default function RealismHelp() {
               La visualizzazione può essere esplorata in due modalità, che
               presentano rispettivamente una visione d’insieme di tutti i
               racconti e una visione in dettaglio di singoli testi che l’utente
-              sceglie di selezionare. Nel primo caso ogni racconto è
+              sceglie di selezionare.<br></br>
+              Nel primo caso ogni racconto è
               rappresentato da un elemento grafico lineare che si dispone in
               ordine cronologico di pubblicazione all’interno di un cerchio.
               Ogni linea, di lunghezza uniforme, rivela tre aspetti principali:{" "}
@@ -77,7 +78,7 @@ export default function RealismHelp() {
                   <span style={{ color: "#FFD337" }}>spazio interno</span>,{" "}
                   <span style={{ color: "#00C19C" }}>spazio esterno</span>,{" "}
                   <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,
-                  <span style={{ color: "#C6CACF" }}>
+                  <span style={{ color: "#AFAFAF" }}>
                     assenza di ambientazione
                   </span>
                   ;
@@ -87,7 +88,7 @@ export default function RealismHelp() {
                   mostra l’eventuale presenza di movimento all’interno del
                   testo.
                 </li>
-              </ol>
+              </ol><br></br>
               Selezionando uno o più elementi e scorrendo verso il basso è
               possibile avere una visione in dettaglio che permette di scoprire
               altre tre importanti caratteristiche:{" "}
@@ -96,7 +97,7 @@ export default function RealismHelp() {
                   la lunghezza reale del racconto selezionato, particolarmente
                   utile nel caso in cui si confrontino più testi;
                 </li>
-                <li>la denominazione esatta di ciascun ambientazione;</li>
+                <li>la denominazione esatta di ciascuna ambientazione;</li>
                 <li>
                   la presenza di livelli spaziali che si annidano l’uno dentro
                   l’altro, qualora ci si trovi di fronte ad ambientazioni
@@ -127,11 +128,12 @@ export default function RealismHelp() {
               nuova tendenza che emerge nella scrittura di Calvino a partire più
               o meno dalla metà degli anni Sessanta: l’azione, l’avventura e
               anche la carica fiabesca che caratterizzavano i testi partigiani,
-              contadini o cittadini (si pensi a Marcovaldo, sempre intento a
+              contadini o cittadini (si pensi a <i>Marcovaldo</i>, sempre intento a
               cimentarsi in qualche impresa) vengono meno, sostituiti da una
               forma e da un contenuto che si aprono piuttosto alla riflessione,
               alle digressioni descrittive e a alcuni procedimenti narrativi
-              propri della scrittura saggistica. Questa inversione di tendenza
+              propri della scrittura saggistica.<br></br><br></br>
+              Questa inversione di tendenza
               non ha un riflesso diretto, come si potrebbe supporre, sul
               rapporto tra spazi esterni e spazi interni. Se è vero che nei
               primissimi anni la produzione calviniana sembra prediligere
@@ -140,11 +142,12 @@ export default function RealismHelp() {
                 Paura sul sentiero, Uomo nei gerbidi, Campo di mine, Ultimo
                 viene il corvo
               </i>
-              ), il sopraggiungere dei primi racconti cittadini (Visti alla
-              mensa, <i>Si dorme come cani, Il gatto e il poliziotto</i>) segna
+              ), il sopraggiungere dei primi racconti cittadini (<i>Visti alla
+              mensa, Si dorme come cani, Il gatto e il poliziotto</i>) segna
               molto presto l’inizio di una sostanziale oscillazione tra
               ambientazioni esterne e ambientazioni interne (o ancora, come
-              accade in molti casi, miste). Tuttavia, mettendo a confronto la
+              accade in molti casi, miste).<br></br><br></br>
+              Tuttavia, mettendo a confronto la
               selezione dei racconti che presentano esclusivamente spazi esterni
               e quella dei racconti che presentano soltanto spazi interni e
               analizzando nel dettaglio le caratteristiche proprie di ogni
