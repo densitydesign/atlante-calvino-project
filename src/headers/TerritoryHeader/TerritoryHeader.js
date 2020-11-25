@@ -193,7 +193,7 @@ class TerritoryHeader extends React.Component {
               this.changeTextsData(opts)
             }}
             selectedOptions={this.state.searchedItems}
-            availableOptions={["title","volume"]}
+            // availableOptions={["title","volume"]}
           />
         )}
 
