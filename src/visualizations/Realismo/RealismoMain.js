@@ -380,8 +380,7 @@ export default function RealismoMain({ title }) {
           changeOptions={(newOptions)=>{
             let temp = newOptions.map(d=>
               {
-                const arr = d.id ? d.id : d.value;
-                return arr.map(id=>
+                return d.value.map(id=>
                   racconti.find(dd=>dd.id===id)
                 ) 
               } 
