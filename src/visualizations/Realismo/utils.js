@@ -24,6 +24,7 @@ export const racconti = uniqBy(realismoData, 'title').map((item) => ({
   length: item.length,
   year: +item.year,
   volume: item.volume_primo,
+  id: item.fonte_id
 }))
 
 export const dataset = groupBy(realismoDataNormalized, 'title')
