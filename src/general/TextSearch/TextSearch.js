@@ -28,7 +28,7 @@ export default function TextSearch({
   // console.log("all titles", _titles)
   if (availableIds && availableIds.length > 0) {
     titles = _titles.filter(
-      (d) => _.intersection(availableIds, d.id).length > 0
+      (d) => _.intersection(availableIds, d.value).length > 0
     );
   }
 
