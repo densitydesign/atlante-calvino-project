@@ -52,7 +52,7 @@ class CancellationInformationSheet extends Component {
                 zona di silenzio al fondo dei rapporti umani» (Calvino 2011, p.
                 XII). Nel racconto il fante Tomagra si trova seduto nello
                 scompartimento di un treno, quando accanto a lui prende posto
-                una donna vestita in lutto. La trama del racconto consiste nel
+                una donna vestita a lutto. La trama del racconto consiste nel
                 susseguirsi delle manovre di seduzione del soldato, che
                 potrebbero permettergli di creare un legame con la vedova.
                 Legame tuttavia fragile e incerto poiché i suoi gesti «appaiono
@@ -93,8 +93,8 @@ class CancellationInformationSheet extends Component {
                 <br />
                 <br />
                 L’alta concentrazione di testo dubitativo e la sua particolare
-                posizione nella visualizzazione rendono L’avventura di un
-                soldato un interessante caso studio su cui soffermarsi per
+                posizione nella visualizzazione rendono <em>L’avventura di un
+                soldato</em> un interessante caso studio su cui soffermarsi per
                 capire meglio come funzioni la griglia d’analisi che ci ha
                 guidato nella creazione della visualizzazione.
               </p>
@@ -157,7 +157,7 @@ class CancellationInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 La visualizzazione del racconto è divisa in quattro sezioni,
-                ognuna accompagnata da un commento: a. Cominciare (§1-8), b.
+                ognuna accompagnata da un commento: a. Cominciare (§1-8); b.
                 Ricominciare (§9-24); c. Buio e attesa (§25-26); d.
                 Cancellazione (§27-31). In questo Approfondimento, il testo è
                 visualizzato nella sua interezza: a ogni parola è stato
@@ -226,7 +226,7 @@ class CancellationInformationSheet extends Component {
                 Nella prima sezione le occorrenze di testo dubitativo sono
                 rarefatte: a colpo d’occhio emerge la categoria del{" "}
                 <span style={{ color: "#FFA500" }}>contenuto</span>, unito allo
-                stile della negazione. I paragrafi iniziali sono occupati dalla
+                stile della <em>negazione</em>. I paragrafi iniziali sono occupati dalla
                 descrizione della donna e dalle prime impressioni di Tomagra,
                 rivedute e corrette di volta in volta. La donna si è seduta
                 accanto lui nonostante i posti liberi non manchino; allora il
@@ -259,7 +259,7 @@ class CancellationInformationSheet extends Component {
                 infatti, notiamo la presenza di occorrenze appartenenti al{" "}
                 <span style={{ color: "#ff3366" }}>significato</span>: nel 8§
                 Tomagra decide di prendere l’iniziativa e «di trasmetterle, in
-                qualche modo, un messaggio» (ibidem, c.n.) che vada oltre le
+                qualche modo, un <em>messaggio</em>» (ibidem, corsivo nostro) che vada oltre le
                 semplici apparenze; il corpo compierà un’azione che avrà un
                 significato “altro”, parallelo: il «muscolo del polpaccio» del
                 fante, diventato «un duro quadrato pugno», «corse e bussò al
@@ -348,7 +348,7 @@ class CancellationInformationSheet extends Component {
                 <span style={{ color: "#ff3366" }}>11</span>, attraverso la{" "}
                 <i>riformulazione</i>, avevano anticipato questa “evoluzione”
                 scomponendo e trasformando il corpo del fante, sostituendo al
-                muscolo della coscia l’immagine di un pugno; la mano in seguito
+                muscolo del polpaccio l’immagine di un pugno; la mano in seguito
                 si metamorfoserà in «farfalla», «topo», «polpo», «granchio»,
                 «gallinella» (ivi, 323, 324, 326). Il testo dubitativo
                 appartenente alla categoria del{" "}
@@ -378,7 +378,7 @@ class CancellationInformationSheet extends Component {
                 che la categoria del{" "}
                 <span style={{ color: "#ff3366" }}>significato</span> nelle
                 pagine centrali del testo viene impiegata diversamente,
-                adottando lo stile dell’<i>esitazione</i> (25, 26, 28, 29, 37);
+                adottando lo stile dell’<i>esitazione</i> (<span style={{ color: "#ff3366" }}>25</span>, <span style={{ color: "#ff3366" }}>26</span>, <span style={{ color: "#ff3366" }}>28</span>, <span style={{ color: "#ff3366" }}>29</span>, <span style={{ color: "#ff3366" }}>37</span>);
                 la prima fra queste occorrenze si interroga se i gesti della
                 vedova siano «segni per fargli capire di desistere» oppure «un
                 estremo rinvio ch’ella gli concedeva» o ancora «un avvertimento»
@@ -394,7 +394,7 @@ class CancellationInformationSheet extends Component {
                 femminile e, contemporaneamente, il principio di metamorfosi che
                 altera la realtà.
                 <br />
-                La conclusione del ventiquattresimo paragrafo riprende la frase
+                La conclusione del 24§ riprende la frase
                 iniziale della sezione: Tomagra è arretrato per l’ennesima
                 volta, eppure esita, «come volesse <i>
                   ricominciare da capo
@@ -452,10 +452,10 @@ class CancellationInformationSheet extends Component {
                 racconto, descrive la reazione di Tomagra a un movimento
                 improvviso della vedova. Le riflessioni su cosa abbia causato lo
                 scatto nella donna non tardano a contraddirsi l’un l’altra: «lui
-                aveva passato il segno» (
-                <span style={{ color: "#FFA500" }}>48</span>) oppure «era un
-                segno che tutto ciò era vero, che lei accettava» (
-                <span style={{ color: "#ff3366" }}>50</span>) (ivi, 327, c.n.).
+                aveva passato il <em>segno</em>» (
+                <span style={{ color: "#FFA500" }}>48</span>) oppure «era un{" "}
+                <em>segno</em> che tutto ciò era vero, che lei accettava» (
+                <span style={{ color: "#ff3366" }}>50</span>) (ivi, 327, corsivo nostro).
                 Dove la parola “segno” prima è usata in maniera figurata,
                 indicando l’esistenza di un limite, di un confine da non
                 superare, poi si trasforma nel sintomo, nella prova-simbolo
@@ -479,7 +479,7 @@ class CancellationInformationSheet extends Component {
                 la galleria era lunga […] certo se subito avesse approfittato
                 avrebbe avuto molto tempo innanzi a sé» (
                 <span style={{ color: "#FFA500" }}>51-53</span>) (ibidem). Il
-                paragrafo rappresenta l’attesa, parola latina composta da <em>ad-</em>
+                paragrafo rappresenta l’attesa, parola latina composta da <em>ad-</em>{" "}
                 per “verso” e <i>téndere</i> nel senso traslato di “mirare,
                 aspirare” ma che significa anche “tirare”: il testo si dilata,
                 si gonfia tramite il processo dubitativo, si “tende” aumentando
@@ -539,7 +539,7 @@ class CancellationInformationSheet extends Component {
               Se non fosse che fuori da quel dubbio e da quelle incertezze non
               viene lasciato nessuno spazio alla rappresentazione: nel momento
               decisivo dell’azione che infine dovrebbe eliminare ogni ambiguità,
-              la narrazione si inibisce e si interrompe. Tra il §30 e il §31
+              la narrazione si inibisce e si interrompe. Tra il 30§ e il 31§
               assistiamo a un salto nella storia, a una clamorosa ellissi: nello
               spazio tra i due paragrafi manca, infatti, una scena. Il punto
               culminante dell’avventura per il quale il soldato si è tormentato

@@ -2,7 +2,7 @@ import React from "react";
 import MainMenu from "../../general/MainMenu/MainMenu";
 import Loading from "../../general/Loading";
 // import ToggleButton from "../../general/ToggleButton/ToggleButton";
-// import Search from "../../general/Search/Search";
+import Search from "../../general/Search/Search";
 import GlobalData from "../../utilities/GlobalData";
 import CompassButton from "../../general/CompassButton/CompassButton";
 import MoreInfo from "../../general/MoreInfo/MoreInfo";
@@ -80,6 +80,16 @@ class TerritoryHeader extends React.Component {
     options.find((item) => item.status === true).label;
 
   changeTextsData = (newOptions) => {
+    console.log(newOptions)
+    const mustReset = newOptions.length === 0;
+    this.props.callTerritoryApplySearchFilterBySearchResults(
+      mustReset,
+      newOptions
+    );
+  };
+
+  changeTextsData2 = (newOptions) => {
+    // console.log(newOptions)
     this.setState({
       searchedItems: newOptions
     })    
@@ -99,16 +109,18 @@ class TerritoryHeader extends React.Component {
     //   }
     // ]
     // It seems the visualizaitons only uses ID to perform filtering, so...
-    let restructured_options = newOptions.map((d) => {
-      const label = "from-" + d.label;
+    let restructured_options = newOptions
+    restructured_options = newOptions.map((d) => {
+      const label = d.label;
       return d.value.map((dd) => ({
         label: label,
         id: dd,
-        desc: label,
+        desc: label + " - " + label,
         status: false,
       }));
     });
     restructured_options = restructured_options.flat()
+    // console.log(restructured_options)
     const mustReset = restructured_options.length === 0;
     this.props.callTerritoryApplySearchFilterBySearchResults(
       mustReset,
@@ -146,7 +158,7 @@ class TerritoryHeader extends React.Component {
         {/* <div
           className="d-flex justify-content-center"
           style={{
-            gridColumn: "span 4",
+            gridColumn: "span 3",
             textAlign: "center",
             fontWeight: "bold",
           }}
@@ -175,7 +187,7 @@ class TerritoryHeader extends React.Component {
 
         {/* {!this.props.isLoading && (
           <Search
-            style={{ gridColumn: "span 10" }}
+            style={{ gridColumn: "span 9" }}
             data={this.props.textsData}
             filterBy={["desc"]}
             changeOptions={this.changeTextsData}
@@ -190,10 +202,10 @@ class TerritoryHeader extends React.Component {
           <TextSearch
             style={{ gridColumn: "span 12" }}
             changeOptions={(opts)=>{
-              this.changeTextsData(opts)
+              this.changeTextsData2(opts)
             }}
             selectedOptions={this.state.searchedItems}
-            availableOptions={["title","volume"]}
+            // availableOptions={["title","volume"]}
           />
         )}
 

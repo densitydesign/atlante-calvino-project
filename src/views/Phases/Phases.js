@@ -34,7 +34,7 @@ class Phases extends React.Component {
                 <p className="text-dark-blue">
                   Per la prima tappa, quella dei fenomeni, abbiamo deciso di
                   disegnare un territorio comune che i tre itinerari ci faranno
-                  esplorare. Il territorio è formato dal corpus di tutte le
+                  esplorare. <br></br>Il territorio è formato dal corpus di tutte le
                   opere di Calvino, che ci sforziamo di riunire in una forma
                   visiva che possa aiutarci a meglio comprenderle.
                 </p>

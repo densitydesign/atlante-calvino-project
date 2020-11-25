@@ -169,7 +169,7 @@ class Cancellazione extends Component {
    * @param {Array} newOptions array of objects. Each object is { label:"title of composition, collection or publication venue", value:["S001", [and other ids] ] }
    */
   changeResearch = (newOptions) => {
-    console.log("change research", newOptions);
+    // console.log("change research", newOptions);
     const ids = d3
       .nest()
       .key((d) => d)

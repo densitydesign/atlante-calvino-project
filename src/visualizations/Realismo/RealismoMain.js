@@ -32,6 +32,8 @@ import CircleWorms from "./CircleWorms"
 import WormDetail from "./WormDetail"
 import { groupBy } from "lodash"
 
+import _titles from "../../general/TextSearch/titles.json"
+
 const LABEL_BEZIER_DELTA_A = 30
 const RESET_BOX_HEIGHT = 70
 const REALISMO_DIAMETER_BASE = 760
@@ -62,6 +64,13 @@ const searchOptionsVolume = (() => {
 })()
 
 const titoliByVolume = groupBy(racconti, "volume")
+// the following is for the textual search
+const availableVolumes = Object.keys(titoliByVolume).map( d=>{
+  const title = _titles.find(t=>{
+    return t.label.toLowerCase()===d.toLowerCase() && t.value[0].includes("V")
+  })
+  return title.value
+}).flat()
 
 export default function RealismoMain({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
@@ -70,6 +79,7 @@ export default function RealismoMain({ title }) {
   }, [])
   const [findFor, setFindFor] = useState("Titolo")
   const [ricerca, setRicerca] = useState([])
+  const [ricerca2, setRicerca2] = useState([])
 
   const { t } = useTranslation(["translation", "realismo"])
 
@@ -380,8 +390,7 @@ export default function RealismoMain({ title }) {
           changeOptions={(newOptions)=>{
             let temp = newOptions.map(d=>
               {
-                const arr = d.id ? d.id : d.value;
-                return arr.map(id=>
+                return d.value.map(id=>
                   racconti.find(dd=>dd.id===id)
                 ) 
               } 
@@ -391,12 +400,11 @@ export default function RealismoMain({ title }) {
             // destination : {label:"title", value:"title"}
             temp = temp.map(d=>({label:d.title, value:d.title}))            
             setRicerca(temp)
+            setRicerca2(newOptions)
           }}
-          selectedOptions={ricerca.map(d=>{
-            const temp = racconti.find(dd=>dd.title===d.value)
-            return {label: temp.title, value: [temp.id]}
-          })}
+          selectedOptions={ricerca2}
           availableIds={racconti.map(d=>d.id)}
+          availableVolumes={availableVolumes}
         />
 
         <MoreInfo
