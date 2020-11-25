@@ -17,7 +17,8 @@ export default function TextSearch({
   changeOptions,
   selectedOptions,
   availableIds, // array of IDS, use this to filter available options in typeahead
-  availableOptions // array of options (title, volume, publication) use this to filter dropdown options
+  availableVolumes, // array of Volumes (as IDS), use this to filter available options in typeahead
+  availableOptions, // array of options (title, volume, publication) use this to filter dropdown options
 }) {
   let titles = _titles,
       volumes = _volumes,
@@ -29,6 +30,11 @@ export default function TextSearch({
   if (availableIds && availableIds.length > 0) {
     titles = _titles.filter(
       (d) => _.intersection(availableIds, d.value).length > 0
+    );
+  }
+  if (availableVolumes && availableVolumes.length > 0) {
+    volumes = _volumes.filter(
+      (d) => _.intersection(availableVolumes, d.value).length > 0
     );
   }
 

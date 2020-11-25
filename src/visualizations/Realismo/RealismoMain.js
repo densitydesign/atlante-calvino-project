@@ -32,6 +32,8 @@ import CircleWorms from "./CircleWorms"
 import WormDetail from "./WormDetail"
 import { groupBy } from "lodash"
 
+import _titles from "../../general/TextSearch/titles.json"
+
 const LABEL_BEZIER_DELTA_A = 30
 const RESET_BOX_HEIGHT = 70
 const REALISMO_DIAMETER_BASE = 760
@@ -62,6 +64,13 @@ const searchOptionsVolume = (() => {
 })()
 
 const titoliByVolume = groupBy(racconti, "volume")
+// the following is for the textual search
+const availableVolumes = Object.keys(titoliByVolume).map( d=>{
+  const title = _titles.find(t=>{
+    return t.label.toLowerCase()===d.toLowerCase() && t.value[0].includes("V")
+  })
+  return title.value
+}).flat()
 
 export default function RealismoMain({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
@@ -379,7 +388,6 @@ export default function RealismoMain({ title }) {
         <TextSearch
           style={{ gridColumn: "span 12" }}
           changeOptions={(newOptions)=>{
-            console.log(newOptions)
             let temp = newOptions.map(d=>
               {
                 return d.value.map(id=>
@@ -394,12 +402,9 @@ export default function RealismoMain({ title }) {
             setRicerca(temp)
             setRicerca2(newOptions)
           }}
-          // selectedOptions={ricerca.map(d=>{
-          //   const temp = racconti.find(dd=>dd.title===d.value)
-          //   return {label: temp.title, value: [temp.id]}
-          // })}
           selectedOptions={ricerca2}
           availableIds={racconti.map(d=>d.id)}
+          availableVolumes={availableVolumes}
         />
 
         <MoreInfo
