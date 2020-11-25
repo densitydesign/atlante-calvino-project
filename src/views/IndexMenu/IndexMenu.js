@@ -62,7 +62,7 @@ const ItemIndex = ({
   const alignItem = () => {
     const group_bbox = groupEl.current.getBoundingClientRect()
     const icon_bbox = iconEl.current.getBoundingClientRect()
-    setYAlign((group_bbox.height - icon_bbox.height) / 2)
+    setYAlign((group_bbox.height - icon_bbox.height) / 3)
     // console.log("group", group_bbox.height)
     // console.log("height", icon_bbox.height)
     // console.log(group_bbox.height - icon_bbox.height)
