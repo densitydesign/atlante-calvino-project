@@ -70,6 +70,7 @@ export default function RealismoMain({ title }) {
   }, [])
   const [findFor, setFindFor] = useState("Titolo")
   const [ricerca, setRicerca] = useState([])
+  const [ricerca2, setRicerca2] = useState([])
 
   const { t } = useTranslation(["translation", "realismo"])
 
@@ -378,6 +379,7 @@ export default function RealismoMain({ title }) {
         <TextSearch
           style={{ gridColumn: "span 12" }}
           changeOptions={(newOptions)=>{
+            console.log(newOptions)
             let temp = newOptions.map(d=>
               {
                 return d.value.map(id=>
@@ -390,11 +392,13 @@ export default function RealismoMain({ title }) {
             // destination : {label:"title", value:"title"}
             temp = temp.map(d=>({label:d.title, value:d.title}))            
             setRicerca(temp)
+            setRicerca2(newOptions)
           }}
-          selectedOptions={ricerca.map(d=>{
-            const temp = racconti.find(dd=>dd.title===d.value)
-            return {label: temp.title, value: [temp.id]}
-          })}
+          // selectedOptions={ricerca.map(d=>{
+          //   const temp = racconti.find(dd=>dd.title===d.value)
+          //   return {label: temp.title, value: [temp.id]}
+          // })}
+          selectedOptions={ricerca2}
           availableIds={racconti.map(d=>d.id)}
         />
 
