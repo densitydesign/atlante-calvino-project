@@ -66,7 +66,6 @@
 /* Icons position and size */
 .territorio .title-viz {
   background: rgb(255,255,250);
-  border:1px solid red;
   padding:0 0.4em 0.4em 0.4em;
 }
 
@@ -506,11 +505,12 @@ and (max-device-width : 1023px) {
 
 @media (aspect-ratio: 3/2) {
   .territorio {
-    position: absolute;
     top: calc(calc(100vh / 8) - var(--navigation-height));
-    left: calc(100% / 12 * 5.5);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  }
+}
+
+@media (aspect-ratio: 16/9) {
+  .territorio {
+    top: calc(calc(100vh / 8) - var(--navigation-height));
   }
 }
