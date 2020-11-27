@@ -413,6 +413,11 @@ class RealismInformationSheet extends Component {
               {this.props.t("bibliografia")}
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
+            <li className="referenceItem">
+                Falaschi 1976: G. Falaschi,
+                <em> La resistenza armata nella narrativa italiana</em>, Torino,
+                Einaudi.
+              </li>
               <li className="referenceItem">
                 Re 1990: L. Re,
                 <em>
@@ -420,11 +425,6 @@ class RealismInformationSheet extends Component {
                   Calvino and the Age of Neorealism: Fables of Estrangement
                 </em>
                 ), Stanford, Stanford University Press.
-              </li>
-              <li className="referenceItem">
-                Falaschi 1976: G. Falaschi,
-                <em> La resistenza armata nella narrativa italiana</em>, Torino,
-                Einaudi.
               </li>
               <li className="referenceItem">
                 Serra 2006: F. Serra, <i>Calvino</i>, Roma, Salerno.

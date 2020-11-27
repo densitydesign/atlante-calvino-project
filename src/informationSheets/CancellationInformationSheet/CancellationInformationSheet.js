@@ -559,14 +559,14 @@ class CancellationInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
             <ol className={SheetStyles.paragraph + " references"}>
               <li className="referenceItem">
-                Serra 2010: F. Serra,{" "}
-                <em>La notte del morto nel paese nemico</em>, «Paragone», a.
-                LXI, n. 90-91-92, Agosto-Dicembre.
-              </li>
-              <li className="referenceItem">
                 Calvino 2011: I. Calvino, <em>Gli amori difficili</em>,
                 presentazione dell’autore con uno scritto di Michele Rago,
                 Milano, Mondadori.
+              </li>
+              <li className="referenceItem">
+                Serra 2010: F. Serra,{" "}
+                <em>La notte del morto nel paese nemico</em>, «Paragone», a.
+                LXI, n. 90-91-92, Agosto-Dicembre.
               </li>
             </ol>
           </div>
