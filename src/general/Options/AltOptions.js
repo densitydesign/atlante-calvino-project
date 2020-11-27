@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import findIndex from "lodash/findIndex"
 import range from "lodash/range"
+import classnames from "classnames"
 import indexOf from "lodash/indexOf"
 import "../../App.css"
 import "./Options.css"
@@ -125,7 +126,9 @@ class AltOptions extends Component {
     if (!multiple) {
       current = anySelected ? options[indices[0]].label : undefined
     } else {
-      current = anySelected ? indices.map((i) => this.props.t('options.'+options[i].label)) : []
+      current = anySelected
+        ? indices.map((i) => this.props.t("options." + options[i].label))
+        : []
     }
     return (
       <div className="options-container" style={style}>
@@ -133,19 +136,25 @@ class AltOptions extends Component {
           <Dropdown.Toggle disabled={this.props.disabled}>
             {!multiple && anySelected && (
               <div>
-                <span className="micro-title">{title}</span>
-                <span className="current-selection">{this.props.t('options.'+current)}</span>
+                {title && <span className="micro-title">{title}</span>}
+                <span className="current-selection">
+                  {this.props.t("options." + current)}
+                </span>
               </div>
             )}
             {multiple && anySelected && (
               <div>
-                <span className="micro-title">{title}</span>
+                {title && <span className="micro-title">{title}</span>}
                 <span className="current-selection">{current.join(", ")}</span>
               </div>
             )}
             {!anySelected && title}
           </Dropdown.Toggle>
           <Dropdown.Menu
+            className={classnames({
+              "d-flex": this.props.isFlex,
+              "flex-wrap": this.props.isFlex,
+            })}
             onToggle={multiple ? undefined : this.toggleDropDown}
             show={this.state.show}
           >
@@ -154,14 +163,19 @@ class AltOptions extends Component {
                 <Dropdown.Item
                   key={i}
                   onClick={() => this.handleChange(i)}
-                  className={{ active: selectedIndices[i] }}
+                  style={{ width: this.props.isFlex ? "33.3%" : undefined }}
+                  className={classnames({
+                    active: selectedIndices[i],
+                    "border-right border-dark": this.props.isFlex,
+                  })}
                 >
-                  {this.props.t('options.'+d.label)}
+                  {this.props.t("options." + d.label)}
                 </Dropdown.Item>
               )
             })}
             {allLink && multiple && (
               <Dropdown.Item
+                style={{ width: this.props.isFlex ? "33.3%" : undefined }}
                 onClick={() => this.handleSelectAll()}
                 className={{ active: allSelected }}
               >
@@ -183,7 +197,7 @@ AltOptions.defaultProps = {
   },
   options: [],
   multiple: false,
-  title: "Options",
+  title: null,
   value: null,
   onChange: (value) => {},
   allowEmpty: true,

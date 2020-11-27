@@ -17,5 +17,14 @@
   "opere_ordinate": "Opere ordinate",
   "Numero di livelli": "Numero di livelli",
   "Tipo di pubblicazione": "Tipo di pubblicazione",
-  "Lunghezza": "Lunghezza"
+  "Lunghezza": "Lunghezza",
+  "Ripristina ordine di prima pubblicazione": "Ripristina ordine di prima pubblicazione",
+  "LUNGHEZZA NORMALIZZATA (PERCENTUALI)": "LUNGHEZZA NORMALIZZATA (PERCENTUALI)",
+  "LUNGHEZZA IN CARATTERI (MIGLIAIA)": "LUNGHEZZA IN CARATTERI (MIGLIAIA)",
+  "tipi_testo": {
+    "Non dubitativo": "Non dubitativo",
+    "Oggetto di dubbio": "Oggetto di dubbio",
+    "Dubitativo e oggetto di dubbio": "Dubitativo e oggetto di dubbio",
+    "Dubitativo": "Dubitativo"
+  }
 }

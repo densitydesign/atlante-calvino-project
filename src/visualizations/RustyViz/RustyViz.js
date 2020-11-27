@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import V from './rusty.d3.js';
 
 class RustyViz extends Component {
@@ -11,7 +12,8 @@ class RustyViz extends Component {
       container: this._rootNode,
       width: bbox.width,
       height: bbox.height,
-      data: this.props.data
+      data: this.props.data,
+      lang: this.props.i18n.language,
     };
     V.init(options);
   }
@@ -31,4 +33,4 @@ class RustyViz extends Component {
   }
 }
 
-export default RustyViz;
+export default withTranslation()(RustyViz);
