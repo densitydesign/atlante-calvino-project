@@ -519,13 +519,13 @@
   }
 }
 
-
+/* 
 @media (min-aspect-ratio: 2/3) {
   .territorio {
     top: calc(calc(100vh /10) - var(--navigation-height));
     left: calc(100% / 12 * 5.35);
   }
-}
+} */
 
 @media (min-aspect-ratio: 4/3) {
   .territorio {
