@@ -31,8 +31,8 @@ const labelsData = {
   [9 / 16]: labels_w9h16,
 }
 
-let pp = pp_w16h9
-let labels = labels_w16h9
+let pp = pp_w3h2
+let labels = labels_w3h2
 
 const line = d3
   .line()
