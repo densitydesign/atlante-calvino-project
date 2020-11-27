@@ -280,6 +280,9 @@ class TransformInformationSheet extends Component {
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className="referenceItem">
+                Genette 1972: G. Genette, <em>Figures III</em>, Paris, Seuil.
+              </li>
+              <li className="referenceItem">
                 Piatti <em>et al.</em> 2009: B. Piatti, H. R. Bär, A. Reuschel,
                 L. Hurni. W. Cartwright,
                 <em>Mapping Literature: Towards A Geography of Fiction</em> in
@@ -293,9 +296,6 @@ class TransformInformationSheet extends Component {
                   Fiction
                 </em>
                 , in «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.
-              </li>
-              <li className="referenceItem">
-                Genette 1972: G. Genette, <em>Figures III</em>, Paris, Seuil.
               </li>
             </ol>
           </div>
