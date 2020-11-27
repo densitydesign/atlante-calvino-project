@@ -64,6 +64,11 @@
 
 /* Icons position and size */
 
+.territorio .title-viz{
+background-color: var(--cool-bg);
+padding:0 0.2em 0.2em 0.2em;
+}
+
 .territorio {
   position: absolute;
   top: calc(calc(100vh / 6) - var(--navigation-height));
@@ -495,5 +500,40 @@ and (max-device-width : 1023px) {
     height: 44px;
   }
 
+}
+
+
+@media (min-aspect-ratio: 3/4) {
+  .territorio {
+    top: calc(calc(100vh / 6) - var(--navigation-height));
+    left: calc(100% / 12 * 5.55);
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .territorio {
+    top: calc(calc(100vh / 7) - var(--navigation-height));
+    left: calc(100% / 12 * 5.55);
+  }
+}
+
+@media (min-aspect-ratio: 4/3) {
+  .territorio {
+    top: calc(calc(100vh / 7) - var(--navigation-height));
+    left: calc(100% / 12 * 5.55);
+  }
+}
+
+@media (min-aspect-ratio: 3/2) {
+  .territorio {
+    top: calc(calc(100vh / 8) - var(--navigation-height));
+    left: calc(100% / 12 * 5.55);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .territorio {
+    top: calc(calc(100vh / 8) - var(--navigation-height));
+  }
 }
 
