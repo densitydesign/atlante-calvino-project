@@ -88,8 +88,8 @@
     "MEZZO DI TRASPORTO": "MEZZO DI TRASPORTO",
     "uno": "1",
     "due": "2",
-    "aggregato": "aggregato",
-    "non aggregato": "non aggregato",
+    "aggregato": "Aggregato",
+    "non aggregato": "Non aggregato",
     "ambito": "piano",
     "quattro": "4",
     "categorie": "sequenza",
@@ -97,7 +97,8 @@
     "tre": "3",
     "titolo": "titolo",
     "sede di pubblicazione": "sede di pubblicazione",
-    "volume": "volume"
+    "volume": "volume",
+    "non_aggregato": "Non aggregato"
   },
   "legenda": "legenda",
   "analisi": "Vai alla visualizzazione",
