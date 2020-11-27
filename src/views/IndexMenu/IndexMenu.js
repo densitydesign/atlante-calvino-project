@@ -145,7 +145,7 @@ const ItemIndex = ({
 export default function IndexMenu({ onClose }) {
   const [showGuida, setShowGuida] = useState(false)
   const [tappaHover, setTappaHover] = useState(null)
-  const [dev, setDev] = useState(true)
+  const [dev, setDev] = useState(false)
   const [itinerarioHover, setItinerario] = useState(null)
 
   const handleCloseGuida = () => setShowGuida(false)
