@@ -175,9 +175,10 @@ class Trama extends Component {
           <AltOptions
             title={t("combining:ui.numero_livelli_testo")}
             multiple
+            isFlex
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            allLink="tutti"
+            allLink="tutti"              
             style={{
               gridColumn: "span 8",
               textAlign: "center",
@@ -192,7 +193,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title={t("combining:ui.dettaglio")}
+            //title={t("combining:ui.dettaglio")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={dettaglio}
@@ -209,7 +210,7 @@ class Trama extends Component {
           />
 
           <AltOptions
-            title={t("combining:ui.modalita")}
+            //title={t("combining:ui.modalita")}
             allowEmpty={false}
             disabled={!controlsEnabled}
             value={aggregazione}

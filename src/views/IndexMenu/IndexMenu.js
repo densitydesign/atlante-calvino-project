@@ -107,6 +107,7 @@ const ItemIndex = ({
       {title !== "Territorio" &&
         (!hoverApprofondimento ? (
           <Link
+            className="text-dark"
             to={linkApprofondimento}
             style={{
               transform: `translate(0, ${
@@ -123,7 +124,7 @@ const ItemIndex = ({
         ) : (
           <Link
             to={linkApprofondimento}
-            className="d-flex align-items-center"
+            className="d-flex align-items-center text-dark"
             style={{
               transform: `translate(0, ${
                 title !== "Territorio" ? yAlign : 0
@@ -353,6 +354,7 @@ export default function IndexMenu({ onClose }) {
           }
           iconHover={
             <NebbiaIconHover
+              style={{ transition: 'ease-in 0.5s'}}
               className={`${styles["hover-icon"]} ${styles["icon-width"]}`}
             />
           }
@@ -476,7 +478,7 @@ export default function IndexMenu({ onClose }) {
           link="/form/phase2"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
-          titleApprofondimento={t('Costruire la varietà')}
+          titleApprofondimento={t("Costruire la varietà")}
           tappa={2}
           linkApprofondimento="/form/phase2/focus"
           className={"combinare"}
@@ -498,7 +500,7 @@ export default function IndexMenu({ onClose }) {
           itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
-          titleApprofondimento={t('Leggere fra le trame')}
+          titleApprofondimento={t("Leggere fra le trame")}
           tappa={3}
           linkApprofondimento="/form/phase3/focus"
           className={"trama"}
