@@ -415,6 +415,11 @@
   }
 
 
+  .territorio .icon-width{
+    width:225px;
+  }
+
+
   .big-name {
     font-size: 60px;
     letter-spacing: 1px;
@@ -524,6 +529,7 @@
     left: calc(100% / 12 * 5.45);
   }
 }
+
 
 @media (min-aspect-ratio: 16/9) {
   .territorio {
