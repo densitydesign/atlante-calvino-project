@@ -415,11 +415,6 @@
   }
 
 
-  .territorio .icon-width{
-    width:225px;
-  }
-
-
   .big-name {
     font-size: 60px;
     letter-spacing: 1px;
@@ -512,6 +507,7 @@
 @media (min-aspect-ratio: 3/4) {
   .territorio {
     top: calc(calc(100vh / 7) - var(--navigation-height));
+    left: calc(100% / 12 * 5.25);
     
   }
 }
@@ -525,12 +521,13 @@
 @media (min-aspect-ratio: 4/3) {
   .territorio {
     top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 5.45);
   }
 }
-
 
 @media (min-aspect-ratio: 16/9) {
   .territorio {
     top: calc(calc(100vh / 11) - var(--navigation-height));
+    left: calc(100% / 12 * 5.4);
   }
 }
