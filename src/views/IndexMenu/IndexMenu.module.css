@@ -507,7 +507,7 @@
 @media (min-aspect-ratio: 3/4) {
   .territorio {
     top: calc(calc(100vh / 7) - var(--navigation-height));
-    left: calc(100% / 12 * 5.25);
+    left: calc(100% / 12 * 5.45);
     
   }
 }
