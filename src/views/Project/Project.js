@@ -16,7 +16,6 @@ class Project extends React.Component {
           <div className="content">
             <Trans i18nKey={"text"} t={this.props.t} ns="project">
               <h1>Progetto</h1>
-              <h2>Uscire a vedere</h2>
               <p>
                 Oggi Italo Calvino avrebbe quasi cento anni. E di fronte alle
                 profonde trasformazioni a cui la letteratura, la stampa, i mezzi
