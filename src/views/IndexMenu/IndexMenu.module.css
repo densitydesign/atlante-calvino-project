@@ -503,14 +503,16 @@ and (max-device-width : 1023px) {
 }
 
 
-@media (aspect-ratio: 3/2) {
+@media (min-aspect-ratio: 4/3) {
   .territorio {
     top: calc(calc(100vh / 8) - var(--navigation-height));
   }
 }
 
-@media (aspect-ratio: 16/9) {
+
+@media (min-aspect-ratio: 16/9) {
   .territorio {
-    top: calc(calc(100vh / 8) - var(--navigation-height));
+    top: calc(calc(100vh / 10) - var(--navigation-height));
   }
 }
+
