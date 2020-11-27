@@ -497,37 +497,37 @@ class CombineInformationSheet extends Component {
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
-                  Barthes 2002: Roland Barthes, <em>Saggi critici</em>, ed. it.
+                  Barthes 2002: R. Barthes, <em>Saggi critici</em>, ed. it.
                   a cura di G. Marrone, Torino, Einaudi.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>
+                  Calvino 1963: I. Calvino, <em>La speculazione edilizia</em>
                   , Torino, Einaudi, risvolto di copertina anonimo ma
                   attribuibile all’autore.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1964: Italo Calvino, <em>Lettera a Mario Boselli</em>,
+                  Calvino 1964: I. Calvino, <em>Lettera a Mario Boselli</em>,
                   in «Nuova corrente», 32-33, pp. 102-110.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1973: Italo Calvino, <em>Nota [1973]</em>, in Id.,{" "}
+                  Calvino 1973: I. Calvino, <em>Nota [1973]</em>, in Id.,{" "}
                   <em>Il castello dei destini incrociati</em>, <em>RR</em>, II.
                 </li>
                 <li className="referenceItem">
-                  Donnarumma 2008: Raffaele Donnarumma,{" "}
+                  Donnarumma 2008: R. Donnarumma,{" "}
                   <em>Da lontano. Calvino, la semiologia, lo strutturalismo</em>
                   , Palermo, Palumbo.
                 </li>
                 <li className="referenceItem">
-                  Falcetto 1991: Bruno Falcetto, <em>«La formica argentina»</em>
+                  Falcetto 1991: B. Falcetto, <em>«La formica argentina»</em>
                   , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi,
                   B. Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
                 </li>
                 <li className="referenceItem">
-                  Serra 2006: Francesca Serra, <em>Calvino</em>, Roma, Salerno.
+                  Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
                 </li>
                 <li className="referenceItem">
-                  Szondi 2000: Peter Szondi,{" "}
+                  Szondi 2000: P. Szondi,{" "}
                   <em>Teoria del dramma moderno (1880-1950)</em>, trad. it. di
                   G.L., Torino, Einaudi.
                 </li>

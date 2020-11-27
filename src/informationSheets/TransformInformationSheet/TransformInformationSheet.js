@@ -67,7 +67,8 @@ class TransformInformationSheet extends Component {
                 testi del corpus calviniano che presentano ambientazioni di
                 questo tipo è necessario operare un’ulteriore distinzione in tre
                 tipologie:
-                <ol>
+                </p>
+                <ol className={SheetStyles.paragraph}>
                   <li>
                     Ambientazioni di testi in cui il tempo della storia è
                     collocato nella contemporaneità, vale a dire nel Novecento.
@@ -86,6 +87,7 @@ class TransformInformationSheet extends Component {
                     contemporanea).
                   </li>
                 </ol>
+                <p className={SheetStyles.paragraph}>
                 Questo approfondimento si propone di mostrare tutte e tre le
                 tipologie di ambientazione, con una particolare predilezione per
                 quelle che intrattengono un rapporto evidente con il Novecento.
