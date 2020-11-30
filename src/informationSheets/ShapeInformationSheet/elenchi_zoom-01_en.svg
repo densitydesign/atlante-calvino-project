@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="151" viewBox="0 0 250 151">
+  <defs>
+    <clipPath id="clip-zoom-01">
+      <rect width="250" height="151"/>
+    </clipPath>
+  </defs>
+  <g id="zoom-01" clip-path="url(#clip-zoom-01)">
+    <g id="axis">
+      <path id="Tracciato_148113" data-name="Tracciato 148113" d="M167.622.791h0Z" transform="translate(85.889 131.314)"/>
+      <line id="Linea_7861" data-name="Linea 7861" y2="4.744" transform="translate(85.99 131.314)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7862" data-name="Linea 7862" y2="4.744" transform="translate(142.622 131.314)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7863" data-name="Linea 7863" y2="4.007" transform="translate(116.278 132.051)" stroke="#5151fc" stroke-width="0.5"/>
+      <line id="Linea_7864" data-name="Linea 7864" y2="4.744" transform="translate(199.253 131.314)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7866" data-name="Linea 7866" x1="4.744" transform="translate(24.5 115.897)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7867" data-name="Linea 7867" x1="4.744" transform="translate(24.5 100.084)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7868" data-name="Linea 7868" x1="4.744" transform="translate(24.5 84.271)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7869" data-name="Linea 7869" x1="4.744" transform="translate(24.5 68.459)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7870" data-name="Linea 7870" x1="4.744" transform="translate(24.5 52.646)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7871" data-name="Linea 7871" x1="4.744" transform="translate(24.5 36.833)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <line id="Linea_7872" data-name="Linea 7872" x1="4.744" transform="translate(24.5 21.021)" fill="none" stroke="#000" stroke-width="0.5"/>
+      <text id="_0.00" data-name="0.00" transform="translate(0 131.891)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0.00</tspan></text>
+      <text id="_0.10" data-name="0.10" transform="translate(0 100.265)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0.10</tspan></text>
+      <text id="_0.20" data-name="0.20" transform="translate(0 68.64)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0.20</tspan></text>
+      <text id="_0.30" data-name="0.30" transform="translate(0 37.014)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">0.30</tspan></text>
+      <path id="Tracciato_148114" data-name="Tracciato 148114" d="M23.17,25.266H28.31l-.332,110.554H249.164" transform="translate(1.33 -4.246)" fill="none" stroke="#000" stroke-width="1"/>
+    </g>
+    <g id="Raggruppa_24069" data-name="Raggruppa 24069">
+      <path id="Tracciato_148101" data-name="Tracciato 148101" d="M261.743,133.355c-12.2-.109-12.875-1.223-26.338-1.223-14.158,0-14.158-1.981-28.316-1.981s-14.158,6.24-28.316,6.24-14.158-5.07-28.316-5.07-14.158-61.4-28.316-61.4-14.158,71.507-28.316,71.507H261.743Z" transform="translate(-8.231 -10.11)" fill="#5151fc" opacity="0.73"/>
+      <path id="Tracciato_148102" data-name="Tracciato 148102" d="M261.743,133.355c-12.2-.109-12.875-1.223-26.338-1.223-14.158,0-14.158-1.981-28.316-1.981s-14.158,6.24-28.316,6.24-14.158-5.07-28.316-5.07-14.158-61.4-28.316-61.4-14.158,71.507-28.316,71.507H261.743Z" transform="translate(-8.231 -10.11)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+      <path id="Tracciato_148103" data-name="Tracciato 148103" d="M261.743,125.077c-12.2-.559-12.875-6.238-26.338-6.238-14.158,0-14.158.919-28.316.919s-14.158,6.343-28.316,6.343-14.158-8.077-28.316-8.077S136.3,36.712,122.142,36.712,107.983,137.063,93.826,137.063c14.157,0,14.157-79.125,28.316-79.125s14.157,64.169,28.316,64.169,14.157,6.176,28.316,6.176,14.157-3.971,28.316-3.971,14.157.725,28.316.725c13.463,0,14.133,1.657,26.338,1.821Z" transform="translate(-8.231 -5.749)" fill="orange"/>
+      <path id="Tracciato_148104" data-name="Tracciato 148104" d="M28.631,150.856c14.158,0,14.158-2.8,28.317-2.8s14.157,2.8,28.316,2.8C71.105,150.856,71.105,130.323,28.631,150.856Z" transform="translate(0.332 -19.542)" fill="orange"/>
+      <path id="Tracciato_148105" data-name="Tracciato 148105" d="M261.743,125.077c-12.2-.559-12.875-6.238-26.338-6.238-14.158,0-14.158.919-28.316.919s-14.158,6.343-28.316,6.343-14.158-8.077-28.316-8.077S136.3,36.712,122.142,36.712,107.983,137.063,93.826,137.063c14.157,0,14.157-79.125,28.316-79.125s14.157,64.169,28.316,64.169,14.157,6.176,28.316,6.176,14.157-3.971,28.316-3.971,14.157.725,28.316.725c13.463,0,14.133,1.657,26.338,1.821Z" transform="translate(-8.231 -5.749)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+      <path id="Tracciato_148106" data-name="Tracciato 148106" d="M28.631,150.856c14.158,0,14.158-2.8,28.317-2.8s14.157,2.8,28.316,2.8C71.105,150.856,71.105,130.323,28.631,150.856Z" transform="translate(0.332 -19.542)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+      <path id="Tracciato_148107" data-name="Tracciato 148107" d="M261.743,131.2c-12.2-.1-12.875-1.155-26.338-1.155-14.158,0-14.158-1.009-28.316-1.009s-14.158,3.921-28.316,3.921-14.158-5.18-28.316-5.18S136.3,64.027,122.142,64.027s-14.158,76.624-28.316,76.624c14.157,0,14.157-71.507,28.316-71.507s14.157,61.4,28.316,61.4,14.157,5.07,28.316,5.07,14.157-6.24,28.316-6.24,14.157,1.981,28.316,1.981c13.463,0,14.133,1.114,26.338,1.223Z" transform="translate(-8.231 -9.337)" fill="#f36"/>
+      <path id="Tracciato_148108" data-name="Tracciato 148108" d="M261.743,131.2c-12.2-.1-12.875-1.155-26.338-1.155-14.158,0-14.158-1.009-28.316-1.009s-14.158,3.921-28.316,3.921-14.158-5.18-28.316-5.18S136.3,64.027,122.142,64.027s-14.158,76.624-28.316,76.624c14.157,0,14.157-71.507,28.316-71.507s14.157,61.4,28.316,61.4,14.157,5.07,28.316,5.07,14.157-6.24,28.316-6.24,14.157,1.981,28.316,1.981c13.463,0,14.133,1.114,26.338,1.223Z" transform="translate(-8.231 -9.337)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+      <path id="Tracciato_148109" data-name="Tracciato 148109" d="M261.743,130.068c-12.2-.163-12.875-1.821-26.338-1.821-14.158,0-14.158-.725-28.316-.725s-14.158,3.971-28.316,3.971-14.158-6.176-28.316-6.176S136.3,61.148,122.142,61.148s-14.158,79.125-28.316,79.125c14.157,0,14.157-76.624,28.316-76.624S136.3,127.4,150.458,127.4s14.157,5.18,28.316,5.18,14.157-3.921,28.316-3.921,14.157,1.009,28.316,1.009c13.463,0,14.133,1.052,26.338,1.155Z" transform="translate(-8.231 -8.958)" fill="#00c19c"/>
+      <path id="Tracciato_148110" data-name="Tracciato 148110" d="M28.631,152.048H85.263C71.105,152.048,71.105,149.248,28.631,152.048Z" transform="translate(0.332 -20.734)" fill="#00c19c"/>
+      <path id="Tracciato_148111" data-name="Tracciato 148111" d="M28.631,152.048H85.263C71.105,152.048,71.105,149.248,28.631,152.048Z" transform="translate(0.332 -20.734)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+      <path id="Tracciato_148112" data-name="Tracciato 148112" d="M261.743,130.068c-12.2-.163-12.875-1.821-26.338-1.821-14.158,0-14.158-.725-28.316-.725s-14.158,3.971-28.316,3.971-14.158-6.176-28.316-6.176S136.3,61.148,122.142,61.148s-14.158,79.125-28.316,79.125c14.157,0,14.157-76.624,28.316-76.624S136.3,127.4,150.458,127.4s14.157,5.18,28.316,5.18,14.157-3.921,28.316-3.921,14.157,1.009,28.316,1.009c13.463,0,14.133,1.052,26.338,1.155Z" transform="translate(-8.231 -8.958)" fill="none" stroke="#000" stroke-width="0.455" opacity="0.702"/>
+    </g>
+    <text id="Angoscia_in_caserma" data-name="Angoscia in caserma" transform="translate(148.581 42.14)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="10">Angoscia in caserma</tspan></text>
+    <circle id="Ellisse_33414" data-name="Ellisse 33414" cx="28.666" cy="28.666" r="28.666" transform="translate(85.499 22.151)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.5"/>
+    <g id="Raggruppa_24068" data-name="Raggruppa 24068">
+      <text id="_1944" data-name="1944" transform="translate(74.194 147.445)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">1944</tspan></text>
+      <text id="_1946" data-name="1946" transform="translate(131.826 147.445)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">1946</tspan></text>
+      <text id="_1948" data-name="1948" transform="translate(189.458 147.445)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">1948</tspan></text>
+      <text id="_1945" data-name="1945" transform="translate(104.705 147.323)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">1945</tspan></text>
+    </g>
+    <g id="Isolation_Mode" data-name="Isolation Mode" transform="translate(23.226 5.722)">
+      <text id="_Type_of_lists_in_the_text" data-name="% Type of lists in the text" transform="translate(0 10)" font-size="10" font-family="HKGrotesk-Italic, HK Grotesk" font-style="italic"><tspan x="0" y="0">% Type of lists in the text</tspan></text>
+    </g>
+  </g>
+</svg>

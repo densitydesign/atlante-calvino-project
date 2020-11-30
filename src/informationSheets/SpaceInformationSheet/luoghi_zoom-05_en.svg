@@ -1,0 +1,390 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="904" viewBox="0 0 250 904">
+  <defs>
+    <clipPath id="clip-zoom-05">
+      <rect width="250" height="904"/>
+    </clipPath>
+  </defs>
+  <g id="zoom-05" clip-path="url(#clip-zoom-05)">
+    <g id="zoom_01" transform="translate(0 0)">
+      <g id="Layer_1" data-name="Layer 1" transform="translate(0.037 194.606)">
+        <path id="Tracciato_148060" data-name="Tracciato 148060" d="M281.824,534.011q-1.482,3.218-3.249,6.3l-.115-.073q1.761-3.066,3.243-6.291Z" transform="translate(-110.882 -407.267)" fill="#00c19c"/>
+        <path id="Tracciato_148061" data-name="Tracciato 148061" d="M169.233,477.483a82.785,82.785,0,1,1,20.13-58.155h-.134a82.645,82.645,0,1,0-20.093,58.094Z" transform="translate(-10.891 -331.278)" fill="#00c19c"/>
+        <line id="Linea_7813" data-name="Linea 7813" x2="11.507" y2="1.937" transform="translate(166.084 101.816)" fill="none" stroke="#ff6c39" stroke-miterlimit="10" stroke-width="0.33"/>
+        <line id="Linea_7814" data-name="Linea 7814" x2="6.54" y2="3.37" transform="translate(162.702 126.494)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="0.33"/>
+        <line id="Linea_7815" data-name="Linea 7815" x1="5.72" y1="2.247" transform="translate(17.664 64.957)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="0.33"/>
+        <line id="Linea_7816" data-name="Linea 7816" y1="10.718" x2="15.175" transform="translate(182.48 19.445)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="0.33"/>
+        <line id="Linea_7817" data-name="Linea 7817" y1="2.726" x2="18.266" transform="translate(201.304 74.193)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="0.33"/>
+        <ellipse id="Ellisse_33258" data-name="Ellisse 33258" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(156.939 94.578)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33259" data-name="Ellisse 33259" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(156.381 100.414)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33260" data-name="Ellisse 33260" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(177.251 103.413)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33261" data-name="Ellisse 33261" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(155.269 106.164)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33262" data-name="Ellisse 33262" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(150.163 119.863)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33263" data-name="Ellisse 33263" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(170.456 126.343)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33264" data-name="Ellisse 33264" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(169.436 128.474)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33265" data-name="Ellisse 33265" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(168.355 130.569)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33266" data-name="Ellisse 33266" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(167.214 132.634)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33267" data-name="Ellisse 33267" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(37.247 71.509)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33268" data-name="Ellisse 33268" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(157.905 145.78)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33269" data-name="Ellisse 33269" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(152.476 151.47)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33270" data-name="Ellisse 33270" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(146.531 156.619)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33271" data-name="Ellisse 33271" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(140.125 161.186)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33272" data-name="Ellisse 33272" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(133.312 165.115)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33273" data-name="Ellisse 33273" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(126.152 168.388)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33274" data-name="Ellisse 33274" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(118.72 170.956)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33275" data-name="Ellisse 33275" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(111.075 172.814)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33276" data-name="Ellisse 33276" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(103.29 173.932)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33277" data-name="Ellisse 33277" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(95.432 174.308)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33278" data-name="Ellisse 33278" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(87.581 173.932)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33279" data-name="Ellisse 33279" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(79.79 172.814)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33280" data-name="Ellisse 33280" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(72.145 170.956)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33281" data-name="Ellisse 33281" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(64.712 168.388)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33282" data-name="Ellisse 33282" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(57.559 165.115)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33283" data-name="Ellisse 33283" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(50.746 161.186)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33284" data-name="Ellisse 33284" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(44.34 156.619)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33285" data-name="Ellisse 33285" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(38.395 151.47)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33286" data-name="Ellisse 33286" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(32.966 145.78)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33287" data-name="Ellisse 33287" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(28.102 139.593)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33288" data-name="Ellisse 33288" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(23.851 132.98)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33289" data-name="Ellisse 33289" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(20.25 125.984)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33290" data-name="Ellisse 33290" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(17.324 118.685)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33291" data-name="Ellisse 33291" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(15.107 111.137)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33292" data-name="Ellisse 33292" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(13.619 103.413)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33293" data-name="Ellisse 33293" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(12.872 95.58)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33294" data-name="Ellisse 33294" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(12.872 87.716)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33295" data-name="Ellisse 33295" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(13.619 79.889)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33296" data-name="Ellisse 33296" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(15.107 72.165)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33297" data-name="Ellisse 33297" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(17.324 64.617)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33298" data-name="Ellisse 33298" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(20.25 57.312)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33299" data-name="Ellisse 33299" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(23.851 50.323)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33300" data-name="Ellisse 33300" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(28.102 43.704)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33301" data-name="Ellisse 33301" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(32.966 37.522)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33302" data-name="Ellisse 33302" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(38.395 31.826)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33303" data-name="Ellisse 33303" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(44.34 26.677)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33304" data-name="Ellisse 33304" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(50.746 22.117)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33305" data-name="Ellisse 33305" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(57.559 18.182)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33306" data-name="Ellisse 33306" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(64.712 14.915)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33307" data-name="Ellisse 33307" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(72.145 12.34)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33308" data-name="Ellisse 33308" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(79.79 10.488)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33309" data-name="Ellisse 33309" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(87.581 9.365)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33310" data-name="Ellisse 33310" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(95.432 8.994)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33311" data-name="Ellisse 33311" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(103.29 9.365)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33312" data-name="Ellisse 33312" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(111.075 10.488)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33313" data-name="Ellisse 33313" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(118.72 12.34)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33314" data-name="Ellisse 33314" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(126.152 14.915)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33315" data-name="Ellisse 33315" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(133.312 18.182)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33316" data-name="Ellisse 33316" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(140.125 22.117)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33317" data-name="Ellisse 33317" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(146.531 26.677)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33318" data-name="Ellisse 33318" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(152.476 31.826)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33319" data-name="Ellisse 33319" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(157.905 37.522)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33320" data-name="Ellisse 33320" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(162.763 43.704)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33321" data-name="Ellisse 33321" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(197.315 19.105)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33322" data-name="Ellisse 33322" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(167.02 50.323)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33323" data-name="Ellisse 33323" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(170.62 57.312)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33324" data-name="Ellisse 33324" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(175.764 72.165)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33325" data-name="Ellisse 33325" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(177.251 79.889)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33326" data-name="Ellisse 33326" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(219.23 73.853)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <ellipse id="Ellisse_33327" data-name="Ellisse 33327" cx="0.34" cy="0.34" rx="0.34" ry="0.34" transform="translate(177.998 87.716)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.22"/>
+        <g id="V005_Parigi" data-name="V005@Parigi" transform="translate(159.211 91.976)" style="isolation: isolate">
+          <text id="Parigi" transform="translate(0.048 1.998) rotate(2.73)" fill="orange" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Parigi</tspan></text>
+        </g>
+        <g id="V005_mare" data-name="V005@mare" transform="translate(158.636 98.022)" style="isolation: isolate">
+          <text id="mare" transform="translate(0.145 1.98) rotate(8.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">mare</tspan></text>
+        </g>
+        <g id="V005_mare_barca" data-name="V005@mare@barca" transform="translate(179.507 101.021)" style="isolation: isolate">
+          <text id="barca" transform="translate(0.145 1.98) rotate(8.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">barca</tspan></text>
+        </g>
+        <g id="V005_mongolfiera" data-name="V005@mongolfiera" transform="translate(157.497 104.009)" style="isolation: isolate">
+          <text id="mongolfiera" transform="matrix(0.972, 0.236, -0.236, 0.972, 0.24, 1.944)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">mongolfiera</tspan></text>
+        </g>
+        <g id="V005_Olivabassa" data-name="V005@Olivabassa" transform="translate(152.23 118.391)" style="isolation: isolate">
+          <text id="Olivabassa" transform="translate(0.466 1.778) rotate(27.27)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Olivabassa</tspan></text>
+        </g>
+        <g id="V005_Olivabassa_ciliegio" data-name="V005@Olivabassa@ciliegio" transform="translate(172.56 124.741)" style="isolation: isolate">
+          <text id="ciliegio" transform="translate(0.427 1.815) rotate(24.82)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">ciliegio</tspan></text>
+        </g>
+        <g id="V005_Olivabassa_mandorlo" data-name="V005@Olivabassa@mandorlo" transform="translate(171.516 126.958)" style="isolation: isolate">
+          <text id="mandorlo" transform="matrix(0.895, 0.445, -0.445, 0.895, 0.453, 1.791)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">mandorlo</tspan></text>
+        </g>
+        <g id="V005_Olivabassa_platano" data-name="V005@Olivabassa@platano" transform="translate(170.411 129.141)" style="isolation: isolate">
+          <text id="platano" transform="translate(0.479 1.764) rotate(28.09)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">platano</tspan></text>
+        </g>
+        <g id="V005_Olivabassa_quercia" data-name="V005@Olivabassa@quercia" transform="translate(169.239 131.301)" style="isolation: isolate">
+          <text id="quercia" transform="translate(0.507 1.734) rotate(29.887)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">quercia</tspan></text>
+        </g>
+        <g id="V005_Ombrosa" data-name="V005@Ombrosa" transform="translate(23.785 65.045)" style="isolation: isolate">
+          <text id="Ombrosa" transform="translate(0.333 1.89) rotate(19.09)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Ombrosa</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_olivo" data-name="V005@Ombrosa@olivo" transform="translate(159.715 145.076)" style="isolation: isolate">
+          <text id="olivo" transform="translate(0.661 1.52) rotate(40.539)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">olivo</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_vigne" data-name="V005@Ombrosa@vigne" transform="translate(154.166 151.118)" style="isolation: isolate">
+          <text id="vigne" transform="translate(0.736 1.38) rotate(46.36)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">vigne</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_valle" data-name="V005@Ombrosa@valle" transform="translate(148.083 156.609)" style="isolation: isolate">
+          <text id="valle" transform="translate(0.8 1.235) rotate(51.875)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">valle</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_vallata" data-name="V005@Ombrosa@vallata" transform="translate(141.526 161.512)" style="isolation: isolate">
+          <text id="vallata" transform="matrix(0.541, 0.841, -0.841, 0.541, 0.855, 1.081)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">vallata</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_bandita" data-name="V005@Ombrosa@bandita" transform="translate(134.556 165.782)" style="isolation: isolate">
+          <text id="bandita" transform="translate(0.904 0.916) rotate(62.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">bandita</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_bosco" data-name="V005@Ombrosa@bosco" transform="translate(127.233 169.391)" style="isolation: isolate">
+          <text id="bosco" transform="translate(0.944 0.743) rotate(68.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">bosco</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_bottega" data-name="V005@Ombrosa@bottega" transform="translate(119.625 172.304)" style="isolation: isolate">
+          <text id="bottega" transform="translate(0.976 0.56) rotate(73.74)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">bottega</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_campo" data-name="V005@Ombrosa@campo" transform="translate(111.804 174.471)" style="isolation: isolate">
+          <text id="campo" transform="matrix(0.19, 0.982, -0.982, 0.19, 0.998, 0.381)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">campo</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_carrozza" data-name="V005@Ombrosa@carrozza" transform="translate(103.838 175.908)" style="isolation: isolate">
+          <text id="carrozza" transform="translate(1.012 0.19) rotate(84.55)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">carrozza</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_carrubo" data-name="V005@Ombrosa@carrubo" transform="translate(95.792 176.579)" style="isolation: isolate">
+          <text id="carrubo" transform="translate(1.017) rotate(90)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">carrubo</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_casa_del_gabelliere" data-name="V005@Ombrosa@casa_del_gabelliere" transform="translate(82.973 177.089)" style="isolation: isolate">
+          <text id="casa_del_gabelliere" data-name="casa del gabelliere" transform="translate(1.991 17.208) rotate(-84.55)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">casa del gabelliere</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_castagneto" data-name="V005@Ombrosa@castagneto" transform="translate(74.587 176.009)" style="isolation: isolate">
+          <text id="castagneto" transform="matrix(0.19, -0.982, 0.982, 0.19, 1.963, 10.253)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">castagneto</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_castagno" data-name="V005@Ombrosa@castagno" transform="translate(66.214 174.181)" style="isolation: isolate">
+          <text id="castagno" transform="translate(1.919 8.283) rotate(-73.64)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">castagno</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_cattedrale" data-name="V005@Ombrosa@cattedrale" transform="translate(57.558 170.874)" style="isolation: isolate">
+          <text id="cattedrale" transform="translate(1.857 9.146) rotate(-68.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">cattedrale</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_ciliegio" data-name="V005@Ombrosa@ciliegio" transform="translate(50.616 167.597)" style="isolation: isolate">
+          <text id="ciliegio-2" data-name="ciliegio" transform="translate(1.778 6.279) rotate(-62.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">ciliegio</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_cimitero" data-name="V005@Ombrosa@cimitero" transform="translate(42.66 163.096)" style="isolation: isolate">
+          <text id="cimitero" transform="matrix(0.541, -0.841, 0.841, 0.541, 1.682, 7.003)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">cimitero</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_colline" data-name="V005@Ombrosa@colline" transform="translate(36.378 157.87)" style="isolation: isolate">
+          <text id="colline" transform="translate(1.572 5.979) rotate(-51.82)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">colline</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_elce" data-name="V005@Ombrosa@elce" transform="translate(31.272 152.337)" style="isolation: isolate">
+          <text id="elce" transform="matrix(0.692, -0.722, 0.722, 0.692, 1.444, 4.288)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">elce</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_faggio" data-name="V005@Ombrosa@faggio" transform="translate(24.258 146.672)" style="isolation: isolate">
+          <text id="faggio" transform="translate(1.3 4.788) rotate(-40.539)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">faggio</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_fico" data-name="V005@Ombrosa@fico" transform="translate(20.9 139.833)" style="isolation: isolate">
+          <text id="fico" transform="translate(1.16 3.379) rotate(-35.45)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">fico</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_frassino" data-name="V005@Ombrosa@frassino" transform="translate(13.267 132.599)" style="isolation: isolate">
+          <text id="frassino" transform="translate(1 5.252) rotate(-30)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">frassino</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_frutteto" data-name="V005@Ombrosa@frutteto" transform="translate(10.129 125.258)" style="isolation: isolate">
+          <text id="frutteto" transform="matrix(0.91, -0.415, 0.415, 0.91, 0.831, 4.326)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">frutteto</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_gelso" data-name="V005@Ombrosa@gelso" transform="translate(8.436 117.36)" style="isolation: isolate">
+          <text id="gelso" transform="translate(0.654 3.534) rotate(-19.09)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">gelso</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_glicine" data-name="V005@Ombrosa@glicine" transform="translate(5.416 109.343)" style="isolation: isolate">
+          <text id="glicine" transform="matrix(0.97, -0.24, 0.24, 0.97, 0.48, 3.388)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">glicine</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_grotta" data-name="V005@Ombrosa@grotta" transform="translate(4.59 101.331)" style="isolation: isolate">
+          <text id="grotta" transform="translate(0.28 2.684) rotate(-8.049)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">grotta</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_magnolia" data-name="V005@Ombrosa@magnolia" transform="translate(1.142 93.075)" style="isolation: isolate">
+          <text id="magnolia" transform="translate(0.095 2.381) rotate(-2.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">magnolia</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_melograno" data-name="V005@Ombrosa@melograno" transform="translate(0 84.392)" style="isolation: isolate">
+          <text id="melograno" transform="translate(0.048 1.998) rotate(2.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">melograno</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_muro" data-name="V005@Ombrosa@muro" transform="translate(5.552 76.009)" style="isolation: isolate">
+          <text id="muro" transform="translate(0.142 1.98) rotate(8.049)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">muro</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_noce" data-name="V005@Ombrosa@noce" transform="translate(7.4 67.605)" style="isolation: isolate">
+          <text id="noce" transform="matrix(0.97, 0.24, -0.24, 0.97, 0.244, 1.94)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">noce</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_tana" data-name="V005@Ombrosa@tana" transform="translate(10.249 59.519)" style="isolation: isolate">
+          <text id="tana" transform="translate(0.333 1.89) rotate(19.09)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">tana</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_olmo" data-name="V005@Ombrosa@olmo" transform="translate(13.063 51.447)" style="isolation: isolate">
+          <text id="olmo" transform="matrix(0.91, 0.415, -0.415, 0.91, 0.422, 1.819)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">olmo</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_orti" data-name="V005@Ombrosa@orti" transform="translate(18.329 44.645)" style="isolation: isolate">
+          <text id="orti" transform="translate(0.508 1.732) rotate(30)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">orti</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_osteria" data-name="V005@Ombrosa@osteria" transform="translate(20.395 35.832)" style="isolation: isolate">
+          <text id="osteria" transform="translate(0.59 1.629) rotate(35.45)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">osteria</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_padiglione" data-name="V005@Ombrosa@padiglione" transform="translate(23.566 27.102)" style="isolation: isolate">
+          <text id="padiglione" transform="translate(0.661 1.52) rotate(40.539)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">padiglione</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_palazzo" data-name="V005@Ombrosa@palazzo" transform="translate(31.328 22.281)" style="isolation: isolate">
+          <text id="palazzo" transform="matrix(0.692, 0.722, -0.722, 0.692, 0.734, 1.384)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">palazzo</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_parchi" data-name="V005@Ombrosa@parchi" transform="translate(38.908 17.787)" style="isolation: isolate">
+          <text id="parchi" transform="translate(0.799 1.236) rotate(51.82)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">parchi</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_parco" data-name="V005@Ombrosa@parco" transform="translate(46.275 13.297)" style="isolation: isolate">
+          <text id="parco" transform="matrix(0.541, 0.841, -0.841, 0.541, 0.855, 1.082)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">parco</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_pesco" data-name="V005@Ombrosa@pesco" transform="translate(53.678 8.909)" style="isolation: isolate">
+          <text id="pesco" transform="translate(0.904 0.916) rotate(62.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">pesco</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_piazza" data-name="V005@Ombrosa@piazza" transform="translate(61.475 5.139)" style="isolation: isolate">
+          <text id="piazza" transform="translate(0.944 0.743) rotate(68.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">piazza</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_pino" data-name="V005@Ombrosa@pino" transform="translate(70.323 4.392)" style="isolation: isolate">
+          <text id="pino" transform="translate(0.976 0.563) rotate(73.64)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">pino</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_platano" data-name="V005@Ombrosa@platano" transform="translate(78.175 0)" style="isolation: isolate">
+          <text id="platano-2" data-name="platano" transform="matrix(0.19, 0.982, -0.982, 0.19, 0.998, 0.381)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">platano</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_porto" data-name="V005@Ombrosa@porto" transform="translate(87.132 0.957)" style="isolation: isolate">
+          <text id="porto" transform="translate(1.012 0.19) rotate(84.55)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">porto</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_prato" data-name="V005@Ombrosa@prato" transform="translate(92.742 2.369)" style="isolation: isolate">
+          <text id="prato" transform="translate(2 5.028) rotate(-90)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">prato</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_prigione" data-name="V005@Ombrosa@prigione" transform="translate(100.796 0.49)" style="isolation: isolate">
+          <text id="prigione" transform="translate(1.991 7.197) rotate(-84.55)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">prigione</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_riva" data-name="V005@Ombrosa@riva" transform="translate(108.805 5.388)" style="isolation: isolate">
+          <text id="riva" transform="matrix(0.19, -0.982, 0.982, 0.19, 1.963, 3.342)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">riva</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_rovere" data-name="V005@Ombrosa@rovere" transform="translate(116.693 4.183)" style="isolation: isolate">
+          <text id="rovere" transform="translate(1.919 6.353) rotate(-73.64)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">rovere</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_sagrato" data-name="V005@Ombrosa@sagrato" transform="translate(124.396 5.794)" style="isolation: isolate">
+          <text id="sagrato" transform="translate(1.857 7.278) rotate(-68.18)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">sagrato</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_salice" data-name="V005@Ombrosa@salice" transform="translate(131.84 10.943)" style="isolation: isolate">
+          <text id="salice" transform="translate(1.778 5.386) rotate(-62.73)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">salice</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_spiaggia" data-name="V005@Ombrosa@spiaggia" transform="translate(138.956 13.266)" style="isolation: isolate">
+          <text id="spiaggia" transform="matrix(0.541, -0.841, 0.841, 0.541, 1.682, 7.003)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">spiaggia</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_stanzetta" data-name="V005@Ombrosa@stanzetta" transform="translate(145.681 17.298)" style="isolation: isolate">
+          <text id="stanzetta" transform="translate(1.572 7.56) rotate(-51.82)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">stanzetta</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_strada" data-name="V005@Ombrosa@strada" transform="translate(151.96 24.313)" style="isolation: isolate">
+          <text id="strada" transform="matrix(0.692, -0.722, 0.722, 0.692, 1.444, 5.74)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">strada</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_susino" data-name="V005@Ombrosa@susino" transform="translate(157.729 30.364)" style="isolation: isolate">
+          <text id="susino" transform="translate(1.3 5.442) rotate(-40.539)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">susino</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_villa_d_Ondariva" data-name="V005@Ombrosa@villa_d&apos;Ondariva" transform="translate(162.921 32.282)" style="isolation: isolate">
+          <text id="villa_d_Ondariva" data-name="villa d&apos;Ondariva" transform="translate(1.16 9.795) rotate(-35.45)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">villa d&apos;Ondariva</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_villa_d_Ondariva_giardino__D_Ondariva_" data-name="V005@Ombrosa@villa_d&apos;Ondariva@giardino_(D&apos;Ondariva)" transform="translate(197.466 4.766)" style="isolation: isolate">
+          <text id="giardino_D_Ondariva_" data-name="giardino (D&apos;Ondariva)" transform="translate(1.16 12.711) rotate(-35.45)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">giardino (D&apos;Ondariva)</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_Vasca_Grande" data-name="V005@Ombrosa@Vasca_Grande" transform="translate(167.517 41.028)" style="isolation: isolate">
+          <text id="Vasca_Grande" data-name="Vasca Grande" transform="translate(1 7.766) rotate(-30)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0" letter-spacing="-0.07em">V</tspan><tspan y="0">asca Grande</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_Quercia_delle_Cinque_Passere" data-name="V005@Ombrosa@Quercia_delle_Cinque_Passere" transform="translate(171.46 46.15)" style="isolation: isolate">
+          <text id="Quercia_delle_Cinque" data-name="Quercia delle Cinque" transform="matrix(0.91, -0.415, 0.415, 0.91, 0.831, 9.758)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Quercia delle Cinque</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_Quercia_delle_Cinque_Passere_1" data-name="V005@Ombrosa@Quercia_delle_Cinque_Passere_1" transform="translate(172.735 54.055)" style="isolation: isolate">
+          <text id="Passere" transform="matrix(0.924, -0.383, 0.383, 0.924, 0.767, 4.547)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Passere</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_Porta_Capperi" data-name="V005@Ombrosa@Porta_Capperi" transform="translate(177.251 66.202)" style="isolation: isolate">
+          <text id="Porta_Capperi" data-name="Porta Capperi" transform="matrix(0.97, -0.24, 0.24, 0.97, 0.48, 4.836)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Porta Capperi</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_villa_d_Ombrosa" data-name="V005@Ombrosa@villa_d&apos;Ombrosa" transform="translate(179.079 74.973)" style="isolation: isolate">
+          <text id="villa_d_Ombrosa" data-name="villa d&apos;Ombrosa" transform="translate(0.28 3.951) rotate(-8.049)" fill="#00c19c" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">villa d&apos;Ombrosa</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_villa_d_Ombrosa_giardino__villa_" data-name="V005@Ombrosa@villa_d&apos;Ombrosa@giardino_(villa)" transform="translate(221.058 69.219)" style="isolation: isolate">
+          <text id="giardino_villa_" data-name="giardino (villa)" transform="translate(0.28 3.669) rotate(-8.049)" fill="#ff6c39" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">giardino (villa)</tspan></text>
+        </g>
+        <g id="V005_Ombrosa_Cammino_dell_Artiglieria" data-name="V005@Ombrosa@Cammino_dell&apos;Artiglieria" transform="translate(180.125 83.927)" style="isolation: isolate">
+          <text id="Cammino_dell_Artiglieria" data-name="Cammino dell&apos;Artiglieria" transform="translate(0.095 3.004) rotate(-2.73)" fill="orange" font-size="2" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Cammino dell&apos;Artiglieria</tspan></text>
+        </g>
+      </g>
+      <g id="Isolation_Mode" data-name="Isolation Mode" transform="translate(1.967 0)">
+        <path id="Tracciato_148062" data-name="Tracciato 148062" d="M119.635,377.249a61.386,61.386,0,1,1-61.386,61.386,61.386,61.386,0,0,1,61.386-61.386m0-.249a61.635,61.635,0,1,0,61.635,61.635A61.635,61.635,0,0,0,119.635,377Z" transform="translate(-26.223 -151.017)"/>
+        <path id="Tracciato_148063" data-name="Tracciato 148063" d="M170.761,112.807a61.938,61.938,0,1,1,6.109-26.852" transform="translate(-24.253 -12.388)" fill="none" stroke="#00c19c" stroke-miterlimit="10" stroke-width="7"/>
+        <path id="Tracciato_148064" data-name="Tracciato 148064" d="M252.782,135.49a61.374,61.374,0,0,1-5.842,21.089" transform="translate(-100.432 -56.161)" fill="none" stroke="#ff6c39" stroke-miterlimit="10" stroke-width="7"/>
+        <path id="Tracciato_148065" data-name="Tracciato 148065" d="M256.827,126q0,2.915-.267,5.763" transform="translate(-104.21 -52.433)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="7"/>
+        <text id="Il_barone_rampante" data-name="Il barone rampante" transform="translate(92.994 75.148)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-38.534" y="0">Il ba</tspan><tspan y="0" letter-spacing="-0.04em">r</tspan><tspan y="0">one rampante</tspan></text>
+        <text id="Il_barone_rampante-2" data-name="Il barone rampante" transform="translate(92.994 289.503)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-38.534" y="0">Il ba</tspan><tspan y="0" letter-spacing="-0.04em">r</tspan><tspan y="0">one rampante</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24059" data-name="Raggruppa 24059">
+      <text id="Hierarchy_of_the_locations_LE_MEDUSE" data-name="Hierarchy of the locations
+LE MEDUSE" transform="translate(1.967 173.059)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan letter-spacing="-0.01em"><tspan x="0" y="0">Hierarchy of the locations</tspan></tspan><tspan x="0" y="11">LE MEDUSE</tspan></text>
+      <text id="First_level" data-name="First level" transform="translate(1.967 10)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic" letter-spacing="-0.01em"><tspan x="0" y="0">First level</tspan></text>
+    </g>
+    <path id="Tracciato_148070" data-name="Tracciato 148070" d="M171.909,31v5.463h0a47.246,47.246,0,1,1-28.016,9.24,47.246,47.246,0,0,1,28.016-9.24V31m0,0a52.716,52.716,0,1,0,14.89,2.154A52.716,52.716,0,0,0,171.909,31Z" transform="translate(-31.166 426.635)" fill="orange"/>
+    <g id="Raggruppa_24060" data-name="Raggruppa 24060" transform="translate(-2.228 437)">
+      <path id="Tracciato_148069" data-name="Tracciato 148069" d="M170.911,328.09v.211h0a52.49,52.49,0,1,1-31.138,10.262A52.49,52.49,0,0,1,170.911,328.3v-.211m0,0a52.716,52.716,0,1,0,14.9,2.154,52.716,52.716,0,0,0-14.9-2.154Z" transform="translate(256.258 -86.465) rotate(40)"/>
+      <path id="Tracciato_148071" data-name="Tracciato 148071" d="M284.914,388.68a76.929,76.929,0,0,1,.4,14.313h-.3a75.122,75.122,0,0,0-.4-14.266Z" transform="translate(236.813 -120.151) rotate(40)" fill="orange"/>
+      <path id="Tracciato_148072" data-name="Tracciato 148072" d="M222.094,440.744A76.089,76.089,0,0,1,104.027,345.48l.25.172a75.785,75.785,0,0,0,117.6,94.889Z" transform="translate(263.331 -85.516) rotate(40)" fill="orange"/>
+      <path id="Tracciato_148073" data-name="Tracciato 148073" d="M308.06,505.591q-3.9,4.5-8.147,8.584l-.2-.211q4.261-4.1,8.116-8.584Z" transform="translate(250.746 -141.914) rotate(40)" fill="orange"/>
+      <path id="Tracciato_148074" data-name="Tracciato 148074" d="M24.84,360.885A125.762,125.762,0,0,1,100.984,249.67l.125.273a125.465,125.465,0,0,0-75.964,110.95Z" transform="translate(260.89 -60.098) rotate(40)" fill="orange"/>
+      <line id="Linea_7820" data-name="Linea 7820" y1="20.361" x2="37.334" transform="translate(166.333 306.08) rotate(40)" fill="none"/>
+      <line id="Linea_7821" data-name="Linea 7821" y1="0.179" x2="6.36" transform="translate(195.938 362.279) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <line id="Linea_7822" data-name="Linea 7822" x1="10.668" y2="0.304" transform="translate(82.209 271.983) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <line id="Linea_7823" data-name="Linea 7823" x2="19.128" y2="18.09" transform="translate(152.812 417.779) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <line id="Linea_7824" data-name="Linea 7824" x2="9.607" y2="26.971" transform="translate(106.562 410.154) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <line id="Linea_7825" data-name="Linea 7825" x2="0.952" y2="34.252" transform="translate(82.565 390.965) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <line id="Linea_7826" data-name="Linea 7826" x1="27.4" y1="18.761" transform="translate(107.674 195.634) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/>
+      <ellipse id="Ellisse_33388" data-name="Ellisse 33388" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(181.299 349.313) rotate(40)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33389" data-name="Ellisse 33389" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(204.885 359.497) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33390" data-name="Ellisse 33390" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(200.718 365.301) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33391" data-name="Ellisse 33391" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(196.02 370.681) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33392" data-name="Ellisse 33392" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(98.532 284.315) rotate(40)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33393" data-name="Ellisse 33393" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(150.03 393.51) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33394" data-name="Ellisse 33394" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(161.599 442.042) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33395" data-name="Ellisse 33395" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(149.858 443.407) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33396" data-name="Ellisse 33396" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(114.904 389.26) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33397" data-name="Ellisse 33397" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(96.491 435.923) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33398" data-name="Ellisse 33398" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(94.243 377.618) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33399" data-name="Ellisse 33399" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(59.383 419.557) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33400" data-name="Ellisse 33400" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(120.938 245.23) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33401" data-name="Ellisse 33401" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(48.081 231.458) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33402" data-name="Ellisse 33402" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(56.397 223.052) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33403" data-name="Ellisse 33403" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(65.461 215.468) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33404" data-name="Ellisse 33404" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(75.206 208.772) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33405" data-name="Ellisse 33405" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(85.538 203.026) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33406" data-name="Ellisse 33406" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(96.362 198.274) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33407" data-name="Ellisse 33407" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(107.581 194.567) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33408" data-name="Ellisse 33408" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(119.099 191.925) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33409" data-name="Ellisse 33409" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(130.824 190.384) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33410" data-name="Ellisse 33410" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(142.634 189.944) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33411" data-name="Ellisse 33411" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(154.438 190.628) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33412" data-name="Ellisse 33412" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(166.121 192.415) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <ellipse id="Ellisse_33413" data-name="Ellisse 33413" cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(177.59 195.294) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/>
+      <text id="Boemia" transform="matrix(0.788, 0.616, -0.616, 0.788, 184.374, 352.21)" fill="orange" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Boemia</tspan></text>
+      <text id="accampamento" transform="matrix(0.839, 0.545, -0.545, 0.839, 207.936, 361.408)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">accampamento</tspan></text>
+      <text id="campo_di_battaglia" data-name="campo di battaglia" transform="matrix(0.788, 0.616, -0.616, 0.788, 204.122, 366.977)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">campo di battaglia</tspan></text>
+      <text id="ospedale" transform="translate(198.629 373.367) rotate(44)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">ospedale</tspan></text>
+      <text id="Italia" transform="matrix(0.788, 0.616, -0.616, 0.788, 91.516, 279.291)" fill="orange" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Italia</tspan></text>
+      <text id="Col_Gerbido" data-name="Col Gerbido" transform="matrix(0.122, 0.993, -0.993, 0.122, 152.011, 397.252)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Col Gerbido</tspan></text>
+      <text id="casolare" transform="translate(161.915 446.118) rotate(81)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">casolare</tspan></text>
+      <text id="tana-2" data-name="tana" transform="matrix(0.07, 0.998, -0.998, 0.07, 151.6, 447.266)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">tana</tspan></text>
+      <text id="Pratofungo" transform="translate(113.915 391.617) rotate(110)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Pratofungo</tspan></text>
+      <text id="capannuccia" transform="translate(94.667 439.25) rotate(110)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">capannuccia</tspan></text>
+      <text id="Terraba" transform="matrix(-0.616, 0.788, -0.788, -0.616, 92.002, 380.686)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0" letter-spacing="-0.11em">T</tspan><tspan y="0">erraba</tspan></text>
+      <text id="campagna" transform="matrix(-0.616, 0.788, -0.788, -0.616, 57.176, 423.066)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">campagna</tspan></text>
+      <text id="Terralba" transform="translate(116.807 229.762) rotate(74)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0" letter-spacing="-0.11em">T</tspan><tspan y="0">erralba</tspan></text>
+      <text id="cimitero-2" data-name="cimitero" transform="matrix(0.743, 0.669, -0.669, 0.743, 36.374, 220.691)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">cimitero</tspan></text>
+      <text id="prato-2" data-name="prato" transform="translate(47.658 214.457) rotate(47)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">prato</tspan></text>
+      <text id="bosco-2" data-name="bosco" transform="matrix(0.602, 0.799, -0.799, 0.602, 58.271, 204.21)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">bosco</tspan></text>
+      <text id="bottega-2" data-name="bottega" transform="translate(67.15 195.819) rotate(58)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">bottega</tspan></text>
+      <text id="casolare-2" data-name="casolare" transform="matrix(0.454, 0.891, -0.891, 0.454, 77.64, 188.475)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">casolare</tspan></text>
+      <text id="castello" transform="translate(91.43 183.743) rotate(69)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">castello</tspan></text>
+      <text id="riva-2" data-name="riva" transform="translate(104.718 184.849) rotate(74)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">riva</tspan></text>
+      <text id="collinetta" transform="translate(117.345 175.065) rotate(80)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">collinetta</tspan></text>
+      <text id="fienile" transform="translate(129.741 177.357) rotate(85)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">fienile</tspan></text>
+      <text id="grotta-2" data-name="grotta" transform="matrix(-0.017, 1, -1, -0.017, 144.416, 177.182)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">grotta</tspan></text>
+      <text id="marina" transform="matrix(-0.105, 0.995, -0.995, -0.105, 157.036, 176.493)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">marina</tspan></text>
+      <text id="Salto_della_Ghigna" data-name="Salto della Ghigna" transform="translate(172.515 159.257) rotate(101)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Salto della Ghigna</tspan></text>
+      <text id="Prato_delle_Monache" data-name="Prato delle Monache" transform="matrix(-0.292, 0.956, -0.956, -0.292, 188.798, 160.362)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation: isolate"><tspan x="0" y="0">Prato delle Monache</tspan></text>
+    </g>
+    <text id="Il_visconte_dimezzato" data-name="Il visconte dimezzato" transform="translate(141 755)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-42.566" y="0">Il visconte dimezzato</tspan></text>
+    <g id="Raggruppa_24059-2" data-name="Raggruppa 24059" transform="translate(-2 437)">
+      <text id="Hierarchy_of_the_locations_LE_MEDUSE-2" data-name="Hierarchy of the locations
+LE MEDUSE" transform="translate(1.967 153.059)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan letter-spacing="-0.01em"><tspan x="0" y="0">Hierarchy of the locations</tspan></tspan><tspan x="0" y="11">LE MEDUSE</tspan></text>
+      <text id="First_level-2" data-name="First level" transform="translate(1.967 10)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic" letter-spacing="-0.01em"><tspan x="0" y="0">First level</tspan></text>
+    </g>
+    <text id="Il_visconte_dimezzato-2" data-name="Il visconte dimezzato" transform="translate(141 514)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-42.566" y="0">Il visconte dimezzato</tspan></text>
+  </g>
+</svg>

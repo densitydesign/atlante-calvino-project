@@ -1,17 +1,22 @@
-import React from "react";
+import React from "react"
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede1 from "../FooterSchede1";
-import SheetStyles from "../SheetStyles.module.css";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede1 from "../FooterSchede1"
+import SheetStyles from "../SheetStyles.module.css"
 
-import "./SpaceInformationSheet.css";
+import "./SpaceInformationSheet.css"
 
-import inventati from "./infosheet-spazio.svg";
-import legenda from "./legend.svg";
-import zoom_02 from "./zoom-02.svg";
-import zoom_04 from "./zoom-04.svg";
-import zoom_05 from "./zoom-05.svg";
-import { Trans, withTranslation } from "react-i18next";
+import inventati from "./infosheet-spazio.svg"
+import legenda from "./legend.svg"
+import zoom_02 from "./zoom-02.svg"
+import zoom_04 from "./zoom-04.svg"
+import zoom_05 from "./zoom-05.svg"
+import inventatiEn from "./luoghi_infosheet-spazio_en.svg"
+import legendaEn from "./luoghi_legend_en.svg"
+import zoom_02En from "./luoghi_zoom-02_en.svg"
+import zoom_04En from "./luoghi_zoom-04_en.svg"
+import zoom_05En from "./luoghi_zoom-05_en.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class SpaceInformationSheet extends React.Component {
   render() {
@@ -28,18 +33,36 @@ class SpaceInformationSheet extends React.Component {
             </h1>
           </div>
           <div className={SheetStyles.gridRow}>
-            <img
-              className={SheetStyles.legend}
-              style={{ gridColumn: "1 / span 5" }}
-              src={legenda}
-              alt=""
-            />
-            <img
-              className={SheetStyles.image100w}
-              style={{ gridColumn: "1 / span 12" }}
-              src={inventati}
-              alt=""
-            />
+            {this.props.i18n.language === "it" ? (
+              <img
+                className={SheetStyles.legend}
+                style={{ gridColumn: "1 / span 5" }}
+                src={legenda}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.legend}
+                style={{ gridColumn: "1 / span 5" }}
+                src={legendaEn}
+                alt=""
+              />
+            )}
+            {this.props.i18n.language === "it" ? (
+              <img
+                className={SheetStyles.image100w}
+                style={{ gridColumn: "1 / span 12" }}
+                src={inventati}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image100w}
+                style={{ gridColumn: "1 / span 12" }}
+                src={inventatiEn}
+                alt=""
+              />
+            )}
             <div className={SheetStyles.paragraphBig}>
               <Trans
                 i18nKey="paragraph-analisi"
@@ -119,7 +142,6 @@ class SpaceInformationSheet extends React.Component {
           </div>
           <div className={SheetStyles.gridRow} style={{ marginTop: "3rem" }}>
             <div className={SheetStyles.paragraph}>
-              
               <Trans
                 i18nKey="paragraph-romanzi-2"
                 ns={"luoghi-sheet"}
@@ -170,14 +192,25 @@ class SpaceInformationSheet extends React.Component {
               </Trans>
             </div>
             <div className={SheetStyles.sideContent}>
-              <img
-                style={{
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) +5rem)",
-                }}
-                src={zoom_05}
-                alt=""
-              />
+              {this.props.i18n.language === "it" ? (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "calc(var(--navigation-height) +5rem)",
+                  }}
+                  src={zoom_05}
+                  alt=""
+                />
+              ) : (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "calc(var(--navigation-height) +5rem)",
+                  }}
+                  src={zoom_05En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
@@ -201,23 +234,45 @@ class SpaceInformationSheet extends React.Component {
               </Trans>
             </div>
             <div className={SheetStyles.sideContent}>
-              <img
-                style={{
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) + 4rem)",
-                }}
-                src={zoom_02}
-              />
+              {this.props.i18n.language === "it" ? (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "calc(var(--navigation-height) + 4rem)",
+                  }}
+                  src={zoom_02}
+                  alt=""
+                />
+              ) : (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "calc(var(--navigation-height) + 4rem)",
+                  }}
+                  src={zoom_02En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>I racconti</h2>
-            <img
-              className={SheetStyles.image}
-              style={{ gridColumn: "1 / span 8" }}
-              src={zoom_04}
-            />
+            {this.props.i18n.language === "it" ? (
+              <img
+                className={SheetStyles.image}
+                style={{ gridColumn: "1 / span 8" }}
+                src={zoom_04}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image}
+                style={{ gridColumn: "1 / span 8" }}
+                src={zoom_04En}
+                alt=""
+              />
+            )}
             <p className="captionLeft" style={{ gridColumn: "1 / span 7" }}>
               Una selezione di racconti scritti a metà degli anni Cinquanta
             </p>
@@ -311,10 +366,10 @@ class SpaceInformationSheet extends React.Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "luoghi-sheet"])(
   SpaceInformationSheet
-);
+)
