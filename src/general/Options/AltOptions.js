@@ -103,11 +103,14 @@ class AltOptions extends Component {
       })
       return
     }
+    console.log(metadata.source, "metadata")
     if (metadata.source === "select" && multiple) {
+      console.log("if")
       this.setState({
         show: true,
       })
     } else {
+      console.log("else")
       this.setState({
         show: !this.state.show,
       })
@@ -150,39 +153,41 @@ class AltOptions extends Component {
             )}
             {!anySelected && title}
           </Dropdown.Toggle>
-          <Dropdown.Menu
-            className={classnames({
-              "d-flex": this.props.isFlex,
-              "flex-wrap": this.props.isFlex,
-            })}
-            onToggle={multiple ? undefined : this.toggleDropDown}
-            show={this.state.show}
-          >
-            {this.props.options.map((d, i) => {
-              return (
+          {this.state.show && (
+            <Dropdown.Menu
+              className={classnames({
+                "d-flex": this.props.isFlex,
+                "flex-wrap": this.props.isFlex,
+              })}
+              onToggle={multiple ? undefined : this.toggleDropDown}
+              show={this.state.show}
+            >
+              {this.props.options.map((d, i) => {
+                return (
+                  <Dropdown.Item
+                    key={i}
+                    onClick={() => this.handleChange(i)}
+                    style={{ width: this.props.isFlex ? "33.3%" : undefined }}
+                    className={classnames({
+                      active: selectedIndices[i],
+                      "border-right border-dark": this.props.isFlex,
+                    })}
+                  >
+                    {this.props.t("options." + d.label)}
+                  </Dropdown.Item>
+                )
+              })}
+              {allLink && multiple && (
                 <Dropdown.Item
-                  key={i}
-                  onClick={() => this.handleChange(i)}
                   style={{ width: this.props.isFlex ? "33.3%" : undefined }}
-                  className={classnames({
-                    active: selectedIndices[i],
-                    "border-right border-dark": this.props.isFlex,
-                  })}
+                  onClick={() => this.handleSelectAll()}
+                  className={{ active: allSelected }}
                 >
-                  {this.props.t("options." + d.label)}
+                  {allLink}
                 </Dropdown.Item>
-              )
-            })}
-            {allLink && multiple && (
-              <Dropdown.Item
-                style={{ width: this.props.isFlex ? "33.3%" : undefined }}
-                onClick={() => this.handleSelectAll()}
-                className={{ active: allSelected }}
-              >
-                {allLink}
-              </Dropdown.Item>
-            )}
-          </Dropdown.Menu>
+              )}
+            </Dropdown.Menu>
+          )}
         </Dropdown>
       </div>
     )
