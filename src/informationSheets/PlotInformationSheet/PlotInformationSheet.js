@@ -223,7 +223,7 @@ class PlotInformationSheet extends Component {
                 top: "var(--navigation-height)",
               }}
             >
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img
                   className={SheetStyles.legend}
                   style={{ gridColumn: "1 / span 12" }}
@@ -238,7 +238,7 @@ class PlotInformationSheet extends Component {
                   alt=""
                 />
               )}
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img
                   className={SheetStyles.image100w}
                   style={{ backgroundColor: "var(--white)" }}
@@ -383,7 +383,7 @@ class PlotInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={SheetStyles.image}
                 src={zoom_01}
@@ -399,7 +399,7 @@ class PlotInformationSheet extends Component {
               />
             )}
             <div style={{ gridColumn: " 12 / span 1" }}>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.sideLegend} src={info_01} alt="" />
               ) : (
                 <img
@@ -565,7 +565,7 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.image100w} src={zoom_02} alt="" />
               ) : (
                 <img className={SheetStyles.image100w} src={zoom_02En} alt="" />
@@ -576,7 +576,7 @@ class PlotInformationSheet extends Component {
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.sideLegend} src={info_02} alt="" />
               ) : (
                 <img
@@ -703,7 +703,7 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.image100w} src={zoom_03} alt="" />
               ) : (
                 <img className={SheetStyles.image100w} src={zoom_03En} alt="" />
@@ -714,7 +714,7 @@ class PlotInformationSheet extends Component {
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.sideLegend} src={info_03} alt="" />
               ) : (
                 <img
@@ -781,7 +781,7 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.image100w} src={zoom_04} alt="" />
               ) : (
                 <img className={SheetStyles.image100w} src={zoom_04En} alt="" />
@@ -792,7 +792,7 @@ class PlotInformationSheet extends Component {
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img className={SheetStyles.sideLegend} src={info_04} alt="" />
               ) : (
                 <img

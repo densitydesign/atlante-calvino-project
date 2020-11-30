@@ -212,7 +212,7 @@ class RealismInformationSheet extends Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={
                   SheetStyles.image + " " + SheetStyles.translucentBackground
@@ -245,7 +245,7 @@ class RealismInformationSheet extends Component {
                 alt=""
               />
             )}
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={SheetStyles.image}
                 src={textWall01}
@@ -314,7 +314,7 @@ class RealismInformationSheet extends Component {
                 e il corpo (18%).
               </p>
             </Trans>
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={SheetStyles.image}
                 src={treemap}
@@ -428,7 +428,7 @@ class RealismInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>
               {this.props.t("realismo-sheet:Trasformazioni, visioni, dubbi")}
             </h2>
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={
                   SheetStyles.image + " " + SheetStyles.translucentBackground
@@ -461,7 +461,7 @@ class RealismInformationSheet extends Component {
                 alt=""
               />
             )}
-            {this.props.i18n === "it" ? (
+            {this.props.i18n.language === "it" ? (
               <img
                 className={SheetStyles.image}
                 src={textWall02}

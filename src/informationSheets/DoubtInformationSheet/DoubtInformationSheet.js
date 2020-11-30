@@ -11,9 +11,13 @@ import "./DoubtInformationSheet.css"
 import legenda from "./legend.svg"
 import zoom_01 from "./zoom-01.svg"
 import zoom_02 from "./zoom-02.svg"
+import legendaEn from "./nebbia_legend_en.svg"
+import zoom_01En from "./nebbia_zoom-01_en.svg"
+import zoom_02En from "./nebbia_zoom-02_en.svg"
 
 class DoubtInformationSheet extends React.Component {
   render() {
+    console.log(this.props.i18n.language)
     return (
       <>
         <HamburgerCompassHeader />
@@ -25,12 +29,21 @@ class DoubtInformationSheet extends React.Component {
             <h1 className={SheetStyles.titleH1}>
               {this.props.t("nebbia-sheet:L’effetto-nebbia")}
             </h1>
-            <img
-              className={SheetStyles.legend}
-              style={{ gridColumn: "1 / span 12" }}
-              src={legenda}
-              alt=""
-            />
+            {this.props.i18n.language === "it" ? (
+              <img
+                className={SheetStyles.legend}
+                style={{ gridColumn: "1 / span 12" }}
+                src={legenda}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.legend}
+                style={{ gridColumn: "1 / span 12" }}
+                src={legendaEn}
+                alt=""
+              />
+            )}
           </div>
           <div id="mainviz" className={SheetStyles.gridRow}>
             <DoubtTypePerYearWrapper />
@@ -59,18 +72,19 @@ class DoubtInformationSheet extends React.Component {
                 <br />
                 Per concreto qui si intende una presenza fisica dell’elemento
                 nella narrazione: es. «c’era un po’ di nebbia verso il mare e
-                l’aria era umida» (<em>Pranzo con un pastore</em>, 1948, in <em>RR</em>,
-                I, 211); «Invece si limita a farci strisciare sopra un dito e a
-                vedere l’impronta umida come la scia d’una nave, poi a
-                cancellarla col maglione fregandoci con il gomito» (
-                <em>La notte dei numeri</em>, 1958, in <em>RR</em>, II, 1058). Viceversa,
-                per <em>astratto</em> si intende una presenza “non fisica”
-                dell’elemento nella narrazione: es. «un’ombra bruna sale dal
-                fondo e come nella nebbia del ricordo lascia trasparire le
+                l’aria era umida» (<em>Pranzo con un pastore</em>, 1948, in{" "}
+                <em>RR</em>, I, 211); «Invece si limita a farci strisciare sopra
+                un dito e a vedere l’impronta umida come la scia d’una nave, poi
+                a cancellarla col maglione fregandoci con il gomito» (
+                <em>La notte dei numeri</em>, 1958, in <em>RR</em>, II, 1058).
+                Viceversa, per <em>astratto</em> si intende una presenza “non
+                fisica” dell’elemento nella narrazione: es. «un’ombra bruna sale
+                dal fondo e come nella nebbia del ricordo lascia trasparire le
                 sparse membra dell’oca» (
-                <em>Un chilo e mezzo di grasso d’oca</em>, 1976, in <em>RR</em>, II,
-                930); «lei abbassava le ciglia e lui si sentì come cancellato» (
-                <em>L’avventura di uno sciatore</em>, 1959, <em>RR</em>, II, 1175).
+                <em>Un chilo e mezzo di grasso d’oca</em>, 1976, in <em>RR</em>,
+                II, 930); «lei abbassava le ciglia e lui si sentì come
+                cancellato» (<em>L’avventura di uno sciatore</em>, 1959,{" "}
+                <em>RR</em>, II, 1175).
               </p>
             </Trans>
           </div>
@@ -114,14 +128,25 @@ class DoubtInformationSheet extends React.Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              <img
-                style={{
-                  position: "sticky",
-                  top: "6.4em",
-                }}
-                src={zoom_02}
-                alt=""
-              />
+              {this.props.i18n.language === "it" ? (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "6.4em",
+                  }}
+                  src={zoom_02}
+                  alt=""
+                />
+              ) : (
+                <img
+                  style={{
+                    position: "sticky",
+                    top: "6.4em",
+                  }}
+                  src={zoom_02En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
@@ -174,16 +199,32 @@ class DoubtInformationSheet extends React.Component {
             </Trans>
 
             <div className={SheetStyles.sideContent}>
-              <img
-                style={{ top: "var(--navigation-height)", position: "sticky" }}
-                src={zoom_01}
-                alt=""
-              />
+              {this.props.i18n.language === "it" ? (
+                <img
+                  style={{
+                    top: "var(--navigation-height)",
+                    position: "sticky",
+                  }}
+                  src={zoom_01}
+                  alt=""
+                />
+              ) : (
+                <img
+                  style={{
+                    top: "var(--navigation-height)",
+                    position: "sticky",
+                  }}
+                  src={zoom_01En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>{this.props.t('bibliografia')}</h2>
+            <h2 className={SheetStyles.titleH2}>
+              {this.props.t("bibliografia")}
+            </h2>
             <ol className={SheetStyles.paragraph + " references "}>
               <li className="referenceItem">
                 Scarpa 2005: D. Scarpa, <em>Italo Calvino</em>, Milano,

@@ -57,7 +57,7 @@ class TransformInformationSheet extends Component {
                   "transform-sheet:Cartografia dei luoghi terrestri"
                 )}
               </h1>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img alt="" className={SheetStyles.image} src={inquadramento} />
               ) : (
                 <img
@@ -68,7 +68,7 @@ class TransformInformationSheet extends Component {
               )}
             </div>
             <div style={{ gridColumn: "1 / span 7" }}>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img alt="" className={SheetStyles.legend} src={legenda_0} />
               ) : (
                 <img alt="" className={SheetStyles.legend} src={legenda_0En} />
@@ -132,7 +132,7 @@ class TransformInformationSheet extends Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n === "it" ? (
+              {this.props.i18n.language === "it" ? (
                 <img
                   className={SheetStyles.image}
                   style={{
@@ -172,7 +172,7 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={SheetStyles.legend}
                           style={{
@@ -195,7 +195,7 @@ class TransformInformationSheet extends Component {
                           src={legenda_01En}
                         />
                       )}
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={
                             SheetStyles.sideContent + " " + SheetStyles.image
@@ -222,7 +222,7 @@ class TransformInformationSheet extends Component {
                       )}
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n === "it" ? (
+                  {this.props.i18n.language === "it" ? (
                     <img
                       className="d-block w-100"
                       src={slide_01}
@@ -247,7 +247,7 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={SheetStyles.legend}
                           style={{
@@ -270,7 +270,7 @@ class TransformInformationSheet extends Component {
                           src={legenda_02En}
                         />
                       )}
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={
                             SheetStyles.sideContent + " " + SheetStyles.image
@@ -297,7 +297,7 @@ class TransformInformationSheet extends Component {
                       )}
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n === "it" ? (
+                  {this.props.i18n.language === "it" ? (
                     <img
                       className="d-block w-100"
                       src={slide_02}
@@ -325,7 +325,7 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={SheetStyles.legend}
                           style={{
@@ -348,7 +348,7 @@ class TransformInformationSheet extends Component {
                           alt=""
                         />
                       )}
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={
                             SheetStyles.sideContent + " " + SheetStyles.image
@@ -375,7 +375,7 @@ class TransformInformationSheet extends Component {
                       )}
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n === "it" ? (
+                  {this.props.i18n.language === "it" ? (
                     <img
                       className="d-block w-100"
                       src={slide_03}
@@ -400,7 +400,7 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={SheetStyles.legend}
                           style={{
@@ -423,7 +423,7 @@ class TransformInformationSheet extends Component {
                           src={legenda_04En}
                         />
                       )}
-                      {this.props.i18n === "it" ? (
+                      {this.props.i18n.language === "it" ? (
                         <img
                           className={
                             SheetStyles.sideContent + " " + SheetStyles.image
@@ -450,7 +450,7 @@ class TransformInformationSheet extends Component {
                       )}
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n === "it" ? (
+                  {this.props.i18n.language === "it" ? (
                     <img
                       className="d-block w-100"
                       src={slide_04}
