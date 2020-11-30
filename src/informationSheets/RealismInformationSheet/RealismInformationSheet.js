@@ -1,17 +1,22 @@
-import React, { Component } from "react";
-import SheetStyles from "../SheetStyles.module.css";
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede3 from "../FooterSchede3";
+import React, { Component } from "react"
+import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede3 from "../FooterSchede3"
 
-import map1x from "./mappa-ver02@1x.png";
-import map2x from "./mappa-ver02@2x.png";
+import map1x from "./mappa-ver02@1x.png"
+import map2x from "./mappa-ver02@2x.png"
 
-import legend01 from "./legend01.svg";
-import legend02 from "./legend02.svg";
-import textWall01 from "./textWall01.svg";
-import textWall02 from "./textWall02.svg";
-import treemap from "./TreemapAbsoluteWordsConcreteAbstract.svg";
-import { Trans, withTranslation } from "react-i18next";
+import legend01 from "./legend01.svg"
+import legend01En from "./realismo_Legend01_en.svg"
+import legend02 from "./legend02.svg"
+import legend02En from "./realismo_Legend02_en.svg"
+import textWall01 from "./textWall01.svg"
+import textWall01En from "./realismo_textWall01_en.svg"
+import textWall02 from "./textWall02.svg"
+import textWall02En from "./realismo_textWall02_en.svg"
+import treemap from "./TreemapAbsoluteWordsConcreteAbstract.svg"
+import treemapEn from "./realismo_TreemapAbsoluteWordsConcreteAbstract_en.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class RealismInformationSheet extends Component {
   render() {
@@ -180,21 +185,19 @@ class RealismInformationSheet extends Component {
               <p className={SheetStyles.paragraph}>
                 Quest’oscillazione tra realtà e immaginazione è qui
                 rappresentata suddividendo il testo in tre tipologie di sequenze
-                narrative: in{" "}
-                <span style={{ color: "#00bfd3" }}>azzurro</span> le parti di
-                racconto ancorate alla realtà, in cui si descrivono per filo e
-                per segno il percorso che Binda sta compiendo, il tempo che
-                impiegherà e ciò che effettivamente incontra lungo il cammino;
-                in {" "}
-                <span style={{ color: "#ff3366" }}>rosso</span>, al contrario, i
-                momenti in cui il personaggio è sopraffatto dal dubbio, da
-                inspiegabili allucinazioni, dalle visite frequenti di Regina e
-                Gund: momenti in cui la stessa meta appare irraggiungibile o
-                perde l’importanza che aveva («Ma si sarebbe raggiunto mai, il
-                casone? Non era legato a un filo che lo trascinava lontano da
-                lui, man mano che s’avvicinava? [...] Ebbe voglia di tornare
-                indietro, di fuggire, come tutto il pericolo fosse laggiù nel
-                casolare di pian Castagna»).
+                narrative: in <span style={{ color: "#00bfd3" }}>azzurro</span>{" "}
+                le parti di racconto ancorate alla realtà, in cui si descrivono
+                per filo e per segno il percorso che Binda sta compiendo, il
+                tempo che impiegherà e ciò che effettivamente incontra lungo il
+                cammino; in <span style={{ color: "#ff3366" }}>rosso</span>, al
+                contrario, i momenti in cui il personaggio è sopraffatto dal
+                dubbio, da inspiegabili allucinazioni, dalle visite frequenti di
+                Regina e Gund: momenti in cui la stessa meta appare
+                irraggiungibile o perde l’importanza che aveva («Ma si sarebbe
+                raggiunto mai, il casone? Non era legato a un filo che lo
+                trascinava lontano da lui, man mano che s’avvicinava? [...] Ebbe
+                voglia di tornare indietro, di fuggire, come tutto il pericolo
+                fosse laggiù nel casolare di pian Castagna»).
               </p>
               <p className={SheetStyles.paragraph}>
                 A queste due tipologie di sequenze se ne aggiunge una terza, in{" "}
@@ -209,27 +212,54 @@ class RealismInformationSheet extends Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            <img
-              className={
-                SheetStyles.image + " " + SheetStyles.translucentBackground
-              }
-              src={legend01}
-              style={{
-                borderBottom: "1px solid #5151fc",
-                gridColumn: "1 / span 12",
-                marginBottom: "1rem",
-                position: "sticky",
-                top: "calc(var(--navigation-height) - 0px)",
-                width: "100%",
-              }}
-              alt=""
-            />
-            <img
-              className={SheetStyles.image}
-              src={textWall01}
-              style={{ gridColumn: "1 / span 12", width: "100%" }}
-              alt=""
-            />
+            {this.props.i18n === "it" ? (
+              <img
+                className={
+                  SheetStyles.image + " " + SheetStyles.translucentBackground
+                }
+                src={legend01}
+                style={{
+                  borderBottom: "1px solid #5151fc",
+                  gridColumn: "1 / span 12",
+                  marginBottom: "1rem",
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) - 0px)",
+                  width: "100%",
+                }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={
+                  SheetStyles.image + " " + SheetStyles.translucentBackground
+                }
+                src={legend01En}
+                style={{
+                  borderBottom: "1px solid #5151fc",
+                  gridColumn: "1 / span 12",
+                  marginBottom: "1rem",
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) - 0px)",
+                  width: "100%",
+                }}
+                alt=""
+              />
+            )}
+            {this.props.i18n === "it" ? (
+              <img
+                className={SheetStyles.image}
+                src={textWall01}
+                style={{ gridColumn: "1 / span 12", width: "100%" }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image}
+                src={textWall01En}
+                style={{ gridColumn: "1 / span 12", width: "100%" }}
+                alt=""
+              />
+            )}
           </div>
           <div className={SheetStyles.gridRow}>
             <Trans
@@ -265,10 +295,10 @@ class RealismInformationSheet extends Component {
                 per farli capitolare. A Binda questo non accade perché – come
                 mostra l’equilibrio quasi perfetto tra le sequenze{" "}
                 <span style={{ color: "#ff3366" }}>rosse</span> e le sequenze{" "}
-                <span style={{ color: "#00bfd3" }}>azzurre</span> – nei momenti in
-                cui l’immaginazione sembra prendere il sopravvento, c’è sempre
-                qualcosa che lo riporta alla realtà e gli permette di completare
-                la sua missione.
+                <span style={{ color: "#00bfd3" }}>azzurre</span> – nei momenti
+                in cui l’immaginazione sembra prendere il sopravvento, c’è
+                sempre qualcosa che lo riporta alla realtà e gli permette di
+                completare la sua missione.
               </p>
               <h2 className={SheetStyles.titleH2}>Il lessico della realtà</h2>
               <p className={SheetStyles.paragraph}>
@@ -284,16 +314,29 @@ class RealismInformationSheet extends Component {
                 e il corpo (18%).
               </p>
             </Trans>
-            <img
-              className={SheetStyles.image}
-              src={treemap}
-              style={{
-                gridColumn: "1 / span 12",
-                width: "100%",
-                marginTop: "2rem",
-              }}
-              alt=""
-            />
+            {this.props.i18n === "it" ? (
+              <img
+                className={SheetStyles.image}
+                src={treemap}
+                style={{
+                  gridColumn: "1 / span 12",
+                  width: "100%",
+                  marginTop: "2rem",
+                }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image}
+                src={treemapEn}
+                style={{
+                  gridColumn: "1 / span 12",
+                  width: "100%",
+                  marginTop: "2rem",
+                }}
+                alt=""
+              />
+            )}
             <br></br>
             <br></br>
             <Trans
@@ -362,21 +405,21 @@ class RealismInformationSheet extends Component {
                 presi dal mondo animale: la paura è prima una generica bestia
                 che insegue il protagonista, poi una scimmia aggrappata al suo
                 collo; le mine si muovono sotto i suoi piedi «come ragni
-                sotterranei» (mentre in{" "}
-                <em>Campo di mine</em> erano «enormi marmotte accoccolate in
-                tane sotterranee»); l’ansia «è un leggero battere di ali di
-                pipistrello nei polmoni»; gli occhi di Gund sono tondi e lucenti
-                «come quelli dei ghiri». Il ventaglio di figure animalesche che
-                Binda vede e incontra lungo il sentiero si fa sempre più ampio,
-                passo dopo passo. Che cosa, dunque, si può dire rimanga reale e
-                cosa non lo è più? Vendetta, Pelle, Serpe, ma anche Creppo,
-                Perallo e Pian Castagna sono prove incontrovertibili della
-                ragione per cui Binda è in cammino, prove incontrovertibili
-                della guerra in corso. Eppure, non appena la missione è
-                compiuta, sprofondano immediatamente nel buio: quando Binda
-                svolta dietro lo sperone di roccia e perde di vista il casone,
-                pronto a raggiungere una nuova meta, «Gund s’alzò dai cespugli,
-                si rimise in marcia dietro di lui, coi suoi passi di gigante».
+                sotterranei» (mentre in <em>Campo di mine</em> erano «enormi
+                marmotte accoccolate in tane sotterranee»); l’ansia «è un
+                leggero battere di ali di pipistrello nei polmoni»; gli occhi di
+                Gund sono tondi e lucenti «come quelli dei ghiri». Il ventaglio
+                di figure animalesche che Binda vede e incontra lungo il
+                sentiero si fa sempre più ampio, passo dopo passo. Che cosa,
+                dunque, si può dire rimanga reale e cosa non lo è più? Vendetta,
+                Pelle, Serpe, ma anche Creppo, Perallo e Pian Castagna sono
+                prove incontrovertibili della ragione per cui Binda è in
+                cammino, prove incontrovertibili della guerra in corso. Eppure,
+                non appena la missione è compiuta, sprofondano immediatamente
+                nel buio: quando Binda svolta dietro lo sperone di roccia e
+                perde di vista il casone, pronto a raggiungere una nuova meta,
+                «Gund s’alzò dai cespugli, si rimise in marcia dietro di lui,
+                coi suoi passi di gigante».
               </p>
             </Trans>
           </div>
@@ -385,27 +428,54 @@ class RealismInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>
               {this.props.t("realismo-sheet:Trasformazioni, visioni, dubbi")}
             </h2>
-            <img
-              className={
-                SheetStyles.image + " " + SheetStyles.translucentBackground
-              }
-              src={legend02}
-              style={{
-                borderBottom: "1px solid #5151fc",
-                gridColumn: "1 / span 12",
-                marginBottom: "1rem",
-                position: "sticky",
-                top: "calc(var(--navigation-height) - 0px)",
-                width: "100%",
-              }}
-              alt=""
-            />
-            <img
-              className={SheetStyles.image}
-              src={textWall02}
-              style={{ gridColumn: "1 / span 12", width: "100%" }}
-              alt=""
-            />
+            {this.props.i18n === "it" ? (
+              <img
+                className={
+                  SheetStyles.image + " " + SheetStyles.translucentBackground
+                }
+                src={legend02}
+                style={{
+                  borderBottom: "1px solid #5151fc",
+                  gridColumn: "1 / span 12",
+                  marginBottom: "1rem",
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) - 0px)",
+                  width: "100%",
+                }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={
+                  SheetStyles.image + " " + SheetStyles.translucentBackground
+                }
+                src={legend02En}
+                style={{
+                  borderBottom: "1px solid #5151fc",
+                  gridColumn: "1 / span 12",
+                  marginBottom: "1rem",
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) - 0px)",
+                  width: "100%",
+                }}
+                alt=""
+              />
+            )}
+            {this.props.i18n === "it" ? (
+              <img
+                className={SheetStyles.image}
+                src={textWall02}
+                style={{ gridColumn: "1 / span 12", width: "100%" }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image}
+                src={textWall02En}
+                style={{ gridColumn: "1 / span 12", width: "100%" }}
+                alt=""
+              />
+            )}
           </div>
 
           <div className={SheetStyles.gridRow}>
@@ -439,10 +509,10 @@ class RealismInformationSheet extends Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "realismo-sheet"])(
   RealismInformationSheet
-);
+)
