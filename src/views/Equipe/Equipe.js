@@ -121,7 +121,7 @@ class Equipe extends React.Component {
                 Ringraziamo Lorenzo Faggi per la registrazione avvenuta presso
                 lo spazio occupato Piano Terra dell’audio del video
                 introduttivo. La voce narrante italiana è di Beatrice Gobbo,
-                quella inglese Marwa Boukarim.
+                quella inglese di Marwa Boukarim.
               </p>
               <p>
                 La traduzione inglese dei testi dell’Atlante è di Ilaria
