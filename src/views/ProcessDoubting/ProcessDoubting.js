@@ -649,13 +649,13 @@ class ProcessDoubting extends Component {
   }
 
   applyFilters() {
-    console.log("apply filters", this.state.filters);
+    // console.log("apply filters", this.state.filters);
     let survive_filters = this.state.data.map((d) => d.id)
     let id_arrays = []
     for (var f in this.state.filters) {
       survive_filters = _.intersection(survive_filters, this.state.filters[f])
     }
-    console.log(survive_filters)
+    // console.log(survive_filters)
     this.setState({ survive_filters: survive_filters })
   }
 

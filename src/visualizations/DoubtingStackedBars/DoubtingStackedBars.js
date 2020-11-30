@@ -25,7 +25,7 @@ class DoubtingStackedBars extends Component {
       prevProps.surviveFilters !== this.props.surviveFilters ||
       prevProps.stackMode !== this.props.stackMode
     ) {
-      console.log("filter or stackmode")
+      // console.log("filter or stackmode")
       V.filter(this.props.surviveFilters)
     }
   }
