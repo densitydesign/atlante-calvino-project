@@ -1,26 +1,37 @@
-import React, { useState, Component } from "react";
+import React, { useState, Component } from "react"
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 
-import FooterSchede3 from "../FooterSchede3";
+import FooterSchede3 from "../FooterSchede3"
 
-import "./PlotInformationSheet.css";
-import SheetStyles from "../SheetStyles.module.css";
+import "./PlotInformationSheet.css"
+import SheetStyles from "../SheetStyles.module.css"
 
-import legend from "./legend.svg";
-import incastonati from "./incastonati.svg";
-import zoom_01 from "./zoom_01.svg";
-import zoom_02 from "./zoom_02.svg";
-import zoom_03 from "./zoom_03.svg";
-import zoom_04 from "./zoom_04.svg";
-import info_01 from "./info_01.svg";
-import info_02 from "./info_02.svg";
-import info_03 from "./info_03.svg";
-import info_04 from "./info_04.svg";
-import { Trans, withTranslation } from "react-i18next";
+import legend from "./legend.svg"
+import legendEn from "./trama_legend_en.svg"
+import incastonati from "./incastonati.svg"
+import incastonatiEn from "./trama_incastonati_en.svg"
+import zoom_01 from "./zoom_01.svg"
+import zoom_01En from "./trama_zoom_01_en.svg"
+import zoom_02 from "./zoom_02.svg"
+import zoom_02En from "./trama_zoom_02_en.svg"
+import zoom_03 from "./zoom_03.svg"
+import zoom_03En from "./trama_zoom_03_en.svg"
+import zoom_04 from "./zoom_04.svg"
+import zoom_04En from "./trama_zoom_04_en.svg"
+import info_01 from "./info_01.svg"
+import info_01En from "./trama_info_01_en.svg"
+import info_02 from "./info_02.svg"
+import info_02En from "./trama_info_02_en.svg"
+import info_03 from "./info_03.svg"
+import info_03En from "./trama_info_03_en.svg"
+import info_04 from "./info_04.svg"
+import info_04En from "./trama_info_04_en.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class PlotInformationSheet extends Component {
   render() {
+    console.log(this.props)
     return (
       <>
         <HamburgerCompassHeader />
@@ -212,18 +223,36 @@ class PlotInformationSheet extends Component {
                 top: "var(--navigation-height)",
               }}
             >
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: "1 / span 12" }}
-                src={legend}
-                alt=""
-              />
-              <img
-                className={SheetStyles.image100w}
-                style={{ backgroundColor: "var(--white)" }}
-                src={incastonati}
-                alt=""
-              />
+              {this.props.i18n === "it" ? (
+                <img
+                  className={SheetStyles.legend}
+                  style={{ gridColumn: "1 / span 12" }}
+                  src={legend}
+                  alt=""
+                />
+              ) : (
+                <img
+                  className={SheetStyles.legend}
+                  style={{ gridColumn: "1 / span 12" }}
+                  src={legendEn}
+                  alt=""
+                />
+              )}
+              {this.props.i18n === "it" ? (
+                <img
+                  className={SheetStyles.image100w}
+                  style={{ backgroundColor: "var(--white)" }}
+                  src={incastonati}
+                  alt=""
+                />
+              ) : (
+                <img
+                  className={SheetStyles.image100w}
+                  style={{ backgroundColor: "var(--white)" }}
+                  src={incastonatiEn}
+                  alt=""
+                />
+              )}
               <Trans
                 i18nKey="trama-di-se-una-notte"
                 ns="trama-sheet"
@@ -328,8 +357,7 @@ class PlotInformationSheet extends Component {
                 avere un approccio più organico e immediato all’esperienza della
                 lettura, non così ossessivamente finalizzato al raggiungimento
                 della conclusione.<br></br>
-                Ma qual è la trama di questo Lettore
-                perseguitato dalle trame?
+                Ma qual è la trama di questo Lettore perseguitato dalle trame?
               </p>
             </Trans>
           </div>
@@ -355,14 +383,31 @@ class PlotInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <img
-              className={SheetStyles.image}
-              src={zoom_01}
-              style={{ gridColumn: " 1 / span 10" }}
-              alt=""
-            />
+            {this.props.i18n === "it" ? (
+              <img
+                className={SheetStyles.image}
+                src={zoom_01}
+                style={{ gridColumn: " 1 / span 10" }}
+                alt=""
+              />
+            ) : (
+              <img
+                className={SheetStyles.image}
+                src={zoom_01En}
+                style={{ gridColumn: " 1 / span 10" }}
+                alt=""
+              />
+            )}
             <div style={{ gridColumn: " 12 / span 1" }}>
-              <img className={SheetStyles.sideLegend} src={info_01} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.sideLegend} src={info_01} alt="" />
+              ) : (
+                <img
+                  className={SheetStyles.sideLegend}
+                  src={info_01En}
+                  alt=""
+                />
+              )}
               <p
                 className=" captionLeft "
                 style={{ gridColumn: " 12 / span 1" }}
@@ -520,14 +565,26 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              <img className={SheetStyles.image100w} src={zoom_02} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.image100w} src={zoom_02} alt="" />
+              ) : (
+                <img className={SheetStyles.image100w} src={zoom_02En} alt="" />
+              )}
             </div>
             <div>
               <p className=" captionLeft ">
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              <img className={SheetStyles.sideLegend} src={info_02} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.sideLegend} src={info_02} alt="" />
+              ) : (
+                <img
+                  className={SheetStyles.sideLegend}
+                  src={info_02En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
@@ -574,16 +631,14 @@ class PlotInformationSheet extends Component {
                 coinvolgendolo in una rissa violenta, e il Lettore che invece,
                 di fronte allo stesso sentimento potenziale, cade in uno stato
                 di turbamento e immobilità e lascia allontanare il possibile
-                rivale quasi con un senso di sconfitta preventiva.
-                <br />
-                Gli incipit fanno quindi da esperienza vicaria sia per il
-                protagonista sia per il lettore (reale), e l’attenta calibratura
-                di questa tensione tra ripetizioni e rovesciamenti, qui appena
-                introdotta e resa sempre più complessa con il procedere della
-                storia, è in un certo senso il vero e proprio motore su cui si
-                basa tutto il resto di{" "}
-                <em>Se una notte d’inverno un viaggiatore</em>, oltre a essere
-                la strategia che permette a Calvino di espellere quasi
+                rivale quasi con un senso di sconfitta preventiva. Gli incipit
+                fanno quindi da esperienza vicaria sia per il protagonista sia
+                per il lettore (reale), e l’attenta calibratura di questa
+                tensione tra ripetizioni e rovesciamenti, qui appena introdotta
+                e resa sempre più complessa con il procedere della storia, è in
+                un certo senso il vero e proprio motore su cui si basa tutto il
+                resto di <em>Se una notte d’inverno un viaggiatore</em>, oltre a
+                essere la strategia che permette a Calvino di espellere quasi
                 completamente dal piano della rappresentazione diretta la
                 costruzione psicologica del suo “eroe” (e parzialmente anche
                 quella della coprotagonista), dislocando la messa a fuoco dei
@@ -648,14 +703,26 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              <img className={SheetStyles.image100w} src={zoom_03} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.image100w} src={zoom_03} alt="" />
+              ) : (
+                <img className={SheetStyles.image100w} src={zoom_03En} alt="" />
+              )}
             </div>
             <div>
               <p className=" captionLeft ">
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              <img className={SheetStyles.sideLegend} src={info_03} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.sideLegend} src={info_03} alt="" />
+              ) : (
+                <img
+                  className={SheetStyles.sideLegend}
+                  src={info_03En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
@@ -714,14 +781,26 @@ class PlotInformationSheet extends Component {
               className={SheetStyles.paragraph}
               style={{ gridColumn: " 1 / span 10", float: "right" }}
             >
-              <img className={SheetStyles.image100w} src={zoom_04} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.image100w} src={zoom_04} alt="" />
+              ) : (
+                <img className={SheetStyles.image100w} src={zoom_04En} alt="" />
+              )}
             </div>
             <div>
               <p className=" captionLeft ">
                 {" "}
                 {this.props.t("trama-sheet:Dove siamo")}
               </p>
-              <img className={SheetStyles.sideLegend} src={info_04} alt="" />
+              {this.props.i18n === "it" ? (
+                <img className={SheetStyles.sideLegend} src={info_04} alt="" />
+              ) : (
+                <img
+                  className={SheetStyles.sideLegend}
+                  src={info_04En}
+                  alt=""
+                />
+              )}
             </div>
           </div>
 
@@ -907,10 +986,10 @@ class PlotInformationSheet extends Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "trama-sheet"])(
   PlotInformationSheet
-);
+)
