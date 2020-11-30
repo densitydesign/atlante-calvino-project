@@ -104,7 +104,6 @@ class Options extends Component {
             {this.props.data.options.map((d, i) => {
               return (
                 <Dropdown.Item
-                  style={{ borderRight: "1px solid #000" }}
                   key={i}
                   name={d.label}
                   onClick={this.handleChange}
@@ -125,6 +124,7 @@ class Options extends Component {
                 className={classnames({
                   active: false,
                   "dropdown-chessboard": this.props.isFlex,
+                  'w-100': this.props.isFlex,
                 })}
               >
                 {this.props.isFlex ? this.props.t("options.Inverti") : this.props.t("options.Inverti_Selezione")}

@@ -428,9 +428,6 @@ class ProcessDoubting extends Component {
           { label: "9", status: false },
           { label: "10", status: false },
           { label: "11", status: false },
-          { label: "12", status: false },
-          { label: "13", status: false },
-          { label: "14", status: false },
         ]
 
         // need to convert date to milliseconds for the timespan filter to work
