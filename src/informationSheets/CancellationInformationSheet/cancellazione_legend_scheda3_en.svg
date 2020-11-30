@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="938" height="104.36" viewBox="0 0 938 104.36">
+  <defs>
+    <clipPath id="clip-legend_scheda3">
+      <rect width="938" height="104.36"/>
+    </clipPath>
+  </defs>
+  <g id="legend_scheda3" clip-path="url(#clip-legend_scheda3)">
+    <text id="Content" transform="translate(31.479 86.364)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Content</tspan></text>
+    <path id="Rectangle_13361" data-name="Rectangle 13361" d="M4.549-41.988h11a5,5,0,0,1,5,5h0a5,5,0,0,1-5,5h-11a5,5,0,0,1-5-5h0A5,5,0,0,1,4.549-41.988Z" transform="translate(0.451 120.352)" fill="#f36" opacity="0.4" style="isolation: isolate"/>
+    <rect id="legend-bg-transparent" width="938" height="110" transform="translate(0.488 0.352)" fill="none"/>
+    <g id="Testo_non_dubitativo" data-name="Testo non dubitativo" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24914" data-name="Raggruppa 24914">
+        <text id="TYPE_OF_TEXT" data-name="TYPE OF TEXT" transform="translate(474.037 -97)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">TYPE OF TEXT</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24915" data-name="Raggruppa 24915" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_19" data-name="Rectangle 19" width="20" height="10" transform="translate(474.037 -85.988)" fill="#f7f8f8"/>
+      <line id="Line_63" data-name="Line 63" x2="20" transform="translate(474.037 -80.988)" fill="none" stroke="#333" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="0 4"/>
+    </g>
+    <g id="Testo_neutro" data-name="Testo neutro" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24916" data-name="Raggruppa 24916">
+        <text id="Non-dubitative_text" data-name="Non-dubitative text" transform="translate(504.037 -77.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Non-dubitative text</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24917" data-name="Raggruppa 24917" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_20" data-name="Rectangle 20" width="20" height="10" transform="translate(474.037 -63.988)" fill="#f7f8f8"/>
+      <line id="Line_64" data-name="Line 64" x2="20" transform="translate(474.037 -58.988)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+    </g>
+    <g id="Testo_soggetto" data-name="Testo soggetto" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24918" data-name="Raggruppa 24918">
+        <text id="Text_object_of_doubt" data-name="Text object of doubt" transform="translate(504.037 -55.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Text object of doubt</tspan></text>
+      </g>
+    </g>
+    <g id="Stili" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24919" data-name="Raggruppa 24919">
+        <text id="STYLES" transform="translate(237.037 -97)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">STYLES</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24920" data-name="Raggruppa 24920" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_16" data-name="Rectangle 16" width="20" height="10" transform="translate(237.037 -85.988)" fill="#f7f8f8"/>
+      <line id="Line_57" data-name="Line 57" x1="2.113" y2="4.532" transform="translate(238.981 -83.254)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_58" data-name="Line 58" x1="2.113" y2="4.532" transform="translate(245.981 -83.254)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_59" data-name="Line 59" x1="2.113" y2="4.532" transform="translate(252.981 -83.254)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_60" data-name="Line 60" x2="6" transform="translate(237.037 -80.988)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_61" data-name="Line 61" x2="6" transform="translate(244.037 -80.988)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <line id="Line_62" data-name="Line 62" x2="6" transform="translate(251.037 -80.988)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+    </g>
+    <g id="Negazione" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24921" data-name="Raggruppa 24921">
+        <text id="Negation" transform="translate(267.037 -77.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Negation</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24922" data-name="Raggruppa 24922" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_17" data-name="Rectangle 17" width="20" height="10" transform="translate(237.037 -63.988)" fill="#f7f8f8"/>
+      <path id="Path_2" data-name="Path 2" d="M242.037-58.988s-1.12-1.878-2.5-1.878-2.5,1.878-2.5,1.878" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <path id="Path_3" data-name="Path 3" d="M252.037-58.988s-1.12-1.878-2.5-1.878-2.5,1.878-2.5,1.878-1.12,1.877-2.5,1.877-2.5-1.877-2.5-1.877" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <path id="Path_4" data-name="Path 4" d="M257.037-58.988s-1.12,1.877-2.5,1.877-2.5-1.877-2.5-1.877" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+    </g>
+    <g id="Esitazione" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24923" data-name="Raggruppa 24923">
+        <text id="Hesitation" transform="translate(267.036 -55.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Hesitation</tspan></text>
+      </g>
+    </g>
+    <g id="Raggruppa_24924" data-name="Raggruppa 24924" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_18" data-name="Rectangle 18" width="20" height="10" transform="translate(237.037 -41.988)" fill="#f7f8f8"/>
+      <path id="Path_5" data-name="Path 5" d="M250.37-40.005c2.9,0,5.556,1.465,5.556,3.811a2.224,2.224,0,0,1-2.269,2.176,2.224,2.224,0,0,1-2.176-2.176c0-2.346,2.659-3.811,5.556-3.811" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <path id="Path_6" data-name="Path 6" d="M243.7-40.005c2.9,0,5.555,1.465,5.555,3.811a2.221,2.221,0,0,1-2.214,2.23,2.222,2.222,0,0,1-2.23-2.214v-.016c0-2.346,2.658-3.811,5.555-3.811" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+      <path id="Path_7" data-name="Path 7" d="M237.037-40.005c2.9,0,5.556,1.465,5.556,3.811a2.224,2.224,0,0,1-2.269,2.176,2.224,2.224,0,0,1-2.176-2.176c0-2.346,2.659-3.811,5.556-3.811" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="0.5"/>
+    </g>
+    <g id="Riformulazione" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24925" data-name="Raggruppa 24925">
+        <text id="Reformulation" transform="translate(267.037 -33.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Reformulation</tspan></text>
+      </g>
+    </g>
+    <g id="Categorie" transform="translate(0.451 120.352)" style="isolation: isolate">
+      <text id="CATEGORIES" transform="translate(0.037 -97)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">CATEGORIES</tspan></text>
+    </g>
+    <g id="Numero_di_paragrafo" data-name="Numero di paragrafo" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24926" data-name="Raggruppa 24926">
+        <text id="Paragraph_number" data-name="Paragraph number" transform="translate(789.037 -55.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Paragraph number</tspan></text>
+      </g>
+    </g>
+    <g id="Numerazioni" transform="translate(0.451 120.352)" style="isolation: isolate">
+      <text id="NUMBERS" transform="translate(710.037 -97)" fill="#5151fc" font-size="10" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700" style="isolation: isolate"><tspan x="0" y="0">NUMBERS</tspan></text>
+    </g>
+    <g id="Occorrenze_testo_dubitativo" data-name="Occorrenze testo dubitativo" transform="translate(0.451 120.352)">
+      <g id="Raggruppa_24927" data-name="Raggruppa 24927">
+        <text id="Occurrences_of_dubitative_text" data-name="Occurrences of dubitative text" transform="translate(789.037 -77.988)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Occurrences of dubitative text</tspan></text>
+      </g>
+    </g>
+    <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(0.451 120.352)">
+      <circle id="Ellisse_33612" data-name="Ellisse 33612" cx="5.793" cy="5.793" r="5.793" transform="translate(737.244 -87.201)" fill="#fff"/>
+      <circle id="Ellisse_33613" data-name="Ellisse 33613" cx="6" cy="6" r="6" transform="translate(737.037 -87.408)" fill="none" stroke="#5151fc" stroke-width="0.414"/>
+    </g>
+    <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(0.451 120.352)">
+      <circle id="Ellisse_33614" data-name="Ellisse 33614" cx="5.793" cy="5.793" r="5.793" transform="translate(761.244 -87.201)" fill="#fff"/>
+      <circle id="Ellisse_33615" data-name="Ellisse 33615" cx="6" cy="6" r="6" transform="translate(761.037 -87.408)" fill="none" stroke="#5151fc" stroke-width="0.414"/>
+    </g>
+    <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(0.451 120.352)">
+      <circle id="Ellisse_33616" data-name="Ellisse 33616" cx="5.793" cy="5.793" r="5.793" transform="translate(711.244 -87.201)" fill="#fff"/>
+      <circle id="Ellisse_33617" data-name="Ellisse 33617" cx="6" cy="6" r="6" transform="translate(711.037 -87.408)" fill="none" stroke="#5151fc" stroke-width="0.414"/>
+    </g>
+    <g id="_12" data-name=" 12" transform="translate(0.451 120.352)" style="isolation: isolate">
+      <text id="_12-2" data-name="12" transform="translate(738.301 -78.791)" fill="#5151fc" font-size="7" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600" style="isolation: isolate"><tspan x="0" y="0">12</tspan></text>
+    </g>
+    <g id="_41" data-name=" 41" transform="translate(0.451 120.352)" style="isolation: isolate">
+      <text id="_41-2" data-name="41" transform="translate(763.312 -78.791)" fill="#5151fc" font-size="7" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600" style="isolation: isolate"><tspan x="0" y="0">41</tspan></text>
+    </g>
+    <g id="_1" data-name=" 1" transform="translate(0.451 120.352)" style="isolation: isolate">
+      <text id="_1-2" data-name="1" transform="translate(714.669 -78.791)" fill="#5151fc" font-size="7" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600" style="isolation: isolate"><tspan x="0" y="0">1</tspan></text>
+    </g>
+    <g id="Raggruppa_24928" data-name="Raggruppa 24928" transform="translate(0.451 120.352)">
+      <rect id="Rectangle_19-2" data-name="Rectangle 19-2" width="20" height="10" transform="translate(723.037 -63.988)" fill="#f7f8f8"/>
+      <rect id="Rectangle_24" data-name="Rectangle 24" width="28" height="10" transform="translate(747.037 -63.988)" fill="#f7f8f8"/>
+      <line id="Line_63-2" data-name="Line 63-2" x2="18.492" transform="translate(724.037 -58.988)" fill="none" stroke="#333" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="0 4"/>
+      <line id="Line_67" data-name="Line 67" y1="0.07" x2="18.5" transform="translate(748.537 -58.988)" fill="none" stroke="#333" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="0 4"/>
+      <line id="Line_68" data-name="Line 68" x2="15" transform="translate(760.537 -58.918)" fill="none" stroke="#333" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="0 4"/>
+      <g id="_18" data-name=" 18" style="isolation: isolate">
+        <text id="_18-2" data-name="18" transform="translate(710.301 -56.418)" fill="#5151fc" font-size="8" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600" style="isolation: isolate"><tspan x="0" y="0">18</tspan></text>
+      </g>
+    </g>
+    <line id="Linea_7940" data-name="Linea 7940" x2="938" transform="translate(0.488 0.352)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.5"/>
+    <text id="Meaning" transform="translate(31.48 42.364)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Meaning</tspan></text>
+    <text id="Form" transform="translate(31.479 64.364)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Form</tspan></text>
+    <path id="Rectangle_13359" data-name="Rectangle 13359" d="M4.549-85.988h11a5,5,0,0,1,5,5h0a5,5,0,0,1-5,5h-11a5,5,0,0,1-5-5h0A5,5,0,0,1,4.549-85.988Z" transform="translate(0.451 120.352)" fill="#ffd93b" opacity="0.4" style="isolation: isolate"/>
+    <path id="Rectangle_13360" data-name="Rectangle 13360" d="M4.549-63.988h11a5,5,0,0,1,5,5h0a5,5,0,0,1-5,5h-11a5,5,0,0,1-5-5h0A5,5,0,0,1,4.549-63.988Z" transform="translate(0.451 120.352)" fill="#10bed2" opacity="0.4" style="isolation: isolate"/>
+    <line id="Linea_7939" data-name="Linea 7939" x2="938" transform="translate(0.488 103.962)" fill="none" stroke="#5151fc" stroke-miterlimit="10" stroke-width="0.5"/>
+  </g>
+</svg>
