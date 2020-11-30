@@ -40,36 +40,18 @@ class HesitationInformationSheet extends Component {
             >
               {this.props.t("doubting-sheet:La giornata d'uno scrutatore")}
             </h3>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: " 1 / span 22", float: "left" }}
-                src={legenda}
-                alt="Legenda"
-              />
-            ) : (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: " 1 / span 22", float: "left" }}
-                src={legendaEn}
-                alt="Legenda"
-              />
-            )}
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image100w}
-                style={{ gridColumn: "1 / span 12" }}
-                src={giornata}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image100w}
-                style={{ gridColumn: "1 / span 12" }}
-                src={giornataEn}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.legend}
+              style={{ gridColumn: " 1 / span 22", float: "left" }}
+              src={this.props.i18n.language === "it" ? legenda : legendaEn}
+              alt="Legenda"
+            />
+            <img
+              className={SheetStyles.image100w}
+              style={{ gridColumn: "1 / span 12" }}
+              src={this.props.i18n.language === "it" ? giornata : giornataEn}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-la-giornata"
               ns="doubting-sheet"
@@ -111,21 +93,12 @@ class HesitationInformationSheet extends Component {
                 due zone del testo separatamente.{" "}
               </p>
             </Trans>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image}
-                style={{ gridColumn: "1 / span 22" }}
-                src={zoom_01}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image}
-                style={{ gridColumn: "1 / span 22" }}
-                src={zoom_01En}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.image}
+              style={{ gridColumn: "1 / span 22" }}
+              src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
+              alt=""
+            />
             <Trans
               i18nKey="numero-di-occorrenze"
               ns="doubting-sheet"
@@ -217,58 +190,32 @@ class HesitationInformationSheet extends Component {
                 laterali, a volte racchiusi dentro appositi segni grafici.
               </p>
             </Trans>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.sideContent}
-                src={info_01}
-                style={{
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) + 3px)",
-                  gridColumn: "8 / span 3",
-                }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.sideContent}
-                src={info_01En}
-                style={{
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) + 3px)",
-                  gridColumn: "8 / span 3",
-                }}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.sideContent}
+              src={this.props.i18n.language === "it" ? info_01 : info_01En}
+              style={{
+                position: "sticky",
+                top: "calc(var(--navigation-height) + 3px)",
+                gridColumn: "8 / span 3",
+              }}
+              alt=""
+            />
           </div>
 
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>
               {this.props.t("doubting-sheet:Gli strati del testo")}
             </h2>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image}
-                style={{
-                  gridColumn: "1 / span 8",
-                  top: "calc(var(--navigation-height) + 0.3rem)",
-                  backgroundColor: "var(--white)",
-                }}
-                src={zoom_02}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image}
-                style={{
-                  gridColumn: "1 / span 8",
-                  top: "calc(var(--navigation-height) + 0.3rem)",
-                  backgroundColor: "var(--white)",
-                }}
-                src={zoom_02En}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.image}
+              style={{
+                gridColumn: "1 / span 8",
+                top: "calc(var(--navigation-height) + 0.3rem)",
+                backgroundColor: "var(--white)",
+              }}
+              src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-gli-strati-del-testo"
               ns="doubting-sheet"
@@ -284,12 +231,11 @@ class HesitationInformationSheet extends Component {
                 testo denso e ricco di informazioni, il filo del discorso si
                 interrompe bruscamente poiché il narratore afferma di «aver
                 capito finalmente quel che non ci voleva poi tanto a capire»
-                (ivi, 10).
-                Questo paragrafo è un ottimo esempio di come il processo
-                dubitativo consista nel “tornare sui propri passi”. Il testo
-                oggetto di dubbio associato a <strong>td28</strong> coincide con
-                l’inizio del paragrafo e racchiude in sé dodici occorrenze del
-                testo dubitativo (dal <strong>td16</strong> al
+                (ivi, 10). Questo paragrafo è un ottimo esempio di come il
+                processo dubitativo consista nel “tornare sui propri passi”. Il
+                testo oggetto di dubbio associato a <strong>td28</strong>{" "}
+                coincide con l’inizio del paragrafo e racchiude in sé dodici
+                occorrenze del testo dubitativo (dal <strong>td16</strong> al
                 <strong> td27</strong>, più della metà del numero totale di
                 occorrenze del capitolo). L’improvviso incremento di occorrenze
                 non è unicamente numerico; in parallelo assistiamo a un
@@ -322,26 +268,19 @@ class HesitationInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: " 1 / span 6", float: "left" }}
-                src={legenda_03}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: " 1 / span 6", float: "left" }}
-                src={legenda_03En}
-                alt=""
-              />
-            )}
-            {this.props.i18n.language === "it" ? (
-              <img className={SheetStyles.image100w} src={zoom_03} alt="" />
-            ) : (
-              <img className={SheetStyles.image100w} src={zoom_03En} alt="" />
-            )}
+            <img
+              className={SheetStyles.legend}
+              style={{ gridColumn: " 1 / span 6", float: "left" }}
+              src={
+                this.props.i18n.language === "it" ? legenda_03 : legenda_03En
+              }
+              alt=""
+            />
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-gli-strati-del-testo-2"
               ns="doubting-sheet"
@@ -358,13 +297,12 @@ class HesitationInformationSheet extends Component {
                 fra la ricerca dell’esattezza della scrittura e l’insuccesso
                 dell’atto interpretativo, per cui l’unico modo per parlare della
                 «complessità delle cose» (ibidem) sembra essere quello di
-                organizzarla in strati.
-                La parentesi e l’inciso generano questa stratificazione,
-                attraverso una forma grafica che introduce un altro spazio, un
-                altrove rispetto al discorso principale. Tale sdoppiamento del
-                testo viene ulteriormente potenziato dal processo dubitativo,
-                che rinforza l’effetto di stratificazione in una modalità meno
-                visibile.
+                organizzarla in strati. La parentesi e l’inciso generano questa
+                stratificazione, attraverso una forma grafica che introduce un
+                altro spazio, un altrove rispetto al discorso principale. Tale
+                sdoppiamento del testo viene ulteriormente potenziato dal
+                processo dubitativo, che rinforza l’effetto di stratificazione
+                in una modalità meno visibile.
               </p>
             </Trans>
           </div>

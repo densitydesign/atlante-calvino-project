@@ -57,22 +57,24 @@ class TransformInformationSheet extends Component {
                   "transform-sheet:Cartografia dei luoghi terrestri"
                 )}
               </h1>
-              {this.props.i18n.language === "it" ? (
-                <img alt="" className={SheetStyles.image} src={inquadramento} />
-              ) : (
-                <img
-                  alt=""
-                  className={SheetStyles.image}
-                  src={inquadramentoEn}
-                />
-              )}
+              <img
+                alt=""
+                className={SheetStyles.image}
+                src={
+                  this.props.i18n.language === "it"
+                    ? inquadramento
+                    : inquadramentoEn
+                }
+              />
             </div>
             <div style={{ gridColumn: "1 / span 7" }}>
-              {this.props.i18n.language === "it" ? (
-                <img alt="" className={SheetStyles.legend} src={legenda_0} />
-              ) : (
-                <img alt="" className={SheetStyles.legend} src={legenda_0En} />
-              )}
+              <img
+                alt=""
+                className={SheetStyles.legend}
+                src={
+                  this.props.i18n.language === "it" ? legenda_0 : legenda_0En
+                }
+              />
             </div>
             <h3 className={SheetStyles.subtitleSheet}>
               {this.props.t("transform-sheet:Geoletteratura")}
@@ -132,27 +134,15 @@ class TransformInformationSheet extends Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n.language === "it" ? (
-                <img
-                  className={SheetStyles.image}
-                  style={{
-                    position: "sticky",
-                    top: "var(--navigation-height)",
-                  }}
-                  src={table}
-                  alt=""
-                />
-              ) : (
-                <img
-                  className={SheetStyles.image}
-                  style={{
-                    position: "sticky",
-                    top: "var(--navigation-height)",
-                  }}
-                  src={tableEn}
-                  alt=""
-                />
-              )}
+              <img
+                className={SheetStyles.image}
+                style={{
+                  position: "sticky",
+                  top: "var(--navigation-height)",
+                }}
+                src={this.props.i18n.language === "it" ? table : tableEn}
+                alt=""
+              />
             </div>
           </div>
 
@@ -172,69 +162,42 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_01}
-                        />
-                      ) : (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_01En}
-                        />
-                      )}
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_1}
-                          alt=""
-                        />
-                      ) : (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_1En}
-                          alt=""
-                        />
-                      )}
+                      <img
+                        className={SheetStyles.legend}
+                        style={{
+                          gridColumn: "1 / span 7",
+                          marginBottom: "0px",
+                          paddingBottom: "0px",
+                        }}
+                        alt=""
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_01
+                            : legenda_01En
+                        }
+                      />
+                      <img
+                        className={
+                          SheetStyles.sideContent + " " + SheetStyles.image
+                        }
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_1 : zoom_1En
+                        }
+                        alt=""
+                      />
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n.language === "it" ? (
-                    <img
-                      className="d-block w-100"
-                      src={slide_01}
-                      alt="First slide"
-                    />
-                  ) : (
-                    <img
-                      className="d-block w-100"
-                      src={slide_01En}
-                      alt="First slide"
-                    />
-                  )}
+                  <img
+                    className="d-block w-100"
+                    src={
+                      this.props.i18n.language === "it" ? slide_01 : slide_01En
+                    }
+                    alt="First slide"
+                  />
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -247,69 +210,42 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_02}
-                        />
-                      ) : (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_02En}
-                        />
-                      )}
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_2}
-                          alt=""
-                        />
-                      ) : (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_2En}
-                          alt=""
-                        />
-                      )}
+                      <img
+                        className={SheetStyles.legend}
+                        style={{
+                          gridColumn: "1 / span 7",
+                          marginBottom: "0px",
+                          paddingBottom: "0px",
+                        }}
+                        alt=""
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_02
+                            : legenda_02En
+                        }
+                      />
+                      <img
+                        className={
+                          SheetStyles.sideContent + " " + SheetStyles.image
+                        }
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_2 : zoom_2En
+                        }
+                        alt=""
+                      />
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n.language === "it" ? (
-                    <img
-                      className="d-block w-100"
-                      src={slide_02}
-                      alt="First slide"
-                    />
-                  ) : (
-                    <img
-                      className="d-block w-100"
-                      src={slide_02En}
-                      alt="First slide"
-                    />
-                  )}
+                  <img
+                    className="d-block w-100"
+                    src={
+                      this.props.i18n.language === "it" ? slide_02 : slide_02En
+                    }
+                    alt="First slide"
+                  />
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -325,69 +261,42 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          src={legenda_03}
-                          alt=""
-                        />
-                      ) : (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          src={legenda_03En}
-                          alt=""
-                        />
-                      )}
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_3}
-                          alt=""
-                        />
-                      ) : (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_3En}
-                          alt=""
-                        />
-                      )}
+                      <img
+                        className={SheetStyles.legend}
+                        style={{
+                          gridColumn: "1 / span 7",
+                          marginBottom: "0px",
+                          paddingBottom: "0px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_03
+                            : legenda_03En
+                        }
+                        alt=""
+                      />
+                      <img
+                        className={
+                          SheetStyles.sideContent + " " + SheetStyles.image
+                        }
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_3 : zoom_3En
+                        }
+                        alt=""
+                      />
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n.language === "it" ? (
-                    <img
-                      className="d-block w-100"
-                      src={slide_03}
-                      alt="First slide"
-                    />
-                  ) : (
-                    <img
-                      className="d-block w-100"
-                      src={slide_03En}
-                      alt="First slide"
-                    />
-                  )}
+                  <img
+                    className="d-block w-100"
+                    src={
+                      this.props.i18n.language === "it" ? slide_03 : slide_03En
+                    }
+                    alt="First slide"
+                  />
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -400,69 +309,42 @@ class TransformInformationSheet extends Component {
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_04}
-                        />
-                      ) : (
-                        <img
-                          className={SheetStyles.legend}
-                          style={{
-                            gridColumn: "1 / span 7",
-                            marginBottom: "0px",
-                            paddingBottom: "0px",
-                          }}
-                          alt=""
-                          src={legenda_04En}
-                        />
-                      )}
-                      {this.props.i18n.language === "it" ? (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_4}
-                          alt=""
-                        />
-                      ) : (
-                        <img
-                          className={
-                            SheetStyles.sideContent + " " + SheetStyles.image
-                          }
-                          style={{
-                            gridColumn: "9 / span 3",
-                            marginTop: "20px",
-                          }}
-                          src={zoom_4En}
-                          alt=""
-                        />
-                      )}
+                      <img
+                        className={SheetStyles.legend}
+                        style={{
+                          gridColumn: "1 / span 7",
+                          marginBottom: "0px",
+                          paddingBottom: "0px",
+                        }}
+                        alt=""
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_04
+                            : legenda_04En
+                        }
+                      />
+                      <img
+                        className={
+                          SheetStyles.sideContent + " " + SheetStyles.image
+                        }
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_4 : zoom_4En
+                        }
+                        alt=""
+                      />
                     </div>
                   </Carousel.Caption>
-                  {this.props.i18n.language === "it" ? (
-                    <img
-                      className="d-block w-100"
-                      src={slide_04}
-                      alt="First slide"
-                    />
-                  ) : (
-                    <img
-                      className="d-block w-100"
-                      src={slide_04En}
-                      alt="First slide"
-                    />
-                  )}
+                  <img
+                    className="d-block w-100"
+                    src={
+                      this.props.i18n.language === "it" ? slide_04 : slide_04En
+                    }
+                    alt="First slide"
+                  />
                 </Carousel.Item>
               </Carousel>
             </div>

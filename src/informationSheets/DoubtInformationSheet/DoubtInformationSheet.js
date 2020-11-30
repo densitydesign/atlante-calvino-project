@@ -29,21 +29,12 @@ class DoubtInformationSheet extends React.Component {
             <h1 className={SheetStyles.titleH1}>
               {this.props.t("nebbia-sheet:L’effetto-nebbia")}
             </h1>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: "1 / span 12" }}
-                src={legenda}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: "1 / span 12" }}
-                src={legendaEn}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.legend}
+              style={{ gridColumn: "1 / span 12" }}
+              src={this.props.i18n.language === "it" ? legenda : legendaEn}
+              alt=""
+            />
           </div>
           <div id="mainviz" className={SheetStyles.gridRow}>
             <DoubtTypePerYearWrapper />
@@ -128,25 +119,14 @@ class DoubtInformationSheet extends React.Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n.language === "it" ? (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "6.4em",
-                  }}
-                  src={zoom_02}
-                  alt=""
-                />
-              ) : (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "6.4em",
-                  }}
-                  src={zoom_02En}
-                  alt=""
-                />
-              )}
+              <img
+                style={{
+                  position: "sticky",
+                  top: "6.4em",
+                }}
+                src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
+                alt=""
+              />
             </div>
           </div>
 
@@ -199,25 +179,14 @@ class DoubtInformationSheet extends React.Component {
             </Trans>
 
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n.language === "it" ? (
-                <img
-                  style={{
-                    top: "var(--navigation-height)",
-                    position: "sticky",
-                  }}
-                  src={zoom_01}
-                  alt=""
-                />
-              ) : (
-                <img
-                  style={{
-                    top: "var(--navigation-height)",
-                    position: "sticky",
-                  }}
-                  src={zoom_01En}
-                  alt=""
-                />
-              )}
+              <img
+                style={{
+                  top: "var(--navigation-height)",
+                  position: "sticky",
+                }}
+                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
+                alt=""
+              />
             </div>
           </div>
 

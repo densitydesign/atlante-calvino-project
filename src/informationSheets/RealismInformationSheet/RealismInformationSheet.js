@@ -212,54 +212,29 @@ class RealismInformationSheet extends Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={
-                  SheetStyles.image + " " + SheetStyles.translucentBackground
-                }
-                src={legend01}
-                style={{
-                  borderBottom: "1px solid #5151fc",
-                  gridColumn: "1 / span 12",
-                  marginBottom: "1rem",
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) - 0px)",
-                  width: "100%",
-                }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={
-                  SheetStyles.image + " " + SheetStyles.translucentBackground
-                }
-                src={legend01En}
-                style={{
-                  borderBottom: "1px solid #5151fc",
-                  gridColumn: "1 / span 12",
-                  marginBottom: "1rem",
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) - 0px)",
-                  width: "100%",
-                }}
-                alt=""
-              />
-            )}
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image}
-                src={textWall01}
-                style={{ gridColumn: "1 / span 12", width: "100%" }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image}
-                src={textWall01En}
-                style={{ gridColumn: "1 / span 12", width: "100%" }}
-                alt=""
-              />
-            )}
+            <img
+              className={
+                SheetStyles.image + " " + SheetStyles.translucentBackground
+              }
+              src={this.props.i18n.language === "it" ? legend01 : legend01En}
+              style={{
+                borderBottom: "1px solid #5151fc",
+                gridColumn: "1 / span 12",
+                marginBottom: "1rem",
+                position: "sticky",
+                top: "calc(var(--navigation-height) - 0px)",
+                width: "100%",
+              }}
+              alt=""
+            />
+            <img
+              className={SheetStyles.image}
+              src={
+                this.props.i18n.language === "it" ? textWall01 : textWall01En
+              }
+              style={{ gridColumn: "1 / span 12", width: "100%" }}
+              alt=""
+            />
           </div>
           <div className={SheetStyles.gridRow}>
             <Trans
@@ -314,29 +289,16 @@ class RealismInformationSheet extends Component {
                 e il corpo (18%).
               </p>
             </Trans>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image}
-                src={treemap}
-                style={{
-                  gridColumn: "1 / span 12",
-                  width: "100%",
-                  marginTop: "2rem",
-                }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image}
-                src={treemapEn}
-                style={{
-                  gridColumn: "1 / span 12",
-                  width: "100%",
-                  marginTop: "2rem",
-                }}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.image}
+              src={this.props.i18n.language === "it" ? treemap : treemapEn}
+              style={{
+                gridColumn: "1 / span 12",
+                width: "100%",
+                marginTop: "2rem",
+              }}
+              alt=""
+            />
             <br></br>
             <br></br>
             <Trans
@@ -428,54 +390,29 @@ class RealismInformationSheet extends Component {
             <h2 className={SheetStyles.titleH2}>
               {this.props.t("realismo-sheet:Trasformazioni, visioni, dubbi")}
             </h2>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={
-                  SheetStyles.image + " " + SheetStyles.translucentBackground
-                }
-                src={legend02}
-                style={{
-                  borderBottom: "1px solid #5151fc",
-                  gridColumn: "1 / span 12",
-                  marginBottom: "1rem",
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) - 0px)",
-                  width: "100%",
-                }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={
-                  SheetStyles.image + " " + SheetStyles.translucentBackground
-                }
-                src={legend02En}
-                style={{
-                  borderBottom: "1px solid #5151fc",
-                  gridColumn: "1 / span 12",
-                  marginBottom: "1rem",
-                  position: "sticky",
-                  top: "calc(var(--navigation-height) - 0px)",
-                  width: "100%",
-                }}
-                alt=""
-              />
-            )}
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.image}
-                src={textWall02}
-                style={{ gridColumn: "1 / span 12", width: "100%" }}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.image}
-                src={textWall02En}
-                style={{ gridColumn: "1 / span 12", width: "100%" }}
-                alt=""
-              />
-            )}
+            <img
+              className={
+                SheetStyles.image + " " + SheetStyles.translucentBackground
+              }
+              src={this.props.i18n.language === "it" ? legend02 : legend02En}
+              style={{
+                borderBottom: "1px solid #5151fc",
+                gridColumn: "1 / span 12",
+                marginBottom: "1rem",
+                position: "sticky",
+                top: "calc(var(--navigation-height) - 0px)",
+                width: "100%",
+              }}
+              alt=""
+            />
+            <img
+              className={SheetStyles.image}
+              src={
+                this.props.i18n.language === "it" ? textWall02 : textWall02En
+              }
+              style={{ gridColumn: "1 / span 12", width: "100%" }}
+              alt=""
+            />
           </div>
 
           <div className={SheetStyles.gridRow}>

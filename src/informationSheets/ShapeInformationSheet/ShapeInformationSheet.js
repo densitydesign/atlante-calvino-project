@@ -33,21 +33,12 @@ class ShapeInformationSheet extends React.Component {
             </h1>
           </div>
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n.language === "it" ? (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: "1 / span 12" }}
-                src={legenda}
-                alt=""
-              />
-            ) : (
-              <img
-                className={SheetStyles.legend}
-                style={{ gridColumn: "1 / span 12" }}
-                src={legendaEn}
-                alt=""
-              />
-            )}
+            <img
+              className={SheetStyles.legend}
+              style={{ gridColumn: "1 / span 12" }}
+              src={this.props.i18n.language === "it" ? legenda : legendaEn}
+              alt=""
+            />
           </div>
 
           <div id="mainviz" className={SheetStyles.gridRow}>
@@ -117,25 +108,14 @@ class ShapeInformationSheet extends React.Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n.language === "it" ? (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "calc(var(--navigation-height) + 1rem)",
-                  }}
-                  src={zoom_01}
-                  alt=""
-                />
-              ) : (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "calc(var(--navigation-height) + 1rem)",
-                  }}
-                  src={zoom_01En}
-                  alt=""
-                />
-              )}
+              <img
+                style={{
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) + 1rem)",
+                }}
+                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
+                alt=""
+              />
             </div>
 
             <h2 className={SheetStyles.titleH2}>
@@ -190,25 +170,14 @@ class ShapeInformationSheet extends React.Component {
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
-              {this.props.i18n.language === "it" ? (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "calc(var(--navigation-height) + 1rem)",
-                  }}
-                  src={zoom_02}
-                  alt=""
-                />
-              ) : (
-                <img
-                  style={{
-                    position: "sticky",
-                    top: "calc(var(--navigation-height) + 1rem)",
-                  }}
-                  src={zoom_02En}
-                  alt=""
-                />
-              )}
+              <img
+                style={{
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) + 1rem)",
+                }}
+                src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
+                alt=""
+              />
             </div>
           </div>
 
@@ -239,17 +208,17 @@ class ShapeInformationSheet extends React.Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            {this.props.i18n.language === "it" ? (
-              <img className={SheetStyles.image100w} src={zoom_03} alt="" />
-            ) : (
-              <img className={SheetStyles.image100w} src={zoom_03En} alt="" />
-            )}
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
+              alt=""
+            />
             <br />
-            {this.props.i18n.language === "it" ? (
-              <img className={SheetStyles.image100w} src={zoom_04} alt="" />
-            ) : (
-              <img className={SheetStyles.image100w} src={zoom_04En} alt="" />
-            )}
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_04 : zoom_04En}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-sintagmi-e-preposizioni-2"
               ns="elenchi-sheet"
