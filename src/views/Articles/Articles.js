@@ -24,8 +24,6 @@ export default function Articles() {
     )
   })
   
-  console.log(data)
-
   return (
     <>
       <IndexMenuHeader />
@@ -84,7 +82,6 @@ export default function Articles() {
                   pdf = (
                     <>
                       <a
-                        a
                         className="link d-flex align-items-center"
                         style={{ marginRight: '4rem'}}
                         href={d.pdf}
@@ -154,7 +151,7 @@ export default function Articles() {
                       {d.title}
                     </h3>
                     {d.authors && <h5 style={{ fontSize: 18 }}>{d.authors}</h5>}
-                    <p style={{ fontSize: 18 }}>{d.publication_place_date}</p>
+                    <p style={{ fontSize: 18 }} dangerouslySetInnerHTML={ { __html: d.publication } } />
                     <h5
                       className="d-flex"
                       style={{ fontSize: 14 }}
