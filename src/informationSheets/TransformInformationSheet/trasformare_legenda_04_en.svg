@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="157" viewBox="0 0 600 157">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Tracciato_157308" data-name="Tracciato 157308" d="M209,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,37.75,205.7,35.5,209,35.5Z" transform="translate(-203 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Tracciato_157310" data-name="Tracciato 157310" d="M209,55.8h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,58.05,205.7,55.8,209,55.8Z" transform="translate(-203 -55.8)"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Tracciato_157312" data-name="Tracciato 157312" d="M209,76.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,78.45,205.7,76.2,209,76.2Z" transform="translate(-203 -76.2)"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="Tracciato_157232" data-name="Tracciato 157232" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-203.5 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-legenda_04">
+      <rect width="600" height="157"/>
+    </clipPath>
+  </defs>
+  <g id="legenda_04" clip-path="url(#clip-legenda_04)">
+    <g id="legenda_04-2" data-name="legenda_04" transform="translate(0.61 -10.99)">
+      <g id="Layer_1" transform="translate(0.667 10.99)">
+        <g id="Isolation_Mode">
+          <circle id="Ellisse_33243" data-name="Ellisse 33243" cx="2.876" cy="2.876" r="2.876" transform="translate(395.492 33.502)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+          <circle id="Ellisse_33244" data-name="Ellisse 33244" cx="6.327" cy="6.327" r="6.327" transform="translate(392.048 26.578)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+          <g id="Raggruppa_24941" data-name="Raggruppa 24941" transform="translate(241.809 28.299)" clip-path="url(#clip-path)">
+            <line id="Linea_7941" data-name="Linea 7941" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7942" data-name="Linea 7942" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7943" data-name="Linea 7943" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7944" data-name="Linea 7944" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7945" data-name="Linea 7945" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7946" data-name="Linea 7946" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7947" data-name="Linea 7947" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7948" data-name="Linea 7948" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7949" data-name="Linea 7949" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7950" data-name="Linea 7950" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7951" data-name="Linea 7951" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7952" data-name="Linea 7952" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7953" data-name="Linea 7953" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7954" data-name="Linea 7954" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7955" data-name="Linea 7955" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7956" data-name="Linea 7956" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7957" data-name="Linea 7957" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7958" data-name="Linea 7958" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7959" data-name="Linea 7959" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7960" data-name="Linea 7960" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7961" data-name="Linea 7961" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Tracciato_157309" data-name="Tracciato 157309" d="M209,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,37.75,205.7,35.5,209,35.5Z" transform="translate(38.809 -7.201)" fill="none" stroke="#f36" stroke-miterlimit="10" stroke-width="0.5"/>
+          <g id="Raggruppa_24942" data-name="Raggruppa 24942" transform="translate(241.809 51.737)" clip-path="url(#clip-path-2)">
+            <line id="Linea_7962" data-name="Linea 7962" x2="107.1" y2="89.25" transform="translate(-66 1.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7963" data-name="Linea 7963" x2="107.1" y2="89.25" transform="translate(-62.4 0.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7964" data-name="Linea 7964" x2="107.1" y2="89.25" transform="translate(-58.8 -1.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7965" data-name="Linea 7965" x2="107.1" y2="89.25" transform="translate(-55.2 -2.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7966" data-name="Linea 7966" x2="107.1" y2="89.25" transform="translate(-51.6 -4.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7967" data-name="Linea 7967" x2="107.1" y2="89.25" transform="translate(-48 -5.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7968" data-name="Linea 7968" x2="107.1" y2="89.25" transform="translate(-44.4 -7.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7969" data-name="Linea 7969" x2="107.1" y2="89.25" transform="translate(-40.8 -8.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7970" data-name="Linea 7970" x2="107.1" y2="89.25" transform="translate(-37.2 -10.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7971" data-name="Linea 7971" x2="107.1" y2="89.25" transform="translate(-33.6 -11.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7972" data-name="Linea 7972" x2="107.1" y2="89.25" transform="translate(-30 -13.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7973" data-name="Linea 7973" x2="107.1" y2="89.25" transform="translate(-26.4 -14.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7974" data-name="Linea 7974" x2="107.1" y2="89.25" transform="translate(-22.8 -16.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7975" data-name="Linea 7975" x2="107.1" y2="89.25" transform="translate(-19.2 -17.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7976" data-name="Linea 7976" x2="107.1" y2="89.25" transform="translate(-15.6 -19.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7977" data-name="Linea 7977" x2="107.1" y2="89.25" transform="translate(-12 -20.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7978" data-name="Linea 7978" x2="107.1" y2="89.25" transform="translate(-8.4 -22.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7979" data-name="Linea 7979" x2="107.1" y2="89.25" transform="translate(-4.8 -23.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7980" data-name="Linea 7980" x2="107.1" y2="89.25" transform="translate(-1.2 -25.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7981" data-name="Linea 7981" x2="107.1" y2="89.25" transform="translate(2.4 -26.75)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7982" data-name="Linea 7982" x2="107.1" y2="89.25" transform="translate(6 -28.25)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Tracciato_157311" data-name="Tracciato 157311" d="M209,55.8h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,58.05,205.7,55.8,209,55.8Z" transform="translate(38.809 -4.063)" fill="none" stroke="#8131f4" stroke-miterlimit="10" stroke-width="0.5"/>
+          <g id="Raggruppa_24943" data-name="Raggruppa 24943" transform="translate(241.809 75.291)" clip-path="url(#clip-path-3)">
+            <line id="Linea_7983" data-name="Linea 7983" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7984" data-name="Linea 7984" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7985" data-name="Linea 7985" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7986" data-name="Linea 7986" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7987" data-name="Linea 7987" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7988" data-name="Linea 7988" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7989" data-name="Linea 7989" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7990" data-name="Linea 7990" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7991" data-name="Linea 7991" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7992" data-name="Linea 7992" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7993" data-name="Linea 7993" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7994" data-name="Linea 7994" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7995" data-name="Linea 7995" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7996" data-name="Linea 7996" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7997" data-name="Linea 7997" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7998" data-name="Linea 7998" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_7999" data-name="Linea 7999" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_8000" data-name="Linea 8000" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_8001" data-name="Linea 8001" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_8002" data-name="Linea 8002" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+            <line id="Linea_8003" data-name="Linea 8003" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+          </g>
+          <path id="Tracciato_157313" data-name="Tracciato 157313" d="M209,76.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203,78.45,205.7,76.2,209,76.2Z" transform="translate(38.809 -0.909)" fill="none" stroke="#0505c4" stroke-miterlimit="10" stroke-width="0.5"/>
+        </g>
+      </g>
+      <g id="Isolation_Mode_1_" transform="translate(-0.61 10.99)">
+        <text id="NARRATED_TIME" data-name="NARRATED TIME" transform="translate(0 13)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">NARRATED TIME</tspan></text>
+      </g>
+    </g>
+    <path id="Tracciato_148042" data-name="Tracciato 148042" d="M7.5,97.2h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C1.5,99.45,4.2,97.2,7.5,97.2Z" transform="translate(0 2.337)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+    <path id="Tracciato_148043" data-name="Tracciato 148043" d="M7.5,128h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C1.5,130.25,4.2,128,7.5,128Z" transform="translate(0 7.099)" fill="none" stroke="red" stroke-miterlimit="10" stroke-width="0.5" stroke-dasharray="2 2"/>
+    <path id="Tracciato_157234" data-name="Tracciato 157234" d="M7.654,76.8C4.585,76.8,2,74.514,2,71.8s2.585-5,5.654-5h9.692c3.069,0,5.654,2.286,5.654,5s-2.585,5-5.654,5Z" transform="translate(-1 -5.309)" fill="#dbdbdb"/>
+    <g id="Raggruppa_24680" data-name="Raggruppa 24680">
+      <g id="Raggruppa_24678" data-name="Raggruppa 24678" transform="translate(0.703 26.322)" clip-path="url(#clip-path-4)">
+        <line id="Linea_7918" data-name="Linea 7918" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7919" data-name="Linea 7919" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7920" data-name="Linea 7920" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7921" data-name="Linea 7921" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7922" data-name="Linea 7922" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7923" data-name="Linea 7923" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7924" data-name="Linea 7924" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7925" data-name="Linea 7925" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7926" data-name="Linea 7926" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7927" data-name="Linea 7927" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7928" data-name="Linea 7928" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7929" data-name="Linea 7929" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7930" data-name="Linea 7930" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7931" data-name="Linea 7931" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7932" data-name="Linea 7932" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7933" data-name="Linea 7933" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7934" data-name="Linea 7934" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7935" data-name="Linea 7935" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7936" data-name="Linea 7936" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7937" data-name="Linea 7937" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7938" data-name="Linea 7938" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+      </g>
+      <path id="Tracciato_157233" data-name="Tracciato 157233" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-202.797 -9.178)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+    </g>
+    <text id="Metropolis" transform="translate(272.295 34.867)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Metropolis</tspan></text>
+    <text id="Urban_landscape" data-name="Urban landscape" transform="translate(272.295 59.34)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Urban landscape</tspan></text>
+    <text id="Cosmic_landscape" data-name="Cosmic landscape" transform="translate(272.295 82.824)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Cosmic landscape</tspan></text>
+    <text id="CONTEXTS" transform="translate(243.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">CONTEXTS</tspan></text>
+    <text id="Number_of_occurrences" data-name="Number of occurrences" transform="translate(414.823 34.756)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Number of occurrences</tspan></text>
+    <text id="SIZE" transform="translate(391.086 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">SIZE</tspan></text>
+    <text id="Locations_disappeared_from_all_stories" data-name="Locations disappeared from all stories" transform="translate(29 143.667)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Locations disappeared from all stories</tspan></text>
+    <text id="Locations_of_texts_where_past_and_present_blend_in_a_mixed_time" data-name="Locations of texts where past and present blend in a mixed time" transform="translate(29 98)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="9">Locations of texts where past and present </tspan><tspan x="0" y="20">blend in a </tspan><tspan y="20" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">mixed time</tspan></text>
+    <text id="Locations_of_texts_where_the_narrated_time_is_set_in_an_indeterminate_time_period" data-name="Locations of texts where the narrated time is set in an indeterminate time period" transform="translate(30 25)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Locations of texts where the narrated time is </tspan><tspan x="0" y="23">set in an </tspan><tspan y="23" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">indeterminate time period</tspan></text>
+    <text id="Locations_of_texts_where_the_narrated_time_is_set_in_the_past" data-name="Locations of texts where the narrated time is set in the past" transform="translate(30 59)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Locations of texts where the narrated </tspan><tspan x="0" y="23">time is set in the past</tspan></text>
+  </g>
+</svg>
