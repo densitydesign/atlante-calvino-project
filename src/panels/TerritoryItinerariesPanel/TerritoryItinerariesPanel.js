@@ -114,7 +114,6 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
     return (
       <div className="territory-itineraries-panel">
         <div className="territory-button-grid">
-
         <RadioButtonWithClose
           id={this.doubtRadioButtonId}
           caption={this.doubtRadioButtonCaption}
