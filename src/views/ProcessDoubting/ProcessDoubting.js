@@ -23,6 +23,7 @@ import TextSearch from "../../general/TextSearch";
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
 import FoldingLine from "../../visualizations/FoldingLine/FoldingLine"
 import { Trans, withTranslation } from 'react-i18next'
+import { options } from "colorette"
 
 const structureData = (arr) => {
   arr = arr.map((d, i) => {
@@ -427,7 +428,10 @@ class ProcessDoubting extends Component {
           { label: "8", status: false },
           { label: "9", status: false },
           { label: "10", status: false },
-          { label: "11", status: false },
+          // { label: "11", status: false },
+          // { label: "12", status: false },
+          // { label: "13", status: false },
+          { label: "14", status: false },
         ]
 
         // need to convert date to milliseconds for the timespan filter to work
@@ -609,10 +613,19 @@ class ProcessDoubting extends Component {
   }
 
   changeAnnidamenti(newOptions) {
-    const levels_in_filter = newOptions
+
+    // this is to make the filtro work even thought certain levels options are not visible (11, 12 e 13)
+    let isFourteen = newOptions.filter((d) => d.status).map(d=>d.label).indexOf("14")>-1;
+    let optionsToUse = newOptions;
+    if (isFourteen) {
+      optionsToUse.push({ label: "11", status: true })
+      optionsToUse.push({ label: "12", status: true })
+      optionsToUse.push({ label: "13", status: true })
+    }
+
+    const levels_in_filter = optionsToUse
       .filter((d) => d.status)
       .map((d) => +d.label)
-    // console.log(levels_in_filter)
 
     let toPreserve = this.state.data.map((d) => d.id)
 
@@ -632,13 +645,13 @@ class ProcessDoubting extends Component {
         .map((d) => d.id)
     }
 
-    console.log(
-      "annidamenti selezionati:",
-      levels_in_filter.join(", "),
-      "(" + toPreserve.length + ")",
-      "👉",
-      toPreserve.join(", ")
-    )
+    // console.log(
+    //   "annidamenti selezionati:",
+    //   levels_in_filter.join(", "),
+    //   "(" + toPreserve.length + ")",
+    //   "👉",
+    //   toPreserve.join(", ")
+    // )
 
     this.setState((prevState) => ({
       filters: {
@@ -688,27 +701,6 @@ class ProcessDoubting extends Component {
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 9" }} />
-
-          {/* {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
-          {!this.state.isLoading && (
-            <Options
-              title={this.props.t("cerca_per")}
-              data={this.state.cerca_per}
-              style={{ gridColumn: "span 3" }}
-              changeOptions={this.changeCercaPer}
-            />
-          )}
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
-          {!this.state.isLoading && (
-            <SearchDropDown
-              style={{
-                gridColumn: "span 5",
-              }}
-              data={{ options: this.state.data_research.titolo }}
-              changeOptions={this.changeRicerca}
-              selectedOptions={this.state.ricerca}
-            />
-          )} */}
 
           {this.state.loading && (
             <Loading style={{ gridColumn: "span 12" }} />
@@ -772,54 +764,6 @@ class ProcessDoubting extends Component {
             />
           )}
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
-          {/* {!this.state.isLoading && this.state.annidamenti && (
-            <div
-              style={{
-                bottom: 240,
-                width: "16.8%",
-                height: 240,
-                left: "33.25%",
-                backgroundColor: "#FFF",
-              }}
-              className="d-flex flex-row flex-wrap position-absolute"
-            >
-              {this.state.annidamenti.options.map((d, i) => {
-                return (
-                  <div
-                    style={{
-                     borderRight: "1px solid #000",
-                     borderBottom: "1px solid #000",
-                     borderTop: i <= 3 ? "1px solid #000" : undefined,
-                     borderLeft: i % 4 === 0 ? "1px solid #000" : undefined,
-                      width: "25%",
-                      height: 60,
-                    }}
-                    key={i}
-                    name={d.label}
-                    onClick={this.handleChange}
-                    className={
-                      "bg-white d-flex align-items-center justify-content-center"
-                    }
-                  >
-                    {d.label}
-                  </div>
-                )
-              })}
-              <div
-                style={{
-                  borderRight: "1px solid #000",
-                  borderBottom: "1px solid #000",
-                  width: "25%",
-                  height: 60,
-                }}
-                className={
-                  "bg-white d-flex align-items-center justify-content-center"
-                }
-              >
-                Inverti
-              </div>
-            </div>
-          )} */}
           {!this.state.isLoading && (
             <Options
               isFlex={true}

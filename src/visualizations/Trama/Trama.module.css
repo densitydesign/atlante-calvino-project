@@ -93,8 +93,8 @@
 .slider {
     /* width: 100%;
     height: 100%; */
-    background-color: #eee;
-    
+    background-color: white;
+    border: 1px solid var(--secondary-element)
 }
 
 .slide {
@@ -137,4 +137,8 @@
 
 .border-dark-blue {
     border-color: var(--dark-blue) !important;
+}
+
+.border-black{
+  border-color: #000 !important;
 }

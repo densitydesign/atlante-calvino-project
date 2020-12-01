@@ -461,8 +461,6 @@ class TerritoryWrapper extends React.Component {
         )
     }
 
-    console.log(this.props,'props')
-
     return (
       <div className="main">
         <HelpSidePanel

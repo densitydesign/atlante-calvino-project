@@ -175,14 +175,21 @@ export default function ProcessDoubtingMainHelp() {
                 )}
               </div>
               <div className="col-md-6 text-left">
-                <img width="157" src={Legend02} alt="Legenda" />
+                <img
+                  width="157"
+                  src={Legend02}
+                  alt="Legenda"
+                  style={{ maxWidth: "100%" }}
+                />
                 <div>
                   <Trans i18nKey={"help_panel.testo_gif"} t={t} ns="doubting">
-                    <small className="badge-legenda-small">
-                      Testi disposti secondo data di prima pubblicazione. Apri
-                      la colonna cliccando, poi scorri verso il basso per vedere
-                      l’andamento del processo dubitativo.
-                    </small>
+                    <p className="text-legenda">
+                      Testi disposti secondo data di prima pubblicazione.
+                    </p>
+                    <p className="text-legenda gray">
+                      Apri la colonna cliccando, poi scorri verso il basso per
+                      vedere l’andamento del processo dubitativo.
+                    </p>
                   </Trans>
                 </div>
               </div>
