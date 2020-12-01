@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import annotazioni from "./cancellazione-annotazioni.svg";
+import annotazioniEN from "./cancellazione-annotazioni.svg";
 import styles from './RustyViz.module.css';
 
 const V = {};
@@ -10,9 +11,9 @@ let width, height, fontSize=12, strokeWidth=0.5, annotationsFontSize=12, annotat
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
     minPerc=2.5;
-    
+
 /**
- * 
+ *
  * @param {Obkect}      options             initialization options
  * @param {HTML Node}   options.container   the container of the SVG element
  * @param {number}      options.width       the max width of the visualization
@@ -25,7 +26,7 @@ V.init = async (options)=>{
     height = options.height;
     svg = d3.select(options.container).append('svg')
             .attr('width',width)
-            .attr('height',height);            
+            .attr('height',height);
     zoom=d3.zoom()
         .extent([[0, 0], [width, height]])
         .scaleExtent([0.75, 100])
@@ -45,10 +46,10 @@ V.init = async (options)=>{
     g1 = svg.append('g');
     g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
     g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')')
-            // animation for the info-sheet    
+            // animation for the info-sheet
             // .style('opacity',0);
     g4 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
-    
+
     // g2.append('rect')
     //     .attr('stroke','blue')
     //     .attr('fill','none')
@@ -61,8 +62,14 @@ V.init = async (options)=>{
     length = g2.selectAll('.length');
     combinations = g2.selectAll('.combinations');
     label = g2.selectAll('.label');
-    
-    const incomingSVG = await d3.svg(annotazioni)
+
+    let translatedSvg
+    if (options.lang === 'en') {
+        translatedSvg = annotazioniEN
+    } else {
+        translatedSvg = annotazioni
+    }
+    const incomingSVG = await d3.svg(translatedSvg)
     const annotations=d3.select(incomingSVG).select('#annotazioni').attr('transform','translate('+(-2740/2)+','+(-1568/2)+')');
     annotations.selectAll('#lines path, #lines line').attr('stroke-dasharray','2 4')
     g3.node().appendChild(annotations.node());
@@ -70,9 +77,9 @@ V.init = async (options)=>{
     V.update(options);
 }
 /**
- * 
- * @param {Object}  options 
- * @param {Array}   options.data 
+ *
+ * @param {Object}  options
+ * @param {Array}   options.data
  */
 V.update = (options)=>{
     const reducedData = options.data.filter(d=>{
@@ -97,10 +104,10 @@ V.update = (options)=>{
             .style('cursor',d=>d.perc_dubbio>=minPerc?'pointer':'unset')
             .on('click',function(d){
                 if (d.perc_dubbio>=minPerc) {
-                   toggleMetaball(d); 
+                   toggleMetaball(d);
                 }
                 if (options.onSelection) {
-                   options.onSelection(d.id); 
+                   options.onSelection(d.id);
                 }
             })
             .merge(length);
@@ -109,7 +116,7 @@ V.update = (options)=>{
         .attr('fill','#ddddda')
         .attr('fill-opacity','1')
         .attr('stroke','white')
-            
+
 
     combinations=combinations.data(reducedData, d=>d.id);
     combinations.exit().remove();
@@ -121,7 +128,7 @@ V.update = (options)=>{
         .on('click',(d)=>{
             toggleMetaball(d);
             if (options.onSelection) {
-                options.onSelection(d.id); 
+                options.onSelection(d.id);
             }
         })
         .merge(combinations);
@@ -138,7 +145,7 @@ V.update = (options)=>{
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y);
-    
+
     label = label.data(options.data, d=>d.id);
     label.exit().remove();
     label = label.enter().append('text')
@@ -195,7 +202,7 @@ V.update = (options)=>{
     //             },500);
     //         });
 
-    
+
 }
 
 V.changeColor = (value)=>{
@@ -259,7 +266,7 @@ function toggleMetaball(data){
                 .duration(350)
                     .attr('cx',d=>d.mx)
                     .attr('cy',d=>d.my)
-                    .attr('fill',d=>col_macrocategorie(d.type.split('_')[0]));    
+                    .attr('fill',d=>col_macrocategorie(d.type.split('_')[0]));
     } else {
         this_combination.selectAll('circle')
             .transition()
@@ -267,7 +274,7 @@ function toggleMetaball(data){
                     .attr('cx',d=>d.x)
                     .attr('cy',d=>d.y)
                     .attr('fill',color);
-            
+
             setTimeout( ()=>{
                 this_combination.select('path').attr('display','block');
                 this_combination.selectAll('circle').attr('display','none');
@@ -292,7 +299,7 @@ function interpolateColor(d) {
 }
 
 /**
- * 
+ *
  * @param {SVGTextElement} el the text node where to append tspans
  * @param {string} text the text you wanna truncate
  * @param {number} length must be an integer
@@ -326,47 +333,47 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //     if (data.length===1)
 //     {
 //         metaball+=`
-//         M ${data[0]['x']-data[0]['r']},${data[0]['y']} 
-//         a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${data[0]['r']*2},0 
-//         a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${-data[0]['r']*2},0 
+//         M ${data[0]['x']-data[0]['r']},${data[0]['y']}
+//         a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${data[0]['r']*2},0
+//         a ${data[0]['r']},${data[0]['r']} 0 1, 0 ${-data[0]['r']*2},0
 //         Z`;
 //         metaball=metaball.replace(/\n/g,'').replace(/\s\s/g,'');
 //         return metaball;
 //     }
-//     else if (data.length===2) 
+//     else if (data.length===2)
 //     {
 //         //  Add "c" property (center) to all data elements
 //         data.forEach(d=>d.c=[d.x,d.y]);
 //         const pointsAndHandles1=curvesBetweenCircles(data[0].r, data[1].r, data[0].c, data[1].c);
 //         const pointsAndHandles2=curvesBetweenCircles(data[1].r, data[0].r, data[1].c, data[0].c);
-        
+
 //         //  set the starting point of the path
 //         metaball+=`M ${pointsAndHandles1.p[1][0]},${pointsAndHandles1.p[1][1]} `;
 
 //         //  1st Bezier Curve
 //         metaball+=`
-//         C ${pointsAndHandles1.h[1][0]},${pointsAndHandles1.h[1][1]} 
-//         ${pointsAndHandles1.h[3][0]},${pointsAndHandles1.h[3][1]} 
+//         C ${pointsAndHandles1.h[1][0]},${pointsAndHandles1.h[1][1]}
+//         ${pointsAndHandles1.h[3][0]},${pointsAndHandles1.h[3][1]}
 //         ${pointsAndHandles1.p[3][0]},${pointsAndHandles1.p[3][1]} `;
-        
+
 //         //  1st arc
 //         metaball+=`
-//         A ${pointsAndHandles1.r},${pointsAndHandles1.r} 
-//         0 1,1 
+//         A ${pointsAndHandles1.r},${pointsAndHandles1.r}
+//         0 1,1
 //         ${pointsAndHandles2.p[1][0]},${pointsAndHandles2.p[1][1]} `;
-        
+
 //         //  2ndt Bezier Curve
 //         metaball+=`
-//         C ${pointsAndHandles2.h[1][0]},${pointsAndHandles2.h[1][1]} 
-//         ${pointsAndHandles2.h[3][0]},${pointsAndHandles2.h[3][1]} 
+//         C ${pointsAndHandles2.h[1][0]},${pointsAndHandles2.h[1][1]}
+//         ${pointsAndHandles2.h[3][0]},${pointsAndHandles2.h[3][1]}
 //         ${pointsAndHandles2.p[3][0]},${pointsAndHandles2.p[3][1]} `;
-        
+
 //         //  2nd arc
 //         metaball+=`
-//         A ${pointsAndHandles2.r},${pointsAndHandles2.r} 
-//         0 1,1 
+//         A ${pointsAndHandles2.r},${pointsAndHandles2.r}
+//         0 1,1
 //         ${pointsAndHandles1.p[1][0]},${pointsAndHandles1.p[1][1]} `;
-        
+
 //         metaball=metaball.replace(/\n/g,'').replace(/\s\s/g,'');
 //         return metaball;
 //     }
@@ -378,7 +385,7 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //         let subsetData = data;
 //         //  Can't do convex hull with less than 3 points
 //         if (data.length>2)
-//         { 
+//         {
 //             //  Calculate convex hull
 //             const convex_hull = d3.polygonHull(data.map(d=>([d.x,d.y])));
 //             //  Subset the data according to convex hull
@@ -412,9 +419,9 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //             const polygon = ShapeInfo.polygon(sampledPoints);
 //             // const path = ShapeInfo.path(metaball);   //  looks like it has a bug
 //             const circle = ShapeInfo.circle({center: {x:this_circle.x, y:this_circle.y}, radius:this_circle.r});
-            
+
 //             const intersections_data = Intersection.intersect(polygon, circle);
-            
+
 //             //  If true
 //             if (intersections_data.status==="Intersection") {
 //                 //  Identify the two adjacent circles
@@ -429,7 +436,7 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 
 //                     return subset_with_distances[0];
 //                 })
-                
+
 //                 //  Insert the new circle between its two adjacent mates
 //                 if ( (adjacent_circles[0].position===0&&adjacent_circles[1].position===subsetData.length-1) || (adjacent_circles[1].position===0&&adjacent_circles[0].position===subsetData.length-1) ) {
 //                     subsetData.push(this_circle);
@@ -440,7 +447,7 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //                     subsetData.splice(append_after+1, 0, this_circle);
 //                 }
 //                 metaball=metaballSegments(subsetData);
-//             }                   
+//             }
 //         }
 //     }
 //     return metaball;
@@ -455,7 +462,7 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //         subsetData.push(subsetData.shift());
 //         //  calculate points and handles for metaball path
 //         const pointsAndHandles=curvesBetweenCircles(circles[0].r, circles[1].r, circles[0].c, circles[1].c);
-        
+
 //         //  calculate for the next one, to draw arch (this could be optimized)
 //         const next=curvesBetweenCircles(circles[1].r, circles[2].r, circles[1].c, circles[2].c);
 
@@ -464,20 +471,20 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 
 //         //  Bezier Curve
 //         pathSegments+=`
-//         C ${pointsAndHandles.h[1][0]},${pointsAndHandles.h[1][1]} 
-//         ${pointsAndHandles.h[3][0]},${pointsAndHandles.h[3][1]} 
+//         C ${pointsAndHandles.h[1][0]},${pointsAndHandles.h[1][1]}
+//         ${pointsAndHandles.h[3][0]},${pointsAndHandles.h[3][1]}
 //         ${pointsAndHandles.p[3][0]},${pointsAndHandles.p[3][1]}`;
-        
+
 //         const p1 = {x:pointsAndHandles.p[3][0],y:pointsAndHandles.p[3][1]};
 //         const p2 = { x:next.p[1][0], y:next.p[1][1] };
 //         const c = { x:circles[1].x, y:circles[1].y };
-            
+
 //         let ang = Math.atan2(p2.y-c.y, p2.x-c.x) - Math.atan2(p1.y-c.y, p1.x-c.x)
 //         ang=ang<0?ang+2*Math.PI:ang;
-            
+
 //         const largeArchFlag = ang>=Math.PI?1:0;
 //         const sweepFlag=1;
-        
+
 //         // Arc
 //         pathSegments+=`A ${next.r1},${next.r1}, 0 ${largeArchFlag},${sweepFlag}, ${next.p[1][0]}, ${next.p[1][1]}`
 //     }
@@ -582,7 +589,7 @@ function truncateLabel(el, text, length=undefined, fade=3) {
 //  */
 
 // /**
-//  * 
+//  *
 //  * @param {Object} p1 is the first point {x: number, y: number}
 //  * @param {*} p2 is the second point {x: number, y: number}
 //  */

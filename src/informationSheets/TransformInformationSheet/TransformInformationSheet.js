@@ -1,30 +1,45 @@
-import React, { Component } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import SheetStyles from "../SheetStyles.module.css";
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede2 from "../FooterSchede2";
+import React, { Component } from "react"
+import Carousel from "react-bootstrap/Carousel"
+import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede2 from "../FooterSchede2"
 
-import "./TransformInformationSheet.css";
+import "./TransformInformationSheet.css"
 
-import inquadramento from "./inquadramento.svg";
-import table from "./table.svg";
+import inquadramento from "./inquadramento.svg"
+import inquadramentoEn from "./trasformare_Inquadramento_en.svg"
+import table from "./table.svg"
+import tableEn from "./trasformare_Table_en.svg"
 
-import legenda_0 from "./legenda_0.svg";
-import legenda_01 from "./legenda_01.svg";
-import legenda_02 from "./legenda_02.svg";
-import legenda_03 from "./legenda_03.svg";
-import legenda_04 from "./legenda_04.svg";
+import legenda_0 from "./legenda_0.svg"
+import legenda_0En from "./trasformare_legenda_0_en.svg"
+import legenda_01 from "./legenda_01.svg"
+import legenda_01En from "./trasformare_legenda_01_en.svg"
+import legenda_02 from "./legenda_02.svg"
+import legenda_02En from "./trasformare_legenda_02_en.svg"
+import legenda_03 from "./legenda_03.svg"
+import legenda_03En from "./trasformare_legenda_03_en.svg"
+import legenda_04 from "./legenda_04.svg"
+import legenda_04En from "./trasformare_legenda_04_en.svg"
 
-import zoom_1 from "./zoom_01.svg";
-import zoom_2 from "./zoom_02.svg";
-import zoom_3 from "./zoom_03.svg";
-import zoom_4 from "./zoom_04.svg";
+import zoom_1 from "./zoom_01.svg"
+import zoom_1En from "./trasformare_zoom_01_en.svg"
+import zoom_2 from "./zoom_02.svg"
+import zoom_2En from "./trasformare_zoom_02_en.svg"
+import zoom_3 from "./zoom_03.svg"
+import zoom_3En from "./trasformare_zoom_03_en.svg"
+import zoom_4 from "./zoom_04.svg"
+import zoom_4En from "./trasformare_zoom_04_en.svg"
 
-import slide_01 from "./slide-01.svg";
-import slide_02 from "./slide-02.svg";
-import slide_03 from "./slide-03.svg";
-import slide_04 from "./slide-04.svg";
-import { Trans, withTranslation } from "react-i18next";
+import slide_01 from "./slide-01.svg"
+import slide_01En from "./trasformare_slide-01_en.svg"
+import slide_02 from "./slide-02.svg"
+import slide_02En from "./trasformare_slide-02_en.svg"
+import slide_03 from "./slide-03.svg"
+import slide_03En from "./trasformare_slide-03_en.svg"
+import slide_04 from "./slide-04.svg"
+import slide_04En from "./slide-04.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class TransformInformationSheet extends Component {
   render() {
@@ -42,10 +57,24 @@ class TransformInformationSheet extends Component {
                   "transform-sheet:Cartografia dei luoghi terrestri"
                 )}
               </h1>
-              <img alt="" className={SheetStyles.image} src={inquadramento} />
+              <img
+                alt=""
+                className={SheetStyles.image}
+                src={
+                  this.props.i18n.language === "it"
+                    ? inquadramento
+                    : inquadramentoEn
+                }
+              />
             </div>
             <div style={{ gridColumn: "1 / span 7" }}>
-              <img alt="" className={SheetStyles.legend} src={legenda_0} />
+              <img
+                alt=""
+                className={SheetStyles.legend}
+                src={
+                  this.props.i18n.language === "it" ? legenda_0 : legenda_0En
+                }
+              />
             </div>
             <h3 className={SheetStyles.subtitleSheet}>
               {this.props.t("transform-sheet:Geoletteratura")}
@@ -67,25 +96,26 @@ class TransformInformationSheet extends Component {
                 testi del corpus calviniano che presentano ambientazioni di
                 questo tipo è necessario operare un’ulteriore distinzione in tre
                 tipologie:
-                <ol>
-                  <li>
-                    Ambientazioni di testi in cui il tempo della storia è
-                    collocato nella contemporaneità, vale a dire nel Novecento.
-                  </li>
-                  <li>
-                    Ambientazioni di testi in cui il tempo della storia è
-                    collocato nel passato o in un tempo indefinito (ad es.{" "}
-                    <em>Il visconte dimezzato</em> è ambientato al tempo di
-                    Carlo Magno, <em>Le città invisibili</em> nel 1200).
-                  </li>
-                  <li>
-                    Ambientazioni di testi in cui presente e passato si fondono
-                    in un tempo della storia misto (ad es. nel racconto{" "}
-                    <em>I cristalli</em> l’ambientazione pre-cosmica e
-                    primordiale presenta riferimenti geografici della New York
-                    contemporanea).
-                  </li>
-                </ol>
+              </p>
+              <ol className={SheetStyles.paragraph}>
+                <li>
+                  Ambientazioni di testi in cui il tempo della storia è
+                  collocato nella contemporaneità, vale a dire nel Novecento.
+                </li>
+                <li>
+                  Ambientazioni di testi in cui il tempo della storia è
+                  collocato nel passato o in un tempo indefinito (ad es.{" "}
+                  <em>Il visconte dimezzato</em> è ambientato al tempo di Carlo
+                  Magno, <em>Le città invisibili</em> nel 1200).
+                </li>
+                <li>
+                  Ambientazioni di testi in cui presente e passato si fondono in
+                  un tempo della storia misto (ad es. nel racconto{" "}
+                  <em>I cristalli</em> l’ambientazione pre-cosmica e primordiale
+                  presenta riferimenti geografici della New York contemporanea).
+                </li>
+              </ol>
+              <p className={SheetStyles.paragraph}>
                 Questo approfondimento si propone di mostrare tutte e tre le
                 tipologie di ambientazione, con una particolare predilezione per
                 quelle che intrattengono un rapporto evidente con il Novecento.
@@ -106,8 +136,11 @@ class TransformInformationSheet extends Component {
             <div className={SheetStyles.sideContent}>
               <img
                 className={SheetStyles.image}
-                style={{ position: "sticky", top: "var(--navigation-height)" }}
-                src={table}
+                style={{
+                  position: "sticky",
+                  top: "var(--navigation-height)",
+                }}
+                src={this.props.i18n.language === "it" ? table : tableEn}
                 alt=""
               />
             </div>
@@ -137,21 +170,32 @@ class TransformInformationSheet extends Component {
                           paddingBottom: "0px",
                         }}
                         alt=""
-                        src={legenda_01}
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_01
+                            : legenda_01En
+                        }
                       />
                       <img
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
-                        src={zoom_1}
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_1 : zoom_1En
+                        }
                         alt=""
                       />
                     </div>
                   </Carousel.Caption>
                   <img
                     className="d-block w-100"
-                    src={slide_01}
+                    src={
+                      this.props.i18n.language === "it" ? slide_01 : slide_01En
+                    }
                     alt="First slide"
                   />
                 </Carousel.Item>
@@ -174,21 +218,32 @@ class TransformInformationSheet extends Component {
                           paddingBottom: "0px",
                         }}
                         alt=""
-                        src={legenda_02}
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_02
+                            : legenda_02En
+                        }
                       />
                       <img
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
-                        src={zoom_2}
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_2 : zoom_2En
+                        }
                         alt=""
                       />
                     </div>
                   </Carousel.Caption>
                   <img
                     className="d-block w-100"
-                    src={slide_02}
+                    src={
+                      this.props.i18n.language === "it" ? slide_02 : slide_02En
+                    }
                     alt="First slide"
                   />
                 </Carousel.Item>
@@ -199,7 +254,6 @@ class TransformInformationSheet extends Component {
                       className={SheetStyles.titleH2}
                       style={{
                         fontStyle: "italic",
-                        color: "#5151fc",
                         color: "#5151fc",
                       }}
                     >
@@ -214,22 +268,33 @@ class TransformInformationSheet extends Component {
                           marginBottom: "0px",
                           paddingBottom: "0px",
                         }}
-                        src={legenda_03}
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_03
+                            : legenda_03En
+                        }
                         alt=""
                       />
                       <img
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
-                        src={zoom_3}
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_3 : zoom_3En
+                        }
                         alt=""
                       />
                     </div>
                   </Carousel.Caption>
                   <img
                     className="d-block w-100"
-                    src={slide_03}
+                    src={
+                      this.props.i18n.language === "it" ? slide_03 : slide_03En
+                    }
                     alt="First slide"
                   />
                 </Carousel.Item>
@@ -252,21 +317,32 @@ class TransformInformationSheet extends Component {
                           paddingBottom: "0px",
                         }}
                         alt=""
-                        src={legenda_04}
+                        src={
+                          this.props.i18n.language === "it"
+                            ? legenda_04
+                            : legenda_04En
+                        }
                       />
                       <img
                         className={
                           SheetStyles.sideContent + " " + SheetStyles.image
                         }
-                        style={{ gridColumn: "9 / span 3", marginTop: "20px" }}
-                        src={zoom_4}
+                        style={{
+                          gridColumn: "9 / span 3",
+                          marginTop: "20px",
+                        }}
+                        src={
+                          this.props.i18n.language === "it" ? zoom_4 : zoom_4En
+                        }
                         alt=""
                       />
                     </div>
                   </Carousel.Caption>
                   <img
                     className="d-block w-100"
-                    src={slide_04}
+                    src={
+                      this.props.i18n.language === "it" ? slide_04 : slide_04En
+                    }
                     alt="First slide"
                   />
                 </Carousel.Item>
@@ -279,10 +355,10 @@ class TransformInformationSheet extends Component {
               {this.props.t("bibliografia")}
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
-            <li className="referenceItem">
+              <li className="referenceItem">
                 Genette 1972: G. Genette, <em>Figures III</em>, Paris, Seuil.
               </li>
-            <li className="referenceItem">
+              <li className="referenceItem">
                 Piatti <em>et al.</em> 2009: B. Piatti, H. R. Bär, A. Reuschel,
                 L. Hurni. W. Cartwright,
                 <em>Mapping Literature: Towards A Geography of Fiction</em> in
@@ -307,10 +383,10 @@ class TransformInformationSheet extends Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "transform-sheet"])(
   TransformInformationSheet
-);
+)

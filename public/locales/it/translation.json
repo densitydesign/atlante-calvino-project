@@ -88,8 +88,8 @@
     "MEZZO DI TRASPORTO": "MEZZO DI TRASPORTO",
     "uno": "1",
     "due": "2",
-    "aggregato": "aggregato",
-    "non aggregato": "non aggregato",
+    "aggregato": "Aggregato",
+    "non aggregato": "Non aggregato",
     "ambito": "piano",
     "quattro": "4",
     "categorie": "sequenza",
@@ -97,7 +97,8 @@
     "tre": "3",
     "titolo": "titolo",
     "sede di pubblicazione": "sede di pubblicazione",
-    "volume": "volume"
+    "volume": "volume",
+    "non_aggregato": "Non aggregato"
   },
   "legenda": "legenda",
   "analisi": "Vai alla visualizzazione",
@@ -119,5 +120,11 @@
   "L’effetto-nebbia": "L’effetto-nebbia",
   "titolo": "Titolo",
   "volume": "Volume",
-  "sede di pubblicazione": "Sede di pubblicazione"
+  "sede di pubblicazione": "Sede di pubblicazione",
+  "il_dubbio_e_la_cancellazione": "Il dubbio e<br/>la cancellazione",
+  "cartografia_dei_luoghi_terrestri": "Cartografia dei<br/>luoghi terrestri",
+  "la_forma_della_geografia_inventata": "La forma della<br/>geografia inventata",
+  "per_un_estetica_elencatoria": "Per un'estetica<br/>elencatoria",
+  "metamorfosi_della_realta": "Metamorfosi della realtà:<br/>sulle tracce della paura",
+  "il_romanzo_saggio_che_dubita": "Il romanzo-saggio<br/>che dubita"
 }

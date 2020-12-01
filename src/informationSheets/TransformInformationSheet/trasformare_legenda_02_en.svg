@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="87" viewBox="0 0 600 87">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Tracciato_147767" data-name="Tracciato 147767" d="M208.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C202.5,37.75,205.2,35.5,208.5,35.5Z" transform="translate(-202.5 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Tracciato_147769" data-name="Tracciato 147769" d="M208.5,56.3h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C202.5,58.425,205.2,56.3,208.5,56.3Z" transform="translate(-202.5 -56.3)"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Tracciato_157232" data-name="Tracciato 157232" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-203.5 -35.5)"/>
+    </clipPath>
+    <clipPath id="clip-legenda_02">
+      <rect width="600" height="87"/>
+    </clipPath>
+  </defs>
+  <g id="legenda_02" clip-path="url(#clip-legenda_02)">
+    <g id="Isolation_Mode" transform="translate(0.61 -12.99)">
+      <g id="Raggruppa_23833" data-name="Raggruppa 23833" transform="translate(242.102 39.32)">
+        <g id="Raggruppa_23832" data-name="Raggruppa 23832" clip-path="url(#clip-path)">
+          <line id="Linea_6946" data-name="Linea 6946" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6947" data-name="Linea 6947" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6948" data-name="Linea 6948" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6949" data-name="Linea 6949" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6950" data-name="Linea 6950" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6951" data-name="Linea 6951" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6952" data-name="Linea 6952" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6953" data-name="Linea 6953" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6954" data-name="Linea 6954" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6955" data-name="Linea 6955" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6956" data-name="Linea 6956" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6957" data-name="Linea 6957" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6958" data-name="Linea 6958" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6959" data-name="Linea 6959" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6960" data-name="Linea 6960" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6961" data-name="Linea 6961" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6962" data-name="Linea 6962" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6963" data-name="Linea 6963" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6964" data-name="Linea 6964" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6965" data-name="Linea 6965" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6966" data-name="Linea 6966" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+        </g>
+      </g>
+      <path id="Tracciato_147768" data-name="Tracciato 147768" d="M208.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C202.5,37.75,205.2,35.5,208.5,35.5Z" transform="translate(39.602 3.82)" fill="none" stroke="#ed6826" stroke-miterlimit="10" stroke-width="0.5"/>
+      <g id="Raggruppa_23835" data-name="Raggruppa 23835" transform="translate(242.102 63.362)">
+        <g id="Raggruppa_23834" data-name="Raggruppa 23834" clip-path="url(#clip-path-2)">
+          <line id="Linea_6967" data-name="Linea 6967" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6968" data-name="Linea 6968" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6969" data-name="Linea 6969" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6970" data-name="Linea 6970" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6971" data-name="Linea 6971" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6972" data-name="Linea 6972" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6973" data-name="Linea 6973" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6974" data-name="Linea 6974" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6975" data-name="Linea 6975" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6976" data-name="Linea 6976" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6977" data-name="Linea 6977" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6978" data-name="Linea 6978" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6979" data-name="Linea 6979" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6980" data-name="Linea 6980" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6981" data-name="Linea 6981" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6982" data-name="Linea 6982" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6983" data-name="Linea 6983" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6984" data-name="Linea 6984" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6985" data-name="Linea 6985" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6986" data-name="Linea 6986" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+          <line id="Linea_6987" data-name="Linea 6987" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+        </g>
+      </g>
+      <path id="Tracciato_147770" data-name="Tracciato 147770" d="M208.5,56.3h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C202.5,58.425,205.2,56.3,208.5,56.3Z" transform="translate(39.602 7.062)" fill="none" stroke="#00ffb6" stroke-miterlimit="10" stroke-width="0.5"/>
+      <circle id="Ellisse_33203" data-name="Ellisse 33203" cx="2.89" cy="2.89" r="2.89" transform="translate(396.464 44.521)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <circle id="Ellisse_33204" data-name="Ellisse 33204" cx="6.357" cy="6.357" r="6.357" transform="translate(392.996 37.586)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <text id="War" transform="translate(271.324 46.879)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">War</tspan></text>
+      <text id="Ligurian_nature" data-name="Ligurian nature" transform="translate(271.324 70.372)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Ligurian nature</tspan></text>
+      <text id="CONTEXTS" transform="translate(242.476 24.99)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">CONTEXTS</tspan></text>
+      <text id="Number_of_occurrences" data-name="Number of occurrences" transform="translate(414.213 47.746)" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Number of occurrences</tspan></text>
+      <text id="SIZE" transform="translate(390.476 24.99)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">SIZE</tspan></text>
+    </g>
+    <path id="Tracciato_157231" data-name="Tracciato 157231" d="M7.654,76.8C4.585,76.8,2,74.514,2,71.8s2.585-5,5.654-5h9.692c3.069,0,5.654,2.286,5.654,5s-2.585,5-5.654,5Z" transform="translate(-1 -5.309)" fill="#dbdbdb"/>
+    <g id="Raggruppa_24679" data-name="Raggruppa 24679">
+      <g id="Raggruppa_24678" data-name="Raggruppa 24678" transform="translate(0.703 26.322)" clip-path="url(#clip-path-3)">
+        <line id="Linea_7918" data-name="Linea 7918" x2="107.1" y2="89.25" transform="translate(-66 1.625)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7919" data-name="Linea 7919" x2="107.1" y2="89.25" transform="translate(-62.4 0.125)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7920" data-name="Linea 7920" x2="107.1" y2="89.25" transform="translate(-58.8 -1.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7921" data-name="Linea 7921" x2="107.1" y2="89.25" transform="translate(-55.2 -2.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7922" data-name="Linea 7922" x2="107.1" y2="89.25" transform="translate(-51.6 -4.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7923" data-name="Linea 7923" x2="107.1" y2="89.25" transform="translate(-48 -5.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7924" data-name="Linea 7924" x2="107.1" y2="89.25" transform="translate(-44.4 -7.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7925" data-name="Linea 7925" x2="107.1" y2="89.25" transform="translate(-40.8 -8.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7926" data-name="Linea 7926" x2="107.1" y2="89.25" transform="translate(-37.2 -10.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7927" data-name="Linea 7927" x2="107.1" y2="89.25" transform="translate(-33.6 -11.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7928" data-name="Linea 7928" x2="107.1" y2="89.25" transform="translate(-30 -13.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7929" data-name="Linea 7929" x2="107.1" y2="89.25" transform="translate(-26.4 -14.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7930" data-name="Linea 7930" x2="107.1" y2="89.25" transform="translate(-22.8 -16.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7931" data-name="Linea 7931" x2="107.1" y2="89.25" transform="translate(-19.2 -17.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7932" data-name="Linea 7932" x2="107.1" y2="89.25" transform="translate(-15.6 -19.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7933" data-name="Linea 7933" x2="107.1" y2="89.25" transform="translate(-12 -20.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7934" data-name="Linea 7934" x2="107.1" y2="89.25" transform="translate(-8.4 -22.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7935" data-name="Linea 7935" x2="107.1" y2="89.25" transform="translate(-4.8 -23.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7936" data-name="Linea 7936" x2="107.1" y2="89.25" transform="translate(-1.2 -25.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7937" data-name="Linea 7937" x2="107.1" y2="89.25" transform="translate(2.4 -26.875)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+        <line id="Linea_7938" data-name="Linea 7938" x2="107.1" y2="89.25" transform="translate(6 -28.375)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+      </g>
+      <path id="Tracciato_157233" data-name="Tracciato 157233" d="M209.5,35.5h9c3.3,0,6,2.25,6,5h0c0,2.75-2.7,5-6,5h-9c-3.3,0-6-2.25-6-5h0C203.5,37.75,206.2,35.5,209.5,35.5Z" transform="translate(-202.797 -9.178)" fill="none" stroke="#0d1b3a" stroke-miterlimit="10" stroke-width="0.25"/>
+    </g>
+    <text id="Locations_of_texts_where_the_narrated_time_is_set_in_an_indeterminate_time_period" data-name="Locations of texts where the narrated time is set in an indeterminate time period" transform="translate(30 25)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Locations of texts where the narrated time is </tspan><tspan x="0" y="23">set in an </tspan><tspan y="23" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500">indeterminate time period</tspan></text>
+    <text id="Locations_of_texts_where_the_narrated_time_is_set_in_the_past" data-name="Locations of texts where the narrated time is set in the past" transform="translate(30 61)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">Locations of texts where the narrated </tspan><tspan x="0" y="23">time is set in the past</tspan></text>
+    <text id="NARRATED_TIME" data-name="NARRATED TIME" transform="translate(0.452 12)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">NARRATED TIME</tspan></text>
+  </g>
+</svg>

@@ -8,6 +8,7 @@ import { ReactComponent as LinkIcon } from "./icons/link.svg"
 import { ReactComponent as DoiIcon } from "./icons/doi.svg"
 import { ReactComponent as PdfIcon } from "./icons/pdf.svg"
 import { ReactComponent as CaptureIcon } from "./icons/capture.svg"
+import { orderBy } from "lodash"
 
 export default function Articles() {
   const [data, setData] = useState(null)
@@ -18,67 +19,76 @@ export default function Articles() {
   useEffect(() => {
     d3.tsv(process.env.PUBLIC_URL + "/pubblicazioni/pubblicazioni.tsv").then(
       (data) => {
-        setData(data)
+        setData(orderBy(data,'date','desc'))
       }
     )
   })
-
+  
   return (
     <>
       <IndexMenuHeader />
       <div className="ac-grid-24">
         <div className="content">
           <h1>Pubblicazioni</h1>
-          <h2>Mostra</h2>
-          <div className="sticky-element bg-white d-flex justify-content-between pb-4">
-            <div className="d-flex align-items-center">
-              <input
-                type="checkbox"
-                checked={articoliScientifici}
-                onChange={() => setArticoliScientifici(!articoliScientifici)}
-                className="mr-2"
-              />{" "}
-              Articoli scientifici
+          <div className='sticky-element bg-white'>
+            <h2>Mostra</h2>
+            <div className="bg-white d-flex justify-content-between pb-4">
+              <div className="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  checked={articoliScientifici}
+                  onChange={() => setArticoliScientifici(!articoliScientifici)}
+                  className="mr-2"
+                />{" "}
+                Articoli scientifici
+              </div>
+              <div className="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  checked={articoliDivulgativi}
+                  className="mr-2"
+                  onChange={() => setArticoliDivulgativi(!articoliDivulgativi)}
+                />{" "}
+                Articoli divulgativi
+              </div>
+              <div className="d-flex align-items-center">
+                <input
+                  type="checkbox"
+                  checked={rassegnaStampa}
+                  onChange={() => setRassegnaStampa(!rassegnaStampa)}
+                  className="mr-2"
+                />{" "}
+                Rassegna stampa
+              </div>
             </div>
-            <div className="d-flex align-items-center">
-              <input
-                type="checkbox"
-                checked={articoliDivulgativi}
-                className="mr-2"
-                onChange={() => setArticoliDivulgativi(!articoliDivulgativi)}
-              />{" "}
-              Articoli divulgativi
-            </div>
-            <div className="d-flex align-items-center">
-              <input
-                type="checkbox"
-                checked={rassegnaStampa}
-                onChange={() => setRassegnaStampa(!rassegnaStampa)}
-                className="mr-2"
-              />{" "}
-              Rassegna stampa
-            </div>
+            <hr />
           </div>
-          <hr />
           {data &&
             data
               .filter((d) => d.title)
-              .filter(d => !rassegnaStampa ? d.kind !== 'rassegna-stampa' : d)
-              .filter(d => !articoliScientifici ? d.kind !== 'articolo-scientifico' : d)
-              .filter(d => !articoliDivulgativi ? d.kind !== 'articolo-divulgativo' : d)
+              .filter((d) => d.kind !== "visualizzazione")
+              .filter((d) =>
+                !rassegnaStampa ? d.kind !== "rassegna-stampa" : d
+              )
+              .filter((d) =>
+                !articoliScientifici ? d.kind !== "articolo-scientifico" : d
+              )
+              .filter((d) =>
+                !articoliDivulgativi ? d.kind !== "articolo-divulgativo" : d
+              )
               .map((d, i) => {
                 let pdf
                 if (d.pdf !== "") {
                   pdf = (
                     <>
                       <a
-                        a
-                        className="link"
+                        className="link d-flex align-items-center"
+                        style={{ marginRight: '4rem'}}
                         href={d.pdf}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <PdfIcon className="text-dark" /> PDF
+                        <PdfIcon className="text-dark mr-1" height='20' /> PDF
                       </a>
                     </>
                   )
@@ -88,12 +98,13 @@ export default function Articles() {
                   externalLinkLink = (
                     <>
                       <a
-                        className="link"
+                        className="link d-flex align-items-center"
                         href={d.link}
+                        style={{ marginRight: '4rem'}}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <LinkIcon className="text-dark" /> Link
+                        <LinkIcon className="text-dark mr-1" height='20' /> Link
                       </a>
                     </>
                   )
@@ -103,12 +114,13 @@ export default function Articles() {
                   pageCapture = (
                     <>
                       <a
-                        className="link"
+                        className="link d-flex align-items-center"
+                        style={{ marginRight: '4rem'}}
                         href={d.page_capture}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CaptureIcon className='text-dark' /> Page capture
+                        <CaptureIcon className="text-dark mr-1" height='20' /> Page capture
                       </a>
                     </>
                   )
@@ -119,12 +131,13 @@ export default function Articles() {
                   doi = (
                     <>
                       <a
-                        className="link"
+                        className="link d-flex align-items-center"
+                        style={{ marginRight: '4rem'}}
                         href={d.doi}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <DoiIcon className="text-dark" /> {d.doi}
+                        <DoiIcon className="text-dark mr-1" height='20' /> {d.doi}
                       </a>
                     </>
                   )
@@ -134,10 +147,15 @@ export default function Articles() {
                     <small className="text-capitalize">
                       {d.kind.replace("-", " ")}
                     </small>
-                    <h3 style={{ fontSize: 18, fontWeight: 'bold' }}>{d.title}</h3>
+                    <h3 style={{ fontSize: 18, fontWeight: "bold" }}>
+                      {d.title}
+                    </h3>
                     {d.authors && <h5 style={{ fontSize: 18 }}>{d.authors}</h5>}
-                    <p style={{ fontSize: 18 }}>{d.publication_place_date}</p>
-                    <h5 className="d-flex justify-content-between" style={{ fontSize: 14 }}>
+                    <p style={{ fontSize: 18 }} dangerouslySetInnerHTML={ { __html: d.publication } } />
+                    <h5
+                      className="d-flex"
+                      style={{ fontSize: 14 }}
+                    >
                       {pdf}
                       {externalLinkLink}
                       {pageCapture}

@@ -258,6 +258,7 @@ class Cancellazione extends Component {
                 changeOptions={this.changeResearch}
                 selectedOptions={this.state.searchedItems}
                 availableIds={this.state.data.map(d=>d.id)}
+                availableOptions={["title","volume"]}
               />
             )}
 

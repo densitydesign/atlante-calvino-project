@@ -46,7 +46,7 @@
 
 .rbt .dropdown-item-selectable *{
     font-size: 1em;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     text-align: left;
     padding-left: 1em;
     margin-left: 0;

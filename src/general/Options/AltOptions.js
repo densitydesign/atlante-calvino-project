@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import findIndex from "lodash/findIndex"
 import range from "lodash/range"
+import classnames from "classnames"
 import indexOf from "lodash/indexOf"
 import "../../App.css"
 import "./Options.css"
@@ -102,11 +103,14 @@ class AltOptions extends Component {
       })
       return
     }
+    console.log(metadata.source, "metadata")
     if (metadata.source === "select" && multiple) {
+      console.log("if")
       this.setState({
         show: true,
       })
     } else {
+      console.log("else")
       this.setState({
         show: !this.state.show,
       })
@@ -125,50 +129,68 @@ class AltOptions extends Component {
     if (!multiple) {
       current = anySelected ? options[indices[0]].label : undefined
     } else {
-      current = anySelected ? indices.map((i) => this.props.t('options.'+options[i].label)) : []
+      current = anySelected
+        ? indices.map((i) => this.props.t("options." + options[i].label))
+        : []
     }
     return (
       <div className="options-container" style={style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
-          <Dropdown.Toggle disabled={this.props.disabled}>
+          <Dropdown.Toggle
+            disabled={this.props.disabled}
+            style={{ opacity: this.props.disabled ? 1 : undefined }}
+          >
             {!multiple && anySelected && (
               <div>
-                <span className="micro-title">{title}</span>
-                <span className="current-selection">{this.props.t('options.'+current)}</span>
+                {title && <span className="micro-title">{title}</span>}
+                <span className="current-selection">
+                  {this.props.t("options." + current)}
+                </span>
               </div>
             )}
             {multiple && anySelected && (
               <div>
-                <span className="micro-title">{title}</span>
+                {title && <span className="micro-title">{title}</span>}
                 <span className="current-selection">{current.join(", ")}</span>
               </div>
             )}
             {!anySelected && title}
           </Dropdown.Toggle>
-          <Dropdown.Menu
-            onToggle={multiple ? undefined : this.toggleDropDown}
-            show={this.state.show}
-          >
-            {this.props.options.map((d, i) => {
-              return (
+          {this.state.show && (
+            <Dropdown.Menu
+              className={classnames({
+                "d-flex": this.props.isFlex,
+                "flex-wrap": this.props.isFlex,
+              })}
+              onToggle={multiple ? undefined : this.toggleDropDown}
+              show={this.state.show}
+            >
+              {this.props.options.map((d, i) => {
+                return (
+                  <Dropdown.Item
+                    key={i}
+                    onClick={() => this.handleChange(i)}
+                    style={{ width: this.props.isFlex ? "33.3%" : undefined }}
+                    className={classnames({
+                      active: selectedIndices[i],
+                      "border-right border-dark": this.props.isFlex,
+                    })}
+                  >
+                    {this.props.t("options." + d.label)}
+                  </Dropdown.Item>
+                )
+              })}
+              {allLink && multiple && (
                 <Dropdown.Item
-                  key={i}
-                  onClick={() => this.handleChange(i)}
-                  className={{ active: selectedIndices[i] }}
+                  style={{ width: this.props.isFlex ? "33.3%" : undefined }}
+                  onClick={() => this.handleSelectAll()}
+                  className={{ active: allSelected }}
                 >
-                  {this.props.t('options.'+d.label)}
+                  {allLink}
                 </Dropdown.Item>
-              )
-            })}
-            {allLink && multiple && (
-              <Dropdown.Item
-                onClick={() => this.handleSelectAll()}
-                className={{ active: allSelected }}
-              >
-                {allLink}
-              </Dropdown.Item>
-            )}
-          </Dropdown.Menu>
+              )}
+            </Dropdown.Menu>
+          )}
         </Dropdown>
       </div>
     )
@@ -183,7 +205,7 @@ AltOptions.defaultProps = {
   },
   options: [],
   multiple: false,
-  title: "Options",
+  title: null,
   value: null,
   onChange: (value) => {},
   allowEmpty: true,

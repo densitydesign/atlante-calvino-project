@@ -99,7 +99,7 @@ let width,
   performed_selection_data = null
 
 V.initialize = (el, data_for_update, _onSelectedElement, t) => {
-  console.log("initialize dubbio fase 2")
+  // console.log("initialize dubbio fase 2")
 
   onSelectedElement = _onSelectedElement
 
@@ -241,7 +241,7 @@ const sortData = (data, property, stackMode) => {
 }
 
 V.update = (data, stackMode, baseLayer, t) => {
-  console.log("update dubbio fase 2")
+  // console.log("update dubbio fase 2")
 
   let keys = JSON.parse(JSON.stringify(stackModeProperties[stackMode]))
   if (baseLayer && baseLayer !== "id" && baseLayer !== "definitivo") {
@@ -944,7 +944,7 @@ V.update = (data, stackMode, baseLayer, t) => {
 }
 
 V.filter = (survive_filters) => {
-  console.log("filter visualization - survivers:", survive_filters);
+  // console.log("filter visualization - survivers:", survive_filters);
   svg.classed("there-is-filter", true)
   serie
     .selectAll("rect")

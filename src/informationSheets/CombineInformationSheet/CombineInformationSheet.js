@@ -1,18 +1,24 @@
-import React, { Component } from "react";
-import SheetStyles from "../SheetStyles.module.css";
+import React, { Component } from "react"
+import SheetStyles from "../SheetStyles.module.css"
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede2 from "../FooterSchede2";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede2 from "../FooterSchede2"
 
-import legenda from "./legend_01.svg";
-import marimekko from "./marimekko.svg";
-import zoom_02 from "./zoom_02.svg";
-import zoom_03 from "./zoom_03.svg";
-import zoom_04 from "./zoom_04.svg";
-import legenda_02 from "./legenda_02.svg";
-import legenda_03 from "./legenda_03.svg";
-import legenda_04 from "./legenda_04.svg";
-import { Trans, withTranslation } from "react-i18next";
+import marimekko from "./marimekko.svg"
+import zoom_02 from "./zoom_02.svg"
+import zoom_03 from "./zoom_03.svg"
+import zoom_04 from "./zoom_04.svg"
+import legenda_02 from "./legenda_02.svg"
+import legenda_03 from "./legenda_03.svg"
+import legenda_04 from "./legenda_04.svg"
+import marimekkoEn from "./combinare_marimekko_en.svg"
+import zoom_02En from "./combinare_zoom_02_en.svg"
+import zoom_03En from "./combinare_zoom_03_en.svg"
+import zoom_04En from "./combinare_zoom_04_en.svg"
+import legenda_02En from "./combinare_legenda_02_en.svg"
+import legenda_03En from "./combinare_legenda_03_en.svg"
+import legenda_04En from "./combinare_legenda_04_en.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class CombineInformationSheet extends Component {
   render() {
@@ -81,8 +87,6 @@ class CombineInformationSheet extends Component {
                 ripetuto (la citazione di un fatto scientifico in apertura, la
                 voce istrionica del narratore Qfwfq) e la variazione di spunti e
                 situazioni.
-                <br />
-                <br />
                 Questo schema critico bipartito, benché effettivamente
                 giustificato dalla storia artistica di Calvino e dall’evoluzione
                 dei suoi interessi letterari, rischia di nascondere tuttavia un
@@ -147,7 +151,7 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
               }}
-              src={marimekko}
+              src={this.props.i18n.language === "it" ? marimekko : marimekkoEn}
               alt=""
             />
             <img
@@ -158,7 +162,9 @@ class CombineInformationSheet extends Component {
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
               }}
-              src={legenda_02}
+              src={
+                this.props.i18n.language === "it" ? legenda_02 : legenda_02En
+              }
               alt=""
             />
             <Trans
@@ -225,7 +231,7 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1.5rem",
                 backgroundColor: "var(--white)",
               }}
-              src={zoom_02}
+              src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
               alt=""
             />
             <img
@@ -237,7 +243,9 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1.5rem",
                 backgroundColor: "var(--white)",
               }}
-              src={legenda_02}
+              src={
+                this.props.i18n.language === "it" ? legenda_02 : legenda_02En
+              }
               alt=""
             />
             <Trans
@@ -289,7 +297,7 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
               }}
-              src={zoom_03}
+              src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
               alt=""
             />
             <img
@@ -301,7 +309,9 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
               }}
-              src={legenda_03}
+              src={
+                this.props.i18n.language === "it" ? legenda_03 : legenda_03En
+              }
               alt=""
             />
             <Trans
@@ -318,15 +328,14 @@ class CombineInformationSheet extends Component {
                 fuoco non più solo l’effetto complessivo o la quantità
                 molecolare delle parti, ma la struttura e le catene connettive
                 in cui queste parti si raggruppano.<br></br>
-                Ed ecco apparire il trucco,
-                quello che dimostra davvero l’estensione della padronanza che
-                Calvino ha sulle tecniche di composizione e di combinazione: il
-                potere di rivelare o nascondere la varietà di un testo non
-                modificando il numero delle parti coinvolte, ma calibrandone
-                l’effetto attraverso un attento processo di assemblaggio
-                strategico. Se riportiamo le categorie ai tre grandi piani
-                generali di appartenenza in cui può essere sezionato un testo
-                narrativo – il piano{" "}
+                Ed ecco apparire il trucco, quello che dimostra davvero
+                l’estensione della padronanza che Calvino ha sulle tecniche di
+                composizione e di combinazione: il potere di rivelare o
+                nascondere la varietà di un testo non modificando il numero
+                delle parti coinvolte, ma calibrandone l’effetto attraverso un
+                attento processo di assemblaggio strategico. Se riportiamo le
+                categorie ai tre grandi piani generali di appartenenza in cui
+                può essere sezionato un testo narrativo – il piano{" "}
                 <span style={{ color: "#FFA500" }}>formale</span> che contiene
                 gli elementi metatestuali che si trovano oltre il confine
                 diegetico, quello{" "}
@@ -442,13 +451,14 @@ class CombineInformationSheet extends Component {
                 incontro-iniziativa-
                 <em>visione</em>, con la ricercata rottura dello schema che
                 acutizza il senso di disperazione dell’eroe ormai vicino al
-                punto di rottura.<br></br><br></br> 
-                Non si tratta ovviamente solo di un piccolo
-                gioco nascosto dall’autore dietro le quinte della storia:
-                l’effetto di ripetizione è integrale alla rappresentazione del
-                pessimismo incombente del racconto, che moltiplica gli sforzi
-                degli individui perseguitati dalle formiche per sottolineare
-                ancora più nettamente la loro inutilità. Ma è anche funzionale a
+                punto di rottura.<br></br>
+                <br></br>
+                Non si tratta ovviamente solo di un piccolo gioco nascosto
+                dall’autore dietro le quinte della storia: l’effetto di
+                ripetizione è integrale alla rappresentazione del pessimismo
+                incombente del racconto, che moltiplica gli sforzi degli
+                individui perseguitati dalle formiche per sottolineare ancora
+                più nettamente la loro inutilità. Ma è anche funzionale a
                 rivelare la lucidità disillusa del protagonista. Se infatti un
                 singolo incontro, con una singola raccomandazione strategica,
                 potrebbe costituire un punto di speranza, tenacia, e di sfida
@@ -473,7 +483,7 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
               }}
-              src={zoom_04}
+              src={this.props.i18n.language === "it" ? zoom_04 : zoom_04En}
               alt=""
             />
             <img
@@ -486,7 +496,9 @@ class CombineInformationSheet extends Component {
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
               }}
-              src={legenda_04}
+              src={
+                this.props.i18n.language === "it" ? legenda_04 : legenda_04En
+              }
               alt=""
             />
           </div>
@@ -497,37 +509,37 @@ class CombineInformationSheet extends Component {
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
-                  Barthes 2002: Roland Barthes, <em>Saggi critici</em>, ed. it.
-                  a cura di G. Marrone, Torino, Einaudi.
+                  Barthes 2002: R. Barthes, <em>Saggi critici</em>, ed. it. a
+                  cura di G. Marrone, Torino, Einaudi.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1963: Italo Calvino, <em>La speculazione edilizia</em>
-                  , Torino, Einaudi, risvolto di copertina anonimo ma
-                  attribuibile all’autore.
+                  Calvino 1963: I. Calvino, <em>La speculazione edilizia</em>,
+                  Torino, Einaudi, risvolto di copertina anonimo ma attribuibile
+                  all’autore.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1964: Italo Calvino, <em>Lettera a Mario Boselli</em>,
-                  in «Nuova corrente», 32-33, pp. 102-110.
+                  Calvino 1964: I. Calvino, <em>Lettera a Mario Boselli</em>, in
+                  «Nuova corrente», 32-33, pp. 102-110.
                 </li>
                 <li className="referenceItem">
-                  Calvino 1973: Italo Calvino, <em>Nota [1973]</em>, in Id.,{" "}
+                  Calvino 1973: I. Calvino, <em>Nota [1973]</em>, in Id.,{" "}
                   <em>Il castello dei destini incrociati</em>, <em>RR</em>, II.
                 </li>
                 <li className="referenceItem">
-                  Donnarumma 2008: Raffaele Donnarumma,{" "}
+                  Donnarumma 2008: R. Donnarumma,{" "}
                   <em>Da lontano. Calvino, la semiologia, lo strutturalismo</em>
                   , Palermo, Palumbo.
                 </li>
                 <li className="referenceItem">
-                  Falcetto 1991: Bruno Falcetto, <em>«La formica argentina»</em>
-                  , in <em>Note e notizie sui testi</em>, a cura di M. Barenghi,
+                  Falcetto 1991: B. Falcetto, <em>«La formica argentina»</em>,
+                  in <em>Note e notizie sui testi</em>, a cura di M. Barenghi,
                   B. Falcetto, C. Milanini, <em>RR</em>, I, pp. 1312-1315.
                 </li>
                 <li className="referenceItem">
-                  Serra 2006: Francesca Serra, <em>Calvino</em>, Roma, Salerno.
+                  Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
                 </li>
                 <li className="referenceItem">
-                  Szondi 2000: Peter Szondi,{" "}
+                  Szondi 2000: P. Szondi,{" "}
                   <em>Teoria del dramma moderno (1880-1950)</em>, trad. it. di
                   G.L., Torino, Einaudi.
                 </li>
@@ -542,10 +554,10 @@ class CombineInformationSheet extends Component {
           ;
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "combining-sheet"])(
   CombineInformationSheet
-);
+)

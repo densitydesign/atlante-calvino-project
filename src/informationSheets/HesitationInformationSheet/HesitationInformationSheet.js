@@ -1,17 +1,23 @@
-import React, { Component } from "react";
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede2 from "../FooterSchede2";
-import "./HesitationInformationSheet.css";
-import SheetStyles from "../SheetStyles.module.css";
-import giornata from "./dubitare-01.svg";
-import legenda from "./legenda.svg";
-import zoom_01 from "./zoom-01.svg";
-import info_01 from "./info-01.svg";
-import legenda_01 from "./legenda-01.svg";
-import zoom_02 from "./zoom-02.svg";
-import zoom_03 from "./zoom-03.svg";
-import legenda_03 from "./legenda-03.svg";
-import { withTranslation, Trans } from "react-i18next";
+import React, { Component } from "react"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede2 from "../FooterSchede2"
+import "./HesitationInformationSheet.css"
+import SheetStyles from "../SheetStyles.module.css"
+import giornata from "./dubitare-01.svg"
+import giornataEn from "./dubitare-01_en.svg"
+import legenda from "./legenda.svg"
+import legendaEn from "./dubitare_legenda_en.svg"
+import zoom_01 from "./zoom-01.svg"
+import info_01 from "./info-01.svg"
+import zoom_01En from "./dubitare_zoom-01_en.svg"
+import info_01En from "./dubitare_info-01_en.svg"
+import zoom_02 from "./zoom-02.svg"
+import zoom_02En from "./dubitare_zoom-02_en.svg"
+import zoom_03 from "./zoom-03.svg"
+import zoom_03En from "./dubitare_zoom-03_en.svg"
+import legenda_03 from "./legenda-03.svg"
+import legenda_03En from "./dubitare_legenda-03_en.svg"
+import { withTranslation, Trans } from "react-i18next"
 
 class HesitationInformationSheet extends Component {
   render() {
@@ -37,13 +43,13 @@ class HesitationInformationSheet extends Component {
             <img
               className={SheetStyles.legend}
               style={{ gridColumn: " 1 / span 22", float: "left" }}
-              src={legenda}
+              src={this.props.i18n.language === "it" ? legenda : legendaEn}
               alt="Legenda"
             />
             <img
               className={SheetStyles.image100w}
               style={{ gridColumn: "1 / span 12" }}
-              src={giornata}
+              src={this.props.i18n.language === "it" ? giornata : giornataEn}
               alt=""
             />
             <Trans
@@ -71,23 +77,26 @@ class HesitationInformationSheet extends Component {
                 dentro un secondo testo. Lo scopo di questo approfondimento è
                 mostrare la distribuzione di tali segni grafici e soprattutto in
                 che modo collaborano con il processo dubitativo, amplificando il
-                suo effetto. <em>La giornata d’uno scrutatore</em> racconta
-                l’esperienza di Amerigo Ormea, militante e intellettuale, nel
-                ruolo di scrutatore durante le elezioni dell’8 giugno 1953,
-                presso un istituto per persone con disabilità mentali e fisiche
-                trasformato in seggio elettorale. Il libro è diviso in 15
-                capitoli e presenta un totale di 214 occorrenze di testo
-                dubitativo, distribuite in maniera diseguale all’interno del
-                volume. Il secondo capitolo possiede una delle concentrazioni
-                maggiori: 23 occorrenze. Abbiamo deciso di concentrarci sulla
-                fine e l’inizio del capitolo, analizzando le due zone del testo
-                separatamente.{" "}
+                suo effetto.
+                <br />
+                <em>La giornata d’uno scrutatore</em> racconta l’esperienza di
+                Amerigo Ormea, militante e intellettuale, nel ruolo di
+                scrutatore durante le elezioni dell’8 giugno 1953, presso un
+                istituto per persone con disabilità mentali e fisiche
+                trasformato in seggio elettorale.
+                <br />
+                Il libro è diviso in 15 capitoli e presenta un totale di 214
+                occorrenze di testo dubitativo, distribuite in maniera diseguale
+                all’interno del volume. Il secondo capitolo possiede una delle
+                concentrazioni maggiori: 23 occorrenze. Abbiamo deciso di
+                concentrarci sulla fine e l’inizio del capitolo, analizzando le
+                due zone del testo separatamente.{" "}
               </p>
             </Trans>
             <img
               className={SheetStyles.image}
               style={{ gridColumn: "1 / span 22" }}
-              src={zoom_01}
+              src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
               alt=""
             />
             <Trans
@@ -109,7 +118,7 @@ class HesitationInformationSheet extends Component {
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>
               {this.props.t(
-                "doubting-sheet:Parole: scegliere, interpretare, precisare"
+                "doubting-sheet:Parole_scegliere_interpretare_precisare"
               )}{" "}
             </h2>
             <Trans
@@ -127,7 +136,7 @@ class HesitationInformationSheet extends Component {
                 specifici. Ognuno, infatti, è «portato ad attribuire valori
                 diversi o magari contrastanti» a questi ultimi, «secondo le
                 proprie cognizioni ed esperienze», e per questo motivo
-                «resterebbe da precisare ancora» (<em>RR</em>, II, 7).
+                «resterebbe da precisare ancora» (ivi, 7).
               </p>
               <p className={SheetStyles.paragraph}>
                 La riflessione che inaugura il capitolo è immediatamente
@@ -140,13 +149,12 @@ class HesitationInformationSheet extends Component {
                 affermato in precedenza: viene infatti svelata l’identità del
                 «partito di sinistra» a cui appartiene il protagonista (ovvero
                 «partito comunista») e l’«istituto religioso» anonimo diventa
-                «il Cottolengo di Torino» (<em>RR</em>, II, 7). La figura
-                retorica utilizzata è la preterizione, che spesso collabora con
-                il processo dubitativo: informare negando, infatti, corrisponde
-                al funzionamento più frequente del testo dubitativo, che
-                alimenta la narrazione tramite un’operazione volta alla
-                sottrazione, ossia mettendo in discussione quanto detto in
-                precedenza.
+                «il Cottolengo di Torino» (ibidem). La figura retorica
+                utilizzata è la preterizione, che spesso collabora con il
+                processo dubitativo: informare negando, infatti, corrisponde al
+                funzionamento più frequente del testo dubitativo, che alimenta
+                la narrazione tramite un’operazione volta alla sottrazione,
+                ossia mettendo in discussione quanto detto in precedenza.
                 <br />
                 In secondo luogo il processo dubitativo investe il problema
                 dell’interpretazione. Il testo (<strong>td9</strong>) afferma
@@ -184,7 +192,7 @@ class HesitationInformationSheet extends Component {
             </Trans>
             <img
               className={SheetStyles.sideContent}
-              src={info_01}
+              src={this.props.i18n.language === "it" ? info_01 : info_01En}
               style={{
                 position: "sticky",
                 top: "calc(var(--navigation-height) + 3px)",
@@ -205,7 +213,7 @@ class HesitationInformationSheet extends Component {
                 top: "calc(var(--navigation-height) + 0.3rem)",
                 backgroundColor: "var(--white)",
               }}
-              src={zoom_02}
+              src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
               alt=""
             />
             <Trans
@@ -222,15 +230,12 @@ class HesitationInformationSheet extends Component {
                 stabilirne l’origine e le motivazioni profonde, producendo un
                 testo denso e ricco di informazioni, il filo del discorso si
                 interrompe bruscamente poiché il narratore afferma di «aver
-                capito finalmente quel che non ci voleva poi tanto a capire» (
-                <em>RR</em>
-                , II, 10).
-                <br />
-                Questo paragrafo è un ottimo esempio di come il processo
-                dubitativo consista nel “tornare sui propri passi”. Il testo
-                oggetto di dubbio associato a <strong>td28</strong> coincide con
-                l’inizio del paragrafo e racchiude in sé dodici occorrenze del
-                testo dubitativo (dal <strong>td16</strong> al
+                capito finalmente quel che non ci voleva poi tanto a capire»
+                (ivi, 10). Questo paragrafo è un ottimo esempio di come il
+                processo dubitativo consista nel “tornare sui propri passi”. Il
+                testo oggetto di dubbio associato a <strong>td28</strong>{" "}
+                coincide con l’inizio del paragrafo e racchiude in sé dodici
+                occorrenze del testo dubitativo (dal <strong>td16</strong> al
                 <strong> td27</strong>, più della metà del numero totale di
                 occorrenze del capitolo). L’improvviso incremento di occorrenze
                 non è unicamente numerico; in parallelo assistiamo a un
@@ -266,10 +271,16 @@ class HesitationInformationSheet extends Component {
             <img
               className={SheetStyles.legend}
               style={{ gridColumn: " 1 / span 6", float: "left" }}
-              src={legenda_03}
+              src={
+                this.props.i18n.language === "it" ? legenda_03 : legenda_03En
+              }
               alt=""
             />
-            <img className={SheetStyles.image100w} src={zoom_03} alt="" />
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-gli-strati-del-testo-2"
               ns="doubting-sheet"
@@ -280,20 +291,18 @@ class HesitationInformationSheet extends Component {
                 <em>Giornata d’uno scrutatore</em>, il testo si sviluppa su
                 piani diversi, i quali a volte collaborano, a volte confliggono.
                 La struttura a strati sovrapposti, come le «foglie d’un
-                carciofo» (<em>RR</em>, II, 9), da una parte si sforza di
-                garantire maggiore chiarezza alla lettrice/lettore, dall’altra
-                li disorienta. Si tratta di un meccanismo narrativo basato sul
-                difficile rapporto fra la ricerca dell’esattezza della scrittura
-                e l’insuccesso dell’atto interpretativo, per cui l’unico modo
-                per parlare della «complessità delle cose» (ibidem) sembra
-                essere quello di organizzarla in strati.
-                <br />
-                La parentesi e l’inciso generano questa stratificazione,
-                attraverso una forma grafica che introduce un altro spazio, un
-                altrove rispetto al discorso principale. Tale sdoppiamento del
-                testo viene ulteriormente potenziato dal processo dubitativo,
-                che rinforza l’effetto di stratificazione in una modalità meno
-                visibile.
+                carciofo» (ivi, 9), da una parte si sforza di garantire maggiore
+                chiarezza alla lettrice/lettore, dall’altra li disorienta. Si
+                tratta di un meccanismo narrativo basato sul difficile rapporto
+                fra la ricerca dell’esattezza della scrittura e l’insuccesso
+                dell’atto interpretativo, per cui l’unico modo per parlare della
+                «complessità delle cose» (ibidem) sembra essere quello di
+                organizzarla in strati. La parentesi e l’inciso generano questa
+                stratificazione, attraverso una forma grafica che introduce un
+                altro spazio, un altrove rispetto al discorso principale. Tale
+                sdoppiamento del testo viene ulteriormente potenziato dal
+                processo dubitativo, che rinforza l’effetto di stratificazione
+                in una modalità meno visibile.
               </p>
             </Trans>
           </div>
@@ -322,10 +331,10 @@ class HesitationInformationSheet extends Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "doubting-sheet"])(
   HesitationInformationSheet
-);
+)

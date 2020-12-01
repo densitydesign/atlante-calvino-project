@@ -1,23 +1,39 @@
+import React from "react"
+import { useHistory } from "react-router-dom"
 
-import React from 'react';
+import "./RadioButton.css"
 
-import './RadioButton.css';
+export default function RadioButton({
+  buttonUpClass,
+  buttonDownClass,
+  callStateContainerRadioButtonPressed,
+  id,
+  caption,
+  pressed,
+  buttonColor,
+  linkRefresh,
+}) {
+  const buttonUpClassname = buttonUpClass || "radio-button-up"
+  const buttonDownClassname = buttonDownClass || "radio-button-down"
+  let history = useHistory()
 
-export default class RadioButton extends React.Component
-{
-  render()
-  {
-    const buttonUpClass   = this.props.buttonUpClass   || "radio-button-up";
-    const buttonDownClass = this.props.buttonDownClass || "radio-button-down";    
-
-    return (
-      <div
-        id={this.props.id}
-        style={ (this.props.pressed ? {backgroundColor:this.props.buttonColor} : {borderColor:this.props.buttonColor}) } 
-        className={this.props.pressed ? buttonDownClass : buttonUpClass}
-        onClick={() => this.props.callStateContainerRadioButtonPressed(this.props.id)} >
-        {this.props.caption}
-      </div>
-    );
-  }
+  return (
+    <div
+      id={id}
+      style={
+        pressed
+          ? { backgroundColor: buttonColor }
+          : { borderColor: buttonColor }
+      }
+      className={pressed ? buttonDownClassname : buttonUpClassname}
+      onClick={() => {
+        callStateContainerRadioButtonPressed(id)
+        setTimeout(() => {
+          linkRefresh && history.push(linkRefresh)
+        },3000)
+      }}
+    >
+      {caption}
+    </div>
+  )
 }

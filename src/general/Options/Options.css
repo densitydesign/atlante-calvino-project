@@ -48,6 +48,7 @@
 .dropdown-chessboard{
   width: 25%;
   height: 59px;
+  border-right: 1px solid #000 !important;
 }
 
 .dropdown-toggle::after {

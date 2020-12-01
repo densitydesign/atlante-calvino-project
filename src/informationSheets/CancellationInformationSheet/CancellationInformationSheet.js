@@ -1,24 +1,29 @@
-import React, { Component } from "react";
-import SheetStyles from "../SheetStyles.module.css";
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import FooterSchede3 from "../FooterSchede3";
+import React, { Component } from "react"
+import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import FooterSchede3 from "../FooterSchede3"
 
-import context_webm_1x from "./animation-text-context@1x.webm";
-import context_mp4_1x from "./animation-text-context@1x.mp4";
-import context_webm_2x from "./animation-text-context@2x.webm";
-import context_mp4_2x from "./animation-text-context@2x.mp4";
+import context_webm_1x from "./animation-text-context@1x.webm"
+import context_mp4_1x from "./animation-text-context@1x.mp4"
+import context_webm_2x from "./animation-text-context@2x.webm"
+import context_mp4_2x from "./animation-text-context@2x.mp4"
 
-import distribution from "./distribution.svg";
-import miniviz from "./miniviz.svg";
-import legend from "./legend.svg";
+import distribution from "./distribution.svg"
+import miniviz from "./miniviz.svg"
+import legend from "./legend.svg"
+import legendEn from "./cancellazione_legend_scheda3_en.svg"
 
-import section01 from "./section01.svg";
-import section02 from "./section02.svg";
-import section03 from "./section03.svg";
-import section04 from "./section04.svg";
+import section01 from "./section01.svg"
+import section02 from "./section02.svg"
+import section03 from "./section03.svg"
+import section04 from "./section04.svg"
+import section01En from "./cancellazione_02 - section01_en.svg"
+import section02En from "./cancellazione_03 - section02_en.svg"
+import section03En from "./cancellazione_04 - section03_en.svg"
+import section04En from "./cancellazione_05 - section04_en.svg"
 
-import visualizationPDF from "./muro-di-testo-avventura-di-un-soldato.pdf";
-import { Trans, withTranslation } from "react-i18next";
+import visualizationPDF from "./muro-di-testo-avventura-di-un-soldato.pdf"
+import { Trans, withTranslation } from "react-i18next"
 
 class CancellationInformationSheet extends Component {
   render() {
@@ -93,10 +98,11 @@ class CancellationInformationSheet extends Component {
                 <br />
                 <br />
                 L’alta concentrazione di testo dubitativo e la sua particolare
-                posizione nella visualizzazione rendono <em>L’avventura di un
-                soldato</em> un interessante caso studio su cui soffermarsi per
-                capire meglio come funzioni la griglia d’analisi che ci ha
-                guidato nella creazione della visualizzazione.
+                posizione nella visualizzazione rendono{" "}
+                <em>L’avventura di un soldato</em> un interessante caso studio
+                su cui soffermarsi per capire meglio come funzioni la griglia
+                d’analisi che ci ha guidato nella creazione della
+                visualizzazione.
               </p>
             </Trans>
             <div className={SheetStyles.sideContent}>
@@ -172,14 +178,13 @@ class CancellationInformationSheet extends Component {
             </Trans>
             <div
               className={SheetStyles.sideContent}
-              style={{ textAlign: "center", position: "sticky", top: "var(--navigation-height)"}}
+              style={{
+                textAlign: "center",
+                position: "sticky",
+                top: "var(--navigation-height)",
+              }}
             >
-              <img
-              
-                src={miniviz}
-                style={{float:'left' }}
-                alt=""
-              />
+              <img src={miniviz} style={{ float: "left" }} alt="" />
             </div>
           </div>
           <div className={SheetStyles.gridRow}>
@@ -187,7 +192,7 @@ class CancellationInformationSheet extends Component {
               className={
                 SheetStyles.image + " " + SheetStyles.translucentBackground
               }
-              src={legend}
+              src={this.props.i18n.language === 'it' ? legend : legendEn}
               style={{
                 borderBottom: "1px solid #5151fc",
                 gridColumn: "1 / span 12",
@@ -201,7 +206,7 @@ class CancellationInformationSheet extends Component {
 
             <img
               className={SheetStyles.image}
-              src={section01}
+              src={this.props.i18n.language === 'it' ? section01 : section01En}
               style={{ gridColumn: "1 / span 12", width: "100%" }}
               alt=""
             />
@@ -226,15 +231,15 @@ class CancellationInformationSheet extends Component {
                 Nella prima sezione le occorrenze di testo dubitativo sono
                 rarefatte: a colpo d’occhio emerge la categoria del{" "}
                 <span style={{ color: "#FFA500" }}>contenuto</span>, unito allo
-                stile della <em>negazione</em>. I paragrafi iniziali sono occupati dalla
-                descrizione della donna e dalle prime impressioni di Tomagra,
-                rivedute e corrette di volta in volta. La donna si è seduta
-                accanto lui nonostante i posti liberi non manchino; allora il
-                soldato comincia a ragionare, a riflettere sulle motivazioni che
-                potrebbero aver spinto la vedova a scegliere proprio quel posto:
-                «certo per via di qualche comodità del viaggiare, s’affrettò a
-                pensare il fante, correnti d’aria o direzioni della corsa» (
-                <em>RR</em>, I, 319) (
+                stile della <em>negazione</em>. I paragrafi iniziali sono
+                occupati dalla descrizione della donna e dalle prime impressioni
+                di Tomagra, rivedute e corrette di volta in volta. La donna si è
+                seduta accanto lui nonostante i posti liberi non manchino;
+                allora il soldato comincia a ragionare, a riflettere sulle
+                motivazioni che potrebbero aver spinto la vedova a scegliere
+                proprio quel posto: «certo per via di qualche comodità del
+                viaggiare, s’affrettò a pensare il fante, correnti d’aria o
+                direzioni della corsa» (<em>RR</em>, I, 319) (
                 <span style={{ color: "#FFA500" }}>2, 3</span>). Ma ben presto
                 si profila un’altra ipotesi: la signora potrebbe voler stabilire
                 un contatto con lui.
@@ -259,11 +264,11 @@ class CancellationInformationSheet extends Component {
                 infatti, notiamo la presenza di occorrenze appartenenti al{" "}
                 <span style={{ color: "#ff3366" }}>significato</span>: nel 8§
                 Tomagra decide di prendere l’iniziativa e «di trasmetterle, in
-                qualche modo, un <em>messaggio</em>» (ibidem, corsivo nostro) che vada oltre le
-                semplici apparenze; il corpo compierà un’azione che avrà un
-                significato “altro”, parallelo: il «muscolo del polpaccio» del
-                fante, diventato «un duro quadrato pugno», «corse e bussò al
-                polpaccio della vedova» (ibidem) (
+                qualche modo, un <em>messaggio</em>» (ibidem, corsivo nostro)
+                che vada oltre le semplici apparenze; il corpo compierà
+                un’azione che avrà un significato “altro”, parallelo: il
+                «muscolo del polpaccio» del fante, diventato «un duro quadrato
+                pugno», «corse e bussò al polpaccio della vedova» (ibidem) (
                 <span style={{ color: "#ff3366" }}>10, 11</span>), come una mano
                 che bussi a una porta sperando si apra. Trasmettere il messaggio
                 provoca però un moto di panico nel soldato, il quale non si
@@ -286,7 +291,7 @@ class CancellationInformationSheet extends Component {
             </Trans>
             <img
               className={SheetStyles.image}
-              src={section02}
+              src={this.props.i18n.language === 'it' ? section02 : section02En}
               style={{
                 gridColumn: "1 / span 12",
                 marginBottom: "1rem",
@@ -378,13 +383,17 @@ class CancellationInformationSheet extends Component {
                 che la categoria del{" "}
                 <span style={{ color: "#ff3366" }}>significato</span> nelle
                 pagine centrali del testo viene impiegata diversamente,
-                adottando lo stile dell’<i>esitazione</i> (<span style={{ color: "#ff3366" }}>25</span>, <span style={{ color: "#ff3366" }}>26</span>, <span style={{ color: "#ff3366" }}>28</span>, <span style={{ color: "#ff3366" }}>29</span>, <span style={{ color: "#ff3366" }}>37</span>);
-                la prima fra queste occorrenze si interroga se i gesti della
-                vedova siano «segni per fargli capire di desistere» oppure «un
-                estremo rinvio ch’ella gli concedeva» o ancora «un avvertimento»
-                (ivi, 324): le versioni possibili si moltiplicano così come si
-                moltiplicano gli interrogativi senza soluzione. Così le
-                occorrenze di{" "}
+                adottando lo stile dell’<i>esitazione</i> (
+                <span style={{ color: "#ff3366" }}>25</span>,{" "}
+                <span style={{ color: "#ff3366" }}>26</span>,{" "}
+                <span style={{ color: "#ff3366" }}>28</span>,{" "}
+                <span style={{ color: "#ff3366" }}>29</span>,{" "}
+                <span style={{ color: "#ff3366" }}>37</span>); la prima fra
+                queste occorrenze si interroga se i gesti della vedova siano
+                «segni per fargli capire di desistere» oppure «un estremo rinvio
+                ch’ella gli concedeva» o ancora «un avvertimento» (ivi, 324): le
+                versioni possibili si moltiplicano così come si moltiplicano gli
+                interrogativi senza soluzione. Così le occorrenze di{" "}
                 <span style={{ color: "#ff3366" }}>significato</span> non
                 riescono più a riformulare il senso di un gesto trasformandolo
                 in un messaggio chiaro, bensì si limitano ad accumulare ipotesi.
@@ -394,14 +403,12 @@ class CancellationInformationSheet extends Component {
                 femminile e, contemporaneamente, il principio di metamorfosi che
                 altera la realtà.
                 <br />
-                La conclusione del 24§ riprende la frase
-                iniziale della sezione: Tomagra è arretrato per l’ennesima
-                volta, eppure esita, «come volesse <i>
-                  ricominciare da capo
-                </i>{" "}
-                il suo pazientissimo lavoro e non fosse sicuro ormai delle
-                profonde mete già raggiunte. Ma le aveva davvero raggiunte?
-                Oppure era stato solo un sogno?» (ivi, 326, corsivo nostro) (
+                La conclusione del 24§ riprende la frase iniziale della sezione:
+                Tomagra è arretrato per l’ennesima volta, eppure esita, «come
+                volesse <i>ricominciare da capo</i> il suo pazientissimo lavoro
+                e non fosse sicuro ormai delle profonde mete già raggiunte. Ma
+                le aveva davvero raggiunte? Oppure era stato solo un sogno?»
+                (ivi, 326, corsivo nostro) (
                 <span style={{ color: "#ff3366" }}>43</span>,{" "}
                 <span style={{ color: "#FFA500" }}>44</span>,{" "}
                 <span style={{ color: "#FFA500" }}>45</span>). L’intera manovra
@@ -417,7 +424,7 @@ class CancellationInformationSheet extends Component {
             </Trans>
             <img
               className={SheetStyles.image}
-              src={section03}
+              src={this.props.i18n.language === 'it' ? section03 : section03En}
               style={{
                 gridColumn: "1 / span 12",
                 marginBottom: "1rem",
@@ -455,10 +462,10 @@ class CancellationInformationSheet extends Component {
                 aveva passato il <em>segno</em>» (
                 <span style={{ color: "#FFA500" }}>48</span>) oppure «era un{" "}
                 <em>segno</em> che tutto ciò era vero, che lei accettava» (
-                <span style={{ color: "#ff3366" }}>50</span>) (ivi, 327, corsivo nostro).
-                Dove la parola “segno” prima è usata in maniera figurata,
-                indicando l’esistenza di un limite, di un confine da non
-                superare, poi si trasforma nel sintomo, nella prova-simbolo
+                <span style={{ color: "#ff3366" }}>50</span>) (ivi, 327, corsivo
+                nostro). Dove la parola “segno” prima è usata in maniera
+                figurata, indicando l’esistenza di un limite, di un confine da
+                non superare, poi si trasforma nel sintomo, nella prova-simbolo
                 della partecipazione da parte della vedova a quello scambio con
                 il soldato. Rivelando che il linguaggio è il primo veicolo
                 dell’ambiguità che avvolge il mondo reale.
@@ -479,20 +486,20 @@ class CancellationInformationSheet extends Component {
                 la galleria era lunga […] certo se subito avesse approfittato
                 avrebbe avuto molto tempo innanzi a sé» (
                 <span style={{ color: "#FFA500" }}>51-53</span>) (ibidem). Il
-                paragrafo rappresenta l’attesa, parola latina composta da <em>ad-</em>{" "}
-                per “verso” e <i>téndere</i> nel senso traslato di “mirare,
-                aspirare” ma che significa anche “tirare”: il testo si dilata,
-                si gonfia tramite il processo dubitativo, si “tende” aumentando
-                il proprio spazio sulla pagina. Al centro del racconto si
-                trovano così i gesti assenti, le deduzioni incerte, un impulso
-                sistematico ad annullare ogni forma di progressione: un
-                articolato stratagemma per prolungare l’attesa, allontanando
+                paragrafo rappresenta l’attesa, parola latina composta da{" "}
+                <em>ad-</em> per “verso” e <i>téndere</i> nel senso traslato di
+                “mirare, aspirare” ma che significa anche “tirare”: il testo si
+                dilata, si gonfia tramite il processo dubitativo, si “tende”
+                aumentando il proprio spazio sulla pagina. Al centro del
+                racconto si trovano così i gesti assenti, le deduzioni incerte,
+                un impulso sistematico ad annullare ogni forma di progressione:
+                un articolato stratagemma per prolungare l’attesa, allontanando
                 contemporaneamente la fine.
               </p>
             </Trans>
             <img
               className={SheetStyles.image}
-              src={section04}
+              src={this.props.i18n.language === 'it' ? section04 : section04En}
               style={{
                 gridColumn: "1 / span 12",
                 marginBottom: "1rem",
@@ -578,10 +585,10 @@ class CancellationInformationSheet extends Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "cancellazione-sheet"])(
   CancellationInformationSheet
-);
+)

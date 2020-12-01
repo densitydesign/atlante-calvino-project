@@ -1,19 +1,22 @@
-import React from "react";
+import React from "react"
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
-import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper";
-import FooterSchede1 from "../FooterSchede1";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
+import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper"
+import FooterSchede1 from "../FooterSchede1"
+import "./ShapeInformationSheet.css"
+import SheetStyles from "../SheetStyles.module.css"
 
-import "../../App.css";
-import "./ShapeInformationSheet.css";
-import SheetStyles from "../SheetStyles.module.css";
-
-import legenda from "./legenda.svg";
-import zoom_01 from "./zoom-01.svg";
-import zoom_02 from "./zoom-02.svg";
-import zoom_03 from "./zoom-03.svg";
-import zoom_04 from "./zoom-04.svg";
-import { Trans, withTranslation } from "react-i18next";
+import legenda from "./legenda.svg"
+import zoom_01 from "./zoom-01.svg"
+import zoom_02 from "./zoom-02.svg"
+import zoom_03 from "./zoom-03.svg"
+import zoom_04 from "./zoom-04.svg"
+import legendaEn from "./elenchi_legend_en.svg"
+import zoom_01En from "./elenchi_zoom-01_en.svg"
+import zoom_02En from "./elenchi_zoom-02_en.svg"
+import zoom_03En from "./elenchi_zoom-03_en.svg"
+import zoom_04En from "./elenchi_zoom-04_en.svg"
+import { Trans, withTranslation } from "react-i18next"
 
 class ShapeInformationSheet extends React.Component {
   render() {
@@ -33,7 +36,7 @@ class ShapeInformationSheet extends React.Component {
             <img
               className={SheetStyles.legend}
               style={{ gridColumn: "1 / span 12" }}
-              src={legenda}
+              src={this.props.i18n.language === "it" ? legenda : legendaEn}
               alt=""
             />
           </div>
@@ -110,7 +113,7 @@ class ShapeInformationSheet extends React.Component {
                   position: "sticky",
                   top: "calc(var(--navigation-height) + 1rem)",
                 }}
-                src={zoom_01}
+                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
                 alt=""
               />
             </div>
@@ -172,7 +175,7 @@ class ShapeInformationSheet extends React.Component {
                   position: "sticky",
                   top: "calc(var(--navigation-height) + 1rem)",
                 }}
-                src={zoom_02}
+                src={this.props.i18n.language === "it" ? zoom_02 : zoom_02En}
                 alt=""
               />
             </div>
@@ -205,9 +208,17 @@ class ShapeInformationSheet extends React.Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            <img className={SheetStyles.image100w} src={zoom_03} alt="" />
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
+              alt=""
+            />
             <br />
-            <img className={SheetStyles.image100w} src={zoom_04} alt="" />
+            <img
+              className={SheetStyles.image100w}
+              src={this.props.i18n.language === "it" ? zoom_04 : zoom_04En}
+              alt=""
+            />
             <Trans
               i18nKey="paragraph-sintagmi-e-preposizioni-2"
               ns="elenchi-sheet"
@@ -252,7 +263,7 @@ class ShapeInformationSheet extends React.Component {
                   Foresman & Company.
                 </li>
                 <li className="referenceItem">
-                  Inglese 2012: A. Inglese, 
+                  Inglese 2012: A. Inglese,
                   <em>
                     Gli ideali della letteratura moderna e la strategia
                     dell’inventario
@@ -262,17 +273,19 @@ class ShapeInformationSheet extends React.Component {
                   77-95.
                 </li>
                 <li className="referenceItem">
-                  Marchese 1991: A. Marchese, 
+                  Marchese 1991: A. Marchese,
                   <em>Dizionario di retorica e stilistica</em>, Milano,
                   Mondadori.
                 </li>
                 <li className="referenceItem">
-                  Orr 1991: L. Orr, <em>Problems and Poetics of the Nonaristotelian Novel</em>,
+                  Orr 1991: L. Orr,{" "}
+                  <em>Problems and Poetics of the Nonaristotelian Novel</em>,
                   Lewisburg, Bucknell University Press, London and Toronto,
                   Associated University Presses.
                 </li>
                 <li className="referenceItem">
-                  Spitzer 1991: L. Spitzer, <em>L’enumerazione caotica nella poesia moderna</em>, trad.
+                  Spitzer 1991: L. Spitzer,{" "}
+                  <em>L’enumerazione caotica nella poesia moderna</em>, trad.
                   it. di A. De Benedetto, in «L’Asino d’Oro», 3, II, pp. 92-130.
                 </li>
               </ol>
@@ -286,10 +299,10 @@ class ShapeInformationSheet extends React.Component {
           />
         </main>
       </>
-    );
+    )
   }
 }
 
 export default withTranslation(["translation", "elenchi-sheet"])(
   ShapeInformationSheet
-);
+)

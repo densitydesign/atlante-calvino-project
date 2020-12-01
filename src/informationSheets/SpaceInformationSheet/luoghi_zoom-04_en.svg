@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="168" viewBox="0 0 600 168">
+  <defs>
+    <clipPath id="clip-zoom-04">
+      <rect width="600" height="168"/>
+    </clipPath>
+  </defs>
+  <g id="zoom-04" clip-path="url(#clip-zoom-04)">
+    <g id="zoom_04" transform="translate(18.7 -13.79)">
+      <g id="Layer_1" data-name="Layer 1">
+        <path id="Tracciato_148051" data-name="Tracciato 148051" d="M245.4,247.135V205.064a5.411,5.411,0,0,1,5.464-5.464h3.606" transform="translate(80.316 -170.071)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+        <path id="Tracciato_148079" data-name="Tracciato 148079" d="M323.65,82.59h9.69a7.55,7.55,0,0,0,7.54-7.54V62.78" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+      </g>
+      <g id="Layer_5" data-name="Layer 5">
+        <line id="Linea_7827" data-name="Linea 7827" y1="25.27" transform="translate(103.83 62.59)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <path id="Tracciato_148075" data-name="Tracciato 148075" d="M286.53,108.15V136.9a7.54,7.54,0,0,0,7.54,7.54h2.56" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <path id="Tracciato_148076" data-name="Tracciato 148076" d="M320.34,112.8V61.51a4.89,4.89,0,0,0-4.9-4.89h0" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <path id="Tracciato_148077" data-name="Tracciato 148077" d="M283.57,85.44H274A7.54,7.54,0,0,0,266.48,93v51.49" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <path id="Tracciato_148078" data-name="Tracciato 148078" d="M283.07,102.91h0a5.38,5.38,0,0,0-5.38,5.39v47.61" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+      </g>
+      <g id="Layer_3" data-name="Layer 3">
+        <g id="Raggruppa_24058" data-name="Raggruppa 24058" opacity="0.8">
+          <line id="Linea_7828" data-name="Linea 7828" x2="1647.86" transform="translate(-183.7 99)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.38" stroke-dasharray="4.56 4.56"/>
+        </g>
+      </g>
+      <g id="new-circles">
+        <circle id="circle" cx="4.08" cy="4.08" r="4.08" transform="translate(25.99 103.8)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-2" data-name="circle" cx="3.62" cy="3.62" r="3.62" transform="translate(26.45 95.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-3" data-name="circle" cx="3.6" cy="3.6" r="3.6" transform="translate(26.47 86.35)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-4" data-name="circle" cx="3.76" cy="3.76" r="3.76" transform="translate(63.02 100.56)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-5" data-name="circle" cx="3.97" cy="3.97" r="3.97" transform="translate(62.81 91.11)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-6" data-name="circle" cx="3.25" cy="3.25" r="3.25" transform="translate(100.23 96.93)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-7" data-name="circle" cx="3.42" cy="3.42" r="3.42" transform="translate(100.06 104.93)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="Isabella_e_Fioravanti" data-name="Isabella e Fioravanti" cx="3.82" cy="3.82" r="3.82" transform="translate(99.66 87.78)" fill="#c2faef" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-8" data-name="circle" cx="3.66" cy="3.66" r="3.66" transform="translate(136.53 100.4)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-9" data-name="circle" cx="3.76" cy="3.76" r="3.76" transform="translate(136.43 91.36)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-10" data-name="circle" cx="3.63" cy="3.63" r="3.63" transform="translate(173.26 95.98)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-11" data-name="circle" cx="4" cy="4" r="4" transform="translate(172.89 104.74)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-12" data-name="circle" cx="4.07" cy="4.07" r="4.07" transform="translate(172.82 86.34)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-13" data-name="circle" cx="3.87" cy="3.87" r="3.87" transform="translate(209.73 95.63)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-14" data-name="circle" cx="3.69" cy="3.69" r="3.69" transform="translate(246.61 100.13)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-15" data-name="circle" cx="3.58" cy="3.58" r="3.58" transform="translate(246.72 91.48)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-16" data-name="circle" cx="3.64" cy="3.64" r="3.64" transform="translate(246.66 109)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-17" data-name="circle" cx="3.66" cy="3.66" r="3.66" transform="translate(246.64 82.66)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-18" data-name="circle" cx="3.55" cy="3.55" r="3.55" transform="translate(283.46 90.38)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="La_storia_di_Kim-Ghi-U" data-name="La storia di Kim-Ghi-U" cx="3.94" cy="3.94" r="3.94" transform="translate(283.07 98.97)" fill="#bdf8ec" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="Un_paese_disgraziato" data-name="Un paese disgraziato" cx="3.44" cy="3.44" r="3.44" transform="translate(283.57 82)" fill="#c2faef" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="Il_generale_in_biblioteca" data-name="Il generale in biblioteca" cx="3.89" cy="3.89" r="3.89" transform="translate(283.12 108.36)" fill="#c2faef" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-19" data-name="circle" cx="3.9" cy="3.9" r="3.9" transform="translate(324.05 91.76)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-20" data-name="circle" cx="3.7" cy="3.7" r="3.7" transform="translate(316.2 87.65)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="Libertà_Libertà_" data-name="Libertà! Libertà!" cx="3.34" cy="3.34" r="3.34" transform="translate(316.16 113.12)" fill="#bdf8ec" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="I_mozzatori_di_nasi" data-name="I mozzatori di nasi" cx="3.29" cy="3.29" r="3.29" transform="translate(322.8 73.48)" fill="#c2faef" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-21" data-name="circle" cx="3.37" cy="3.37" r="3.37" transform="translate(323.37 109.14)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-22" data-name="circle" cx="3.3" cy="3.3" r="3.3" transform="translate(323.73 101.03)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="Lo_jus_primae_noctis" data-name="Lo jus primae noctis" cx="3.57" cy="3.57" r="3.57" transform="translate(316.5 79.02)" fill="#c2faef" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-23" data-name="circle" cx="3.51" cy="3.51" r="3.51" transform="translate(323.07 117.38)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-24" data-name="circle" cx="3.3" cy="3.3" r="3.3" transform="translate(323.91 83.69)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-25" data-name="circle" cx="3.3" cy="3.3" r="3.3" transform="translate(316.98 96.51)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-26" data-name="circle" cx="3.52" cy="3.52" r="3.52" transform="translate(316.07 104.59)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-27" data-name="circle" cx="3.75" cy="3.75" r="3.75" transform="translate(438.3 105.33)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-28" data-name="circle" cx="3.69" cy="3.69" r="3.69" transform="translate(466.85 104.31)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-29" data-name="circle" cx="3.61" cy="3.61" r="3.61" transform="translate(466.93 95.59)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <circle id="circle-30" data-name="circle" cx="3.51" cy="3.51" r="3.51" transform="translate(467.03 87.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+        <g id="swarm-raccolta_romanzo" data-name="swarm-raccolta;romanzo">
+          <g id="circles">
+            <circle id="circle-31" data-name="circle" cx="4.48" cy="4.48" r="4.48" transform="translate(163.41 95.21)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+            <circle id="circle-32" data-name="circle" cx="9.56" cy="9.56" r="9.56" transform="translate(227.18 90.63)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+            <circle id="circle-33" data-name="circle" cx="18.47" cy="18.47" r="18.47" transform="translate(405.29 75.55)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.38"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="Isabella_e_Fioravanti-2" data-name="Isabella e Fioravanti" transform="translate(76.788 42.397)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Isabella e Fioravanti</tspan></text>
+    <text id="La_storia_di_Kim-Ghi-U-2" data-name="La storia di Kim-Ghi-U" transform="translate(180.136 129.971)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">La storia di Kim-Ghi-U</tspan></text>
+    <text id="Un_paese_disgraziato-2" data-name="Un paese disgraziato" transform="translate(319.173 131.44)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Un paese disgraziato</tspan></text>
+    <text id="Il_generale_in_biblioteca-2" data-name="Il generale in biblioteca" transform="translate(247.131 152.531)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Il generale in biblioteca</tspan></text>
+    <text id="Libertà_Libertà_2" data-name="Libertà! Libertà!" transform="translate(258.414 42.152)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Libertà! Libertà!</tspan></text>
+    <text id="I_mozzatori_di_nasi-2" data-name="I mozzatori di nasi" transform="translate(358.614 46.01)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">I mozzatori di nasi</tspan></text>
+    <text id="Lo_jus_primae_noctis-2" data-name="Lo jus primae noctis" transform="translate(358.684 19.118)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Lo jus primae noctis</tspan></text>
+  </g>
+</svg>

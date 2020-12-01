@@ -136,9 +136,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
               terrestri localizzabili. Inoltre, in Calvino, l’invenzione prende
               forma non soltanto all’interno di spazi noti ma in molti casi
               anche familiari (vedi{" "}
-              <strong>
-                <Link to="/space/phase1/focus">Approfondimento</Link>
-              </strong>
+              <Link to="/space/phase1/focus">Approfondimento</Link>
               ).
             </p>
             <p>

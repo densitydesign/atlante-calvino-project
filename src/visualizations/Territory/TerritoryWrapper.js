@@ -461,6 +461,8 @@ class TerritoryWrapper extends React.Component {
         )
     }
 
+    console.log(this.props,'props')
+
     return (
       <div className="main">
         <HelpSidePanel
@@ -542,6 +544,7 @@ class TerritoryWrapper extends React.Component {
             {this.state.itineraryDropUpPosition ===
               GlobalData.itineraryDropUpPositions.open && (
               <TerritoryItinerariesDropUp
+                router={this.props.router}
                 callStateContainerRadioButtonPressed={
                   this.callItineraryDropUpRadioButtonPressed
                 }
@@ -1094,4 +1097,6 @@ function array_intersection(a1, a2) {
   return result
 }
 
-export default withTranslation(['translation','nebbia','luoghi','elenchi'])(TerritoryWrapper)
+export default withTranslation(["translation", "nebbia", "luoghi", "elenchi"])(
+  TerritoryWrapper
+)

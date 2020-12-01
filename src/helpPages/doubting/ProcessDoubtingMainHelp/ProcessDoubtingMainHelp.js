@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import { Tabs, Tab } from "react-bootstrap"
-import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
-import "./ProcessDoubtingMainHelp.css"
-import { Link } from "react-router-dom"
-import { ReactComponent as Legend01 } from "./icons/dubitare_disposizione.svg"
-import { ReactComponent as Legend01En } from "./icons/dubitare_disposizione_en.svg"
-import Legend02 from "./icons/dubitare_disposizioneGIF.gif"
-import Legend02En from "./icons/dubitare_disposizioneGIF_en.gif"
-import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
-import { useTranslation, Trans } from "react-i18next"
+import React, { useState } from "react";
+import { Tabs, Tab } from "react-bootstrap";
+import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel";
+import "./ProcessDoubtingMainHelp.css";
+import { Link } from "react-router-dom";
+import { ReactComponent as Legend01 } from "./icons/dubitare_disposizione.svg";
+import { ReactComponent as Legend01En } from "./icons/dubitare_disposizione_en.svg";
+import Legend02 from "./icons/dubitare_disposizioneGIF.gif";
+import Legend02En from "./icons/dubitare_disposizioneGIF_en.gif";
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function ProcessDoubtingMainHelp() {
-  const [key, setKey] = useState("info")
-  const { t, i18n } = useTranslation(["translation", "doubting"])
+  const [key, setKey] = useState("info");
+  const { t, i18n } = useTranslation(["translation", "doubting"]);
   return (
     <>
       <IntestazioneHelpPanel
@@ -48,7 +48,8 @@ export default function ProcessDoubtingMainHelp() {
               fronte a un testo instabile, all’interno del quale entrano in
               competizione e si sommano numerose versioni possibili della storia
               che il narratore cerca di raccontare con molti dubbi e difficoltà.
-              La visualizzazione mostra la presenza del testo dubitativo
+              La visualizzazione mostra la presenza del{" "}
+              <span style={{ color: "#BBBBFF" }}>testo dubitativo</span>{" "}
               all’interno dell’opera e permette di indagare il modo in cui tale
               tipo di testo altera la linearità del meccanismo narrativo.
             </p>
@@ -67,31 +68,39 @@ export default function ProcessDoubtingMainHelp() {
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> (zona
               di espressione del dubbio);{" "}
               <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span>{" "}
-              (zona del testo messa in dubbio);  <span style={{ color: "#00C19C" }}>testo dubitativo e oggetto di
-              dubbio</span>{" "} (zona del testo in cui viene espresso un dubbio e di cui
-              poi si dubita); <span style={{ color: "#AFAFAF" }}>testo non dubitativo</span>{" "} (zona neutra).
-              <br /><br />
+              (zona del testo messa in dubbio);{" "}
+              <span style={{ color: "#00C19C" }}>
+                testo dubitativo e oggetto di dubbio
+              </span>{" "}
+              (zona del testo in cui viene espresso un dubbio e di cui poi si
+              dubita);{" "}
+              <span style={{ color: "#AFAFAF" }}>testo non dubitativo</span>{" "}
+              (zona neutra).
+              <br />
+              <br />
               Ogni colonna se selezionata si “apre” e mostra, tramite una scala
               cromatica d’intensità crescente, la quantità di caratteri che è
               stata messa in discussione una o più volte dal processo
               dubitativo; l’informazione è riportata in percentuale accanto al
-              tipo di testo corrispondente. Il numero di volte che un {" "}
-              <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> o un {" "}
-              <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span> sono stati messi in
-              discussione determina il{" "}
-              <i>Numero di livelli</i>.<br /><br />
-              Varie funzioni permettono di esplorare i
-              dati raccolti, filtrando i testi secondo diversi criteri (
+              tipo di testo corrispondente. Il numero di volte che un{" "}
+              <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> o un{" "}
+              <span style={{ color: "#FFD337" }}>testo oggetto di dubbio</span>{" "}
+              sono stati messi in discussione determina il{" "}
+              <i>Numero di livelli</i>.<br />
+              <br />
+              Varie funzioni permettono di esplorare i dati raccolti, filtrando
+              i testi secondo diversi criteri (
               <i>
                 Cerca per; Tipo di pubblicazione; Numero di livelli, Filtro
                 cronologico
               </i>
               ) o modificando la loro scala di valore (<i>Lunghezza</i>).
               Inoltre è possibile riorganizzare la successione delle barre
-              scegliendo un tipo di testo come parametro ordinante.<br /><br />
-              Il secondo
-              modo mostra l’andamento del processo dubitativo nel testo
-              selezionato. In questo caso è possibile vedere le singole
+              scegliendo un tipo di testo come parametro ordinante.
+              <br />
+              <br />
+              Il secondo modo mostra l’andamento del processo dubitativo nel
+              testo selezionato. In questo caso è possibile vedere le singole
               occorrenze dei diversi tipi di testo, ma soprattutto in che modo
               si creano i <i>livelli</i>.
             </p>
@@ -118,24 +127,27 @@ export default function ProcessDoubtingMainHelp() {
               il proprio statuto, più il{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span> a sua
               volta diventa fragile e oggetto di continue negazioni e
-              riformulazioni.<br /><br />
-              Passando a esaminare la struttura interna dei
-              singoli racconti o romanzi, la visualizzazione mostra la diversa
-              configurazione del processo dubitativo a seconda del testo. In
-              particolare, rispetto al modo in cui si strutturano i livelli, si
-              possono individuare due tendenze: a) da un lato troviamo opere che
-              si costruiscono su catene di ipotesi frammentate e di estensione
-              contenuta, stabilendo così un percorso di lettura fortemente
-              instabile (es. <i>Ti con Zero</i>); b) dall’altro invece opere
-              che, dopo aver accumulato alcune occorrenze di{" "}
+              riformulazioni.
+              <br />
+              <br />
+              Passando a esaminare la struttura interna dei singoli racconti o
+              romanzi, la visualizzazione mostra la diversa configurazione del
+              processo dubitativo a seconda del testo. In particolare, rispetto
+              al modo in cui si strutturano i livelli, si possono individuare
+              due tendenze: a) da un lato troviamo opere che si costruiscono su
+              catene di ipotesi frammentate e di estensione contenuta,
+              stabilendo così un percorso di lettura fortemente instabile (es.{" "}
+              <i>Ti con Zero</i>); b) dall’altro invece opere che, dopo aver
+              accumulato alcune occorrenze di{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span>,
               tendono verso la fine ad annullare il percorso compiuto,
               includendo nell’ultimo{" "}
               <span style={{ color: "#FFD337" }}>oggetto di dubbio</span> una
               grande quantità di testo (es. <i>L’inseguimento</i>). Nel primo
-              caso il numero dei livelli sale molto di più che nel secondo.<br /><br />
-              Le
-              due tendenze sono più evidenti nelle forme brevi, ma anche nei
+              caso il numero dei livelli sale molto di più che nel secondo.
+              <br />
+              <br />
+              Le due tendenze sono più evidenti nelle forme brevi, ma anche nei
               romanzi si possono individuare strategie simili nella
               distribuzione delle occorrenze del processo dubitativo (vedi{" "}
               <Link to="/doubt/phase2/focus">Approfondimento</Link>
@@ -204,5 +216,5 @@ export default function ProcessDoubtingMainHelp() {
         </Tab>
       </Tabs>
     </>
-  )
+  );
 }

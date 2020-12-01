@@ -1,6 +1,8 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { parse } from 'query-string'
+import { parse, stringifyUrl } from 'query-string'
+
+import { createBrowserHistory as createHistory } from "history"
 
 import Backend from 'i18next-http-backend'
 // import LanguageDetector from 'i18next-browser-languagedetector'
@@ -14,6 +16,22 @@ import Backend from 'i18next-http-backend'
 const query = parse(window.location.search)
 const queryLng = query.lang ?? 'it'
 const lng = ['it', 'en'].includes(queryLng) ? queryLng : 'it'
+
+export function createHistoryHackedWithI18n(options) {
+  const history = createHistory(options)
+
+  // NOTE: HACKER TIME
+  const originalCreateHref = history.createHref
+
+  function hackCreateHref(to) {
+    const href = originalCreateHref(to)
+    const nextHref = stringifyUrl({ url: href, query: { lang: lng } })
+    return nextHref
+  }
+  history.createHref = hackCreateHref
+
+  return history
+}
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)

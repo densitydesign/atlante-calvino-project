@@ -114,9 +114,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
               tipi, il che segnala una precisa consapevolezza artistica e la
               ricerca di una forma di equilibrio nell’impiego di questa forma di
               accumulazione verbale (vedi{" "}
-              <strong>
-                <Link to={"/form/phase1/focus"}>Approfondimento</Link>
-              </strong>
+              <Link to={"/form/phase1/focus"}>Approfondimento</Link>
               ).
             </p>
           </Trans>

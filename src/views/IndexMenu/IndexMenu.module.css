@@ -14,12 +14,36 @@
 }
 
 .OrbiteContainer {
-    position: absolute;
-    pointer-events: none;
-    background-color: var(--cool-bg);
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--cool-bg);
 }
 
-.tappa1{
+.icon-approfondimento {
+  padding-left: 0;
+}
+
+.icon-approfondimento:hover{
+  padding-left: -10px !important;
+  transition: ease-in 1s;
+}
+
+.text-approfondimento {
+  display: none;
+}
+
+.icon-approfondimento:hover > .text-approfondimento{
+  display: block;
+  transition: ease-in 1s;
+}
+
+.small-approfondimento{
+  font-size: 10px;
+  color: #808080;
+  line-height: 10px;
+}
+
+.tappa1 {
   position: absolute;
   /* top: calc(calc(100vh / 5.25) - var(--navigation-height));
   left: calc(100% / 12 * 7); */
@@ -27,7 +51,7 @@
   height: 44px;
 }
 
-.tappa2{
+.tappa2 {
   position: absolute;
   /* top: calc(calc(100vh / 5.75) - var(--navigation-height));
   left: calc(100% / 12 * 7.5); */
@@ -35,7 +59,7 @@
   height: 44px;
 }
 
-.tappa3{
+.tappa3 {
   position: absolute;
   top: calc(calc(100vh / 6.25) - var(--navigation-height));
   left: calc(100% / 12 * 8);
@@ -43,7 +67,7 @@
   height: 44px;
 }
 
-.tappe{
+.tappe {
   color: var(--dark-green);
   text-transform: uppercase;
   position: absolute;
@@ -62,6 +86,7 @@
 .icon-width {
   width: 80px;
 }
+
 
 /* Icons position and size */
 .territorio .title-viz {
@@ -90,37 +115,37 @@
   flex-direction: column;
 }
 
-.curve-dubbio-1{
+.curve-dubbio-1 {
   position: absolute;
   top: calc(calc(100vh / 8 * 3) - var(--navigation-height));
   left: calc(100% / 12 * 2.25);
 }
 
-.curve-dubbio-2{
+.curve-dubbio-2 {
   position: absolute;
   top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
   left: calc(100% / 12 * 1.75);
 }
 
-.curve-spazio-1{
+.curve-spazio-1 {
   position: absolute;
   top: calc(calc(100vh / 8 * 4.75) - var(--navigation-height));
   left: calc(100% / 12 * 5.25);
 }
 
-.curve-spazio-2{
+.curve-spazio-2 {
   position: absolute;
   top: calc(calc(100vh / 8 * 6.5) - var(--navigation-height));
   left: calc(100% / 12 * 5);
 }
 
-.curve-forma-1{
+.curve-forma-1 {
   position: absolute;
   top: calc(calc(100vh / 8 * 3) - var(--navigation-height));
   left: calc(100% / 12 * 9.25);
 }
 
-.curve-forma-2{
+.curve-forma-2 {
   position: absolute;
   top: calc(calc(100vh / 8 * 4.8) - var(--navigation-height));
   left: calc(100% / 12 * 9.7);
@@ -130,8 +155,8 @@
   position: absolute;
   /* top: calc(calc(100vh / 8 * 2) - var(--navigation-height));
   left: calc(100% / 12 * 3); */
-  top:30.100334448160538%;
-  left:29.270833333333336%;
+  top: 30.100334448160538%;
+  left: 29.270833333333336%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -250,11 +275,13 @@
   border-left: 1px solid var(--dark-blue);
 }
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1023px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .icon-width {
     width: 90px;
+  }
+
+  .territorio .icon-width{
+    width:115px;
   }
 
   .big-name {
@@ -264,7 +291,7 @@ and (max-device-width : 1023px) {
     color: var(--violet-index-home);
   }
 
-  .tappe{
+  .tappe {
     color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
@@ -274,23 +301,23 @@ and (max-device-width : 1023px) {
     font-weight: bold;
   }
 
-  .tappa1{
+  .tappa1 {
     position: absolute;
     /* top: calc(calc(100vh / 5.25) - var(--navigation-height));
     left: calc(100% / 12 * 7); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa2{
+
+  .tappa2 {
     position: absolute;
     /* top: calc(calc(100vh / 5.75) - var(--navigation-height));
     left: calc(100% / 12 * 7.5); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa3{
+
+  .tappa3 {
     position: absolute;
     top: calc(calc(100vh / 6.5) - var(--navigation-height));
     left: calc(100% / 12 * 8);
@@ -311,7 +338,7 @@ and (max-device-width : 1023px) {
     color: var(--violet-index-home);
   }
 
-  .tappe{
+  .tappe {
     color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
@@ -321,23 +348,23 @@ and (max-device-width : 1023px) {
     font-weight: bold;
   }
 
-  .tappa1{
+  .tappa1 {
     position: absolute;
     /* top: calc(calc(100vh / 5.75) - var(--navigation-height));
     left: calc(100% / 12 * 7); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa2{
+
+  .tappa2 {
     position: absolute;
     /* top: calc(calc(100vh / 6.25) - var(--navigation-height));
     left: calc(100% / 12 * 7.5); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa3{
+
+  .tappa3 {
     position: absolute;
     top: calc(calc(100vh / 7) - var(--navigation-height));
     left: calc(100% / 12 * 8);
@@ -364,7 +391,7 @@ and (max-device-width : 1023px) {
     width: 150px;
   }
 
-  .tappe{
+  .tappe {
     color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
@@ -374,23 +401,23 @@ and (max-device-width : 1023px) {
     font-weight: bold;
   }
 
-  .tappa1{
+  .tappa1 {
     position: absolute;
     /* top: calc(calc(100vh / 5.25) - var(--navigation-height));
     left: calc(100% / 12 * 7); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa2{
+
+  .tappa2 {
     position: absolute;
     /* top: calc(calc(100vh / 6) - var(--navigation-height));
     left: calc(100% / 12 * 7.5); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa3{
+
+  .tappa3 {
     position: absolute;
     top: calc(calc(100vh / 6.5) - var(--navigation-height));
     left: calc(100% / 12 * 8);
@@ -411,6 +438,7 @@ and (max-device-width : 1023px) {
     width: 180px;
   }
 
+
   .big-name {
     font-size: 60px;
     letter-spacing: 1px;
@@ -418,7 +446,7 @@ and (max-device-width : 1023px) {
     color: #afaff9;
   }
 
-  .tappe{
+  .tappe {
     color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
@@ -428,23 +456,23 @@ and (max-device-width : 1023px) {
     font-weight: bold;
   }
 
-  .tappa1{
+  .tappa1 {
     position: absolute;
     /* top: calc(calc(100vh / 5.5) - var(--navigation-height));
     left: calc(100% / 12 * 7); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa2{
+
+  .tappa2 {
     position: absolute;
     /* top: calc(calc(100vh / 6.15) - var(--navigation-height));
     left: calc(100% / 12 * 7.5); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa3{
+
+  .tappa3 {
     position: absolute;
     top: calc(calc(100vh / 6.75) - var(--navigation-height));
     left: calc(100% / 12 * 8);
@@ -452,21 +480,20 @@ and (max-device-width : 1023px) {
     height: 44px;
   }
 
-  .curve-combinare{
+  .curve-combinare {
     position: absolute;
     top: calc(calc(100vh / 8 * 5) - var(--navigation-height));
     left: calc(100% / 12 * 10.5);
     width: 300px;
   }
-
 }
 
-@media screen and (min-width: 2000px){
+@media screen and (min-width: 2000px) {
   .icon-width {
     width: 200px;
   }
 
-  .tappe{
+  .tappe {
     color: var(--dark-green);
     text-transform: uppercase;
     position: absolute;
@@ -476,41 +503,65 @@ and (max-device-width : 1023px) {
     font-weight: bold;
   }
 
-  .tappa1{
+  .tappa1 {
     position: absolute;
     /* top: calc(calc(100vh / 6) - var(--navigation-height));
     left: calc(100% / 12 * 7); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa2{
+
+  .tappa2 {
     position: absolute;
     /* top: calc(calc(100vh / 6.75) - var(--navigation-height));
     left: calc(100% / 12 * 7.5); */
     width: 44px;
     height: 44px;
   }
-  
-  .tappa3{
+
+  .tappa3 {
     position: absolute;
     top: calc(calc(100vh / 7.5) - var(--navigation-height));
     left: calc(100% / 12 * 8);
     width: 44px;
     height: 44px;
   }
-
 }
 
-
-@media (aspect-ratio: 3/2) {
+@media (min-aspect-ratio: 3/4) {
   .territorio {
-    top: calc(calc(100vh / 8) - var(--navigation-height));
+    top: calc(calc(100vh / 7) - var(--navigation-height));
+    left: calc(100% / 12 * 5.45);
+    
   }
 }
 
-@media (aspect-ratio: 16/9) {
+@media (min-aspect-ratio: 1/1) {
   .territorio {
-    top: calc(calc(100vh / 8) - var(--navigation-height));
+    top: calc(calc(100vh /8) - var(--navigation-height));
+    left: calc(100% / 12 * 5.55);
+  }
+}
+
+/* 
+@media (min-aspect-ratio: 2/3) {
+  .territorio {
+    top: calc(calc(100vh /10) - var(--navigation-height));
+    left: calc(100% / 12 * 5.35);
+  }
+} */
+
+@media (min-aspect-ratio: 4/3) {
+  .territorio {
+    top: calc(calc(100vh / 9) - var(--navigation-height));
+    left: calc(100% / 12 * 5.45);
+  }
+}
+
+
+@media (min-aspect-ratio: 16/9) {
+  .territorio {
+    top: calc(calc(100vh / 11) - var(--navigation-height));
+    left: calc(100% / 12 * 5.4);
   }
 }

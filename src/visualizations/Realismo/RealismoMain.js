@@ -405,6 +405,7 @@ export default function RealismoMain({ title }) {
           selectedOptions={ricerca2}
           availableIds={racconti.map(d=>d.id)}
           availableVolumes={availableVolumes}
+          availableOptions={["title","volume"]}
         />
 
         <MoreInfo
