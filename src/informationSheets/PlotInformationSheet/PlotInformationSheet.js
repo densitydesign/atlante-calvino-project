@@ -840,26 +840,26 @@ class PlotInformationSheet extends Component {
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
               <li className={"referenceItem"}>
-                Barenghi 1992: Mario Barenghi, <em>L’autorità dell’autore</em>,
+                Barenghi 1992: M. Barenghi, <em>L’autorità dell’autore</em>,
                 Lecce, Milella.
               </li>
               <li className={"referenceItem"}>
-                Calvino 1995a: Italo Calvino,{" "}
+                Calvino 1995a: I. Calvino,{" "}
                 <em>Cominciare e finire, appendice alle Lezioni americane</em>,
-                SS, I, pp. 734-753.
+                Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
-                Calvino 1995b: Italo Calvino,{" "}
+                Calvino 1995b: I. Calvino,{" "}
                 <em>Ariosto: la struttura dell’«Orlando furioso» </em>[1975], in
-                Id., SS, I, pp. 759-768.
+                Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 759-768.
               </li>
               <li className={"referenceItem"}>
-                Du Plessix Gray 1981: Francine du Plessix Gray,{" "}
+                Du Plessix Gray 1981: F. du Plessix Gray,{" "}
                 <em>Visiting Italo Calvino</em>, in «The New York Times Review
                 of Books», June 21.
               </li>
               <li className={"referenceItem"}>
-                Eco 1979: Umberto Eco,{" "}
+                Eco 1979: U. Eco,{" "}
                 <em>
                   Lector in fabula. La cooperazione interpretativa nei testi
                   narrativi
@@ -867,22 +867,22 @@ class PlotInformationSheet extends Component {
                 , Milano, Bompiani.
               </li>
               <li className={"referenceItem"}>
-                Falcetto 1992: Bruno Falcetto,{" "}
+                Falcetto 1992: B. Falcetto,{" "}
                 <em>«Se una notte d’inverno un viaggiatore»</em>, in{" "}
                 <em>Note e notizie sui testi</em>, a cura di M. Barenghi, B.
                 Falcetto, C. Milanini, <em>RR</em>, II, pp. 1381-1401.
               </li>
               <li className={"referenceItem"}>
-                Jauss 1969: Hans Robert Jauss,{" "}
+                Jauss 1969: H. R. Jauss,{" "}
                 <em>Perché la storia della letteratura?</em>, ed. it. a cura di
                 A. Varvaro, Napoli, Guida.{" "}
               </li>
               <li className={"referenceItem"}>
-                Jauss 1988: Hans Robert Jauss, <em>Estetica della ricezione</em>
+                Jauss 1988: H. R. Jauss, <em>Estetica della ricezione</em>
                 , trad. it. di A. Giugliano, Napoli, Guida.
               </li>
               <li className={"referenceItem"}>
-                Iser 1974: Wolfgang Iser,{" "}
+                Iser 1974: W. Iser,{" "}
                 <em>
                   The Implied Reader. Patterns of communication in prose fiction
                   from Bunyan to Beckett
@@ -890,29 +890,29 @@ class PlotInformationSheet extends Component {
                 [1972], eng. transl., Baltimore, Johns Hopkins University Press.
               </li>
               <li className={"referenceItem"}>
-                Iser 1976: Wolfgang Iser,{" "}
+                Iser 1976: W. Iser,{" "}
                 <em>L’acte de lecture. Theorie de l’effet esthètique</em>, fr.
                 trad. par E. Sznycer, Bruxelles, Mardaga.
               </li>
               <li className={"referenceItem"}>
-                Kermode 1972: Frank Kermode,{" "}
+                Kermode 1972: F. Kermode,{" "}
                 <em>Il senso della fine. Studi sulla teoria del romanzo</em>,
                 trad. it. di G. Montefoschi, Milano, Rizzoli.
               </li>
               <li className={"referenceItem"}>
-                Matte Blanco 1990: Ignacio Matte Blanco,{" "}
+                Matte Blanco 1990: I. Matte Blanco,{" "}
                 <em>
                   L’inconscio come insiemi infiniti. Saggio sulla bi-logica
                 </em>
                 , trad. it. di P. Bria, Torino, Einaudi.
               </li>
               <li className={"referenceItem"}>
-                Rivière 1913: Jacques Rivière, <em>Le Roman d’aventure</em>, in
+                Rivière 1913: J. Rivière, <em>Le Roman d’aventure</em>, in
                 «Nouvelle Revue Française», LIII (mai 1913), pp. 748-765, LIV
                 (juin 1913), pp. 914-933, LV (juillet 1913), pp. 56-77.
               </li>
               <li className={"referenceItem"}>
-                Sorapure 1985: Madeleine Sorapure,
+                Sorapure 1985: M. Sorapure,
                 <em>
                   {" "}
                   Being in the Midst: Italo Calvino’s «If on a winter’s night a
@@ -921,12 +921,12 @@ class PlotInformationSheet extends Component {
                 , in «Modern Fiction Studies», XXXI, pp. 702-710.
               </li>
               <li className={"referenceItem"}>
-                Todorov 2008: Tzvetan Todorov,{" "}
+                Todorov 2008: T. Todorov,{" "}
                 <em>La letteratura in pericolo</em>, trad. it. di E. Lana,
                 Milano, Garzanti.
               </li>
               <li className={"referenceItem"}>
-                Tortonese 2013: Paolo Tortonese,{" "}
+                Tortonese 2013: P. Tortonese,{" "}
                 <em>
                   L’homme en action. La représentation littéraire d’Aristote à
                   Zola
@@ -934,7 +934,7 @@ class PlotInformationSheet extends Component {
                 , Paris, Classiques Garnier.
               </li>
               <li className={"referenceItem"}>
-                Woolf 1995: Virginia Woolf, <em>Il lettore comune</em>, trad.
+                Woolf 1995: V. Woolf, <em>Il lettore comune</em>, trad.
                 it. di D. Guglielmino, Genova, il Melangolo.
               </li>
             </ol>
