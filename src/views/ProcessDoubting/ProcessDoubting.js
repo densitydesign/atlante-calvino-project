@@ -689,27 +689,6 @@ class ProcessDoubting extends Component {
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
           <PageTitle title={this.props.t('dubitare')} style={{ gridColumn: "span 9" }} />
 
-          {/* {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
-          {!this.state.isLoading && (
-            <Options
-              title={this.props.t("cerca_per")}
-              data={this.state.cerca_per}
-              style={{ gridColumn: "span 3" }}
-              changeOptions={this.changeCercaPer}
-            />
-          )}
-          {this.state.isLoading && <Loading style={{ gridColumn: "span 5" }} />}
-          {!this.state.isLoading && (
-            <SearchDropDown
-              style={{
-                gridColumn: "span 5",
-              }}
-              data={{ options: this.state.data_research.titolo }}
-              changeOptions={this.changeRicerca}
-              selectedOptions={this.state.ricerca}
-            />
-          )} */}
-
           {this.state.loading && (
             <Loading style={{ gridColumn: "span 12" }} />
           )}
@@ -772,54 +751,6 @@ class ProcessDoubting extends Component {
             />
           )}
           {this.state.isLoading && <Loading style={{ gridColumn: "span 4" }} />}
-          {/* {!this.state.isLoading && this.state.annidamenti && (
-            <div
-              style={{
-                bottom: 240,
-                width: "16.8%",
-                height: 240,
-                left: "33.25%",
-                backgroundColor: "#FFF",
-              }}
-              className="d-flex flex-row flex-wrap position-absolute"
-            >
-              {this.state.annidamenti.options.map((d, i) => {
-                return (
-                  <div
-                    style={{
-                     borderRight: "1px solid #000",
-                     borderBottom: "1px solid #000",
-                     borderTop: i <= 3 ? "1px solid #000" : undefined,
-                     borderLeft: i % 4 === 0 ? "1px solid #000" : undefined,
-                      width: "25%",
-                      height: 60,
-                    }}
-                    key={i}
-                    name={d.label}
-                    onClick={this.handleChange}
-                    className={
-                      "bg-white d-flex align-items-center justify-content-center"
-                    }
-                  >
-                    {d.label}
-                  </div>
-                )
-              })}
-              <div
-                style={{
-                  borderRight: "1px solid #000",
-                  borderBottom: "1px solid #000",
-                  width: "25%",
-                  height: 60,
-                }}
-                className={
-                  "bg-white d-flex align-items-center justify-content-center"
-                }
-              >
-                Inverti
-              </div>
-            </div>
-          )} */}
           {!this.state.isLoading && (
             <Options
               isFlex={true}
