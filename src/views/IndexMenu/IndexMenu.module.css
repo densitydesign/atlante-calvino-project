@@ -19,6 +19,30 @@
   background-color: var(--cool-bg);
 }
 
+.icon-approfondimento {
+  padding-left: 0;
+}
+
+.icon-approfondimento:hover{
+  padding-left: -10px !important;
+  transition: ease-in 1s;
+}
+
+.text-approfondimento {
+  display: none;
+}
+
+.icon-approfondimento:hover > .text-approfondimento{
+  display: block;
+  transition: ease-in 1s;
+}
+
+.small-approfondimento{
+  font-size: 10px;
+  color: #808080;
+  line-height: 10px;
+}
+
 .tappa1 {
   position: absolute;
   /* top: calc(calc(100vh / 5.25) - var(--navigation-height));

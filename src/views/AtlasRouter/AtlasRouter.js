@@ -2,7 +2,7 @@ import React from "react"
 
 import LoadingWrapper from "../../general/LoadingWrapper"
 
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, useHistory } from "react-router-dom"
 
 import GlobalData from "../../utilities/GlobalData"
 import SplashScreen2 from "../../visualizations/SplashScreen2/"
@@ -38,6 +38,9 @@ import Cancellazione from "../Cancellazione"
 import Capta from "../Capta"
 
 export default function AtlasRouter() {
+
+  const history = useHistory()
+
   return (
     <BrowserRouter basename="/atlante-calvino-project">
       <Route exact path="/">
@@ -71,6 +74,7 @@ export default function AtlasRouter() {
       </Route>
       <Route exact path="/archipelago">
         <TerritoryWrapper
+          router={history}
           title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.noAnalysis}
           mainAnalysisMode={GlobalData.analysisModes.noAnalysis}
@@ -78,6 +82,7 @@ export default function AtlasRouter() {
       </Route>
       <Route exact path="/doubt/phase1">
         <TerritoryWrapper
+          router={history}
           title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.doubt}
           mainAnalysisMode={GlobalData.analysisModes.doubt}
@@ -89,6 +94,7 @@ export default function AtlasRouter() {
 
       <Route exact path="/space/phase1">
         <TerritoryWrapper
+          router={history}
           title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.space}
           mainAnalysisMode={GlobalData.analysisModes.space}
@@ -100,6 +106,7 @@ export default function AtlasRouter() {
 
       <Route exact path="/form/phase1">
         <TerritoryWrapper
+          router={history}
           title="L'ARCIPELAGO DELLE OPERE PER"
           bottomPanelMode={GlobalData.bottomPanelModes.shape}
           mainAnalysisMode={GlobalData.analysisModes.shape}

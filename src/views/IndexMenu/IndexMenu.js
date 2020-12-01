@@ -6,7 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react"
-import { useTranslation } from "react-i18next"
+import { Trans, useTranslation } from "react-i18next"
 import IndexMenuHeader from "../../headers/IndexMenuHeader"
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
@@ -57,7 +57,6 @@ const ItemIndex = ({
   const iconEl = useRef()
   const groupEl = useRef()
   const [yAlign, setYAlign] = useState(0)
-  const [hoverApprofondimento, setHoverApprofondimento] = useState(false)
 
   const alignItem = () => {
     const group_bbox = groupEl.current.getBoundingClientRect()
@@ -104,41 +103,21 @@ const ItemIndex = ({
       >
         {title}
       </span>
-      {title !== "Territorio" &&
-        (!hoverApprofondimento ? (
-          <Link
-            className="text-dark"
-            to={linkApprofondimento}
-            style={{
-              transform: `translate(0, ${
-                title !== "Territorio" ? yAlign : 0
-              }px)`,
-            }}
-          >
-            <IconApprofondimento
-              onMouseEnter={() => setHoverApprofondimento(true)}
-              onMouseLeave={() => setHoverApprofondimento(false)}
-              className="mt-2"
-            />
-          </Link>
-        ) : (
-          <Link
-            to={linkApprofondimento}
-            className="d-flex align-items-center text-dark"
-            style={{
-              transform: `translate(0, ${
-                title !== "Territorio" ? yAlign : 0
-              }px)`,
-            }}
-          >
-            <IconApprofondimento
-              onMouseEnter={() => setHoverApprofondimento(true)}
-              onMouseLeave={() => setHoverApprofondimento(false)}
-              className="mt-2 mr-2"
-            />
+      {title !== "Territorio" && (
+        <Link
+          className={`d-flex mt-2 ${styles["icon-approfondimento"]} ${styles["small-approfondimento"]}`}
+          to={linkApprofondimento}
+          style={{
+            transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`,
+          }}
+        >
+          <IconApprofondimento className='mr-2'
+          />
+          <span className={styles['text-approfondimento']}>
             {titleApprofondimento}
-          </Link>
-        ))}
+          </span>
+        </Link>
+      )}
     </div>
   )
 }
@@ -320,7 +299,17 @@ export default function IndexMenu({ onClose }) {
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
           itinerario={"Dubbio"}
-          titleApprofondimento={t("Il romanzo-saggio che dubita")}
+          titleApprofondimento={
+            <Trans
+              i18nKey="il_romanzo_saggio_che_dubita"
+              t={t}
+              ns="translation"
+            >
+              Il romanzo-saggio
+              <br />
+              che dubita
+            </Trans>
+          }
           tappa={2}
           link="/doubt/phase2"
           linkApprofondimento="/doubt/phase2/focus"
@@ -354,7 +343,7 @@ export default function IndexMenu({ onClose }) {
           }
           iconHover={
             <NebbiaIconHover
-              style={{ transition: 'ease-in 0.5s'}}
+              style={{ transition: "ease-in 0.5s" }}
               className={`${styles["hover-icon"]} ${styles["icon-width"]}`}
             />
           }
@@ -366,7 +355,16 @@ export default function IndexMenu({ onClose }) {
           itinerarioHover={itinerarioHover}
           itinerario={"Dubbio"}
           tappa={3}
-          titleApprofondimento={t("Il dubbio e la cancellazione")}
+          titleApprofondimento={
+            <Trans
+              i18nKey="il_dubbio_e_la_cancellazione"
+              t={t}
+              ns="translation"
+            >
+              Il dubbio e<br />
+              la cancellazione
+            </Trans>
+          }
           linkApprofondimento="/doubt/phase3/focus"
           link="/doubt/phase3"
           className={"cancellazione"}
@@ -385,7 +383,17 @@ export default function IndexMenu({ onClose }) {
           title={t("trasformare")}
           onClose={onClose}
           itinerario={"Spazio"}
-          titleApprofondimento={t("Cartografia dei luoghi terrestri")}
+          titleApprofondimento={
+            <Trans
+              i18nKey="cartografia_dei_luoghi_terrestri"
+              t={t}
+              ns="translation"
+            >
+              Cartografia dei
+              <br />
+              luoghi terrestri
+            </Trans>
+          }
           linkApprofondimento="/space/phase2/focus"
           className={"trasformare"}
           tappaHover={tappaHover}
@@ -409,7 +417,17 @@ export default function IndexMenu({ onClose }) {
           itinerarioHover={itinerarioHover}
           tappa={1}
           itinerario={"Spazio"}
-          titleApprofondimento={t("La forma della geografia inventata")}
+          titleApprofondimento={
+            <Trans
+              i18nKey="la_forma_della_geografia_inventata"
+              t={t}
+              ns="translation"
+            >
+              La forma della
+              <br />
+              geografia inventata
+            </Trans>
+          }
           onClose={onClose}
           linkApprofondimento="/space/phase1/focus"
           link="/space/phase1"
@@ -431,9 +449,13 @@ export default function IndexMenu({ onClose }) {
           linkApprofondimento="/space/phase3/focus"
           className={"realismo"}
           itinerario={"Spazio"}
-          titleApprofondimento={t(
-            "Metamorfosi della realtà sulle tracce della paura"
-          )}
+          titleApprofondimento={
+            <Trans i18nKey="metamorfosi_della_realta" t={t} ns="translation">
+              Metamorfosi della realtà:
+              <br />
+              sulle tracce della paura
+            </Trans>
+          }
           link="/space/phase3"
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
@@ -456,7 +478,13 @@ export default function IndexMenu({ onClose }) {
           itinerario={"Forma"}
           tappaHover={tappaHover}
           itinerarioHover={itinerarioHover}
-          titleApprofondimento={t("Per un'estetica elencatoria")}
+          titleApprofondimento={
+            <Trans i18nKey="per_un_estetica_elencatoria" t={t} ns="translation">
+              Per un'estetica
+              <br />
+              elencatoria
+            </Trans>
+          }
           tappa={1}
           onClose={onClose}
           className={"elenchi"}
