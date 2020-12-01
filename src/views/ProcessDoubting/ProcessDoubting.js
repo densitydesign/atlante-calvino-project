@@ -645,13 +645,13 @@ class ProcessDoubting extends Component {
         .map((d) => d.id)
     }
 
-    console.log(
-      "annidamenti selezionati:",
-      levels_in_filter.join(", "),
-      "(" + toPreserve.length + ")",
-      "👉",
-      toPreserve.join(", ")
-    )
+    // console.log(
+    //   "annidamenti selezionati:",
+    //   levels_in_filter.join(", "),
+    //   "(" + toPreserve.length + ")",
+    //   "👉",
+    //   toPreserve.join(", ")
+    // )
 
     this.setState((prevState) => ({
       filters: {

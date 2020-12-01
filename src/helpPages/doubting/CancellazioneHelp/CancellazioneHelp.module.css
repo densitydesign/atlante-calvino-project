@@ -1,4 +1,4 @@
-.h1 {
+/* .h1 {
     margin-bottom: 0.5rem !important;
 }
 
@@ -37,4 +37,13 @@
 
 .switchView:hover {
     text-decoration: underline;
+} */
+
+.background-gif {
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.metaball-animation {
+    background-image: url("./icons/cancellazione_a_coloreGIF_en.gif")
 }

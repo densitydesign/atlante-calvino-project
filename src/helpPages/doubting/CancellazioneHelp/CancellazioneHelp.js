@@ -10,6 +10,8 @@ import { ReactComponent as Legend03 } from "./icons/cancellazione_a_colore.svg"
 import { ReactComponent as Legend03En } from "./icons/cancellazione_a_colore_en.svg"
 import { ReactComponent as Legend04 } from "./icons/cancellazione_griglia.svg"
 import { ReactComponent as Legend04En } from "./icons/cancellazione_griglia_en.svg"
+import metaballGIF from "./icons/cancellazione_a_coloreGIF_en.gif"
+import styles from "./CancellazioneHelp.module.css"
 import { Link } from "react-router-dom"
 
 export default function CancellazioneHelp() {
@@ -169,7 +171,7 @@ export default function CancellazioneHelp() {
             <div>
               <small>{t("cancellazione:help_panel.colore")}</small>
             </div>
-            <div className="mt-2">
+            <div className="mt-2" className={[styles["background-gif"], styles["metaball-animation"]].join(" ")}>
               {i18n.language === "it" ? <Legend03 /> : <Legend03En />}
             </div>
           </div>
