@@ -544,7 +544,7 @@ a:visited.button-text {
   right: 0;
   height: 61px;
   cursor: pointer;
-  width: 61px;
+  width: 4.25%;
   top: var(--navigation-height);
 }
 
