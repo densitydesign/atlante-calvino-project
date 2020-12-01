@@ -123,7 +123,7 @@ export default function CancellazioneHelp() {
               presenza di testo dubitativo è quantitativamente inferiore; a
               destra invece la presenza di testo dubitativo si intensifica e il
               colore degli elementi grafici suggerisce una maggiore combinazione
-              nell’utilizzo delle <i>Categorie</i>.<br/>Questa separazione, emersa
+              nell’utilizzo delle <i>Categorie</i>. Questa separazione, emersa
               spontaneamente dalla disposizione dei testi nello spazio in base
               ai dati raccolti, sembra rispecchiare una divisione cronologica; a
               sinistra tenderanno infatti a collocarsi i testi prima degli anni
