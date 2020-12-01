@@ -23,6 +23,7 @@ import TextSearch from "../../general/TextSearch";
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
 import FoldingLine from "../../visualizations/FoldingLine/FoldingLine"
 import { Trans, withTranslation } from 'react-i18next'
+import { options } from "colorette"
 
 const structureData = (arr) => {
   arr = arr.map((d, i) => {
@@ -427,7 +428,10 @@ class ProcessDoubting extends Component {
           { label: "8", status: false },
           { label: "9", status: false },
           { label: "10", status: false },
-          { label: "11", status: false },
+          // { label: "11", status: false },
+          // { label: "12", status: false },
+          // { label: "13", status: false },
+          { label: "14", status: false },
         ]
 
         // need to convert date to milliseconds for the timespan filter to work
@@ -609,10 +613,19 @@ class ProcessDoubting extends Component {
   }
 
   changeAnnidamenti(newOptions) {
-    const levels_in_filter = newOptions
+
+    // this is to make the filtro work even thought certain levels options are not visible (11, 12 e 13)
+    let isFourteen = newOptions.filter((d) => d.status).map(d=>d.label).indexOf("14")>-1;
+    let optionsToUse = newOptions;
+    if (isFourteen) {
+      optionsToUse.push({ label: "11", status: true })
+      optionsToUse.push({ label: "12", status: true })
+      optionsToUse.push({ label: "13", status: true })
+    }
+
+    const levels_in_filter = optionsToUse
       .filter((d) => d.status)
       .map((d) => +d.label)
-    // console.log(levels_in_filter)
 
     let toPreserve = this.state.data.map((d) => d.id)
 
