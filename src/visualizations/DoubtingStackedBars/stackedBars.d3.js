@@ -177,7 +177,7 @@ V.initialize = (el, data_for_update, _onSelectedElement, t) => {
     .attr("font-style", "italic")
     .attr("font-size", "0.8571428571rem")
     .attr("fill", "#666")
-    .text(t("opere_ordinate"))
+    .text(t("Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una"))
 
   legendItem = legend
     .append("g")
