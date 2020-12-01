@@ -33,7 +33,7 @@ class CancellationInformationSheet extends Component {
         <main className={SheetStyles.main}>
           <div className={SheetStyles.gridRow}>
             <h4 className={SheetStyles.titleH4}>
-              {this.props.t("TAPPA 3")} {">"} {this.props.t("cancellare")}
+              {this.props.t("TAPPA 3")} {">"} {this.props.t("cancellazione")}
             </h4>
             <h1 className={SheetStyles.titleH1}>
               {this.props.t("cancellazione-sheet:Il dubbio e la cancellazione")}
@@ -54,7 +54,7 @@ class CancellationInformationSheet extends Component {
                 <i>Gli amori difficili</i> (1970). Come spiega lo stesso Calvino
                 nella nota introduttiva al volume, «ciò che sta alla base di
                 molte di queste storie è una difficoltà di comunicazione, una
-                zona di silenzio al fondo dei rapporti umani» (Calvino 2011, p.
+                zona di silenzio al fondo dei rapporti umani» (Calvino 2011, 
                 XII). Nel racconto il fante Tomagra si trova seduto nello
                 scompartimento di un treno, quando accanto a lui prende posto
                 una donna vestita a lutto. La trama del racconto consiste nel
@@ -136,7 +136,7 @@ class CancellationInformationSheet extends Component {
                 </video>
               </div>
               <p className="captionLeft">
-                {this.props.t("cancellazione-sheet:Posizione del racconto")}
+                {this.props.t("cancellazione-sheet: Posizione del racconto nella visualizzazione")}
               </p>
               <img
                 className={SheetStyles.image + " " + SheetStyles.image100w}

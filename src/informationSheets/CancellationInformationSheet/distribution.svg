@@ -3,34 +3,30 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 385 118" style="enable-background:new 0 0 385 118;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;}
-	.st1{font-family:'HKGrotesk-Italic';}
-	.st2{font-size:12px;}
-	.st3{font-family:'HKGrotesk-BoldItalic';}
-	.st4{font-family:'HKGrotesk-SemiBold';}
-	.st5{fill:none;stroke:#000000;stroke-width:0.5;}
+	.st0{font-family:'HKGrotesk-Italic';}
+	.st1{font-size:12px;}
+	.st2{font-family:'HKGrotesk-BoldItalic';}
+	.st3{font-family:'HKGrotesk-SemiBold';}
+	.st4{fill:none;stroke:#000000;stroke-width:0.5;}
 </style>
-<g transform="translate(-596 -615)">
-	<rect x="596" y="641" class="st0" width="385" height="92"/>
-	<text transform="matrix(1 0 0 1 605 678.9943)" class="st1 st2">Significato</text>
-	<text transform="matrix(1 0 0 1 605 658.9946)" class="st3 st2">Categorie</text>
-	<text transform="matrix(1 0 0 1 797.5684 632.2887)" class="st3 st2">Stili</text>
-	<text transform="matrix(1 0 0 1 605 698.9943)" class="st1 st2">Forma</text>
-	<text transform="matrix(1 0 0 1 605 718.9943)" class="st1 st2">Contenuto</text>
-	<text transform="matrix(1 0 0 1 892 658.9943)" class="st1 st2">Riformulazione</text>
-	<text transform="matrix(1 0 0 1 892 678.9943)" class="st4 st2">7</text>
-	<text transform="matrix(1 0 0 1 892 698.9943)" class="st4 st2">1</text>
-	<text transform="matrix(1 0 0 1 892 718.9943)" class="st4 st2">2</text>
-	<text transform="matrix(1 0 0 1 701 658.9943)" class="st1 st2">Negazione</text>
-	<text transform="matrix(1 0 0 1 701 678.9943)" class="st4 st2">3</text>
-	<text transform="matrix(1 0 0 1 701 698.9943)" class="st4 st2">1</text>
-	<text transform="matrix(1 0 0 1 701 718.9943)" class="st4 st2">14</text>
-	<text transform="matrix(1 0 0 1 797 658.9943)" class="st1 st2">Esitazione</text>
-	<text transform="matrix(1 0 0 1 797 678.9943)" class="st4 st2">5</text>
-	<text transform="matrix(1 0 0 1 797 698.9943)" class="st4 st2">-</text>
-	<text transform="matrix(1 0 0 1 797 718.9943)" class="st4 st2">24</text>
-	<line class="st5" x1="692.5" y1="641" x2="692.5" y2="733"/>
-	<line class="st5" x1="788.5" y1="641" x2="788.5" y2="733"/>
-	<line class="st5" x1="884.5" y1="641" x2="884.5" y2="733"/>
-</g>
+<text transform="matrix(1 0 0 1 31.2948 103.9943)" class="st0 st1">Significato</text>
+<text transform="matrix(9.488839e-08 -1 1 0 14.9985 106.5315)" class="st2 st1">Categorie</text>
+<text transform="matrix(1 0 0 1 225.7204 17.2887)" class="st2 st1">Stili</text>
+<text transform="matrix(1 0 0 1 31.2948 83.9943)" class="st0 st1">Forma</text>
+<text transform="matrix(1 0 0 1 296 43.9943)" class="st0 st1">Riformulazione</text>
+<text transform="matrix(1 0 0 1 296 103.9943)" class="st3 st1">7</text>
+<text transform="matrix(1 0 0 1 296 83.9943)" class="st3 st1">1</text>
+<text transform="matrix(1 0 0 1 111.9297 43.9943)" class="st0 st1">Negazione</text>
+<text transform="matrix(1 0 0 1 111.9297 103.9943)" class="st3 st1">3</text>
+<text transform="matrix(1 0 0 1 111.9297 83.9943)" class="st3 st1">1</text>
+<text transform="matrix(1 0 0 1 204.7812 43.9943)" class="st0 st1">Esitazione</text>
+<text transform="matrix(1 0 0 1 204.7812 103.9943)" class="st3 st1">5</text>
+<text transform="matrix(1 0 0 1 204.7812 83.9943)" class="st3 st1">-</text>
+<line class="st4" x1="104.1" y1="26" x2="104.1" y2="118"/>
+<line class="st4" x1="196.3" y1="26" x2="196.3" y2="118"/>
+<line class="st4" x1="288.5" y1="26" x2="288.5" y2="118"/>
+<text transform="matrix(1 0 0 1 31.2948 63.9943)" class="st0 st1">Contenuto</text>
+<text transform="matrix(1 0 0 1 296 63.9943)" class="st3 st1">2</text>
+<text transform="matrix(1 0 0 1 111.9297 63.9943)" class="st3 st1">14</text>
+<text transform="matrix(1 0 0 1 204.7812 63.9943)" class="st3 st1">24</text>
 </svg>
