@@ -1,59 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="904" height="56" viewBox="0 0 904 56">
-  <defs>
-    <clipPath id="clip-legend">
-      <rect width="904" height="56"/>
-    </clipPath>
-  </defs>
-  <g id="legend" clip-path="url(#clip-legend)">
-    <g id="Layer_1" data-name="Layer 1" transform="translate(-0.88 1.35)">
-      <g id="legend-2" data-name="legend">
-        <circle id="S004" cx="3.13" cy="3.13" r="3.13" transform="translate(9.76 44.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-        <circle id="S004-2" data-name="S004" cx="3.13" cy="3.13" r="3.13" transform="translate(9.76 44.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
-        <circle id="S004-3" data-name="S004" cx="11.32" cy="11.32" r="11.32" transform="translate(1.57 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
-        <text id="_986" data-name="986" transform="translate(51.52 28.94)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0" letter-spacing="-0.01em">98</tspan><tspan y="0">6</tspan></text>
-        <text id="caratteri" transform="translate(69.77 28.94)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0" letter-spacing="-0.01em">c</tspan><tspan y="0">arat</tspan><tspan y="0" letter-spacing="-0.01em">t</tspan><tspan y="0">eri</tspan></text>
-        <text id="caratteri-2" data-name="caratteri" transform="translate(91.73 45.11)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0" letter-spacing="-0.01em">c</tspan><tspan y="0">arat</tspan><tspan y="0" letter-spacing="-0.01em">t</tspan><tspan y="0">eri</tspan></text>
-        <text id="_458335" data-name="458335" transform="translate(51.52 45.11)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">458335</tspan></text>
-        <line id="Line_7807" data-name="Line 7807" x2="1" transform="translate(12.89 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-        <line id="Line_7808" data-name="Line 7808" x2="27.35" transform="translate(15.91 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25" stroke-dasharray="2.03 2.03"/>
-        <line id="Line_7809" data-name="Line 7809" x2="1" transform="translate(44.27 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-        <line id="Line_7810" data-name="Line 7810" x2="1" transform="translate(12.89 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-        <line id="Line_7811" data-name="Line 7811" x2="27.35" transform="translate(15.91 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25" stroke-dasharray="2.03 2.03"/>
-        <line id="Line_7812" data-name="Line 7812" x2="1" transform="translate(44.27 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
-        <rect id="Rectangle_19195" data-name="Rectangle 19195" width="7.94" height="4.5" transform="translate(166.79 25.86)" fill="#b6f5e7"/>
-        <rect id="Rectangle_19196" data-name="Rectangle 19196" width="7.94" height="4.5" transform="translate(167.71 25.86)" fill="#aff3e4"/>
-        <rect id="Rectangle_19197" data-name="Rectangle 19197" width="7.94" height="4.5" transform="translate(168.63 25.86)" fill="#a9f1e1"/>
-        <rect id="Rectangle_19198" data-name="Rectangle 19198" width="7.94" height="4.5" transform="translate(169.55 25.86)" fill="#a2efdf"/>
-        <rect id="Rectangle_19199" data-name="Rectangle 19199" width="7.94" height="4.5" transform="translate(170.47 25.86)" fill="#9beddc"/>
-        <rect id="Rectangle_19200" data-name="Rectangle 19200" width="7.94" height="4.5" transform="translate(171.39 25.86)" fill="#94ebd9"/>
-        <rect id="Rectangle_19201" data-name="Rectangle 19201" width="7.94" height="4.5" transform="translate(172.31 25.86)" fill="#8ee9d6"/>
-        <rect id="Rectangle_19202" data-name="Rectangle 19202" width="7.94" height="4.5" transform="translate(173.24 25.86)" fill="#87e8d4"/>
-        <rect id="Rectangle_19203" data-name="Rectangle 19203" width="7.94" height="4.5" transform="translate(174.16 25.86)" fill="#80e6d1"/>
-        <rect id="Rectangle_19204" data-name="Rectangle 19204" width="7.94" height="4.5" transform="translate(175.08 25.86)" fill="#79e4ce"/>
-        <rect id="Rectangle_19205" data-name="Rectangle 19205" width="7.94" height="4.5" transform="translate(176 25.86)" fill="#73e2cb"/>
-        <rect id="Rectangle_19206" data-name="Rectangle 19206" width="7.94" height="4.5" transform="translate(176.92 25.86)" fill="#6ce0c8"/>
-        <rect id="Rectangle_19207" data-name="Rectangle 19207" width="7.94" height="4.5" transform="translate(177.84 25.86)" fill="#65dec6"/>
-        <rect id="Rectangle_19208" data-name="Rectangle 19208" width="7.94" height="4.5" transform="translate(178.76 25.86)" fill="#5edcc3"/>
-        <rect id="Rectangle_19209" data-name="Rectangle 19209" width="7.94" height="4.5" transform="translate(179.68 25.86)" fill="#58dac0"/>
-        <rect id="Rectangle_19210" data-name="Rectangle 19210" width="7.94" height="4.5" transform="translate(180.61 25.86)" fill="#51d8bd"/>
-        <rect id="Rectangle_19211" data-name="Rectangle 19211" width="7.94" height="4.5" transform="translate(181.53 25.86)" fill="#4ad6bb"/>
-        <rect id="Rectangle_19212" data-name="Rectangle 19212" width="7.94" height="4.5" transform="translate(182.45 25.86)" fill="#43d4b8"/>
-        <rect id="Rectangle_19213" data-name="Rectangle 19213" width="7.94" height="4.5" transform="translate(183.37 25.86)" fill="#3dd2b5"/>
-        <rect id="Rectangle_19214" data-name="Rectangle 19214" width="7.94" height="4.5" transform="translate(184.29 25.86)" fill="#36d0b2"/>
-        <rect id="Rectangle_19215" data-name="Rectangle 19215" width="7.94" height="4.5" transform="translate(185.21 25.86)" fill="#2fceaf"/>
-        <rect id="Rectangle_19216" data-name="Rectangle 19216" width="7.94" height="4.5" transform="translate(186.13 25.86)" fill="#28cdad"/>
-        <rect id="Rectangle_19217" data-name="Rectangle 19217" width="7.94" height="4.5" transform="translate(187.05 25.86)" fill="#22cbaa"/>
-        <rect id="Rectangle_19218" data-name="Rectangle 19218" width="7.94" height="4.5" transform="translate(187.98 25.86)" fill="#1bc9a7"/>
-        <rect id="Rectangle_19219" data-name="Rectangle 19219" width="7.94" height="4.5" transform="translate(188.9 25.86)" fill="#14c7a4"/>
-        <rect id="Rectangle_19220" data-name="Rectangle 19220" width="7.94" height="4.5" transform="translate(189.82 25.86)" fill="#0dc5a2"/>
-        <rect id="Rectangle_19221" data-name="Rectangle 19221" width="7.94" height="4.5" transform="translate(190.74 25.86)" fill="#07c39f"/>
-        <rect id="Rectangle_19222" data-name="Rectangle 19222" width="7.94" height="4.5" transform="translate(191.66 25.86)" fill="#00c19c"/>
-        <text id="Percentuale_di_luoghi_inventati_nel_testo_rispetto_al_numero_massimo_della_categoria" data-name="Percentuale di luoghi inventati 
+<svg xmlns="http://www.w3.org/2000/svg" width="344.67" height="59.18" viewBox="0 0 344.67 59.18">
+  <g id="Layer_1" data-name="Layer 1" transform="translate(-0.88 1.35)">
+    <g id="legend">
+      <circle id="S004" cx="3.13" cy="3.13" r="3.13" transform="translate(9.76 44.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <circle id="S004-2" data-name="S004" cx="3.13" cy="3.13" r="3.13" transform="translate(9.76 44.06)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <circle id="S004-3" data-name="S004" cx="11.32" cy="11.32" r="11.32" transform="translate(1.57 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+      <text id="_458335_Caratteri" data-name="458335 Caratteri" transform="translate(51.52 28.94)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0" letter-spacing="-0.01em">458335</tspan><tspan y="0" xml:space="preserve"> Caratteri</tspan></text>
+      <text id="_986_Caratteri" data-name="986 Caratteri" transform="translate(51.52 45.11)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">986 Caratteri</tspan></text>
+      <line id="Linea_7807" data-name="Linea 7807" x2="1" transform="translate(12.89 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <line id="Linea_7808" data-name="Linea 7808" x2="27.35" transform="translate(15.91 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25" stroke-dasharray="2.03 2.03"/>
+      <line id="Linea_7809" data-name="Linea 7809" x2="1" transform="translate(44.27 27.68)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <line id="Linea_7810" data-name="Linea 7810" x2="1" transform="translate(12.89 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <line id="Linea_7811" data-name="Linea 7811" x2="27.35" transform="translate(15.91 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25" stroke-dasharray="2.03 2.03"/>
+      <line id="Linea_7812" data-name="Linea 7812" x2="1" transform="translate(44.27 43.98)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+      <rect id="Rettangolo_19195" data-name="Rettangolo 19195" width="7.94" height="4.5" transform="translate(166.79 25.86)" fill="#b6f5e7"/>
+      <rect id="Rettangolo_19196" data-name="Rettangolo 19196" width="7.94" height="4.5" transform="translate(167.71 25.86)" fill="#aff3e4"/>
+      <rect id="Rettangolo_19197" data-name="Rettangolo 19197" width="7.94" height="4.5" transform="translate(168.63 25.86)" fill="#a9f1e1"/>
+      <rect id="Rettangolo_19198" data-name="Rettangolo 19198" width="7.94" height="4.5" transform="translate(169.55 25.86)" fill="#a2efdf"/>
+      <rect id="Rettangolo_19199" data-name="Rettangolo 19199" width="7.94" height="4.5" transform="translate(170.47 25.86)" fill="#9beddc"/>
+      <rect id="Rettangolo_19200" data-name="Rettangolo 19200" width="7.94" height="4.5" transform="translate(171.39 25.86)" fill="#94ebd9"/>
+      <rect id="Rettangolo_19201" data-name="Rettangolo 19201" width="7.94" height="4.5" transform="translate(172.31 25.86)" fill="#8ee9d6"/>
+      <rect id="Rettangolo_19202" data-name="Rettangolo 19202" width="7.94" height="4.5" transform="translate(173.24 25.86)" fill="#87e8d4"/>
+      <rect id="Rettangolo_19203" data-name="Rettangolo 19203" width="7.94" height="4.5" transform="translate(174.16 25.86)" fill="#80e6d1"/>
+      <rect id="Rettangolo_19204" data-name="Rettangolo 19204" width="7.94" height="4.5" transform="translate(175.08 25.86)" fill="#79e4ce"/>
+      <rect id="Rettangolo_19205" data-name="Rettangolo 19205" width="7.94" height="4.5" transform="translate(176 25.86)" fill="#73e2cb"/>
+      <rect id="Rettangolo_19206" data-name="Rettangolo 19206" width="7.94" height="4.5" transform="translate(176.92 25.86)" fill="#6ce0c8"/>
+      <rect id="Rettangolo_19207" data-name="Rettangolo 19207" width="7.94" height="4.5" transform="translate(177.84 25.86)" fill="#65dec6"/>
+      <rect id="Rettangolo_19208" data-name="Rettangolo 19208" width="7.94" height="4.5" transform="translate(178.76 25.86)" fill="#5edcc3"/>
+      <rect id="Rettangolo_19209" data-name="Rettangolo 19209" width="7.94" height="4.5" transform="translate(179.68 25.86)" fill="#58dac0"/>
+      <rect id="Rettangolo_19210" data-name="Rettangolo 19210" width="7.94" height="4.5" transform="translate(180.61 25.86)" fill="#51d8bd"/>
+      <rect id="Rettangolo_19211" data-name="Rettangolo 19211" width="7.94" height="4.5" transform="translate(181.53 25.86)" fill="#4ad6bb"/>
+      <rect id="Rettangolo_19212" data-name="Rettangolo 19212" width="7.94" height="4.5" transform="translate(182.45 25.86)" fill="#43d4b8"/>
+      <rect id="Rettangolo_19213" data-name="Rettangolo 19213" width="7.94" height="4.5" transform="translate(183.37 25.86)" fill="#3dd2b5"/>
+      <rect id="Rettangolo_19214" data-name="Rettangolo 19214" width="7.94" height="4.5" transform="translate(184.29 25.86)" fill="#36d0b2"/>
+      <rect id="Rettangolo_19215" data-name="Rettangolo 19215" width="7.94" height="4.5" transform="translate(185.21 25.86)" fill="#2fceaf"/>
+      <rect id="Rettangolo_19216" data-name="Rettangolo 19216" width="7.94" height="4.5" transform="translate(186.13 25.86)" fill="#28cdad"/>
+      <rect id="Rettangolo_19217" data-name="Rettangolo 19217" width="7.94" height="4.5" transform="translate(187.05 25.86)" fill="#22cbaa"/>
+      <rect id="Rettangolo_19218" data-name="Rettangolo 19218" width="7.94" height="4.5" transform="translate(187.98 25.86)" fill="#1bc9a7"/>
+      <rect id="Rettangolo_19219" data-name="Rettangolo 19219" width="7.94" height="4.5" transform="translate(188.9 25.86)" fill="#14c7a4"/>
+      <rect id="Rettangolo_19220" data-name="Rettangolo 19220" width="7.94" height="4.5" transform="translate(189.82 25.86)" fill="#0dc5a2"/>
+      <rect id="Rettangolo_19221" data-name="Rettangolo 19221" width="7.94" height="4.5" transform="translate(190.74 25.86)" fill="#07c39f"/>
+      <rect id="Rettangolo_19222" data-name="Rettangolo 19222" width="7.94" height="4.5" transform="translate(191.66 25.86)" fill="#00c19c"/>
+      <text id="Percentuale_di_luoghi_inventati_nel_testo_rispetto_al_numero_massimo_della_categoria" data-name="Percentuale di luoghi inventati 
 nel testo rispetto al numero
 massimo della categoria" transform="translate(208.55 30.83)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0" letter-spacing="-0.04em">P</tspan><tspan y="0">e</tspan><tspan y="0" letter-spacing="-0.05em">r</tspan><tspan y="0">centuale di </tspan><tspan y="0" letter-spacing="-0.01em">lu</tspan><tspan y="0">oghi in</tspan><tspan y="0" letter-spacing="-0.02em">v</tspan><tspan y="0">entati </tspan><tspan x="0" y="12">nel </tspan><tspan y="12" letter-spacing="-0.01em">t</tspan><tspan y="12">es</tspan><tspan y="12" letter-spacing="-0.01em">t</tspan><tspan y="12">o rispetto al </tspan><tspan y="12" letter-spacing="-0.01em">n</tspan><tspan y="12">ume</tspan><tspan y="12" letter-spacing="-0.05em">r</tspan><tspan y="12">o</tspan><tspan x="0" y="24">massimo della </tspan><tspan y="24" letter-spacing="-0.01em">c</tspan><tspan y="24">ate</tspan><tspan y="24" letter-spacing="-0.02em">g</tspan><tspan y="24">oria</tspan></text>
-        <text id="DIMENSIONE" transform="translate(0.88 10.65)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">DIMENSIONE</tspan></text>
-        <text id="COLORE" transform="translate(166.02 10.65)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0" letter-spacing="-0.01em">C</tspan><tspan y="0">O</tspan><tspan y="0" letter-spacing="-0.03em">L</tspan><tspan y="0">ORE</tspan></text>
-      </g>
+      <text id="DIMENSIONE" transform="translate(0.88 10.65)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="0">DIMENSIONE</tspan></text>
+      <text id="COLORE" transform="translate(166.02 10.65)" font-size="12" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500" letter-spacing="-0.01em"><tspan x="0" y="0">COLORE</tspan></text>
     </g>
   </g>
 </svg>

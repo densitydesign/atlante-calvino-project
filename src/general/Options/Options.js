@@ -73,7 +73,7 @@ class Options extends Component {
       })
     } else {
       this.setState({
-        show: undefined,
+        show: !this.state.show,
       })
     }
   }
@@ -93,13 +93,13 @@ class Options extends Component {
             )}
             {this.props.data.multiple && this.props.title}
           </Dropdown.Toggle>
+          {this.state.show && (
           <Dropdown.Menu
             className={classnames({
               "d-flex": this.props.isFlex,
               "flex-wrap": this.props.isFlex,
             })}
             onToggle={this.toggleDropDown}
-            show={this.state.show}
           >
             {this.props.data.options.map((d, i) => {
               return (
@@ -131,6 +131,7 @@ class Options extends Component {
               </Dropdown.Item>
             )}
           </Dropdown.Menu>
+          )}
         </Dropdown>
       </div>
     )

@@ -19,7 +19,7 @@ class AltOptions extends Component {
     const { value, multiple, options, allowEmpty } = this.props
     if (multiple) {
       const indices = options
-        .map((item, i) => (indexOf(value, item.label) !== -1 ? i : undefined))
+        .map((item, i) => (indexOf(value, item.value) !== -1 ? i : undefined))
         .filter((i) => i !== undefined)
       const selectedIndices = {}
       indices.forEach((i) => (selectedIndices[i] = true))
@@ -28,7 +28,7 @@ class AltOptions extends Component {
       if (!value && allowEmpty) {
         this.setState({ selectedIndices: {} })
       } else if (value) {
-        const i = findIndex(options, (x) => x.label === value)
+        const i = findIndex(options, (x) => x.value === value)
         this.setState({ selectedIndices: { [i]: true } })
       }
     }
@@ -127,7 +127,7 @@ class AltOptions extends Component {
     const allSelected = indices.length === options.length
     let current
     if (!multiple) {
-      current = anySelected ? options[indices[0]].label : undefined
+      current = anySelected ? options[indices[0]].value : undefined
     } else {
       current = anySelected
         ? indices.map((i) => this.props.t("options." + options[i].label))

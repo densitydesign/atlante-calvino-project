@@ -33,7 +33,7 @@ const searchOptions = racconti.map((racconto) => ({
   value: racconto.titolo,
 }))
 
-const cercaOptions = [{ label: "Titolo" }]
+const cercaOptions = [{ label: "Titolo", value: "Titolo" }]
 
 function Trama2Main({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)

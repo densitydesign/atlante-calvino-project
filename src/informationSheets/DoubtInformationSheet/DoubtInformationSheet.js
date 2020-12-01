@@ -51,7 +51,7 @@ class DoubtInformationSheet extends React.Component {
               <p className={SheetStyles.paragraph}>
                 {" "}
                 Il grafico mostra i due fenomeni,{" "}
-                <em>nebbia e cancellazione</em>, distribuiti cronologicamente e
+                <em>nebbia</em> e <em>cancellazione</em>, distribuiti cronologicamente e
                 non più ancorati ai singoli testi. Le onde della{" "}
                 <em>bump chart</em> evidenziano il loro impiego durante i
                 quarant’anni di carriera dell’autore, consentendoci di leggere

@@ -10,6 +10,7 @@ import { ReactComponent as LegendaProporzione } from "./icons/nebbia_b_proporzio
 import { ReactComponent as LegendaProporzioneEn } from "./icons/nebbia_b_proporzione_en.svg"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 import FrequenzaLegenda from "../../../panels/HelpSidePanel/components/FrequenzaLegenda"
+import { Link } from "react-router-dom"
 
 export default function TerritoryDoubtHelp({ helpProps }) {
   const [key, setKey] = useState("info")
@@ -93,7 +94,11 @@ export default function TerritoryDoubtHelp({ helpProps }) {
           </p>
           <Trans i18nKey={"help_panel.qualche_pista_di_lettura"} t={t} ns="nebbia">
             <p>
-            Un’informazione rilevante che emerge dalla visualizzazione consiste nel diverso tipo di distribuzione nel tempo e nell’opera dei due fenomeni: la nebbia, maggiormente presente nelle forme brevi, si sposta dalle raccolte centrali nella carriera di Calvino verso i testi isolati degli ultimi anni. La cancellazione invece si dispone in maniera uniforme lungo tutta l’opera, intensificandosi progressivamente a partire dagli anni Sessanta. La seconda metà dell’opera di Calvino sembra essere pervasa dalla nebbia: se però osserviamo la sua evoluzione cronologica, salta all’occhio che la presenza numerica del fenomeno non riflette tale percezione (vedi Approfondimento).</p>
+            Un’informazione rilevante che emerge dalla visualizzazione consiste nel diverso tipo di distribuzione nel tempo e nell’opera dei due fenomeni: la nebbia, maggiormente presente nelle forme brevi, si sposta dalle raccolte centrali nella carriera di Calvino verso i testi isolati degli ultimi anni. La cancellazione invece si dispone in maniera uniforme lungo tutta l’opera, intensificandosi progressivamente a partire dagli anni Sessanta. La seconda metà dell’opera di Calvino sembra essere pervasa dalla nebbia: se però osserviamo la sua evoluzione cronologica, salta all’occhio che la presenza numerica del fenomeno non riflette tale percezione(vedi{" "}
+              <strong>
+                <Link to={"/doubt/phase1/focus"}>Approfondimento</Link>
+              </strong>
+              ).</p>
             <p>Un altro aspetto interessante è l’osservazione dell’impiego solitamente disgiunto di nebbia e cancellazione: i testi che contengono entrambi sono soltanto una decina. Se ne deduce che i due fenomeni sono complementari: laddove la nebbia ha concretamente spazio, il narratore non sembra aver bisogno di evocare la cancellazione; viceversa, laddove la cancellazione dilaga, l’apparizione della nebbia vera e propria diventa superflua.
             </p>
           </Trans>
