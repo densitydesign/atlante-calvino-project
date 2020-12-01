@@ -8,19 +8,19 @@
     margin-bottom: 7px;
     cursor: grab;
     border-radius: 5px;
-    border: solid 1px var(--dark-blue);
+    border: solid 1px var(--dark-green);
     background-color: #fff;
     touch-action: pan-y;
 }
 
 .rc-slider-handle:active, .rc-slider-handle-click-focused {
-    border: solid 1px var(--dark-blue) !important;
+    border: solid 1px var(--dark-green) !important;
     box-shadow: none;
     cursor: grabbing;
 }
 
 .rc-slider-handle:hover {
-    border: solid 1px var(--dark-blue);
+    border: solid 1px var(--dark-green);
     box-shadow: none;
     cursor: grabbing;
 }
