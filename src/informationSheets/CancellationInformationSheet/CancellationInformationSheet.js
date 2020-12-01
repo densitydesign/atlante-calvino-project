@@ -33,7 +33,7 @@ class CancellationInformationSheet extends Component {
         <main className={SheetStyles.main}>
           <div className={SheetStyles.gridRow}>
             <h4 className={SheetStyles.titleH4}>
-              {this.props.t("TAPPA 3")} {">"} {this.props.t("cancellare")}
+              {this.props.t("TAPPA 3")} {">"} {this.props.t("cancellazione")}
             </h4>
             <h1 className={SheetStyles.titleH1}>
               {this.props.t("cancellazione-sheet:Il dubbio e la cancellazione")}
@@ -136,7 +136,7 @@ class CancellationInformationSheet extends Component {
                 </video>
               </div>
               <p className="captionLeft">
-                {this.props.t("cancellazione-sheet:Posizione del racconto")}
+                {this.props.t("cancellazione-sheet:Posizione di L’avventura di un soldato nella terza tappa Cancellazione")}
               </p>
               <img
                 className={SheetStyles.image + " " + SheetStyles.image100w}

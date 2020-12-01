@@ -172,8 +172,7 @@ class HesitationInformationSheet extends Component {
                 consapevolezza di una ipotetica lettrice/lettore sulle funzioni
                 del Cottolengo. Come conseguenza dell’instabilità semantica che
                 sta dietro le parole, l’unico modo per assicurarsi di essere
-                compresi correttamente è quello di «precisare» (<em>RR</em>, II,
-                7), ridefinendo ancora e ancora il concetto, accumulando le
+                compresi correttamente è quello di «precisare» (ibidem), ridefinendo ancora e ancora il concetto, accumulando le
                 puntualizzazioni (cfr. Mengaldo 1996, 278). Il testo in
                 questione si trova all’interno di un inciso; qui il segno
                 grafico delimita un’informazione, ma crea anche una deviazione
