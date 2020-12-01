@@ -23,7 +23,7 @@ export default function ProcessDoubtingMainHelp() {
         linkItinerario={"/itineraries#doubt"}
         titolo={t("dubitare")}
         linkApprofondimento="/doubt/phase2/focus"
-        nomeItinerario={t("doubting:help_panel.itinerario_dubbio")}
+        nomeItinerario={t("doubting:help_panel.Itinerario dubbio")}
       />
       <Tabs
         className="mt-2"
@@ -163,7 +163,7 @@ export default function ProcessDoubtingMainHelp() {
           <div className="mt-2">
             <div>
               <small>
-                {t("doubting:help_panel.disposizione_sulle_colonne")}
+                {t("doubting:help_panel.Disposizione")}
               </small>
             </div>
             <div className="row">
@@ -198,24 +198,24 @@ export default function ProcessDoubtingMainHelp() {
           <div className="row mt-2">
             <div className="col-md-12">
               <div>
-                <small>{t("doubting:help_panel.tipo_di_fenomeno")}</small>
+                <small>{t("doubting:help_panel.tipo di fenomeno")}</small>
               </div>
               <div>
                 <BadgeLegenda
                   color="#BBBBFF"
-                  name={t("doubting:help_panel.testo_dubitativo_dt")}
+                  name={t("doubting:help_panel.testo dubitativo (td)")}
                 />
                 <BadgeLegenda
                   color="#FFD337"
-                  name={t("doubting:help_panel.oggetto_di_dubbio")}
+                  name={t("doubting:help_panel.oggetto di dubbio")}
                 />
                 <BadgeLegenda
                   color="#00C19C"
-                  name={t("doubting:help_panel.dubitativo_e_oggetto_di_dubbio")}
+                  name={t("doubting:help_panel.dubitativo e oggetto di dubbio")}
                 />
                 <BadgeLegenda
                   color="#C6CACF"
-                  name={t("doubting:help_panel.non_dubitativo")}
+                  name={t("doubting:help_panel.non dubitativo")}
                 />
               </div>
             </div>
