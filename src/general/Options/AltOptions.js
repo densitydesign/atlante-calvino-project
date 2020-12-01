@@ -136,7 +136,10 @@ class AltOptions extends Component {
     return (
       <div className="options-container" style={style}>
         <Dropdown onToggle={this.toggleDropDown} show={this.state.show}>
-          <Dropdown.Toggle disabled={this.props.disabled}>
+          <Dropdown.Toggle
+            disabled={this.props.disabled}
+            style={{ opacity: this.props.disabled ? 1 : undefined }}
+          >
             {!multiple && anySelected && (
               <div>
                 {title && <span className="micro-title">{title}</span>}

@@ -103,7 +103,7 @@ const ItemIndex = ({
       >
         {title}
       </span>
-      {title !== "Territorio" && (
+      {link !== '/archipelago' && (
         <Link
           className={`d-flex mt-2 ${styles["icon-approfondimento"]} ${styles["small-approfondimento"]}`}
           to={linkApprofondimento}
