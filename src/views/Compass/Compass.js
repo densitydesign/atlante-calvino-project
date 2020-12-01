@@ -68,32 +68,14 @@ class Compass extends React.Component {
           </div>
           <div style={{ width: "70%" }}>
             <SlidingPanel
-              toggleFlowOfStories={this.toggleFlowOfStories}
+              toggleTimeAndWorks={this.toggleTimeAndWorks}
               id="1"
+              toggleTempoEOpere={this.toggleTempoEOpere}
               open={this.state.selectedPanel >= 1}
               zIndex="1"
-              icon={<Bussola1 className="mr-5 compass" />}
+              icon={<Bussola2 className="mr-5 compass" />}
               openClassName="panel1-open"
               closedClassName="panel1-closed"
-              hide={this.props.hide}
-              title={this.props.t("bussola:i_flussi_dei_racconti")}
-              getSelectedPanel={this.getSelectedPanel}
-              setSelectedPanel={this.setSelectedPanel}
-              panelClicked={this.panelClicked}
-              interactiveViewUrl="/compass/time-and-works"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
-              text={this.props.t("bussola:flussi_testo")}
-            />
-
-            <SlidingPanel
-              toggleTimeAndWorks={this.toggleTimeAndWorks}
-              id="2"
-              toggleTempoEOpere={this.toggleTempoEOpere}
-              open={this.state.selectedPanel >= 2}
-              zIndex="2"
-              icon={<Bussola2 className="mr-5 compass" />}
-              openClassName="panel2-open"
-              closedClassName="panel2-closed"
               hide={this.props.hide}
               title={this.props.t("bussola:il_tempo_e_le_opere")}
               getSelectedPanel={this.getSelectedPanel}
@@ -102,6 +84,24 @@ class Compass extends React.Component {
               interactiveViewUrl="/compass/flows-of-stories"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
               text={this.props.t("bussola:tempo_testo")}
+            />
+
+            <SlidingPanel
+              toggleFlowOfStories={this.toggleFlowOfStories}
+              id="2"
+              open={this.state.selectedPanel >= 2}
+              zIndex="2"
+              icon={<Bussola1 className="mr-5 compass" />}
+              openClassName="panel2-open"
+              closedClassName="panel2-closed"
+              hide={this.props.hide}
+              title={this.props.t("bussola:i_flussi_dei_racconti")}
+              getSelectedPanel={this.getSelectedPanel}
+              setSelectedPanel={this.setSelectedPanel}
+              panelClicked={this.panelClicked}
+              interactiveViewUrl="/compass/time-and-works"
+              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
+              text={this.props.t("bussola:flussi_testo")}
             />
 
             <SlidingPanel

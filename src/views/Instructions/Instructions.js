@@ -14,7 +14,6 @@ export default function Instructions() {
         <Trans i18nKey='instructions_text' ns='instructions' t={t}>
           <div className="content">
             <h1>Istruzioni per l'uso</h1>
-            <h2>Elementi che compongono l’Atlante</h2>
             <p>
               L’Atlante si esplora con l’aiuto di una Bussola, muovendosi lungo
               3 itinerari, che si articolano ciascuno in 3 tappe.
@@ -115,6 +114,10 @@ export default function Instructions() {
               <br />
               <Link to="/itineraries#shape">Itinerario della forma</Link>:
               <strong> Valeria Cavalloro</strong>
+            </p>
+            <p>
+            L’Atlante è stato scritto in italiano e tradotto in inglese, affinché fosse disponibile in una doppia versione. La traduzione inglese è di Ilaria Bruzzone.
+I titoli delle opere appaiono sempre in lingua originale. Per quanto riguarda le citazioni, laddove non è diversamente specificato, la traduzione è nostra.
             </p>
           </div>
         </Trans>

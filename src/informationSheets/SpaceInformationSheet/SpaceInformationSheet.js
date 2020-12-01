@@ -276,13 +276,12 @@ class SpaceInformationSheet extends React.Component {
               {this.props.t("bibliografia")}
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
-              <li className="referenceItem">
-                Zipfel 2001: F. Zipfel, Fiktion, Fiktivität,{" "}
+            <li className="referenceItem">
+                Berardinelli 1991: A. Berardinelli,{" "}
                 <em>
-                  Fiktionalität: Analysen zur Fiktion in der Literatur und zum
-                  Fiktionsbegriff in der Literaturwissenschaft
+                  Calvino moralista. Ovvero restare sani dopo la fine del mondo
                 </em>
-                , Berlin, Erich Schmidt Verlag.
+                , in «Diario», VII, 9, pp. 37-58.
               </li>
               <li className="referenceItem">
                 Piatti 2008: B. Piatti, <em>Die Geographie der Literatur.</em>{" "}
@@ -298,14 +297,15 @@ class SpaceInformationSheet extends React.Component {
                 in «The Cartographic Journal», vol. 48, n. 4, pp. 293-308.
               </li>
               <li className="referenceItem">
-                Berardinelli 1991: A. Berardinelli,{" "}
-                <em>
-                  Calvino moralista. Ovvero restare sani dopo la fine del mondo
-                </em>
-                , in «Diario», VII, 9, pp. 37-58.
+                Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
               </li>
               <li className="referenceItem">
-                Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
+                Zipfel 2001: F. Zipfel, Fiktion, Fiktivität,{" "}
+                <em>
+                  Fiktionalität: Analysen zur Fiktion in der Literatur und zum
+                  Fiktionsbegriff in der Literaturwissenschaft
+                </em>
+                , Berlin, Erich Schmidt Verlag.
               </li>
             </ol>
           </div>
