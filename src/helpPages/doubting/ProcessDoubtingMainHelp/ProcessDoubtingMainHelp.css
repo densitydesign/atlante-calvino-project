@@ -1,0 +1,10 @@
+.help-side-panel p.text-legenda {
+  font-size: 10px;
+  line-height: 13px;
+  margin:0;
+  margin-top: 5px;
+}
+
+p.text-legenda.gray {
+  color: #666;
+}
