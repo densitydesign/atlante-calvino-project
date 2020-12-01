@@ -2,12 +2,8 @@ import React from "react"
 
 import LoadingWrapper from "../../general/LoadingWrapper"
 
-<<<<<<< HEAD
-import { BrowserRouter, Route, useHistory } from "react-router-dom"
-=======
-import { Router, Route } from "react-router-dom"
+import { Router, Route, useHistory } from "react-router-dom"
 import { createHistoryHackedWithI18n } from '../../i18n'
->>>>>>> 7e3edac534d7ccca753e0dfb8ca8d05a620e3ca7
 
 import GlobalData from "../../utilities/GlobalData"
 import SplashScreen2 from "../../visualizations/SplashScreen2/"
@@ -47,8 +43,6 @@ const history = createHistoryHackedWithI18n({
 })
 
 export default function AtlasRouter() {
-
-  const history = useHistory()
 
   return (
     <Router history={history}>
