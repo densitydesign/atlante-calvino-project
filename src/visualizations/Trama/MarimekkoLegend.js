@@ -31,7 +31,7 @@ export default function MarimekkoLegend({
       </div>
       {Object.keys(byGruppo).map(gruppo => (
         <div key={gruppo} className="mt-1">
-          {/* <div className={styles.legendGroupText}>{gruppo}</div> */}
+          <div className={styles.legendGroupText}>{t(gruppo)}</div>
           <div>
             {byGruppo[gruppo].map((item, i) => {
               const notFound = currentBook && !currentBook.categoriesMatchesForBook[item.valore]

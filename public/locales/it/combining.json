@@ -51,5 +51,10 @@
     "situazione": "situazione",
     "spostamento": "spostamento",
     "stato euforico": "stato euforico"
-  }
+  },
+  "Ambientazione": "Ambientazione",
+  "Struttura": "Struttura",
+  "Esteriore": "Piano esteriore",
+  "Forma": "Piano formale",
+  "Interiore": "Piano interiore"
 }
