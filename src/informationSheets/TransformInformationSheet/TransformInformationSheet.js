@@ -146,7 +146,12 @@ class TransformInformationSheet extends Component {
 
           <div className={SheetStyles.gridRow} style={{ marginBottom: "0px" }}>
             <div className="CarouselSlide" data-interval="false">
-
+              <h2 className={SheetStyles.titleH2}>
+                {this.props.t("transform-sheet:Approfondimento")}
+              </h2>
+              <p className="order-message">
+                {this.props.t("transform-sheet:Clicca qui per cambiare mappa")}
+              </p>
               <Carousel>
                 <Carousel.Item>
                   <Carousel.Caption>

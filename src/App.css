@@ -138,6 +138,14 @@ p.small {
   font-size: 1rem;
   line-height: 1.2857142857rem;
 }
+
+.order-message{
+  color:#666;
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: center;
+  margin-bottom:0;
+}
 /* end block */
 
 .ac-breadcrumb {
