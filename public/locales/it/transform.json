@@ -1,30 +1,29 @@
 {
   "help_panel": {
     "aspetto": "aspetto",
-    "testo_gif": "testo_gif",
-    "tipo_di_luogo": "tipo_di_luogo",
-    "terrestri_generici": "Terrestri generici",
-    "terrestri_localizzabili": "terrestri localizzabili",
-    "cosmici_localizzabili": "cosmici localizzabili",
-    "nessun_luogo": "nessun luogo",
+    "cosmici_generici": "cosmici_generici",
+    "cosmici_localizzabili": "cosmici_localizzabili",
+    "terrestri_inventati": "terrestri_inventati",
+    "nessun_luogo": "nessun_luogo",
     "di_cosa_si_tratta": "<p>Italo Calvino è uno degli scrittori italiani del secondo Novecento più sensibili alla dimensione narrativa dello spazio. Sia in senso orizzontale, nell’attenzione che dalla natura ligure lo conduce alla metropoli, passando per la città industriale italiana; sia in quello trasversale, che proietta il racconto in paesi e città immaginarie o fuori dai confini terrestri, verso spazi cosmici primordiali. In questo senso, mostrare tutte le ambientazioni della sua opera significa riflettere sul complesso rapporto di trasformazione della realtà rappresentata.</p>",
     "come_funziona": "<0>I luoghi sono raccolti in categorie, secondo il loro rapporto di aderenza alla realtà. Le categorie scelte, distribuite sull’asse verticale, sono quelle già presenti nella prima tappa: <2>cosmici generici</2>, <5>cosmici localizzabili</5>, <8>terrestri localizzabili</8>, <11>terrestri generici</11>, <14>terrestri inventati</14>, <17>nessun luogo</17>. <br/><br/>Tutte le ambientazioni sono rappresentate da un cerchio. La dimensione dei cerchi non è uniforme, ma varia in rapporto al numero di luoghi che appartengono a una stessa ambientazione. Nel caso in cui la rappresentazione di un luogo includa al suo interno un altro luogo, quest’ultimo, da un punto di vista grafico, scompare e la circonferenza del primo aumenta, mettendo in evidenza la presenza di un contenuto nascosto. Per svelare questo contenuto interno è sufficiente selezionare e aprire il cerchio “contenitore”.<br/><br/>È possibile attivare o disattivare un ampio numero di filtri, che permettono di trasformare il campo della ricerca, osservandolo da prospettive differenti. I risultati possono essere filtrati per categoria, per <i>Tipo di pubblicazione (romanzo, raccolta di racconti, periodico)</i>, per <i>Contesti (guerra, natura ligure, paesaggio urbano, mare, fabbrica, metropoli)</i> o attraverso il <i>Filtro cronologico</i>.</0>",
     "qualche_pista_di_lettura": "<0>Una prima considerazione riguarda la categoria dei luoghi terrestri localizzabili, che riflette con una certa precisione la geografia biografica dell’autore (vedi <2>Approfondimento</2>).<br/><br/>La disposizione spaziale degli elementi rivela una coincidenza significativa con il tempo della storia: al centro dell’asse verticale della visualizzazione, salvo alcune eccezioni, il tempo della storia coincide con il momento storico in cui Calvino scrive; allontanandosi verso l’alto o verso il basso, questa corrispondenza viene meno e ci si trova catapultati all’indietro, in un passato recente o ai primordi del mondo.<br/><br/>Un’ultima considerazione riguarda l’utilità dei filtri: selezionando l’opera per <i>Tipo di pubblicazione</i>, emergono differenze rilevanti: i romanzi esplorano maggiormente gli spazi del fantastico; invece i testi pubblicati in periodici e poi non più raccolti sono gli unici in cui l’interesse verso luoghi reali ben identificabili rimane abbastanza stabile nel tempo; infine, le raccolte di racconti si collocano nel mezzo: la spinta realista, inizialmente forte, a un certo punto è interrotta dalle esplorazioni cosmiche.</0>",
+    "interazione": "interazione",
+    "tipo_di_luogo": "tipo_di_luogo",
+    "terrestri_localizzabili": "terrestri_localizzabili",
     "posizione": "posizione",
-    "cosmici_generici": "cosmici generici",
-    "terrestri_inventati": "terrestri inventati",
-    "interazione": "interazione"
+    "terrestri_generici": "terrestri_generici"
   },
   "footer": {
-    "contesti": "contesti",
-    "tipo_di_pubblicazione": "Tipo di pubblicazione"
+    "tipo_di_pubblicazione": "tipo_di_pubblicazione",
+    "contesti": "contesti"
   },
   "categoria": {
     "Cosmici generici": "Cosmici generici",
-    "Terrestri Inventati": "Terrestri Inventati",
-    "Nessun luogo": "Nessun luogo",
     "Cosmici localizzabili": "Cosmici localizzabili",
     "Terrestri localizzabili": "Terrestri localizzabili",
-    "Terrestri generici": "Terrestri generici"
+    "Terrestri generici": "Terrestri generici",
+    "Terrestri Inventati": "Terrestri Inventati",
+    "Nessun luogo": "Nessun luogo"
   }
 }

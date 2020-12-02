@@ -76,9 +76,7 @@ class TransformInformationSheet extends Component {
                 }
               />
             </div>
-            <h3 className={SheetStyles.subtitleSheet}>
-              {this.props.t("transform-sheet:Geoletteratura")}
-            </h3>
+
             <Trans
               i18nKey="paragraph-geoletterature"
               ns="transform-sheet"
@@ -151,6 +149,9 @@ class TransformInformationSheet extends Component {
               <h2 className={SheetStyles.titleH2}>
                 {this.props.t("transform-sheet:Approfondimento")}
               </h2>
+              <p className="order-message">
+                {this.props.t("transform-sheet:Clicca qui per cambiare mappa")}
+              </p>
               <Carousel>
                 <Carousel.Item>
                   <Carousel.Caption>

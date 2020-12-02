@@ -11,6 +11,8 @@ import { ReactComponent as Legend02En } from "./icons/trasformare_dimensione_en.
 import { ReactComponent as Legend03En } from "./icons/trasformare_posizione_en.svg"
 import Legend04 from "./icons/trasformare_interazioneGIF.gif"
 import Legend04En from "./icons/trasformare_interazioneGIF_en.gif"
+import Legend05 from "./icons/transformare_interazione-testoGIF.svg"
+import Legend05En from "./icons/transformare_interazione-testoGIF_en.svg"
 import "./TransformMainHelp.css"
 import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
 
@@ -164,7 +166,8 @@ export default function TransformMainHelp() {
               </div>
               <img src={Legend04} width="117" className="mt-2" alt="Legenda" />
               <small style={{ lineHeight: 0.5 }}>
-                {t("transform:help_panel.testo_gif")}
+              <img src={Legend05} width="117" className="mt-2" alt="Legenda" />
+              <small style={{ lineHeight: 0.5 }}></small>
               </small>
             </div>
           </div>
