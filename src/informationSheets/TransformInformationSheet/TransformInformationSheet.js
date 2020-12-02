@@ -76,9 +76,7 @@ class TransformInformationSheet extends Component {
                 }
               />
             </div>
-            <h3 className={SheetStyles.subtitleSheet}>
-              {this.props.t("transform-sheet:Geoletteratura")}
-            </h3>
+
             <Trans
               i18nKey="paragraph-geoletterature"
               ns="transform-sheet"
@@ -148,9 +146,7 @@ class TransformInformationSheet extends Component {
 
           <div className={SheetStyles.gridRow} style={{ marginBottom: "0px" }}>
             <div className="CarouselSlide" data-interval="false">
-              <h2 className={SheetStyles.titleH2}>
-                {this.props.t("transform-sheet:Approfondimento")}
-              </h2>
+
               <Carousel>
                 <Carousel.Item>
                   <Carousel.Caption>
