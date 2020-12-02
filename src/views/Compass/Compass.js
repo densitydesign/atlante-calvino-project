@@ -61,7 +61,7 @@ class Compass extends React.Component {
               <h1>{this.props.t("bussola")}</h1>
               <p className="text-dark-blue">
                 <Trans i18nKey={"testo_bussola"} t={this.props.t} ns="bussola">
-                  Prima di iniziare il viaggio, ci vuole una bussola. Per quello abbiamo creato tre visualizzazioni orientative, <i>Il tempo e le opere, I flussi dei racconti</i> e <i>L’arcipelago dei nomi</i> che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano. Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.
+                  Prima di iniziare il viaggio, ci vuole una bussola. Per quello abbiamo creato tre visualizzazioni orientative, <i>Il tempo e le opere, I flussi dei racconti</i> e <i>L’arcipelago dei nomi</i>, che aiutino a muoversi dentro l’intero corpus dell’opera e che siano sempre a portata di mano. Fornendo un colpo d’occhio sulla storia dei volumi, sulla vicenda dei racconti e sulla biblioteca mentale dell’autore.
                 </Trans>
               </p>
             </div>
