@@ -392,13 +392,13 @@ export default function RealismoMain({ title }) {
               {
                 return d.value.map(id=>
                   racconti.find(dd=>dd.id===id)
-                ) 
-              } 
+                )
+              }
             )
             temp = temp.flat()
             temp = temp.filter(d=>d)
             // destination : {label:"title", value:"title"}
-            temp = temp.map(d=>({label:d.title, value:d.title}))            
+            temp = temp.map(d=>({label:d.title, value:d.title}))
             setRicerca(temp)
             setRicerca2(newOptions)
           }}
@@ -434,6 +434,7 @@ export default function RealismoMain({ title }) {
                   onClick={() => {
                     // Reset Selection
                     setRicerca([])
+                    setRicerca2([])
                     // Reset Filters
                     setSpazio([])
                     setMovimento(null)

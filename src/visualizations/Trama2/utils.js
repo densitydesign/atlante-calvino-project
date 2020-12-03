@@ -127,6 +127,7 @@ export function makeVizData(scaleY) {
       titolo: item["titolo racconto"],
       anno: item["anno"],
       mese: item["mese"],
+      volume: item['titolo volume'],
     })),
     (item) => {
       const anno = +item.anno;
