@@ -167,7 +167,7 @@ export default function Capta() {
           {selected.jsx}
         </div>
       </div>
-      <div className="ac-grid-24">
+      {/* <div className="ac-grid-24">
         <div className="content">
           <h2>Bibliografia</h2>
           <ol className="references">
@@ -203,7 +203,7 @@ export default function Capta() {
             </li>
           </ol>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

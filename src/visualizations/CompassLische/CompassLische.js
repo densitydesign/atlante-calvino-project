@@ -93,7 +93,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,127.21c-44.69,0-44.78,60.92-89.38,60.92"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" 
                     stroke-width="0.35"
                   />
                   <rect
@@ -154,7 +154,7 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1174.05c-109.39,0-109.39-84.22-218.78-84.22"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -187,15 +187,15 @@ export default class CompassLische extends React.Component {
                     y2="1093.16"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1089.76" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1143.6c-63.52,0-63.52,23.41-127,23.41"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1143.6a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1143.6Z"
@@ -205,7 +205,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1167c-4.11,0-4.11,7-8,7"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M548.82,1174.05a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,548.82,1174.05Z"
@@ -224,7 +224,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,776c-47.25,0-94.64,124.21-171.19,124.21"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,776a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,501.06,776Z"
@@ -234,7 +234,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,900.13c-44.69,0-44.69,176-89.38,176"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -285,8 +285,8 @@ export default class CompassLische extends React.Component {
                     y2="903.42"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -295,8 +295,8 @@ export default class CompassLische extends React.Component {
                     y2="903.42"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="900.13" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -308,7 +308,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,770.27c-51.77,0-94.64,123.23-171.19,123.23"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,770.27a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,501.06,770.27Z"
@@ -354,8 +354,8 @@ export default class CompassLische extends React.Component {
                     y2="896.85"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="893.45" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -367,7 +367,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,753.16c-63.87,0-94.64,120.29-171.19,120.29"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,753.14a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,501.06,753.14Z"
@@ -437,8 +437,8 @@ export default class CompassLische extends React.Component {
                     y2="876.79"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="873.4" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -450,7 +450,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,747.45c-68,0-94.57,119.32-171.07,119.32"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,747.45a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,501.06,747.45Z"
@@ -460,7 +460,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,866.71c-44.69,0-44.69,206.5-89.38,206.5"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -511,8 +511,8 @@ export default class CompassLische extends React.Component {
                     y2="870"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -521,8 +521,8 @@ export default class CompassLische extends React.Component {
                     y2="870.11"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,864.31a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -537,7 +537,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,741.75c-71.9,0-94.64,118.33-171.19,118.33"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,741.75a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,501.06,741.75Z"
@@ -547,7 +547,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,860c-44.69,0-44.62,210.26-89.38,210.26"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -604,8 +604,8 @@ export default class CompassLische extends React.Component {
                     y2="863.32"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -614,8 +614,8 @@ export default class CompassLische extends React.Component {
                     y2="863.43"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,857.62a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -630,7 +630,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,736c-75.93,0-94.64,117.36-171.19,117.36"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,736a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,501.06,736Z"
@@ -640,7 +640,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,853.35c-44.69,0-44.69,214-89.38,214"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -673,8 +673,8 @@ export default class CompassLische extends React.Component {
                     y2="856.64"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -683,8 +683,8 @@ export default class CompassLische extends React.Component {
                     y2="856.74"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,850.94a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -699,13 +699,13 @@ export default class CompassLische extends React.Component {
                     d="M479,595.25c-74.14,0-60.62,201.14-147.11,201.14"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,746.19c-50.46,0-50.46-150.94-95.54-150.94"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,595.25a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,595.25Z"
@@ -770,8 +770,8 @@ export default class CompassLische extends React.Component {
                     y2="799.74"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="796.34" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -783,13 +783,13 @@ export default class CompassLische extends React.Component {
                     d="M479,571.52c-73.78,0-66.88,211.5-147.11,211.5"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,711.88c-48.67,0-48.67-140.36-95.54-140.36"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,571.52a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,571.52Z"
@@ -848,8 +848,8 @@ export default class CompassLische extends React.Component {
                     y2="786.36"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="782.97" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -861,7 +861,7 @@ export default class CompassLische extends React.Component {
                     d="M479,547.8c-73.85,0-72.92,221.85-147.11,221.85"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,547.82A1.86,1.86,0,1,0,479,546,1.85,1.85,0,0,0,477.15,547.82Z"
@@ -907,8 +907,8 @@ export default class CompassLische extends React.Component {
                     y2="772.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="769.6" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -920,13 +920,13 @@ export default class CompassLische extends React.Component {
                     d="M479,725.74c-73.56,0-73.56,37.58-147.11,37.58"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,724.63c-12,0-12,1.11-24.08,1.11"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,725.74a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,725.74Z"
@@ -976,8 +976,8 @@ export default class CompassLische extends React.Component {
                     y2="766.31"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="762.92" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -989,7 +989,7 @@ export default class CompassLische extends React.Component {
                     d="M479,524.07c-73.93,0-73.69,225.53-147.11,225.53"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,524.07a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,524.07Z"
@@ -999,7 +999,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,749.55c-44.69,0-44.69-27.62-89.38-27.62"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1050,8 +1050,8 @@ export default class CompassLische extends React.Component {
                     y2="752.85"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1060,8 +1060,8 @@ export default class CompassLische extends React.Component {
                     y2="752.85"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,747.14a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1076,7 +1076,7 @@ export default class CompassLische extends React.Component {
                     d="M479,452.89c-76.77,0-82.79,276.66-147.11,276.66"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,452.89A1.86,1.86,0,1,0,479,451,1.85,1.85,0,0,0,477.15,452.89Z"
@@ -1086,7 +1086,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,729.5c-44.69,0-44.69,162.69-89.38,162.69"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1137,8 +1137,8 @@ export default class CompassLische extends React.Component {
                     y2="732.8"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1147,8 +1147,8 @@ export default class CompassLische extends React.Component {
                     y2="732.8"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,727.09a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1163,7 +1163,7 @@ export default class CompassLische extends React.Component {
                     d="M479,441c-77.58,0-85,281.83-147,281.83"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,441a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,441Z"
@@ -1173,7 +1173,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,722.82c-44.69,0-44.69,140.38-89.38,140.38"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1221,8 +1221,8 @@ export default class CompassLische extends React.Component {
                     y2="726.12"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1231,8 +1231,8 @@ export default class CompassLische extends React.Component {
                     y2="726.12"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,720.41a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1247,7 +1247,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,716.13c-44.69,0-44.69,93.63-89.38,93.63"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1311,7 +1311,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,709.45c-44.78,0-44.69,130.75-89.38,130.75"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1393,7 +1393,7 @@ export default class CompassLische extends React.Component {
                     d="M479,429.17c-147,0-81.34,261.32-147.11,261.32"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,429.16a1.86,1.86,0,1,0,1.86-1.85A1.86,1.86,0,0,0,477.15,429.16Z"
@@ -1403,7 +1403,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,690.41c-44.69,0-44.69-168-89.38-168"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1443,8 +1443,8 @@ export default class CompassLische extends React.Component {
                     y2="693.75"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1453,8 +1453,8 @@ export default class CompassLische extends React.Component {
                     y2="693.75"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,688a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1469,7 +1469,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,626.8c-44.69,0-44.69,49.54-89.38,49.54"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1512,7 +1512,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,613.43c-44.69,0-44.69,57-89.38,57"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1567,7 +1567,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,547.66c-43.06,0-48.22-253.15-89.38-253.15"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1616,7 +1616,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,540.94c-44.69,0-44.69-261.42-89.38-261.42"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -1677,13 +1677,13 @@ export default class CompassLische extends React.Component {
                     d="M479,417.3c-103.8,0-110.34,117-147.11,117"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,626.11c-46,0-46-208.81-95.54-208.81"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,417.3a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,417.3Z"
@@ -1697,7 +1697,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,534.29c-44.69,0-44.69-40.72-89.38-40.72"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1760,8 +1760,8 @@ export default class CompassLische extends React.Component {
                     y2="537.55"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1770,8 +1770,8 @@ export default class CompassLische extends React.Component {
                     y2="537.55"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,531.84a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -1786,13 +1786,13 @@ export default class CompassLische extends React.Component {
                     d="M479,678.29c-73.76,0-73.63-157.38-147-157.38"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,701.81c-12.15,0-12-23.52-24.08-23.52"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,678.29a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,678.29Z"
@@ -1806,7 +1806,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,520.93c-44.69,0-44.69-244.36-89.38-244.36"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1848,8 +1848,8 @@ export default class CompassLische extends React.Component {
                     y2="524.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1858,8 +1858,8 @@ export default class CompassLische extends React.Component {
                     y2="524.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,518.47a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1874,13 +1874,13 @@ export default class CompassLische extends React.Component {
                     d="M479,654.56c-73.82,0-73.69-167.07-147.11-167.07"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,690.4c-12,0-12-35.84-24.08-35.84"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,654.56a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,654.56Z"
@@ -1894,7 +1894,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,487.52c-44.69,0-44.87-222.74-89.38-222.74"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -1963,8 +1963,8 @@ export default class CompassLische extends React.Component {
                     y2="490.77"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -1973,8 +1973,8 @@ export default class CompassLische extends React.Component {
                     y2="490.77"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,485.05a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -1989,13 +1989,13 @@ export default class CompassLische extends React.Component {
                     d="M479,630.84c-74.91,0-73.49-189.09-147-189.09"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,679c-9.33,0-9.33-48.15-24.08-48.15"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,630.84A1.86,1.86,0,1,0,479,629,1.85,1.85,0,0,0,477.15,630.84Z"
@@ -2009,7 +2009,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,441.7c-44.69,0-44.69-194.61-89.38-194.61"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2051,8 +2051,8 @@ export default class CompassLische extends React.Component {
                     y2="445.04"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2061,8 +2061,8 @@ export default class CompassLische extends React.Component {
                     y2="445.04"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,439.31a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -2077,13 +2077,13 @@ export default class CompassLische extends React.Component {
                     d="M479,393.58c-73.89,0-73.49,41.48-147,41.48"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,609c-45.08,0-43-215.37-95.54-215.37"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M572.51,609a1.86,1.86,0,1,0,1.86-1.86A1.86,1.86,0,0,0,572.51,609Z"
@@ -2094,7 +2094,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,435c-44.69,0-44.69,83.39-89.38,83.39"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2152,8 +2152,8 @@ export default class CompassLische extends React.Component {
                     y2="438.36"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2162,8 +2162,8 @@ export default class CompassLische extends React.Component {
                     y2="438.36"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,432.63a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -2178,13 +2178,13 @@ export default class CompassLische extends React.Component {
                     d="M479,619c-73.76,0-73.63-190.6-147-190.6"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,673.28c-8,0-8-54.3-24.08-54.3"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,618.92a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,618.92Z"
@@ -2198,7 +2198,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,428.33c-44.69,0-45.26-184.19-89.38-184.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2231,8 +2231,8 @@ export default class CompassLische extends React.Component {
                     y2="431.67"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2241,8 +2241,8 @@ export default class CompassLische extends React.Component {
                     y2="431.67"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,426a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -2257,7 +2257,7 @@ export default class CompassLische extends React.Component {
                     d="M479,381.72c-73.56,0-73.56,40-147.11,40"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,381.72a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,381.72Z"
@@ -2267,7 +2267,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,421.65c-44.69,0-44.69-180.46-89.38-180.46"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2318,8 +2318,8 @@ export default class CompassLische extends React.Component {
                     y2="424.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2328,8 +2328,8 @@ export default class CompassLische extends React.Component {
                     y2="424.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,419.26a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -2344,13 +2344,13 @@ export default class CompassLische extends React.Component {
                     d="M479,369.85c-73.56,0-73.56,32.84-147.11,32.84"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,591.79c-43.61,0-39.48-221.94-95.54-221.94"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,369.85A1.86,1.86,0,1,0,479,368,1.85,1.85,0,0,0,477.15,369.85Z"
@@ -2364,7 +2364,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,402.73c-44.69,0-44.69,87.44-89.38,87.44"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.98"
@@ -2421,8 +2421,8 @@ export default class CompassLische extends React.Component {
                     y2="405.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2431,8 +2431,8 @@ export default class CompassLische extends React.Component {
                     y2="405.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,400.26a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -2484,7 +2484,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,377c-44.69,0-45.29,34-89.38,34"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                 </g>
@@ -2496,7 +2496,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,283.24c-37.75,0-36,34.66-75.5,34.66"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2562,8 +2562,8 @@ export default class CompassLische extends React.Component {
                     y2="321.24"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="317.88" r="2.13" fill="#5f5f5e" />
                   <path
@@ -2579,7 +2579,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,276.11c-39.51,0-39.83,35-75.5,35"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2630,8 +2630,8 @@ export default class CompassLische extends React.Component {
                     y2="314.56"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="311.2" r="2.13" fill="#5f5f5e" />
                   <path
@@ -2647,7 +2647,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,265.47c-44.69,0-44.69-50.81-89.38-50.81"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -2714,19 +2714,19 @@ export default class CompassLische extends React.Component {
                     d="M479,286.81c-35.79,0-35.79-39.22-71.61-39.22"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,247.59c-37.75,0-37.75,4.52-75.5,4.52"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,252.1c-44.69,0-44.69-43.33-89.38-43.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2784,8 +2784,8 @@ export default class CompassLische extends React.Component {
                     y2="255.43"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2794,8 +2794,8 @@ export default class CompassLische extends React.Component {
                     y2="255.43"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,249.69a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -2814,19 +2814,19 @@ export default class CompassLische extends React.Component {
                     d="M479,275c-35.8,0-35.8-34.49-71.61-34.49"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,240.46c-37.75,0-37.75,5-75.5,5"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,245.42c-44.69,0-44.69-39.6-89.38-39.6"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2877,8 +2877,8 @@ export default class CompassLische extends React.Component {
                     y2="248.74"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2887,8 +2887,8 @@ export default class CompassLische extends React.Component {
                     y2="248.74"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,243a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -2911,19 +2911,19 @@ export default class CompassLische extends React.Component {
                     d="M479,263.09c-35.79,0-35.8-29.76-71.61-29.76"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,233.33c-37.75,0-37.75-1.27-75.5-1.27"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,232c-44.69,0-44.69-29.17-89.38-29.17"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -2968,8 +2968,8 @@ export default class CompassLische extends React.Component {
                     y2="235.38"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -2978,8 +2978,8 @@ export default class CompassLische extends React.Component {
                     y2="235.38"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,229.64a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3002,19 +3002,19 @@ export default class CompassLische extends React.Component {
                     d="M479,251.22c-35.79,0-35.8-25-71.61-25"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,226.21c-37.75,0-37.75-.84-75.5-.84"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,225.36c-44.69,0-44.69-25.44-89.38-25.44"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3047,8 +3047,8 @@ export default class CompassLische extends React.Component {
                     y2="228.69"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3057,8 +3057,8 @@ export default class CompassLische extends React.Component {
                     y2="228.69"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,223a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -3081,13 +3081,13 @@ export default class CompassLische extends React.Component {
                     d="M407.39,219.08c-37.75,0-37.75-.39-75.5-.39"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,218.68C134.39,218.68,134.51,407,89.82,407"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3132,8 +3132,8 @@ export default class CompassLische extends React.Component {
                     y2="222.02"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3142,8 +3142,8 @@ export default class CompassLische extends React.Component {
                     y2="222.02"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,216.27a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3162,19 +3162,19 @@ export default class CompassLische extends React.Component {
                     d="M479,239.36c-35.8,0-35.8-27.41-71.61-27.41"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,212c-37.75,0-37.75.06-75.5.06"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,212c-44.78,0-44.69-15-89.38-15"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3222,8 +3222,8 @@ export default class CompassLische extends React.Component {
                     y2="215.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3232,8 +3232,8 @@ export default class CompassLische extends React.Component {
                     y2="215.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,209.59a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3256,7 +3256,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,120.52c-44.69,0-44.69,64.66-89.38,64.66"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3305,7 +3305,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,35.74c-44.69,0-44.69,64.11-89.38,64.11"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3351,7 +3351,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,42.42c-44.69,0-44.69,60.83-89.38,60.83"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3400,7 +3400,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,49.11c-44.69,0-44.69,57.54-89.38,57.54"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3470,7 +3470,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,61.42c-44.69,0-44.69,64.18-89.38,64.18"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3521,8 +3521,8 @@ export default class CompassLische extends React.Component {
                     y2="64.77"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3531,8 +3531,8 @@ export default class CompassLische extends React.Component {
                     y2="64.77"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,59a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3542,7 +3542,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,105c-37.63,0-38-43.59-75.5-43.59"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,105a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,105Z"
@@ -3557,7 +3557,7 @@ export default class CompassLische extends React.Component {
                     d="M479,120.73c-35.79,0-35.79-8.59-71.61-8.59"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,120.76A1.86,1.86,0,1,0,479,118.9,1.85,1.85,0,0,0,477.15,120.76Z"
@@ -3567,7 +3567,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,73.74c-44.69,0-44.69,75.32-89.38,75.32"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3609,8 +3609,8 @@ export default class CompassLische extends React.Component {
                     y2="77.08"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3619,8 +3619,8 @@ export default class CompassLische extends React.Component {
                     y2="77.08"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,71.33a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3630,7 +3630,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,112.14c-39.42,0-38-38.4-75.5-38.4"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,112.08a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,405.59,112.08Z"
@@ -3645,7 +3645,7 @@ export default class CompassLische extends React.Component {
                     d="M479,132.59c-35.8,0-35.8-6.19-71.58-6.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,132.59a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,132.59Z"
@@ -3655,7 +3655,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,87.1c-44.69,0-44.69,222.66-89.38,222.66"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3715,8 +3715,8 @@ export default class CompassLische extends React.Component {
                     y2="90.45"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3725,8 +3725,8 @@ export default class CompassLische extends React.Component {
                     y2="90.45"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,84.7a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3736,7 +3736,7 @@ export default class CompassLische extends React.Component {
                     d="M407.42,126.4c-39.43,0-39.32-39.29-75.53-39.29"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,126.4a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,126.4Z"
@@ -3751,7 +3751,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,93.79c-44.69,0-44.69,85.5-89.38,85.5"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3806,13 +3806,13 @@ export default class CompassLische extends React.Component {
                     d="M479,156.32c-35.8,0-35.8-15.66-71.58-15.66"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,107.15c-36,0-39.76,177.87-89.38,177.87"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3839,8 +3839,8 @@ export default class CompassLische extends React.Component {
                     y2="110.5"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -3849,8 +3849,8 @@ export default class CompassLische extends React.Component {
                     y2="110.5"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,104.75a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -3860,7 +3860,7 @@ export default class CompassLische extends React.Component {
                     d="M407.42,140.66c-39.43,0-41.29-33.5-75.53-33.5"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,140.66a1.86,1.86,0,0,0,3.72,0,1.86,1.86,0,1,0-3.72,0Z"
@@ -3879,7 +3879,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,139.47c-44.69,0-44.69,195.75-89.38,195.75"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -3946,7 +3946,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,146.16c-44.69,0-44.69,211.13-89.38,211.13"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -3991,8 +3991,8 @@ export default class CompassLische extends React.Component {
                     y2="149.55"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4001,8 +4001,8 @@ export default class CompassLische extends React.Component {
                     y2="149.55"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,143.8a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4012,7 +4012,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,154.92c-37.74,0-37.75-8.7-75.5-8.7"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,154.92a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,154.92Z"
@@ -4027,19 +4027,19 @@ export default class CompassLische extends React.Component {
                     d="M479,180.05c-35.79,0-35.8-18-71.61-18"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,162c-37.75,0-37.75-9.14-75.5-9.14"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,152.85c-44.69,0-44.69,20.66-89.38,20.66"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4084,8 +4084,8 @@ export default class CompassLische extends React.Component {
                     y2="156.23"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4094,8 +4094,8 @@ export default class CompassLische extends React.Component {
                     y2="156.23"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,150.49a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -4118,13 +4118,13 @@ export default class CompassLische extends React.Component {
                     d="M407.39,169.17c-37.75,0-37.85-9.59-75.5-9.59"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,159.52c-44.69,0-44.69,17.2-89.38,17.2"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4166,8 +4166,8 @@ export default class CompassLische extends React.Component {
                     y2="162.91"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4176,8 +4176,8 @@ export default class CompassLische extends React.Component {
                     y2="162.91"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,157.17a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4196,19 +4196,19 @@ export default class CompassLische extends React.Component {
                     d="M479,191.91c-35.79,0-35.8-15.61-71.61-15.61"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,176.3c-37.75,0-38-10-75.5-10"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,166.21c-44.69,0-44.69,121.18-89.38,121.18"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4247,8 +4247,8 @@ export default class CompassLische extends React.Component {
                     y2="169.6"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4257,8 +4257,8 @@ export default class CompassLische extends React.Component {
                     y2="169.6"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,163.85a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4281,7 +4281,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,172.89c-44.69,0-44.69,204.67-89.38,204.67"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -4336,13 +4336,13 @@ export default class CompassLische extends React.Component {
                     d="M407.42,183.43c-37.77,0-37.75-3.79-75.53-3.79"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,179.58c-44.94,0-44.69,110.19-89.38,110.19"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4393,8 +4393,8 @@ export default class CompassLische extends React.Component {
                     y2="182.96"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4403,8 +4403,8 @@ export default class CompassLische extends React.Component {
                     y2="182.96"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,177.22a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4423,19 +4423,19 @@ export default class CompassLische extends React.Component {
                     d="M479,203.77c-35.79,0-35.79-13.21-71.61-13.21"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.42,190.56c-37.77,0-37.75-4.24-75.53-4.24"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,186.26c-44.69,0-45.44,4.82-89.38,4.82"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4489,8 +4489,8 @@ export default class CompassLische extends React.Component {
                     y2="189.65"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4499,8 +4499,8 @@ export default class CompassLische extends React.Component {
                     y2="189.65"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,183.9a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4523,19 +4523,19 @@ export default class CompassLische extends React.Component {
                     d="M479,215.63c-35.79,0-35.8-17.94-71.61-17.94"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.42,197.69c-37.77,0-37.77-4.69-75.53-4.69"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,193.06c-44.69,0-44.69,99.08-89.38,99.08"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4598,8 +4598,8 @@ export default class CompassLische extends React.Component {
                     y2="196.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4608,8 +4608,8 @@ export default class CompassLische extends React.Component {
                     y2="196.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,190.59a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -4632,19 +4632,20 @@ export default class CompassLische extends React.Component {
                     d="M479,227.5c-35.8,0-35.79-22.68-71.61-22.68"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
+
                   />
                   <path
                     d="M407.39,204.82c-37.75,0-37.75.5-75.5.5"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,205.3c-44.69,0-45.44-12.16-89.38-12.16"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4677,8 +4678,8 @@ export default class CompassLische extends React.Component {
                     y2="208.64"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4687,8 +4688,8 @@ export default class CompassLische extends React.Component {
                     y2="208.64"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,202.9a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4711,7 +4712,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,238.72C134.51,238.72,134.51,440,89.82,440"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -4772,7 +4773,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,258.79c-44.69,0-44.69-47.08-89.38-47.08"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -4812,13 +4813,13 @@ export default class CompassLische extends React.Component {
                     d="M407.39,254.72c-37.75,0-37.75,17.44-75.5,17.44"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,272.16c-44.65,0-44.69-54.55-89.38-54.55"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4866,8 +4867,8 @@ export default class CompassLische extends React.Component {
                     y2="275.48"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -4876,8 +4877,8 @@ export default class CompassLische extends React.Component {
                     y2="275.48"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,269.74a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -4896,13 +4897,13 @@ export default class CompassLische extends React.Component {
                     d="M479,298.68c-35.8,0-35.8-36.83-71.61-36.83"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,261.85c-37.75,0-37.75,17-75.5,17"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -4959,8 +4960,8 @@ export default class CompassLische extends React.Component {
                     y2="282.16"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <g>
                     <path
@@ -4986,7 +4987,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,291.17c-44.69,0-45.1-70.61-89.38-70.61"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5029,7 +5030,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,297.84c-44.69,0-44.69-74.33-89.38-74.33"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5081,13 +5082,13 @@ export default class CompassLische extends React.Component {
                     d="M479,310.54c-35.8,0-35.8-41.56-71.61-41.56"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,269c-37.75,0-37.75,35.55-75.5,35.55"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -5135,8 +5136,8 @@ export default class CompassLische extends React.Component {
                     y2="307.86"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="304.52" r="2.13" fill="#5f5f5e" />
                   <path
@@ -5156,7 +5157,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,290.37c-37.75,0-35.57,34.22-75.5,34.22"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -5216,8 +5217,8 @@ export default class CompassLische extends React.Component {
                     y2="327.93"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="324.57" r="2.13" fill="#5f5f5e" />
                   <path
@@ -5233,13 +5234,13 @@ export default class CompassLische extends React.Component {
                     d="M479,322.4c-35.8,0-35.8-24.9-71.61-24.9"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,297.5c-37.75,0-35.57,33.74-75.5,33.77"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,322.4a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,322.4Z"
@@ -5297,8 +5298,8 @@ export default class CompassLische extends React.Component {
                     y2="334.61"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="331.25" r="2.13" fill="#5f5f5e" />
                   <path
@@ -5314,19 +5315,19 @@ export default class CompassLische extends React.Component {
                     d="M479,334.26c-35.8,0-35.8-29.64-71.61-29.64"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M407.39,304.62c-37.75,0-35.12,33.21-75.5,33.33"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,574.64c-43.29,0-35.6-240.38-95.54-240.38"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,334.21a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -5400,8 +5401,8 @@ export default class CompassLische extends React.Component {
                     y2="341.3"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="337.93" r="2.13" fill="#5f5f5e" />
                   <path
@@ -5417,7 +5418,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,311.75c-37.75,0-34.19,32.89-75.5,32.89"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -5462,8 +5463,8 @@ export default class CompassLische extends React.Component {
                     y2="347.99"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="344.62" r="2.13" fill="#5f5f5e" />
                   <path
@@ -5479,7 +5480,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,357c-44.54,0-44.69-130.52-89.38-130.52"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5561,7 +5562,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,363.65c-44.94,0-44.69-134.25-89.38-134.25"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5646,7 +5647,7 @@ export default class CompassLische extends React.Component {
                     d="M479,346.13c-73.56,0-73.56,24.19-147.11,24.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,346.13a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -5656,7 +5657,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,370.31c-44.69,0-44.69,96.51-89.38,96.51"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -5708,8 +5709,8 @@ export default class CompassLische extends React.Component {
                     y2="373.62"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -5718,8 +5719,8 @@ export default class CompassLische extends React.Component {
                     y2="373.62"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,367.89a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -5734,7 +5735,7 @@ export default class CompassLische extends React.Component {
                     d="M479,358c-73.49,0-73.49,25.7-147,25.7"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,358a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,358Z"
@@ -5744,7 +5745,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,383.68c-44.69,0-44.69-151.33-89.38-151.33"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -5789,8 +5790,8 @@ export default class CompassLische extends React.Component {
                     y2="386.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -5799,8 +5800,8 @@ export default class CompassLische extends React.Component {
                     y2="386.99"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,381.26a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -5815,7 +5816,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,396c-44.69,0-44.69-160.72-89.38-160.72"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5870,7 +5871,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,415c-44.69,0-44.69-176.71-89.38-176.71"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5940,7 +5941,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,455.07C134.51,455.07,134.51,253,89.82,253"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -5983,7 +5984,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,461.75c-44.69,0-44.78-205.82-89.38-205.82"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6053,7 +6054,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,468.43c-44.69,0-44.69-209.55-89.38-209.55"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6120,7 +6121,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,480.79c-44.69,0-44.69-219-89.38-219"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6172,7 +6173,7 @@ export default class CompassLische extends React.Component {
                     d="M574.54,797.66c-104.06,0-138.59,17.73-242.65,17.73"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M572.51,797.66a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,572.51,797.66Z"
@@ -6186,7 +6187,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,815.39c-44.27,0-44.69,158-89.38,158"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -6258,8 +6259,8 @@ export default class CompassLische extends React.Component {
                     y2="818.63"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -6268,8 +6269,8 @@ export default class CompassLische extends React.Component {
                     y2="818.63"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,812.93a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -6284,7 +6285,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,500.87c-44.69,0-44.69-230.2-89.38-230.2"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6336,7 +6337,7 @@ export default class CompassLische extends React.Component {
                     d="M479,405.44c-110.34,0-101.59,102.1-147.11,102.1"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,405.44a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,405.44Z"
@@ -6346,7 +6347,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,507.56c-44.69,0-44.69-233.94-89.38-233.94"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -6379,8 +6380,8 @@ export default class CompassLische extends React.Component {
                     y2="510.82"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -6389,8 +6390,8 @@ export default class CompassLische extends React.Component {
                     y2="510.82"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,505.1a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -6405,13 +6406,13 @@ export default class CompassLische extends React.Component {
                     d="M479,476.62c-10.14,0-21.54-13.92-31.68-13.92"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M447.32,462.7c-57.09,0-58.29,51.52-115.43,51.52"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,476.62a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,476.62Z"
@@ -6421,7 +6422,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,514.24c-44.69,0-44.69,33.8-89.38,33.8"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.98"
@@ -6484,8 +6485,8 @@ export default class CompassLische extends React.Component {
                     y2="517.5"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -6494,8 +6495,8 @@ export default class CompassLische extends React.Component {
                     y2="517.51"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,511.78a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -6514,13 +6515,13 @@ export default class CompassLische extends React.Component {
                     d="M479,488.48H447.32"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M447.32,488.48c-57.09,0-58.29,39.11-115.43,39.11"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,488.48a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,488.48Z"
@@ -6530,7 +6531,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,527.58c-44.69,0-44.69,45.06-89.38,45.06"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.98"
@@ -6587,8 +6588,8 @@ export default class CompassLische extends React.Component {
                     y2="530.87"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -6597,8 +6598,8 @@ export default class CompassLische extends React.Component {
                     y2="530.88"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,525.15a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -6617,7 +6618,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,560c-44.69,0-44.69-277.49-89.38-277.49"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6681,13 +6682,13 @@ export default class CompassLische extends React.Component {
                     d="M479,500.35c-11.6,0-20.93,13.92-31.68,13.92"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M447.32,514.27c-57,0-58.3,52.38-115.25,52.38"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,500.35a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,500.35Z"
@@ -6736,8 +6737,8 @@ export default class CompassLische extends React.Component {
                     y2="569.99"
                     fill="none"
                     stroke="#00c97c"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="566.61" r="2.13" fill="#5f5f5e" />
                   <path
@@ -6753,7 +6754,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,573.33c-44.69,0-44.69,27.51-89.38,27.51"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6814,7 +6815,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,580c-44.69,0-44.69,75.68-89.38,75.68"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6869,7 +6870,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,586.7c-44.69,0-44.69,71.95-89.38,71.95"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6921,7 +6922,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,593.42c-44.69,0-44.69,68.18-89.38,68.18"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -6991,7 +6992,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,600.07c-44.69,0-44.69,64.48-89.38,64.48"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7040,7 +7041,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,606.75c-44.69,0-44.69,60.75-89.38,60.75"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7086,7 +7087,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,620.12c-44.69,0-44.69,53.27-89.38,53.27"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7138,7 +7139,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,633.48c-44.69,0-44.69,45.81-89.38,45.81"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7188,7 +7189,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,652.49c-44.69,0-44.69,32.7-89.38,32.7"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.89"
@@ -7260,8 +7261,8 @@ export default class CompassLische extends React.Component {
                     y2="655.75"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -7270,8 +7271,8 @@ export default class CompassLische extends React.Component {
                     y2="655.75"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,650a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -7281,7 +7282,7 @@ export default class CompassLische extends React.Component {
                     d="M574.54,780.5c-159.08,0-150.69-123.79-242.65-128"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                 </g>
                 <g
@@ -7292,7 +7293,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,683.77C134.51,683.77,134.51,803,89.82,803"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7350,7 +7351,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,702.77c-44.69,0-44.69,103.59-89.38,103.59"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7405,13 +7406,13 @@ export default class CompassLische extends React.Component {
                     d="M479,464.76c-67.61,0-74.95,271.47-147.11,271.47"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,643.26c-47.77,0-47.77-178.5-95.54-178.5"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,464.76a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -7421,7 +7422,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,736.18c-44.69,0-44.69,181.43-89.38,181.43"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -7484,8 +7485,8 @@ export default class CompassLische extends React.Component {
                     y2="739.48"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -7494,8 +7495,8 @@ export default class CompassLische extends React.Component {
                     y2="739.48"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,733.78a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -7514,13 +7515,13 @@ export default class CompassLische extends React.Component {
                     d="M479,512.21c-73.93,0-75.11,230.7-147.11,230.7"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,660.42c-47.77,0-47.77-148.21-95.54-148.21"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <circle cx="479.01" cy="512.21" r="1.86" fill="#5151fc" />
                   <circle cx="574.37" cy="660.42" r="1.86" fill="#ffd93b" />
@@ -7528,7 +7529,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,742.82C134.51,742.82,134,552,89.82,552"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -7574,8 +7575,8 @@ export default class CompassLische extends React.Component {
                     y2="746.17"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -7584,8 +7585,8 @@ export default class CompassLische extends React.Component {
                     y2="746.17"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,740.46a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -7672,7 +7673,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1576.33c-44.69,0-44.69-197.86-89.38-197.86"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -7721,13 +7722,13 @@ export default class CompassLische extends React.Component {
                     d="M479,535.93c-74.14,0-71.27,220.35-147.11,220.35"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,677.57c-47.77,0-47.77-141.64-95.54-141.64"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,536a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,536Z"
@@ -7741,7 +7742,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,756.24c-44.69,0-44.69,186.87-89.38,186.87"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -7807,8 +7808,8 @@ export default class CompassLische extends React.Component {
                     y2="759.53"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -7817,8 +7818,8 @@ export default class CompassLische extends React.Component {
                     y2="759.62"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,753.83a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -7833,13 +7834,13 @@ export default class CompassLische extends React.Component {
                     d="M479,559.66c-74.14,0-69.24,216.67-147.11,216.67"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,694.73c-47.77,0-47.77-135.07-95.54-135.07"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,559.66A1.86,1.86,0,1,0,479,557.8,1.85,1.85,0,0,0,477.15,559.66Z"
@@ -7886,8 +7887,8 @@ export default class CompassLische extends React.Component {
                     y2="779.68"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="776.29" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -7899,13 +7900,13 @@ export default class CompassLische extends React.Component {
                     d="M479,583.39c-73.93,0-63.5,206.31-147.11,206.31"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,729C525,729,525,583.39,479,583.39"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,583.39a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -7964,8 +7965,8 @@ export default class CompassLische extends React.Component {
                     y2="793.05"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="789.65" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -7977,13 +7978,13 @@ export default class CompassLische extends React.Component {
                     d="M479,607.11c-74.14,0-58,196.43-147.11,196"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M574.54,763.35c-51.36,0-51.36-156.24-95.54-156.24"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,607.11a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,477.15,607.11Z"
@@ -8048,8 +8049,8 @@ export default class CompassLische extends React.Component {
                     y2="806.42"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="803.02" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -8061,7 +8062,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,827.76c-44.69,0-45.51,174.09-89.38,174.09"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -8125,7 +8126,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,840c-44.69,0-44.69,191.61-89.38,191.61"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -8168,7 +8169,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,730.33c-77.26,0-94.64,116.39-171.19,116.39"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,730.33a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,501.06,730.33Z"
@@ -8178,7 +8179,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,846.66c-44.69,0-44.69,217.79-89.38,217.79"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8241,8 +8242,8 @@ export default class CompassLische extends React.Component {
                     y2="849.95"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -8251,8 +8252,8 @@ export default class CompassLische extends React.Component {
                     y2="850.06"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,844.26a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -8267,7 +8268,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,758.86c-59.76,0-94.64,121.28-171.19,121.28"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,758.86a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,501.06,758.86Z"
@@ -8322,8 +8323,8 @@ export default class CompassLische extends React.Component {
                     y2="883.48"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="880.08" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -8335,7 +8336,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,764.57c-55.46,0-94.64,122.25-171.19,122.25"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,764.57a1.86,1.86,0,0,0,3.72,0,1.86,1.86,0,1,0-3.72,0Z"
@@ -8399,8 +8400,8 @@ export default class CompassLische extends React.Component {
                     y2="890.16"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="886.76" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -8412,7 +8413,7 @@ export default class CompassLische extends React.Component {
                     d="M503.08,781.68c-43.76,0-94.64,125.19-171.19,125.19"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M501.06,781.68a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,501.06,781.68Z"
@@ -8422,7 +8423,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,906.82c-44.69,0-44.69,172.23-89.38,172.23"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8482,8 +8483,8 @@ export default class CompassLische extends React.Component {
                     y2="910.1"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -8492,8 +8493,8 @@ export default class CompassLische extends React.Component {
                     y2="910.1"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="906.82" r="2.13" fill="#5f5f5e" />
                 </g>
@@ -8505,19 +8506,19 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1156.24c-4.11,0-4.11,6.48-8,6.48"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M550.67,1162.72c-109.39,0-109.39-79.58-218.78-79.58"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M685.81,912.66c-55.45,0-55.45-97.84-111.27-97.84"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M572.51,814.82a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,572.51,814.82Z"
@@ -8539,7 +8540,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1083.14c-44.69,0-44.69,53.46-89.38,53.46"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8602,8 +8603,8 @@ export default class CompassLische extends React.Component {
                     y2="1086.35"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -8612,8 +8613,8 @@ export default class CompassLische extends React.Component {
                     y2="1086.48"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1080.67a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -8623,7 +8624,7 @@ export default class CompassLische extends React.Component {
                     d="M574.54,814.82c-24.08,0,9.49,341.42-15.85,341.42"
                     fill="none"
                     stroke="#ffd93b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M556.84,1156.24a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,556.84,1156.24Z"
@@ -8802,7 +8803,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1583c-44.69,0-44.19-201.62-89.38-201.62"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                 </g>
@@ -8814,7 +8815,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1477.39c-160.07,0-187.38,86.72-346.08,86.72"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8874,8 +8875,8 @@ export default class CompassLische extends React.Component {
                     y2="1567.45"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1564.01" r="2.13" fill="#5f5f5e" />
                   <path
@@ -8891,7 +8892,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1473.82c-160.07,0-188.76,83.61-346.08,83.61"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8948,8 +8949,8 @@ export default class CompassLische extends React.Component {
                     y2="1560.77"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1557.33" r="2.13" fill="#5f5f5e" />
                   <path
@@ -8965,7 +8966,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1470.26c-160.07,0-188.76,80.48-346.08,80.48"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -8989,8 +8990,8 @@ export default class CompassLische extends React.Component {
                     y2="1554.08"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1550.64" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9006,7 +9007,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1466.7c-160.07,0-188.76,77.36-346.08,77.36"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9054,8 +9055,8 @@ export default class CompassLische extends React.Component {
                     y2="1547.4"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1543.96" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9071,7 +9072,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1463.13c-160.07,0-188.76,74.24-346.08,74.24"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9116,8 +9117,8 @@ export default class CompassLische extends React.Component {
                     y2="1540.72"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1537.27" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9133,7 +9134,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1459.57c-160.07,0-188.76,71.26-346.08,71.26"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9181,8 +9182,8 @@ export default class CompassLische extends React.Component {
                     y2="1534.03"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1530.59" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9195,7 +9196,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1456c-160.07,0-191.2,68-346.08,68"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9240,8 +9241,8 @@ export default class CompassLische extends React.Component {
                     y2="1527.35"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1523.91" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9254,7 +9255,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1452.44c-160.07,0-188.76,64.88-346.08,64.88"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9287,8 +9288,8 @@ export default class CompassLische extends React.Component {
                     y2="1520.66"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1517.22" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9301,7 +9302,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1448.88c-160.07,0-188.76,61.76-346.08,61.76"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9318,8 +9319,8 @@ export default class CompassLische extends React.Component {
                     y2="1513.98"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1510.54" r="2.13" fill="#5f5f5e" />
                   <text
@@ -9360,7 +9361,7 @@ export default class CompassLische extends React.Component {
                     d="M678,1445.31c-160.07,0-188.76,58.64-346.08,58.64"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9414,8 +9415,8 @@ export default class CompassLische extends React.Component {
                     y2="1507.29"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1503.86" r="2.13" fill="#5f5f5e" />
                   <path
@@ -9431,13 +9432,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1441.75c-160.07,0-188.76,55.52-346.08,55.52"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1497.17c-44.69,0-44.69-121.63-89.38-121.63"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9488,8 +9489,8 @@ export default class CompassLische extends React.Component {
                     y2="1500.42"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -9498,8 +9499,8 @@ export default class CompassLische extends React.Component {
                     y2="1500.61"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1494.76a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -9518,13 +9519,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1438.18c-160.07,0-188.76,52.4-346.08,52.4"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1490.49c-44.69,0-44.69-117.88-89.38-117.88"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9563,8 +9564,8 @@ export default class CompassLische extends React.Component {
                     y2="1493.74"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -9573,8 +9574,8 @@ export default class CompassLische extends React.Component {
                     y2="1493.93"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1488.08a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -9593,7 +9594,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1483.81c-44.69,0-44.69,5.53-89.38,5.53"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <text
@@ -9640,13 +9641,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1434.62c-160.07,0-188.76,30.28-346.08,30.28"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1464.8c-44.69,0-44.69-95.12-89.38-95.12"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9679,8 +9680,8 @@ export default class CompassLische extends React.Component {
                     y2="1468.05"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -9689,8 +9690,8 @@ export default class CompassLische extends React.Component {
                     y2="1468.05"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1462.4a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -9709,13 +9710,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1431.05c-160.07,0-188.76,27.16-346.08,27.16"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1458.12c-44.51,0-44.69,63.18-89.38,63.18"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9754,8 +9755,8 @@ export default class CompassLische extends React.Component {
                     y2="1461.37"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -9764,8 +9765,8 @@ export default class CompassLische extends React.Component {
                     y2="1461.37"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1455.71a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -9781,7 +9782,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1451.44c-44.78,0-44.69,33.93-89.38,33.93"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -9833,13 +9834,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1427.49c-160.07,0-188.76,17.36-346.08,17.36"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1444.75c-44.69,0-44.69-78-89.38-78"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -9878,8 +9879,8 @@ export default class CompassLische extends React.Component {
                     y2="1448"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -9888,8 +9889,8 @@ export default class CompassLische extends React.Component {
                     y2="1448"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1442.35a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -9947,13 +9948,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1423.93c-160.07,0-188.76,1.91-346.08,1.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1425.75c-44.69,0-44.69-61.93-89.38-61.93"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10001,8 +10002,8 @@ export default class CompassLische extends React.Component {
                     y2="1429.01"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10011,8 +10012,8 @@ export default class CompassLische extends React.Component {
                     y2="1429.01"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1423.35a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -10136,7 +10137,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1400.07c-44.52,0-44.69,58.06-89.38,58.06"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10200,13 +10201,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1420.36c-160.07,0-188.76-26.89-346.08-26.89"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1393.38c-44.69,0-44.69-32.49-89.38-32.49"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10242,8 +10243,8 @@ export default class CompassLische extends React.Component {
                     y2="1396.64"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10252,8 +10253,8 @@ export default class CompassLische extends React.Component {
                     y2="1396.64"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1391a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -10272,7 +10273,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1386.79c-44.69,0-44.69,31.73-89.38,31.73"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10360,7 +10361,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1380c-44.69,0-44.69-22.07-89.38-22.07"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10418,7 +10419,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1367.79c-44.61,0-44.69-46.77-89.38-46.77"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10506,7 +10507,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1347.79c-44.69,0-44.69-608-89.38-608"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10549,13 +10550,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1416.8c-158.7,0-188.76-74.7-346.08-74.7"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1342c-44.69,0-44.69-23.91-89.38-23.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10594,8 +10595,8 @@ export default class CompassLische extends React.Component {
                     y2="1345.27"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10604,8 +10605,8 @@ export default class CompassLische extends React.Component {
                     y2="1345.27"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1339.61a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -10624,7 +10625,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1334.33c-44.69,0-44.69-837.36-89.38-837.36"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -10670,13 +10671,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1413.23c-160.07,0-188.76-84.5-346.08-84.5"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1328.65c-44.69,0-44.69-13.46-89.38-13.46"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10718,8 +10719,8 @@ export default class CompassLische extends React.Component {
                     y2="1331.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10728,8 +10729,8 @@ export default class CompassLische extends React.Component {
                     y2="1331.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1326.24a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -10793,13 +10794,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1409.67c-158.7,0-188.76-99.94-346.08-99.94"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1309.65c-44.69,0-44.69,2.63-89.38,2.63"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10850,8 +10851,8 @@ export default class CompassLische extends React.Component {
                     y2="1312.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10860,8 +10861,8 @@ export default class CompassLische extends React.Component {
                     y2="1312.91"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1307.24a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -10919,13 +10920,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1406.11c-158.7,0-188.76-109.75-346.08-109.75"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1296.28c-44.69,0-44.69,13.08-89.38,13.08"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -10985,8 +10986,8 @@ export default class CompassLische extends React.Component {
                     y2="1299.54"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -10995,8 +10996,8 @@ export default class CompassLische extends React.Component {
                     y2="1299.54"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1293.87a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -11015,13 +11016,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1402.54c-160.07,0-190-118.49-346.08-118.49"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1284.05c-44.69,0-44.69,22.4-89.38,22.4"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11075,8 +11076,8 @@ export default class CompassLische extends React.Component {
                     y2="1287.23"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11085,8 +11086,8 @@ export default class CompassLische extends React.Component {
                     y2="1287.23"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1281.56a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -11105,13 +11106,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1399c-158.7,0-188.76-121.62-346.08-121.62"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1277.28c-44.69,0-44.69,26.25-89.38,26.25"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11165,8 +11166,8 @@ export default class CompassLische extends React.Component {
                     y2="1280.54"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11175,8 +11176,8 @@ export default class CompassLische extends React.Component {
                     y2="1280.54"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1274.87a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -11195,13 +11196,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1395.41c-160.9,0-188.76-124.73-346.08-124.73"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1270.6c-44.69,0-44.72,30-89.38,30"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11264,8 +11265,8 @@ export default class CompassLische extends React.Component {
                     y2="1273.86"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11274,8 +11275,8 @@ export default class CompassLische extends React.Component {
                     y2="1273.86"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1268.19a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -11294,13 +11295,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1391.85c-160.9,0-188.76-127.86-346.08-127.86"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1263.91c-44.69,0-44.69,33.79-89.38,33.79"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11336,8 +11337,8 @@ export default class CompassLische extends React.Component {
                     y2="1267.18"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11346,8 +11347,8 @@ export default class CompassLische extends React.Component {
                     y2="1267.18"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1261.51a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -11366,13 +11367,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1388.28c-158.7,0-188.76-131-346.08-131"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1257.23c-44.69,0-44.69,37.55-89.38,37.55"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11423,8 +11424,8 @@ export default class CompassLische extends React.Component {
                     y2="1260.49"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11433,8 +11434,8 @@ export default class CompassLische extends React.Component {
                     y2="1260.49"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1254.82a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -11453,13 +11454,13 @@ export default class CompassLische extends React.Component {
                     d="M678,1384.72c-160.07,0-188.76-134.09-346.08-134.09"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1250.55c-44.69,0-44.69,41.32-89.38,41.32"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -11516,8 +11517,8 @@ export default class CompassLische extends React.Component {
                     y2="1253.81"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -11526,8 +11527,8 @@ export default class CompassLische extends React.Component {
                     y2="1253.81"
                     fill="none"
                     stroke="#ff6539"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1248.14a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -11546,7 +11547,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1243.86c-44.78,0-44.69,45.09-89.38,45.09"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -11691,7 +11692,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1223.81c-44.69,0-44.69,62.23-89.38,62.23"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -11731,7 +11732,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1153.49c-44.69,0-44.69-416.67-89.38-416.67"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -11819,7 +11820,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1179.13c-45.46,0-44.69,67.74-89.38,67.74"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -11862,7 +11863,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1211.49c-45.46,0-44.69,71.63-89.38,71.63"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -11998,7 +11999,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,1191.44c-44.69,0-44.69,88.76-89.38,88.76"
                     fill="none"
                     stroke="#9aa4a5"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.35"
                   />
                   <rect
@@ -12053,7 +12054,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1113.12c-113.4,0-125,29.13-226.8,29.13"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12092,8 +12093,8 @@ export default class CompassLische extends React.Component {
                     y2="1145.45"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1142.18" r="2.13" fill="#5f5f5e" />
                   <path
@@ -12109,7 +12110,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1102.35c-113.4,0-130.77,33.21-226.8,33.21"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12160,15 +12161,15 @@ export default class CompassLische extends React.Component {
                     y2="1138.77"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1135.49" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1101.61c-63.52,0-63.52.74-127,.74"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1101.61a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -12187,7 +12188,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1091.57c-113.4,0-136.34,37.31-226.8,37.31"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12220,15 +12221,15 @@ export default class CompassLische extends React.Component {
                     y2="1132.08"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1128.81" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1091.11c-63.52,0-63.52.46-127,.46"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1091.11a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1091.11Z"
@@ -12247,13 +12248,13 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1080.79c-113.4,0-141.5,41.41-226.8,41.41"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1122.12c-44.69,0-44.69,96.53-89.38,96.53"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12292,8 +12293,8 @@ export default class CompassLische extends React.Component {
                     y2="1125.4"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -12302,8 +12303,8 @@ export default class CompassLische extends React.Component {
                     y2="1125.4"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1119.72a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -12313,7 +12314,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1080.61c-63.52,0-63.52.18-127,.18"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1080.61a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1080.61Z"
@@ -12332,7 +12333,7 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1185.38c-109.39,0-109.39-75.5-218.78-75.5"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12392,15 +12393,15 @@ export default class CompassLische extends React.Component {
                     y2="1113.21"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1109.81" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1154.09c-63.52,0-63.52,23.7-127,23.7"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1154.09a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1154.09Z"
@@ -12410,7 +12411,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1177.79c-4.11,0-4.11,7.59-8,7.59"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M548.82,1185.38a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,548.82,1185.38Z"
@@ -12426,7 +12427,7 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1242c-109.39,0-82.22-138.85-218.78-138.85"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12465,15 +12466,15 @@ export default class CompassLische extends React.Component {
                     y2="1106.53"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1103.12" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1206.58c-67.82,0-67.36,35.46-135.14,35.46"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1206.58a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1206.58Z"
@@ -12489,7 +12490,7 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1230.71c-109.39,0-82.22-134.2-218.78-134.2"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12519,15 +12520,15 @@ export default class CompassLische extends React.Component {
                     y2="1099.84"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1096.44" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1196.08c-67.82,0-67.36,34.63-135.14,34.63"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1196.08a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1196.08Z"
@@ -12546,13 +12547,13 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1219.38c-109.39,0-82.22-142.92-218.78-142.92"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1076.39c-44.69,0-44.69,114-89.38,114"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12600,8 +12601,8 @@ export default class CompassLische extends React.Component {
                     y2="1079.67"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -12610,8 +12611,8 @@ export default class CompassLische extends React.Component {
                     y2="1079.8"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1074a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -12621,7 +12622,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1185.58c-67.82,0-67.36,33.8-135.14,33.8"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1185.58a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1185.58Z"
@@ -12640,13 +12641,13 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1070c-113.4,0-113.4-.24-226.8-.24"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1069.71c-44.69,0-44.69,63.93-89.38,63.93"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12687,8 +12688,8 @@ export default class CompassLische extends React.Component {
                     y2="1072.98"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -12697,8 +12698,8 @@ export default class CompassLische extends React.Component {
                     y2="1073.11"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1067.3a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -12714,7 +12715,7 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1196.71c-109.39,0-82.22-166-218.78-166"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12767,8 +12768,8 @@ export default class CompassLische extends React.Component {
                     y2="1034.06"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <g>
                     <path
@@ -12781,7 +12782,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1164.59c-67.82,0-67.36,32.12-135.14,32.12"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1164.59a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1164.59Z"
@@ -12800,13 +12801,13 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1208c-109.39,0-82.22-165-218.78-165"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1043c-44.69,0-44.69-175.81-89.38-175.81"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12836,8 +12837,8 @@ export default class CompassLische extends React.Component {
                     y2="1046.25"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -12846,8 +12847,8 @@ export default class CompassLische extends React.Component {
                     y2="1046.38"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1040.56a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -12857,7 +12858,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1175.09c-67.82,0-67.36,33-135.14,33"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1175.09a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -12876,13 +12877,13 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1151.38c-109.39,0-109.39-88.29-218.78-88.29"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1063c-44.69,0-44.69,99.21-89.38,99.21"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -12924,8 +12925,8 @@ export default class CompassLische extends React.Component {
                     y2="1066.3"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -12934,8 +12935,8 @@ export default class CompassLische extends React.Component {
                     y2="1066.43"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1060.61a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -12945,7 +12946,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1133.1c-63.52,0-63.52,12.36-127,12.36"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1133.1a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1133.1Z"
@@ -12955,7 +12956,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1145.46c-4.11,0-4.11,5.92-8,5.92"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M548.82,1151.38a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,548.82,1151.38Z"
@@ -12974,13 +12975,13 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1140.05c-109.39,0-109.39-83.64-218.78-83.64"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1056.34c-44.69,0-44.69,74.34-89.38,74.34"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13016,8 +13017,8 @@ export default class CompassLische extends React.Component {
                     y2="1059.62"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13026,8 +13027,8 @@ export default class CompassLische extends React.Component {
                     y2="1059.75"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1053.93a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -13037,7 +13038,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1122.6c-63.52,0-63.52,12.08-127,12.08"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1122.6a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1122.6Z"
@@ -13047,7 +13048,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1134.68c-4.11,0-4.11,5.37-8,5.37"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M548.82,1140.05a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,548.82,1140.05Z"
@@ -13066,13 +13067,13 @@ export default class CompassLische extends React.Component {
                     d="M550.67,1128.72c-109.39,0-109.39-79-218.78-79"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1049.65c-44.69,0-44.69,78.07-89.38,78.07"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13117,8 +13118,8 @@ export default class CompassLische extends React.Component {
                     y2="1052.93"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13127,8 +13128,8 @@ export default class CompassLische extends React.Component {
                     y2="1053.06"
                     fill="none"
                     stroke="#f36"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1047.25a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -13138,7 +13139,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1112.1c-63.79,0-63.56,11.8-127.12,11.8"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1112.1a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1112.1Z"
@@ -13148,7 +13149,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1123.9c-4.11,0-4.11,4.82-8,4.82"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M548.82,1128.72a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,548.82,1128.72Z"
@@ -13164,7 +13165,7 @@ export default class CompassLische extends React.Component {
                     d="M534.71,952c-101.41,0-101.41,66.45-202.82,66.45"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13197,8 +13198,8 @@ export default class CompassLische extends React.Component {
                     y2="1021.74"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1018.34" r="2.13" fill="#5f5f5e" />
                   <path
@@ -13209,7 +13210,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,975.64c-75.43,0-75.27-23.69-151.1-23.69"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,952a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,952Z"
@@ -13229,7 +13230,7 @@ export default class CompassLische extends React.Component {
                     d="M534.71,939.86c-101.41,0-101.41,71.86-202.82,71.86"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <text
                     transform="translate(190.05 1013.55)"
@@ -13254,8 +13255,8 @@ export default class CompassLische extends React.Component {
                     y2="1015.06"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1011.65" r="2.13" fill="#5f5f5e" />
                   <path
@@ -13266,7 +13267,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,965.14c-75.73,0-75.18-25.28-151.1-25.28"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,939.86a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,939.86Z"
@@ -13281,7 +13282,7 @@ export default class CompassLische extends React.Component {
                     d="M534.71,1024.49c-101.41,0-101.41-19.46-202.82-19.46"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13317,15 +13318,15 @@ export default class CompassLische extends React.Component {
                     y2="1008.38"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="1004.97" r="2.13" fill="#5f5f5e" />
                   <path
                     d="M685.81,1038.62c-63.52,0-63.52-11.72-127-11.72"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1038.62a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1038.62Z"
@@ -13335,7 +13336,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1026.9c-12,0-12-2.41-24-2.41"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,1024.49a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,1024.49Z"
@@ -13362,7 +13363,7 @@ export default class CompassLische extends React.Component {
                     d="M534.71,927.77c-101.41,0-101.41,70.58-202.82,70.58"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <text
                     transform="translate(190.05 1000.18)"
@@ -13402,8 +13403,8 @@ export default class CompassLische extends React.Component {
                     y2="1001.69"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <circle cx="182.62" cy="998.29" r="2.13" fill="#5f5f5e" />
                   <path
@@ -13414,7 +13415,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,954.65c-75.73,0-75.18-26.88-151.1-26.88"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,927.77a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,927.77Z"
@@ -13429,13 +13430,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,915.68c-101.41,0-101.41,76.19-202.82,76.19"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,991.6c-44.69,0-44.68-147.43-89.38-147.43"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13474,8 +13475,8 @@ export default class CompassLische extends React.Component {
                     y2="994.88"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13484,8 +13485,8 @@ export default class CompassLische extends React.Component {
                     y2="995.01"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,989.2a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -13499,7 +13500,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,944.15c-75.73,0-76.38-28.47-151.1-28.47"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,915.68a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,915.68Z"
@@ -13514,13 +13515,13 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1059.24c-133.16,0-133.16-74.26-226.8-74.26"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,985c-44.69,0-44.69,139.78-89.38,139.78"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="256.04"
@@ -13562,8 +13563,8 @@ export default class CompassLische extends React.Component {
                     y2="988.2"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13572,8 +13573,8 @@ export default class CompassLische extends React.Component {
                     y2="988.32"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,982.51a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -13583,7 +13584,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1070.12c-63.52,0-63.52-10.88-127-10.88"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1070.12a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1070.12Z"
@@ -13602,13 +13603,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,1012.4c-101.41,0-101.93-34.1-202.82-34.1"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,978.24c-44.69,0-44.69,143.56-89.38,143.56"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13652,8 +13653,8 @@ export default class CompassLische extends React.Component {
                     y2="981.52"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13662,8 +13663,8 @@ export default class CompassLische extends React.Component {
                     y2="981.64"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,975.83a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -13673,7 +13674,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1028.13c-63.52,0-63.52-12-127-12"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1028.13a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -13683,7 +13684,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1016.13c-12,0-12-3.73-24-3.73"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,1012.4a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,1012.4Z"
@@ -13702,13 +13703,13 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1048.46c-133.16,0-129.68-76.85-226.8-76.85"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,971.55c-44.69,0-44.69,147.29-89.38,147.29"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="256.04"
@@ -13753,8 +13754,8 @@ export default class CompassLische extends React.Component {
                     y2="974.83"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13763,8 +13764,8 @@ export default class CompassLische extends React.Component {
                     y2="974.96"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,969.14a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -13774,7 +13775,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1059.62c-63.52,0-63.52-11.16-127-11.16"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1059.62a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1059.62Z"
@@ -13793,13 +13794,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,1000.31c-101.41,0-101.41-35.38-202.82-35.38"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,964.87c-44.69,0-44.69,151-89.38,151"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -13855,8 +13856,8 @@ export default class CompassLische extends React.Component {
                     y2="968.15"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13865,8 +13866,8 @@ export default class CompassLische extends React.Component {
                     y2="968.27"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,962.46a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -13876,7 +13877,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1017.63c-63.52,0-63.52-12.28-127-12.28"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1017.63a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1017.63Z"
@@ -13886,7 +13887,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1005.35c-12,0-12-5-24-5"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,1000.31a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,1000.31Z"
@@ -13905,13 +13906,13 @@ export default class CompassLische extends React.Component {
                     d="M558.69,1037.68c-133.16,0-127-79.43-226.8-79.43"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,958.18c-44.69,0-44.69,154.74-89.38,154.74"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="256.04"
@@ -13956,8 +13957,8 @@ export default class CompassLische extends React.Component {
                     y2="961.47"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -13966,8 +13967,8 @@ export default class CompassLische extends React.Component {
                     y2="961.59"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,955.78a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -13977,7 +13978,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1049.12c-63.52,0-63.52-11.44-127-11.44"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1049.12a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,1049.12Z"
@@ -13996,13 +13997,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,988.22c-101.27,0-101.41-36.66-202.82-36.66"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,951.56c-44.69,0-44.69,158.39-89.38,158.39"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14055,8 +14056,8 @@ export default class CompassLische extends React.Component {
                     y2="954.78"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14065,8 +14066,8 @@ export default class CompassLische extends React.Component {
                     y2="954.91"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,949.09a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14076,7 +14077,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1007.13c-63.52,0-63.52-12.56-127-12.56"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,1007.13a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,684,1007.13Z"
@@ -14086,7 +14087,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,994.57c-12,0-12-6.35-24-6.35"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,988.22a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,988.22Z"
@@ -14105,13 +14106,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,903.59c-107.51,0-95.24,36.33-202.82,35.65"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,938.18c-44.69,0-44.69-204.34-89.38-204.34"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14156,8 +14157,8 @@ export default class CompassLische extends React.Component {
                     y2="942.47"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14166,8 +14167,8 @@ export default class CompassLische extends React.Component {
                     y2="942.47"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,936.78a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -14181,7 +14182,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,933.65c-75.73,0-75.92-30.06-151.1-30.06"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,903.59a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,903.59Z"
@@ -14196,13 +14197,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,891.51c-101.41,0-101.41,41-202.82,41"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,931.5c-44.51,0-44.69-200.63-89.38-200.63"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14235,8 +14236,8 @@ export default class CompassLische extends React.Component {
                     y2="935.79"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14245,8 +14246,8 @@ export default class CompassLische extends React.Component {
                     y2="935.79"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,930.09a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14260,7 +14261,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,923.16c-75.82,0-75.55-31.65-151.1-31.65"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,891.45a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,532.86,891.45Z"
@@ -14275,13 +14276,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,976.13c-101.41,0-101.41-50.26-202.82-50.26"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,924.82c-44.69,0-44.69-196.93-89.38-196.93"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14320,8 +14321,8 @@ export default class CompassLische extends React.Component {
                     y2="929.1"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14330,8 +14331,8 @@ export default class CompassLische extends React.Component {
                     y2="929.1"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,923.41a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14341,7 +14342,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,996.64c-63.52,0-63.52-12.85-127-12.85"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,996.64a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,996.64Z"
@@ -14351,7 +14352,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,983.79c-12,0-12-7.66-24-7.66"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,976.13a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,976.13Z"
@@ -14370,13 +14371,13 @@ export default class CompassLische extends React.Component {
                     d="M534.71,964c-101.41,0-101.41-44.85-202.82-44.85"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,918.13c-44.88,0-44.69-193.22-89.38-193.22"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14427,8 +14428,8 @@ export default class CompassLische extends React.Component {
                     y2="922.42"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14437,8 +14438,8 @@ export default class CompassLische extends React.Component {
                     y2="922.42"
                     fill="none"
                     stroke="#97dadd"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,916.73a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -14448,7 +14449,7 @@ export default class CompassLische extends React.Component {
                     d="M685.81,986.14c-63.52,0-63.52-13.12-127-13.12"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M684,986.14a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,684,986.14Z"
@@ -14458,7 +14459,7 @@ export default class CompassLische extends React.Component {
                     d="M558.69,973c-12,0-12-9-24-9"
                     fill="none"
                     stroke="orange"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M532.86,964a1.86,1.86,0,1,0,1.85-1.85A1.85,1.85,0,0,0,532.86,964Z"
@@ -14477,13 +14478,13 @@ export default class CompassLische extends React.Component {
                     d="M479,642.7c-76.92,0-78.59-194.27-147-194.27"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,684.69c-12,0-12-42-24.08-42"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,642.7a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,477.15,642.7Z"
@@ -14497,7 +14498,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,448.38C134.51,448.38,134.51,250,89.82,250"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14536,8 +14537,8 @@ export default class CompassLische extends React.Component {
                     y2="451.72"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14546,8 +14547,8 @@ export default class CompassLische extends React.Component {
                     y2="451.72"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,446a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14562,13 +14563,13 @@ export default class CompassLische extends React.Component {
                     d="M479,666.43c-73.65,0-73.69-172.28-147.11-172.28"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,696.1c-12,0-12-29.67-24.08-29.67"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,666.43a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -14582,7 +14583,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,494.19c-44.69,0-44.69-226.46-89.38-226.46"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14627,8 +14628,8 @@ export default class CompassLische extends React.Component {
                     y2="497.46"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14637,8 +14638,8 @@ export default class CompassLische extends React.Component {
                     y2="497.46"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,491.73a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14653,13 +14654,13 @@ export default class CompassLische extends React.Component {
                     d="M479,690.15c-73.56,0-73.56-50-147.11-50"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,707.51c-12.15,0-12-17.36-24.08-17.36"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,690.15A1.86,1.86,0,1,0,479,688.3,1.85,1.85,0,0,0,477.15,690.15Z"
@@ -14673,7 +14674,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,640.13c-44.69,0-44.69,42.11-89.38,42.11"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14715,8 +14716,8 @@ export default class CompassLische extends React.Component {
                     y2="643.44"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14725,8 +14726,8 @@ export default class CompassLische extends React.Component {
                     y2="643.44"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,637.72a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14741,13 +14742,13 @@ export default class CompassLische extends React.Component {
                     d="M479,702c-73.56,0-73.69-37.21-147.11-37.21"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,713.22c-12,0-12-11.2-24.08-11.2"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,702a1.86,1.86,0,0,0,3.71,0,1.86,1.86,0,1,0-3.71,0Z"
@@ -14761,7 +14762,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,664.76c-44.69,0-44.69,54.19-89.38,54.19"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14806,8 +14807,8 @@ export default class CompassLische extends React.Component {
                     y2="668.07"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14816,8 +14817,8 @@ export default class CompassLische extends React.Component {
                     y2="668.07"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,662.36a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -14832,13 +14833,13 @@ export default class CompassLische extends React.Component {
                     d="M479,713.88c-73.56,0-73.56-36.76-147.11-36.76"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M503.08,718.92c-12,0-12-5-24.08-5"
                     fill="none"
                     stroke="#bbf"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M477.15,713.88A1.86,1.86,0,1,0,479,712,1.85,1.85,0,0,0,477.15,713.88Z"
@@ -14852,7 +14853,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,677.08c-44.69,0-44.69,108.09-89.38,108.09"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14879,8 +14880,8 @@ export default class CompassLische extends React.Component {
                     y2="680.38"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14889,8 +14890,8 @@ export default class CompassLische extends React.Component {
                     y2="680.38"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,674.67a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14905,13 +14906,13 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1227.57c-177,0-177,375.59-353.92,375.59"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1603.06c-44.69,0-44.69-215.79-89.38-215.79"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -14938,8 +14939,8 @@ export default class CompassLische extends React.Component {
                     y2="1606.3"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -14948,8 +14949,8 @@ export default class CompassLische extends React.Component {
                     y2="1606.3"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1600.65a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -14968,13 +14969,13 @@ export default class CompassLische extends React.Component {
                     d="M685.81,1217.08c-177,0-177,379.4-353.92,379.4"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,1596.38c-44.69,0-44.69-212.05-89.38-212.05"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -15010,8 +15011,8 @@ export default class CompassLische extends React.Component {
                     y2="1599.62"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -15020,8 +15021,8 @@ export default class CompassLische extends React.Component {
                     y2="1599.62"
                     fill="none"
                     stroke="#f1634b"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,1594a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -15040,7 +15041,7 @@ export default class CompassLische extends React.Component {
                     d="M179.2,80.42c-44.69,0-44.69,86.68-89.38,86.68"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -15070,8 +15071,8 @@ export default class CompassLische extends React.Component {
                     y2="83.76"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -15080,8 +15081,8 @@ export default class CompassLische extends React.Component {
                     y2="83.76"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,78a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -15091,7 +15092,7 @@ export default class CompassLische extends React.Component {
                     d="M407.42,119.27c-39.43,0-40-38.84-75.53-38.84"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,119.27a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,119.27Z"
@@ -15106,13 +15107,13 @@ export default class CompassLische extends React.Component {
                     d="M479,144.46c-35.79,0-35.79-10.92-71.61-10.92"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,100.47c-44.69,0-44.69,81.76-89.38,81.76"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -15145,8 +15146,8 @@ export default class CompassLische extends React.Component {
                     y2="103.81"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -15155,8 +15156,8 @@ export default class CompassLische extends React.Component {
                     y2="103.81"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,98.07a2.41,2.41,0,1,1-2.4,2.4,2.41,2.41,0,0,1,2.4-2.4m0-.25a2.66,2.66,0,1,0,2.66,2.65,2.65,2.65,0,0,0-2.66-2.65Z"
@@ -15166,7 +15167,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,133.54c-39.51,0-41.26-33.06-75.5-33.06"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,133.54a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,133.54Z"
@@ -15185,13 +15186,13 @@ export default class CompassLische extends React.Component {
                     d="M479,168.18c-35.79,0-35.8-20.39-71.61-20.39"
                     fill="none"
                     stroke="#5151fc"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M179.2,113.84c-44.69,0-44.69,56.46-89.38,56.46"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <rect
                     x="255.96"
@@ -15242,8 +15243,8 @@ export default class CompassLische extends React.Component {
                     y2="117.18"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <line
                     x1="331.89"
@@ -15252,8 +15253,8 @@ export default class CompassLische extends React.Component {
                     y2="117.18"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
-                    stroke-width="1.5"
+                    stroke-miterlimit="10" stroke-width="0.5"
+                    stroke-width="1"
                   />
                   <path
                     d="M182.62,111.43a2.41,2.41,0,1,1-2.4,2.41,2.41,2.41,0,0,1,2.4-2.41m0-.25a2.66,2.66,0,1,0,2.66,2.66,2.66,2.66,0,0,0-2.66-2.66Z"
@@ -15263,7 +15264,7 @@ export default class CompassLische extends React.Component {
                     d="M407.39,147.79c-39.43,0-41.8-33.94-75.5-33.94"
                     fill="none"
                     stroke="#00c195"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                   />
                   <path
                     d="M405.59,147.79a1.86,1.86,0,1,0,1.85-1.86A1.85,1.85,0,0,0,405.59,147.79Z"
@@ -15910,7 +15911,7 @@ export default class CompassLische extends React.Component {
                     y2="116.05"
                     fill="none"
                     stroke="#000"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.5"
                   />
                   <polygon points="170.13 114.65 171.99 115.44 173.84 114.65 171.99 119.04 170.13 114.65" />
@@ -15974,7 +15975,7 @@ export default class CompassLische extends React.Component {
                     y2="94.9"
                     fill="none"
                     stroke="#000"
-                    stroke-miterlimit="10"
+                    stroke-miterlimit="10" stroke-width="0.5"
                     stroke-width="0.5"
                   />
                   <polygon points="488.25 96.75 489.04 94.9 488.25 93.05 492.64 94.9 488.25 96.75" />
