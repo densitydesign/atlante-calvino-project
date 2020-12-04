@@ -16,7 +16,7 @@ class CompassTime extends React.Component {
           toggleTempoEOpere={this.props.toggleTempoEOpere}
         />
         <div id="main--sinuous">
-          <div className="container-fluid">
+          <div className="container">
             <h4>{this.props.t("bussola")}</h4>
             <div className="row intro">
               <div className="col-12 col-lg-9">
@@ -81,7 +81,7 @@ class CompassTime extends React.Component {
             </div>
           </div>
 
-          <div className="container-fluid">
+          <div className="container">
             <div className="row">
               <div
                 className="col-12 col-lg-8 col-xl-8"
