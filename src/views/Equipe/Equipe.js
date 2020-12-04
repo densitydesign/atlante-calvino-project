@@ -62,12 +62,13 @@ class Equipe extends React.Component {
                 </a>{" "}
                 è parte del Dipartimento di Design del Politecnico di Milano.
                 Obiettivo del laboratorio è la rappresentazione di fenomeni
-                complessi di natura sociale, organizzativa e urbana. A questi
+                complessi di natura sociale, organizzativa o urbana. A questi
                 temi va aggiunto il crescente interesse per le Digital
-                Humanities ed in particolare per la progettazione di artefatti e
-                metodi digitali che riguardano l’elaborazione, l’accesso e la
-                visualizzazione dell’informazione per chi lavora a contatto con
-                materie umanistiche.
+                Humanities e in particolare per tutto ciò che sta
+                all’intersezione fra le materie umanistiche e l’information
+                design, come la progettazione di artefatti e metodi digitali per
+                l’elaborazione, l’accesso e la visualizzazione
+                dell’informazione.
               </p>
               <ul>
                 {people.density.map((d, i) => {
@@ -103,7 +104,7 @@ class Equipe extends React.Component {
                 >
                   Paolo Ciuccarelli
                 </a>{" "}
-                alla guida dell’équipe DDL.
+                alla direzione del gruppo DensityDesign.
               </p>
               <p>
                 Allo sviluppo delle visualizzazioni hanno collaborato Mauro
@@ -118,10 +119,13 @@ class Equipe extends React.Component {
                 .
               </p>
               <p>
-                Ringraziamo Lorenzo Faggi per la registrazione avvenuta presso
-                lo spazio occupato Piano Terra dell’audio del video
-                introduttivo. La voce narrante italiana è di Beatrice Gobbo,
-                quella inglese di Marwa Boukarim.
+                Ringraziamo Lorenzo Faggi per la registrazione, presso
+                lo spazio occupato Piano Terra, dell’audio del video
+                introduttivo.
+              </p>
+              <p>
+                La voce narrante italiana è di Beatrice Gobbo e quella inglese
+                di Marwa Boukarim.
               </p>
               <p>
                 La traduzione inglese dei testi dell’Atlante è di Ilaria
