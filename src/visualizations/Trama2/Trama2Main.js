@@ -1,18 +1,21 @@
-import React, { useCallback, useState, useMemo, useEffect } from "react"
-import MainMenu from "../../general/MainMenu"
-import PageTitle from "../../general/PageTitle"
-import MoreInfo from "../../general/MoreInfo"
-import CompassButton from "../../general/CompassButton/CompassButton"
-import SearchDropDown from "../../general/Search/SearchDropDownControlled"
-import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
+import React, { useCallback, useState, useMemo } from 'react'
+import MainMenu from '../../general/MainMenu'
+import PageTitle from '../../general/PageTitle'
+import MoreInfo from '../../general/MoreInfo'
+import CompassButton from '../../general/CompassButton/CompassButton'
+import SearchDropDown from '../../general/Search/SearchDropDownControlled'
+import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
 
-import AltOptions from "../../general/Options/AltOptions"
-import GlobalData from "../../utilities/GlobalData"
-import Trama2Content from "./Trama2Content"
-import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from "./utils"
-import keyBy from "lodash/keyBy"
-import "./Trama2.css"
-import { useTranslation } from "react-i18next"
+import AltOptions from '../../general/Options/AltOptions'
+import GlobalData from '../../utilities/GlobalData'
+import Trama2Content from './Trama2Content'
+import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from './utils'
+import keyBy from 'lodash/keyBy'
+import flatMap from 'lodash/flatMap'
+import uniq from 'lodash/uniq'
+import uniqBy from 'lodash/uniqBy'
+import './Trama2.css'
+import { useTranslation } from 'react-i18next'
 
 // SCALES
 const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
@@ -31,15 +34,28 @@ const {
 const searchOptions = racconti.map((racconto) => ({
   label: racconto.titolo,
   value: racconto.titolo,
+  volume: racconto.volume,
 }))
 
-const cercaOptions = [{ label: "Titolo", value: "Titolo" }]
+const searchOptonsVolume = uniq(
+  racconti.map((r) => r.volume).filter(Boolean)
+).map((v) => ({
+  label: v,
+  value: v,
+  volume: true,
+}))
+
+const cercaOptions = [
+  { label: 'Titolo', value: 'titolo' },
+  { label: 'Volume', value: 'volume' },
+]
 
 function Trama2Main({ title }) {
   const [helpSidePanelOpen, setHelpSidePanelOpen] = useState(true)
+  const [ricercaTop, setRicercaTop] = useState([])
   const [ricerca, setRicerca] = useState([])
 
-  const [currentView, setCurrentView] = useState("list")
+  const [currentView, setCurrentView] = useState('list')
 
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
@@ -80,11 +96,12 @@ function Trama2Main({ title }) {
         value: item.value,
         fromBounds: item.fromBounds === undefined ? false : item.fromBounds,
       })),
-      "value"
+      'value'
     )
   }, [ricerca])
 
   const { t } = useTranslation('translation')
+  const [findFor, setFindFor] = useState('titolo')
 
   return (
     <div className="trasformare main">
@@ -97,44 +114,54 @@ function Trama2Main({ title }) {
       />
 
       <div className="top-nav navigations">
-        <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
+        <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
+        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
 
         <AltOptions
-          title={t("cerca_per")}
+          title={t('cerca_per')}
           options={cercaOptions}
-          disabled={true}
-          value={"Titolo"}
-          onChange={(x) => {}}
+          value={findFor}
+          onChange={(x) => setFindFor(x.value)}
           style={{
-            gridColumn: "span 3",
+            gridColumn: 'span 3',
           }}
         />
 
         <SearchDropDown
           style={{
-            gridColumn: "span 8",
+            gridColumn: 'span 8',
           }}
-          data={{ options: searchOptions }}
+          data={{
+            options: findFor === 'titolo' ? searchOptions : searchOptonsVolume,
+          }}
           changeOptions={(newOptions) => {
-            setRicerca(
+            // In top bar
+            setRicercaTop(
               newOptions.map((o) => ({
                 ...o,
                 fromBounds: false,
               }))
             )
+            // In chart...
+            const racconti = newOptions.filter((o) => o.volume !== true)
+            const volumi = newOptions.filter((o) => o.volume === true)
+            const raccontiInVolumi = flatMap(volumi.map((v) =>
+              searchOptions.filter((o) => o.volume === v.value)
+            ))
+            const finalRicerca = uniqBy(racconti.concat(raccontiInVolumi), v => v.value)
+            setRicerca(finalRicerca)
           }}
-          selectedOptions={ricerca}
+          selectedOptions={ricercaTop}
         />
 
         <MoreInfo
           helpSidePanelOpen={helpSidePanelOpen}
-          style={{ gridColumn: "span 1" }}
+          style={{ gridColumn: 'span 1' }}
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton
           style={{
-            gridColumn: "span 1",
+            gridColumn: 'span 1',
           }}
         />
       </div>

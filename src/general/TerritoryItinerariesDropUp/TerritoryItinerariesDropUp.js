@@ -22,7 +22,6 @@ export default class TerritoryItinerariesDropUp extends React.Component
       <div className="territory-itineraries-drop-up">
 
         <RadioButton
-          linkRefresh={'/doubt/phase1'}
           id={TerritoryItinerariesDropUp.doubtButtonId}
           router={this.props.router}
           caption={this.doubtButtonCaption}
@@ -33,7 +32,6 @@ export default class TerritoryItinerariesDropUp extends React.Component
         />
 
         <RadioButton
-          linkRefresh={'/space/phase1'}
           id={TerritoryItinerariesDropUp.spaceButtonId}
           caption={this.spaceButtonCaption}
           buttonColor={"black"}
@@ -43,7 +41,6 @@ export default class TerritoryItinerariesDropUp extends React.Component
         />
 
         <RadioButton
-          linkRefresh={'/form/phase1'}
           id={TerritoryItinerariesDropUp.shapeButtonId}
           caption={this.shapeButtonCaption}
           buttonColor={"black"}
