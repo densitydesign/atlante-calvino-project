@@ -15,16 +15,15 @@ export default function Capta() {
           <h1>Capta</h1>
           <h2>Data/Capta</h2>
           <p>
-            In questa pagina è riportata una descrizione dei dataset che abbiamo
-            costruito e che sono il fondamento delle visualizzazioni
-            dell’Atlante. Spenderemo qualche parola sulle scelte progettuali,
-            sui metodi e sugli strumenti che abbiamo usato per creare questo
-            materiale.
+            I dataset che abbiamo realizzato sono il fondamento delle
+            visualizzazioni dell’Atlante. In questa sezione se ne fornisce una
+            descrizione, insieme ad alcune informazioni sulle scelte
+            progettuali, sui metodi e sugli strumenti usati.
             <br />
-            Abbiamo deciso di intitolare questa sezione ‘Capta’ invece di
-            ‘Dati’, per richiamare il concetto che ha ampiamente influenzato il
-            nostro lavoro e che è ormai conosciuto nell’ambito delle Digital
-            Humanities.
+            Abbiamo deciso di intitolare questa sezione <i>Capta</i> invece di{" "}
+            <i>Dati</i>, per servirci di un concetto che ha fortemente
+            influenzato il nostro lavoro e che è molto noto nell’ambito delle
+            Digital Humanities, secondo la definizione di Johanna Drucker:
           </p>
           <p className="cite cite2">
             «Capta is “taken” actively while data is assumed to be a “given”
@@ -32,30 +31,24 @@ export default function Capta() {
             differences arises. Humanistic inquiry acknowledges the situated,
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
-            as a natural representation of pre-existing fact.»
-            <br />– Johanna Drucker, 2011
+            as a natural representation of pre-existing fact.» (<a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener">Drucker, 2011</a>)
           </p>
           <p>
-            Infatti, il lavoro di osservazione e di registrazione delle
-            informazioni che sono derivate dall’opera di Calvino, ha richiesto
-            di prendere delle decisioni e di fare delle scelte riguardo la
-            manipolazione di questo materiale e la selezione di alcuni elementi.
-            Questo processo non poteva non essere condizionato delle esperte di
-            dominio che lo hanno attuato, ed in particolare dalla loro
-            conoscenze ed esperienze pregresse, attraverso le quali è stato loro
-            possibile creare collegamenti con altri ambiti del sapere
-            umanistico.
-            <br />
             Le informazioni raccolte, anche se presentate in forma di dati
-            tabulari come tipicamente accade nel mondo di altre discipline più
-            tecniche o scientifiche, rimangono il frutto di un lavoro
-            umanistico. Per questo motivo sono state trattate visualmente con
-            particolare riguardo. Sono stati riadattati modelli visivi esistenti
-            oppure ne sono stati ideati di nuovi, al fine di dare spazio nella
-            rappresentazione visuale alle peculiarità del pensiero umanistico,
-            ed in particolare alla capacità di valorizzare eccezioni,
-            particolarità e disomogeneità che sono invece difficilmente
-            rappresentabili con le soluzioni tradizionali.
+            tabulari come tipicamente accade nel campo delle discipline tecniche
+            o scientifiche, rimangono il frutto di un lavoro umanistico: per
+            questo motivo sono state trattate visualmente con particolare
+            riguardo. Sono stati riadattati modelli visivi esistenti oppure ne
+            sono stati ideati di nuovi, al fine di dare spazio nella
+            rappresentazione alle peculiarità dello sguardo umanistico: alla sua
+            capacità di valorizzare eccezioni, particolarità e disomogeneità
+            difficilmente rappresentabili con le soluzioni tradizionali e di
+            “vedere” elementi testuali che al momento nessuna macchina può
+            riconoscere.
+          </p>
+          <p>
+            Di seguito sono elencati i capta e gli strumenti che ne hanno
+            permesso la raccolta.
           </p>
           <span className={styles["info-box"]}>
             <p>
@@ -63,35 +56,32 @@ export default function Capta() {
               sottolineare che:
             </p>
             <ul>
-              <li>l’opera è l’insieme di tutti i testi;</li>
               <li>
-                il testo è il singolo racconto/volume indicato da un titolo;
+                l’<i>opera</i> è l’insieme di tutti i testi;
               </li>
               <li>
-                l’occorrenza è la parola, la formula o la frase presa in analisi
-                come unità minima del dataset;
+                il <i>testo</i> è il singolo racconto/volume indicato da un{" "}
+                <i>titolo</i>;
               </li>
               <li>
-                la lunghezza dei testi può essere calcolata in numero di
-                caratteri o in numero di parole;
+                l’<i>occorrenza</i> è la parola o il passaggio presi in analisi
+                come unità minime del dataset;
               </li>
               <li>
-                la posizione delle occorrenze nel testo è indicata tramite il
-                numero di caratteri;
+                la lunghezza dei testi può essere calcolata in numero di{" "}
+                <i>caratteri</i> o in numero di <i>parole</i>;
               </li>
               <li>
-                posizione e lunghezza delle occorrenze possono essere
+                la posizione delle <i>occorrenze</i> nel testo è indicata
+                tramite il numero di caratteri;
+              </li>
+              <li>
+                Posizione e lunghezza delle occorrenze possono essere
                 “normalizzate” ovvero ricalcolate in percentuale rispetto al
                 totale dei caratteri di riferimento.
               </li>
             </ul>
           </span>
-          <p>
-            Di seguito i dati, o capta, e gli strumenti che abbiamo costruito.
-            Una parte di questi non è ancora stata resa disponibile per il
-            download, poiché in attesa di pubblicazione in tesi dottorali o
-            ricerche correlate.
-          </p>
         </div>
       </div>
       <div
@@ -107,9 +97,11 @@ export default function Capta() {
               <li
                 key={d.name}
                 onClick={() => {
-                  document.querySelector('.'+styles["capta-focus"]).scrollIntoView({behavior:"auto",block:"start"});
-                  setSelected(d)}
-                }
+                  document
+                    .querySelector("." + styles["capta-focus"])
+                    .scrollIntoView({ behavior: "auto", block: "start" });
+                  setSelected(d);
+                }}
                 className={d === selected ? styles["active-capta"] : ""}
               >
                 {d.name}
@@ -161,15 +153,12 @@ export default function Capta() {
                     href={url.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={[
-                      styles["dataset-download"],
-                      "noselect",
-                    ].join(" ")}
+                    className={[styles["dataset-download"], "noselect"].join(
+                      " "
+                    )}
                   >
-                    { url.label }
-                    <BsBoxArrowUpRight
-                      style={{ marginLeft: "0.5rem" }}
-                    />
+                    {url.label}
+                    <BsBoxArrowUpRight style={{ marginLeft: "0.5rem" }} />
                   </a>
                 );
               })}
@@ -178,7 +167,7 @@ export default function Capta() {
           {selected.jsx}
         </div>
       </div>
-      <div className="ac-grid-24">
+      {/* <div className="ac-grid-24">
         <div className="content">
           <h2>Bibliografia</h2>
           <ol className="references">
@@ -214,7 +203,7 @@ export default function Capta() {
             </li>
           </ol>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

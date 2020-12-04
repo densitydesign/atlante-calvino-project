@@ -1,13 +1,14 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./capta.module.css";
 
 const formaElenchi = {
-  name: "Forma: Presenza e tipologia di elenchi",
+  name: "Forma: Strutture elencatorie",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-  licenseAltAttr: "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+  licenseAltAttr:
+    "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
   open: false,
   files: [
     {
@@ -18,24 +19,29 @@ const formaElenchi = {
   jsx: (
     <>
       <p>
-        Questo dataset registra le occorrenze di forme elencatorie presenti nel
-        corpus, raccolte tramite lo strumento Explorer. Sono state identificate
-        quattro categorie di elenco:
+        Questo dataset registra le occorrenze di strutture elencatorie presenti
+        nel corpus, raccolte tramite lo strumento Explorer.
       </p>
+      <p>Per ogni occorrenza sono riportate le seguenti informazioni:</p>
+
       <ul>
-        <li><span className={styles.tag}>parole</span></li>
-        <li><span className={styles.tag}>frasi</span></li>
-        <li><span className={styles.tag}>sintagmi</span></li>
-        <li><span className={styles.tag}>elenchi misti</span></li>
+        <li><span className={styles.tag}>ID del testo</span> in cui compare l’occorrenza; </li>
+        <li><span className={styles.tag}>occorrenza</span>;</li>
+        <li><span className={styles.tag}>posizione</span> nel testo (carattere di inizio e di fine);</li>
+        <li><span className={styles.tag}>categoria</span> (parole/sintagmi/proposizioni/misto);</li>
+        <li><span className={styles.tag}>totale dei caratteri</span> del testo in cui compare l’occorrenza;</li>
+        <li><span className={styles.tag}>totale dei caratteri</span> dell’occorrenza;</li>
+        <li>
+          <span className={styles.tag}>percentuale</span> tra numero di caratteri dell’occorrenza e numero di
+          caratteri del testo.
+        </li>
       </ul>
+
       <p>
-        Per ogni elenco è stata identificata la categoria di appartenenza, la
-        posizione nel testo e la lunghezza in caratteri. Successivamente è stata
-        calcolata la proporzione tra caratteri dedicati ad elenchi e resto del
-        testo e la distribuzione delle quattro categorie rispetto al totale
-        delle sole strutture elencatorie di ogni testo.
+        Il dataset è stato utilizzato per la visualizzazione{" "}
+        <Link to="/form/phase1">Elenchi</Link> e l’approfondimento{" "}
+        <Link to="form/phase1/focus">Per un’estetica elencatoria</Link>.
       </p>
-      <p></p>
     </>
   ),
 };
