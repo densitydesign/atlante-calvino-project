@@ -31,7 +31,7 @@ export default function Capta() {
             differences arises. Humanistic inquiry acknowledges the situated,
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
-            as a natural representation of pre-existing fact.» (Drucker, 2011)
+            as a natural representation of pre-existing fact.» (<a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener">Drucker, 2011</a>)
           </p>
           <p>
             Le informazioni raccolte, anche se presentate in forma di dati
@@ -45,7 +45,8 @@ export default function Capta() {
             difficilmente rappresentabili con le soluzioni tradizionali e di
             “vedere” elementi testuali che al momento nessuna macchina può
             riconoscere.
-            <br />
+          </p>
+          <p>
             Di seguito sono elencati i capta e gli strumenti che ne hanno
             permesso la raccolta.
           </p>

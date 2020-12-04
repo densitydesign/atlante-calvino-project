@@ -24,18 +24,17 @@ const tools = {
 tools.jsx = (
   <>
     <p>
-      La raccolta di dati sopra descritta è avvenuta direttamente sulle opere di
-      Calvino, fornite da Mondadori che detiene tutti i diritti sull’opera.
+      La raccolta dati è avvenuta in forma di annotazione sul testo tramite
+      strumenti digitali appositamente realizzati. Altre applicazioni per
+      l’annotazione già esistono, ma si sono rivelate inadatte per la necessità
+      di caricare il testo su server di terze parti e per problematiche di
+      obsolescenza, di incompatibilità oppure per una curva di apprendimento
+      troppo ripida.
       <br />
-      Di conseguenza è stato necessario prestare una particolare attenzione a
-      non infrangerne il copyright e da qui viene lo spunto per la creazione di
-      nuovi strumenti orientati alla raccolta di dati e annotazioni sui testi.
-    </p>
-    <p>
-      Applicazioni con simili funzionalità esistono già, ma in certi casi sono
-      risultate obsolete, in altri utilizzabili solamente previo upload del
-      proprio materiale su un server di terze parti e, in altri casi ancora, la
-      curva di apprendimento è risultata troppo ripida.
+      Nel rispetto del copyright dell’opera, gli strumenti introdotti risolvono
+      il problema della diffusione inappropriata del materiale utilizzando un
+      approccio <i className="italic-lang-ita">client-side</i>, come già succede nel caso di altre applicazioni
+      diffuse nel mondo della visualizzazione (es. RAWGraphs).
     </p>
     <p>
       Anche se in forma di ‘sito internet’, gli strumenti che proponiamo qui di
@@ -55,24 +54,22 @@ tools.jsx = (
         🔭
       </span>
     </h2>
-    <p>Lo strumento necessita del caricamento di due files:</p>
-
+    <p>
+      Lo strumento permette di evidenziare parti del testo, risalire alla
+      posizione in caratteri del testo evidenziato, specificare un certo numero
+      di proprietà a seconda di uno schema dati definito dal ricercatore e
+      infine esportare queste informazioni in formato tabulare.
+    </p>
+    <p>Lo strumento necessita del caricamento di due file:</p>
     <ul>
       <li>un file di testo in formato .txt sul quale applicare annotazioni</li>
       <li>un file in formato .tsv contenente lo schema per la raccolta.</li>
     </ul>
-
     <p>
-      Lo strumento permette di evidenziare parti del testo, risalire alla
-      posizione in caratteri del testo evidenziato, specificare un certo numero
-      di proprietà a seconda dello schema dati caricato ed infine esportare
-      queste informazioni in formato tabulare.
-    </p>
-    <p>
-      La lunghezza di alcuni testi come i romanzi o i racconti lunghi, non ne
+      La lunghezza di alcuni testi come i romanzi o i racconti lunghi non ne
       permette l'analisi in una sola sessione. In questi casi è possibile
       esportare il proprio lavoro e ricaricarlo successivamente per riprendere
-      ciò che è stato lasciato in sospeso.
+      quanto è stato lasciato in sospeso.
     </p>
     <p>
       <a
@@ -101,9 +98,9 @@ tools.jsx = (
     </h2>
     <p>
       Lo strumento è un’evoluzione del precedente e ne eredita tutte le
-      funzionalità. In aggiunta, permette di selezionare contemporaneamente due
-      porzioni di testo tra le quali si vuole indicare una relazione (e.g. testo
-      dubitativo).
+      funzionalità. In aggiunta, Wanderer permette di selezionare
+      contemporaneamente due porzioni di testo tra le quali si vuole indicare
+      una relazione.
     </p>
     <p>
       <a
