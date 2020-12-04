@@ -23,6 +23,8 @@
   background-color: var(--cool-bg);
   width: 30%;
   overflow-x: hidden;
+  margin-top:0px !important;
+  padding-top:3rem !important;
 }
 
 
