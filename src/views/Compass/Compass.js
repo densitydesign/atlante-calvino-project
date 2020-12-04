@@ -84,6 +84,7 @@ class Compass extends React.Component {
               interactiveViewUrl="/compass/flows-of-stories"
               pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
               text={this.props.t("bussola:tempo_testo")}
+              
             />
 
             <SlidingPanel
