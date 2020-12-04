@@ -1,14 +1,14 @@
-import React from "react"
-import { withTranslation, Trans } from "react-i18next"
+import React from "react";
+import { withTranslation, Trans } from "react-i18next";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import CompassTimeSinuousWrapper from "../../visualizations/CompassTimeSinuous/CompassTimeSinuousWrapper"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import CompassTimeSinuousWrapper from "../../visualizations/CompassTimeSinuous/CompassTimeSinuousWrapper";
 
-import "./CompassTime.css"
+import "./CompassTime.css";
 
 class CompassTime extends React.Component {
   render() {
-    const rhythm = 70
+    const rhythm = 70;
 
     return (
       <>
@@ -55,7 +55,7 @@ class CompassTime extends React.Component {
                   t={this.props.t}
                   ns="compass-time"
                 >
-                  <p className="references">
+                  <p>
                     &#x201C;Il tempo e le opere&#x201D; &#xA9;
                     UNIGE/DensityDesign
                     <br />
@@ -69,7 +69,7 @@ class CompassTime extends React.Component {
                     </a>
                     .
                   </p>
-                  <p className="references">
+                  <p>
                     <strong>Coordinatrice e coordinatore scientifici</strong>:
                     Francesca Serra, Paolo Ciuccarelli.
                     <br />
@@ -99,7 +99,7 @@ class CompassTime extends React.Component {
                 <div className="legend open">
                   <div className="legend-content">
                     <h4>{this.props.t("legenda")}</h4>
-                    <h2>{this.props.t("compass-time:Opere")}}</h2>
+                    <h2>{this.props.t("compass-time:Opere")}</h2>
                     <div className="legend-item">
                       <div
                         className="legend-circle"
@@ -110,7 +110,7 @@ class CompassTime extends React.Component {
                             "/CompassTime/glifi-01.svg)",
                         }}
                       ></div>
-                      <h6>{this.props.t("compass-time:Romanzo")}}</h6>
+                      <h6>{this.props.t("compass-time:Romanzo")}</h6>
                     </div>
                     <div className="legend-item">
                       <div
@@ -469,8 +469,8 @@ class CompassTime extends React.Component {
                         >
                           Il visconte dimezzato
                         </span>{" "}
-                        nella trilogia dei <i>Nostri antenati</i> del 1960) e una
-                        raccolta antologica dei racconti scritti
+                        nella trilogia dei <i>Nostri antenati</i> del 1960) e
+                        una raccolta antologica dei racconti scritti
                         dall&#x27;inizio della sua carriera fino al tempo
                         presente (
                         <span
@@ -516,14 +516,84 @@ class CompassTime extends React.Component {
                       ns="compass-time"
                     >
                       <h2>Anni 60</h2>
-                      <p>Tra gli Anni 50 e l&#x27;inizio degli <span className="Xfont-weight-bold">Anni 60</span> sperimenta vari esempi di forme ibride tra romanzo breve e racconto lungo. <span className="work-title ibrido"
-                      data-attribute="V010">La speculazione edilizia</span>, <span className="work-title ibrido" data-attribute="V012">La nuvola di smog</span> e <span className="work-title ibrido" data-attribute="V012">La
-                      formica argentina</span>, originariamente pubblicati su rivista, vengono riproposti in volume all&#x27;inizio del nuovo decennio. Nel 1963 pubblica un ultimo romanzo breve (<span className="work-title ibrido"
-                      data-attribute="V009">La giornata d&#x27;uno scrutatore</span>) e riunisce in volume i racconti di <span className="work-title racconti-protagonista" data-attribute="V011">Marcovaldo</span>, primo esempio di un
-                    sottogenere che avr&#xE0; molta fortuna nella sua opera: la raccolta di racconti con un unico protagonista.
-                    La seconda met&#xE0; degli anni 60 &#xE8; segnata dall&#x2019;invenzione della serie di racconti delle Cosmicomiche, che vengono raccolti in due libri (<span className="work-title racconti-protagonista" data-attribute="V013">Le cosmicomiche</span> e <span className="work-title racconti-protagonista" data-attribute="V014">Ti con zero</span>), ma lascer&#xE0; strascichi fino al 1984 con il volume{" "} 
-                     <span className="font-italic racconti-protagonista">Cosmicomiche vecchie e nuove</span>, passando per <span className="font-italic racconti-protagonista">La memoria del mondo</span> del 1968. Alla fine degli Anni 60 inaugura un nuovo genere di ibridazioni destinato a imporsi negli Anni 70: il romanzo di racconti racchiusi dentro una cornice (<span className="work-title racconti-cornice"
-                      data-attribute="V018">Il castello dei destini incrociati</span>).
+                      <p>
+                        Tra gli Anni 50 e l&#x27;inizio degli{" "}
+                        <span className="Xfont-weight-bold">Anni 60</span>{" "}
+                        sperimenta vari esempi di forme ibride tra romanzo breve
+                        e racconto lungo.{" "}
+                        <span
+                          className="work-title ibrido"
+                          data-attribute="V010"
+                        >
+                          La speculazione edilizia
+                        </span>
+                        ,{" "}
+                        <span
+                          className="work-title ibrido"
+                          data-attribute="V012"
+                        >
+                          La nuvola di smog
+                        </span>{" "}
+                        e{" "}
+                        <span
+                          className="work-title ibrido"
+                          data-attribute="V012"
+                        >
+                          La formica argentina
+                        </span>
+                        , originariamente pubblicati su rivista, vengono
+                        riproposti in volume all&#x27;inizio del nuovo decennio.
+                        Nel 1963 pubblica un ultimo romanzo breve (
+                        <span
+                          className="work-title ibrido"
+                          data-attribute="V009"
+                        >
+                          La giornata d&#x27;uno scrutatore
+                        </span>
+                        ) e riunisce in volume i racconti di{" "}
+                        <span
+                          className="work-title racconti-protagonista"
+                          data-attribute="V011"
+                        >
+                          Marcovaldo
+                        </span>
+                        , primo esempio di un sottogenere che avr&#xE0; molta
+                        fortuna nella sua opera: la raccolta di racconti con un
+                        unico protagonista. La seconda met&#xE0; degli anni 60
+                        &#xE8; segnata dall&#x2019;invenzione della serie di
+                        racconti delle Cosmicomiche, che vengono raccolti in due
+                        libri (
+                        <span
+                          className="work-title racconti-protagonista"
+                          data-attribute="V013"
+                        >
+                          Le cosmicomiche
+                        </span>{" "}
+                        e{" "}
+                        <span
+                          className="work-title racconti-protagonista"
+                          data-attribute="V014"
+                        >
+                          Ti con zero
+                        </span>
+                        ), ma lascer&#xE0; strascichi fino al 1984 con il volume{" "}
+                        <span className="font-italic racconti-protagonista">
+                          Cosmicomiche vecchie e nuove
+                        </span>
+                        , passando per{" "}
+                        <span className="font-italic racconti-protagonista">
+                          La memoria del mondo
+                        </span>{" "}
+                        del 1968. Alla fine degli Anni 60 inaugura un nuovo
+                        genere di ibridazioni destinato a imporsi negli Anni 70:
+                        il romanzo di racconti racchiusi dentro una cornice (
+                        <span
+                          className="work-title racconti-cornice"
+                          data-attribute="V018"
+                        >
+                          Il castello dei destini incrociati
+                        </span>
+                        ).
                       </p>
                     </Trans>
                   </div>
@@ -549,9 +619,9 @@ class CompassTime extends React.Component {
                           Gli amori difficili
                         </span>
                         ) che nasce da una sezione dei{" "}
-                        <span className="font-italic racconti">Racconti</span> del 1958,
-                        arricchita di nuovi elementi. Ripropone inoltre presso
-                        Einaudi{" "}
+                        <span className="font-italic racconti">Racconti</span>{" "}
+                        del 1958, arricchita di nuovi elementi. Ripropone
+                        inoltre presso Einaudi{" "}
                         <span
                           className="work-title riscritture"
                           data-attribute="V015"
@@ -581,8 +651,10 @@ class CompassTime extends React.Component {
                         . Come il protagonista di Marcovaldo era nato dieci anni
                         prima la sua pubblicazione in volume sulle pagine de
                         &#xAB;l&#x27;Unit&#xE0;&#xBB; , così il protagonista di{" "}
-                        <span className="font-italic racconti-protagonista">Palomar</span> vede la
-                        luce a met&#xE0; degli Anni 70 sulle pagine del
+                        <span className="font-italic racconti-protagonista">
+                          Palomar
+                        </span>{" "}
+                        vede la luce a met&#xE0; degli Anni 70 sulle pagine del
                         &#xAB;Corriere della Sera&#xBB;, a cui Calvino collabora
                         dal 1974 al 1979. A partire dal 1979 passa a &#xAB;la
                         Repubblica&#xBB;, inaugurando l&#x27;ultima importante
@@ -690,8 +762,8 @@ class CompassTime extends React.Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default withTranslation(["translation", "compass-time"])(CompassTime)
+export default withTranslation(["translation", "compass-time"])(CompassTime);
