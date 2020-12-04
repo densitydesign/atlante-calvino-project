@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* cursor: not-allowed; */
+  cursor: pointer;
 }
 
 .main-menu:hover {

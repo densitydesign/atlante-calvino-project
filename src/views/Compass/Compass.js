@@ -12,6 +12,10 @@ import "./Compass.css"
 import CompassTime from "../CompassTime/CompassTime"
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
 
+import timeZip from "./files/viz-01-sinuosa.zip"
+import flowsZip from "./files/viz-02-flussi.zip"
+import archipelagoZip from "./files/viz-03-arcipelago.zip"
+
 class Compass extends React.Component {
   constructor(props) {
     super(props)
@@ -82,7 +86,7 @@ class Compass extends React.Component {
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/flows-of-stories"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-02-flussi.zip"
+              pdfUrl={timeZip}
               text={this.props.t("bussola:tempo_testo")}
               
             />
@@ -101,7 +105,7 @@ class Compass extends React.Component {
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl="/compass/time-and-works"
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-01-sinuosa.zip"
+              pdfUrl={flowsZip}
               text={this.props.t("bussola:flussi_testo")}
             />
 
@@ -118,7 +122,7 @@ class Compass extends React.Component {
               setSelectedPanel={this.setSelectedPanel}
               panelClicked={this.panelClicked}
               interactiveViewUrl=""
-              pdfUrl="http://atlantecalvino.unige.ch/assets/viz-03-arcipelago.zip"
+              pdfUrl={archipelagoZip}
               text={this.props.t("bussola:testo_arcipelago")}
             />
           </div>
