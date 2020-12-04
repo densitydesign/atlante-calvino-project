@@ -289,7 +289,7 @@ class Cancellazione extends Component {
             )}
             {!this.state.loading && (
               <Options
-                title={this.props.t("cancellazione:footer.colora_per_stile")}
+                title={this.props.t("cancellazione:footer.Colora per stile")}
                 data={this.state.manifestazioniStilistiche}
                 style={{ gridColumn: "span 12", textAlign: "center" }}
                 changeOptions={this.changeColor}

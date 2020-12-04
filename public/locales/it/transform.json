@@ -15,8 +15,9 @@
     "terrestri_generici": "terrestri_generici"
   },
   "footer": {
-    "tipo_di_pubblicazione": "tipo_di_pubblicazione",
-    "contesti": "contesti"
+    "Tipo di pubblicazione": "Tipo di pubblicazione",
+    "contesti": "contesti",
+    "tipo_di_pubblicazione": "tipo_di_pubblicazione"
   },
   "categoria": {
     "Cosmici generici": "Cosmici generici",

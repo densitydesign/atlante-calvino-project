@@ -589,7 +589,7 @@ class Trasformare extends Component {
           {this.state.isLoading && <Loading style={{ gridColumn: "span 7" }} />}
           {!this.state.isLoading && (
             <Options
-              title={this.props.t("transform:footer.tipo_di_pubblicazione")}
+              title={this.props.t("transform:footer.Tipo di pubblicazione")}
               data={this.state.pubblicazioni}
               style={{ gridColumn: "span 7", textAlign: "center" }}
               changeOptions={this.changePubblicazioni}

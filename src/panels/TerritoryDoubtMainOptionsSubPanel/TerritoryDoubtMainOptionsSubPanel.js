@@ -11,7 +11,7 @@ class TerritoryDoubtMainOptionsSubPanel extends React.Component {
     return (
       <>
         <div className="title-panel">
-          <h4>{this.props.t('footer.presenza_del_fenomeno')}</h4>
+          <h4>{this.props.t('footer.Presenza del fenomeno')}</h4>
         </div>
         <div className="territory-doubt-main-options-subpanel">
           <RadioButton

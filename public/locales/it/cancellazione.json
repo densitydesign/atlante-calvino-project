@@ -7,6 +7,7 @@
     "qualche_pista_di_lettura": "<0>La linea verticale è stata introdotta all’interno della visualizzazione per sottolineare una particolare distribuzione degli elementi nello spazio. A sinistra della linea abbiamo a che fare con un’area cromaticamente omogenea, tendente al giallo (<1>contenuto</1>), in cui la presenza di testo dubitativo è quantitativamente inferiore; a destra invece la presenza di testo dubitativo si intensifica e il colore degli elementi grafici suggerisce una maggiore combinazione nell’utilizzo delle <i>Categorie</i>.<br/>Questa separazione, emersa spontaneamente dalla disposizione dei testi nello spazio in base ai dati raccolti, sembra rispecchiare una divisione cronologica; a sinistra tenderanno infatti a collocarsi i testi prima degli anni ’60, con qualche rara eccezione: “superano” la linea <i>Campo di mine</i> (1946), <i>L’avventura di un soldato</i> (1949) (vedi <14>Approfondimento</14>), <i>La casa degli alveari</i> (1949), <i>L’avventura di un impiegato</i> (1953), <i>L’avventura di un fotografo</i> (1955), <i>Il cavaliere inesistente</i> (1959). Una maggiore densità di testo dubitativo spinge questi testi verso destra, suggerendoci che, nonostante l’utilizzo del testo dubitativo si intensifichi pienamente a partire dagli anni ’60, era presente fin dall’inizio dell’opera.</0>"
   },
   "footer": {
-    "colora_per_stile": "colora_per_stile"
+    "colora_per_stile": "colora_per_stile",
+    "Colora per stile": "Colora per stile"
   }
 }
