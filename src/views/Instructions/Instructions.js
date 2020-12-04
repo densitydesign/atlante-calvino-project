@@ -91,7 +91,7 @@ export default function Instructions() {
               <strong> corpus </strong>
               narrativo, basandosi sul testo stabilito nell’edizione dei{" "}
               <i>Romanzi e racconti</i>, edizione diretta da Claudio Milanini, a
-              cura di Mario Barenghi e Bruno Falcetto (3 voll., 1991, 1992,
+              cura di Mario Barenghi e Bruno Falcetto (Milano, Mondadori, 3 voll., 1991, 1992,
               1994: d’ora in avanti <i>RR</i>, seguito dal volume e dal numero di
               pagina) di cui la casa editrice Mondadori ci ha consentito
               l’utilizzo in formato digitale per la creazione dei dataset

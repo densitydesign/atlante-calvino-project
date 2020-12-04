@@ -21,9 +21,7 @@ class CompassFlux extends React.Component {
             <div className="col-12">
               <Trans i18nKey={"title"} t={this.props.t} ns="compass-flux">
                 <h1>
-                  I racconti di Italo Calvino:{" "}
-                  <br className="d-block d-sm-none d-md-block d-lg-none" />
-                  dai periodici alle raccolte
+                I flussi dei racconti
                 </h1>
               </Trans>
             </div>
@@ -81,7 +79,7 @@ class CompassFlux extends React.Component {
                 t={this.props.t}
                 ns="compass-flux"
               >
-                <p className="references">
+                <p>
                   &#x201C;I racconti di Italo Calvino: dai periodici alle
                   raccolte&#x201D; &#xA9; UNIGE/DensityDesign
                   <br />
@@ -95,7 +93,7 @@ class CompassFlux extends React.Component {
                   </a>
                   .
                 </p>
-                <p className="references">
+                <p>
                   <strong>Coordinatrice e coordinatore scientifici</strong>:
                   Francesca Serra, Paolo Ciuccarelli.
                   <br />

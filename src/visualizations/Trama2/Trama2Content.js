@@ -102,7 +102,7 @@ export default function Trama2Content({
   const handleClickRacconto = useCallback((data) => {
     setCurrentTramaDetail(data)
     setCurrentView('detail')
-  }, [])
+  }, [setCurrentView])
 
   const [years, setYears] = useState([
     racconti[0].anno,
