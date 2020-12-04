@@ -59,13 +59,13 @@ class ShapeInformationSheet extends React.Component {
               <p className={SheetStyles.paragraph}>
                 Sono tutti anni in cui Calvino pubblica pochi titoli: nel 1945
                 solo <em>Angoscia in caserma</em>, nel 1951 solo{" "}
-                <em>Il reggimento smarrito</em>e{" "}
+                <em>Il reggimento smarrito</em> e{" "}
                 <em>L’avventura di una bagnante</em>, nel 1962 solo{" "}
                 <em>La strada di San Giovanni</em>, nel 1966 solo{" "}
-                <em>Ti con zero</em>, nel 1972 solo <em>Il nome, il naso</em>e{" "}
+                <em>Ti con zero</em>, nel 1972 solo <em>Il nome, il naso</em> e{" "}
                 <em>Le città invisibili</em>. Tutti i testi in questione sono
                 composti negli anni della rispettiva pubblicazione, tranne{" "}
-                <em>La strada e Le città</em>, che cominciano a essere scritti
+                <em>La strad</em> e {" "}<em>Le città</em>, che cominciano a essere scritti
                 rispettivamente a partire dal 1960 e dal 1970, in periodi in cui
                 le pubblicazioni si diradano. Il risultato sembra suggerire una
                 forma di correlazione tra la rarefazione del numero di testi e
@@ -183,10 +183,10 @@ class ShapeInformationSheet extends React.Component {
 
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>
-              {this.props.t("elenchi-sheet:Sintagmi e Preposizioni")}
+              {this.props.t("elenchi-sheet:Sintagmi e Proposizioni")}
             </h2>
             <Trans
-              i18nKey="paragraph-sintagmi-e-preposizioni"
+              i18nKey="paragraph-sintagmi-e-proposizioni"
               ns="elenchi-sheet"
               t={this.props.t}
             >
@@ -258,12 +258,12 @@ class ShapeInformationSheet extends React.Component {
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
-                  Freytag 1990: G. Freytag, <em>Technique of the Drama.</em> An
-                  Exposition of Dramatic Composition and Art, Chicago, Scott,
+                  Freytag 1990: G. Freytag, <em>Technique of the Drama. An
+                  Exposition of Dramatic Composition and Art</em>, Chicago, Scott,
                   Foresman & Company.
                 </li>
                 <li className="referenceItem">
-                  Inglese 2012: A. Inglese,
+                  Inglese 2012: A. Inglese,{" "}
                   <em>
                     Gli ideali della letteratura moderna e la strategia
                     dell’inventario
@@ -273,7 +273,7 @@ class ShapeInformationSheet extends React.Component {
                   77-95.
                 </li>
                 <li className="referenceItem">
-                  Marchese 1991: A. Marchese,
+                  Marchese 1991: A. Marchese,{" "}
                   <em>Dizionario di retorica e stilistica</em>, Milano,
                   Mondadori.
                 </li>
