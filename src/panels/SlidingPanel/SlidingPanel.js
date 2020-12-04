@@ -85,9 +85,10 @@ class SlidingPanel extends React.Component {
             <p>
               <a
                 className="link"
-                href={process.env.PUBLIC_URL + this.props.pdfUrl}
+                href={this.props.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                download={"Atlante Calvino - "+this.props.title+".zip"}
               >
                 <PdfIcon /> PDF 
               </a>
