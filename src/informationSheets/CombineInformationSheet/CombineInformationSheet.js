@@ -70,7 +70,7 @@ class CombineInformationSheet extends Component {
                 autoriflessivo» (Donnarumma 2008, 82). Sono anni interamente
                 dedicati all’affinamento di una «macchina narrativa
                 combinatoria» (espressione con cui lui stesso definirà il ruolo
-                dei tarocchi nel Castello; Calvino 1973, <em>RR</em> II, 1276)
+                dei tarocchi nel <i>Castello</i>; Calvino 1973, <em>RR</em>, II, 1276)
                 che, dotata dei giusti elementi di partenza e di un set di
                 regole efficaci, possa produrre una varietà infinita di esiti,
                 anticipando di mezzo secolo novità che la rivoluzione

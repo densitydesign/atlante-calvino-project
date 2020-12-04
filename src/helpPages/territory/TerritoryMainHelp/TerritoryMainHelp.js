@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import { Tabs, Tab } from "react-bootstrap"
-import { useTranslation, Trans } from "react-i18next"
-import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel"
-import { ReactComponent as Info01 } from "./icons/territorio_a_disposizione_cronologia.svg"
-import { ReactComponent as Info02 } from "./icons/territorio_dimensione.svg"
-import { ReactComponent as Info03 } from "./icons/territorio_a_cronologia.svg"
-import { ReactComponent as Info04 } from "./icons/territorio_b_situazione_editoriale_1.svg"
-import { ReactComponent as Info05 } from "./icons/territorio_b_situazione_editoriale_2.svg"
-import { ReactComponent as Info06 } from "./icons/territorio_b_situazione_editoriale_3.svg"
-import { ReactComponent as Info07 } from "./icons/territorio_b_situazione_editoriale_4.svg"
-import { ReactComponent as Info01En } from "./icons/territorio_a_disposizione_cronologia_en.svg"
-import { ReactComponent as Info02En } from "./icons/territorio_dimensione_en.svg"
-import { ReactComponent as Info03En } from "./icons/territorio_a_cronologia_en.svg"
-import { ReactComponent as Info04En } from "./icons/territorio_b_situazione_editoriale_1_en.svg"
-import { ReactComponent as Info05En } from "./icons/territorio_b_situazione_editoriale_2_en.svg"
-import { ReactComponent as Info06En } from "./icons/territorio_b_situazione_editoriale_3_en.svg"
-import { ReactComponent as Info07En } from "./icons/territorio_b_situazione_editoriale_4_en.svg"
-import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda"
+import React, { useState } from "react";
+import { Tabs, Tab } from "react-bootstrap";
+import { useTranslation, Trans } from "react-i18next";
+import IntestazioneHelpPanel from "../../../panels/HelpSidePanel/components/IntestazioneHelpPanel";
+import { ReactComponent as Info01 } from "./icons/territorio_a_disposizione_cronologia.svg";
+import { ReactComponent as Info02 } from "./icons/territorio_dimensione.svg";
+import { ReactComponent as Info03 } from "./icons/territorio_a_cronologia.svg";
+import { ReactComponent as Info04 } from "./icons/territorio_b_situazione_editoriale_1.svg";
+import { ReactComponent as Info05 } from "./icons/territorio_b_situazione_editoriale_2.svg";
+import { ReactComponent as Info06 } from "./icons/territorio_b_situazione_editoriale_3.svg";
+import { ReactComponent as Info07 } from "./icons/territorio_b_situazione_editoriale_4.svg";
+import { ReactComponent as Info01En } from "./icons/territorio_a_disposizione_cronologia_en.svg";
+import { ReactComponent as Info02En } from "./icons/territorio_dimensione_en.svg";
+import { ReactComponent as Info03En } from "./icons/territorio_a_cronologia_en.svg";
+import { ReactComponent as Info04En } from "./icons/territorio_b_situazione_editoriale_1_en.svg";
+import { ReactComponent as Info05En } from "./icons/territorio_b_situazione_editoriale_2_en.svg";
+import { ReactComponent as Info06En } from "./icons/territorio_b_situazione_editoriale_3_en.svg";
+import { ReactComponent as Info07En } from "./icons/territorio_b_situazione_editoriale_4_en.svg";
+import BadgeLegenda from "../../../panels/HelpSidePanel/components/BadgeLegenda";
 
-import "./TerritoryMainHelp.css"
+import "./TerritoryMainHelp.css";
 
 export default function TerritoryMainHelp({ helpProps }) {
-  const [key, setKey] = useState("info")
-  const { t, i18n } = useTranslation(["translation", "territorio"])
+  const [key, setKey] = useState("info");
+  const { t, i18n } = useTranslation(["translation", "territorio"]);
   return (
     <>
       <IntestazioneHelpPanel
@@ -115,7 +115,7 @@ export default function TerritoryMainHelp({ helpProps }) {
             <p>
               c) L’uso del colore introduce due differenti modalità esplorative:
               la scala cromatica che va dal verde al viola, attiva nella
-              modalità Cronologia, segnala l’ordine cronologico di prima
+              modalità <i>Cronologia</i>, segnala l’ordine cronologico di prima
               pubblicazione di tutti i testi del corpus.
             </p>
           </Trans>
@@ -145,21 +145,39 @@ export default function TerritoryMainHelp({ helpProps }) {
             ns="territorio"
           >
             <p>
-              Selezionando invece la modalità Volumi, il colore consente di
-              riconoscere tutti i volumi pubblicati in vita dall’autore, sia che
-              si tratti di raccolte di racconti, sia che si tratti di altri tipi
-              di testi. Le raccolte di racconti sono riconoscibili con gli
-              stessi colori anche in modalità Cronologia, attraverso l’utilizzo
-              di alcune linee di contorno.
+              Selezionando invece la modalità <i>Volumi</i>, il colore consente
+              di riconoscere tutti i volumi pubblicati in vita dall’autore, sia
+              che si tratti di raccolte di racconti, sia che si tratti di altri
+              tipi di testi. Le raccolte di racconti sono riconoscibili con gli
+              stessi colori anche in modalità <i>Cronologia</i>, attraverso
+              l’utilizzo di alcune linee di contorno.
             </p>
             <p>
               Interagendo con un singolo elemento grafico appaiono il titolo,
               l’anno di prima pubblicazione ed eventuali pubblicazioni
-              successive. Il Filtro cronologico consente di riorganizzare il
-              corpus su una linea temporale e, se necessario, selezionare un
+              successive. Il <i>Filtro cronologico</i> consente di riorganizzare
+              il corpus su una linea temporale e, se necessario, selezionare un
               intervallo di tempo specifico (un anno, un decennio ecc.)
-              Utilizzando la funzione Cerca è possibile individuare singoli
-              testi o raccolte di racconti.
+              Utilizzando la funzione <i>Cerca per</i> è possibile individuare
+              singoli testi o raccolte di racconti.
+            </p>
+          </Trans>
+          <p>
+            <strong>
+              {t("help_panel.qualche_pista_di_lettura")}
+            </strong>
+          </p>
+          <Trans
+            i18nKey={"help_panel.qualche_pista_di_lettura"}
+            t={t}
+            ns="territorio"
+          >
+            <p>
+              Il territorio può essere esplorato da vari punti di vista, in modo
+              da sfruttare la sua capacità di sollecitare spunti di ricerca
+              inediti come la prospettiva che presenta. Un esempio sono le tre{" "}
+              <i>Analisi dei fenomeni</i> qui proposte, che elaborano la struttura di
+              partenza del territorio in base a tre diverse interrogazioni.
             </p>
           </Trans>
         </Tab>
@@ -272,5 +290,5 @@ export default function TerritoryMainHelp({ helpProps }) {
         </Tab>
       </Tabs>
     </>
-  )
+  );
 }

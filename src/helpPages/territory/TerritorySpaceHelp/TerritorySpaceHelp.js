@@ -184,7 +184,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
             <div className="row mt-2">
               <div className="col-md-6">
                 <div>
-                  <small>{t("luoghi:help_panel.tipo_di_fenomeno")}</small>
+                  <small>{t("luoghi:help_panel.tipo_di_luogo")}</small>
                 </div>
                 <div>
                   <BadgeLegenda
@@ -232,7 +232,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
             <div className="row mt-2">
               <div className="col-md-6">
                 <div>
-                  <small>{t("luoghi:help_panel.tipo_di_fenomeno")}</small>
+                <small>{t("luoghi:help_panel.tipo_di_luogo")}</small>
                 </div>
                 <div>
                   <BadgeLegenda
@@ -279,7 +279,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
             <div className="row mt-2">
               <div className="col-md-6">
                 <div>
-                  <small>TIPO DI FENOMENO</small>
+                <small>{t("luoghi:help_panel.tipo_di_luogo")}</small>
                 </div>
                 <div>
                   <BadgeLegenda
