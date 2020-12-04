@@ -35,10 +35,10 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <div className="main-menu" style={this.props.style}>
-        <span className="main-menu-inner" onClick={this.toggle}>
+      <div className="main-menu" style={this.props.style} onClick={this.toggle}>
+        {/* <span className="main-menu-inner"> */}
           <IconIndexMenu />
-        </span>
+        {/* </span> */}
         {this.state.open && (
           <ModalIndexMenu toggle={this.toggle} />
         )}
