@@ -134,6 +134,7 @@ class Equipe extends React.Component {
             </div>
           </Trans>
           <div className="sidebar sticky-element">
+          <div className="content">
             <h1>{this.props.t("contatti")}</h1>
             <p>
               <BsEnvelope /> atlantecalvino@unige.ch
@@ -148,6 +149,7 @@ class Equipe extends React.Component {
                 @AtlanteCalvino
               </a>
             </p>
+            </div>
           </div>
         </div>
         <Footer />
