@@ -229,29 +229,29 @@ export default function TerritoryMainHelp({ helpProps }) {
                   {t("territorio:help_panel.situazione_editoriale")}
                 </small>
               </div>
-              <div className="row">
-                <div className="col-md-3">
+              <div className="d-flex justify-content-between">
+                <div>
                   {i18n.language === "it" ? (
                     <Info04 width="75.5" />
                   ) : (
                     <Info04En width="75.5" />
                   )}
                 </div>
-                <div className="col-md-3">
+                <div>
                   {i18n.language === "it" ? (
                     <Info05 width="75.5" />
                   ) : (
                     <Info05En width="75.5" />
                   )}
                 </div>
-                <div className="col-md-3">
+                <div>
                   {i18n.language === "it" ? (
                     <Info06 width="75.5" />
                   ) : (
                     <Info06En width="75.5" />
                   )}
                 </div>
-                <div className="col-md-3">
+                <div>
                   {i18n.language === "it" ? (
                     <Info07 width="75.5" />
                   ) : (
