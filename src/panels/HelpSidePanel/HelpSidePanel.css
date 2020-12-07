@@ -242,3 +242,7 @@ small{
   font-size: 10px;
   text-transform: lowercase;
 }
+
+.badge-legenda-name::first-letter{
+  text-transform: uppercase;
+}

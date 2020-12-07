@@ -32,7 +32,7 @@ export default function IntestazioneHelpPanel({
           <span className="text-dark-blue mr-2">
             <small className="text-dark-blue text-uppercase">{t('help_panel.tappa')}</small>
           </span>
-          <Link to={linkTappa1} className="link-tappa">
+          <HashLink to={linkTappa1} className="link-tappa">
             <div
               className={classnames("mr-2", {
                 "number-tappa": tappa !== 1,
@@ -41,8 +41,8 @@ export default function IntestazioneHelpPanel({
             >
               1
             </div>
-          </Link>
-          <Link to={linkTappa2} className="link-tappa">
+          </HashLink>
+          <HashLink to={linkTappa2} className="link-tappa">
             <div
               className={classnames("mr-2", {
                 "number-tappa": tappa !== 2,
@@ -51,8 +51,8 @@ export default function IntestazioneHelpPanel({
             >
               2
             </div>
-          </Link>
-          <Link to={linkTappa3} className="link-tappa">
+          </HashLink>
+          <HashLink to={linkTappa3} className="link-tappa">
             <div
               className={classnames("mr-2", {
                 "number-tappa": tappa !== 3,
@@ -61,7 +61,7 @@ export default function IntestazioneHelpPanel({
             >
               3
             </div>
-          </Link>
+          </HashLink>
         </div>
       </div>
       <h2 className="text-dark-blue">{titolo}</h2>
