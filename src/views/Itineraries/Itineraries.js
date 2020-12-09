@@ -179,8 +179,7 @@ class Itineraries extends React.Component {
                 </div>
               </div>
             </section>
-
-            <section id="form">
+            <section id="form" className='pt-5'>
               <Trans i18nKey={"la_forma"} t={this.props.t} ns="itineraries">
                 <h1 className="text-dark-blue">La Forma</h1>
                 <p>
