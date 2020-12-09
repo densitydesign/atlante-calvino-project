@@ -1,23 +1,23 @@
-import React from "react"
-import { Trans, withTranslation } from "react-i18next"
+import React from "react";
+import { Trans, withTranslation } from "react-i18next";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import DoubtTypePerYearWrapper from "../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper"
-import FooterSchede1 from "../FooterSchede1"
-import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import DoubtTypePerYearWrapper from "../../visualizations/DoubtTypePerYear/DoubtTypePerYearWrapper";
+import FooterSchede1 from "../FooterSchede1";
+import SheetStyles from "../SheetStyles.module.css";
 
-import "./DoubtInformationSheet.css"
+import "./DoubtInformationSheet.css";
 
-import legenda from "./legend.svg"
-import zoom_01 from "./zoom-01.svg"
-import zoom_02 from "./zoom-02.svg"
-import legendaEn from "./nebbia_legend_en.svg"
-import zoom_01En from "./nebbia_zoom-01_en.svg"
-import zoom_02En from "./nebbia_zoom-02_en.svg"
+import legenda from "./legend.svg";
+import zoom_01 from "./zoom-01.svg";
+import zoom_02 from "./zoom-02.svg";
+import legendaEn from "./nebbia_legend_en.svg";
+import zoom_01En from "./nebbia_zoom-01_en.svg";
+import zoom_02En from "./nebbia_zoom-02_en.svg";
 
 class DoubtInformationSheet extends React.Component {
   render() {
-    console.log(this.props.i18n.language)
+    console.log(this.props.i18n.language);
     return (
       <>
         <HamburgerCompassHeader />
@@ -50,12 +50,12 @@ class DoubtInformationSheet extends React.Component {
             >
               <p className={SheetStyles.paragraph}>
                 {" "}
-                Il grafico mostra i due fenomeni,{" "}
-                <em>nebbia</em> e <em>cancellazione</em>, distribuiti cronologicamente e
-                non più ancorati ai singoli testi. Le onde della{" "}
-                <em>bump chart</em> evidenziano il loro impiego durante i
-                quarant’anni di carriera dell’autore, consentendoci di leggere
-                in parallelo i loro rispettivi andamenti.
+                Il grafico mostra i due fenomeni, <em>nebbia</em> e{" "}
+                <em>cancellazione</em>, distribuiti cronologicamente e non più
+                ancorati ai singoli testi. Le onde della <em>bump chart</em>{" "}
+                evidenziano il loro impiego durante i quarant’anni di carriera
+                dell’autore, consentendoci di leggere in parallelo i loro
+                rispettivi andamenti.
                 <br />
                 Le occorrenze, inoltre, sono distinte a seconda che siano state
                 categorizzate nella raccolta dati come <em>astratte</em> o come{" "}
@@ -74,7 +74,7 @@ class DoubtInformationSheet extends React.Component {
                 sparse membra dell’oca» (
                 <em>Un chilo e mezzo di grasso d’oca</em>, 1976, in <em>RR</em>,
                 II, 930); «lei abbassava le ciglia e lui si sentì come
-                cancellato» (<em>L’avventura di uno sciatore</em>, 1959,{" "}
+                cancellato» (<em>L’avventura di uno sciatore</em>, 1959, in {" "}
                 <em>RR</em>, II, 1175).
               </p>
             </Trans>
@@ -209,10 +209,10 @@ class DoubtInformationSheet extends React.Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "nebbia-sheet"])(
   DoubtInformationSheet
-)
+);
