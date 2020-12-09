@@ -110,6 +110,7 @@ export function MarimekkoSlider({
           <Slider
             reverse
             vertical
+            className={ selected ? 'handle-blue' : undefined}
             min={0}
             max={Math.floor(height - CURSOR_HEIGHT)}
             style={{ height: height - CURSOR_HEIGHT }}
