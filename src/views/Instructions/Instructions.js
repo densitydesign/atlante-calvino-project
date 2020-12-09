@@ -36,7 +36,7 @@ export default function Instructions() {
                   La ricostruzione della vicenda editoriale di tutti i racconti
                   (
                   <Link to="compass/flows-of-stories">
-                    Il I flussi dei racconti
+                    I flussi dei racconti
                   </Link>
                   )
                 </li>
@@ -116,7 +116,7 @@ export default function Instructions() {
               <strong> Valeria Cavalloro</strong>
             </p>
             <p>
-            L’Atlante è stato scritto in italiano e tradotto in inglese, affinché fosse disponibile in una doppia versione. La traduzione inglese è di Ilaria Bruzzone.
+            L’Atlante è stato scritto in italiano e tradotto in inglese, affinché fosse disponibile in una doppia versione.
 I titoli delle opere appaiono sempre in lingua originale. Per quanto riguarda le citazioni, laddove non è diversamente specificato, la traduzione è nostra.
             </p>
           </div>

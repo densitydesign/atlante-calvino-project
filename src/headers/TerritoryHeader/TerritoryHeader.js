@@ -151,7 +151,7 @@ class TerritoryHeader extends React.Component {
       <div className="top-nav navigations">
         <MainMenu style={{ gridColumn: "span 1" }} />
         <PageTitle
-          title={this.props.t("territorio:header.esplorare_opera")}
+          title={this.props.t("territorio:Esplorare l'opera come un territorio")}
           style={{ gridColumn: "span 9" }}
         />
 
