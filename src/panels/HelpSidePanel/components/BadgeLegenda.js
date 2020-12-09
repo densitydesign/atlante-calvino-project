@@ -7,6 +7,7 @@ export default function BadgeLegenda({ name, color, border, italic }) {
         <div
           style={{
             width: "21px",
+            flexShrink: 0,
             height: "10px",
             background: color ? color : undefined,
             borderRadius: "6px",
