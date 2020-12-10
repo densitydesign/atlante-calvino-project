@@ -42,8 +42,8 @@ class Equipe extends React.Component {
                     <li key={"gin-" + i}>
                       <a href={d.url} target="_blank" rel="noopener noreferrer">
                         {d.name}
-                      </a>{" "}
-                      – {d.role}
+                      </a>
+                      {d.showRole && " (" + d.role + ")"}
                     </li>
                   );
                 })}
@@ -76,13 +76,24 @@ class Equipe extends React.Component {
                     <li key={"dd-" + i}>
                       <a href={d.url} target="_blank" rel="noopener noreferrer">
                         {d.name}
-                      </a>{" "}
-                      – {d.role}
+                      </a>
+                      {d.showRole && " (" + d.role + ")"}
                     </li>
                   );
                 })}
               </ul>
               <br />
+              <p>
+                Il progetto è iniziato con{" "}
+                <a
+                  href="https://densitydesign.org/person/paolo-ciuccarelli/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Paolo Ciuccarelli
+                </a>{" "}
+                alla direzione del gruppo DensityDesign.
+              </p>
               <p>
                 Alla ricerca e alla progettazione dell’Atlante hanno partecipato
                 anche: Matteo Banal,{" "}
@@ -94,17 +105,6 @@ class Equipe extends React.Component {
                   Gabriele Colombo
                 </a>
                 , Serena Del Nero, Giovanni Lombardi.
-              </p>
-              <p>
-                Il progetto è iniziato con{" "}
-                <a
-                  href="https://densitydesign.org/person/paolo-ciuccarelli/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Paolo Ciuccarelli
-                </a>{" "}
-                alla direzione del gruppo DensityDesign.
               </p>
               <p>
                 Allo sviluppo delle visualizzazioni hanno collaborato Mauro
@@ -119,9 +119,8 @@ class Equipe extends React.Component {
                 .
               </p>
               <p>
-                Ringraziamo Lorenzo Faggi per la registrazione, presso
-                lo spazio occupato Piano Terra, dell’audio del video
-                introduttivo.
+                Ringraziamo Lorenzo Faggi per la registrazione, presso lo spazio
+                occupato Piano Terra, dell’audio del video introduttivo.
               </p>
               <p>
                 La voce narrante italiana è di Beatrice Gobbo e quella inglese
@@ -134,21 +133,21 @@ class Equipe extends React.Component {
             </div>
           </Trans>
           <div className="sidebar sticky-element">
-          <div className="content">
-            <h1>{this.props.t("contatti")}</h1>
-            <p>
-              <BsEnvelope /> atlantecalvino@unige.ch
-            </p>
-            <p>
-              <FaTwitter />{" "}
-              <a
-                href="https://twitter.com/AtlanteCalvino"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @AtlanteCalvino
-              </a>
-            </p>
+            <div className="content">
+              <h1>{this.props.t("contatti")}</h1>
+              <p>
+                <BsEnvelope /> atlantecalvino@unige.ch
+              </p>
+              <p>
+                <FaTwitter />{" "}
+                <a
+                  href="https://twitter.com/AtlanteCalvino"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @AtlanteCalvino
+                </a>
+              </p>
             </div>
           </div>
         </div>

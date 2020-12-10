@@ -2,7 +2,8 @@
   "unige": [
     {
       "name": "Francesca Serra",
-      "role": "Ideazione e direzione del progetto",
+      "showRole": true,
+      "role": "ideazione e direzione del progetto",
       "url": "https://www.unige.ch/lettres/roman/unites/italien/enseignants/serra/"
     },
     {
@@ -24,7 +25,8 @@
   "density": [
     {
       "name": "Michele Mauri",
-      "role": "Direzione delle attività del gruppo DensityDesign",
+      "showRole": true,
+      "role": "direzione delle attività del gruppo DensityDesign",
       "url": "https://densitydesign.org/person/michele-mauri/"
     },
     {

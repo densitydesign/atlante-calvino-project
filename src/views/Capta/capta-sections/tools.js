@@ -25,27 +25,17 @@ tools.jsx = (
   <>
     <p>
       La raccolta dati è avvenuta in forma di annotazione sul testo tramite
-      strumenti digitali appositamente realizzati. Altre applicazioni per
-      l’annotazione già esistono, ma si sono rivelate inadatte per la necessità
-      di caricare il testo su server di terze parti e per problematiche di
-      obsolescenza, di incompatibilità oppure per una curva di apprendimento
-      troppo ripida.
+      strumenti digitali appositamente realizzati. Le applicazioni per
+      l’annotazione già esistenti si sono rivelate inadatte al nostro lavoro per
+      varie ragioni. Tra queste, la necessità di caricare il testo su server di
+      terze parti, problemi di obsolescenza e di incompatibilità, oppure a causa
+      di una curva di apprendimento troppo ripida.
       <br />
       Nel rispetto del copyright dell’opera, gli strumenti introdotti risolvono
       il problema della diffusione inappropriata del materiale utilizzando un
-      approccio <i className="italic-lang-ita">client-side</i>, come già succede nel caso di altre applicazioni
-      diffuse nel mondo della visualizzazione (es. RAWGraphs).
-    </p>
-    <p>
-      Anche se in forma di ‘sito internet’, gli strumenti che proponiamo qui di
-      seguito risolvono all’origine ogni problematica legata alla diffusione
-      inappropriata di testo e dati, utilizzando un approccio completamente
-      client-side come già fatto da altre applicazioni diffuse nel mondo della
-      visualizzazione (e.g.{" "}
-      <a href="https://rawgraphs.io" target="_blank" rel="noopener noreferrer">
-        RAWGraphs
-      </a>
-      ).
+      approccio <i className="italic-lang-ita">client-side</i>, come già succede
+      nel caso di altre applicazioni diffuse nel mondo della visualizzazione
+      (es. <a href="https://rawgraphs.io/" target="_blank" rel="noopener">RAWGraphs</a>).
     </p>
     <br />
     <h2>
