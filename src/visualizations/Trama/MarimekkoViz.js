@@ -274,12 +274,12 @@ function MarimekkoViz({
   }, [data, dettaglio, aggregazione, tipologia, ricerca]);
 
   const availableWidth = useMemo(() => {
-    if(booksData.length === 1){
+    if(booksData.length === 1 && !currentTextID){
       return columnWidth
     }
     return booksData.length > 4 ? dimensions.vizWidth: columnWidth * 4
 
-  }, [booksData.length, columnWidth, dimensions.vizWidth])
+  }, [booksData.length, columnWidth, currentTextID, dimensions.vizWidth])
 
 
   const booksDataWithPositions = useMemo(() => {
