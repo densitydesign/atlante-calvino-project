@@ -23,18 +23,20 @@
   padding-left: 0;
 }
 
-.icon-approfondimento:hover{
+/* .icon-approfondimento:hover{
   padding-left: -10px !important;
   transition: ease-in 1s;
-}
+} */
 
 .text-approfondimento {
-  display: none;
+  visibility: hidden;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
 }
 
 .icon-approfondimento:hover > .text-approfondimento{
-  display: block;
-  transition: ease-in 1s;
+  visibility: visible;
+  opacity: 1;
 }
 
 .small-approfondimento{
