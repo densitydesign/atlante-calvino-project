@@ -40,7 +40,7 @@ class Phases extends React.Component {
                 </p>
                 <Link to="/archipelago">
                   <button type="button" className="button-text">
-                    ESPLORARE L'OPERA
+                    ESPLORARE L'OPERA COME UN TERRITORIO
                   </button>
                 </Link>
               </div>

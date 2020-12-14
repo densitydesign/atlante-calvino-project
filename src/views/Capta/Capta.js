@@ -26,12 +26,12 @@ export default function Capta() {
             Digital Humanities, secondo la definizione di Johanna Drucker:
           </p>
           <p className="cite cite2">
-            «Capta is “taken” actively while data is assumed to be a “given”
+            Capta is “taken” actively while data is assumed to be a “given”
             able to be recorded and observed. From this distinction, a world of
             differences arises. Humanistic inquiry acknowledges the situated,
             partial, and constitutive character of knowledge production, the
             recognition that knowledge is constructed, taken, not simply given
-            as a natural representation of pre-existing fact.» (<a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener">Drucker, 2011</a>)
+            as a natural representation of pre-existing fact. (<a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener">Drucker, 2011</a>)
           </p>
           <p>
             Le informazioni raccolte, anche se presentate in forma di dati

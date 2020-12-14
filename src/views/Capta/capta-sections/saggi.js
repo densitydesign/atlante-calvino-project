@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./capta.module.css";
 
 const saggi = {
-  name: "Saggi: L’arcipelago dei nomi",
+  name: "Saggi",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -50,8 +50,10 @@ const saggi = {
           pagine);
         </li>
         <li>
-          <span className={styles.tag}>titoli</span> dei saggi in cui viene
-          nominato.
+          <span className={styles.tag}>titoli</span> del testo in cui comprare l’occorrenza.
+        </li>
+        <li>
+          <span className={styles.tag}>lunghezza</span> del testo (pagina di inizio e fine).
         </li>
       </ul>
       <p>

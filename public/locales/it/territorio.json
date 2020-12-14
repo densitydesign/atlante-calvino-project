@@ -1,5 +1,5 @@
 {
-  "esplorare_l_opera": "Esplorare l'opera",
+  "esplorare_l_opera": "Esplorare l'opera come un territorio",
   "help_panel": {
     "cronologia": "Cronologia",
     "testo_cronologia": "<0>c) L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al viola, attiva nella modalità <i>Cronologia</i>, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</0>",
@@ -10,7 +10,7 @@
     "come_funziona": "<p>Per leggere correttamente la visualizzazione è necessario prestare attenzione a tre parametri: a) la disposizione degli elementi; b) la loro dimensione; c) l’uso del colore.</p><1><0></0></1><p>a) Gli elementi sono posizionati sulla base di due criteri: l’appartenenza a uno stesso volume e la data di prima pubblicazione. Questo significa che un principio di attrazione agisce sia sui testi pubblicati in uno stesso volume sia sui testi cronologicamente coevi. Di conseguenza, osservando il territorio, è possibile riconoscere un anello esterno e alcuni gruppi di testi interni. Questi ultimi sono i testi che confluiscono in raccolte.</p><3><0></0></3><p>b) La dimensione di ogni elemento è proporzionale alla lunghezza del testo che rappresenta; a colpo d’occhio è quindi possibile individuare le opere più consistenti del corpus.</p>"
   },
   "header": {
-    "esplorare_opera": "Esplorare l'opera"
+    "esplorare_opera": "Esplorare l'opera come un territorio"
   },
   "footer": {
     "analisi_dei_fenomeni": "Analisi dei fenomeni",
@@ -19,5 +19,6 @@
     "modalita": "Modalità",
     "Cronologia": "Cronologia",
     "proporzione": "Proporzione"
-  }
+  },
+  "Esplorare l'opera come un territorio": "Esplorare l'opera come un territorio"
 }
