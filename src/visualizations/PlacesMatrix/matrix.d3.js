@@ -376,6 +376,7 @@ class VClass
         }
       })
       .merge(node)
+      .attr("display", d=> (d.year>=timeFilter[0] && d.year <= timeFilter[1]) ? "block" : "none" )
       .style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
       .attr("fill", d => d.opened === true ? 'white' : color(d.category))
       .attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
@@ -388,6 +389,7 @@ class VClass
       .attr('r', 1.5)
       .attr('fill', d => d3.color(color(d.category)).darker(1))
       .merge(presumed)
+      .attr("display", d=> (d.year>=timeFilter[0] && d.year <= timeFilter[1]) ? "block" : "none" )
 
     // Apply the general update pattern to the links.
     link = link.data(links, d => d.source.id + "-" + d.target.id);

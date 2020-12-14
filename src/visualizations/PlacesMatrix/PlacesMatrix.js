@@ -17,7 +17,7 @@ class PlacesMatrix extends Component {
 
     if (this.props.filter !== prevProps.filter) {
       // console.log('new filters')
-      if (this.props.searched.length !== this.props.originalData.length) {
+      if (this.props.expandOnSearch && this.props.searched.length !== this.props.originalData.length) {
         V.openOnSearch(this.props.searched)
       }
       const selectThoseLabels = this.props.searched;
