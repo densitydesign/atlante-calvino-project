@@ -50,7 +50,7 @@ const spazioMetamorfosi = {
       </ul>
 
       <p>
-        Il dataset è stato utilizzato per l’approfondimento <Link to="/space/phase3/focus">Metamorfosi della realtà: sulle tracce della paura</Link>.
+        Il dataset è stato utilizzato per l’Approfondimento <Link to="/space/phase3/focus">Metamorfosi della realtà: sulle tracce della paura</Link>.
       </p>
     </>
   ),

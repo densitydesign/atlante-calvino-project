@@ -56,7 +56,7 @@ const dubbioNebbia = {
       <p>
       Il dataset è stato utilizzato per realizzare la visualizzazione{" "}
         <Link to="/doubt/phase1">Nebbia</Link> e{" "}
-        <Link to="/doubt/phase1/focus">l’approfondimento L’effetto-nebbia</Link>.
+        <Link to="/doubt/phase1/focus">l’Approfondimento L’effetto-nebbia</Link>.
       </p>
     </>
   ),
