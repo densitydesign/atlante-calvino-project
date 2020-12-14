@@ -110,7 +110,7 @@ class HesitationInformationSheet extends Component {
               >
                 {" "}
                 Occorrenze di testo dubitativo distribuite per capitolo in{" "}
-                <em>La giornata di uno scrutatore</em>
+                <em>La giornata d'uno scrutatore</em>
               </p>
             </Trans>
           </div>

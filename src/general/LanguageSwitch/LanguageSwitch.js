@@ -20,8 +20,8 @@ export default function LanguageSwitch() {
   const langNotSelected = i18n.language === "it" ? "en" : "it"
 
   return (
-    <div>
-      <div className="cursor-pointer text-dark-blue" style={{ borderBottom: '2px solid #5151FC'}} onClick={() => setOpenLang(!openLang)}>
+    <div style={{ width: 18 }}>
+      <div className="cursor-pointer text-dark-blue text-center" style={{ borderBottom: '2px solid #5151FC', fontSize: 10}} onClick={() => setOpenLang(!openLang)}>
         {i18n.language === "it" ? "IT" : "EN"}
       </div>
       {openLang && (

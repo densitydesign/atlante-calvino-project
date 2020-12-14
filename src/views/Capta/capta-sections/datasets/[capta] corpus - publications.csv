@@ -1,41 +1,41 @@
 id,destination,type,year,month,day,firstPublication
-S001,«Roma fascista»,altro,1943,4,29,TRUE
-S002,«Roma fascista»,altro,1943,4,29,TRUE
-S003,«Roma fascista»,altro,1943,4,29,TRUE
-S004,«Aretusa»,altro,1945,12,16,TRUE
-S005,«Politecnico»,altro,1946,1,19,TRUE
-S006,«L'Unità» (Milano),altro,1946,4,28,TRUE
-S007,«Darsena nuova»,altro,1946,6,1,TRUE
-S008,«Unità» (Torino),altro,1946,6,9,TRUE
-S009,«L'Unità» (Torino),altro,1946,6,23,TRUE
-S010,«L'Unità» (Genova),altro,1946,8,18,TRUE
-S011,«L'Unità» (Milano),altro,1946,9,22,TRUE
-S012,«Unità» (Torino),altro,1946,9,29,TRUE
-S013,«Unità» (Torino),altro,1946,11,7,TRUE
-S014,«Agorà»,altro,1947,1,1,TRUE
-S016,«L'Unità» (Milano),altro,1947,1,5,TRUE
-S017,«L'Unità» (Milano),altro,1947,1,8,TRUE
-S018,«L'Unità» (Genova),altro,1947,3,30,TRUE
-S019,«Il Settimanale»,altro,1947,5,3,TRUE
-S020,«L'Unità» (Genova),altro,1947,5,18,TRUE
-S021,«L'Unità» (Torino),altro,1947,6,19,TRUE
-S015,«Graal. Rivista d’arte e pensiero»,altro,1947,7,1,TRUE
-S022,«L'Unità» (Genova),altro,1947,7,6,TRUE
+S001,«Roma fascista»,periodico,1943,4,29,TRUE
+S002,«Roma fascista»,periodico,1943,4,29,TRUE
+S003,«Roma fascista»,periodico,1943,4,29,TRUE
+S004,«Aretusa»,periodico,1945,12,16,TRUE
+S005,«Il Politecnico»,periodico,1946,1,19,TRUE
+S006,«l'Unità» (Milano),periodico,1946,4,28,TRUE
+S007,«Darsena nuova»,periodico,1946,6,1,TRUE
+S008,«l'Unità» (Torino),periodico,1946,6,9,TRUE
+S009,«l'Unità» (Torino),periodico,1946,6,23,TRUE
+S010,«l'Unità» (Genova),periodico,1946,8,18,TRUE
+S011,«l'Unità» (Milano),periodico,1946,9,22,TRUE
+S012,«l'Unità» (Torino),periodico,1946,9,29,TRUE
+S013,«l'Unità» (Torino),periodico,1946,11,7,TRUE
+S014,«Agorà»,periodico,1947,1,1,TRUE
+S016,«l'Unità» (Milano),periodico,1947,1,5,TRUE
+S017,«l'Unità» (Milano),periodico,1947,1,8,TRUE
+S018,«l'Unità» (Genova),periodico,1947,3,30,TRUE
+S019,«Il Settimanale»,periodico,1947,5,3,TRUE
+S020,«l'Unità» (Genova),periodico,1947,5,18,TRUE
+S021,«l'Unità» (Torino),periodico,1947,6,19,TRUE
+S015,«Graal. Rivista d’arte e pensiero»,periodico,1947,7,1,TRUE
+S022,«l'Unità» (Genova),periodico,1947,7,6,TRUE
 V001,V001,romanzo,1947,10,10,TRUE
-S023,«L'Unità» (Torino),altro,1948,1,8,TRUE
-S024,«L'Unità» (Torino),altro,1948,2,1,TRUE
-S025,«Rinascita»,altro,1948,2,1,TRUE
-S026,«L'Unità» (Torino),altro,1948,4,20,TRUE
-S027,«L'Unità» (Torino),altro,1948,6,11,TRUE
-S028,«Milano-sera»,altro,1948,6,22,TRUE
-S029,«L'Unità» (Torino),altro,1948,8,28,TRUE
-S030,«L'Unità» (Torino),altro,1948,9,15,TRUE
-S031,«Unità» (Torino),altro,1948,10,16,TRUE
-S032,«Unità» (Torino),altro,1948,10,31,TRUE
-S033,«L'Unità» (Torino),altro,1948,11,23,TRUE
+S023,«l'Unità» (Torino),periodico,1948,1,8,TRUE
+S024,«l'Unità» (Torino),periodico,1948,2,1,TRUE
+S025,«Rinascita»,periodico,1948,2,1,TRUE
+S026,«l'Unità» (Torino),periodico,1948,4,20,TRUE
+S027,«l'Unità» (Torino),periodico,1948,6,11,TRUE
+S028,«Milano-sera»,periodico,1948,6,22,TRUE
+S029,«l'Unità» (Torino),periodico,1948,8,28,TRUE
+S030,«l'Unità» (Torino),periodico,1948,9,15,TRUE
+S031,«l'Unità» (Torino),periodico,1948,10,16,TRUE
+S032,«l'Unità» (Torino),periodico,1948,10,31,TRUE
+S033,«l'Unità» (Torino),periodico,1948,11,23,TRUE
 S034,Antologia Einaudi 1948,altro,1948,12,22,TRUE
-S035,«Unità» (Torino),altro,1949,1,8,TRUE
-S036,«Unità» (Torino),altro,1949,4,2,TRUE
+S035,«l'Unità» (Torino),periodico,1949,1,8,TRUE
+S036,«l'Unità» (Torino),periodico,1949,4,2,TRUE
 S004,V002,raccolta,1949,7,30,FALSO
 S005,V002,raccolta,1949,7,30,FALSO
 S006,V002,raccolta,1949,7,30,FALSO
@@ -68,65 +68,65 @@ S041,V002,raccolta,1949,7,30,TRUE
 S042,V002,raccolta,1949,7,30,TRUE
 S043,V002,raccolta,1949,7,30,TRUE
 V002,V002,raccolta,1949,7,30,TRUE
-S044,«Unità» (Torino),altro,1950,4,7,TRUE
-S045,«Unità» (Torino),altro,1950,8,17,TRUE
-S046,«Inventario»,altro,1950,9,23,TRUE
-S047,«Rinascita»,altro,1950,11,1,TRUE
-S048,«L'Unità» (Torino),altro,1950,11,9,TRUE
-S049,«Unità» (Torino),altro,1951,7,15,TRUE
-S050,«Paragone-letteratura»,altro,1951,8,1,TRUE
+S044,«l'Unità» (Torino),periodico,1950,4,7,TRUE
+S045,«l'Unità» (Torino),periodico,1950,8,17,TRUE
+S046,«Inventario»,periodico,1950,9,23,TRUE
+S047,«Rinascita»,periodico,1950,11,1,TRUE
+S048,«l'Unità» (Torino),periodico,1950,11,9,TRUE
+S049,«l'Unità» (Torino),periodico,1951,7,15,TRUE
+S050,«Paragone» (serie Letteratura),periodico,1951,8,1,TRUE
 V003,V003,ibrido,1952,2,12,TRUE
-S051,«Unità» (Torino),altro,1952,6,8,TRUE
-S052,«L'Unità»,altro,1952,6,29,TRUE
-S053,«L'Unità» (Torino),altro,1952,9,28,TRUE
-S054,«Botteghe Oscure»,altro,1952,10,1,TRUE
-S055,«L'Unità» (Torino),altro,1952,10,12,TRUE
-S056,«L'Unità» (Torino),altro,1952,10,19,TRUE
-S057,«Unità» (Torino),altro,1952,11,2,TRUE
-S058,«Unità» (Torino),altro,1952,12,9,TRUE
-S059,«Unità» (Torino),altro,1952,12,14,TRUE
-S060,«Unità» (Torino),altro,1953,1,14,TRUE
-S061,«L'Unità» (Torino),altro,1953,2,1,TRUE
-S062,«L'Unità» (Torino),altro,1953,2,15,TRUE
-S063,«Unità» (Torino),altro,1953,4,2,TRUE
-S064,«L'Unità» (Torino),altro,1953,4,30,TRUE
-S065,«Nuovi Argomenti»,altro,1953,5,1,TRUE
-S066,«L'Unità» (Torino),altro,1953,7,5,TRUE
-S067,«Il Ponte»,altro,1953,8,1,TRUE
-S068,«Paragone-letteratura»,altro,1953,8,1,TRUE
-S069,«Unità» (Torino),altro,1953,10,14,TRUE
-S070,«Unità» (Torino),altro,1953,10,30,TRUE
-S071,«Unità» (Torino),altro,1954,2,28,TRUE
+S051,«l'Unità» (Torino),periodico,1952,6,8,TRUE
+S052,«l'Unità» (Torino),periodico,1952,6,29,TRUE
+S053,«l'Unità» (Torino),periodico,1952,9,28,TRUE
+S054,«Botteghe Oscure»,periodico,1952,10,1,TRUE
+S055,«l'Unità» (Torino),periodico,1952,10,12,TRUE
+S056,«l'Unità» (Torino),periodico,1952,10,19,TRUE
+S057,«l'Unità» (Torino),periodico,1952,11,2,TRUE
+S058,«l'Unità» (Torino),periodico,1952,12,9,TRUE
+S059,«l'Unità» (Torino),periodico,1952,12,14,TRUE
+S060,«l'Unità» (Torino),periodico,1953,1,14,TRUE
+S061,«l'Unità» (Torino),periodico,1953,2,1,TRUE
+S062,«l'Unità» (Torino),periodico,1953,2,15,TRUE
+S063,«l'Unità» (Torino),periodico,1953,4,2,TRUE
+S064,«l'Unità» (Torino),periodico,1953,4,30,TRUE
+S065,«Nuovi Argomenti»,periodico,1953,5,1,TRUE
+S066,«l'Unità» (Torino),periodico,1953,7,5,TRUE
+S067,«Il Ponte»,periodico,1953,8,1,TRUE
+S068,«Paragone» (serie Letteratura),periodico,1953,8,1,TRUE
+S069,«l'Unità» (Torino),periodico,1953,10,14,TRUE
+S070,«l'Unità» (Torino),periodico,1953,10,30,TRUE
+S071,«l'Unità» (Torino),periodico,1954,2,28,TRUE
 S072,V004,raccolta,1954,5,25,TRUE
 V004,V004,raccolta,1954,5,25,TRUE
 S065,V004,raccolta,1954,5,25,FALSO
 S067,V004,raccolta,1954,5,25,FALSO
-S073,«Incontri oggi»,altro,1954,6,1,TRUE
-S074,«Il contemporaneo»,altro,1954,8,7,TRUE
-S075,«Il contemporaneo»,altro,1954,8,21,TRUE
-S076,«Il contemporaneo»,altro,1954,8,28,TRUE
-S077,«Il contemporaneo»,altro,1954,9,4,TRUE
-S078,«Il contemporaneo»,altro,1954,9,11,TRUE
-S079,«Il contemporaneo»,altro,1954,9,25,TRUE
-S080,«Il contemporaneo»,altro,1954,10,9,TRUE
-S081,«Il contemporaneo»,altro,1954,10,23,TRUE
-S082,«Il contemporaneo»,altro,1954,12,11,TRUE
-S083,«Il contemporaneo»,altro,1954,12,25,TRUE
-S084,«Il contemporaneo»,altro,1955,4,30,TRUE
-S085,«Il Caffè»,altro,1956,1,1,TRUE
-S086,«Corriere d'informazione»,altro,1957,5,4,TRUE
+S073,«Incontri oggi»,periodico,1954,6,1,TRUE
+S074,«Il Contemporaneo»,periodico,1954,8,7,TRUE
+S075,«Il Contemporaneo»,periodico,1954,8,21,TRUE
+S076,«Il Contemporaneo»,periodico,1954,8,28,TRUE
+S077,«Il Contemporaneo»,periodico,1954,9,4,TRUE
+S078,«Il Contemporaneo»,periodico,1954,9,11,TRUE
+S079,«Il Contemporaneo»,periodico,1954,9,25,TRUE
+S080,«Il Contemporaneo»,periodico,1954,10,9,TRUE
+S081,«Il Contemporaneo»,periodico,1954,10,23,TRUE
+S082,«Il Contemporaneo»,periodico,1954,12,11,TRUE
+S083,«Il Contemporaneo»,periodico,1954,12,25,TRUE
+S084,«Il Contemporaneo»,periodico,1955,4,30,TRUE
+S085,«Il Caffè»,periodico,1956,1,1,TRUE
+S086,«Corriere d'informazione»,periodico,1957,5,4,TRUE
 V005,V005,romanzo,1957,6,4,TRUE
-S087,«Città aperta»,altro,1957,7,25,TRUE
-S088,«Botteghe Oscure»,altro,1957,9,1,TRUE
-S089,«Città aperta»,altro,1958,3,6,TRUE
-S090,«L'Espresso»,altro,1958,5,25,TRUE
-S091,«Città aperta»,altro,1958,6,1,TRUE
-S092,«Nuova Corrente»,altro,1958,7,1,TRUE
-S093,«Il Mondo»,altro,1958,7,15,TRUE
-S094,«Tempo presente»,altro,1958,8,1,TRUE
-S095,«Nuovi Argomenti»,altro,1958,9,1,TRUE
-S096,«Il Caffè»,altro,1958,9,1,TRUE
-S097,«Il Verri»,altro,1958,10,1,TRUE
+S087,«Città aperta»,periodico,1957,7,25,TRUE
+S088,«Botteghe Oscure»,periodico,1957,9,1,TRUE
+S089,«Città aperta»,periodico,1958,3,6,TRUE
+S090,«L'Espresso»,periodico,1958,5,25,TRUE
+S091,«Città aperta»,periodico,1958,6,1,TRUE
+S092,«Nuova corrente»,periodico,1958,7,1,TRUE
+S093,«Il Mondo»,periodico,1958,7,15,TRUE
+S094,«Tempo presente»,periodico,1958,8,1,TRUE
+S095,«Nuovi Argomenti»,periodico,1958,9,1,TRUE
+S096,«Il Caffè»,periodico,1958,9,1,TRUE
+S097,«Il Verri»,periodico,1958,10,1,TRUE
 S005,V006,raccolta,1958,11,20,FALSO
 S007,V006,raccolta,1958,11,20,FALSO
 S009,V006,raccolta,1958,11,20,FALSO
@@ -181,17 +181,17 @@ S104,V006,raccolta,1958,11,20,TRUE
 V006,V006,raccolta,1958,11,20,TRUE
 S054,V007,ibrido,1958,,,FALSO
 V007,V007,ibrido,1958,,,TRUE
-S105,«Successo»,altro,1959,5,1,TRUE
+S105,«Successo»,periodico,1959,5,1,TRUE
 V008,V008,romanzo,1959,11,30,TRUE
-S106,"«Questo e altro», n.1",altro,1962,1,1,TRUE
+S106,«Questo e altro»,periodico,1962,1,1,TRUE
 V009,V009,ibrido,1963,2,28,TRUE
-S107,«L'Europa letteraria»,altro,1963,4,1,TRUE
+S107,«L'Europa letteraria»,periodico,1963,4,1,TRUE
 S088,V010,ibrido,1963,6,28,FALSO
 V010,V010,ibrido,1963,6,28,TRUE
-S108,«Il Corriere dei Piccoli»,altro,1963,10,20,TRUE
-S109,«Il Corriere dei Piccoli»,altro,1963,10,27,TRUE
-S110,«Il Corriere dei Piccoli»,altro,1963,11,3,TRUE
-S111,«Il Corriere dei Piccoli»,altro,1963,11,10,TRUE
+S108,«Corriere dei piccoli»,periodico,1963,10,20,TRUE
+S109,«Corriere dei piccoli»,periodico,1963,10,27,TRUE
+S110,«Corriere dei piccoli»,periodico,1963,11,3,TRUE
+S111,«Corriere dei piccoli»,periodico,1963,11,10,TRUE
 S053,V011,raccolta,1963,11,23,FALSO
 S055,V011,raccolta,1963,11,23,FALSO
 S056,V011,raccolta,1963,11,23,FALSO
@@ -213,20 +213,20 @@ S115,V011,raccolta,1963,11,23,TRUE
 S116,V011,raccolta,1963,11,23,TRUE
 S117,V011,raccolta,1963,11,23,TRUE
 V011,V011,raccolta,1963,11,23,TRUE
-S118,«Il Caffè politico e letterario»,altro,1964,11,1,TRUE
-S119,«Il Caffè politico e letterario»,altro,1964,11,1,TRUE
-S120,«Il Caffè politico e letterario»,altro,1964,11,1,TRUE
-S121,«Il Caffè politico e letterario»,altro,1964,11,1,TRUE
-S122,«Il Giorno»,altro,1965,4,11,TRUE
-S123,«Il Giorno»,altro,1965,4,18,TRUE
-S124,«Il Giorno»,altro,1965,5,1,TRUE
-S125,«Il Giorno»,altro,1965,5,16,TRUE
+S118,«Il Caffè»,periodico,1964,11,1,TRUE
+S119,«Il Caffè»,periodico,1964,11,1,TRUE
+S120,«Il Caffè»,periodico,1964,11,1,TRUE
+S121,«Il Caffè»,periodico,1964,11,1,TRUE
+S122,«Il Giorno»,periodico,1965,4,11,TRUE
+S123,«Il Giorno»,periodico,1965,4,18,TRUE
+S124,«Il Giorno»,periodico,1965,5,1,TRUE
+S125,«Il Giorno»,periodico,1965,5,16,TRUE
 S054,V012,raccolta,1965,10,20,FALSO
 S095,V012,raccolta,1965,10,20,FALSO
 V012,V012,raccolta,1965,10,20,TRUE
-S126,«Il Giorno»,altro,1965,10,24,TRUE
-S127,«Il Giorno»,altro,1965,10,31,TRUE
-S128,«L'Espresso»,altro,1965,11,14,TRUE
+S126,«Il Giorno»,periodico,1965,10,24,TRUE
+S127,«Il Giorno»,periodico,1965,10,31,TRUE
+S128,«L'Espresso»,periodico,1965,11,14,TRUE
 S046,V012,raccolta,1965,11,15,FALSO
 S129,V013,raccolta,1965,11,15,TRUE
 S130,V013,raccolta,1965,11,15,TRUE
@@ -242,13 +242,13 @@ S124,V013,raccolta,1965,11,15,FALSO
 S126,V013,raccolta,1965,11,15,FALSO
 S128,V013,raccolta,1965,11,15,FALSO
 S133,Almanacco Letterario Bompiani 1967,altro,1966,11,1,TRUE
-S134,«Nuova Corrente»,altro,1967,1,1,TRUE
-S135,«Il Giorno»,altro,1967,5,28,TRUE
-S136,«Il Giorno»,altro,1967,6,11,TRUE
-S137,«Linus»,altro,1967,7,1,TRUE
-S138,«Il Giorno»,altro,1967,7,2,TRUE
-S139,«Rendiconti»,altro,1967,7,15,TRUE
-S140,«Il Giorno»,altro,1967,7,30,TRUE
+S134,«Nuova corrente»,periodico,1967,1,1,TRUE
+S135,«Il Giorno»,periodico,1967,5,28,TRUE
+S136,«Il Giorno»,periodico,1967,6,11,TRUE
+S137,«Linus»,periodico,1967,7,1,TRUE
+S138,«Il Giorno»,periodico,1967,7,2,TRUE
+S139,«Rendiconti»,periodico,1967,7,15,TRUE
+S140,«Il Giorno»,periodico,1967,7,30,TRUE
 S133,V014,raccolta,1967,10,28,FALSO
 S134,V014,raccolta,1967,10,28,FALSO
 S135,V014,raccolta,1967,10,28,FALSO
@@ -261,7 +261,7 @@ S142,V014,raccolta,1967,10,28,TRUE
 S143,V014,raccolta,1967,10,28,TRUE
 S144,V014,raccolta,1967,10,28,TRUE
 V014,V014,raccolta,1967,10,28,TRUE
-S145,«Playmen»,altro,1968,5,1,TRUE
+S145,«Playmen»,periodico,1968,5,1,TRUE
 S146,V015,raccolta,1968,11,1,TRUE
 S147,V015,raccolta,1968,11,1,TRUE
 S148,V015,raccolta,1968,11,1,TRUE
@@ -283,7 +283,7 @@ S140,V015,raccolta,1968,11,1,FALSO
 S141,V015,raccolta,1968,11,1,FALSO
 S144,V015,raccolta,1968,11,1,FALSO
 S145,V015,raccolta,1968,11,1,FALSO
-S149,«Il caffè letterario e satirico»,altro,1969,8,1,TRUE
+S149,«Il Caffè»,periodico,1969,8,1,TRUE
 V016,V016,romanzo,1969,11,1,TRUE
 S042,V017,raccolta,1970,6,20,FALSO
 S050,V017,raccolta,1970,6,20,FALSO
@@ -302,51 +302,51 @@ S105,V017,raccolta,1970,6,20,FALSO
 S140,V017,raccolta,1970,6,20,FALSO
 V017,V017,raccolta,1970,6,20,TRUE
 S150,Adelphiana 1971,altro,1971,6,1,TRUE
-S151,«Playboy»,altro,1972,11,1,TRUE
+S151,«Playboy»,periodico,1972,11,1,TRUE
 V018,V018,romanzo,1972,11,3,TRUE
 S152,V019,raccolta,1973,10,27,TRUE
 V019,V019,raccolta,1973,10,27,TRUE
-S153,«Corriere della sera»,altro,1974,4,25,TRUE
+S153,«Corriere della sera»,periodico,1974,4,25,TRUE
 S154,"F. Fellini, Quattro film",altro,1974,9,28,TRUE
 V020,V020,racconto,1974,12,1,TRUE
-S155,«Corriere della sera»,altro,1974,12,21,TRUE
-S156,«Corriere della sera»,altro,1975,4,27,TRUE
+S155,«Corriere della sera»,periodico,1974,12,21,TRUE
+S156,«Corriere della sera»,periodico,1975,4,27,TRUE
 S157,"Aa. Vv., Le interviste imposibili",altro,1975,5,1,TRUE
 S158,"Aa. Vv., Le interviste imposibili",altro,1975,5,1,TRUE
-S159,«Corriere della sera»,altro,1975,7,27,TRUE
-S160,«Corriere della sera»,altro,1975,8,1,TRUE
-S161,«Corriere della sera»,altro,1975,8,1,TRUE
-S162,«Corriere della sera»,altro,1975,8,10,TRUE
-S163,«Corriere della sera»,altro,1975,8,10,TRUE
-S164,«Corriere della sera»,altro,1975,8,24,TRUE
-S165,«Corriere della sera»,altro,1975,9,18,TRUE
-S166,«Corriere della sera»,altro,1976,1,23,TRUE
+S159,«Corriere della sera»,periodico,1975,7,27,TRUE
+S160,«Corriere della sera»,periodico,1975,8,1,TRUE
+S161,«Corriere della sera»,periodico,1975,8,1,TRUE
+S162,«Corriere della sera»,periodico,1975,8,10,TRUE
+S163,«Corriere della sera»,periodico,1975,8,10,TRUE
+S164,«Corriere della sera»,periodico,1975,8,24,TRUE
+S165,«Corriere della sera»,periodico,1975,9,18,TRUE
+S166,«Corriere della sera»,periodico,1976,1,23,TRUE
 S167,L'atelier de l'artiste,altro,1976,4,1,TRUE
-S168,«Corriere della sera»,altro,1976,7,16,TRUE
+S168,«Corriere della sera»,periodico,1976,7,16,TRUE
 S169,"-V. Gobbi/S. Toresella, Acquedotti ieri e oggi",altro,1976,12,1,TRUE
-S170,«Corriere della sera»,altro,1977,1,16,TRUE
-S171,«Paragone»,altro,1977,2,1,TRUE
-S172,«Corriere della sera»,altro,1977,8,2,TRUE
-S173,«Il Caffè»,altro,1977,10,1,TRUE
+S170,«Corriere della sera»,periodico,1977,1,16,TRUE
+S171,«Paragone» (serie Letteratura),periodico,1977,2,1,TRUE
+S172,«Corriere della sera»,periodico,1977,8,2,TRUE
+S173,«Il Caffè»,periodico,1977,10,1,TRUE
 S174,Paraphrases,altro,1978,4,1,TRUE
-S175,«Corriere della sera»,altro,1978,12,24,TRUE
+S175,«Corriere della sera»,periodico,1978,12,24,TRUE
 V021,V021,romanzo,1979,6,2,TRUE
-S176,«la Repubblica»,altro,1980,3,15,TRUE
-S177,«Derrière le miroir»,altro,1980,5,1,TRUE
-S178,«la Repubblica»,altro,1980,5,16,TRUE
-S179,«Gran Bazaar»,altro,1980,9,1,TRUE
+S176,«la Repubblica»,periodico,1980,3,15,TRUE
+S177,«Derrière le miroir»,periodico,1980,5,1,TRUE
+S178,«la Repubblica»,periodico,1980,5,16,TRUE
+S179,«Gran Bazaar»,periodico,1980,9,1,TRUE
 S180,Magnelli. Les pierres: 1931-1935,altro,1981,7,14,TRUE
 S181,"I. Calvino/M. Campigli, Le memorie di Casanova",altro,1981,11,30,TRUE
-S182,«la Repubblica»,altro,1981,12,3,TRUE
+S182,«la Repubblica»,periodico,1981,12,3,TRUE
 S183,Firenze perduta,altro,1982,1,1,TRUE
-S184,«la Repubblica»,altro,1982,4,15,TRUE
-S185,«FMR»,altro,1982,6,1,TRUE
-S186,«Cnac Magazine»,altro,1982,7,1,TRUE
-S187,«la Repubblica»,altro,1982,8,12,TRUE
-S188,Gnoli,altro,1983,3,1,TRUE
-S189,«FMR»,altro,1983,7,1,TRUE
-S190,«la Repubblica»,altro,1983,7,29,TRUE
-S191,«la Repubblica»,altro,1983,8,25,TRUE
+S184,«la Repubblica»,periodico,1982,4,15,TRUE
+S185,«FMR»,periodico,1982,6,1,TRUE
+S186,«Cnac Magazine»,periodico,1982,7,1,TRUE
+S187,«la Repubblica»,periodico,1982,8,12,TRUE
+S188,«FMR»,periodico,1983,3,1,TRUE
+S189,«FMR»,periodico,1983,7,1,TRUE
+S190,«la Repubblica»,periodico,1983,7,29,TRUE
+S191,«la Repubblica»,periodico,1983,8,25,TRUE
 S192,V022,raccolta,1983,11,19,TRUE
 S193,V022,raccolta,1983,11,19,TRUE
 S194,V022,raccolta,1983,11,19,TRUE
@@ -375,11 +375,11 @@ S186,V022,raccolta,1983,11,19,FALSO
 S187,V022,raccolta,1983,11,19,FALSO
 S190,V022,raccolta,1983,11,19,FALSO
 S191,V022,raccolta,1983,11,19,FALSO
-S202,«la Repubblica»,altro,1984,1,3,TRUE
+S202,«la Repubblica»,periodico,1984,1,3,TRUE
 S203,Cremonini. Opere dal 1960 al 1984,altro,1984,6,1,TRUE
-S204,«la Repubblica»,altro,1984,8,12,TRUE
-S205,«la Repubblica»,altro,1984,9,2,TRUE
-S206,«la Repubblica»,altro,1984,9,13,TRUE
+S204,«la Repubblica»,periodico,1984,8,12,TRUE
+S205,«la Repubblica»,periodico,1984,9,2,TRUE
+S206,«la Repubblica»,periodico,1984,9,13,TRUE
 S118,V023,raccolta,1984,11,20,FALSO
 S119,V023,raccolta,1984,11,20,FALSO
 S120,V023,raccolta,1984,11,20,FALSO

@@ -96,9 +96,9 @@ class TerritoryHeader extends React.Component {
     // New options structure example
     // [
     //   {
-    //     "label": "La giornata di uno scrutatore",
+    //     "label": "La giornata d'uno scrutatore",
     //     "id": "V009",
-    //     "desc": "La giornata di uno scrutatore - La giornata di uno scrutatore",
+    //     "desc": "La giornata d'uno scrutatore - La giornata d'uno scrutatore",
     //     "status": false
     //   },
     //   {

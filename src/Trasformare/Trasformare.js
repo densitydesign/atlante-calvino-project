@@ -16,6 +16,7 @@ import Options from "../general/Options"
 import Search from "../general/Search"
 import RangeFilter from "../general/RangeFilter"
 import _volumes from "../general/TextSearch/volumes.json"
+import _periodicals from "../general/TextSearch/periodicals.json"
 import _titles from "../general/TextSearch/volumes.json"
 
 import PlacesMatrix from "../visualizations/PlacesMatrix"
@@ -63,10 +64,15 @@ class Trasformare extends Component {
             status: false,
           },
           {
-            label: "sede di pubblicazione",
-            value: "sede di pubblicazione",
+            label: "periodico",
+            value: "periodico",
             status: false,
           },
+          // {
+          //   label: "sede di pubblicazione",
+          //   value: "sede di pubblicazione",
+          //   status: false,
+          // },
         ],
       },
       gruppi: {
@@ -134,18 +140,18 @@ class Trasformare extends Component {
           .entries(allTitles)
           .map((d) => d.key)
 
-        let nodesByPublicationTitle = []
-        allTitles.forEach((d) => {
-          let publishedHere = data.data.filter((e) => {
-            return e.pubVenueTitle.includes(d)
-          })
-          let obj = {
-            label: d,
-            id: [publishedHere.map((d) => d.id)],
-            status: true,
-          }
-          nodesByPublicationTitle.push(obj)
-        })
+        // let nodesByPublicationTitle = []
+        // allTitles.forEach((d) => {
+        //   let publishedHere = data.data.filter((e) => {
+        //     return e.pubVenueTitle.includes(d)
+        //   })
+        //   let obj = {
+        //     label: d,
+        //     id: [publishedHere.map((d) => d.id)],
+        //     status: true,
+        //   }
+        //   nodesByPublicationTitle.push(obj)
+        // })
 
         let searchByCompositionTitle = d3
           .nest()
@@ -190,10 +196,26 @@ class Trasformare extends Component {
           }
         })
 
+        let searchByPeriodicals = _periodicals.map(p=>{
+
+          const textsIds = p.value
+          let texts = textsIds.map(id=>searchByCompositionTitle.find(c=>id===c.sourceID))
+          texts = texts.filter(d=>d)
+          let places = texts.map(d=>d.id).flat()
+          places = _.uniq(places)
+          return {
+            label: p.label,
+            id: places,
+            status: true
+          }
+
+        })
+
         let data_research = {
           // luogo: data.data.map(d=>{ return { 'label':d.label, 'id': [d.id], 'status': true } }),
           "luogo": searchByLuogo,
-          "sede di pubblicazione": nodesByPublicationTitle,
+          // "sede di pubblicazione": nodesByPublicationTitle,
+          "periodico": searchByPeriodicals,
           "titolo": searchByCompositionTitle,
           "volume": serachByVolume,
         }

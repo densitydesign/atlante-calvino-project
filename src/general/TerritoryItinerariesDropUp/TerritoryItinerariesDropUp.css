@@ -37,6 +37,7 @@
 .territory-itineraries-drop-up *{
   background-color : var(--bg);
   padding-top: 1.2em;
+  border-right: 1px solid #000;
 }
 
 

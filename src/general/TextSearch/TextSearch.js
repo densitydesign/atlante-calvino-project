@@ -9,7 +9,7 @@ import styles from "./TextSearch.module.css";
 
 import _titles from "./titles.json";
 import _volumes from "./volumes.json";
-import _publications from "./publications.json";
+import _periodicals from "./periodicals.json";
 import { useTranslation } from "react-i18next";
 
 export default function TextSearch({
@@ -22,7 +22,7 @@ export default function TextSearch({
 }) {
   let titles = _titles,
       volumes = _volumes,
-      publications = _publications;
+      periodicals = _periodicals;
 
   // console.log("IDS available in visualization:", availableIds)
   // console.log("titles not in viz:", _.difference(_titles.map(d=>d.id).flat(), availableIds))
@@ -41,11 +41,7 @@ export default function TextSearch({
   let options = [
     { id: "title", label: "titolo", data: titles },
     { id: "volume", label: "volume", data: volumes },
-    {
-      id: "publication",
-      label: "sede di pubblicazione",
-      data: publications,
-    },
+    { id: "periodical", label: "periodico", data: periodicals },
   ];
   if (availableOptions && availableOptions.length > 0) {
     options = options.filter(o=>availableOptions.indexOf(o.id)>-1);

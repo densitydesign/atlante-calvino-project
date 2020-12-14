@@ -62,7 +62,7 @@ const collections = [
     'has_metaball': false
   },
   {
-    'n': 'La giornata di uno scrutatore',
+    'n': 'La giornata d\'uno scrutatore',
     'id': 'V009',
     'year': 1963,
     'c': '#AEB6BF',
@@ -8138,7 +8138,7 @@ const GlobalData = {
     {"id":"V006","label":"I racconti", "type":"raccolta"},
     {"id":"V007","label":"La formica argentina", "type":"ibrido"},
     {"id":"V008","label":"Il cavaliere inesistente", "type":"romanzo"},
-    {"id":"V009","label":"La giornata di uno scrutatore", "type":"ibrido"},
+    {"id":"V009","label":"La giornata d'uno scrutatore", "type":"ibrido"},
     {"id":"V010","label":"La speculazione edilizia", "type":"ibrido"},
     {"id":"V011","label":"Marcovaldo", "type":"raccolta"},
     {"id":"V012","label":"La nuvola di smog e La formica argentina", "type":"raccolta"},
