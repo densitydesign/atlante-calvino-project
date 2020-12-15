@@ -5,7 +5,7 @@ import corpusTitles from "./datasets/[capta] corpus - titles.csv";
 import corpusPublications from "./datasets/[capta] corpus - publications.csv";
 
 const corpus = {
-  name: "Corpus delle opere",
+  name: "Corpus",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -26,7 +26,7 @@ const corpus = {
         informazioni sui testi selezionati per il progetto. Tali informazioni
         provengono: a) dalla sezione <i>Note e notizie sui testi</i> a cura di
         Mario Barenghi, Bruno Falcetto e Claudio Milanini all’interno dei tre
-        volumi
+        volumi{" "}
         <i>Romanzi e racconti</i> (<i>RR</i>, I, 1242-1393; <i>RR</i>, II,
         1309-1475; <i>RR</i>, III, 1195-1350); b) dalla{" "}
         <i>Bibliografia di Italo Calvino</i> di Luca Baranelli (Pisa, Edizioni

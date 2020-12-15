@@ -338,6 +338,7 @@ li {
   position: sticky;
   background-color: var(--white);
   top: 0;
+  z-index:999999;
 }
 
 .the-body-viz {

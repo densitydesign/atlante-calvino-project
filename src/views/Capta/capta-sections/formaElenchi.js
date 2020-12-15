@@ -39,7 +39,7 @@ const formaElenchi = {
 
       <p>
         Il dataset è stato utilizzato per la visualizzazione{" "}
-        <Link to="/form/phase1">Elenchi</Link> e l’approfondimento{" "}
+        <Link to="/form/phase1">Elenchi</Link> e l’Approfondimento{" "}
         <Link to="form/phase1/focus">Per un’estetica elencatoria</Link>.
       </p>
     </>

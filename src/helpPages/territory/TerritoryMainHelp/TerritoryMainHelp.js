@@ -31,7 +31,7 @@ export default function TerritoryMainHelp({ helpProps }) {
         linkTappa2={"/phases#process"}
         linkTappa3={"/phases#problem"}
         linkItinerario={"/phases#tappa1"}
-        titolo={t("territorio:esplorare_l_opera")}
+        titolo={t("territorio:Esplorare l'opera come un territorio")}
         nomeItinerario={t("help_panel.il_fenomeno")}
       />
       <Tabs

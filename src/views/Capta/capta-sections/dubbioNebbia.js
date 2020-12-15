@@ -45,7 +45,7 @@ const dubbioNebbia = {
           inizio e di fine);
         </li>
         <li>
-          <span className={styles.tag}>luogo del testo</span> (<i>inplicit</i>/
+          <span className={styles.tag}>luogo del testo</span> (<i>incipit</i>/
           <i>explicit</i>/-);
         </li>
         <li>
@@ -54,9 +54,9 @@ const dubbioNebbia = {
         </li>
       </ul>
       <p>
-        Il dataset è stato utilizzato per realizzare le visualizzazioni{" "}
-        <Link to="/doubt/phase1">«Nebbia»</Link> e{" "}
-        <Link to="/doubt/phase1/focus">«L’effetto-nebbia»</Link>.
+      Il dataset è stato utilizzato per realizzare la visualizzazione{" "}
+        <Link to="/doubt/phase1">Nebbia</Link> e{" "}
+        <Link to="/doubt/phase1/focus">l’Approfondimento L’effetto-nebbia</Link>.
       </p>
     </>
   ),

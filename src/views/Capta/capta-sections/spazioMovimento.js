@@ -38,8 +38,8 @@ const spazioMovimento = {
         </li>
       </ul>
       <p>
-        Il dataset è stato utilizzato nella visualizzazione{" "}
-        <Link to="/space/phase3">«Realismo»</Link>.
+        Il dataset è stato utilizzato per la visualizzazione{" "}
+        <Link to="/space/phase3">Realismo</Link>.
       </p>
     </>
   ),

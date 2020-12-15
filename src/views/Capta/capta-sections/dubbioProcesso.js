@@ -41,11 +41,11 @@ const dubbioProcesso = {
           <span className={styles.tag}>ID occorrenza</span> di testo dubitativo;
         </li>
         <li>
-          <span className={styles.tag}>occorrenza</span> di testo dubitativo;
-        </li>
-        <li>
           <span className={styles.tag}>posizione</span> nel testo (carattere di
           inizio e di fine);
+        </li>
+        <li>
+          <span className={styles.tag}>occorrenza</span> di testo dubitativo;
         </li>
         <li>
           <span className={styles.tag}>categoria</span>{" "}
@@ -95,7 +95,7 @@ const dubbioProcesso = {
         testo.
       </p>
       <p>
-        Il dataset è stato utilizzato per realizzare le visualizzazioni
+        Il dataset è stato utilizzato per realizzare le visualizzazioni{" "}
         <Link to="/doubt/phase2">Dubitare</Link>,{" "}
         <Link to="/doubt/phase3">Cancellazione</Link> e gli Approfondimenti
         della seconda e terza tappa intitolati{" "}

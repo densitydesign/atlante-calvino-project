@@ -72,7 +72,7 @@ const spazioLuoghi = {
         tale categoria di informazioni è stata solo in minima parte utilizzata.
       </p>
       <p>
-        Il dataset è stato utilizzato per la realizzazione delle visualizzazioni
+        Il dataset è stato utilizzato per la realizzazione delle visualizzazioni{" "}
         <Link to="/space/phase1">Luoghi</Link> e{" "}
         <Link to="/space/phase2">Trasformare</Link>, oltre che per i relativi
         Approfondimenti:{" "}
@@ -85,18 +85,6 @@ const spazioLuoghi = {
           classificazione del tempo della storia
         </span>{" "}
         dei testi che appartengono alla selezione.
-      </p>
-      <p>
-        Il dataset è stato rappresentato nelle visualizzazioni{" "}
-        <Link to="/space/phase1">«luoghi»</Link>,{" "}
-        <Link to="/space/phase2">«trasformare»</Link> e relative schede di
-        approfondimento,{" "}
-        <Link to="/space/phase1/focus">«Tassonomie dei luoghi inventati»</Link>{" "}
-        e{" "}
-        <Link to="/space/phase2/focus">
-          «L'orizzonte geografico e letterario in Calvino»
-        </Link>
-        .
       </p>
     </>
   ),

@@ -28,7 +28,7 @@ const formaSequenze = {
         sequenze interne, mostrando la stratificazione dei motivi nel testo.
         Tutti i segmenti così ricavati sono stati categorizzati in base al{" "}
         <i>tipo di sequenza</i> e distribuiti fra <i>tre piani</i>. All’interno
-        di ogni piano, il
+        di ogni piano, il{" "}
         <i>tipo di sequenza</i> specifica il contenuto o il ruolo strutturale
         dei singoli segmenti.
       </p>
@@ -59,7 +59,7 @@ const formaSequenze = {
 
       <p>
         Il dataset è stato utilizzato per la visualizzazione{" "}
-        <Link to="form/phase2">Combinare</Link> e l’approfondimento{" "}
+        <Link to="form/phase2">Combinare</Link> e l’Approfondimento{" "}
         <Link to="form/phase2/focus">Costruire la varietà</Link>.
       </p>
     </>

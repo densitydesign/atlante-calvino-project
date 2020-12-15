@@ -56,12 +56,6 @@ class Project extends React.Component {
                 casa editrice Mondadori, che detiene i diritti italiani
                 dell’intera opera di Calvino.
               </p>
-            </Trans>
-          </div>
-        </div>
-        <div className="ac-grid-24">
-          <div className="content indented">
-            <Trans i18nKey={"text_2"} t={this.props.t} ns="project">
               <p>
                 Le due anime del progetto, quella letteraria e quella del design
                 dell’informazione, sono state chiamate a mescolarsi per trovare
