@@ -417,7 +417,7 @@ html {
   display: block;
   border-radius: 50%;
   margin: auto;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   padding-bottom: calc(30% - 4px);
 }
 
@@ -517,11 +517,12 @@ html {
   }
 
   #main--sinuous .legend.open .legend-content {
-    height: 70vh;
+    height: 78vh;
     width: 100%;
     display: grid;
     justify-content: center;
     justify-items: center;
+    row-gap: 1em;
   }
 
   #main--sinuous .legend {
@@ -612,7 +613,7 @@ html {
 
 @media screen and (min-width: 1024px) {
   #main--sinuous .legend.open .legend-content {
-    height: 70vh;
+    height: 80vh;
     width: 100%;
   }
 

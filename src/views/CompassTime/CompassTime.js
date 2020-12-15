@@ -99,7 +99,7 @@ class CompassTime extends React.Component {
                 <div className="legend open">
                   <div className="legend-content">
                     <h4>{this.props.t("legenda")}</h4>
-                    <h2 style={{ marginTop:'1em'}}>{this.props.t("compass-time:Opere")}</h2>
+                    <h2>{this.props.t("compass-time:Opere")}</h2>
                     <div className="legend-item">
                       <div
                         className="legend-circle"
@@ -285,7 +285,7 @@ class CompassTime extends React.Component {
                         </Trans>
                       </h6>
                     </div>
-                    <h2 style={{ marginTop:'2em'}}>{this.props.t("compass-time:Quotidiani")}</h2>
+                    <h2 style={{ marginTop:'2.5em'}}>{this.props.t("compass-time:Quotidiani")}</h2>
                     <div className="legend-item">
                       <div
                         className="legend-article-circle lgnd narrative"
@@ -329,7 +329,7 @@ class CompassTime extends React.Component {
                       ></div>
                       <h6>{this.props.t("compass-time:la Repubblica")}</h6>
                     </div>
-                    <h2 style={{ marginTop:'2em'}}>{this.props.t("compass-time:Prima pubblicazione")}</h2>
+                    <h2 style={{ marginTop:'2.5em'}}>{this.props.t("compass-time:Prima pubblicazione")}</h2>
                     <div style={{ gridColumn: "span 3", marginTop:'2em' }}>
                       <img
                         src={
