@@ -613,14 +613,14 @@ html {
 
 @media screen and (max-width: 1980px) {
   #main--sinuous .legend.open .legend-content {
-    height: 75vh;
+    height: 80vh;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 2048px) {
   #main--sinuous .legend.open .legend-content {
-    height: 73vh;
+    height: 78vh;
     width: 100%;
   }
 }
