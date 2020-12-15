@@ -592,3 +592,11 @@ html {
     margin-bottom: 1rem;
   }
 }
+
+@media screen and (min-width: 993px) {
+  #main--sinuous .legend.open .legend-content {
+    height: 80vh;
+    width: 100%;
+  }
+
+}
