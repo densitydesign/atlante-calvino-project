@@ -54,9 +54,9 @@ const dubbioNebbia = {
         </li>
       </ul>
       <p>
-      Il dataset è stato utilizzato per realizzare la visualizzazione{" "}
-        <Link to="/doubt/phase1">Nebbia</Link> e{" "}
-        <Link to="/doubt/phase1/focus">l’Approfondimento L’effetto-nebbia</Link>.
+        Il dataset è stato utilizzato per realizzare la visualizzazione{" "}
+        <Link to="/doubt/phase1">Nebbia</Link> e l’Approfondimento{" "}
+        <Link to="/doubt/phase1/focus">L’effetto-nebbia</Link>.
       </p>
     </>
   ),
