@@ -19,8 +19,10 @@ class CompassTime extends React.Component {
           <div className="container">
             <h4>{this.props.t("bussola")}</h4>
             <div className="row intro">
-              <div className="col-12 col-lg-9">
+              <div className="col-12">
                 <h1>{this.props.t("compass-time:Il tempo e le opere")}</h1>
+              </div>
+              <div className="col-8">
                 <Trans i18nKey={"text"} t={this.props.t} ns="compass-time">
                   <p>
                     La visualizzazione rappresenta gli snodi pi&#xF9; importanti
@@ -48,45 +50,32 @@ class CompassTime extends React.Component {
                     &#xAB;la Repubblica&#xBB;.
                   </p>
                 </Trans>
-              </div>
-              <div className="col-12 col-lg-9 mt-3">
-                <Trans
-                  i18nKey={"references"}
-                  t={this.props.t}
-                  ns="compass-time"
-                >
-                  <p>
-                    &#x201C;Il tempo e le opere&#x201D; &#xA9;
-                    UNIGE/DensityDesign
-                    <br />
-                    Visualizzazione realizzata all&#x2019;interno del progetto{" "}
-                    <a
-                      href="http://atlantecalvino.unige.ch/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Atlante Calvino: letteratura e visualizzazione
-                    </a>
-                    .
-                  </p>
-                  <p>
-                    <strong>Coordinatrice e coordinatore scientifici</strong>:
-                    Francesca Serra, Paolo Ciuccarelli.
-                    <br />
-                    <strong>Autor*</strong>: Tommaso Elli, Margherita Parigini,
-                    Virginia Giustetto, Valeria Cavalloro.
-                  </p>
-                </Trans>
+                <div className="compass-credits" style={{ marginTop: "2em" }}>
+                  <Trans
+                    i18nKey={"references"}
+                    t={this.props.t}
+                    ns="compass-time"
+                  >
+                    <p>
+                      &#x201C;Il tempo e le opere&#x201D; &#xA9;
+                      UNIGE/DensityDesign
+                    </p>
+                    <p>
+                      <strong>Coordinatrice e coordinatore scientifici</strong>:
+                      Francesca Serra, Paolo Ciuccarelli.
+                      <br />
+                      <strong>Autor*</strong>: Tommaso Elli, Margherita
+                      Parigini, Virginia Giustetto, Valeria Cavalloro.
+                    </p>
+                  </Trans>
+                </div>
               </div>
             </div>
           </div>
 
-          <div style={{margin:'0 4em 0 4em'}}>
+          <div style={{ margin: "0 4em 0 4em" }}>
             <div className="row">
-              <div
-                className="col-lg-8 col-xl-8"
-                id="visualisation-container"
-              >
+              <div className="col-lg-8 col-xl-8" id="visualisation-container">
                 <CompassTimeSinuousWrapper />
               </div>
               <div className="col-10 offset-lg-0 col-lg-4 col-xl-4 scrollytelling-container">
@@ -108,7 +97,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-01.svg)",
-                            border:'1px solid #5151fc'
+                          border: "1px solid #5151fc",
                         }}
                       ></div>
                       <h6>{this.props.t("compass-time:Romanzo")}</h6>
@@ -121,7 +110,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-02.svg)",
-                            border:'1px solid #8ae297'
+                          border: "1px solid #8ae297",
                         }}
                       ></div>
                       <h6>
@@ -144,7 +133,8 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-03.svg)",
-                            border:'1px solid #FF3366'}}
+                          border: "1px solid #FF3366",
+                        }}
                       ></div>
                       <h6>
                         <Trans
@@ -166,7 +156,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-07.svg)",
-                            border:'1px solid #6E94F4'
+                          border: "1px solid #6E94F4",
                         }}
                       ></div>
                       <h6>
@@ -189,7 +179,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-05.svg)",
-                            border:'1px solid #F2CA22'
+                          border: "1px solid #F2CA22",
                         }}
                       ></div>
                       <h6>
@@ -212,7 +202,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-06.svg)",
-                            border:'1px solid #C890F4'
+                          border: "1px solid #C890F4",
                         }}
                       ></div>
                       <h6>{this.props.t("compass-time:Riscrittura")}</h6>
@@ -225,7 +215,6 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-08.svg)",
-                            
                         }}
                       ></div>
                       <h6>
@@ -248,7 +237,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-04.svg)",
-                            border:'1px solid #FFA500'
+                          border: "1px solid #FFA500",
                         }}
                       ></div>
                       <h6>
@@ -271,7 +260,6 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-09.svg)",
-                            
                         }}
                       ></div>
                       <h6>
@@ -285,7 +273,9 @@ class CompassTime extends React.Component {
                         </Trans>
                       </h6>
                     </div>
-                    <h2 style={{ marginTop:'2.5em'}}>{this.props.t("compass-time:Quotidiani")}</h2>
+                    <h2 style={{ marginTop: "2.5em" }}>
+                      {this.props.t("compass-time:Quotidiani")}
+                    </h2>
                     <div className="legend-item">
                       <div
                         className="legend-article-circle lgnd narrative"
@@ -329,8 +319,10 @@ class CompassTime extends React.Component {
                       ></div>
                       <h6>{this.props.t("compass-time:la Repubblica")}</h6>
                     </div>
-                    <h2 style={{ marginTop:'2.5em'}}>{this.props.t("compass-time:Prima pubblicazione")}</h2>
-                    <div style={{ gridColumn: "span 3", marginTop:'2em' }}>
+                    <h2 style={{ marginTop: "2.5em" }}>
+                      {this.props.t("compass-time:Prima pubblicazione")}
+                    </h2>
+                    <div style={{ gridColumn: "span 3", marginTop: "2em" }}>
                       <img
                         src={
                           process.env.PUBLIC_URL +
