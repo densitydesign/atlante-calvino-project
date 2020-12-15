@@ -298,6 +298,7 @@ li {
   line-height: 1.8rem;
   margin: 2rem 0 2rem 3rem;
   hyphens: manual;
+  font-style: normal;
 }
 
 .navigations {
