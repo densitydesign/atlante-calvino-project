@@ -108,6 +108,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-01.svg)",
+                            border:'1px solid #5151fc'
                         }}
                       ></div>
                       <h6>{this.props.t("compass-time:Romanzo")}</h6>
@@ -120,6 +121,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-02.svg)",
+                            border:'1px solid #8ae297'
                         }}
                       ></div>
                       <h6>
@@ -142,7 +144,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-03.svg)",
-                        }}
+                            border:'1px solid #FF3366'}}
                       ></div>
                       <h6>
                         <Trans
@@ -163,7 +165,8 @@ class CompassTime extends React.Component {
                           backgroundImage:
                             "url(" +
                             process.env.PUBLIC_URL +
-                            "/CompassTime/glifi-04.svg)",
+                            "/CompassTime/glifi-07.svg)",
+                            border:'1px solid #6E94F4'
                         }}
                       ></div>
                       <h6>
@@ -186,6 +189,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-05.svg)",
+                            border:'1px solid #F2CA22'
                         }}
                       ></div>
                       <h6>
@@ -208,6 +212,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-06.svg)",
+                            border:'1px solid #C890F4'
                         }}
                       ></div>
                       <h6>{this.props.t("compass-time:Riscrittura")}</h6>
@@ -219,7 +224,8 @@ class CompassTime extends React.Component {
                           backgroundImage:
                             "url(" +
                             process.env.PUBLIC_URL +
-                            "/CompassTime/glifi-07.svg)",
+                            "/CompassTime/glifi-08.svg)",
+                            
                         }}
                       ></div>
                       <h6>
@@ -241,7 +247,8 @@ class CompassTime extends React.Component {
                           backgroundImage:
                             "url(" +
                             process.env.PUBLIC_URL +
-                            "/CompassTime/glifi-08.svg)",
+                            "/CompassTime/glifi-04.svg)",
+                            border:'1px solid #FFA500'
                         }}
                       ></div>
                       <h6>
@@ -264,6 +271,7 @@ class CompassTime extends React.Component {
                             "url(" +
                             process.env.PUBLIC_URL +
                             "/CompassTime/glifi-09.svg)",
+                            
                         }}
                       ></div>
                       <h6>
@@ -277,7 +285,7 @@ class CompassTime extends React.Component {
                         </Trans>
                       </h6>
                     </div>
-                    <h2 style={{ marginTop:'3em'}}>{this.props.t("compass-time:Quotidiani")}</h2>
+                    <h2 style={{ marginTop:'2em'}}>{this.props.t("compass-time:Quotidiani")}</h2>
                     <div className="legend-item">
                       <div
                         className="legend-article-circle lgnd narrative"
@@ -300,11 +308,11 @@ class CompassTime extends React.Component {
                     <div className="legend-item">
                       <div
                         className="legend-article-circle"
-                        style={{ backgroundColor: "var(--c-corriere)" }}
+                        style={{ backgroundColor: "var(--c-cds)" }}
                       ></div>
                       <div
                         className="legend-article-circle"
-                        style={{ borderColor: "var(--c-corriere)" }}
+                        style={{ borderColor: "var(--c-cds)" }}
                       ></div>
                       <h6>
                         {this.props.t("compass-time:Corriere della Sera")}
@@ -321,8 +329,8 @@ class CompassTime extends React.Component {
                       ></div>
                       <h6>{this.props.t("compass-time:la Repubblica")}</h6>
                     </div>
-                    <h2 style={{ marginTop:'3em'}}>{this.props.t("compass-time:Prima pubblicazione")}</h2>
-                    <div style={{ gridColumn: "span 3", marginTop:'4em' }}>
+                    <h2 style={{ marginTop:'2em'}}>{this.props.t("compass-time:Prima pubblicazione")}</h2>
+                    <div style={{ gridColumn: "span 3", marginTop:'2em' }}>
                       <img
                         src={
                           process.env.PUBLIC_URL +
