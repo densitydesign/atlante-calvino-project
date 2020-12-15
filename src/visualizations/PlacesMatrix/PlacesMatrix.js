@@ -17,11 +17,13 @@ class PlacesMatrix extends Component {
 
     if (this.props.filter !== prevProps.filter) {
       // console.log('new filters')
-      if (this.props.expandOnSearch && this.props.searched.length !== this.props.originalData.length) {
+      if (this.props.searchedPlace && this.props.searched.length !== this.props.originalData.length) {
         V.openOnSearch(this.props.searched)
       }
+      
       const selectThoseLabels = this.props.searched;
-      V.filter(this.props.filter, selectThoseLabels)
+
+      V.filter(this.props.filter) //, selectThoseLabels)
     }
 
     if (this.props.timeFilter !== prevProps.timeFilter) {

@@ -600,7 +600,7 @@ class Trasformare extends Component {
               }
               onChangeCategorie={this.changeCategorie}
               resetFilter={this.resetFilter}
-              expandOnSearch = {this.state.cerca_per.options.find(d=>d.status).value === "luogo"}
+              searchedPlace = {this.state.cerca_per.options.find(d=>d.status).value === "luogo"}
             />
           )}
         </div>
