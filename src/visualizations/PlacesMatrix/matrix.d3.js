@@ -235,7 +235,7 @@ class VClass
       .force("x", d3.forceX(d => x(d.year)))
       .force("y", d3.forceY(d => y(d.category)).strength(d => d.part_of === '' ? 0.1 : 0))
       .on("tick", this.ticked)
-      .on("end", () => { console.log('simulation ended') })
+      //.on("end", () => { console.log('simulation ended') })
       .stop()
 
   	// handle the zoom function
@@ -349,7 +349,7 @@ class VClass
     node = node.enter().append('circle')
       .attr('class', d => `node`)
       .classed('sub-node', d => d.part_of !== '')
-      // .classed('selected', d => d.isSelected )
+      .classed('selected', d => d.isSelected )
       .attr('key', d => d.id)
       .on('mouseenter', d => {
         label.filter(l => l.id === d.id).style('display', 'block')
@@ -361,23 +361,26 @@ class VClass
         node.style('opacity', '')
         self.displayTitle(d);
       })
+
       .on('click', function(d) {
         // console.log('clicked on', d)
         // if double click/tap
         if((d3.event.timeStamp - last) < 500) {
           self.toggleSubnodes(d, 'restart the force');
         }
-        last = d3.event.timeStamp;
+        else {
+          last = d3.event.timeStamp;
 
-        const isSelected = d3.select(this).classed('selected')
-        // do this after the nodes have been opened
-        if (!isSelected) {
-          self.selectLabel(d);
-          self.selectSameComposition(d);
-          self.displayTitle([d]);
-        } else {
-          self.unselectNode(d)
-          self.unselectLabel(d);
+          const isSelected = d3.select(this).classed('selected')
+          // do this after the nodes have been opened
+          if (!isSelected) {
+            self.selectLabel(d);
+            self.selectSameComposition(d);
+            self.displayTitle([d]);
+          } else {
+            self.unselectLabel(d);
+            self.unselectNode(d)
+          }
         }
       })
       .merge(node)
@@ -520,7 +523,7 @@ class VClass
     d.subNodes.forEach(function(subNode) {
       subNode.x = d.x;
       subNode.y = d.y;
-      // subNode.isSelected = true;
+      subNode.isSelected = true;
     })
 
     // Make convex hull
@@ -652,8 +655,8 @@ class VClass
 
   unselectNode = (d) => {
     node.filter(n => n.id === d.id).classed('selected', false)
-
-    if(svg.selectAll('.selected').size() === 0) {
+    console.log(svg.selectAll('.selected'))
+    if(svg.selectAll('.selected').size() < 1) {
       svg.classed('there-is-selection', false)
     }
   }

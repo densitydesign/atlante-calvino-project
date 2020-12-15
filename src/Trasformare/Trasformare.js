@@ -104,6 +104,8 @@ class Trasformare extends Component {
     d3.tsv(process.env.PUBLIC_URL + "/places-matrix-data.tsv")
       .then((data) => {
 
+        // data = data.filter(d=>d["Fonte"]==="V018")
+
         const graph = ParseMatrixData.parser(data)
         return graph
       })
@@ -178,6 +180,8 @@ class Trasformare extends Component {
             }
           })
           .sort((a, b) => a.label.localeCompare(b.label))
+
+        console.log(searchByLuogo)
 
         let serachByVolume = _volumes.map(v=>{
           // console.log(v)
@@ -399,7 +403,6 @@ class Trasformare extends Component {
   }
 
   resetFilter() {
-    console.log(this.state)
 
     const ambientiOptions = this.state.ambienti.options.map((d) => {
       return {
