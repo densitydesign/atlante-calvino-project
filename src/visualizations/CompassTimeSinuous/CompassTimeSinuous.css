@@ -598,15 +598,22 @@ html {
 
 @media screen and (min-width: 993px) {
   #main--sinuous .legend.open .legend-content {
-    height: 80vh;
+    height: 85vh;
     width: 100%;
   }
 
 }
 
-@media screen and (width: 1024px) {
+@media screen and (min-width: 1024px) {
   #main--sinuous .legend.open .legend-content {
     height: 88vh;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1980px) {
+  #main--sinuous .legend.open .legend-content {
+    height: 75vh;
     width: 100%;
   }
 }
