@@ -41,9 +41,9 @@ class Equipe extends React.Component {
                   return (
                     <li key={"gin-" + i}>
                       <a href={d.url} target="_blank" rel="noopener noreferrer">
-                        {d.name}
+                        { d.name + " " }
                       </a>
-                      {d.showRole && " (" + d.role + ")"}
+                      {d.showRole && " - " + d.role}
                     </li>
                   );
                 })}
@@ -77,7 +77,7 @@ class Equipe extends React.Component {
                       <a href={d.url} target="_blank" rel="noopener noreferrer">
                         {d.name}
                       </a>
-                      {d.showRole && " (" + d.role + ")"}
+                      {d.showRole && " - " + d.role}
                     </li>
                   );
                 })}
