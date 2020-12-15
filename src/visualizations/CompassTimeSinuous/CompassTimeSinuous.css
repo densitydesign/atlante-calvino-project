@@ -1,6 +1,6 @@
 html {
   font-size: 16px;
-  --c-bg: #fffefa;
+  --c-bg: #fffffa;
   --c-romanzo: #0490ca;
   --c-racconti: #bd504c;
   --c-ibrido: #f2d371;
@@ -209,7 +209,8 @@ html {
 #main--sinuous .scrollytelling-container {
   /* padding-top: 50vh;
   padding-bottom: 50vh; */
-  z-index: 1050;
+  z-index: 900;
+  max-width:50vh;
 }
 
 #main--sinuous .scrollytelling-container p {
@@ -226,7 +227,7 @@ html {
 }
 
 #main--sinuous .how-to > div {
-  background-color: var(--bg);
+  background-color: var(--cool-bg);
   padding: 0.8rem;
   border: 1px solid var(--c-text);
   border-radius: 3px;
@@ -264,7 +265,6 @@ html {
   height: 2rem;
   position: sticky;
   top: calc(var(--navigation-height) + (var(--navigation-height)) * 0.5);
-  background: var(--bg);
   margin-top: 2em;
   margin-bottom: 2rem;
   z-index: 10000;
@@ -286,11 +286,11 @@ html {
   transition: height 0.35s ease;
   overflow: hidden;
   border: 1px solid var(--navigation-borders);
-  background-color: var(--bg);
+  backdrop-filter: blur;
 }
 
 #main--sinuous .legend.open .legend-content {
-  background: var(--bg);
+  background-color:var(--cool-bg);
   height: 50vh;
   overflow: visible;
 }
@@ -606,5 +606,11 @@ html {
     height: 88vh;
     width: 100%;
   }
+}
 
+@media screen and (max-width: 2048px) {
+  #main--sinuous .legend.open .legend-content {
+    height: 73vh;
+    width: 100%;
+  }
 }
