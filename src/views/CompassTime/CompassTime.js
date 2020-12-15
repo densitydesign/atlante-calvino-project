@@ -81,10 +81,10 @@ class CompassTime extends React.Component {
             </div>
           </div>
 
-          <div className="container">
+          <div style={{margin:'0 4em 0 4em'}}>
             <div className="row">
               <div
-                className="col-12 col-lg-8 col-xl-8"
+                className="col-lg-8 col-xl-8"
                 id="visualisation-container"
               >
                 <CompassTimeSinuousWrapper />
