@@ -210,7 +210,8 @@ html {
 #main--sinuous .scrollytelling-container {
   /* padding-top: 50vh;
   padding-bottom: 50vh; */
-  z-index: 1050;
+  z-index: 900;
+  max-width:50vh;
 }
 
 #main--sinuous .scrollytelling-container p {
@@ -608,13 +609,11 @@ html {
     height: 88vh;
     width: 100%;
   }
-
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 2048px) {
   #main--sinuous .legend.open .legend-content {
-    height: 80vh;
+    height: 73vh;
     width: 100%;
   }
-
 }

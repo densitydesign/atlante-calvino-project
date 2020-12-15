@@ -235,7 +235,7 @@ class VClass
       .force("x", d3.forceX(d => x(d.year)))
       .force("y", d3.forceY(d => y(d.category)).strength(d => d.part_of === '' ? 0.1 : 0))
       .on("tick", this.ticked)
-      .on("end", () => { console.log('simulation ended') })
+      //.on("end", () => { console.log('simulation ended') })
       .stop()
 
   	// handle the zoom function
@@ -269,11 +269,16 @@ class VClass
       d3.select('g.labels').style('font-size', newSize + 'px');
 
       // display all labels of selected compositions
-      if(d3.event.transform.k > 3) {
+      if(d3.event.transform.k > 2.5) {
 
         // make the labels of selected nodes visible
         d3.selectAll('.node.selected').each(d => {
          	label.filter(l => l.id === d.id).classed('zoom-selected', true)
+        })
+
+        // make the labels of selected nodes via filter visible
+        d3.selectAll('.node:not(.filtered)').each(d => {
+          label.filter(l => l.id === d.id).classed('zoom-selected', true)
         })
 
         // all labels visible
@@ -344,7 +349,7 @@ class VClass
     node = node.enter().append('circle')
       .attr('class', d => `node`)
       .classed('sub-node', d => d.part_of !== '')
-      // .classed('selected', d => d.isSelected )
+      .classed('selected', d => d.isSelected )
       .attr('key', d => d.id)
       .on('mouseenter', d => {
         label.filter(l => l.id === d.id).style('display', 'block')
@@ -356,26 +361,30 @@ class VClass
         node.style('opacity', '')
         self.displayTitle(d);
       })
+
       .on('click', function(d) {
         // console.log('clicked on', d)
         // if double click/tap
         if((d3.event.timeStamp - last) < 500) {
           self.toggleSubnodes(d, 'restart the force');
         }
-        last = d3.event.timeStamp;
+        else {
+          last = d3.event.timeStamp;
 
-        const isSelected = d3.select(this).classed('selected')
-        // do this after the nodes have been opened
-        if (!isSelected) {
-          self.selectLabel(d);
-          self.selectSameComposition(d);
-          self.displayTitle([d]);
-        } else {
-          self.unselectNode(d)
-          self.unselectLabel(d);
+          const isSelected = d3.select(this).classed('selected')
+          // do this after the nodes have been opened
+          if (!isSelected) {
+            self.selectLabel(d);
+            self.selectSameComposition(d);
+            self.displayTitle([d]);
+          } else {
+            self.unselectLabel(d);
+            self.unselectNode(d)
+          }
         }
       })
       .merge(node)
+      .attr("display", d=> (d.year>=timeFilter[0] && d.year <= timeFilter[1]) ? "block" : "none" )
       .style('cursor', function(d) { return d.subNodes && d.subNodes.length ? 'pointer' : 'auto'; })
       .attr("fill", d => d.opened === true ? 'white' : color(d.category))
       .attr('stroke', function(d) { if(d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1) })
@@ -388,6 +397,7 @@ class VClass
       .attr('r', 1.5)
       .attr('fill', d => d3.color(color(d.category)).darker(1))
       .merge(presumed)
+      .attr("display", d=> (d.year>=timeFilter[0] && d.year <= timeFilter[1]) ? "block" : "none" )
 
     // Apply the general update pattern to the links.
     link = link.data(links, d => d.source.id + "-" + d.target.id);
@@ -428,7 +438,6 @@ class VClass
   }
 
   filter = (filter, selectLabelsArr) => {
-    // console.log('viz', filter)
     this.applyFilter(filter, 'do reset');
 
     if (selectLabelsArr && selectLabelsArr.length < originalData.length) {
@@ -514,7 +523,7 @@ class VClass
     d.subNodes.forEach(function(subNode) {
       subNode.x = d.x;
       subNode.y = d.y;
-      // subNode.isSelected = true;
+      subNode.isSelected = true;
     })
 
     // Make convex hull
@@ -646,8 +655,8 @@ class VClass
 
   unselectNode = (d) => {
     node.filter(n => n.id === d.id).classed('selected', false)
-
-    if(svg.selectAll('.selected').size() === 0) {
+    console.log(svg.selectAll('.selected'))
+    if(svg.selectAll('.selected').size() < 1) {
       svg.classed('there-is-selection', false)
     }
   }

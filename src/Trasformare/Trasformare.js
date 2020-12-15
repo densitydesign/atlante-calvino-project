@@ -103,7 +103,8 @@ class Trasformare extends Component {
   loadData() {
     d3.tsv(process.env.PUBLIC_URL + "/places-matrix-data.tsv")
       .then((data) => {
-        // console.log(data)
+
+        // data = data.filter(d=>d["Fonte"]==="V018")
 
         const graph = ParseMatrixData.parser(data)
         return graph
@@ -219,8 +220,6 @@ class Trasformare extends Component {
           "titolo": searchByCompositionTitle,
           "volume": serachByVolume,
         }
-
-        console.log(data_research)
 
         let time = d3.extent(data.data, (d) => d.year)
         // console.log(time)
@@ -401,7 +400,6 @@ class Trasformare extends Component {
   }
 
   resetFilter() {
-    console.log(this.state)
 
     const ambientiOptions = this.state.ambienti.options.map((d) => {
       return {
@@ -602,6 +600,7 @@ class Trasformare extends Component {
               }
               onChangeCategorie={this.changeCategorie}
               resetFilter={this.resetFilter}
+              searchedPlace = {this.state.cerca_per.options.find(d=>d.status).value === "luogo"}
             />
           )}
         </div>

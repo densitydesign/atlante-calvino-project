@@ -125,7 +125,7 @@ L00122	S026	Il bosco degli animali	raccolta	«L'Unità» (Torino);V002;V006	«L'
 L00123	S027	Si dorme come cani	raccolta	«L'Unità» (Torino);V002;V006	«L'Unità» (Torino);Ultimo viene il corvo;I racconti	1948	biglietteria	Torino	L00126	generico			x		x	sì	sì	-	Terrestri generici	130	142	sì	paesaggio urbano	paesaggio urbano
 L00124	S027	Si dorme come cani	raccolta	«L'Unità» (Torino);V002;V006	«L'Unità» (Torino);Ultimo viene il corvo;I racconti	1948	stazione 	Torino	L00126	generico			x		x	sì	sì	-	Terrestri generici	5508	5516		paesaggio urbano	paesaggio urbano
 L00125	S027	Si dorme come cani	raccolta	«L'Unità» (Torino);V002;V006	«L'Unità» (Torino);Ultimo viene il corvo;I racconti	1948	portici	Torino	L00126	generico						sì	sì	-	Terrestri generici	11383	11390		paesaggio urbano	paesaggio urbano
-L00126	S027	Si dorme come cani	raccolta	«L'Unità» (Torino);V002;V006	«L'Unità» (Torino);Ultimo viene il corvo;I racconti	1948	Torino 			nominato	comune	sì				sì	sì	no	Terrestri localizzabili	-	-		guerra;paesaggio urbano;	guerra;paesaggio urbano;
+L00126	S027	Si dorme come cani	raccolta	«L'Unità» (Torino);V002;V006	«L'Unità» (Torino);Ultimo viene il corvo;I racconti	1948	Torino			nominato	comune	sì				sì	sì	no	Terrestri localizzabili	-	-		guerra;paesaggio urbano;	guerra;paesaggio urbano;
 L00127	S028	Com'era grande il mare	altro	«Milano-sera»	«Milano-sera»	1948	strada litoranea			generico			x			no	sì	-	Terrestri generici	32	38		mare	mare
 L00128	S028	Com'era grande il mare	altro	«Milano-sera»	«Milano-sera»	1948	mare			generico						no	sì	-	Terrestri generici	538	542		mare	mare
 L00129	S028	Com'era grande il mare	altro	«Milano-sera»	«Milano-sera»	1948	ripa			generico					x	no	sì	-	Terrestri generici	1150	1154		mare	mare
@@ -1160,8 +1160,8 @@ L01155	S154	Autobiografia di uno spettatore	altro	F. Fellini, Quattro film	F. Fe
 L01156	S154	Autobiografia di uno spettatore	altro	F. Fellini, Quattro film	F. Fellini, Quattro film	1974	Quartiere Latino	Parigi	L01158	nominato	territorio					sì	sì	no	Terrestri localizzabili	32138	32154		paesaggio urbano;metropoli	paesaggio urbano;metropoli
 L01157	S154	Autobiografia di uno spettatore	altro	F. Fellini, Quattro film	F. Fellini, Quattro film	1974	Sanremo			nominato	comune		x			sì	sì	no	Terrestri localizzabili	34030	34037		paesaggio urbano;metropoli	paesaggio urbano;metropoli
 L01158	S154	Autobiografia di uno spettatore	altro	F. Fellini, Quattro film	F. Fellini, Quattro film	1974	Parigi			nominato	comune	sì				sì	sì	no	Terrestri localizzabili	-	-		paesaggio urbano;metropoli	paesaggio urbano;metropoli
-L01159	V020	Eremita a Parigi	romanzo	V020	Eremita a Parigi	1974	Parigi			nominato	comune		x		x	sì	sì	no	Terrestri localizzabili	56	62		metropoli	metropoli
-L01160	V020	Eremita a Parigi	romanzo	V020	Eremita a Parigi	1974	studio	Parigi	L01159	generico			x		x	sì	sì	-	Terrestri generici	5210	5216		metropoli	metropoli
+L01159	V020	Eremita a Parigi	altro	V020	Eremita a Parigi	1974	Parigi			nominato	comune		x		x	sì	sì	no	Terrestri localizzabili	56	62		metropoli	metropoli
+L01160	V020	Eremita a Parigi	altro	V020	Eremita a Parigi	1974	studio	Parigi	L01159	generico			x		x	sì	sì	-	Terrestri generici	5210	5216		metropoli	metropoli
 L01161	S155	La pompa di benzina	altro	«Corriere della sera»	«Corriere della sera»	1974	città			generico			x			no	sì	-	Terrestri generici	2284	2289		paesaggio urbano;mare	paesaggio urbano;mare
 L01162	S155	La pompa di benzina	altro	«Corriere della sera»	«Corriere della sera»	1974	vettura			generico				x		no	sì	-	Terrestri generici	4365	4372		paesaggio urbano;mare	paesaggio urbano;mare
 L01163	S155	La pompa di benzina	altro	«Corriere della sera»	«Corriere della sera»	1974	mare			generico						no	sì	-	Terrestri generici	4543	4547		paesaggio urbano;mare	paesaggio urbano;mare

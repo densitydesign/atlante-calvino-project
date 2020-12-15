@@ -141,13 +141,13 @@ export default function IndexMenu({ onClose }) {
     var kappa = 0.5522847498
     var ox = rx * kappa // x offset for the control point
     var oy = ry * kappa // y offset for the control point
-    let d = `M${cx - rx},${cy}`
-    d += `C${cx - rx}, ${cy - oy}, ${cx - ox}, ${cy - ry}, ${cx}, ${cy - ry},`
-    d += `C${cx + ox}, ${cy - ry}, ${cx + rx}, ${cy - oy}, ${cx + rx}, ${cy},`
-    d += `C${cx + rx}, ${cy + oy}, ${cx + ox}, ${cy + ry}, ${cx}, ${cy + ry},`
-    d += `C${cx - ox}, ${cy + ry}, ${cx - rx}, ${cy + oy}, ${cx - rx}, ${cy},`
-    d += `z`
-    return d
+    let d = `M${cx - rx},${cy} `;
+    d += `C${cx - rx} ${cy - oy}, ${cx - ox} ${cy - ry}, ${cx} ${cy - ry} `;
+    d += `C${cx + ox} ${cy - ry}, ${cx + rx} ${cy - oy}, ${cx + rx} ${cy} `;
+    d += `C${cx + rx} ${cy + oy}, ${cx + ox} ${cy + ry}, ${cx} ${cy + ry} `;
+    d += `C${cx - ox} ${cy + ry}, ${cx - rx} ${cy + oy}, ${cx - rx} ${cy} `;
+    d += `z`;
+    return d;
   }
 
   const tappeLayout = useCallback(() => {
@@ -155,11 +155,13 @@ export default function IndexMenu({ onClose }) {
     const bbox = el.getBoundingClientRect()
     const g = el.querySelector("g")
     g.querySelectorAll("ellipse").forEach((o, i) => {
+
       // transforming the ellipse into a path (in order to use 'getPointAtLength()')
       const cx = (parseInt(o.getAttribute("cx")) / 100) * bbox.width,
-        cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
-        rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
-        ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height
+            cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
+            rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
+            ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height;
+
       const d = getD(cx, cy, rx, ry)
       const path = document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -175,6 +177,7 @@ export default function IndexMenu({ onClose }) {
       const percentages = [0.34, 0.34, 0.34] // adjust these to fix positioning
       const position = length * percentages[i] // position depends on the totalLength
       const point = path.getPointAtLength(position)
+      console.log(point)
       const cl = "tappa" + (i + 1)
       const el2 = document.querySelector("." + styles[cl])
       el2.style.top = point.y - 10 + "px"
