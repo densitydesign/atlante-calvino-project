@@ -609,3 +609,11 @@ html {
   }
 
 }
+
+@media screen and (min-width: 1024px) {
+  #main--sinuous .legend.open .legend-content {
+    height: 70vh;
+    width: 100%;
+  }
+
+}
