@@ -141,16 +141,12 @@ export default function IndexMenu({ onClose }) {
     var kappa = 0.5522847498
     var ox = rx * kappa // x offset for the control point
     var oy = ry * kappa // y offset for the control point
-    console.log(kappa, ox, oy);
     let d = `M${cx - rx},${cy} `;
     d += `C${cx - rx} ${cy - oy}, ${cx - ox} ${cy - ry}, ${cx} ${cy - ry} `;
     d += `C${cx + ox} ${cy - ry}, ${cx + rx} ${cy - oy}, ${cx + rx} ${cy} `;
     d += `C${cx + rx} ${cy + oy}, ${cx + ox} ${cy + ry}, ${cx} ${cy + ry} `;
     d += `C${cx - ox} ${cy + ry}, ${cx - rx} ${cy + oy}, ${cx - rx} ${cy} `;
     d += `z`;
-
-    console.log(d);
-
     return d;
   }
 
@@ -174,7 +170,7 @@ export default function IndexMenu({ onClose }) {
       path.setAttribute("d", d)
       path.setAttribute("fill", "none")
       path.setAttribute("stroke", "red")
-      g.appendChild(path); // uncomment to show the path
+      // g.appendChild(path); // uncomment to show the path
 
       // positioning the circles
       const length = path.getTotalLength()
