@@ -92,10 +92,10 @@ class Equipe extends React.Component {
                 >
                   Paolo Ciuccarelli
                 </a>{" "}
-                alla direzione del gruppo DensityDesign.
+                alla direzione dell’équipe del DensityDesign.
               </p>
               <p>
-                Alla ricerca e alla progettazione dell’Atlante hanno partecipato
+                Alla realizzazione dell’Atlante hanno partecipato
                 anche: Matteo Banal,{" "}
                 <a
                   href="https://densitydesign.org/person/gabriele-colombo/"

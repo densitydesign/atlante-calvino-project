@@ -7,6 +7,7 @@ import spazioMetamorfosi from "./capta-sections/spazioMetamorfosi.js"
 import spazioMovimento from "./capta-sections/spazioMovimento.js"
 import formaElenchi from "./capta-sections/formaElenchi.js"
 import formaSequenze from "./capta-sections/formaSequenze.js"
+import formaTerzo from "./capta-sections/formaTerzo.js"
 import tools from "./capta-sections/tools.js"
 
 const capta = [
@@ -19,6 +20,7 @@ const capta = [
   spazioMetamorfosi,
   formaElenchi,
   formaSequenze,
+  formaTerzo,
   tools
 ];
 export default capta;

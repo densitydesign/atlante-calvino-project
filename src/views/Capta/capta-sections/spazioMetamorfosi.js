@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./capta.module.css";
 
 const spazioMetamorfosi = {
-  name: "Spazio: metamorfosi della realtà",
+  name: "Spazio: dataset 3",
   type: "data",
   license: "https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png",
   licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
