@@ -110,7 +110,6 @@ class Trasformare extends Component {
         return graph
       })
       .then((data) => {
-        console.log(data)
         let themes = data.data.map((d) => d.themes).flat()
         themes = themes.filter((d, i) => themes.indexOf(d) === i)
         themes = themes.filter((d) => d !== "" && d !== " ")
@@ -180,8 +179,6 @@ class Trasformare extends Component {
             }
           })
           .sort((a, b) => a.label.localeCompare(b.label))
-
-        console.log(searchByLuogo)
 
         let serachByVolume = _volumes.map(v=>{
           // console.log(v)
