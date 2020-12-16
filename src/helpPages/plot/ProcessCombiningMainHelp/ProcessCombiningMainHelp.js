@@ -163,51 +163,53 @@ export default function ProcessCombiningMainHelp() {
             <div className="col-md-8">
               <BadgeLegenda
                 color="#8131F4"
-                name={t("trama:help_panel.eventi_eliminali")}
-                italic={`${t("trama:tipologia.rivelazione")}, ${t(
-                  "trama:tipologia.morte"
+                name={t("trama:eventi liminali")}
+                italic={`${t("trama:rivelazione")}, ${t(
+                  "trama:morte"
                 )}`}
               />
               <BadgeLegenda
                 color="#0000FF"
-                name={t("trama:help_panel.interazione")}
-                italic={`${t("trama:tipologia.guerra")}, ${t(
-                  "trama:tipologia.aggressione/scontro"
-                )}, ${t("trama:tipologia.aggressione/aiuto/salvataggio")}, ${t(
-                  "trama:tipologia.compito/missione"
-                )}, ${t("trama:tipologia.incontro animale")}, ${t(
-                  "trama:tipologia.incontro di gruppo"
-                )}, ${t("trama:tipologia.incontro femminile")}, ${t(
-                  "trama:tipologia.incontro maschile"
-                )}, ${t("trama:tipologia.matrimonio")}, ${t(
-                  "trama:tipologia.offerta"
-                )}, ${t("trama:tipologia.rifiuto")}, ${t(
-                  "trama:tipologia.scena erotica"
-                )}, ${t("trama:tipologia.scommessa")}, ${t(
-                  "trama:tipologia.telefonata"
+                name={t("trama:Interazione")}
+                italic={`${t("trama:Guerra")}, ${t(
+                  "trama:aggressione/scontro"
+                )}, ${t("trama:aiuto/salvataggio")}, ${t(
+                  "trama:compito/missione"
+                )}, ${t("trama:incontro animale")}, ${t(
+                  "trama:incontro di gruppo"
+                )}, ${t("trama:incontro femminile")}, ${t(
+                  "trama:incontro maschile"
+                )}, ${t("trama:matrimonio")}, ${t(
+                  "trama:offerta"
+                )}, ${t("trama:rifiuto")}, ${t(
+                  "trama:scena erotica"
+                )}, ${t("trama:scommessa")}, ${t(
+                  "trama:telefonata"
                 )}`}
               />
               <BadgeLegenda
                 color="#5151FC"
-                name={t("trama:help_panel.spostamento")}
-                italic={`${t("trama:tipologia.arrivo/ritorno")}, ${t(
-                  "trama:tipologia.arrivo/fuga"
-                )}, ${t("trama:tipologia.inseguimento/ricerca")}, ${t(
-                  "trama:tipologia.partenza/sparizione"
-                )}, ${t("trama:tipologia.viaggio")}`}
+                name={t("trama:Spostamento")}
+                italic={`${t("trama:Arrivo/ritorno")}, ${t(
+                  "trama:arrivo/fuga"
+                )}, ${t("trama:inseguimento/ricerca")}, ${t(
+                  "trama:partenza/sparizione"
+                )}, ${t("trama:viaggio")}`}
               />
               <BadgeLegenda
                 color="#6E94F4"
-                name={t("trama:help_panel.intenzione")}
-                italic={`${t("trama:tipologia.iniziativa/piano")}, ${t(
-                  "trama:tipologia.ostacolo"
-                )}, ${t("trama:tipologia.successo")}`}
+                name={t("trama:Intenzione")}
+                italic={`${t("trama:Iniziativa/piano")}, ${t(
+                  "trama:ostacolo"
+                )}, ${t("trama:successo")}`}
               />
               <BadgeLegenda
                 color="#00FFFF"
-                name={t("trama:help_panel.situazione")}
-                italic={`${t("trama:tipologia.illusione/speranza")}, ${t(
-                  "trama:tipologia.innamoramento"
+                name={t("trama:Situazione")}
+                italic={`${t("trama:Cambiamento")}, ${t(
+                  "trama:città magica"
+                )},${t(
+                  "trama:situazione"
                 )}`}
               />
             </div>
@@ -224,33 +226,31 @@ export default function ProcessCombiningMainHelp() {
             <div className="col-md-8">
               <BadgeLegenda
                 color="#009959"
-                name={t("trama:help_panel.stato_euforico")}
-                italic={`${t("trama:tipologia.angoscia/delusione")}, ${t(
-                  "trama:tipologia.smarrimento/dubbio"
+                name={t("trama:Stato euforico")}
+                italic={`${t("trama:Illusione/speranza")}, ${t(
+                  "trama:innamoramento"
                 )}`}
               />
               <BadgeLegenda
                 color="#00C19C"
-                name={t("trama:help_panel.stato_disforico")}
-                italic={`${t("trama:tipologia.visione")}, ${t(
-                  "trama:tipologia.riflessione"
-                )}, ${t("trama:tipologia.mistero/assurdità")}, ${t(
-                  "trama:tipologia.ipotesi"
+                name={t("trama:Stato disforico")}
+                italic={`${t("trama:Angoscia/delusione")}, ${t(
+                  "trama:smarrimento/dubbio"
                 )}`}
               />
               <BadgeLegenda
                 color="#67E9B1"
-                name={t("trama:help_panel.stato_riflessivo")}
-                italic={`${t("trama:tipologia.pausa/sospensione")}, ${t(
-                  "trama:tipologia.attesa"
+                name={t("trama:Stato riflessivo")}
+                italic={`${t("trama:Visione")}, ${t(
+                  "trama:riflessione"
+                )}, ${t("trama:mistero/assurdità")}, ${t(
+                  "trama:tipologia.ipotesi"
                 )}`}
               />
               <BadgeLegenda
                 color="#00FFB6"
-                name={t("trama:help_panel.stato_sospeso")}
-                italic={`${t("trama:tipologia.cambiamento")}, ${t(
-                  "trama:tipologia.città magica"
-                )}, ${t("trama:tipologia.situazione")}`}
+                name={t("trama:Stato sospeso")}
+                italic={`${t("trama:Pausa/sospensione")}, ${t("trama:attesa")}`}
               />
             </div>
           </div>
