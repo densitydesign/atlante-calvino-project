@@ -1,36 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="271" height="208.884" viewBox="0 0 271 208.884">
-  <g id="Raggruppa_22302" data-name="Raggruppa 22302" transform="translate(-46 -193)">
-    <g id="Raggruppa_901" data-name="Raggruppa 901" transform="translate(-383.737 44.996)">
-      <line id="Linea_293" data-name="Linea 293" x2="114.581" transform="translate(500.992 306.798)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
-    </g>
-    <g id="Raggruppa_902" data-name="Raggruppa 902" transform="translate(-383.737 44.996)">
-      <line id="Linea_294" data-name="Linea 294" y1="122.189" transform="translate(493.696 184.272)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
-      <line id="Linea_295" data-name="Linea 295" x2="4.074" transform="translate(491.659 306.461)" fill="none" stroke="#000" stroke-width="0.5"/>
-      <line id="Linea_296" data-name="Linea 296" x2="4.074" transform="translate(491.659 184.272)" fill="none" stroke="#000" stroke-width="0.5"/>
-    </g>
-    <path id="Tracciato_116441" data-name="Tracciato 116441" d="M0,0H45.531V62.957H0Z" transform="translate(122.591 260.269)" fill="#0fc"/>
-    <rect id="Rettangolo_9622" data-name="Rettangolo 9622" width="45.531" height="42.957" transform="translate(168.121 270.269)" fill="#66f"/>
-    <line id="Linea_297" data-name="Linea 297" x1="45.531" transform="translate(122.591 269.269)" fill="none" stroke="#666" stroke-width="0.496" stroke-dasharray="1.982"/>
-    <line id="Linea_298" data-name="Linea 298" x1="45.531" transform="translate(122.591 311.956)" fill="none" stroke="#666" stroke-width="0.496" stroke-dasharray="1.982"/>
-    <text id="inizio" transform="translate(74.541 223)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="5.766" y="10">inizio</tspan></text>
-    <text id="fine" transform="translate(74.541 342.051)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="13.366" y="10">fine</tspan></text>
-    <text id="lunghezza_del_testo_in_caratteri_normalizzata" data-name="lunghezza del testo in caratteri normalizzata" transform="translate(46 261.342)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="15.099" y="10">lunghezza </tspan><tspan x="10.409" y="23">del testo in </tspan><tspan x="21.989" y="36">caratteri </tspan><tspan x="2.099" y="49">normalizzata</tspan></text>
-    <text id="_volume" data-name=" volume" transform="translate(47 193)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10" xml:space="preserve"> volume</tspan></text>
-    <text id="sequenza_X" data-name="sequenza X" transform="translate(122 203)" fill="#0fc" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">sequenza X</tspan></text>
-    <text id="sequenza_Y_che_si_svolge_durante_la_sequenza_X" data-name="sequenza Y che si svolge durante la sequenza X" transform="translate(206 223)" fill="#0fc" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10" fill="#5151fc">sequenza Y</tspan><tspan y="10" xml:space="preserve" fill="#000"> che si </tspan><tspan x="0" y="23" fill="#000">svolge durante la </tspan><tspan x="0" y="36" fill="#0fc">sequenza X</tspan></text>
-    <line id="Linea_299" data-name="Linea 299" y1="44.268" transform="translate(145.554 220.135)" fill="none" stroke="#000" stroke-width="0.5"/>
-    <rect id="Rettangolo_9623" data-name="Rettangolo 9623" width="45.531" height="122.189" transform="translate(122.591 229.269)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
-    <path id="Tracciato_108889" data-name="Tracciato 108889" d="M471.035,153.923c21.108,0,20.606,30.875,36.79,30.875" transform="translate(-387.234 44.996)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
-    <g id="Raggruppa_903" data-name="Raggruppa 903" transform="translate(-383.737 44.996)">
-      <text id="LIVELLO_1" data-name="LIVELLO 1" transform="translate(503.328 313.702)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="7.608" y="10">LIVELLO </tspan></text>
-      <text id="LIVELLO_2" data-name="LIVELLO 2" transform="translate(550.652 313.702)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="3.208" y="10">LIVELLO 2</tspan></text>
-      <text id="tipo_di_sequenza" data-name="tipo di sequenza" transform="translate(610.737 329.888)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">tipo di sequenza</tspan></text>
-      <text id="dettaglio" transform="translate(506.328 328.888)" fill="#c6cacf" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">dettaglio</tspan></text>
-      <text id="dettaglio-2" data-name="dettaglio" transform="translate(553.652 328.888)" fill="#c6cacf" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="10">dettaglio</tspan></text>
-      <line id="Linea_301" data-name="Linea 301" x2="39.29" transform="translate(506.328 341.031)" fill="none" stroke="#0fc" stroke-miterlimit="10" stroke-width="1"/>
-      <line id="Linea_302" data-name="Linea 302" x2="40.29" transform="translate(553.652 341.031)" fill="none" stroke="#66f" stroke-miterlimit="10" stroke-width="1"/>
-      <line id="Linea_303" data-name="Linea 303" x1="16" transform="translate(593.237 335.689)" fill="none" stroke="#000" stroke-width="0.5"/>
-    </g>
-    <path id="Tracciato_116468" data-name="Tracciato 116468" d="M8918.663,11600.2c0-12.19-2.052-38.749,15.095-38.749" transform="translate(-8733 -11325)" fill="none" stroke="#000" stroke-width="0.5"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 271 208.9" style="enable-background:new 0 0 271 208.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:0.5;}
+	.st2{fill:#00FFCC;}
+	.st3{fill:#6666FF;}
+	.st4{fill:none;stroke:#666666;stroke-width:0.496;stroke-dasharray:1.982;}
+	.st5{font-family:'HKGrotesk-Regular';}
+	.st6{font-size:10px;}
+	.st7{fill:#5151FC;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#C6CACF;}
+	.st10{fill:none;stroke:#00FFCC;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#6666FF;stroke-miterlimit:10;}
+</style>
+<g id="Raggruppa_22302" transform="translate(-46 -193)">
+	<g id="Raggruppa_901" transform="translate(-383.737 44.996)">
+		<line id="Linea_293" class="st0" x1="501" y1="306.8" x2="615.6" y2="306.8"/>
+	</g>
+	<g id="Raggruppa_902" transform="translate(-383.737 44.996)">
+		<line id="Linea_294" class="st0" x1="493.7" y1="306.5" x2="493.7" y2="184.3"/>
+		<line id="Linea_295" class="st1" x1="491.7" y1="306.5" x2="495.7" y2="306.5"/>
+		<line id="Linea_296" class="st1" x1="491.7" y1="184.3" x2="495.7" y2="184.3"/>
+	</g>
+	<path id="Tracciato_116441" class="st2" d="M122.6,260.3h45.5v63h-45.5V260.3z"/>
+	<rect id="Rettangolo_9622" x="168.1" y="270.3" class="st3" width="45.5" height="43"/>
+	<line id="Linea_297" class="st4" x1="168.1" y1="269.3" x2="122.6" y2="269.3"/>
+	<line id="Linea_298" class="st4" x1="168.1" y1="312" x2="122.6" y2="312"/>
+	<text transform="matrix(1 0 0 1 80.307 233)" class="st5 st6">inizio</text>
+	<text transform="matrix(1 0 0 1 87.907 352.051)" class="st5 st6">fine</text>
+	<text transform="matrix(1 0 0 1 59.105 271.342)" class="st5 st6">lunghezza</text>
+	<text transform="matrix(1 0 0 1 65.1013 284.342)" class="st5 st6">del testo</text>
+	<text transform="matrix(1 0 0 1 46.7957 297.342)" class="st5 st6">normalizzata</text>
+	<text transform="matrix(1 0 0 1 47 203)" class="st5 st6"> volume</text>
+	<text transform="matrix(1 0 0 1 122 213)" class="st2 st5 st6">sequenza X</text>
+	<text transform="matrix(1 0 0 1 206 233)" class="st7 st5 st6">sequenza Y</text>
+	<text transform="matrix(1 0 0 1 255.3555 233)" class="st5 st6"> che si </text>
+	<text transform="matrix(1 0 0 1 206 246)" class="st5 st6">svolge durante la </text>
+	<text transform="matrix(1 0 0 1 206 259)" class="st2 st5 st6">sequenza X</text>
+	<line id="Linea_299" class="st1" x1="145.6" y1="264.4" x2="145.6" y2="220.1"/>
+	<rect id="Rettangolo_9623" x="122.6" y="229.3" class="st8" width="45.5" height="122.2"/>
+	<path id="Tracciato_108889" class="st0" d="M83.8,198.9c21.1,0,20.6,30.9,36.8,30.9"/>
+	<g id="Raggruppa_903" transform="translate(-383.737 44.996)">
+		<text transform="matrix(1 0 0 1 510.936 323.702)" class="st5 st6">LIVELLO</text>
+		<text transform="matrix(1 0 0 1 553.86 323.702)" class="st5 st6">LIVELLO 2</text>
+		<text transform="matrix(1 0 0 1 610.737 339.888)" class="st5 st6">tipo di sequenza</text>
+		<text transform="matrix(1 0 0 1 506.328 338.888)" class="st9 st5 st6">dettaglio</text>
+		<text transform="matrix(1 0 0 1 553.652 338.888)" class="st9 st5 st6">dettaglio</text>
+		<line id="Linea_301" class="st10" x1="506.3" y1="341" x2="545.6" y2="341"/>
+		<line id="Linea_302" class="st11" x1="553.7" y1="341" x2="593.9" y2="341"/>
+		<line id="Linea_303" class="st1" x1="609.2" y1="335.7" x2="593.2" y2="335.7"/>
+	</g>
+	<path id="Tracciato_116468" class="st1" d="M185.7,275.2c0-12.2-2.1-38.7,15.1-38.7"/>
+</g>
 </svg>
