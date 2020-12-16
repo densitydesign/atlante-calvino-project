@@ -363,25 +363,25 @@ class VClass
       })
 
       .on('click', function(d) {
-        // console.log('clicked on', d)
+        console.log('clicked on', d)
         // if double click/tap
-        if((d3.event.timeStamp - last) < 500) {
+        const _delay = 500;
+        if((d3.event.timeStamp - last) < _delay) {
+          console.log('dbl clicked on', d)
           self.toggleSubnodes(d, 'restart the force');
         }
-        else {
-          last = d3.event.timeStamp;
-
-          const isSelected = d3.select(this).classed('selected')
-          // do this after the nodes have been opened
-          if (!isSelected) {
-            self.selectLabel(d);
-            self.selectSameComposition(d);
-            self.displayTitle([d]);
-          } else {
-            self.unselectLabel(d);
-            self.unselectNode(d)
-          }
+        const isSelected = d3.select(this).classed('selected')
+        // do this after the nodes have been opened
+        if (!isSelected) {
+          self.selectLabel(d);
+          self.selectSameComposition(d);
+          self.displayTitle([d]);
+        } else {
+          self.unselectLabel(d);
+          self.unselectNode(d)
         }
+
+        last = d3.event.timeStamp;
       })
       .merge(node)
       .attr("display", d=> (d.year>=timeFilter[0] && d.year <= timeFilter[1]) ? "block" : "none" )
