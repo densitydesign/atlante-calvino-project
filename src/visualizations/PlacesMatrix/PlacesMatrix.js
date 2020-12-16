@@ -23,7 +23,11 @@ class PlacesMatrix extends Component {
       
       const selectThoseLabels = this.props.searched;
 
-      V.filter(this.props.filter) //, selectThoseLabels)
+      if (this.props.searchedPlace) {
+        V.filter(this.props.filter, selectThoseLabels)
+      } else {
+        V.filter(this.props.filter) //, selectThoseLabels)
+      }
     }
 
     if (this.props.timeFilter !== prevProps.timeFilter) {
