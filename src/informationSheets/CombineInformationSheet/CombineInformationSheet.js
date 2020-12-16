@@ -96,7 +96,7 @@ class CombineInformationSheet extends Component {
                 volume che raccoglie due testi precedentemente usciti su rivista
                 (rispettivamente in «Nuovi Argomenti», 34, 1958 e in «Botteghe
                 Oscure», quaderno X, 1952) in uno strano dittico:{" "}
-                <em>La nuvola di smog</em> e <em>La formica argentina</em>. Il
+                <em>La nuvola di smog e La formica argentina</em>. Il
                 volumetto Einaudi, parte di un progetto mai realizzato che
                 doveva consistere in un «ciclo narrativo sull’Italia di metà
                 secolo» (Calvino 1963), è significativo forse proprio in quanto
@@ -117,13 +117,13 @@ class CombineInformationSheet extends Component {
                 italiana del dopoguerra: una forma non più tenuta a distanza dal
                 filtro straniante di un linguaggio volutamente semplice, dai
                 tratti infantili, come accadeva ad esempio in{" "}
-                <em>Ultimo viene il corvo</em> o nel trittico dell’{" "}
+                <em>Ultimo viene il corvo</em> o nel trittico dell’
                 <em>Entrata in guerra</em>, ma affrontata in modo diretto,
                 disilluso, “adulto”. Una modalità che riunisce una piccola
                 famiglia di titoli tutto sommato non incospicua, alla quale si
                 possono ricondurre anche <em>La speculazione edilizia</em> e{" "}
                 <em>La giornata d’uno scrutatore</em>, le avventure irrisolte
-                degli <em>Amori difficili</em>, e almeno in parte
+                degli <em>Amori difficili</em>, e almeno in parte{" "}
                 <em>I Racconti</em>, e con la quale tuttavia l’autore non sembra
                 essere del tutto a suo agio. Lo si può forse intravedere nello
                 stile eccentrico della lettera di “non-difesa” scritta in
@@ -213,7 +213,7 @@ class CombineInformationSheet extends Component {
                 un lato un’opera di pura molteplicità, leggerezza, esuberanza
                 fantastica, con personaggi poco meno che onnipotenti, e
                 dall’altro un’opera che è programmaticamente stazionaria, lenta,
-                monocorde, abitata da eroi passivi che rinunciano a ogni agency
+                monocorde, abitata da eroi passivi che rinunciano a ogni{" "} <em>agency</em>{" "}
                 quasi per principio. Eppure…
               </p>
             </Trans>
@@ -359,7 +359,7 @@ class CombineInformationSheet extends Component {
                 dettaglio, possiamo vedere che nelle <em>Cosmicomiche</em> la
                 narrazione coinvolge tutti e tre i piani nominati, e passa
                 dall’uno all’altro 70 volte; d’altra parte il dittico{" "}
-                <em>Nuvola-Formica</em> , a parità di numero di sequenze,
+                <em>Nuvola-Formica</em>, a parità di numero di sequenze,
                 coinvolge solo due piani (escludendo del tutto quello formale),
                 e i passaggi sono 50, un intero quarto dei casi in meno. Che
                 cosa significa questo, in pratica? Significa che nel primo caso
@@ -407,7 +407,7 @@ class CombineInformationSheet extends Component {
                 da Calvino nel distribuire i suoi materiali può rivelarci
                 dettagli illuminanti su come viene costruito l’equilibrio
                 interno di una storia. Un esempio è la funzione dell’
-                <em>incontro</em>
+                <em>incontro</em>{" "}
                 come meccanismo di dissimulazione della complessità. Sia nella{" "}
                 <em>Nuvola di smog</em> che nella <em>Formica argentina</em>,
                 l’ossatura fondamentale del testo è basata sulla stessa
