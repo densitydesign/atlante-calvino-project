@@ -298,7 +298,7 @@ class Trasformare extends Component {
     let toPreserve = newOptions.map((d) => d.id)
     toPreserve = _.flattenDeep(toPreserve)
 
-    // In case it is empty, to prevent bugs, make it equal to any other fitler
+    // In case it is empty, to prevent bugs, make it equal to any other filter
     if (toPreserve.length === 0) {
       toPreserve = this.state.toPreserveVolumi
     }
