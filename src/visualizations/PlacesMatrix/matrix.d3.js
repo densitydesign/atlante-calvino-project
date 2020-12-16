@@ -47,8 +47,14 @@ class VClass
       .on('click', d => {
         if((d3.event.timeStamp - last) < 500) {
           console.log('reset')
+          this.closeAll()
           this.reset('also categories');
+          
           _resetFilter();
+        } else {
+          label.classed('selected', false)
+          node.classed('selected', false)
+          svg.classed('there-is-selection', false)
         }
         last = d3.event.timeStamp;
       })
@@ -317,6 +323,8 @@ class VClass
       timeFilter = globalTimeFilter
     }
 
+    console.log(new Date(timeFilter[0]).getFullYear(), new Date(timeFilter[1]).getFullYear())
+
     // update data
     nodes = graph.nodes;
     links = graph.edges;
@@ -498,6 +506,7 @@ class VClass
     nodes.filter(d => d.part_of === '').forEach(function(d) {
       self.closeSubnodes(d, 'do not restart simulation');
     })
+    this.update();
   }
 
   destroy = () => {}
@@ -646,6 +655,9 @@ class VClass
 
   unselectLabel = (d) => {
     label.filter(l => l.id === d.id).classed('selected', false)
+    if(svg.selectAll('.selected').size() < 1) {
+      svg.classed('there-is-selection', false)
+    }
   }
 
   selectNode = (d) => {
