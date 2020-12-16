@@ -137,7 +137,7 @@ export default function ProcessDoubtingMainHelp() {
               due tendenze: a) da un lato troviamo opere che si costruiscono su
               catene di ipotesi frammentate e di estensione contenuta,
               stabilendo così un percorso di lettura fortemente instabile (es.{" "}
-              <i>Ti con Zero</i>); b) dall’altro invece opere che, dopo aver
+              <i>Ti con zero</i>); b) dall’altro invece opere che, dopo aver
               accumulato alcune occorrenze di{" "}
               <span style={{ color: "#BBBBFF" }}>testo dubitativo</span>,
               tendono verso la fine ad annullare il percorso compiuto,

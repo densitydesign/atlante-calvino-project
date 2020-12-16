@@ -87,14 +87,40 @@ export default function TransformMainHelp() {
               prospettive differenti. I risultati possono essere filtrati per
               categoria, per{" "}
               <i>
-                Tipo di pubblicazione (romanzo, raccolta di racconti, periodico)
-              </i>
-              , per{" "}
+                Tipo di pubblicazione
+              </i> (
               <i>
-                Contesti (guerra, natura ligure, paesaggio urbano, mare,
-                fabbrica, metropoli)
+                romanzo
+              </i>,{" "} 
+              <i>
+                raccolta
+              </i>,{" "}  
+              <i>
+                altro
+              </i>
+              ), per{" "}
+              <i>
+                Contesti
               </i>{" "}
-              o attraverso il <i>Filtro cronologico</i>.
+              (<i>
+                guerra
+              </i>,{" "}
+              <i>
+              natura ligure
+              </i>,{" "}
+              <i>
+              paesaggio urbano
+              </i>,{" "}
+              <i>
+              mare
+              </i>,{" "}
+              <i>
+              fabbrica
+              </i>,{" "}
+              <i>
+              metropoli
+              </i>
+              ) o attraverso il <i>Filtro cronologico</i>.
             </p>
           </Trans>
           <p className="mt-3">
@@ -119,7 +145,7 @@ export default function TransformMainHelp() {
               corrispondenza viene meno e ci si trova catapultati all’indietro,
               in un passato recente o ai primordi del mondo.<br /><br />
               Un’ultima
-              considerazione riguarda l’utilità dei filtri: selezionando l’opera
+              considerazione riguarda l’utilità dei filtri. Selezionando l’opera
               per <i>Tipo di pubblicazione</i>, emergono differenze rilevanti: i
               romanzi esplorano maggiormente gli spazi del fantastico; invece i
               testi pubblicati in periodici e poi non più raccolti sono gli

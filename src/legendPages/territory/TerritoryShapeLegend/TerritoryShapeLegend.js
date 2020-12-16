@@ -20,7 +20,7 @@ export default class TerritoryShapeLegend extends React.Component
         </div>
 
         <div className="legend-block">
-          <h5>TIPOLOGIE DI ELENCO</h5>
+          <h5>PROPOSIZIONI</h5>
             <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-shape-colore.svg'} alt="legend information" />
         </div>
 

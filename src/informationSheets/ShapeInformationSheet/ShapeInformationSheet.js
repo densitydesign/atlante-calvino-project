@@ -65,7 +65,7 @@ class ShapeInformationSheet extends React.Component {
                 <em>Ti con zero</em>, nel 1972 solo <em>Il nome, il naso</em> e{" "}
                 <em>Le città invisibili</em>. Tutti i testi in questione sono
                 composti negli anni della rispettiva pubblicazione, tranne{" "}
-                <em>La strad</em> e {" "}<em>Le città</em>, che cominciano a essere scritti
+                <em>La strada</em> e {" "}<em>Le città</em>, che cominciano a essere scritti
                 rispettivamente a partire dal 1960 e dal 1970, in periodi in cui
                 le pubblicazioni si diradano. Il risultato sembra suggerire una
                 forma di correlazione tra la rarefazione del numero di testi e
@@ -157,7 +157,7 @@ class ShapeInformationSheet extends React.Component {
                 109). Diventa allora interessante notare che il 1965 è l’anno
                 che Calvino dedica interamente a costruire la galassia delle
                 “storie cosmicomiche” (scrive 8 dei 12 testi del volume{" "}
-                <em>Le cosmicomiche</em>, uscito l’anno stesso, e 3 dei testi
+                <em>Le Cosmicomiche</em>, uscito l’anno stesso, e 3 dei testi
                 che confluiranno nella raccolta sorella{" "}
                 <em>La memoria del mondo</em> del 1968): testi in cui una
                 fortissima cornice concettuale, ancorata direttamente alle
@@ -266,9 +266,9 @@ class ShapeInformationSheet extends React.Component {
                   Inglese 2012: A. Inglese,{" "}
                   <em>
                     Gli ideali della letteratura moderna e la strategia
-                    dell’inventario
+                    dell’inventario, in Pro e contro la trama
                   </em>
-                  , in Pro e contro la trama, a cura di W. Nardon e C. Tirinanzi
+                  , a cura di W. Nardon e C. Tirinanzi
                   De Medici, Trento, Università degli studi di Trento, pp.
                   77-95.
                 </li>

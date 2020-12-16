@@ -22,7 +22,7 @@ const spazioMovimento = {
         quanto descritto al punto precedente. Una selezione, perché prende in
         esame soltanto i luoghi d’ambientazione terrestri localizzabili e
         generici della produzione calviniana di narrativa breve. Un ampliamento,
-        perchè alle caratteristiche precedentemente elencate in questo dataset
+        perché alle caratteristiche precedentemente elencate in questo dataset
         si aggiungono alcune informazioni supplementari:
       </p>
       <ul>

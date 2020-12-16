@@ -21,7 +21,7 @@ export default class TerritoryShapeProportion2Legend extends React.Component
         </div>
 
         <div className="legend-block">
-          <div className="title-panel"><h4>PROPORZIONI ELENCHI</h4></div>
+          <div className="title-panel"><h4>PROPOSIZIONI</h4></div>
           <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-shape-proporzioni.svg'} alt="legend information" />
         </div>
 

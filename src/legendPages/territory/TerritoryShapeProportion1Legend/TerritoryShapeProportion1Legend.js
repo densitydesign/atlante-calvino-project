@@ -20,7 +20,7 @@ export default class TerritoryShapeProportion1Legend extends React.Component
         </div>
 
         <div className="legend-block">
-          <div className="title-panel"><h4>TIPOLOGIE DI ELENCO</h4></div>
+          <div className="title-panel"><h4>PROPOSIZIONI</h4></div>
           <img src={process.env.PUBLIC_URL + '/legendTerritory/territory-legend-spheres-shape-colore.svg'} alt="legend information" />
         </div>
 
