@@ -559,7 +559,7 @@ class CompassTime extends React.Component {
                         </span>
                         , primo esempio di un sottogenere che avr&#xE0; molta
                         fortuna nella sua opera: la raccolta di racconti con un
-                        unico protagonista. La seconda met&#xE0; degli anni 60
+                        unico protagonista. La seconda met&#xE0; degli Anni 60
                         &#xE8; segnata dall&#x2019;invenzione della serie di
                         racconti delle Cosmicomiche, che vengono raccolti in due
                         libri (

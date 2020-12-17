@@ -275,13 +275,13 @@ export default function TerritoryMainHelp({ helpProps }) {
                   <BadgeLegenda color="#97DADD" name="Le Cosmicomiche" />
                 </div>
                 <div className="col-md-6">
-                  <BadgeLegenda color="#FF3366" name="Ti con Zero" />
+                  <BadgeLegenda color="#FF3366" name="Ti con zero" />
                   <BadgeLegenda color="#FFA500" name="La memoria del mondo" />
                   <BadgeLegenda color="#FFD337" name="Gli amori difficili" />
                   <BadgeLegenda color="#FF6C39" name="Palomar" />
                   <BadgeLegenda
                     color="#00BFD3"
-                    name="Le Cosmicomiche vecchie e nuove"
+                    name="Cosmicomiche vecchie e nuove"
                   />
                 </div>
               </div>

@@ -75,7 +75,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
               <span style={{ color: "#00c19c" }}>terrestri localizzabili</span>{" "}
               (es. “Sanremo” o “Parigi”), luoghi{" "}
               <span style={{ color: "#ffa500" }}>terrestri generici</span> (es.
-              una “città” o una “vallata”) e luoghi luoghi{" "}
+              una “città” o una “vallata”) e luoghi{" "}
               <span style={{ color: "#ff6c39" }}>terrestri inventati</span> (es.
               il paese di “Ombrosa” o una delle cinquantacinque città
               invisibili). A queste se ne aggiunge, <em>ex negativo</em>, una

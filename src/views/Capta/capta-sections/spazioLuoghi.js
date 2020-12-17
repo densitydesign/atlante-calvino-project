@@ -21,7 +21,14 @@ const spazioLuoghi = {
       <p>
         Il dataset raccoglie tutti i luoghi d’ambientazione delle opere di
         Calvino. I luoghi sono stati identificati manualmente e classificati in
-        parte grazie all’utilizzo dello strumento Explorer.
+        parte grazie all’utilizzo dello strumento {" "}
+        <a
+          href="https://densitydesign.github.io/atlante-calvino/explorer/"
+          target="_blank"
+          rel="noopner noreferrer"
+        >
+          Explorer
+        </a>.
       </p>
       <p>Per ogni occorrenza sono riportate le seguenti informazioni:</p>
       <ul>
@@ -37,7 +44,7 @@ const spazioLuoghi = {
         </li>
         
         <li>
-          <span className={styles.tag}>appartenenza o dipendenza</span> a un
+          <span className={styles.tag}>appartenenza o dipendenza</span> da un
           altro luogo d’ambientazione esplicitamente citato;
         </li>
         <li>
