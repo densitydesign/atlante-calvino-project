@@ -60,6 +60,7 @@ export default function RealismHelp() {
           </p>
           <Trans i18nKey={"help_panel.come_funziona"} t={t} ns="realismo">
             <div>
+              <p>
               La visualizzazione può essere esplorata in due modalità, che
               presentano rispettivamente una visione d’insieme di tutti i
               racconti e una visione in dettaglio di singoli testi che l’utente
@@ -68,6 +69,7 @@ export default function RealismHelp() {
               rappresentato da un elemento grafico lineare che si dispone in
               ordine cronologico di pubblicazione all’interno di un cerchio.
               Ogni linea, di lunghezza uniforme, rivela tre aspetti principali:{" "}
+              </p>
               <ol type="1">
                 <li>
                   il numero di ambientazioni attraverso cui si sviluppa la
@@ -89,9 +91,10 @@ export default function RealismHelp() {
                   testo.
                 </li>
               </ol><br></br>
-              Selezionando uno o più elementi e scorrendo verso il basso è
+              <p>Selezionando uno o più elementi e scorrendo verso il basso è
               possibile avere una visione in dettaglio che permette di scoprire
               altre tre importanti caratteristiche:{" "}
+              </p>
               <ol type="1">
                 <li>
                   la lunghezza reale del racconto selezionato, particolarmente

@@ -1,22 +1,22 @@
-import React, { Component } from "react"
-import SheetStyles from "../SheetStyles.module.css"
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import FooterSchede3 from "../FooterSchede3"
+import React, { Component } from "react";
+import SheetStyles from "../SheetStyles.module.css";
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import FooterSchede3 from "../FooterSchede3";
 
-import map1x from "./mappa-ver02@1x.png"
-import map2x from "./mappa-ver02@2x.png"
+import map1x from "./mappa-ver02@1x.png";
+import map2x from "./mappa-ver02@2x.png";
 
-import legend01 from "./legend01.svg"
-import legend01En from "./realismo_Legend01_en.svg"
-import legend02 from "./legend02.svg"
-import legend02En from "./realismo_Legend02_en.svg"
-import textWall01 from "./textWall01.svg"
-import textWall01En from "./realismo_textWall01_en.svg"
-import textWall02 from "./textWall02.svg"
-import textWall02En from "./realismo_textWall02_en.svg"
-import treemap from "./TreemapAbsoluteWordsConcreteAbstract.svg"
-import treemapEn from "./realismo_TreemapAbsoluteWordsConcreteAbstract_en.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legend01 from "./legend01.svg";
+import legend01En from "./realismo_Legend01_en.svg";
+import legend02 from "./legend02.svg";
+import legend02En from "./realismo_Legend02_en.svg";
+import textWall01 from "./textWall01.svg";
+import textWall01En from "./realismo_textWall01_en.svg";
+import textWall02 from "./textWall02.svg";
+import textWall02En from "./realismo_textWall02_en.svg";
+import treemap from "./TreemapAbsoluteWordsConcreteAbstract.svg";
+import treemapEn from "./realismo_TreemapAbsoluteWordsConcreteAbstract_en.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class RealismInformationSheet extends Component {
   render() {
@@ -140,15 +140,7 @@ class RealismInformationSheet extends Component {
                 che l’autore ha conosciuto direttamente e che descrive con
                 dovizia di dettagli fornendo indicazioni geografiche molto
                 precise, che consentono di ricostruire per filo e per segno il
-                percorso compiuto dal protagonista{" "}
-                <a
-                  href="https://www.openstreetmap.org/#map=14/43.9894/7.7688"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  (vedi mappa)
-                </a>
-                .
+                percorso compiuto dal protagonista (vedi mappa).
               </p>
             </Trans>
             <Trans
@@ -387,9 +379,6 @@ class RealismInformationSheet extends Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>
-              {this.props.t("realismo-sheet:Trasformazioni, visioni, dubbi")}
-            </h2>
             <img
               className={
                 SheetStyles.image + " " + SheetStyles.translucentBackground
@@ -420,7 +409,7 @@ class RealismInformationSheet extends Component {
               {this.props.t("bibliografia")}
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
-            <li className="referenceItem">
+              <li className="referenceItem">
                 Falaschi 1976: G. Falaschi,
                 <em> La resistenza armata nella narrativa italiana</em>, Torino,
                 Einaudi.
@@ -446,10 +435,10 @@ class RealismInformationSheet extends Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "realismo-sheet"])(
   RealismInformationSheet
-)
+);
