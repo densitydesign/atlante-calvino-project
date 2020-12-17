@@ -454,7 +454,6 @@ class Trasformare extends Component {
       .key((d) => d.source)
       .entries(selectedData)
       .map((d) => {
-        console.log(d)
         return {
           composition_id: d.key,
           composition_title: d.values[0].sourceTitle,
