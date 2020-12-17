@@ -9,22 +9,22 @@ import { withTranslation } from "react-i18next"
 
 class TerritorySpacePanel extends React.Component {
   genericCosmicRadioButtonId = "genericCosmicRadioButton"
-  genericCosmicRadioButtonCaption = this.props.t("help_panel.cosmici_generici")
+  genericCosmicRadioButtonCaption = this.props.t("help_panel.Cosmici generici")
 
   namedCosmicRadioButtonId = "namedCosmicRadioButton"
-  namedCosmicRadioButtonCaption = this.props.t("help_panel.cosmici_localizzabili")
+  namedCosmicRadioButtonCaption = this.props.t("help_panel.Cosmici localizzabili")
 
   genericTerrestrialRadioButtonId = "genericTerrestrialRadioButton"
-  genericTerrestrialRadioButtonCaption = this.props.t("help_panel.terrestri_generici")
+  genericTerrestrialRadioButtonCaption = this.props.t("help_panel.Terrestri generici")
 
   namedTerrestrialRadioButtonId = "namedTerrestrialRadioButton"
-  namedTerrestrialRadioButtonCaption = this.props.t("help_panel.terrestri_localizzabili")
+  namedTerrestrialRadioButtonCaption = this.props.t("help_panel.Terrestri localizzabili")
 
   inventedRadioButtonId = "inventedRadioButton"
-  inventedRadioButtonCaption = this.props.t("help_panel.terrestri_inventati")
+  inventedRadioButtonCaption = this.props.t("help_panel.Terrestri inventati")
 
   noSettingRadioButtonId = "noSettingRadioButton"
-  noSettingRadioButtonCaption = this.props.t("help_panel.nessun_luogo")
+  noSettingRadioButtonCaption = this.props.t("help_panel.Nessun luogo")
 
   proportionRadioButtonId = "proportionRadioButton"
   proportionRadioButtonCaption = "%"

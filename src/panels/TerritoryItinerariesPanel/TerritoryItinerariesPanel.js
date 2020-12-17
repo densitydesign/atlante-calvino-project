@@ -14,13 +14,13 @@ import GlobalData from '../../utilities/GlobalData';
 export default class TerritoryItinerariesPanel extends React.Component
 {
   doubtRadioButtonId = "doubtRadioButton";
-  doubtRadioButtonCaption = "NEBBIA";
+  doubtRadioButtonCaption = "Nebbia";
 
   spaceRadioButtonId = "spaceRadioButton";
-  spaceRadioButtonCaption = "LUOGHI";
+  spaceRadioButtonCaption = "Luoghi";
 
   shapeRadioButtonId = "shapeRadioButton";
-  shapeRadioButtonCaption = "ELENCHI";
+  shapeRadioButtonCaption = "Elenchi";
 
   state = {
     optionRadioButtonsStates : [
