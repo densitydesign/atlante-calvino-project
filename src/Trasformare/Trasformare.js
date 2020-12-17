@@ -447,11 +447,14 @@ class Trasformare extends Component {
     const selected = d3.selectAll(".node:not(.filtered)")
     let selectedData = selected.data()
 
+    const places = selectedData.map(d=>d.id+"\t"+d.label)
+
     selectedData = d3
       .nest()
       .key((d) => d.source)
       .entries(selectedData)
       .map((d) => {
+        console.log(d)
         return {
           composition_id: d.key,
           composition_title: d.values[0].sourceTitle,
@@ -473,10 +476,12 @@ class Trasformare extends Component {
       .join(", ")}\n`
     export_data += `\n\n`
 
-    export_data += `composition_id\tcomposition_title\n`
+    export_data += `titles\nid\tyear\ttitle\n`
     selectedData.forEach((d) => {
       export_data += d.composition_id + "\t" + d.composition_title + "\n"
     })
+
+    export_data += `\nplaces\nid\tlabel\n${places.join("\n")}`
 
     let the_date = new Date()
     the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
