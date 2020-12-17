@@ -557,7 +557,7 @@ class VClass {
       .classed("label", true)
       .style("display", "none")
       .attr("text-anchor", "middle")
-      // .style('pointer-events', 'none')
+      .style('pointer-events', 'none')
       .text((d) => d.label)
       .merge(label);
 
