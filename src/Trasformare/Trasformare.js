@@ -298,7 +298,7 @@ class Trasformare extends Component {
     let toPreserve = newOptions.map((d) => d.id)
     toPreserve = _.flattenDeep(toPreserve)
 
-    // In case it is empty, to prevent bugs, make it equal to any other fitler
+    // In case it is empty, to prevent bugs, make it equal to any other filter
     if (toPreserve.length === 0) {
       toPreserve = this.state.toPreserveVolumi
     }
@@ -447,6 +447,8 @@ class Trasformare extends Component {
     const selected = d3.selectAll(".node:not(.filtered)")
     let selectedData = selected.data()
 
+    const places = selectedData.map(d=>d.id+"\t"+d.label)
+
     selectedData = d3
       .nest()
       .key((d) => d.source)
@@ -473,10 +475,12 @@ class Trasformare extends Component {
       .join(", ")}\n`
     export_data += `\n\n`
 
-    export_data += `composition_id\tcomposition_title\n`
+    export_data += `titles\nid\tyear\ttitle\n`
     selectedData.forEach((d) => {
       export_data += d.composition_id + "\t" + d.composition_title + "\n"
     })
+
+    export_data += `\nplaces\nid\tlabel\n${places.join("\n")}`
 
     let the_date = new Date()
     the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
