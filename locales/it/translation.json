@@ -100,7 +100,14 @@
     "sede di pubblicazione": "Sede di pubblicazione",
     "volume": "Volume",
     "non_aggregato": "Non aggregato",
-    "periodico": "Periodico"
+    "periodico": "Periodico",
+    "ui": {
+      "uno": "uno",
+      "due": "due",
+      "quattro": "quattro",
+      "cinque": "cinque",
+      "tre": "tre"
+    }
   },
   "legenda": "Legenda",
   "analisi": "Vai alla visualizzazione",
@@ -129,5 +136,8 @@
   "per_un_estetica_elencatoria": "Per un'estetica<br/>elencatoria",
   "metamorfosi_della_realta": "Metamorfosi della realtà:<br/>sulle tracce della paura",
   "il_romanzo_saggio_che_dubita": "Il romanzo-saggio<br/>che dubita",
-  "periodico": "Periodico"
+  "periodico": "Periodico",
+  "tipologia": {
+    "matrimonio": "matrimonio"
+  }
 }

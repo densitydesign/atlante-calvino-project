@@ -1,20 +1,20 @@
 {
   "help_panel": {
+    "tipi_di_elenco": "proposizioni",
     "di_cosa_si_tratta": "<p>Perché gli elenchi? Perché Calvino è un autore fondamentalmente elencatorio, che usa gli elenchi in modo virtuosistico e con grande frequenza. Gli elenchi rappresentano il grado zero di quella forma “modulare” della sua scrittura che indagheremo nel corso di questo itinerario.</p><1>Sono stati considerati elenchi tutte le sequenze composte da più di tre componenti, e i vari tipi sono stati distinti scegliendo come parametro la complessità degli elementi sintattici che li compongono (quando gli elenchi sono composti da tipi diversi si è seguito il criterio del tipo più presente), e sono segnalati da colori diversi: elenchi di singole <2>parole</2> (nomi, aggettivi, verbi, avverbi, con o senza articoli), elenchi di <5>sintagmi</5> (unità sintattiche complesse senza significato compiuto), elenchi di <8>proposizioni</8> (unità sintattiche complesse con significato compiuto), elenchi <11>misti</11> (sequenze in cui gli elementi precedenti sono mescolati in modo tale che nessuno è dominante sugli altri).</1>",
     "come_funziona": "<p>La visualizzazione mostra in primo luogo la distribuzione tra i tipi di elenchi: ogni cerchio del territorio è diviso in segmenti colorati di lunghezza diversa, che rispecchiano il rapporto tra le estensioni dei vari tipi di elenchi presenti all’interno di un certo testo, calcolata in base al numero di caratteri. Sulla base di questa rappresentazione grafica, un primo filtro permette di selezionare individualmente uno o più tipi per osservarne la distribuzione sul corpus.</p><1>La modalità <1>Proporzione</1> permette di visualizzare nello specifico il rapporto tra la quantità di testo occupata dai vari elenchi, aggregati indipendentemente dalla suddivisione per tipologia, e la lunghezza complessiva di ogni opera.</1>",
-    "qualche_pista_di_lettura": "<0>Nel complesso, la trasposizione grafica dei dati permette di avere una panoramica sull’uso delle strutture elencatorie da parte di Calvino, che rivela come primo dato evidente la pervasività di questo strumento stilistico: quasi la totalità del corpus presenta elenchi, e nella maggior parte dei casi la loro presenza supera il 5% della lunghezza complessiva dei testi, il che rimarca la propensione dell’autore per l’espansione paradigmatica (elementi simili tra loro) rispetto allo sviluppo sintagmatico (elementi diversi tra loro) della narrazione. I dati rivelano anche una serie di informazioni sulle preferenze calviniane, e sulla loro oscillazione attraverso il tempo e i generi, tra cui la predominanza di elenchi che coinvolgono strutture complesse (sintagmi o frasi), e la tendenza a mescolare sempre i diversi tipi, il che segnala una precisa consapevolezza artistica e la ricerca di una forma di equilibrio nell’impiego di questa forma di accumulazione verbale (vedi <2><0>Approfondimento</0></2>).</0>",
-    "tipi_di_elenco": "TIPI DI ELENCO",
-    "misto": "misto",
+    "qualche_pista_di_lettura": "<0>Nel complesso, la trasposizione grafica dei dati permette di avere una panoramica sull’uso delle strutture elencatorie da parte di Calvino, che rivela come primo dato evidente la pervasività di questo strumento stilistico: quasi la totalità del corpus presenta elenchi, e nella maggior parte dei casi la loro presenza supera il 5% della lunghezza complessiva dei testi, il che rimarca la propensione dell’autore per l’espansione paradigmatica (elementi simili tra loro) rispetto allo sviluppo sintagmatico (elementi diversi tra loro) della narrazione. I dati rivelano anche una serie di informazioni sulle preferenze calviniane, e sulla loro oscillazione attraverso il tempo e i generi, tra cui la predominanza di elenchi che coinvolgono strutture complesse (sintagmi o frasi), e la tendenza a mescolare sempre i diversi tipi, il che segnala una precisa consapevolezza artistica e la ricerca di una forma di equilibrio nell’impiego di questa forma di accumulazione verbale (vedi <2>Approfondimento</2>).</0>",
     "parole": "parole",
     "sintagmi": "sintagmi",
+    "senza_elenco": "senza elenco",
     "frasi": "frasi",
-    "senza_elenco": "senza_elenco"
+    "misto": "misto"
   },
   "footer": {
     "tipo_di_elenco": "tipo di elenco",
     "Misto": "Misto",
-    "Proposizioni": "Proposizioni",
     "Parole": "Parole",
-    "Sintagmi": "Sintagmi"
+    "Sintagmi": "Sintagmi",
+    "Proposizioni": "Proposizioni"
   }
 }

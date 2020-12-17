@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 271 208.9" style="enable-background:new 0 0 271 208.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:0.5;}
+	.st2{fill:#00FFCC;}
+	.st3{fill:#6666FF;}
+	.st4{fill:none;stroke:#666666;stroke-width:0.496;stroke-dasharray:1.982;}
+	.st5{font-family:'HKGrotesk-Regular';}
+	.st6{font-size:10px;}
+	.st7{fill:#5151FC;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#C6CACF;}
+	.st10{fill:none;stroke:#00FFCC;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#6666FF;stroke-miterlimit:10;}
+</style>
+<g id="Raggruppa_22302" transform="translate(-46 -193)">
+	<g id="Raggruppa_901" transform="translate(-383.737 44.996)">
+		<line id="Linea_293" class="st0" x1="501" y1="306.8" x2="615.6" y2="306.8"/>
+	</g>
+	<g id="Raggruppa_902" transform="translate(-383.737 44.996)">
+		<line id="Linea_294" class="st0" x1="493.7" y1="306.5" x2="493.7" y2="184.3"/>
+		<line id="Linea_295" class="st1" x1="491.7" y1="306.5" x2="495.7" y2="306.5"/>
+		<line id="Linea_296" class="st1" x1="491.7" y1="184.3" x2="495.7" y2="184.3"/>
+	</g>
+	<path id="Tracciato_116441" class="st2" d="M122.6,260.3h45.5v63h-45.5V260.3z"/>
+	<rect id="Rettangolo_9622" x="168.1" y="270.3" class="st3" width="45.5" height="43"/>
+	<line id="Linea_297" class="st4" x1="168.1" y1="269.3" x2="122.6" y2="269.3"/>
+	<line id="Linea_298" class="st4" x1="168.1" y1="312" x2="122.6" y2="312"/>
+	<text transform="matrix(1 0 0 1 80.307 233)" class="st5 st6">inizio</text>
+	<text transform="matrix(1 0 0 1 87.907 352.051)" class="st5 st6">fine</text>
+	<text transform="matrix(1 0 0 1 59.105 271.342)" class="st5 st6">lunghezza</text>
+	<text transform="matrix(1 0 0 1 65.1013 284.342)" class="st5 st6">del testo</text>
+	<text transform="matrix(1 0 0 1 46.7957 297.342)" class="st5 st6">normalizzata</text>
+	<text transform="matrix(1 0 0 1 47 203)" class="st5 st6"> volume</text>
+	<text transform="matrix(1 0 0 1 122 213)" class="st2 st5 st6">sequenza X</text>
+	<text transform="matrix(1 0 0 1 206 233)" class="st7 st5 st6">sequenza Y</text>
+	<text transform="matrix(1 0 0 1 255.3555 233)" class="st5 st6"> che si </text>
+	<text transform="matrix(1 0 0 1 206 246)" class="st5 st6">svolge durante la </text>
+	<text transform="matrix(1 0 0 1 206 259)" class="st2 st5 st6">sequenza X</text>
+	<line id="Linea_299" class="st1" x1="145.6" y1="264.4" x2="145.6" y2="220.1"/>
+	<rect id="Rettangolo_9623" x="122.6" y="229.3" class="st8" width="45.5" height="122.2"/>
+	<path id="Tracciato_108889" class="st0" d="M83.8,198.9c21.1,0,20.6,30.9,36.8,30.9"/>
+	<g id="Raggruppa_903" transform="translate(-383.737 44.996)">
+		<text transform="matrix(1 0 0 1 510.936 323.702)" class="st5 st6">LIVELLO</text>
+		<text transform="matrix(1 0 0 1 553.86 323.702)" class="st5 st6">LIVELLO 2</text>
+		<text transform="matrix(1 0 0 1 610.737 339.888)" class="st5 st6">tipo di sequenza</text>
+		<text transform="matrix(1 0 0 1 506.328 338.888)" class="st9 st5 st6">dettaglio</text>
+		<text transform="matrix(1 0 0 1 553.652 338.888)" class="st9 st5 st6">dettaglio</text>
+		<line id="Linea_301" class="st10" x1="506.3" y1="341" x2="545.6" y2="341"/>
+		<line id="Linea_302" class="st11" x1="553.7" y1="341" x2="593.9" y2="341"/>
+		<line id="Linea_303" class="st1" x1="609.2" y1="335.7" x2="593.2" y2="335.7"/>
+	</g>
+	<path id="Tracciato_116468" class="st1" d="M185.7,275.2c0-12.2-2.1-38.7,15.1-38.7"/>
+</g>
+</svg>
