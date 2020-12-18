@@ -146,7 +146,7 @@ class CancellationInformationSheet extends Component {
               />
               <p className="captionLeft">
                 {this.props.t(
-                  "cancellazione-sheet:Distribuzione delle categorie nel racconto"
+                  "cancellazione-sheet: Distribuzione delle occorrenze di testo dubitativo nel racconto in base alla griglia d’analisi"
                 )}
                 .
               </p>

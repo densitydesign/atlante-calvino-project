@@ -54,7 +54,10 @@ export default function CancellazioneHelp() {
               aspetto, mettendo da parte la visione dei singoli racconti o
               romanzi a favore di una diversa forma di aggregazione, un elemento
               grafico che rappresenta unicamente la presenza del testo
-              dubitativo. Con il vantaggio di integrare due diverse prospettive
+              dubitativo. 
+          </p>
+          <p>  
+              Con il vantaggio di integrare due diverse prospettive
               di analisi: una che mostra il “comportamento” del testo dubitativo
               nell’opera tramite la disposizione spaziale dei vari elementi e il
               loro colore; l’altra a cui si accede, invece, “aprendo” i singoli
@@ -76,7 +79,10 @@ export default function CancellazioneHelp() {
               tramite questo schema delineano un profilo di utilizzo del testo
               dubitativo: i testi con delle caratteristiche in comune sono
               collocati vicini, mentre i testi che condividono poco o nulla tra
-              loro si allontanano.<br/>La griglia è composta da tre categorie:{" "}
+              loro si allontanano.
+            </p>
+            <p>
+              La griglia è composta da tre categorie:{" "}
               <span style={{ color: "#FFD337" }}>contenuto</span> (si dubita del
               contenuto che si vuole raccontare),{" "}
               <span style={{ color: "#00BFD3" }}>forma</span> (si dubita del
@@ -90,14 +96,20 @@ export default function CancellazioneHelp() {
               il <span style={{ color: "#FFD337" }}>contenuto</span>, la <span style={{ color: "#00BFD3" }}>forma</span> o il <span style={{ color: "#FF3366" }}>significato</span> di quanto appena
               affermato). Ogni occorrenza di testo dubitativo è stata analizzata
               attraverso il duplice <i>focus</i> dei{" "}
-              <i>Livelli</i> e degli <i>Stili</i>.<br/>Il colore degli elementi
+              <i>Livelli</i> e degli <i>Stili</i>.
+            </p>
+            <p>
+              Il colore degli elementi
               grafici corrisponde alla percentuale di utilizzo delle diverse{" "}
               <i>Categorie</i> nel testo dubitativo di ogni singola opera. La
               loro dimensione corrisponde alla quantità di testo
               dubitativo misurata in caratteri. Se selezionato, ogni{" "}
               elemento grafico si “apre”, mostrando la distribuzione
               interna delle occorrenze in base alla griglia con la quale il
-              testo dubitativo è stato analizzato.<br/>La visualizzazione può essere
+              testo dubitativo è stato analizzato.
+            </p>
+            <p>
+              La visualizzazione può essere
               esplorata tramite la ricerca per titolo (<i>Cerca per</i>) e i
               testi possono essere selezionati in base a un intervallo temporale
               (<i>Filtro cronologico</i>). Inoltre è possibile modificare la
@@ -125,7 +137,10 @@ export default function CancellazioneHelp() {
               presenza di testo dubitativo è quantitativamente inferiore; a
               destra invece la presenza di testo dubitativo si intensifica e il
               colore degli elementi grafici suggerisce una maggiore combinazione
-              nell’utilizzo delle <i>Categorie</i>. Questa separazione, emersa
+              nell’utilizzo delle <i>Categorie</i>. 
+            </p>
+            <p>
+              Questa separazione, emersa
               spontaneamente dalla disposizione dei testi nello spazio in base
               ai dati raccolti, sembra rispecchiare una divisione cronologica; a
               sinistra tenderanno infatti a collocarsi i testi prima degli anni
@@ -141,6 +156,7 @@ export default function CancellazioneHelp() {
               che, nonostante l’utilizzo del testo dubitativo si intensifichi
               pienamente a partire dagli anni ’60, era presente fin dall’inizio
               dell’opera.
+              <br></br><br></br><br></br><br></br>
             </p>
           </Trans>
         </Tab>

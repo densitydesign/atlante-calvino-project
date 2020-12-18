@@ -233,9 +233,12 @@ small{
 
 .badge-legenda-small{
   color: #777777;
-  line-height: 0.5 !important;
-  font-size: 10px;
   font-weight: normal;
+  text-transform: initial;
+}
+
+small .badge-legenda-small{
+  color: red; 
 }
 
 .badge-legenda-name{
@@ -246,3 +249,5 @@ small{
 .badge-legenda-name::first-letter{
   text-transform: uppercase;
 }
+
+

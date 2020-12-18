@@ -10,12 +10,14 @@ import inventati from "./infosheet-spazio.svg"
 import legenda from "./legend.svg"
 import zoom_02 from "./zoom-02.svg"
 import zoom_04 from "./zoom-04.svg"
-import zoom_05 from "./zoom-05.svg"
+import zoom_01 from "./zoom-01.svg"
+import zoom_03 from "./zoom-03.svg"
 import inventatiEn from "./luoghi_infosheet-spazio_en.svg"
 import legendaEn from "./luoghi_legend_en.svg"
 import zoom_02En from "./luoghi_zoom-02_en.svg"
 import zoom_04En from "./luoghi_zoom-04_en.svg"
-import zoom_05En from "./luoghi_zoom-05_en.svg"
+import zoom_01En from "./luoghi_zoom-01_en.svg"
+import zoom_03En from "./luoghi_zoom-03_en.svg"
 import { Trans, withTranslation } from "react-i18next"
 
 class SpaceInformationSheet extends React.Component {
@@ -121,6 +123,16 @@ class SpaceInformationSheet extends React.Component {
                 </p>
               </div>
             </Trans>
+            <div className={SheetStyles.sideContentRight}>
+              <img
+                style={{
+                  position: "sticky",
+                  top: "calc(var(--navigation-height) +5rem)",
+                }}
+                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
+                alt=""
+              />
+            </div>
           </div>
           <div className={SheetStyles.gridRow} style={{ marginTop: "3rem" }}>
             <div className={SheetStyles.paragraph}>
@@ -173,13 +185,14 @@ class SpaceInformationSheet extends React.Component {
                 </p>
               </Trans>
             </div>
-            <div className={SheetStyles.sideContent}>
+            <div className={SheetStyles.sideContentRight}>
               <img
                 style={{
                   position: "sticky",
                   top: "calc(var(--navigation-height) +5rem)",
+              
                 }}
-                src={this.props.i18n.language === "it" ? zoom_05 : zoom_05En}
+                src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
                 alt=""
               />
             </div>
@@ -204,7 +217,7 @@ class SpaceInformationSheet extends React.Component {
                 </p>
               </Trans>
             </div>
-            <div className={SheetStyles.sideContent}>
+            <div className={SheetStyles.sideContentRight}>
               <img
                 style={{
                   position: "sticky",

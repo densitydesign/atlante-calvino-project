@@ -289,7 +289,7 @@ const Legend = React.memo(
             className="realismo-legend-text"
             textAnchor={"start"}
           >
-            {t("ANNO PRIMA")}
+            {t("ANNO DI PRIMA")}
           </text>
           <text
             x={0}

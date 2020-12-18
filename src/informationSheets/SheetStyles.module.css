@@ -111,6 +111,14 @@ body{
   width: 120%;
 }
 
+.sideContentRight {
+  grid-column: 8 / span 5;
+  display: grid;
+  justify-items: flex-end;
+  justify-content: center;
+  width: 120%;
+}
+
 .legend{
     margin-top: 2em;
     margin-bottom: 2em;
