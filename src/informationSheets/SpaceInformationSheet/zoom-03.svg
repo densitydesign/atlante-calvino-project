@@ -1,1 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="497" viewBox="0 0 250 497"><defs><clipPath id="b"><rect width="250" height="497"/></clipPath></defs><g id="a" clip-path="url(#b)"><path d="M171.909,31v5.463h0a47.246,47.246,0,1,1-28.016,9.24,47.246,47.246,0,0,1,28.016-9.24V31m0,0a52.716,52.716,0,1,0,14.89,2.154A52.716,52.716,0,0,0,171.909,31Z" transform="translate(-63.166 26.635)" fill="orange"/><g transform="translate(-34.228 37)"><path d="M170.911,328.09v.211h0a52.49,52.49,0,1,1-31.138,10.262A52.49,52.49,0,0,1,170.911,328.3v-.211m0,0a52.716,52.716,0,1,0,14.9,2.154,52.716,52.716,0,0,0-14.9-2.154Z" transform="translate(256.258 -86.465) rotate(40)"/><path d="M284.914,388.68a76.929,76.929,0,0,1,.4,14.313h-.3a75.122,75.122,0,0,0-.4-14.266Z" transform="translate(236.813 -120.151) rotate(40)" fill="orange"/><path d="M222.094,440.744A76.089,76.089,0,0,1,104.027,345.48l.25.172a75.785,75.785,0,0,0,117.6,94.889Z" transform="translate(263.331 -85.516) rotate(40)" fill="orange"/><path d="M308.06,505.591q-3.9,4.5-8.147,8.584l-.2-.211q4.261-4.1,8.116-8.584Z" transform="translate(250.746 -141.914) rotate(40)" fill="orange"/><path d="M24.84,360.885A125.762,125.762,0,0,1,100.984,249.67l.125.273a125.465,125.465,0,0,0-75.964,110.95Z" transform="translate(260.89 -60.098) rotate(40)" fill="orange"/><line y1="20.361" x2="37.334" transform="translate(166.333 306.08) rotate(40)" fill="none"/><line y1="0.179" x2="6.36" transform="translate(195.938 362.279) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><line x1="10.668" y2="0.304" transform="translate(82.209 271.983) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><line x2="19.128" y2="18.09" transform="translate(152.812 417.779) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><line x2="9.607" y2="26.971" transform="translate(106.562 410.154) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><line x2="0.952" y2="34.252" transform="translate(82.565 390.965) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><line x1="27.4" y1="18.761" transform="translate(107.674 195.634) rotate(40)" fill="none" stroke="orange" stroke-miterlimit="10" stroke-width="0.58"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(181.299 349.313) rotate(40)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(204.885 359.497) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(200.718 365.301) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(196.02 370.681) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(98.532 284.315) rotate(40)" fill="orange" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(150.03 393.51) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(161.599 442.042) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(149.858 443.407) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(114.904 389.26) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(96.491 435.923) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(94.243 377.618) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(59.383 419.557) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(120.938 245.23) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(48.081 231.458) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(56.397 223.052) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(65.461 215.468) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(75.206 208.772) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(85.538 203.026) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(96.362 198.274) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(107.581 194.567) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(119.099 191.925) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(130.824 190.384) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(142.634 189.944) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(154.438 190.628) rotate(40)" fill="#ff6c39" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(166.121 192.415) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><ellipse cx="0.757" cy="0.757" rx="0.757" ry="0.757" transform="translate(177.59 195.294) rotate(40)" fill="#00c19c" stroke="#fff" stroke-miterlimit="10" stroke-width="0.39"/><text transform="matrix(0.788, 0.616, -0.616, 0.788, 184.374, 352.21)" fill="orange" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Boemia</tspan></text><text transform="matrix(0.839, 0.545, -0.545, 0.839, 207.936, 361.408)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">accampamento</tspan></text><text transform="matrix(0.788, 0.616, -0.616, 0.788, 204.122, 366.977)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">campo di battaglia</tspan></text><text transform="translate(198.629 373.367) rotate(44)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">ospedale</tspan></text><text transform="matrix(0.788, 0.616, -0.616, 0.788, 91.516, 279.291)" fill="orange" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Italia</tspan></text><text transform="matrix(0.122, 0.993, -0.993, 0.122, 152.011, 397.252)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Col Gerbido</tspan></text><text transform="translate(161.915 446.118) rotate(81)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">casolare</tspan></text><text transform="matrix(0.07, 0.998, -0.998, 0.07, 151.6, 447.266)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">tana</tspan></text><text transform="translate(113.915 391.617) rotate(110)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Pratofungo</tspan></text><text transform="translate(94.667 439.25) rotate(110)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">capannuccia</tspan></text><text transform="matrix(-0.616, 0.788, -0.788, -0.616, 92.002, 380.686)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0" letter-spacing="-0.11em">T</tspan><tspan y="0">erraba</tspan></text><text transform="matrix(-0.616, 0.788, -0.788, -0.616, 57.176, 423.066)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">campagna</tspan></text><text transform="translate(116.807 229.762) rotate(74)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0" letter-spacing="-0.11em">T</tspan><tspan y="0">erralba</tspan></text><text transform="matrix(0.743, 0.669, -0.669, 0.743, 36.374, 220.691)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">cimitero</tspan></text><text transform="translate(47.658 214.457) rotate(47)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">prato</tspan></text><text transform="matrix(0.602, 0.799, -0.799, 0.602, 58.271, 204.21)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">bosco</tspan></text><text transform="translate(67.15 195.819) rotate(58)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">bottega</tspan></text><text transform="matrix(0.454, 0.891, -0.891, 0.454, 77.64, 188.475)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">casolare</tspan></text><text transform="translate(91.43 183.743) rotate(69)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">castello</tspan></text><text transform="translate(104.718 184.849) rotate(74)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">riva</tspan></text><text transform="translate(117.345 175.065) rotate(80)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">collinetta</tspan></text><text transform="translate(129.741 177.357) rotate(85)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">fienile</tspan></text><text transform="matrix(-0.017, 1, -1, -0.017, 144.416, 177.182)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">grotta</tspan></text><text transform="matrix(-0.105, 0.995, -0.995, -0.105, 157.036, 176.493)" fill="#ff6c39" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">marina</tspan></text><text transform="translate(172.515 159.257) rotate(101)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Salto della Ghigna</tspan></text><text transform="matrix(-0.292, 0.956, -0.956, -0.292, 188.798, 160.362)" fill="#00c19c" font-size="3" font-family="ArialMT, Arial" style="isolation:isolate"><tspan x="0" y="0">Prato delle Monache</tspan></text></g><text transform="translate(143 355)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-40.449" y="0">Il visconte dimezzato</tspan></text><g transform="translate(0 37)"><text transform="translate(1.967 153.059)" fill="#1d1d1b" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic" letter-spacing="-0.01em"><tspan x="0" y="0">Livelli spaziali: luoghi contenuti in altri luoghi</tspan></text></g><text transform="translate(109 114)" fill="#1d1d1b" font-size="9" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-40.449" y="0">Il visconte dimezzato</tspan></text><g transform="translate(-19 -297)"><text transform="translate(20.067 297)" fill="#404040" font-size="10" font-family="HKGrotesk-Bold, HK Grotesk" font-weight="700"><tspan x="0" y="9">TIPO DI LUOGO</tspan></text><text transform="translate(50 327)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation:isolate"><tspan x="0" y="0">Terrestri </tspan><tspan x="0" y="12">generici</tspan></text><rect width="21" height="10" rx="5" transform="translate(19 319)" fill="#ff6c39"/><rect width="21" height="10" rx="5" transform="translate(104 318)" fill="orange"/><text transform="translate(135 326)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation:isolate"><tspan x="0" y="0">Terrestri </tspan><tspan x="0" y="12">localizzabili</tspan></text><rect width="21" height="10" rx="5" transform="translate(199 318)" fill="#00c19c"/><text transform="translate(230 326.078)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation:isolate"><tspan x="0" y="0">Terrestri </tspan><tspan x="0" y="12">inventati</tspan></text></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 385 438" style="enable-background:new 0 0 385 438;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFA500;stroke:#FFA500;stroke-width:0.5;stroke-miterlimit:10;}
+	.st1{fill:none;}
+	.st2{fill:none;stroke:#FFA500;stroke-width:0.58;stroke-miterlimit:10;}
+	.st3{fill:#FFA500;stroke:#FFFFFF;stroke-width:0.39;stroke-miterlimit:10;}
+	.st4{fill:#FF6C39;stroke:#FFFFFF;stroke-width:0.39;stroke-miterlimit:10;}
+	.st5{fill:#00C19C;stroke:#FFFFFF;stroke-width:0.39;stroke-miterlimit:10;}
+	.st6{fill:#FFA500;}
+	.st7{font-family:'HKGrotesk-Regular';}
+	.st8{font-size:4px;}
+	.st9{fill:#FF6C39;}
+	.st10{fill:#00C19C;}
+	.st11{font-family:'ArialMT';}
+	.st12{font-size:3px;}
+	.st13{fill:#1D1D1B;}
+	.st14{font-size:9px;}
+	.st15{fill:#404040;}
+	.st16{font-family:'HKGrotesk-Bold';}
+	.st17{font-size:10px;}
+	.st18{font-family:'HKGrotesk-MediumItalic';}
+</style>
+<g>
+	<path d="M247.9,269.4l-0.1,0.2l0,0c22.2,18.6,25.1,51.7,6.5,73.9c-18.6,22.2-51.7,25.1-73.9,6.5c-22.2-18.6-25.1-51.7-6.5-73.9
+		c10.7-12.8,26.9-19.7,43.5-18.7c11.2,0.7,21.9,5,30.5,12.2L247.9,269.4 M247.9,269.4c-22.3-18.7-55.5-15.8-74.3,6.5
+		c-18.7,22.3-15.8,55.5,6.5,74.3c22.3,18.7,55.5,15.8,74.3-6.5c15-17.9,16.5-43.6,3.6-63C255.2,276.4,251.8,272.6,247.9,269.4z"/>
+	<path class="st0" d="M278.7,353.4c-2.6,4-5.6,7.8-8.9,11.2l-0.2-0.2c3.3-3.4,6.3-7.2,8.9-11.2L278.7,353.4z"/>
+	<path class="st0" d="M221.8,386c-41.7,4.8-79.5-25.1-84.3-66.9c-4.3-37.2,19.1-71.9,55.1-82l0.1,0.3c-40.3,11.2-63.9,53-52.7,93.3
+		c10,35.9,44.7,59.2,81.7,54.9L221.8,386z"/>
+	<path class="st0" d="M231.9,420.8c-3.9,0.6-7.8,1.1-11.8,1.3l0-0.3c3.9-0.3,7.8-0.7,11.7-1.4L231.9,420.8z"/>
+	<path class="st0" d="M125.4,244.4c32.6-36.2,83.2-50.3,129.8-36.3l-0.1,0.3c-46.5-14-97,0-129.5,36.2L125.4,244.4z"/>
+	<line class="st1" x1="224.9" y1="312.8" x2="266.6" y2="321.2"/>
+	<line class="st2" x1="269.3" y1="355" x2="274.3" y2="359"/>
+	<line class="st2" x1="162" y1="269.9" x2="153.6" y2="263.3"/>
+	<line class="st2" x1="224.9" y1="412.3" x2="226" y2="421.3"/>
+	<line class="st2" x1="177.3" y1="401.2" x2="172" y2="413.3"/>
+	<line class="st2" x1="155.8" y1="383.4" x2="144.7" y2="397.4"/>
+	<line class="st2" x1="188.4" y1="219.5" x2="185.1" y2="207.8"/>
+	<ellipse class="st3" cx="254.8" cy="343" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="278.4" cy="353.2" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="274.3" cy="359" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="269.6" cy="364.4" rx="0.8" ry="0.8"/>
+	<ellipse class="st3" cx="172.5" cy="277.6" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="221.7" cy="385.7" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="231.8" cy="420.5" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="220.1" cy="421.9" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="186.6" cy="381.4" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="172" cy="413.3" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="166" cy="369.8" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="144.7" cy="397.4" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="192.7" cy="237.4" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="125.6" cy="244.6" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="134" cy="236.2" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="143" cy="228.7" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="152.8" cy="222" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="163.1" cy="216.2" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="173.9" cy="211.5" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="185.1" cy="207.8" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="196.7" cy="205.1" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="208.4" cy="203.6" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="220.2" cy="203.1" rx="0.8" ry="0.8"/>
+	<ellipse class="st4" cx="232" cy="203.8" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="243.7" cy="205.6" rx="0.8" ry="0.8"/>
+	<ellipse class="st5" cx="255.2" cy="208.5" rx="0.8" ry="0.8"/>
+	<text transform="matrix(0.7878 0.6159 -0.6159 0.7878 255.5971 345.5613)" class="st6 st7 st8">Boemia</text>
+	<text transform="matrix(0.8386 0.5447 -0.5447 0.8386 281.3844 354.0242)" class="st9 st7 st8">accampamento</text>
+	<text transform="matrix(0.7878 0.6159 -0.6159 0.7878 277.5697 359.5925)" class="st9 st7 st8">campo di battaglia</text>
+	<text transform="matrix(0.7193 0.6947 -0.6947 0.7193 272.0781 365.983)" class="st9 st7 st8">ospedale</text>
+	<text transform="matrix(0.7878 0.6159 -0.6159 0.7878 163.278 271.4599)" class="st6 st7 st8">Italia</text>
+	<text transform="matrix(0.1219 0.9925 -0.9925 0.1219 220.9921 389.0901)" class="st10 st7 st8">Col Gerbido</text>
+	<text transform="matrix(0.1564 0.9877 -0.9877 0.1564 232.0443 423.5066)" class="st9 st7 st8">casolare</text>
+	<text transform="matrix(6.996838e-02 0.9975 -0.9975 6.996838e-02 219.323 424.6548)" class="st9 st7 st8">tana</text>
+	<text transform="matrix(0.4226 -0.9063 0.9063 0.4226 178.4774 401.2455)" class="st10 st7 st8">Pratofungo</text>
+	<text transform="matrix(0.4226 -0.9063 0.9063 0.4226 163.1409 434.8861)" class="st9 st7 st8">capannuccia</text>
+	<text transform="matrix(0.6822 -0.7312 0.7312 0.6822 156.8208 382.1866)" class="st10 st7 st8">Terraba</text>
+	<text transform="matrix(0.6822 -0.7312 0.7312 0.6822 132.2604 411.9902)" class="st9 st7 st8">campagna</text>
+	<text transform="matrix(0.2756 0.9613 -0.9613 0.2756 188.4339 220.8642)" class="st10 st11 st12">T</text>
+	<text transform="matrix(0.2756 0.9613 -0.9613 0.2756 188.848 222.3084)" class="st10 st7 st8">erralba</text>
+	<text transform="matrix(0.7431 0.6691 -0.6691 0.7431 113.8493 232.8149)" class="st9 st7 st8">cimitero</text>
+	<text transform="matrix(0.682 0.7314 -0.7314 0.682 125.1344 226.5813)" class="st9 st7 st8">prato</text>
+	<text transform="matrix(0.6018 0.7987 -0.7987 0.6018 135.7462 216.3341)" class="st9 st7 st8">bosco</text>
+	<text transform="matrix(0.5299 0.848 -0.848 0.5299 144.6257 207.9434)" class="st9 st7 st8">bottega</text>
+	<text transform="matrix(0.454 0.891 -0.891 0.454 155.1165 200.5993)" class="st9 st7 st8">casolare</text>
+	<text transform="matrix(0.3584 0.9336 -0.9336 0.3584 168.906 195.8673)" class="st9 st7 st8">castello</text>
+	<text transform="matrix(0.2756 0.9613 -0.9613 0.2756 182.1947 198.1941)" class="st9 st7 st8">riva</text>
+	<text transform="matrix(0.1736 0.9848 -0.9848 0.1736 194.8216 187.1893)" class="st9 st7 st8">collinetta</text>
+	<text transform="matrix(8.715574e-02 0.9962 -0.9962 8.715574e-02 207.2164 189.4814)" class="st9 st7 st8">fienile</text>
+	<text transform="matrix(0.1041 -0.9946 0.9946 0.1041 221.9585 199.7955)" class="st9 st7 st8">grotta</text>
+	<text transform="matrix(0.1912 -0.9815 0.9815 0.1912 232.577 200.8435)" class="st9 st7 st8">marina</text>
+	<text transform="matrix(0.2756 -0.9613 0.9613 0.2756 245.003 202.343)" class="st10 st7 st8">Salto della Ghigna</text>
+	<text transform="matrix(0.3744 -0.9273 0.9273 0.3744 256.6664 206.7675)" class="st10 st7 st8">Prato delle Monache</text>
+	<text transform="matrix(1 0 0 1 176.3456 313.7767)" class="st13 st7 st14">Il visconte dimezzato</text>
+</g>
+<g id="Group_4719" transform="translate(-19 -297)">
+	<text transform="matrix(1 0 0 1 41.0593 306.4999)" class="st15 st16 st17">TIPO DI LUOGO</text>
+	<text transform="matrix(1 0 0 1 70.9923 327.4999)" class="st7 st17">Terrestri </text>
+	<text transform="matrix(1 0 0 1 70.9923 339.4999)" class="st7 st17">generici</text>
+	<path id="Rectangle_13372" class="st9" d="M45,319.5h11c2.8,0,5,2.2,5,5l0,0c0,2.8-2.2,5-5,5H45c-2.8,0-5-2.2-5-5l0,0
+		C40,321.7,42.2,319.5,45,319.5z"/>
+	<path id="Rectangle_13373" class="st6" d="M45,359.5h11c2.8,0,5,2.2,5,5l0,0c0,2.8-2.2,5-5,5H45c-2.8,0-5-2.2-5-5l0,0
+		C40,361.7,42.2,359.5,45,359.5z"/>
+	<text transform="matrix(1 0 0 1 70.9923 367.4999)" class="st7 st17">Terrestri </text>
+	<text transform="matrix(1 0 0 1 70.9923 379.4999)" class="st7 st17">localizzabili</text>
+	<path id="Rectangle_20149" class="st10" d="M45,399.5h11c2.8,0,5,2.2,5,5l0,0c0,2.8-2.2,5-5,5H45c-2.8,0-5-2.2-5-5l0,0
+		C40,401.7,42.2,399.5,45,399.5z"/>
+	<text transform="matrix(1 0 0 1 70.9923 407.5779)" class="st7 st17">Terrestri </text>
+	<text transform="matrix(1 0 0 1 70.9923 419.5779)" class="st7 st17">inventati</text>
+</g>
+<g id="Group_24059" transform="translate(122 20)">
+	<text transform="matrix(1 0 0 1 -8.0407 142.9013)" class="st13 st18 st17">Livelli spaziali: luoghi contenuti in altri luoghi</text>
+</g>
+<path class="st6" d="M216.2,12.6v5.5l0,0c26.1,0,47.3,21.1,47.3,47.2c0,26.1-21.1,47.3-47.2,47.3S169.1,91.5,169,65.4
+	c0-15,7.1-29.1,19.2-38.1c8.1-6,17.9-9.2,28-9.2V12.6 M216.2,12.6c-29.1,0-52.7,23.6-52.7,52.7s23.6,52.7,52.7,52.7
+	s52.7-23.6,52.7-52.7c0-23.4-15.4-44-37.8-50.6C226.3,13.3,221.3,12.6,216.2,12.6z"/>
+<text transform="matrix(1 0 0 1 176.0433 68.9868)" class="st13 st7 st14">Il visconte dimezzato</text>
+</svg>
