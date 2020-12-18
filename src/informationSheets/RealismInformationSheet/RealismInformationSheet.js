@@ -140,7 +140,15 @@ class RealismInformationSheet extends Component {
                 che l’autore ha conosciuto direttamente e che descrive con
                 dovizia di dettagli fornendo indicazioni geografiche molto
                 precise, che consentono di ricostruire per filo e per segno il
-                percorso compiuto dal protagonista (vedi mappa).
+                percorso compiuto dal protagonista{" "}
+                <a
+                  href="https://www.openstreetmap.org/#map=14/43.9894/7.7688"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  (vedi mappa)
+                </a>
+                .
               </p>
             </Trans>
             <Trans
