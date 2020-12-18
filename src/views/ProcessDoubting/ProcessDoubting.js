@@ -264,8 +264,8 @@ class ProcessDoubting extends Component {
     d3.json(process.env.PUBLIC_URL + "/data-process-doubting.json")
       .then((json) => {
         json = json.filter(
-          (d) =>
-            d.id !== "V002" &&
+          (d) =>{
+            return d.id !== "V002" &&
             d.id !== "V004" &&
             d.id !== "V006" &&
             d.id !== "V007" &&
@@ -278,8 +278,9 @@ class ProcessDoubting extends Component {
             d.id !== "V019" &&
             d.id !== "V022" &&
             d.id !== "V023" &&
-            d.id !== "S088"
+            d.id !== "S088"}
         )
+        const filteredData = JSON.parse(JSON.stringify(json))
         // json = json.filter(d=>d.id==="S133");
         json.forEach((d) => {
           d.details = structureData(d.details)
@@ -436,7 +437,6 @@ class ProcessDoubting extends Component {
 
         // need to convert date to milliseconds for the timespan filter to work
         const timeExtent = d3.extent(data, (d) => +new Date(d.year))
-
         this.setState({
           data: data,
           filters: {
@@ -705,7 +705,7 @@ class ProcessDoubting extends Component {
           {this.state.loading && (
             <Loading style={{ gridColumn: "span 12" }} />
           )}
-          {!this.state.loading && (
+          {!this.state.loading && this.state.data && (
             <TextSearch
               style={{ gridColumn: "span 12" }}
               changeOptions={this.changeRicerca2}
