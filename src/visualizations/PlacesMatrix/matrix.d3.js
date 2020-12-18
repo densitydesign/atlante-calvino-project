@@ -168,100 +168,102 @@ class VClass {
 
     const self = this;
 
-    yAxis.selectAll(".tick").on("click", function (d) {
-      if (d3.select(this).classed("cat-selected") === false) {
-        selCats.push(d);
-        let toOpen = [];
-        nodes.forEach((n0) => {
-          // console.log('n0',n0);
-          if (n0.totalSubNodes > 0) {
-            if (n0.subNodes.map((n) => n.category).indexOf(d) > -1) {
-              toOpen.push(n0);
-            }
-            n0.subNodes.forEach((n1) => {
-              // console.log('n1',n1);
-              if (n1.totalSubNodes > 0) {
-                if (n1.subNodes.map((n) => n.category).indexOf(d) > -1) {
-                  toOpen.push(n0);
-                  toOpen.push(n1);
-                }
-                n1.subNodes.forEach((n2) => {
-                  // console.log('n2',n2);
-                  if (n2.totalSubNodes > 0) {
-                    if (n2.subNodes.map((n) => n.category).indexOf(d) > -1) {
-                      toOpen.push(n0);
-                      toOpen.push(n1);
-                      toOpen.push(n2);
-                    }
-                  }
-                });
+    yAxis
+      .selectAll(".tick")
+      .on("click", function (d) {
+        if (d3.select(this).classed("cat-selected") === false) {
+          selCats.push(d);
+          let toOpen = [];
+          nodes.forEach((n0) => {
+            // console.log('n0',n0);
+            if (n0.totalSubNodes > 0) {
+              if (n0.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                toOpen.push(n0);
               }
-            });
-          }
-        });
-        toOpen.forEach((n) => {
-          self.openSubnodes(n, false);
-        });
-
-        d3.select(this)
-          .select("rect")
-          .attr("fill", (d) => color(d));
-      } else {
-        const index = selCats.indexOf(d);
-        if (index !== -1) selCats.splice(index, 1);
-
-        let toClose = [];
-        nodes.forEach((n0) => {
-          // console.log('n0',n0);
-          if (n0.totalSubNodes > 0) {
-            if (n0.subNodes.map((n) => n.category).indexOf(d) > -1) {
-              toClose.push(n0);
-            }
-            n0.subNodes.forEach((n1) => {
-              // console.log('n1',n1);
-              if (n1.totalSubNodes > 0) {
-                if (n1.subNodes.map((n) => n.category).indexOf(d) > -1) {
-                  toClose.push(n0);
-                  toClose.push(n1);
-                }
-                n1.subNodes.forEach((n2) => {
-                  // console.log('n2',n2);
-                  if (n2.totalSubNodes > 0) {
-                    if (n2.subNodes.map((n) => n.category).indexOf(d) > -1) {
-                      toClose.push(n0);
-                      toClose.push(n1);
-                      toClose.push(n2);
-                    }
+              n0.subNodes.forEach((n1) => {
+                // console.log('n1',n1);
+                if (n1.totalSubNodes > 0) {
+                  if (n1.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                    toOpen.push(n0);
+                    toOpen.push(n1);
                   }
-                });
+                  n1.subNodes.forEach((n2) => {
+                    // console.log('n2',n2);
+                    if (n2.totalSubNodes > 0) {
+                      if (n2.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                        toOpen.push(n0);
+                        toOpen.push(n1);
+                        toOpen.push(n2);
+                      }
+                    }
+                  });
+                }
+              });
+            }
+          });
+          toOpen.forEach((n) => {
+            self.openSubnodes(n, false);
+          });
+
+          d3.select(this)
+            .select("rect")
+            .attr("fill", (d) => color(d));
+        } else {
+          const index = selCats.indexOf(d);
+          if (index !== -1) selCats.splice(index, 1);
+
+          let toClose = [];
+          nodes.forEach((n0) => {
+            // console.log('n0',n0);
+            if (n0.totalSubNodes > 0) {
+              if (n0.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                toClose.push(n0);
               }
-            });
-          }
-        });
-        toClose.forEach((n) => {
-          self.closeSubnodes(n, false);
-        });
-        d3.select(this).select("rect").attr("fill", "transparent");
-      }
+              n0.subNodes.forEach((n1) => {
+                // console.log('n1',n1);
+                if (n1.totalSubNodes > 0) {
+                  if (n1.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                    toClose.push(n0);
+                    toClose.push(n1);
+                  }
+                  n1.subNodes.forEach((n2) => {
+                    // console.log('n2',n2);
+                    if (n2.totalSubNodes > 0) {
+                      if (n2.subNodes.map((n) => n.category).indexOf(d) > -1) {
+                        toClose.push(n0);
+                        toClose.push(n1);
+                        toClose.push(n2);
+                      }
+                    }
+                  });
+                }
+              });
+            }
+          });
+          toClose.forEach((n) => {
+            self.closeSubnodes(n, false);
+          });
+          d3.select(this).select("rect").attr("fill", "transparent");
+        }
 
-      self.update();
+        self.update();
 
-      // Now that everything is done, assign the class
-      d3.select(this).classed(
-        "cat-selected",
-        !d3.select(this).classed("cat-selected")
-      );
+        // Now that everything is done, assign the class
+        d3.select(this).classed(
+          "cat-selected",
+          !d3.select(this).classed("cat-selected")
+        );
 
-      _onChangeCategorie(selCats);
-    });
+        _onChangeCategorie(selCats);
+      });
 
     yAxis
       .selectAll(".tick")
       .append("rect")
       .attr("width", "14px")
       .attr("height", "14px")
-      .attr("x", -14)
-      .attr("y", -22)
+      .attr("x", -20)
+      .attr("y", -8)
       .attr("rx", 2)
       .attr("fill", "transparent")
       .attr("stroke", (d) => color(d));
@@ -273,13 +275,13 @@ class VClass {
         const cat_label = this.innerHTML.split(" ");
         this.innerHTML = "";
         d3.select(this)
-          .attr("transform", "translate(-15,-48)")
+          .attr("transform", "translate(-21,-30)")
           .selectAll("tspan")
           .data(cat_label)
           .enter()
           .append("tspan")
           .attr("x", 0)
-          .attr("dy", (d, i) => i * 16)
+          .attr("dy", (d, i) => i * 14)
           .text((d) => d);
       });
 

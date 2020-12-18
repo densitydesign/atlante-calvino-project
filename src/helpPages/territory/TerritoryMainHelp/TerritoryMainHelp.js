@@ -272,7 +272,7 @@ export default function TerritoryMainHelp({ helpProps }) {
                   <BadgeLegenda color="#8AE297" name="L’entrata in guerra" />
                   <BadgeLegenda color="#5151FC" name="I racconti" />
                   <BadgeLegenda color="#BBBBFF" name="Marcovaldo" />
-                  <BadgeLegenda color="#97DADD" name="Le Cosmicomiche" />
+                  <BadgeLegenda color="#97DADD" name="Le cosmicomiche" />
                 </div>
                 <div className="col-md-6">
                   <BadgeLegenda color="#FF3366" name="Ti con zero" />

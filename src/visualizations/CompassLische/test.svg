@@ -13316,7 +13316,7 @@ export default class CompassLische extends React.Component
               fontWeight="700"
               transform="rotate(90 -185.715 703.875)"
             >
-              Le Cosmicomiche
+              Le cosmicomiche
               <tspan
                 x="58.83"
                 y="0"

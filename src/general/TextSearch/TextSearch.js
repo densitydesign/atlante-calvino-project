@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import classnames from "classnames";
 // import { withTranslation } from "react-i18next";
@@ -16,21 +16,18 @@ export default function TextSearch({
   style,
   changeOptions,
   selectedOptions,
-  availableIds, // array of IDS, use this to filter available options in typeahead
+  availableIds,     // array of IDS, use this to filter available options in typeahead
   availableVolumes, // array of Volumes (as IDS), use this to filter available options in typeahead
   availableOptions, // array of options (title, volume, publication) use this to filter dropdown options
 }) {
   let titles = _titles,
-      volumes = _volumes,
-      periodicals = _periodicals;
+    volumes = _volumes,
+    periodicals = _periodicals;
 
-  // console.log("IDS available in visualization:", availableIds)
-  // console.log("titles not in viz:", _.difference(_titles.map(d=>d.id).flat(), availableIds))
-  // console.log("all titles", _titles)
   if (availableIds && availableIds.length > 0) {
-    titles = _titles.filter(
-      (d) => _.intersection(availableIds, d.value).length > 0
-    );
+    titles = _titles.filter((d) => {
+      return _.intersection(availableIds, d.value).length > 0;
+    });
   }
   if (availableVolumes && availableVolumes.length > 0) {
     volumes = _volumes.filter(
@@ -44,10 +41,11 @@ export default function TextSearch({
     { id: "periodical", label: "periodico", data: periodicals },
   ];
   if (availableOptions && availableOptions.length > 0) {
-    options = options.filter(o=>availableOptions.indexOf(o.id)>-1);
+    options = options.filter((o) => availableOptions.indexOf(o.id) > -1);
   }
-  const {t} = useTranslation("translation")
-  const [option, setOption] = useState(options[0]);
+
+  const [option, setOption] = useState(options[0].id);
+  const { t } = useTranslation("translation");
   return (
     <div className={styles.container} style={style}>
       <div className={classnames("options-container", styles.selector)}>
@@ -55,7 +53,7 @@ export default function TextSearch({
           <Dropdown.Toggle>
             <div>
               <span className="micro-title">{t("cerca_per")}</span>
-              <span className="current-selection">{t(option.label)}</span>
+              <span className="current-selection">{t(options.find(d=>d.id===option).label)}</span>
             </div>
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -63,9 +61,9 @@ export default function TextSearch({
               <Dropdown.Item
                 key={i}
                 className={classnames(styles.dropdownItem, {
-                  active: option === d,
+                  active: option === d.id,
                 })}
-                onClick={() => setOption(d)}
+                onClick={() => setOption(d.id)}
               >
                 {t(d.label)}
               </Dropdown.Item>
@@ -74,7 +72,7 @@ export default function TextSearch({
         </Dropdown>
       </div>
       <SearchDropDown
-        data={{ options: option.data }}
+        data={{ options: options.find(d=>d.id===option).data }}
         changeOptions={changeOptions}
         selectedOptions={selectedOptions}
       />

@@ -454,13 +454,15 @@ class Trasformare extends Component {
       .key((d) => d.source)
       .entries(selectedData)
       .map((d) => {
+        console.log(d)
         return {
           composition_id: d.key,
+          composition_year: new Date(d.values[0].year).getFullYear(),
           composition_title: d.values[0].sourceTitle,
         }
       })
 
-    let export_data = "Compositions titles surviving filters\n\n"
+    let export_data = "Atlante Calvino - Trasformare\nList of filtered elements\n----------\n"
 
     export_data += `Ambienti attivati: ${this.state.ambienti.options
       .filter((d) => d.status)
@@ -472,15 +474,15 @@ class Trasformare extends Component {
       .join(", ")}\n`
     export_data += `Ricerca effettuata: ${this.state.ricercaOptionsSearched
       .map((d) => d.label)
-      .join(", ")}\n`
-    export_data += `\n\n`
+      .join(", ")}`
+    export_data += `\n----------\n`
 
     export_data += `titles\nid\tyear\ttitle\n`
     selectedData.forEach((d) => {
-      export_data += d.composition_id + "\t" + d.composition_title + "\n"
+      export_data += d.composition_id + "\t" + d.composition_year + "\t" + d.composition_title + "\n"
     })
 
-    export_data += `\nplaces\nid\tlabel\n${places.join("\n")}`
+    export_data += `----------\nplaces\nid\tlabel\n${places.join("\n")}`
 
     let the_date = new Date()
     the_date = d3.timeFormat("%Y_%m_%d %X")(the_date)
