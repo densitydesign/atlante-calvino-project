@@ -411,7 +411,7 @@
       <text id="beginning" transform="translate(2 147)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">beginning</tspan></text>
     </g>
     <g id="cosmi">
-      <text id="Le_Cosmicomiche" data-name="Le Cosmicomiche" transform="translate(0 -2)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="14">Le Cosmicomiche</tspan></text>
+      <text id="Le_Cosmicomiche" data-name="Le cosmicomiche" transform="translate(0 -2)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="14">Le cosmicomiche</tspan></text>
       <text id="beginning-2" data-name="beginning" transform="translate(0 30)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">beginning</tspan></text>
     </g>
   </g>

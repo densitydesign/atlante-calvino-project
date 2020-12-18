@@ -157,7 +157,7 @@ class ShapeInformationSheet extends React.Component {
                 109). Diventa allora interessante notare che il 1965 è l’anno
                 che Calvino dedica interamente a costruire la galassia delle
                 “storie cosmicomiche” (scrive 8 dei 12 testi del volume{" "}
-                <em>Le Cosmicomiche</em>, uscito l’anno stesso, e 3 dei testi
+                <em>Le cosmicomiche</em>, uscito l’anno stesso, e 3 dei testi
                 che confluiranno nella raccolta sorella{" "}
                 <em>La memoria del mondo</em> del 1968): testi in cui una
                 fortissima cornice concettuale, ancorata direttamente alle

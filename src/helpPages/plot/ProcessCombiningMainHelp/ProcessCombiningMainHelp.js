@@ -116,7 +116,7 @@ export default function ProcessCombiningMainHelp() {
               gioco a esibire costruzioni sempre più complesse, che legano
               precisione matematica (come gli indici di <i>Palomar</i>,
               raggruppati in terzetti esponenziali) e variazioni calcolate (come
-              nella raccolta <i>Le cosmicomiche vecchie e nuove</i>, che
+              nella raccolta <i>Cosmicomiche vecchie e nuove</i>, che
               ridispone in raggruppamenti nuovi i racconti già usciti nelle
               raccolte precedenti), e passano da esperimenti di minimalismo
               estremo come il livello unico delle <i>Città invisibili</i> a formule

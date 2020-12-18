@@ -8143,7 +8143,7 @@ const GlobalData = {
     {"id":"V011","label":"Marcovaldo", "type":"raccolta"},
     {"id":"V012","label":"La nuvola di smog e La formica argentina", "type":"raccolta"},
     {"id":"V013","label":"Le cosmicomiche", "type":"raccolta"},
-    {"id":"V014","label":"Ti con Zero", "type":"raccolta"},
+    {"id":"V014","label":"Ti con zero", "type":"raccolta"},
     {"id":"V015","label":"La memoria del mondo", "type":"raccolta"},
     {"id":"V016","label":"Il castello dei destini incrociati", "type":"romanzo"},
     {"id":"V017","label":"Gli amori difficili", "type":"raccolta"},
@@ -8152,7 +8152,7 @@ const GlobalData = {
     {"id":"V020","label":"Eremita a Parigi", "type":"racconto"},
     {"id":"V021","label":"Se una notte d'inverno un viaggiatore", "type":"romanzo"},
     {"id":"V022","label":"Palomar", "type":"raccolta"},
-    {"id":"V023","label":"Le cosmicomiche vecchie e nuove", "type":"raccolta"}
+    {"id":"V023","label":"Cosmicomiche vecchie e nuove", "type":"raccolta"}
   ],
 /*
   commands : {
