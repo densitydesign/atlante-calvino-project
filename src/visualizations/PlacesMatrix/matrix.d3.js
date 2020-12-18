@@ -273,13 +273,13 @@ class VClass {
         const cat_label = this.innerHTML.split(" ");
         this.innerHTML = "";
         d3.select(this)
-          .attr("transform","translate(-15,-48)")
+          .attr("transform", "translate(-15,-48)")
           .selectAll("tspan")
           .data(cat_label)
           .enter()
           .append("tspan")
-          .attr("x",0)
-          .attr("dy",(d,i)=>i*16)
+          .attr("x", 0)
+          .attr("dy", (d, i) => i * 16)
           .text((d) => d);
       });
 
@@ -425,11 +425,6 @@ class VClass {
       timeFilter = globalTimeFilter;
     }
 
-    console.log(
-      new Date(timeFilter[0]).getFullYear(),
-      new Date(timeFilter[1]).getFullYear()
-    );
-
     // update data
     nodes = graph.nodes;
     links = graph.edges;
@@ -504,9 +499,11 @@ class VClass {
         last = d3.event.timeStamp;
       })
       .merge(node)
-      .attr("display", (d) =>
-        d.year >= timeFilter[0] && d.year <= timeFilter[1] ? "block" : "none"
-      )
+      .attr("display", (d) => {
+        return d.year >= timeFilter[0] && d.year <= timeFilter[1]
+          ? "block"
+          : "none";
+      })
       .style("cursor", function (d) {
         return d.subNodes && d.subNodes.length ? "pointer" : "auto";
       })
@@ -557,7 +554,7 @@ class VClass {
       .classed("label", true)
       .style("display", "none")
       .attr("text-anchor", "middle")
-      .style('pointer-events', 'none')
+      .style("pointer-events", "none")
       .text((d) => d.label)
       .merge(label);
 

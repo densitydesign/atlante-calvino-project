@@ -99,8 +99,19 @@ Viz.update = (span) => {
 			}
 			return getAnchor(d, Viz.x, width);
 		})
-		.text(d => {
-			return d.getFullYear()
+		.text((d,i) => {
+			let year = d.getFullYear()
+			if (i===0) {
+				const month = d.getMonth()
+				const day = d.getDate()
+				if (month===0 && day === 1) {
+					year = year
+				} else {
+					year++
+				}
+			}
+			return year
+			// return d.getFullYear()
 		})
 		.merge(info)
 

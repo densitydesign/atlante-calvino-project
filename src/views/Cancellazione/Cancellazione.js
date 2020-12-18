@@ -129,7 +129,7 @@ class Cancellazione extends Component {
     filters.time = this.state.data
       .filter((d) => {
         const year = Number(d.year);
-        return year >= newOptions[0] && year <= newOptions[1];
+        return year >= newOptions[0]+1 && year <= newOptions[1];
       })
       .map((d) => d.id);
     this.applyFilters();
