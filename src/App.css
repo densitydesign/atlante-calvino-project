@@ -87,6 +87,7 @@ a.active {
 html,
 body {
   height: 100vh;
+  line-height: normal;
 }
 
 body {

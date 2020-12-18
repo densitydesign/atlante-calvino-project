@@ -40,7 +40,7 @@ class RealismInformationSheet extends Component {
             >
               <p className={SheetStyles.paragraph}>
                 Dall’analisi sullo spostamento spaziale terrestre nella
-                produzione breve calviniana emergono alcune tendenze
+                produzione narrativa breve calviniana emergono alcune tendenze
                 significative, che è possibile identificare e isolare e che vale
                 la pena approfondire. Tra queste, la concentrazione di racconti
                 esclusivamente all’aperto (ambientazioni esterne),
@@ -118,9 +118,9 @@ class RealismInformationSheet extends Component {
                 </a>
               </p>
             </div>
-            <h2 className={SheetStyles.titleH2}>
+            <h2 className={SheetStyles.titleH2}><i>
               {this.props.t("realismo-sheet:Paura sul sentiero")}
-            </h2>
+              </i></h2>
             <Trans
               i18nKey="paragrapg-un-racconto-esemplare"
               ns="realismo-sheet"
@@ -339,10 +339,10 @@ class RealismInformationSheet extends Component {
                 Nel gioco dell’ambiguità, che può diventare facilmente
                 spaventoso, tornano con insistenza alcuni meccanismi narrativi,
                 messi in evidenza nell’ultima visualizzazione. Innanzitutto gli{" "}
-                <span style={{ color: "#FFA500" }}>interrogativi</span> («Chi
+                <span style={{ color: "#FFA500"}}>interrogativi</span> («Chi
                 era mai a quell’ora?»; «Ma si sarebbe raggiunto mai il casone?»)
                 o l’uso insistito del{" "}
-                <span style={{ color: "#FFA500" }}>forse</span> («forse una
+                <span style={{ color: "#FFA500", fontStyle: "italic"}}>forse</span> («forse una
                 lepre, forse una volpe, forse un tedesco coricato tra gli
                 arbusti che lo prendeva di mira»; «forse aveva rallentato
                 senz’avvedersene, forse s’era fermato»); in secondo luogo le{" "}
