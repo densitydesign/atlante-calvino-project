@@ -1,87 +1,103 @@
-import React, { useState } from "react";
-import IndexMenuHeader from "../../headers/IndexMenuHeader";
-import Footer from "../../headers/Footer/Footer";
-import capta from "./capta-list";
-import styles from "./capta-sections/capta.module.css";
-import { BsFileEarmarkSpreadsheet, BsBoxArrowUpRight } from "react-icons/bs";
+import React, { useState } from "react"
+import IndexMenuHeader from "../../headers/IndexMenuHeader"
+import Footer from "../../headers/Footer/Footer"
+import capta from "./capta-list"
+import styles from "./capta-sections/capta.module.css"
+import { BsFileEarmarkSpreadsheet, BsBoxArrowUpRight } from "react-icons/bs"
+import { Trans, useTranslation } from "react-i18next"
 
 export default function Capta() {
-  const [selected, setSelected] = useState(capta[0]);
+  const [selected, setSelected] = useState(capta[0])
+  const { t } = useTranslation("capta")
   return (
     <>
       <IndexMenuHeader />
       <div className="ac-grid-24 has-sidebar">
         <div className="content">
-          <h1>Capta</h1>
-          <h2>Data/Capta</h2>
-          <p>
-            I dataset che abbiamo realizzato sono il fondamento delle
-            visualizzazioni dell’Atlante. In questa sezione se ne fornisce una
-            descrizione, insieme ad alcune informazioni sulle scelte
-            progettuali, sui metodi e sugli strumenti usati.
-            <br />
-            Abbiamo deciso di intitolare questa sezione <i>Capta</i> invece di{" "}
-            <i>Dati</i>, per servirci di un concetto che ha fortemente
-            influenzato il nostro lavoro e che è molto noto nell’ambito delle
-            Digital Humanities, secondo la definizione di Johanna Drucker:
-          </p>
-          <p className="cite cite2">
-            Capta is “taken” actively while data is assumed to be a “given”
-            able to be recorded and observed. From this distinction, a world of
-            differences arises. Humanistic inquiry acknowledges the situated,
-            partial, and constitutive character of knowledge production, the
-            recognition that knowledge is constructed, taken, not simply given
-            as a natural representation of pre-existing fact. (<a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html" target="_blank" rel="noopener">Drucker, 2011</a>)
-          </p>
-          <p>
-            Le informazioni raccolte, anche se presentate in forma di dati
-            tabulari come tipicamente accade nel campo delle discipline tecniche
-            o scientifiche, rimangono il frutto di un lavoro umanistico: per
-            questo motivo sono state trattate visualmente con particolare
-            riguardo. Sono stati riadattati modelli visivi esistenti oppure ne
-            sono stati ideati di nuovi, al fine di dare spazio nella
-            rappresentazione alle peculiarità dello sguardo umanistico: alla sua
-            capacità di valorizzare eccezioni, particolarità e disomogeneità
-            difficilmente rappresentabili con le soluzioni tradizionali e di
-            “vedere” elementi testuali che al momento nessuna macchina può
-            riconoscere.
-          </p>
-          <p>
-            Di seguito sono elencati i capta e gli strumenti che ne hanno
-            permesso la raccolta.
-          </p>
-          <span className={styles["info-box"]}>
+          <h1>{t("Capta")}</h1>
+          <h2>{t("Data/Capta")}</h2>
+          <Trans t={t} i18nKey={"paragrafo_capta_1"} ns="capta">
             <p>
-              Per meglio comprendere il testo di questa pagina è importante
-              sottolineare che:
+              I dataset che abbiamo realizzato sono il fondamento delle
+              visualizzazioni dell’Atlante. In questa sezione se ne fornisce una
+              descrizione, insieme ad alcune informazioni sulle scelte
+              progettuali, sui metodi e sugli strumenti usati.
+              <br />
+              Abbiamo deciso di intitolare questa sezione <i>Capta</i> invece di{" "}
+              <i>Dati</i>, per servirci di un concetto che ha fortemente
+              influenzato il nostro lavoro e che è molto noto nell’ambito delle
+              Digital Humanities, secondo la definizione di Johanna Drucker:
             </p>
-            <ul>
-              <li>
-                l’<i>opera</i> è l’insieme di tutti i testi;
-              </li>
-              <li>
-                il <i>testo</i> è il singolo racconto/volume indicato da un{" "}
-                <i>titolo</i>;
-              </li>
-              <li>
-                l’<i>occorrenza</i> è la parola o il passaggio presi in analisi
-                come unità minime del dataset;
-              </li>
-              <li>
-                la lunghezza dei testi può essere calcolata in numero di{" "}
-                <i>caratteri</i> o in numero di <i>parole</i>;
-              </li>
-              <li>
-                la posizione delle <i>occorrenze</i> nel testo è indicata
-                tramite il numero di caratteri;
-              </li>
-              <li>
-                Posizione e lunghezza delle occorrenze possono essere
-                “normalizzate” ovvero ricalcolate in percentuale rispetto al
-                totale dei caratteri di riferimento.
-              </li>
-            </ul>
-          </span>
+            <p className="cite cite2">
+              Capta is “taken” actively while data is assumed to be a “given”
+              able to be recorded and observed. From this distinction, a world
+              of differences arises. Humanistic inquiry acknowledges the
+              situated, partial, and constitutive character of knowledge
+              production, the recognition that knowledge is constructed, taken,
+              not simply given as a natural representation of pre-existing fact.
+              (
+              <a
+                href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html"
+                target="_blank"
+                rel="noopener"
+              >
+                Drucker, 2011
+              </a>
+              )
+            </p>
+            <p>
+              Le informazioni raccolte, anche se presentate in forma di dati
+              tabulari come tipicamente accade nel campo delle discipline
+              tecniche o scientifiche, rimangono il frutto di un lavoro
+              umanistico: per questo motivo sono state trattate visualmente con
+              particolare riguardo. Sono stati riadattati modelli visivi
+              esistenti oppure ne sono stati ideati di nuovi, al fine di dare
+              spazio nella rappresentazione alle peculiarità dello sguardo
+              umanistico: alla sua capacità di valorizzare eccezioni,
+              particolarità e disomogeneità difficilmente rappresentabili con le
+              soluzioni tradizionali e di “vedere” elementi testuali che al
+              momento nessuna macchina può riconoscere.
+            </p>
+
+            <p>
+              Di seguito sono elencati i capta e gli strumenti che ne hanno
+              permesso la raccolta.
+            </p>
+          </Trans>
+          <Trans t={t} i18nKey={"paragrafo_capta_2"} ns="capta">
+            <span className={styles["info-box"]}>
+              <p>
+                Per meglio comprendere il testo di questa pagina è importante
+                sottolineare che:
+              </p>
+              <ul>
+                <li>
+                  l’<i>opera</i> è l’insieme di tutti i testi;
+                </li>
+                <li>
+                  il <i>testo</i> è il singolo racconto/volume indicato da un{" "}
+                  <i>titolo</i>;
+                </li>
+                <li>
+                  l’<i>occorrenza</i> è la parola o il passaggio presi in
+                  analisi come unità minime del dataset;
+                </li>
+                <li>
+                  la lunghezza dei testi può essere calcolata in numero di{" "}
+                  <i>caratteri</i> o in numero di <i>parole</i>;
+                </li>
+                <li>
+                  la posizione delle <i>occorrenze</i> nel testo è indicata
+                  tramite il numero di caratteri;
+                </li>
+                <li>
+                  Posizione e lunghezza delle occorrenze possono essere
+                  “normalizzate” ovvero ricalcolate in percentuale rispetto al
+                  totale dei caratteri di riferimento.
+                </li>
+              </ul>
+            </span>
+          </Trans>
         </div>
       </div>
       <div
@@ -99,18 +115,18 @@ export default function Capta() {
                 onClick={() => {
                   document
                     .querySelector("." + styles["capta-focus"])
-                    .scrollIntoView({ behavior: "auto", block: "start" });
-                  setSelected(d);
+                    .scrollIntoView({ behavior: "auto", block: "start" })
+                  setSelected(d)
                 }}
                 className={d === selected ? styles["active-capta"] : ""}
               >
-                {d.name}
+                {t(d.name.replace(':','-'))}
               </li>
             ))}
           </ul>
         </div>
         <div className={styles["capta-focus"]}>
-          <h1>{selected.name}</h1>
+          <h1>{t(selected.name.replace(':','-'))}</h1>
           {selected.type === "data" && (
             <div className={styles.downloadArea}>
               {selected.files.map((file) => {
@@ -130,9 +146,9 @@ export default function Capta() {
                     />
                     {selected.open
                       ? file.label.replace("[Atlante Calvino] ", "")
-                      : "dataset non ancora disponibile"}
+                      : t("dataset non ancora disponibile")}
                   </a>
-                );
+                )
               })}
               <a
                 href={selected.licenseUrl}
@@ -160,11 +176,13 @@ export default function Capta() {
                     {url.label}
                     <BsBoxArrowUpRight style={{ marginLeft: "0.5rem" }} />
                   </a>
-                );
+                )
               })}
             </div>
           )}
+          <Trans i18nKey={selected.name.replace(':','-')+'-text'} t={t} ns='capta'>
           {selected.jsx}
+          </Trans>
         </div>
       </div>
       {/* <div className="ac-grid-24">
@@ -206,5 +224,5 @@ export default function Capta() {
       </div> */}
       <Footer />
     </>
-  );
+  )
 }
