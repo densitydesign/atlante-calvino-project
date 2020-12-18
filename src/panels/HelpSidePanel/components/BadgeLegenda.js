@@ -1,3 +1,4 @@
+import { initial } from "lodash"
 import React from "react"
 
 export default function BadgeLegenda({ name, color, border, italic }) {

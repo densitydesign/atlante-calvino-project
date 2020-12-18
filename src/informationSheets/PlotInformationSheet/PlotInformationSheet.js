@@ -216,13 +216,7 @@ class PlotInformationSheet extends Component {
           </div>
           <div className={SheetStyles.gridRow}>
             <div
-              className={SheetStyles.image100w}
-              style={{
-                backgroundColor: "var(--white)",
-                position: "sticky",
-                top: "var(--navigation-height)",
-              }}
-            >
+              className={SheetStyles.image100w}            >
               <img
                 className={SheetStyles.legend}
                 style={{ gridColumn: "1 / span 12" }}
@@ -845,13 +839,13 @@ class PlotInformationSheet extends Component {
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995a: I. Calvino,{" "}
-                <em>Cominciare e finire, appendice alle Lezioni americane</em>,
+                <em>Cominciare e finire</em>, appendice alle <em>Lezioni americane</em>,
                 Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995b: I. Calvino,{" "}
                 <em>Ariosto: la struttura dell’«Orlando furioso» </em>[1975], in
-                Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 759-768.
+                Id., <em>Saggi. 1945-1985</em>, a cura di M. Barenghi, Milano, Mondadori, pp. 759-768.
               </li>
               <li className={"referenceItem"}>
                 Du Plessix Gray 1981: F. du Plessix Gray,{" "}

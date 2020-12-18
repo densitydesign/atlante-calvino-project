@@ -60,7 +60,7 @@ export default function ProcessCombiningMainHelp() {
           <Trans i18nKey={"help_panel.come_funziona"} t={t} ns="combining">
             <p>
               La visualizzazione è organizzata su diversi livelli di
-              approfondimento progressivo.<br /><br />
+              approfondimento progressivo.<br /><br /><br /><br />
               In primo luogo, la segmentazione
               delle colonne mostra la struttura di superficie dei volumi:
               l’ampiezza e la disposizione dei tre tipi di segmenti colorati,
@@ -70,7 +70,7 @@ export default function ProcessCombiningMainHelp() {
               alternando scene del mondo esterno e parentesi di interiorità,
               oppure ponendo il lettore davanti a indici stratificati e soglie
               metaletterarie, o ancora con una combinazione di tutte le
-              possibilità).<br /><br />
+              possibilità).<br /><br /><br /><br />
               Selezionando il filtro <i>Piani/Sequenze</i> si
               passa alla struttura intermedia: in questa configurazione la
               visualizzazione permette di vedere le sequenze narrative
