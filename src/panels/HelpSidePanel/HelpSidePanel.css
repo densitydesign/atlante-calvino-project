@@ -235,6 +235,7 @@ small{
   color: #777777;
   font-weight: normal;
   text-transform: initial;
+  line-height: 5px;
 }
 
 small .badge-legenda-small{
