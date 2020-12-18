@@ -16,10 +16,7 @@ const realismoDataNormalized = realismoData.map((item) => ({
 }))
 
 export const yearsExtent = extent(realismoData, (d) => +d.year).map(
-  (y,i) => {
-    y = i===0?y-1:y
-    return new Date(y, 0)
-  }
+  (y,i) => new Date(y, 0)
 )
 
 export const racconti = uniqBy(realismoData, 'title').map((item) => ({
