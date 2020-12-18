@@ -20,7 +20,6 @@ export default function TextSearch({
   availableVolumes, // array of Volumes (as IDS), use this to filter available options in typeahead
   availableOptions, // array of options (title, volume, publication) use this to filter dropdown options
 }) {
-  console.log("text search", availableIds);
   let titles = _titles,
     volumes = _volumes,
     periodicals = _periodicals;
@@ -44,7 +43,6 @@ export default function TextSearch({
   if (availableOptions && availableOptions.length > 0) {
     options = options.filter((o) => availableOptions.indexOf(o.id) > -1);
   }
-  console.log(options);
 
   const [option, setOption] = useState(options[0].id);
   const { t } = useTranslation("translation");
