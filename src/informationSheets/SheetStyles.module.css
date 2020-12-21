@@ -113,10 +113,10 @@ body{
 
 .sideContentRight {
   grid-column: 8 / span 5;
-  display: grid;
+  /* display: grid; */
   justify-items: flex-end;
   justify-content: center;
-  width: 120%;
+  /* width: 120%; */
 }
 
 .legend{
