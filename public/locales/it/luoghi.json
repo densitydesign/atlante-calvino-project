@@ -1,26 +1,24 @@
 {
   "help_panel": {
-    "tipo_di_luogo": "tipo di luogo",
-    "terrestri_generici": "terrestri generici",
-    "cosmici_localizzabili": "cosmici localizzabili",
+    "tipo_di_luogo": "tipo_di_luogo",
+    "cosmici_localizzabili": "cosmici_localizzabili",
+    "nessun_luogo": "nessun_luogo",
     "di_cosa_si_tratta": "<p>Perché i luoghi? Perché Calvino è un autore che dà molto rilievo alla dimensione narrativa dello spazio. Esplorare il corpus dell’opera narrativa di Italo Calvino attraverso la mappatura di tutti i suoi luoghi permette di comprendere come lo scrittore abbia usato lo spazio per parlare della realtà nelle sue molteplici forme. I luoghi presi in esame sono quelli d’ambientazione, vale a dire i luoghi in cui si sviluppa l’azione, in presenza dei personaggi. Sono esclusi i luoghi di cui si parla in quanto ricordi passati, mete future o desiderate, così come quelli soltanto menzionati, privi di significato ai fini della trama.</p>",
-    "qualche_pista_di_lettura": "<p>Alcune categorie sono circoscritte a periodi specifici e altre, come i luoghi terrestri localizzabili e i luoghi inventati, sono distribuite in modo uniforme. Il fatto che i luoghi terrestri localizzabili, che sono in prevalenza legati a testi di stampo realista, siano stabili nel tempo, sembra smentire l’idea vulgata di un autore che sia stato fondamentalmente “realista” soltanto nella prima parte della sua carriera.</p><1>Attraverso i <1>Livelli spaziali</1> è possibile notare come i luoghi d’invenzione, maggiormente concentrati nell’anello esterno del territorio, siano spesso incorniciati all’interno di luoghi terrestri localizzabili. Inoltre, in Calvino, l’invenzione prende forma non soltanto all’interno di spazi noti ma in molti casi anche familiari (vedi <4>Approfondimento</4>).</1><p>L’assenza di ambientazione è quasi esclusivamente concentrata in testi brevi, scritti nell’ultimo decennio, testimoniando il progressivo orientarsi dell’autore verso narrazioni in cui l’interesse per l’azione decade e viceversa cresce quello verso una prosa di tipo saggistico.</p>",
-    "cosmici_generici": "cosmici generici",
-    "come_funziona": "<0>Rielaborando alcuni modelli teorici sulle categorie spaziali letterarie ideati all’inizio degli anni Duemila, a ogni luogo d’ambientazione, sulla base del rapporto di aderenza alla realtà, è stata assegnata una categoria. Le categorie scelte sono cinque: luoghi <1>cosmici generici</1> (es. lo “spazio” o le “galassie”), luoghi <5>cosmici localizzabili</5> (es. la “Luna” o il pianeta “Terra”), luoghi <9>terrestri localizzabili</9> (es. “Sanremo” o “Parigi”), luoghi <13>terrestri generici</13> (es. una “città” o una “vallata”) e luoghi <16>terrestri inventati</16> (es. il paese di “Ombrosa” o una delle cinquantacinque città invisibili). A queste se ne aggiunge, <18>ex negativo</18>, una sesta, che accoglie al suo interno i testi dell’autore privi di luoghi di ambientazione.</0><1>Ogni testo può presentare più luoghi d’ambientazione, non per forza appartenenti alla medesima categoria. Può inoltre capitare che di un luogo d’ambientazione si conoscano anche ambientazioni più specifiche interne (es. <1>Il barone rampante</1> è ambientato nel paese di Ombrosa; tuttavia, a seconda della scena, gli eventi si svolgono nelle stanze della villa della famiglia, su uno dei tanti alberi abitati da Cosimo, nel giardino dei D’Ondariva e così via) e sia necessario tenere conto del rapporto di dipendenza che li contraddistingue.</1><p>Sulla base di queste caratteristiche è possibile esplorare la visualizzazione in tre modalità.</p><3><0>Tipo di luogo</0> permette di filtrare il territorio selezionando le categorie una alla volta.</3><4><0>Proporzione</0> evidenzia la compresenza di categorie differenti all’interno di uno stesso testo (escludendo però tutti i luoghi interni ad altri luoghi).</4><5><0>Livelli spaziali</0> consente di ricostruire i rapporti di dipendenza tra i luoghi di uno stesso testo, mostrando anche la loro denominazione.</5>",
-    "terrestri_localizzabili": "terrestri localizzabili",
-    "terrestri_inventati": "terrestri inventati",
-    "nessun_luogo": "nessun luogo",
-    "Cosmici_generici": "Cosmici_generici",
-    "Cosmici_localizzabili": "Cosmici_localizzabili",
-    "Terrestri localizzabili": "Terrestri localizzabili",
-    "Terrestri generici": "Terrestri generici",
+    "qualche_pista_di_lettura": "<p>Alcune categorie sono circoscritte a periodi specifici e altre, come i luoghi terrestri localizzabili e i luoghi inventati, sono distribuite in modo uniforme. Il fatto che i luoghi terrestri localizzabili, che sono in prevalenza legati a testi di stampo realista, siano stabili nel tempo, sembra smentire l’idea vulgata di un autore che sia stato fondamentalmente “realista” soltanto nella prima parte della sua carriera.</p><1>Attraverso i <1>Livelli spaziali</1> è possibile notare come i luoghi d’invenzione, maggiormente concentrati nell’anello esterno del territorio, siano spesso incorniciati all’interno di luoghi terrestri localizzabili. Inoltre, in Calvino, l’invenzione prende forma non soltanto all’interno di spazi noti ma in molti casi anche familiari (vedi <4>Approfondimento</4>).</1><2>L’assenza di ambientazione è quasi esclusivamente concentrata in testi brevi, scritti nell’ultimo decennio, testimoniando il progressivo orientarsi dell’autore verso narrazioni in cui l’interesse per l’azione decade e viceversa cresce quello verso una prosa di tipo saggistico.<br/><br/><br/></2>",
+    "Cosmici generici": "Cosmici generici",
     "Cosmici localizzabili": "Cosmici localizzabili",
-    "Nessun luogo": "Nessun luogo",
+    "Terrestri generici": "Terrestri generici",
+    "Terrestri localizzabili": "Terrestri localizzabili",
     "Terrestri inventati": "Terrestri inventati",
-    "Cosmici generici": "Cosmici generici"
+    "terrestri_localizzabili": "terrestri_localizzabili",
+    "cosmici_generici": "cosmici_generici",
+    "terrestri_generici": "terrestri_generici",
+    "come_funziona": "<0>Rielaborando alcuni modelli teorici sulle categorie spaziali letterarie ideati all’inizio degli anni Duemila, a ogni luogo d’ambientazione, sulla base del rapporto di aderenza alla realtà, è stata assegnata una categoria. Le categorie scelte sono cinque: luoghi <1>cosmici generici</1> (es. lo “spazio” o le “galassie”), luoghi <5>cosmici localizzabili</5> (es. la “Luna” o il pianeta “Terra”), luoghi <9>terrestri localizzabili</9> (es. “Sanremo” o “Parigi”), luoghi <13>terrestri generici</13> (es. una “città” o una “vallata”) e luoghi <16>terrestri inventati</16> (es. il paese di “Ombrosa” o una delle cinquantacinque città invisibili). A queste se ne aggiunge, <18>ex negativo</18>, una sesta, che accoglie al suo interno i testi dell’autore privi di luoghi di ambientazione.</0><1>Ogni testo può presentare più luoghi d’ambientazione, non per forza appartenenti alla medesima categoria. Può inoltre capitare che di un luogo d’ambientazione si conoscano anche ambientazioni più specifiche interne (es. <1>Il barone rampante</1> è ambientato nel paese di Ombrosa; tuttavia, a seconda della scena, gli eventi si svolgono nelle stanze della villa della famiglia, su uno dei tanti alberi abitati da Cosimo, nel giardino dei D’Ondariva e così via) e sia necessario tenere conto del rapporto di dipendenza che li contraddistingue.</1><p>Sulla base di queste caratteristiche è possibile esplorare la visualizzazione in tre modalità.</p><3><0>Tipo di luogo</0> permette di filtrare il territorio selezionando le categorie una alla volta.</3><4><0>Proporzione</0> evidenzia la compresenza di categorie differenti all’interno di uno stesso testo (escludendo però tutti i luoghi interni ad altri luoghi).</4><5><0>Livelli spaziali</0> consente di ricostruire i rapporti di dipendenza tra i luoghi di uno stesso testo, mostrando anche la loro denominazione.</5>",
+    "Nessun luogo": "Nessun luogo",
+    "terrestri_inventati": "terrestri_inventati"
   },
   "footer": {
-    "livelli_spaziali": "livelli spaziali",
-    "tipo_di_luogo": "tipo di luogo"
+    "livelli_spaziali": "livelli_spaziali",
+    "tipo_di_luogo": "tipo_di_luogo"
   }
 }

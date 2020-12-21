@@ -29,8 +29,8 @@ const formaElenchi = {
         <li><span className={styles.tag}>occorrenza</span>;</li>
         <li><span className={styles.tag}>posizione</span> nel testo (carattere di inizio e di fine);</li>
         <li><span className={styles.tag}>categoria</span> (parole/sintagmi/proposizioni/misto);</li>
-        <li><span className={styles.tag}>numero dei caratteri</span> del testo in cui compare l’occorrenza;</li>
-        <li><span className={styles.tag}>numero dei caratteri</span> dell’occorrenza;</li>
+        <li><span className={styles.tag}>totale dei caratteri</span> del testo in cui compare l’occorrenza;</li>
+        <li><span className={styles.tag}>totale dei caratteri</span> dell’occorrenza;</li>
         <li>
           <span className={styles.tag}>percentuale</span> tra numero di caratteri dell’occorrenza e numero di
           caratteri del testo.

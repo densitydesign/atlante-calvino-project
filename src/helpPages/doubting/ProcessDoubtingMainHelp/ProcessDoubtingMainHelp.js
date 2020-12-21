@@ -188,7 +188,8 @@ export default function ProcessDoubtingMainHelp() {
                     </p>
                     <p className="text-legenda gray">
                       Apri la colonna cliccando, poi scorri verso il basso per
-                      vedere l’andamento del processo dubitativo.
+                      vedere l’andamento del processo dubitativo.<br></br><br></br><br></br>
+                       <br></br><br></br>
                     </p>
                   </Trans>
                 </div>
