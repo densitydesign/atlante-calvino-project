@@ -46,11 +46,11 @@ const saggi = {
           <span className={styles.tag}>occorrenza</span> (nome e cognome);
         </li>
         <li>
-          <span className={styles.tag}>Posizione nel testo</span> (pagina o
+          <span className={styles.tag}>posizione nel testo</span> (pagina o
           pagine);
         </li>
         <li>
-          <span className={styles.tag}>titoli</span> del testo in cui comprare l’occorrenza.
+          <span className={styles.tag}>titoli</span> del testo in cui comprare l’occorrenza;
         </li>
         <li>
           <span className={styles.tag}>lunghezza</span> del testo (pagina di inizio e fine).
