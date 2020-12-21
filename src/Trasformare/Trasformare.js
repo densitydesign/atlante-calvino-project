@@ -636,16 +636,16 @@ class Trasformare extends Component {
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 10" }} />}
           {!this.state.isLoading && (
+            <RangeFilterSnap
+              extent={this.state.timeExtent}
+              update={this.changeTimeSpan}
+              style={{ gridColumn: "span 10" }}
+            />
             // <RangeFilterSnap
             //   style={{ gridColumn: "span 10" }}
-            //   extent={this.state.timeExtent}
-            //   update={this.changeTimeSpan}
+            //   data={this.state.timeExtent}
+            //   changeOptions={this.changeTimeSpan}
             // />
-            <RangeFilterSnap
-              style={{ gridColumn: "span 10" }}
-              data={this.state.timeExtent}
-              changeOptions={this.changeTimeSpan}
-            />
           )}
         </div>
       </div>
