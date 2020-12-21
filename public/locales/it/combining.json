@@ -37,6 +37,7 @@
   "Esteriore": "Esteriore",
   "categorie": {
     "spostamento": "spostamento",
+    "stato euforico": "stato euforico",
     "stato disforico": "stato disforico",
     "stato riflessivo": "stato riflessivo",
     "stato sospeso": "stato sospeso",
@@ -45,12 +46,11 @@
     "cornice": "cornice",
     "struttura": "struttura",
     "terna": "terna",
-    "eventi liminali": "eventi liminali",
     "interazione": "interazione",
-    "situazione": "situazione",
-    "stato euforico": "stato euforico",
-    "intenzione": "intenzione"
+    "eventi liminali": "eventi liminali",
+    "intenzione": "intenzione",
+    "situazione": "situazione"
   },
-  "Interiore": "Interiore",
-  "Forma": "Forma"
+  "Forma": "Forma",
+  "Interiore": "Interiore"
 }
