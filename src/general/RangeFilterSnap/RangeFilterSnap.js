@@ -3,8 +3,7 @@ import * as d3 from "d3";
 import styles from "./RangeFilter.module.css";
 
 export default function RangeFilterSnap({ extent, update, style }) {
-
-  extent = extent.map(d=>new Date(d))
+  extent = extent.map((d) => new Date(d));
 
   const svgEl = useRef(null);
 
@@ -71,37 +70,56 @@ export default function RangeFilterSnap({ extent, update, style }) {
     // bind the "brush" event after the active selection is set
     brush.on("brush", brushed);
 
-    let year = svg.append('g').selectAll('text')
-    updateYears(extent)
+    let year = svg.append("g").selectAll("text");
+    updateYears(extent);
 
     function updateYears(data) {
-      year = year.data(data.map(d=>({date:d,year:d.getFullYear()})), (d,i)=>i)
-      year.exit().remove()
-      year = year.enter().append("text")
-        .merge(year)
-        .attr("x", d=>x(d.date))
-        .attr("y", 33)
-        .attr("text-anchor", (d, i) => {
-          function getAnchor(d, scale, width) {
-            let anchor;
-            if(i % 2 === 0) {
-              if(scale(d) >= width / 4) {
-                anchor = "end";
-              } else {
-                anchor = "start";
-              }
+      year = year.data(
+        data.map((d, i) => {
+          // text-anchor value
+          let anchor, dx, fill;
+          if (i % 2 === 0) {
+            if (x(d) >= width / 4) {
+              anchor = "end";
+              dx = -5;
+              fill = "white";
             } else {
-              if(scale(d) <= width / 4 * 3) {
-                anchor = "start";
-              } else {
-                anchor = "end";
-              }
+              anchor = "start";
+              dx = 5;
+              fill = "black";
             }
-            return anchor;
+          } else {
+            if (x(d) <= (width / 4) * 3) {
+              anchor = "start";
+              dx = 5;
+              fill = "white";
+            } else {
+              anchor = "end";
+              dx = -5;
+              fill = "black";
+            }
           }
-          return getAnchor(d.date, x, width);
-        })
-        .text(d=>d.year);
+          return {
+            date: d,
+            year: d.getFullYear(),
+            anchor: anchor,
+            dx: dx,
+            fill: fill,
+          };
+        }),
+        (d, i) => i
+      );
+      year.exit().remove();
+      year = year
+        .enter()
+        .append("text")
+        .merge(year)
+        .attr("fill", d=>d.fill)
+        .style("font-weight", "500")
+        .attr("x", (d) => x(d.date) + d.dx)
+        .attr("y", 33)
+        .attr("text-anchor", d=>d.anchor)
+        .text((d) => d.year);
     }
 
     function brushed() {
@@ -118,13 +136,11 @@ export default function RangeFilterSnap({ extent, update, style }) {
 
       // span = span.map(d => new Date(d));
       // Viz.update(span);
-      updateYears(d1)
+      updateYears(d1);
 
       // Apply filter
       update(d1);
     }
-
-
   }, []);
 
   return (

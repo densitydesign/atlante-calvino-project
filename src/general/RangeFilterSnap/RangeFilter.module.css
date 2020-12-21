@@ -1,26 +1,20 @@
 .range-filter {
   width: 100%;
   height: calc(var(--navigation-height) - 2px);
+  height: var(--navigation-height);
 }
 
-.range-filter rect.context-window {
-  fill: transparent;
-  stroke: var(--navigation-borders);
-  stroke-width: 1px;
-}
-
-.overlay {
+.range-filter :global .overlay {
   fill: var(--dark-blue);
-  border-radius: 6px;
+  stroke: var(--dark-blue);
+  rx: 4px;
 }
 
-.range-filter rect.selection {
+.range-filter :global .selection {
   fill: var(--cool-bg);
-  stroke: none;
   fill-opacity: 1;
-}
-
-.range-filter text.info {
-  fill: var(--navigation-borders);
-  font-weight: bold;
+  stroke: black;
+  stroke-width: 1px;
+  rx: 4px;
+  shape-rendering: geometricprecision;
 }
