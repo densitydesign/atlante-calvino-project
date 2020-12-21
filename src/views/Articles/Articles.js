@@ -19,7 +19,7 @@ export default function Articles() {
   useEffect(() => {
     d3.tsv(process.env.PUBLIC_URL + "/pubblicazioni/pubblicazioni.tsv").then(
       (data) => {
-        setData(orderBy(data,'date','desc'))
+        setData(orderBy(data,'date','asc'))
       }
     )
   })
