@@ -1,5 +1,8 @@
 import React from "react";
+import Lische from "./Lische"
 import { Trans, withTranslation } from "react-i18next";
+
+// import {ReactComponent as LischeSVG} from './lische-web-005-01.svg';
 
 import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
 import CompassLische from "../../visualizations/CompassLische/CompassLische";
@@ -17,7 +20,7 @@ class CompassFlux extends React.Component {
         />
         <div id="main--bones">
           <div className="container">
-          <h4>{this.props.t("bussola")}</h4>
+            <h4>{this.props.t("bussola")}</h4>
             <div className="row intro">
               <div className="col-12">
                 <Trans i18nKey={"title"} t={this.props.t} ns="compass-flux">
@@ -97,10 +100,10 @@ class CompassFlux extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid lische-box"></div>
-          <div className="row">
+          <div className="container-fluid">
             <div className="col-12 lische my-lg-3 py-1 py-md-4">
-              <CompassLische id="lische" />
+              {/* <CompassLische id="lische" /> */}
+              <Lische />
             </div>
           </div>
         </div>
