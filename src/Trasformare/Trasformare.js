@@ -15,6 +15,7 @@ import Loading from "../general/Loading"
 import Options from "../general/Options"
 import Search from "../general/Search"
 import RangeFilter from "../general/RangeFilter"
+import RangeFilterSnap from "../general/RangeFilterSnap"
 import _volumes from "../general/TextSearch/volumes.json"
 import _periodicals from "../general/TextSearch/periodicals.json"
 import _titles from "../general/TextSearch/volumes.json"
@@ -635,11 +636,16 @@ class Trasformare extends Component {
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 10" }} />}
           {!this.state.isLoading && (
-            <RangeFilter
+            <RangeFilterSnap
+              extent={this.state.timeExtent}
+              update={this.changeTimeSpan}
               style={{ gridColumn: "span 10" }}
-              data={this.state.timeExtent}
-              changeOptions={this.changeTimeSpan}
             />
+            // <RangeFilterSnap
+            //   style={{ gridColumn: "span 10" }}
+            //   data={this.state.timeExtent}
+            //   changeOptions={this.changeTimeSpan}
+            // />
           )}
         </div>
       </div>
