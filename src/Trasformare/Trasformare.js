@@ -14,7 +14,6 @@ import Loading from "../general/Loading"
 
 import Options from "../general/Options"
 import Search from "../general/Search"
-import RangeFilter from "../general/RangeFilter"
 import RangeFilterSnap from "../general/RangeFilterSnap"
 import _volumes from "../general/TextSearch/volumes.json"
 import _periodicals from "../general/TextSearch/periodicals.json"
@@ -641,11 +640,6 @@ class Trasformare extends Component {
               update={this.changeTimeSpan}
               style={{ gridColumn: "span 10" }}
             />
-            // <RangeFilterSnap
-            //   style={{ gridColumn: "span 10" }}
-            //   data={this.state.timeExtent}
-            //   changeOptions={this.changeTimeSpan}
-            // />
           )}
         </div>
       </div>
