@@ -16,7 +16,7 @@ import CancellazioneHelp from "../../helpPages/doubting/CancellazioneHelp";
 
 import Options from "../../general/Options";
 import SearchDropDown from "../../general/Search/SearchDropDownControlled";
-import RangeFilter from "../../general/RangeFilter";
+import RangeFilterSnap from "../../general/RangeFilterSnap";
 import TextSearch from "../../general/TextSearch";
 
 import GlobalData from "../../utilities/GlobalData";
@@ -84,7 +84,7 @@ class Cancellazione extends Component {
       manifestazioniStilistiche: manifestazioniStilistiche,
       // cerca_per: cerca_per,
       searchedItems: [],
-      timeExtent: [+new Date("1945"), +new Date("1985")],
+      timeExtent: [+new Date("1944"), +new Date("1985")],
       color: manifestazioniStilistiche.options.find((d) => d.status).value,
     };
   }
@@ -300,10 +300,10 @@ class Cancellazione extends Component {
               <Loading style={{ gridColumn: "span 12" }} />
             )}
             {!this.state.loading && (
-              <RangeFilter
+              <RangeFilterSnap
                 style={{ gridColumn: "span 12" }}
-                data={this.state.timeExtent}
-                changeOptions={this.changeTimeSpan}
+                extent={this.state.timeExtent}
+                update={this.changeTimeSpan}
               />
             )}
           </div>
