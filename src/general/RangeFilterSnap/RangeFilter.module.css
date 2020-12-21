@@ -1,0 +1,20 @@
+.range-filter {
+  width: 100%;
+  height: calc(var(--navigation-height) - 2px);
+  height: var(--navigation-height);
+}
+
+.range-filter :global .overlay {
+  fill: var(--dark-blue);
+  stroke: var(--dark-blue);
+  rx: 4px;
+}
+
+.range-filter :global .selection {
+  fill: var(--cool-bg);
+  fill-opacity: 1;
+  stroke: black;
+  stroke-width: 1px;
+  rx: 4px;
+  shape-rendering: geometricprecision;
+}

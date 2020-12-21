@@ -170,39 +170,6 @@ V.update = (options)=>{
             .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
             .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
       );
-
-    // Animation for the info-sheet
-    // svg.transition()
-    //     .delay(5000)
-    //     .duration(5000)
-    //         .call(
-    //             zoom.transform,
-    //             d3.zoomIdentity
-    //                 .translate( -16045.43691252109, -15029.37721676252)
-    //                 .scale(29.32379662961129)
-    //             )
-    //         .on('end',()=>{
-
-    //             setTimeout(function(){
-    //                 const d = d3.select('#combinations-S042').data()[0];
-    //                 toggleMetaball(d);
-
-    //                 setTimeout(function(){
-    //                     toggleMetaball(d);
-
-    //                     svg.transition().delay(5000).duration(5000).call(
-    //                         zoom.transform,
-    //                         d3.zoomIdentity
-    //                             .translate(width/2, height/2)
-    //                             .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
-    //                             .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
-    //                         );
-
-    //                 },2500);
-    //             },500);
-    //         });
-
-
 }
 
 V.changeColor = (value)=>{
@@ -225,12 +192,19 @@ V.changeColor = (value)=>{
 V.filter = (filter)=>{
     if (filter==='no filters') {
         length.style('opacity',1).attr('fill-opacity','0.5');
+        length.filter(d=>d.perc_dubbio <= 2.5)
+            .attr('fill','#ddddda')
+            .attr('fill-opacity','1')
+            .attr('stroke','white')
         combinations.style('opacity',1);
         label.style('opacity',1);
     } else {
-        length
-            .style('opacity',1).attr('fill-opacity','1')
-            .filter(d=>filter.indexOf(d.id)<0)
+        length.style('opacity',1).attr('fill-opacity','1')
+        length.filter(d=>d.perc_dubbio <= 2.5)
+            .attr('fill','#ddddda')
+            .attr('fill-opacity','1')
+            .attr('stroke','white')
+        length.filter(d=>filter.indexOf(d.id)<0)
                 .style('opacity',0.2).attr('fill-opacity','0.5');
 
         combinations

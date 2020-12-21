@@ -17,7 +17,7 @@ import Loading from "../../general/Loading"
 import Options from "../../general/Options"
 import Search from "../../general/Search"
 import SearchDropDown from "../../general/Search/SearchDropDown"
-import RangeFilter from "../../general/RangeFilter"
+import RangeFilterSnap from "../../general/RangeFilterSnap"
 import TextSearch from "../../general/TextSearch";
 
 import DoubtingStackedBars from "../../visualizations/DoubtingStackedBars/DoubtingStackedBars"
@@ -777,11 +777,16 @@ class ProcessDoubting extends Component {
             <Loading style={{ gridColumn: "span 12" }} />
           )}
           {!this.state.isLoading && (
-            <RangeFilter
-              style={{ gridColumn: "span 12" }}
-              data={this.state.timeExtent}
-              changeOptions={this.changeTimeSpan}
+            <RangeFilterSnap
+              extent={this.state.timeExtent}
+              update={this.changeTimeSpan}
+              style={{ gridColumn: "span 10" }}
             />
+            // <RangeFilter
+            //   style={{ gridColumn: "span 12" }}
+            //   data={this.state.timeExtent}
+            //   changeOptions={this.changeTimeSpan}
+            // />
           )}
         </div>
       </div>

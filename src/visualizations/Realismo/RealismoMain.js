@@ -15,7 +15,7 @@ import MoreInfo from "../../general/MoreInfo"
 import CompassButton from "../../general/CompassButton/CompassButton"
 import useDimensions from "react-use-dimensions"
 import GlobalData from "../../utilities/GlobalData"
-import RangeFilter from "../../general/RangeFilter"
+import RangeFilterSnap from "../../general/RangeFilterSnap"
 import { useTranslation, Trans } from "react-i18next"
 import sortBy from "lodash/sortBy"
 import difference from "lodash/difference"
@@ -539,10 +539,10 @@ export default function RealismoMain({ title }) {
               textAlign: "center",
             }}
           />
-          <RangeFilter
+          <RangeFilterSnap
             style={{ gridColumn: "span 8" }}
-            data={timeFilter}
-            changeOptions={(timeSpan) => {
+            extent={timeFilter}
+            update={(timeSpan) => {
               setTimeFilter(timeSpan)
             }}
           />
