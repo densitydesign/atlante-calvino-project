@@ -4,12 +4,10 @@ import styles from "./RangeFilter.module.css";
 
 export default function RangeFilterSnap({ extent, update, style }) {
   extent = extent.map((d) => new Date(d));
-
   const svgEl = useRef(null);
 
   useEffect(() => {
     const bbox = svgEl.current.getBoundingClientRect();
-    console.log(bbox);
     const width = bbox.width,
       height = bbox.height,
       margin = { top: 10, right: 10, bottom: 10, left: 10 },
@@ -133,13 +131,13 @@ export default function RangeFilterSnap({ extent, update, style }) {
         d1[1] = interval.offset(d1[0]);
       }
       d3.select(this).call(brush.move, d1.map(x));
-
-      // span = span.map(d => new Date(d));
-      // Viz.update(span);
       updateYears(d1);
 
       // Apply filter
-      update(d1);
+      const start = d1[0];
+      const end = d1[1];
+      end.setHours(1)
+      update([start, end]);
     }
   }, []);
 
