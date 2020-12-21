@@ -52,10 +52,14 @@ export default function RangeFilterSnap({ extent, update, style }) {
     //         .call((g) => g.selectAll("text").attr("x", 6))
     //     );
 
-    const brush = d3.brushX().extent([
-      [margin.left, margin.top],
-      [width - margin.right, height - margin.bottom],
-    ]);
+    const brush = d3
+      .brushX()
+      .handleSize(10)
+      // .touchable()
+      .extent([
+        [margin.left, margin.top],
+        [width - margin.right, height - margin.bottom],
+      ]);
 
     // svg.append("g").call(xAxis);
 
@@ -112,11 +116,11 @@ export default function RangeFilterSnap({ extent, update, style }) {
         .enter()
         .append("text")
         .merge(year)
-        .attr("fill", d=>d.fill)
+        .attr("fill", (d) => d.fill)
         .style("font-weight", "500")
         .attr("x", (d) => x(d.date) + d.dx)
         .attr("y", 33)
-        .attr("text-anchor", d=>d.anchor)
+        .attr("text-anchor", (d) => d.anchor)
         .text((d) => d.year);
     }
 
@@ -136,7 +140,7 @@ export default function RangeFilterSnap({ extent, update, style }) {
       // Apply filter
       const start = d1[0];
       const end = d1[1];
-      end.setHours(1)
+      end.setHours(1);
       update([start, end]);
     }
   }, []);
