@@ -120,7 +120,7 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               concretamente spazio, il narratore non sembra aver bisogno di
               evocare la cancellazione; viceversa, laddove la cancellazione
               dilaga, l’apparizione della nebbia vera e propria diventa
-              superflua.
+              superflua.<br></br><br></br><br></br>
             </p>
           </Trans>
         </Tab>

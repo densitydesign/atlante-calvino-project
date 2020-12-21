@@ -177,7 +177,7 @@ export default function TerritoryMainHelp({ helpProps }) {
               da sfruttare la sua capacità di sollecitare spunti di ricerca
               inediti come la prospettiva che presenta. Un esempio sono le tre{" "}
               <i>Analisi dei fenomeni</i> qui proposte, che elaborano la struttura di
-              partenza del territorio in base a tre diverse interrogazioni.
+              partenza del territorio in base a tre diverse interrogazioni.<br></br><br></br><br></br>
             </p>
           </Trans>
         </Tab>
@@ -272,7 +272,7 @@ export default function TerritoryMainHelp({ helpProps }) {
                   <BadgeLegenda color="#8AE297" name="L’entrata in guerra" />
                   <BadgeLegenda color="#5151FC" name="I racconti" />
                   <BadgeLegenda color="#BBBBFF" name="Marcovaldo" />
-                  <BadgeLegenda color="#97DADD" name="Le cosmicomiche" />
+                  <BadgeLegenda color="#97DADD" name="Le Cosmicomiche" />
                 </div>
                 <div className="col-md-6">
                   <BadgeLegenda color="#FF3366" name="Ti con zero" />

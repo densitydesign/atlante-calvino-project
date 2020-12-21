@@ -144,7 +144,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
               testi brevi, scritti nell’ultimo decennio, testimoniando il
               progressivo orientarsi dell’autore verso narrazioni in cui
               l’interesse per l’azione decade e viceversa cresce quello verso
-              una prosa di tipo saggistico.
+              una prosa di tipo saggistico.<br></br><br></br><br></br>
             </p>
           </Trans>
         </Tab>

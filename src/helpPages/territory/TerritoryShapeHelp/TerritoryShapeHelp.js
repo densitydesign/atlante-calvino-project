@@ -115,7 +115,7 @@ export default function TerritoryShapeHelp({ helpProps }) {
               ricerca di una forma di equilibrio nell’impiego di questa forma di
               accumulazione verbale (vedi{" "}
               <Link to={"/form/phase1/focus"}>Approfondimento</Link>
-              ).
+              ).<br></br><br></br><br></br>
             </p>
           </Trans>
         </Tab>
