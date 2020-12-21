@@ -2,11 +2,12 @@ import React, {useRef, useEffect} from "react";
 import * as d3 from "d3"
 import { ReactComponent as LischeHeaderSVG} from "./lische-header.svg"
 import { ReactComponent as LischeSVG} from "./lische-web.svg"
+import styles from "./Lische.module.css"
 
 export default function Lische() {
     const vizEl = useRef(null)
     useEffect(()=>{
-			console.log(vizEl.current)
+			// console.log(vizEl.current)
 			const viz = d3.select(vizEl.current);
 
 			let selectedItems = [];
@@ -147,8 +148,8 @@ export default function Lische() {
     },[]);
     return (
         <>
-            <LischeHeaderSVG/>
-            <LischeSVG ref={vizEl}/>
+            <LischeHeaderSVG className={["sticky-element", styles.lischeHeader].join(" ")} />
+            <LischeSVG className={styles.lische} ref={vizEl} />
         </>
     )
 }
