@@ -319,8 +319,9 @@ class TerritoryFooter extends React.Component {
         ) : (
           <div
             style={{ gridColumn: "span 8" }}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center flex-column"
           >
+            <div class="micro-title">{this.props.t('territorio:footer.modalita')}</div>
             <div className="text-center">
               {this.props.t(`territorio:footer.${this.chronologyLabel}`)}
             </div>
