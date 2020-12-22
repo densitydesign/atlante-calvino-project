@@ -108,7 +108,11 @@
       "quattro": "quattro",
       "cinque": "cinque",
       "tre": "tre"
-    }
+    },
+    "Aggregato": "Aggregato",
+    "Non aggregato": "Non aggregato",
+    "Ambito": "Ambito",
+    "Categorie": "Categorie"
   },
   "legenda": "Legenda",
   "analisi": "Vai alla visualizzazione",
