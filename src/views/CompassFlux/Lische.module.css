@@ -1,0 +1,8 @@
+.lische :global g > g {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.lischeHeader {
+    background-color: var(--cool-bg);
+}
