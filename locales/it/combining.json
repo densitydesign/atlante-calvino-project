@@ -11,7 +11,8 @@
     "due": "due",
     "categorie": "Categorie",
     "footer_chart": "footer_chart",
-    "ambito": "Ambito"
+    "ambito": "Ambito",
+    "livello": "livello"
   },
   "help_panel": {
     "itinerario_forma": "Itinerario forma",
@@ -32,5 +33,24 @@
     "esteriore": "esteriore",
     "interiore": "interiore",
     "formale": "formale"
-  }
+  },
+  "Esteriore": "Esteriore",
+  "categorie": {
+    "spostamento": "spostamento",
+    "stato euforico": "stato euforico",
+    "stato disforico": "stato disforico",
+    "stato riflessivo": "stato riflessivo",
+    "stato sospeso": "stato sospeso",
+    "racconto incastonato": "racconto incastonato",
+    "metanarrazione": "metanarrazione",
+    "cornice": "cornice",
+    "struttura": "struttura",
+    "terna": "terna",
+    "interazione": "interazione",
+    "eventi liminali": "eventi liminali",
+    "intenzione": "intenzione",
+    "situazione": "situazione"
+  },
+  "Forma": "Forma",
+  "Interiore": "Interiore"
 }
