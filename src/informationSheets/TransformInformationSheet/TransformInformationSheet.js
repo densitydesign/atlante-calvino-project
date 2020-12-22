@@ -149,7 +149,7 @@ class TransformInformationSheet extends Component {
               <p className="order-message">
                 {this.props.t("transform-sheet:Clicca qui per cambiare decennio")}
               </p>
-              <Carousel>
+              <Carousel interval={null}>
                 <Carousel.Item>
                   <Carousel.Caption>
                     <h2
