@@ -41,6 +41,7 @@ const line = d3
   .y((d) => d.y)
 
 const Curves = ({ dev, setItinerario, itinerarioHover, onClose }) => {
+
   const svg = useRef()
   const [ratio, setRatio] = useState(4 / 3)
   const { t } = useTranslation("translation")
@@ -150,7 +151,7 @@ const Curves = ({ dev, setItinerario, itinerarioHover, onClose }) => {
         )}
       {labels.map((l, i) => (
         <HashLink
-          onClick={onClose}
+          onClick={() => onClose}
           key={i}
           to={l.link}
           className={styles.linkItinerary}

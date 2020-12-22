@@ -175,7 +175,6 @@ export default function IndexMenu({ onClose }) {
       const percentages = [0.34, 0.34, 0.34] // adjust these to fix positioning
       const position = length * percentages[i] // position depends on the totalLength
       const point = path.getPointAtLength(position)
-      console.log(point)
       const cl = "tappa" + (i + 1)
       const el2 = document.querySelector("." + styles[cl])
       el2.style.top = point.y - 10 + "px"
@@ -216,14 +215,13 @@ export default function IndexMenu({ onClose }) {
         onHide={handleCloseGuida}
       >
         <Modal.Body style={{ height: 500 }}>
-          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
+          {/* <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
-          </div>
+          </div> */}
           {i18n.language === "it" ? (
             <iframe
               width="100%"
-              className="mt-1"
-              height="70%"
+              height="100%"
               title="Video Guida"
               src="https://www.youtube.com/embed/UYcQVKPG8uE"
               frameBorder="0"
@@ -233,8 +231,7 @@ export default function IndexMenu({ onClose }) {
           ) : (
             <iframe
               width="100%"
-              className="mt-1"
-              height="70%"
+              height="100%"
               title="Video Guida"
               src="https://www.youtube.com/embed/BtljJn6Na_U"
               frameBorder="0"
