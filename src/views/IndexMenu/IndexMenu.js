@@ -215,14 +215,13 @@ export default function IndexMenu({ onClose }) {
         onHide={handleCloseGuida}
       >
         <Modal.Body style={{ height: 500 }}>
-          <div onClick={handleCloseGuida} className="text-right cursor-pointer">
+          {/* <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
-          </div>
+          </div> */}
           {i18n.language === "it" ? (
             <iframe
               width="100%"
-              className="mt-1"
-              height="70%"
+              height="100%"
               title="Video Guida"
               src="https://www.youtube.com/embed/UYcQVKPG8uE"
               frameBorder="0"
@@ -232,8 +231,7 @@ export default function IndexMenu({ onClose }) {
           ) : (
             <iframe
               width="100%"
-              className="mt-1"
-              height="70%"
+              height="100%"
               title="Video Guida"
               src="https://www.youtube.com/embed/BtljJn6Na_U"
               frameBorder="0"
