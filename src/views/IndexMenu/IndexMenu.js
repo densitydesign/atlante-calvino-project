@@ -103,7 +103,7 @@ const ItemIndex = ({
       >
         {title}
       </span>
-      {link !== '/archipelago' && (
+      {link !== "/archipelago" && (
         <Link
           className={`d-flex mt-2 ${styles["icon-approfondimento"]} ${styles["small-approfondimento"]}`}
           to={linkApprofondimento}
@@ -111,9 +111,8 @@ const ItemIndex = ({
             transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`,
           }}
         >
-          <IconApprofondimento className='mr-2'
-          />
-          <span className={styles['text-approfondimento']}>
+          <IconApprofondimento className="mr-2" />
+          <span className={styles["text-approfondimento"]}>
             {titleApprofondimento}
           </span>
         </Link>
@@ -133,7 +132,7 @@ export default function IndexMenu({ onClose }) {
     setShowGuida(true)
   }
 
-  const { t } = useTranslation("translation")
+  const { t, i18n } = useTranslation("translation")
 
   const orbiteRef = useRef()
 
@@ -141,13 +140,13 @@ export default function IndexMenu({ onClose }) {
     var kappa = 0.5522847498
     var ox = rx * kappa // x offset for the control point
     var oy = ry * kappa // y offset for the control point
-    let d = `M${cx - rx},${cy} `;
-    d += `C${cx - rx} ${cy - oy}, ${cx - ox} ${cy - ry}, ${cx} ${cy - ry} `;
-    d += `C${cx + ox} ${cy - ry}, ${cx + rx} ${cy - oy}, ${cx + rx} ${cy} `;
-    d += `C${cx + rx} ${cy + oy}, ${cx + ox} ${cy + ry}, ${cx} ${cy + ry} `;
-    d += `C${cx - ox} ${cy + ry}, ${cx - rx} ${cy + oy}, ${cx - rx} ${cy} `;
-    d += `z`;
-    return d;
+    let d = `M${cx - rx},${cy} `
+    d += `C${cx - rx} ${cy - oy}, ${cx - ox} ${cy - ry}, ${cx} ${cy - ry} `
+    d += `C${cx + ox} ${cy - ry}, ${cx + rx} ${cy - oy}, ${cx + rx} ${cy} `
+    d += `C${cx + rx} ${cy + oy}, ${cx + ox} ${cy + ry}, ${cx} ${cy + ry} `
+    d += `C${cx - ox} ${cy + ry}, ${cx - rx} ${cy + oy}, ${cx - rx} ${cy} `
+    d += `z`
+    return d
   }
 
   const tappeLayout = useCallback(() => {
@@ -155,12 +154,11 @@ export default function IndexMenu({ onClose }) {
     const bbox = el.getBoundingClientRect()
     const g = el.querySelector("g")
     g.querySelectorAll("ellipse").forEach((o, i) => {
-
       // transforming the ellipse into a path (in order to use 'getPointAtLength()')
       const cx = (parseInt(o.getAttribute("cx")) / 100) * bbox.width,
-            cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
-            rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
-            ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height;
+        cy = (parseInt(o.getAttribute("cy")) / 100) * bbox.height,
+        rx = (parseInt(o.getAttribute("rx")) / 100) * bbox.width,
+        ry = (parseInt(o.getAttribute("ry")) / 100) * bbox.height
 
       const d = getD(cx, cy, rx, ry)
       const path = document.createElementNS(
@@ -204,6 +202,10 @@ export default function IndexMenu({ onClose }) {
     return () => void window.removeEventListener("resize", cb)
   }, [tappeLayout])
 
+  // useEffect(() => {
+  //   handleShowGuida()
+  // },[])
+
   return (
     <div className={[dev ? styles.development : ""].join(" ")}>
       <Modal
@@ -217,12 +219,29 @@ export default function IndexMenu({ onClose }) {
           <div onClick={handleCloseGuida} className="text-right cursor-pointer">
             <IconCloseGuida />
           </div>
-          <video width="100%" height="90%" controls autoplay="autoplay">
-            <source
-              src={process.env.PUBLIC_URL + "/introcalvino.mp4"}
-              type="video/mp4"
-            />
-          </video>
+          {i18n.language === "it" ? (
+            <iframe
+              width="100%"
+              className="mt-1"
+              height="70%"
+              title="Video Guida"
+              src="https://www.youtube.com/embed/UYcQVKPG8uE"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <iframe
+              width="100%"
+              className="mt-1"
+              height="70%"
+              title="Video Guida"
+              src="https://www.youtube.com/embed/BtljJn6Na_U"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
         </Modal.Body>
       </Modal>
       <IndexMenuHeader
