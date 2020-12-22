@@ -175,7 +175,6 @@ export default function IndexMenu({ onClose }) {
       const percentages = [0.34, 0.34, 0.34] // adjust these to fix positioning
       const position = length * percentages[i] // position depends on the totalLength
       const point = path.getPointAtLength(position)
-      console.log(point)
       const cl = "tappa" + (i + 1)
       const el2 = document.querySelector("." + styles[cl])
       el2.style.top = point.y - 10 + "px"
