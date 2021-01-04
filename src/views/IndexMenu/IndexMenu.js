@@ -127,7 +127,19 @@ export default function IndexMenu({ onClose }) {
   const [dev, setDev] = useState(false)
   const [itinerarioHover, setItinerario] = useState(null)
 
-  const handleCloseGuida = () => setShowGuida(false)
+  const [visible, setVisible] = React.useState(false)
+  useEffect(() => {
+    let pop_status = localStorage.getItem("pop_status")
+    if (!pop_status) {
+      setVisible(true)
+      localStorage.setItem("pop_status", 1)
+    }
+  }, [])
+
+  const handleCloseGuida = () => {
+    setShowGuida(false)
+    setVisible(false)
+  }
   const handleShowGuida = () => {
     setShowGuida(true)
   }
@@ -205,13 +217,15 @@ export default function IndexMenu({ onClose }) {
   //   handleShowGuida()
   // },[])
 
+  console.log(visible)
+
   return (
     <div className={[dev ? styles.development : ""].join(" ")}>
       <Modal
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        show={showGuida}
+        show={showGuida || visible}
         onHide={handleCloseGuida}
       >
         <Modal.Body style={{ height: 500 }}>
