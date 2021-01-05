@@ -191,7 +191,7 @@ const CicrleYears = React.memo(({ x, y, radius, radiusStrokeSize }) => {
                 style={{
                   transformOrigin: `${textX}px -3px`,
                   transform: flipText ? "rotate(180deg)" : undefined,
-                  fontSize: 10,
+                  fontSize: 9,
                 }}
               >
                 <text textAnchor={flipText ? "start" : "end"} x={textX} y={0}>
