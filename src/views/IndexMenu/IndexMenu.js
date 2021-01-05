@@ -109,6 +109,7 @@ const ItemIndex = ({
           to={linkApprofondimento}
           style={{
             transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`,
+            height: 20
           }}
         >
           <IconApprofondimento className="mr-2" />
