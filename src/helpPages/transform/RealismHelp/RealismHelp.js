@@ -49,7 +49,7 @@ export default function RealismHelp() {
               allo spazio d’ambientazione terrestre, localizzabile (es. <em>Sanremo</em>)
               e non localizzabile (es. una <em>città</em>), dei testi brevi pubblicati in
               volume tra il 1945 e il 1983. Questa specifica selezione concentra
-              il<em>focus</em> sullo spazio che possiamo definire più <em>realista</em>
+              il <em>focus</em> sullo spazio che possiamo definire più <em>realista</em>{" "}
               all’interno dell’opera dell’autore, con l’obiettivo di comprendere
               in che modo questo complesso insieme di figurazioni spaziali si
               trasformi e si modifichi nel corso del tempo.
@@ -79,7 +79,7 @@ export default function RealismHelp() {
                   la tipologia di ogni ambientazione:{" "}
                   <span style={{ color: "#FFD337" }}>spazio interno</span>,{" "}
                   <span style={{ color: "#00C19C" }}>spazio esterno</span>,{" "}
-                  <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,
+                  <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,{" "}
                   <span style={{ color: "#AFAFAF" }}>
                     assenza di ambientazione
                   </span>
