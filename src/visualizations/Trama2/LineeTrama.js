@@ -98,6 +98,7 @@ const LineaTrama = React.memo(
     width,
     height,
     index,
+    setFindFor,
     itemSelected,
     toggleItem,
     onRaccontoClick,
@@ -125,7 +126,10 @@ const LineaTrama = React.memo(
         />
         <path
           d={d}
-          onClick={() => toggleItem(racconto.titolo)}
+          onClick={() => {
+            setFindFor('titolo')
+            toggleItem(racconto.titolo)
+          }}
           className={`trama2-pointer ${itemSelected ? 'selected' : ''}`}
         ></path>
 
@@ -191,6 +195,7 @@ const LineeTramaList = React.memo(
     onRaccontoClick,
     height,
     scalaColore,
+    setFindFor,
     scalaMotivoY,
     selected,
     toggleSelect,
@@ -211,6 +216,7 @@ const LineeTramaList = React.memo(
                 }
                 onRaccontoClick={onRaccontoClick}
                 scalaColore={scalaColore}
+                setFindFor={setFindFor}
                 scalaMotivoY={scalaMotivoY}
                 index={i}
                 width={measures.width}
@@ -251,6 +257,8 @@ function LineeTramaWithMeasures(
     scalaColore,
     scalaMotivoY,
     colors,
+    setFindFor,
+    setRicerca,
     selected,
     toggleSelect,
     onRaccontoClick,
@@ -592,6 +600,7 @@ function LineeTramaWithMeasures(
             onRaccontoClick={onRaccontoClick}
             height={height}
             scalaColore={scalaColore}
+            setFindFor={setFindFor}
             scalaMotivoY={scalaMotivoY}
             selected={selected}
             toggleSelect={toggleSelect}
@@ -666,6 +675,7 @@ function LineeTrama(props, ref) {
         <LineeTramaWithMeasuresReffed
           ref={childRef}
           {...props}
+          setFindFor={props.setFindFor}
           measures={measures}
         />
       )}

@@ -31,6 +31,7 @@ export default function Trama2Content({
   tipologieByTipologia,
   colors,
   racconti,
+  setFindFor,
   byRacconto,
   selected,
   toggleSelect,
@@ -187,6 +188,7 @@ export default function Trama2Content({
               selected={selected}
               toggleSelect={toggleSelect}
               racconti={racconti}
+              setFindFor={setFindFor}
               tipologie={tipologie}
               tipologieByTipologia={tipologieByTipologia}
               data={byRacconto}
