@@ -20,20 +20,23 @@
 }
 
 .icon-approfondimento {
-  padding-left: 0;
+  left: 50%;
+  width: 100%;
+  position: absolute;
+  top: 100%;
 }
 
 .icon-approfondimento:hover{
-  padding-left: -10px !important;
-  transition: ease-in 1s;
+  left: 10%;
+  transition: linear 0.5s;
 }
 
 .text-approfondimento {
-  display: none;
+  opacity: 0;
 }
 
 .icon-approfondimento:hover > .text-approfondimento{
-  display: block;
+  opacity: 1;
   transition: ease-in 1s;
 }
 
