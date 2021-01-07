@@ -103,6 +103,8 @@ function Trama2Main({ title }) {
   const { t } = useTranslation('translation')
   const [findFor, setFindFor] = useState('titolo')
 
+  console.log(ricerca)
+
   return (
     <div className="trasformare main">
       <HelpSidePanel
@@ -176,6 +178,7 @@ function Trama2Main({ title }) {
         colors={colors}
         racconti={racconti}
         setFindFor={setFindFor}
+        ricerca={ricerca}
         currentView={currentView}
         setCurrentView={setCurrentView}
         byRacconto={byRacconto}

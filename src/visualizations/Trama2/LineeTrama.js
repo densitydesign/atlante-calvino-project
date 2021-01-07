@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom'
-import { useTranslation } from 'react-i18next'
+import ReactDOM from "react-dom"
+import { useTranslation } from "react-i18next"
 import React, {
   useRef,
   useState,
@@ -9,20 +9,20 @@ import React, {
   useLayoutEffect,
   useImperativeHandle,
   forwardRef,
-} from 'react'
-import { line, curveMonotoneX, curveStep } from 'd3-shape'
-import { scaleLinear } from 'd3-scale'
-import { zoom } from 'd3-zoom'
-import { select, selectAll, event as currentEvent } from 'd3-selection'
+} from "react"
+import { line, curveMonotoneX, curveStep } from "d3-shape"
+import { scaleLinear } from "d3-scale"
+import { zoom } from "d3-zoom"
+import { select, selectAll, event as currentEvent } from "d3-selection"
 
-import range from 'lodash/range'
-import find from 'lodash/find'
-import findIndex from 'lodash/findIndex'
+import range from "lodash/range"
+import find from "lodash/find"
+import findIndex from "lodash/findIndex"
 
-import { splitPath, makeScalaMotivoY } from './utils'
-import GradientsDefinitions from './GradientsDefinitions'
-import RaccontoInfoBoxSvg from './RaccontoInfoBoxSvg'
-import Brush, { BRUSH_HANDLE_WIDTH } from './Brush'
+import { splitPath, makeScalaMotivoY } from "./utils"
+import GradientsDefinitions from "./GradientsDefinitions"
+import RaccontoInfoBoxSvg from "./RaccontoInfoBoxSvg"
+import Brush, { BRUSH_HANDLE_WIDTH } from "./Brush"
 
 const lineGenerator = line()
   .x((d) => d.x)
@@ -43,8 +43,8 @@ const SubPathsWithColors = React.memo(({ subPaths, data, itemSelected }) => {
             d={subPath}
             className="trama2-line"
             style={{
-              stroke: itemSelected ? strokeSelected : '#ddd',
-              fill: 'none',
+              stroke: itemSelected ? strokeSelected : "#ddd",
+              fill: "none",
             }}
           ></path>
         )
@@ -99,6 +99,7 @@ const LineaTrama = React.memo(
     height,
     index,
     setFindFor,
+    ricerca,
     itemSelected,
     toggleItem,
     onRaccontoClick,
@@ -127,10 +128,10 @@ const LineaTrama = React.memo(
         <path
           d={d}
           onClick={() => {
-            setFindFor('titolo')
+            setFindFor("titolo")
             toggleItem(racconto.titolo)
           }}
-          className={`trama2-pointer ${itemSelected ? 'selected' : ''}`}
+          className={`trama2-pointer ${itemSelected ? "selected" : ""}`}
         ></path>
 
         {itemSelected && (
@@ -153,12 +154,12 @@ const LineaTrama = React.memo(
                 transformOrigin: `${selectedPoint.x}px ${selectedPoint.y}px`,
                 transform:
                   selectedPoint.originalX < 0.2
-                    ? 'rotate(30deg) translate(5px, 5px)'
+                    ? "rotate(30deg) translate(5px, 5px)"
                     : `rotate(-30deg) translateX(-10px)`,
               }}
               x={selectedPoint.x}
               y={selectedPoint.y}
-              textAnchor={selectedPoint.originalX < 0.2 ? 'start' : 'end'}
+              textAnchor={selectedPoint.originalX < 0.2 ? "start" : "end"}
             >
               {selectedPoint.motivo_type}
             </text>
@@ -169,7 +170,7 @@ const LineaTrama = React.memo(
     if (itemSelected) {
       return ReactDOM.createPortal(
         element,
-        document.getElementsByClassName('linea-container-selected')[index]
+        document.getElementsByClassName("linea-container-selected")[index]
       )
     }
     return element
@@ -196,6 +197,7 @@ const LineeTramaList = React.memo(
     height,
     scalaColore,
     setFindFor,
+    ricerca,
     scalaMotivoY,
     selected,
     toggleSelect,
@@ -217,6 +219,7 @@ const LineeTramaList = React.memo(
                 onRaccontoClick={onRaccontoClick}
                 scalaColore={scalaColore}
                 setFindFor={setFindFor}
+                ricerca={ricerca}
                 scalaMotivoY={scalaMotivoY}
                 index={i}
                 width={measures.width}
@@ -239,13 +242,13 @@ const LineeTramaList = React.memo(
 const HORIZ_PADDING = 20
 
 function imperativeTranslate(currentScaleY) {
-  selectAll('.linea-container').attr(
-    'transform',
-    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  selectAll(".linea-container").attr(
+    "transform",
+    (d, i) => "translate(0, " + currentScaleY(i) + ")"
   )
-  selectAll('.linea-container-selected').attr(
-    'transform',
-    (d, i) => 'translate(0, ' + currentScaleY(i) + ')'
+  selectAll(".linea-container-selected").attr(
+    "transform",
+    (d, i) => "translate(0, " + currentScaleY(i) + ")"
   )
 }
 
@@ -258,7 +261,7 @@ function LineeTramaWithMeasures(
     scalaMotivoY,
     colors,
     setFindFor,
-    setRicerca,
+    ricerca,
     selected,
     toggleSelect,
     onRaccontoClick,
@@ -307,10 +310,10 @@ function LineeTramaWithMeasures(
             [0, 0],
             [measures.width, measures.height],
           ])
-          .on('zoom', handleZoom)
+          .on("zoom", handleZoom)
       )
       return () => {
-        selection.on('.zoom', null)
+        selection.on(".zoom", null)
       }
     }
   }, [height, measures, racconti, setYears])
@@ -334,7 +337,7 @@ function LineeTramaWithMeasures(
       let out = data[racconto.titolo].filter((d) => d.y !== undefined)
       out = out.map((d, i) => {
         if (i > 0) {
-          gradientsSet.add(d.motivo_type + '-' + out[i - 1].motivo_type)
+          gradientsSet.add(d.motivo_type + "-" + out[i - 1].motivo_type)
         }
         return {
           ...d,
@@ -354,12 +357,12 @@ function LineeTramaWithMeasures(
   const [x, setX] = useState(measures.width - BRUSH_HANDLE_WIDTH / 2)
 
   useEffect(() => {
-    const initialTitle = 'Il cavaliere inesistente'
+    const initialTitle = "Il cavaliere inesistente"
     const raccontoData = dataByRacconti[initialTitle]
     const raccontoDatum = find(raccontoData, (datum) => {
       if (
-        datum.originalX.toFixed(2) === '0.77' &&
-        datum.motivo_type === 'viaggio'
+        datum.originalX.toFixed(2) === "0.77" &&
+        datum.motivo_type === "viaggio"
       ) {
         return true
       }
@@ -438,148 +441,130 @@ function LineeTramaWithMeasures(
         .range([0 + height, measures.height - height])
       imperativeTranslate(scaleYOriginal)
 
-      const raccontoDataIndex = findIndex(
-        dataRacconti,
-        (r) => r.racconto.titolo === 'Il cavaliere inesistente'
-      )
-      const raccontoData = dataRacconti[raccontoDataIndex]
+      if (ricerca) {
+        ricerca.forEach((element) => {
+          const raccontoDataIndex = findIndex(
+            dataRacconti,
+            (r) => r.racconto.titolo === element.value
+          )
 
-      const scaleXBoxPlot = scaleLinear()
-        .domain([0, racconti.length])
-        .range([10, measures.width - 10])
+          const raccontoData = dataRacconti[raccontoDataIndex]
 
-      const flyToX = scaleXBoxPlot(raccontoDataIndex)
+          const scaleXBoxPlot = scaleLinear()
+            .domain([0, racconti.length])
+            .range([10, measures.width - 10])
+
+          const flyToX = scaleXBoxPlot(raccontoDataIndex)
+
+          document
+            .querySelectorAll(
+              '[data-subracconto="' + element.value + '"] .trama2-pointz'
+            )
+            .forEach((p) => (p.style.display = "none"))
+          const paths = document.querySelectorAll(
+            '[data-subracconto="' + element.value + '"] path.trama2-line'
+          )
+          let scaleMotivo = makeScalaMotivoY(600)
+          scaleMotivo.range([-200, 400])
+
+          let start = null
+          function animate(timestamp) {
+            if (start === null) {
+              start = timestamp
+            }
+            const k = (timestamp - start) / 1500
+
+            const dataFly = []
+            for (let i = 1; i < raccontoData.length; i++) {
+              const prevDatum = raccontoData[i - 1]
+              const datum = raccontoData[i]
+
+              // const y1 = prevDatum.y * (1 - k) + k * 25
+              // const y2 = datum.y * (1 - k) + k * 25
+              const y1 = prevDatum.y
+              const y2 = datum.y
+
+              const x1 = prevDatum.x * (1 - k) + k * flyToX
+              const x2 = datum.x * (1 - k) + k * flyToX
+
+              dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
+            }
+            paths.forEach((path, i) => {
+              cachedResetStrokes[i] = path.style.stroke
+              path.setAttribute("d", dataFly[i])
+            })
+
+            if (k < 1) {
+              window.requestAnimationFrame(animate)
+            } else {
+              start = null
+              setTimeout(() => {
+                cb()
+                cleanUpAnimation(element.value)
+              }, 50)
+              // window.requestAnimationFrame(animate2)
+            }
+          }
+
+          const cachedResetStrokes = []
+
+          function cleanUpAnimation(racconto) {
+            // CLEAN UP ANIMATION
+
+            // SHOW INFO UI
+            setShowInfoUI(true)
+
+            // RESET ZOOM STATE
+            const lastZoomScaleY = lastZoomedScaleYRef.current
+            if (lastZoomScaleY) {
+              imperativeTranslate(lastZoomScaleY)
+            }
+            // RESET SELECTED LINE
+            const resetDPath = lineGenerator(raccontoData)
+            const resettedDSubPaths = splitPath(resetDPath)
+            paths.forEach((path, i) => {
+              path.setAttribute("d", resettedDSubPaths[i])
+              path.style.stroke = cachedResetStrokes[i]
+            })
+            // Reset opacity
+            document
+              .querySelectorAll(
+                '[data-subracconto]:not([data-subracconto="' +
+                  racconto +
+                  '"]) path.trama2-line'
+              )
+              .forEach((p) => (p.style.opacity = "1"))
+            // Show Points
+            document
+              .querySelectorAll(
+                '[data-subracconto="' + racconto + '"] .trama2-pointz'
+              )
+              .forEach((p) => (p.style.display = "initial"))
+          }
+
+          document
+            .querySelectorAll(
+              '[data-subracconto]:not([data-subracconto="'+element.value+'"]) path.trama2-line'
+            )
+            .forEach((p) => (p.style.opacity = "0.1"))
+
+          setTimeout(() => {
+            window.requestAnimationFrame(animate)
+          }, 800)
+        })
+      }
 
       // Hide Points
-      document
-        .querySelectorAll(
-          '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
-        )
-        .forEach((p) => (p.style.display = 'none'))
-      const paths = document.querySelectorAll(
-        '[data-subracconto="Il cavaliere inesistente"] path.trama2-line'
-      )
-      let scaleMotivo = makeScalaMotivoY(600)
-      scaleMotivo.range([-200, 400])
-
-      let start = null
-      function animate(timestamp) {
-        if (start === null) {
-          start = timestamp
-        }
-        const k = (timestamp - start) / 1500
-
-        const dataFly = []
-        for (let i = 1; i < raccontoData.length; i++) {
-          const prevDatum = raccontoData[i - 1]
-          const datum = raccontoData[i]
-
-          // const y1 = prevDatum.y * (1 - k) + k * 25
-          // const y2 = datum.y * (1 - k) + k * 25
-          const y1 = prevDatum.y
-          const y2 = datum.y
-
-          const x1 = prevDatum.x * (1 - k) + k * flyToX
-          const x2 = datum.x * (1 - k) + k * flyToX
-
-          dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
-        }
-        paths.forEach((path, i) => {
-          cachedResetStrokes[i] = path.style.stroke
-          path.setAttribute('d', dataFly[i])
-        })
-
-        if (k < 1) {
-          window.requestAnimationFrame(animate)
-        } else {
-          start = null
-          setTimeout(() => {
-            cb()
-            cleanUpAnimation()
-          }, 50)
-          // window.requestAnimationFrame(animate2)
-        }
-      }
-
-      const cachedResetStrokes = []
-
-      // function animate2(timestamp) {
-      //   if (start === null) {
-      //     start = timestamp
-      //   }
-      //   const k = (timestamp - start) / 1000
-
-      //   const dataFly = []
-      //   for (let i = 1; i < raccontoData.length; i++) {
-      //     const prevDatum = raccontoData[i - 1]
-      //     const datum = raccontoData[i]
-
-      //     const y1 = 25 * (1 - k) + k * scaleMotivo(prevDatum.ordineMotivo)
-      //     const y2 = 25 * (1 - k) + k * scaleMotivo(datum.ordineMotivo)
-
-      //     const x1 = flyToX
-      //     const x2 = flyToX
-
-      //     dataFly.push(`M ${x1} ${y1} L ${x2} ${y2}`)
-      //   }
-      //   paths.forEach((path, i) => {
-      //     path.setAttribute('d', dataFly[i])
-      //     path.style.stroke = 'var(--blue)'
-      //   })
-      //   if (k < 1) {
-      //     window.requestAnimationFrame(animate2)
-      //   } else {
-      //     cb()
-      //     cleanUpAnimation()
-      //   }
-      // }
-
-      function cleanUpAnimation() {
-        // CLEAN UP ANIMATION
-
-        // SHOW INFO UI
-        setShowInfoUI(true)
-
-        // RESET ZOOM STATE
-        const lastZoomScaleY = lastZoomedScaleYRef.current
-        if (lastZoomScaleY) {
-          imperativeTranslate(lastZoomScaleY)
-        }
-        // RESET SELECTED LINE
-        const resetDPath = lineGenerator(raccontoData)
-        const resettedDSubPaths = splitPath(resetDPath)
-        paths.forEach((path, i) => {
-          path.setAttribute('d', resettedDSubPaths[i])
-          path.style.stroke = cachedResetStrokes[i]
-        })
-        // Reset opacity
-        document.querySelectorAll(
-          '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
-        ).forEach(p => p.style.opacity = '1')
-        // Show Points
-        document
-          .querySelectorAll(
-            '[data-subracconto="Il cavaliere inesistente"] .trama2-pointz'
-          )
-          .forEach((p) => (p.style.display = 'initial'))
-      }
 
       // Opacity lines
-      document.querySelectorAll(
-        '[data-subracconto]:not([data-subracconto="Il cavaliere inesistente"]) path.trama2-line'
-      ).forEach(p => p.style.opacity = '0.1')
-
-      setTimeout(() => {
-        window.requestAnimationFrame(animate)
-      }, 800)
     },
   }))
 
-  const { t } = useTranslation('trama')
+  const { t } = useTranslation("trama")
 
   return (
     <>
-      <div className="trama2-top-legend-list">{t('scrolla_per_zoomare')}</div>
+      <div className="trama2-top-legend-list">{t("scrolla_per_zoomare")}</div>
       <svg
         style={{
           height: measures.height,
@@ -601,6 +586,7 @@ function LineeTramaWithMeasures(
             height={height}
             scalaColore={scalaColore}
             setFindFor={setFindFor}
+            ricerca={ricerca}
             scalaMotivoY={scalaMotivoY}
             selected={selected}
             toggleSelect={toggleSelect}
@@ -621,9 +607,9 @@ function LineeTramaWithMeasures(
         />
       )}
       <div className="trama2-brush-legend-list">
-        <div>{t('inizio_del_testo')}</div>
-        <div>{t('lunghezza_del_testo')}</div>
-        <div>{t('fine_del_testo')}</div>
+        <div>{t("inizio_del_testo")}</div>
+        <div>{t("lunghezza_del_testo")}</div>
+        <div>{t("fine_del_testo")}</div>
       </div>
     </>
   )
@@ -669,13 +655,14 @@ function LineeTrama(props, ref) {
     <div
       ref={containerRef}
       className="w-100 h-100"
-      style={{ overflow: 'hidden' }}
+      style={{ overflow: "hidden" }}
     >
       {measures && (
         <LineeTramaWithMeasuresReffed
           ref={childRef}
           {...props}
           setFindFor={props.setFindFor}
+          ricerca={props.ricerca}
           measures={measures}
         />
       )}
