@@ -20,14 +20,14 @@
 }
 
 .icon-approfondimento {
-  left: 50%;
+  left: 45%;
   width: 100%;
   position: absolute;
   top: 100%;
 }
 
 .icon-approfondimento:hover{
-  left: 10%;
+  left: 15%;
   transition: linear 0.5s;
 }
 
