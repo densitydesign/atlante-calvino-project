@@ -19,7 +19,7 @@ export default function IndexMenuHeader({
         <div
           className="d-flex justify-content-center cursor-pointer"
           style={{ gridColumn: "span 1" }}
-          onClick={() => onClose()}
+          onClick={() => onClose}
         >
           <IconClose />
         </div>

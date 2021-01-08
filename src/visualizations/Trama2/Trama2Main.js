@@ -103,6 +103,8 @@ function Trama2Main({ title }) {
   const { t } = useTranslation('translation')
   const [findFor, setFindFor] = useState('titolo')
 
+  console.log(ricerca)
+
   return (
     <div className="trasformare main">
       <HelpSidePanel
@@ -121,7 +123,10 @@ function Trama2Main({ title }) {
           title={t('cerca_per')}
           options={cercaOptions}
           value={findFor}
-          onChange={(x) => setFindFor(x.value)}
+          onChange={(x) => {
+            setRicerca([])
+            setFindFor(x.value)
+          }}
           style={{
             gridColumn: 'span 3',
           }}
@@ -151,7 +156,7 @@ function Trama2Main({ title }) {
             const finalRicerca = uniqBy(racconti.concat(raccontiInVolumi), v => v.value)
             setRicerca(finalRicerca)
           }}
-          selectedOptions={ricercaTop}
+          selectedOptions={ricerca}
         />
 
         <MoreInfo
@@ -172,6 +177,8 @@ function Trama2Main({ title }) {
         tipologieByTipologia={tipologieByTipologia}
         colors={colors}
         racconti={racconti}
+        setFindFor={setFindFor}
+        ricerca={ricerca}
         currentView={currentView}
         setCurrentView={setCurrentView}
         byRacconto={byRacconto}
