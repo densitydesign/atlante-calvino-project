@@ -41,7 +41,7 @@ class Equipe extends React.Component {
                   return (
                     <li key={"gin-" + i}>
                       <a href={d.url} target="_blank" rel="noopener noreferrer">
-                        { d.name + " " }
+                        {d.name + " "}
                       </a>
                       {d.showRole && " - " + d.role}
                     </li>
@@ -60,15 +60,20 @@ class Equipe extends React.Component {
                 <a href="http://densitydesign.org/" rel="noopener noreferrer">
                   DensityDesign
                 </a>{" "}
-                è parte del Dipartimento di Design del Politecnico di Milano.
-                Obiettivo del laboratorio è la rappresentazione di fenomeni
-                complessi di natura sociale, organizzativa o urbana. A questi
-                temi va aggiunto il crescente interesse per le Digital
-                Humanities e in particolare per tutto ciò che sta
-                all’intersezione fra le materie umanistiche e l’information
-                design, come la progettazione di artefatti e metodi digitali per
-                l’elaborazione, l’accesso e la visualizzazione
-                dell’informazione.
+                fa afferenza al{" "}
+                <a
+                  href="http://www.dipartimentodesign.polimi.it/"
+                  rel="noopener noreferrer"
+                >
+                  Dipartimento di Design
+                </a>{" "}
+                del Politecnico di Milano. Studia le implicazioni legate
+                all’utilizzo di dati, tecnologie digitali e metodi visuali negli
+                ambiti sociali, progettuali e di ricerca. L’equipe di design ha
+                contribuito alla co-progettazione di metodologie di
+                visualizzazione in sinergia con l’equipe letteraria, impiegando
+                conoscenze maturate in ambito Digital Humanities e competenze
+                legate alla rappresentazione, analisi e comunicazione dei dati.
               </p>
               <ul>
                 {people.density.map((d, i) => {
@@ -92,11 +97,11 @@ class Equipe extends React.Component {
                 >
                   Paolo Ciuccarelli
                 </a>{" "}
-                alla direzione dell’équipe del DensityDesign.
+                alla direzione delle attività di design.
               </p>
               <p>
-                Alla realizzazione dell’Atlante hanno partecipato
-                anche: Matteo Banal,{" "}
+              Alla ricerca, progettazione e realizzazione dell’Atlante hanno partecipato anche: Matteo
+                Banal,{" "}
                 <a
                   href="https://densitydesign.org/person/gabriele-colombo/"
                   target="_blank"
