@@ -143,31 +143,6 @@ export function MarimekkoSlider({
             value={cursorY}
             onChange={handleDragNative}
           />
-          {/* {((currentSequences && currentSequences.length > 0) ||
-            (currentSequencesSelected && currentSequencesSelected.length > 0)) >
-            0 && (
-            <div
-              onClick={() => {
-                if (selected) {
-                  setCurrentSequencesSelected([])
-                } else if (currentSequences && currentSequences.length) {
-                  setCurrentSequencesSelected(currentSequences)
-                }
-              }}
-              style={{
-                position: "absolute",
-                top: cursorY - 1,
-                left: -30,
-                cursor: "pointer",
-                width: CURSOR_HEIGHT,
-                height: CURSOR_HEIGHT,
-                border: "solid #222 1px",
-                borderRadius: 20,
-                background: selected ? "#222" : undefined,
-                borderColor: `var(--dark-green)`,
-              }}
-            ></div>
-          )} */}
         </div>
       )}
     </div>
