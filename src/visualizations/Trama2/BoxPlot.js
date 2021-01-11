@@ -119,7 +119,10 @@ const BoxPlotElement = React.memo(
           >
             <Star
               svgStyle={{ cursor: 'pointer' }}
-              onClick={onGlyphoClick}
+              onClick={() => {
+                toggleItem(data.racconto.titolo)
+                onGlyphoClick()
+              }}
               size={widthBar * Math.sqrt(2)}
               className="trama2-box-plot-same-start-end-symbol"
             />
@@ -130,7 +133,10 @@ const BoxPlotElement = React.memo(
               style={{
                 cursor: 'pointer',
               }}
-              onClick={onGlyphoClick}
+              onClick={() => {
+                toggleItem(data.racconto.titolo)
+                onGlyphoClick()
+              }}
               width={widthBar}
               height={widthBar}
               className="trama2-box-plot-start-symbol"
