@@ -52,5 +52,8 @@
     "situazione": "situazione"
   },
   "Forma": "Forma",
-  "Interiore": "Interiore"
+  "Interiore": "Interiore",
+  "combining": {
+    "text_slider": "<0><i>Muovi lo slider per vedere la struttura dei livelli</i><br/><2>Clicca <1></1> per evidenziare la combinazione</2></0>"
+  }
 }

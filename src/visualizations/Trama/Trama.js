@@ -150,9 +150,9 @@ class Trama extends Component {
         </div>
         {currentTextID && (
           <Trans
-            i18nKey={"combinare.text_slider"}
+            i18nKey={"combining.text_slider"}
             t={t}
-            ns="cancellazione"
+            ns="combining"
           >
             <div className="position-absolute" style={{ top: 70, left: 130 }}>
               <i>Muovi lo slider per vedere la struttura dei livelli</i>
