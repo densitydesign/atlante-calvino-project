@@ -6,10 +6,23 @@ import { ReactComponent as CloseIcon } from "../IndexMenuHeader/icons/icon-close
 export default function HamburgerCompassHeader({
   toggleFlowOfStories,
   toggleTempoEOpere,
+  isSubPageBussola,
 }) {
   const toggleFlows = toggleFlowOfStories || toggleTempoEOpere
 
-  return (
+  return isSubPageBussola ? (
+    <div className="top-nav navigations">
+      <div
+        onClick={toggleFlows}
+        className="cursor-pointer d-flex justify-content-center"
+        style={{ gridColumn: "span 1" }}
+      >
+        <CloseIcon onClick={toggleFlows} />
+      </div>
+      <div style={{ gridColumn: "span 22" }} />
+      <div style={{ gridColumn: "span 1" }} />
+    </div>
+  ) : (
     <div className="top-nav navigations">
       <MainMenu style={{ gridColumn: "span 1" }} />
       <div style={{ gridColumn: "span 22" }} />
