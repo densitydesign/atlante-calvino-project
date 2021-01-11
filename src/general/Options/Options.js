@@ -116,7 +116,7 @@ class Options extends Component {
                 </Dropdown.Item>
               )
             })}
-            {this.props.data.multiple && (
+            {this.props.data.multiple && this.props.invert && (
               <Dropdown.Item
                 key={5}
                 name="all"
@@ -148,5 +148,6 @@ Options.defaultProps = {
     options: [],
     multiple: false,
   },
+  invert: true,
   title: "Options",
 }

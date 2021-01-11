@@ -400,6 +400,11 @@ a:visited.button-text {
   color: var(--bg);
 }
 
+.cc-btn.cc-dismiss:hover {
+  color: #00c19c;
+  color: #5151fc;
+}
+
 /* BOTTONI DELLE VIZ */
 .btn-primary {
   font-weight: 600;

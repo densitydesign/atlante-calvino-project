@@ -769,6 +769,7 @@ class ProcessDoubting extends Component {
               isFlex={true}
               title={this.props.t("doubting:Numero di livelli")}
               data={this.state.annidamenti}
+              invert={false}
               style={{ gridColumn: "span 4", textAlign: "center" }}
               changeOptions={this.changeAnnidamenti}
             />
