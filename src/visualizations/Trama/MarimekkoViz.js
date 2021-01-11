@@ -40,6 +40,8 @@ import { useTranslation } from "react-i18next";
 
 const volumiByID = keyBy(volumi, "textID");
 
+const NOMI_LIVELLI = ['uno','due','tre','quattro','cinque']
+
 const coloriCategorie = mappaCategorie.reduce((out, c) => {
   out[c.categoria] = c.colore;
   return out;
@@ -491,6 +493,7 @@ function MarimekkoViz({
                 </div>
               ))}
               {currentTextID && currentSequencesDisplay.map((seq, i) => (
+                NOMI_LIVELLI.indexOf(seq.livello) === i && 
                 <div
                   className="position-absolute text-center px-2"
                   style={{ width: columnWidth, left: columnWidth * i, top: 14 }}

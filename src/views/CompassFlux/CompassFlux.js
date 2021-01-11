@@ -19,6 +19,7 @@ class CompassFlux extends React.Component {
       <>
         <HamburgerCompassHeader
           toggleFlowOfStories={this.props.toggleFlowOfStories}
+          isSubPageBussola
         />
         <div id="main--bones">
           <div className="container">

@@ -14,6 +14,7 @@ class CompassTime extends React.Component {
       <>
         <HamburgerCompassHeader
           toggleTempoEOpere={this.props.toggleTempoEOpere}
+          isSubPageBussola
         />
         <div id="main--sinuous">
           <div className="container">

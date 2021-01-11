@@ -13,8 +13,17 @@
     touch-action: pan-y;
 }
 
-.handle-blue > .rc-slider-handle {
+.handle-blue  {
     background-color: var(--dark-blue);
+    color: #fff;
+}
+
+.handle-blue:hover{
+    color: #FFF;
+}
+
+.block-eye{
+    border: 1px solid #000;
 }
 
 .rc-slider-handle:active, .rc-slider-handle-click-focused {
