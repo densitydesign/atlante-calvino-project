@@ -1,17 +1,17 @@
-import React from "react"
-import Footer from "../../headers/Footer/Footer"
-import IndexMenuHeader from "../../headers/IndexMenuHeader"
-import { Link } from "react-router-dom"
-import { Trans, useTranslation } from "react-i18next"
+import React from "react";
+import Footer from "../../headers/Footer/Footer";
+import IndexMenuHeader from "../../headers/IndexMenuHeader";
+import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Instructions() {
-  const { t } = useTranslation("instructions")
+  const { t } = useTranslation("instructions");
 
   return (
     <div>
       <IndexMenuHeader menuAction={"openIndex"} />
       <div className="ac-grid-24">
-        <Trans i18nKey='instructions_text' ns='instructions' t={t}>
+        <Trans i18nKey="instructions_text" ns="instructions" t={t}>
           <div className="content">
             <h1>Istruzioni per l'uso</h1>
             <p>
@@ -47,13 +47,29 @@ export default function Instructions() {
               </ol>
             </div>
             <p>
-              I {" "}
+              I{" "}
               <Link to="/itineraries">
                 <strong>3 itinerari</strong>
               </Link>{" "}
               che abbiamo scelto di percorrere riguardano:
             </p>
             <div>
+              <ol type="1">
+                <li>
+                  il dubbio, considerato come uno dei grandi motori della
+                  scrittura calviniana
+                </li>
+                <li>
+                  lo spazio, che consente di esplorare l’opera attraverso una
+                  mappatura dei suoi luoghi
+                </li>
+                <li>la forma, che pone il problema fondamentale della trama</li>
+              </ol>
+            </div>
+            <div>
+            <p>
+            Ciascuno dei 3 itinerari si sviluppa in <strong>3 tappe</strong>:
+            </p>
               <ol type="1">
                 <li>
                   La prima tappa (<Link to="/phases#phaenomenon">fenomeno</Link>
@@ -91,11 +107,11 @@ export default function Instructions() {
               <strong> corpus </strong>
               narrativo, basandosi sul testo stabilito nell’edizione dei{" "}
               <i>Romanzi e racconti</i>, edizione diretta da Claudio Milanini, a
-              cura di Mario Barenghi e Bruno Falcetto (Milano, Mondadori, 3 voll., 1991, 1992,
-              1994: d’ora in avanti <i>RR</i>, seguito dal volume e dal numero di
-              pagina) di cui la casa editrice Mondadori ci ha consentito
-              l’utilizzo in formato digitale per la creazione dei dataset
-              necessari alle elaborazioni visive. I casi in cui la
+              cura di Mario Barenghi e Bruno Falcetto (Milano, Mondadori, 3
+              voll., 1991, 1992, 1994: d’ora in avanti <i>RR</i>, seguito dal
+              volume e dal numero di pagina) di cui la casa editrice Mondadori
+              ci ha consentito l’utilizzo in formato digitale per la creazione
+              dei dataset necessari alle elaborazioni visive. I casi in cui la
               visualizzazione riguardi invece una selezione del corpus, sono
               esplicitamente indicati.
             </p>
@@ -116,13 +132,16 @@ export default function Instructions() {
               <strong> Valeria Cavalloro</strong>
             </p>
             <p>
-            L’Atlante è stato scritto in italiano e tradotto in inglese, affinché fosse disponibile in una doppia versione.
-I titoli delle opere appaiono sempre in lingua originale. Per quanto riguarda le citazioni, laddove non è diversamente specificato, la traduzione è nostra.
+              L’Atlante è stato scritto in italiano e tradotto in inglese,
+              affinché fosse disponibile in una doppia versione. I titoli delle
+              opere appaiono sempre in lingua originale. Per quanto riguarda le
+              citazioni, laddove non è diversamente specificato, la traduzione è
+              nostra.
             </p>
           </div>
         </Trans>
       </div>
       <Footer />
     </div>
-  )
+  );
 }
