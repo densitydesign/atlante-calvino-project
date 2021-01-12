@@ -34,7 +34,7 @@
     "interiore": "interiore",
     "formale": "formale"
   },
-  "Esteriore": "Esteriore",
+  "Esteriore": "Piano Esteriore",
   "categorie": {
     "spostamento": "spostamento",
     "stato euforico": "stato euforico",
@@ -51,6 +51,9 @@
     "intenzione": "intenzione",
     "situazione": "situazione"
   },
-  "Forma": "Forma",
-  "Interiore": "Interiore"
+  "Forma": "Piano Formale",
+  "Interiore": "Piano Interiore",
+  "combining": {
+    "text_slider": "<0><i>Muovi lo slider per vedere la struttura dei livelli</i><br/><2>Clicca <1></1> per evidenziare la combinazione</2></0>"
+  }
 }
