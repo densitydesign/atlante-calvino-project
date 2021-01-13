@@ -112,7 +112,15 @@
     "Aggregato": "Aggregato",
     "Non aggregato": "Non aggregato",
     "Ambito": "Ambito",
-    "Categorie": "Categorie"
+    "Categorie": "Categorie",
+    "Movement": "Movement",
+    "No movement": "No movement",
+    "Interno": "Interno",
+    "Esterno": "Esterno",
+    "Indoor": "Indoor",
+    "Outdoor": "Outdoor",
+    "No location": "No location",
+    "Means of transportation": "Means of transportation"
   },
   "legenda": "Legenda",
   "analisi": "Vai alla visualizzazione",
