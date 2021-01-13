@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { withTranslation } from "react-i18next"
+import { withTranslation, Trans } from "react-i18next"
 import MainMenu from "../../general/MainMenu"
 import PageTitle from "../../general/PageTitle"
 import MoreInfo from "../../general/MoreInfo"
@@ -14,6 +14,7 @@ import marimekkoData from "./marimekko.json"
 
 import volumi from "./volumi.json"
 import GlobalData from "../../utilities/GlobalData"
+import { ReactComponent as Eye } from "./icons/eye.svg"
 
 // const marimekkoData = MD.filter(x => x.textID === "V005")
 
@@ -104,12 +105,12 @@ class Trama extends Component {
 
         <div className="top-nav navigations">
           <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
-          <PageTitle title={t('combinare')} style={{ gridColumn: "span 10" }} />
+          <PageTitle title={t("combinare")} style={{ gridColumn: "span 10" }} />
 
           {this.state.isLoading && <Loading style={{ gridColumn: "span 3" }} />}
           {!this.state.isLoading && (
             <AltOptions
-              title={t('cerca_per')}
+              title={t("cerca_per")}
               options={cercaOptions}
               disabled={true}
               value={cercaPer}
@@ -147,7 +148,21 @@ class Trama extends Component {
             }}
           />
         </div>
-
+        {currentTextID && (
+          <Trans
+            i18nKey={"combining.text_slider"}
+            t={t}
+            ns="combining"
+          >
+            <div className="position-absolute" style={{ top: 70, left: 130 }}>
+              <i>Muovi lo slider per vedere la struttura dei livelli</i>
+              <br />
+              <i>
+                Clicca <Eye /> per evidenziare la combinazione
+              </i>
+            </div>
+          </Trans>
+        )}
         <div className="the-body-viz">
           <MarimekkoViz
             data={marimekkoData}
@@ -178,7 +193,7 @@ class Trama extends Component {
             isFlex
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            allLink="tutti"              
+            allLink="tutti"
             style={{
               gridColumn: "span 8",
               textAlign: "center",
@@ -231,4 +246,4 @@ class Trama extends Component {
   }
 }
 
-export default withTranslation(["translation","combining"])(Trama)
+export default withTranslation(["translation", "combining"])(Trama)

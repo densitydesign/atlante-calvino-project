@@ -49,7 +49,8 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               Calvino. Prendendo la nebbia come oggetto di studio, abbiamo
               cercato di tracciare la ricorrenza di questo elemento atmosferico
               nell’opera di Calvino. A tal fine, sono state catalogate tutte le
-              occorrenze delle parole derivate dal termine nebbia; inoltre, sono
+              occorrenze delle parole derivate dal termine{" "}
+              <span style={{ color: "#5151fc" }}>nebbia</span>; inoltre, sono
               stati presi in considerazione anche elementi atmosferici non
               esattamente coincidenti ma simili, quali “bruma”, “caligine”,
               “foschia” e eventuali derivati. Infine, abbiamo deciso di
@@ -120,7 +121,9 @@ export default function TerritoryDoubtHelp({ helpProps }) {
               concretamente spazio, il narratore non sembra aver bisogno di
               evocare la cancellazione; viceversa, laddove la cancellazione
               dilaga, l’apparizione della nebbia vera e propria diventa
-              superflua.<br></br><br></br><br></br>
+              superflua.<br></br>
+              <br></br>
+              <br></br>
             </p>
           </Trans>
         </Tab>
