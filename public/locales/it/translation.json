@@ -120,7 +120,16 @@
     "Indoor": "Indoor",
     "Outdoor": "Outdoor",
     "No location": "No location",
-    "Means of transportation": "Means of transportation"
+    "Means of transportation": "Means of transportation",
+    "One": "One",
+    "Two": "Two",
+    "Three": "Three",
+    "Four": "Four",
+    "Five": "Five",
+    "Piano": "Piano",
+    "Categories": "Categories",
+    "Aggregated": "Aggregated",
+    "Non-aggregated": "Non-aggregated"
   },
   "legenda": "Legenda",
   "analisi": "Vai alla visualizzazione",
