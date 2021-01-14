@@ -1,25 +1,21 @@
 {
-  "esplorare_l_opera": "Exploring the corpus as a territory",
+  "Esplorare l'opera come un territorio": "Exploring the corpus as a territory",
   "help_panel": {
     "di_cosa_si_tratta": "<p>This visualization is the same for the first stage of each of the three itineraries. It represents Italo Calvino’s body of work: over two hundred texts, written and published between 1943 and 1985, grouped together based on time of publication and edition. Each text is represented by a graphic element; as such, the minimum unit of the visualization is not the volume, but the single text. As an opening to the Atlas, we felt it was necessary to provide a new comprehensive view of the author’s full body of work as an invitation to explore it.</p>",
-    "come_funziona": "<p>To correctly read the visualization it is necessary to pay attention to three parameters: a) the arrangement of the elements; b) their size; c) the use of colour.\n</p><1><0></0></1><p>a) The elements are positioned following two criteria: the volume they are published in and the date they were first published. This means that a principle of attraction is acting both on texts that belong to the same volume, and on contemporary texts. As a consequence, when observing the territory it is possible to recognise an outer ring and a number of internal clusters. The latter represent all the texts that were gathered into collections.</p><3><0></0></3><p>b) Each element’s size is proportional to the length of the text it represents. As such, it is possible to locate the more substantial works at a glance.</p>",
-    "cronologia": "CRONOLOGIA",
-    "testo_cronologia": "<p>c) L’uso del colore introduce due differenti modalità esplorative: la scala cromatica che va dal verde al viola, attiva nella modalità Cronologia, segnala l’ordine cronologico di prima pubblicazione di tutti i testi del corpus.</p>",
-    "situazione_editoriale": "SITUAZIONE EDITORIALE",
-    "testo_situazione_editoriale": "<p>Selezionando invece la modalità Volumi, il colore consente di riconoscere tutti i volumi pubblicati in vita dall’autore, sia che si tratti di raccolte di racconti, sia che si tratti di altri tipi di testi. Le raccolte di racconti sono riconoscibili con gli stessi colori anche in modalità Cronologia, attraverso l’utilizzo di alcune linee di contorno.</p><p>Interagendo con un singolo elemento grafico appaiono il titolo, l’anno di prima pubblicazione ed eventuali pubblicazioni successive. Il Filtro cronologico consente di riorganizzare il corpus su una linea temporale e, se necessario, selezionare un intervallo di tempo specifico (un anno, un decennio ecc.) Utilizzando la funzione Cerca è possibile individuare singoli testi o raccolte di racconti.</p>",
-    "raccolte": "RACCOLTE"
-  },
-  "header": {
-    "cerca_per_titolo": "Cerca per titolo",
-    "esplorare_opera": "Exploring the corpus as a territory"
+    "qualche_pista_di_lettura": "<0>The territory can be explored from many different points of view in order to use it as an inspiration source for research ideas as new as this particular perspective. An example of this are the three <i>Analyses of the phenomena</i> in this work, which elaborate on the source structure of the territory following three different queries.<br/><br/><br/></0>",
+    "situazione_editoriale": "Publishing situation",
+    "come_funziona": "<p>To correctly read the visualization it is necessary to pay attention to three parameters: a) the arrangement of the elements; b) their size; c) the use of colour.</p><1><0></0></1><p>a) The elements are positioned following two criteria: the volume they are published in and the date they were first published. This means that a principle of attraction is acting both on texts that belong to the same volume, and on contemporary texts. As a consequence, when observing the territory it is possible to recognise an outer ring and a number of internal clusters. The latter represent all the texts that were gathered into collections.</p><3><0></0></3><p>b) Each element’s size is proportional to the length of the text it represents. As such, it is possible to locate the more substantial works at a glance.</p>",
+    "testo_cronologia": "<0>c) The use of colour introduces two different paths to explore: the chromatic scale that ranges from green to purple, activated in <i>Chronology</i>, mode, shows the chronological order of first publication for every text.</0>",
+    "testo_situazione_editoriale": "<0>When selecting the <i>Volumes</i>mode, the colour shows all the volumes published by the author in his life, both collections of short stories and other types of texts. The collections are recognizable in <i>Chronology</i>, mode as well, highlighted by outlines in the same colours used in the Volumes mode.</0><1>When interacting with a single graphic element, the title, year of first publication and years of later publications (if present), become visible. The <i>chronological filter</i> allows viewers to reorganize the entire corpus on a timeline and, if necessary, to select a specific time interval (a year, a decade, etc). With the <i>Search</i> function it is also possible to select single texts or collections.</1>",
+    "cronologia": "Chronology",
+    "raccolte": "Collections"
   },
   "footer": {
-    "Cronologia": "Cronologia",
-    "modalita": "Modalità",
-    "analisi_dei_fenomeni": "Analisi dei fenomeni",
-    "cronologia": "cronologia",
-    "volumi": "Volumi",
+    "analisi_dei_fenomeni": "Phenomena analysis",
+    "Cronologia": "Chronology",
+    "volumi": "Volumes",
     "filtro_cronologico": "Chronological filter",
-    "proporzione": "proporzione"
+    "modalita": "Mode",
+    "proporzione": "Proportion"
   }
 }

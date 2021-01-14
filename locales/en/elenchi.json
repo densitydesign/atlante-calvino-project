@@ -1,20 +1,20 @@
 {
   "help_panel": {
-    "di_cosa_si_tratta": "<p>Perché gli elenchi? Perché Calvino è un autore fondamentalmente elencatorio, che usa gli elenchi in modo virtuosistico e con grande frequenza. Gli elenchi rappresentano il grado zero di quella forma “modulare” della sua scrittura che indagheremo nel corso di questo itinerario.</p><1>Sono stati considerati elenchi tutte le sequenze composte da più di tre componenti, e i vari tipi sono stati distinti scegliendo come parametro la complessità degli elementi sintattici che li compongono (quando gli elenchi sono composti da tipi diversi si è seguito il criterio del tipo più presente), e sono segnalati da colori diversi: elenchi di singole <2>parole</2> (nomi, aggettivi, verbi, avverbi, con o senza articoli), elenchi di <5>sintagmi</5> (unità sintattiche complesse senza significato compiuto), elenchi di <8>proposizioni</8> (unità sintattiche complesse con significato compiuto), elenchi <11>misti</11> (sequenze in cui gli elementi precedenti sono mescolati in modo tale che nessuno è dominante sugli altri).</1>",
-    "come_funziona": "<p>La visualizzazione mostra in primo luogo la distribuzione tra i tipi di elenchi: ogni cerchio del territorio è diviso in segmenti colorati di lunghezza diversa, che rispecchiano il rapporto tra le estensioni dei vari tipi di elenchi presenti all’interno di un certo testo, calcolata in base al numero di caratteri. Sulla base di questa rappresentazione grafica, un primo filtro permette di selezionare individualmente uno o più tipi per osservarne la distribuzione sul corpus.</p><1>La modalità <1>Proporzione</1> permette di visualizzare nello specifico il rapporto tra la quantità di testo occupata dai vari elenchi, aggregati indipendentemente dalla suddivisione per tipologia, e la lunghezza complessiva di ogni opera.</1>",
-    "qualche_pista_di_lettura": "<0>Nel complesso, la trasposizione grafica dei dati permette di avere una panoramica sull’uso delle strutture elencatorie da parte di Calvino, che rivela come primo dato evidente la pervasività di questo strumento stilistico: quasi la totalità del corpus presenta elenchi, e nella maggior parte dei casi la loro presenza supera il 5% della lunghezza complessiva dei testi, il che rimarca la propensione dell’autore per l’espansione paradigmatica (elementi simili tra loro) rispetto allo sviluppo sintagmatico (elementi diversi tra loro) della narrazione. I dati rivelano anche una serie di informazioni sulle preferenze calviniane, e sulla loro oscillazione attraverso il tempo e i generi, tra cui la predominanza di elenchi che coinvolgono strutture complesse (sintagmi o frasi), e la tendenza a mescolare sempre i diversi tipi, il che segnala una precisa consapevolezza artistica e la ricerca di una forma di equilibrio nell’impiego di questa forma di accumulazione verbale (vedi <2><0>Approfondimento</0></2>).</0>",
-    "tipi_di_elenco": "TIPI DI ELENCO",
-    "misto": "misto",
-    "parole": "parole",
-    "sintagmi": "sintagmi",
-    "frasi": "frasi",
-    "senza_elenco": "senza_elenco"
+    "tipi_di_elenco": "List types",
+    "misto": "Mixed",
+    "parole": "Words",
+    "sintagmi": "Phrases",
+    "frasi": "Sentences",
+    "senza_elenco": "No list",
+    "di_cosa_si_tratta": "<p>Why lists? Because Calvino is an author who always makes lists, using them with true mastery and great frequency. Lists represent the degree zero of the “modular” form of his writing that we mean to investigate in this itinerary.</p><1>Every sequence of more than three components has been counted as a list; the lists have then been divided according to the complexity of the syntactic elements in them (when a list contains more than one type of element, it is assigned to a group according to the prevalent type), and highlighted by different colours: lists of <2>words</2> (nouns, adjectives, verbs, adverbs, with or without articles), lists of <5>phrases</5> (complex syntactic units with no complete meaning), lists of <8>clauses</8> (complex syntactic units with complete meaning), <11>mixed</11> lists (sequences in which the elements are mixed and where none prevails over the others).</1>",
+    "come_funziona": "<p>First of all, this visualization shows the distribution of the types of list: each circle on the territory is divided into coloured segments of varying length, mirroring the size of the various types of lists in a specific text, depending on the number of characters in each one. A first filter can then be applied to this graphic representation to select one or more types of lists and see their distribution over the whole body of work.</p><1>The <1>Proportion</1> mode allows the viewer to visualize the ratio between the amount of text occupied by the lists, independently of their type, and the length of each work.</1>",
+    "qualche_pista_di_lettura": "<0>Overall, the graphic transposition of the data allows the viewer to have an overview on the use of listing structures in Calvino’s writing. The first important information that can be inferred from it is how pervasive this stylistic device is: almost every work has lists in it, and in most cases they amount to more than 5% of the overall length of the texts. This can only underline the author’s propensity towards paradigmatic (elements that are similar to each other) rather than syntagmatic (elements that are different from each other) development of narration. The data also reveal information about Calvino’s preferences and the changes they undergo through time and genres. For example, the predominance of lists of complex structures (phrases or sentences), and the tendency to always mix the types, which reveals a precise artistic awareness and the search for a balanced use of this form of verbal accumulation (see the <2>In-depth analysis</2>).<br/><br/><br/></0>"
   },
   "footer": {
-    "tipo_di_elenco": "tipo di elenco",
-    "Misto": "Misto",
-    "Proposizioni": "Proposizioni",
-    "Parole": "Parole",
-    "Sintagmi": "Sintagmi"
+    "Misto": "Mixed",
+    "Proposizioni": "Clauses",
+    "tipo_di_elenco": "List types",
+    "Parole": "Words",
+    "Sintagmi": "Phrases"
   }
 }
