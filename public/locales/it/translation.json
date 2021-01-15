@@ -161,5 +161,6 @@
   "periodico": "Periodico",
   "tipologia": {
     "matrimonio": "matrimonio"
-  }
+  },
+  "subtitle": "subtitle"
 }

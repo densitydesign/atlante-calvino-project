@@ -27,10 +27,13 @@ class CompassFlux extends React.Component {
             <div className="row intro">
               <div className="col-12">
                 <Trans i18nKey={"title"} t={this.props.t} ns="compass-flux">
-                  <h1>I flussi dei racconti</h1>
+                  <h1 style={{marginBottom: 0}}>I flussi dei racconti</h1>
                 </Trans>
               </div>
               <div className="col-7 col-xl-7">
+                <h2 style={{marginBottom: '3rem'}}>{this.props.t(
+                    "compass-flux:subtitle"
+                  )}</h2>
                 <Trans
                   i18nKey={"blocco_testo_1"}
                   t={this.props.t}
