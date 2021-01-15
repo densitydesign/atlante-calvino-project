@@ -4,6 +4,8 @@ import IndexMenuHeader from "../../headers/IndexMenuHeader";
 import { Link } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
 
+import archipelagoZip from "../Compass/files/viz-03-arcipelago.zip";
+
 export default function Instructions() {
   const { t } = useTranslation("instructions");
 
@@ -42,7 +44,16 @@ export default function Instructions() {
                 </li>
                 <li>
                   La rappresentazione della biblioteca mentale dello scrittore (
-                  <Link to="/compass">L’arcipelago dei nomi</Link>)
+                  <a
+                    href={archipelagoZip}
+                    className="link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download={"Atlante Calvino - L'arcipelago dei nomi.zip"}
+                  >
+                    L’arcipelago dei nomi
+                  </a>
+                  )
                 </li>
               </ol>
             </div>
@@ -67,9 +78,10 @@ export default function Instructions() {
               </ol>
             </div>
             <div>
-            <p>
-            Ciascuno dei 3 itinerari si sviluppa in <strong>3 tappe</strong>:
-            </p>
+              <p>
+                Ciascuno dei 3 itinerari si sviluppa in <strong>3 tappe</strong>
+                :
+              </p>
               <ol type="1">
                 <li>
                   La prima tappa (<Link to="/phases#phaenomenon">fenomeno</Link>
