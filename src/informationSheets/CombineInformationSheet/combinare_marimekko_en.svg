@@ -1,368 +1,892 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="750" height="395" viewBox="0 0 750 395">
-  <defs>
-    <clipPath id="clip-marimekko">
-      <rect width="750" height="395"/>
-    </clipPath>
-  </defs>
-  <g id="marimekko" clip-path="url(#clip-marimekko)">
-    <g id="Raggruppa_23656" data-name="Raggruppa 23656" transform="translate(0 2)">
-      <text id="Le_Cosmicomiche" data-name="Le cosmicomiche" transform="translate(0 -2)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="14">Le cosmicomiche</tspan></text>
-      <text id="La_nuvola_di_smog_and_La_formica_argentina" data-name="La nuvola di smog and La formica argentina" transform="translate(464)" font-size="14" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500"><tspan x="0" y="14">La nuvola di smog and La formica argentina</tspan></text>
-      <g id="Raggruppa_23655" data-name="Raggruppa 23655" transform="translate(0 35.861)">
-        <g id="Raggruppa_23651" data-name="Raggruppa 23651" transform="translate(285 280.108)">
-          <rect id="Rettangolo_19055" data-name="Rettangolo 19055" width="95.2" height="8.906" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19056" data-name="Rettangolo 19056" width="95.2" height="0.975" transform="translate(0 8.908)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19057" data-name="Rettangolo 19057" width="95.2" height="2.754" transform="translate(0 9.885)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19058" data-name="Rettangolo 19058" width="95.2" height="3.597" transform="translate(0 12.641)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19059" data-name="Rettangolo 19059" width="95.2" height="3.346" transform="translate(0 16.24)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19060" data-name="Rettangolo 19060" width="95.2" height="8.117" transform="translate(0 19.588)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19061" data-name="Rettangolo 19061" width="95.2" height="9.368" transform="translate(0 27.717)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19062" data-name="Rettangolo 19062" width="95.2" height="4.729" transform="translate(0 37.095)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19063" data-name="Rettangolo 19063" width="95.2" height="3.489" transform="translate(0 41.826)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19064" data-name="Rettangolo 19064" width="95.2" height="3.025" transform="translate(0 45.316)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19065" data-name="Rettangolo 19065" width="95.2" height="4.458" transform="translate(0 48.343)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-        </g>
-        <g id="Raggruppa_24963" data-name="Raggruppa 24963" transform="translate(190 280.108)" opacity="0.222">
-          <rect id="Rettangolo_19055-2" data-name="Rettangolo 19055" width="95.2" height="8.906" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19056-2" data-name="Rettangolo 19056" width="95.2" height="0.975" transform="translate(0 8.908)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19057-2" data-name="Rettangolo 19057" width="95.2" height="2.754" transform="translate(0 9.885)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19058-2" data-name="Rettangolo 19058" width="95.2" height="3.597" transform="translate(0 12.641)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19059-2" data-name="Rettangolo 19059" width="95.2" height="3.346" transform="translate(0 16.24)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19060-2" data-name="Rettangolo 19060" width="95.2" height="8.117" transform="translate(0 19.588)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19061-2" data-name="Rettangolo 19061" width="95.2" height="9.368" transform="translate(0 27.717)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19062-2" data-name="Rettangolo 19062" width="95.2" height="4.729" transform="translate(0 37.095)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19063-2" data-name="Rettangolo 19063" width="95.2" height="3.489" transform="translate(0 41.826)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19064-2" data-name="Rettangolo 19064" width="95.2" height="3.025" transform="translate(0 45.316)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19065-2" data-name="Rettangolo 19065" width="95.2" height="4.458" transform="translate(0 48.343)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-        </g>
-        <g id="Raggruppa_23650" data-name="Raggruppa 23650" transform="translate(189.449 0.219)">
-          <rect id="Rettangolo_19066" data-name="Rettangolo 19066" width="95.2" height="10.506" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19067" data-name="Rettangolo 19067" width="95.2" height="3.671" transform="translate(0 10.508)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19068" data-name="Rettangolo 19068" width="95.2" height="3.686" transform="translate(0 14.18)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19069" data-name="Rettangolo 19069" width="95.2" height="1.234" transform="translate(0 17.869)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19070" data-name="Rettangolo 19070" width="95.2" height="4.794" transform="translate(0 19.104)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19071" data-name="Rettangolo 19071" width="95.2" height="5.99" transform="translate(0 23.901)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19072" data-name="Rettangolo 19072" width="95.2" height="5.077" transform="translate(0 29.892)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19073" data-name="Rettangolo 19073" width="95.2" height="1.143" transform="translate(0 34.971)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19074" data-name="Rettangolo 19074" width="95.2" height="6.947" transform="translate(0 36.116)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19075" data-name="Rettangolo 19075" width="95.2" height="5.293" transform="translate(0 43.065)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19076" data-name="Rettangolo 19076" width="95.2" height="8.653" transform="translate(0 47.59)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19077" data-name="Rettangolo 19077" width="95.2" height="4.315" transform="translate(0 56.873)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19078" data-name="Rettangolo 19078" width="95.2" height="9.165" transform="translate(0 51.994)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19079" data-name="Rettangolo 19079" width="95.2" height="7.87" transform="translate(0 59.716)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19080" data-name="Rettangolo 19080" width="95.2" height="5.406" transform="translate(0 66.409)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19081" data-name="Rettangolo 19081" width="95.2" height="3.27" transform="translate(0 53.673)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19082" data-name="Rettangolo 19082" width="95.2" height="3.971" transform="translate(0 55.698)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19083" data-name="Rettangolo 19083" width="95.2" height="0.758" transform="translate(0 58.465)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19084" data-name="Rettangolo 19084" width="95.2" height="2.112" transform="translate(0 58.845)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19085" data-name="Rettangolo 19085" width="95.2" height="5.974" transform="translate(0 60.08)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19086" data-name="Rettangolo 19086" width="95.2" height="2.042" transform="translate(0 64.195)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19087" data-name="Rettangolo 19087" width="95.2" height="8.063" transform="translate(0 64.969)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19088" data-name="Rettangolo 19088" width="95.2" height="1.41" transform="translate(0 70.682)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19089" data-name="Rettangolo 19089" width="95.2" height="2.172" transform="translate(0 71.509)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19090" data-name="Rettangolo 19090" width="95.2" height="2.303" transform="translate(0 72.878)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19091" data-name="Rettangolo 19091" width="95.2" height="4.916" transform="translate(0 74.086)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19092" data-name="Rettangolo 19092" width="95.2" height="1.24" transform="translate(0 77.578)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19093" data-name="Rettangolo 19093" width="95.2" height="1.599" transform="translate(0 78.332)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19094" data-name="Rettangolo 19094" width="95.2" height="1.888" transform="translate(0 79.321)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19095" data-name="Rettangolo 19095" width="95.2" height="5.264" transform="translate(0 80.162)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19096" data-name="Rettangolo 19096" width="95.2" height="5.76" transform="translate(0 83.913)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19097" data-name="Rettangolo 19097" width="95.2" height="4.951" transform="translate(0 87.653)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19098" data-name="Rettangolo 19098" width="95.2" height="2.536" transform="translate(0 91.082)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19099" data-name="Rettangolo 19099" width="95.2" height="4.359" transform="translate(0 92.471)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19100" data-name="Rettangolo 19100" width="95.2" height="4.384" transform="translate(0 95.819)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19101" data-name="Rettangolo 19101" width="95.2" height="2.104" transform="translate(0 98.897)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19102" data-name="Rettangolo 19102" width="95.2" height="5.203" transform="translate(0 99.825)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19103" data-name="Rettangolo 19103" width="95.2" height="3.1" transform="translate(0 103.41)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19104" data-name="Rettangolo 19104" width="95.2" height="1.975" transform="translate(0 105.536)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19105" data-name="Rettangolo 19105" width="95.2" height="2.261" transform="translate(0 106.753)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19106" data-name="Rettangolo 19106" width="95.2" height="1.195" transform="translate(0 108.343)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19107" data-name="Rettangolo 19107" width="95.2" height="5.435" transform="translate(0 108.494)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19108" data-name="Rettangolo 19108" width="95.2" height="1.149" transform="translate(0 112.573)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19109" data-name="Rettangolo 19109" width="95.2" height="2.971" transform="translate(0 113.034)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19110" data-name="Rettangolo 19110" width="95.2" height="2.708" transform="translate(0 114.962)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19111" data-name="Rettangolo 19111" width="95.2" height="3.214" transform="translate(0 116.606)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19112" data-name="Rettangolo 19112" width="95.2" height="3.959" transform="translate(0 119.156)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19113" data-name="Rettangolo 19113" width="95.2" height="1.642" transform="translate(0 122.041)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19114" data-name="Rettangolo 19114" width="95.2" height="2.329" transform="translate(0 122.976)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19115" data-name="Rettangolo 19115" width="95.2" height="3.396" transform="translate(0 124.282)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19116" data-name="Rettangolo 19116" width="95.2" height="3.33" transform="translate(0 126.45)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19117" data-name="Rettangolo 19117" width="95.2" height="6.961" transform="translate(0 127.942)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19118" data-name="Rettangolo 19118" width="95.2" height="3.721" transform="translate(0 133.201)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19119" data-name="Rettangolo 19119" width="95.2" height="8.657" transform="translate(0 134.665)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19120" data-name="Rettangolo 19120" width="95.2" height="3.694" transform="translate(0 141.062)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19121" data-name="Rettangolo 19121" width="95.2" height="7.299" transform="translate(0 142.715)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19122" data-name="Rettangolo 19122" width="95.2" height="2.327" transform="translate(0 148.308)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19123" data-name="Rettangolo 19123" width="95.2" height="7.454" transform="translate(0 148.765)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19124" data-name="Rettangolo 19124" width="95.2" height="0.193" transform="translate(0 154.959)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19125" data-name="Rettangolo 19125" width="95.2" height="0.76" transform="translate(0 154.969)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19126" data-name="Rettangolo 19126" width="95.2" height="2.934" transform="translate(0 155.011)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19127" data-name="Rettangolo 19127" width="95.2" height="3.878" transform="translate(0 156.68)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19128" data-name="Rettangolo 19128" width="95.2" height="4.928" transform="translate(0 159.647)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19129" data-name="Rettangolo 19129" width="95.2" height="0.435" transform="translate(0 163.738)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19130" data-name="Rettangolo 19130" width="95.2" height="4.402" transform="translate(0 163.162)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19131" data-name="Rettangolo 19131" width="95.2" height="0.435" transform="translate(0 166.823)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19132" data-name="Rettangolo 19132" width="95.2" height="2.325" transform="translate(0 166.688)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19133" data-name="Rettangolo 19133" width="95.2" height="0.495" transform="translate(0 168.571)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19134" data-name="Rettangolo 19134" width="95.2" height="2.373" transform="translate(0 168.473)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19135" data-name="Rettangolo 19135" width="95.2" height="11.15" transform="translate(0 167.977)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19136" data-name="Rettangolo 19136" width="95.2" height="2.1" transform="translate(0 177.134)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19137" data-name="Rettangolo 19137" width="95.2" height="2.996" transform="translate(0 178.26)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19138" data-name="Rettangolo 19138" width="95.2" height="2.936" transform="translate(0 180.663)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19139" data-name="Rettangolo 19139" width="95.2" height="0.371" transform="translate(0 183.144)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19140" data-name="Rettangolo 19140" width="95.2" height="1.955" transform="translate(0 183.003)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19141" data-name="Rettangolo 19141" width="95.2" height="2.079" transform="translate(0 184.217)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19142" data-name="Rettangolo 19142" width="95.2" height="0.994" transform="translate(0 185.805)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19143" data-name="Rettangolo 19143" width="95.2" height="1.478" transform="translate(0 186.321)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19144" data-name="Rettangolo 19144" width="95.2" height="5.487" transform="translate(0 186.27)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19145" data-name="Rettangolo 19145" width="95.2" height="2.137" transform="translate(0 190.59)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19146" data-name="Rettangolo 19146" width="95.2" height="4.102" transform="translate(0 191.452)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19147" data-name="Rettangolo 19147" width="95.2" height="2.882" transform="translate(0 194.369)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19148" data-name="Rettangolo 19148" width="95.2" height="2.133" transform="translate(0 196.394)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19149" data-name="Rettangolo 19149" width="95.2" height="2.114" transform="translate(0 197.757)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19150" data-name="Rettangolo 19150" width="95.2" height="2.443" transform="translate(0 199.016)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19151" data-name="Rettangolo 19151" width="95.2" height="2.768" transform="translate(0 200.484)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19152" data-name="Rettangolo 19152" width="95.2" height="3.646" transform="translate(0 202.008)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19153" data-name="Rettangolo 19153" width="95.2" height="2.035" transform="translate(0 204.758)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19154" data-name="Rettangolo 19154" width="95.2" height="1.217" transform="translate(0 206.274)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19155" data-name="Rettangolo 19155" width="95.2" height="2" transform="translate(0 206.837)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19156" data-name="Rettangolo 19156" width="95.2" height="2.093" transform="translate(0 208.085)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19157" data-name="Rettangolo 19157" width="95.2" height="4.09" transform="translate(0 208.864)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19158" data-name="Rettangolo 19158" width="95.2" height="1.57" transform="translate(0 212.164)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19159" data-name="Rettangolo 19159" width="95.2" height="1.694" transform="translate(0 213.13)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19160" data-name="Rettangolo 19160" width="95.2" height="1.704" transform="translate(0 214.206)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19161" data-name="Rettangolo 19161" width="95.2" height="1.909" transform="translate(0 215.234)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19162" data-name="Rettangolo 19162" width="95.2" height="0.617" transform="translate(0 216.815)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19163" data-name="Rettangolo 19163" width="95.2" height="1.066" transform="translate(0 217.082)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19164" data-name="Rettangolo 19164" width="95.2" height="2.497" transform="translate(0 217.353)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19165" data-name="Rettangolo 19165" width="95.2" height="2.1" transform="translate(0 219.056)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19166" data-name="Rettangolo 19166" width="95.2" height="2.303" transform="translate(0 220.578)" fill="aqua" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19167" data-name="Rettangolo 19167" width="95.2" height="1.261" transform="translate(0 222.348)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19168" data-name="Rettangolo 19168" width="95.2" height="2.052" transform="translate(0 205.493)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19169" data-name="Rettangolo 19169" width="95.2" height="3.603" transform="translate(0 207.034)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19170" data-name="Rettangolo 19170" width="95.2" height="2.543" transform="translate(0 210.192)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19171" data-name="Rettangolo 19171" width="95.2" height="1.273" transform="translate(0 212.486)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19172" data-name="Rettangolo 19172" width="95.2" height="2.835" transform="translate(0 213.367)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19173" data-name="Rettangolo 19173" width="95.2" height="7.792" transform="translate(0 215.124)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19174" data-name="Rettangolo 19174" width="95.2" height="8.622" transform="translate(0 221.545)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19175" data-name="Rettangolo 19175" width="95.2" height="3.067" transform="translate(0 221.556)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19176" data-name="Rettangolo 19176" width="95.2" height="3.715" transform="translate(0 223.762)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19177" data-name="Rettangolo 19177" width="95.2" height="0.866" transform="translate(0 228.119)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19178" data-name="Rettangolo 19178" width="95.2" height="5.197" transform="translate(0 228.987)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19179" data-name="Rettangolo 19179" width="95.2" height="2.199" transform="translate(0 234.186)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19180" data-name="Rettangolo 19180" width="95.2" height="2.334" transform="translate(0 236.387)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19181" data-name="Rettangolo 19181" width="95.2" height="8.715" transform="translate(0 238.723)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19182" data-name="Rettangolo 19182" width="95.2" height="7.676" transform="translate(0 247.44)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19183" data-name="Rettangolo 19183" width="95.2" height="4.721" transform="translate(0 255.118)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19184" data-name="Rettangolo 19184" width="95.2" height="1.311" transform="translate(0 259.841)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19185" data-name="Rettangolo 19185" width="95.2" height="3.017" transform="translate(0 261.154)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19186" data-name="Rettangolo 19186" width="95.2" height="0.894" transform="translate(0 264.173)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19187" data-name="Rettangolo 19187" width="95.2" height="4.284" transform="translate(0 265.069)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19188" data-name="Rettangolo 19188" width="95.2" height="7.173" transform="translate(0 269.355)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19189" data-name="Rettangolo 19189" width="95.2" height="1.476" transform="translate(0 276.53)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_19190" data-name="Rettangolo 19190" width="95.2" height="1.035" transform="translate(0 278.008)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-        </g>
-        <g id="Raggruppa_23649" data-name="Raggruppa 23649" transform="translate(94 0.219)">
-          <rect id="Rettangolo_2177" data-name="Rettangolo 2177" width="95.161" height="332.249" transform="translate(0.039)" fill="#fffdd1"/>
-          <rect id="Rettangolo_1515" data-name="Rettangolo 1515" width="94.814" height="0.487" transform="translate(0 38.839)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1517" data-name="Rettangolo 1517" width="94.814" height="0.179" transform="translate(0 64.274)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1519" data-name="Rettangolo 1519" width="94.814" height="0.474" transform="translate(0 89.404)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1521" data-name="Rettangolo 1521" width="94.814" height="0.602" transform="translate(0 101.798)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1523" data-name="Rettangolo 1523" width="94.814" height="0.638" transform="translate(0 126.56)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1525" data-name="Rettangolo 1525" width="94.814" height="0.276" transform="translate(0 141.835)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1527" data-name="Rettangolo 1527" width="94.814" height="0.746" transform="translate(0 169.795)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1529" data-name="Rettangolo 1529" width="94.814" height="0.495" transform="translate(0 191.948)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1531" data-name="Rettangolo 1531" width="94.814" height="0.227" transform="translate(0 234.475)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1533" data-name="Rettangolo 1533" width="94.814" height="0.409" transform="translate(0 261.128)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-          <rect id="Rettangolo_1535" data-name="Rettangolo 1535" width="94.814" height="0.575" transform="translate(0 295.957)" fill="orange" stroke="#fff" stroke-width="0.2"/>
-        </g>
-        <rect id="Rettangolo_2221" data-name="Rettangolo 2221" width="95" height="332" transform="translate(0 0.139)" fill="#ffa501" opacity="0.419"/>
-        <line id="Linea_235" data-name="Linea 235" y2="332.423" transform="translate(94.781)" fill="none" stroke="#000" stroke-width="1"/>
-        <line id="Linea_6419" data-name="Linea 6419" y2="332.423" transform="translate(189.029)" fill="none" stroke="#000" stroke-width="1"/>
-        <line id="Linea_6420" data-name="Linea 6420" y2="332.423" transform="translate(285.182)" fill="none" stroke="#000" stroke-width="1"/>
-      </g>
-      <g id="Raggruppa_23658" data-name="Raggruppa 23658" transform="translate(464 36)">
-        <g id="Raggruppa_23657" data-name="Raggruppa 23657">
-          <g id="Raggruppa_23654" data-name="Raggruppa 23654" transform="translate(95 0.08)">
-            <g id="Raggruppa_23652" data-name="Raggruppa 23652">
-              <rect id="Rettangolo_18913" data-name="Rettangolo 18913" width="95.2" height="4.441" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18914" data-name="Rettangolo 18914" width="95.2" height="6.958" transform="translate(0 4.444)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18915" data-name="Rettangolo 18915" width="95.2" height="3.471" transform="translate(0 11.406)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18916" data-name="Rettangolo 18916" width="95.2" height="5.922" transform="translate(0 14.88)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18918" data-name="Rettangolo 18918" width="95.2" height="9.037" transform="translate(0 31.867)" fill="#00ffb6" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18919" data-name="Rettangolo 18919" width="95.2" height="18.915" transform="translate(0 40.907)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18923" data-name="Rettangolo 18923" width="95.2" height="12.404" transform="translate(0 81.371)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18924" data-name="Rettangolo 18924" width="95.2" height="1.663" transform="translate(0 93.711)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18925" data-name="Rettangolo 18925" width="95.2" height="5.821" transform="translate(0 95.357)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18926" data-name="Rettangolo 18926" width="95.2" height="2.139" transform="translate(0 101.148)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18927" data-name="Rettangolo 18927" width="95.2" height="0.107" transform="translate(0 103.279)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18928" data-name="Rettangolo 18928" width="95.2" height="3.342" transform="translate(0 103.382)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18932" data-name="Rettangolo 18932" width="95.2" height="5.743" transform="translate(0 78.442)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18933" data-name="Rettangolo 18933" width="95.2" height="3.547" transform="translate(0 82.705)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18934" data-name="Rettangolo 18934" width="95.2" height="4.725" transform="translate(0 84.745)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18935" data-name="Rettangolo 18935" width="95.2" height="3.852" transform="translate(0 87.705)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18936" data-name="Rettangolo 18936" width="95.2" height="1.953" transform="translate(0 90.251)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18937" data-name="Rettangolo 18937" width="95.2" height="1.452" transform="translate(0 91.496)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18938" data-name="Rettangolo 18938" width="95.2" height="3.131" transform="translate(0 92.199)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18939" data-name="Rettangolo 18939" width="95.2" height="2.498" transform="translate(0 94.176)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18940" data-name="Rettangolo 18940" width="95.2" height="10.88" transform="translate(0 94.734)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18941" data-name="Rettangolo 18941" width="95.2" height="0.74" transform="translate(0 102.536)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18942" data-name="Rettangolo 18942" width="95.2" height="1.619" transform="translate(0 102.883)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18943" data-name="Rettangolo 18943" width="95.2" height="1.376" transform="translate(0 103.901)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18944" data-name="Rettangolo 18944" width="95.2" height="1.279" transform="translate(0 104.753)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18948" data-name="Rettangolo 18948" width="95.2" height="1.76" transform="translate(0 115.791)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18949" data-name="Rettangolo 18949" width="95.2" height="0.495" transform="translate(0 116.312)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18950" data-name="Rettangolo 18950" width="95.2" height="2.816" transform="translate(0 116.297)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18951" data-name="Rettangolo 18951" width="95.2" height="4.003" transform="translate(0 117.845)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18952" data-name="Rettangolo 18952" width="95.2" height="2.076" transform="translate(0 120.556)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18953" data-name="Rettangolo 18953" width="95.2" height="4.136" transform="translate(0 121.524)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18954" data-name="Rettangolo 18954" width="95.2" height="7.969" transform="translate(0 123.466)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18955" data-name="Rettangolo 18955" width="95.2" height="3.125" transform="translate(0 129.037)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18956" data-name="Rettangolo 18956" width="95.2" height="4.276" transform="translate(0 130.463)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18957" data-name="Rettangolo 18957" width="95.2" height="2.233" transform="translate(0 134.831)" fill="#00c19c" stroke="#fff" stroke-width="0.2" opacity="0.001"/>
-              <rect id="Rettangolo_18958" data-name="Rettangolo 18958" width="95.2" height="0.857" transform="translate(0 136.414)" fill="#00c19c" stroke="#fff" stroke-width="0.2" opacity="0.001"/>
-              <rect id="Rettangolo_18959" data-name="Rettangolo 18959" width="95.2" height="18.9" transform="translate(0 137.058)" fill="blue" stroke="#fff" stroke-width="0.2" opacity="0"/>
-              <rect id="Rettangolo_18960" data-name="Rettangolo 18960" width="95.2" height="19.978" transform="translate(0 147.437)" fill="blue" stroke="#fff" stroke-width="0.2" opacity="0"/>
-              <path id="Tracciato_147694" data-name="Tracciato 147694" d="M95.2,15.5h0Z" transform="translate(0 158.814)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18962" data-name="Rettangolo 18962" width="95.2" height="8.631" transform="translate(0 167.464)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18963" data-name="Rettangolo 18963" width="95.2" height="1.792" transform="translate(0 174.645)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18964" data-name="Rettangolo 18964" width="95.2" height="7.761" transform="translate(0 174.486)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18965" data-name="Rettangolo 18965" width="95.2" height="2.274" transform="translate(0 180.364)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18966" data-name="Rettangolo 18966" width="95.2" height="1.506" transform="translate(0 181.916)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18967" data-name="Rettangolo 18967" width="95.2" height="4.926" transform="translate(0 182.093)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18968" data-name="Rettangolo 18968" width="95.2" height="4.262" transform="translate(0 185.231)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18969" data-name="Rettangolo 18969" width="95.2" height="1.978" transform="translate(0 188.331)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18970" data-name="Rettangolo 18970" width="95.2" height="3.263" transform="translate(0 189.249)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18971" data-name="Rettangolo 18971" width="95.2" height="4.696" transform="translate(0 190.908)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18972" data-name="Rettangolo 18972" width="95.2" height="6.983" transform="translate(0 193.269)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18973" data-name="Rettangolo 18973" width="95.2" height="7.969" transform="translate(0 197.262)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18974" data-name="Rettangolo 18974" width="95.2" height="4.029" transform="translate(0 203.043)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18975" data-name="Rettangolo 18975" width="95.2" height="4.92" transform="translate(0 205.273)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18976" data-name="Rettangolo 18976" width="95.2" height="0.706" transform="translate(0 209.304)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18977" data-name="Rettangolo 18977" width="95.2" height="2.233" transform="translate(0 208.654)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18979" data-name="Rettangolo 18979" width="95.2" height="3.608" transform="translate(0 218.001)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18982" data-name="Rettangolo 18982" width="95.2" height="3.016" transform="translate(0 230.73)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18987" data-name="Rettangolo 18987" width="95.2" height="0.857" transform="translate(0 262.159)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18988" data-name="Rettangolo 18988" width="95.2" height="1.858" transform="translate(0 262.374)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18996" data-name="Rettangolo 18996" width="95.2" height="12.841" transform="translate(0 249.953)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18997" data-name="Rettangolo 18997" width="95.2" height="2.743" transform="translate(0 258.992)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_18999" data-name="Rettangolo 18999" width="95.2" height="2.098" transform="translate(0 275.127)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19000" data-name="Rettangolo 19000" width="95.2" height="1.632" transform="translate(0 277.228)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19001" data-name="Rettangolo 19001" width="95.2" height="3.707" transform="translate(0 278.863)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19002" data-name="Rettangolo 19002" width="95.2" height="6.173" transform="translate(0 282.574)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19003" data-name="Rettangolo 19003" width="95.2" height="0.923" transform="translate(0 297.245)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19004" data-name="Rettangolo 19004" width="95.2" height="7.03" transform="translate(0 298.171)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19005" data-name="Rettangolo 19005" width="95.2" height="1.496" transform="translate(0 305.205)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19006" data-name="Rettangolo 19006" width="95.2" height="4.088" transform="translate(0 306.704)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19007" data-name="Rettangolo 19007" width="95.2" height="4.044" transform="translate(0 310.796)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19008" data-name="Rettangolo 19008" width="95.2" height="2.989" transform="translate(0 314.844)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19009" data-name="Rettangolo 19009" width="95.2" height="3.481" transform="translate(0 317.836)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19010" data-name="Rettangolo 19010" width="95.2" height="3.099" transform="translate(0 321.32)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-              <rect id="Rettangolo_19011" data-name="Rettangolo 19011" width="95.2" height="8.546" transform="translate(0 324.422)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            </g>
-          </g>
-          <g id="Raggruppa_23653" data-name="Raggruppa 23653" transform="translate(191 20.637)">
-            <rect id="Rettangolo_19012" data-name="Rettangolo 19012" width="95.2" height="5.153" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19013" data-name="Rettangolo 19013" width="95.2" height="5.9" transform="translate(0 5.156)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19014" data-name="Rettangolo 19014" width="95.2" height="5.257" transform="translate(0 39.02)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19015" data-name="Rettangolo 19015" width="95.2" height="2.246" transform="translate(0 44.28)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19016" data-name="Rettangolo 19016" width="95.2" height="3.748" transform="translate(0 48.013)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19017" data-name="Rettangolo 19017" width="95.2" height="1.654" transform="translate(0 51.764)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19018" data-name="Rettangolo 19018" width="95.2" height="1.521" transform="translate(0 53.421)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19019" data-name="Rettangolo 19019" width="95.2" height="8.18" transform="translate(0 85.908)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19020" data-name="Rettangolo 19020" width="95.2" height="0.885" transform="translate(0 94.043)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19021" data-name="Rettangolo 19021" width="95.2" height="2.296" transform="translate(0 53.866)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19022" data-name="Rettangolo 19022" width="95.2" height="1.411" transform="translate(0 55.238)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19023" data-name="Rettangolo 19023" width="95.2" height="1.877" transform="translate(0 55.993)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19024" data-name="Rettangolo 19024" width="95.2" height="3.78" transform="translate(0 102.973)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19025" data-name="Rettangolo 19025" width="95.2" height="4.186" transform="translate(0 105.027)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19026" data-name="Rettangolo 19026" width="95.2" height="6.706" transform="translate(0 113.865)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19027" data-name="Rettangolo 19027" width="95.2" height="7.509" transform="translate(0 117.458)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19028" data-name="Rettangolo 19028" width="95.2" height="2.926" transform="translate(0 122.559)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19029" data-name="Rettangolo 19029" width="95.2" height="5.525" transform="translate(0 123.686)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19030" data-name="Rettangolo 19030" width="95.2" height="3.027" transform="translate(0 127.295)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19031" data-name="Rettangolo 19031" width="95.2" height="2.413" transform="translate(0 129.125)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19032" data-name="Rettangolo 19032" width="95.2" height="1.811" transform="translate(0 130.61)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19033" data-name="Rettangolo 19033" width="95.2" height="0.526" transform="translate(0 131.9)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19034" data-name="Rettangolo 19034" width="95.2" height="4.013" transform="translate(0 131.466)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19035" data-name="Rettangolo 19035" width="95.2" height="3.301" transform="translate(0 133.873)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19036" data-name="Rettangolo 19036" width="95.2" height="2.173" transform="translate(0 135.975)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19037" data-name="Rettangolo 19037" width="95.2" height="1.745" transform="translate(0 137.294)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19038" data-name="Rettangolo 19038" width="95.2" height="9.267" transform="translate(0 136.597)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19039" data-name="Rettangolo 19039" width="95.2" height="1.021" transform="translate(0 143.666)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19040" data-name="Rettangolo 19040" width="95.2" height="2.58" transform="translate(0 143.885)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19041" data-name="Rettangolo 19041" width="95.2" height="1.751" transform="translate(0 145.531)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19042" data-name="Rettangolo 19042" width="95.2" height="1.547" transform="translate(0 201.319)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19043" data-name="Rettangolo 19043" width="95.2" height="4.939" transform="translate(0 201.093)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19044" data-name="Rettangolo 19044" width="95.2" height="7.575" transform="translate(0 202.985)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19045" data-name="Rettangolo 19045" width="95.2" height="3.292" transform="translate(0 214.874)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19046" data-name="Rettangolo 19046" width="95.2" height="15.967" transform="translate(0 212.191)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19047" data-name="Rettangolo 19047" width="95.2" height="7.449" transform="translate(0 189.803)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19048" data-name="Rettangolo 19048" width="95.2" height="2.06" transform="translate(0 222.002)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19049" data-name="Rettangolo 19049" width="95.2" height="2.192" transform="translate(0 226.421)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19050" data-name="Rettangolo 19050" width="95.2" height="3.348" transform="translate(0 233.424)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19051" data-name="Rettangolo 19051" width="95.2" height="5.314" transform="translate(0 242.407)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19052" data-name="Rettangolo 19052" width="95.2" height="6.596" transform="translate(0 247.724)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19053" data-name="Rettangolo 19053" width="95.2" height="5.95" transform="translate(0 267.426)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19054" data-name="Rettangolo 19054" width="95.2" height="2.504" transform="translate(0 273.379)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-          </g>
-          <g id="Raggruppa_24964" data-name="Raggruppa 24964" transform="translate(95.402 20.637)" opacity="0.2">
-            <rect id="Rettangolo_19012-2" data-name="Rettangolo 19012" width="95.2" height="5.153" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19013-2" data-name="Rettangolo 19013" width="95.2" height="5.9" transform="translate(0 5.156)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19014-2" data-name="Rettangolo 19014" width="95.2" height="5.257" transform="translate(0 39.02)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19015-2" data-name="Rettangolo 19015" width="95.2" height="2.246" transform="translate(0 44.28)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19016-2" data-name="Rettangolo 19016" width="95.2" height="3.748" transform="translate(0 48.013)" fill="#5151fc" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19017-2" data-name="Rettangolo 19017" width="95.2" height="1.654" transform="translate(0 51.764)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19018-2" data-name="Rettangolo 19018" width="95.2" height="1.521" transform="translate(0 53.421)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19019-2" data-name="Rettangolo 19019" width="95.2" height="8.18" transform="translate(0 85.908)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19020-2" data-name="Rettangolo 19020" width="95.2" height="0.885" transform="translate(0 94.043)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19021-2" data-name="Rettangolo 19021" width="95.2" height="2.296" transform="translate(0 53.866)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19022-2" data-name="Rettangolo 19022" width="95.2" height="1.411" transform="translate(0 55.238)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19023-2" data-name="Rettangolo 19023" width="95.2" height="1.877" transform="translate(0 55.993)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19024-2" data-name="Rettangolo 19024" width="95.2" height="3.78" transform="translate(0 102.973)" fill="#8131f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19025-2" data-name="Rettangolo 19025" width="95.2" height="4.186" transform="translate(0 105.027)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19026-2" data-name="Rettangolo 19026" width="95.2" height="6.706" transform="translate(0 113.865)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19027-2" data-name="Rettangolo 19027" width="95.2" height="7.509" transform="translate(0 117.458)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19028-2" data-name="Rettangolo 19028" width="95.2" height="2.926" transform="translate(0 122.559)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19029-2" data-name="Rettangolo 19029" width="95.2" height="5.525" transform="translate(0 123.686)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19030-2" data-name="Rettangolo 19030" width="95.2" height="3.027" transform="translate(0 127.295)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19031-2" data-name="Rettangolo 19031" width="95.2" height="2.413" transform="translate(0 129.125)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19032-2" data-name="Rettangolo 19032" width="95.2" height="1.811" transform="translate(0 130.61)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19033-2" data-name="Rettangolo 19033" width="95.2" height="0.526" transform="translate(0 131.9)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19034-2" data-name="Rettangolo 19034" width="95.2" height="4.013" transform="translate(0 131.466)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19035-2" data-name="Rettangolo 19035" width="95.2" height="3.301" transform="translate(0 133.873)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19036-2" data-name="Rettangolo 19036" width="95.2" height="2.173" transform="translate(0 135.975)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19037-2" data-name="Rettangolo 19037" width="95.2" height="1.745" transform="translate(0 137.294)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19038-2" data-name="Rettangolo 19038" width="95.2" height="9.267" transform="translate(0 136.597)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19039-2" data-name="Rettangolo 19039" width="95.2" height="1.021" transform="translate(0 143.666)" fill="blue" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19040-2" data-name="Rettangolo 19040" width="95.2" height="2.58" transform="translate(0 143.885)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19041-2" data-name="Rettangolo 19041" width="95.2" height="1.751" transform="translate(0 145.531)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19042-2" data-name="Rettangolo 19042" width="95.2" height="1.547" transform="translate(0 201.319)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19043-2" data-name="Rettangolo 19043" width="95.2" height="4.939" transform="translate(0 201.093)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19044-2" data-name="Rettangolo 19044" width="95.2" height="7.575" transform="translate(0 202.985)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19045-2" data-name="Rettangolo 19045" width="95.2" height="3.292" transform="translate(0 214.874)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19046-2" data-name="Rettangolo 19046" width="95.2" height="15.967" transform="translate(0 212.191)" fill="#009959" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19047-2" data-name="Rettangolo 19047" width="95.2" height="7.449" transform="translate(0 189.803)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19048-2" data-name="Rettangolo 19048" width="95.2" height="2.06" transform="translate(0 222.002)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19049-2" data-name="Rettangolo 19049" width="95.2" height="2.192" transform="translate(0 226.421)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19050-2" data-name="Rettangolo 19050" width="95.2" height="3.348" transform="translate(0 233.424)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19051-2" data-name="Rettangolo 19051" width="95.2" height="5.314" transform="translate(0 242.407)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19052-2" data-name="Rettangolo 19052" width="95.2" height="6.596" transform="translate(0 247.724)" fill="#00c19c" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19053-2" data-name="Rettangolo 19053" width="95.2" height="5.95" transform="translate(0 267.426)" fill="#6e94f4" stroke="#fff" stroke-width="0.2"/>
-            <rect id="Rettangolo_19054-2" data-name="Rettangolo 19054" width="95.2" height="2.504" transform="translate(0 273.379)" fill="#8ae297" stroke="#fff" stroke-width="0.2"/>
-          </g>
-          <path id="Tracciato_157359" data-name="Tracciato 157359" d="M0,0H95V332H0Z" transform="translate(0 1)" fill="#ffa501" opacity="0.423"/>
-        </g>
-        <line id="Linea_231" data-name="Linea 231" y2="332.423" transform="translate(95.08 0.556)" fill="none" stroke="#000" stroke-width="1"/>
-        <line id="Linea_6421" data-name="Linea 6421" y2="332.423" transform="translate(190.28 0.813)" fill="none" stroke="#000" stroke-width="1"/>
-      </g>
-      <text id="LEVEL_TWO" data-name="LEVEL TWO" transform="translate(142 387)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-22.696" y="0">LEVEL TWO</tspan></text>
-      <text id="LEVEL_TWO-2" data-name="LEVEL TWO" transform="translate(607 387)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-22.696" y="0">LEVEL TWO</tspan></text>
-      <text id="LEVEL_ONE" data-name="LEVEL ONE" transform="translate(48 387)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-21.664" y="0">LEVEL ONE</tspan></text>
-      <text id="LEVEL_ONE-2" data-name="LEVEL ONE" transform="translate(512 387)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-21.664" y="0">LEVEL ONE</tspan></text>
-      <text id="LEVEL_THREE" data-name="LEVEL THREE" transform="translate(238 388)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-26.18" y="0">LEVEL THREE</tspan></text>
-      <text id="LEVEL_THREE-2" data-name="LEVEL THREE" transform="translate(703 388)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-26.18" y="0">LEVEL THREE</tspan></text>
-      <text id="LEVEL_FOUR" data-name="LEVEL FOUR" transform="translate(333 388)" font-size="8" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="-24.076" y="0">LEVEL FOUR</tspan></text>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 750 395" enable-background="new 0 0 750 395" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="750" height="395"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g id="marimekko" clip-path="url(#SVGID_2_)">
+		<g id="Raggruppa_23656" transform="translate(0 2)">
+			<g enable-background="new    ">
+				<path d="M1.4707,2.23651h1.24658v8.61523h4.37061v1.14844H1.4707V2.23651z"/>
+				<path d="M14.15771,8.90448H9.21289c0.04199,1.31641,0.78467,2.11523,2.05908,2.11523c0.70068,0,1.28906-0.19629,1.87744-0.82617
+					l0.82617,0.74219c-0.78418,0.83984-1.625,1.19043-2.71729,1.19043c-2.19922,0-3.25-1.625-3.25-3.54395
+					c0-1.90527,1.03662-3.61426,3.1377-3.61426c2.11523,0,3.05371,1.63965,3.05371,3.32031
+					C14.19971,8.48456,14.18555,8.72284,14.15771,8.90448z M13.05127,7.92401c-0.01416-0.02832-0.01416-0.07031-0.01416-0.12598
+					c-0.04199-1.06445-0.74219-1.82129-1.90479-1.82129c-1.17676,0-1.83545,0.91113-1.91943,1.94727H13.05127z"/>
+				<path d="M19.29248,7.09784c0-3.12402,1.73682-5.0293,4.58008-5.0293c1.98926,0,3.43213,0.9248,4.11865,2.73145l-1.14893,0.44824
+					c-0.49023-1.34473-1.49854-1.98828-2.96973-1.98828c-2.12891,0-3.3335,1.38672-3.3335,3.83789
+					c0,2.46484,1.20459,3.87988,3.2915,3.87988c1.45703,0,2.50732-0.68652,3.01172-2.03125l1.17676,0.43457
+					c-0.71436,1.82031-2.19922,2.78711-4.18848,2.78711C21.01514,12.16815,19.29248,10.24921,19.29248,7.09784z"/>
+				<path d="M28.896,8.54022c0-2.0166,1.31689-3.57227,3.34814-3.57227c2.0166,0,3.37549,1.55566,3.37549,3.57227
+					c0,2.00293-1.34473,3.58594-3.37549,3.58594C30.21289,12.12616,28.896,10.5578,28.896,8.54022z M34.41504,8.54022
+					c0-1.42871-0.75635-2.50684-2.1709-2.50684c-1.41504,0-2.14355,1.0918-2.14355,2.50684s0.74268,2.52148,2.14355,2.52148
+					C33.65869,11.06171,34.41504,9.94061,34.41504,8.54022z"/>
+				<path d="M36.60986,10.27753l0.99463-0.44824c0.22412,0.64453,0.79834,1.26074,1.82129,1.26074
+					c0.89648,0,1.40039-0.46289,1.40039-1.06445c0-1.61133-3.83789-0.58887-3.83789-3.08203
+					c0-1.24707,1.06445-1.97559,2.42334-1.97559c1.13428,0,2.04492,0.50488,2.53516,1.47168l-0.95264,0.51758
+					c-0.30811-0.56055-0.79834-0.96582-1.61084-0.96582c-0.75635,0-1.23242,0.32129-1.23242,0.82617
+					c0,1.44238,3.86621,0.5459,3.86621,3.1377c0,1.4707-1.23291,2.1709-2.54932,2.1709
+					C38.08105,12.12616,36.97412,11.35565,36.60986,10.27753z"/>
+				<path d="M53.48535,7.65741v4.34277h-1.20508V8.008c0-0.57422-0.02783-1.97461-1.40039-1.97461
+					c-1.41504,0-1.63916,1.37207-1.63916,2.87109v3.0957h-1.20459V8.03632c0-0.93848-0.26611-2.00293-1.42871-2.00293
+					c-1.37256,0-1.61084,1.37207-1.61084,2.87109v3.0957h-1.20459l-0.01416-6.90527h1.17676V5.9494
+					c0.43408-0.71484,1.13428-0.98145,1.87695-0.98145c0.89648,0,1.65283,0.37891,2.03125,1.34473
+					c0.47607-0.93848,1.26025-1.34473,2.25488-1.34473C52.77051,4.96796,53.48535,6.11737,53.48535,7.65741z"/>
+				<path d="M55.59375,2.23651h1.34473v1.4707h-1.34473V2.23651z M55.66406,5.09491h1.20459v6.90527h-1.20459V5.09491z"/>
+				<path d="M58.63184,8.56854c0-1.82129,1.05029-3.60059,3.19385-3.60059c1.27441,0,2.31104,0.63086,2.85742,1.94727
+					l-1.14893,0.46289c-0.27979-0.84082-0.91016-1.34473-1.7085-1.34473c-1.37305,0-1.96143,1.23242-1.96143,2.53516
+					s0.58838,2.49316,1.96143,2.49316c0.81201,0,1.44238-0.49023,1.68066-1.31641l1.10645,0.41992
+					c-0.46191,1.26074-1.48438,1.96094-2.77344,1.96094C59.75244,12.12616,58.63184,10.45917,58.63184,8.56854z"/>
+				<path d="M65.58936,8.54022c0-2.0166,1.31689-3.57227,3.34814-3.57227c2.0166,0,3.37549,1.55566,3.37549,3.57227
+					c0,2.00293-1.34473,3.58594-3.37549,3.58594C66.90625,12.12616,65.58936,10.5578,65.58936,8.54022z M71.1084,8.54022
+					c0-1.42871-0.75635-2.50684-2.1709-2.50684c-1.41504,0-2.14355,1.0918-2.14355,2.50684s0.74268,2.52148,2.14355,2.52148
+					C70.35205,11.06171,71.1084,9.94061,71.1084,8.54022z"/>
+				<path d="M83.73926,7.65741v4.34277h-1.20508V8.008c0-0.57422-0.02783-1.97461-1.40039-1.97461
+					c-1.41504,0-1.63916,1.37207-1.63916,2.87109v3.0957h-1.20459V8.03632c0-0.93848-0.26611-2.00293-1.42871-2.00293
+					c-1.37256,0-1.61084,1.37207-1.61084,2.87109v3.0957H74.0459l-0.01416-6.90527h1.17676V5.9494
+					c0.43408-0.71484,1.13428-0.98145,1.87695-0.98145c0.89648,0,1.65283,0.37891,2.03125,1.34473
+					c0.47607-0.93848,1.26025-1.34473,2.25488-1.34473C83.02441,4.96796,83.73926,6.11737,83.73926,7.65741z"/>
+				<path d="M85.84766,2.23651h1.34473v1.4707h-1.34473V2.23651z M85.91797,5.09491h1.20459v6.90527h-1.20459V5.09491z"/>
+				<path d="M88.88525,8.56854c0-1.82129,1.05029-3.60059,3.19385-3.60059c1.27441,0,2.31104,0.63086,2.85742,1.94727
+					l-1.14844,0.46289c-0.28027-0.84082-0.91064-1.34473-1.70898-1.34473c-1.37305,0-1.96143,1.23242-1.96143,2.53516
+					s0.58838,2.49316,1.96143,2.49316c0.8125,0,1.44238-0.49023,1.68066-1.31641l1.10645,0.41992
+					c-0.46191,1.26074-1.48438,1.96094-2.77344,1.96094C90.00586,12.12616,88.88525,10.45917,88.88525,8.56854z"/>
+				<path d="M102.25879,7.6994v4.30078h-1.20508V7.99432c0-1.34473-0.44824-1.96094-1.42871-1.96094
+					c-1.24658,0-1.90479,0.99414-1.90479,2.92676v3.04004h-1.20459V2.23651h1.20459v3.79688
+					c0.4624-0.67285,1.26074-1.06543,2.22705-1.06543C101.44629,4.96796,102.25879,5.92108,102.25879,7.6994z"/>
+				<path d="M110.02832,8.90448h-4.94482c0.04199,1.31641,0.78467,2.11523,2.05908,2.11523
+					c0.70068,0,1.28906-0.19629,1.87744-0.82617l0.82617,0.74219c-0.78418,0.83984-1.625,1.19043-2.71729,1.19043
+					c-2.19922,0-3.25-1.625-3.25-3.54395c0-1.90527,1.03662-3.61426,3.1377-3.61426c2.11523,0,3.05371,1.63965,3.05371,3.32031
+					C110.07031,8.48456,110.05615,8.72284,110.02832,8.90448z M108.92188,7.92401c-0.01416-0.02832-0.01416-0.07031-0.01416-0.12598
+					c-0.04199-1.06445-0.74219-1.82129-1.90479-1.82129c-1.17676,0-1.83496,0.91113-1.91943,1.94727H108.92188z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M465.4707,4.23651h1.24609v8.61523h4.37109v1.14844h-5.61719V4.23651z"/>
+				<path d="M477.94727,9.68573v4.31445h-1.10645l-0.08398-1.03613c-0.49023,0.74219-1.31738,1.16211-2.35352,1.16211
+					c-1.48438,0-2.42285-0.84082-2.42285-2.1709c0-0.72852,0.30859-1.28906,0.86816-1.59668
+					c0.51855-0.28027,1.2041-0.39258,2.36719-0.39258h1.52637V9.68573c0-1.06445-0.58789-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.0166,1.10645l-0.86816-0.72852c0.76953-0.98047,1.70898-1.44336,2.91309-1.44336
+					C476.89648,6.96796,477.94727,7.97675,477.94727,9.68573z M476.74219,10.97479v-0.07031h-1.38672
+					c-1.0498,0-1.52637,0.08398-1.82031,0.30859c-0.22461,0.18164-0.34961,0.44824-0.34961,0.79785
+					c0,0.67285,0.57422,1.10645,1.49805,1.10645C475.90234,13.11737,476.74219,12.24921,476.74219,10.97479z"/>
+				<path d="M489.52539,9.6994v4.30078h-1.20508V9.99432c0-1.14844-0.32227-1.96094-1.44238-1.96094
+					c-1.38672,0-1.8916,1.27441-1.8916,2.9834v2.9834h-1.2041V7.09491h1.2041v0.93848
+					c0.46289-0.67285,1.27539-1.06543,2.21387-1.06543C488.71289,6.96796,489.52539,7.92108,489.52539,9.6994z"/>
+				<path d="M497.16895,7.09491v6.90527h-1.2041v-0.93848c-0.49023,0.72852-1.3457,1.06445-2.21289,1.06445
+					c-1.625,0-2.32617-1.14844-2.32617-2.77344V7.09491h1.20508v3.96387c0,0.89648,0.12598,2.00293,1.42871,2.00293
+					c1.44238,0,1.90527-1.37305,1.90527-2.96973V7.09491H497.16895z"/>
+				<path d="M498.50977,7.09491h1.30273l2.00293,5.35059l2.03027-5.35059h1.31738l-2.8291,6.90527h-1.00977L498.50977,7.09491z"/>
+				<path d="M505.67773,10.54022c0-2.0166,1.31641-3.57227,3.34766-3.57227c2.0166,0,3.375,1.55566,3.375,3.57227
+					c0,2.00293-1.34375,3.58594-3.375,3.58594S505.67773,12.5578,505.67773,10.54022z M511.19629,10.54022
+					c0-1.42871-0.75684-2.50684-2.1709-2.50684c-1.41504,0-2.14355,1.0918-2.14355,2.50684s0.74316,2.52148,2.14355,2.52148
+					C510.43945,13.06171,511.19629,11.94061,511.19629,10.54022z"/>
+				<path d="M514.07812,12.4455V4.23651h1.2041v8.13867c0,0.41992,0.16797,0.67285,0.57422,0.67285
+					c0.19629,0,0.4209-0.05664,0.61621-0.1123l0.01367,0.99414c-0.32227,0.1123-0.68555,0.19629-0.99414,0.19629
+					C514.65234,14.12616,514.07812,13.58026,514.07812,12.4455z"/>
+				<path d="M523.25,9.68573v4.31445h-1.10547l-0.08398-1.03613c-0.49023,0.74219-1.31738,1.16211-2.35352,1.16211
+					c-1.48535,0-2.42383-0.84082-2.42383-2.1709c0-0.72852,0.30859-1.28906,0.86914-1.59668
+					c0.51758-0.28027,1.2041-0.39258,2.36719-0.39258h1.52637V9.68573c0-1.06445-0.58887-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.0166,1.10645l-0.86914-0.72852c0.77051-0.98047,1.70898-1.44336,2.91406-1.44336
+					C522.2002,6.96796,523.25,7.97675,523.25,9.68573z M522.0459,10.97479v-0.07031h-1.38672
+					c-1.0498,0-1.52637,0.08398-1.82129,0.30859c-0.22363,0.18164-0.34961,0.44824-0.34961,0.79785
+					c0,0.67285,0.57422,1.10645,1.49805,1.10645C521.20508,13.11737,522.0459,12.24921,522.0459,10.97479z"/>
+				<path d="M534.95508,4.23651v9.76367H533.75v-0.85449c-0.49023,0.64453-1.27539,0.98047-2.18555,0.98047
+					c-1.97461,0-3.02539-1.52637-3.02539-3.58594c0-2.18555,1.17676-3.57227,3.02539-3.57227
+					c0.91016,0,1.70898,0.36426,2.18555,0.99512V4.23651H534.95508z M533.84766,10.54022c0-1.4707-0.72852-2.49316-2.05859-2.49316
+					c-1.30273,0-2.04492,0.98047-2.04492,2.49316c0,1.4707,0.68555,2.49316,2.04492,2.49316
+					C533.16211,13.03339,533.84766,11.96893,533.84766,10.54022z"/>
+				<path d="M537.23242,4.23651h1.3457v1.4707h-1.3457V4.23651z M537.30273,7.09491h1.20508v6.90527h-1.20508V7.09491z"/>
+				<path d="M543.79883,12.27753l0.99414-0.44824c0.22461,0.64453,0.79883,1.26074,1.82129,1.26074
+					c0.89648,0,1.40039-0.46289,1.40039-1.06445c0-1.61133-3.83789-0.58887-3.83789-3.08203
+					c0-1.24707,1.06445-1.97559,2.42285-1.97559c1.13477,0,2.04492,0.50488,2.53516,1.47168l-0.95215,0.51758
+					c-0.30762-0.56055-0.79785-0.96582-1.61035-0.96582c-0.75684,0-1.23242,0.32129-1.23242,0.82617
+					c0,1.44238,3.86523,0.5459,3.86523,3.1377c0,1.4707-1.23242,2.1709-2.54883,2.1709
+					C545.26953,14.12616,544.16211,13.35565,543.79883,12.27753z"/>
+				<path d="M560.67383,9.65741v4.34277h-1.20508V10.008c0-0.57422-0.02734-1.97461-1.40039-1.97461
+					c-1.41406,0-1.63867,1.37207-1.63867,2.87109v3.0957h-1.20508v-3.96387c0-0.93848-0.26562-2.00293-1.42773-2.00293
+					c-1.37305,0-1.61133,1.37207-1.61133,2.87109v3.0957h-1.20508l-0.01367-6.90527h1.17676V7.9494
+					c0.43457-0.71484,1.13477-0.98145,1.87695-0.98145c0.89648,0,1.65332,0.37891,2.03125,1.34473
+					c0.47559-0.93848,1.26074-1.34473,2.25488-1.34473C559.95898,6.96796,560.67383,8.11737,560.67383,9.65741z"/>
+				<path d="M562.25,10.54022c0-2.0166,1.31738-3.57227,3.34863-3.57227c2.0166,0,3.37598,1.55566,3.37598,3.57227
+					c0,2.00293-1.3457,3.58594-3.37598,3.58594C563.56738,14.12616,562.25,12.5578,562.25,10.54022z M567.76953,10.54022
+					c0-1.42871-0.75586-2.50684-2.1709-2.50684s-2.14355,1.0918-2.14355,2.50684s0.74219,2.52148,2.14355,2.52148
+					C567.01367,13.06171,567.76953,11.94061,567.76953,10.54022z"/>
+				<path d="M576.23926,15.02264c0,1.34473-1.24707,1.96094-3.02539,1.96094c-1.96094,0-3.1377-0.75586-3.1377-2.15723
+					c0-0.13965,0.01367-0.22363,0.02734-0.30762l1.09375-0.82715c-0.51953-0.25195-0.88281-0.6582-0.88281-1.3584
+					c0-0.58789,0.25195-1.00879,0.71484-1.34473c-0.37891-0.41992-0.58887-0.9668-0.58887-1.56836
+					c0-1.44336,1.2041-2.45215,2.70312-2.45215c0.65918,0,1.2334,0.19629,1.69531,0.51855l0.98047-0.83984l0.62988,0.76953
+					l-0.95215,0.78516c0.22363,0.36426,0.35059,0.79785,0.35059,1.27441c0,1.45703-1.20508,2.40918-2.67578,2.40918
+					c-0.51855,0-0.99414-0.1123-1.38672-0.32227c-0.25195,0.14062-0.37891,0.33594-0.37891,0.58887
+					c0,0.64355,0.8125,0.79785,1.76562,0.93848C574.55859,13.28534,576.23926,13.46796,576.23926,15.02264z M575.03516,15.13495
+					c0-0.74219-1.02344-0.84082-2.11523-1.00879c-0.2666-0.04199-0.54688-0.08398-0.8125-0.13965l-0.82617,0.79785
+					c-0.01465,0.05664-0.01465,0.08398-0.01465,0.1123c0,0.85449,0.95215,1.12109,2.00293,1.12109
+					S575.03516,15.73749,575.03516,15.13495z M571.64453,9.44745c0,0.8125,0.56055,1.45703,1.51367,1.45703
+					c0.9375,0,1.48438-0.62988,1.48438-1.45703c0-0.86816-0.57422-1.4707-1.48438-1.4707
+					C572.27539,7.97675,571.64453,8.57928,571.64453,9.44745z"/>
+				<path d="M586.96289,9.68573v4.31445h-1.10645l-0.08398-1.03613c-0.49023,0.74219-1.31738,1.16211-2.35352,1.16211
+					c-1.48438,0-2.42285-0.84082-2.42285-2.1709c0-0.72852,0.30859-1.28906,0.86816-1.59668
+					c0.51855-0.28027,1.2041-0.39258,2.36719-0.39258h1.52637V9.68573c0-1.06445-0.58789-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.0166,1.10645l-0.86816-0.72852c0.76953-0.98047,1.70898-1.44336,2.91309-1.44336
+					C585.91211,6.96796,586.96289,7.97675,586.96289,9.68573z M585.75781,10.97479v-0.07031h-1.38672
+					c-1.0498,0-1.52637,0.08398-1.82031,0.30859c-0.22461,0.18164-0.34961,0.44824-0.34961,0.79785
+					c0,0.67285,0.57422,1.10645,1.49805,1.10645C584.91797,13.11737,585.75781,12.24921,585.75781,10.97479z"/>
+				<path d="M594.85938,9.6994v4.30078h-1.20508V9.99432c0-1.14844-0.32227-1.96094-1.44238-1.96094
+					c-1.38672,0-1.8916,1.27441-1.8916,2.9834v2.9834h-1.2041V7.09491h1.2041v0.93848
+					c0.46289-0.67285,1.27539-1.06543,2.21387-1.06543C594.04688,6.96796,594.85938,7.92108,594.85938,9.6994z"/>
+				<path d="M602.90918,4.23651v9.76367h-1.2041v-0.85449c-0.49023,0.64453-1.27539,0.98047-2.18555,0.98047
+					c-1.97559,0-3.02539-1.52637-3.02539-3.58594c0-2.18555,1.17578-3.57227,3.02539-3.57227
+					c0.91016,0,1.70898,0.36426,2.18555,0.99512V4.23651H602.90918z M601.80273,10.54022c0-1.4707-0.72852-2.49316-2.05957-2.49316
+					c-1.30273,0-2.04492,0.98047-2.04492,2.49316c0,1.4707,0.68652,2.49316,2.04492,2.49316
+					C601.11621,13.03339,601.80273,11.96893,601.80273,10.54022z"/>
+				<path d="M609.23438,4.23651h1.24609v8.61523h4.37109v1.14844h-5.61719V4.23651z"/>
+				<path d="M621.71094,9.68573v4.31445h-1.10742l-0.08398-1.03613c-0.49023,0.74219-1.31641,1.16211-2.35352,1.16211
+					c-1.48438,0-2.42285-0.84082-2.42285-2.1709c0-0.72852,0.30859-1.28906,0.86816-1.59668
+					c0.51855-0.28027,1.20508-0.39258,2.36719-0.39258h1.52734V9.68573c0-1.06445-0.58789-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.01758,1.10645l-0.86816-0.72852c0.77051-0.98047,1.70898-1.44336,2.91309-1.44336
+					C620.66016,6.96796,621.71094,7.97675,621.71094,9.68573z M620.50586,10.97479v-0.07031h-1.38672
+					c-1.05078,0-1.52734,0.08398-1.82031,0.30859c-0.22461,0.18164-0.35059,0.44824-0.35059,0.79785
+					c0,0.67285,0.57422,1.10645,1.49902,1.10645C619.66602,13.11737,620.50586,12.24921,620.50586,10.97479z"/>
+				<path d="M627.96484,8.07538h-1.41406V7.09491h1.42871v-0.9668c0-1.56934,0.89648-2.01758,1.84863-2.01758
+					c0.43457,0,0.84082,0.09863,1.26172,0.28027l-0.40625,0.93848c-0.25293-0.12598-0.49023-0.20996-0.72852-0.20996
+					c-0.56055,0-0.78516,0.43457-0.78516,0.95215v1.02344h1.86328v0.98047h-1.86328v5.9248h-1.20508V8.07538z"/>
+				<path d="M631.50684,10.54022c0-2.0166,1.31738-3.57227,3.34766-3.57227c2.01758,0,3.37598,1.55566,3.37598,3.57227
+					c0,2.00293-1.34473,3.58594-3.37598,3.58594C632.82422,14.12616,631.50684,12.5578,631.50684,10.54022z M637.02539,10.54022
+					c0-1.42871-0.75586-2.50684-2.1709-2.50684s-2.14355,1.0918-2.14355,2.50684s0.74316,2.52148,2.14355,2.52148
+					C636.26953,13.06171,637.02539,11.94061,637.02539,10.54022z"/>
+				<path d="M644.38867,7.30487l-0.58789,1.00781c-0.29395-0.13965-0.58789-0.20996-0.89648-0.20996
+					c-1.05078,0-1.73633,0.74316-1.73633,2.17188v3.72559h-1.20508V7.09491h1.20508v1.07812
+					c0.43359-0.88281,1.25977-1.20508,1.98828-1.20508C643.59082,6.96796,643.98242,7.06659,644.38867,7.30487z"/>
+				<path d="M655.3125,9.65741v4.34277h-1.20508V10.008c0-0.57422-0.02734-1.97461-1.40039-1.97461
+					c-1.41504,0-1.63867,1.37207-1.63867,2.87109v3.0957h-1.20508v-3.96387c0-0.93848-0.26562-2.00293-1.42871-2.00293
+					c-1.37207,0-1.61035,1.37207-1.61035,2.87109v3.0957h-1.20508l-0.01367-6.90527h1.17578V7.9494
+					c0.43457-0.71484,1.13477-0.98145,1.87695-0.98145c0.89648,0,1.65332,0.37891,2.03125,1.34473
+					c0.47656-0.93848,1.26074-1.34473,2.25586-1.34473C654.59766,6.96796,655.3125,8.11737,655.3125,9.65741z"/>
+				<path d="M657.41992,4.23651h1.3457v1.4707h-1.3457V4.23651z M657.49023,7.09491h1.20508v6.90527h-1.20508V7.09491z"/>
+				<path d="M660.45898,10.56854c0-1.82129,1.0498-3.60059,3.19336-3.60059c1.27441,0,2.31055,0.63086,2.85742,1.94727
+					l-1.14844,0.46289c-0.28027-0.84082-0.91016-1.34473-1.70898-1.34473c-1.37305,0-1.96094,1.23242-1.96094,2.53516
+					s0.58789,2.49316,1.96094,2.49316c0.8125,0,1.44238-0.49023,1.68066-1.31641l1.10645,0.41992
+					c-0.46191,1.26074-1.48438,1.96094-2.77344,1.96094C661.5791,14.12616,660.45898,12.45917,660.45898,10.56854z"/>
+				<path d="M673.3418,9.68573v4.31445h-1.10742l-0.08398-1.03613c-0.49023,0.74219-1.31641,1.16211-2.35352,1.16211
+					c-1.48438,0-2.42285-0.84082-2.42285-2.1709c0-0.72852,0.30859-1.28906,0.86816-1.59668
+					c0.51855-0.28027,1.20508-0.39258,2.36719-0.39258h1.52734V9.68573c0-1.06445-0.58789-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.01758,1.10645l-0.86816-0.72852c0.77051-0.98047,1.70898-1.44336,2.91309-1.44336
+					C672.29102,6.96796,673.3418,7.97675,673.3418,9.68573z M672.13672,10.97479v-0.07031H670.75
+					c-1.05078,0-1.52734,0.08398-1.82031,0.30859c-0.22461,0.18164-0.35059,0.44824-0.35059,0.79785
+					c0,0.67285,0.57422,1.10645,1.49902,1.10645C671.29688,13.11737,672.13672,12.24921,672.13672,10.97479z"/>
+				<path d="M684.48438,9.68573v4.31445h-1.10547l-0.08398-1.03613c-0.49023,0.74219-1.31738,1.16211-2.35352,1.16211
+					c-1.48535,0-2.42383-0.84082-2.42383-2.1709c0-0.72852,0.30859-1.28906,0.86914-1.59668
+					c0.51758-0.28027,1.2041-0.39258,2.36719-0.39258h1.52637V9.68573c0-1.06445-0.58887-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.0166,1.10645l-0.86914-0.72852c0.77051-0.98047,1.70898-1.44336,2.91406-1.44336
+					C683.43457,6.96796,684.48438,7.97675,684.48438,9.68573z M683.28027,10.97479v-0.07031h-1.38672
+					c-1.0498,0-1.52637,0.08398-1.82129,0.30859c-0.22363,0.18164-0.34961,0.44824-0.34961,0.79785
+					c0,0.67285,0.57422,1.10645,1.49805,1.10645C682.43945,13.11737,683.28027,12.24921,683.28027,10.97479z"/>
+				<path d="M691.06445,7.30487l-0.58789,1.00781c-0.29492-0.13965-0.58887-0.20996-0.89648-0.20996
+					c-1.05078,0-1.7373,0.74316-1.7373,2.17188v3.72559h-1.2041V7.09491h1.2041v1.07812
+					c0.43457-0.88281,1.26074-1.20508,1.98926-1.20508C690.26562,6.96796,690.6582,7.06659,691.06445,7.30487z"/>
+				<path d="M697.29492,15.02264c0,1.34473-1.24609,1.96094-3.02539,1.96094c-1.96094,0-3.13672-0.75586-3.13672-2.15723
+					c0-0.13965,0.01367-0.22363,0.02734-0.30762l1.09277-0.82715c-0.51855-0.25195-0.88281-0.6582-0.88281-1.3584
+					c0-0.58789,0.25293-1.00879,0.71484-1.34473c-0.37793-0.41992-0.58887-0.9668-0.58887-1.56836
+					c0-1.44336,1.20508-2.45215,2.70312-2.45215c0.65918,0,1.2334,0.19629,1.69531,0.51855l0.98047-0.83984l0.63086,0.76953
+					l-0.95312,0.78516c0.22461,0.36426,0.35059,0.79785,0.35059,1.27441c0,1.45703-1.2041,2.40918-2.6748,2.40918
+					c-0.51953,0-0.99512-0.1123-1.38672-0.32227c-0.25293,0.14062-0.37891,0.33594-0.37891,0.58887
+					c0,0.64355,0.8125,0.79785,1.76562,0.93848C695.61523,13.28534,697.29492,13.46796,697.29492,15.02264z M696.09082,15.13495
+					c0-0.74219-1.02246-0.84082-2.11523-1.00879c-0.2666-0.04199-0.5459-0.08398-0.8125-0.13965l-0.82617,0.79785
+					c-0.01465,0.05664-0.01465,0.08398-0.01465,0.1123c0,0.85449,0.95312,1.12109,2.00391,1.12109
+					S696.09082,15.73749,696.09082,15.13495z M692.70117,9.44745c0,0.8125,0.56055,1.45703,1.5127,1.45703
+					c0.93848,0,1.48535-0.62988,1.48535-1.45703c0-0.86816-0.57422-1.4707-1.48535-1.4707
+					C693.33203,7.97675,692.70117,8.57928,692.70117,9.44745z"/>
+				<path d="M704.29492,10.90448h-4.94434c0.04199,1.31641,0.78418,2.11523,2.05957,2.11523
+					c0.7002,0,1.28906-0.19629,1.87695-0.82617l0.82617,0.74219c-0.78418,0.83984-1.625,1.19043-2.7168,1.19043
+					c-2.19922,0-3.25-1.625-3.25-3.54395c0-1.90527,1.03613-3.61426,3.13672-3.61426c2.11523,0,3.05469,1.63965,3.05469,3.32031
+					C704.33789,10.48456,704.32324,10.72284,704.29492,10.90448z M703.18945,9.92401
+					c-0.01465-0.02832-0.01465-0.07031-0.01465-0.12598c-0.04199-1.06445-0.74219-1.82129-1.90527-1.82129
+					c-1.17578,0-1.83496,0.91113-1.91895,1.94727H703.18945z"/>
+				<path d="M711.8418,9.6994v4.30078h-1.20508V9.99432c0-1.14844-0.32227-1.96094-1.44238-1.96094
+					c-1.38672,0-1.8916,1.27441-1.8916,2.9834v2.9834h-1.2041V7.09491h1.2041v0.93848
+					c0.46289-0.67285,1.27539-1.06543,2.21387-1.06543C711.0293,6.96796,711.8418,7.92108,711.8418,9.6994z"/>
+				<path d="M715.46484,8.07538v4.07617c0,0.62988,0.32227,0.91016,0.86914,0.91016c0.23828,0,0.51758-0.05566,0.82617-0.1543
+					v1.02246c-0.37891,0.12598-0.75586,0.19629-1.12109,0.19629c-0.99414,0-1.7793-0.5459-1.7793-1.84863V8.07538h-1.13379V7.09491
+					h1.13379V5.27362l1.20508-0.91016v2.73145h1.69531v0.98047H715.46484z"/>
+				<path d="M718.81055,4.23651h1.34375v1.4707h-1.34375V4.23651z M718.88086,7.09491h1.2041v6.90527h-1.2041V7.09491z"/>
+				<path d="M728.17969,9.6994v4.30078h-1.20508V9.99432c0-1.14844-0.32227-1.96094-1.44336-1.96094
+					c-1.38672,0-1.89062,1.27441-1.89062,2.9834v2.9834h-1.20508V7.09491h1.20508v0.93848
+					c0.46289-0.67285,1.27441-1.06543,2.21289-1.06543C727.36719,6.96796,728.17969,7.92108,728.17969,9.6994z"/>
+				<path d="M735.66797,9.68573v4.31445h-1.10547l-0.08398-1.03613c-0.49023,0.74219-1.31738,1.16211-2.35352,1.16211
+					c-1.48535,0-2.42383-0.84082-2.42383-2.1709c0-0.72852,0.30859-1.28906,0.86914-1.59668
+					c0.51758-0.28027,1.2041-0.39258,2.36719-0.39258h1.52637V9.68573c0-1.06445-0.58887-1.65234-1.63867-1.65234
+					c-0.8125,0-1.4707,0.37793-2.0166,1.10645l-0.86914-0.72852c0.77051-0.98047,1.70898-1.44336,2.91406-1.44336
+					C734.61816,6.96796,735.66797,7.97675,735.66797,9.68573z M734.46387,10.97479v-0.07031h-1.38672
+					c-1.0498,0-1.52637,0.08398-1.82129,0.30859c-0.22363,0.18164-0.34961,0.44824-0.34961,0.79785
+					c0,0.67285,0.57422,1.10645,1.49805,1.10645C733.62305,13.11737,734.46387,12.24921,734.46387,10.97479z"/>
+			</g>
+			<g id="Raggruppa_23655" transform="translate(0 35.861)">
+				<g id="Raggruppa_23651" transform="translate(285 280.108)">
+					<rect id="Rettangolo_19055" y="0" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.906"/>
+					<rect id="Rettangolo_19056" y="8.908" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.975"/>
+					<rect id="Rettangolo_19057" y="9.885" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.754"/>
+					<rect id="Rettangolo_19058" y="12.641" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.597"/>
+					<rect id="Rettangolo_19059" y="16.24" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.346"/>
+					<rect id="Rettangolo_19060" y="19.588" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.117"/>
+					<rect id="Rettangolo_19061" y="27.717" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.368"/>
+					<rect id="Rettangolo_19062" y="37.095" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.729"/>
+					<rect id="Rettangolo_19063" y="41.826" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.489"/>
+					<rect id="Rettangolo_19064" y="45.316" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.025"/>
+					<rect id="Rettangolo_19065" y="48.343" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.458"/>
+				</g>
+				<g id="Raggruppa_24963" transform="translate(190 280.108)" opacity="0.222">
+					<rect id="Rettangolo_19055-2" y="0" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.906"/>
+					<rect id="Rettangolo_19056-2" y="8.908" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.975"/>
+					<rect id="Rettangolo_19057-2" y="9.885" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.754"/>
+					<rect id="Rettangolo_19058-2" y="12.641" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.597"/>
+					<rect id="Rettangolo_19059-2" y="16.24" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.346"/>
+					<rect id="Rettangolo_19060-2" y="19.588" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.117"/>
+					<rect id="Rettangolo_19061-2" y="27.717" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.368"/>
+					<rect id="Rettangolo_19062-2" y="37.095" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.729"/>
+					<rect id="Rettangolo_19063-2" y="41.826" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.489"/>
+					<rect id="Rettangolo_19064-2" y="45.316" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.025"/>
+					<rect id="Rettangolo_19065-2" y="48.343" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.458"/>
+				</g>
+				<g id="Raggruppa_23650" transform="translate(189.449 0.219)">
+					<rect id="Rettangolo_19066" x="0" y="0" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="10.506"/>
+					
+						<rect id="Rettangolo_19067" x="0" y="10.508" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.671"/>
+					
+						<rect id="Rettangolo_19068" x="0" y="14.18" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.686"/>
+					
+						<rect id="Rettangolo_19069" x="0" y="17.869" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.234"/>
+					
+						<rect id="Rettangolo_19070" x="0" y="19.104" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.794"/>
+					
+						<rect id="Rettangolo_19071" x="0" y="23.901" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.99"/>
+					
+						<rect id="Rettangolo_19072" x="0" y="29.892" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.077"/>
+					
+						<rect id="Rettangolo_19073" x="0" y="34.971" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.143"/>
+					
+						<rect id="Rettangolo_19074" x="0" y="36.116" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.947"/>
+					
+						<rect id="Rettangolo_19075" x="0" y="43.065" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.293"/>
+					
+						<rect id="Rettangolo_19076" x="0" y="47.59" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.653"/>
+					
+						<rect id="Rettangolo_19077" x="0" y="56.873" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.315"/>
+					
+						<rect id="Rettangolo_19078" x="0" y="51.994" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.165"/>
+					
+						<rect id="Rettangolo_19079" x="0" y="59.716" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.87"/>
+					
+						<rect id="Rettangolo_19080" x="0" y="66.409" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.406"/>
+					
+						<rect id="Rettangolo_19081" x="0" y="53.673" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.27"/>
+					
+						<rect id="Rettangolo_19082" x="0" y="55.698" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.971"/>
+					
+						<rect id="Rettangolo_19083" x="0" y="58.465" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.758"/>
+					
+						<rect id="Rettangolo_19084" x="0" y="58.845" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.112"/>
+					
+						<rect id="Rettangolo_19085" x="0" y="60.08" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.974"/>
+					
+						<rect id="Rettangolo_19086" x="0" y="64.195" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.042"/>
+					
+						<rect id="Rettangolo_19087" x="0" y="64.969" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.063"/>
+					
+						<rect id="Rettangolo_19088" x="0" y="70.682" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.41"/>
+					
+						<rect id="Rettangolo_19089" x="0" y="71.509" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.172"/>
+					
+						<rect id="Rettangolo_19090" x="0" y="72.878" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.303"/>
+					
+						<rect id="Rettangolo_19091" x="0" y="74.086" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.916"/>
+					
+						<rect id="Rettangolo_19092" x="0" y="77.578" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.24"/>
+					
+						<rect id="Rettangolo_19093" x="0" y="78.332" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.599"/>
+					
+						<rect id="Rettangolo_19094" x="0" y="79.321" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.888"/>
+					
+						<rect id="Rettangolo_19095" x="0" y="80.162" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.264"/>
+					
+						<rect id="Rettangolo_19096" x="0" y="83.913" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.76"/>
+					
+						<rect id="Rettangolo_19097" x="0" y="87.653" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.951"/>
+					
+						<rect id="Rettangolo_19098" x="0" y="91.082" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.536"/>
+					
+						<rect id="Rettangolo_19099" x="0" y="92.471" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.359"/>
+					
+						<rect id="Rettangolo_19100" x="0" y="95.819" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.384"/>
+					
+						<rect id="Rettangolo_19101" x="0" y="98.897" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.104"/>
+					
+						<rect id="Rettangolo_19102" x="0" y="99.825" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.203"/>
+					<rect id="Rettangolo_19103" x="0" y="103.41" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.1"/>
+					
+						<rect id="Rettangolo_19104" x="0" y="105.536" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.975"/>
+					
+						<rect id="Rettangolo_19105" x="0" y="106.753" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.261"/>
+					
+						<rect id="Rettangolo_19106" x="0" y="108.343" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.195"/>
+					
+						<rect id="Rettangolo_19107" x="0" y="108.494" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.435"/>
+					
+						<rect id="Rettangolo_19108" x="0" y="112.573" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.149"/>
+					
+						<rect id="Rettangolo_19109" x="0" y="113.034" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.971"/>
+					
+						<rect id="Rettangolo_19110" x="0" y="114.962" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.708"/>
+					
+						<rect id="Rettangolo_19111" x="0" y="116.606" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.214"/>
+					
+						<rect id="Rettangolo_19112" x="0" y="119.156" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.959"/>
+					
+						<rect id="Rettangolo_19113" x="0" y="122.041" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.642"/>
+					
+						<rect id="Rettangolo_19114" x="0" y="122.976" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.329"/>
+					
+						<rect id="Rettangolo_19115" x="0" y="124.282" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.396"/>
+					
+						<rect id="Rettangolo_19116" x="0" y="126.45" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.33"/>
+					
+						<rect id="Rettangolo_19117" x="0" y="127.942" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.961"/>
+					
+						<rect id="Rettangolo_19118" x="0" y="133.201" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.721"/>
+					
+						<rect id="Rettangolo_19119" x="0" y="134.66499" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.657"/>
+					
+						<rect id="Rettangolo_19120" x="0" y="141.062" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.694"/>
+					
+						<rect id="Rettangolo_19121" x="0" y="142.715" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.299"/>
+					
+						<rect id="Rettangolo_19122" x="0" y="148.308" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.327"/>
+					
+						<rect id="Rettangolo_19123" x="0" y="148.765" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.454"/>
+					
+						<rect id="Rettangolo_19124" x="0" y="154.959" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.193"/>
+					
+						<rect id="Rettangolo_19125" x="0" y="154.96899" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.76"/>
+					
+						<rect id="Rettangolo_19126" x="0" y="155.011" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.934"/>
+					
+						<rect id="Rettangolo_19127" x="0" y="156.67999" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.878"/>
+					
+						<rect id="Rettangolo_19128" x="0" y="159.647" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.928"/>
+					
+						<rect id="Rettangolo_19129" x="0" y="163.73801" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.435"/>
+					
+						<rect id="Rettangolo_19130" x="0" y="163.162" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.402"/>
+					
+						<rect id="Rettangolo_19131" x="0" y="166.823" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.435"/>
+					
+						<rect id="Rettangolo_19132" x="0" y="166.688" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.325"/>
+					
+						<rect id="Rettangolo_19133" x="0" y="168.571" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.495"/>
+					
+						<rect id="Rettangolo_19134" x="0" y="168.47301" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.373"/>
+					
+						<rect id="Rettangolo_19135" x="0" y="167.97701" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="11.15"/>
+					
+						<rect id="Rettangolo_19136" x="0" y="177.134" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.1"/>
+					
+						<rect id="Rettangolo_19137" x="0" y="178.25999" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.996"/>
+					
+						<rect id="Rettangolo_19138" x="0" y="180.66299" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.936"/>
+					
+						<rect id="Rettangolo_19139" x="0" y="183.144" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.371"/>
+					
+						<rect id="Rettangolo_19140" x="0" y="183.00301" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.955"/>
+					
+						<rect id="Rettangolo_19141" x="0" y="184.217" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.079"/>
+					
+						<rect id="Rettangolo_19142" x="0" y="185.80499" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.994"/>
+					
+						<rect id="Rettangolo_19143" x="0" y="186.321" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.478"/>
+					
+						<rect id="Rettangolo_19144" x="0" y="186.27" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.487"/>
+					
+						<rect id="Rettangolo_19145" x="0" y="190.59" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.137"/>
+					
+						<rect id="Rettangolo_19146" x="0" y="191.452" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.102"/>
+					
+						<rect id="Rettangolo_19147" x="0" y="194.369" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.882"/>
+					
+						<rect id="Rettangolo_19148" x="0" y="196.394" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.133"/>
+					
+						<rect id="Rettangolo_19149" x="0" y="197.757" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.114"/>
+					
+						<rect id="Rettangolo_19150" x="0" y="199.01601" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.443"/>
+					
+						<rect id="Rettangolo_19151" x="0" y="200.48399" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.768"/>
+					
+						<rect id="Rettangolo_19152" x="0" y="202.008" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.646"/>
+					
+						<rect id="Rettangolo_19153" x="0" y="204.758" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.035"/>
+					
+						<rect id="Rettangolo_19154" x="0" y="206.274" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.217"/>
+					
+						<rect id="Rettangolo_19155" x="0" y="206.83701" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2"/>
+					
+						<rect id="Rettangolo_19156" x="0" y="208.08501" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.093"/>
+					
+						<rect id="Rettangolo_19157" x="0" y="208.864" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.09"/>
+					
+						<rect id="Rettangolo_19158" x="0" y="212.164" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.57"/>
+					
+						<rect id="Rettangolo_19159" x="0" y="213.13" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.694"/>
+					
+						<rect id="Rettangolo_19160" x="0" y="214.20599" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.704"/>
+					
+						<rect id="Rettangolo_19161" x="0" y="215.23399" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.909"/>
+					
+						<rect id="Rettangolo_19162" x="0" y="216.815" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.617"/>
+					
+						<rect id="Rettangolo_19163" x="0" y="217.082" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.066"/>
+					
+						<rect id="Rettangolo_19164" x="0" y="217.353" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.497"/>
+					
+						<rect id="Rettangolo_19165" x="0" y="219.056" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.1"/>
+					
+						<rect id="Rettangolo_19166" x="0" y="220.578" fill="#00FFFF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.303"/>
+					
+						<rect id="Rettangolo_19167" x="0" y="222.34801" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.261"/>
+					
+						<rect id="Rettangolo_19168" x="0" y="205.493" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.052"/>
+					
+						<rect id="Rettangolo_19169" x="0" y="207.034" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.603"/>
+					
+						<rect id="Rettangolo_19170" x="0" y="210.192" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.543"/>
+					
+						<rect id="Rettangolo_19171" x="0" y="212.48599" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.273"/>
+					
+						<rect id="Rettangolo_19172" x="0" y="213.367" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.835"/>
+					
+						<rect id="Rettangolo_19173" x="0" y="215.12399" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.792"/>
+					
+						<rect id="Rettangolo_19174" x="0" y="221.545" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.622"/>
+					
+						<rect id="Rettangolo_19175" x="0" y="221.556" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.067"/>
+					
+						<rect id="Rettangolo_19176" x="0" y="223.76199" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.715"/>
+					
+						<rect id="Rettangolo_19177" x="0" y="228.119" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.866"/>
+					
+						<rect id="Rettangolo_19178" x="0" y="228.987" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.197"/>
+					
+						<rect id="Rettangolo_19179" x="0" y="234.186" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.199"/>
+					
+						<rect id="Rettangolo_19180" x="0" y="236.38699" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.334"/>
+					
+						<rect id="Rettangolo_19181" x="0" y="238.72301" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.715"/>
+					
+						<rect id="Rettangolo_19182" x="0" y="247.44" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.676"/>
+					
+						<rect id="Rettangolo_19183" x="0" y="255.118" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.721"/>
+					
+						<rect id="Rettangolo_19184" x="0" y="259.841" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.311"/>
+					
+						<rect id="Rettangolo_19185" x="0" y="261.15399" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.017"/>
+					
+						<rect id="Rettangolo_19186" x="0" y="264.173" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.894"/>
+					
+						<rect id="Rettangolo_19187" x="0" y="265.069" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.284"/>
+					
+						<rect id="Rettangolo_19188" x="0" y="269.35501" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.173"/>
+					
+						<rect id="Rettangolo_19189" x="0" y="276.53" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.476"/>
+					
+						<rect id="Rettangolo_19190" x="0" y="278.008" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.035"/>
+				</g>
+				<g id="Raggruppa_23649" transform="translate(94 0.219)">
+					<rect id="Rettangolo_2177" x="0.039" y="0" fill="#FFFDD1" width="95.161" height="332.24899"/>
+					<rect id="Rettangolo_1515" y="38.839" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.487"/>
+					<rect id="Rettangolo_1517" y="64.274" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.179"/>
+					<rect id="Rettangolo_1519" y="89.404" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.474"/>
+					<rect id="Rettangolo_1521" y="101.798" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.602"/>
+					<rect id="Rettangolo_1523" y="126.56" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.638"/>
+					<rect id="Rettangolo_1525" y="141.83501" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.276"/>
+					<rect id="Rettangolo_1527" y="169.795" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.746"/>
+					<rect id="Rettangolo_1529" y="191.948" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.495"/>
+					<rect id="Rettangolo_1531" y="234.47501" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.227"/>
+					<rect id="Rettangolo_1533" y="261.12799" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.409"/>
+					<rect id="Rettangolo_1535" y="295.957" fill="#FFA500" stroke="#FFFFFF" stroke-width="0.2" width="94.814" height="0.575"/>
+				</g>
+				<rect id="Rettangolo_2221" y="0.139" opacity="0.419" fill="#FFA501" enable-background="new    " width="95" height="332"/>
+				<line id="Linea_235" fill="none" stroke="#000000" x1="94.781" y1="0" x2="94.781" y2="332.423"/>
+				<line id="Linea_6419" fill="none" stroke="#000000" x1="189.02901" y1="0" x2="189.02901" y2="332.423"/>
+				<line id="Linea_6420" fill="none" stroke="#000000" x1="285.18201" y1="0" x2="285.18201" y2="332.423"/>
+			</g>
+			<g id="Raggruppa_23658" transform="translate(464 36)">
+				<g id="Raggruppa_23657">
+					<g id="Raggruppa_23654" transform="translate(95 0.08)">
+						<g id="Raggruppa_23652">
+							<rect id="Rettangolo_18913" y="0" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.441"/>
+							<rect id="Rettangolo_18914" y="4.444" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.958"/>
+							<rect id="Rettangolo_18915" y="11.406" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.471"/>
+							<rect id="Rettangolo_18916" y="14.88" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.922"/>
+							<rect id="Rettangolo_18918" y="31.867" fill="#00FFB6" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.037"/>
+							<rect id="Rettangolo_18919" y="40.907" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="18.915"/>
+							<rect id="Rettangolo_18923" y="81.371" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="12.404"/>
+							<rect id="Rettangolo_18924" y="93.711" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.663"/>
+							<rect id="Rettangolo_18925" y="95.357" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.821"/>
+							<rect id="Rettangolo_18926" y="101.148" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.139"/>
+							<rect id="Rettangolo_18927" y="103.279" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.107"/>
+							<rect id="Rettangolo_18928" y="103.382" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.342"/>
+							<rect id="Rettangolo_18932" y="78.442" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.743"/>
+							<rect id="Rettangolo_18933" y="82.705" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.547"/>
+							<rect id="Rettangolo_18934" y="84.745" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.725"/>
+							<rect id="Rettangolo_18935" y="87.705" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.852"/>
+							<rect id="Rettangolo_18936" y="90.251" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.953"/>
+							<rect id="Rettangolo_18937" y="91.496" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.452"/>
+							<rect id="Rettangolo_18938" y="92.199" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.131"/>
+							<rect id="Rettangolo_18939" y="94.176" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.498"/>
+							<rect id="Rettangolo_18940" y="94.734" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="10.88"/>
+							<rect id="Rettangolo_18941" y="102.536" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.74"/>
+							<rect id="Rettangolo_18942" y="102.883" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.619"/>
+							<rect id="Rettangolo_18943" y="103.901" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.376"/>
+							<rect id="Rettangolo_18944" y="104.753" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.279"/>
+							<rect id="Rettangolo_18948" y="115.791" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.76"/>
+							<rect id="Rettangolo_18949" y="116.312" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.495"/>
+							<rect id="Rettangolo_18950" y="116.297" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.816"/>
+							<rect id="Rettangolo_18951" y="117.845" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.003"/>
+							<rect id="Rettangolo_18952" y="120.556" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.076"/>
+							<rect id="Rettangolo_18953" y="121.524" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.136"/>
+							<rect id="Rettangolo_18954" y="123.466" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.969"/>
+							<rect id="Rettangolo_18955" y="129.037" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.125"/>
+							<rect id="Rettangolo_18956" y="130.463" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.276"/>
+							
+								<rect id="Rettangolo_18957" y="134.83099" opacity="0.001" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" enable-background="new    " width="95.2" height="2.233"/>
+							
+								<rect id="Rettangolo_18958" y="136.414" opacity="0.001" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" enable-background="new    " width="95.2" height="0.857"/>
+							<rect id="Rettangolo_18959" y="137.058" fill="#0000FF" fill-opacity="0" width="95.2" height="18.9"/>
+							<rect id="Rettangolo_18960" y="147.437" fill="#0000FF" fill-opacity="0" width="95.2" height="19.978"/>
+							<path id="Tracciato_147694" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" d="M95.2,174.314L95.2,174.314z"/>
+							<rect id="Rettangolo_18962" y="167.464" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.631"/>
+							<rect id="Rettangolo_18963" y="174.645" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.792"/>
+							
+								<rect id="Rettangolo_18964" y="174.48599" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.761"/>
+							<rect id="Rettangolo_18965" y="180.364" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.274"/>
+							<rect id="Rettangolo_18966" y="181.916" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.506"/>
+							<rect id="Rettangolo_18967" y="182.093" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.926"/>
+							<rect id="Rettangolo_18968" y="185.231" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.262"/>
+							
+								<rect id="Rettangolo_18969" y="188.33099" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.978"/>
+							
+								<rect id="Rettangolo_18970" y="189.24899" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.263"/>
+							<rect id="Rettangolo_18971" y="190.908" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.696"/>
+							<rect id="Rettangolo_18972" y="193.269" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.983"/>
+							
+								<rect id="Rettangolo_18973" y="197.26199" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.969"/>
+							<rect id="Rettangolo_18974" y="203.043" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.029"/>
+							<rect id="Rettangolo_18975" y="205.27299" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.92"/>
+							<rect id="Rettangolo_18976" y="209.304" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.706"/>
+							
+								<rect id="Rettangolo_18977" y="208.65401" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.233"/>
+							
+								<rect id="Rettangolo_18979" y="218.00101" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.608"/>
+							<rect id="Rettangolo_18982" y="230.73" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.016"/>
+							<rect id="Rettangolo_18987" y="262.159" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.857"/>
+							
+								<rect id="Rettangolo_18988" y="262.37399" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.858"/>
+							<rect id="Rettangolo_18996" y="249.953" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="12.841"/>
+							<rect id="Rettangolo_18997" y="258.992" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.743"/>
+							
+								<rect id="Rettangolo_18999" y="275.12701" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.098"/>
+							<rect id="Rettangolo_19000" y="277.228" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.632"/>
+							
+								<rect id="Rettangolo_19001" y="278.86301" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.707"/>
+							
+								<rect id="Rettangolo_19002" y="282.57401" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.173"/>
+							<rect id="Rettangolo_19003" y="297.245" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.923"/>
+							<rect id="Rettangolo_19004" y="298.17099" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.03"/>
+							
+								<rect id="Rettangolo_19005" y="305.20499" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.496"/>
+							
+								<rect id="Rettangolo_19006" y="306.70401" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.088"/>
+							
+								<rect id="Rettangolo_19007" y="310.79599" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.044"/>
+							
+								<rect id="Rettangolo_19008" y="314.84399" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.989"/>
+							<rect id="Rettangolo_19009" y="317.836" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.481"/>
+							
+								<rect id="Rettangolo_19010" y="321.32001" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.099"/>
+							<rect id="Rettangolo_19011" y="324.422" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.546"/>
+						</g>
+					</g>
+					<g id="Raggruppa_23653" transform="translate(191 20.637)">
+						<rect id="Rettangolo_19012" y="0" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.153"/>
+						<rect id="Rettangolo_19013" y="5.156" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.9"/>
+						<rect id="Rettangolo_19014" y="39.02" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.257"/>
+						<rect id="Rettangolo_19015" y="44.28" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.246"/>
+						<rect id="Rettangolo_19016" y="48.013" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.748"/>
+						<rect id="Rettangolo_19017" y="51.764" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.654"/>
+						<rect id="Rettangolo_19018" y="53.421" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.521"/>
+						<rect id="Rettangolo_19019" y="85.908" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.18"/>
+						<rect id="Rettangolo_19020" y="94.043" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.885"/>
+						<rect id="Rettangolo_19021" y="53.866" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.296"/>
+						<rect id="Rettangolo_19022" y="55.238" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.411"/>
+						<rect id="Rettangolo_19023" y="55.993" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.877"/>
+						<rect id="Rettangolo_19024" y="102.973" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.78"/>
+						<rect id="Rettangolo_19025" y="105.027" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.186"/>
+						<rect id="Rettangolo_19026" y="113.865" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.706"/>
+						<rect id="Rettangolo_19027" y="117.458" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.509"/>
+						<rect id="Rettangolo_19028" y="122.559" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.926"/>
+						<rect id="Rettangolo_19029" y="123.686" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.525"/>
+						<rect id="Rettangolo_19030" y="127.295" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.027"/>
+						<rect id="Rettangolo_19031" y="129.125" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.413"/>
+						<rect id="Rettangolo_19032" y="130.61" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.811"/>
+						<rect id="Rettangolo_19033" y="131.89999" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.526"/>
+						<rect id="Rettangolo_19034" y="131.466" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.013"/>
+						<rect id="Rettangolo_19035" y="133.873" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.301"/>
+						<rect id="Rettangolo_19036" y="135.97501" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.173"/>
+						<rect id="Rettangolo_19037" y="137.29401" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.745"/>
+						<rect id="Rettangolo_19038" y="136.597" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.267"/>
+						<rect id="Rettangolo_19039" y="143.666" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.021"/>
+						<rect id="Rettangolo_19040" y="143.88499" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.58"/>
+						<rect id="Rettangolo_19041" y="145.53101" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.751"/>
+						<rect id="Rettangolo_19042" y="201.319" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.547"/>
+						<rect id="Rettangolo_19043" y="201.093" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.939"/>
+						<rect id="Rettangolo_19044" y="202.985" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.575"/>
+						<rect id="Rettangolo_19045" y="214.87399" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.292"/>
+						
+							<rect id="Rettangolo_19046" y="212.19099" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="15.967"/>
+						<rect id="Rettangolo_19047" y="189.80299" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.449"/>
+						<rect id="Rettangolo_19048" y="222.002" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.06"/>
+						<rect id="Rettangolo_19049" y="226.42101" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.192"/>
+						<rect id="Rettangolo_19050" y="233.424" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.348"/>
+						<rect id="Rettangolo_19051" y="242.407" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.314"/>
+						<rect id="Rettangolo_19052" y="247.724" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.596"/>
+						<rect id="Rettangolo_19053" y="267.42599" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.95"/>
+						<rect id="Rettangolo_19054" y="273.379" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.504"/>
+					</g>
+					<g id="Raggruppa_24964" transform="translate(95.402 20.637)" opacity="0.2">
+						<rect id="Rettangolo_19012-2" x="0" y="0" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.153"/>
+						
+							<rect id="Rettangolo_19013-2" x="0" y="5.156" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.9"/>
+						
+							<rect id="Rettangolo_19014-2" x="0" y="39.02" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.257"/>
+						
+							<rect id="Rettangolo_19015-2" x="0" y="44.28" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.246"/>
+						
+							<rect id="Rettangolo_19016-2" x="0" y="48.013" fill="#5151FC" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.748"/>
+						
+							<rect id="Rettangolo_19017-2" x="0" y="51.764" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.654"/>
+						
+							<rect id="Rettangolo_19018-2" x="0" y="53.421" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.521"/>
+						
+							<rect id="Rettangolo_19019-2" x="0" y="85.908" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="8.18"/>
+						
+							<rect id="Rettangolo_19020-2" x="0" y="94.043" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.885"/>
+						
+							<rect id="Rettangolo_19021-2" x="0" y="53.866" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.296"/>
+						
+							<rect id="Rettangolo_19022-2" x="0" y="55.238" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.411"/>
+						
+							<rect id="Rettangolo_19023-2" x="0" y="55.993" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.877"/>
+						
+							<rect id="Rettangolo_19024-2" x="0" y="102.973" fill="#8131F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.78"/>
+						
+							<rect id="Rettangolo_19025-2" x="0" y="105.027" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.186"/>
+						
+							<rect id="Rettangolo_19026-2" x="0" y="113.865" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.706"/>
+						
+							<rect id="Rettangolo_19027-2" x="0" y="117.458" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.509"/>
+						
+							<rect id="Rettangolo_19028-2" x="0" y="122.559" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.926"/>
+						
+							<rect id="Rettangolo_19029-2" x="0" y="123.686" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.525"/>
+						
+							<rect id="Rettangolo_19030-2" x="0" y="127.295" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.027"/>
+						
+							<rect id="Rettangolo_19031-2" x="0" y="129.125" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.413"/>
+						
+							<rect id="Rettangolo_19032-2" x="0" y="130.61" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.811"/>
+						
+							<rect id="Rettangolo_19033-2" x="0" y="131.89999" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="0.526"/>
+						
+							<rect id="Rettangolo_19034-2" x="0" y="131.466" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.013"/>
+						
+							<rect id="Rettangolo_19035-2" x="0" y="133.873" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.301"/>
+						
+							<rect id="Rettangolo_19036-2" x="0" y="135.97501" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.173"/>
+						
+							<rect id="Rettangolo_19037-2" x="0" y="137.29401" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.745"/>
+						
+							<rect id="Rettangolo_19038-2" x="0" y="136.597" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="9.267"/>
+						
+							<rect id="Rettangolo_19039-2" x="0" y="143.666" fill="#0000FF" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.021"/>
+						
+							<rect id="Rettangolo_19040-2" x="0" y="143.88499" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.58"/>
+						
+							<rect id="Rettangolo_19041-2" x="0" y="145.53101" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.751"/>
+						
+							<rect id="Rettangolo_19042-2" x="0" y="201.319" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="1.547"/>
+						
+							<rect id="Rettangolo_19043-2" x="0" y="201.093" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="4.939"/>
+						
+							<rect id="Rettangolo_19044-2" x="0" y="202.985" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.575"/>
+						
+							<rect id="Rettangolo_19045-2" x="0" y="214.87399" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.292"/>
+						
+							<rect id="Rettangolo_19046-2" x="0" y="212.19099" fill="#009959" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="15.967"/>
+						
+							<rect id="Rettangolo_19047-2" x="0" y="189.80299" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="7.449"/>
+						
+							<rect id="Rettangolo_19048-2" x="0" y="222.002" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.06"/>
+						
+							<rect id="Rettangolo_19049-2" x="0" y="226.42101" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.192"/>
+						
+							<rect id="Rettangolo_19050-2" x="0" y="233.424" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="3.348"/>
+						
+							<rect id="Rettangolo_19051-2" x="0" y="242.407" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.314"/>
+						
+							<rect id="Rettangolo_19052-2" x="0" y="247.724" fill="#00C19C" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="6.596"/>
+						
+							<rect id="Rettangolo_19053-2" x="0" y="267.42599" fill="#6E94F4" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="5.95"/>
+						
+							<rect id="Rettangolo_19054-2" x="0" y="273.379" fill="#8AE297" stroke="#FFFFFF" stroke-width="0.2" width="95.2" height="2.504"/>
+					</g>
+					<path id="Tracciato_157359" opacity="0.423" fill="#FFA501" enable-background="new    " d="M0,1h95v332H0V1z"/>
+				</g>
+				<line id="Linea_231" fill="none" stroke="#000000" x1="95.08" y1="0.556" x2="95.08" y2="332.979"/>
+				<line id="Linea_6421" fill="none" stroke="#000000" x1="190.28" y1="0.813" x2="190.28" y2="333.23599"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M120.21582,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M124.51172,381.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V381.42694z"/>
+				<path d="M133.81299,381.42694l-2.19873,5.57324h-0.46387l-2.20654-5.57324h0.63135l1.80713,4.68555l1.80713-4.68555H133.81299z"
+					/>
+				<path d="M135.01562,381.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V381.42694z"/>
+				<path d="M140.07129,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M147.83838,381.95526h-1.92676v-0.52832h4.4375v0.52832h-1.93506v5.04492h-0.57568V381.95526z"/>
+				<path d="M151.11963,381.42694h0.5918l1.34277,4.72559l1.42334-4.42969h0.50391l1.42334,4.42969l1.33496-4.72559h0.59961
+					l-1.61475,5.57324h-0.57568l-1.41553-4.37402l-1.42334,4.37402h-0.5752L151.11963,381.42694z"/>
+				<path d="M159.05518,384.21796c0-1.72754,1.02344-2.87109,2.55078-2.87109c1.52686,0,2.55029,1.14355,2.55029,2.87109
+					c0,1.71875-1.02344,2.8623-2.55029,2.8623C160.07861,387.08026,159.05518,385.93671,159.05518,384.21796z M163.58887,384.21796
+					c0-1.42383-0.77588-2.32715-1.98291-2.32715c-1.20752,0-1.98291,0.90332-1.98291,2.32715
+					c0,1.41504,0.77539,2.31836,1.98291,2.31836C162.81299,386.53632,163.58887,385.633,163.58887,384.21796z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M585.21582,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M589.51172,381.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V381.42694z"/>
+				<path d="M598.8125,381.42694l-2.19824,5.57324h-0.46387l-2.20703-5.57324h0.63184l1.80664,4.68555l1.80762-4.68555H598.8125z"/>
+				<path d="M600.01562,381.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V381.42694z"/>
+				<path d="M605.07129,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M612.83789,381.95526h-1.92676v-0.52832h4.4375v0.52832h-1.93457v5.04492h-0.57617V381.95526z"/>
+				<path d="M616.11914,381.42694h0.5918l1.34277,4.72559l1.42383-4.42969h0.50391l1.42285,4.42969l1.33496-4.72559h0.59961
+					l-1.61426,5.57324h-0.57617l-1.41504-4.37402l-1.42383,4.37402h-0.5752L616.11914,381.42694z"/>
+				<path d="M624.05469,384.21796c0-1.72754,1.02344-2.87109,2.55078-2.87109s2.55078,1.14355,2.55078,2.87109
+					c0,1.71875-1.02344,2.8623-2.55078,2.8623S624.05469,385.93671,624.05469,384.21796z M628.58887,384.21796
+					c0-1.42383-0.77637-2.32715-1.9834-2.32715s-1.98242,0.90332-1.98242,2.32715c0,1.41504,0.77539,2.31836,1.98242,2.31836
+					S628.58887,385.633,628.58887,384.21796z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M27.24756,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M31.54346,381.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V381.42694z"/>
+				<path d="M40.84473,381.42694l-2.19873,5.57324h-0.46387l-2.20654-5.57324h0.63135l1.80713,4.68555l1.80713-4.68555H40.84473z"/>
+				<path d="M42.04736,381.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V381.42694z"/>
+				<path d="M47.10303,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M53.20703,384.21796c0-1.72754,1.02344-2.87109,2.55078-2.87109c1.52686,0,2.55029,1.14355,2.55029,2.87109
+					c0,1.71875-1.02344,2.8623-2.55029,2.8623C54.23047,387.08026,53.20703,385.93671,53.20703,384.21796z M57.74072,384.21796
+					c0-1.42383-0.77588-2.32715-1.98291-2.32715c-1.20752,0-1.98291,0.90332-1.98291,2.32715
+					c0,1.41504,0.77539,2.31836,1.98291,2.31836C56.96484,386.53632,57.74072,385.633,57.74072,384.21796z"/>
+				<path d="M63.69287,381.42694v5.57324h-0.62354l-2.74268-4.60547v4.60547h-0.56738v-5.57324H60.375l2.75049,4.58203v-4.58203
+					H63.69287z"/>
+				<path d="M65.51904,381.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V381.42694z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M491.24805,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M495.54395,381.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V381.42694z"/>
+				<path d="M504.84473,381.42694l-2.19824,5.57324h-0.46387l-2.20703-5.57324h0.63184l1.80664,4.68555l1.80762-4.68555H504.84473z"
+					/>
+				<path d="M506.04785,381.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V381.42694z"/>
+				<path d="M511.10352,381.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V381.42694z"/>
+				<path d="M517.20703,384.21796c0-1.72754,1.02344-2.87109,2.55078-2.87109s2.55078,1.14355,2.55078,2.87109
+					c0,1.71875-1.02344,2.8623-2.55078,2.8623S517.20703,385.93671,517.20703,384.21796z M521.74121,384.21796
+					c0-1.42383-0.77637-2.32715-1.9834-2.32715s-1.98242,0.90332-1.98242,2.32715c0,1.41504,0.77539,2.31836,1.98242,2.31836
+					S521.74121,385.633,521.74121,384.21796z"/>
+				<path d="M527.69336,381.42694v5.57324h-0.62402l-2.74219-4.60547v4.60547h-0.56738v-5.57324h0.61523l2.75098,4.58203v-4.58203
+					H527.69336z"/>
+				<path d="M529.51953,381.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V381.42694z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M212.73145,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M217.02734,382.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+				<path d="M226.32861,382.42694l-2.19873,5.57324h-0.46387l-2.20654-5.57324h0.63135l1.80713,4.68555l1.80713-4.68555H226.32861z"
+					/>
+				<path d="M227.53125,382.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+				<path d="M232.58691,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M240.354,382.95526h-1.92676v-0.52832h4.4375v0.52832h-1.93506v5.04492H240.354V382.95526z"/>
+				<path d="M244.05078,382.42694h0.56738v2.46289h2.89453v-2.46289h0.57568v5.57324h-0.57568v-2.57422h-2.89453v2.57422h-0.56738
+					V382.42694z"/>
+				<path d="M253.05713,388.00018l-1.42334-2.4707h-0.37549h-0.77588v2.4707h-0.56738v-5.57324h1.59082
+					c1.19971,0,1.83936,0.53613,1.83936,1.54395c0,0.7832-0.39209,1.28711-1.14355,1.48633l1.51904,2.54297H253.05713z
+					 M251.4502,385.00214c0.87939,0,1.31934-0.34375,1.31934-1.02344s-0.43994-1.02344-1.31934-1.02344h-0.96777v2.04688H251.4502z"
+					/>
+				<path d="M254.97852,382.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+				<path d="M260.03467,382.42694h3.65381v0.52832h-3.08643v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M677.73145,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M682.02734,382.42694h3.6543v0.52832h-3.08691v1.94238h2.77539v0.52832h-2.77539v2.04688h3.08691v0.52734h-3.6543
+					V382.42694z"/>
+				<path d="M691.3291,382.42694l-2.19922,5.57324h-0.46387l-2.20605-5.57324h0.63086l1.80762,4.68555l1.80664-4.68555H691.3291z"/>
+				<path d="M692.53125,382.42694h3.6543v0.52832h-3.08691v1.94238h2.77539v0.52832h-2.77539v2.04688h3.08691v0.52734h-3.6543
+					V382.42694z"/>
+				<path d="M697.58691,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M705.35449,382.95526h-1.92676v-0.52832h4.4375v0.52832h-1.93555v5.04492h-0.5752V382.95526z"/>
+				<path d="M709.05078,382.42694h0.56738v2.46289h2.89453v-2.46289h0.57617v5.57324h-0.57617v-2.57422h-2.89453v2.57422h-0.56738
+					V382.42694z"/>
+				<path d="M718.05762,388.00018l-1.42383-2.4707h-0.375h-0.77637v2.4707h-0.56738v-5.57324h1.59082
+					c1.2002,0,1.83984,0.53613,1.83984,1.54395c0,0.7832-0.39258,1.28711-1.14355,1.48633l1.51855,2.54297H718.05762z
+					 M716.4502,385.00214c0.87988,0,1.31934-0.34375,1.31934-1.02344s-0.43945-1.02344-1.31934-1.02344h-0.96777v2.04688H716.4502z"
+					/>
+				<path d="M719.97852,382.42694h3.6543v0.52832h-3.08691v1.94238h2.77539v0.52832h-2.77539v2.04688h3.08691v0.52734h-3.6543
+					V382.42694z"/>
+				<path d="M725.03516,382.42694h3.65332v0.52832h-3.08594v1.94238h2.77441v0.52832h-2.77441v2.04688h3.08594v0.52734h-3.65332
+					V382.42694z"/>
+			</g>
+			<g enable-background="new    ">
+				<path d="M309.83545,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M314.13135,382.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+				<path d="M323.43262,382.42694l-2.19873,5.57324h-0.46387l-2.20654-5.57324h0.63135l1.80713,4.68555l1.80713-4.68555H323.43262z"
+					/>
+				<path d="M324.63525,382.42694h3.65381v0.52832h-3.08643v1.94238h2.7749v0.52832h-2.7749v2.04688h3.08643v0.52734h-3.65381
+					V382.42694z"/>
+				<path d="M329.69092,382.42694h0.56738v5.0459h2.54297v0.52734h-3.11035V382.42694z"/>
+				<path d="M336.1709,382.42694h3.78174v0.52832h-3.21436v1.94238h2.81445v0.52832h-2.81445v2.57422h-0.56738V382.42694z"/>
+				<path d="M340.77881,385.21796c0-1.72754,1.02344-2.87109,2.55078-2.87109c1.52686,0,2.55029,1.14355,2.55029,2.87109
+					c0,1.71875-1.02344,2.8623-2.55029,2.8623C341.80225,388.08026,340.77881,386.93671,340.77881,385.21796z M345.3125,385.21796
+					c0-1.42383-0.77588-2.32715-1.98291-2.32715c-1.20752,0-1.98291,0.90332-1.98291,2.32715
+					c0,1.41504,0.77539,2.31836,1.98291,2.31836C344.53662,387.53632,345.3125,386.633,345.3125,385.21796z"/>
+				<path d="M347.21094,385.98553v-3.55859h0.56787v3.50195c0,1.08008,0.46338,1.5918,1.43115,1.5918
+					c0.97559,0,1.43896-0.51953,1.43896-1.61523v-3.47852h0.56787v3.51855c0,1.39941-0.70361,2.13477-2.00684,2.13477
+					C347.91455,388.08026,347.21094,387.35272,347.21094,385.98553z"/>
+				<path d="M356.06494,388.00018l-1.42334-2.4707h-0.37549h-0.77588v2.4707h-0.56738v-5.57324h1.59082
+					c1.19971,0,1.83936,0.53613,1.83936,1.54395c0,0.7832-0.39209,1.28711-1.14355,1.48633l1.51904,2.54297H356.06494z
+					 M354.45801,385.00214c0.87939,0,1.31934-0.34375,1.31934-1.02344s-0.43994-1.02344-1.31934-1.02344h-0.96777v2.04688H354.45801
+					z"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>
