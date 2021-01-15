@@ -141,7 +141,7 @@ class CancellationInformationSheet extends Component {
               <img
                 className={SheetStyles.image + " " + SheetStyles.image100w}
                 src={distribution}
-                style={{ border: "0.5px solid #333333" }}
+                style={{ border: "none" }}
                 alt=""
               />
               <p className="captionLeft">
@@ -513,54 +513,60 @@ class CancellationInformationSheet extends Component {
                 SheetStyles.titleH2,
               ].join(" ")}
             >
-              d. Cancellazione
+              {this.props.t("cancellazione-sheet:paragraph-text-D-title")}
             </h2>
-            <p
-              className={SheetStyles.paragraphCentered}
-              style={{ marginTop: "1rem" }}
+            <Trans
+              i18nKey="paragraph-text-D"
+              ns="cancellazione-sheet"
+              t={this.props.t}
             >
-              <br></br>Nell’ultima sezione del racconto il testo dubitativo
-              diminuisce sensibilmente. È trascorso del tempo, i due personaggi
-              sono rimasti soli mentre si sta facendo sera. Ormai i gesti di
-              Tomagra sono sempre più espliciti: esita brevemente (
-              <span style={{ color: "#FFA500" }}>54</span>,{" "}
-              <span style={{ color: "#FFA500" }}>55</span>) prima di alzarsi a
-              tirare le tende dello scompartimento. Respinge il mondo esterno,
-              isolando lui stesso e la vedova che improvvisamente lo guarda con
-              «gli occhi aperti e fissi» (ibidem), occhi il cui colore
-              («azzurri») si scoprirà solo nelle ultime righe del racconto. Le
-              ultime due occorrenze rappresentano il modo in cui il testo
-              dubitativo ha partecipato allo sviluppo della narrazione e, in
-              definitiva, alla sua creazione: la prima (
-              <span style={{ color: "#ff3366" }}>56</span>) specifica cosa
-              Tomagra, tramite i suoi movimenti, vorrebbe dire ad alta voce,
-              mentre finora tutta la vicenda si era svolto nel silenzio; la
-              seconda (<span style={{ color: "#FFA500" }}>57</span>) corregge
-              definitivamente l’idea che il soldato si era fatto della vedova. A
-              questo punto le incertezze cadono e arriva finalmente il momento
-              di prendere l’iniziativa finale, che scioglierà ogni dubbio sul
-              carattere sessuale dell’avventura a cui abbiamo assistito: «al
-              fante Tomagra non restava che far sì che non ci fossero più dubbi
-              possibili» (ivi, 328).<br></br>
-              <br></br>
-              Se non fosse che fuori da quel dubbio e da quelle incertezze non
-              viene lasciato nessuno spazio alla rappresentazione: nel momento
-              decisivo dell’azione che infine dovrebbe eliminare ogni ambiguità,
-              la narrazione si inibisce e si interrompe. Tra il 30§ e il 31§
-              assistiamo a un salto nella storia, a una clamorosa ellissi: nello
-              spazio tra i due paragrafi manca, infatti, una scena. Il punto
-              culminante dell’avventura per il quale il soldato si è tormentato
-              pagina dopo pagina viene semplicemente cancellato. Aprendo a
-              ridosso della fine del racconto come un vuoto, una lacuna vistosa
-              e al tempo stesso quasi irrilevante rispetto al racconto che
-              abbiamo letto fin qui. Perché ottenere o meno i favori della
-              vedova non ha rassicurato il soldato, il quale a conclusione di
-              tutto «ebbe ancora un moto di paura d’avere […] osato tanto»
-              (ibidem). La cancellazione si svela infine essere la vera
-              protagonista del racconto, la forza sotterranea in grado di
-              trasformarsi in un paradossale principio creativo.<br></br>
-              <br></br>
-            </p>
+              <p
+                className={SheetStyles.paragraphCentered}
+                style={{ marginTop: "1rem" }}
+              >
+                <br></br>Nell’ultima sezione del racconto il testo dubitativo
+                diminuisce sensibilmente. È trascorso del tempo, i due personaggi
+                sono rimasti soli mentre si sta facendo sera. Ormai i gesti di
+                Tomagra sono sempre più espliciti: esita brevemente (
+                <span style={{ color: "#FFA500" }}>54</span>,{" "}
+                <span style={{ color: "#FFA500" }}>55</span>) prima di alzarsi a
+                tirare le tende dello scompartimento. Respinge il mondo esterno,
+                isolando lui stesso e la vedova che improvvisamente lo guarda con
+                «gli occhi aperti e fissi» (ibidem), occhi il cui colore
+                («azzurri») si scoprirà solo nelle ultime righe del racconto. Le
+                ultime due occorrenze rappresentano il modo in cui il testo
+                dubitativo ha partecipato allo sviluppo della narrazione e, in
+                definitiva, alla sua creazione: la prima (
+                <span style={{ color: "#ff3366" }}>56</span>) specifica cosa
+                Tomagra, tramite i suoi movimenti, vorrebbe dire ad alta voce,
+                mentre finora tutta la vicenda si era svolto nel silenzio; la
+                seconda (<span style={{ color: "#FFA500" }}>57</span>) corregge
+                definitivamente l’idea che il soldato si era fatto della vedova. A
+                questo punto le incertezze cadono e arriva finalmente il momento
+                di prendere l’iniziativa finale, che scioglierà ogni dubbio sul
+                carattere sessuale dell’avventura a cui abbiamo assistito: «al
+                fante Tomagra non restava che far sì che non ci fossero più dubbi
+                possibili» (ivi, 328).<br></br>
+                <br></br>
+                Se non fosse che fuori da quel dubbio e da quelle incertezze non
+                viene lasciato nessuno spazio alla rappresentazione: nel momento
+                decisivo dell’azione che infine dovrebbe eliminare ogni ambiguità,
+                la narrazione si inibisce e si interrompe. Tra il 30§ e il 31§
+                assistiamo a un salto nella storia, a una clamorosa ellissi: nello
+                spazio tra i due paragrafi manca, infatti, una scena. Il punto
+                culminante dell’avventura per il quale il soldato si è tormentato
+                pagina dopo pagina viene semplicemente cancellato. Aprendo a
+                ridosso della fine del racconto come un vuoto, una lacuna vistosa
+                e al tempo stesso quasi irrilevante rispetto al racconto che
+                abbiamo letto fin qui. Perché ottenere o meno i favori della
+                vedova non ha rassicurato il soldato, il quale a conclusione di
+                tutto «ebbe ancora un moto di paura d’avere […] osato tanto»
+                (ibidem). La cancellazione si svela infine essere la vera
+                protagonista del racconto, la forza sotterranea in grado di
+                trasformarsi in un paradossale principio creativo.<br></br>
+                <br></br>
+              </p>
+            </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
             <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
