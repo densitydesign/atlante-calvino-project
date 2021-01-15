@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { withTranslation, Trans } from "react-i18next";
 
 import * as d3 from "d3"
 import Footer from "../../headers/Footer/Footer"
@@ -10,7 +11,9 @@ import { ReactComponent as PdfIcon } from "./icons/pdf.svg"
 import { ReactComponent as CaptureIcon } from "./icons/capture.svg"
 import { orderBy } from "lodash"
 
-export default function Articles() {
+
+
+function Articles({t}) {
   const [data, setData] = useState(null)
   const [articoliScientifici, setArticoliScientifici] = useState(true)
   const [articoliDivulgativi, setArticoliDivulgativi] = useState(true)
@@ -23,15 +26,17 @@ export default function Articles() {
       }
     )
   })
+
+  console.log()
   
   return (
     <>
       <IndexMenuHeader />
       <div className="ac-grid-24">
         <div className="content">
-          <h1>Pubblicazioni</h1>
+          <h1>{t("title")}</h1>
           <div className='sticky-element bg-white'>
-            <h2>Mostra</h2>
+            <h2>{t("Mostra")}</h2>
             <div className="bg-white d-flex justify-content-between pb-4">
               <div className="d-flex align-items-center">
                 <input
@@ -40,7 +45,7 @@ export default function Articles() {
                   onChange={() => setArticoliScientifici(!articoliScientifici)}
                   className="mr-2"
                 />{" "}
-                Articoli scientifici
+                {t("Articoli scientifici")}
               </div>
               <div className="d-flex align-items-center">
                 <input
@@ -49,7 +54,7 @@ export default function Articles() {
                   className="mr-2"
                   onChange={() => setArticoliDivulgativi(!articoliDivulgativi)}
                 />{" "}
-                Articoli divulgativi
+                {t("Articoli divulgativi")}
               </div>
               <div className="d-flex align-items-center">
                 <input
@@ -58,7 +63,7 @@ export default function Articles() {
                   onChange={() => setRassegnaStampa(!rassegnaStampa)}
                   className="mr-2"
                 />{" "}
-                Rassegna stampa
+                {t("Rassegna stampa")}
               </div>
             </div>
             <hr />
@@ -120,7 +125,7 @@ export default function Articles() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CaptureIcon className="text-dark mr-1" height='20' /> Page capture
+                        <CaptureIcon className="text-dark mr-1" height='20' /> {t("Pagina archiviata")}
                       </a>
                     </>
                   )
@@ -145,7 +150,7 @@ export default function Articles() {
                 return (
                   <div className="pubblication-item" key={i}>
                     <small className="text-capitalize">
-                      {d.kind.replace("-", " ")}
+                      {t(d.kind.replace("-", " "))}
                     </small>
                     <h3 style={{ fontSize: 18, fontWeight: "bold" }}>
                       {d.title}
@@ -171,3 +176,5 @@ export default function Articles() {
     </>
   )
 }
+
+export default withTranslation("articles")(Articles)
