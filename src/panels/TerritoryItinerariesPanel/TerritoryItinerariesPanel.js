@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { withTranslation, Trans } from "react-i18next";
 
 import RadioButtonWithClose from '../../general/RadioButtonWithClose/RadioButtonWithClose';
 
@@ -11,16 +11,16 @@ import './TerritoryItinerariesPanel.css';
 
 import GlobalData from '../../utilities/GlobalData';
 
-export default class TerritoryItinerariesPanel extends React.Component
+class TerritoryItinerariesPanel extends React.Component
 {
   doubtRadioButtonId = "doubtRadioButton";
-  doubtRadioButtonCaption = "Nebbia";
+  doubtRadioButtonCaption = this.props.t("nebbia");
 
   spaceRadioButtonId = "spaceRadioButton";
-  spaceRadioButtonCaption = "Luoghi";
+  spaceRadioButtonCaption = this.props.t("luoghi");
 
   shapeRadioButtonId = "shapeRadioButton";
-  shapeRadioButtonCaption = "Elenchi";
+  shapeRadioButtonCaption = this.props.t("elenchi");
 
   state = {
     optionRadioButtonsStates : [
@@ -144,3 +144,5 @@ console.log("visualizationMode.mainAnalysisMode", visualizationMode.mainAnalysis
     );
   }
 }
+
+export default withTranslation("translation")(TerritoryItinerariesPanel)

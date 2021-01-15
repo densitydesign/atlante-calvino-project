@@ -1,8 +1,9 @@
 import React from "react"
+import { withTranslation, Trans } from "react-i18next";
 
 import "./RadioButton.css"
 
-export default function RadioButton({
+function RadioButton({
   buttonUpClass,
   buttonDownClass,
   callStateContainerRadioButtonPressed,
@@ -10,6 +11,7 @@ export default function RadioButton({
   caption,
   pressed,
   buttonColor,
+  t
 }) {
   const buttonUpClassname = buttonUpClass || "radio-button-up"
   const buttonDownClassname = buttonDownClass || "radio-button-down"
@@ -27,7 +29,9 @@ export default function RadioButton({
         callStateContainerRadioButtonPressed(id)
       }}
     >
-      {caption}
+      {t(caption)}
     </div>
   )
 }
+
+export default withTranslation("translation")(RadioButton)
