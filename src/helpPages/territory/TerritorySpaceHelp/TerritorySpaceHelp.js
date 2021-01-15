@@ -68,7 +68,7 @@ export default function TerritorySpaceHelp({ helpProps }) {
               letterarie ideati all’inizio degli anni Duemila, a ogni luogo
               d’ambientazione, sulla base del rapporto di aderenza alla realtà,
               è stata assegnata una categoria. Le categorie scelte sono cinque:
-              luoghi <span style={{ color: "#bbbbff" }}>cosmici generici</span>{" "}
+              luoghi <span style={{ color: "#bbbbff", color: "#9696d6" }}>cosmici generici</span>{" "}
               (es. lo “spazio” o le “galassie”), luoghi{" "}
               <span style={{ color: "#5151fc" }}>cosmici localizzabili</span>{" "}
               (es. la “Luna” o il pianeta “Terra”), luoghi{" "}
