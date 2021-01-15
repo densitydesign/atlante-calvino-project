@@ -56,11 +56,16 @@ export default function SplashScreen2() {
       <div className={S["subtitle"]}>
         <Link to="/navigation" className={S["disabled-link"]}>
           <h2
-            style={{ backgroundColor: "var(--cool-bg)", textAlign: "center" }}
+            style={{ backgroundColor: "var(--cool-bg)", textAlign: "center", marginBottom: "0.2rem" }}
           >
             {t("Letteratura e visualizzazione")}
           </h2>
         </Link>
+        <p
+          style={{ backgroundColor: "var(--cool-bg)", textAlign: "center", fontWeight: "normal" }}
+        >
+          {t("Un nuovo modo di esplorare l’opera di Italo Calvino")}
+        </p>
       </div>
       <div className={S["arrow-down"]}>
         <Link to="/navigation" className={S["disabled-link"]}>
