@@ -230,58 +230,71 @@ class SpaceInformationSheet extends React.Component {
           </div>
 
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>I racconti</h2>
+            <h2 className={SheetStyles.titleH2}>{this.props.t("luoghi-sheet:I racconti")}</h2>
             <img
               className={SheetStyles.image}
               style={{ gridColumn: "1 / span 8" }}
               src={this.props.i18n.language === "it" ? zoom_04 : zoom_04En}
               alt=""
             />
-            <p className="captionLeft" style={{ gridColumn: "1 / span 7" }}>
-              Una selezione di racconti scritti a metà degli anni Cinquanta
-            </p>
-            <p className={SheetStyles.paragraph}>
-              {" "}
-              Nella forma breve, sia che si tratti di racconti pubblicati in
-              volume sia che si tratti di testi usciti su periodici e poi non
-              più raccolti, la diffusione di luoghi inventati è decisamente
-              inferiore. Tuttavia, come mostra la visualizzazione, si rilevano
-              alcune zone di concentrazione: una, in particolare, più
-              interessante delle altre. <br></br>
-              Tra la fine del 1953 e l’inizio del 1954, dopo aver pubblicato
-              sull’«Unità» di Torino il primo blocco di storie che andranno a
-              comporre <em>Marcovaldo</em>, Calvino scrive una serie di testi
-              brevi di natura molto diversa, accomunati dall’incedere
-              favolistico e dalla presenza di ambientazioni fantastiche. Due di
-              questi testi (<em>Un paese disgraziato</em>, 1953;{" "}
-              <em>Il generale in biblioteca</em>, 1953) compaiono ancora
-              sull’edizione torinese dell’«Unità»; gli altri tre (
-              <em>Libertà! Libertà!</em>, 1954; <em>Lo ius primae noctis</em>,
-              1954; <em>I mozzatori di nasi</em>, 1954), scritti l’anno
-              successivo, sono pubblicati sul settimanale «Il Contemporaneo» in
-              una rubrica intitolata <em>I viaggi di Gulliver</em> all’interno
-              della quale Calvino raccolse alcuni apologhi politici con
-              riferimenti evidenti all’attualità.<br></br>
-              Ciò che accomuna tutti questi testi è la presenza di
-              un’ambientazione unidimensionale – un generico paese senza nome o
-              luoghi d’invenzione come Sant’Alcide, Marzalia, Panduria,
-              Cocinindia o Atrabilia – «dedita a una sola cosa, che sottostà a
-              una sola regola, che conosce un solo modo d’essere» (Serra 2006,
-              322). Nella quasi totalità dei casi questa situazione iniziale
-              viene messa a dura prova da un accadimento inatteso, che scombina
-              l’ordine delle cose e da cui si ricava spesso un insegnamento o
-              una morale.<br></br>
-              L’aspetto più interessante di questi racconti scritti a metà degli
-              anni Cinquanta è il fatto che sia possibile riconoscere in nuce,
-              pertanto in forma acerba e a tratti elementare, alcuni elementi
-              fondanti delle <em>Città Invisibili</em>: l’ambientazione
-              unidimensionale, la regola o il carattere <em>sui generis</em> che
-              connota la città, i nomi dei luoghi esclusivamente femminili.
-              <br></br>
-              In filigrana si riconosce un percorso organico e continuativo, che
-              affonda le radici in un tempo piuttosto remoto e trova il suo
-              compimento negli anni Settanta del Novecento.
-            </p>
+            <Trans
+              i18nKey="paragraph-racconti-caption-1"
+              ns={"luoghi-sheet"}
+              t={this.props.t}
+            >
+              <p className="captionLeft" style={{ gridColumn: "1 / span 7" }}>
+                Una selezione di racconti scritti a metà degli anni Cinquanta
+                A selection of stories written in the mid 1950s
+              </p>
+            </Trans>
+            <Trans
+              i18nKey="paragraph-racconti-1"
+              ns={"luoghi-sheet"}
+              t={this.props.t}
+            >
+              <p className={SheetStyles.paragraph}>
+                {" "}
+                Nella forma breve, sia che si tratti di racconti pubblicati in
+                volume sia che si tratti di testi usciti su periodici e poi non
+                più raccolti, la diffusione di luoghi inventati è decisamente
+                inferiore. Tuttavia, come mostra la visualizzazione, si rilevano
+                alcune zone di concentrazione: una, in particolare, più
+                interessante delle altre. <br></br>
+                Tra la fine del 1953 e l’inizio del 1954, dopo aver pubblicato
+                sull’«Unità» di Torino il primo blocco di storie che andranno a
+                comporre <em>Marcovaldo</em>, Calvino scrive una serie di testi
+                brevi di natura molto diversa, accomunati dall’incedere
+                favolistico e dalla presenza di ambientazioni fantastiche. Due di
+                questi testi (<em>Un paese disgraziato</em>, 1953;{" "}
+                <em>Il generale in biblioteca</em>, 1953) compaiono ancora
+                sull’edizione torinese dell’«Unità»; gli altri tre (
+                <em>Libertà! Libertà!</em>, 1954; <em>Lo ius primae noctis</em>,
+                1954; <em>I mozzatori di nasi</em>, 1954), scritti l’anno
+                successivo, sono pubblicati sul settimanale «Il Contemporaneo» in
+                una rubrica intitolata <em>I viaggi di Gulliver</em> all’interno
+                della quale Calvino raccolse alcuni apologhi politici con
+                riferimenti evidenti all’attualità.<br></br>
+                Ciò che accomuna tutti questi testi è la presenza di
+                un’ambientazione unidimensionale – un generico paese senza nome o
+                luoghi d’invenzione come Sant’Alcide, Marzalia, Panduria,
+                Cocinindia o Atrabilia – «dedita a una sola cosa, che sottostà a
+                una sola regola, che conosce un solo modo d’essere» (Serra 2006,
+                322). Nella quasi totalità dei casi questa situazione iniziale
+                viene messa a dura prova da un accadimento inatteso, che scombina
+                l’ordine delle cose e da cui si ricava spesso un insegnamento o
+                una morale.<br></br>
+                L’aspetto più interessante di questi racconti scritti a metà degli
+                anni Cinquanta è il fatto che sia possibile riconoscere <i>in nuce</i>,
+                pertanto in forma acerba e a tratti elementare, alcuni elementi
+                fondanti delle <em>Città Invisibili</em>: l’ambientazione
+                unidimensionale, la regola o il carattere <em>sui generis</em> che
+                connota la città, i nomi dei luoghi esclusivamente femminili.
+                <br></br>
+                In filigrana si riconosce un percorso organico e continuativo, che
+                affonda le radici in un tempo piuttosto remoto e trova il suo
+                compimento negli anni Settanta del Novecento.
+              </p>
+            </Trans>
           </div>
 
           <div className={SheetStyles.gridRow}>

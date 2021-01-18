@@ -5,16 +5,16 @@ import RadioButton from '../RadioButton/RadioButton';
 
 import './TerritoryItinerariesDropUp.css';
 
-export default class TerritoryItinerariesDropUp extends React.Component
+class TerritoryItinerariesDropUp extends React.Component
 {
   static get doubtButtonId() { return "doubtButton"; }
-  doubtButtonCaption = "Nebbia";
+  doubtButtonCaption = "nebbia";
 
   static get spaceButtonId() { return "spaceButton"; }
-  spaceButtonCaption = "Luoghi";
+  spaceButtonCaption = "luoghi";
 
   static get shapeButtonId() { return  "shapeButton"; }
-  shapeButtonCaption = "Elenchi";
+  shapeButtonCaption = "elenchi";
 
   render()
   {
@@ -53,3 +53,5 @@ export default class TerritoryItinerariesDropUp extends React.Component
     );
   }
 }
+
+export default TerritoryItinerariesDropUp

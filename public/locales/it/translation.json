@@ -161,5 +161,30 @@
   "periodico": "Periodico",
   "tipologia": {
     "matrimonio": "matrimonio"
-  }
+  },
+  "subtitle": "subtitle",
+  "Un nuovo modo di esplorare l’opera di Italo Calvino": "Un nuovo modo di esplorare l’opera di Italo Calvino",
+  "TUTTE": "TUTTE",
+  "%": "%",
+  "Unspecified terrestrial": "Unspecified terrestrial",
+  "Specific terrestrial": "Specific terrestrial",
+  "Unspecified cosmic": "Unspecified cosmic",
+  "Specific cosmic": "Specific cosmic",
+  "Spatial levels": "Spatial levels",
+  "Invented terrestrial": "Invented terrestrial",
+  "No location": "No location",
+  "Fog": "Fog",
+  "Erasure": "Erasure",
+  "Both": "Both",
+  "Nebbia": "Nebbia",
+  "Entrambi": "Entrambi",
+  "Cancellazione": "Cancellazione",
+  "Terrestri generici": "Terrestri generici",
+  "Nessun luogo": "Nessun luogo",
+  "livelli spaziali": "livelli spaziali",
+  "Cosmici generici": "Cosmici generici",
+  "Terrestri inventati": "Terrestri inventati",
+  "Cosmici localizzabili": "Cosmici localizzabili",
+  "Terrestri localizzabili": "Terrestri localizzabili",
+  "Livelli spaziali": "Livelli spaziali"
 }
