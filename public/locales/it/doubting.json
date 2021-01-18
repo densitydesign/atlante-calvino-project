@@ -40,5 +40,13 @@
     "soggetto": "Opere ordinate per quantità di testo oggetto di dubbio, usa il selettore per espanderne una",
     "misto": "Opere ordinate per quantità di testo dubitativo e oggetto di dubbio, usa il selettore per espanderne una",
     "id": "Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una."
-  }
+  },
+  "ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO": "ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO",
+  "Usa la rotellina del mouse per fare zoom": "Usa la rotellina del mouse per fare zoom",
+  "Clicca su un elemento per evidenziare l’occorrenza di testo dubitativo": {
+    "": ""
+  },
+  "Inizio del testo": "Inizio del testo",
+  "CARATTERE": "CARATTERE",
+  "Fine del testo": "Fine del testo"
 }

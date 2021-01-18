@@ -33,5 +33,14 @@
   },
   "Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una": "Works organised by first publication, use the cursor below to select and widen one",
   "LUNGHEZZA IN CARATTERI (MIGLIAIA)": "TEXT LENGTH IN CHARACTERS (THOUSANDS)",
-  "Ripristina ordine di prima pubblicazione": "Restore arrangements by first publication"
+  "Ripristina ordine di prima pubblicazione": "Restore arrangements by first publication",
+  "orderMessages": {
+    "definitivo": "Works organised by amount of non-dubitative text, use the cursor below to select and widen one",
+    "dubbio": "Works organised by amount of dubitative text, use the cursor below to select and widen one",
+    "soggetto": "Works organised by amount of text object of doubt, use the cursor below to select and widen one",
+    "misto": "Works organised by amount of dubitative text also object of doubt, use the cursor below to select and widen one",
+    "id": "Works organised by first publication, use the cursor below to select and widen one"
+  },
+  "ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO": "BEHAVIOUR OF THE DUBITATIVE PROCESS IN THE SELECTED TEXT",
+  "Usa la rotellina del mouse per fare zoom": "Scroll up and down to zoom"
 }
