@@ -781,7 +781,7 @@ class ProcessDoubting extends Component {
             <RangeFilterSnap
               extent={this.state.timeExtent}
               update={this.changeTimeSpan}
-              style={{ gridColumn: "span 10" }}
+              style={{ gridColumn: "span 12" }}
             />
             // <RangeFilter
             //   style={{ gridColumn: "span 12" }}

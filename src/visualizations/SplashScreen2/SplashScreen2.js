@@ -61,11 +61,11 @@ export default function SplashScreen2() {
             {t("Letteratura e visualizzazione")}
           </h2>
         </Link>
-        <p
+        {/* <p
           style={{ backgroundColor: "var(--cool-bg)", textAlign: "center", fontWeight: "normal" }}
         >
           {t("Un nuovo modo di esplorare l’opera di Italo Calvino")}
-        </p>
+        </p> */}
       </div>
       <div className={S["arrow-down"]}>
         <Link to="/navigation" className={S["disabled-link"]}>

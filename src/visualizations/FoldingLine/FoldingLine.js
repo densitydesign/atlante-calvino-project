@@ -3,6 +3,15 @@ import * as d3 from 'd3';
 import V from './FoldingLine.d3';
 import './FoldingLine.css';
 
+import { withTranslation } from 'react-i18next'
+
+import leg_pt2_01_it from './leg-dubitare-2-formula-it.svg'
+import leg_pt2_02_it from './leg-dubitare-2-livelli-it.svg'
+import leg_pt2_03_it from './leg-dubitare-2-misto-it.svg'
+import leg_pt2_01_en from './leg-dubitare-2-formula-en.svg'
+import leg_pt2_02_en from './leg-dubitare-2-livelli-en.svg'
+import leg_pt2_03_en from './leg-dubitare-2-misto-en.svg'
+
 import ToggleSwitch from '../../general/ToggleSwitch';
 
 class FoldingLine extends Component {
@@ -106,13 +115,13 @@ class FoldingLine extends Component {
             <ToggleSwitch label="Dubitativo e oggetto di dubbio" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
           </div>
           <div style={{gridColumnStart:'col-2',gridRowStart:'headers',gridRowEnd:'span 3'}}>
-            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-fenomenodubitativo.svg'} />
+            <img width="235" src={this.props.i18n.language==='it'?leg_pt2_01_it:leg_pt2_01_en} />
           </div>
           <div style={{gridColumnStart:'col-3',gridRowStart:'headers',gridRowEnd:'span 3'}}>
-            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-annidamenti.svg'} />
+            <img width="235" src={this.props.i18n.language==='it'?leg_pt2_02_it:leg_pt2_02_en} />
           </div>
           <div style={{gridColumnStart:'col-4',gridRowStart:'headers',gridRowEnd:'span 3'}}>
-            <img width="235" src={process.env.PUBLIC_URL + '/legenda-dubbio2-comportamento-testomisto.svg'} />
+            <img width="235" src={this.props.i18n.language==='it'?leg_pt2_03_it:leg_pt2_03_en} />
           </div>
 
       </div>
@@ -120,4 +129,4 @@ class FoldingLine extends Component {
   }
 }
 
-export default FoldingLine;
+export default withTranslation('doubting')(FoldingLine);
