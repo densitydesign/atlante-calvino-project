@@ -66,18 +66,18 @@ let width,
   legendItem,
   legendMessage,
   orderMessage,
-  orderMessages = {
-    id:
-      "Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.",
-    definitivo:
-      "Opere ordinate per quantità di testo non dubitativo, usa il selettore per espanderne una.",
-    dubbio:
-      "Opere ordinate per quantità di testo dubitativo, usa il selettore per espanderne una.",
-    soggetto:
-      "Opere ordinate per quantità di testo oggetto di dubbio, usa il selettore per espanderne una.",
-    misto:
-      "Opere ordinate per quantità di testo dubitativo e oggetto di dubbio, usa il selettore per espanderne una.",
-  },
+  // orderMessages = {
+  //   id:
+  //     "Opere ordinate per data di prima pubblicazione, usa il selettore per espanderne una.",
+  //   definitivo:
+  //     "Opere ordinate per quantità di testo non dubitativo, usa il selettore per espanderne una.",
+  //   dubbio:
+  //     "Opere ordinate per quantità di testo dubitativo, usa il selettore per espanderne una.",
+  //   soggetto:
+  //     "Opere ordinate per quantità di testo oggetto di dubbio, usa il selettore per espanderne una.",
+  //   misto:
+  //     "Opere ordinate per quantità di testo dubitativo e oggetto di dubbio, usa il selettore per espanderne una.",
+  // },
   selector,
   serie,
   treemap_misto,
@@ -143,7 +143,8 @@ V.initialize = (el, data_for_update, _onSelectedElement, t) => {
       let sortedData = sortData(
         data_for_update.data,
         "id",
-        data_for_update.stackMode
+        data_for_update.stackMode,
+        t
       )
       d3.select(".legend-message").text(t("Clicca per riordinare"))
       legend.select(".legend-message-box").style("display", "none")
@@ -226,7 +227,7 @@ V.initialize = (el, data_for_update, _onSelectedElement, t) => {
   V.update(data_for_update.data, data_for_update.stackMode, undefined, t)
 }
 
-const sortData = (data, property, stackMode) => {
+const sortData = (data, property, stackMode, t) => {
   if (property !== "id") {
     if (stackMode === "normalized") {
       property += "_perc"
@@ -236,7 +237,7 @@ const sortData = (data, property, stackMode) => {
     data = data.sort((a, b) => a.id_index.localeCompare(b.id_index))
     // data = data.sort((a,b) => (a[property] > b[property]) ? 1 : ((b[property] > a[property]) ? -1 : 0));
   }
-  orderMessage.text(orderMessages[property.replace("_perc", "")])
+  orderMessage.text(t(`orderMessages.${property.replace("_perc", "")}`))
   return data
 }
 
@@ -395,7 +396,7 @@ V.update = (data, stackMode, baseLayer, t) => {
             t("Ripristina ordine di prima pubblicazione")
           )
           d3.select(".legend-message-box").style("display", "block")
-          let sortedData = sortData(data, d.id, stackMode)
+          let sortedData = sortData(data, d.id, stackMode, t)
           // d.id is the baselayer ordering setting
           // In the Update cycle it is skipped if equal to "id" or "definitivo"
           V.update(sortedData, stackMode, d.id, t)
