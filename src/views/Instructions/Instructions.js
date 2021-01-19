@@ -79,22 +79,24 @@ export default function Instructions() {
             </div>
             <div>
               <p>
-                Ciascuno dei 3 itinerari si sviluppa in <strong>3 tappe</strong>
+                Ciascuno dei 3 itinerari si sviluppa in <Link to="/phases">
+                <strong>3 tappe</strong>
+              </Link>{" "} 
                 :
               </p>
               <ol type="1">
                 <li>
-                  La prima tappa (<Link to="/phases#phaenomenon">fenomeno</Link>
+                  La prima tappa (<strong>fenomeno</strong>
                   ) introduce all’itinerario nel suo aspetto più concreto e
                   tangibile
                 </li>
                 <li>
-                  La seconda tappa (<Link to="/phases#process">processo</Link>)
+                  La seconda tappa (<strong>processo</strong>)
                   cerca di cogliere la dinamica che sta dietro a ciascuno dei
                   tre fenomeni
                 </li>
                 <li>
-                  La terza tappa (<Link to="/phases#problem">problema</Link>)
+                  La terza tappa (<strong>problema</strong>)
                   indaga la questione principale che muove verso il fenomeno,
                   dando avvio al processo
                 </li>
@@ -134,14 +136,14 @@ export default function Instructions() {
               ripartizione:
             </p>
             <p>
-              <Link to="/itineraries#doubt">Itinerario del dubbio</Link>:
-              <strong> Margherita Parigini</strong>
+              <strong>Itinerario del dubbio</strong>: 
+               Margherita Parigini
               <br />
-              <Link to="/itineraries#space">Itinerario dello spazio</Link>:
-              <strong> Virginia Giustetto</strong>
+              <strong>Itinerario dello spazio</strong>: 
+              Virginia Giustetto
               <br />
-              <Link to="/itineraries#shape">Itinerario della forma</Link>:
-              <strong> Valeria Cavalloro</strong>
+              <strong>Itinerario della forma</strong>: 
+              Valeria Cavalloro
             </p>
             <p>
               L’Atlante è stato scritto in italiano e tradotto in inglese,
