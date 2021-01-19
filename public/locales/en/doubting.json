@@ -42,5 +42,10 @@
     "id": "Works organised by first publication, use the cursor below to select and widen one"
   },
   "ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO": "BEHAVIOUR OF THE DUBITATIVE PROCESS IN THE SELECTED TEXT",
-  "Usa la rotellina del mouse per fare zoom": "Scroll up and down to zoom"
+  "Usa la rotellina del mouse per fare zoom": "Scroll up and down to zoom",
+  "Inizio del testo": "Beginning of text",
+  "CARATTERE": "CHARACTER",
+  "Fine del testo": "End of text",
+  "Mostra": "Show",
+  "Etichette": "Labels"
 }

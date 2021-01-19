@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 // import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 import GlobalData from '../../utilities/GlobalData';
+import { withTranslation } from "react-i18next"
 
 const V = {}
 
@@ -98,7 +99,7 @@ let width, legendWidth, height, lvl0 = 10, margin = {top: 16, right: window.inne
 
     globalUpdateOptions, id_opera, selected_pairs = [];
 
-V.initialize = (init_options) => {
+V.initialize = (init_options,t) => {
     // console.log(init_options);
     id_opera = init_options.data.id;
 
@@ -153,7 +154,7 @@ V.initialize = (init_options) => {
                 .scale(x)
         );
         globalUpdateOptions.transformed = true;
-        V.update(globalUpdateOptions);
+        V.update(globalUpdateOptions,t);
     }
 
     const zoom = d3.zoom()
@@ -215,12 +216,12 @@ V.initialize = (init_options) => {
         .attr('fill','#666666')
         .attr('font-size','0.8571428571rem')
         .attr('font-style','italic')
-        .text('Clicca su un elemento per evidenziare l’occorrenza di testo dubitativo.')
+        .text(t('Clicca su un elemento per evidenziare l’occorrenza di testo dubitativo.'))
 
-    V.update({data:init_options.data,showLabels:init_options.showLabels,showMisto:init_options.showMisto});
+    V.update({data:init_options.data,showLabels:init_options.showLabels,showMisto:init_options.showMisto},t);
 }
 
-V.update = (options) => {
+V.update = (options, t) => {
     // console.log('V.update');
     if (options) {
         globalUpdateOptions = options;
@@ -262,13 +263,13 @@ V.update = (options) => {
         tick.select('line').remove();
         let percentage;
         if (d<1) {
-            percentage = 'Inizio del testo';
+            percentage = t('Inizio del testo');
         } else if (d===options.data.length) {
-            percentage = 'Fine del testo';
+            percentage = t('Fine del testo');
         } else {
             percentage = `${Math.floor(d/options.data.length*100)}%`;
         }
-        let character = 'CARATTERE ' + Math.round(d);
+        let character = t('CARATTERE') + ' ' + Math.round(d);
         
         const text = tick.select('text');
         text.attr('text-anchor', i===0?'start':'end')

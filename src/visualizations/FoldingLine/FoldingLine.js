@@ -34,7 +34,7 @@ class FoldingLine extends Component {
       showLabels:this.state.showLabels,
       showMisto:this.state.showMisto
     }
-    V.initialize(options);
+    V.initialize(options,this.props.t);
   }
 
   componentDidUpdate(prevProps,prevState) {
@@ -45,7 +45,7 @@ class FoldingLine extends Component {
         showLabels:this.state.showLabels,
         showMisto:this.state.showMisto
       }
-      V.update(options)
+      V.update(options,this.props.t)
     }
     if (prevState.showLabels!==this.state.showLabels)
     {
@@ -75,9 +75,9 @@ class FoldingLine extends Component {
             alignItems:"center",
             padding:"0 "+window.innerWidth/24+"px"
           }}>
-          ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO
+          {this.props.t('ANDAMENTO DEL PROCESSO DUBITATIVO NEL TESTO SELEZIONATO')}
           <span style={{color:"#666666",marginLeft:"0.5rem",fontSize:"0.8571428571rem",fontStyle:"italic",fontWeight:"400"}}>
-            Usa la rotellina del mouse per fare zoom
+            {this.props.t('Usa la rotellina del mouse per fare zoom')}
           </span>
       </div>
       <svg id="folding-line" style={style} ref={this._setRef.bind(this)}></svg>
@@ -105,14 +105,14 @@ class FoldingLine extends Component {
           </div> */}
           
           <div style={{gridColumnStart:'col-1',gridRowStart:'switches',alignSelf:'start'}}>
-            {[['Oggetto di dubbio',"#FFD850"],['Dubitativo',"#CFCFFF"],['Dubitativo e oggetto di dubbio',"#4CD3B9"]].map((c,i)=>{
+            {[[this.props.t('tipi_testo.Oggetto di dubbio'),"#FFD850"],[this.props.t('tipi_testo.Dubitativo'),"#CFCFFF"],[this.props.t('tipi_testo.Dubitativo e oggetto di dubbio'),"#4CD3B9"]].map((c,i)=>{
               return <div key={'color'+i}>
                 <span style={{backgroundColor:c[1],display:'inline-block',width:16,height:8,borderRadius:4,marginRight:8}}></span>{c[0]}
               </div>
             })}
-            <span style={{display:'block',marginTop:5}}>Mostra</span>
-            <ToggleSwitch label="Etichette" background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
-            <ToggleSwitch label="Dubitativo e oggetto di dubbio" background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
+            <span style={{display:'block',marginTop:5}}>{this.props.t('Mostra')}</span>
+            <ToggleSwitch label={this.props.t('Etichette')} background_active="#707070" onChange={()=>this.setState({showLabels:!this.state.showLabels})}/>
+            <ToggleSwitch label={this.props.t('tipi_testo.Dubitativo e oggetto di dubbio')} background_active="#05c19d" onChange={()=>this.setState({showMisto:!this.state.showMisto})}/>
           </div>
           <div style={{gridColumnStart:'col-2',gridRowStart:'headers',gridRowEnd:'span 3'}}>
             <img width="235" src={this.props.i18n.language==='it'?leg_pt2_01_it:leg_pt2_01_en} />
