@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235" height="165" viewBox="0 0 235 165">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d1d1f8"/>
+      <stop offset="1" stop-color="#f5f5fd"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="0.958" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe37d"/>
+      <stop offset="1" stop-color="#fffcf0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6cd3bf"/>
+      <stop offset="1" stop-color="#e7fcf8"/>
+    </linearGradient>
+  </defs>
+  <g id="leg-dubitare-2-misto-it" transform="translate(-748 -570)">
+    <path id="Path_1364" data-name="Path 1364" d="M0,0H235V165H0Z" transform="translate(748 570)" fill="#f3f3f3"/>
+    <text id="L_area_verde_indica_la_presenza_di_un_testo_dubitativo_e_oggetto_di_dubbio" data-name="L’area verde indica la presenza
+di un testo dubitativo
+e oggetto di dubbio" transform="translate(770 677)" fill="#666" font-size="10" font-family="HKGrotesk-MediumItalic, HK Grotesk" font-weight="500" font-style="italic"><tspan x="0" y="0">L’area verde indica la presenza</tspan><tspan x="0" y="13">di un </tspan><tspan y="13" fill="#00c19c" font-family="HKGrotesk-BoldItalic, HK Grotesk" font-weight="700">testo dubitativo</tspan><tspan fill="#00c19c" font-family="HKGrotesk-BoldItalic, HK Grotesk" font-weight="700"><tspan x="0" y="26">e oggetto di dubbio</tspan></tspan></text>
+    <g id="Group_701" data-name="Group 701" transform="translate(237 -4116)">
+      <rect id="Rectangle_7336" data-name="Rectangle 7336" width="44" height="14" transform="translate(651 4719) rotate(90)" fill="url(#linear-gradient)"/>
+      <rect id="Rectangle_7337" data-name="Rectangle 7337" width="44" height="42" transform="translate(637 4719) rotate(90)" fill="url(#linear-gradient-2)"/>
+      <line id="Line_374" data-name="Line 374" x2="42" transform="translate(595 4719)" fill="none" stroke="#ffc806" stroke-width="1"/>
+      <line id="Line_375" data-name="Line 375" x2="14" transform="translate(637 4719)" fill="none" stroke="#bbf" stroke-width="1"/>
+      <rect id="Rectangle_7338" data-name="Rectangle 7338" width="10" height="14" transform="translate(629 4753) rotate(90)" fill="#d1d1f8"/>
+      <rect id="Rectangle_7344" data-name="Rectangle 7344" width="34" height="14" transform="translate(629 4719) rotate(90)" fill="url(#linear-gradient-3)"/>
+      <rect id="Rectangle_7339" data-name="Rectangle 7339" width="10" height="14" transform="translate(615 4753) rotate(90)" fill="#ffe37d"/>
+      <line id="Line_376" data-name="Line 376" x2="14" transform="translate(601 4753)" fill="none" stroke="#ffc806" stroke-width="1"/>
+      <line id="Line_377" data-name="Line 377" x2="14" transform="translate(615 4753)" fill="none" stroke="#bbf" stroke-width="1"/>
+      <line id="Line_378" data-name="Line 378" x2="14" transform="translate(615 4719)" fill="none" stroke="#00c19c" stroke-width="1"/>
+      <path id="Path_1361" data-name="Path 1361" d="M24.56,0h81.373" transform="translate(556.608 4762.5)" fill="none" stroke="#707070" stroke-width="1"/>
+      <line id="Line_379" data-name="Line 379" x2="14.503" transform="translate(579.5 4753)" fill="none" stroke="#666" stroke-linecap="round" stroke-width="1" stroke-dasharray="0 4"/>
+      <line id="Line_380" data-name="Line 380" x2="14.503" transform="translate(579.5 4719)" fill="none" stroke="#666" stroke-linecap="round" stroke-width="1" stroke-dasharray="0 4"/>
+      <text id="Livello_0" data-name="Livello 0" transform="translate(533 4757)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Livello 0</tspan></text>
+      <text id="Livello_1" data-name="Livello 1" transform="translate(533 4723)" font-size="12" font-family="HKGrotesk-Regular, HK Grotesk"><tspan x="0" y="0">Livello 1</tspan></text>
+    </g>
+  </g>
+</svg>
