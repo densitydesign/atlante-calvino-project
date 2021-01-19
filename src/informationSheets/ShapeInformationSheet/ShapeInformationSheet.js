@@ -1,22 +1,22 @@
-import React from "react"
+import React from "react";
 
-import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader"
-import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper"
-import FooterSchede1 from "../FooterSchede1"
-import "./ShapeInformationSheet.css"
-import SheetStyles from "../SheetStyles.module.css"
+import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/HamburgerCompassHeader";
+import ListTypePerTextWrapper from "../../visualizations/ListTypesPerText/ListTypesPerTextWrapper";
+import FooterSchede1 from "../FooterSchede1";
+import "./ShapeInformationSheet.css";
+import SheetStyles from "../SheetStyles.module.css";
 
-import legenda from "./legenda.svg"
-import zoom_01 from "./zoom-01.svg"
-import zoom_02 from "./zoom-02.svg"
-import zoom_03 from "./zoom-03.svg"
-import zoom_04 from "./zoom-04.svg"
-import legendaEn from "./elenchi_legend_en.svg"
-import zoom_01En from "./elenchi_zoom-01_en.svg"
-import zoom_02En from "./elenchi_zoom-02_en.svg"
-import zoom_03En from "./elenchi_zoom-03_en.svg"
-import zoom_04En from "./elenchi_zoom-04_en.svg"
-import { Trans, withTranslation } from "react-i18next"
+import legenda from "./legenda.svg";
+import zoom_01 from "./zoom-01.svg";
+import zoom_02 from "./zoom-02.svg";
+import zoom_03 from "./zoom-03.svg";
+import zoom_04 from "./zoom-04.svg";
+import legendaEn from "./elenchi_legend_en.svg";
+import zoom_01En from "./elenchi_zoom-01_en.svg";
+import zoom_02En from "./elenchi_zoom-02_en.svg";
+import zoom_03En from "./elenchi_zoom-03_en.svg";
+import zoom_04En from "./elenchi_zoom-04_en.svg";
+import { Trans, withTranslation } from "react-i18next";
 
 class ShapeInformationSheet extends React.Component {
   render() {
@@ -65,13 +65,13 @@ class ShapeInformationSheet extends React.Component {
                 <em>Ti con zero</em>, nel 1972 solo <em>Il nome, il naso</em> e{" "}
                 <em>Le città invisibili</em>. Tutti i testi in questione sono
                 composti negli anni della rispettiva pubblicazione, tranne{" "}
-                <em>La strada</em> e {" "}<em>Le città</em>, che cominciano a essere scritti
-                rispettivamente a partire dal 1960 e dal 1970, in periodi in cui
-                le pubblicazioni si diradano. Il risultato sembra suggerire una
-                forma di correlazione tra la rarefazione del numero di testi e
-                un uso più intenso degli elenchi, come se l’espansione
-                orizzontale ed enumerativa della scrittura fosse legata al
-                ridursi della varietà di storie elaborate.
+                <em>La strada</em> e <em>Le città</em>, che cominciano a essere
+                scritti rispettivamente a partire dal 1960 e dal 1970, in
+                periodi in cui le pubblicazioni si diradano. Il risultato sembra
+                suggerire una forma di correlazione tra la rarefazione del
+                numero di testi e un uso più intenso degli elenchi, come se
+                l’espansione orizzontale ed enumerativa della scrittura fosse
+                legata al ridursi della varietà di storie elaborate.
               </p>
             </Trans>
             <h2 className={SheetStyles.titleH2}>
@@ -258,19 +258,23 @@ class ShapeInformationSheet extends React.Component {
             <p className={SheetStyles.paragraph}>
               <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
                 <li className="referenceItem">
-                  Freytag 1990: G. Freytag, <em>Technique of the Drama. An
-                  Exposition of Dramatic Composition and Art</em>, Chicago, Scott,
-                  Foresman & Company.
+                  Freytag 1990: G. Freytag,{" "}
+                  <em>
+                    Technique of the Drama. An Exposition of Dramatic
+                    Composition and Art
+                  </em>
+                  , Chicago, Scott, Foresman & Company.
                 </li>
                 <li className="referenceItem">
                   Inglese 2012: A. Inglese,{" "}
                   <em>
                     Gli ideali della letteratura moderna e la strategia
-                    dell’inventario, in Pro e contro la trama
+                    dell’inventario
                   </em>
-                  , a cura di W. Nardon e C. Tirinanzi
-                  De Medici, Trento, Università degli studi di Trento, pp.
-                  77-95.
+                  , in
+                  <em> Pro e contro la trama</em>, a cura di W. Nardon e C.
+                  Tirinanzi De Medici, Trento, Università degli studi di Trento,
+                  pp. 77-95.
                 </li>
                 <li className="referenceItem">
                   Marchese 1991: A. Marchese,{" "}
@@ -299,10 +303,10 @@ class ShapeInformationSheet extends React.Component {
           />
         </main>
       </>
-    )
+    );
   }
 }
 
 export default withTranslation(["translation", "elenchi-sheet"])(
   ShapeInformationSheet
-)
+);
