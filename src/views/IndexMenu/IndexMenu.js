@@ -97,7 +97,7 @@ const ItemIndex = ({
         </Link>
       )}
       <span
-        className={`${styles["title-viz"]} text-capitalize`}
+        className={`${styles["title-viz"]} XXXtext-capitalize`}
         style={{
           transform: `translate(0, ${title !== "Territorio" ? yAlign : 0}px)`,
         }}
