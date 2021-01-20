@@ -1,5 +1,5 @@
 import React from "react";
-import Lische from "./Lische"
+import Lische from "./Lische";
 import { Trans, withTranslation } from "react-i18next";
 
 // import {ReactComponent as LischeSVG} from './lische-web-005-01.svg';
@@ -8,6 +8,7 @@ import HamburgerCompassHeader from "../../headers/HamburgerCompassHeader/Hamburg
 // import CompassLische from "../../visualizations/CompassLische/CompassLische";
 
 import legend_it from "./lische-legend.svg";
+import legend_en from "./lische-legend-en.svg";
 
 import "./CompassFlux.css";
 
@@ -27,13 +28,13 @@ class CompassFlux extends React.Component {
             <div className="row intro">
               <div className="col-12">
                 <Trans i18nKey={"title"} t={this.props.t} ns="compass-flux">
-                  <h1 style={{marginBottom: 0}}>I flussi dei racconti</h1>
+                  <h1 style={{ marginBottom: 0 }}>I flussi dei racconti</h1>
                 </Trans>
               </div>
               <div className="col-7 col-xl-7">
-                <h2 style={{marginBottom: '3rem'}}>{this.props.t(
-                    "compass-flux:subtitle"
-                  )}</h2>
+                <h2 style={{ marginBottom: "3rem" }}>
+                  {this.props.t("compass-flux:subtitle")}
+                </h2>
                 <Trans
                   i18nKey={"blocco_testo_1"}
                   t={this.props.t}
@@ -75,11 +76,19 @@ class CompassFlux extends React.Component {
                   )}
                 </h4>
                 <div className="legend">
-                  <img
-                    src={legend_it}
-                    style={{ width: "100%" }}
-                    alt="information complement"
-                  />
+                  {this.props.i18n.language === "it" ? (
+                    <img
+                      src={legend_it}
+                      style={{ width: "100%" }}
+                      alt="information complement"
+                    />
+                  ) : (
+                    <img
+                      src={legend_en}
+                      style={{ width: "100%" }}
+                      alt="information complement"
+                    />
+                  )}
                 </div>
               </div>
               <div className="compass-credits" style={{ marginTop: "2em" }}>
