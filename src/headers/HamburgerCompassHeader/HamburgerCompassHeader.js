@@ -20,7 +20,9 @@ export default function HamburgerCompassHeader({
         <CloseIcon onClick={toggleFlows} />
       </div>
       <div style={{ gridColumn: "span 22" }} />
-      <div style={{ gridColumn: "span 1" }} />
+      <div className='cursor-pointer d-flex justify-content-center' style={{ gridColumn: "span 1" }}>
+        <LanguageSwitch />
+      </div>
     </div>
   ) : (
     <div className="top-nav navigations">
