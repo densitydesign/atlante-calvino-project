@@ -34,6 +34,7 @@ import { ReactComponent as TramaIcon } from "./icons/trama_blue.svg"
 import { ReactComponent as IconApprofondimento } from "./icons/icon_approfondimento.svg"
 import { ReactComponent as Orbite } from "./icons/orbite.svg"
 import { ReactComponent as Bussola } from "./icons/bussola.svg"
+import { ReactComponent as BussolaEn } from "./icons/bussolaEn.svg"
 import { ReactComponent as IconCloseGuida } from "../../headers/IndexMenuHeader/icons/icon-close.svg"
 import Footer from "../../headers/Footer/Footer"
 import { Modal } from "react-bootstrap"
@@ -580,7 +581,7 @@ export default function IndexMenu({ onClose }) {
       </div>
       <div className="position-absolute" style={{ top: 70, left: 100 }}>
         <Link target="_blank" to="/compass">
-          <Bussola width="70" />
+        {i18n.language === "it" ?<Bussola width="70" />: <BussolaEn width="70" />}
         </Link>
       </div>
       <div
