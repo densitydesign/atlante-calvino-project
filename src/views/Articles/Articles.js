@@ -89,7 +89,7 @@ function Articles({t}) {
                       <a
                         className="link d-flex align-items-center"
                         style={{ marginRight: '4rem'}}
-                        href={d.pdf}
+                        href={process.env.PUBLIC_URL + '/pubblicazioni/' + d.pdf}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
