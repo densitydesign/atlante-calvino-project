@@ -56,7 +56,7 @@ export default function SplashScreen2() {
       <div className={S["subtitle"]}>
         <Link to="/navigation" className={S["disabled-link"]}>
           <h2
-            style={{ backgroundColor: "var(--cool-bg)", textAlign: "center", marginBottom: "0.2rem" }}
+            style={{ backgroundColor: "#fff", textAlign: "center", marginBottom: "0.2rem" }}
           >
             {t("Letteratura e visualizzazione")}
           </h2>
