@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import annotazioni from "./cancellazione-annotazioni.svg";
-import annotazioniEN from "./cancellazione-annotazioni.svg";
+import annotazioniEN from "./cancellazione-annotazioni_en.svg";
 import styles from './RustyViz.module.css';
 
 const V = {};

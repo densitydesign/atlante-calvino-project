@@ -25,8 +25,14 @@ class Equipe extends React.Component {
                 Université de Genève
               </h3>
               <p>
-                L'équipe letteraria del progetto lavora all'interno dell'Unité
-                d’italien del Département des langues et des littératures
+                L'équipe letteraria del progetto lavora all'interno dell'
+                <a
+                  href="https://www.unige.ch/lettres/roman/unites/italien/accueil/"
+                  className="link"
+                >
+                  Unité d’italien
+                </a>
+                 del Département des langues et des littératures
                 romanes dell'Université de Genève.
                 <br />
                 Il gruppo riunisce specialiste di critica letteraria e in
