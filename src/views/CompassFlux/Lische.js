@@ -2,9 +2,15 @@ import React, {useRef, useEffect} from "react";
 import * as d3 from "d3"
 import { ReactComponent as LischeHeaderSVG} from "./lische-header.svg"
 import { ReactComponent as LischeSVG} from "./lische-web.svg"
+
+import { ReactComponent as LischeHeaderSVG_en} from "./lische-header-en.svg"
+import { ReactComponent as LischeSVG_en} from "./lische-web-en.svg"
+
+import { withTranslation } from 'react-i18next'
+
 import styles from "./Lische.module.css"
 
-export default function Lische() {
+function Lische(i18n) {
     const vizEl = useRef(null)
     useEffect(()=>{
 			// console.log(vizEl.current)
@@ -145,11 +151,24 @@ export default function Lische() {
 				d3.selectAll('g.collections-labels > g').transition().duration(250).style('opacity', 1);
 			}
 
-    },[]);
+	},[]);
+	console.log(i18n)
     return (
         <>
-            <LischeHeaderSVG className={["sticky-element", styles.lischeHeader].join(" ")} />
-            <LischeSVG className={styles.lische} ref={vizEl} />
+			{i18n.i18n.language==='it' &&
+				<>
+					<LischeHeaderSVG className={["sticky-element", styles.lischeHeader].join(" ")} />
+					<LischeSVG className={styles.lische} ref={vizEl} />
+				</>
+			}
+            {i18n.i18n.language==='en' &&
+				<>
+					<LischeHeaderSVG_en className={["sticky-element", styles.lischeHeader].join(" ")} />
+					<LischeSVG_en className={styles.lische} ref={vizEl} />
+				</>
+			}
         </>
     )
 }
+
+export default withTranslation()(Lische)
