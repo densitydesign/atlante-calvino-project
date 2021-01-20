@@ -1,7 +1,6 @@
 import * as d3 from 'd3';
 // import DoubtingStackedBars from '../DoubtingStackedBars/DoubtingStackedBars';
 import GlobalData from '../../utilities/GlobalData';
-import { withTranslation } from "react-i18next"
 
 const V = {}
 

@@ -6,7 +6,7 @@ import { curveSankey, append_tooltip_entry } from '../../utilities/graphic_utili
 import './DoubtTypePerYear.css';
 
 class VClass {
-  initialize = (el, input_data) => {
+  initialize = (el, input_data, t) => {
 
     const doubtLabels = ['na', 'nc', 'ca', 'cc'];
     const values = ['na', 'nc', 'ca', 'cc'];
@@ -102,13 +102,13 @@ console.log("data", data);
       .append("text")
       .attr("y", 10)
       .attr("x", 0)
-      .text("numero di");
+      .text(t("Numero di"));
 
     svg
       .append("text")
       .attr("y", 25)
       .attr("x", 0)
-      .text("occorrenze");
+      .text(t("occorrenze"));
 
 
     svg

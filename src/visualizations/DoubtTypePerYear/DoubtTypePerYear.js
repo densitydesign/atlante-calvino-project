@@ -3,11 +3,13 @@ import React from 'react';
 
 import V from './DoubtTypePerYear.d3';
 
-export default class DoubtTypePerYear extends React.Component
+import { withTranslation } from 'react-i18next'
+
+class DoubtTypePerYear extends React.Component
 {
   componentDidMount()
   {
-    V.initialize(this._rootNode, this.props.data);
+    V.initialize(this._rootNode, this.props.data, this.props.t);
   }
 
   componentWillUnmount()
@@ -27,3 +29,5 @@ export default class DoubtTypePerYear extends React.Component
     return <svg id={this.props.id} style={style} ref={this._setRef}></svg>;
   }
 }
+
+export default withTranslation('nebbia-sheet')(DoubtTypePerYear);
