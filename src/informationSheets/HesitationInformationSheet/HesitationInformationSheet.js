@@ -314,6 +314,11 @@ class HesitationInformationSheet extends Component {
               <li className="referenceItem">
                 Barenghi 2009: M. Barenghi, <em>Calvino</em>, Bologna, Mulino.
               </li>
+              { this.props.i18n.language === "en" &&
+                <li className="referenceItem">
+                  Calvino 1971: I. Calvino, <i>The Watcher and Other Stories</i>, New York, Harcourt Inc. (translated by William Weaver).
+                </li>
+              }
               <li className="referenceItem">
                 Mengaldo 1996: P.V. Mengaldo,{" "}
                 <em>Aspetti della lingua di Calvino</em>, in Id.,{" "}
