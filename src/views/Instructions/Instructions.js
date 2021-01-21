@@ -22,7 +22,7 @@ export default function Instructions() {
             </p>
             <p>
               La
-              <Link to="/compass">
+              <Link target='_blank' to="/compass">
                 <strong> Bussola </strong>
               </Link>
               consente di avere a disposizione, in ogni punto dell’Atlante, 3
