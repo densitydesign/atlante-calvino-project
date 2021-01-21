@@ -87,11 +87,11 @@ const ItemIndex = ({
     >
       {(tappa && tappaHover && tappa === tappaHover) ||
       (itinerario && itinerarioHover === itinerario) ? (
-        <Link onClick={() => onClose} to={link} ref={iconEl}>
+        <Link onClick={onClose} to={link} ref={iconEl}>
           {iconHover}
         </Link>
       ) : (
-        <Link onClick={() => onClose} to={link} ref={iconEl}>
+        <Link onClick={onClose} to={link} ref={iconEl}>
           {icon}
           {iconHover}
         </Link>

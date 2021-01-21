@@ -151,7 +151,7 @@ const Curves = ({ dev, setItinerario, itinerarioHover, onClose }) => {
         )}
       {labels.map((l, i) => (
         <HashLink
-          onClick={() => onClose}
+          onClick={onClose}
           key={i}
           to={l.link}
           className={styles.linkItinerary}
