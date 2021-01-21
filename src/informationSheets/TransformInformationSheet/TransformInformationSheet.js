@@ -63,7 +63,7 @@ class TransformInformationSheet extends Component {
                 src={
                   this.props.i18n.language === "it"
                     ? inquadramento
-                    : inquadramentoEn
+                    : inquadramento
                 }
               />
             </div>
@@ -358,13 +358,13 @@ class TransformInformationSheet extends Component {
               </li>
               <li className="referenceItem">
                 Piatti <em>et al.</em> 2009: B. Piatti, H. R. Bär, A. Reuschel,
-                L. Hurni. W. Cartwright,
+                L. Hurni. W. Cartwright,{" "}
                 <em>Mapping Literature: Towards A Geography of Fiction</em> in
-                W. Cartwright, G. Gartner, A. Lehn,
+                W. Cartwright, G. Gartner, A. Lehn,{" "}
                 <em>Cartography and Art</em>, Berlin, Springer, pp. 177-192.
               </li>
               <li className="referenceItem">
-                Reuschel-Hurni 2011: A. Reuschel, L. Hurni,
+                Reuschel-Hurni 2011: A. Reuschel, L. Hurni,{" "}
                 <em>
                   Mapping Literature: Visualisation of Spatial Uncertainty in
                   Fiction
