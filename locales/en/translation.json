@@ -63,7 +63,7 @@
     "14": "14",
     "luogo": "Location",
     "altro": "Other",
-    "nessuno": "Nobody",
+    "nessuno": "None",
     "guerra": "War",
     "natura ligure": "Ligurian nature",
     "paesaggio urbano": "Urban landscape",
@@ -101,7 +101,7 @@
     "sede di pubblicazione": "Found in",
     "volume": "Volume",
     "non_aggregato": "Non-aggregated",
-    "periodico": "Found in",
+    "periodico": "Periodical",
     "ui": {
       "uno": "uno",
       "due": "due",
