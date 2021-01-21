@@ -175,23 +175,25 @@ export default function ProcessDoubtingMainHelp() {
                 )}
               </div>
               <div className="col-md-6 text-left">
-                <img
-                  width="157"
-                  src={Legend02}
-                  alt="Legenda"
-                  style={{ maxWidth: "100%" }}
-                />
-                <div>
-                  <Trans i18nKey={"help_panel.testo_gif"} t={t} ns="doubting">
-                    <p className="text-legenda">
-                      Testi disposti secondo data di prima pubblicazione.
-                    </p>
-                    <p className="text-legenda gray">
-                      Apri la colonna cliccando, poi scorri verso il basso per
-                      vedere l’andamento del processo dubitativo.<br></br><br></br><br></br>
-                       <br></br><br></br>
-                    </p>
-                  </Trans>
+                <div style={{position:'relative'}}>
+                  <img
+                    width="157"
+                    src={Legend02}
+                    alt="Legenda"
+                    style={{ maxWidth: "100%" }}
+                  />
+                  <div style={{position:'absolute',top:94}}>
+                    <Trans i18nKey={"help_panel.testo_gif"} t={t} ns="doubting">
+                      <p className="text-legenda">
+                        Testi disposti secondo data di prima pubblicazione.
+                      </p>
+                      <p className="text-legenda">
+                        Apri la colonna cliccando, poi scorri verso il basso per
+                        vedere l’andamento del processo dubitativo.<br></br><br></br><br></br>
+                         <br></br><br></br>
+                      </p>
+                    </Trans>
+                  </div>
                 </div>
               </div>
             </div>
