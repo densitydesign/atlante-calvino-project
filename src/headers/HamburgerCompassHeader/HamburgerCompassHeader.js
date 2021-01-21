@@ -2,6 +2,8 @@ import React from "react"
 import LanguageSwitch from "../../general/LanguageSwitch"
 import MainMenu from "../../general/MainMenu/MainMenu"
 import { ReactComponent as CloseIcon } from "../IndexMenuHeader/icons/icon-close.svg"
+import { createBrowserHistory } from "history"
+
 
 export default function HamburgerCompassHeader({
   toggleFlowOfStories,
@@ -9,6 +11,7 @@ export default function HamburgerCompassHeader({
   isSubPageBussola,
 }) {
   const toggleFlows = toggleFlowOfStories || toggleTempoEOpere
+  const history = createBrowserHistory()
 
   return isSubPageBussola ? (
     <div className="top-nav navigations">
@@ -17,7 +20,7 @@ export default function HamburgerCompassHeader({
         className="cursor-pointer d-flex justify-content-center"
         style={{ gridColumn: "span 1" }}
       >
-        <CloseIcon onClick={toggleFlows} />
+        {toggleFlows ? <CloseIcon onClick={toggleFlows} /> : <CloseIcon onClick={() => history.goBack()} />}
       </div>
       <div style={{ gridColumn: "span 22" }} />
       <div className='cursor-pointer d-flex justify-content-center' style={{ gridColumn: "span 1" }}>
