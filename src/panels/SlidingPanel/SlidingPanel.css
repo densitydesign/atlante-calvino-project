@@ -27,13 +27,15 @@
 }
 
   .sliding-panel-main-text{
-    padding: 175px 240px 100px 200px;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 90px;
+    padding-right: 70px;
   }
 
   @media screen and (max-width: 1024px){
-    .sliding-panel-main-text{
-      padding: 160px 100px 100px 120px;
-    }
+    
 
     .rotated-title {
       padding: 80px;

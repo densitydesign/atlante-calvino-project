@@ -1,13 +1,13 @@
-import ReactDOM from 'react-dom'
-import React, { Component, useRef } from 'react'
-import { ReactComponent as IconIndexMenu } from '../../headers/IndexMenuHeader/icons/icon-index.svg'
-import IndexMenu from '../../views/IndexMenu/IndexMenu'
-import './MainMenu.css'
+import ReactDOM from "react-dom"
+import React, { Component, useRef } from "react"
+import { ReactComponent as IconIndexMenu } from "../../headers/IndexMenuHeader/icons/icon-index.svg"
+import IndexMenu from "../../views/IndexMenu/IndexMenu"
+import "./MainMenu.css"
 
 function ModalIndexMenu({ toggle }) {
   const modalNode = useRef()
   if (!modalNode.current) {
-    modalNode.current = document.getElementById('index-menu-modal-container')
+    modalNode.current = document.getElementById("index-menu-modal-container")
   }
 
   if (modalNode.current) {
@@ -35,18 +35,20 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <div className="main-menu" style={this.props.style} onClick={this.toggle}>
-        {/* <span className="main-menu-inner"> */}
+      <>
+      <div className="main-menu" style={this.props.style}  onClick={this.toggle}>
+        <div>
+          {/* <span className="main-menu-inner"> */}
           <IconIndexMenu />
+        </div>
         {/* </span> */}
-        {this.state.open && (
-          <ModalIndexMenu toggle={this.toggle} />
-        )}
       </div>
+      {this.state.open && <ModalIndexMenu toggle={this.toggle} />}
+      </>
     )
   }
 }
 
 export default MainMenu
 
-MainMenu.defaultProps = { style: { gridColumn: 'span 1' } }
+MainMenu.defaultProps = { style: { gridColumn: "span 1" } }
