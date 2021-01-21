@@ -326,7 +326,7 @@ class SpaceInformationSheet extends React.Component {
                 Serra 2006: F. Serra, <em>Calvino</em>, Roma, Salerno.
               </li>
               <li className="referenceItem">
-                Zipfel 2001: F. Zipfel, Fiktion, Fiktivität,{" "}
+                Zipfel 2001: F. Zipfel, <i>Fiktion, Fiktivität</i>,{" "}
                 <em>
                   Fiktionalität: Analysen zur Fiktion in der Literatur und zum
                   Fiktionsbegriff in der Literaturwissenschaft
