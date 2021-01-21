@@ -176,7 +176,7 @@ export default function TransformMainHelp() {
               <div>
                 <small>{t("help_panel.dimensione")}</small>
               </div>
-              <Legend02 width="123" className="mt-2" />
+              { i18n.language === "it" ? <Legend02 width="123" className="mt-2" /> : <Legend02En width="123" className="mt-2" /> }
             </div>
           </div>
           <div className="row mt-2">
@@ -184,17 +184,16 @@ export default function TransformMainHelp() {
               <div>
                 <small>{t("transform:help_panel.posizione")}</small>
               </div>
-              <Legend03 width="134" className="mt-2" />
+              { i18n.language === "it" ? <Legend03 width="134" className="mt-2" /> : <Legend03En width="134" className="mt-2" /> }
             </div>
             <div className="col-md-6">
               <div>
                 <small>{t("transform:help_panel.interazione")}</small>
               </div>
-              <img src={Legend04} width="117" className="mt-2" alt="Legenda" />
-              <small style={{ lineHeight: 0.5 }}>
-              <img src={Legend05} width="117" className="mt-2" alt="Legenda" />
-              <small style={{ lineHeight: 0.5 }}></small>
-              </small>
+              <div style={{position:'relative'}}>
+                <img src={i18n.language === "it" ? Legend04 : Legend04En } width="117" className="mt-2" alt="Legenda" />
+                <img style={{position:'absolute', left:0}} src={ i18n.language === "it" ? Legend05 : Legend05En } width="117" className="mt-2" alt="Legenda" />
+              </div>
             </div>
           </div>
           <div className="row mt-2">

@@ -129,7 +129,7 @@ class SpaceInformationSheet extends React.Component {
                   position: "sticky",
                   top: "calc(var(--navigation-height) +5rem)",
                 }}
-                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
+                src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
                 alt=""
               />
             </div>
@@ -192,7 +192,7 @@ class SpaceInformationSheet extends React.Component {
                   top: "calc(var(--navigation-height) +5rem)",
               
                 }}
-                src={this.props.i18n.language === "it" ? zoom_03 : zoom_03En}
+                src={this.props.i18n.language === "it" ? zoom_01 : zoom_01En}
                 alt=""
               />
             </div>
