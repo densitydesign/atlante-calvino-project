@@ -8,7 +8,8 @@ import context_mp4_1x from "./animation-text-context@1x.mp4"
 import context_webm_2x from "./animation-text-context@2x.webm"
 import context_mp4_2x from "./animation-text-context@2x.mp4"
 
-import distribution from "./distribution.svg"
+import distribution_it from "./distribution_it.svg"
+import distribution_en from "./distribution_en.svg"
 import miniviz from "./miniviz.svg"
 import legend from "./legend.svg"
 import legendEn from "./cancellazione_legend_scheda3_en.svg"
@@ -140,7 +141,7 @@ class CancellationInformationSheet extends Component {
               </p>
               <img
                 className={SheetStyles.image + " " + SheetStyles.image100w}
-                src={distribution}
+                src={ this.props.i18n.language === "it" ? distribution_it : distribution_en }
                 style={{ border: "none" }}
                 alt=""
               />
