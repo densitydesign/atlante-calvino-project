@@ -244,7 +244,8 @@ small .badge-legenda-small{
 
 .badge-legenda-name{
   font-size: 10px;
-  text-transform: lowercase;
+  /* TOlto per problema Le cosmicomiche */
+  /* text-transform: lowercase; */
 }
 
 .badge-legenda-name::first-letter{
