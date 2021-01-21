@@ -303,7 +303,7 @@ class TransformInformationSheet extends Component {
                       className={SheetStyles.titleH2}
                       style={{ fontStyle: "italic", color: "#5151fc" }}
                     >
-                      1976 - 1985
+                      1976 - 1984
                     </h2>
                     <br />
                     <div className={SheetStyles.gridRow}>
