@@ -9,8 +9,9 @@ import context_webm_2x from "./animation-text-context@2x.webm"
 import context_mp4_2x from "./animation-text-context@2x.mp4"
 
 import distribution_it from "./distribution_it.svg"
-import distribution_en from "./distribution_en.svg"
-import miniviz from "./miniviz.svg"
+import distribution_en from "./distribution_it.svg"
+import miniviz_it from "./miniviz_it.svg"
+import miniviz_en from "./miniviz_en.svg"
 import legend from "./legend.svg"
 import legendEn from "./cancellazione_legend_scheda3_en.svg"
 
@@ -185,7 +186,7 @@ class CancellationInformationSheet extends Component {
                 top: "var(--navigation-height)",
               }}
             >
-              <img src={miniviz} style={{ float: "left" }} alt="" />
+              <img src={this.props.i18n.language === "it" ? miniviz_it : miniviz_en} style={{ float: "left" }} alt="" />
             </div>
           </div>
           <div className={SheetStyles.gridRow}>
@@ -570,11 +571,16 @@ class CancellationInformationSheet extends Component {
             </Trans>
           </div>
           <div className={SheetStyles.gridRow}>
-            <h2 className={SheetStyles.titleH2}>Bibliografia</h2>
+            <h2 className={SheetStyles.titleH2}>{this.props.t("Bibliografia")}</h2>
             <ol className={SheetStyles.paragraph + " references"}>
+              {this.props.i18n.language == "en" && 
+                <li className="referenceItem">
+                  Calvino 2010: I. Calvino, <i>Difficult Loves</i>, London, Vintage Books (translated by William Weaver).
+                </li>
+              }
               <li className="referenceItem">
-                Calvino 2011: I. Calvino, <em>Gli amori difficili</em>,
-                presentazione dell’autore con uno scritto di Michele Rago,
+                Calvino 2011: I. Calvino, <em>Gli amori difficili</em>,{" "}
+                {this.props.i18n.language === "it" ? "presentazione dell’autore con uno scritto di Michele Rago" : "author’s presentation with a text by Michele Rago"},
                 Milano, Mondadori.
               </li>
               <li className="referenceItem">
