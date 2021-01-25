@@ -6,12 +6,15 @@ import TerritoryShapeMainOptionsSubPanel from '../TerritoryShapeMainOptionsSubPa
 import TerritoryPercentageSubPanel from '../TerritoryPercentageSubPanel/TerritoryPercentageSubPanel';
 import GlobalData from '../../utilities/GlobalData';
 
+import { withTranslation } from "react-i18next"
+
 import './TerritoryShapePanel.css';
 
-export default class TerritoryShapePanel extends React.Component
+class TerritoryShapePanel extends React.Component
 {
   typesRadioButtonId = "allRadioButton";
-  typesRadioButtonCaption = "TUTTE";
+  // removed and fixed below
+  // typesRadioButtonCaption = "TUTTE";
 
   proportionRadioButtonId = "proportionRadioButton";
   proportionRadioButtonCaption = "%";
@@ -59,7 +62,7 @@ export default class TerritoryShapePanel extends React.Component
           callStateContainerRadioButtonPressed={this.optionRadioButtonPressed}
 
           typesRadioButtonId={this.typesRadioButtonId}
-          typesRadioButtonCaption={this.typesRadioButtonCaption}
+          typesRadioButtonCaption={this.props.i18n.language === "it" ? "TUTTE" : "ALL"}
           typesRadioButtonPressed={this.state.optionRadioButtonsStates.find(item => item.id === this.typesRadioButtonId).pressed}
         />
       </div>
@@ -80,3 +83,5 @@ export default class TerritoryShapePanel extends React.Component
     );
   }
 }
+
+export default withTranslation(['translation'])(TerritoryShapePanel)
