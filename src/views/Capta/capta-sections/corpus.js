@@ -26,9 +26,8 @@ const corpus = {
         informazioni sui testi selezionati per il progetto. Tali informazioni
         provengono: a) dalla sezione <i>Note e notizie sui testi</i> a cura di
         Mario Barenghi, Bruno Falcetto e Claudio Milanini all’interno dei tre
-        volumi{" "}
-        <i>Romanzi e racconti</i> (<i>RR</i>, I, 1242-1393; <i>RR</i>, II,
-        1309-1475; <i>RR</i>, III, 1195-1350); b) dalla{" "}
+        volumi <i>Romanzi e racconti</i> (<i>RR</i>, I, 1242-1393; <i>RR</i>,
+        II, 1309-1475; <i>RR</i>, III, 1195-1350); b) dalla{" "}
         <i>Bibliografia di Italo Calvino</i> di Luca Baranelli (Pisa, Edizioni
         della Normale, 2007).
       </p>
@@ -52,8 +51,8 @@ const corpus = {
           possibile trovare il testo;
         </li>
         <li>
-          il nome del file .txt che contiene
-          la digitalizzazione del testo (disponibile solo per uso interno).
+          nome del file .txt che contiene la digitalizzazione del testo
+          (disponibile solo per uso interno).
         </li>
       </ul>
       <p>
@@ -72,8 +71,8 @@ const corpus = {
           <span className={styles.tag}>data</span> di pubblicazione;
         </li>
         <li>
-          un <span className={styles.tag}>flag</span> (es. vero/falso) che
-          indica se si tratta o meno della prima pubblicazione.
+          <span className={styles.tag}>flag</span> (es. vero/falso) che indica
+          se si tratta o meno della prima pubblicazione.
         </li>
       </ul>
       <p>
@@ -82,16 +81,16 @@ const corpus = {
       </p>
       <p>
         Tutte le visualizzazioni che fanno parte di questo progetto sono basate,
-        direttamente o indirettamente, su questo dataset ed in particolare
+        direttamente o indirettamente, su tale dataset, e in particolare
         consigliamo la consultazione di{" "}
         <Link to="/archipelago">Esplorare l’opera come un territorio</Link>.
       </p>
       <p>
-        Unica eccezione è{" "}
+        Sola eccezione è{" "}
         <Link to="/compass" style={{ whiteSpace: "nowrap" }}>
           L’arcipelago dei nomi
-        </Link>{" "}
-        che è l’unica visualizzazione che abbia preso in considerazione i saggi
+        </Link>,{" "}
+        l’unica visualizzazione che abbia preso in considerazione i saggi
         calviniani, per fornire un orientamento sull’universo intellettuale
         dell’autore.
       </p>

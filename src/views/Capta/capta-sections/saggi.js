@@ -17,9 +17,9 @@ const saggi = {
         informazioni presenti nell’indice dei nomi dei <i>Saggi. 1945-1985</i>{" "}
         (a cura di Mario Barenghi, II, Milano, Mondadori, 1995, pp. 3045-3076).
         <br />
-        Sull’indice è stato necessario applicare un algoritmo di riconoscimento
-        del testo; a questo scopo è stato utilizzato Adobe Acrobat Reader.
-        Successivamente il testo è stato convertito in .txt (
+        Sull’indice è stato necessario applicare un algoritmo di{" "}
+        <i>text recognition</i>; a questo scopo è stato utilizzato Adobe Acrobat
+        Reader. Successivamente il testo è stato convertito in .txt (
         <i className="italic-lang-ita">plain text</i>) ed è stato ripulito di
         errori e sbavature con l’aiuto di{" "}
         <i className="italic-lang-ita">regular expressions</i> o con accorte
@@ -50,10 +50,12 @@ const saggi = {
           pagine);
         </li>
         <li>
-          <span className={styles.tag}>titoli</span> del testo in cui comprare l’occorrenza;
+          <span className={styles.tag}>titolo</span> del testo in cui comprare
+          l’occorrenza;
         </li>
         <li>
-          <span className={styles.tag}>lunghezza</span> del testo (pagina di inizio e fine).
+          <span className={styles.tag}>lunghezza</span> del testo (pagina di
+          inizio e fine).
         </li>
       </ul>
       <p>
@@ -72,8 +74,9 @@ const saggi = {
         <br />
         Tali informazioni non sono state ancora trasformate in una
         visualizzazione, ma la loro raccolta ha permesso di osservare da vicino
-        il mondo dei <i className="italic-lang-ita">linked open data</i> e delle basi di conoscenza online
-        collaborative, fornendo potenziali spunti di ricerca.
+        il mondo dei <i className="italic-lang-ita">linked open data</i> e delle
+        basi di conoscenza online collaborative, fornendo potenziali spunti di
+        ricerca.
       </p>
     </>
   ),

@@ -52,14 +52,14 @@ const spazioLuoghi = {
         </li>
         
         <li>
-          luogo <span className={styles.tag}>localizzabile</span> (true/false);
+          luogo <span className={styles.tag}>localizzabile</span> (vero/falso);
         </li>
         <li>
-          luogo <span className={styles.tag}>terrestre</span> (true/false);
+          luogo <span className={styles.tag}>terrestre</span> (vero/falso);
         </li>
         <li>
-          luogo <span className={styles.tag}>inventato</span> (true/false/not
-          given);
+          luogo <span className={styles.tag}>inventato</span> (vero/falso/non
+          assegnato);
         </li>
         <li>
           <span className={styles.tag}>categoria</span> (cosmici generici/cosmici

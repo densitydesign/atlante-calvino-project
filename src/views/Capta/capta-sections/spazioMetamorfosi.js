@@ -38,15 +38,15 @@ const spazioMetamorfosi = {
           <span className={styles.tag}>tipologia di sequenza</span> narrativa
           (realtà/immaginazione/contestualizzazione);
         </li>
-        <li><span className={styles.tag}>luogo geografico</span> (true/false);</li>
-        <li><span className={styles.tag}>nome proprio</span> (true/false);</li>
-        <li><span className={styles.tag}>sostantivo</span> (true/false);</li>
+        <li><span className={styles.tag}>luogo geografico</span> (vero/falso);</li>
+        <li><span className={styles.tag}>nome proprio</span> (vero/falso);</li>
+        <li><span className={styles.tag}>sostantivo</span> (vero/falso);</li>
         <li><span className={styles.tag}>tipologia di sostantivo</span> (astratto/concreto);</li>
         <li><span className={styles.tag}>campo semantico</span> (guerra/natura/corpo/altro);</li>
-        <li><span className={styles.tag}>metafora</span> (true/false);</li>
-        <li><span className={styles.tag}>similitudine</span> (true/false);</li>
-        <li><span className={styles.tag}>interrogativo-dubbio</span> (true/false);</li>
-        <li><span className={styles.tag}>visione-desiderio</span> (true/false).</li>
+        <li><span className={styles.tag}>metafora</span> (vero/falso);</li>
+        <li><span className={styles.tag}>similitudine</span> (vero/falso);</li>
+        <li><span className={styles.tag}>interrogativo-dubbio</span> (vero/falso);</li>
+        <li><span className={styles.tag}>visione-desiderio</span> (vero/falso).</li>
       </ul>
 
       <p>

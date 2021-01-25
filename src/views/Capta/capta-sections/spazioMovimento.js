@@ -31,7 +31,7 @@ const spazioMovimento = {
           d’ambientazione (spazio esterno/spazio interno/mezzo di trasporto);
         </li>
         <li>
-          il <span className={styles.tag}>movimento</span> (true/false);
+          il <span className={styles.tag}>movimento</span> (vero/falso);
         </li>
         <li>
           la <span className={styles.tag}>direzione del movimento</span> (avanti/indietro).

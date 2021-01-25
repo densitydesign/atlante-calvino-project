@@ -39,7 +39,7 @@ tools.jsx = (
     </p>
     <br />
     <h2>
-      Annotazioni semplici: Explorer{" "}
+      Explorer{" "}
       <span role="img" aria-label="telescope">
         🔭
       </span>
@@ -81,7 +81,7 @@ tools.jsx = (
     </p>
     <br />
     <h2>
-      Annotazioni annidate: Wanderer{" "}
+      Wanderer{" "}
       <span role="img" aria-label="telescope">
         🔬
       </span>

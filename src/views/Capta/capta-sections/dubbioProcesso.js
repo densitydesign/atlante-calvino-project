@@ -60,11 +60,11 @@ const dubbioProcesso = {
         </li>
         <li>
           <span className={styles.tag}>parentesi</span> nel testo dubitativo
-          (true/false);
+          (vero/falso);
         </li>
         <li>
           <span className={styles.tag}>incisi</span> nel testo dubitativo
-          (true/false);
+          (vero/falso);
         </li>
 
         <li>
@@ -77,17 +77,17 @@ const dubbioProcesso = {
         </li>
         <li>
           <span className={styles.tag}>parentesi</span> nel testo oggetto di
-          dubbio (true/false);
+          dubbio (vero/falso);
         </li>
         <li>
           <span className={styles.tag}>incisi</span> nel testo oggetto di dubbio
-          (true/false);
+          (vero/falso);
         </li>
         <li>
           <span className={styles.tag}>
             testo dubitativo e oggetto di dubbio
           </span>{" "}
-          (yes/no).
+          (si/no).
         </li>
       </ul>
       <p>

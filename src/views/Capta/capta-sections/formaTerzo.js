@@ -19,8 +19,8 @@ const formaTerzo = {
   jsx: (
     <>
       <p>
-        Il dataset rappresenta, espande e rielabora il punto 5.2., estendendo
-        l’analisi a tutti i testi del corpus.
+        Il dataset rappresenta, espande e rielabora quello precedente,
+        estendendo l’analisi a tutti i testi del corpus.
         <br />
         Ogni testo è stato diviso in segmenti che riprendono la categorizzazione
         per <i>tipo di sequenza</i> del dataset precedente, ma abbandonano la
@@ -37,13 +37,16 @@ const formaTerzo = {
           l’occorrenza;
         </li>
         <li>
-          <span className={styles.tag}>posizione</span> dell’occorrenza nel testo (carattere di inizio e di fine)
+          <span className={styles.tag}>posizione</span> dell’occorrenza nel
+          testo (carattere di inizio e di fine)
         </li>
         <li>
-          <span className={styles.tag}>numero di caratteri</span> dell’occorrenza;
+          <span className={styles.tag}>numero di caratteri</span>{" "}
+          dell’occorrenza;
         </li>
         <li>
-          <span className={styles.tag}>numero di caratteri</span> del testo in cui compare l’occorrenza.
+          <span className={styles.tag}>numero di caratteri</span> del testo in
+          cui compare l’occorrenza.
         </li>
       </ul>
 
