@@ -131,7 +131,9 @@
     "Aggregated": "Aggregated",
     "Non-aggregated": "Non-aggregated",
     "Piani": "Piani",
-    "Sequenze": "Sequenze"
+    "Sequenze": "Sequenze",
+    "Assenza di movimento": "Assenza di movimento",
+    "Presenza di movimento": "Presenza di movimento"
   },
   "legenda": "Legenda",
   "analisi": "Vai alla visualizzazione",

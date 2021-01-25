@@ -2,7 +2,7 @@
   "SI MOVIMENTO": "Presenza di movimento",
   "ESTERNO": "Esterno",
   "Titolo": "Titolo",
-  "seleziona_testo": "Seleziona testo",
+  "seleziona_testo": "Seleziona il testo e poi scorri in basso",
   "help_panel": {
     "colore": "colore",
     "luogo_esterno": "luogo esterno",
@@ -23,5 +23,6 @@
   "PUBBLICAZIONE": "PUBBLICAZIONE",
   "ANNO DI PRIMA": "ANNO DI PRIMA",
   "INIZIO DEL TESTO": "INIZIO",
-  "vedi_dettaglio": "Vedi in dettaglio i testi selezionati"
+  "vedi_dettaglio": "Vedi in dettaglio i testi selezionati",
+  "Movimento": "Movimento"
 }
