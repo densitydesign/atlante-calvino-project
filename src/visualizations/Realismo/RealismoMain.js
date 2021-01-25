@@ -509,7 +509,7 @@ export default function RealismoMain({ title }) {
         </div>
         <div className="bottom-nav navigations">
           <AltOptions
-            title="Movimento"
+            title={t("realismo:Movimento")}
             options={optionsMovimento}
             value={movimento}
             allowEmpty={true}
