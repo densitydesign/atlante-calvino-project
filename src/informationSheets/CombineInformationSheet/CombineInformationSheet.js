@@ -319,7 +319,7 @@ class CombineInformationSheet extends Component {
               ns="combining-sheet"
               t={this.props.t}
             >
-              <p className={SheetStyles.paragraph}>
+              <p className={SheetStyles.paragraph} style={{marginBottom:0}}>
                 Un trucco è effettivamente in azione, e diventa visibile se
                 facciamo un passo indietro e ci posizioniamo a una distanza
                 intermedia sia dallo zoom estremo che abbiamo appena
@@ -551,7 +551,6 @@ class CombineInformationSheet extends Component {
             linkTappaB={"/form/phase3"}
             linkAnalisi={"/form/phase2"}
           />
-          ;
         </main>
       </>
     )
