@@ -523,7 +523,7 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Calvino 1973: I. Calvino, <em>Nota [1973]</em>, in Id.,{" "}
-                  <em>Il castello dei destini incrociati</em>, <em>RR</em>, II.
+                  <em>Il castello dei destini incrociati</em>, <em>RR</em>, II, pp. 1275-1281.
                 </li>
                 <li className="referenceItem">
                   Donnarumma 2008: R. Donnarumma,{" "}
