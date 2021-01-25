@@ -150,6 +150,7 @@ class CombineInformationSheet extends Component {
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
                 backgroundColor: "var(--white)",
+                width: "auto"
               }}
               src={this.props.i18n.language === "it" ? marimekko : marimekkoEn}
               alt=""
@@ -157,7 +158,7 @@ class CombineInformationSheet extends Component {
             <img
               className={SheetStyles.sideLegend}
               style={{
-                gridColumn: "12 / span 1",
+                gridColumn: "11 / span 2",
                 top: "calc(var(--navigation-height))",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
