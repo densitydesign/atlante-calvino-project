@@ -9,9 +9,9 @@
     "tre": "tre",
     "cinque": "cinque",
     "due": "due",
-    "categorie": "Categorie",
+    "categorie": "Sequenze",
     "footer_chart": "Volumi disposti secondo la data di prima pubblicazione; lo spessore corrisponde alla lunghezza in caratteri.",
-    "ambito": "Ambito",
+    "ambito": "Piani",
     "livello": "livello"
   },
   "help_panel": {
@@ -34,7 +34,7 @@
     "interiore": "interiore",
     "formale": "formale"
   },
-  "Esteriore": "Piano Esteriore",
+  "Esteriore": "piano esteriore",
   "categorie": {
     "spostamento": "spostamento",
     "stato euforico": "stato euforico",
@@ -51,8 +51,8 @@
     "intenzione": "intenzione",
     "situazione": "situazione"
   },
-  "Forma": "Piano Formale",
-  "Interiore": "Piano Interiore",
+  "Forma": "piano formale",
+  "Interiore": "piano interiore",
   "combining": {
     "text_slider": "<0><i>Muovi lo slider per vedere la struttura dei livelli</i><br/><2>Clicca <1></1> per evidenziare la combinazione</2></0>"
   }
