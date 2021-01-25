@@ -6,7 +6,7 @@ import { curveSankey, append_tooltip_entry } from '../../utilities/graphic_utili
 import './ListTypesPerText.css';
 
 class VClass {
-  initialize = (el, input_data) => {
+  initialize = (el, input_data, t) => {
 
     const typeLabels = ['Frasi', 'Misto', 'Parole', 'Sintagmi'];
     const values = ['n_lists_f', 'n_lists_m', 'n_lists_p', 'n_lists_s'];
@@ -98,13 +98,15 @@ console.log("data", data);
       .append("text")
       .attr("y", 10)
       .attr("x", 0)
-      .text("% tipo di");
+      .attr("font-style","italic")
+      .text(t("% tipo di"));
 
     svg
       .append("text")
       .attr("y", 25)
       .attr("x", 0)
-      .text("elenchi");
+      .attr("font-style","italic")
+      .text(t("elenchi"));
 
     svg
       .append("text")

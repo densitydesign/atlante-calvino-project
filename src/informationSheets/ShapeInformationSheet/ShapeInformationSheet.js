@@ -276,6 +276,13 @@ class ShapeInformationSheet extends React.Component {
                   Tirinanzi De Medici, Trento, Università degli studi di Trento,
                   pp. 77-95.
                 </li>
+                { this.props.i18n.language === "it" &&
+                  <li className="referenceItem">
+                    Marchese 1991: A. Marchese,{" "}
+                    <em>Dizionario di retorica e stilistica</em>, Milano,
+                    Mondadori.
+                </li>
+                }
                 <li className="referenceItem">
                   Orr 1991: L. Orr,{" "}
                   <em>Problems and Poetics of the Nonaristotelian Novel</em>,
