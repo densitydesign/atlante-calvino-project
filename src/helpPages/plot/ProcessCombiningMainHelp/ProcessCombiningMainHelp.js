@@ -191,7 +191,7 @@ export default function ProcessCombiningMainHelp() {
                 color="#5151FC"
                 name={t("trama:Spostamento")}
                 italic={`${t("trama:Arrivo/ritorno")}, ${t(
-                  "trama:arrivo/fuga"
+                  "trama:fuga"
                 )}, ${t("trama:inseguimento/ricerca")}, ${t(
                   "trama:partenza/sparizione"
                 )}, ${t("trama:viaggio")}`}

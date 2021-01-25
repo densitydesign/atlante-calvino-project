@@ -19,7 +19,7 @@ export default function BadgeLegenda({ name, color, border, italic }) {
         <div className="ml-2 badge-legenda-name">{name}</div>
       </div>
       {italic && (
-        <small className="badge-legenda-small">
+        <small className="badge-legenda-small" style={{textTransform: "lowercase"}}>
           <i>{italic}</i>
         </small>
       )}
