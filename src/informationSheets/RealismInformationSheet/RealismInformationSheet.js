@@ -428,7 +428,7 @@ class RealismInformationSheet extends Component {
                   {" "}
                   Calvino and the Age of Neorealism: Fables of Estrangement
                 </em>
-                ), Stanford, Stanford University Press.
+                , Stanford, Stanford University Press.
               </li>
               <li className="referenceItem">
                 Serra 2006: F. Serra, <i>Calvino</i>, Roma, Salerno.
