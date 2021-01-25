@@ -277,11 +277,6 @@ class ShapeInformationSheet extends React.Component {
                   pp. 77-95.
                 </li>
                 <li className="referenceItem">
-                  Marchese 1991: A. Marchese,{" "}
-                  <em>Dizionario di retorica e stilistica</em>, Milano,
-                  Mondadori.
-                </li>
-                <li className="referenceItem">
                   Orr 1991: L. Orr,{" "}
                   <em>Problems and Poetics of the Nonaristotelian Novel</em>,
                   Lewisburg, Bucknell University Press, London and Toronto,
