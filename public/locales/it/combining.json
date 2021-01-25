@@ -11,7 +11,8 @@
     "due": "due",
     "footer_chart": "footer_chart",
     "numero_livelli_testo": "numero_livelli_testo",
-    "quattro": "quattro"
+    "quattro": "quattro",
+    "livello": "livello"
   },
   "help_panel": {
     "itinerario_forma": "itinerario_forma",
@@ -32,5 +33,27 @@
     "formale": "formale",
     "esteriore": "esteriore",
     "interiore": "interiore"
-  }
+  },
+  "combining": {
+    "text_slider": "<0><i>Muovi lo slider per vedere la struttura dei livelli</i><br/><2>Clicca <1></1> per evidenziare la combinazione</2></0>"
+  },
+  "Esteriore": "Esteriore",
+  "categorie": {
+    "eventi liminali": "eventi liminali",
+    "interazione": "interazione",
+    "spostamento": "spostamento",
+    "intenzione": "intenzione",
+    "situazione": "situazione",
+    "stato euforico": "stato euforico",
+    "stato disforico": "stato disforico",
+    "stato riflessivo": "stato riflessivo",
+    "stato sospeso": "stato sospeso",
+    "racconto incastonato": "racconto incastonato",
+    "metanarrazione": "metanarrazione",
+    "cornice": "cornice",
+    "struttura": "struttura",
+    "terna": "terna"
+  },
+  "Interiore": "Interiore",
+  "Forma": "Forma"
 }
