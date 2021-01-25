@@ -839,8 +839,8 @@ class PlotInformationSheet extends Component {
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995a: I. Calvino,{" "}
-                <em>Cominciare e finire</em>, appendice alle <em>Lezioni americane</em>,
-                Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
+                <em>Cominciare e finire</em>, appendice a <em> Le lezioni americane</em>,
+                Id., <em>Saggi. 1945-1985</em>, I, in a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995b: I. Calvino,{" "}
@@ -867,12 +867,12 @@ class PlotInformationSheet extends Component {
                 Falcetto, C. Milanini, <em>RR</em>, II, pp. 1381-1401.
               </li>
               <li className={"referenceItem"}>
-                Jauss 1969: H. R. Jauss,{" "}
+                Jauss 1969: H.R. Jauss,{" "}
                 <em>Perché la storia della letteratura?</em>, ed. it. a cura di
                 A. Varvaro, Napoli, Guida.{" "}
               </li>
               <li className={"referenceItem"}>
-                Jauss 1988: H. R. Jauss, <em>Estetica della ricezione</em>
+                Jauss 1988: H.R. Jauss, <em>Estetica della ricezione</em>
                 , trad. it. di A. Giugliano, Napoli, Guida.
               </li>
               <li className={"referenceItem"}>
