@@ -38,7 +38,7 @@ import slide_02En from "./trasformare_slide-02_en.svg"
 import slide_03 from "./slide-03.svg"
 import slide_03En from "./trasformare_slide-03_en.svg"
 import slide_04 from "./slide-04.svg"
-import slide_04En from "./slide-04.svg"
+import slide_04En from "./trasformare_slide-04_en.svg"
 import { Trans, withTranslation } from "react-i18next"
 
 class TransformInformationSheet extends Component {
