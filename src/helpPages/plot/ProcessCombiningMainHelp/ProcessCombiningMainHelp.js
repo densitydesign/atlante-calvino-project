@@ -164,8 +164,8 @@ export default function ProcessCombiningMainHelp() {
               <BadgeLegenda
                 color="#8131F4"
                 name={t("trama:eventi liminali")}
-                italic={`${t("trama:rivelazione")}, ${t(
-                  "trama:morte"
+                italic={`${t("trama:morte")}, ${t(
+                  "trama:rivelazione"
                 )}`}
               />
               <BadgeLegenda
