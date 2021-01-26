@@ -293,7 +293,7 @@ html {
 
 #main--sinuous .legend.open .legend-content {
   background: var(--cool-bg);
-  height: 50vh;
+  height: calc(100vh - 116px);
   overflow: visible;
 }
 
@@ -503,6 +503,7 @@ html {
 @media screen and (max-width: 480px) {
   #main--sinuous .legend.open .legend-content {
     height: 70vh;
+    height: calc(100vh - 116px);
   }
 }
 
@@ -519,6 +520,7 @@ html {
 
   #main--sinuous .legend.open .legend-content {
     height: 78vh;
+    height: calc(100vh - 116px);
     width: 100%;
     display: grid;
     justify-content: center;
@@ -572,6 +574,7 @@ html {
 
   #main--sinuous .legend.open .legend-content {
     height: 88vh;
+    height: calc(100vh - 116px);
     width: 100%;
   }
 
@@ -599,6 +602,7 @@ html {
 @media screen and (min-width: 993px) {
   #main--sinuous .legend.open .legend-content {
     height: 85vh;
+    height: calc(100vh - 116px);
     width: 100%;
   }
 
@@ -607,6 +611,7 @@ html {
 @media screen and (min-width: 1024px) {
   #main--sinuous .legend.open .legend-content {
     height: 88vh;
+    height: calc(100vh - 116px);
     width: 100%;
   }
 }
@@ -614,6 +619,7 @@ html {
 @media screen and (max-width: 1980px) {
   #main--sinuous .legend.open .legend-content {
     height: 80vh;
+    height: calc(100vh - 116px);
     width: 100%;
   }
 }
@@ -621,6 +627,7 @@ html {
 @media screen and (max-width: 2048px) {
   #main--sinuous .legend.open .legend-content {
     height: 78vh;
+    height: calc(100vh - 116px);
     width: 100%;
   }
 }
