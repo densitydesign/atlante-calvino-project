@@ -5,12 +5,12 @@ import './FoldingLine.css';
 
 import { withTranslation } from 'react-i18next'
 
-import leg_pt2_01_it from './leg-dubitare-2-formula-it.svg'
-import leg_pt2_02_it from './leg-dubitare-2-livelli-it.svg'
-import leg_pt2_03_it from './leg-dubitare-2-misto-it.svg'
-import leg_pt2_01_en from './leg-dubitare-2-formula-en.svg'
-import leg_pt2_02_en from './leg-dubitare-2-livelli-en.svg'
-import leg_pt2_03_en from './leg-dubitare-2-misto-en.svg'
+import leg_pt2_01_it from './leg-dubitare-2-formula-it@2x.png'
+import leg_pt2_02_it from './leg-dubitare-2-livelli-it@2x.png'
+import leg_pt2_03_it from './leg-dubitare-2-misto-it@2x.png'
+import leg_pt2_01_en from './leg-dubitare-2-formula-en@2x.png'
+import leg_pt2_02_en from './leg-dubitare-2-livelli-en@2x.png'
+import leg_pt2_03_en from './leg-dubitare-2-misto-en@2x.png'
 
 import ToggleSwitch from '../../general/ToggleSwitch';
 
