@@ -32,12 +32,12 @@ export default function Instructions() {
               <ol type="1">
                 <li>
                   Una mappa sintetica della carriera letteraria dell’autore (
-                  <Link to="compass/time-and-works">Il tempo e le opere</Link>)
+                  <Link target='_blank' to="compass/time-and-works">Il tempo e le opere</Link>)
                 </li>
                 <li>
                   La ricostruzione della vicenda editoriale di tutti i racconti
                   (
-                  <Link to="compass/flows-of-stories">
+                  <Link target='_blank' to="compass/flows-of-stories">
                     I flussi dei racconti
                   </Link>
                   )
