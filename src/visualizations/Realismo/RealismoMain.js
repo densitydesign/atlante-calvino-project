@@ -64,6 +64,8 @@ const searchOptionsVolume = (() => {
 })()
 
 const titoliByVolume = groupBy(racconti, "volume")
+console.log(searchOptionsVolume,'searchOptionsVolume')
+
 // the following is for the textual search
 const availableVolumes = Object.keys(titoliByVolume).map( d=>{
   const title = _titles.find(t=>{

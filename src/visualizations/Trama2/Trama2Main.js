@@ -1,21 +1,24 @@
-import React, { useCallback, useState, useMemo } from 'react'
-import MainMenu from '../../general/MainMenu'
-import PageTitle from '../../general/PageTitle'
-import MoreInfo from '../../general/MoreInfo'
-import CompassButton from '../../general/CompassButton/CompassButton'
-import SearchDropDown from '../../general/Search/SearchDropDownControlled'
-import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
+import React, { useCallback, useState, useMemo } from "react"
+import MainMenu from "../../general/MainMenu"
+import PageTitle from "../../general/PageTitle"
+import MoreInfo from "../../general/MoreInfo"
+import CompassButton from "../../general/CompassButton/CompassButton"
+import SearchDropDown from "../../general/Search/SearchDropDownControlled"
+import HelpSidePanel from "../../panels/HelpSidePanel/HelpSidePanel"
 
-import AltOptions from '../../general/Options/AltOptions'
-import GlobalData from '../../utilities/GlobalData'
-import Trama2Content from './Trama2Content'
-import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from './utils'
-import keyBy from 'lodash/keyBy'
-import flatMap from 'lodash/flatMap'
-import uniq from 'lodash/uniq'
-import uniqBy from 'lodash/uniqBy'
-import './Trama2.css'
-import { useTranslation } from 'react-i18next'
+import AltOptions from "../../general/Options/AltOptions"
+import GlobalData from "../../utilities/GlobalData"
+import Trama2Content from "./Trama2Content"
+import { makeScalaMotivoY, makeVizData, MOTIVO_LINE_HEIGHT } from "./utils"
+import keyBy from "lodash/keyBy"
+import flatMap from "lodash/flatMap"
+import uniq from "lodash/uniq"
+import uniqBy from "lodash/uniqBy"
+import "./Trama2.css"
+import { useTranslation } from "react-i18next"
+// @TODO Hack per importare l'associazione racconti volumi in maniera correttav (In dataset riporta solo un volume per racconto)
+import realismoJson from "./dati/realismo.json"
+import get from "lodash/get"
 
 // SCALES
 const scalaMotivoY = makeScalaMotivoY(MOTIVO_LINE_HEIGHT)
@@ -31,10 +34,18 @@ const {
 
 // we leverage react lazy+suspense to load core component at first render (it will load all json by importing it)
 
+const titoliVolumi = keyBy(uniqBy(realismoJson, (item) => {
+  return `${item.title} ${item.pubblicazioni_titolo}`
+}).map((item) => ({
+  titolo: item.title,
+  volumi: item.pubblicazioni_titolo.split(";"),
+})),'titolo')
+
 const searchOptions = racconti.map((racconto) => ({
   label: racconto.titolo,
   value: racconto.titolo,
   volume: racconto.volume,
+  volumi: get(titoliVolumi,racconto.titolo,{ volumi: []}).volumi
 }))
 
 const searchOptonsVolume = uniq(
@@ -46,8 +57,8 @@ const searchOptonsVolume = uniq(
 }))
 
 const cercaOptions = [
-  { label: 'Titolo', value: 'titolo' },
-  { label: 'Volume', value: 'volume' },
+  { label: "Titolo", value: "titolo" },
+  { label: "Volume", value: "volume" },
 ]
 
 function Trama2Main({ title }) {
@@ -55,7 +66,7 @@ function Trama2Main({ title }) {
   const [ricercaTop, setRicercaTop] = useState([])
   const [ricerca, setRicerca] = useState([])
 
-  const [currentView, setCurrentView] = useState('list')
+  const [currentView, setCurrentView] = useState("list")
 
   const toggleHelpSidePanel = useCallback(() => {
     setHelpSidePanelOpen((a) => !a)
@@ -96,14 +107,12 @@ function Trama2Main({ title }) {
         value: item.value,
         fromBounds: item.fromBounds === undefined ? false : item.fromBounds,
       })),
-      'value'
+      "value"
     )
   }, [ricerca])
 
-  const { t } = useTranslation('translation')
-  const [findFor, setFindFor] = useState('titolo')
-
-  console.log(ricerca)
+  const { t } = useTranslation("translation")
+  const [findFor, setFindFor] = useState("titolo")
 
   return (
     <div className="trasformare main">
@@ -116,11 +125,11 @@ function Trama2Main({ title }) {
       />
 
       <div className="top-nav navigations">
-        <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
-        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
+        <MainMenu className="main-menu" style={{ gridColumn: "span 1" }} />
+        <PageTitle title={title} style={{ gridColumn: "span 10" }} />
 
         <AltOptions
-          title={t('cerca_per')}
+          title={t("cerca_per")}
           options={cercaOptions}
           value={findFor}
           onChange={(x) => {
@@ -128,16 +137,16 @@ function Trama2Main({ title }) {
             setFindFor(x.value)
           }}
           style={{
-            gridColumn: 'span 3',
+            gridColumn: "span 3",
           }}
         />
 
         <SearchDropDown
           style={{
-            gridColumn: 'span 8',
+            gridColumn: "span 8",
           }}
           data={{
-            options: findFor === 'titolo' ? searchOptions : searchOptonsVolume,
+            options: findFor === "titolo" ? searchOptions : searchOptonsVolume,
           }}
           changeOptions={(newOptions) => {
             // In top bar
@@ -150,10 +159,16 @@ function Trama2Main({ title }) {
             // In chart...
             const racconti = newOptions.filter((o) => o.volume !== true)
             const volumi = newOptions.filter((o) => o.volume === true)
-            const raccontiInVolumi = flatMap(volumi.map((v) =>
-              searchOptions.filter((o) => o.volume === v.value)
-            ))
-            const finalRicerca = uniqBy(racconti.concat(raccontiInVolumi), v => v.value)
+            const raccontiInVolumi = flatMap(
+              volumi.map((v) =>
+                //searchOptions.filter((o) => o.volume === v.value)
+                searchOptions.filter((o) => o.volumi.indexOf(v.value) !== -1)
+              )
+            )
+            const finalRicerca = uniqBy(
+              racconti.concat(raccontiInVolumi),
+              (v) => v.value
+            )
             setRicerca(finalRicerca)
           }}
           selectedOptions={ricerca}
@@ -161,12 +176,12 @@ function Trama2Main({ title }) {
 
         <MoreInfo
           helpSidePanelOpen={helpSidePanelOpen}
-          style={{ gridColumn: 'span 1' }}
+          style={{ gridColumn: "span 1" }}
           onClicked={toggleHelpSidePanel}
         />
         <CompassButton
           style={{
-            gridColumn: 'span 1',
+            gridColumn: "span 1",
           }}
         />
       </div>
