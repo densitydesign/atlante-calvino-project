@@ -6,7 +6,7 @@
   "help_panel": {
     "colore": "Colour",
     "luogo_esterno": "Outdoor location",
-    "mezzo_di_trasporto": "Means of transportation",
+    "mezzo_di_trasporto": "Means of transport",
     "assenza_di_ambientazione": "No location",
     "movimento": "Movement",
     "visione_in_dettaglio": "Detailed view",
@@ -16,7 +16,7 @@
     "luogo_interno": "Indoor location"
   },
   "NO MOVIMENTO": "No movement",
-  "MEZZO DI TRASPORTO": "Means of transportation",
+  "MEZZO DI TRASPORTO": "Means of transport",
   "INTERNO": "Indoor",
   "ASSENZA DI AMBIENTAZIONE": "No location",
   "fine": "END",
