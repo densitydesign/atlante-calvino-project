@@ -208,7 +208,7 @@ export default function ProcessCombiningMainHelp() {
                 name={t("trama:Situazione")}
                 italic={`${t("trama:Cambiamento")}, ${t(
                   "trama:città magica"
-                )},${t(
+                )}, ${t(
                   "trama:situazione"
                 )}`}
               />
@@ -244,7 +244,7 @@ export default function ProcessCombiningMainHelp() {
                 italic={`${t("trama:Visione")}, ${t(
                   "trama:riflessione"
                 )}, ${t("trama:mistero/assurdità")}, ${t(
-                  "trama:tipologia.ipotesi"
+                  "trama:Stato riflessivo"
                 )}`}
               />
               <BadgeLegenda

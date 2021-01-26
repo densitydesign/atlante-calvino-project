@@ -88,7 +88,9 @@
 .legendEntryText {
   font-size: 12px;
 }
-
+.legendEntryText::first-letter {
+  text-transform: uppercase;
+}
 
 .slider {
     /* width: 100%;
