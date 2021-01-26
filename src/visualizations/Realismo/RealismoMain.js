@@ -133,7 +133,7 @@ export default function RealismoMain({ title }) {
   const [movimento, setMovimento] = useState(null)
   const [spazio, setSpazio] = useState([])
   const [timeFilter, setTimeFilter] = useState(yearsExtent)
-  const spazioLabels = useMemo(() => spazio.map((s) => s.label), [spazio])
+  const spazioLabels = useMemo(() => spazio.map((s) => s.value), [spazio])
 
   const omitted = useMemo(() => {
     const omittedStuff = {}
@@ -515,7 +515,7 @@ export default function RealismoMain({ title }) {
             allowEmpty={true}
             onChange={(m) => {
               if (m) {
-                setMovimento(m.label)
+                setMovimento(m.value)
               } else {
                 setMovimento(null)
               }
@@ -526,12 +526,13 @@ export default function RealismoMain({ title }) {
             }}
           />
           <AltOptions
-            title="Spazio"
+            title={t("realismo:Spazio")}
             multiple
             options={optionsSpace}
             value={spazioLabels}
             allowEmpty={true}
             onChange={(s) => {
+              console.log(s,'s')
               setSpazio(s)
             }}
             style={{
