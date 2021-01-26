@@ -1,6 +1,6 @@
 
 .territory-body {
-  height : 100%;
+  height : calc(100% - 116px);
   display : flex;
   flex-direction : column-reverse;
   z-index : 1;
