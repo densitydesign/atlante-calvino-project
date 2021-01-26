@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react'
-import { linkVertical } from 'd3-shape'
-import { colorScale } from './utils'
-import range from 'lodash/range'
-import MiniInfoBox from '../../general/MiniInfoBox'
+import React, { useMemo } from "react"
+import { linkVertical } from "d3-shape"
+import { colorScale } from "./utils"
+import range from "lodash/range"
+import MiniInfoBox from "../../general/MiniInfoBox"
+import { Trans, useTranslation } from "react-i18next"
 
 const CHART_PADDING_X = 80
 const LEGEND_TEXT_HEIGHT = 150
@@ -22,20 +23,20 @@ function yScale(level) {
 
 function makeItemFill(item) {
   if (item.ghost) {
-    return 'rgba(95, 102, 100, 0.5)'
+    return "rgba(95, 102, 100, 0.5)"
   }
-  if (item.movement === 'FALSE') {
+  if (item.movement === "FALSE") {
     return item.color
   }
   return `url(${makeItemGradientUrl(item)})`
 }
 
 function makeItemGradientUrl(item) {
-  let direction = ''
-  if (item.direction === 'forward') {
-    direction = '-forward'
-  } else if (item.direction === 'backward') {
-    direction = '-backward'
+  let direction = ""
+  if (item.direction === "forward") {
+    direction = "-forward"
+  } else if (item.direction === "backward") {
+    direction = "-backward"
   }
   return `#worm-detail-${item.category}${direction}`
 }
@@ -121,7 +122,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
   let ghostWorm
 
   // GHOST (no ambientazione)
-  if (dataWorms.length === 1 && dataWorms[0].occurrence_location === '0') {
+  if (dataWorms.length === 1 && dataWorms[0].occurrence_location === "0") {
     ghostWorm = {
       x1: 0 + CHART_PADDING_X + CHART_MARGIN_LEFT,
       x2:
@@ -134,14 +135,18 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
     totalLabelX = dataWorms[dataWorms.length - 1]?.x2
   }
 
+  const { t } = useTranslation(["translation", "realismo"])
+
   return (
     <div className="realismo-detail">
       <div className="realismo-detail-info-legend">
-        Livelli:
-        <br />
-        luoghi contenuti
-        <br />
-        in altri luoghi
+        <Trans i18nKey={"livelli_luoghi_contenuti"} t={t} ns="realismo">
+          Livelli:
+          <br />
+          luoghi contenuti
+          <br />
+          in altri luoghi
+        </Trans>
       </div>
       <div style={{ margin: `0px ${CHART_PADDING_X}px` }}>
         <MiniInfoBox
@@ -153,8 +158,8 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
       </div>
       <svg className="worm-detail-svg" style={{ height }}>
         <linearGradient id="worm-detail-indoor">
-          <stop offset={'0%'} stopColor={'#ffc33e'} />
-          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+          <stop offset={"0%"} stopColor={"#ffc33e"} />
+          <stop offset={"50%"} stopColor={"#FFF3D7"}>
             <animate
               attributeName="offset"
               values="0;1;0"
@@ -162,11 +167,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#ffc33e'} />
+          <stop offset={"100%"} stopColor={"#ffc33e"} />
         </linearGradient>
         <linearGradient id="worm-detail-indoor-backward">
-          <stop offset={'0%'} stopColor={'#ffc33e'} />
-          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+          <stop offset={"0%"} stopColor={"#ffc33e"} />
+          <stop offset={"50%"} stopColor={"#FFF3D7"}>
             <animate
               attributeName="offset"
               values="1;0"
@@ -174,11 +179,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#ffc33e'} />
+          <stop offset={"100%"} stopColor={"#ffc33e"} />
         </linearGradient>
         <linearGradient id="worm-detail-indoor-forward">
-          <stop offset={'0%'} stopColor={'#ffc33e'} />
-          <stop offset={'50%'} stopColor={'#FFF3D7'}>
+          <stop offset={"0%"} stopColor={"#ffc33e"} />
+          <stop offset={"50%"} stopColor={"#FFF3D7"}>
             <animate
               attributeName="offset"
               values="0;1"
@@ -186,11 +191,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#ffc33e'} />
+          <stop offset={"100%"} stopColor={"#ffc33e"} />
         </linearGradient>
         <linearGradient id="worm-detail-outdoor">
-          <stop offset={'0%'} stopColor={'#00c97c'} />
-          <stop offset={'50%'} stopColor={'#63FFC3'}>
+          <stop offset={"0%"} stopColor={"#00c97c"} />
+          <stop offset={"50%"} stopColor={"#63FFC3"}>
             <animate
               attributeName="offset"
               values="0;1;0"
@@ -198,11 +203,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#00c97c'} />
+          <stop offset={"100%"} stopColor={"#00c97c"} />
         </linearGradient>
         <linearGradient id="worm-detail-outdoor-forward">
-          <stop offset={'0%'} stopColor={'#00c97c'} />
-          <stop offset={'50%'} stopColor={'#63FFC3'}>
+          <stop offset={"0%"} stopColor={"#00c97c"} />
+          <stop offset={"50%"} stopColor={"#63FFC3"}>
             <animate
               attributeName="offset"
               values="0;1"
@@ -210,11 +215,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#00c97c'} />
+          <stop offset={"100%"} stopColor={"#00c97c"} />
         </linearGradient>
         <linearGradient id="worm-detail-outdoor-backward">
-          <stop offset={'0%'} stopColor={'#00c97c'} />
-          <stop offset={'50%'} stopColor={'#63FFC3'}>
+          <stop offset={"0%"} stopColor={"#00c97c"} />
+          <stop offset={"50%"} stopColor={"#63FFC3"}>
             <animate
               attributeName="offset"
               values="1;0"
@@ -222,11 +227,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#00c97c'} />
+          <stop offset={"100%"} stopColor={"#00c97c"} />
         </linearGradient>
         <linearGradient id="worm-detail-transportation">
-          <stop offset={'0%'} stopColor={'#4a4aff'} />
-          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+          <stop offset={"0%"} stopColor={"#4a4aff"} />
+          <stop offset={"50%"} stopColor={"#E3E3FF"}>
             <animate
               attributeName="offset"
               values="0;1;0"
@@ -234,11 +239,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#4a4aff'} />
+          <stop offset={"100%"} stopColor={"#4a4aff"} />
         </linearGradient>
         <linearGradient id="worm-detail-transportation-forward">
-          <stop offset={'0%'} stopColor={'#4a4aff'} />
-          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+          <stop offset={"0%"} stopColor={"#4a4aff"} />
+          <stop offset={"50%"} stopColor={"#E3E3FF"}>
             <animate
               attributeName="offset"
               values="0;1"
@@ -246,11 +251,11 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#4a4aff'} />
+          <stop offset={"100%"} stopColor={"#4a4aff"} />
         </linearGradient>
         <linearGradient id="worm-detail-transportation-backward">
-          <stop offset={'0%'} stopColor={'#4a4aff'} />
-          <stop offset={'50%'} stopColor={'#E3E3FF'}>
+          <stop offset={"0%"} stopColor={"#4a4aff"} />
+          <stop offset={"50%"} stopColor={"#E3E3FF"}>
             <animate
               attributeName="offset"
               values="1;0"
@@ -258,14 +263,14 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               repeatCount="indefinite"
             ></animate>
           </stop>
-          <stop offset={'100%'} stopColor={'#4a4aff'} />
+          <stop offset={"100%"} stopColor={"#4a4aff"} />
         </linearGradient>
-        <g transform={'translate(0, 10)'}>
+        <g transform={"translate(0, 10)"}>
           {levelsData.map((datum) => (
             <g
               key={datum.level}
               className={`worm-detail-grid-container ${
-                datum.hasData ? 'level-enabled' : 'level-disabled'
+                datum.hasData ? "level-enabled" : "level-disabled"
               }`}
             >
               <line
@@ -276,7 +281,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
                 className={`worm-detail-y-grid`}
               ></line>
               <text
-                className={'worm-detail-level-label'}
+                className={"worm-detail-level-label"}
                 y={yScale(datum.level) + 4}
                 x={CHART_PADDING_X - 10 + CHART_MARGIN_LEFT}
               >
@@ -339,7 +344,7 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
               width={ghostWorm.x2 - ghostWorm.x1}
               height={MINI_RADIUS}
               style={{
-                fill: 'rgba(95, 102, 100, 0.5)',
+                fill: "rgba(95, 102, 100, 0.5)",
               }}
               y={yScale(0) - MINI_RADIUS / 2}
             />
@@ -347,19 +352,19 @@ function WormDetail({ data, width: allWidth, title, year, toggleSelect }) {
         </g>
 
         <text
-          textAnchor={totalLabelX / width >= 0.75 ? 'end' : 'middle'}
+          textAnchor={totalLabelX / width >= 0.75 ? "end" : "middle"}
           x={totalLabelX}
           y={10}
           style={{ fontSize: 12 }}
         >
-          {totalLength} caratteri
+          {totalLength} {t('realismo:caratteri')}
         </text>
         <line
           x1={totalLabelX}
           x2={totalLabelX}
           y1={12}
           y2={18}
-          stroke={'black'}
+          stroke={"black"}
         />
       </svg>
     </div>
