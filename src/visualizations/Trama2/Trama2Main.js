@@ -117,7 +117,7 @@ function Trama2Main({ title }) {
 
       <div className="top-nav navigations">
         <MainMenu className="main-menu" style={{ gridColumn: 'span 1' }} />
-        <PageTitle title={title} style={{ gridColumn: 'span 10' }} />
+        <PageTitle title={t(title)} style={{ gridColumn: 'span 10' }} />
 
         <AltOptions
           title={t('cerca_per')}

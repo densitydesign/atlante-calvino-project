@@ -155,7 +155,7 @@ export default function AtlasRouter() {
         <Equipe />
       </Route>
       <Route exact path="/form/phase3">
-        <Trama2 title="Trama"></Trama2>
+        <Trama2 title="TitoloTrama"></Trama2>
       </Route>
       <Route exact path="/form/phase3/focus">
         <PlotInformationSheet />
