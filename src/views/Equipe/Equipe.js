@@ -28,6 +28,7 @@ class Equipe extends React.Component {
                 L'équipe letteraria del progetto lavora all'interno dell'
                 <a
                   href="https://www.unige.ch/lettres/roman/unites/italien/accueil/"
+                  target="_blank"
                   className="link"
                 >
                   Unité d’italien
@@ -63,12 +64,13 @@ class Equipe extends React.Component {
               </h3>
               <p>
                 Il laboratorio di ricerca{" "}
-                <a href="http://densitydesign.org/" rel="noopener noreferrer">
+                <a href="http://densitydesign.org/" target="_blank" rel="noopener noreferrer">
                   DensityDesign
                 </a>{" "}
                 fa afferenza al{" "}
                 <a
                   href="http://www.dipartimentodesign.polimi.it/"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   Dipartimento di Design
