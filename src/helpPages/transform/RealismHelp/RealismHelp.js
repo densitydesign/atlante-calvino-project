@@ -7,10 +7,16 @@ import { ReactComponent as Legend01 } from "./icons/realismo_disposizione.svg"
 import { ReactComponent as Legend01En } from "./icons/realismo_disposizione_en.svg"
 import Legend02 from "./icons/realismo_movimentoGIF.gif"
 import Legend02En from "./icons/realismo_movimentoGIF_en.gif"
+import Legend02t from "./icons/realismo_movimento-testoGIF.svg"
+import Legend02tEn from "./icons/realismo_movimento-testoGIF_en.svg"
 import { ReactComponent as Legend03 } from "./icons/realismo_dettaglio.svg"
 import { ReactComponent as Legend03En } from "./icons/realismo_dettaglio_en.svg"
 import { Link } from "react-router-dom"
 import "./RealismHelp.css"
+
+
+
+
 
 export default function RealismHelp() {
   const [key, setKey] = useState("info")
@@ -77,8 +83,8 @@ export default function RealismHelp() {
                 </li>
                 <li>
                   la tipologia di ogni ambientazione:{" "}
-                  <span style={{ color: "#FFD337" }}>spazio interno</span>,{" "}
-                  <span style={{ color: "#00C19C" }}>spazio esterno</span>,{" "}
+                  <span style={{ color: "#00C19C" }}>spazio interno</span>,{" "}
+                  <span style={{ color: "#FFD337" }}>spazio esterno</span>,{" "}
                   <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,{" "}
                   <span style={{ color: "#AFAFAF" }}>
                     assenza di ambientazione
@@ -217,22 +223,10 @@ export default function RealismHelp() {
             <div>
               <small>{t("realismo:help_panel.movimento")}</small>
             </div>
-            <div>
-              {i18n.language === "it" ? (
-                <img
-                  src={Legend02}
-                  width="200"
-                  alt="Visione in dettaglio"
-                  className="mt-2"
-                />
-              ) : (
-                <img
-                  src={Legend02En}
-                  width="200"
-                  alt="Visione in dettaglio"
-                  className="mt-2"
-                />
-              )}
+            <div style={{position:'relative'}}> 
+                <img src={i18n.language === "it" ? Legend02 : Legend02En } width="280" className="mt-2" alt="Legenda" />
+                <img style={{position:'absolute', left:0}} src={ i18n.language === "it" ? Legend02t : Legend02tEn } width="280" className="mt-2" alt="Legenda" />
+
             </div>
           </div>
           <div className="mt-2">
