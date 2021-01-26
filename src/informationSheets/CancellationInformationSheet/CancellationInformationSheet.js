@@ -9,7 +9,7 @@ import context_webm_2x from "./animation-text-context@2x.webm"
 import context_mp4_2x from "./animation-text-context@2x.mp4"
 
 import distribution_it from "./distribution_it.svg"
-import distribution_en from "./distribution_it.svg"
+import distribution_en from "./distribution_en.svg"
 import miniviz_it from "./miniviz_it.svg"
 import miniviz_en from "./miniviz_en.svg"
 import legend from "./legend.svg"
