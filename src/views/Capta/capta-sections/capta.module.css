@@ -14,7 +14,12 @@
   display: inline-block;
   margin-bottom: 0.6rem;
 }
-
+.info-box.it:before {
+  content: "Nota sulla terminologia";
+}
+.info-box.en:before {
+  content: "Note on the terminology";
+}
 .info-box * {
   font-size: 1.2rem;
   line-height: 1.5rem;
