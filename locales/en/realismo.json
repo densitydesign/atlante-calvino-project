@@ -24,5 +24,8 @@
   "ANNO DI PRIMA": "YEAR OF FIRST",
   "INIZIO DEL TESTO": "BEGINNING",
   "vedi_dettaglio": "See the selected texts in detail",
-  "Movimento": "Movement"
+  "Movimento": "Movement",
+  "Spazio": "Space",
+  "livelli_luoghi_contenuti": "Levels:<br/>locations inside<br/>other locations",
+  "caratteri": "characters"
 }

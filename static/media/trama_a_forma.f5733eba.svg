@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="49" viewBox="0 0 100 49">
+  <defs>
+    <clipPath id="clip-trama_a_forma">
+      <rect width="100" height="49"/>
+    </clipPath>
+  </defs>
+  <g id="trama_a_forma" clip-path="url(#clip-trama_a_forma)">
+    <g id="Rectangle_8748" data-name="Rectangle 8748" transform="translate(-310.019 -637.006)">
+      <rect id="Rectangle_9623" data-name="Rectangle 9623" width="11" height="11" transform="translate(312.019 643.006)" fill="#fff"/>
+      <rect id="Rectangle_9624" data-name="Rectangle 9624" width="10.5" height="10.5" transform="translate(312.269 643.256)" fill="none" stroke="#000" stroke-width="0.5"/>
+    </g>
+    <g id="categoria_di_inizio" data-name="categoria di inizio" transform="translate(-306.019 -637.006)" style="isolation: isolate">
+      <text id="Inizio_del_testo" data-name="Inizio del testo" transform="translate(329.019 652.006)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Inizio del testo</tspan></text>
+    </g>
+    <g id="categoria_di_fine" data-name="categoria di fine" transform="translate(-306.019 -637.006)" style="isolation: isolate">
+      <text id="Fine_del_testo" data-name="Fine del testo" transform="translate(330.019 675.006)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Fine del testo</tspan></text>
+    </g>
+    <g id="Rectangle_8749" data-name="Rectangle 8749" transform="translate(-311.019 -637.006)">
+      <rect id="Rectangle_9625" data-name="Rectangle 9625" width="11" height="11" transform="translate(311.741 671.784) rotate(-45)" fill="#fff"/>
+      <rect id="Rectangle_9626" data-name="Rectangle 9626" width="10.5" height="10.5" transform="translate(312.094 671.784) rotate(-45)" fill="none" stroke="#000" stroke-width="0.5"/>
+    </g>
+    <rect id="Rectangle_20363" data-name="Rectangle 20363" width="93" height="43" fill="none"/>
+  </g>
+</svg>

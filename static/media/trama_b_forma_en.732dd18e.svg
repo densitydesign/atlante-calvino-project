@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210" height="70" viewBox="0 0 210 70">
+  <defs>
+    <clipPath id="clip-trama_b_forma_en">
+      <rect width="210" height="70"/>
+    </clipPath>
+  </defs>
+  <g id="trama_b_forma_en" clip-path="url(#clip-trama_b_forma_en)">
+    <rect id="Rectangle_9623" data-name="Rectangle 9623" width="11" height="11" transform="translate(2.278 6)" fill="#fff"/>
+    <rect id="Rectangle_9624" data-name="Rectangle 9624" width="10.5" height="10.5" transform="translate(2.528 6.25)" fill="none" stroke="#000" stroke-width="0.5"/>
+    <text id="Beginning_of_text" data-name="Beginning of text" transform="translate(23.278 15)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Beginning of text</tspan></text>
+    <text id="End_of_text" data-name="End of text" transform="translate(23.278 38)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">End of text</tspan></text>
+    <text id="Concurrence_between_beginning_and_end" data-name="Concurrence between beginning and end" transform="translate(23.278 61)" font-size="10" font-family="HKGrotesk-Regular, HK Grotesk" style="isolation: isolate"><tspan x="0" y="0">Concurrence between beginning and end</tspan></text>
+    <rect id="Rectangle_9625" data-name="Rectangle 9625" width="11" height="11" transform="translate(0 34.779) rotate(-45)" fill="#fff"/>
+    <rect id="Rectangle_9626" data-name="Rectangle 9626" width="10.5" height="10.5" transform="translate(0.354 34.779) rotate(-45)" fill="none" stroke="#000" stroke-width="0.5"/>
+    <path id="Path_116471" data-name="Path 116471" d="M473.446,369.2l2.278-2.278-2.278-2.278v-3.222h-3.222l-2.278-2.278-2.278,2.278h-3.222v3.222l-2.278,2.278,2.278,2.278v3.222h3.222l2.278,2.278,2.278-2.278h3.222Z" transform="translate(-459.89 -309.641)" fill="#e72eff" stroke="#000" stroke-width="0.5"/>
+  </g>
+</svg>
