@@ -9,6 +9,8 @@ import React, {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
+import { useTranslation } from "react-i18next"
+
 //data management
 import keyBy from 'lodash/keyBy'
 import sortBy from 'lodash/sortBy'
@@ -111,6 +113,8 @@ export default function Trama2Content({
     racconti[racconti.length - 1].anno,
   ])
 
+  const { t } = useTranslation("trama")
+
   return (
     <div className="trama2-container" ref={containerRef}>
       <div className={`trama2-side-panel ${sidePanelOpen ? 'open' : 'closed'}`}>
@@ -150,7 +154,7 @@ export default function Trama2Content({
               }
             }}
           >
-            Routa la vista
+            {t("Routa la vista")}
           </div>
         )}
       </div>

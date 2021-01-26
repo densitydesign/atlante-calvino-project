@@ -163,17 +163,19 @@ function SideBar({
           </div>
         )
       })}
-      <div
-        className="trama2-sidebar-footer"
-        style={{
-          paddingLeft: leftAsMyNavGridIs,
-        }}
-      >
-        Clicca per scegliere il <br />
-        punto più alto e più basso
-        <br />
-        delle curve
-      </div>
+      <Trans i18nKey={"clicca_per_scegliere_punto_alto_basso"} t={t} ns="trama">
+        <div
+          className="trama2-sidebar-footer"
+          style={{
+            paddingLeft: leftAsMyNavGridIs,
+          }}
+        >
+          Clicca per scegliere il <br />
+          punto più alto e più basso
+          <br />
+          delle curve
+        </div>
+      </Trans>
       {/* <div>
         {bounds.length > 0 && (
           <span
