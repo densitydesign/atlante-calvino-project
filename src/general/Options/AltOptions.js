@@ -172,7 +172,7 @@ class AltOptions extends Component {
                     onClick={() => this.handleChange(i)}
                     style={{ width: this.props.isFlex ? "33.3%" : undefined }}
                     className={classnames({
-                      active: selectedIndices[i],
+                      "active": selectedIndices[i],
                       "border-right border-dark": this.props.isFlex,
                     })}
                   >
