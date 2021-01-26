@@ -58,7 +58,7 @@ const corpus = {
       <p>
         La seconda tabella illustra il percorso editoriale di ciascun testo,
         elencando le sue varie pubblicazioni (vedi{" "}
-        <Link to="/compass">I flussi dei racconti</Link>). In questa tabella
+        <Link target="_blank" to="/compass">I flussi dei racconti</Link>). In questa tabella
         l’ID di ogni testo appare tante volte quante sono le sue pubblicazioni,
         accompagnato da:
       </p>
@@ -87,7 +87,7 @@ const corpus = {
       </p>
       <p>
         Sola eccezione è{" "}
-        <Link to="/compass" style={{ whiteSpace: "nowrap" }}>
+        <Link target="_blank" to="/compass" style={{ whiteSpace: "nowrap" }}>
           L’arcipelago dei nomi
         </Link>,{" "}
         l’unica visualizzazione che abbia preso in considerazione i saggi
