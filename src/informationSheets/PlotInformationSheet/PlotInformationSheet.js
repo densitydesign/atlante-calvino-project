@@ -867,12 +867,12 @@ class PlotInformationSheet extends Component {
                 Falcetto, C. Milanini, <em>RR</em>, II, pp. 1381-1401.
               </li>
               <li className={"referenceItem"}>
-                Jauss 1969: H.R. Jauss,{" "}
+                Jauss 1969: H. R. Jauss,{" "}
                 <em>Perché la storia della letteratura?</em>, ed. it. a cura di
                 A. Varvaro, Napoli, Guida.{" "}
               </li>
               <li className={"referenceItem"}>
-                Jauss 1988: H.R. Jauss, <em>Estetica della ricezione</em>
+                Jauss 1988: H. R. Jauss, <em>Estetica della ricezione</em>
                 , trad. it. di A. Giugliano, Napoli, Guida.
               </li>
               <li className={"referenceItem"}>
