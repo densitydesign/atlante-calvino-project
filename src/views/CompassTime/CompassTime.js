@@ -76,10 +76,10 @@ class CompassTime extends React.Component {
 
           <div style={{ margin: "0 4.1666666667%" }}>
             <div className="row">
-              <div className="col-lg-8 col-xl-8" id="visualisation-container">
+              <div className="col-8" id="visualisation-container">
                 <CompassTimeSinuousWrapper />
               </div>
-              <div className="col-10 offset-lg-0 col-lg-4 col-xl-4 scrollytelling-container">
+              <div className="col-4 scrollytelling-container">
                 <h4>
                   {this.props.t(
                     "compass-time:Come si legge la visualizzazione"
@@ -274,16 +274,16 @@ class CompassTime extends React.Component {
                         </Trans>
                       </h6>
                     </div>
-                    <h2 style={{ marginTop: "2.5em" }}>
+                    <h2>
                       {this.props.t("compass-time:Quotidiani")}
                     </h2>
                     <div className="legend-item">
                       <div
-                        className="legend-article-circle lgnd narrative"
+                        className={`legend-article-circle lgnd narrative ${this.props.i18n.language}`}
                         style={{ backgroundColor: "var(--c-unita)" }}
                       ></div>
                       <div
-                        className="legend-article-circle lgnd"
+                        className={`legend-article-circle lgnd ${this.props.i18n.language}`}
                         style={{ borderColor: "var(--c-unita)" }}
                       ></div>
                       <h6>
@@ -320,16 +320,16 @@ class CompassTime extends React.Component {
                       ></div>
                       <h6>{this.props.t("compass-time:la Repubblica")}</h6>
                     </div>
-                    <h2 style={{ marginTop: "2.5em" }}>
+                    <h2>
                       {this.props.t("compass-time:Prima pubblicazione")}
                     </h2>
-                    <div style={{ gridColumn: "span 3", marginTop: "2em" }}>
+                    <div style={{ gridColumn: "span 3"}}>
                       <img
                         src={
                           process.env.PUBLIC_URL +
                           "/CompassTime/prima-pubblicazione-10.svg"
                         }
-                        style={{ width: "60%", margin: "10% 20%" }}
+                        style={{ width: "120px" }}
                         alt="information complement"
                       />
                     </div>

@@ -22,7 +22,7 @@ html {
 }
 
 #main--sinuous h2 {
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 #main--sinuous .label {
@@ -210,8 +210,8 @@ html {
 #main--sinuous .scrollytelling-container {
   /* padding-top: 50vh;
   padding-bottom: 50vh; */
-  z-index: 900;
-  max-width:50vh;
+  /* z-index: 900;
+  max-width:50vh; */
 }
 
 #main--sinuous .scrollytelling-container p {
@@ -281,8 +281,8 @@ html {
   justify-items:center;
   grid-template-columns: repeat(3, 20%);
   grid-column-gap: 15%;
-  grid-template-rows: 2rem 2rem 8rem 8rem 8rem 2rem 6rem 2rem;
-  grid-row-gap: 0.1rem;
+  grid-template-rows: 28px 42px 1fr 1fr 1fr 48px 72px 42px 48px;
+  grid-row-gap: 0;
   height: 2rem;
   width: 100%;
   transition: height 0.35s ease;
@@ -357,6 +357,7 @@ html {
   line-height: 2rem;
   grid-column: span 3;
   text-align: center;
+  align-self: center;
 }
 
 #main--sinuous .legend h4 {
@@ -391,7 +392,7 @@ html {
 #main--sinuous .legend-item {
   width: 80%;
   height:80%;
-  margin-top:3em;
+  /* margin-top:3em; */
 }
 
 #main--sinuous .legend-circle {
@@ -438,6 +439,20 @@ html {
   font-size: 0.7rem;
   left: 20px;
   top: -5.5px;
+}
+
+#main--sinuous .legend-article-circle.lgnd.it::after {
+  content: "Altro";
+}
+#main--sinuous .legend-article-circle.lgnd.en::after {
+  content: "Other";
+}
+
+#main--sinuous .legend-article-circle.lgnd.narrative.it::after {
+  content: "Narrativa";
+}
+#main--sinuous .legend-article-circle.lgnd.narrative.en::after {
+  content: "Narrative";
 }
 
 @-webkit-keyframes arcs-direction {
@@ -514,7 +529,6 @@ html {
   }
 
   #main--sinuous .scrollytelling-container {
-    z-index: 1050;
     width: 100%;
   }
 
@@ -523,9 +537,7 @@ html {
     height: calc(100vh - 116px);
     width: 100%;
     display: grid;
-    justify-content: center;
-    justify-items: center;
-    row-gap: 1em;
+    row-gap: 0;
   }
 
   #main--sinuous .legend {
@@ -537,7 +549,7 @@ html {
 #main--sinuous .legend-item {
   width:60%;
   height:60%;
-  margin-top:3em;
+  /* margin-top:3em; */
 }
 
 
