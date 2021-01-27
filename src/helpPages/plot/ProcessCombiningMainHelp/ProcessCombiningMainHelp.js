@@ -11,7 +11,7 @@ import "./ProcessCombiningMainHelp.css"
 
 export default function ProcessCombiningMainHelp() {
   const [key, setKey] = useState("info")
-  const { t, i18n } = useTranslation(["translation", "combining"])
+  const { t, i18n } = useTranslation(["translation", "combining", "trama"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -266,23 +266,23 @@ export default function ProcessCombiningMainHelp() {
             <div className="col-md-8">
               <BadgeLegenda
                 color="#FFF800"
-                name={t("combining:help_panel.racconto_incastonato")}
+                name={t("trama:racconto_incastonato")}
               />
               <BadgeLegenda
                 color="#F2CA22"
-                name={t("combining:help_panel.metanarrazione")}
+                name={t("trama:metanarrazione")}
               />
               <BadgeLegenda
                 color="#EFA625"
-                name={t("combining:help_panel.cornice")}
+                name={t("trama:cornice")}
               />
               <BadgeLegenda
                 color="#ED6826"
-                name={t("combining:help_panel.struttura")}
+                name={t("trama:struttura")}
               />
               <BadgeLegenda
                 color="#FF3366"
-                name={t("combining:help_panel.terra")}
+                name={t("trama:terna")}
               />
             </div>
           </div>
