@@ -5,14 +5,15 @@
     "aggregato": "Aggregated",
     "non_aggregato": "Non-aggregated",
     "volume": "volume",
-    "numero_livelli_testo": "Number of text levels",
+    "numero_livelli_testo": "Number of levels",
     "tre": "3",
     "cinque": "5",
     "due": "2",
     "categorie": "Sequences",
     "footer_chart": "Volumes arranged by date of first publication: the thickness corresponds to the text length in characters.",
     "ambito": "Layer",
-    "livello": "Level"
+    "livello": "Level",
+    "all_link": "All"
   },
   "help_panel": {
     "itinerario_forma": "Form itinerary",
