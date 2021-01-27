@@ -9,9 +9,9 @@
     "tre": "3",
     "cinque": "5",
     "due": "2",
-    "categorie": "Categories",
+    "categorie": "Sequences",
     "footer_chart": "Volumes arranged by date of first publication: the thickness corresponds to the text length in characters.",
-    "ambito": "Piano",
+    "ambito": "Layer",
     "livello": "Level"
   },
   "help_panel": {
@@ -103,7 +103,7 @@
     "cornice": "Narrative frame",
     "struttura": "Structure",
     "terna": "Triad",
-    "interazione": "Interactions",
+    "interazione": "Interaction",
     "eventi liminali": "Liminal events",
     "intenzione": "Intention",
     "situazione": "Situation",
