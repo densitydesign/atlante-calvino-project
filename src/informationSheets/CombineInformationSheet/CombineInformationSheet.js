@@ -515,8 +515,8 @@ class CombineInformationSheet extends Component {
                 </li>
                 <li className="referenceItem">
                   Calvino 1963: I. Calvino, <em>La speculazione edilizia</em>,
-                  Torino, Einaudi, risvolto di copertina anonimo ma attribuibile
-                  all’autore.
+                  Torino, Einaudi,{" "}
+                  { this.props.i18n.language=== "it" ? "risvolto di copertina anonimo ma attribuibile all’autore." : "anonymous blurb, probably written by the author." }
                 </li>
                 <li className="referenceItem">
                   Calvino 1964: I. Calvino, <em>Lettera a Mario Boselli</em>, in
