@@ -426,7 +426,6 @@ html {
 #main--sinuous .legend-article-circle.lgnd::after {
   content: "Altro";
   position: relative;
-  font-family: "HK Grotesk";
   font-size: 0.7rem;
   left: 20px;
   top: -5.5px;
@@ -435,7 +434,6 @@ html {
 #main--sinuous .legend-article-circle.lgnd.narrative::after {
   content: "Narrativa";
   position: relative;
-  font-family: "HK Grotesk";
   font-size: 0.7rem;
   left: 20px;
   top: -5.5px;
@@ -452,7 +450,7 @@ html {
   content: "Narrativa";
 }
 #main--sinuous .legend-article-circle.lgnd.narrative.en::after {
-  content: "Narrative";
+  content: "Fiction";
 }
 
 @-webkit-keyframes arcs-direction {
