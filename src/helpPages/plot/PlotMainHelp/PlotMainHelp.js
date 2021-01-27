@@ -306,6 +306,8 @@ export default function PlotMainHelp({ helpProps }) {
               <BadgeLegenda color="#ED6826" name={t("trama:struttura")} />
             </div>
           </div>
+          <br/>
+          <br/>
         </Tab>
       </Tabs>
     </>
