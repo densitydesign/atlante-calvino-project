@@ -31,7 +31,6 @@ import { Trans, withTranslation } from "react-i18next"
 
 class PlotInformationSheet extends Component {
   render() {
-    console.log(this.props)
     return (
       <>
         <HamburgerCompassHeader />
@@ -837,6 +836,11 @@ class PlotInformationSheet extends Component {
                 Barenghi 1992: M. Barenghi, <em>L’autorità dell’autore</em>,
                 Lecce, Milella.
               </li>
+              { this.props.i18n.language === "en" &&
+                <li className={"referenceItem"}>
+                  Calvino 1981: I. Calvino, <i>If on a winter’s night a traveler</i>, New York, Harcourt Inc. (translated by William Weaver).
+                </li>
+              }
               <li className={"referenceItem"}>
                 Calvino 1995a: I. Calvino,{" "}
                 <em>Cominciare e finire</em>, appendice a <em> Le lezioni americane</em>,
