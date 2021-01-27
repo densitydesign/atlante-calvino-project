@@ -122,23 +122,23 @@ export default function TerritoryMainHelp({ helpProps }) {
           <div className="text-center">
             <small>{t("territorio:help_panel.situazione_editoriale")}</small>
           </div>
-          <p className="d-flex justify-content-center">
+          <div className="d-flex justify-content-between mb-3">
             {i18n.language === "it" ? (
               <>
-                <Info04 width="75.5" />
-                <Info05 width="75.5" />
-                <Info06 width="75.5" />
-                <Info07 width="75.5" />
+                <Info04 />
+                <Info05 />
+                <Info06 />
+                <Info07 />
               </>
             ) : (
               <>
-                <Info04En width="75.5" />
-                <Info05En width="75.5" />
-                <Info06En width="75.5" />
-                <Info07En width="75.5" />
+                <Info04En />
+                <Info05En />
+                <Info06En />
+                <Info07En />
               </>
             )}
-          </p>
+          </div>
           <Trans
             i18nKey={"help_panel.testo_situazione_editoriale"}
             t={t}
@@ -229,35 +229,32 @@ export default function TerritoryMainHelp({ helpProps }) {
                   {t("territorio:help_panel.situazione_editoriale")}
                 </small>
               </div>
-              <div className="d-flex justify-content-between">
-                <div>
+              <div className="d-flex justify-content-between mb-3">
+                
                   {i18n.language === "it" ? (
-                    <Info04 width="75.5" />
+                    <Info04 />
                   ) : (
-                    <Info04En width="75.5" />
+                    <Info04En />
                   )}
-                </div>
-                <div>
+                
                   {i18n.language === "it" ? (
-                    <Info05 width="75.5" />
+                    <Info05 />
                   ) : (
-                    <Info05En width="75.5" />
+                    <Info05En />
                   )}
-                </div>
-                <div>
+                
                   {i18n.language === "it" ? (
-                    <Info06 width="75.5" />
+                    <Info06 />
                   ) : (
-                    <Info06En width="75.5" />
+                    <Info06En />
                   )}
-                </div>
-                <div>
+                
                   {i18n.language === "it" ? (
-                    <Info07 width="75.5" />
+                    <Info07 />
                   ) : (
-                    <Info07En width="75.5" />
+                    <Info07En />
                   )}
-                </div>
+                
               </div>
             </>
           )}
