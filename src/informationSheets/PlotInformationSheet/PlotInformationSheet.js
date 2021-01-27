@@ -843,8 +843,8 @@ class PlotInformationSheet extends Component {
               }
               <li className={"referenceItem"}>
                 Calvino 1995a: I. Calvino,{" "}
-                <em>Cominciare e finire</em>, appendice a <em> Le lezioni americane</em>,
-                Id., <em>Saggi. 1945-1985</em>, I, in a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
+                <em>Cominciare e finire</em>, appendice alle <em>Lezioni americane</em>,
+                in Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995b: I. Calvino,{" "}
