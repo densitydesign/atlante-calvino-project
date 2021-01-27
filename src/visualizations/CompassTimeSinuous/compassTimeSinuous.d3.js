@@ -681,8 +681,7 @@ class VClass {
       })
       .text(function (d, i) {
         if (i == 0 && d.key != "1970" && d.key != "1980") {
-          console.log(d.key.substring(2, 4));
-          d.key = "Anni " + d.key.substring(2, 4);
+          d.key = language == "it" ? "Anni " + d.key.substring(2, 4) : d.key+"s"
         }
         return d.key;
       });
