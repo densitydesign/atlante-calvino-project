@@ -62,7 +62,7 @@ const saggi = {
         A partire da queste informazioni è stata generata una tabella di
         collegamenti che indicano la compresenza dei nomi nello stesso saggio,
         in seguito visualizzata sotto forma di grafico a rete in{" "}
-        <Link to="/compass">L’arcipelago dei nomi</Link>.
+        <Link target="_blank" to="/compass">L’arcipelago dei nomi</Link>.
       </p>
       <p>
         Per ampliare le potenzialità della visualizzazione, ogni nome è stato
