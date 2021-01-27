@@ -11,7 +11,7 @@ import "./ProcessCombiningMainHelp.css"
 
 export default function ProcessCombiningMainHelp() {
   const [key, setKey] = useState("info")
-  const { t, i18n } = useTranslation(["translation", "combining", "trama"])
+  const { t, i18n } = useTranslation(["translation", "combining"])
   return (
     <>
       <IntestazioneHelpPanel
@@ -157,59 +157,59 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#5151FC" }}
               >
-                {t("combining:help_panel.piano_esteriore")}
+                {t("combining:help_panel.colors.Piano esteriore")}
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#8131F4"
-                name={t("trama:eventi liminali")}
-                italic={`${t("trama:morte")}, ${t(
-                  "trama:rivelazione"
+                name={t("combining:help_panel.colors.Eventi liminali")}
+                italic={`${t("combining:help_panel.colors.morte")}, ${t(
+                  "combining:help_panel.colors.rivelazione"
                 )}`}
               />
               <BadgeLegenda
                 color="#0000FF"
-                name={t("trama:Interazione")}
-                italic={`${t("trama:Guerra")}, ${t(
-                  "trama:aggressione/scontro"
-                )}, ${t("trama:aiuto/salvataggio")}, ${t(
-                  "trama:compito/missione"
-                )}, ${t("trama:incontro animale")}, ${t(
-                  "trama:incontro di gruppo"
-                )}, ${t("trama:incontro femminile")}, ${t(
-                  "trama:incontro maschile"
-                )}, ${t("trama:matrimonio")}, ${t(
-                  "trama:offerta"
-                )}, ${t("trama:rifiuto")}, ${t(
-                  "trama:scena erotica"
-                )}, ${t("trama:scommessa")}, ${t(
-                  "trama:telefonata"
+                name={t("combining:help_panel.colors.Interazione")}
+                italic={`${t("combining:help_panel.colors.guerra")}, ${t(
+                  "combining:help_panel.colors.aggressione/scontro"
+                )}, ${t("combining:help_panel.colors.aiuto/salvataggio")}, ${t(
+                  "combining:help_panel.colors.compito/missione"
+                )}, ${t("combining:help_panel.colors.incontro animale")}, ${t(
+                  "combining:help_panel.colors.incontro di gruppo"
+                )}, ${t("combining:help_panel.colors.incontro femminile")}, ${t(
+                  "combining:help_panel.colors.incontro maschile"
+                )}, ${t("combining:help_panel.colors.matrimonio")}, ${t(
+                  "combining:help_panel.colors.offerta"
+                )}, ${t("combining:help_panel.colors.rifiuto")}, ${t(
+                  "combining:help_panel.colors.scena erotica"
+                )}, ${t("combining:help_panel.colors.scommessa")}, ${t(
+                  "combining:help_panel.colors.telefonata"
                 )}`}
               />
               <BadgeLegenda
                 color="#5151FC"
-                name={t("trama:Spostamento")}
-                italic={`${t("trama:Arrivo/ritorno")}, ${t(
-                  "trama:fuga"
-                )}, ${t("trama:inseguimento/ricerca")}, ${t(
-                  "trama:partenza/sparizione"
-                )}, ${t("trama:viaggio")}`}
+                name={t("combining:help_panel.colors.Spostamento")}
+                italic={`${t("combining:help_panel.colors.arrivo/ritorno")}, ${t(
+                  "combining:help_panel.colors.fuga"
+                )}, ${t("combining:help_panel.colors.inseguimento/ricerca")}, ${t(
+                  "combining:help_panel.colors.partenza/sparizione"
+                )}, ${t("combining:help_panel.colors.viaggio")}`}
               />
               <BadgeLegenda
                 color="#6E94F4"
-                name={t("trama:Intenzione")}
-                italic={`${t("trama:Iniziativa/piano")}, ${t(
-                  "trama:ostacolo"
-                )}, ${t("trama:successo")}`}
+                name={t("combining:help_panel.colors.Intenzione")}
+                italic={`${t("combining:help_panel.colors.iniziativa/piano")}, ${t(
+                  "combining:help_panel.colors.ostacolo"
+                )}, ${t("combining:help_panel.colors.successo")}`}
               />
               <BadgeLegenda
                 color="#00FFFF"
-                name={t("trama:Situazione")}
-                italic={`${t("trama:Cambiamento")}, ${t(
-                  "trama:città magica"
+                name={t("combining:help_panel.colors.Situazione")}
+                italic={`${t("combining:help_panel.colors.cambiamento")}, ${t(
+                  "combining:help_panel.colors.città magica"
                 )}, ${t(
-                  "trama:situazione"
+                  "combining:help_panel.colors.situazione"
                 )}`}
               />
             </div>
@@ -220,37 +220,37 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#00FFCC" }}
               >
-                {t("combining:help_panel.piano_interiore")}
+                {t("combining:help_panel.colors.Piano interiore")}
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#009959"
-                name={t("trama:Stato euforico")}
-                italic={`${t("trama:Illusione/speranza")}, ${t(
-                  "trama:innamoramento"
+                name={t("combining:help_panel.colors.Stato euforico")}
+                italic={`${t("combining:help_panel.colors.illusione/speranza")}, ${t(
+                  "combining:help_panel.colors.innamoramento"
                 )}`}
               />
               <BadgeLegenda
                 color="#00C19C"
-                name={t("trama:Stato disforico")}
-                italic={`${t("trama:Angoscia/delusione")}, ${t(
-                  "trama:smarrimento/dubbio"
+                name={t("combining:help_panel.colors.Stato disforico")}
+                italic={`${t("combining:help_panel.colors.angoscia/delusione")}, ${t(
+                  "combining:help_panel.colors.smarrimento/dubbio"
                 )}`}
               />
               <BadgeLegenda
                 color="#67E9B1"
-                name={t("trama:Stato riflessivo")}
-                italic={`${t("trama:Visione")}, ${t(
-                  "trama:riflessione"
-                )}, ${t("trama:mistero/assurdità")}, ${t(
-                  "trama:Stato riflessivo"
+                name={t("combining:help_panel.colors.Stato riflessivo")}
+                italic={`${t("combining:help_panel.colors.visione")}, ${t(
+                  "combining:help_panel.colors.riflessione"
+                )}, ${t("combining:help_panel.colors.mistero/assurdità")}, ${t(
+                  "combining:help_panel.colors.ipotesi"
                 )}`}
               />
               <BadgeLegenda
                 color="#00FFB6"
-                name={t("trama:Stato sospeso")}
-                italic={`${t("trama:Pausa/sospensione")}, ${t("trama:attesa")}`}
+                name={t("combining:help_panel.colors.Stato sospeso")}
+                italic={`${t("combining:help_panel.colors.pausa/sospensione")}, ${t("combining:help_panel.colors.attesa")}`}
               />
             </div>
           </div>
@@ -260,29 +260,29 @@ export default function ProcessCombiningMainHelp() {
                 className="mt-2 font-weight-bold"
                 style={{ color: "#FFA500" }}
               >
-                {t("combining:help_panel.piano_formale")}
+                {t("combining:help_panel.colors.Piano formale")}
               </div>
             </div>
             <div className="col-md-8">
               <BadgeLegenda
                 color="#FFF800"
-                name={t("trama:racconto_incastonato")}
+                name={t("combining:help_panel.colors.Racconto incastonato")}
               />
               <BadgeLegenda
                 color="#F2CA22"
-                name={t("trama:metanarrazione")}
+                name={t("combining:help_panel.colors.Metanarrazione")}
               />
               <BadgeLegenda
                 color="#EFA625"
-                name={t("trama:cornice")}
+                name={t("combining:help_panel.colors.Cornice")}
               />
               <BadgeLegenda
                 color="#ED6826"
-                name={t("trama:struttura")}
+                name={t("combining:help_panel.colors.Struttura")}
               />
               <BadgeLegenda
                 color="#FF3366"
-                name={t("trama:terna")}
+                name={t("combining:help_panel.colors.Terna")}
               />
             </div>
           </div>
