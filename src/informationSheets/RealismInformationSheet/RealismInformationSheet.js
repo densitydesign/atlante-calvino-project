@@ -417,6 +417,11 @@ class RealismInformationSheet extends Component {
               {this.props.t("bibliografia")}
             </h2>
             <ol className={[SheetStyles.paragraph, "references"].join(" ")}>
+              { this.props.i18n.language === "en" &&
+                <li className={"referenceItem"}>
+                  Calvino 2010: I. Calvino, <i>Adam, One Afternoon</i>, London, Vintage books (translated by Archibald Colquhoun and Peggy Wright).
+                </li>
+              }
               <li className="referenceItem">
                 Falaschi 1976: G. Falaschi,
                 <em> La resistenza armata nella narrativa italiana</em>, Torino,

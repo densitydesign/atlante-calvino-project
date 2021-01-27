@@ -48,18 +48,25 @@ export default function PlotMainHelp({ helpProps }) {
               La visualizzazione rappresenta le forme della trama che
               costituiscono l’ossatura narrativa dei testi del corpus.
             </p>
+          </Trans>
+          <Trans i18nKey={"help_panel.di_cosa_si_tratta_pt2"} t={t} ns="trama">
             <p>
-              La trama di ogni testo pubblicato in vita da Calvino è
-              sintetizzata nella forma di una linea colorata che, come un
-              sismografo, si muove su due assi: quello orizzontale, orientato da
-              destra a sinistra, rappresenta l’avanzamento lineare del testo
-              dall’incipit alla conclusione, mentre quello verticale presenta un
-              elenco ragionato dei più comuni tipi di sequenza narrativa
-              riscontrati nel corpus, raggruppati e riordinati in base alla loro
-              capacità di perturbare la vicenda narrata, dai più statici, come i
-              brani metaletterari e descrittivi, a quelli intermedi, come i
-              passaggi dedicati ai moti interiori, fino ai più dinamici, come
-              gli incontri-scontri tra personaggi e l’esperienza della morte.
+              La trama di ogni testo pubblicato in vita da Calvino è sintetizzata
+              nella forma di una linea colorata che, come un sismografo, si muove
+              su due assi: quello orizzontale, orientato da destra a sinistra,
+              rappresenta l’avanzamento lineare del testo dall’incipit alla
+              conclusione, mentre quello verticale presenta un elenco ragionato
+              dei più comuni tipi di sequenza narrativa riscontrati nel corpus,
+              raggruppati e riordinati in base alla loro capacità di perturbare la
+              vicenda narrata, dai più statici, come i{" "}
+              <span style={{ color: "#f2ca22" }}>brani metaletterari</span> e{" "}
+              <span style={{ color: "#0fd4d4" }}>descrittivi</span>, a quelli
+              intermedi, come i passaggi dedicati ai{" "}
+              <span style={{ color: "#52c392" }}>moti interiori</span>, fino ai
+              più dinamici, come gli{" "}
+              <span style={{ color: "#0000ff" }}>incontri-scontri</span> tra
+              personaggi e l’esperienza della{" "}
+              <span style={{ color: "#8131f4" }}>morte</span>.
             </p>
           </Trans>
           <p>
@@ -149,7 +156,7 @@ export default function PlotMainHelp({ helpProps }) {
             </p>
           </Trans>
         </Tab>
-        <Tab tabClassName="tab-info" eventKey="legenda" title="Legenda">
+        <Tab tabClassName="tab-info" eventKey="legenda" title={t("help_panel.legenda")}>
           {helpProps.helpPages === "list" && (
             <>
               <div className="row mt-2">
@@ -158,9 +165,9 @@ export default function PlotMainHelp({ helpProps }) {
                     <small>{t("trama:help_panel.dimensione_e_colore")}</small>
                   </div>
                   {i18n.language === "it" ? (
-                    <LegendDimensione01 width="300" className="mt-2" />
+                    <LegendDimensione01 className="mt-2" />
                   ) : (
-                    <LegendDimensione01En width="300" className="mt-2" />
+                    <LegendDimensione01En className="mt-2" />
                   )}
                 </div>
               </div>
@@ -214,9 +221,7 @@ export default function PlotMainHelp({ helpProps }) {
               <BadgeLegenda
                 color="#8131F4"
                 name={t("trama:eventi liminali")}
-                italic={`${t("trama:Rivelazione")}, ${t(
-                  "trama:morte"
-                )}`}
+                italic={`${t("trama:morte")}, ${t("trama:Rivelazione")}`}
               />
               <BadgeLegenda
                 color="#0000FF"
@@ -229,11 +234,9 @@ export default function PlotMainHelp({ helpProps }) {
                   "trama:incontro di gruppo"
                 )}, ${t("trama:incontro femminile")}, ${t(
                   "trama:incontro maschile"
-                )}, ${t("trama:matrimonio")}, ${t(
-                  "trama:offerta"
-                )}, ${t("trama:rifiuto")}, ${t(
-                  "trama:scena erotica"
-                )}, ${t("trama:scommessa")}, ${t(
+                )}, ${t("trama:matrimonio")}, ${t("trama:offerta")}, ${t(
+                  "trama:rifiuto"
+                )}, ${t("trama:scena erotica")}, ${t("trama:scommessa")}, ${t(
                   "trama:telefonata"
                 )}`}
               />
@@ -258,15 +261,13 @@ export default function PlotMainHelp({ helpProps }) {
                 name={t("trama:Situazione")}
                 italic={`${t("trama:Cambiamento")}, ${t(
                   "trama:città magica"
-                )},${t(
-                  "trama:situazione"
-                )}`}
+                )}, ${t("trama:situazione")}`}
               />
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
-            <BadgeLegenda
+              <BadgeLegenda
                 color="#009959"
                 name={t("trama:Stato euforico")}
                 italic={`${t("trama:Illusione/speranza")}, ${t(
@@ -283,11 +284,9 @@ export default function PlotMainHelp({ helpProps }) {
               <BadgeLegenda
                 color="#67E9B1"
                 name={t("trama:Stato riflessivo")}
-                italic={`${t("trama:Visione")}, ${t(
-                  "trama:riflessione"
-                )}, ${t("trama:mistero/assurdità")}, ${t(
-                  "trama:tipologia.ipotesi"
-                )}`}
+                italic={`${t("trama:Visione")}, ${t("trama:riflessione")}, ${t(
+                  "trama:mistero/assurdità"
+                )}, ${t("trama:tipologia.ipotesi")}`}
               />
               <BadgeLegenda
                 color="#00FFB6"
@@ -302,18 +301,9 @@ export default function PlotMainHelp({ helpProps }) {
                 color="#FFF800"
                 name={t("trama:racconto_incastonato")}
               />
-              <BadgeLegenda
-                color="#F2CA22"
-                name={t("trama:metanarrazione")}
-              />
-              <BadgeLegenda
-                color="#EFA625"
-                name={t("trama:cornice")}
-              />
-              <BadgeLegenda
-                color="#ED6826"
-                name={t("trama:struttura")}
-              />
+              <BadgeLegenda color="#F2CA22" name={t("trama:metanarrazione")} />
+              <BadgeLegenda color="#EFA625" name={t("trama:cornice")} />
+              <BadgeLegenda color="#ED6826" name={t("trama:struttura")} />
             </div>
           </div>
         </Tab>

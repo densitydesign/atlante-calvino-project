@@ -5,6 +5,7 @@ import { makeScalaMotivoY, splitPath } from './utils'
 import GradientsDefinitions from './GradientsDefinitions'
 import MiniInfoBox from '../../general/MiniInfoBox'
 import { groupBy, countBy, sortBy, orderBy, mapValues } from 'lodash'
+import { useTranslation } from "react-i18next"
 
 const TRESHOLD_LABEL = 100
 function calculateLabelScore(data, i) {
@@ -59,6 +60,8 @@ export default function TramaDetail({
   detailHeight,
 }) {
   const [measures, setMeasures] = useState(null)
+
+  const { t } = useTranslation("trama")
 
   useLayoutEffect(() => {
     const m = containerRef.current.getBoundingClientRect()
@@ -311,7 +314,7 @@ export default function TramaDetail({
                           y={-5}
                           style={{ transform: 'rotate(-30deg)' }}
                         >
-                          {d.motivo_type}
+                          {t("tipologia."+d.motivo_type)}
                         </text>
                       )}
                     </g>
