@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr) 50px;
 }
 
 .bg-svg {
