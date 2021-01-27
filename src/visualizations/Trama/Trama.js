@@ -193,7 +193,7 @@ class Trama extends Component {
             isFlex
             disabled={!controlsEnabled}
             options={tipologiaOptions}
-            allLink="tutti"
+            allLink={t("combining:ui.all_link")}
             style={{
               gridColumn: "span 8",
               textAlign: "center",

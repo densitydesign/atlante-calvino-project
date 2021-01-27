@@ -487,7 +487,7 @@ function MarimekkoViz({
                   <div
                     className={`w-100 text-center ${styles.currentSequenceLevel}`}
                   >
-                    {t('ui.livello')} {levelMapsInverted[r+1]}
+                    {t("Livello " + levelMapsInverted[r+1])}
                   </div>
 
                 </div>

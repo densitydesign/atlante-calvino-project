@@ -146,7 +146,7 @@ export default function AtlasRouter() {
         <CancellationInformationSheet />
       </Route>
       <Route exact path="/space/phase3">
-        <Realismo title={"Realismo"} />
+        <Realismo title={"TitoloRealismo"} />
       </Route>
       <Route exact path="/space/phase3/focus">
         <RealismInformationSheet />

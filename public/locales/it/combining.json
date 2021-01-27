@@ -12,7 +12,8 @@
     "footer_chart": "Volumi disposti secondo la data di prima pubblicazione; lo spessore corrisponde alla lunghezza in caratteri.",
     "numero_livelli_testo": "Numero di livelli",
     "quattro": "quattro",
-    "livello": "livello"
+    "livello": "livello",
+    "all_link": "Tutti"
   },
   "help_panel": {
     "itinerario_forma": "Itinerario forma",
@@ -115,5 +116,10 @@
   "Interiore": "Interiore",
   "Forma": "Forma",
   "TIPO DI PIANO": "TIPO DI PIANO",
-  "TIPO DI SEQUENZA": "TIPO DI SEQUENZA"
+  "TIPO DI SEQUENZA": "TIPO DI SEQUENZA",
+  "Livello uno": "Livello uno",
+  "Livello due": "Livello due",
+  "Livello quattro": "Livello quattro",
+  "Livello tre": "Livello tre",
+  "Livello cinque": "Livello cinque"
 }

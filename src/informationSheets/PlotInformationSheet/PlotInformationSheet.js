@@ -843,8 +843,8 @@ class PlotInformationSheet extends Component {
               }
               <li className={"referenceItem"}>
                 Calvino 1995a: I. Calvino,{" "}
-                <em>Cominciare e finire</em>, appendice a <em> Le lezioni americane</em>,
-                Id., <em>Saggi. 1945-1985</em>, I, in a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
+                <em>Cominciare e finire</em>, appendice a <em>Lezioni americane</em>,
+                in Id., <em>Saggi. 1945-1985</em>, I, a cura di M. Barenghi, Milano, Mondadori, pp. 734-753.
               </li>
               <li className={"referenceItem"}>
                 Calvino 1995b: I. Calvino,{" "}
@@ -931,10 +931,15 @@ class PlotInformationSheet extends Component {
                 </em>
                 , Paris, Classiques Garnier.
               </li>
-              <li className={"referenceItem"}>
-                Woolf 1995: V. Woolf, <em>Il lettore comune</em>, trad.
-                it. di D. Guglielmino, Genova, il Melangolo.
-              </li>
+              { this.props.i18n.language === "it" ?
+                (<li className={"referenceItem"}>
+                  Woolf 1995: V. Woolf, <em>Il lettore comune</em>, trad.
+                  it. di D. Guglielmino, Genova, il Melangolo.
+                </li>) : 
+                (<li className={"referenceItem"}>
+                  Woolf 2017: V. Woolf, <i>The Common Reader (Complete Edition: Series 1&2)</i>, Mosaicum Books, ebook.
+                </li>)
+              }
             </ol>
           </div>
 

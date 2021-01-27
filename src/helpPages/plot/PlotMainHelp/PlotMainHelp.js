@@ -193,9 +193,9 @@ export default function PlotMainHelp({ helpProps }) {
                     <small>{t("trama:help_panel.dimensione_e_colore")}</small>
                   </div>
                   {i18n.language === "it" ? (
-                    <LegendDimensione02 width="300" className="mt-2" />
+                    <LegendDimensione02 width="100%" className="mt-2" />
                   ) : (
-                    <LegendDimensione02En width="300" className="mt-2" />
+                    <LegendDimensione02En width="100%" className="mt-2" />
                   )}
                 </div>
               </div>
@@ -256,13 +256,6 @@ export default function PlotMainHelp({ helpProps }) {
                   "trama:ostacolo"
                 )}, ${t("trama:successo")}`}
               />
-              <BadgeLegenda
-                color="#00FFFF"
-                name={t("trama:Situazione")}
-                italic={`${t("trama:Cambiamento")}, ${t(
-                  "trama:città magica"
-                )}, ${t("trama:situazione")}`}
-              />
             </div>
           </div>
           <div className="row">
@@ -293,6 +286,13 @@ export default function PlotMainHelp({ helpProps }) {
                 name={t("trama:Stato sospeso")}
                 italic={`${t("trama:Pausa/sospensione")}, ${t("trama:attesa")}`}
               />
+              <BadgeLegenda
+                color="#00FFFF"
+                name={t("trama:Situazione")}
+                italic={`${t("trama:Cambiamento")}, ${t(
+                  "trama:città magica"
+                )}, ${t("trama:situazione")}`}
+              />
             </div>
           </div>
           <div className="row">
@@ -306,6 +306,8 @@ export default function PlotMainHelp({ helpProps }) {
               <BadgeLegenda color="#ED6826" name={t("trama:struttura")} />
             </div>
           </div>
+          <br/>
+          <br/>
         </Tab>
       </Tabs>
     </>
