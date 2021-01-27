@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/atlante-calvino-project/static/css/main.2bc13a40.chunk.css",
-    "main.js": "/atlante-calvino-project/static/js/main.5ad4ba6f.chunk.js",
-    "main.js.map": "/atlante-calvino-project/static/js/main.5ad4ba6f.chunk.js.map",
-    "runtime-main.js": "/atlante-calvino-project/static/js/runtime-main.66b5b2cc.js",
-    "runtime-main.js.map": "/atlante-calvino-project/static/js/runtime-main.66b5b2cc.js.map",
+    "main.js": "/atlante-calvino-project/static/js/main.3013962a.chunk.js",
+    "main.js.map": "/atlante-calvino-project/static/js/main.3013962a.chunk.js.map",
+    "runtime-main.js": "/atlante-calvino-project/static/js/runtime-main.2547fa9b.js",
+    "runtime-main.js.map": "/atlante-calvino-project/static/js/runtime-main.2547fa9b.js.map",
     "static/css/2.256e879f.chunk.css": "/atlante-calvino-project/static/css/2.256e879f.chunk.css",
     "static/js/2.426a95a0.chunk.js": "/atlante-calvino-project/static/js/2.426a95a0.chunk.js",
     "static/js/2.426a95a0.chunk.js.map": "/atlante-calvino-project/static/js/2.426a95a0.chunk.js.map",
     "static/js/3.017851ed.chunk.js": "/atlante-calvino-project/static/js/3.017851ed.chunk.js",
     "static/js/3.017851ed.chunk.js.map": "/atlante-calvino-project/static/js/3.017851ed.chunk.js.map",
     "static/css/4.669295d1.chunk.css": "/atlante-calvino-project/static/css/4.669295d1.chunk.css",
-    "static/js/4.603c756b.chunk.js": "/atlante-calvino-project/static/js/4.603c756b.chunk.js",
-    "static/js/4.603c756b.chunk.js.map": "/atlante-calvino-project/static/js/4.603c756b.chunk.js.map",
+    "static/js/4.5274c3bf.chunk.js": "/atlante-calvino-project/static/js/4.5274c3bf.chunk.js",
+    "static/js/4.5274c3bf.chunk.js.map": "/atlante-calvino-project/static/js/4.5274c3bf.chunk.js.map",
     "static/css/5.669295d1.chunk.css": "/atlante-calvino-project/static/css/5.669295d1.chunk.css",
     "static/js/5.e5bd08dc.chunk.js": "/atlante-calvino-project/static/js/5.e5bd08dc.chunk.js",
     "static/js/5.e5bd08dc.chunk.js.map": "/atlante-calvino-project/static/js/5.e5bd08dc.chunk.js.map",
     "index.html": "/atlante-calvino-project/index.html",
-    "precache-manifest.0a147f3cf13bc1fc5a474ae25ca25415.js": "/atlante-calvino-project/precache-manifest.0a147f3cf13bc1fc5a474ae25ca25415.js",
+    "precache-manifest.36e69e675a98272eddcb949818930aed.js": "/atlante-calvino-project/precache-manifest.36e69e675a98272eddcb949818930aed.js",
     "service-worker.js": "/atlante-calvino-project/service-worker.js",
     "static/css/2.256e879f.chunk.css.map": "/atlante-calvino-project/static/css/2.256e879f.chunk.css.map",
     "static/css/4.669295d1.chunk.css.map": "/atlante-calvino-project/static/css/4.669295d1.chunk.css.map",
@@ -73,7 +73,7 @@
     "static/media/combinare_legenda_03_en.svg": "/atlante-calvino-project/static/media/combinare_legenda_03_en.173bd065.svg",
     "static/media/combinare_legenda_04_en.svg": "/atlante-calvino-project/static/media/combinare_legenda_04_en.f93b22a9.svg",
     "static/media/combinare_marimekko_en.svg": "/atlante-calvino-project/static/media/combinare_marimekko_en.f4b0f377.svg",
-    "static/media/combinare_zoom_02_en.svg": "/atlante-calvino-project/static/media/combinare_zoom_02_en.c0239cca.svg",
+    "static/media/combinare_zoom_02_en.svg": "/atlante-calvino-project/static/media/combinare_zoom_02_en.d8851c77.svg",
     "static/media/combinare_zoom_03_en.svg": "/atlante-calvino-project/static/media/combinare_zoom_03_en.e4feb033.svg",
     "static/media/combinare_zoom_04_en.svg": "/atlante-calvino-project/static/media/combinare_zoom_04_en.def6c507.svg",
     "static/media/compass.cea5f8bb.svg": "/atlante-calvino-project/static/media/compass.cea5f8bb.svg",
@@ -275,10 +275,10 @@
     "static/media/zoom_04.svg": "/atlante-calvino-project/static/media/zoom_04.2142acbb.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.66b5b2cc.js",
+    "static/js/runtime-main.2547fa9b.js",
     "static/css/2.256e879f.chunk.css",
     "static/js/2.426a95a0.chunk.js",
     "static/css/main.2bc13a40.chunk.css",
-    "static/js/main.5ad4ba6f.chunk.js"
+    "static/js/main.3013962a.chunk.js"
   ]
 }
