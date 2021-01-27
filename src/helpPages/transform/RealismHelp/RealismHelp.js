@@ -83,8 +83,8 @@ export default function RealismHelp() {
                 </li>
                 <li>
                   la tipologia di ogni ambientazione:{" "}
-                  <span style={{ color: "#00C19C" }}>spazio interno</span>,{" "}
-                  <span style={{ color: "#FFD337" }}>spazio esterno</span>,{" "}
+                  <span style={{ color: "#FFD337" }}>spazio interno</span>,{" "}
+                  <span style={{ color: "#00C19C" }}>spazio esterno</span>,{" "}
                   <span style={{ color: "#5151FF" }}>mezzo di trasporto</span>,{" "}
                   <span style={{ color: "#AFAFAF" }}>
                     assenza di ambientazione
