@@ -70,7 +70,7 @@
       "Stato riflessivo": "Reflective state",
       "visione": "vision",
       "riflessione": "reflection",
-      "ipotesi":"hypothesis",
+      "ipotesi": "hypothesis",
       "mistero/assurdità": "mystery/absurdity",
       "stato riflessivo": "stato riflessivo",
       "Stato sospeso": "Suspended state",
@@ -103,17 +103,16 @@
     "metanarrazione": "Metanarration",
     "cornice": "Narrative frame",
     "struttura": "Structure",
-    "terna": "Triad",
+    "terna": "Terna",
     "interazione": "Interaction",
     "eventi liminali": "Liminal events",
     "intenzione": "Intention",
-    "situazione": "Situation",
-    "terna": "Terna"
+    "situazione": "Situation"
   },
   "Forma": "Formal layer",
   "Interiore": "Internal layer",
   "combining": {
-    "text_slider": "<0><i>Move the slider to see the levels’ structure</i><br/><2>Clicca <1></1> to highlight the combination</2></0>"
+    "text_slider": "<0><i>Move the slider to see the levels’ structure</i><br/><2>Click <1></1> to highlight the combination</2></0>"
   },
   "TIPO DI PIANO": "LAYER TYPE",
   "TIPO DI SEQUENZA": "SEQUENCE TYPE",
