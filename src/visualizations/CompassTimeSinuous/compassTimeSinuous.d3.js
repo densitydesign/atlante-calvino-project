@@ -6,9 +6,7 @@ import GlobalData from "../../utilities/GlobalData.js";
 import "./CompassTimeSinuous.css";
 
 class VClass {
-  initialize = (el, input_data) => {
-    console.log(input_data);
-
+  initialize = (el, input_data, language) => {
     d3.selection.prototype.moveToFront = function () {
       return this.each(function () {
         this.parentNode.appendChild(this);
@@ -723,12 +721,12 @@ class VClass {
     birthInfo
       .append("tspan")
       .attr("x", -margin.left + 30)
-      .text("Italo Calvino nasce il 15 ottobre 1923");
+      .text(language==='it' ? "Italo Calvino nasce il 15 ottobre 1923" : 'Italo Calvino was born on 15 October 1923');
     birthInfo
       .append("tspan")
       .attr("x", -margin.left + 30)
       .attr("dy", rem2px(0.8))
-      .text("a Santiago de las Vegas (L’Avana, Cuba)");
+      .text(language==='it' ? "a Santiago de las Vegas (L’Avana, Cuba)" : "in Santiago de las Vegas (L’Avana, Cuba)");
 
     // date and place of death
     let deathInfoXpos = workPosition({
@@ -756,12 +754,12 @@ class VClass {
       .append("tspan")
       .attr("x", deathInfoXpos)
       .attr("dy", rem2px(0.8))
-      .text("Muore a Siena");
+      .text(language==='it' ? "Muore a Siena" : "He died in Siena");
     deathInfo
       .append("tspan")
       .attr("x", deathInfoXpos)
       .attr("dy", rem2px(0.8))
-      .text("il 19 Settembre");
+      .text(language==='it' ? "il 19 Settembre" : "on 19 September");
     deathInfo
       .append("tspan")
       .attr("x", deathInfoXpos)
@@ -799,10 +797,10 @@ class VClass {
       // })
       .attr("y", -r * 1.75).html(`<tspan x="${
       workPosition({ year: "1990.15" })[0]
-    }" dy="0">Pubblicazioni</tspan>
+    }" dy="0">${language==='it' ? "Pubblicazioni" : "Posthumous"}</tspan>
   					 <tspan x="${workPosition({ year: "1990.15" })[0]}" dy="${rem2px(
       0.8
-    )}">postume</tspan>
+    )}">${language==='it' ? "postume" : "publications"}</tspan>
   					`);
 
     // Move La giornata di uno scriutatore to from to avoid silly overlapping with lines

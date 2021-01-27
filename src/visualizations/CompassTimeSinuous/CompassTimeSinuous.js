@@ -4,11 +4,13 @@ import React from 'react';
 import V from './compassTimeSinuous.d3';
 import CompassTimeDefs from './CompassTimeDefs';
 
-export default class CompassTimeSinuous extends React.Component
+import { withTranslation } from "react-i18next";
+
+class CompassTimeSinuous extends React.Component
 {
   componentDidMount()
   {
-    V.initialize(this._rootNode, this.props.data);
+    V.initialize(this._rootNode, this.props.data, this.props.i18n.language);
   }
 
   componentWillUnmount()
@@ -32,3 +34,5 @@ export default class CompassTimeSinuous extends React.Component
     </svg>;
   }
 }
+
+export default withTranslation()(CompassTimeSinuous)
