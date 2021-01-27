@@ -5,6 +5,7 @@ import MoreInfo from '../../general/MoreInfo'
 import CompassButton from '../../general/CompassButton/CompassButton'
 import Loading from '../../general/Loading'
 import HelpSidePanel from '../../panels/HelpSidePanel/HelpSidePanel'
+import { useTranslation } from "react-i18next"
 
 import GlobalData from '../../utilities/GlobalData'
 
@@ -38,18 +39,17 @@ const Menu = ({ title, helpPage }) => {
   )
 }
 
-class Trama extends Component {
-  render() {
-    const { title } = this.props
+function Trama({title}) {
+  const { t } = useTranslation("translation")
+  // const { title } = this.props
 
-    const helpPage = GlobalData.helpPages.realism.main
+  const helpPage = GlobalData.helpPages.realism.main
 
-    return (
-      <Suspense fallback={<Menu title={title} helpPage={helpPage} />}>
-        <RealismoMain title={title}></RealismoMain>
-      </Suspense>
-    )
-  }
+  return (
+    <Suspense fallback={<Menu title={t(title)} helpPage={helpPage} />}>
+      <RealismoMain title={t(title)}></RealismoMain>
+    </Suspense>
+  )
 }
 
 export default Trama
