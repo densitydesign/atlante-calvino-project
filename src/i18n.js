@@ -62,7 +62,7 @@ i18n
 
     // TODO: Handle in a more generic way....
     backend: {
-      loadPath: '/atlante-calvino-project/locales/{{lng}}/{{ns}}.json',
+      loadPath: process.env.PUBLIC_URL + '/locales/{{lng}}/{{ns}}.json',
 
       // path to post missing resources
       addPath: '/api/front/locales/add/{{lng}}/{{ns}}',

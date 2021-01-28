@@ -39,7 +39,7 @@ import Cancellazione from "../Cancellazione"
 import Capta from "../Capta"
 
 const history = createHistoryHackedWithI18n({
-  basename:"/atlante-calvino-project"
+  // basename:"/atlante-calvino-project",
 })
 
 export default function AtlasRouter() {

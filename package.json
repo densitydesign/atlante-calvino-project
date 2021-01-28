@@ -1,6 +1,6 @@
 {
   "name": "atlante-calvino-project",
-  "homepage": "https://densitydesign.github.io/atlante-calvino-project",
+  "homepage": "http://atlantecalvino.unige.ch/",
   "proxy": "http://localhost:3023",
   "version": "0.1.0",
   "private": true,
