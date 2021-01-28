@@ -5995,7 +5995,7 @@
 ,
 {"textID":"V011","ID SEQ":"S2160","seq":"struttura;incontro maschile;terna","titolo":"Marcovaldo","anno":"1963","mese":"11","caratteri":"202259","livello":"tre","starts_at":"60807","ends_at":"61086","starts_at norm":"30,06","ends_at norm":"30,20","somma ripetizioni":"279","tipologia":"terna","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
 ,
-{"textID":"V011","ID SEQ":"S2161","seq":"struttura;incontro maschile;tema","titolo":"Marcovaldo","anno":"1963","mese":"11","caratteri":"202259","livello":"tre","starts_at":"61087","ends_at":"61714","starts_at norm":"30,20","ends_at norm":"30,51","somma ripetizioni":"627","tipologia":"tema","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
+{"textID":"V011","ID SEQ":"S2161","seq":"struttura;incontro maschile;terna","titolo":"Marcovaldo","anno":"1963","mese":"11","caratteri":"202259","livello":"tre","starts_at":"61087","ends_at":"61714","starts_at norm":"30,20","ends_at norm":"30,51","somma ripetizioni":"627","tipologia":"terna","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
 ,
 {"textID":"V011","ID SEQ":"S2262","seq":"struttura;compito/missione;terna","titolo":"Marcovaldo","anno":"1963","mese":"11","caratteri":"202259","livello":"tre","starts_at":"198323","ends_at":"198565","starts_at norm":"98,05","ends_at norm":"98,17","somma ripetizioni":"242","tipologia":"terna","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
 ,
@@ -8197,7 +8197,7 @@
 ,
 {"textID":"V006","ID SEQ":"S1214","seq":"struttura;struttura;incontro maschile;terna","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"quattro","starts_at":"301086","ends_at":"301365","starts_at norm":"27,22","ends_at norm":"27,25","somma ripetizioni":"279","tipologia":"terna","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
 ,
-{"textID":"V006","ID SEQ":"S1215","seq":"struttura;struttura;incontro maschile;tema","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"quattro","starts_at":"301366","ends_at":"301993","starts_at norm":"27,25","ends_at norm":"27,30","somma ripetizioni":"627","tipologia":"tema","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
+{"textID":"V006","ID SEQ":"S1215","seq":"struttura;struttura;incontro maschile;terna","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"quattro","starts_at":"301366","ends_at":"301993","starts_at norm":"27,25","ends_at norm":"27,30","somma ripetizioni":"627","tipologia":"terna","categorie di tipologia":"forma","struttura/contenuto":"struttura","cluster tipologie":"terna"}
 ,
 {"textID":"V006","ID SEQ":"S1281","seq":"struttura;struttura;incontro di gruppo;compito/missione","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"quattro","starts_at":"388229","ends_at":"388930","starts_at norm":"35,10","ends_at norm":"35,16","somma ripetizioni":"701","tipologia":"compito/missione","categorie di tipologia":"esteriore","struttura/contenuto":"contenuto","cluster tipologie":"interazione"}
 ,
