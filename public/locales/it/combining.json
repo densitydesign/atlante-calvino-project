@@ -85,7 +85,16 @@
       "Struttura": "Struttura",
       "Spostamento": "Spostamento",
       "ipotesi": "ipotesi",
-      "incontro animale": "incontro animale"
+      "incontro animale": "incontro animale",
+
+      "eventi liminali":"eventi liminali",
+      "interazione": "interazione",
+      "racconto incastonato": "racconto incastonato",
+      "metanarrazione": "metanarrazione",
+      "cornice": "cornice",
+      "struttura": "struttura",
+      "terna": "terna"
+
     }
   },
   "ambito": {

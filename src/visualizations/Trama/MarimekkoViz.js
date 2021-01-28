@@ -507,7 +507,7 @@ function MarimekkoViz({
                       }`
                     }}
                   >
-                    {seq["tipologia"]}
+                    {t("help_panel.colors."+seq["tipologia"])}
                   </div>
                   {/* <div className="text-center w-100">
                     <small>

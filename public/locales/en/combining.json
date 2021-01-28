@@ -84,7 +84,15 @@
       "Terna": "Triad",
       "inseguimento/ricerca": "chase/search",
       "Struttura": "Structure",
-      "Spostamento": "Movement"
+      "Spostamento": "Movement",
+
+      "eventi liminali":"liminal events",
+      "interazione": "interaction",
+      "racconto incastonato": "nested story",
+      "metanarrazione": "metanarration",
+      "cornice": "narrative frame",
+      "struttura": "structure",
+      "terna": "triad"
     }
   },
   "ambito": {
