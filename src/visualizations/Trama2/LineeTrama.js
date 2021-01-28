@@ -104,6 +104,7 @@ const LineaTrama = React.memo(
     toggleItem,
     onRaccontoClick,
     showInfoUI = true,
+    t
   }) => {
     const [d, subPaths] = useMemo(() => {
       const d = lineGenerator(data)
@@ -161,7 +162,7 @@ const LineaTrama = React.memo(
               y={selectedPoint.y}
               textAnchor={selectedPoint.originalX < 0.2 ? "start" : "end"}
             >
-              {selectedPoint.motivo_type}
+              {t('tipologia.'+selectedPoint.motivo_type)}
             </text>
           </g>
         )}
@@ -203,6 +204,7 @@ const LineeTramaList = React.memo(
     toggleSelect,
     xScale,
     showInfoUI = true,
+    t
   }) => {
     return (
       <g>
@@ -230,6 +232,7 @@ const LineeTramaList = React.memo(
                 racconto={racconti[i]}
                 data={datum}
                 showInfoUI={showInfoUI}
+                t={t}
               ></LineaTrama>
             </g>
           )
@@ -592,6 +595,7 @@ function LineeTramaWithMeasures(
             toggleSelect={toggleSelect}
             xScale={xScale}
             showInfoUI={showInfoUI}
+            t={t}
           />
           <SelectedContainers n={dataRacconti.length} />
         </g>

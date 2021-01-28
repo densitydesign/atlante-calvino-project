@@ -1,6 +1,6 @@
 import React, { useRef, useState, useLayoutEffect, useContext } from 'react'
 import { CurretTramaViewContext } from './Trama2Content'
-import { ReactComponent as IconClose } from './icons/icon-close.svg'
+import { ReactComponent as ChevronRight } from './icons/chevron-right.svg'
 
 const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
   const containerRef = useRef(null)
@@ -32,7 +32,7 @@ const RaccontoInfoBoxSvg = ({ titolo, x, y = 0, onClick }) => {
             y2={22}
             className="trama2-info-box"
           />
-          <IconClose x={measures.width+20} y={5} />
+          <ChevronRight x={measures.width+20} y={5} />
         </g>
       )}
       <text
