@@ -48,55 +48,54 @@ export default function SplashScreen2() {
           vectorEffect="non-scaling-stroke"
         />
       </svg>
-      <div className={S["project-logo"]}>
-        <Link to="/navigation" style={{ width: "100%", height: "100%" }}>
-          <InteractiveLogo />
-        </Link>
+      
+      <div className={S["pack"]}>
+        <div className={S["project-logo"]}>
+          <Link to="/navigation" style={{ width: "100%", height: "100%" }}>
+            <InteractiveLogo />
+          </Link>
+        </div>
+        <div className={S["subtitle"]}>
+          <Link to="/navigation" className={S["disabled-link"]}>
+            <h2
+              style={{ backgroundColor: "#fff", textAlign: "center", margin: "0.5rem 0 1.5rem" }}
+            >
+              {t("Letteratura e visualizzazione")}
+            </h2>
+          </Link>
+        </div>
+        <div className={S["arrow-down"]}>
+          <Link to="/navigation" className={S["disabled-link"]}>
+            <div>
+              <BsArrowDown color="var(--dark-blue)" />
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className={S["subtitle"]}>
-        <Link to="/navigation" className={S["disabled-link"]}>
-          <h2
-            style={{ backgroundColor: "#fff", textAlign: "center", marginBottom: "0.2rem" }}
-          >
-            {t("Letteratura e visualizzazione")}
-          </h2>
-        </Link>
-        {/* <p
-          style={{ backgroundColor: "var(--cool-bg)", textAlign: "center", fontWeight: "normal" }}
-        >
-          {t("Un nuovo modo di esplorare l’opera di Italo Calvino")}
-        </p> */}
-      </div>
-      <div className={S["arrow-down"]}>
-        <Link to="/navigation" className={S["disabled-link"]}>
-          <div>
-            <BsArrowDown color="var(--dark-blue)" />
-          </div>
-        </Link>
-      </div>
+      
       <div className={S["logos-left"]}>
-        <a href="http://www.snf.ch/">
+        <a className={S["logos"]} href="http://www.snf.ch/">
           <img src={logoFnsnf} alt="" />
         </a>
       </div>
       <div className={S["logos-center"]}>
-        <a href="https://www.unige.ch/">
+        <a className={S["logos"]} href="https://www.unige.ch/">
           <img src={logoUnige} alt="" />
         </a>
-        <a href="http://densitydesign.org/">
-          <img src={logoDensityDesign} alt="Density Design" />
+        <a className={S["logos"]} href="http://densitydesign.org/">
+          <img src={logoDensityDesign} alt="Density Design" style={{marginLeft:"4px"}} />
         </a>
-        <a href="http://www.dipartimentodesign.polimi.it/">
+        <a className={S["logos"]} href="http://www.dipartimentodesign.polimi.it/">
           <img src={logoPolitecnico} alt="Polimi" />
         </a>
       </div>
       <div className={S["logos-right"]}>
-        <a href="https://www.mondadori.it/">
+        <a className={S["logos"]} href="https://www.mondadori.it/">
           <img src={logoMondadori} alt="Mondadori" />
         </a>
       </div>
       <div
-        className="position-absolute d-flex cursor-pointer"
+        className="position-fixed d-flex cursor-pointer"
         style={{ top: 20, right: 40 }}
       >
         <div
