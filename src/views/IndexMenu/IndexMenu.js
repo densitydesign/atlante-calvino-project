@@ -585,7 +585,7 @@ export default function IndexMenu({ onClose }) {
         </Link>
       </div>
       <div
-        className={`position-absolute cursor-pointer ${styles["guarda-la-guida"]}`}
+        className={`position-fixed cursor-pointer ${styles["guarda-la-guida"]}`}
         onClick={handleShowGuida}
         src={process.env.PUBLIC_URL + "https://youtu.be/UYcQVKPG8uE"}
       >
