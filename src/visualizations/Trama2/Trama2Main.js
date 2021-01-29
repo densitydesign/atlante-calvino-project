@@ -18,6 +18,7 @@ import "./Trama2.css"
 import { useTranslation } from "react-i18next"
 // @TODO Hack per importare l'associazione racconti volumi in maniera correttav (In dataset riporta solo un volume per racconto)
 import realismoJson from "./dati/realismo.json"
+import tramaVolumiRacconti from "./dati/dataset_Trama_volumi_testi.json"
 import get from "lodash/get"
 
 // SCALES
@@ -34,18 +35,27 @@ const {
 
 // we leverage react lazy+suspense to load core component at first render (it will load all json by importing it)
 
-const titoliVolumi = keyBy(uniqBy(realismoJson, (item) => {
-  return `${item.title} ${item.pubblicazioni_titolo}`
-}).map((item) => ({
-  titolo: item.title,
-  volumi: item.pubblicazioni_titolo.split(";"),
-})),'titolo')
+
+const volumi = Object.keys(tramaVolumiRacconti)
+
+const titoliVolumi = {}
+
+volumi.forEach(volume => {
+  const racconti = tramaVolumiRacconti[volume]
+  racconti.forEach(racconto => {
+    if(!titoliVolumi[racconto]){
+      titoliVolumi[racconto] = [volume.toLowerCase()]
+    } else {
+      titoliVolumi[racconto].push(volume.toLowerCase())
+    }
+  })
+})
 
 const searchOptions = racconti.map((racconto) => ({
   label: racconto.titolo,
   value: racconto.titolo,
   volume: racconto.volume,
-  volumi: get(titoliVolumi,racconto.titolo,{ volumi: []}).volumi
+  volumi: get(titoliVolumi,racconto.titolo,[])
 }))
 
 const searchOptonsVolume = uniq(
@@ -162,7 +172,7 @@ function Trama2Main({ title }) {
             const raccontiInVolumi = flatMap(
               volumi.map((v) =>
                 //searchOptions.filter((o) => o.volume === v.value)
-                searchOptions.filter((o) => o.volumi.indexOf(v.value) !== -1)
+                searchOptions.filter((o) => o.volumi.indexOf(v.value.toLowerCase()) !== -1)
               )
             )
             const finalRicerca = uniqBy(
