@@ -1,6 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { parse, stringifyUrl } from 'query-string'
+import { parse, stringifyUrl, stringify } from 'query-string'
 
 import { createBrowserHistory as createHistory } from "history"
 
@@ -17,6 +17,21 @@ const query = parse(window.location.search)
 const queryLng = query.lang ?? 'it'
 const lng = ['it', 'en'].includes(queryLng) ? queryLng : 'it'
 
+function hackToWithLang(to) {
+  if (typeof to === 'string') {
+    return stringifyUrl({ url: to, query: { lang: lng } })
+  } else if (typeof to === 'object' && to !== null) {
+    const query = parse(to.search ?? '')
+    const search = stringify({ ...query, lang: lng })
+    return {
+      ...to,
+      search,
+    }
+  } else {
+    return to
+  }
+}
+
 export function createHistoryHackedWithI18n(options) {
   const history = createHistory(options)
 
@@ -29,6 +44,18 @@ export function createHistoryHackedWithI18n(options) {
     return nextHref
   }
   history.createHref = hackCreateHref
+
+  const originalPush = history.push
+  function hackPush(to, state) {
+    return originalPush(hackToWithLang(to), state)
+  }
+  history.push = hackPush
+
+  const originalReplace = history.replace
+  function hackReplace(to, state) {
+    return originalReplace(hackToWithLang(to), state)
+  }
+  history.replace = hackReplace
 
   return history
 }
