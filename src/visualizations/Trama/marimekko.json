@@ -5323,7 +5323,7 @@
 ,
 {"textID":"V006","ID SEQ":"S1445","seq":"struttura;struttura;angoscia/delusione","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"tre","starts_at":"566196","ends_at":"567576","starts_at norm":"51,19","ends_at norm":"51,31","somma ripetizioni":"1380","tipologia":"angoscia/delusione","categorie di tipologia":"interiore","struttura/contenuto":"contenuto","cluster tipologie":"stato disforico"}
 ,
-{"textID":"V006","ID SEQ":"S1446","seq":"struttura;struttura;smarrimento/dubbio","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"tre","starts_at":"567577","ends_at":"568470","starts_at norm":"51,31","ends_at norm":"60,44","somma ripetizioni":"100893","tipologia":"smarrimento/dubbio","categorie di tipologia":"interiore","struttura/contenuto":"contenuto","cluster tipologie":"stato disforico"}
+{"textID":"V006","ID SEQ":"S1446","seq":"struttura;struttura;smarrimento/dubbio","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"tre","starts_at":"567577","ends_at":"568470","starts_at norm":"51,31","ends_at norm":"51,39","somma ripetizioni":"100893","tipologia":"smarrimento/dubbio","categorie di tipologia":"interiore","struttura/contenuto":"contenuto","cluster tipologie":"stato disforico"}
 ,
 {"textID":"V006","ID SEQ":"S1447","seq":"struttura;struttura;incontro di gruppo","titolo":"I racconti","anno":"1958","mese":"11","caratteri":"1106081","livello":"tre","starts_at":"568471","ends_at":"570273","starts_at norm":"51,40","ends_at norm":"51,56","somma ripetizioni":"1802","tipologia":"incontro di gruppo","categorie di tipologia":"esteriore","struttura/contenuto":"contenuto","cluster tipologie":"interazione"}
 ,
