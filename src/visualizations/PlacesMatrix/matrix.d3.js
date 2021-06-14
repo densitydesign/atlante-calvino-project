@@ -6,10 +6,22 @@ const categories = [
   "Cosmici generici",
   "Cosmici localizzabili",
   "Terrestri localizzabili",
+  "natura ligure",
+  "Terrestri generici",
+  "Marcovaldo",
+  "Terrestri Inventati",
+  "Nessun luogo",
+];
+
+const categoriesOLD = [
+  "Cosmici generici",
+  "Cosmici localizzabili",
+  "Terrestri localizzabili",
   "Terrestri generici",
   "Terrestri Inventati",
   "Nessun luogo",
 ];
+
 const categoriesColors = [
   "#3131ff",
   "#bbbbff",
@@ -19,7 +31,7 @@ const categoriesColors = [
   "#cecece",
 ];
 
-const collisionPadding = 0.25;
+const collisionPadding = 2;
 
 // data
 let originalData,
@@ -35,7 +47,7 @@ let x,
   y,
   r,
   color,
-  margin = { top: 0, right: 50, bottom: 30, left: 50 },
+  margin = { top: 152.2477, right: 28.3465, bottom: 42.4964, left: 28.3465 },
   originalLabelsSize,
   width,
   height;
@@ -83,6 +95,7 @@ class VClass {
       .append("rect")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
+      .attr("fill", "#fafafa")
       .classed("reset-rect", true)
       .on("click", (d) => {
         if (d3.event.timeStamp - last < 500) {
@@ -109,6 +122,17 @@ class VClass {
 
     y = d3.scalePoint().range([0, height]).domain(categories).padding(0.5);
 
+    y = d3.scaleOrdinal().range([
+      152.2477,
+      241.1302,
+      330.0127,
+      418.8952,
+      507.7777,
+      596.6602,
+      685.5427,
+      774.4253
+    ]).domain(categories);
+
     yAxisCall = d3
       .axisRight(y)
       .tickSize(width)
@@ -131,17 +155,17 @@ class VClass {
         }),
       ]);
 
-    color = d3.scaleOrdinal().domain(categories).range(categoriesColors);
+    color = d3.scaleOrdinal().domain(categoriesOLD).range(categoriesColors);
 
     // Groups and scales
     g = svg
       .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+      .attr("transform", `translate(${margin.left},${margin.top*0})`);
     xAxis = g.append("g").attr("class", "x-axis");
     yAxis = g.append("g").attr("class", "y-axis");
     g_forceLayout = g.append("g");
 
-    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall);
+    xAxis.attr("transform", `translate(${0}, ${795.6851})`).call(xAxisCall);
 
     yAxis
       .attr("transform", `translate(0, 0)`)
@@ -160,7 +184,7 @@ class VClass {
         g
           .selectAll(".tick text")
           .attr("x", 4)
-          .attr("dy", -y.step() / 10)
+          // .attr("dy", -y.step() / 10)
       );
 
     this.selectedCategories = [];
@@ -465,19 +489,19 @@ class VClass {
       .classed("sub-node", (d) => d.part_of !== "")
       .classed("selected", (d) => d.isSelected)
       .attr("key", (d) => d.id)
-      .on("mouseenter", (d) => {
-        label.filter((l) => l.id === d.id).style("display", "block");
-        node
-          .style("opacity", 0.25)
-          .filter((n) => n.source === d.source)
-          .style("opacity", 1);
-        self.displayTitle(d);
-      })
-      .on("mouseleave", (d) => {
-        label.filter((l) => l.id === d.id).style("display", "none");
-        node.style("opacity", "");
-        self.displayTitle(d);
-      })
+      // .on("mouseenter", (d) => {
+      //   label.filter((l) => l.id === d.id).style("display", "block");
+      //   node
+      //     .style("opacity", 0.25)
+      //     .filter((n) => n.source === d.source)
+      //     .style("opacity", 1);
+      //   self.displayTitle(d);
+      // })
+      // .on("mouseleave", (d) => {
+      //   label.filter((l) => l.id === d.id).style("display", "none");
+      //   node.style("opacity", "");
+      //   self.displayTitle(d);
+      // })
 
       .on("click", function (d) {
         console.log("clicked on", d);
@@ -509,9 +533,9 @@ class VClass {
       .style("cursor", function (d) {
         return d.subNodes && d.subNodes.length ? "pointer" : "auto";
       })
-      .attr("fill", (d) => (d.opened === true ? "white" : color(d.category)))
+      .attr("fill", (d) => (d.opened === true ? "white" : color(d.categoryOLD)))
       .attr("stroke", function (d) {
-        if (d.totalSubNodes > 0) return d3.color(color(d.category)).darker(1);
+        if (d.totalSubNodes > 0) return d3.color(color(d.categoryOLD)).darker(1);
       })
       .attr("r", function (d) {
         return d.opened ? r(1) : r(d.totalSubNodes + 1);
@@ -554,9 +578,11 @@ class VClass {
       .enter()
       .append("text")
       .classed("label", true)
-      .style("display", "none")
+      // .style("display", "none")
       .attr("text-anchor", "middle")
       .style("pointer-events", "none")
+      .style("font-family", "Brera, serif")
+      .attr("font-size","7")
       .text((d) => d.label)
       .merge(label);
 
@@ -819,9 +845,12 @@ class VClass {
 
     svg.classed("there-is-filter", true);
     node
-      .classed("filtered", false)
+      // .classed("filtered", false)
+      .style("opacity",1)
       .filter((n) => filter.indexOf(n.id) < 0)
-      .classed("filtered", true);
+      // .classed("filtered", true)
+      .style("opacity",0.25)
+
   };
 
   selectSameComposition = (d) => {

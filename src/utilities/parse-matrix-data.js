@@ -17,6 +17,7 @@ ParseMatrixData.parser = (rawData) => {
 			'sourceTitle': d['Titolo Fonte'],
 			'year': +d.year,
 			'category': d['Categoria'],
+			'categoryOLD': d['CategoriaOLD'],
 			'totalSubNodes':0,
       'publicationType': d['Pubblicazione Fonte'].split(';'),
       'pubVenueTitle': d['Pubblicazioni Titoli'],

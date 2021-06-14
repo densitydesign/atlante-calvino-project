@@ -23,6 +23,8 @@ import PlacesMatrix from "../visualizations/PlacesMatrix"
 import ParseMatrixData from "../utilities/parse-matrix-data"
 import { withTranslation } from "react-i18next"
 
+import styles from './Trasformare.module.css';
+
 class Trasformare extends Component {
   constructor(props) {
     super(props)
@@ -101,7 +103,7 @@ class Trasformare extends Component {
   legendToggleButtonCaption = this.props.t("help_panel.legenda")
 
   loadData() {
-    d3.tsv(process.env.PUBLIC_URL + "/places-matrix-data.tsv")
+    d3.tsv(process.env.PUBLIC_URL + "/places-matrix-data-extended-categories.tsv")
       .then((data) => {
 
         // data = data.filter(d=>d["Fonte"]==="V018")
@@ -591,7 +593,7 @@ class Trasformare extends Component {
           />
         </div>
 
-        <div className="the-body-viz">
+        <div className={"the-body-viz"+" "+styles["perStampa"]}>
           {this.state.isLoading && <Loading />}
           {!this.state.isLoading && (
             <PlacesMatrix
