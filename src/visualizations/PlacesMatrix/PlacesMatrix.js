@@ -56,8 +56,8 @@ class PlacesMatrix extends Component {
 
   render() {
     const style={
-      width: '100%',
-      height: '100%'
+      width: '1644.094px',
+      height: '816.945px'
     }
     return <svg id={this.props.id} style={style} ref={this._setRef.bind(this)}></svg>
   }

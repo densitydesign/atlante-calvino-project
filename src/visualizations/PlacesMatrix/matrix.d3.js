@@ -19,7 +19,7 @@ const categoriesColors = [
   "#cecece",
 ];
 
-const collisionPadding = 0.25;
+const collisionPadding = 2;
 
 // data
 let originalData,
@@ -35,7 +35,7 @@ let x,
   y,
   r,
   color,
-  margin = { top: 0, right: 50, bottom: 30, left: 50 },
+  margin = { top: 152.2477, right: 28.3465, bottom: 42.4964, left: 28.3465 },
   originalLabelsSize,
   width,
   height;
@@ -107,7 +107,18 @@ class VClass {
 
     xAxisCall = d3.axisBottom(x).ticks(d3.timeYear.every(1));
 
-    y = d3.scalePoint().range([0, height]).domain(categories).padding(0.5);
+    y = d3.scalePoint().range([0, height]).domain(categories).padding(0.5)
+
+    y = d3.scaleOrdinal()
+    .range([
+      152.2477,
+      276.6832 - 30,
+      401.1187 - 30,
+      525.5542,
+      649.9897 + 30,
+      774.4253
+    ])
+    .domain(categories);
 
     yAxisCall = d3
       .axisRight(y)
@@ -123,7 +134,7 @@ class VClass {
     r = d3
       .scalePow()
       .exponent(0.5)
-      .range([3, 25])
+      .range([4.5, 40])
       .domain([
         1,
         d3.max(data.nodes, function (d) {
@@ -136,12 +147,12 @@ class VClass {
     // Groups and scales
     g = svg
       .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+      .attr("transform", `translate(${margin.left},${margin.top*0})`);
     xAxis = g.append("g").attr("class", "x-axis");
     yAxis = g.append("g").attr("class", "y-axis");
     g_forceLayout = g.append("g");
 
-    xAxis.attr("transform", `translate(${0}, ${height})`).call(xAxisCall);
+    xAxis.attr("transform", `translate(${0}, ${795.6851})`).call(xAxisCall);
 
     yAxis
       .attr("transform", `translate(0, 0)`)
@@ -160,7 +171,7 @@ class VClass {
         g
           .selectAll(".tick text")
           .attr("x", 4)
-          .attr("dy", -y.step() / 10)
+          // .attr("dy", -y.step() / 10)
       );
 
     this.selectedCategories = [];
@@ -465,19 +476,19 @@ class VClass {
       .classed("sub-node", (d) => d.part_of !== "")
       .classed("selected", (d) => d.isSelected)
       .attr("key", (d) => d.id)
-      .on("mouseenter", (d) => {
-        label.filter((l) => l.id === d.id).style("display", "block");
-        node
-          .style("opacity", 0.25)
-          .filter((n) => n.source === d.source)
-          .style("opacity", 1);
-        self.displayTitle(d);
-      })
-      .on("mouseleave", (d) => {
-        label.filter((l) => l.id === d.id).style("display", "none");
-        node.style("opacity", "");
-        self.displayTitle(d);
-      })
+      // .on("mouseenter", (d) => {
+      //   label.filter((l) => l.id === d.id).style("display", "block");
+      //   node
+      //     .style("opacity", 0.25)
+      //     .filter((n) => n.source === d.source)
+      //     .style("opacity", 1);
+      //   self.displayTitle(d);
+      // })
+      // .on("mouseleave", (d) => {
+      //   label.filter((l) => l.id === d.id).style("display", "none");
+      //   node.style("opacity", "");
+      //   self.displayTitle(d);
+      // })
 
       .on("click", function (d) {
         console.log("clicked on", d);
@@ -554,9 +565,12 @@ class VClass {
       .enter()
       .append("text")
       .classed("label", true)
-      .style("display", "none")
+      // .style("display", "none")
       .attr("text-anchor", "middle")
-      .style("pointer-events", "none")
+      .attr("font-family", "brera, serif")
+      .attr("font-size", 7)
+      .style("font-weight", "bold")
+      // .style("pointer-events", "none")
       .text((d) => d.label)
       .merge(label);
 
@@ -819,9 +833,11 @@ class VClass {
 
     svg.classed("there-is-filter", true);
     node
-      .classed("filtered", false)
+      // .classed("filtered", false)
+      .attr("opacity",1)
       .filter((n) => filter.indexOf(n.id) < 0)
-      .classed("filtered", true);
+      .attr("opacity",0.2)
+      // .classed("filtered", true);
   };
 
   selectSameComposition = (d) => {
