@@ -7,10 +7,13 @@ const V = {};
 export default V;
 
 let width, height, fontSize=12, strokeWidth=0.5, annotationsFontSize=12, annotationsStrokeWidth=1, zoom,
-    svg, g1, g2, g3, g4, length, combinations, label,
+    svg, g0, g1, g2, g3, g4, length, combinations, label,
     col_macrocategorie = d3.scaleOrdinal().range(['#FFD93B', '#10BED2', '#FF3366']).domain(['cosa','come','senso']),
     col_manifestazioni = d3.scaleLinear().range(['#ffffff','#5151FC']).domain([0,1]),
-    minPerc=2.5;
+    minPerc=0;
+
+let riformStroke = d3.scaleLinear().range(['#999','#5151FC']).domain([0,1])
+let riformStrokeWidth = d3.scaleLinear().range(['0.5','2']).domain([0,1])
 
 /**
  *
@@ -26,7 +29,8 @@ V.init = async (options)=>{
     height = options.height;
     svg = d3.select(options.container).append('svg')
             .attr('width',width)
-            .attr('height',height);
+            .attr('height',height)
+    
     zoom=d3.zoom()
         .extent([[0, 0], [width, height]])
         .scaleExtent([0.75, 100])
@@ -43,8 +47,75 @@ V.init = async (options)=>{
             }
         });
     svg.call(zoom);
+    //for page items volumes
+    g0 = svg.append('g').classed('volumes',true);
+
+    g0.append('rect')
+        .attr('x',0)
+        .attr('y',0)
+        .attr('width',width)
+        .attr('height',height)
+        .attr('fill','#faefe8')
+
+    g0.append('line')
+        .attr('x1',226.7717)
+        .attr('y1',0)
+        .attr('x2',226.7717)
+        .attr('y2','100%')
+        .attr('stroke','black')
+        .attr('stroke-width','0.5px')
+
+    g0.append('line')
+        .attr('x1',793.7005)
+        .attr('y1',0)
+        .attr('x2',793.7005)
+        .attr('y2','100%')
+        .attr('stroke','grey')
+        .attr('stroke-width','0.5px')
+
+    g0.append('line')
+        .attr('x1',807.8738)
+        .attr('y1',0)
+        .attr('x2',807.8738)
+        .attr('y2','100%')
+        .attr('stroke','black')
+        .attr('stroke-width','0.5px')
+
+    g0.append('line')
+        .attr('x1',822.047)
+        .attr('y1',0)
+        .attr('x2',822.047)
+        .attr('y2','100%')
+        .attr('stroke','black')
+        
+
+    g0.append('line')
+        .attr('x1',836.2202)
+        .attr('y1',0)
+        .attr('x2',836.2202)
+        .attr('y2','100%')
+        .attr('stroke','black')
+        .attr('stroke-width','0.5px')
+        
+    g0.append('line')
+        .attr('x1',850.3935)
+        .attr('y1',0)
+        .attr('x2',850.3935)
+        .attr('y2','100%')
+        .attr('stroke','grey')
+        .attr('stroke-width','0.5px')
+
+    g0.append('line')
+        .attr('x1',1417.322)
+        .attr('y1',0)
+        .attr('x2',1417.322)
+        .attr('y2','100%')
+        .attr('stroke','black')
+        .attr('stroke-width','0.5px')
+
+    // original of viz
     g1 = svg.append('g');
-    g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')');
+    g2 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')')
     g3 = g1.append('g').attr('transform','translate('+width/2+','+height/2+')')
             // animation for the info-sheet
             // .style('opacity',0);
@@ -82,10 +153,11 @@ V.init = async (options)=>{
  * @param {Array}   options.data
  */
 V.update = (options)=>{
-    const reducedData = options.data.filter(d=>{
+    const reducedData = options.data
+    .filter(d=>{
         d.state='metaball';
         d.color=interpolateColor(d);
-        return d.perc_dubbio>=minPerc;
+        return true || d.perc_dubbio>=minPerc;
     });
 
     length=length.data(options.data, d=>d.id);
@@ -96,8 +168,10 @@ V.update = (options)=>{
             .attr('fill',d=>d.perc_dubbio>=minPerc?'#fff':'transparent')
             .attr('fill-opacity','0.8')
             .attr('stroke','#999')
+            .attr('stroke',d=>riformStroke(d.cosa_riformulazione+d.senso_riformulazione+d.come_riformulazione))
             // .attr('stroke-dasharray','2 4')
             .attr('stroke-width',strokeWidth)
+            .attr('stroke-width',d=>riformStrokeWidth(d.cosa_riformulazione+d.senso_riformulazione+d.come_riformulazione))
             .attr('r',d=>d.r)
             .attr('cx',d=>d.x)
             .attr('cy',d=>d.y)
@@ -112,7 +186,7 @@ V.update = (options)=>{
             })
             .merge(length);
 
-    length.filter(d=>d.perc_dubbio <= 2.5)
+    length.filter(d=>d.perc_dubbio <= minPerc)
         .attr('fill','#ddddda')
         .attr('fill-opacity','1')
         .attr('stroke','white')
@@ -149,27 +223,31 @@ V.update = (options)=>{
     label = label.data(options.data, d=>d.id);
     label.exit().remove();
     label = label.enter().append('text')
-            .classed('label',true)
+            // .classed('label',true)
             .attr('x',d=>d.x)
             .attr('y',d=>d.y)
-            .attr('font-size',fontSize)
-            .attr('display','none')
+            .attr('font-size',7)
+            .attr('font-family','brera condensed, serif')
+            // .attr('display','none')
             // animation for the info-sheet
             // .style('opacity',0)
             .merge(label)
-            .each(function(d){truncateLabel(this,d.title,8)})
-            .on('mouseenter',function(d){truncateLabel(this,d.title)})
-            .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
+            .text(d=>d.title)
+            // .each(function(d){truncateLabel(this,d.title,8)})
+            // .on('mouseenter',function(d){truncateLabel(this,d.title)})
+            // .on('mouseleave',function(d){truncateLabel(this,d.title,8)});
 
     const bbox=g1.node().getBBox();
     const x0=bbox.x, y0=bbox.y, x1=x0+bbox.width, y1=y0+bbox.height;
-    svg.call(
-        zoom.transform,
-        d3.zoomIdentity
-            .translate(width/2, height/2)
-            .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
-            .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
-      );
+    // svg.call(
+    //     zoom.transform,
+    //     d3.zoomIdentity
+    //         .translate(width/2, height/2)
+    //         .scale(Math.min(8, 0.95 / Math.max((x1 - x0) / width, (y1 - y0) / height)))
+    //         .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+    //   );
+
+    g1.attr("transform", `translate(-102, 48) scale(1.05) rotate(-9.4 ${width/2} ${height/2})`)
 }
 
 V.changeColor = (value)=>{
@@ -192,7 +270,7 @@ V.changeColor = (value)=>{
 V.filter = (filter)=>{
     if (filter==='no filters') {
         length.style('opacity',1).attr('fill-opacity','0.5');
-        length.filter(d=>d.perc_dubbio <= 2.5)
+        length.filter(d=>d.perc_dubbio <= minPerc)
             .attr('fill','#ddddda')
             .attr('fill-opacity','1')
             .attr('stroke','white')
@@ -200,7 +278,7 @@ V.filter = (filter)=>{
         label.style('opacity',1);
     } else {
         length.style('opacity',1).attr('fill-opacity','1')
-        length.filter(d=>d.perc_dubbio <= 2.5)
+        length.filter(d=>d.perc_dubbio <= minPerc)
             .attr('fill','#ddddda')
             .attr('fill-opacity','1')
             .attr('stroke','white')

@@ -90,8 +90,9 @@ class Cancellazione extends Component {
   }
   async componentDidMount() {
     const data = await d3.json(
-      process.env.PUBLIC_URL + "/cancellazione_dataset_spatialized.json"
+      process.env.PUBLIC_URL + "/cancellazione_dataset_spatialized_laLettura4.json"
     );
+    console.log(data)
     const timeExtent = d3.extent(data, (d) => +new Date(d.year));
 
     // // set publications array for search
