@@ -156,7 +156,7 @@ V.init = async (options) => {
   g3 = g1
     .append("g")
     .classed("g3", true)
-    .attr("display", "none")
+    // .attr("display", "none")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
   // animation for the info-sheet
   // .style('opacity',0);
@@ -177,8 +177,12 @@ V.init = async (options) => {
   length = g2.append('g').classed('g-length', true).selectAll(".length");
   sRiform = gStyles.append('g').classed('g-riform', true).selectAll(".sRiform");
   sEsitaz = gStyles.append('g').classed('g-esitaz', true).selectAll(".sEsitaz");
+  
   combinations = g2.append('g').classed('g-combinations', true).selectAll(".combinations");
   label = g2.append('g').classed('g-labels', true).selectAll(".label");
+  
+  
+  
 
   let translatedSvg;
   if (options.lang === "en") {
@@ -214,33 +218,57 @@ V.update = (options) => {
   sRiform.exit().remove();
   sRiform = sRiform
     .enter()
-    .append("circle")
+    
+    // .append("circle")
+    // .classed("sRiform", true)
+    // .attr("r", (d) => d.r)
+    // .attr("cx", (d) => d.x)
+    // .attr("cy", (d) => d.y)
+    // .attr("stroke", "#00f")
+    // .attr("stroke-opacity", d=>{
+    //     const riform = d.come_riformulazione + d.cosa_riformulazione + d.senso_riformulazione
+    //     return riform
+    // })
+    // .attr("fill", "#fff")
+
+    .append("path")
     .classed("sRiform", true)
-    .attr("r", (d) => d.r)
-    .attr("cx", (d) => d.x)
-    .attr("cy", (d) => d.y)
+    .attr("d", (d) => d.metaballSegments)
+    .attr("fill", "none")
     .attr("stroke", "#00f")
     .attr("stroke-opacity", d=>{
-        const riform = d.come_riformulazione + d.cosa_riformulazione + d.senso_riformulazione
-        return riform
+      const riform = d.come_riformulazione + d.cosa_riformulazione + d.senso_riformulazione
+      return riform
     })
-    .attr("fill", "#fff");
+    .attr("transform", d=>`translate(${d.x},${d.y})`);
 
   sEsitaz = sEsitaz.data(reducedData);
   sEsitaz.exit().remove();
   sEsitaz = sEsitaz
     .enter()
-    .append("circle")
+
+    // .append("circle")
+    // .classed("sEsitaz", true)
+    // .attr("r", (d) => d.r)
+    // .attr("cx", (d) => d.x)
+    // .attr("cy", (d) => d.y)
+    // .attr("stroke", "#f00")
+    // .attr("stroke-opacity", d=>{
+    //     const esitaz = d.come_esitazione + d.cosa_esitazione + d.senso_esitazione
+    //     return esitaz
+    // })
+    // .attr("fill", "#fff")
+    
+    .append("path")
     .classed("sEsitaz", true)
-    .attr("r", (d) => d.r)
-    .attr("cx", (d) => d.x)
-    .attr("cy", (d) => d.y)
+    .attr("d", (d) => d.metaballSegments)
+    .attr("fill", "none")
     .attr("stroke", "#f00")
     .attr("stroke-opacity", d=>{
-        const esitaz = d.come_esitazione + d.cosa_esitazione + d.senso_esitazione
-        return esitaz
+      const esitaz = d.come_esitazione + d.cosa_esitazione + d.senso_esitazione
+      return esitaz
     })
-    .attr("fill", "#fff");
+    .attr("transform", d=>`translate(${d.x},${d.y})`);;
 
   length = length.data(options.data, (d) => d.id);
   length.exit().remove();
@@ -295,8 +323,13 @@ V.update = (options) => {
   combinations
     .append("path")
     .classed("metaball", true)
-    .attr("fill", (d) => d.color)
-    .attr("d", (d) => d.metaballSegments);
+    .attr("d", (d) => d.metaballSegments)
+    // .attr("fill", (d) => d.color)
+    .attr("fill", "white")
+    .attr("fill-opacity", "0.8")
+    .attr("stroke", "#999")
+    // .attr('stroke',d=>riformStroke(d.cosa_riformulazione+d.senso_riformulazione+d.come_riformulazione))
+    .attr("stroke-width", strokeWidth);
 
   combinations
     .selectAll(".circle-combination")
@@ -304,7 +337,8 @@ V.update = (options) => {
     .enter()
     .append("circle")
     .classed("circle-combination", true)
-    .attr("display", "none")
+    // .attr("display", "none")
+    .attr("fill", d=>col_macrocategorie(d.type.split("_")[0]))
     .attr("r", (d) => d.r)
     .attr("cx", (d) => d.x)
     .attr("cy", (d) => d.y);
