@@ -471,12 +471,12 @@ class VClass {
           .style("opacity", 0.25)
           .filter((n) => n.source === d.source)
           .style("opacity", 1);
-        self.displayTitle(d);
+        self.displayTitle([d]);
       })
       .on("mouseleave", (d) => {
         label.filter((l) => l.id === d.id).style("display", "none");
         node.style("opacity", "");
-        self.displayTitle(d);
+        self.displayTitle([]);
       })
 
       .on("click", function (d) {
@@ -783,8 +783,13 @@ class VClass {
           x(d.year) >= width / 2 ? x(d.year) + 4.8 : x(d.year) - 3.2
         )
         .attr("y", height - 10)
-        .text((d) =>
-          x(d.year) >= width / 2 ? d.sourceTitle + " ↓" : "↓ " + d.sourceTitle
+        .text((d) => {
+          let txt = x(d.year) >= width / 2 ? d.sourceTitle + " ↓" : "↓ " + d.sourceTitle
+
+          txt+=`[${d.pubVenueTitle}]`
+
+          return txt
+        }
         )
         .merge(information);
     }
